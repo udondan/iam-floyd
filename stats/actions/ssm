@@ -55,7 +55,7 @@ ssm:DescribeMaintenanceWindowsForTarget;List
 ssm:DescribeOpsItems;Read
 ssm:DescribeParameters;List
 ssm:DescribePatchBaselines;List
-ssm:DescribePatchGroupState;Read
+ssm:DescribePatchGroupState;List
 ssm:DescribePatchGroups;List
 ssm:DescribePatchProperties;List
 ssm:DescribeSessions;List
@@ -92,7 +92,7 @@ ssm:ListCommandInvocations;Read
 ssm:ListCommands;Read
 ssm:ListComplianceItems;List
 ssm:ListComplianceSummaries;List
-ssm:ListDocumentMetadataHistory;Read
+ssm:ListDocumentMetadataHistory;List
 ssm:ListDocumentVersions;List
 ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
@@ -103,12 +103,13 @@ ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;Read
-ssm:ModifyDocumentPermission;Write
+ssm:ModifyDocumentPermission;Permissions management
 ssm:PutComplianceItems;Write
 ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write
 ssm:PutParameter;Write
 ssm:RegisterDefaultPatchBaseline;Write
+ssm:RegisterManagedInstance;Write
 ssm:RegisterPatchBaselineForPatchGroup;Write
 ssm:RegisterTargetWithMaintenanceWindow;Write
 ssm:RegisterTaskWithMaintenanceWindow;Write
@@ -123,6 +124,7 @@ ssm:StartChangeRequestExecution;Write
 ssm:StartSession;Write
 ssm:StopAutomationExecution;Write
 ssm:TerminateSession;Write
+ssm:UnlabelParameterVersion;Write
 ssm:UpdateAssociation;Write
 ssm:UpdateAssociationStatus;Write
 ssm:UpdateDocument;Write

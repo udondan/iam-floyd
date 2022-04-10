@@ -24,7 +24,9 @@ sagemaker:human-task-ui
 sagemaker:hyper-parameter-tuning-job
 sagemaker:image
 sagemaker:image-version
+sagemaker:inference-recommendations-job
 sagemaker:labeling-job
+sagemaker:lineage-group
 sagemaker:model
 sagemaker:model-bias-job-definition
 sagemaker:model-explainability-job-definition
@@ -38,6 +40,7 @@ sagemaker:pipeline
 sagemaker:pipeline-execution
 sagemaker:processing-job
 sagemaker:project
+sagemaker:studio-lifecycle-config
 sagemaker:training-job
 sagemaker:transform-job
 sagemaker:user-profile

@@ -23,6 +23,7 @@ clouddirectory:DetachPolicy;Write
 clouddirectory:DetachTypedLink;Write
 clouddirectory:DisableDirectory;Write
 clouddirectory:EnableDirectory;Write
+clouddirectory:GetAppliedSchemaVersion;Read
 clouddirectory:GetDirectory;Read
 clouddirectory:GetFacet;Read
 clouddirectory:GetLinkAttributes;Read
@@ -61,3 +62,5 @@ clouddirectory:UpdateLinkAttributes;Write
 clouddirectory:UpdateObjectAttributes;Write
 clouddirectory:UpdateSchema;Write
 clouddirectory:UpdateTypedLinkFacet;Write
+clouddirectory:UpgradeAppliedSchema;Write
+clouddirectory:UpgradePublishedSchema;Write

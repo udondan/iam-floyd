@@ -23,6 +23,7 @@ s3-outposts:ListBucketMultipartUploads;List
 s3-outposts:ListEndpoints;List
 s3-outposts:ListMultipartUploadParts;List
 s3-outposts:ListRegionalBuckets;List
+s3-outposts:ListSharedEndpoints;List
 s3-outposts:PutAccessPointPolicy;Permissions management
 s3-outposts:PutBucketPolicy;Permissions management
 s3-outposts:PutBucketTagging;Tagging

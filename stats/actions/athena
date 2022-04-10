@@ -31,5 +31,6 @@ athena:StopQueryExecution;Write
 athena:TagResource;Tagging
 athena:UntagResource;Tagging
 athena:UpdateDataCatalog;Write
+athena:UpdateNamedQuery;Write
 athena:UpdatePreparedStatement;Write
 athena:UpdateWorkGroup;Write

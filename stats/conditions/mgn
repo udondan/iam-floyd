@@ -1,3 +1,4 @@
+mgn:CreateAction
 mgn:RequestTag/${TagKey}
 mgn:ResourceTag/${TagKey}
 mgn:TagKeys

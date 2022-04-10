@@ -15,6 +15,7 @@ workmail:CreateSmtpGateway;Write
 workmail:CreateUser;Write
 workmail:DeleteAccessControlRule;Write
 workmail:DeleteAlias;Write
+workmail:DeleteEmailMonitoringConfiguration;Write
 workmail:DeleteGroup;Write
 workmail:DeleteInboundMailFlowRule;Write
 workmail:DeleteMailDomain;Write
@@ -31,6 +32,7 @@ workmail:DeleteUser;Write
 workmail:DeregisterFromWorkMail;Write
 workmail:DeregisterMailDomain;Write
 workmail:DescribeDirectories;List
+workmail:DescribeEmailMonitoringConfiguration;Read
 workmail:DescribeGroup;List
 workmail:DescribeInboundDmarcSettings;Read
 workmail:DescribeInboundMailFlowRule;Read
@@ -84,6 +86,7 @@ workmail:ListSmtpGateways;List
 workmail:ListTagsForResource;List
 workmail:ListUsers;List
 workmail:PutAccessControlRule;Write
+workmail:PutEmailMonitoringConfiguration;Write
 workmail:PutInboundDmarcSettings;Write
 workmail:PutMailboxPermissions;Write
 workmail:PutMobileDeviceAccessOverride;Write

@@ -3,6 +3,7 @@ mobiletargeting:CreateCampaign;Write
 mobiletargeting:CreateEmailTemplate;Write
 mobiletargeting:CreateExportJob;Write
 mobiletargeting:CreateImportJob;Write
+mobiletargeting:CreateInAppTemplate;Write
 mobiletargeting:CreateJourney;Write
 mobiletargeting:CreatePushTemplate;Write
 mobiletargeting:CreateRecommenderConfiguration;Write
@@ -22,6 +23,7 @@ mobiletargeting:DeleteEmailTemplate;Write
 mobiletargeting:DeleteEndpoint;Write
 mobiletargeting:DeleteEventStream;Write
 mobiletargeting:DeleteGcmChannel;Write
+mobiletargeting:DeleteInAppTemplate;Write
 mobiletargeting:DeleteJourney;Write
 mobiletargeting:DeletePushTemplate;Write
 mobiletargeting:DeleteRecommenderConfiguration;Write
@@ -58,6 +60,7 @@ mobiletargeting:GetGcmChannel;Read
 mobiletargeting:GetImportJob;Read
 mobiletargeting:GetImportJobs;List
 mobiletargeting:GetInAppMessages;Read
+mobiletargeting:GetInAppTemplate;Read
 mobiletargeting:GetJourney;Read
 mobiletargeting:GetJourneyDateRangeKpi;Read
 mobiletargeting:GetJourneyExecutionActivityMetrics;Read
@@ -86,6 +89,7 @@ mobiletargeting:PutEventStream;Write
 mobiletargeting:PutEvents;Write
 mobiletargeting:RemoveAttributes;Write
 mobiletargeting:SendMessages;Write
+mobiletargeting:SendOTPMessage;Write
 mobiletargeting:SendUsersMessages;Write
 mobiletargeting:TagResource;Tagging
 mobiletargeting:UntagResource;Tagging
@@ -102,6 +106,7 @@ mobiletargeting:UpdateEmailTemplate;Write
 mobiletargeting:UpdateEndpoint;Write
 mobiletargeting:UpdateEndpointsBatch;Write
 mobiletargeting:UpdateGcmChannel;Write
+mobiletargeting:UpdateInAppTemplate;Write
 mobiletargeting:UpdateJourney;Write
 mobiletargeting:UpdateJourneyState;Write
 mobiletargeting:UpdatePushTemplate;Write
@@ -112,3 +117,4 @@ mobiletargeting:UpdateSmsTemplate;Write
 mobiletargeting:UpdateTemplateActiveVersion;Write
 mobiletargeting:UpdateVoiceChannel;Write
 mobiletargeting:UpdateVoiceTemplate;Write
+mobiletargeting:VerifyOTPMessage;Write

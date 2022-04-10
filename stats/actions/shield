@@ -15,10 +15,12 @@ shield:DescribeEmergencyContactSettings;Read
 shield:DescribeProtection;Read
 shield:DescribeProtectionGroup;Read
 shield:DescribeSubscription;Read
+shield:DisableApplicationLayerAutomaticResponse;Write
 shield:DisableProactiveEngagement;Write
 shield:DisassociateDRTLogBucket;Write
 shield:DisassociateDRTRole;Write
 shield:DisassociateHealthCheck;Write
+shield:EnableApplicationLayerAutomaticResponse;Write
 shield:EnableProactiveEngagement;Write
 shield:GetSubscriptionState;Read
 shield:ListAttacks;List
@@ -28,6 +30,7 @@ shield:ListResourcesInProtectionGroup;List
 shield:ListTagsForResource;Read
 shield:TagResource;Tagging
 shield:UntagResource;Tagging
+shield:UpdateApplicationLayerAutomaticResponse;Write
 shield:UpdateEmergencyContactSettings;Write
 shield:UpdateProtectionGroup;Write
 shield:UpdateSubscription;Write

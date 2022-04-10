@@ -4,6 +4,7 @@ proton:environment-template
 proton:environment-template-major-version
 proton:environment-template-minor-version
 proton:environment-template-version
+proton:repository
 proton:service
 proton:service-instance
 proton:service-template

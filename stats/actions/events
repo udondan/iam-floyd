@@ -3,6 +3,7 @@ events:CancelReplay;Write
 events:CreateApiDestination;Write
 events:CreateArchive;Write
 events:CreateConnection;Write
+events:CreateEndpoint;Write
 events:CreateEventBus;Write
 events:CreatePartnerEventSource;Write
 events:DeactivateEventSource;Write
@@ -10,12 +11,14 @@ events:DeauthorizeConnection;Write
 events:DeleteApiDestination;Write
 events:DeleteArchive;Write
 events:DeleteConnection;Write
+events:DeleteEndpoint;Write
 events:DeleteEventBus;Write
 events:DeletePartnerEventSource;Write
 events:DeleteRule;Write
 events:DescribeApiDestination;Read
 events:DescribeArchive;Read
 events:DescribeConnection;Read
+events:DescribeEndpoint;Read
 events:DescribeEventBus;Read
 events:DescribeEventSource;Read
 events:DescribePartnerEventSource;Read
@@ -27,6 +30,7 @@ events:InvokeApiDestination;Write
 events:ListApiDestinations;List
 events:ListArchives;List
 events:ListConnections;List
+events:ListEndpoints;List
 events:ListEventBuses;List
 events:ListEventSources;List
 events:ListPartnerEventSourceAccounts;List
@@ -50,3 +54,4 @@ events:UntagResource;Tagging
 events:UpdateApiDestination;Write
 events:UpdateArchive;Write
 events:UpdateConnection;Write
+events:UpdateEndpoint;Write

@@ -1,1 +1,3 @@
-
+cloudtrail:RequestTag/${TagKey}
+cloudtrail:ResourceTag/${TagKey}
+cloudtrail:TagKeys

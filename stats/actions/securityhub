@@ -2,8 +2,10 @@ securityhub:AcceptAdministratorInvitation;Write
 securityhub:AcceptInvitation;Write
 securityhub:BatchDisableStandards;Write
 securityhub:BatchEnableStandards;Write
+securityhub:BatchGetStandardsControlAssociations;Read
 securityhub:BatchImportFindings;Write
 securityhub:BatchUpdateFindings;Write
+securityhub:BatchUpdateStandardsControlAssociations;Write
 securityhub:CreateActionTarget;Write
 securityhub:CreateFindingAggregator;Write
 securityhub:CreateInsight;Write
@@ -51,6 +53,7 @@ securityhub:ListFindingAggregators;List
 securityhub:ListInvitations;List
 securityhub:ListMembers;List
 securityhub:ListOrganizationAdminAccounts;List
+securityhub:ListSecurityControlDefinitions;List
 securityhub:ListTagsForResource;Read
 securityhub:SendFindingEvents;Read
 securityhub:SendInsightEvents;Read

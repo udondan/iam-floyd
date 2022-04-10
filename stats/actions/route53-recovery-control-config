@@ -16,6 +16,9 @@ route53-recovery-control-config:ListClusters;Read
 route53-recovery-control-config:ListControlPanels;Read
 route53-recovery-control-config:ListRoutingControls;Read
 route53-recovery-control-config:ListSafetyRules;Read
+route53-recovery-control-config:ListTagsForResource;Read
+route53-recovery-control-config:TagResource;Tagging
+route53-recovery-control-config:UntagResource;Tagging
 route53-recovery-control-config:UpdateControlPanel;Write
 route53-recovery-control-config:UpdateRoutingControl;Write
 route53-recovery-control-config:UpdateSafetyRule;Write

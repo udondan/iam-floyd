@@ -52,7 +52,7 @@ panorama:ListNodeFromTemplateJobs;List
 panorama:ListNodes;List
 panorama:ListPackageImportJobs;List
 panorama:ListPackages;List
-panorama:ListTagsForResource;List
+panorama:ListTagsForResource;Read
 panorama:ProvisionDevice;Write
 panorama:RegisterPackageVersion;Write
 panorama:RemoveApplicationInstance;Write

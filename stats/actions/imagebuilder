@@ -25,6 +25,7 @@ imagebuilder:GetImageRecipe;Read
 imagebuilder:GetImageRecipePolicy;Read
 imagebuilder:GetInfrastructureConfiguration;Read
 imagebuilder:ImportComponent;Write
+imagebuilder:ImportVmImage;Write
 imagebuilder:ListComponentBuildVersions;List
 imagebuilder:ListComponents;List
 imagebuilder:ListContainerRecipes;List

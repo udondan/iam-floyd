@@ -12,6 +12,7 @@ ram:GetResourceShareAssociations;Read
 ram:GetResourceShareInvitations;Read
 ram:GetResourceShares;Read
 ram:ListPendingInvitationResources;Read
+ram:ListPermissionVersions;List
 ram:ListPermissions;List
 ram:ListPrincipals;List
 ram:ListResourceSharePermissions;List

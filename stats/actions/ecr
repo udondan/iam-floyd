@@ -1,15 +1,20 @@
 ecr:BatchCheckLayerAvailability;Read
 ecr:BatchDeleteImage;Write
 ecr:BatchGetImage;Read
+ecr:BatchGetRepositoryScanningConfiguration;Read
+ecr:BatchImportUpstreamImage;Write
 ecr:CompleteLayerUpload;Write
+ecr:CreatePullThroughCacheRule;Write
 ecr:CreateRepository;Write
 ecr:DeleteLifecyclePolicy;Write
+ecr:DeletePullThroughCacheRule;Write
 ecr:DeleteRegistryPolicy;Permissions management
 ecr:DeleteRepository;Write
 ecr:DeleteRepositoryPolicy;Permissions management
 ecr:DescribeImageReplicationStatus;Read
 ecr:DescribeImageScanFindings;Read
 ecr:DescribeImages;List
+ecr:DescribePullThroughCacheRules;List
 ecr:DescribeRegistry;Read
 ecr:DescribeRepositories;Read
 ecr:GetAuthorizationToken;Read
@@ -17,6 +22,7 @@ ecr:GetDownloadUrlForLayer;Read
 ecr:GetLifecyclePolicy;Read
 ecr:GetLifecyclePolicyPreview;Read
 ecr:GetRegistryPolicy;Read
+ecr:GetRegistryScanningConfiguration;Read
 ecr:GetRepositoryPolicy;Read
 ecr:InitiateLayerUpload;Write
 ecr:ListImages;List
@@ -26,6 +32,7 @@ ecr:PutImageScanningConfiguration;Write
 ecr:PutImageTagMutability;Write
 ecr:PutLifecyclePolicy;Write
 ecr:PutRegistryPolicy;Permissions management
+ecr:PutRegistryScanningConfiguration;Write
 ecr:PutReplicationConfiguration;Write
 ecr:ReplicateImage;Write
 ecr:SetRepositoryPolicy;Permissions management

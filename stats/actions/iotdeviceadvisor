@@ -1,5 +1,6 @@
 iotdeviceadvisor:CreateSuiteDefinition;Write
 iotdeviceadvisor:DeleteSuiteDefinition;Write
+iotdeviceadvisor:GetEndpoint;Read
 iotdeviceadvisor:GetSuiteDefinition;Read
 iotdeviceadvisor:GetSuiteRun;Read
 iotdeviceadvisor:GetSuiteRunReport;Read

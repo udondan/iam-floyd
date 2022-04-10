@@ -1,3 +1,4 @@
+quicksight:AccountConfigurations;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
 quicksight:CreateAdmin;Write
@@ -57,6 +58,7 @@ quicksight:DescribeFolder;Read
 quicksight:DescribeFolderPermissions;Read
 quicksight:DescribeFolderResolvedPermissions;Read
 quicksight:DescribeGroup;Read
+quicksight:DescribeGroupMembership;Read
 quicksight:DescribeIAMPolicyAssignment;Read
 quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
@@ -102,10 +104,12 @@ quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
 quicksight:RegisterUser;Write
 quicksight:RestoreAnalysis;Write
+quicksight:ScopeDownPolicy;Write
 quicksight:SearchAnalyses;List
 quicksight:SearchDashboards;List
 quicksight:SearchDirectoryGroups;List
 quicksight:SearchFolders;Read
+quicksight:SearchGroups;List
 quicksight:SetGroupMapping;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging

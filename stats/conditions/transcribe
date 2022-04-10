@@ -1,3 +1,7 @@
 transcribe:OutputBucketName
 transcribe:OutputEncryptionKMSKeyId
 transcribe:OutputKey
+transcribe:OutputLocation
+transcribe:RequestTag/${TagKey}
+transcribe:ResourceTag/${TagKey}
+transcribe:TagKeys

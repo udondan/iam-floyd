@@ -1,0 +1,7 @@
+amplifyuibuilder:AppId
+amplifyuibuilder:ComponentsId
+amplifyuibuilder:EnvironmentName
+amplifyuibuilder:RequestTag/${TagKey}
+amplifyuibuilder:ResourceTag/${TagKey}
+amplifyuibuilder:TagKeys
+amplifyuibuilder:ThemesId

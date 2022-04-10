@@ -5,14 +5,14 @@ ds:AddTagsToResource;Tagging
 ds:AuthorizeApplication;Write
 ds:CancelSchemaExtension;Write
 ds:CheckAlias;Read
-ds:ConnectDirectory;Tagging
+ds:ConnectDirectory;Write
 ds:CreateAlias;Write
 ds:CreateComputer;Write
 ds:CreateConditionalForwarder;Write
-ds:CreateDirectory;Tagging
-ds:CreateIdentityPoolDirectory;Tagging
+ds:CreateDirectory;Write
+ds:CreateIdentityPoolDirectory;Write
 ds:CreateLogSubscription;Write
-ds:CreateMicrosoftAD;Tagging
+ds:CreateMicrosoftAD;Write
 ds:CreateSnapshot;Write
 ds:CreateTrust;Write
 ds:DeleteConditionalForwarder;Write
@@ -23,6 +23,7 @@ ds:DeleteTrust;Write
 ds:DeregisterCertificate;Write
 ds:DeregisterEventTopic;Write
 ds:DescribeCertificate;Read
+ds:DescribeClientAuthenticationSettings;Read
 ds:DescribeConditionalForwarders;Read
 ds:DescribeDirectories;List
 ds:DescribeDomainControllers;Read

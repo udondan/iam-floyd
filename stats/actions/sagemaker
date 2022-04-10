@@ -27,7 +27,9 @@ sagemaker:CreateHumanTaskUi;Write
 sagemaker:CreateHyperParameterTuningJob;Write
 sagemaker:CreateImage;Write
 sagemaker:CreateImageVersion;Write
+sagemaker:CreateInferenceRecommendationsJob;Write
 sagemaker:CreateLabelingJob;Write
+sagemaker:CreateLineageGroupPolicy;Write
 sagemaker:CreateModel;Write
 sagemaker:CreateModelBiasJobDefinition;Write
 sagemaker:CreateModelExplainabilityJobDefinition;Write
@@ -42,6 +44,7 @@ sagemaker:CreatePresignedDomainUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
 sagemaker:CreateProject;Write
+sagemaker:CreateStudioLifecycleConfig;Write
 sagemaker:CreateTrainingJob;Write
 sagemaker:CreateTransformJob;Write
 sagemaker:CreateTrial;Write
@@ -69,6 +72,7 @@ sagemaker:DeleteHumanLoop;Write
 sagemaker:DeleteHumanTaskUi;Write
 sagemaker:DeleteImage;Write
 sagemaker:DeleteImageVersion;Write
+sagemaker:DeleteLineageGroupPolicy;Write
 sagemaker:DeleteModel;Write
 sagemaker:DeleteModelBiasJobDefinition;Write
 sagemaker:DeleteModelExplainabilityJobDefinition;Write
@@ -82,6 +86,7 @@ sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
+sagemaker:DeleteStudioLifecycleConfig;Write
 sagemaker:DeleteTags;Tagging
 sagemaker:DeleteTrial;Write
 sagemaker:DeleteTrialComponent;Write
@@ -113,7 +118,9 @@ sagemaker:DescribeHumanTaskUi;Read
 sagemaker:DescribeHyperParameterTuningJob;Read
 sagemaker:DescribeImage;Read
 sagemaker:DescribeImageVersion;Read
+sagemaker:DescribeInferenceRecommendationsJob;Read
 sagemaker:DescribeLabelingJob;Read
+sagemaker:DescribeLineageGroup;Read
 sagemaker:DescribeModel;Read
 sagemaker:DescribeModelBiasJobDefinition;Read
 sagemaker:DescribeModelExplainabilityJobDefinition;Read
@@ -128,6 +135,7 @@ sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
 sagemaker:DescribeProcessingJob;Read
 sagemaker:DescribeProject;Read
+sagemaker:DescribeStudioLifecycleConfig;Read
 sagemaker:DescribeSubscribedWorkteam;Read
 sagemaker:DescribeTrainingJob;Read
 sagemaker:DescribeTransformJob;Read
@@ -141,6 +149,7 @@ sagemaker:DisassociateTrialComponent;Write
 sagemaker:EnableSagemakerServicecatalogPortfolio;Write
 sagemaker:GetDeviceFleetReport;Read
 sagemaker:GetDeviceRegistration;Read
+sagemaker:GetLineageGroupPolicy;Read
 sagemaker:GetModelPackageGroupPolicy;Read
 sagemaker:GetRecord;Read
 sagemaker:GetSagemakerServicecatalogPortfolioStatus;Read
@@ -173,10 +182,13 @@ sagemaker:ListHumanTaskUis;List
 sagemaker:ListHyperParameterTuningJobs;List
 sagemaker:ListImageVersions;List
 sagemaker:ListImages;List
+sagemaker:ListInferenceRecommendationsJobs;List
 sagemaker:ListLabelingJobs;List
 sagemaker:ListLabelingJobsForWorkteam;List
+sagemaker:ListLineageGroups;List
 sagemaker:ListModelBiasJobDefinitions;List
 sagemaker:ListModelExplainabilityJobDefinitions;List
+sagemaker:ListModelMetadata;List
 sagemaker:ListModelPackageGroups;List
 sagemaker:ListModelPackages;List
 sagemaker:ListModelQualityJobDefinitions;List
@@ -191,6 +203,7 @@ sagemaker:ListPipelineParametersForExecution;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListStudioLifecycleConfigs;List
 sagemaker:ListSubscribedWorkteams;List
 sagemaker:ListTags;List
 sagemaker:ListTrainingJobs;List
@@ -201,10 +214,13 @@ sagemaker:ListTrials;List
 sagemaker:ListUserProfiles;List
 sagemaker:ListWorkforces;List
 sagemaker:ListWorkteams;List
+sagemaker:PutLineageGroupPolicy;Write
 sagemaker:PutModelPackageGroupPolicy;Write
 sagemaker:PutRecord;Write
+sagemaker:QueryLineage;List
 sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
+sagemaker:RetryPipelineExecution;Write
 sagemaker:Search;Read
 sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write
@@ -218,6 +234,7 @@ sagemaker:StopCompilationJob;Write
 sagemaker:StopEdgePackagingJob;Write
 sagemaker:StopHumanLoop;Write
 sagemaker:StopHyperParameterTuningJob;Write
+sagemaker:StopInferenceRecommendationsJob;Write
 sagemaker:StopLabelingJob;Write
 sagemaker:StopMonitoringSchedule;Write
 sagemaker:StopNotebookInstance;Write

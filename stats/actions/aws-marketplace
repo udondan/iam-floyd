@@ -20,8 +20,8 @@ aws-marketplace:GetEntitlements;Read
 aws-marketplace:ListAgreementApprovalRequests;List
 aws-marketplace:ListAgreementRequests;List
 aws-marketplace:ListBuilds;Read
-aws-marketplace:ListChangeSets;Read
-aws-marketplace:ListEntities;Read
+aws-marketplace:ListChangeSets;List
+aws-marketplace:ListEntities;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListTasks;List
 aws-marketplace:MeterUsage;Write

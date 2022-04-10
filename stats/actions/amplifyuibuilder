@@ -1,0 +1,17 @@
+amplifyuibuilder:CreateComponent;Write
+amplifyuibuilder:CreateTheme;Write
+amplifyuibuilder:DeleteComponent;Write
+amplifyuibuilder:DeleteTheme;Write
+amplifyuibuilder:ExchangeCodeForToken;Write
+amplifyuibuilder:ExportComponents;Read
+amplifyuibuilder:ExportThemes;Read
+amplifyuibuilder:GetComponent;Read
+amplifyuibuilder:GetTheme;Read
+amplifyuibuilder:ListComponents;List
+amplifyuibuilder:ListTagsForResource;Read
+amplifyuibuilder:ListThemes;List
+amplifyuibuilder:RefreshToken;Write
+amplifyuibuilder:TagResource;Tagging
+amplifyuibuilder:UntagResource;Tagging
+amplifyuibuilder:UpdateComponent;Write
+amplifyuibuilder:UpdateTheme;Write

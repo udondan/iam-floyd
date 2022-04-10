@@ -1,3 +1,4 @@
 apprunner:autoscalingconfiguration
 apprunner:connection
 apprunner:service
+apprunner:vpcconnector

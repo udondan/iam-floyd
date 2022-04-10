@@ -1,12 +1,15 @@
 connect:AssociateApprovedOrigin;Write
 connect:AssociateBot;Write
 connect:AssociateCustomerProfilesDomain;Write
+connect:AssociateDefaultVocabulary;Write
 connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
 connect:AssociateLexBot;Write
 connect:AssociateQueueQuickConnects;Write
 connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
+connect:BatchAssociateAnalyticsDataSet;Write
+connect:BatchDisassociateAnalyticsDataSet;Write
 connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
@@ -20,6 +23,7 @@ connect:CreateSecurityProfile;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
+connect:CreateVocabulary;Write
 connect:DeleteContactFlow;Write
 connect:DeleteContactFlowModule;Write
 connect:DeleteHoursOfOperation;Write
@@ -30,6 +34,7 @@ connect:DeleteSecurityProfile;Write
 connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
+connect:DeleteVocabulary;Write
 connect:DescribeAgentStatus;Read
 connect:DescribeContact;Read
 connect:DescribeContactFlow;Read
@@ -45,6 +50,7 @@ connect:DescribeSecurityProfile;Read
 connect:DescribeUser;Read
 connect:DescribeUserHierarchyGroup;Read
 connect:DescribeUserHierarchyStructure;Read
+connect:DescribeVocabulary;Read
 connect:DisassociateApprovedOrigin;Write
 connect:DisassociateBot;Write
 connect:DisassociateCustomerProfilesDomain;Write
@@ -65,6 +71,7 @@ connect:ListBots;List
 connect:ListContactFlowModules;List
 connect:ListContactFlows;List
 connect:ListContactReferences;List
+connect:ListDefaultVocabularies;List
 connect:ListHoursOfOperations;List
 connect:ListInstanceAttributes;List
 connect:ListInstanceStorageConfigs;List
@@ -88,12 +95,15 @@ connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
 connect:ResumeContactRecording;Write
+connect:SearchVocabularies;List
 connect:StartChatContact;Write
 connect:StartContactRecording;Write
+connect:StartContactStreaming;Write
 connect:StartOutboundVoiceContact;Write
 connect:StartTaskContact;Write
 connect:StopContact;Write
 connect:StopContactRecording;Write
+connect:StopContactStreaming;Write
 connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
 connect:UntagResource;Tagging
@@ -102,6 +112,7 @@ connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactFlowContent;Write
 connect:UpdateContactFlowMetadata;Write
+connect:UpdateContactFlowModuleContent;Write
 connect:UpdateContactFlowModuleMetadata;Write
 connect:UpdateContactFlowName;Write
 connect:UpdateContactSchedule;Write

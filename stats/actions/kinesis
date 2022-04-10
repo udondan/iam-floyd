@@ -26,3 +26,4 @@ kinesis:StartStreamEncryption;Write
 kinesis:StopStreamEncryption;Write
 kinesis:SubscribeToShard;Read
 kinesis:UpdateShardCount;Write
+kinesis:UpdateStreamMode;Write

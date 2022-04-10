@@ -1,0 +1,10 @@
+rum:CreateAppMonitor;Write
+rum:DeleteAppMonitor;Write
+rum:GetAppMonitor;Read
+rum:GetAppMonitorData;Read
+rum:ListAppMonitors;List
+rum:ListTagsForResource;Read
+rum:PutRumEvents;Write
+rum:TagResource;Tagging
+rum:UntagResource;Tagging
+rum:UpdateAppMonitor;Write

@@ -34,6 +34,7 @@ frauddetector:GetDetectors;List
 frauddetector:GetEntityTypes;List
 frauddetector:GetEvent;Read
 frauddetector:GetEventPrediction;Read
+frauddetector:GetEventPredictionMetadata;Read
 frauddetector:GetEventTypes;List
 frauddetector:GetExternalModels;List
 frauddetector:GetKMSEncryptionKey;Read
@@ -43,6 +44,7 @@ frauddetector:GetModels;List
 frauddetector:GetOutcomes;List
 frauddetector:GetRules;List
 frauddetector:GetVariables;List
+frauddetector:ListEventPredictions;List
 frauddetector:ListTagsForResource;Read
 frauddetector:PutDetector;Write
 frauddetector:PutEntityType;Write

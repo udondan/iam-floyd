@@ -1,3 +1,4 @@
+events:EventBusArn
 events:ManagedBy
 events:RequestTag/${TagKey}
 events:ResourceTag/${TagKey}

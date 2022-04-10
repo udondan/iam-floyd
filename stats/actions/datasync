@@ -1,7 +1,9 @@
 datasync:CancelTaskExecution;Write
 datasync:CreateAgent;Write
 datasync:CreateLocationEfs;Write
+datasync:CreateLocationFsxLustre;Write
 datasync:CreateLocationFsxWindows;Write
+datasync:CreateLocationHdfs;Write
 datasync:CreateLocationNfs;Write
 datasync:CreateLocationObjectStorage;Write
 datasync:CreateLocationS3;Write
@@ -12,7 +14,9 @@ datasync:DeleteLocation;Write
 datasync:DeleteTask;Write
 datasync:DescribeAgent;Read
 datasync:DescribeLocationEfs;Read
+datasync:DescribeLocationFsxLustre;Read
 datasync:DescribeLocationFsxWindows;Read
+datasync:DescribeLocationHdfs;Read
 datasync:DescribeLocationNfs;Read
 datasync:DescribeLocationObjectStorage;Read
 datasync:DescribeLocationS3;Read
@@ -28,6 +32,7 @@ datasync:StartTaskExecution;Write
 datasync:TagResource;Tagging
 datasync:UntagResource;Tagging
 datasync:UpdateAgent;Write
+datasync:UpdateLocationHdfs;Write
 datasync:UpdateLocationNfs;Write
 datasync:UpdateLocationObjectStorage;Write
 datasync:UpdateLocationSmb;Write

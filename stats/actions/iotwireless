@@ -19,6 +19,7 @@ iotwireless:DeleteDestination;Write
 iotwireless:DeleteDeviceProfile;Write
 iotwireless:DeleteFuotaTask;Write
 iotwireless:DeleteMulticastGroup;Write
+iotwireless:DeleteQueuedMessages;Write
 iotwireless:DeleteServiceProfile;Write
 iotwireless:DeleteWirelessDevice;Write
 iotwireless:DeleteWirelessGateway;Write
@@ -57,6 +58,7 @@ iotwireless:ListFuotaTasks;Read
 iotwireless:ListMulticastGroups;Read
 iotwireless:ListMulticastGroupsByFuotaTask;Read
 iotwireless:ListPartnerAccounts;Read
+iotwireless:ListQueuedMessages;Read
 iotwireless:ListServiceProfiles;Read
 iotwireless:ListTagsForResource;Read
 iotwireless:ListWirelessDevices;Read

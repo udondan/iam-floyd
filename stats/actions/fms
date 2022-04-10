@@ -1,9 +1,11 @@
 fms:AssociateAdminAccount;Write
+fms:AssociateThirdPartyFirewall;Write
 fms:DeleteAppsList;Write
 fms:DeleteNotificationChannel;Write
 fms:DeletePolicy;Write
 fms:DeleteProtocolsList;Write
 fms:DisassociateAdminAccount;Write
+fms:DisassociateThirdPartyFirewall;Write
 fms:GetAdminAccount;Read
 fms:GetAppsList;Read
 fms:GetComplianceDetail;Read
@@ -11,6 +13,7 @@ fms:GetNotificationChannel;Read
 fms:GetPolicy;Read
 fms:GetProtectionStatus;Read
 fms:GetProtocolsList;Read
+fms:GetThirdPartyFirewallAssociationStatus;Read
 fms:GetViolationDetails;Read
 fms:ListAppsLists;List
 fms:ListComplianceStatus;List
@@ -18,6 +21,7 @@ fms:ListMemberAccounts;List
 fms:ListPolicies;List
 fms:ListProtocolsLists;List
 fms:ListTagsForResource;Read
+fms:ListThirdPartyFirewallFirewallPolicies;List
 fms:PutAppsList;Write
 fms:PutNotificationChannel;Write
 fms:PutPolicy;Write

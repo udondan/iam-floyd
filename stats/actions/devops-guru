@@ -2,6 +2,7 @@ devops-guru:AddNotificationChannel;Write
 devops-guru:DescribeAccountHealth;Read
 devops-guru:DescribeAccountOverview;Read
 devops-guru:DescribeAnomaly;Read
+devops-guru:DescribeEventSourcesConfig;Read
 devops-guru:DescribeFeedback;Read
 devops-guru:DescribeInsight;Read
 devops-guru:DescribeOrganizationHealth;Read
@@ -22,5 +23,6 @@ devops-guru:RemoveNotificationChannel;Write
 devops-guru:SearchInsights;List
 devops-guru:SearchOrganizationInsights;List
 devops-guru:StartCostEstimation;Read
+devops-guru:UpdateEventSourcesConfig;Write
 devops-guru:UpdateResourceCollection;Write
 devops-guru:UpdateServiceIntegration;Write

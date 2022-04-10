@@ -1,1 +1,3 @@
-
+ce:RequestTag/${TagKey}
+ce:ResourceTag/${TagKey}
+ce:TagKeys

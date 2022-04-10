@@ -1,9 +1,13 @@
+braket:CancelJob;Write
 braket:CancelQuantumTask;Write
+braket:CreateJob;Write
 braket:CreateQuantumTask;Write
 braket:GetDevice;Read
+braket:GetJob;Read
 braket:GetQuantumTask;Read
 braket:ListTagsForResource;Read
 braket:SearchDevices;Read
+braket:SearchJobs;Read
 braket:SearchQuantumTasks;Read
 braket:TagResource;Tagging
 braket:UntagResource;Tagging

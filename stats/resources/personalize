@@ -1,5 +1,6 @@
 personalize:algorithm
 personalize:batchInferenceJob
+personalize:batchSegmentJob
 personalize:campaign
 personalize:dataset
 personalize:datasetExportJob
@@ -9,5 +10,6 @@ personalize:eventTracker
 personalize:featureTransformation
 personalize:filter
 personalize:recipe
+personalize:recommender
 personalize:schema
 personalize:solution

@@ -1,1 +1,5 @@
-
+sms-voice:ConfigurationSet
+sms-voice:OptOutList
+sms-voice:PhoneNumber
+sms-voice:Pool
+sms-voice:SenderId

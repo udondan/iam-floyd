@@ -22,8 +22,8 @@ forecast:DescribeAutoPredictor;Read
 forecast:DescribeDataset;Read
 forecast:DescribeDatasetGroup;Read
 forecast:DescribeDatasetImportJob;Read
+forecast:DescribeExplainability;Read
 forecast:DescribeExplainabilityExport;Read
-forecast:DescribeExplainablity;Read
 forecast:DescribeForecast;Read
 forecast:DescribeForecastExportJob;Read
 forecast:DescribePredictor;Read

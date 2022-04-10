@@ -1,5 +1,7 @@
+fsx:association
 fsx:backup
 fsx:file-system
+fsx:snapshot
 fsx:storage-virtual-machine
 fsx:task
 fsx:volume

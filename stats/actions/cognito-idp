@@ -77,6 +77,7 @@ cognito-idp:ListUsers;List
 cognito-idp:ListUsersInGroup;List
 cognito-idp:ResendConfirmationCode;Write
 cognito-idp:RespondToAuthChallenge;Write
+cognito-idp:RevokeToken;Write
 cognito-idp:SetRiskConfiguration;Write
 cognito-idp:SetUICustomization;Write
 cognito-idp:SetUserMFAPreference;Write

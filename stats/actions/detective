@@ -3,7 +3,10 @@ detective:CreateGraph;Write
 detective:CreateMembers;Write
 detective:DeleteGraph;Write
 detective:DeleteMembers;Write
+detective:DescribeOrganizationConfiguration;Read
+detective:DisableOrganizationAdminAccount;Write
 detective:DisassociateMembership;Write
+detective:EnableOrganizationAdminAccount;Write
 detective:GetFreeTrialEligibility;Read
 detective:GetGraphIngestState;Read
 detective:GetMembers;Read
@@ -12,9 +15,11 @@ detective:GetUsageInformation;Read
 detective:ListGraphs;List
 detective:ListInvitations;List
 detective:ListMembers;List
+detective:ListOrganizationAdminAccounts;List
 detective:ListTagsForResource;Read
 detective:RejectInvitation;Write
 detective:SearchGraph;Read
 detective:StartMonitoringMember;Write
 detective:TagResource;Tagging
 detective:UntagResource;Tagging
+detective:UpdateOrganizationConfiguration;Write

@@ -1,6 +1,8 @@
+appsync:AssociateApi;Write
 appsync:CreateApiCache;Write
 appsync:CreateApiKey;Write
 appsync:CreateDataSource;Write
+appsync:CreateDomainName;Write
 appsync:CreateFunction;Write
 appsync:CreateGraphqlApi;Write
 appsync:CreateResolver;Write
@@ -8,13 +10,17 @@ appsync:CreateType;Write
 appsync:DeleteApiCache;Write
 appsync:DeleteApiKey;Write
 appsync:DeleteDataSource;Write
+appsync:DeleteDomainName;Write
 appsync:DeleteFunction;Write
 appsync:DeleteGraphqlApi;Write
 appsync:DeleteResolver;Write
 appsync:DeleteType;Write
+appsync:DisassociateApi;Write
 appsync:FlushApiCache;Write
+appsync:GetApiAssociation;Read
 appsync:GetApiCache;Read
 appsync:GetDataSource;Read
+appsync:GetDomainName;Read
 appsync:GetFunction;Read
 appsync:GetGraphqlApi;Read
 appsync:GetIntrospectionSchema;Read
@@ -24,6 +30,7 @@ appsync:GetType;Read
 appsync:GraphQL;Write
 appsync:ListApiKeys;List
 appsync:ListDataSources;List
+appsync:ListDomainNames;List
 appsync:ListFunctions;List
 appsync:ListGraphqlApis;List
 appsync:ListResolvers;List
@@ -37,6 +44,7 @@ appsync:UntagResource;Tagging
 appsync:UpdateApiCache;Write
 appsync:UpdateApiKey;Write
 appsync:UpdateDataSource;Write
+appsync:UpdateDomainName;Write
 appsync:UpdateFunction;Write
 appsync:UpdateGraphqlApi;Write
 appsync:UpdateResolver;Write

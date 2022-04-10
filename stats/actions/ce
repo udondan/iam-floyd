@@ -31,7 +31,10 @@ ce:GetSavingsPlansUtilizationDetails;Read
 ce:GetTags;Read
 ce:GetUsageForecast;Read
 ce:ListCostCategoryDefinitions;List
+ce:ListTagsForResource;Read
 ce:ProvideAnomalyFeedback;Write
+ce:TagResource;Tagging
+ce:UntagResource;Tagging
 ce:UpdateAnomalyMonitor;Write
 ce:UpdateAnomalySubscription;Write
 ce:UpdateCostCategoryDefinition;Write

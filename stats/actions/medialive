@@ -4,6 +4,7 @@ medialive:BatchStart;Write
 medialive:BatchStop;Write
 medialive:BatchUpdateSchedule;Write
 medialive:CancelInputDeviceTransfer;Write
+medialive:ClaimDevice;Write
 medialive:CreateChannel;Write
 medialive:CreateInput;Write
 medialive:CreateInputSecurityGroup;Write
