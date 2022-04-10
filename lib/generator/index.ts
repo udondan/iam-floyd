@@ -960,10 +960,15 @@ function validateUrl(url: string) {
 
 function requestWithRetry(
   url: string,
-  options = {},
+  options: request.CoreOptions = {},
   retries = 3,
   backoff = 300
 ): Promise<any> {
+  options.headers = {
+    'User-Agent':
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9',
+  };
   return new Promise((resolve, reject) => {
     const retry = (retries: number, backoff: number) => {
       request(url, options, (err, response, body) => {
