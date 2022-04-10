@@ -113,7 +113,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
     requestWithRetry(url)
       .then((body) => {
-        const re = /href=".\/list_(.*?)\.html"/g;
+        const re = /href="\.\/list_(.*?)\.html"/g;
         var match: RegExpExecArray;
         const services: string[] = [];
         do {
@@ -138,7 +138,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
 
         resolve(unique.sort());
       })
-      .catch((err) => {
+      .catch((err: any) => {
         reject(err);
       });
   });
@@ -194,11 +194,11 @@ export function getContent(service: string): Promise<Module> {
 
           resolve(module);
         })
-        .catch((err) => {
+        .catch((err: any) => {
           reject(err);
         });
-    } catch (e) {
-      reject(e);
+    } catch (error: any) {
+      reject(error);
     }
   });
 }
@@ -516,6 +516,9 @@ export function createModule(module: Module): Promise<void> {
     if (name.length > 1 && !name[1].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
+    } else if (name.length == 1 && name[0] == 'Attribute') {
+      // special case for ec2:Attribute
+      methodName += 'Exists';
     }
     const method = classDeclaration.addMethod({
       name: methodName,
@@ -754,7 +757,7 @@ function getLastModified(url: string): Promise<Date> {
         }
         resolve(mod);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         reject(err);
       });
   });
@@ -950,7 +953,7 @@ function validateUrl(url: string) {
 
   try {
     new URL(url);
-  } catch (_) {
+  } catch (_: any) {
     console.warn(`Removed invalid URL ${url}`.red);
     return '';
   }
