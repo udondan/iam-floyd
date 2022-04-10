@@ -19,7 +19,7 @@ export enum PrincipalType {
  */
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected useNotPrincipals = false;
-  protected principals: Principals = {};
+  protected myPrincipals: Principals = {};
 
   /**
    * Injects principals into the statement.
@@ -37,7 +37,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     const statement = super.toJSON();
 
     if (this.hasPrincipals()) {
-      statement[mode] = this.principals;
+      statement[mode] = this.myPrincipals;
     }
 
     return statement;
@@ -63,7 +63,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    * Checks weather a principal was applied to the policy
    */
   public hasPrincipals(): boolean {
-    return Object.keys(this.principals).length > 0;
+    return Object.keys(this.myPrincipals).length > 0;
   }
 
   /**
@@ -74,10 +74,10 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   protected addPrincipal(prefix: string, principal: string) {
     this.skipAutoResource = true;
-    if (!(prefix in this.principals)) {
-      this.principals[prefix] = [];
+    if (!(prefix in this.myPrincipals)) {
+      this.myPrincipals[prefix] = [];
     }
-    this.principals[prefix].push(principal);
+    this.myPrincipals[prefix].push(principal);
     return this;
   }
 
