@@ -19,6 +19,20 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources
+   *
+   * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_AssociateServiceRoleToAccount.html
+   */
+  public toAssociateServiceRoleToAccount() {
+    return this.to('AssociateServiceRoleToAccount');
+  }
+
+  /**
    * Grants permission to associate a list of client devices with a core device
    *
    * Access Level: Write
@@ -139,6 +153,17 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate the service role from an account. Without a service role, deployments will not work
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DisassociateServiceRoleFromAccount.html
+   */
+  public toDisassociateServiceRoleFromAccount() {
+    return this.to('DisassociateServiceRoleFromAccount');
+  }
+
+  /**
    * Grants permission to get the recipe for a version of a component
    *
    * Access Level: Read
@@ -158,6 +183,20 @@ export class GreengrassV2 extends PolicyStatement {
    */
   public toGetComponentVersionArtifact() {
     return this.to('GetComponentVersionArtifact');
+  }
+
+  /**
+   * Grants permission to retrieve the connectivity information for a Greengrass core device
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - iot:GetThingShadow
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetConnectivityInfo.html
+   */
+  public toGetConnectivityInfo() {
+    return this.to('GetConnectivityInfo');
   }
 
   /**
@@ -186,6 +225,17 @@ export class GreengrassV2 extends PolicyStatement {
    */
   public toGetDeployment() {
     return this.to('GetDeployment');
+  }
+
+  /**
+   * Grants permission to retrieve the service role that is attached to an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetServiceRoleForAccount.html
+   */
+  public toGetServiceRoleForAccount() {
+    return this.to('GetServiceRoleForAccount');
   }
 
   /**
@@ -334,7 +384,25 @@ export class GreengrassV2 extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iot:GetThingShadow
+   * - iot:UpdateThingShadow
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_UpdateConnectivityInfo.html
+   */
+  public toUpdateConnectivityInfo() {
+    return this.to('UpdateConnectivityInfo');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AssociateServiceRoleToAccount'
+    ],
     Write: [
       'BatchAssociateClientDeviceWithCoreDevice',
       'BatchDisassociateClientDeviceFromCoreDevice',
@@ -342,14 +410,18 @@ export class GreengrassV2 extends PolicyStatement {
       'CreateComponentVersion',
       'CreateDeployment',
       'DeleteComponent',
-      'DeleteCoreDevice'
+      'DeleteCoreDevice',
+      'DisassociateServiceRoleFromAccount',
+      'UpdateConnectivityInfo'
     ],
     Read: [
       'DescribeComponent',
       'GetComponent',
       'GetComponentVersionArtifact',
+      'GetConnectivityInfo',
       'GetCoreDevice',
       'GetDeployment',
+      'GetServiceRoleForAccount',
       'ListTagsForResource'
     ],
     List: [
@@ -367,6 +439,20 @@ export class GreengrassV2 extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type connectivityInfo to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ConnectivityInfo.html
+   *
+   * @param thingName - Identifier for the thingName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
+  }
 
   /**
    * Adds a resource of type component to the statement

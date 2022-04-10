@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
+ * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,12 +10,34 @@ export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
 
   /**
-   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
+   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to accept creation of an attachment between a source and destination in a core network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AcceptAttachment.html
+   */
+  public toAcceptAttachment() {
+    return this.to('AcceptAttachment');
+  }
+
+  /**
+   * Grants permission to associate a Connect Peer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateConnectPeer.html
+   */
+  public toAssociateConnectPeer() {
+    return this.to('AssociateConnectPeer');
   }
 
   /**
@@ -58,6 +80,36 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Connect attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectAttachment.html
+   */
+  public toCreateConnectAttachment() {
+    return this.to('CreateConnectAttachment');
+  }
+
+  /**
+   * Grants permission to create a Connect Peer connection
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectPeer.html
+   */
+  public toCreateConnectPeer() {
+    return this.to('CreateConnectPeer');
+  }
+
+  /**
    * Grants permission to create a new connection
    *
    * Access Level: Write
@@ -70,6 +122,21 @@ export class Networkmanager extends PolicyStatement {
    */
   public toCreateConnection() {
     return this.to('CreateConnection');
+  }
+
+  /**
+   * Grants permission to create a new core network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetwork.html
+   */
+  public toCreateCoreNetwork() {
+    return this.to('CreateCoreNetwork');
   }
 
   /**
@@ -136,6 +203,61 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a site-to-site VPN attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpnConnectionArn()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSiteToSiteVpnAttachment.html
+   */
+  public toCreateSiteToSiteVpnAttachment() {
+    return this.to('CreateSiteToSiteVpnAttachment');
+  }
+
+  /**
+   * Grants permission to create a VPC attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcArn()
+   * - .ifSubnetArns()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateVpcAttachment.html
+   */
+  public toCreateVpcAttachment() {
+    return this.to('CreateVpcAttachment');
+  }
+
+  /**
+   * Grants permission to delete an attachment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteAttachment.html
+   */
+  public toDeleteAttachment() {
+    return this.to('DeleteAttachment');
+  }
+
+  /**
+   * Grants permission to delete a Connect Peer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnectPeer.html
+   */
+  public toDeleteConnectPeer() {
+    return this.to('DeleteConnectPeer');
+  }
+
+  /**
    * Grants permission to delete a connection
    *
    * Access Level: Write
@@ -144,6 +266,28 @@ export class Networkmanager extends PolicyStatement {
    */
   public toDeleteConnection() {
     return this.to('DeleteConnection');
+  }
+
+  /**
+   * Grants permission to delete a core network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetwork.html
+   */
+  public toDeleteCoreNetwork() {
+    return this.to('DeleteCoreNetwork');
+  }
+
+  /**
+   * Grants permission to delete the core network policy version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPolicyVersion.html
+   */
+  public toDeleteCoreNetworkPolicyVersion() {
+    return this.to('DeleteCoreNetworkPolicyVersion');
   }
 
   /**
@@ -180,6 +324,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a site
    *
    * Access Level: Write
@@ -213,6 +368,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toDescribeGlobalNetworks() {
     return this.to('DescribeGlobalNetworks');
+  }
+
+  /**
+   * Grants permission to disassociate a Connect Peer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateConnectPeer.html
+   */
+  public toDisassociateConnectPeer() {
+    return this.to('DisassociateConnectPeer');
   }
 
   /**
@@ -255,6 +421,50 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to apply changes to the core network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ExecuteCoreNetworkChangeSet.html
+   */
+  public toExecuteCoreNetworkChangeSet() {
+    return this.to('ExecuteCoreNetworkChangeSet');
+  }
+
+  /**
+   * Grants permission to retrieve a Connect attachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectAttachment.html
+   */
+  public toGetConnectAttachment() {
+    return this.to('GetConnectAttachment');
+  }
+
+  /**
+   * Grants permission to retrieve a Connect Peer
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectPeer.html
+   */
+  public toGetConnectPeer() {
+    return this.to('GetConnectPeer');
+  }
+
+  /**
+   * Grants permission to describe Connect Peer associations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectPeerAssociations.html
+   */
+  public toGetConnectPeerAssociations() {
+    return this.to('GetConnectPeerAssociations');
+  }
+
+  /**
    * Grants permission to describe connections
    *
    * Access Level: List
@@ -263,6 +473,39 @@ export class Networkmanager extends PolicyStatement {
    */
   public toGetConnections() {
     return this.to('GetConnections');
+  }
+
+  /**
+   * Grants permission to retrieve a core network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetwork.html
+   */
+  public toGetCoreNetwork() {
+    return this.to('GetCoreNetwork');
+  }
+
+  /**
+   * Grants permission to retrieve a list of core network change sets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkChangeSet.html
+   */
+  public toGetCoreNetworkChangeSet() {
+    return this.to('GetCoreNetworkChangeSet');
+  }
+
+  /**
+   * Grants permission to retrieve core network policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkPolicy.html
+   */
+  public toGetCoreNetworkPolicy() {
+    return this.to('GetCoreNetworkPolicy');
   }
 
   /**
@@ -365,6 +608,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to retrieve a route analysis configuration and result
    *
    * Access Level: Read
@@ -373,6 +627,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toGetRouteAnalysis() {
     return this.to('GetRouteAnalysis');
+  }
+
+  /**
+   * Grants permission to retrieve a site-to-site VPN attachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSiteToSiteVpnAttachment.html
+   */
+  public toGetSiteToSiteVpnAttachment() {
+    return this.to('GetSiteToSiteVpnAttachment');
   }
 
   /**
@@ -409,7 +674,62 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists tag for a Network Manager resource
+   * Grants permission to retrieve a VPC attachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetVpcAttachment.html
+   */
+  public toGetVpcAttachment() {
+    return this.to('GetVpcAttachment');
+  }
+
+  /**
+   * Grants permission to describe attachments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html
+   */
+  public toListAttachments() {
+    return this.to('ListAttachments');
+  }
+
+  /**
+   * Grants permission to describe Connect Peers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListConnectPeers.html
+   */
+  public toListConnectPeers() {
+    return this.to('ListConnectPeers');
+  }
+
+  /**
+   * Grants permission to list core network policy versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPolicyVersions.html
+   */
+  public toListCoreNetworkPolicyVersions() {
+    return this.to('ListCoreNetworkPolicyVersions');
+  }
+
+  /**
+   * Grants permission to list core networks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworks.html
+   */
+  public toListCoreNetworks() {
+    return this.to('ListCoreNetworks');
+  }
+
+  /**
+   * Grants permission to list tags for a Network Manager resource
    *
    * Access Level: Read
    *
@@ -420,6 +740,28 @@ export class Networkmanager extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create a core network policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html
+   */
+  public toPutCoreNetworkPolicy() {
+    return this.to('PutCoreNetworkPolicy');
+  }
+
+  /**
+   * Grants permission to create or update a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -434,6 +776,28 @@ export class Networkmanager extends PolicyStatement {
    */
   public toRegisterTransitGateway() {
     return this.to('RegisterTransitGateway');
+  }
+
+  /**
+   * Grants permission to reject attachment request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RejectAttachment.html
+   */
+  public toRejectAttachment() {
+    return this.to('RejectAttachment');
+  }
+
+  /**
+   * Grants permission to restore the core network policy to a previous version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html
+   */
+  public toRestoreCoreNetworkPolicyVersion() {
+    return this.to('RestoreCoreNetworkPolicyVersion');
   }
 
   /**
@@ -486,6 +850,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toUpdateConnection() {
     return this.to('UpdateConnection');
+  }
+
+  /**
+   * Grants permission to update a core network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateCoreNetwork.html
+   */
+  public toUpdateCoreNetwork() {
+    return this.to('UpdateCoreNetwork');
   }
 
   /**
@@ -543,33 +918,69 @@ export class Networkmanager extends PolicyStatement {
     return this.to('UpdateSite');
   }
 
+  /**
+   * Grants permission to update a VPC attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSubnetArns()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateVpcAttachment.html
+   */
+  public toUpdateVpcAttachment() {
+    return this.to('UpdateVpcAttachment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptAttachment',
+      'AssociateConnectPeer',
       'AssociateCustomerGateway',
       'AssociateLink',
       'AssociateTransitGatewayConnectPeer',
+      'CreateConnectAttachment',
+      'CreateConnectPeer',
       'CreateConnection',
+      'CreateCoreNetwork',
       'CreateDevice',
       'CreateGlobalNetwork',
       'CreateLink',
       'CreateSite',
+      'CreateSiteToSiteVpnAttachment',
+      'CreateVpcAttachment',
+      'DeleteAttachment',
+      'DeleteConnectPeer',
       'DeleteConnection',
+      'DeleteCoreNetwork',
+      'DeleteCoreNetworkPolicyVersion',
       'DeleteDevice',
       'DeleteGlobalNetwork',
       'DeleteLink',
+      'DeleteResourcePolicy',
       'DeleteSite',
       'DeregisterTransitGateway',
+      'DisassociateConnectPeer',
       'DisassociateCustomerGateway',
       'DisassociateLink',
       'DisassociateTransitGatewayConnectPeer',
+      'ExecuteCoreNetworkChangeSet',
+      'PutCoreNetworkPolicy',
+      'PutResourcePolicy',
       'RegisterTransitGateway',
+      'RejectAttachment',
+      'RestoreCoreNetworkPolicyVersion',
       'StartRouteAnalysis',
       'UpdateConnection',
+      'UpdateCoreNetwork',
       'UpdateDevice',
       'UpdateGlobalNetwork',
       'UpdateLink',
       'UpdateNetworkResourceMetadata',
-      'UpdateSite'
+      'UpdateSite',
+      'UpdateVpcAttachment'
     ],
     List: [
       'DescribeGlobalNetworks',
@@ -580,15 +991,28 @@ export class Networkmanager extends PolicyStatement {
       'GetLinks',
       'GetSites',
       'GetTransitGatewayConnectPeerAssociations',
-      'GetTransitGatewayRegistrations'
+      'GetTransitGatewayRegistrations',
+      'ListAttachments',
+      'ListConnectPeers',
+      'ListCoreNetworkPolicyVersions',
+      'ListCoreNetworks'
     ],
     Read: [
+      'GetConnectAttachment',
+      'GetConnectPeer',
+      'GetConnectPeerAssociations',
+      'GetCoreNetwork',
+      'GetCoreNetworkChangeSet',
+      'GetCoreNetworkPolicy',
       'GetNetworkResourceCounts',
       'GetNetworkResourceRelationships',
       'GetNetworkResources',
       'GetNetworkRoutes',
       'GetNetworkTelemetry',
+      'GetResourcePolicy',
       'GetRouteAnalysis',
+      'GetSiteToSiteVpnAttachment',
+      'GetVpcAttachment',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -682,6 +1106,54 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type core-network to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCoreNetwork(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:core-network/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type attachment to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAttachment(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:attachment/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type connect-peer to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectPeer(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:connect-peer/${ resourceId }`);
+  }
+
+  /**
    * Filters access by which customer gateways can be associated or disassociated
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
@@ -695,6 +1167,22 @@ export class Networkmanager extends PolicyStatement {
    */
   public ifCgwArn(value: string | string[], operator?: Operator | string) {
     return this.if(`cgwArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by which VPC subnets can be added or removed from a VPC attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateVpcAttachment()
+   * - .toUpdateVpcAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnetArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`subnetArns`, value, operator || 'StringLike');
   }
 
   /**
@@ -727,5 +1215,35 @@ export class Networkmanager extends PolicyStatement {
    */
   public ifTgwConnectPeerArn(value: string | string[], operator?: Operator | string) {
     return this.if(`tgwConnectPeerArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by which VPC can be used to a create/update attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateVpcAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`vpcArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by which Site-to-Site VPN can be used to a create/update attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateSiteToSiteVpnAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpnConnectionArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`vpnConnectionArn`, value, operator || 'StringLike');
   }
 }

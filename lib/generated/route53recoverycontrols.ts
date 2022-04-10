@@ -23,6 +23,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html
    */
   public toCreateCluster() {
@@ -33,6 +37,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * Grants permission to create a control panel
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel.html
    */
@@ -55,6 +63,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * Grants permission to create a safety rule
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/recovery-cluster/latest/api/safetyrule.html
    */
@@ -217,6 +229,47 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update a cluster
    *
    * Access Level: Write
@@ -272,10 +325,15 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       'ListClusters',
       'ListControlPanels',
       'ListRoutingControls',
-      'ListSafetyRules'
+      'ListSafetyRules',
+      'ListTagsForResource'
     ],
     List: [
       'ListAssociatedRoute53HealthChecks'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -287,6 +345,9 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCluster(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
@@ -300,6 +361,9 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param controlPanelId - Identifier for the controlPanelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onControlpanel(controlPanelId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
@@ -328,6 +392,9 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param safetyRuleId - Identifier for the safetyRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSafetyrule(controlPanelId: string, safetyRuleId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);

@@ -129,6 +129,39 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view risk details in AWS Trusted Advisor Priority
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeRisk() {
+    return this.to('DescribeRisk');
+  }
+
+  /**
+   * Grants permission to view affected resources for a risk in AWS Trusted Advisor Priority
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeRiskResources() {
+    return this.to('DescribeRiskResources');
+  }
+
+  /**
+   * Grants permission to view risks in AWS Trusted Advisor Priority
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeRisks() {
+    return this.to('DescribeRisks');
+  }
+
+  /**
    * Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses
    *
    * Access Level: Read
@@ -137,6 +170,17 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toDescribeServiceMetadata() {
     return this.to('DescribeServiceMetadata');
+  }
+
+  /**
+   * Grants permission to download a file that contains details about the risk in AWS Trusted Advisor Priority
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDownloadRisk() {
+    return this.to('DownloadRisk');
   }
 
   /**
@@ -249,6 +293,17 @@ export class Trustedadvisor extends PolicyStatement {
     return this.to('UpdateNotificationPreferences');
   }
 
+  /**
+   * Grants permission to update the risk status in AWS Trusted Advisor Priority
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toUpdateRiskStatus() {
+    return this.to('UpdateRiskStatus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'DescribeAccount',
@@ -261,7 +316,11 @@ export class Trustedadvisor extends PolicyStatement {
       'DescribeOrganization',
       'DescribeOrganizationAccounts',
       'DescribeReports',
+      'DescribeRisk',
+      'DescribeRiskResources',
+      'DescribeRisks',
       'DescribeServiceMetadata',
+      'DownloadRisk',
       'ListAccountsForParent',
       'ListOrganizationalUnitsForParent',
       'ListRoots'
@@ -273,7 +332,8 @@ export class Trustedadvisor extends PolicyStatement {
       'RefreshCheck',
       'SetAccountAccess',
       'SetOrganizationAccess',
-      'UpdateNotificationPreferences'
+      'UpdateNotificationPreferences',
+      'UpdateRiskStatus'
     ]
   };
 

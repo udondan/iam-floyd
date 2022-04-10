@@ -206,6 +206,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the email monitoring configuration for an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteEmailMonitoringConfiguration.html
+   */
+  public toDeleteEmailMonitoringConfiguration() {
+    return this.to('DeleteEmailMonitoringConfiguration');
+  }
+
+  /**
    * Grants permission to delete a group from WorkMail
    *
    * Access Level: Write
@@ -379,6 +390,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDescribeDirectories() {
     return this.to('DescribeDirectories');
+  }
+
+  /**
+   * Grants permission to retrieve the email monitoring configuration for an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeEmailMonitoringConfiguration.html
+   */
+  public toDescribeEmailMonitoringConfiguration() {
+    return this.to('DescribeEmailMonitoringConfiguration');
   }
 
   /**
@@ -936,6 +958,10 @@ export class Workmail extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -962,6 +988,17 @@ export class Workmail extends PolicyStatement {
    */
   public toPutAccessControlRule() {
     return this.to('PutAccessControlRule');
+  }
+
+  /**
+   * Grants permission to add or update the email monitoring configuration for an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutEmailMonitoringConfiguration.html
+   */
+  public toPutEmailMonitoringConfiguration() {
+    return this.to('PutEmailMonitoringConfiguration');
   }
 
   /**
@@ -1156,6 +1193,10 @@ export class Workmail extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -1188,6 +1229,10 @@ export class Workmail extends PolicyStatement {
    * Grants permission to untag the specified Amazon WorkMail organization resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UntagResource.html
    */
@@ -1313,6 +1358,7 @@ export class Workmail extends PolicyStatement {
       'CreateUser',
       'DeleteAccessControlRule',
       'DeleteAlias',
+      'DeleteEmailMonitoringConfiguration',
       'DeleteGroup',
       'DeleteInboundMailFlowRule',
       'DeleteMailDomain',
@@ -1336,6 +1382,7 @@ export class Workmail extends PolicyStatement {
       'EnableMailGroups',
       'EnableMailUsers',
       'PutAccessControlRule',
+      'PutEmailMonitoringConfiguration',
       'PutInboundDmarcSettings',
       'PutMailboxPermissions',
       'PutMobileDeviceAccessOverride',
@@ -1391,6 +1438,7 @@ export class Workmail extends PolicyStatement {
       'ListUsers'
     ],
     Read: [
+      'DescribeEmailMonitoringConfiguration',
       'DescribeInboundDmarcSettings',
       'DescribeInboundMailFlowRule',
       'DescribeMailboxExportJob',

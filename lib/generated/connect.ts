@@ -73,6 +73,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to default vocabulary for an existing Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toAssociateDefaultVocabulary() {
+    return this.to('AssociateDefaultVocabulary');
+  }
+
+  /**
    * Grants permission to associate instance storage for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -178,6 +190,34 @@ export class Connect extends PolicyStatement {
    */
   public toAssociateSecurityKey() {
     return this.to('AssociateSecurityKey');
+  }
+
+  /**
+   * Grants permission to grant access and to associate the datasets with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toBatchAssociateAnalyticsDataSet() {
+    return this.to('BatchAssociateAnalyticsDataSet');
+  }
+
+  /**
+   * Grants permission to revoke access and to disassociate the datasets with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toBatchDisassociateAnalyticsDataSet() {
+    return this.to('BatchDisassociateAnalyticsDataSet');
   }
 
   /**
@@ -405,12 +445,30 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
    */
   public toCreateUserHierarchyGroup() {
     return this.to('CreateUserHierarchyGroup');
+  }
+
+  /**
+   * Grants permission to create a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateVocabulary.html
+   */
+  public toCreateVocabulary() {
+    return this.to('CreateVocabulary');
   }
 
   /**
@@ -575,6 +633,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteUserHierarchyGroup() {
     return this.to('DeleteUserHierarchyGroup');
+  }
+
+  /**
+   * Grants permission to delete a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteVocabulary.html
+   */
+  public toDeleteVocabulary() {
+    return this.to('DeleteVocabulary');
   }
 
   /**
@@ -800,6 +873,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeUserHierarchyStructure() {
     return this.to('DescribeUserHierarchyStructure');
+  }
+
+  /**
+   * Grants permission to describe a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeVocabulary.html
+   */
+  public toDescribeVocabulary() {
+    return this.to('DescribeVocabulary');
   }
 
   /**
@@ -1096,6 +1184,20 @@ export class Connect extends PolicyStatement {
    */
   public toListContactReferences() {
     return this.to('ListContactReferences');
+  }
+
+  /**
+   * Grants permission to list default vocabularies associated with a Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDefaultVocabularies.html
+   */
+  public toListDefaultVocabularies() {
+    return this.to('ListDefaultVocabularies');
   }
 
   /**
@@ -1417,6 +1519,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search vocabularies in a Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchVocabularies.html
+   */
+  public toSearchVocabularies() {
+    return this.to('SearchVocabularies');
+  }
+
+  /**
    * Grants permission to initiate a chat using the Amazon Connect API
    *
    * Access Level: Write
@@ -1436,6 +1552,17 @@ export class Connect extends PolicyStatement {
    */
   public toStartContactRecording() {
     return this.to('StartContactRecording');
+  }
+
+  /**
+   * Grants permission to start chat streaming using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html
+   */
+  public toStartContactStreaming() {
+    return this.to('StartContactStreaming');
   }
 
   /**
@@ -1489,6 +1616,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop chat streaming using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html
+   */
+  public toStopContactStreaming() {
+    return this.to('StopContactStreaming');
+  }
+
+  /**
    * Grants permission to suspend recording for the specified contact
    *
    * Access Level: Write
@@ -1507,7 +1645,6 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
@@ -1522,7 +1659,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
@@ -1601,6 +1738,21 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateContactFlowMetadata() {
     return this.to('UpdateContactFlowMetadata');
+  }
+
+  /**
+   * Grants permission to update contact flow module content in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleContent.html
+   */
+  public toUpdateContactFlowModuleContent() {
+    return this.to('UpdateContactFlowModuleContent');
   }
 
   /**
@@ -2014,12 +2166,15 @@ export class Connect extends PolicyStatement {
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateCustomerProfilesDomain',
+      'AssociateDefaultVocabulary',
       'AssociateInstanceStorageConfig',
       'AssociateLambdaFunction',
       'AssociateLexBot',
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
+      'BatchAssociateAnalyticsDataSet',
+      'BatchDisassociateAnalyticsDataSet',
       'CreateAgentStatus',
       'CreateContactFlow',
       'CreateContactFlowModule',
@@ -2033,6 +2188,7 @@ export class Connect extends PolicyStatement {
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
+      'CreateVocabulary',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
       'DeleteHoursOfOperation',
@@ -2043,6 +2199,7 @@ export class Connect extends PolicyStatement {
       'DeleteUseCase',
       'DeleteUser',
       'DeleteUserHierarchyGroup',
+      'DeleteVocabulary',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
       'DisassociateCustomerProfilesDomain',
@@ -2056,16 +2213,19 @@ export class Connect extends PolicyStatement {
       'ResumeContactRecording',
       'StartChatContact',
       'StartContactRecording',
+      'StartContactStreaming',
       'StartOutboundVoiceContact',
       'StartTaskContact',
       'StopContact',
       'StopContactRecording',
+      'StopContactStreaming',
       'SuspendContactRecording',
       'UpdateAgentStatus',
       'UpdateContact',
       'UpdateContactAttributes',
       'UpdateContactFlowContent',
       'UpdateContactFlowMetadata',
+      'UpdateContactFlowModuleContent',
       'UpdateContactFlowModuleMetadata',
       'UpdateContactFlowName',
       'UpdateContactSchedule',
@@ -2109,6 +2269,7 @@ export class Connect extends PolicyStatement {
       'DescribeUser',
       'DescribeUserHierarchyGroup',
       'DescribeUserHierarchyStructure',
+      'DescribeVocabulary',
       'GetContactAttributes',
       'GetCurrentMetricData',
       'GetFederationToken',
@@ -2123,6 +2284,7 @@ export class Connect extends PolicyStatement {
       'ListContactFlowModules',
       'ListContactFlows',
       'ListContactReferences',
+      'ListDefaultVocabularies',
       'ListHoursOfOperations',
       'ListInstanceAttributes',
       'ListInstanceStorageConfigs',
@@ -2142,7 +2304,8 @@ export class Connect extends PolicyStatement {
       'ListSecurityProfiles',
       'ListUseCases',
       'ListUserHierarchyGroups',
-      'ListUsers'
+      'ListUsers',
+      'SearchVocabularies'
     ],
     Tagging: [
       'TagResource',
@@ -2246,6 +2409,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
@@ -2401,7 +2567,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgentStatus(instanceId: string, agentStatusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-status/${ agentStatusId }`);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
   }
 
   /**
@@ -2416,7 +2582,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-status/${ resourceName }`);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-state/${ resourceName }`);
   }
 
   /**
@@ -2431,7 +2597,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-numbers/${ phoneNumberId }`);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -2446,7 +2612,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWildcardPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-numbers/${ resourceName }`);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ resourceName }`);
   }
 
   /**
@@ -2486,6 +2652,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vocabulary to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Vocabulary.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param vocabularyId - Identifier for the vocabularyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -2509,12 +2693,15 @@ export class Connect extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateApprovedOrigin()
    * - .toAssociateBot()
+   * - .toAssociateDefaultVocabulary()
    * - .toAssociateInstanceStorageConfig()
    * - .toAssociateLambdaFunction()
    * - .toAssociateLexBot()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
+   * - .toBatchAssociateAnalyticsDataSet()
+   * - .toBatchDisassociateAnalyticsDataSet()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
@@ -2527,6 +2714,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateUseCase()
    * - .toCreateUser()
    * - .toCreateUserHierarchyGroup()
+   * - .toCreateVocabulary()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
    * - .toDeleteHoursOfOperation()
@@ -2537,6 +2725,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteUseCase()
    * - .toDeleteUser()
    * - .toDeleteUserHierarchyGroup()
+   * - .toDeleteVocabulary()
    * - .toDescribeAgentStatus()
    * - .toDescribeContact()
    * - .toDescribeContactFlow()
@@ -2552,6 +2741,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUser()
    * - .toDescribeUserHierarchyGroup()
    * - .toDescribeUserHierarchyStructure()
+   * - .toDescribeVocabulary()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
    * - .toDisassociateInstanceStorageConfig()
@@ -2567,6 +2757,7 @@ export class Connect extends PolicyStatement {
    * - .toListApprovedOrigins()
    * - .toListBots()
    * - .toListContactReferences()
+   * - .toListDefaultVocabularies()
    * - .toListHoursOfOperations()
    * - .toListInstanceAttributes()
    * - .toListInstanceStorageConfigs()
@@ -2583,6 +2774,7 @@ export class Connect extends PolicyStatement {
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
+   * - .toSearchVocabularies()
    * - .toStartTaskContact()
    * - .toStopContact()
    * - .toUpdateAgentStatus()
@@ -2590,6 +2782,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactAttributes()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
    * - .toUpdateContactSchedule()

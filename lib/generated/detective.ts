@@ -78,6 +78,34 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the current configuration related to the Amazon Detective integration with AWS Organizations
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_DescribeOrganizationConfiguration.html
+   */
+  public toDescribeOrganizationConfiguration() {
+    return this.to('DescribeOrganizationConfiguration');
+  }
+
+  /**
+   * Grants permission to remove the Amazon Detective delegated administrator account for an organization
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_DisableOrganizationAdminAccount.html
+   */
+  public toDisableOrganizationAdminAccount() {
+    return this.to('DisableOrganizationAdminAccount');
+  }
+
+  /**
    * Grants permission to remove the association of this account with a behavior graph
    *
    * Access Level: Write
@@ -89,9 +117,28 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to designate the Amazon Detective delegated administrator account for an organization
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:RegisterDelegatedAdministrator
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_EnableOrganizationAdminAccount.html
+   */
+  public toEnableOrganizationAdminAccount() {
+    return this.to('EnableOrganizationAdminAccount');
+  }
+
+  /**
    * Grants permission to retrieve a behavior graph's eligibility for a free trial period
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/free-trial-overview.html
    */
   public toGetFreeTrialEligibility() {
     return this.to('GetFreeTrialEligibility');
@@ -101,6 +148,8 @@ export class Detective extends PolicyStatement {
    * Grants permission to retrieve the data ingestion state of a behavior graph
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/detective-source-data-about.html
    */
   public toGetGraphIngestState() {
     return this.to('GetGraphIngestState');
@@ -121,6 +170,8 @@ export class Detective extends PolicyStatement {
    * Grants permission to retrieve information about Amazon Detective's pricing
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/usage-projected-cost-calculation.html
    */
   public toGetPricingInformation() {
     return this.to('GetPricingInformation');
@@ -130,6 +181,8 @@ export class Detective extends PolicyStatement {
    * Grants permission to list usage information of a behavior graph
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/tracking-usage-logging.html
    */
   public toGetUsageInformation() {
     return this.to('GetUsageInformation');
@@ -169,6 +222,20 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the current Amazon Detective delegated administrator account for an organization
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListOrganizationAdminAccounts.html
+   */
+  public toListOrganizationAdminAccounts() {
+    return this.to('ListOrganizationAdminAccounts');
+  }
+
+  /**
    * Grants permission to list the tag values that are assigned to a behavior graph
    *
    * Access Level: Read
@@ -197,13 +264,15 @@ export class Detective extends PolicyStatement {
    * Grants permission to search the data stored in a behavior graph
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/detective-search.html
    */
   public toSearchGraph() {
     return this.to('SearchGraph');
   }
 
   /**
-   * Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED.
+   * Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED
    *
    * Access Level: Write
    *
@@ -243,6 +312,20 @@ export class Detective extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update the current configuration related to the Amazon Detective integration with AWS Organizations
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateOrganizationConfiguration.html
+   */
+  public toUpdateOrganizationConfiguration() {
+    return this.to('UpdateOrganizationConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInvitation',
@@ -250,11 +333,15 @@ export class Detective extends PolicyStatement {
       'CreateMembers',
       'DeleteGraph',
       'DeleteMembers',
+      'DisableOrganizationAdminAccount',
       'DisassociateMembership',
+      'EnableOrganizationAdminAccount',
       'RejectInvitation',
-      'StartMonitoringMember'
+      'StartMonitoringMember',
+      'UpdateOrganizationConfiguration'
     ],
     Read: [
+      'DescribeOrganizationConfiguration',
       'GetFreeTrialEligibility',
       'GetGraphIngestState',
       'GetMembers',
@@ -266,7 +353,8 @@ export class Detective extends PolicyStatement {
     List: [
       'ListGraphs',
       'ListInvitations',
-      'ListMembers'
+      'ListMembers',
+      'ListOrganizationAdminAccounts'
     ],
     Tagging: [
       'TagResource',

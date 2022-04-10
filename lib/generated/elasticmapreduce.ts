@@ -232,6 +232,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to block an identity from opening a collaborative workspace
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toDeleteWorkspaceAccess() {
+    return this.to('DeleteWorkspaceAccess');
+  }
+
+  /**
    * Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on
    *
    * Access Level: Read
@@ -573,6 +584,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list identities that are granted access to a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toListWorkspaceAccessIdentities() {
+    return this.to('ListWorkspaceAccessIdentities');
+  }
+
+  /**
    * Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster
    *
    * Access Level: Write
@@ -658,6 +680,17 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toPutManagedScalingPolicy() {
     return this.to('PutManagedScalingPolicy');
+  }
+
+  /**
+   * Grants permission to allow an identity to open a collaborative workspace
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toPutWorkspaceAccess() {
+    return this.to('PutWorkspaceAccess');
   }
 
   /**
@@ -806,6 +839,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toUpdateEditor() {
+    return this.to('UpdateEditor');
+  }
+
+  /**
    * Grants permission to update an EMR notebook repository
    *
    * Access Level: Write
@@ -888,6 +932,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'StopNotebookExecution',
       'TerminateJobFlows',
       'UnlinkRepository',
+      'UpdateEditor',
       'UpdateRepository',
       'UpdateStudio',
       'UpdateStudioSessionMapping'
@@ -895,6 +940,11 @@ export class Elasticmapreduce extends PolicyStatement {
     Tagging: [
       'AddTags',
       'RemoveTags'
+    ],
+    'Permissions management': [
+      'DeleteWorkspaceAccess',
+      'PutBlockPublicAccessConfiguration',
+      'PutWorkspaceAccess'
     ],
     Read: [
       'DescribeCluster',
@@ -926,10 +976,8 @@ export class Elasticmapreduce extends PolicyStatement {
       'ListSecurityConfigurations',
       'ListStudioSessionMappings',
       'ListStudios',
+      'ListWorkspaceAccessIdentities',
       'ViewEventsFromAllClustersInConsole'
-    ],
-    'Permissions management': [
-      'PutBlockPublicAccessConfiguration'
     ]
   };
 

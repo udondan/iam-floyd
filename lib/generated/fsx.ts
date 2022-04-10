@@ -88,6 +88,24 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new data respository association for an Amazon FSx for Lustre file system
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryAssociation.html
+   */
+  public toCreateDataRepositoryAssociation() {
+    return this.to('CreateDataRepositoryAssociation');
+  }
+
+  /**
    * Grants permission to create a new data respository task for an Amazon FSx for Lustre file system
    *
    * Access Level: Write
@@ -142,6 +160,24 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new snapshot on a volume
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapshot.html
+   */
+  public toCreateSnapshot() {
+    return this.to('CreateSnapshot');
+  }
+
+  /**
    * Grants permission to create a new storage virtual machine in an Amazon FSx for Ontap file system
    *
    * Access Level: Write
@@ -168,6 +204,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifStorageVirtualMachineId()
+   * - .ifParentVolumeId()
    *
    * Dependent actions:
    * - fsx:TagResource
@@ -198,7 +235,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a backup, deleting its contents. After deletion, the backup no longer exists, and its data is no longer available.
+   * Grants permission to delete a backup, deleting its contents. After deletion, the backup no longer exists, and its data is no longer available
    *
    * Access Level: Write
    *
@@ -206,6 +243,17 @@ export class Fsx extends PolicyStatement {
    */
   public toDeleteBackup() {
     return this.to('DeleteBackup');
+  }
+
+  /**
+   * Grants permission to delete a data repository association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteDataRepositoryAssociation.html
+   */
+  public toDeleteDataRepositoryAssociation() {
+    return this.to('DeleteDataRepositoryAssociation');
   }
 
   /**
@@ -228,12 +276,20 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a storage virtual machine, deleting its contents.
+   * Grants permission to delete a snapshot on a volume
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteSnapshot.html
+   */
+  public toDeleteSnapshot() {
+    return this.to('DeleteSnapshot');
+  }
+
+  /**
+   * Grants permission to delete a storage virtual machine, deleting its contents
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteStorageVirtualMachine.html
    */
@@ -242,13 +298,15 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a volume, deleting its contents and any existing automatic backups of the volume.
+   * Grants permission to delete a volume, deleting its contents and any existing automatic backups of the volume
    *
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifStorageVirtualMachineId()
+   * - .ifParentVolumeId()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteVolume.html
    */
@@ -279,7 +337,18 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the descriptions of all data repository task owned by your AWS account in the AWS Region of the endpoint that you're calling
+   * Grants permission to return the descriptions of all data repository associations owned by your AWS account in the AWS Region of the endpoint that you're calling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeDataRepositoryAssociations.html
+   */
+  public toDescribeDataRepositoryAssociations() {
+    return this.to('DescribeDataRepositoryAssociations');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all data repository tasks owned by your AWS account in the AWS Region of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -309,6 +378,17 @@ export class Fsx extends PolicyStatement {
    */
   public toDescribeFileSystems() {
     return this.to('DescribeFileSystems');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all snapshots owned by your AWS account in the AWS Region of the endpoint you're calling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html
+   */
+  public toDescribeSnapshots() {
+    return this.to('DescribeSnapshots');
   }
 
   /**
@@ -378,6 +458,28 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to release file system NFS V3 locks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ReleaseFileSystemNfsV3Locks.html
+   */
+  public toReleaseFileSystemNfsV3Locks() {
+    return this.to('ReleaseFileSystemNfsV3Locks');
+  }
+
+  /**
+   * Grants permission to restore volume state from a snapshot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_RestoreVolumeFromSnapshot.html
+   */
+  public toRestoreVolumeFromSnapshot() {
+    return this.to('RestoreVolumeFromSnapshot');
+  }
+
+  /**
    * Grants permission to tag an Amazon FSx resource
    *
    * Access Level: Tagging
@@ -407,6 +509,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update data repository association configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateDataRepositoryAssociation.html
+   */
+  public toUpdateDataRepositoryAssociation() {
+    return this.to('UpdateDataRepositoryAssociation');
+  }
+
+  /**
    * Grants permission to update file system configuration
    *
    * Access Level: Write
@@ -418,12 +531,20 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update storage virtual machine configuration
+   * Grants permission to update snapshot configuration
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSnapshot.html
+   */
+  public toUpdateSnapshot() {
+    return this.to('UpdateSnapshot');
+  }
+
+  /**
+   * Grants permission to update storage virtual machine configuration
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateStorageVirtualMachine.html
    */
@@ -437,8 +558,8 @@ export class Fsx extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifStorageVirtualMachineId()
+   * - .ifParentVolumeId()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateVolume.html
    */
@@ -453,28 +574,38 @@ export class Fsx extends PolicyStatement {
       'CancelDataRepositoryTask',
       'CopyBackup',
       'CreateBackup',
+      'CreateDataRepositoryAssociation',
       'CreateDataRepositoryTask',
       'CreateFileSystem',
       'CreateFileSystemFromBackup',
+      'CreateSnapshot',
       'CreateStorageVirtualMachine',
       'CreateVolume',
       'CreateVolumeFromBackup',
       'DeleteBackup',
+      'DeleteDataRepositoryAssociation',
       'DeleteFileSystem',
+      'DeleteSnapshot',
       'DeleteStorageVirtualMachine',
       'DeleteVolume',
       'DisassociateFileGateway',
       'DisassociateFileSystemAliases',
+      'ReleaseFileSystemNfsV3Locks',
+      'RestoreVolumeFromSnapshot',
+      'UpdateDataRepositoryAssociation',
       'UpdateFileSystem',
+      'UpdateSnapshot',
       'UpdateStorageVirtualMachine',
       'UpdateVolume'
     ],
     Read: [
       'DescribeAssociatedFileGateways',
       'DescribeBackups',
+      'DescribeDataRepositoryAssociations',
       'DescribeDataRepositoryTasks',
       'DescribeFileSystemAliases',
       'DescribeFileSystems',
+      'DescribeSnapshots',
       'DescribeStorageVirtualMachines',
       'DescribeVolumes',
       'ListTagsForResource'
@@ -525,7 +656,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Adds a resource of type storage-virtual-machine to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html
    *
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param storageVirtualMachineId - Identifier for the storageVirtualMachineId.
@@ -558,9 +689,27 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type association to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
+   *
+   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAssociation(fileSystemId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemId }/${ dataRepositoryAssociationId }`);
+  }
+
+  /**
    * Adds a resource of type volume to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html
    *
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param volumeId - Identifier for the volumeId.
@@ -573,6 +722,24 @@ export class Fsx extends PolicyStatement {
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
+  }
+
+  /**
+   * Adds a resource of type snapshot to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenFsGuide/access-control-overview.html#access-control-resources
+   *
+   * @param volumeId - Identifier for the volumeId.
+   * @param snapshotId - Identifier for the snapshotId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**
@@ -595,6 +762,23 @@ export class Fsx extends PolicyStatement {
    */
   public ifIsBackupCopySource(value?: boolean) {
     return this.if(`IsBackupCopySource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the containing parent volume for mutating volume operations
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateVolume.html
+   *
+   * Applies to actions:
+   * - .toCreateVolume()
+   * - .toDeleteVolume()
+   * - .toUpdateVolume()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifParentVolumeId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ParentVolumeId`, value, operator || 'StringLike');
   }
 
   /**

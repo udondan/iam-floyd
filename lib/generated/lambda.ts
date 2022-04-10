@@ -36,6 +36,7 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPrincipal()
+   * - .ifFunctionUrlAuthType()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
@@ -95,6 +96,21 @@ export class Lambda extends PolicyStatement {
    */
   public toCreateFunction() {
     return this.to('CreateFunction');
+  }
+
+  /**
+   * Grants permission to create a function url configuration for a Lambda function
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   * - .ifFunctionArn()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html
+   */
+  public toCreateFunctionUrlConfig() {
+    return this.to('CreateFunctionUrlConfig');
   }
 
   /**
@@ -175,6 +191,21 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteFunctionEventInvokeConfig() {
     return this.to('DeleteFunctionEventInvokeConfig');
+  }
+
+  /**
+   * Grants permission to delete function url configuration for a Lambda function
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   * - .ifFunctionArn()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionUrlConfig.html
+   */
+  public toDeleteFunctionUrlConfig() {
+    return this.to('DeleteFunctionUrlConfig');
   }
 
   /**
@@ -320,6 +351,21 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read function url configuration for a Lambda function
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   * - .ifFunctionArn()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionUrlConfig.html
+   */
+  public toGetFunctionUrlConfig() {
+    return this.to('GetFunctionUrlConfig');
+  }
+
+  /**
    * Grants permission to view details about a version of an AWS Lambda layer. Note this action also supports GetLayerVersionByArn API
    *
    * Access Level: Read
@@ -386,6 +432,21 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an AWS Lambda function through url
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   * - .ifFunctionArn()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html
+   */
+  public toInvokeFunctionUrl() {
+    return this.to('InvokeFunctionUrl');
+  }
+
+  /**
    * Grants permission to retrieve a list of aliases for an AWS Lambda function
    *
    * Access Level: List
@@ -427,6 +488,20 @@ export class Lambda extends PolicyStatement {
    */
   public toListFunctionEventInvokeConfigs() {
     return this.to('ListFunctionEventInvokeConfigs');
+  }
+
+  /**
+   * Grants permission to read function url configurations for a function
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionUrlConfigs.html
+   */
+  public toListFunctionUrlConfigs() {
+    return this.to('ListFunctionUrlConfigs');
   }
 
   /**
@@ -593,6 +668,7 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPrincipal()
+   * - .ifFunctionUrlAuthType()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
@@ -708,6 +784,21 @@ export class Lambda extends PolicyStatement {
     return this.to('UpdateFunctionEventInvokeConfig');
   }
 
+  /**
+   * Grants permission to update a function url configuration for a Lambda function
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFunctionUrlAuthType()
+   * - .ifFunctionArn()
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionUrlConfig.html
+   */
+  public toUpdateFunctionUrlConfig() {
+    return this.to('UpdateFunctionUrlConfig');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddLayerVersionPermission',
@@ -722,6 +813,7 @@ export class Lambda extends PolicyStatement {
       'CreateCodeSigningConfig',
       'CreateEventSourceMapping',
       'CreateFunction',
+      'CreateFunctionUrlConfig',
       'DeleteAlias',
       'DeleteCodeSigningConfig',
       'DeleteEventSourceMapping',
@@ -729,10 +821,12 @@ export class Lambda extends PolicyStatement {
       'DeleteFunctionCodeSigningConfig',
       'DeleteFunctionConcurrency',
       'DeleteFunctionEventInvokeConfig',
+      'DeleteFunctionUrlConfig',
       'DeleteLayerVersion',
       'DeleteProvisionedConcurrencyConfig',
       'InvokeAsync',
       'InvokeFunction',
+      'InvokeFunctionUrl',
       'PublishLayerVersion',
       'PublishVersion',
       'PutFunctionCodeSigningConfig',
@@ -745,7 +839,8 @@ export class Lambda extends PolicyStatement {
       'UpdateFunctionCode',
       'UpdateFunctionCodeSigningConfig',
       'UpdateFunctionConfiguration',
-      'UpdateFunctionEventInvokeConfig'
+      'UpdateFunctionEventInvokeConfig',
+      'UpdateFunctionUrlConfig'
     ],
     Read: [
       'GetAccountSettings',
@@ -757,6 +852,7 @@ export class Lambda extends PolicyStatement {
       'GetFunctionConcurrency',
       'GetFunctionConfiguration',
       'GetFunctionEventInvokeConfig',
+      'GetFunctionUrlConfig',
       'GetLayerVersion',
       'GetLayerVersionPolicy',
       'GetPolicy',
@@ -768,6 +864,7 @@ export class Lambda extends PolicyStatement {
       'ListCodeSigningConfigs',
       'ListEventSourceMappings',
       'ListFunctionEventInvokeConfigs',
+      'ListFunctionUrlConfigs',
       'ListFunctions',
       'ListFunctionsByCodeSigningConfig',
       'ListLayerVersions',
@@ -905,15 +1002,42 @@ export class Lambda extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEventSourceMapping()
+   * - .toCreateFunctionUrlConfig()
    * - .toDeleteEventSourceMapping()
+   * - .toDeleteFunctionUrlConfig()
    * - .toGetEventSourceMapping()
+   * - .toGetFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
    * - .toUpdateEventSourceMapping()
+   * - .toUpdateFunctionUrlConfig()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFunctionArn(value: string | string[], operator?: Operator | string) {
     return this.if(`FunctionArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by authorization type specified in request. Available during CreateFunctionUrlConfig, UpdateFunctionUrlConfig, DeleteFunctionUrlConfig, GetFunctionUrlConfig, ListFunctionUrlConfig, AddPermission and RemovePermission operations
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * Applies to actions:
+   * - .toAddPermission()
+   * - .toCreateFunctionUrlConfig()
+   * - .toDeleteFunctionUrlConfig()
+   * - .toGetFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
+   * - .toListFunctionUrlConfigs()
+   * - .toRemovePermission()
+   * - .toUpdateFunctionUrlConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFunctionUrlAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`FunctionUrlAuthType`, value, operator || 'StringLike');
   }
 
   /**

@@ -297,6 +297,8 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifModifyRotationRules()
+   * - .ifRotateImmediately()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html
    */
@@ -566,6 +568,20 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
+   * Filters access by whether the rotation rules of the secret are to be modified
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toRotateSecret()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifModifyRotationRules(value?: boolean) {
+    return this.if(`ModifyRotationRules`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the friendly name of the secret in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
@@ -631,6 +647,20 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the secret is to be rotated immediately
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toRotateSecret()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifRotateImmediately(value?: boolean) {
+    return this.if(`RotateImmediately`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -534,7 +534,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of your hosted zones in lexicographic order. Hosted zones are sorted by name with the labels reversed, for example, com.example.www.
+   * Grants permission to get a list of your hosted zones in lexicographic order. Hosted zones are sorted by name with the labels reversed, for example, com.example.www
    *
    * Access Level: List
    *
@@ -559,7 +559,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone.
+   * Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone
    *
    * Access Level: List
    *
@@ -614,7 +614,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the latest version for every traffic policy that is associated with the current AWS account. Policies are listed in the order in which they were created.
+   * Grants permission to get information about the latest version for every traffic policy that is associated with the current AWS account. Policies are listed in the order in which they were created
    *
    * Access Level: List
    *

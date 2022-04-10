@@ -79,6 +79,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
@@ -110,6 +114,17 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public toCreateMountTarget() {
     return this.to('CreateMountTarget');
+  }
+
+  /**
+   * Grants permission to create a new replication configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_CreateReplicationConfiguration.html
+   */
+  public toCreateReplicationConfiguration() {
+    return this.to('CreateReplicationConfiguration');
   }
 
   /**
@@ -172,12 +187,24 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a replication configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteReplicationConfiguration.html
+   */
+  public toDeleteReplicationConfiguration() {
+    return this.to('DeleteReplicationConfiguration');
+  }
+
+  /**
    * Grants permission to delete the specified tags from a file system; deprecated, see UntagResource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
@@ -274,6 +301,17 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the description of an Amazon EFS replication configuration specified by FileSystemId; or to view the description of all replication configurations owned by the caller's AWS account in the AWS region of the endpoint that is being called
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeReplicationConfigurations.html
+   */
+  public toDescribeReplicationConfigurations() {
+    return this.to('DescribeReplicationConfigurations');
+  }
+
+  /**
    * Grants permission to view the tags associated with a file system
    *
    * Access Level: Read
@@ -366,6 +404,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html
    */
   public toTagResource() {
@@ -376,6 +418,10 @@ export class Elasticfilesystem extends PolicyStatement {
    * Grants permission to delete the specified tags from an Amazon EFS resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html
    */
@@ -402,9 +448,11 @@ export class Elasticfilesystem extends PolicyStatement {
       'CreateAccessPoint',
       'CreateFileSystem',
       'CreateMountTarget',
+      'CreateReplicationConfiguration',
       'DeleteAccessPoint',
       'DeleteFileSystem',
       'DeleteMountTarget',
+      'DeleteReplicationConfiguration',
       'ModifyMountTargetSecurityGroups',
       'PutAccountPreferences',
       'PutBackupPolicy',
@@ -435,7 +483,8 @@ export class Elasticfilesystem extends PolicyStatement {
     List: [
       'DescribeAccessPoints',
       'DescribeAccountPreferences',
-      'DescribeFileSystems'
+      'DescribeFileSystems',
+      'DescribeReplicationConfigurations'
     ]
   };
 

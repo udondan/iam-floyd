@@ -40,6 +40,8 @@ export class CodestarConnections extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifProviderType()
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html

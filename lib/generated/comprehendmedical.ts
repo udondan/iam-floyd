@@ -23,7 +23,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DescribeEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeEntitiesDetectionV2Job.html
    */
   public toDescribeEntitiesDetectionV2Job() {
     return this.to('DescribeEntitiesDetectionV2Job');
@@ -34,7 +34,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DescribeICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeICD10CMInferenceJob.html
    */
   public toDescribeICD10CMInferenceJob() {
     return this.to('DescribeICD10CMInferenceJob');
@@ -45,7 +45,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DescribePHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribePHIDetectionJob.html
    */
   public toDescribePHIDetectionJob() {
     return this.to('DescribePHIDetectionJob');
@@ -56,10 +56,21 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DescribeRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeRxNormInferenceJob.html
    */
   public toDescribeRxNormInferenceJob() {
     return this.to('DescribeRxNormInferenceJob');
+  }
+
+  /**
+   * Grants permission to describe the properties of a SNOMED-CT linking job that you have submitted
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeSNOMEDCTInferenceJob.html
+   */
+  public toDescribeSNOMEDCTInferenceJob() {
+    return this.to('DescribeSNOMEDCTInferenceJob');
   }
 
   /**
@@ -67,7 +78,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DetectEntitiesV2.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DetectEntitiesV2.html
    */
   public toDetectEntitiesV2() {
     return this.to('DetectEntitiesV2');
@@ -78,7 +89,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_DetectPHI.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DetectPHI.html
    */
   public toDetectPHI() {
     return this.to('DetectPHI');
@@ -89,7 +100,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_InferICD10CM.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferICD10CM.html
    */
   public toInferICD10CM() {
     return this.to('InferICD10CM');
@@ -100,10 +111,21 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_InferRxNorm.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferRxNorm.html
    */
   public toInferRxNorm() {
     return this.to('InferRxNorm');
+  }
+
+  /**
+   * Grants permission to detect the medical condition, anatomy, and test, treatment, and procedure entities within the given text document and link them to SNOMED-CT codes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferSNOMEDCT.html
+   */
+  public toInferSNOMEDCT() {
+    return this.to('InferSNOMEDCT');
   }
 
   /**
@@ -111,7 +133,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_ListEntitiesDetectionV2Jobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListEntitiesDetectionV2Jobs.html
    */
   public toListEntitiesDetectionV2Jobs() {
     return this.to('ListEntitiesDetectionV2Jobs');
@@ -122,7 +144,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_ListICD10CMInferenceJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListICD10CMInferenceJobs.html
    */
   public toListICD10CMInferenceJobs() {
     return this.to('ListICD10CMInferenceJobs');
@@ -133,7 +155,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_ListPHIDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListPHIDetectionJobs.html
    */
   public toListPHIDetectionJobs() {
     return this.to('ListPHIDetectionJobs');
@@ -144,10 +166,21 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_ListRxNormInferenceJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListRxNormInferenceJobs.html
    */
   public toListRxNormInferenceJobs() {
     return this.to('ListRxNormInferenceJobs');
+  }
+
+  /**
+   * Grants permission to list the SNOMED-CT linking jobs that you have submitted
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListSNOMEDCTInferenceJobs.html
+   */
+  public toListSNOMEDCTInferenceJobs() {
+    return this.to('ListSNOMEDCTInferenceJobs');
   }
 
   /**
@@ -155,7 +188,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StartEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartEntitiesDetectionV2Job.html
    */
   public toStartEntitiesDetectionV2Job() {
     return this.to('StartEntitiesDetectionV2Job');
@@ -166,7 +199,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StartICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartICD10CMInferenceJob.html
    */
   public toStartICD10CMInferenceJob() {
     return this.to('StartICD10CMInferenceJob');
@@ -177,7 +210,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StartPHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartPHIDetectionJob.html
    */
   public toStartPHIDetectionJob() {
     return this.to('StartPHIDetectionJob');
@@ -188,10 +221,21 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StartRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartRxNormInferenceJob.html
    */
   public toStartRxNormInferenceJob() {
     return this.to('StartRxNormInferenceJob');
+  }
+
+  /**
+   * Grants permission to start an asynchronous SNOMED-CT linking job for a collection of documents
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartSNOMEDCTInferenceJob.html
+   */
+  public toStartSNOMEDCTInferenceJob() {
+    return this.to('StartSNOMEDCTInferenceJob');
   }
 
   /**
@@ -199,7 +243,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StopEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopEntitiesDetectionV2Job.html
    */
   public toStopEntitiesDetectionV2Job() {
     return this.to('StopEntitiesDetectionV2Job');
@@ -210,7 +254,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StopICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopICD10CMInferenceJob.html
    */
   public toStopICD10CMInferenceJob() {
     return this.to('StopICD10CMInferenceJob');
@@ -221,7 +265,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StopPHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopPHIDetectionJob.html
    */
   public toStopPHIDetectionJob() {
     return this.to('StopPHIDetectionJob');
@@ -232,10 +276,21 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_medical_StopRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopRxNormInferenceJob.html
    */
   public toStopRxNormInferenceJob() {
     return this.to('StopRxNormInferenceJob');
+  }
+
+  /**
+   * Grants permission to stop a SNOMED-CT linking job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopSNOMEDCTInferenceJob.html
+   */
+  public toStopSNOMEDCTInferenceJob() {
+    return this.to('StopSNOMEDCTInferenceJob');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -244,24 +299,29 @@ export class Comprehendmedical extends PolicyStatement {
       'DescribeICD10CMInferenceJob',
       'DescribePHIDetectionJob',
       'DescribeRxNormInferenceJob',
+      'DescribeSNOMEDCTInferenceJob',
       'DetectEntitiesV2',
       'DetectPHI',
       'InferICD10CM',
       'InferRxNorm',
+      'InferSNOMEDCT',
       'ListEntitiesDetectionV2Jobs',
       'ListICD10CMInferenceJobs',
       'ListPHIDetectionJobs',
-      'ListRxNormInferenceJobs'
+      'ListRxNormInferenceJobs',
+      'ListSNOMEDCTInferenceJobs'
     ],
     Write: [
       'StartEntitiesDetectionV2Job',
       'StartICD10CMInferenceJob',
       'StartPHIDetectionJob',
       'StartRxNormInferenceJob',
+      'StartSNOMEDCTInferenceJob',
       'StopEntitiesDetectionV2Job',
       'StopICD10CMInferenceJob',
       'StopPHIDetectionJob',
-      'StopRxNormInferenceJob'
+      'StopRxNormInferenceJob',
+      'StopSNOMEDCTInferenceJob'
     ]
   };
 }

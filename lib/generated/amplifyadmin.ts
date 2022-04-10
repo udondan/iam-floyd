@@ -74,6 +74,17 @@ export class Amplifybackend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a backend storage resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#CreateBackendStorage
+   */
+  public toCreateBackendStorage() {
+    return this.to('CreateBackendStorage');
+  }
+
+  /**
    * Grants permission to create an Amplify Admin challenge token by appId
    *
    * Access Level: Write
@@ -115,6 +126,17 @@ export class Amplifybackend extends PolicyStatement {
    */
   public toDeleteBackendAuth() {
     return this.to('DeleteBackendAuth');
+  }
+
+  /**
+   * Grants permission to delete a backend storage resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#DeleteBackendStorage
+   */
+  public toDeleteBackendStorage() {
+    return this.to('DeleteBackendStorage');
   }
 
   /**
@@ -195,6 +217,17 @@ export class Amplifybackend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an existing backend storage resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#GetBackendStorage
+   */
+  public toGetBackendStorage() {
+    return this.to('GetBackendStorage');
+  }
+
+  /**
    * Grants permission to retrieve an Amplify Admin challenge token by appId
    *
    * Access Level: Read
@@ -217,6 +250,17 @@ export class Amplifybackend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import an existing backend storage resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ImportBackendStorage
+   */
+  public toImportBackendStorage() {
+    return this.to('ImportBackendStorage');
+  }
+
+  /**
    * Grants permission to retrieve the jobs of an existing Amplify Admin backend environment by appId and backendEnvironmentName
    *
    * Access Level: List
@@ -225,6 +269,17 @@ export class Amplifybackend extends PolicyStatement {
    */
   public toListBackendJobs() {
     return this.to('ListBackendJobs');
+  }
+
+  /**
+   * Grants permission to retrieve s3 buckets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ListS3Buckets
+   */
+  public toListS3Buckets() {
+    return this.to('ListS3Buckets');
   }
 
   /**
@@ -293,6 +348,17 @@ export class Amplifybackend extends PolicyStatement {
     return this.to('UpdateBackendJob');
   }
 
+  /**
+   * Grants permission to update a backend storage resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#UpdateBackendStorage
+   */
+  public toUpdateBackendStorage() {
+    return this.to('UpdateBackendStorage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CloneBackend',
@@ -300,19 +366,23 @@ export class Amplifybackend extends PolicyStatement {
       'CreateBackendAPI',
       'CreateBackendAuth',
       'CreateBackendConfig',
+      'CreateBackendStorage',
       'CreateToken',
       'DeleteBackend',
       'DeleteBackendAPI',
       'DeleteBackendAuth',
+      'DeleteBackendStorage',
       'DeleteToken',
       'GenerateBackendAPIModels',
       'ImportBackendAuth',
+      'ImportBackendStorage',
       'RemoveAllBackends',
       'RemoveBackendConfig',
       'UpdateBackendAPI',
       'UpdateBackendAuth',
       'UpdateBackendConfig',
-      'UpdateBackendJob'
+      'UpdateBackendJob',
+      'UpdateBackendStorage'
     ],
     Read: [
       'GetBackend',
@@ -320,10 +390,12 @@ export class Amplifybackend extends PolicyStatement {
       'GetBackendAPIModels',
       'GetBackendAuth',
       'GetBackendJob',
+      'GetBackendStorage',
       'GetToken'
     ],
     List: [
-      'ListBackendJobs'
+      'ListBackendJobs',
+      'ListS3Buckets'
     ]
   };
 
@@ -423,5 +495,19 @@ export class Amplifybackend extends PolicyStatement {
    */
   public onToken(appId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/token`);
+  }
+
+  /**
+   * Adds a resource of type storage to the statement
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStorage(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/storage`);
   }
 }

@@ -1135,6 +1135,9 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cloudformation:UpdateStack
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_SyncResource.html
    */
   public toSyncResource() {

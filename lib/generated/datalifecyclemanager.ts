@@ -19,7 +19,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.
+   * Grants permission to create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Delete an existing data lifecycle policy. In addition, this action halts the creation and deletion of snapshots that the policy specified. Existing snapshots are not affected.
+   * Grants permission to delete an existing data lifecycle policy. In addition, this action halts the creation and deletion of snapshots that the policy specified. Existing snapshots are not affected
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Returns a list of summary descriptions of data lifecycle policies.
+   * Grants permission to returns a list of summary descriptions of data lifecycle policies
    *
    * Access Level: List
    *
@@ -56,7 +56,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Returns a complete description of a single data lifecycle policy.
+   * Grants permission to return a complete description of a single data lifecycle policy
    *
    * Access Level: Read
    *
@@ -67,7 +67,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags associated with a resource.
+   * Grants permission to list the tags associated with a resource
    *
    * Access Level: Read
    *
@@ -78,9 +78,13 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or update tags of a resource.
+   * Grants permission to add or update tags of a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html
    */
@@ -89,9 +93,13 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove associated with a resource.
+   * Grants permission to remove tags associated with a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html
    */
@@ -100,7 +108,7 @@ export class Dlm extends PolicyStatement {
   }
 
   /**
-   * Updates an existing data lifecycle policy.
+   * Grants permission to update an existing data lifecycle policy
    *
    * Access Level: Write
    *

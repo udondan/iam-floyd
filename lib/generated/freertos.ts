@@ -19,7 +19,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Creates a software configuration.
+   * Creates a software configuration
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Deletes the software configuration.
+   * Deletes the software configuration
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Describes the hardware platform.
+   * Describes the hardware platform
    *
    * Access Level: Read
    *
@@ -56,7 +56,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Describes the software configuration.
+   * Describes the software configuration
    *
    * Access Level: Read
    *
@@ -67,7 +67,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Get the URL for Amazon FreeRTOS software download.
+   * Get the URL for Amazon FreeRTOS software download
    *
    * Access Level: Read
    *
@@ -78,7 +78,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Get the URL for Amazon FreeRTOS software download based on the configuration.
+   * Get the URL for Amazon FreeRTOS software download based on the configuration
    *
    * Access Level: Read
    *
@@ -89,7 +89,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists versions of AmazonFreeRTOS.
+   * Lists versions of AmazonFreeRTOS
    *
    * Access Level: List
    *
@@ -100,7 +100,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the hardware platforms.
+   * Lists the hardware platforms
    *
    * Access Level: List
    *
@@ -111,7 +111,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the hardware vendors.
+   * Lists the hardware vendors
    *
    * Access Level: List
    *
@@ -122,7 +122,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the software configurations.
+   * Lists the software configurations
    *
    * Access Level: List
    *
@@ -133,7 +133,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Updates the software configuration.
+   * Updates the software configuration
    *
    * Access Level: Write
    *

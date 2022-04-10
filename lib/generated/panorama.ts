@@ -635,7 +635,7 @@ export class Panorama extends PolicyStatement {
   /**
    * Grants permission to retrieve a list of tags for a resource in AWS Panorama
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListTagsForResource.html
    */
@@ -802,7 +802,8 @@ export class Panorama extends PolicyStatement {
       'GetDeploymentConfiguration',
       'GetInputs',
       'GetStreams',
-      'GetWebSocketURL'
+      'GetWebSocketURL',
+      'ListTagsForResource'
     ],
     List: [
       'ListAppDeploymentOperations',
@@ -819,8 +820,7 @@ export class Panorama extends PolicyStatement {
       'ListNodeFromTemplateJobs',
       'ListNodes',
       'ListPackageImportJobs',
-      'ListPackages',
-      'ListTagsForResource'
+      'ListPackages'
     ],
     Tagging: [
       'TagResource',

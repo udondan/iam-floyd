@@ -19,6 +19,20 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure logs for a playback configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/configurelogs-playbackconfiguration.html
+   */
+  public toConfigureLogsForPlaybackConfiguration() {
+    return this.to('ConfigureLogsForPlaybackConfiguration');
+  }
+
+  /**
    * Grants permission to create a new channel
    *
    * Access Level: Write
@@ -31,6 +45,17 @@ export class Mediatailor extends PolicyStatement {
    */
   public toCreateChannel() {
     return this.to('CreateChannel');
+  }
+
+  /**
+   * Grants permission to create a prefetch schedule for the playback configuration with the specified playback configuration name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html
+   */
+  public toCreatePrefetchSchedule() {
+    return this.to('CreatePrefetchSchedule');
   }
 
   /**
@@ -97,7 +122,7 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Deletes the playback configuration for the specified name
+   * Grants permission to delete the specified playback configuration
    *
    * Access Level: Write
    *
@@ -105,6 +130,17 @@ export class Mediatailor extends PolicyStatement {
    */
   public toDeletePlaybackConfiguration() {
     return this.to('DeletePlaybackConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a prefetch schedule for a playback configuration with the specified prefetch schedule name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html
+   */
+  public toDeletePrefetchSchedule() {
+    return this.to('DeletePrefetchSchedule');
   }
 
   /**
@@ -218,6 +254,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve prefetch schedule for a playback configuration with the specified prefetch schedule name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html
+   */
+  public toGetPrefetchSchedule() {
+    return this.to('GetPrefetchSchedule');
+  }
+
+  /**
    * Grants permission to retrieve the list of alerts on a resource
    *
    * Access Level: Read
@@ -251,6 +298,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the list of prefetch schedules for a playback configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname.html
+   */
+  public toListPrefetchSchedules() {
+    return this.to('ListPrefetchSchedules');
+  }
+
+  /**
    * Grants permission to retrieve the list of existing source locations
    *
    * Access Level: Read
@@ -262,7 +320,7 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the tags assigned to the specified playback configuration resource
+   * Grants permission to list the tags assigned to the specified playback configuration resource
    *
    * Access Level: Read
    *
@@ -332,7 +390,7 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Adds tags to the specified playback configuration resource
+   * Grants permission to add tags to the specified playback configuration resource
    *
    * Access Level: Tagging
    *
@@ -347,7 +405,7 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Removes tags from the specified playback configuration resource
+   * Grants permission to remove tags from the specified playback configuration resource
    *
    * Access Level: Tagging
    *
@@ -396,12 +454,15 @@ export class Mediatailor extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ConfigureLogsForPlaybackConfiguration',
       'CreateChannel',
+      'CreatePrefetchSchedule',
       'CreateProgram',
       'CreateSourceLocation',
       'CreateVodSource',
       'DeleteChannel',
       'DeletePlaybackConfiguration',
+      'DeletePrefetchSchedule',
       'DeleteProgram',
       'DeleteSourceLocation',
       'DeleteVodSource',
@@ -424,6 +485,7 @@ export class Mediatailor extends PolicyStatement {
       'GetChannelPolicy',
       'GetChannelSchedule',
       'GetPlaybackConfiguration',
+      'GetPrefetchSchedule',
       'ListAlerts',
       'ListChannels',
       'ListSourceLocations',
@@ -431,7 +493,8 @@ export class Mediatailor extends PolicyStatement {
       'ListVodSources'
     ],
     List: [
-      'ListPlaybackConfigurations'
+      'ListPlaybackConfigurations',
+      'ListPrefetchSchedules'
     ],
     Tagging: [
       'TagResource',
@@ -454,6 +517,20 @@ export class Mediatailor extends PolicyStatement {
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:playbackConfiguration/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type prefetchSchedule to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPrefetchSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:prefetchSchedule/${ resourceId }`);
   }
 
   /**

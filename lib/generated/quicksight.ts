@@ -19,6 +19,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable setting default access to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toAccountConfigurations() {
+    return this.to('AccountConfigurations');
+  }
+
+  /**
    * Grants permission to cancel a SPICE ingestions on a dataset
    *
    * Access Level: Write
@@ -242,6 +253,9 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ds:CreateIdentityPoolDirectory
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
    */
@@ -494,6 +508,9 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to delete a QuickSight namespace
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ds:DeleteDirectory
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteNamespace.html
    */
@@ -771,6 +788,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a QuickSight group member
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeGroupMembership.html
+   */
+  public toDescribeGroupMembership() {
+    return this.to('DescribeGroupMembership');
+  }
+
+  /**
    * Grants permission to describe an existing assignment
    *
    * Access Level: Read
@@ -899,6 +927,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
    */
@@ -1290,6 +1322,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to manage scoping policies for permissions to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toScopeDownPolicy() {
+    return this.to('ScopeDownPolicy');
+  }
+
+  /**
    * Grants permission to search for a sub-set of analyses
    *
    * Access Level: List
@@ -1331,6 +1374,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchFolders() {
     return this.to('SearchFolders');
+  }
+
+  /**
+   * Grants permission to search for a sub-set of QuickSight groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchGroups.html
+   */
+  public toSearchGroups() {
+    return this.to('SearchGroups');
   }
 
   /**
@@ -1695,6 +1749,7 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AccountConfigurations',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAdmin',
@@ -1742,6 +1797,7 @@ export class Quicksight extends PolicyStatement {
       'ListCustomPermissions',
       'RegisterUser',
       'RestoreAnalysis',
+      'ScopeDownPolicy',
       'SetGroupMapping',
       'Subscribe',
       'Unsubscribe',
@@ -1791,6 +1847,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeFolderPermissions',
       'DescribeFolderResolvedPermissions',
       'DescribeGroup',
+      'DescribeGroupMembership',
       'DescribeIAMPolicyAssignment',
       'DescribeIngestion',
       'DescribeIpRestriction',
@@ -1836,7 +1893,8 @@ export class Quicksight extends PolicyStatement {
       'ListUsers',
       'SearchAnalyses',
       'SearchDashboards',
-      'SearchDirectoryGroups'
+      'SearchDirectoryGroups',
+      'SearchGroups'
     ],
     Tagging: [
       'TagResource',
@@ -2135,6 +2193,7 @@ export class Quicksight extends PolicyStatement {
    * Applies to actions:
    * - .toCreateGroupMembership()
    * - .toDeleteGroupMembership()
+   * - .toDescribeGroupMembership()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

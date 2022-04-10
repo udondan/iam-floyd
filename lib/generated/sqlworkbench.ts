@@ -19,7 +19,7 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to associate connection to a chart
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to associate connection to a tab
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to associate query to a tab
    *
    * Access Level: Write
    *
@@ -229,17 +229,6 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe KMS Keys
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toGetKMSKey() {
-    return this.to('GetKMSKey');
-  }
-
-  /**
    * Grants permission to get saved query on your account
    *
    * Access Level: Read
@@ -273,17 +262,6 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list buckets
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListBuckets() {
-    return this.to('ListBuckets');
-  }
-
-  /**
    * Grants permission to list the connections on your account
    *
    * Access Level: List
@@ -314,28 +292,6 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toListFiles() {
     return this.to('ListFiles');
-  }
-
-  /**
-   * Grants permission to list KMS Key Aliases
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListKMSKeyAliases() {
-    return this.to('ListKMSKeyAliases');
-  }
-
-  /**
-   * Grants permission to list KMS Keys
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListKMSKeys() {
-    return this.to('ListKMSKeys');
   }
 
   /**
@@ -380,6 +336,17 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toListTabs() {
     return this.to('ListTabs');
+  }
+
+  /**
+   * Grants permission to list tagged resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListTaggedResources() {
+    return this.to('ListTaggedResources');
   }
 
   /**
@@ -541,20 +508,17 @@ export class Sqlworkbench extends PolicyStatement {
       'GetAccountInfo',
       'GetChart',
       'GetConnection',
-      'GetKMSKey',
       'GetSavedQuery',
       'GetUserInfo',
       'GetUserWorkspaceSettings',
-      'ListBuckets',
       'ListSampleDatabases',
+      'ListTaggedResources',
       'ListTagsForResource'
     ],
     List: [
       'ListConnections',
       'ListDatabases',
       'ListFiles',
-      'ListKMSKeyAliases',
-      'ListKMSKeys',
       'ListRedshiftClusters',
       'ListSavedQueryVersions',
       'ListTabs'

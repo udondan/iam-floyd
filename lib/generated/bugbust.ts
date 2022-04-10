@@ -255,6 +255,9 @@ export class Bugbust extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
+   * Dependent actions:
+   * - codeguru-reviewer:ListRecommendations
+   *
    * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateWorkItem() {
@@ -268,6 +271,9 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - codeguru-reviewer:ListRecommendations
    *
    * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
@@ -302,41 +308,6 @@ export class Bugbust extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type codereview to the statement
-   *
-   * https://docs.aws.amazon.com/codeguru/latest/profiler-ug/API_CodeReview.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param codeReviewId - Identifier for the codeReviewId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCodereview(resourceId: string, codeReviewId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }:codereview:${ codeReviewId }`);
-  }
-
-  /**
-   * Adds a resource of type ProfilingGroup to the statement
-   *
-   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/working-with-profiling-groups.html
-   *
-   * @param profilingGroupName - Identifier for the profilingGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codeguru-profiler:${ region || '*' }:${ account || '*' }:profilingGroup/${ profilingGroupName }`);
-  }
 
   /**
    * Adds a resource of type Event to the statement

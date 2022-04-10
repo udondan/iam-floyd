@@ -40,6 +40,11 @@ export class Nimble extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
+   * - ec2:DescribeNatGateways
+   * - ec2:DescribeNetworkAcls
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcEndpoints
    * - ec2:RunInstances
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateLaunchProfile.html
@@ -626,6 +631,13 @@ export class Nimble extends PolicyStatement {
    * Grants permission to update a launch profile
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeNatGateways
+   * - ec2:DescribeNetworkAcls
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcEndpoints
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateLaunchProfile.html
    */

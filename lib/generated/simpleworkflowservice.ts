@@ -19,51 +19,51 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for CancelTimer
+   * Grants permission to cancel a previously started timer and record a TimerCanceled event in the history
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelTimer.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCancelTimer() {
     return this.to('CancelTimer');
   }
 
   /**
-   * Description for CancelWorkflowExecution
+   * Grants permission to close the workflow execution and record a WorkflowExecutionCanceled event in the history
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCancelWorkflowExecution() {
     return this.to('CancelWorkflowExecution');
   }
 
   /**
-   * Description for CompleteWorkflowExecution
+   * Grants permission to close the workflow execution and record a WorkflowExecutionCompleted event in the history
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CompleteWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCompleteWorkflowExecution() {
     return this.to('CompleteWorkflowExecution');
   }
 
   /**
-   * Description for ContinueAsNewWorkflowExecution
+   * Grants permission to close the workflow execution and start a new workflow execution of the same type using the same workflow ID and a unique run Id
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ContinueAsNewWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toContinueAsNewWorkflowExecution() {
     return this.to('ContinueAsNewWorkflowExecution');
   }
 
   /**
-   * Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.
+   * Grants permission to return the number of closed workflow executions within the given domain that meet the specified filtering criteria
    *
    * Access Level: Read
    *
@@ -79,7 +79,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.
+   * Grants permission to return the number of open workflow executions within the given domain that meet the specified filtering criteria
    *
    * Access Level: Read
    *
@@ -95,7 +95,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns the estimated number of activity tasks in the specified task list.
+   * Grants permission to return the estimated number of activity tasks in the specified task list
    *
    * Access Level: Read
    *
@@ -109,7 +109,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns the estimated number of decision tasks in the specified task list.
+   * Grants permission to return the estimated number of decision tasks in the specified task list
    *
    * Access Level: Read
    *
@@ -123,7 +123,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Deprecates the specified activity type.
+   * Grants permission to deprecate the specified activity type
    *
    * Access Level: Write
    *
@@ -138,7 +138,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Deprecates the specified domain.
+   * Grants permission to deprecate the specified domain
    *
    * Access Level: Write
    *
@@ -149,7 +149,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Deprecates the specified workflow type.
+   * Grants permission to deprecate the specified workflow type
    *
    * Access Level: Write
    *
@@ -164,7 +164,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified activity type.
+   * Grants permission to return information about the specified activity type
    *
    * Access Level: Read
    *
@@ -179,7 +179,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified domain, including description and status.
+   * Grants permission to return information about the specified domain, including its description and status
    *
    * Access Level: Read
    *
@@ -190,7 +190,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified workflow execution including its type and some statistics.
+   * Grants permission to return information about the specified workflow execution including its type and some statistics
    *
    * Access Level: Read
    *
@@ -201,7 +201,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified workflow type.
+   * Grants permission to return information about the specified workflow type
    *
    * Access Level: Read
    *
@@ -216,18 +216,18 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for FailWorkflowExecution
+   * Grants permission to close the workflow execution and record a WorkflowExecutionFailed event in the history
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_FailWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toFailWorkflowExecution() {
     return this.to('FailWorkflowExecution');
   }
 
   /**
-   * Returns the history of the specified workflow execution.
+   * Grants permission to return the history of the specified workflow execution
    *
    * Access Level: Read
    *
@@ -238,7 +238,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about all activities registered in the specified domain that match the specified name and registration status.
+   * Grants permission to return information about all activities registered in the specified domain that match the specified name and registration status
    *
    * Access Level: List
    *
@@ -249,7 +249,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns a list of closed workflow executions in the specified domain that meet the filtering criteria.
+   * Grants permission to return a list of closed workflow executions in the specified domain that meet the filtering criteria
    *
    * Access Level: List
    *
@@ -265,7 +265,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns the list of domains registered in the account.
+   * Grants permission to return the list of domains registered in the account
    *
    * Access Level: List
    *
@@ -276,7 +276,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns a list of open workflow executions in the specified domain that meet the filtering criteria.
+   * Grants permission to return a list of open workflow executions in the specified domain that meet the filtering criteria
    *
    * Access Level: List
    *
@@ -292,7 +292,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an AWS SWF resource.
+   * Grants permission to list tags for an AWS SWF resource
    *
    * Access Level: List
    *
@@ -303,7 +303,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Returns information about workflow types in the specified domain.
+   * Grants permission to return information about workflow types in the specified domain
    *
    * Access Level: List
    *
@@ -314,7 +314,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by workers to get an ActivityTask from the specified activity taskList.
+   * Grants permission to workers to get an ActivityTask from the specified activity taskList
    *
    * Access Level: Write
    *
@@ -328,7 +328,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by deciders to get a DecisionTask from the specified decision taskList.
+   * Grants permission to deciders to get a DecisionTask from the specified decision taskList
    *
    * Access Level: Write
    *
@@ -342,7 +342,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by activity workers to report to the service that the ActivityTask represented by the specified taskToken is still making progress.
+   * Grants permission to workers to report to the service that the ActivityTask represented by the specified taskToken is still making progress
    *
    * Access Level: Write
    *
@@ -353,18 +353,18 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for RecordMarker
+   * Grants permission to record a MarkerRecorded event in the history
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordMarker.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRecordMarker() {
     return this.to('RecordMarker');
   }
 
   /**
-   * Registers a new activity type along with its configuration settings in the specified domain.
+   * Grants permission to register a new activity type along with its configuration settings in the specified domain
    *
    * Access Level: Write
    *
@@ -380,7 +380,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Registers a new domain.
+   * Grants permission to register a new domain
    *
    * Access Level: Write
    *
@@ -395,7 +395,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Registers a new workflow type and its configuration settings in the specified domain.
+   * Grants permission to register a new workflow type and its configuration settings in the specified domain
    *
    * Access Level: Write
    *
@@ -411,29 +411,29 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for RequestCancelActivityTask
+   * Grants permission to attempt to cancel a previously scheduled activity task
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelActivityTask.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRequestCancelActivityTask() {
     return this.to('RequestCancelActivityTask');
   }
 
   /**
-   * Description for RequestCancelExternalWorkflowExecution
+   * Grants permission to request that a request be made to cancel the specified external workflow execution
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelExternalWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRequestCancelExternalWorkflowExecution() {
     return this.to('RequestCancelExternalWorkflowExecution');
   }
 
   /**
-   * Records a WorkflowExecutionCancelRequested event in the currently running workflow execution identified by the given domain, workflowId, and runId.
+   * Grants permission to record a WorkflowExecutionCancelRequested event in the currently running workflow execution identified by the given domain, workflowId, and runId
    *
    * Access Level: Write
    *
@@ -444,7 +444,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by workers to tell the service that the ActivityTask identified by the taskToken was successfully canceled.
+   * Grants permission to workers to tell the service that the ActivityTask identified by the taskToken was successfully canceled
    *
    * Access Level: Write
    *
@@ -455,7 +455,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by workers to tell the service that the ActivityTask identified by the taskToken completed successfully with a result (if provided).
+   * Grants permission to workers to tell the service that the ActivityTask identified by the taskToken completed successfully with a result (if provided)
    *
    * Access Level: Write
    *
@@ -478,7 +478,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by workers to tell the service that the ActivityTask identified by the taskToken has failed with reason (if specified).
+   * Grants permission to workers to tell the service that the ActivityTask identified by the taskToken has failed with reason (if specified)
    *
    * Access Level: Write
    *
@@ -489,7 +489,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Used by deciders to tell the service that the DecisionTask identified by the taskToken has successfully completed.
+   * Grants permission to deciders to tell the service that the DecisionTask identified by the taskToken has successfully completed
    *
    * Access Level: Write
    *
@@ -500,29 +500,29 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for ScheduleActivityTask
+   * Grants permission to schedule an activity task
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ScheduleActivityTask.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toScheduleActivityTask() {
     return this.to('ScheduleActivityTask');
   }
 
   /**
-   * Description for SignalExternalWorkflowExecution
+   * Grants permission to request a signal to be delivered to the specified external workflow execution and records
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalExternalWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toSignalExternalWorkflowExecution() {
     return this.to('SignalExternalWorkflowExecution');
   }
 
   /**
-   * Records a WorkflowExecutionSignaled event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId.
+   * Grants permission to record a WorkflowExecutionSignaled event in the workflow execution history and create a decision task for the workflow execution identified by the given domain, workflowId and runId
    *
    * Access Level: Write
    *
@@ -533,29 +533,29 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Description for StartChildWorkflowExecution
+   * Grants permission to request that a child workflow execution be started
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartChildWorkflowExecution.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toStartChildWorkflowExecution() {
     return this.to('StartChildWorkflowExecution');
   }
 
   /**
-   * Description for StartTimer
+   * Grants permission to start a timer for a workflow execution
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartTimer.html
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toStartTimer() {
     return this.to('StartTimer');
   }
 
   /**
-   * Starts an execution of the workflow type in the specified domain using the provided workflowId and input data.
+   * Grants permission to start an execution of the workflow type in the specified domain using the provided workflowId and input data
    *
    * Access Level: Write
    *
@@ -576,7 +576,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * This action tags an AWS SWF resource.
+   * Grants permission to tag an AWS SWF resource
    *
    * Access Level: Tagging
    *
@@ -591,7 +591,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Records a WorkflowExecutionTerminated event and forces closure of the workflow execution identified by the given domain, runId, and workflowId.
+   * Grants permission to record a WorkflowExecutionTerminated event and force closure of the workflow execution identified by the given domain, runId, and workflowId
    *
    * Access Level: Write
    *
@@ -602,7 +602,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Undeprecates a previously deprecated activity type.
+   * Grants permission to undeprecate a previously deprecated activity type
    *
    * Access Level: Write
    *
@@ -617,7 +617,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Undeprecates a previously deprecated domain.
+   * Grants permission to undeprecate a previously deprecated domain
    *
    * Access Level: Write
    *
@@ -628,7 +628,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Undeprecates a previously deprecated workflow type.
+   * Grants permission to undeprecate a previously deprecated workflow type
    *
    * Access Level: Write
    *
@@ -643,7 +643,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an AWS SWF resource.
+   * Grants permission to remove a tag from an AWS SWF resource
    *
    * Access Level: Tagging
    *
@@ -719,7 +719,7 @@ export class Swf extends PolicyStatement {
   /**
    * Adds a resource of type domain to the statement
    *
-   * https://docs.aws.amazon.com/swf/latest/developerguide/swf-dev-domains.html
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-domains.html
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -733,7 +733,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only an activity type of the specified name.
+   * Filters access by the name of the activity type
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -751,7 +751,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Contstrains the policy statement to only an activity type of the specified version.
+   * Filters access by the version of the activity type
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -769,7 +769,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a matching defaultTaskList name.
+   * Filters access by the name of the default task list
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -785,7 +785,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only activities or workflows with the specified name.
+   * Filters access by the name of activities or workflows
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -801,7 +801,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a matching tagFilter.tag value.
+   * Filters access by the value of tagFilter.tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -819,7 +819,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that contain the specified tag.
+   * Filters access by the specified tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -835,7 +835,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that contain the specified tag.
+   * Filters access by the specified tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -851,7 +851,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that contain the specified tag.
+   * Filters access by the specified tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -867,7 +867,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that contain the specified tag.
+   * Filters access by the specified tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -883,7 +883,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that contain the specified tag.
+   * Filters access by the specified tag
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -899,7 +899,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a tasklist with the specified name.
+   * Filters access by the name of the tasklist
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -919,7 +919,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a type filter with the specified name.
+   * Filters access by the name of the type filter
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -937,7 +937,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a type filter with the specified version.
+   * Filters access by the version of the type filter
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -955,7 +955,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only activities or workflows with the specified version.
+   * Filters access by the version of activities or workflows
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -971,7 +971,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a workflow type of the specified name.
+   * Filters access by the name of the workflow type
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
@@ -990,7 +990,7 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only requests that specify a workflow type of the specified version.
+   * Filters access by the version of the workflow type
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *

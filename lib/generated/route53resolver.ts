@@ -835,7 +835,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-dnssec-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -852,7 +852,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-query-log-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -869,7 +869,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-rule to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -886,7 +886,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -903,7 +903,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-rule-group to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -920,7 +920,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-rule-group-association to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -937,7 +937,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-domain-list to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -954,7 +954,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -971,7 +971,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

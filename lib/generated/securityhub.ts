@@ -63,6 +63,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the association between a list of security controls and standards in batches
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   */
+  public toBatchGetStandardsControlAssociations() {
+    return this.to('BatchGetStandardsControlAssociations');
+  }
+
+  /**
    * Grants permission to import findings into Security Hub from an integrated product
    *
    * Access Level: Write
@@ -88,6 +99,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toBatchUpdateFindings() {
     return this.to('BatchUpdateFindings');
+  }
+
+  /**
+   * Grants permission to update the association between a list of security controls and standards in batches
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   */
+  public toBatchUpdateStandardsControlAssociations() {
+    return this.to('BatchUpdateStandardsControlAssociations');
   }
 
   /**
@@ -623,6 +645,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of security control definitions, which contain cross-Region control details for security controls
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   */
+  public toListSecurityControlDefinitions() {
+    return this.to('ListSecurityControlDefinitions');
+  }
+
+  /**
    * Grants permission to list of tags associated with a resource
    *
    * Access Level: Read
@@ -762,6 +795,7 @@ export class Securityhub extends PolicyStatement {
       'BatchEnableStandards',
       'BatchImportFindings',
       'BatchUpdateFindings',
+      'BatchUpdateStandardsControlAssociations',
       'CreateActionTarget',
       'CreateFindingAggregator',
       'CreateInsight',
@@ -791,6 +825,7 @@ export class Securityhub extends PolicyStatement {
       'UpdateStandardsControl'
     ],
     Read: [
+      'BatchGetStandardsControlAssociations',
       'DescribeActionTargets',
       'DescribeHub',
       'DescribeOrganizationConfiguration',
@@ -822,7 +857,8 @@ export class Securityhub extends PolicyStatement {
       'ListFindingAggregators',
       'ListInvitations',
       'ListMembers',
-      'ListOrganizationAdminAccounts'
+      'ListOrganizationAdminAccounts',
+      'ListSecurityControlDefinitions'
     ],
     Tagging: [
       'TagResource',

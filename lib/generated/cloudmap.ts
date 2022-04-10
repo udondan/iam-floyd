@@ -194,7 +194,7 @@ export class Servicediscovery extends PolicyStatement {
   /**
    * Grants permission to get summary information about the instances that were registered with a specified service
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifServiceArn()
@@ -208,7 +208,7 @@ export class Servicediscovery extends PolicyStatement {
   /**
    * Grants permission to get information about the namespaces
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html
    */
@@ -230,7 +230,7 @@ export class Servicediscovery extends PolicyStatement {
   /**
    * Grants permission to get settings for all the services that match specified filters
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html
    */
@@ -241,7 +241,7 @@ export class Servicediscovery extends PolicyStatement {
   /**
    * Grants permission to lists tags for the specified resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html
    */
@@ -373,14 +373,14 @@ export class Servicediscovery extends PolicyStatement {
       'GetInstancesHealthStatus',
       'GetNamespace',
       'GetOperation',
-      'GetService'
-    ],
-    List: [
+      'GetService',
       'ListInstances',
       'ListNamespaces',
-      'ListOperations',
       'ListServices',
       'ListTagsForResource'
+    ],
+    List: [
+      'ListOperations'
     ],
     Tagging: [
       'TagResource',

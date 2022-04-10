@@ -19,7 +19,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Adds a new Facet to an object.
+   * Grants permission to add a new Facet to an object
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Copies input published schema into Directory with same name and version as that of published schema.
+   * Grants permission to copy input published schema into Directory with same name and version as that of published schema
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Attaches an existing object to another existing object.
+   * Grants permission to attach an existing object to another existing object
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Attaches a policy object to any other object.
+   * Grants permission to attach a policy object to any other object
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Attaches the specified object to the specified index.
+   * Grants permission to attach the specified object to the specified index
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Attaches a typed link b/w a source & target object reference.
+   * Grants permission to attach a typed link b/w a source & target object reference
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Performs all the read operations in a batch. Each individual operation inside BatchRead needs to be granted permissions explicitly.
+   * Grants permission to perform all the read operations in a batch. Each individual operation inside BatchRead needs to be granted permissions explicitly
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Performs all the write operations in a batch. Each individual operation inside BatchWrite needs to be granted permissions explicitly.
+   * Grants permission to perform all the write operations in a batch. Each individual operation inside BatchWrite needs to be granted permissions explicitly
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a Directory by copying the published schema into the directory.
+   * Grants permission to create a Directory by copying the published schema into the directory
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a new Facet in a schema.
+   * Grants permission to create a new Facet in a schema
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates an index object.
+   * Grants permission to create an index object
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates an object in a Directory.
+   * Grants permission to create an object in a Directory
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a new schema in a development state.
+   * Grants permission to create a new schema in a development state
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a new Typed Link facet in a schema.
+   * Grants permission to create a new Typed Link facet in a schema
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a directory. Only disabled directories can be deleted.
+   * Grants permission to delete a directory. Only disabled directories can be deleted
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a given Facet. All attributes and Rules associated with the facet will be deleted.
+   * Grants permission to delete a given Facet. All attributes and Rules associated with the facet will be deleted
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes an object and its associated attributes.
+   * Grants permission to delete an object and its associated attributes
    *
    * Access Level: Write
    *
@@ -206,7 +206,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a given schema.
+   * Grants permission to delete a given schema
    *
    * Access Level: Write
    *
@@ -217,7 +217,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a given TypedLink Facet. All attributes and Rules associated with the facet will be deleted.
+   * Grants permission to delete a given TypedLink Facet. All attributes and Rules associated with the facet will be deleted
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Detaches the specified object from the specified index.
+   * Grants permission to detach the specified object from the specified index
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Detaches a given object from the parent object.
+   * Grants permission to detach a given object from the parent object
    *
    * Access Level: Write
    *
@@ -250,7 +250,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Detaches a policy from an object.
+   * Grants permission to detach a policy from an object
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Detaches a given typed link b/w given source and target object reference.
+   * Grants permission to detach a given typed link b/w given source and target object reference
    *
    * Access Level: Write
    *
@@ -272,7 +272,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Disables the specified directory.
+   * Grants permission to disable the specified directory
    *
    * Access Level: Write
    *
@@ -283,7 +283,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Enables the specified directory.
+   * Grants permission to enable the specified directory
    *
    * Access Level: Write
    *
@@ -294,7 +294,18 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves metadata about a directory.
+   * Grants permission to return current applied schema version ARN, including the minor version in use
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetAppliedSchemaVersion.html
+   */
+  public toGetAppliedSchemaVersion() {
+    return this.to('GetAppliedSchemaVersion');
+  }
+
+  /**
+   * Grants permission to retrieve metadata about a directory
    *
    * Access Level: Read
    *
@@ -305,7 +316,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Gets details of the Facet, such as Facet Name, Attributes, Rules, or ObjectType.
+   * Grants permission to get details of the Facet, such as Facet Name, Attributes, Rules, or ObjectType
    *
    * Access Level: Read
    *
@@ -316,7 +327,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves attributes that are associated with a typed link.
+   * Grants permission to retrieve attributes that are associated with a typed link
    *
    * Access Level: Read
    *
@@ -327,7 +338,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves attributes within a facet that are associated with an object.
+   * Grants permission to retrieve attributes within a facet that are associated with an object
    *
    * Access Level: Read
    *
@@ -338,7 +349,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves metadata about an object.
+   * Grants permission to retrieve metadata about an object
    *
    * Access Level: Read
    *
@@ -349,7 +360,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves a JSON representation of the schema.
+   * Grants permission to retrieve a JSON representation of the schema
    *
    * Access Level: Read
    *
@@ -360,7 +371,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns identity attributes order information associated with a given typed link facet.
+   * Grants permission to return identity attributes order information associated with a given typed link facet
    *
    * Access Level: Read
    *
@@ -371,7 +382,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists schemas applied to a directory.
+   * Grants permission to list schemas applied to a directory
    *
    * Access Level: List
    *
@@ -382,7 +393,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists indices attached to an object.
+   * Grants permission to list indices attached to an object
    *
    * Access Level: Read
    *
@@ -393,7 +404,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves the ARNs of schemas in the development state.
+   * Grants permission to retrieve the ARNs of schemas in the development state
    *
    * Access Level: List
    *
@@ -404,7 +415,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists directories created within an account.
+   * Grants permission to list directories created within an account
    *
    * Access Level: List
    *
@@ -415,7 +426,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves attributes attached to the facet.
+   * Grants permission to retrieve attributes attached to the facet
    *
    * Access Level: Read
    *
@@ -426,7 +437,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves the names of facets that exist in a schema.
+   * Grants permission to retrieve the names of facets that exist in a schema
    *
    * Access Level: Read
    *
@@ -437,7 +448,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns a paginated list of all incoming TypedLinks for a given object.
+   * Grants permission to return a paginated list of all incoming TypedLinks for a given object
    *
    * Access Level: Read
    *
@@ -448,7 +459,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists objects attached to the specified index.
+   * Grants permission to list objects attached to the specified index
    *
    * Access Level: Read
    *
@@ -459,7 +470,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.
+   * Grants permission to list the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead
    *
    * Access Level: List
    *
@@ -470,7 +481,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists all attributes associated with an object.
+   * Grants permission to list all attributes associated with an object
    *
    * Access Level: Read
    *
@@ -481,7 +492,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns a paginated list of child objects associated with a given object.
+   * Grants permission to return a paginated list of child objects associated with a given object
    *
    * Access Level: Read
    *
@@ -492,7 +503,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects.
+   * Grants permission to retrieve all available parent paths for any object type such as node, leaf node, policy node, and index node objects
    *
    * Access Level: Read
    *
@@ -503,7 +514,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists parent objects associated with a given object in pagination fashion.
+   * Grants permission to list parent objects associated with a given object in pagination fashion
    *
    * Access Level: Read
    *
@@ -514,7 +525,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns policies attached to an object in pagination fashion.
+   * Grants permission to return policies attached to an object in pagination fashion
    *
    * Access Level: Read
    *
@@ -525,7 +536,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns a paginated list of all outgoing TypedLinks for a given object.
+   * Grants permission to return a paginated list of all outgoing TypedLinks for a given object
    *
    * Access Level: Read
    *
@@ -536,7 +547,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns all of the ObjectIdentifiers to which a given policy is attached.
+   * Grants permission to return all of the ObjectIdentifiers to which a given policy is attached
    *
    * Access Level: Read
    *
@@ -547,7 +558,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves published schema ARNs.
+   * Grants permission to retrieve published schema ARNs
    *
    * Access Level: List
    *
@@ -558,7 +569,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns tags for a resource.
+   * Grants permission to return tags for a resource
    *
    * Access Level: Read
    *
@@ -569,7 +580,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns a paginated list of attributes associated with typed link facet.
+   * Grants permission to return a paginated list of attributes associated with typed link facet
    *
    * Access Level: Read
    *
@@ -580,7 +591,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Returns a paginated list of typed link facet names that exist in a schema.
+   * Grants permission to return a paginated list of typed link facet names that exist in a schema
    *
    * Access Level: Read
    *
@@ -591,7 +602,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Lists all policies from the root of the Directory to the object specified.
+   * Grants permission to list all policies from the root of the Directory to the object specified
    *
    * Access Level: Read
    *
@@ -602,7 +613,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Publishes a development schema with a version.
+   * Grants permission to publish a development schema with a version
    *
    * Access Level: Write
    *
@@ -613,7 +624,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Allows a schema to be updated using JSON upload. Only available for development schemas.
+   * Grants permission to update a schema using JSON upload. Only available for development schemas
    *
    * Access Level: Write
    *
@@ -624,7 +635,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Removes the specified facet from the specified object.
+   * Grants permission to remove the specified facet from the specified object
    *
    * Access Level: Write
    *
@@ -635,7 +646,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Adds tags to a resource.
+   * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
    *
@@ -646,7 +657,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Removes tags from a resource.
+   * Grants permission to remove tags from a resource
    *
    * Access Level: Tagging
    *
@@ -657,7 +668,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Adds/Updates/Deletes existing Attributes, Rules, or ObjectType of a Facet.
+   * Grants permission to add/update/delete existing Attributes, Rules, or ObjectType of a Facet
    *
    * Access Level: Write
    *
@@ -668,7 +679,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its IdentityAttributeOrder.
+   * Grants permission to update a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its IdentityAttributeOrder
    *
    * Access Level: Write
    *
@@ -679,7 +690,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Updates a given object's attributes.
+   * Grants permission to update a given object's attributes
    *
    * Access Level: Write
    *
@@ -690,7 +701,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Updates the schema name with a new name.
+   * Grants permission to update the schema name with a new name
    *
    * Access Level: Write
    *
@@ -701,7 +712,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Adds/Updates/Deletes existing Attributes, Rules, identity attribute order of a TypedLink Facet.
+   * Grants permission to add/update/delete existing Attributes, Rules, identity attribute order of a TypedLink Facet
    *
    * Access Level: Write
    *
@@ -709,6 +720,28 @@ export class Clouddirectory extends PolicyStatement {
    */
   public toUpdateTypedLinkFacet() {
     return this.to('UpdateTypedLinkFacet');
+  }
+
+  /**
+   * Grants permission to upgrade a single directory in-place using the PublishedSchemaArn with schema updates found in MinorVersion. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpgradeAppliedSchema.html
+   */
+  public toUpgradeAppliedSchema() {
+    return this.to('UpgradeAppliedSchema');
+  }
+
+  /**
+   * Grants permission to upgrade a published schema under a new minor version revision using the current contents of DevelopmentSchemaArn
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpgradePublishedSchema.html
+   */
+  public toUpgradePublishedSchema() {
+    return this.to('UpgradePublishedSchema');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -744,10 +777,13 @@ export class Clouddirectory extends PolicyStatement {
       'UpdateLinkAttributes',
       'UpdateObjectAttributes',
       'UpdateSchema',
-      'UpdateTypedLinkFacet'
+      'UpdateTypedLinkFacet',
+      'UpgradeAppliedSchema',
+      'UpgradePublishedSchema'
     ],
     Read: [
       'BatchRead',
+      'GetAppliedSchemaVersion',
       'GetDirectory',
       'GetFacet',
       'GetLinkAttributes',

@@ -30,9 +30,23 @@ export class Route53RecoveryCluster extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list routing controls
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_ListRoutingControls.html
+   */
+  public toListRoutingControls() {
+    return this.to('ListRoutingControls');
+  }
+
+  /**
    * Grants permission to update a routing control state
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAllowSafetyRulesOverrides()
    *
    * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlState.html
    */
@@ -45,6 +59,9 @@ export class Route53RecoveryCluster extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAllowSafetyRulesOverrides()
+   *
    * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlStates.html
    */
   public toUpdateRoutingControlStates() {
@@ -53,7 +70,8 @@ export class Route53RecoveryCluster extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Read: [
-      'GetRoutingControlState'
+      'GetRoutingControlState',
+      'ListRoutingControls'
     ],
     Write: [
       'UpdateRoutingControlState',
@@ -73,5 +91,20 @@ export class Route53RecoveryCluster extends PolicyStatement {
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+  }
+
+  /**
+   * Override safety rules to allow routing control state updates
+   *
+   * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlState.html
+   *
+   * Applies to actions:
+   * - .toUpdateRoutingControlState()
+   * - .toUpdateRoutingControlStates()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAllowSafetyRulesOverrides(value?: boolean) {
+    return this.if(`AllowSafetyRulesOverrides`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

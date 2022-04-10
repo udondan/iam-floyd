@@ -104,6 +104,10 @@ export class Auditmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentFramework.html
    */
   public toCreateAssessmentFramework() {

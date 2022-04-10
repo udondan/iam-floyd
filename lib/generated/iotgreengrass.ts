@@ -156,7 +156,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a group.
+   * Grants permission to create a group
    *
    * Access Level: Write
    *
@@ -916,6 +916,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to deploy multiple groups in one operation
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
    */

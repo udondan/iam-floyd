@@ -92,6 +92,10 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -532,13 +536,16 @@ export class Sns extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:sns:${ region || '*' }:${ account || '*' }:${ topicName }`);
   }
 
   /**
-   * Filters access based on the URL, email address, or ARN from a Subscribe request or a previously confirmed subscription
+   * Filters access by the URL, email address, or ARN from a Subscribe request or a previously confirmed subscription
    *
    * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
    *
@@ -553,7 +560,7 @@ export class Sns extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the protocol value from a Subscribe request or a previously confirmed subscription
+   * Filters access by the protocol value from a Subscribe request or a previously confirmed subscription
    *
    * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
    *

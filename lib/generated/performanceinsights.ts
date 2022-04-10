@@ -19,7 +19,7 @@ export class Pi extends PolicyStatement {
   }
 
   /**
-   * For a specific time period, retrieve the top N dimension keys for a metric.
+   * Grants permission to call DescribeDimensionKeys API to retrieve the top N dimension keys for a metric for a specific time period
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Pi extends PolicyStatement {
   }
 
   /**
-   * Retrieve the attributes of the specified dimension group.
+   * Grants permission to call GetDimensionKeyDetails API to retrieve the attributes of the specified dimension group
    *
    * Access Level: Read
    *
@@ -41,7 +41,18 @@ export class Pi extends PolicyStatement {
   }
 
   /**
-   * Retrieve PI metrics for a set of data sources, over a time period.
+   * Grants permission to call GetResourceMetadata API to retrieve the metadata for different features
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetResourceMetadata.html
+   */
+  public toGetResourceMetadata() {
+    return this.to('GetResourceMetadata');
+  }
+
+  /**
+   * Grants permission to call GetResourceMetrics API to retrieve PI metrics for a set of data sources, over a time period
    *
    * Access Level: Read
    *
@@ -51,11 +62,36 @@ export class Pi extends PolicyStatement {
     return this.to('GetResourceMetrics');
   }
 
+  /**
+   * Grants permission to call ListAvailableResourceDimensions API to retrieve the dimensions that can be queried for each specified metric type on a specified DB instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListAvailableResourceDimensions.html
+   */
+  public toListAvailableResourceDimensions() {
+    return this.to('ListAvailableResourceDimensions');
+  }
+
+  /**
+   * Grants permission to call ListAvailableResourceMetrics API to retrieve metrics of the specified types that can be queried for a specified DB instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListAvailableResourceMetrics.html
+   */
+  public toListAvailableResourceMetrics() {
+    return this.to('ListAvailableResourceMetrics');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'DescribeDimensionKeys',
       'GetDimensionKeyDetails',
-      'GetResourceMetrics'
+      'GetResourceMetadata',
+      'GetResourceMetrics',
+      'ListAvailableResourceDimensions',
+      'ListAvailableResourceMetrics'
     ]
   };
 

@@ -19,7 +19,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.
+   * Grants permission to add or update tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags
    *
    * Access Level: Tagging
    *
@@ -30,7 +30,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Creates a Amazon Kinesis stream.
+   * Grants permission to create a Amazon Kinesis stream
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Decreases the stream's retention period, which is the length of time data records are accessible after they are added to the stream.
+   * Grants permission to decrease the stream's retention period, which is the length of time data records are accessible after they are added to the stream
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Deletes a stream and all its shards and data.
+   * Grants permission to delete a stream and all its shards and data
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Deregisters a stream consumer with a Kinesis data stream.
+   * Grants permission to deregister a stream consumer with a Kinesis data stream
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Describes the shard limits and usage for the account.
+   * Grants permission to describe the shard limits and usage for the account
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Describes the specified stream.
+   * Grants permission to describe the specified stream
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Gets the description of a registered stream consumer.
+   * Grants permission to get the description of a registered stream consumer
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Provides a summarized description of the specified Kinesis data stream without the shard list.
+   * Grants permission to provide a summarized description of the specified Kinesis data stream without the shard list
    *
    * Access Level: Read
    *
@@ -118,7 +118,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Disables enhanced monitoring.
+   * Grants permission to disables enhanced monitoring
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * API_EnableEnhancedMonitoring.html
+   * Grants permission to enable enhanced Kinesis data stream monitoring for shard-level metrics
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Gets data records from a shard.
+   * Grants permission to get data records from a shard
    *
    * Access Level: Read
    *
@@ -151,7 +151,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Gets a shard iterator. A shard iterator expires five minutes after it is returned to the requester.
+   * Grants permission to get a shard iterator. A shard iterator expires five minutes after it is returned to the requester
    *
    * Access Level: Read
    *
@@ -162,7 +162,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Increases the stream's retention period, which is the length of time data records are accessible after they are added to the stream.
+   * Grants permission to increase the stream's retention period, which is the length of time data records are accessible after they are added to the stream
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Lists the shards in a stream and provides information about each shard.
+   * Grants permission to list the shards in a stream and provides information about each shard
    *
    * Access Level: List
    *
@@ -184,7 +184,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Lists the stream consumers registered to receive data from a Kinesis stream using enhanced fan-out, and provides information about each consumer.
+   * Grants permission to list the stream consumers registered to receive data from a Kinesis stream using enhanced fan-out, and provides information about each consumer
    *
    * Access Level: List
    *
@@ -195,7 +195,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Lists your streams.
+   * Grants permission to list your streams
    *
    * Access Level: List
    *
@@ -206,7 +206,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Lists the tags for the specified Amazon Kinesis stream.
+   * Grants permission to list the tags for the specified Amazon Kinesis stream
    *
    * Access Level: Read
    *
@@ -217,7 +217,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Merges two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data.
+   * Grants permission to merge two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Writes a single data record from a producer into an Amazon Kinesis stream.
+   * Grants permission to write a single data record from a producer into an Amazon Kinesis stream
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Writes multiple data records from a producer into an Amazon Kinesis stream in a single call (also referred to as a PutRecords request).
+   * Grants permission to write multiple data records from a producer into an Amazon Kinesis stream in a single call (also referred to as a PutRecords request)
    *
    * Access Level: Write
    *
@@ -250,7 +250,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Registers a stream consumer with a Kinesis data stream.
+   * Grants permission to register a stream consumer with a Kinesis data stream
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Description for SplitShard
+   * Grants permission to remove tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes
    *
    * Access Level: Tagging
    *
@@ -272,7 +272,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Description for SplitShard
+   * Grants permission to split a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and transport data
    *
    * Access Level: Write
    *
@@ -283,7 +283,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream.
+   * Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream
    *
    * Access Level: Write
    *
@@ -294,7 +294,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable server-side encryption for a specified stream.
+   * Grants permission to disable server-side encryption for a specified stream
    *
    * Access Level: Write
    *
@@ -305,7 +305,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Listening to a specific shard with enhanced fan-out.
+   * Grants permission to listen to a specific shard with enhanced fan-out
    *
    * Access Level: Read
    *
@@ -316,7 +316,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Updates the shard count of the specified stream to the specified number of shards.
+   * Grants permission to update the shard count of the specified stream to the specified number of shards
    *
    * Access Level: Write
    *
@@ -324,6 +324,17 @@ export class Kinesis extends PolicyStatement {
    */
   public toUpdateShardCount() {
     return this.to('UpdateShardCount');
+  }
+
+  /**
+   * Grants permission to update the capacity mode of the data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamMode.html
+   */
+  public toUpdateStreamMode() {
+    return this.to('UpdateStreamMode');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -346,7 +357,8 @@ export class Kinesis extends PolicyStatement {
       'SplitShard',
       'StartStreamEncryption',
       'StopStreamEncryption',
-      'UpdateShardCount'
+      'UpdateShardCount',
+      'UpdateStreamMode'
     ],
     Read: [
       'DescribeLimits',
@@ -399,7 +411,7 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type kmsKey to the statement
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys
+   * https://docs.aws.amazon.com/kinesis/latest/dev/concepts.html#kms_keys
    *
    * @param keyId - Identifier for the keyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

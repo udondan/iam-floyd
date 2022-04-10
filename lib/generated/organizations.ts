@@ -19,7 +19,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request.
+   * Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach a policy to a root, an organizational unit, or an individual account.
+   * Grants permission to attach a policy to a root, an organizational unit, or an individual account
    *
    * Access Level: Write
    *
@@ -44,7 +44,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a handshake.
+   * Grants permission to cancel a handshake
    *
    * Access Level: Write
    *
@@ -55,7 +55,18 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS account that is automatically a member of the organization with the credentials that made the request.
+   * Grants permission to close an AWS account that is now a part of an Organizations, either created within the organization, or invited to join the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CloseAccount.html
+   */
+  public toCloseAccount() {
+    return this.to('CloseAccount');
+  }
+
+  /**
+   * Grants permission to create an AWS account that is automatically a member of the organization with the credentials that made the request
    *
    * Access Level: Write
    *
@@ -70,7 +81,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS GovCloud (US) account.
+   * Grants permission to create an AWS GovCloud (US) account
    *
    * Access Level: Write
    *
@@ -85,7 +96,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an organization. The account with the credentials that calls the CreateOrganization operation automatically becomes the management account of the new organization.
+   * Grants permission to create an organization. The account with the credentials that calls the CreateOrganization operation automatically becomes the management account of the new organization
    *
    * Access Level: Write
    *
@@ -96,7 +107,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an organizational unit (OU) within a root or parent OU.
+   * Grants permission to create an organizational unit (OU) within a root or parent OU
    *
    * Access Level: Write
    *
@@ -111,7 +122,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account.
+   * Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account
    *
    * Access Level: Write
    *
@@ -127,7 +138,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to decline a handshake request. This sets the handshake state to DECLINED and effectively deactivates the request.
+   * Grants permission to decline a handshake request. This sets the handshake state to DECLINED and effectively deactivates the request
    *
    * Access Level: Write
    *
@@ -138,7 +149,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the organization.
+   * Grants permission to delete the organization
    *
    * Access Level: Write
    *
@@ -149,7 +160,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an organizational unit from a root or another OU.
+   * Grants permission to delete an organizational unit from a root or another OU
    *
    * Access Level: Write
    *
@@ -160,7 +171,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a policy from your organization.
+   * Grants permission to delete a policy from your organization
    *
    * Access Level: Write
    *
@@ -174,7 +185,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal.
+   * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
    *
@@ -188,7 +199,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve Organizations-related details about the specified account.
+   * Grants permission to retrieve Organizations-related details about the specified account
    *
    * Access Level: Read
    *
@@ -199,7 +210,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the current status of an asynchronous request to create an account.
+   * Grants permission to retrieve the current status of an asynchronous request to create an account
    *
    * Access Level: Read
    *
@@ -210,7 +221,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the effective policy for an account.
+   * Grants permission to retrieve the effective policy for an account
    *
    * Access Level: Read
    *
@@ -224,7 +235,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about a previously requested handshake.
+   * Grants permission to retrieve details about a previously requested handshake
    *
    * Access Level: Read
    *
@@ -235,7 +246,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves details about the organization that the calling credentials belong to.
+   * Grants permission to retrieves details about the organization that the calling credentials belong to
    *
    * Access Level: Read
    *
@@ -246,7 +257,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about an organizational unit (OU).
+   * Grants permission to retrieve details about an organizational unit (OU)
    *
    * Access Level: Read
    *
@@ -257,7 +268,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves details about a policy.
+   * Grants permission to retrieves details about a policy
    *
    * Access Level: Read
    *
@@ -271,7 +282,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach a policy from a target root, organizational unit, or account.
+   * Grants permission to detach a policy from a target root, organizational unit, or account
    *
    * Access Level: Write
    *
@@ -285,7 +296,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations.
+   * Grants permission to disable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations
    *
    * Access Level: Write
    *
@@ -299,7 +310,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable an organization policy type in a root.
+   * Grants permission to disable an organization policy type in a root
    *
    * Access Level: Write
    *
@@ -313,7 +324,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations.
+   * Grants permission to enable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations
    *
    * Access Level: Write
    *
@@ -327,7 +338,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start the process to enable all features in an organization, upgrading it from supporting only Consolidated Billing features.
+   * Grants permission to start the process to enable all features in an organization, upgrading it from supporting only Consolidated Billing features
    *
    * Access Level: Write
    *
@@ -338,7 +349,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable a policy type in a root.
+   * Grants permission to enable a policy type in a root
    *
    * Access Level: Write
    *
@@ -352,7 +363,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send an invitation to another AWS account, asking it to join your organization as a member account.
+   * Grants permission to send an invitation to another AWS account, asking it to join your organization as a member account
    *
    * Access Level: Write
    *
@@ -367,7 +378,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a member account from its parent organization.
+   * Grants permission to remove a member account from its parent organization
    *
    * Access Level: Write
    *
@@ -378,7 +389,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the list of the AWS services for which you enabled integration with your organization.
+   * Grants permission to retrieve the list of the AWS services for which you enabled integration with your organization
    *
    * Access Level: List
    *
@@ -389,7 +400,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the the accounts in the organization.
+   * Grants permission to list all of the the accounts in the organization
    *
    * Access Level: List
    *
@@ -400,7 +411,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the accounts in an organization that are contained by a root or organizational unit (OU).
+   * Grants permission to list the accounts in an organization that are contained by a root or organizational unit (OU)
    *
    * Access Level: List
    *
@@ -411,7 +422,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the OUs or accounts that are contained in a parent OU or root.
+   * Grants permission to list all of the OUs or accounts that are contained in a parent OU or root
    *
    * Access Level: List
    *
@@ -422,7 +433,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the asynchronous account creation requests that are currently being tracked for the organization.
+   * Grants permission to list the asynchronous account creation requests that are currently being tracked for the organization
    *
    * Access Level: List
    *
@@ -433,7 +444,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS accounts that are designated as delegated administrators in this organization.
+   * Grants permission to list the AWS accounts that are designated as delegated administrators in this organization
    *
    * Access Level: List
    *
@@ -447,7 +458,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS services for which the specified account is a delegated administrator in this organization.
+   * Grants permission to list the AWS services for which the specified account is a delegated administrator in this organization
    *
    * Access Level: List
    *
@@ -458,7 +469,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the handshakes that are associated with an account.
+   * Grants permission to list all of the handshakes that are associated with an account
    *
    * Access Level: List
    *
@@ -469,7 +480,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the handshakes that are associated with the organization.
+   * Grants permission to list the handshakes that are associated with the organization
    *
    * Access Level: List
    *
@@ -480,7 +491,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists all of the organizational units (OUs) in a parent organizational unit or root.
+   * Grants permission to lists all of the organizational units (OUs) in a parent organizational unit or root
    *
    * Access Level: List
    *
@@ -491,7 +502,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the root or organizational units (OUs) that serve as the immediate parent of a child OU or account.
+   * Grants permission to list the root or organizational units (OUs) that serve as the immediate parent of a child OU or account
    *
    * Access Level: List
    *
@@ -502,7 +513,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the policies in an organization.
+   * Grants permission to list all of the policies in an organization
    *
    * Access Level: List
    *
@@ -516,7 +527,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the policies that are directly attached to a root, organizational unit (OU), or account.
+   * Grants permission to list all of the policies that are directly attached to a root, organizational unit (OU), or account
    *
    * Access Level: List
    *
@@ -530,7 +541,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the roots that are defined in the organization.
+   * Grants permission to list all of the roots that are defined in the organization
    *
    * Access Level: List
    *
@@ -541,7 +552,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all tags for the specified resource.
+   * Grants permission to list all tags for the specified resource
    *
    * Access Level: List
    *
@@ -552,7 +563,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the roots, OUs, and accounts to which a policy is attached.
+   * Grants permission to list all the roots, OUs, and accounts to which a policy is attached
    *
    * Access Level: List
    *
@@ -566,7 +577,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to move an account from its current root or OU to another parent root or OU.
+   * Grants permission to move an account from its current root or OU to another parent root or OU
    *
    * Access Level: Write
    *
@@ -577,7 +588,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal.
+   * Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
    *
@@ -591,7 +602,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to removes the specified account from the organization.
+   * Grants permission to removes the specified account from the organization
    *
    * Access Level: Write
    *
@@ -602,7 +613,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more tags to the specified resource.
+   * Grants permission to add one or more tags to the specified resource
    *
    * Access Level: Tagging
    *
@@ -617,7 +628,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove one or more tags from the specified resource.
+   * Grants permission to remove one or more tags from the specified resource
    *
    * Access Level: Tagging
    *
@@ -631,7 +642,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to rename an organizational unit (OU).
+   * Grants permission to rename an organizational unit (OU)
    *
    * Access Level: Write
    *
@@ -642,7 +653,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an existing policy with a new name, description, or content.
+   * Grants permission to update an existing policy with a new name, description, or content
    *
    * Access Level: Write
    *
@@ -660,6 +671,7 @@ export class Organizations extends PolicyStatement {
       'AcceptHandshake',
       'AttachPolicy',
       'CancelHandshake',
+      'CloseAccount',
       'CreateAccount',
       'CreateGovCloudAccount',
       'CreateOrganization',
@@ -828,7 +840,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Enables you to filter the request to only the specified policy type names.
+   * Filters access by the specified policy type names
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
@@ -854,7 +866,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Enables you to filter the request to only the specified service principal names.
+   * Filters access by the specified service principal names
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *

@@ -456,7 +456,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-user.html
    *
    * @param serverId - Identifier for the serverId.
-   * @param username - Identifier for the username.
+   * @param userName - Identifier for the userName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -464,8 +464,8 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ username }`);
+  public onUser(serverId: string, userName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
   }
 
   /**

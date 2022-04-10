@@ -34,14 +34,14 @@ export class Codeartifact extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repos-upstream.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html
    */
   public toAssociateWithDownstreamRepository() {
     return this.to('AssociateWithDownstreamRepository');
   }
 
   /**
-   * Grants permission to copy package versions from one repository to another repository in the same domain.
+   * Grants permission to copy package versions from one repository to another repository in the same domain
    *
    * Access Level: Write
    *
@@ -350,7 +350,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
    */
   public toPublishPackageVersion() {
     return this.to('PublishPackageVersion');
@@ -372,7 +372,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
    */
   public toPutPackageMetadata() {
     return this.to('PutPackageMetadata');
@@ -394,7 +394,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
    */
   public toReadFromRepository() {
     return this.to('ReadFromRepository');
@@ -505,7 +505,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Adds a resource of type domain to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -522,7 +522,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
@@ -540,7 +540,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Adds a resource of type package to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.

@@ -432,7 +432,7 @@ export class Kinesisvideo extends PolicyStatement {
   /**
    * Adds a resource of type channel to the statement
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html
+   * https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html
    *
    * @param channelName - Identifier for the channelName.
    * @param creationTime - Identifier for the creationTime.

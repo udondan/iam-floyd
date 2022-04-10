@@ -19,7 +19,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The BatchGetItem action returns the attributes of one or more items from one or more tables.
+   * Grants permission to return the attributes of one or more items from one or more tables
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The BatchWriteItem action operation puts or deletes multiple items in one or more tables.
+   * Grants permission to put or delete multiple items in one or more tables
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key
+   * Grants permission to the ConditionCheckItem operation that checks the existence of a set of attributes for the item with the given primary key
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The CreateCluster action creates a DAX cluster.
+   * Grants permission to create a DAX cluster
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The CreateParameterGroup action creates collection of parameters that you apply to all of the nodes in a DAX cluster.
+   * Grants permission to create a parameter group
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The CreateSubnetGroup action creates a new subnet group.
+   * Grants permission to create a subnet group
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DecreaseReplicationFactor action removes one or more nodes from a DAX cluster.
+   * Grants permission to remove one or more nodes from a DAX cluster
    *
    * Access Level: Write
    *
@@ -108,7 +108,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DeleteCluster action deletes a previously provisioned DAX cluster.
+   * Grants permission to delete a previously provisioned DAX cluster
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DeleteItem action deletes a single item in a table by primary key.
+   * Grants permission to delete a single item in a table by primary key
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DeleteParameterGroup action deletes the specified parameter group.
+   * Grants permission to delete the specified parameter group
    *
    * Access Level: Write
    *
@@ -144,7 +144,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DeleteSubnetGroup action deletes a subnet group.
+   * Grants permission to delete a subnet group
    *
    * Access Level: Write
    *
@@ -155,7 +155,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeClusters action returns information about all provisioned DAX clusters.
+   * Grants permission to return information about all provisioned DAX clusters
    *
    * Access Level: List
    *
@@ -166,7 +166,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeDefaultParameters action returns the default system parameter information for DAX.
+   * Grants permission to return the default system parameter information for DAX
    *
    * Access Level: List
    *
@@ -177,7 +177,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeEvents action returns events related to DAX clusters and parameter groups.
+   * Grants permission to return events related to DAX clusters and parameter groups
    *
    * Access Level: List
    *
@@ -188,7 +188,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeParameterGroups action returns a list of parameter group descriptions.
+   * Grants permission to return a list of parameter group descriptions
    *
    * Access Level: List
    *
@@ -199,7 +199,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeParameters action returns the detailed parameter list for a particular parameter group.
+   * Grants permission to return the detailed parameter list for a particular parameter group
    *
    * Access Level: Read
    *
@@ -210,7 +210,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The DescribeSubnetGroups action returns a list of subnet group descriptions.
+   * Grants permission to return a list of subnet group descriptions
    *
    * Access Level: List
    *
@@ -221,7 +221,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The GetItem action returns a set of attributes for the item with the given primary key.
+   * Grants permission to the GetItem operation that returns a set of attributes for the item with the given primary key
    *
    * Access Level: Read
    *
@@ -235,7 +235,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The IncreaseReplicationFactor action adds one or more nodes to a DAX cluster.
+   * Grants permission to add one or more nodes to a DAX cluster
    *
    * Access Level: Write
    *
@@ -246,7 +246,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The ListTags action returns a list all of the tags for a DAX cluster.
+   * Grants permission to return a list all of the tags for a DAX cluster
    *
    * Access Level: Read
    *
@@ -257,7 +257,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The PutItem action creates a new item, or replaces an old item with a new item.
+   * Grants permission to create a new item, or replace an old item with a new item
    *
    * Access Level: Write
    *
@@ -271,7 +271,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The Query action finds items based on primary key values. You can query any table or secondary index that has a composite primary key (a partition key and a sort key).
+   * Grants permission to use the primary key of a table or a secondary index to directly access items from that table or index
    *
    * Access Level: Read
    *
@@ -282,7 +282,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The RebootNode action reboots a single node of a DAX cluster.
+   * Grants permission to reboot a single node of a DAX cluster
    *
    * Access Level: Write
    *
@@ -293,7 +293,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The Scan action returns one or more items and item attributes by accessing every item in a table or a secondary index.
+   * Grants permission to return one or more items and item attributes by accessing every item in a table or a secondary index
    *
    * Access Level: Read
    *
@@ -304,7 +304,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The TagResource action associates a set of tags with a DAX resource.
+   * Grants permission to associate a set of tags with a DAX resource
    *
    * Access Level: Tagging
    *
@@ -315,7 +315,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The UntagResource action removes the association of tags from a DAX resource.
+   * Grants permission to remove the association of tags from a DAX resource
    *
    * Access Level: Tagging
    *
@@ -326,7 +326,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The UpdateCluster action modifies the settings for a DAX cluster.
+   * Grants permission to modify the settings for a DAX cluster
    *
    * Access Level: Write
    *
@@ -337,7 +337,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The UpdateItem action edits an existing item's attributes, or adds a new item to the table if it does not already exist.
+   * Grants permission to edit an existing item's attributes, or adds a new item to the table if it does not already exist
    *
    * Access Level: Write
    *
@@ -351,7 +351,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The UpdateParameterGroup action modifies the parameters of a parameter group.
+   * Grants permission to modify the parameters of a parameter group
    *
    * Access Level: Write
    *
@@ -362,7 +362,7 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * The UpdateSubnetGroup action modifies an existing subnet group.
+   * Grants permission to modify an existing subnet group
    *
    * Access Level: Write
    *
@@ -428,7 +428,9 @@ export class Dax extends PolicyStatement {
   }
 
   /**
-   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
+   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.htmlspecifying-conditions.html#FGAC_DDB.ConditionKeys
    *
    * Applies to actions:
    * - .toDeleteItem()

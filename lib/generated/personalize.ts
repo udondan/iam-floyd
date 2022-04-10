@@ -30,6 +30,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a batch segment job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchSegmentJob.html
+   */
+  public toCreateBatchSegmentJob() {
+    return this.to('CreateBatchSegmentJob');
+  }
+
+  /**
    * Grants permission to create a campaign
    *
    * Access Level: Write
@@ -104,6 +115,17 @@ export class Personalize extends PolicyStatement {
    */
   public toCreateFilter() {
     return this.to('CreateFilter');
+  }
+
+  /**
+   * Grants permission to create a recommender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html
+   */
+  public toCreateRecommender() {
+    return this.to('CreateRecommender');
   }
 
   /**
@@ -195,6 +217,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a recommender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteRecommender.html
+   */
+  public toDeleteRecommender() {
+    return this.to('DeleteRecommender');
+  }
+
+  /**
    * Grants permission to delete a schema
    *
    * Access Level: Write
@@ -236,6 +269,17 @@ export class Personalize extends PolicyStatement {
    */
   public toDescribeBatchInferenceJob() {
     return this.to('DescribeBatchInferenceJob');
+  }
+
+  /**
+   * Grants permission to describe a batch segment job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeBatchSegmentJob.html
+   */
+  public toDescribeBatchSegmentJob() {
+    return this.to('DescribeBatchSegmentJob');
   }
 
   /**
@@ -338,6 +382,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a recommender
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html
+   */
+  public toDescribeRecommender() {
+    return this.to('DescribeRecommender');
+  }
+
+  /**
    * Grants permission to describe a schema
    *
    * Access Level: Read
@@ -412,6 +467,17 @@ export class Personalize extends PolicyStatement {
    */
   public toListBatchInferenceJobs() {
     return this.to('ListBatchInferenceJobs');
+  }
+
+  /**
+   * Grants permission to list batch segment jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html
+   */
+  public toListBatchSegmentJobs() {
+    return this.to('ListBatchSegmentJobs');
   }
 
   /**
@@ -503,6 +569,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list recommenders
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecommenders.html
+   */
+  public toListRecommenders() {
+    return this.to('ListRecommenders');
+  }
+
+  /**
    * Grants permission to list schemas
    *
    * Access Level: List
@@ -590,9 +667,21 @@ export class Personalize extends PolicyStatement {
     return this.to('UpdateCampaign');
   }
 
+  /**
+   * Grants permission to update a recommender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateRecommender.html
+   */
+  public toUpdateRecommender() {
+    return this.to('UpdateRecommender');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateBatchInferenceJob',
+      'CreateBatchSegmentJob',
       'CreateCampaign',
       'CreateDataset',
       'CreateDatasetExportJob',
@@ -600,6 +689,7 @@ export class Personalize extends PolicyStatement {
       'CreateDatasetImportJob',
       'CreateEventTracker',
       'CreateFilter',
+      'CreateRecommender',
       'CreateSchema',
       'CreateSolution',
       'CreateSolutionVersion',
@@ -608,17 +698,20 @@ export class Personalize extends PolicyStatement {
       'DeleteDatasetGroup',
       'DeleteEventTracker',
       'DeleteFilter',
+      'DeleteRecommender',
       'DeleteSchema',
       'DeleteSolution',
       'PutEvents',
       'PutItems',
       'PutUsers',
       'StopSolutionVersionCreation',
-      'UpdateCampaign'
+      'UpdateCampaign',
+      'UpdateRecommender'
     ],
     Read: [
       'DescribeAlgorithm',
       'DescribeBatchInferenceJob',
+      'DescribeBatchSegmentJob',
       'DescribeCampaign',
       'DescribeDataset',
       'DescribeDatasetExportJob',
@@ -628,6 +721,7 @@ export class Personalize extends PolicyStatement {
       'DescribeFeatureTransformation',
       'DescribeFilter',
       'DescribeRecipe',
+      'DescribeRecommender',
       'DescribeSchema',
       'DescribeSolution',
       'DescribeSolutionVersion',
@@ -637,6 +731,7 @@ export class Personalize extends PolicyStatement {
     ],
     List: [
       'ListBatchInferenceJobs',
+      'ListBatchSegmentJobs',
       'ListCampaigns',
       'ListDatasetExportJobs',
       'ListDatasetGroups',
@@ -645,6 +740,7 @@ export class Personalize extends PolicyStatement {
       'ListEventTrackers',
       'ListFilters',
       'ListRecipes',
+      'ListRecommenders',
       'ListSchemas',
       'ListSolutionVersions',
       'ListSolutions'
@@ -653,6 +749,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type schema to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html#schema-examples
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -666,6 +764,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type featureTransformation to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -677,6 +777,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Dataset.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -690,6 +792,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type datasetGroup to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetGroup.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -701,6 +805,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type datasetImportJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetImportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -714,7 +820,7 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type datasetExportJob to the statement
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/export-data.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -728,6 +834,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type solution to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -739,6 +847,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type campaign to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Campaign.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -752,6 +862,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type eventTracker to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_EventTracker.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -763,6 +875,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type recipe to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -776,6 +890,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type algorithm to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -787,6 +903,8 @@ export class Personalize extends PolicyStatement {
 
   /**
    * Adds a resource of type batchInferenceJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -800,6 +918,8 @@ export class Personalize extends PolicyStatement {
   /**
    * Adds a resource of type filter to the statement
    *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Filter.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -807,5 +927,33 @@ export class Personalize extends PolicyStatement {
    */
   public onFilter(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:filter/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type recommender to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Recommender.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRecommender(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:recommender/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type batchSegmentJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:batch-segment-job/${ resourceId }`);
   }
 }

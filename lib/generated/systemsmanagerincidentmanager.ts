@@ -391,7 +391,7 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Adds a resource of type response-plan to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/response-plans.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/response-plans.html
    *
    * @param responsePlan - Identifier for the responsePlan.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -404,7 +404,7 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Adds a resource of type incident-record to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/incident-record.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-record.html
    *
    * @param responsePlan - Identifier for the responsePlan.
    * @param incidentRecord - Identifier for the incidentRecord.
@@ -418,7 +418,7 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Adds a resource of type replication-set to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/replication-set.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/replication-set.html
    *
    * @param replicationSet - Identifier for the replicationSet.
    * @param account - Account of the resource; defaults to empty string: all accounts.

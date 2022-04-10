@@ -86,6 +86,17 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deactivate an anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DeactivateAnomalyDetector.html
+   */
+  public toDeactivateAnomalyDetector() {
+    return this.to('DeactivateAnomalyDetector');
+  }
+
+  /**
    * Grants permission to delete an alert
    *
    * Access Level: Write
@@ -218,6 +229,17 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of related measures in an anomaly group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAnomalyGroupRelatedMetrics.html
+   */
+  public toListAnomalyGroupRelatedMetrics() {
+    return this.to('ListAnomalyGroupRelatedMetrics');
+  }
+
+  /**
    * Grants permission to get a list of anomaly groups
    *
    * Access Level: List
@@ -331,6 +353,7 @@ export class Lookoutmetrics extends PolicyStatement {
       'CreateAlert',
       'CreateAnomalyDetector',
       'CreateMetricSet',
+      'DeactivateAnomalyDetector',
       'DeleteAlert',
       'DeleteAnomalyDetector',
       'PutFeedback',
@@ -351,6 +374,7 @@ export class Lookoutmetrics extends PolicyStatement {
     List: [
       'ListAlerts',
       'ListAnomalyDetectors',
+      'ListAnomalyGroupRelatedMetrics',
       'ListAnomalyGroupSummaries',
       'ListAnomalyGroupTimeSeries',
       'ListMetricSets'

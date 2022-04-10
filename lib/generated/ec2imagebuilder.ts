@@ -172,6 +172,8 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCreatedResourceTagKeys()
    * - .ifCreatedResourceTag()
+   * - .ifEc2MetadataHttpTokens()
+   * - .ifStatusTopicArn()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -409,6 +411,25 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toImportComponent() {
     return this.to('ImportComponent');
+  }
+
+  /**
+   * Grants permission to import an image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeImportImageTasks
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportVmImage.html
+   */
+  public toImportVmImage() {
+    return this.to('ImportVmImage');
   }
 
   /**
@@ -670,6 +691,8 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCreatedResourceTagKeys()
    * - .ifCreatedResourceTag()
+   * - .ifEc2MetadataHttpTokens()
+   * - .ifStatusTopicArn()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -699,6 +722,7 @@ export class Imagebuilder extends PolicyStatement {
       'DeleteImageRecipe',
       'DeleteInfrastructureConfiguration',
       'ImportComponent',
+      'ImportVmImage',
       'StartImagePipelineExecution',
       'UpdateDistributionConfiguration',
       'UpdateImagePipeline',
@@ -949,5 +973,37 @@ export class Imagebuilder extends PolicyStatement {
    */
   public ifCreatedResourceTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`CreatedResourceTagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the EC2 Instance Metadata HTTP Token Requirement specified in the request
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-ec2metadatahttptokens
+   *
+   * Applies to actions:
+   * - .toCreateInfrastructureConfiguration()
+   * - .toUpdateInfrastructureConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEc2MetadataHttpTokens(value: string | string[], operator?: Operator | string) {
+    return this.if(`Ec2MetadataHttpTokens`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the SNS Topic Arn in the request to which terminal state notifications will be published
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-statustopicarn
+   *
+   * Applies to actions:
+   * - .toCreateInfrastructureConfiguration()
+   * - .toUpdateInfrastructureConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStatusTopicArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`StatusTopicArn`, value, operator || 'StringLike');
   }
 }

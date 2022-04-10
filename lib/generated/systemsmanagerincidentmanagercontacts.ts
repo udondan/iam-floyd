@@ -23,7 +23,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_AcceptPage.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_AcceptPage.html
    */
   public toAcceptPage() {
     return this.to('AcceptPage');
@@ -34,7 +34,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ActivateContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ActivateContactChannel.html
    */
   public toActivateContactChannel() {
     return this.to('ActivateContactChannel');
@@ -45,7 +45,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_AssociateContact.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_AssociateContact.html
    */
   public toAssociateContact() {
     return this.to('AssociateContact');
@@ -59,7 +59,7 @@ export class SsmContacts extends PolicyStatement {
    * Dependent actions:
    * - ssm-contacts:AssociateContact
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateContact.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateContact.html
    */
   public toCreateContact() {
     return this.to('CreateContact');
@@ -70,7 +70,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateContactChannel.html
    */
   public toCreateContactChannel() {
     return this.to('CreateContactChannel');
@@ -81,7 +81,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeactivateContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeactivateContactChannel.html
    */
   public toDeactivateContactChannel() {
     return this.to('DeactivateContactChannel');
@@ -92,7 +92,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteContact.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContact.html
    */
   public toDeleteContact() {
     return this.to('DeleteContact');
@@ -103,7 +103,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContactChannel.html
    */
   public toDeleteContactChannel() {
     return this.to('DeleteContactChannel');
@@ -114,7 +114,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteContactPolicy.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContactPolicy.html
    */
   public toDeleteContactPolicy() {
     return this.to('DeleteContactPolicy');
@@ -125,7 +125,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DescribeEngagement.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DescribeEngagement.html
    */
   public toDescribeEngagement() {
     return this.to('DescribeEngagement');
@@ -136,7 +136,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DescribePage.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DescribePage.html
    */
   public toDescribePage() {
     return this.to('DescribePage');
@@ -147,7 +147,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetContact.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContact.html
    */
   public toGetContact() {
     return this.to('GetContact');
@@ -158,7 +158,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContactChannel.html
    */
   public toGetContactChannel() {
     return this.to('GetContactChannel');
@@ -169,7 +169,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetContactPolicy.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContactPolicy.html
    */
   public toGetContactPolicy() {
     return this.to('GetContactPolicy');
@@ -180,7 +180,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListContactChannels.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListContactChannels.html
    */
   public toListContactChannels() {
     return this.to('ListContactChannels');
@@ -191,7 +191,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListContacts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListContacts.html
    */
   public toListContacts() {
     return this.to('ListContacts');
@@ -202,7 +202,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListEngagements.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListEngagements.html
    */
   public toListEngagements() {
     return this.to('ListEngagements');
@@ -213,7 +213,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListPageReceipts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPageReceipts.html
    */
   public toListPageReceipts() {
     return this.to('ListPageReceipts');
@@ -224,7 +224,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListPagesByContacts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByContacts.html
    */
   public toListPagesByContact() {
     return this.to('ListPagesByContact');
@@ -235,7 +235,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListPagesByEngagement.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByEngagement.html
    */
   public toListPagesByEngagement() {
     return this.to('ListPagesByEngagement');
@@ -246,7 +246,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -257,7 +257,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_PutContactPolicy.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_PutContactPolicy.html
    */
   public toPutContactPolicy() {
     return this.to('PutContactPolicy');
@@ -268,7 +268,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SendActivationCode.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_SendActivationCode.html
    */
   public toSendActivationCode() {
     return this.to('SendActivationCode');
@@ -279,7 +279,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_StartEngagement.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_StartEngagement.html
    */
   public toStartEngagement() {
     return this.to('StartEngagement');
@@ -290,7 +290,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_StopEngagement.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_StopEngagement.html
    */
   public toStopEngagement() {
     return this.to('StopEngagement');
@@ -301,7 +301,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -312,7 +312,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -326,7 +326,7 @@ export class SsmContacts extends PolicyStatement {
    * Dependent actions:
    * - ssm-contacts:AssociateContact
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateContact.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContact.html
    */
   public toUpdateContact() {
     return this.to('UpdateContact');
@@ -337,7 +337,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateContactChannel.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContactChannel.html
    */
   public toUpdateContactChannel() {
     return this.to('UpdateContactChannel');
@@ -348,7 +348,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateContactPolicy.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContactPolicy.html
    */
   public toUpdateContactPolicy() {
     return this.to('UpdateContactPolicy');
@@ -431,13 +431,14 @@ export class SsmContacts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/escalation.html
    *
+   * @param contactAlias - Identifier for the contactAlias.
    * @param engagementId - Identifier for the engagementId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onEngagement(engagementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ engagementId }`);
+  public onEngagement(contactAlias: string, engagementId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
   }
 
   /**

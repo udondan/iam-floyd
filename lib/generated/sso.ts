@@ -44,7 +44,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach an AWS managed policy to a permission set.
+   * Grants permission to attach an AWS managed policy to a permission set
    *
    * Access Level: Permissions management
    *
@@ -55,7 +55,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to assign access to a Principal for a specified AWS account using a specified permission set.
+   * Grants permission to assign access to a Principal for a specified AWS account using a specified permission set
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set.
+   * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set
    *
    * Access Level: Write
    *
@@ -180,7 +180,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the inline policy from a specified permission set.
+   * Grants permission to delete the inline policy from a specified permission set
    *
    * Access Level: Write
    *
@@ -244,7 +244,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the status of the assignment creation request.
+   * Grants permission to describe the status of the assignment creation request
    *
    * Access Level: Read
    *
@@ -255,7 +255,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the status of an assignment deletion request.
+   * Grants permission to describe the status of an assignment deletion request
    *
    * Access Level: Read
    *
@@ -288,7 +288,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the status for the given Permission Set Provisioning request.
+   * Grants permission to describe the status for the given Permission Set Provisioning request
    *
    * Access Level: Read
    *
@@ -321,7 +321,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach the attached AWS managed policy from the specified permission set.
+   * Grants permission to detach the attached AWS managed policy from the specified permission set
    *
    * Access Level: Permissions management
    *
@@ -379,7 +379,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to obtain the inline policy assigned to the permission set.
+   * Grants permission to obtain the inline policy assigned to the permission set
    *
    * Access Level: Read
    *
@@ -503,7 +503,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the status of the AWS account assignment creation requests for a specified SSO instance.
+   * Grants permission to list the status of the AWS account assignment creation requests for a specified SSO instance
    *
    * Access Level: List
    *
@@ -514,7 +514,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance.
+   * Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance
    *
    * Access Level: List
    *
@@ -525,7 +525,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the assignee of the specified AWS account with the specified permission set.
+   * Grants permission to list the assignee of the specified AWS account with the specified permission set
    *
    * Access Level: List
    *
@@ -536,7 +536,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the AWS accounts where the specified permission set is provisioned.
+   * Grants permission to list all the AWS accounts where the specified permission set is provisioned
    *
    * Access Level: List
    *
@@ -608,7 +608,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the SSO Instances that the caller has access to.
+   * Grants permission to list the SSO Instances that the caller has access to
    *
    * Access Level: List
    *
@@ -619,7 +619,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS managed policies that are attached to a specified permission set.
+   * Grants permission to list the AWS managed policies that are attached to a specified permission set
    *
    * Access Level: List
    *
@@ -630,7 +630,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the status of the Permission Set Provisioning requests for a specified SSO instance.
+   * Grants permission to list the status of the Permission Set Provisioning requests for a specified SSO instance
    *
    * Access Level: List
    *
@@ -650,7 +650,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the permission sets that are provisioned to a specified AWS account.
+   * Grants permission to list all the permission sets that are provisioned to a specified AWS account
    *
    * Access Level: List
    *
@@ -686,7 +686,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags that are attached to a specified resource.
+   * Grants permission to list the tags that are attached to a specified resource
    *
    * Access Level: Read
    *
@@ -697,7 +697,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to provision a specified permission set to the specified target.
+   * Grants permission to provision a specified permission set to the specified target
    *
    * Access Level: Write
    *
@@ -708,7 +708,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach an IAM inline policy to a permission set.
+   * Grants permission to attach an IAM inline policy to a permission set
    *
    * Access Level: Write
    *
@@ -784,7 +784,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a set of tags with a specified resource.
+   * Grants permission to associate a set of tags with a specified resource
    *
    * Access Level: Tagging
    *
@@ -799,7 +799,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a set of tags from a specified resource.
+   * Grants permission to disassociate a set of tags from a specified resource
    *
    * Access Level: Tagging
    *
@@ -924,7 +924,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the permission set.
+   * Grants permission to update the permission set
    *
    * Access Level: Permissions management
    */

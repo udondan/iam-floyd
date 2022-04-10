@@ -211,6 +211,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a presigned download URL for the specified release of the mobile SDK
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GenerateMobileSdkReleaseUrl.html
+   */
+  public toGenerateMobileSdkReleaseUrl() {
+    return this.to('GenerateMobileSdkReleaseUrl');
+  }
+
+  /**
    * Grants permission to retrieve details about an IPSet
    *
    * Access Level: Read
@@ -247,6 +258,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toGetManagedRuleSet() {
     return this.to('GetManagedRuleSet');
+  }
+
+  /**
+   * Grants permission to retrieve information for the specified mobile SDK release, including release notes and tags
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetMobileSdkRelease.html
+   */
+  public toGetMobileSdkRelease() {
+    return this.to('GetMobileSdkRelease');
   }
 
   /**
@@ -339,6 +361,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an array of managed rule group versions that are available for you to use
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroupVersions.html
+   */
+  public toListAvailableManagedRuleGroupVersions() {
+    return this.to('ListAvailableManagedRuleGroupVersions');
+  }
+
+  /**
    * Grants permission to retrieve an array of managed rule groups that are available for you to use
    *
    * Access Level: List
@@ -380,6 +413,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toListManagedRuleSets() {
     return this.to('ListManagedRuleSets');
+  }
+
+  /**
+   * Grants permission to retrieve a list of the available releases for the mobile SDK and the specified device platform
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListMobileSdkReleases.html
+   */
+  public toListMobileSdkReleases() {
+    return this.to('ListMobileSdkReleases');
   }
 
   /**
@@ -611,9 +655,11 @@ export class Wafv2 extends PolicyStatement {
     Read: [
       'CheckCapacity',
       'DescribeManagedRuleGroup',
+      'GenerateMobileSdkReleaseUrl',
       'GetIPSet',
       'GetLoggingConfiguration',
       'GetManagedRuleSet',
+      'GetMobileSdkRelease',
       'GetPermissionPolicy',
       'GetRateBasedStatementManagedKeys',
       'GetRegexPatternSet',
@@ -628,10 +674,12 @@ export class Wafv2 extends PolicyStatement {
       'PutPermissionPolicy'
     ],
     List: [
+      'ListAvailableManagedRuleGroupVersions',
       'ListAvailableManagedRuleGroups',
       'ListIPSets',
       'ListLoggingConfigurations',
       'ListManagedRuleSets',
+      'ListMobileSdkReleases',
       'ListRegexPatternSets',
       'ListResourcesForWebACL',
       'ListRuleGroups',

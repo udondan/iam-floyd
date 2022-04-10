@@ -472,7 +472,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigId(value: string | string[], operator?: Operator | string) {
-    return this.if(`configId`, value, operator || 'StringLike');
+    return this.if(`ConfigId`, value, operator || 'StringLike');
   }
 
   /**
@@ -487,7 +487,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigType(value: string | string[], operator?: Operator | string) {
-    return this.if(`configType`, value, operator || 'StringLike');
+    return this.if(`ConfigType`, value, operator || 'StringLike');
   }
 
   /**
@@ -502,7 +502,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifContactId(value: string | string[], operator?: Operator | string) {
-    return this.if(`contactId`, value, operator || 'StringLike');
+    return this.if(`ContactId`, value, operator || 'StringLike');
   }
 
   /**
@@ -517,7 +517,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataflowEndpointGroupId(value: string | string[], operator?: Operator | string) {
-    return this.if(`dataflowEndpointGroupId`, value, operator || 'StringLike');
+    return this.if(`DataflowEndpointGroupId`, value, operator || 'StringLike');
   }
 
   /**
@@ -532,7 +532,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGroundStationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundStationId`, value, operator || 'StringLike');
+    return this.if(`GroundStationId`, value, operator || 'StringLike');
   }
 
   /**
@@ -547,7 +547,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMissionProfileId(value: string | string[], operator?: Operator | string) {
-    return this.if(`missionProfileId`, value, operator || 'StringLike');
+    return this.if(`MissionProfileId`, value, operator || 'StringLike');
   }
 
   /**
@@ -562,6 +562,6 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSatelliteId(value: string | string[], operator?: Operator | string) {
-    return this.if(`satelliteId`, value, operator || 'StringLike');
+    return this.if(`SatelliteId`, value, operator || 'StringLike');
   }
 }

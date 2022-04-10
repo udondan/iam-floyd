@@ -111,6 +111,17 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
+   * Grants permission to show detailed information about a model packaging job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DescribeModelPackagingJob.html
+   */
+  public toDescribeModelPackagingJob() {
+    return this.to('DescribeModelPackagingJob');
+  }
+
+  /**
    * Grants permission to show detailed information about a project
    *
    * Access Level: Read
@@ -155,6 +166,17 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all model packaging jobs associated with a project
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListModelPackagingJobs.html
+   */
+  public toListModelPackagingJobs() {
+    return this.to('ListModelPackagingJobs');
+  }
+
+  /**
    * Grants permission to list all models associated with a project
    *
    * Access Level: List
@@ -177,7 +199,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list tags for a resource
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -210,6 +232,17 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a model packaging job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_StartModelPackagingJob.html
+   */
+  public toStartModelPackagingJob() {
+    return this.to('StartModelPackagingJob');
+  }
+
+  /**
    * Grants permission to start bulk detection of anomalies for a set of images stored in an S3 bucket
    *
    * Access Level: Write
@@ -232,7 +265,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to tag a resource with given key value pairs
+   * Grants permission to tag a resource with given key value pairs
    *
    * Access Level: Tagging
    *
@@ -247,7 +280,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to remove the tag with the given key from a resource
+   * Grants permission to remove the tag with the given key from a resource
    *
    * Access Level: Tagging
    *
@@ -281,6 +314,7 @@ export class Lookoutvision extends PolicyStatement {
       'DeleteProject',
       'DetectAnomalies',
       'StartModel',
+      'StartModelPackagingJob',
       'StartTrialDetection',
       'StopModel',
       'UpdateDatasetEntries'
@@ -288,12 +322,14 @@ export class Lookoutvision extends PolicyStatement {
     Read: [
       'DescribeDataset',
       'DescribeModel',
+      'DescribeModelPackagingJob',
       'DescribeProject',
       'DescribeTrialDetection',
       'ListDatasetEntries',
       'ListTagsForResource'
     ],
     List: [
+      'ListModelPackagingJobs',
       'ListModels',
       'ListProjects',
       'ListTrialDetections'

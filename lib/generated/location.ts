@@ -107,6 +107,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to calculate a route matrix using a given route calculator resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_CalculateRouteMatrix.html
+   */
+  public toCalculateRouteMatrix() {
+    return this.to('CalculateRouteMatrix');
+  }
+
+  /**
    * Grants permission to create a geofence-collection
    *
    * Access Level: Write
@@ -314,7 +325,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grant permission to retrieve the device position history
+   * Grants permission to retrieve the device position history
    *
    * Access Level: Read
    *
@@ -325,7 +336,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the geofence details from a geofence-collection.
+   * Grants permission to retrieve the geofence details from a geofence-collection
    *
    * Access Level: Read
    *
@@ -382,7 +393,7 @@ export class Geo extends PolicyStatement {
   /**
    * Grants permission to retrieve a list of devices and their latest positions from the given tracker resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListDevicePositions.html
    */
@@ -501,6 +512,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate suggestions for addresses and points of interest based on partial or misspelled free-form text
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForSuggestions.html
+   */
+  public toSearchPlaceIndexForSuggestions() {
+    return this.to('SearchPlaceIndexForSuggestions');
+  }
+
+  /**
    * Grants permission to geocode free-form text, such as an address, name, city or region
    *
    * Access Level: Read
@@ -542,7 +564,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the description of a geofence collection
+   * Grants permission to update a geofence collection
    *
    * Access Level: Write
    *
@@ -553,7 +575,40 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the description of a tracker resource
+   * Grants permission to update a map resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateMap.html
+   */
+  public toUpdateMap() {
+    return this.to('UpdateMap');
+  }
+
+  /**
+   * Grants permission to update a place index resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdatePlaceIndex.html
+   */
+  public toUpdatePlaceIndex() {
+    return this.to('UpdatePlaceIndex');
+  }
+
+  /**
+   * Grants permission to update a route calculator resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateRouteCalculator.html
+   */
+  public toUpdateRouteCalculator() {
+    return this.to('UpdateRouteCalculator');
+  }
+
+  /**
+   * Grants permission to update a tracker resource
    *
    * Access Level: Write
    *
@@ -584,11 +639,15 @@ export class Geo extends PolicyStatement {
       'DisassociateTrackerConsumer',
       'PutGeofence',
       'UpdateGeofenceCollection',
+      'UpdateMap',
+      'UpdatePlaceIndex',
+      'UpdateRouteCalculator',
       'UpdateTracker'
     ],
     Read: [
       'BatchGetDevicePosition',
       'CalculateRoute',
+      'CalculateRouteMatrix',
       'DescribeGeofenceCollection',
       'DescribeMap',
       'DescribePlaceIndex',
@@ -601,14 +660,15 @@ export class Geo extends PolicyStatement {
       'GetMapSprites',
       'GetMapStyleDescriptor',
       'GetMapTile',
+      'ListDevicePositions',
       'ListGeofences',
       'ListTagsForResource',
       'ListTrackerConsumers',
       'SearchPlaceIndexForPosition',
+      'SearchPlaceIndexForSuggestions',
       'SearchPlaceIndexForText'
     ],
     List: [
-      'ListDevicePositions',
       'ListGeofenceCollections',
       'ListMaps',
       'ListPlaceIndexes',

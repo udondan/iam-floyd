@@ -52,6 +52,28 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve repository scanning configuration for a list of repositories
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetRepositoryScanningConfiguration.html
+   */
+  public toBatchGetRepositoryScanningConfiguration() {
+    return this.to('BatchGetRepositoryScanningConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the image from the upstream registry and import it to your private registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchImportUpstreamImage.html
+   */
+  public toBatchImportUpstreamImage() {
+    return this.to('BatchImportUpstreamImage');
+  }
+
+  /**
    * Grants permission to inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed
    *
    * Access Level: Write
@@ -60,6 +82,17 @@ export class Ecr extends PolicyStatement {
    */
   public toCompleteLayerUpload() {
     return this.to('CompleteLayerUpload');
+  }
+
+  /**
+   * Grants permission to create new pull-through cache rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreatePullThroughCacheRule.html
+   */
+  public toCreatePullThroughCacheRule() {
+    return this.to('CreatePullThroughCacheRule');
   }
 
   /**
@@ -86,6 +119,17 @@ export class Ecr extends PolicyStatement {
    */
   public toDeleteLifecyclePolicy() {
     return this.to('DeleteLifecyclePolicy');
+  }
+
+  /**
+   * Grants permission to delete the pull-through cache rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeletePullThroughCacheRule.html
+   */
+  public toDeletePullThroughCacheRule() {
+    return this.to('DeletePullThroughCacheRule');
   }
 
   /**
@@ -152,6 +196,17 @@ export class Ecr extends PolicyStatement {
    */
   public toDescribeImages() {
     return this.to('DescribeImages');
+  }
+
+  /**
+   * Grants permission to describe the pull-through cache rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribePullThroughCacheRules.html
+   */
+  public toDescribePullThroughCacheRules() {
+    return this.to('DescribePullThroughCacheRules');
   }
 
   /**
@@ -232,6 +287,17 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve registry scanning configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRegistryScanningConfiguration.html
+   */
+  public toGetRegistryScanningConfiguration() {
+    return this.to('GetRegistryScanningConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve the repository policy for a specified repository
    *
    * Access Level: Read
@@ -268,6 +334,10 @@ export class Ecr extends PolicyStatement {
    * Grants permission to list the tags for an Amazon ECR resource
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
@@ -328,6 +398,17 @@ export class Ecr extends PolicyStatement {
    */
   public toPutRegistryPolicy() {
     return this.to('PutRegistryPolicy');
+  }
+
+  /**
+   * Grants permission to update registry scanning configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutRegistryScanningConfiguration.html
+   */
+  public toPutRegistryScanningConfiguration() {
+    return this.to('PutRegistryScanningConfiguration');
   }
 
   /**
@@ -405,6 +486,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
@@ -426,6 +511,7 @@ export class Ecr extends PolicyStatement {
     Read: [
       'BatchCheckLayerAvailability',
       'BatchGetImage',
+      'BatchGetRepositoryScanningConfiguration',
       'DescribeImageReplicationStatus',
       'DescribeImageScanFindings',
       'DescribeRegistry',
@@ -435,20 +521,25 @@ export class Ecr extends PolicyStatement {
       'GetLifecyclePolicy',
       'GetLifecyclePolicyPreview',
       'GetRegistryPolicy',
+      'GetRegistryScanningConfiguration',
       'GetRepositoryPolicy',
       'ListTagsForResource'
     ],
     Write: [
       'BatchDeleteImage',
+      'BatchImportUpstreamImage',
       'CompleteLayerUpload',
+      'CreatePullThroughCacheRule',
       'CreateRepository',
       'DeleteLifecyclePolicy',
+      'DeletePullThroughCacheRule',
       'DeleteRepository',
       'InitiateLayerUpload',
       'PutImage',
       'PutImageScanningConfiguration',
       'PutImageTagMutability',
       'PutLifecyclePolicy',
+      'PutRegistryScanningConfiguration',
       'PutReplicationConfiguration',
       'ReplicateImage',
       'StartImageScan',
@@ -463,6 +554,7 @@ export class Ecr extends PolicyStatement {
     ],
     List: [
       'DescribeImages',
+      'DescribePullThroughCacheRules',
       'ListImages'
     ],
     Tagging: [
@@ -490,7 +582,7 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource
+   * Filters access by tag-value associated with the resource
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *

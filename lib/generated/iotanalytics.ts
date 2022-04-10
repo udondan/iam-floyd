@@ -19,7 +19,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Puts a batch of messages into the specified channel.
+   * Puts a batch of messages into the specified channel
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Cancels reprocessing for the specified pipeline.
+   * Cancels reprocessing for the specified pipeline
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Creates a channel.
+   * Creates a channel
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Creates a dataset.
+   * Creates a dataset
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Generates content of the specified dataset (by executing the dataset actions).
+   * Generates content from the specified dataset (by executing the dataset actions)
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Creates a datastore.
+   * Creates a datastore
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Creates a pipeline.
+   * Creates a pipeline
    *
    * Access Level: Write
    *
@@ -112,7 +112,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified channel.
+   * Deletes the specified channel
    *
    * Access Level: Write
    *
@@ -123,7 +123,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified dataset.
+   * Deletes the specified dataset
    *
    * Access Level: Write
    *
@@ -134,7 +134,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the content of the specified dataset.
+   * Deletes the content of the specified dataset
    *
    * Access Level: Write
    *
@@ -145,7 +145,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified datastore.
+   * Deletes the specified datastore
    *
    * Access Level: Write
    *
@@ -156,7 +156,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified pipeline.
+   * Deletes the specified pipeline
    *
    * Access Level: Write
    *
@@ -167,7 +167,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes the specified channel.
+   * Describes the specified channel
    *
    * Access Level: Read
    *
@@ -178,7 +178,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes the specified dataset.
+   * Describes the specified dataset
    *
    * Access Level: Read
    *
@@ -189,7 +189,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes the specified datastore.
+   * Describes the specified datastore
    *
    * Access Level: Read
    *
@@ -200,7 +200,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes logging options for the the account.
+   * Describes logging options for the the account
    *
    * Access Level: Read
    *
@@ -211,7 +211,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes the specified pipeline.
+   * Describes the specified pipeline
    *
    * Access Level: Read
    *
@@ -222,7 +222,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Gets the content of the specified dataset.
+   * Gets the content of the specified dataset
    *
    * Access Level: Read
    *
@@ -233,7 +233,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists the channels for the account.
+   * Lists the channels for the account
    *
    * Access Level: List
    *
@@ -244,7 +244,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists information about dataset contents that have been created.
+   * Lists information about dataset contents that have been created
    *
    * Access Level: List
    *
@@ -255,7 +255,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists the datasets for the account.
+   * Lists the datasets for the account
    *
    * Access Level: List
    *
@@ -266,7 +266,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists the datastores for the account.
+   * Lists the datastores for the account
    *
    * Access Level: List
    *
@@ -277,7 +277,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists the pipelines for the account.
+   * Lists the pipelines for the account
    *
    * Access Level: List
    *
@@ -288,7 +288,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Lists the tags (metadata) which you have assigned to the resource.
+   * Lists the tags (metadata) which you have assigned to the resource
    *
    * Access Level: Read
    *
@@ -299,7 +299,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Puts logging options for the the account.
+   * Puts logging options for the the account
    *
    * Access Level: Write
    *
@@ -310,7 +310,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Runs the specified pipeline activity.
+   * Runs the specified pipeline activity
    *
    * Access Level: Read
    *
@@ -321,7 +321,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Samples the specified channel's data.
+   * Samples the specified channel's data
    *
    * Access Level: Read
    *
@@ -332,7 +332,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Starts reprocessing for the specified pipeline.
+   * Starts reprocessing for the specified pipeline
    *
    * Access Level: Write
    *
@@ -343,7 +343,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+   * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource
    *
    * Access Level: Tagging
    *
@@ -358,7 +358,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Removes the given tags (metadata) from the resource.
+   * Removes the given tags (metadata) from the resource
    *
    * Access Level: Tagging
    *
@@ -373,7 +373,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Updates the specified channel.
+   * Updates the specified channel
    *
    * Access Level: Write
    *
@@ -384,7 +384,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Updates the specified dataset.
+   * Updates the specified dataset
    *
    * Access Level: Write
    *
@@ -395,7 +395,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Updates the specified datastore.
+   * Updates the specified datastore
    *
    * Access Level: Write
    *
@@ -406,7 +406,7 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * Updates the specified pipeline.
+   * Updates the specified pipeline
    *
    * Access Level: Write
    *
@@ -538,7 +538,9 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
-   * The preface string for a tag key and value pair attached to an IoT Analytics resource.
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/userguide/tagging.html#tagging-iam
    *
    * Applies to resource types:
    * - channel

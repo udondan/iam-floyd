@@ -73,6 +73,36 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   * - ec2:CreateVpcEndpoint
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcAttribute
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcs
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#CreateClusterV2
+   */
+  public toCreateClusterV2() {
+    return this.to('CreateClusterV2');
+  }
+
+  /**
    * Grants permission to create an MSK configuration
    *
    * Access Level: Write
@@ -87,6 +117,11 @@ export class Kafka extends PolicyStatement {
    * Grants permission to delete an MSK cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DescribeVpcAttribute
+   * - ec2:DescribeVpcEndpoints
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
@@ -128,11 +163,22 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an MSK cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters-clusterarn.html#DescribeClusterV2
+   */
+  public toDescribeClusterV2() {
+    return this.to('DescribeClusterV2');
+  }
+
+  /**
    * Grants permission to describe an MSK configuration
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DescribeConfiguration
    */
   public toDescribeConfiguration() {
     return this.to('DescribeConfiguration');
@@ -143,7 +189,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions-revision.html#DescribeConfigurationRevision
    */
   public toDescribeConfigurationRevision() {
     return this.to('DescribeConfigurationRevision');
@@ -194,6 +240,17 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all MSK clusters in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#ListClustersV2
+   */
+  public toListClustersV2() {
+    return this.to('ListClustersV2');
+  }
+
+  /**
    * Grants permission to list all revisions for an MSK configuration in this account
    *
    * Access Level: List
@@ -209,7 +266,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#ListConfigurations
    */
   public toListConfigurations() {
     return this.to('ListConfigurations');
@@ -359,7 +416,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#UpdateConfiguration
    */
   public toUpdateConfiguration() {
     return this.to('UpdateConfiguration');
@@ -410,6 +467,7 @@ export class Kafka extends PolicyStatement {
       'BatchAssociateScramSecret',
       'BatchDisassociateScramSecret',
       'CreateCluster',
+      'CreateClusterV2',
       'CreateConfiguration',
       'DeleteCluster',
       'DeleteConfiguration',
@@ -427,6 +485,7 @@ export class Kafka extends PolicyStatement {
     Read: [
       'DescribeCluster',
       'DescribeClusterOperation',
+      'DescribeClusterV2',
       'DescribeConfiguration',
       'DescribeConfigurationRevision',
       'GetBootstrapBrokers',
@@ -436,6 +495,7 @@ export class Kafka extends PolicyStatement {
       'GetCompatibleKafkaVersions',
       'ListClusterOperations',
       'ListClusters',
+      'ListClustersV2',
       'ListConfigurationRevisions',
       'ListConfigurations',
       'ListKafkaVersions',
@@ -454,7 +514,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param uUID - Identifier for the uUID.
+   * @param uuid - Identifier for the uuid.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -462,7 +522,70 @@ export class Kafka extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uUID }`);
+  public onCluster(clusterName: string, uuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uuid }`);
+  }
+
+  /**
+   * Adds a resource of type configuration to the statement
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html
+   *
+   * @param configurationName - Identifier for the configurationName.
+   * @param uuid - Identifier for the uuid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConfiguration(configurationName: string, uuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }/${ uuid }`);
+  }
+
+  /**
+   * Adds a resource of type topic to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/topics
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param topicName - Identifier for the topicName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/groups
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param groupName - Identifier for the groupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
+  }
+
+  /**
+   * Adds a resource of type transactional-id to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/transactional_ids
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param transactionalId - Identifier for the transactionalId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
   }
 }

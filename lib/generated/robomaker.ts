@@ -227,6 +227,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldExportJob.html
    */
   public toCreateWorldExportJob() {
@@ -238,6 +242,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldGenerationJob.html
    */
   public toCreateWorldGenerationJob() {
@@ -248,6 +256,10 @@ export class Robomaker extends PolicyStatement {
    * Create a world template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldTemplate.html
    */
@@ -540,7 +552,7 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
-   * List tags for a RoboMaker resource.
+   * List tags for a RoboMaker resource
    *
    * Access Level: List
    *

@@ -447,6 +447,17 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get more details of a particular prediction
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventPredictionMetadata.html
+   */
+  public toGetEventPredictionMetadata() {
+    return this.to('GetEventPredictionMetadata');
+  }
+
+  /**
    * Grants permission to get all event types or a specific event type if name is provided. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetEventTypesResponse as part of your request. A null pagination token fetches the records from the beginning
    *
    * Access Level: List
@@ -543,6 +554,17 @@ export class Frauddetector extends PolicyStatement {
    */
   public toGetVariables() {
     return this.to('GetVariables');
+  }
+
+  /**
+   * Grants permission to get a list of past predictions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html
+   */
+  public toListEventPredictions() {
+    return this.to('ListEventPredictions');
   }
 
   /**
@@ -882,7 +904,8 @@ export class Frauddetector extends PolicyStatement {
       'GetModels',
       'GetOutcomes',
       'GetRules',
-      'GetVariables'
+      'GetVariables',
+      'ListEventPredictions'
     ],
     Read: [
       'DescribeDetector',
@@ -891,6 +914,7 @@ export class Frauddetector extends PolicyStatement {
       'GetDetectorVersion',
       'GetEvent',
       'GetEventPrediction',
+      'GetEventPredictionMetadata',
       'GetKMSEncryptionKey',
       'GetModelVersion',
       'ListTagsForResource'

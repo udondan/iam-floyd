@@ -19,7 +19,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a new DataIntegration
+   * Grants permission to create a new DataIntegration
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a DataIntegrationAssociation
+   * Grants permission to create a DataIntegrationAssociation
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a new EventIntegration
+   * Grants permission to create a new EventIntegration
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create an EventIntegrationAssociation
+   * Grants permission to create an EventIntegrationAssociation
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a DataIntegration
+   * Grants permission to delete a DataIntegration
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a DataIntegrationAssociation
+   * Grants permission to delete a DataIntegrationAssociation
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an EventIntegration
+   * Grants permission to delete an EventIntegration
    *
    * Access Level: Write
    *
@@ -114,7 +114,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an EventIntegrationAssociation
+   * Grants permission to delete an EventIntegrationAssociation
    *
    * Access Level: Write
    *
@@ -130,7 +130,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view details about DataIntegrations
+   * Grants permission to view details about DataIntegrations
    *
    * Access Level: Read
    *
@@ -144,7 +144,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view details about EventIntegrations
+   * Grants permission to view details about EventIntegrations
    *
    * Access Level: Read
    *
@@ -158,7 +158,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list DataIntegrationAssociations
+   * Grants permission to list DataIntegrationAssociations
    *
    * Access Level: List
    *
@@ -169,7 +169,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list DataIntegrations
+   * Grants permission to list DataIntegrations
    *
    * Access Level: List
    *
@@ -180,7 +180,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list EventIntegrationAssociations
+   * Grants permission to list EventIntegrationAssociations
    *
    * Access Level: Read
    *
@@ -191,7 +191,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list EventIntegrations
+   * Grants permission to list EventIntegrations
    *
    * Access Level: List
    *
@@ -232,7 +232,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to untag an Amazon AppIntegration resource
+   * Grants permission to untag an Amazon AppIntegration resource
    *
    * Access Level: Tagging
    *
@@ -247,7 +247,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to modify a DataIntegration
+   * Grants permission to modify a DataIntegration
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to modify an EventIntegration
+   * Grants permission to modify an EventIntegration
    *
    * Access Level: Write
    *

@@ -150,12 +150,13 @@ export class Iotfleethub extends PolicyStatement {
    *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onApplication(applicationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleethub::${ account || '*' }:application/${ applicationId }`);
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:iotfleethub:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
   }
 }

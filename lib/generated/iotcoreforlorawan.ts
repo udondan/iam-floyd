@@ -292,6 +292,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete QueuedMessages
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteQueuedMessages.html
+   */
+  public toDeleteQueuedMessages() {
+    return this.to('DeleteQueuedMessages');
+  }
+
+  /**
    * Grants permission to delete a ServiceProfile
    *
    * Access Level: Write
@@ -716,6 +727,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Queued Messages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListQueuedMessages.html
+   */
+  public toListQueuedMessages() {
+    return this.to('ListQueuedMessages');
+  }
+
+  /**
    * Grants permission to list information of available ServiceProfiles based on the AWS account
    *
    * Access Level: Read
@@ -1042,6 +1064,7 @@ export class Iotwireless extends PolicyStatement {
       'DeleteDeviceProfile',
       'DeleteFuotaTask',
       'DeleteMulticastGroup',
+      'DeleteQueuedMessages',
       'DeleteServiceProfile',
       'DeleteWirelessDevice',
       'DeleteWirelessGateway',
@@ -1102,6 +1125,7 @@ export class Iotwireless extends PolicyStatement {
       'ListMulticastGroups',
       'ListMulticastGroupsByFuotaTask',
       'ListPartnerAccounts',
+      'ListQueuedMessages',
       'ListServiceProfiles',
       'ListTagsForResource',
       'ListWirelessDevices',

@@ -33,6 +33,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the specified application to the specified entitlement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicationToEntitlement.html
+   */
+  public toAssociateApplicationToEntitlement() {
+    return this.to('AssociateApplicationToEntitlement');
+  }
+
+  /**
    * Grants permission to associate the specified fleet with the specified stack
    *
    * Access Level: Write
@@ -127,6 +138,17 @@ export class Appstream extends PolicyStatement {
    */
   public toCreateDirectoryConfig() {
     return this.to('CreateDirectoryConfig');
+  }
+
+  /**
+   * Grants permission to create an entitlement to control access to applications based on user attributes
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateEntitlement.html
+   */
+  public toCreateEntitlement() {
+    return this.to('CreateEntitlement');
   }
 
   /**
@@ -279,6 +301,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified entitlement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteEntitlement.html
+   */
+  public toDeleteEntitlement() {
+    return this.to('DeleteEntitlement');
+  }
+
+  /**
    * Grants permission to delete the specified fleet
    *
    * Access Level: Write
@@ -415,6 +448,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve one or all entitlements for the specified stack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeEntitlements.html
+   */
+  public toDescribeEntitlements() {
+    return this.to('DescribeEntitlements');
+  }
+
+  /**
    * Grants permission to retrieve a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described
    *
    * Access Level: Read
@@ -539,6 +583,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate the specified application from the specified entitlement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicationFromEntitlement.html
+   */
+  public toDisassociateApplicationFromEntitlement() {
+    return this.to('DisassociateApplicationFromEntitlement');
+  }
+
+  /**
    * Grants permission to disassociate the specified fleet from the specified stack
    *
    * Access Level: Write
@@ -594,6 +649,17 @@ export class Appstream extends PolicyStatement {
    */
   public toListAssociatedStacks() {
     return this.to('ListAssociatedStacks');
+  }
+
+  /**
+   * Grants permission to retrieve the applications that are associated with the specified entitlement
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListEntitledApplications.html
+   */
+  public toListEntitledApplications() {
+    return this.to('ListEntitledApplications');
   }
 
   /**
@@ -733,6 +799,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the specified fields for the specified entitlement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateEntitlement.html
+   */
+  public toUpdateEntitlement() {
+    return this.to('UpdateEntitlement');
+  }
+
+  /**
    * Grants permission to update the specified fleet. All attributes except the fleet name can be updated when the fleet is in the STOPPED state
    *
    * Access Level: Write
@@ -777,6 +854,7 @@ export class Appstream extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApplicationFleet',
+      'AssociateApplicationToEntitlement',
       'AssociateFleet',
       'BatchAssociateUserStack',
       'BatchDisassociateUserStack',
@@ -784,6 +862,7 @@ export class Appstream extends PolicyStatement {
       'CreateAppBlock',
       'CreateApplication',
       'CreateDirectoryConfig',
+      'CreateEntitlement',
       'CreateFleet',
       'CreateImageBuilder',
       'CreateImageBuilderStreamingURL',
@@ -795,6 +874,7 @@ export class Appstream extends PolicyStatement {
       'DeleteAppBlock',
       'DeleteApplication',
       'DeleteDirectoryConfig',
+      'DeleteEntitlement',
       'DeleteFleet',
       'DeleteImage',
       'DeleteImageBuilder',
@@ -804,6 +884,7 @@ export class Appstream extends PolicyStatement {
       'DeleteUser',
       'DisableUser',
       'DisassociateApplicationFleet',
+      'DisassociateApplicationFromEntitlement',
       'DisassociateFleet',
       'EnableUser',
       'ExpireSession',
@@ -814,6 +895,7 @@ export class Appstream extends PolicyStatement {
       'Stream',
       'UpdateApplication',
       'UpdateDirectoryConfig',
+      'UpdateEntitlement',
       'UpdateFleet',
       'UpdateImagePermissions',
       'UpdateStack'
@@ -823,6 +905,7 @@ export class Appstream extends PolicyStatement {
       'DescribeApplicationFleetAssociations',
       'DescribeApplications',
       'DescribeDirectoryConfigs',
+      'DescribeEntitlements',
       'DescribeFleets',
       'DescribeImageBuilders',
       'DescribeImagePermissions',
@@ -835,6 +918,9 @@ export class Appstream extends PolicyStatement {
       'ListAssociatedFleets',
       'ListAssociatedStacks',
       'ListTagsForResource'
+    ],
+    List: [
+      'ListEntitledApplications'
     ],
     Tagging: [
       'TagResource',

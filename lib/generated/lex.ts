@@ -19,7 +19,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates a new version based on the $LATEST version of the specified bot.
+   * Creates a new version based on the $LATEST version of the specified bot
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates a new version based on the $LATEST version of the specified intent.
+   * Creates a new version based on the $LATEST version of the specified intent
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates a new version based on the $LATEST version of the specified slot type.
+   * Creates a new version based on the $LATEST version of the specified slot type
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes all versions of a bot.
+   * Deletes all versions of a bot
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes an alias for a specific bot.
+   * Deletes an alias for a specific bot
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes the association between a Amazon Lex bot alias and a messaging platform.
+   * Deletes the association between a Amazon Lex bot alias and a messaging platform
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes a specific version of a bot.
+   * Deletes a specific version of a bot
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes all versions of an intent.
+   * Deletes all versions of an intent
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes a specific version of an intent.
+   * Deletes a specific version of an intent
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Removes session information for a specified bot, alias, and user ID.
+   * Removes session information for a specified bot, alias, and user ID
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes all versions of a slot type.
+   * Deletes all versions of a slot type
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes a specific version of a slot type.
+   * Deletes a specific version of a slot type
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Deletes the information Amazon Lex maintains for utterances on a specific bot and userId.
+   * Deletes the information Amazon Lex maintains for utterances on a specific bot and userId
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for a specific bot. In addition to the bot name, the bot version or alias is required.
+   * Returns information for a specific bot. In addition to the bot name, the bot version or alias is required
    *
    * Access Level: Read
    *
@@ -173,7 +173,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information about a Amazon Lex bot alias.
+   * Returns information about a Amazon Lex bot alias
    *
    * Access Level: Read
    *
@@ -184,7 +184,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns a list of aliases for a given Amazon Lex bot.
+   * Returns a list of aliases for a given Amazon Lex bot
    *
    * Access Level: List
    *
@@ -195,7 +195,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information about the association between a Amazon Lex bot and a messaging platform.
+   * Returns information about the association between a Amazon Lex bot and a messaging platform
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all of the channels associated with a single bot.
+   * Returns a list of all of the channels associated with a single bot
    *
    * Access Level: List
    *
@@ -217,7 +217,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for all versions of a specific bot.
+   * Returns information for all versions of a specific bot
    *
    * Access Level: List
    *
@@ -228,7 +228,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for the $LATEST version of all bots, subject to filters provided by the client.
+   * Returns information for the $LATEST version of all bots, subject to filters provided by the client
    *
    * Access Level: List
    *
@@ -239,7 +239,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information about a built-in intent.
+   * Returns information about a built-in intent
    *
    * Access Level: Read
    *
@@ -250,7 +250,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Gets a list of built-in intents that meet the specified criteria.
+   * Gets a list of built-in intents that meet the specified criteria
    *
    * Access Level: Read
    *
@@ -261,7 +261,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Gets a list of built-in slot types that meet the specified criteria.
+   * Gets a list of built-in slot types that meet the specified criteria
    *
    * Access Level: Read
    *
@@ -272,7 +272,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Exports Amazon Lex Resource in a requested format.
+   * Exports Amazon Lex Resource in a requested format
    *
    * Access Level: Read
    *
@@ -283,7 +283,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Gets information about an import job started with StartImport.
+   * Gets information about an import job started with StartImport
    *
    * Access Level: Read
    *
@@ -294,7 +294,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for a specific intent. In addition to the intent name, you must also specify the intent version.
+   * Returns information for a specific intent. In addition to the intent name, you must also specify the intent version
    *
    * Access Level: Read
    *
@@ -305,7 +305,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for all versions of a specific intent.
+   * Returns information for all versions of a specific intent
    *
    * Access Level: List
    *
@@ -316,7 +316,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for the $LATEST version of all intents, subject to filters provided by the client.
+   * Returns information for the $LATEST version of all intents, subject to filters provided by the client
    *
    * Access Level: List
    *
@@ -349,7 +349,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns session information for a specified bot, alias, and user ID.
+   * Returns session information for a specified bot, alias, and user ID
    *
    * Access Level: Read
    *
@@ -360,7 +360,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must also specify the slot type version.
+   * Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must also specify the slot type version
    *
    * Access Level: Read
    *
@@ -371,7 +371,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for all versions of a specific slot type.
+   * Returns information for all versions of a specific slot type
    *
    * Access Level: List
    *
@@ -382,7 +382,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns information for the $LATEST version of all slot types, subject to filters provided by the client.
+   * Returns information for the $LATEST version of all slot types, subject to filters provided by the client
    *
    * Access Level: List
    *
@@ -393,7 +393,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Returns a view of aggregate utterance data for versions of a bot for a recent time period.
+   * Returns a view of aggregate utterance data for versions of a bot for a recent time period
    *
    * Access Level: List
    *
@@ -415,7 +415,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Sends user input (text or speech) to Amazon Lex.
+   * Sends user input (text or speech) to Amazon Lex
    *
    * Access Level: Write
    *
@@ -426,7 +426,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Sends user input (text-only) to Amazon Lex.
+   * Sends user input (text-only) to Amazon Lex
    *
    * Access Level: Write
    *
@@ -437,7 +437,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates or updates the $LATEST version of a Amazon Lex conversational bot.
+   * Creates or updates the $LATEST version of a Amazon Lex conversational bot
    *
    * Access Level: Write
    *
@@ -452,7 +452,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates or updates an alias for the specific bot.
+   * Creates or updates an alias for the specific bot
    *
    * Access Level: Write
    *
@@ -467,7 +467,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates or updates the $LATEST version of an intent.
+   * Creates or updates the $LATEST version of an intent
    *
    * Access Level: Write
    *
@@ -478,7 +478,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates a new session or modifies an existing session with an Amazon Lex bot.
+   * Creates a new session or modifies an existing session with an Amazon Lex bot
    *
    * Access Level: Write
    *
@@ -489,7 +489,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Creates or updates the $LATEST version of a slot type.
+   * Creates or updates the $LATEST version of a slot type
    *
    * Access Level: Write
    *
@@ -500,7 +500,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Starts a job to import a resource to Amazon Lex.
+   * Starts a job to import a resource to Amazon Lex
    *
    * Access Level: Write
    *
@@ -712,7 +712,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Enables you to control access based on the intents included in the request.
+   * Enables you to control access based on the intents included in the request
    *
    * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
    *
@@ -724,7 +724,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Enables you to control access based on the slot types included in the request.
+   * Enables you to control access based on the slot types included in the request
    *
    * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
    *
@@ -736,7 +736,7 @@ export class Lex extends PolicyStatement {
   }
 
   /**
-   * Enables you to control access based on the channel type included in the request.
+   * Enables you to control access based on the channel type included in the request
    *
    * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
    *

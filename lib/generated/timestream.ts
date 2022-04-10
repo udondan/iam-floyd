@@ -19,7 +19,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permission to cancel queries in your account
+   * Grants permission to cancel queries in your account
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a database in your account.
+   * Grants permission to create a database in your account
    *
    * Access Level: Write
    *
@@ -45,7 +45,25 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a table in your account.
+   * Grants permission to create a scheduled query in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CreateScheduledQuery.html
+   */
+  public toCreateScheduledQuery() {
+    return this.to('CreateScheduledQuery');
+  }
+
+  /**
+   * Grants permission to create a table in your account
    *
    * Access Level: Write
    *
@@ -60,7 +78,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a database in your account.
+   * Grants permission to delete a database in your account
    *
    * Access Level: Write
    *
@@ -71,7 +89,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a table in your account.
+   * Grants permission to delete a scheduled query in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DeleteScheduledQuery.html
+   */
+  public toDeleteScheduledQuery() {
+    return this.to('DeleteScheduledQuery');
+  }
+
+  /**
+   * Grants permission to delete a table in your account
    *
    * Access Level: Write
    *
@@ -82,7 +111,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a database in your account.
+   * Grants permission to describe a database in your account
    *
    * Access Level: Read
    *
@@ -93,7 +122,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe timestream endpoints.
+   * Grants permission to describe timestream endpoints
    *
    * Access Level: List
    *
@@ -104,7 +133,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permissions to describe a table in your account
+   * Grants permission to describe a scheduled query in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DescribeScheduledQuery.html
+   */
+  public toDescribeScheduledQuery() {
+    return this.to('DescribeScheduledQuery');
+  }
+
+  /**
+   * Grants permission to describe a table in your account
    *
    * Access Level: Read
    *
@@ -115,7 +155,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permission to list databases in your account
+   * Grants permission to execute a scheduled query in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_ExecuteScheduledQuery.html
+   */
+  public toExecuteScheduledQuery() {
+    return this.to('ExecuteScheduledQuery');
+  }
+
+  /**
+   * Grants permission to list databases in your account
    *
    * Access Level: List
    *
@@ -126,7 +177,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permissions to list measures of a table in your account
+   * Grants permission to list measures of a table in your account
    *
    * Access Level: List
    *
@@ -137,7 +188,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permission to list tables in your account
+   * Grants permission to list scheduled queries in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_ListScheduledQueries.html
+   */
+  public toListScheduledQueries() {
+    return this.to('ListScheduledQueries');
+  }
+
+  /**
+   * Grants permission to list tables in your account
    *
    * Access Level: List
    *
@@ -148,7 +210,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list tags of a resource in your account.
+   * Grants permission to list tags of a resource in your account
    *
    * Access Level: List
    *
@@ -159,7 +221,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permission to issue 'select from table' queries
+   * Grants permission to issue prepare queries
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_PrepareQuery.html
+   */
+  public toPrepareQuery() {
+    return this.to('PrepareQuery');
+  }
+
+  /**
+   * Grants permission to issue 'select from table' queries
    *
    * Access Level: Read
    *
@@ -170,7 +243,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants Permissions to issue 'select 1' queries
+   * Grants permission to issue 'select 1' queries
    *
    * Access Level: Read
    *
@@ -181,7 +254,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to add tags to a resource.
+   * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
    *
@@ -196,7 +269,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to remove a tag from a resource.
+   * Grants permission to remove a tag from a resource
    *
    * Access Level: Tagging
    *
@@ -210,7 +283,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a database in your account.
+   * Grants permission to update a database in your account
    *
    * Access Level: Write
    *
@@ -221,7 +294,18 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a table in your account.
+   * Grants permission to update a scheduled query in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_UpdateScheduledQuery.html
+   */
+  public toUpdateScheduledQuery() {
+    return this.to('UpdateScheduledQuery');
+  }
+
+  /**
+   * Grants permission to update a table in your account
    *
    * Access Level: Write
    *
@@ -232,7 +316,7 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to ingest data to a table in your account.
+   * Grants permission to ingest data to a table in your account
    *
    * Access Level: Write
    *
@@ -246,16 +330,23 @@ export class Timestream extends PolicyStatement {
     Write: [
       'CancelQuery',
       'CreateDatabase',
+      'CreateScheduledQuery',
       'CreateTable',
       'DeleteDatabase',
+      'DeleteScheduledQuery',
       'DeleteTable',
+      'ExecuteScheduledQuery',
+      'PrepareQuery',
       'UpdateDatabase',
+      'UpdateScheduledQuery',
       'UpdateTable',
       'WriteRecords'
     ],
     Read: [
       'DescribeDatabase',
+      'DescribeScheduledQuery',
       'DescribeTable',
+      'ListScheduledQueries',
       'Select',
       'SelectValues'
     ],
@@ -305,5 +396,22 @@ export class Timestream extends PolicyStatement {
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }/table/${ tableName }`);
+  }
+
+  /**
+   * Adds a resource of type scheduled-query to the statement
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ScheduledQuery.html
+   *
+   * @param scheduledQueryName - Identifier for the scheduledQueryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:timestream:${ region || '*' }:${ account || '*' }:scheduled-query/${ scheduledQueryName }`);
   }
 }

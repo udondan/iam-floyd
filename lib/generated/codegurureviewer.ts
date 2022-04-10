@@ -233,7 +233,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_TagResource.html
    */
@@ -247,7 +248,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_UnTagResource.html
    */
@@ -326,6 +328,8 @@ export class CodeguruReviewer extends PolicyStatement {
 
   /**
    * Adds a resource of type connection to the statement
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
    *
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -45,6 +45,21 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an integration workflow in a domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateIntegrationWorkflow.html
+   */
+  public toCreateIntegrationWorkflow() {
+    return this.to('CreateIntegrationWorkflow');
+  }
+
+  /**
    * Grants permission to create a profile in the domain
    *
    * Access Level: Write
@@ -122,6 +137,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a workflow in a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteWorkflow.html
+   */
+  public toDeleteWorkflow() {
+    return this.to('DeleteWorkflow');
+  }
+
+  /**
    * Grants permission to get a preview of auto merging in a domain
    *
    * Access Level: Read
@@ -196,6 +222,28 @@ export class Profile extends PolicyStatement {
    */
   public toGetProfileObjectTypeTemplate() {
     return this.to('GetProfileObjectTypeTemplate');
+  }
+
+  /**
+   * Grants permission to get workflow details in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetWorkflow.html
+   */
+  public toGetWorkflow() {
+    return this.to('GetWorkflow');
+  }
+
+  /**
+   * Grants permission to get workflow step details in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetWorkflowSteps.html
+   */
+  public toGetWorkflowSteps() {
+    return this.to('GetWorkflowSteps');
   }
 
   /**
@@ -284,6 +332,17 @@ export class Profile extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list all the workflows in a specific domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListWorkflows.html
+   */
+  public toListWorkflows() {
+    return this.to('ListWorkflows');
   }
 
   /**
@@ -405,6 +464,7 @@ export class Profile extends PolicyStatement {
     Write: [
       'AddProfileKey',
       'CreateDomain',
+      'CreateIntegrationWorkflow',
       'CreateProfile',
       'DeleteDomain',
       'DeleteIntegration',
@@ -412,6 +472,7 @@ export class Profile extends PolicyStatement {
       'DeleteProfileKey',
       'DeleteProfileObject',
       'DeleteProfileObjectType',
+      'DeleteWorkflow',
       'MergeProfiles',
       'PutIntegration',
       'PutProfileObject',
@@ -426,6 +487,8 @@ export class Profile extends PolicyStatement {
       'GetIntegration',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
+      'GetWorkflow',
+      'GetWorkflowSteps',
       'ListTagsForResource',
       'SearchProfiles'
     ],
@@ -437,7 +500,8 @@ export class Profile extends PolicyStatement {
       'ListIntegrations',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
-      'ListProfileObjects'
+      'ListProfileObjects',
+      'ListWorkflows'
     ],
     Tagging: [
       'TagResource',

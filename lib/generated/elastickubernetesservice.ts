@@ -162,6 +162,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister an External cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeregisterCluster.html
+   */
+  public toDeregisterCluster() {
+    return this.to('DeregisterCluster');
+  }
+
+  /**
    * Grants permission to retrieve descriptive information about an Amazon EKS add-on
    *
    * Access Level: Read
@@ -327,6 +338,21 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register an External cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterCluster.html
+   */
+  public toRegisterCluster() {
+    return this.to('RegisterCluster');
+  }
+
+  /**
    * Grants permission to tag the specified resource
    *
    * Access Level: Tagging
@@ -433,7 +459,9 @@ export class Eks extends PolicyStatement {
       'DeleteCluster',
       'DeleteFargateProfile',
       'DeleteNodegroup',
+      'DeregisterCluster',
       'DisassociateIdentityProviderConfig',
+      'RegisterCluster',
       'UpdateAddon',
       'UpdateClusterConfig',
       'UpdateClusterVersion',

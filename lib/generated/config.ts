@@ -885,6 +885,10 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html
    */
   public toPutStoredQuery() {

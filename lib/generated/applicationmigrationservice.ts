@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [mgn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationmigrationservice.html).
@@ -666,6 +666,7 @@ export class Mgn extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifCreateAction()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mgn/latest/APIReference/API_TagResource.html
@@ -946,5 +947,20 @@ export class Mgn extends PolicyStatement {
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/supported-iam-actions-tagging.html
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
   }
 }

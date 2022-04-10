@@ -19,7 +19,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a virtual private cloud (VPC) subnet endpoint to a custom routing accelerator endpoint group.
+   * Grants permission to add a virtual private cloud (VPC) subnet endpoint to a custom routing accelerator endpoint group
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).
+   * Grants permission to advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP)
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to allows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet.
+   * Grants permission to allows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a standard accelerator.
+   * Grants permission to create a standard accelerator
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an endpoint group for the specified listener for a custom routing accelerator.
+   * Grants permission to create an endpoint group for the specified listener for a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -93,7 +93,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a listener to process inbound connections from clients to a custom routing accelerator.
+   * Grants permission to create a listener to process inbound connections from clients to a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add an endpoint group to a standard accelerator listener.
+   * Grants permission to add an endpoint group to a standard accelerator listener
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a listener to a standard accelerator.
+   * Grants permission to add a listener to a standard accelerator
    *
    * Access Level: Write
    *
@@ -126,7 +126,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a standard accelerator.
+   * Grants permission to delete a standard accelerator
    *
    * Access Level: Write
    *
@@ -137,7 +137,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a custom routing accelerator.
+   * Grants permission to delete a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an endpoint group from a listener for a custom routing accelerator.
+   * Grants permission to delete an endpoint group from a listener for a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -159,7 +159,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a listener for a custom routing accelerator.
+   * Grants permission to delete a listener for a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an endpoint group associated with a standard accelerator listener.
+   * Grants permission to delete an endpoint group associated with a standard accelerator listener
    *
    * Access Level: Write
    *
@@ -181,7 +181,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a listener from a standard accelerator.
+   * Grants permission to delete a listener from a standard accelerator
    *
    * Access Level: Write
    *
@@ -192,7 +192,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disallows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet.
+   * Grants permission to disallows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet
    *
    * Access Level: Write
    *
@@ -203,7 +203,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to releases the specified address range that you provisioned for use with your accelerator through bring your own IP addresses (BYOIP).
+   * Grants permission to releases the specified address range that you provisioned for use with your accelerator through bring your own IP addresses (BYOIP)
    *
    * Access Level: Write
    *
@@ -214,7 +214,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a standard accelerator.
+   * Grants permissions to describe a standard accelerator
    *
    * Access Level: Read
    *
@@ -225,7 +225,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a standard accelerator attributes.
+   * Grants permission to describe a standard accelerator attributes
    *
    * Access Level: Read
    *
@@ -236,7 +236,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a custom routing accelerator.
+   * Grants permission to describe a custom routing accelerator
    *
    * Access Level: Read
    *
@@ -247,7 +247,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the attributes of a custom routing accelerator.
+   * Grants permission to describe the attributes of a custom routing accelerator
    *
    * Access Level: Read
    *
@@ -258,7 +258,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an endpoint group for a custom routing accelerator.
+   * Grants permission to describe an endpoint group for a custom routing accelerator
    *
    * Access Level: Read
    *
@@ -269,7 +269,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a listener for a custom routing accelerator.
+   * Grants permission to describe a listener for a custom routing accelerator
    *
    * Access Level: Read
    *
@@ -280,7 +280,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a standard accelerator endpoint group.
+   * Grants permission to describe a standard accelerator endpoint group
    *
    * Access Level: Read
    *
@@ -291,7 +291,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a standard accelerator listener.
+   * Grants permission to describe a standard accelerator listener
    *
    * Access Level: Read
    *
@@ -302,7 +302,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all standard accelerators.
+   * Grants permission to list all standard accelerators
    *
    * Access Level: List
    *
@@ -313,7 +313,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the BYOIP cidrs.
+   * Grants permission to list the BYOIP cidrs
    *
    * Access Level: List
    *
@@ -324,7 +324,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the custom routing accelerators for an AWS account.
+   * Grants permission to list the custom routing accelerators for an AWS account
    *
    * Access Level: List
    *
@@ -335,7 +335,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the endpoint groups that are associated with a listener for a custom routing accelerator.
+   * Grants permission to list the endpoint groups that are associated with a listener for a custom routing accelerator
    *
    * Access Level: List
    *
@@ -346,7 +346,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the listeners for a custom routing accelerator.
+   * Grants permission to list the listeners for a custom routing accelerator
    *
    * Access Level: List
    *
@@ -357,7 +357,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the port mappings for a custom routing accelerator.
+   * Grants permission to list the port mappings for a custom routing accelerator
    *
    * Access Level: List
    *
@@ -379,7 +379,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all endpoint groups associated with a standard accelerator listener.
+   * Grants permission to list all endpoint groups associated with a standard accelerator listener
    *
    * Access Level: List
    *
@@ -390,7 +390,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all listeners associated with a standard accelerator.
+   * Grants permission to list all listeners associated with a standard accelerator
    *
    * Access Level: List
    *
@@ -401,7 +401,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for a globalaccelerator resource.
+   * Grants permission to list tags for a globalaccelerator resource
    *
    * Access Level: Read
    *
@@ -412,7 +412,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to provisions an address range for use with your accelerator through bring your own IP addresses (BYOIP).
+   * Grants permission to provisions an address range for use with your accelerator through bring your own IP addresses (BYOIP)
    *
    * Access Level: Write
    *
@@ -423,7 +423,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove virtual private cloud (VPC) subnet endpoints from a custom routing accelerator endpoint group.
+   * Grants permission to remove virtual private cloud (VPC) subnet endpoints from a custom routing accelerator endpoint group
    *
    * Access Level: Write
    *
@@ -434,7 +434,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to a globalaccelerator resource.
+   * Grants permission to add tags to a globalaccelerator resource
    *
    * Access Level: Tagging
    *
@@ -449,7 +449,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from a globalaccelerator resource.
+   * Grants permission to remove tags from a globalaccelerator resource
    *
    * Access Level: Tagging
    *
@@ -463,7 +463,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a standard accelerator.
+   * Grants permission to update a standard accelerator
    *
    * Access Level: Write
    *
@@ -474,7 +474,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a standard accelerator attributes.
+   * Grants permission to update a standard accelerator attributes
    *
    * Access Level: Write
    *
@@ -485,7 +485,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a custom routing accelerator.
+   * Grants permission to update a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -496,7 +496,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the attributes for a custom routing accelerator.
+   * Grants permission to update the attributes for a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -507,7 +507,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a listener for a custom routing accelerator.
+   * Grants permission to update a listener for a custom routing accelerator
    *
    * Access Level: Write
    *
@@ -518,7 +518,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an endpoint group on a standard accelerator listener.
+   * Grants permission to update an endpoint group on a standard accelerator listener
    *
    * Access Level: Write
    *
@@ -529,7 +529,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a listener on a standard accelerator.
+   * Grants permission to update a listener on a standard accelerator
    *
    * Access Level: Write
    *
@@ -540,7 +540,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stops advertising a BYOIP IPv4 address.
+   * Grants permission to stops advertising a BYOIP IPv4 address
    *
    * Access Level: Write
    *

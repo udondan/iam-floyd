@@ -19,7 +19,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Accepts a directory sharing request that was sent from the directory owner account.
+   * Grants permission to accept a directory sharing request that was sent from the directory owner account
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Adds a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services
+   * Grants permission to add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services
    *
    * Access Level: Write
    *
@@ -46,7 +46,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Adds two domain controllers in the specified Region for the specified directory.
+   * Grants permission to add two domain controllers in the specified Region for the specified directory
    *
    * Access Level: Write
    *
@@ -57,7 +57,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
+   * Grants permission to add or overwrite one or more tags for the specified Amazon Directory Services directory
    *
    * Access Level: Tagging
    *
@@ -75,7 +75,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Authorizes an application for your AWS Directory.
+   * Grants permission to authorize an application for your AWS Directory
    *
    * Access Level: Write
    */
@@ -84,7 +84,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Cancels an in-progress schema extension to a Microsoft AD directory.
+   * Grants permission to cancel an in-progress schema extension to a Microsoft AD directory
    *
    * Access Level: Write
    *
@@ -95,7 +95,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Verifies that the alias is available for use.
+   * Grants permission to verify that the alias is available for use
    *
    * Access Level: Read
    */
@@ -104,9 +104,9 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates an AD Connector to connect to an on-premises directory.
+   * Grants permission to create an AD Connector to connect to an on-premises directory
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -129,7 +129,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates an alias for a directory and assigns the alias to the directory.
+   * Grants permission to create an alias for a directory and assigns the alias to the directory
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a computer account in the specified directory, and joins the computer to the directory.
+   * Grants permission to create a computer account in the specified directory, and joins the computer to the directory
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a conditional forwarder associated with your AWS directory.
+   * Grants permission to create a conditional forwarder associated with your AWS directory
    *
    * Access Level: Write
    *
@@ -162,9 +162,9 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a Simple AD directory.
+   * Grants permission to create a Simple AD directory
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -187,9 +187,9 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a IdentityPool Directory in the AWS cloud.
+   * Grants permission to create an IdentityPool Directory in the AWS cloud
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -200,7 +200,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account.
+   * Grants permission to create a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account
    *
    * Access Level: Write
    *
@@ -211,9 +211,9 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a Microsoft AD in the AWS cloud.
+   * Grants permission to create a Microsoft AD in the AWS cloud
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -236,7 +236,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
+   * Grants permission to create a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud
    *
    * Access Level: Write
    *
@@ -247,7 +247,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.
+   * Grants permission to initiate the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain
    *
    * Access Level: Write
    *
@@ -258,7 +258,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes a conditional forwarder that has been set up for your AWS directory.
+   * Grants permission to delete a conditional forwarder that has been set up for your AWS directory
    *
    * Access Level: Write
    *
@@ -269,7 +269,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes an AWS Directory Service directory.
+   * Grants permission to delete an AWS Directory Service directory
    *
    * Access Level: Write
    *
@@ -287,7 +287,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified log subscription.
+   * Grants permission to delete the specified log subscription
    *
    * Access Level: Write
    *
@@ -298,7 +298,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes a directory snapshot.
+   * Grants permission to delete a directory snapshot
    *
    * Access Level: Write
    *
@@ -309,7 +309,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+   * Grants permission to delete an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain
    *
    * Access Level: Write
    *
@@ -320,7 +320,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deletes from the system the certificate that was registered for a secured LDAP connection.
+   * Grants permission to delete from the system the certificate that was registered for a secured LDAP connection
    *
    * Access Level: Write
    *
@@ -331,7 +331,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Removes the specified directory as a publisher to the specified SNS topic.
+   * Grants permission to remove the specified directory as a publisher to the specified SNS topic
    *
    * Access Level: Write
    *
@@ -342,7 +342,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Displays information about the certificate registered for a secured LDAP connection.
+   * Grants permission to display information about the certificate registered for a secured LDAP connection
    *
    * Access Level: Read
    *
@@ -353,7 +353,18 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains information about the conditional forwarders for this account.
+   * Grants permission to retrieve information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only SmartCard is supported
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeClientAuthenticationSettings.html
+   */
+  public toDescribeClientAuthenticationSettings() {
+    return this.to('DescribeClientAuthenticationSettings');
+  }
+
+  /**
+   * Grants permission to obtain information about the conditional forwarders for this account
    *
    * Access Level: Read
    *
@@ -364,7 +375,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains information about the directories that belong to this account.
+   * Grants permission to obtain information about the directories that belong to this account
    *
    * Access Level: List
    *
@@ -375,7 +386,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Provides information about any domain controllers in your directory.
+   * Grants permission to provide information about any domain controllers in your directory
    *
    * Access Level: Read
    *
@@ -386,7 +397,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains information about which SNS topics receive status messages from the specified directory.
+   * Grants permission to obtain information about which SNS topics receive status messages from the specified directory
    *
    * Access Level: Read
    *
@@ -397,7 +408,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Describes the status of LDAP security for the specified directory.
+   * Grants permission to describe the status of LDAP security for the specified directory
    *
    * Access Level: Read
    *
@@ -408,7 +419,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Provides information about the Regions that are configured for multi-Region replication.
+   * Grants permission to provide information about the Regions that are configured for multi-Region replication
    *
    * Access Level: Read
    *
@@ -419,7 +430,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Returns the shared directories in your account.
+   * Grants permission to return the shared directories in your account
    *
    * Access Level: Read
    *
@@ -430,7 +441,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains information about the directory snapshots that belong to this account.
+   * Grants permission to obtain information about the directory snapshots that belong to this account
    *
    * Access Level: Read
    *
@@ -441,7 +452,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains information about the trust relationships for this account.
+   * Grants permission to obtain information about the trust relationships for this account
    *
    * Access Level: Read
    *
@@ -452,7 +463,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Disables alternative client authentication methods for the specified directory.
+   * Grants permission to disable alternative client authentication methods for the specified directory
    *
    * Access Level: Write
    *
@@ -463,7 +474,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Deactivates LDAP secure calls for the specified directory.
+   * Grants permission to deactivate LDAP secure calls for the specified directory
    *
    * Access Level: Write
    *
@@ -474,7 +485,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.
+   * Grants permission to disable multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory
    *
    * Access Level: Write
    *
@@ -485,7 +496,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Disables single-sign on for a directory.
+   * Grants permission to disable single-sign on for a directory
    *
    * Access Level: Write
    *
@@ -496,7 +507,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Enables alternative client authentication methods for the specified directory.
+   * Grants permission to enable alternative client authentication methods for the specified directory
    *
    * Access Level: Write
    *
@@ -507,7 +518,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Activates the switch for the specific directory to always use LDAP secure calls.
+   * Grants permission to activate the switch for the specific directory to always use LDAP secure calls
    *
    * Access Level: Write
    *
@@ -518,7 +529,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.
+   * Grants permission to enable multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory
    *
    * Access Level: Write
    *
@@ -529,7 +540,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Enables single-sign on for a directory.
+   * Grants permission to enable single-sign on for a directory
    *
    * Access Level: Write
    *
@@ -540,7 +551,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to retrieve the details of the authorized applications on a directory
    *
    * Access Level: Read
    *
@@ -551,7 +562,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains directory limit information for the current region.
+   * Grants permission to obtain directory limit information for the current region
    *
    * Access Level: Read
    *
@@ -562,7 +573,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains the manual snapshot limits for a directory.
+   * Grants permission to obtain the manual snapshot limits for a directory
    *
    * Access Level: Read
    *
@@ -573,7 +584,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Obtains the aws applications authorized for a directory.
+   * Grants permission to obtain the AWS applications authorized for a directory
    *
    * Access Level: Read
    */
@@ -582,7 +593,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+   * Grants permission to list all the certificates registered for a secured LDAP connection, for the specified directory
    *
    * Access Level: List
    *
@@ -593,7 +604,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Lists the address blocks that you have added to a directory.
+   * Grants permission to list the address blocks that you have added to a directory
    *
    * Access Level: Read
    *
@@ -604,7 +615,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Lists the active log subscriptions for the AWS account.
+   * Grants permission to list the active log subscriptions for the AWS account
    *
    * Access Level: Read
    *
@@ -615,7 +626,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Lists all schema extensions applied to a Microsoft AD Directory.
+   * Grants permission to list all schema extensions applied to a Microsoft AD Directory
    *
    * Access Level: List
    *
@@ -626,7 +637,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Lists all tags on an Amazon Directory Services directory.
+   * Grants permission to list all tags on an Amazon Directory Services directory
    *
    * Access Level: Read
    *
@@ -637,7 +648,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Registers a certificate for secured LDAP connection.
+   * Grants permission to register a certificate for secured LDAP connection
    *
    * Access Level: Write
    *
@@ -648,7 +659,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Associates a directory with an SNS topic.
+   * Grants permission to associate a directory with an SNS topic
    *
    * Access Level: Write
    *
@@ -662,7 +673,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Rejects a directory sharing request that was sent from the directory owner account.
+   * Grants permission to reject a directory sharing request that was sent from the directory owner account
    *
    * Access Level: Write
    *
@@ -673,7 +684,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Removes IP address blocks from a directory.
+   * Grants permission to remove IP address blocks from a directory
    *
    * Access Level: Write
    *
@@ -684,7 +695,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation.
+   * Grants permission to stop all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation
    *
    * Access Level: Write
    *
@@ -695,7 +706,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Removes tags from an Amazon Directory Services directory.
+   * Grants permission to remove tags from an Amazon Directory Services directory
    *
    * Access Level: Tagging
    *
@@ -713,7 +724,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+   * Grants permission to reset the password for any user in your AWS Managed Microsoft AD or Simple AD directory
    *
    * Access Level: Write
    *
@@ -724,7 +735,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Restores a directory using an existing directory snapshot.
+   * Grants permission to restore a directory using an existing directory snapshot
    *
    * Access Level: Write
    *
@@ -735,7 +746,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Shares a specified directory in your AWS account (directory owner) with another AWS account (directory consumer). With this operation you can use your directory from any AWS account and from any Amazon VPC within an AWS Region.
+   * Grants permission to share a specified directory in your AWS account (directory owner) with another AWS account (directory consumer). With this operation you can use your directory from any AWS account and from any Amazon VPC within an AWS Region
    *
    * Access Level: Write
    *
@@ -746,7 +757,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Applies a schema extension to a Microsoft AD directory.
+   * Grants permission to apply a schema extension to a Microsoft AD directory
    *
    * Access Level: Write
    *
@@ -757,7 +768,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Unauthorizes an application from your AWS Directory.
+   * Grants permission to unauthorize an application from your AWS Directory
    *
    * Access Level: Write
    */
@@ -766,7 +777,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Stops the directory sharing between the directory owner and consumer accounts.
+   * Grants permission to stop the directory sharing between the directory owner and consumer accounts
    *
    * Access Level: Write
    *
@@ -777,7 +788,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Updates a conditional forwarder that has been set up for your AWS directory.
+   * Grants permission to update a conditional forwarder that has been set up for your AWS directory
    *
    * Access Level: Write
    *
@@ -788,7 +799,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Adds or removes domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request.
+   * Grants permission to add or remove domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request
    *
    * Access Level: Write
    *
@@ -799,7 +810,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory.
+   * Grants permission to update the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory
    *
    * Access Level: Write
    *
@@ -810,7 +821,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active Directory.
+   * Grants permission to update the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active Directory
    *
    * Access Level: Write
    *
@@ -821,7 +832,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+   * Grants permission to verify a trust relationship between your Microsoft AD in the AWS cloud and an external domain
    *
    * Access Level: Read
    *
@@ -838,10 +849,14 @@ export class Ds extends PolicyStatement {
       'AddRegion',
       'AuthorizeApplication',
       'CancelSchemaExtension',
+      'ConnectDirectory',
       'CreateAlias',
       'CreateComputer',
       'CreateConditionalForwarder',
+      'CreateDirectory',
+      'CreateIdentityPoolDirectory',
       'CreateLogSubscription',
+      'CreateMicrosoftAD',
       'CreateSnapshot',
       'CreateTrust',
       'DeleteConditionalForwarder',
@@ -877,15 +892,12 @@ export class Ds extends PolicyStatement {
     ],
     Tagging: [
       'AddTagsToResource',
-      'ConnectDirectory',
-      'CreateDirectory',
-      'CreateIdentityPoolDirectory',
-      'CreateMicrosoftAD',
       'RemoveTagsFromResource'
     ],
     Read: [
       'CheckAlias',
       'DescribeCertificate',
+      'DescribeClientAuthenticationSettings',
       'DescribeConditionalForwarders',
       'DescribeDomainControllers',
       'DescribeEventTopics',
@@ -912,6 +924,8 @@ export class Ds extends PolicyStatement {
 
   /**
    * Adds a resource of type directory to the statement
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/welcome.html
    *
    * @param directoryId - Identifier for the directoryId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -809,14 +809,13 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/cd-create-dataset.html
    *
    * @param projectName - Identifier for the projectName.
-   * @param creationTimestamp - Identifier for the creationTimestamp.
    * @param datasetType - Identifier for the datasetType.
-   * @param creationTimestamp2 - Identifier for the creationTimestamp2.
+   * @param creationTimestamp - Identifier for the creationTimestamp.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onDataset(projectName: string, creationTimestamp: string, datasetType: string, creationTimestamp2: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }/dataset/${ datasetType }/${ creationTimestamp2 }`);
+  public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
   }
 }

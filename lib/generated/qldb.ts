@@ -333,6 +333,8 @@ export class Qldb extends PolicyStatement {
    * Grants permission to send commands to a ledger
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/API_QLDB-Session_SendCommand.html
    */
   public toSendCommand() {
     return this.to('SendCommand');
@@ -353,6 +355,10 @@ export class Qldb extends PolicyStatement {
    * Grants permission to stream journal contents to a Kinesis Data Stream
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html
    */

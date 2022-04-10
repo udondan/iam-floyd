@@ -494,6 +494,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an inference recommendations job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateInferenceRecommendationsJob.html
+   */
+  public toCreateInferenceRecommendationsJob() {
+    return this.to('CreateInferenceRecommendationsJob');
+  }
+
+  /**
    * Grants permission to start a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models
    *
    * Access Level: Write
@@ -513,6 +531,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateLabelingJob() {
     return this.to('CreateLabelingJob');
+  }
+
+  /**
+   * Grants permission to create a lineage group policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLineageGroupPolicy.html
+   */
+  public toCreateLineageGroupPolicy() {
+    return this.to('CreateLineageGroupPolicy');
   }
 
   /**
@@ -791,6 +820,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateProject() {
     return this.to('CreateProject');
+  }
+
+  /**
+   * Grants permission to create a Studio Lifecycle Configuration that can be deployed using Amazon SageMaker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateStudioLifecycleConfig.html
+   */
+  public toCreateStudioLifecycleConfig() {
+    return this.to('CreateStudioLifecycleConfig');
   }
 
   /**
@@ -1149,6 +1189,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a lineage group policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteLineageGroupPolicy.html
+   */
+  public toDeleteLineageGroupPolicy() {
+    return this.to('DeleteLineageGroupPolicy');
+  }
+
+  /**
    * Grants permission to delete a model created using the CreateModel API. The DeleteModel API deletes only the model entry in Amazon SageMaker that you created by calling the CreateModel API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model
    *
    * Access Level: Write
@@ -1289,6 +1340,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteRecord() {
     return this.to('DeleteRecord');
+  }
+
+  /**
+   * Grants permission to delete a Studio Lifecycle Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteStudioLifecycleConfig.html
+   */
+  public toDeleteStudioLifecycleConfig() {
+    return this.to('DeleteStudioLifecycleConfig');
   }
 
   /**
@@ -1636,6 +1698,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an inference recommendations job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeInferenceRecommendationsJob.html
+   */
+  public toDescribeInferenceRecommendationsJob() {
+    return this.to('DescribeInferenceRecommendationsJob');
+  }
+
+  /**
    * Grants permission to return information about a labeling job
    *
    * Access Level: Read
@@ -1644,6 +1717,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeLabelingJob() {
     return this.to('DescribeLabelingJob');
+  }
+
+  /**
+   * Grants permission to describe a lineage group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeLineageGroup.html
+   */
+  public toDescribeLineageGroup() {
+    return this.to('DescribeLineageGroup');
   }
 
   /**
@@ -1801,6 +1885,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a Studio Lifecycle Configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeStudioLifecycleConfig.html
+   */
+  public toDescribeStudioLifecycleConfig() {
+    return this.to('DescribeStudioLifecycleConfig');
+  }
+
+  /**
    * Grants permission to return information about a subscribed workteam
    *
    * Access Level: Read
@@ -1941,6 +2036,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toGetDeviceRegistration() {
     return this.to('GetDeviceRegistration');
+  }
+
+  /**
+   * Grants permission to retreive a lineage group policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetLineageGroupPolicy.html
+   */
+  public toGetLineageGroupPolicy() {
+    return this.to('GetLineageGroupPolicy');
   }
 
   /**
@@ -2299,6 +2405,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list inference recommendations jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListInferenceRecommendationsJobs.html
+   */
+  public toListInferenceRecommendationsJobs() {
+    return this.to('ListInferenceRecommendationsJobs');
+  }
+
+  /**
    * Grants permission to list labeling jobs
    *
    * Access Level: List
@@ -2321,6 +2438,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list lineage groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLineageGroups.html
+   */
+  public toListLineageGroups() {
+    return this.to('ListLineageGroups');
+  }
+
+  /**
    * Grants permission to list model bias job definitions
    *
    * Access Level: List
@@ -2340,6 +2468,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListModelExplainabilityJobDefinitions() {
     return this.to('ListModelExplainabilityJobDefinitions');
+  }
+
+  /**
+   * Grants permission to list model metadata for inference recommendations jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelMetadata.html
+   */
+  public toListModelMetadata() {
+    return this.to('ListModelMetadata');
   }
 
   /**
@@ -2497,6 +2636,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Studio Lifecycle Configurations that can be deployed using Amazon SageMaker
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListStudioLifecycleConfigs.html
+   */
+  public toListStudioLifecycleConfigs() {
+    return this.to('ListStudioLifecycleConfigs');
+  }
+
+  /**
    * Grants permission to list subscribed workteams
    *
    * Access Level: List
@@ -2607,6 +2757,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a lineage group policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutLineageGroupPolicy.html
+   */
+  public toPutLineageGroupPolicy() {
+    return this.to('PutLineageGroupPolicy');
+  }
+
+  /**
    * Grants permission to put a ModelPackageGroup policy
    *
    * Access Level: Write
@@ -2626,6 +2787,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toPutRecord() {
     return this.to('PutRecord');
+  }
+
+  /**
+   * Grants permission to explore the lineage graph
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_QueryLineage.html
+   */
+  public toQueryLineage() {
+    return this.to('QueryLineage');
   }
 
   /**
@@ -2655,6 +2827,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toRenderUiTemplate() {
     return this.to('RenderUiTemplate');
+  }
+
+  /**
+   * Grants permission to retry a pipeline execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RetryPipelineExecution.html
+   */
+  public toRetryPipelineExecution() {
+    return this.to('RetryPipelineExecution');
   }
 
   /**
@@ -2798,6 +2981,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStopHyperParameterTuningJob() {
     return this.to('StopHyperParameterTuningJob');
+  }
+
+  /**
+   * Grants permission to stop an inference recommendations job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopInferenceRecommendationsJob.html
+   */
+  public toStopInferenceRecommendationsJob() {
+    return this.to('StopInferenceRecommendationsJob');
   }
 
   /**
@@ -3230,7 +3424,9 @@ export class Sagemaker extends PolicyStatement {
       'CreateHyperParameterTuningJob',
       'CreateImage',
       'CreateImageVersion',
+      'CreateInferenceRecommendationsJob',
       'CreateLabelingJob',
+      'CreateLineageGroupPolicy',
       'CreateModel',
       'CreateModelBiasJobDefinition',
       'CreateModelExplainabilityJobDefinition',
@@ -3245,6 +3441,7 @@ export class Sagemaker extends PolicyStatement {
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
+      'CreateStudioLifecycleConfig',
       'CreateTrainingJob',
       'CreateTransformJob',
       'CreateTrial',
@@ -3272,6 +3469,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteHumanTaskUi',
       'DeleteImage',
       'DeleteImageVersion',
+      'DeleteLineageGroupPolicy',
       'DeleteModel',
       'DeleteModelBiasJobDefinition',
       'DeleteModelExplainabilityJobDefinition',
@@ -3285,6 +3483,7 @@ export class Sagemaker extends PolicyStatement {
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',
+      'DeleteStudioLifecycleConfig',
       'DeleteTrial',
       'DeleteTrialComponent',
       'DeleteUserProfile',
@@ -3294,9 +3493,11 @@ export class Sagemaker extends PolicyStatement {
       'DisableSagemakerServicecatalogPortfolio',
       'DisassociateTrialComponent',
       'EnableSagemakerServicecatalogPortfolio',
+      'PutLineageGroupPolicy',
       'PutModelPackageGroupPolicy',
       'PutRecord',
       'RegisterDevices',
+      'RetryPipelineExecution',
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
@@ -3309,6 +3510,7 @@ export class Sagemaker extends PolicyStatement {
       'StopEdgePackagingJob',
       'StopHumanLoop',
       'StopHyperParameterTuningJob',
+      'StopInferenceRecommendationsJob',
       'StopLabelingJob',
       'StopMonitoringSchedule',
       'StopNotebookInstance',
@@ -3374,7 +3576,9 @@ export class Sagemaker extends PolicyStatement {
       'DescribeHyperParameterTuningJob',
       'DescribeImage',
       'DescribeImageVersion',
+      'DescribeInferenceRecommendationsJob',
       'DescribeLabelingJob',
+      'DescribeLineageGroup',
       'DescribeModel',
       'DescribeModelBiasJobDefinition',
       'DescribeModelExplainabilityJobDefinition',
@@ -3389,6 +3593,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribePipelineExecution',
       'DescribeProcessingJob',
       'DescribeProject',
+      'DescribeStudioLifecycleConfig',
       'DescribeSubscribedWorkteam',
       'DescribeTrainingJob',
       'DescribeTransformJob',
@@ -3399,6 +3604,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeWorkteam',
       'GetDeviceFleetReport',
       'GetDeviceRegistration',
+      'GetLineageGroupPolicy',
       'GetModelPackageGroupPolicy',
       'GetRecord',
       'GetSagemakerServicecatalogPortfolioStatus',
@@ -3435,10 +3641,13 @@ export class Sagemaker extends PolicyStatement {
       'ListHyperParameterTuningJobs',
       'ListImageVersions',
       'ListImages',
+      'ListInferenceRecommendationsJobs',
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',
+      'ListLineageGroups',
       'ListModelBiasJobDefinitions',
       'ListModelExplainabilityJobDefinitions',
+      'ListModelMetadata',
       'ListModelPackageGroups',
       'ListModelPackages',
       'ListModelQualityJobDefinitions',
@@ -3453,6 +3662,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListStudioLifecycleConfigs',
       'ListSubscribedWorkteams',
       'ListTags',
       'ListTrainingJobs',
@@ -3462,7 +3672,8 @@ export class Sagemaker extends PolicyStatement {
       'ListTrials',
       'ListUserProfiles',
       'ListWorkforces',
-      'ListWorkteams'
+      'ListWorkteams',
+      'QueryLineage'
     ]
   };
 
@@ -3569,6 +3780,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:human-task-ui/${ humanTaskUiName }`);
+  }
+
+  /**
+   * Adds a resource of type inference-recommendations-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommendations-job
+   *
+   * @param inferenceRecommendationsJobName - Identifier for the inferenceRecommendationsJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
   }
 
   /**
@@ -3699,6 +3928,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
+  }
+
+  /**
+   * Adds a resource of type studio-lifecycle-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lcc.html
+   *
+   * @param studioLifecycleConfigName - Identifier for the studioLifecycleConfigName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
@@ -4264,6 +4511,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type lineage-group to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_LineageGroupSummary.html
+   *
+   * @param lineageGroupName - Identifier for the lineageGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onLineageGroup(lineageGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:lineage-group/${ lineageGroupName }`);
+  }
+
+  /**
    * Filters access by the list of all accelerator types associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -4670,6 +4935,7 @@ export class Sagemaker extends PolicyStatement {
    * - edge-packaging-job
    * - flow-definition
    * - human-task-ui
+   * - inference-recommendations-job
    * - labeling-job
    * - workteam
    * - workforce
@@ -4677,6 +4943,7 @@ export class Sagemaker extends PolicyStatement {
    * - user-profile
    * - app
    * - app-image-config
+   * - studio-lifecycle-config
    * - notebook-instance
    * - code-repository
    * - image
@@ -4705,6 +4972,7 @@ export class Sagemaker extends PolicyStatement {
    * - artifact
    * - context
    * - action
+   * - lineage-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -74,6 +74,20 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEventBusArn()
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEndpoint.html
+   */
+  public toCreateEndpoint() {
+    return this.to('CreateEndpoint');
+  }
+
+  /**
    * Grants permission to create event buses
    *
    * Access Level: Write
@@ -155,6 +169,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEndpoint.html
+   */
+  public toDeleteEndpoint() {
+    return this.to('DeleteEndpoint');
+  }
+
+  /**
    * Grants permission to delete event buses
    *
    * Access Level: Write
@@ -222,6 +247,17 @@ export class Events extends PolicyStatement {
    */
   public toDescribeConnection() {
     return this.to('DescribeConnection');
+  }
+
+  /**
+   * Grants permission to retrieve details about an endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEndpoint.html
+   */
+  public toDescribeEndpoint() {
+    return this.to('DescribeEndpoint');
   }
 
   /**
@@ -357,7 +393,18 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permission to to retrieve a list of the event buses in your account
+   * Grants permission to retrieve a list of endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEndpoints.html
+   */
+  public toListEndpoints() {
+    return this.to('ListEndpoints');
+  }
+
+  /**
+   * Grants permission to retrieve a list of the event buses in your account
    *
    * Access Level: List
    *
@@ -651,6 +698,20 @@ export class Events extends PolicyStatement {
     return this.to('UpdateConnection');
   }
 
+  /**
+   * Grants permission to update an endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEventBusArn()
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEndpoint.html
+   */
+  public toUpdateEndpoint() {
+    return this.to('UpdateEndpoint');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEventSource',
@@ -658,6 +719,7 @@ export class Events extends PolicyStatement {
       'CreateApiDestination',
       'CreateArchive',
       'CreateConnection',
+      'CreateEndpoint',
       'CreateEventBus',
       'CreatePartnerEventSource',
       'DeactivateEventSource',
@@ -665,6 +727,7 @@ export class Events extends PolicyStatement {
       'DeleteApiDestination',
       'DeleteArchive',
       'DeleteConnection',
+      'DeleteEndpoint',
       'DeleteEventBus',
       'DeletePartnerEventSource',
       'DeleteRule',
@@ -679,12 +742,14 @@ export class Events extends PolicyStatement {
       'StartReplay',
       'UpdateApiDestination',
       'UpdateArchive',
-      'UpdateConnection'
+      'UpdateConnection',
+      'UpdateEndpoint'
     ],
     Read: [
       'DescribeApiDestination',
       'DescribeArchive',
       'DescribeConnection',
+      'DescribeEndpoint',
       'DescribeEventBus',
       'DescribeEventSource',
       'DescribePartnerEventSource',
@@ -696,6 +761,7 @@ export class Events extends PolicyStatement {
       'ListApiDestinations',
       'ListArchives',
       'ListConnections',
+      'ListEndpoints',
       'ListEventBuses',
       'ListEventSources',
       'ListPartnerEventSourceAccounts',
@@ -817,6 +883,36 @@ export class Events extends PolicyStatement {
    */
   public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:api-destination/${ apiDestinationName }`);
+  }
+
+  /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param endpointName - Identifier for the endpointName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+  }
+
+  /**
+   * Filters access by the ARN of the event buses that can be associated with an endpoint to CreateEndpoint and UpdateEndpoint actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-event-buses
+   *
+   * Applies to actions:
+   * - .toCreateEndpoint()
+   * - .toUpdateEndpoint()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEventBusArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`EventBusArn`, value, operator || 'ArnLike');
   }
 
   /**

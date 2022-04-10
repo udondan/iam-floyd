@@ -63,6 +63,17 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete domains
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DeleteDomain.html
+   */
+  public toDeleteDomain() {
+    return this.to('DeleteDomain');
+  }
+
+  /**
    * Grants permission to delete the specified tags for a domain
    *
    * Access Level: Tagging
@@ -118,7 +129,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to get information about whether the registrant contact has responded
+   * Grants permission to get information about whether the registrant contact has responded for operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain
    *
    * Access Level: Read
    *
@@ -184,9 +195,20 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the tags that are associated with the specified domain
+   * Grants permission to list the prices of operations for TLDs
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListPrices.html
+   */
+  public toListPrices() {
+    return this.to('ListPrices');
+  }
+
+  /**
+   * Grants permission to list all the tags that are associated with the specified domain
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListTagsForDomain.html
    */
@@ -228,7 +250,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to resend the confirmation email to the current email address for the registrant contact
+   * Grants permission to resend the confirmation email to the current email address for the registrant contact for operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain
    *
    * Access Level: Write
    *
@@ -330,6 +352,7 @@ export class Route53domains extends PolicyStatement {
     Write: [
       'AcceptDomainTransferFromAnotherAwsAccount',
       'CancelDomainTransferToAnotherAwsAccount',
+      'DeleteDomain',
       'DisableDomainAutoRenew',
       'DisableDomainTransferLock',
       'EnableDomainAutoRenew',
@@ -352,6 +375,7 @@ export class Route53domains extends PolicyStatement {
       'GetDomainDetail',
       'GetDomainSuggestions',
       'GetOperationDetail',
+      'ListTagsForDomain',
       'ViewBilling'
     ],
     Tagging: [
@@ -361,7 +385,7 @@ export class Route53domains extends PolicyStatement {
     List: [
       'ListDomains',
       'ListOperations',
-      'ListTagsForDomain'
+      'ListPrices'
     ]
   };
 }

@@ -111,7 +111,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the resource policy associated with the specified Profiling Group.
+   * Grants permission to get the resource policy associated with the specified Profiling Group
    *
    * Access Level: Read
    *
@@ -199,7 +199,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group.
+   * Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group
    *
    * Access Level: Permissions management
    *
@@ -221,7 +221,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the permission of specified Action Group from the resource policy associated with the specified Profiling Group.
+   * Grants permission to remove the permission of specified Action Group from the resource policy associated with the specified Profiling Group
    *
    * Access Level: Permissions management
    *

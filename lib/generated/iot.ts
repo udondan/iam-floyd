@@ -1891,6 +1891,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Adds support to list metric datapoints collected for IoT devices
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListMetricValues.html
+   */
+  public toListMetricValues() {
+    return this.to('ListMetricValues');
+  }
+
+  /**
    * Grants permission to get a list of all mitigation actions that match the specified filter criteria
    *
    * Access Level: List
@@ -2290,6 +2301,17 @@ export class Iot extends PolicyStatement {
    */
   public toPublish() {
     return this.to('Publish');
+  }
+
+  /**
+   * Grants permission to put verification state on a violation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_PutVerificationStateOnViolation.html
+   */
+  public toPutVerificationStateOnViolation() {
+    return this.to('PutVerificationStateOnViolation');
   }
 
   /**
@@ -3005,6 +3027,7 @@ export class Iot extends PolicyStatement {
       'EnableTopicRule',
       'OpenTunnel',
       'Publish',
+      'PutVerificationStateOnViolation',
       'Receive',
       'RegisterCACertificate',
       'RegisterCertificate',
@@ -3146,6 +3169,7 @@ export class Iot extends PolicyStatement {
       'ListJobTemplates',
       'ListJobs',
       'ListManagedJobTemplates',
+      'ListMetricValues',
       'ListMitigationActions',
       'ListNamedShadowsForThing',
       'ListOTAUpdates',

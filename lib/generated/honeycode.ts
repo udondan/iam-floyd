@@ -96,6 +96,17 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#delete-domains
+   */
+  public toDeleteDomains() {
+    return this.to('DeleteDomains');
+  }
+
+  /**
    * Grants permission to remove groups from an Amazon Honeycode team for your AWS Account
    *
    * Access Level: Write
@@ -206,6 +217,17 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all tags for a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list all pending and approved team associations with your AWS Account
    *
    * Access Level: List
@@ -294,6 +316,28 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update an Amazon Honeycode team for your AWS Account
    *
    * Access Level: Write
@@ -313,6 +357,7 @@ export class Honeycode extends PolicyStatement {
       'BatchUpsertTableRows',
       'CreateTeam',
       'CreateTenant',
+      'DeleteDomains',
       'DeregisterGroups',
       'InvokeScreenAutomation',
       'RegisterDomainForVerification',
@@ -336,6 +381,11 @@ export class Honeycode extends PolicyStatement {
       'ListTables',
       'ListTeamAssociations',
       'ListTenants'
+    ],
+    Tagging: [
+      'ListTagsForResource',
+      'TagResource',
+      'UntagResource'
     ]
   };
 

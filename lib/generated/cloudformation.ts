@@ -140,6 +140,8 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to upload templates to Amazon S3 buckets. Used only by the AWS CloudFormation console and is not documented in the API reference
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
    */
   public toCreateUploadBucket() {
     return this.to('CreateUploadBucket');
@@ -243,6 +245,20 @@ export class Cloudformation extends PolicyStatement {
    */
   public toDescribeChangeSet() {
     return this.to('DescribeChangeSet');
+  }
+
+  /**
+   * Grants permission to return the Hook invocation information for the specified change set
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifChangeSetName()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHooks.html
+   */
+  public toDescribeChangeSetHooks() {
+    return this.to('DescribeChangeSetHooks');
   }
 
   /**
@@ -656,6 +672,20 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rollback the stack to the last stable state
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRoleArn()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RollbackStack.html
+   */
+  public toRollbackStack() {
+    return this.to('RollbackStack');
+  }
+
+  /**
    * Grants permission to set a stack policy for a specified stack
    *
    * Access Level: Permissions management
@@ -841,6 +871,7 @@ export class Cloudformation extends PolicyStatement {
       'RecordHandlerProgress',
       'RegisterPublisher',
       'RegisterType',
+      'RollbackStack',
       'SetTypeConfiguration',
       'SetTypeDefaultVersion',
       'SignalResource',
@@ -855,6 +886,7 @@ export class Cloudformation extends PolicyStatement {
       'BatchDescribeTypeConfigurations',
       'DescribeAccountLimits',
       'DescribeChangeSet',
+      'DescribeChangeSetHooks',
       'DescribePublisher',
       'DescribeStackDriftDetectionStatus',
       'DescribeStackEvents',
@@ -909,6 +941,9 @@ export class Cloudformation extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:changeSet/${ changeSetName }/${ id }`);
@@ -987,6 +1022,7 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateChangeSet()
    * - .toDeleteChangeSet()
    * - .toDescribeChangeSet()
+   * - .toDescribeChangeSetHooks()
    * - .toExecuteChangeSet()
    *
    * @param value The value(s) to check
@@ -1039,6 +1075,7 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateStack()
    * - .toCreateStackSet()
    * - .toDeleteStack()
+   * - .toRollbackStack()
    * - .toUpdateStack()
    * - .toUpdateStackSet()
    *

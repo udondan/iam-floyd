@@ -60,7 +60,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS App Runner service
+   * Grants permission to create an AWS App Runner service resource
    *
    * Access Level: Write
    *
@@ -69,11 +69,27 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifConnectionArn()
    * - .ifAutoScalingConfigurationArn()
+   * - .ifVpcConnectorArn()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html
    */
   public toCreateService() {
     return this.to('CreateService');
+  }
+
+  /**
+   * Grants permission to create an AWS App Runner VPC connector resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcConnector.html
+   */
+  public toCreateVpcConnector() {
+    return this.to('CreateVpcConnector');
   }
 
   /**
@@ -88,7 +104,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an AWS App Runner connection
+   * Grants permission to delete an AWS App Runner connection resource
    *
    * Access Level: Write
    *
@@ -99,7 +115,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an AWS App Runner service
+   * Grants permission to delete an AWS App Runner service resource
    *
    * Access Level: Write
    *
@@ -110,7 +126,18 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve descriptions of an AWS App Runner automatic scaling configuration resource
+   * Grants permission to delete an AWS App Runner VPC connector resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteVpcConnector.html
+   */
+  public toDeleteVpcConnector() {
+    return this.to('DeleteVpcConnector');
+  }
+
+  /**
+   * Grants permission to retrieve the description of an AWS App Runner automatic scaling configuration resource
    *
    * Access Level: Read
    *
@@ -132,7 +159,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve description of an operation that occurred on an AWS App Runner service
+   * Grants permission to retrieve the description of an operation that occurred on an AWS App Runner service
    *
    * Access Level: Read
    *
@@ -143,7 +170,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve description of an AWS App Runner service
+   * Grants permission to retrieve the description of an AWS App Runner service resource
    *
    * Access Level: Read
    *
@@ -151,6 +178,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toDescribeService() {
     return this.to('DescribeService');
+  }
+
+  /**
+   * Grants permission to retrieve the description of an AWS App Runner VPC connector resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeVpcConnector.html
+   */
+  public toDescribeVpcConnector() {
+    return this.to('DescribeVpcConnector');
   }
 
   /**
@@ -176,7 +214,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of AWS App Runner connections associated with your AWS account
+   * Grants permission to retrieve a list of AWS App Runner connections in your AWS account
    *
    * Access Level: List
    *
@@ -187,7 +225,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of operations that occurred on an AWS App Runner service
+   * Grants permission to retrieve a list of operations that occurred on an AWS App Runner service resource
    *
    * Access Level: List
    *
@@ -217,6 +255,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS App Runner VPC connectors in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_ListVpcConnectors.html
+   */
+  public toListVpcConnectors() {
+    return this.to('ListVpcConnectors');
   }
 
   /**
@@ -253,7 +302,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to, or update tag values of, an App Runner resource
+   * Grants permission to add tags to, or update tag values of, an AWS App Runner resource
    *
    * Access Level: Tagging
    *
@@ -268,7 +317,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an App Runner resource
+   * Grants permission to remove tags from an AWS App Runner resource
    *
    * Access Level: Tagging
    *
@@ -282,13 +331,14 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an AWS App Runner service
+   * Grants permission to update an AWS App Runner service resource
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifConnectionArn()
    * - .ifAutoScalingConfigurationArn()
+   * - .ifVpcConnectorArn()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateService.html
    */
@@ -302,9 +352,11 @@ export class Apprunner extends PolicyStatement {
       'CreateAutoScalingConfiguration',
       'CreateConnection',
       'CreateService',
+      'CreateVpcConnector',
       'DeleteAutoScalingConfiguration',
       'DeleteConnection',
       'DeleteService',
+      'DeleteVpcConnector',
       'DisassociateCustomDomain',
       'PauseService',
       'ResumeService',
@@ -316,13 +368,15 @@ export class Apprunner extends PolicyStatement {
       'DescribeCustomDomains',
       'DescribeOperation',
       'DescribeService',
+      'DescribeVpcConnector',
       'ListTagsForResource'
     ],
     List: [
       'ListAutoScalingConfigurations',
       'ListConnections',
       'ListOperations',
-      'ListServices'
+      'ListServices',
+      'ListVpcConnectors'
     ],
     Tagging: [
       'TagResource',
@@ -380,7 +434,24 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Filters access to the CreateService and UpdateService actions based on the ARN of an associated AutoScalingConfiguration resource
+   * Adds a resource of type vpcconnector to the statement
+   *
+   * @param vpcConnectorName - Identifier for the vpcConnectorName.
+   * @param vpcConnectorVersion - Identifier for the vpcConnectorVersion.
+   * @param vpcConnectorId - Identifier for the vpcConnectorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcconnector(vpcConnectorName: string, vpcConnectorVersion: string, vpcConnectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
+  }
+
+  /**
+   * Filters access by the CreateService and UpdateService actions based on the ARN of an associated AutoScalingConfiguration resource
    *
    * Applies to actions:
    * - .toCreateService()
@@ -394,7 +465,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Filters access to the CreateService and UpdateService actions based on the ARN of an associated Connection resource
+   * Filters access by the CreateService and UpdateService actions based on the ARN of an associated Connection resource
    *
    * Applies to actions:
    * - .toCreateService()
@@ -405,5 +476,19 @@ export class Apprunner extends PolicyStatement {
    */
   public ifConnectionArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ConnectionArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the CreateService and UpdateService actions based on the ARN of an associated VpcConnector resource
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifVpcConnectorArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcConnectorArn`, value, operator || 'ArnLike');
   }
 }

@@ -19,7 +19,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream.
+   * Grants permission to initiate a bulk publish of all existing datasets for an Identity Pool to the configured stream
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Deletes the specific dataset.
+   * Grants permission to delete a specific dataset
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets meta data about a dataset by identity and dataset name.
+   * Grants permission to get metadata about a dataset by identity and dataset name
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets usage details (for example, data storage) about a particular identity pool.
+   * Grants permission to get usage details (for example, data storage) about a particular identity pool
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets usage information for an identity, including number of datasets and data usage.
+   * Grants permission to get usage information for an identity, including number of datasets and data usage
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Get the status of the last BulkPublish operation for an identity pool.
+   * Grants permission to get the status of the last BulkPublish operation for an identity pool
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets the events and the corresponding Lambda functions associated with an identity pool.
+   * Grants permission to get the events and the corresponding Lambda functions associated with an identity pool
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets the configuration settings of an identity pool.
+   * Grants permission to get the configuration settings of an identity pool
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Lists datasets for an identity.
+   * Grants permission to list datasets for an identity
    *
    * Access Level: List
    *
@@ -118,7 +118,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets a list of identity pools registered with Cognito.
+   * Grants permission to get a list of identity pools registered with Cognito
    *
    * Access Level: Read
    *
@@ -129,7 +129,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Gets paginated records, optionally changed after a particular sync count for a dataset and identity.
+   * Grants permission to get paginated records, optionally changed after a particular sync count for a dataset and identity
    *
    * Access Level: Read
    *
@@ -140,7 +140,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * A permission that grants the ability to query records.
+   * Grants permission to query records
    *
    * Access Level: Read
    */
@@ -149,7 +149,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Registers a device to receive push sync notifications.
+   * Grants permission to register a device to receive push sync notifications
    *
    * Access Level: Write
    *
@@ -160,7 +160,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Sets the AWS Lambda function for a given event type for an identity pool.
+   * Grants permission to set the AWS Lambda function for a given event type for an identity pool
    *
    * Access Level: Write
    *
@@ -171,7 +171,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * A permission that grants ability to configure datasets.
+   * Grants permission to configure datasets
    *
    * Access Level: Write
    */
@@ -180,7 +180,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Sets the necessary configuration for push sync.
+   * Grants permission to set the necessary configuration for push sync
    *
    * Access Level: Write
    *
@@ -191,7 +191,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Subscribes to receive notifications when a dataset is modified by another device.
+   * Grants permission to subscribe to receive notifications when a dataset is modified by another device
    *
    * Access Level: Write
    *
@@ -202,7 +202,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Unsubscribes from receiving notifications when a dataset is modified by another device.
+   * Grants permission to unsubscribe from receiving notifications when a dataset is modified by another device
    *
    * Access Level: Write
    *
@@ -213,7 +213,7 @@ export class CognitoSync extends PolicyStatement {
   }
 
   /**
-   * Posts updates to records and adds and deletes records for a dataset and user.
+   * Grants permission to post updates to records and add and delete records for a dataset and user
    *
    * Access Level: Write
    *

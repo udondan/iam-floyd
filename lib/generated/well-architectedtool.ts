@@ -30,6 +30,28 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to an owner of a lens to share with other AWS accounts and IAM Users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensShare.html
+   */
+  public toCreateLensShare() {
+    return this.to('CreateLensShare');
+  }
+
+  /**
+   * Grants permission to create a new lens version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensVersion.html
+   */
+  public toCreateLensVersion() {
+    return this.to('CreateLensVersion');
+  }
+
+  /**
    * Grants permission to create a new milestone for the specified workload
    *
    * Access Level: Write
@@ -67,6 +89,28 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a lens
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLens.html
+   */
+  public toDeleteLens() {
+    return this.to('DeleteLens');
+  }
+
+  /**
+   * Grants permission to delete an existing lens share
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html
+   */
+  public toDeleteLensShare() {
+    return this.to('DeleteLensShare');
+  }
+
+  /**
    * Grants permission to delete an existing workload
    *
    * Access Level: Write
@@ -100,6 +144,17 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export an existing lens
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ExportLens.html
+   */
+  public toExportLens() {
+    return this.to('ExportLens');
+  }
+
+  /**
    * Grants permission to retrieve the specified answer from the specified lens review
    *
    * Access Level: Read
@@ -108,6 +163,17 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toGetAnswer() {
     return this.to('GetAnswer');
+  }
+
+  /**
+   * Grants permission to get an existing lens
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html
+   */
+  public toGetLens() {
+    return this.to('GetLens');
   }
 
   /**
@@ -169,6 +235,17 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import a new lens
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ImportLens.html
+   */
+  public toImportLens() {
+    return this.to('ImportLens');
+  }
+
+  /**
    * Grants permission to list the answers from the specified lens review
    *
    * Access Level: List
@@ -199,6 +276,17 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toListLensReviews() {
     return this.to('ListLensReviews');
+  }
+
+  /**
+   * Grants permission to list all shares created for a lens
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensShares.html
+   */
+  public toListLensShares() {
+    return this.to('ListLensShares');
   }
 
   /**
@@ -379,12 +467,17 @@ export class Wellarchitected extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateLenses',
+      'CreateLensShare',
+      'CreateLensVersion',
       'CreateMilestone',
       'CreateWorkload',
       'CreateWorkloadShare',
+      'DeleteLens',
+      'DeleteLensShare',
       'DeleteWorkload',
       'DeleteWorkloadShare',
       'DisassociateLenses',
+      'ImportLens',
       'UpdateAnswer',
       'UpdateLensReview',
       'UpdateShareInvitation',
@@ -393,7 +486,9 @@ export class Wellarchitected extends PolicyStatement {
       'UpgradeLensReview'
     ],
     Read: [
+      'ExportLens',
       'GetAnswer',
+      'GetLens',
       'GetLensReview',
       'GetLensReviewReport',
       'GetLensVersionDifference',
@@ -405,6 +500,7 @@ export class Wellarchitected extends PolicyStatement {
       'ListAnswers',
       'ListLensReviewImprovements',
       'ListLensReviews',
+      'ListLensShares',
       'ListLenses',
       'ListMilestones',
       'ListNotifications',
@@ -433,5 +529,19 @@ export class Wellarchitected extends PolicyStatement {
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type lens to the statement
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Lens.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
   }
 }

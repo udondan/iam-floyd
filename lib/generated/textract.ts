@@ -47,6 +47,20 @@ export class Textract extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detect relevant information from identity documents provided as input
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeID.html
+   */
+  public toAnalyzeID() {
+    return this.to('AnalyzeID');
+  }
+
+  /**
    * Grants permission to detect text in document images
    *
    * Access Level: Read
@@ -139,6 +153,7 @@ export class Textract extends PolicyStatement {
     Read: [
       'AnalyzeDocument',
       'AnalyzeExpense',
+      'AnalyzeID',
       'DetectDocumentText',
       'GetDocumentAnalysis',
       'GetDocumentTextDetection',

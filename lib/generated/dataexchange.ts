@@ -19,7 +19,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to cancel a job
+   * Grants permission to cancel a job
    *
    * Access Level: Write
    *
@@ -66,14 +66,14 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toCreateEventAction() {
     return this.to('CreateEventAction');
   }
 
   /**
-   * Grants permissions to create a job to import or export assets
+   * Grants permission to create a job to import or export assets
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an asset
+   * Grants permission to delete an asset
    *
    * Access Level: Write
    *
@@ -111,7 +111,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a data set
+   * Grants permission to delete a data set
    *
    * Access Level: Write
    *
@@ -126,14 +126,14 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toDeleteEventAction() {
     return this.to('DeleteEventAction');
   }
 
   /**
-   * Grants permissions to delete a revision
+   * Grants permission to delete a revision
    *
    * Access Level: Write
    *
@@ -144,7 +144,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about an asset and to export it (for example, in a Job)
+   * Grants permission to get information about an asset and to export it (for example, in a Job)
    *
    * Access Level: Read
    *
@@ -170,14 +170,14 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toGetEventAction() {
     return this.to('GetEventAction');
   }
 
   /**
-   * Grants permissions to get information about a job
+   * Grants permission to get information about a job
    *
    * Access Level: Read
    *
@@ -199,7 +199,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the revisions of a data set
+   * Grants permission to list the revisions of a data set
    *
    * Access Level: Read
    *
@@ -225,14 +225,14 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toListEventActions() {
     return this.to('ListEventActions');
   }
 
   /**
-   * Grants permissions to list jobs for the account
+   * Grants permission to list jobs for the account
    *
    * Access Level: Read
    *
@@ -243,7 +243,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get list the assets of a revision
+   * Grants permission to get list the assets of a revision
    *
    * Access Level: Read
    *
@@ -254,7 +254,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags that you associated with the specified resource.
+   * Grants permission to list the tags that you associated with the specified resource
    *
    * Access Level: Read
    *
@@ -269,14 +269,36 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toPublishDataSet() {
     return this.to('PublishDataSet');
   }
 
   /**
-   * Grants permissions to start a job
+   * Grants permission to revoke subscriber access to a revision
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
+   */
+  public toRevokeRevision() {
+    return this.to('RevokeRevision');
+  }
+
+  /**
+   * Grants permission to send a request to an API asset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   */
+  public toSendApiAsset() {
+    return this.to('SendApiAsset');
+  }
+
+  /**
+   * Grants permission to start a job
    *
    * Access Level: Write
    *
@@ -316,7 +338,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get update information about an asset
+   * Grants permission to get update information about an asset
    *
    * Access Level: Write
    *
@@ -327,7 +349,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update information about a data set
+   * Grants permission to update information about a data set
    *
    * Access Level: Write
    *
@@ -342,14 +364,14 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
    */
   public toUpdateEventAction() {
     return this.to('UpdateEventAction');
   }
 
   /**
-   * Grants permissions to update information about a revision
+   * Grants permission to update information about a revision
    *
    * Access Level: Write
    *
@@ -372,6 +394,8 @@ export class Dataexchange extends PolicyStatement {
       'DeleteEventAction',
       'DeleteRevision',
       'PublishDataSet',
+      'RevokeRevision',
+      'SendApiAsset',
       'StartJob',
       'UpdateAsset',
       'UpdateDataSet',

@@ -97,6 +97,10 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ImportHypervisorConfiguration.html
    */
   public toImportHypervisorConfiguration() {

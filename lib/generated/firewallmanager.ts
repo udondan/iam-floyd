@@ -30,6 +30,17 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the Firewall Manager administrator as a tenant administrator of a third-party firewall service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateThirdPartyFirewall.html
+   */
+  public toAssociateThirdPartyFirewall() {
+    return this.to('AssociateThirdPartyFirewall');
+  }
+
+  /**
    * Grants permission to permanently deletes an AWS Firewall Manager applications list
    *
    * Access Level: Write
@@ -85,6 +96,17 @@ export class Fms extends PolicyStatement {
    */
   public toDisassociateAdminAccount() {
     return this.to('DisassociateAdminAccount');
+  }
+
+  /**
+   * Grants permission to disassociate a Firewall Manager administrator from a third-party firewall tenant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateThirdPartyFirewall.html
+   */
+  public toDisassociateThirdPartyFirewall() {
+    return this.to('DisassociateThirdPartyFirewall');
   }
 
   /**
@@ -165,6 +187,17 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the onboarding status of a Firewall Manager administrator account to third-party firewall vendor tenant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetThirdPartyFirewallAssociationStatus.html
+   */
+  public toGetThirdPartyFirewallAssociationStatus() {
+    return this.to('GetThirdPartyFirewallAssociationStatus');
+  }
+
+  /**
    * Grants permission to retrieve violations for a resource based on the specified AWS Firewall Manager policy and AWS account
    *
    * Access Level: Read
@@ -239,6 +272,17 @@ export class Fms extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to retrieve a list of all of the third-party firewall policies that are associated with the third-party firewall administrator's account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListThirdPartyFirewallFirewallPolicies.html
+   */
+  public toListThirdPartyFirewallFirewallPolicies() {
+    return this.to('ListThirdPartyFirewallFirewallPolicies');
   }
 
   /**
@@ -329,11 +373,13 @@ export class Fms extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAdminAccount',
+      'AssociateThirdPartyFirewall',
       'DeleteAppsList',
       'DeleteNotificationChannel',
       'DeletePolicy',
       'DeleteProtocolsList',
       'DisassociateAdminAccount',
+      'DisassociateThirdPartyFirewall',
       'PutAppsList',
       'PutNotificationChannel',
       'PutPolicy',
@@ -347,6 +393,7 @@ export class Fms extends PolicyStatement {
       'GetPolicy',
       'GetProtectionStatus',
       'GetProtocolsList',
+      'GetThirdPartyFirewallAssociationStatus',
       'GetViolationDetails',
       'ListTagsForResource'
     ],
@@ -355,7 +402,8 @@ export class Fms extends PolicyStatement {
       'ListComplianceStatus',
       'ListMemberAccounts',
       'ListPolicies',
-      'ListProtocolsLists'
+      'ListProtocolsLists',
+      'ListThirdPartyFirewallFirewallPolicies'
     ],
     Tagging: [
       'TagResource',

@@ -60,6 +60,21 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint for an Amazon Fsx Lustre
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxLustre.html
+   */
+  public toCreateLocationFsxLustre() {
+    return this.to('CreateLocationFsxLustre');
+  }
+
+  /**
    * Grants permission to create an endpoint for an Amazon FSx Windows File Server file system
    *
    * Access Level: Write
@@ -72,6 +87,21 @@ export class Datasync extends PolicyStatement {
    */
   public toCreateLocationFsxWindows() {
     return this.to('CreateLocationFsxWindows');
+  }
+
+  /**
+   * Grants permission to create an endpoint for an Amazon Hdfs
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationHdfs.html
+   */
+  public toCreateLocationHdfs() {
+    return this.to('CreateLocationHdfs');
   }
 
   /**
@@ -135,7 +165,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a sync task.
+   * Grants permission to create a sync task
    *
    * Access Level: Write
    *
@@ -205,6 +235,17 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view metadata, such as the path information about an Amazon FSx Lustre sync location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxLustre.html
+   */
+  public toDescribeLocationFsxLustre() {
+    return this.to('DescribeLocationFsxLustre');
+  }
+
+  /**
    * Grants permission to view metadata, such as the path information about an Amazon FSx Windows sync location
    *
    * Access Level: Read
@@ -213,6 +254,17 @@ export class Datasync extends PolicyStatement {
    */
   public toDescribeLocationFsxWindows() {
     return this.to('DescribeLocationFsxWindows');
+  }
+
+  /**
+   * Grants permission to view metadata, such as the path information about an Amazon HDFS sync location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationHdfs.html
+   */
+  public toDescribeLocationHdfs() {
+    return this.to('DescribeLocationHdfs');
   }
 
   /**
@@ -377,7 +429,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the name of an agent.
+   * Grants permission to update the name of an agent
    *
    * Access Level: Write
    *
@@ -385,6 +437,17 @@ export class Datasync extends PolicyStatement {
    */
   public toUpdateAgent() {
     return this.to('UpdateAgent');
+  }
+
+  /**
+   * Grants permission to update an HDFS sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationHdfs.html
+   */
+  public toUpdateLocationHdfs() {
+    return this.to('UpdateLocationHdfs');
   }
 
   /**
@@ -447,7 +510,9 @@ export class Datasync extends PolicyStatement {
       'CancelTaskExecution',
       'CreateAgent',
       'CreateLocationEfs',
+      'CreateLocationFsxLustre',
       'CreateLocationFsxWindows',
+      'CreateLocationHdfs',
       'CreateLocationNfs',
       'CreateLocationObjectStorage',
       'CreateLocationS3',
@@ -458,6 +523,7 @@ export class Datasync extends PolicyStatement {
       'DeleteTask',
       'StartTaskExecution',
       'UpdateAgent',
+      'UpdateLocationHdfs',
       'UpdateLocationNfs',
       'UpdateLocationObjectStorage',
       'UpdateLocationSmb',
@@ -467,7 +533,9 @@ export class Datasync extends PolicyStatement {
     Read: [
       'DescribeAgent',
       'DescribeLocationEfs',
+      'DescribeLocationFsxLustre',
       'DescribeLocationFsxWindows',
+      'DescribeLocationHdfs',
       'DescribeLocationNfs',
       'DescribeLocationObjectStorage',
       'DescribeLocationS3',

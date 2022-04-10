@@ -677,7 +677,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to view aggregated status details for patches for a specified patch group
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html
    */
@@ -800,6 +800,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDocumentCategories()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
    */
   public toGetDocument() {
@@ -884,7 +887,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
+   * Grants permission to Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
    *
    * Access Level: Read
    */
@@ -1082,7 +1085,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to view metadata history about a specified SSM document
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentMetadataHistory.html
    */
@@ -1113,7 +1116,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)
+   * Grants permission to SSM Agent to check for new State Manager associations (internal Systems Manager call)
    *
    * Access Level: List
    *
@@ -1206,7 +1209,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to share a custom SSM document publicly or privately with specified AWS accounts
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
    */
@@ -1226,7 +1229,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
+   * Grants permission to SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
    *
    * Access Level: Read
    */
@@ -1269,6 +1272,21 @@ export class Ssm extends PolicyStatement {
    */
   public toRegisterDefaultPatchBaseline() {
     return this.to('RegisterDefaultPatchBaseline');
+  }
+
+  /**
+   * Grants permission to register a Systems Manager Agent
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toRegisterManagedInstance() {
+    return this.to('RegisterManagedInstance');
   }
 
   /**
@@ -1403,6 +1421,8 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSessionDocumentAccessCheck()
+   * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -1430,6 +1450,17 @@ export class Ssm extends PolicyStatement {
    */
   public toTerminateSession() {
     return this.to('TerminateSession');
+  }
+
+  /**
+   * Grants permission to remove an identifying label from a specified version of a parameter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UnlabelParameterVersion.html
+   */
+  public toUnlabelParameterVersion() {
+    return this.to('UnlabelParameterVersion');
   }
 
   /**
@@ -1488,7 +1519,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
+   * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
    *
    * Access Level: Write
    */
@@ -1497,7 +1528,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
+   * Grants permission to SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
    *
    * Access Level: Write
    *
@@ -1643,11 +1674,11 @@ export class Ssm extends PolicyStatement {
       'DeregisterTaskFromMaintenanceWindow',
       'DisassociateOpsItemRelatedItem',
       'LabelParameterVersion',
-      'ModifyDocumentPermission',
       'PutComplianceItems',
       'PutInventory',
       'PutParameter',
       'RegisterDefaultPatchBaseline',
+      'RegisterManagedInstance',
       'RegisterPatchBaselineForPatchGroup',
       'RegisterTargetWithMaintenanceWindow',
       'RegisterTaskWithMaintenanceWindow',
@@ -1661,6 +1692,7 @@ export class Ssm extends PolicyStatement {
       'StartSession',
       'StopAutomationExecution',
       'TerminateSession',
+      'UnlabelParameterVersion',
       'UpdateAssociation',
       'UpdateAssociationStatus',
       'UpdateDocument',
@@ -1699,7 +1731,6 @@ export class Ssm extends PolicyStatement {
       'DescribeInstanceProperties',
       'DescribeInventoryDeletions',
       'DescribeOpsItems',
-      'DescribePatchGroupState',
       'GetAutomationExecution',
       'GetCalendarState',
       'GetCommandInvocation',
@@ -1727,7 +1758,6 @@ export class Ssm extends PolicyStatement {
       'GetServiceSetting',
       'ListCommandInvocations',
       'ListCommands',
-      'ListDocumentMetadataHistory',
       'ListOpsItemEvents',
       'ListOpsItemRelatedItems',
       'ListTagsForResource',
@@ -1744,6 +1774,7 @@ export class Ssm extends PolicyStatement {
       'DescribeMaintenanceWindowsForTarget',
       'DescribeParameters',
       'DescribePatchBaselines',
+      'DescribePatchGroupState',
       'DescribePatchGroups',
       'DescribePatchProperties',
       'DescribeSessions',
@@ -1751,6 +1782,7 @@ export class Ssm extends PolicyStatement {
       'ListAssociations',
       'ListComplianceItems',
       'ListComplianceSummaries',
+      'ListDocumentMetadataHistory',
       'ListDocumentVersions',
       'ListDocuments',
       'ListInstanceAssociations',
@@ -1758,6 +1790,9 @@ export class Ssm extends PolicyStatement {
       'ListOpsMetadata',
       'ListResourceComplianceSummaries',
       'ListResourceDataSync'
+    ],
+    'Permissions management': [
+      'ModifyDocumentPermission'
     ]
   };
 
@@ -2057,6 +2092,21 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by verifying that a user has permission to access a document belonging to a specific category
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toGetDocument()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDocumentCategories(value: string | string[], operator?: Operator | string) {
+    return this.if(`DocumentCategories`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by controlling whether the values for specified resources can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
@@ -2069,7 +2119,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access for resources created in a hierarchical structure
+   * Filters access by resources created in a hierarchical structure
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2113,12 +2163,13 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access based on a tag key-value pair assigned to the Systems Manager resource
+   * Filters access by based on a tag key-value pair assigned to the Systems Manager resource
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
    * - .toSendCommand()
+   * - .toStartSession()
    *
    * Applies to resource types:
    * - document

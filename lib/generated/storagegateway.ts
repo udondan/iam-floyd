@@ -1019,6 +1019,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the list of Active Directory users and groups that have special permissions for SMB file shares on the gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBLocalGroups.html
+   */
+  public toUpdateSMBLocalGroups() {
+    return this.to('UpdateSMBLocalGroups');
+  }
+
+  /**
    * Grants permission to update the SMB security strategy on a file gateway
    *
    * Access Level: Write
@@ -1107,6 +1118,7 @@ export class Storagegateway extends PolicyStatement {
       'UpdateNFSFileShare',
       'UpdateSMBFileShare',
       'UpdateSMBFileShareVisibility',
+      'UpdateSMBLocalGroups',
       'UpdateSMBSecurityStrategy',
       'UpdateSnapshotSchedule',
       'UpdateVTLDeviceType'
