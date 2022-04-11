@@ -10,7 +10,6 @@ on:
 jobs:
   build-standalone:
     name: "STANDALONE: Build package"
-    needs: finalize
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain
@@ -55,7 +54,6 @@ jobs:
 
   build-cdk:
     name: "CDK: Build package"
-    needs: finalize
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain
