@@ -14,22 +14,11 @@ jobs:
     container:
       image: jsii/superchain
     steps:
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
-        with:
-          name: sha
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Get the version
         id: get_version
@@ -58,22 +47,11 @@ jobs:
     container:
       image: jsii/superchain
     steps:
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
-        with:
-          name: sha
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Get the version
         id: get_version
