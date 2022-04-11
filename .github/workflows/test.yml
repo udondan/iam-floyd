@@ -39,6 +39,9 @@ jobs:
           name: ${{ github.run_id }}
           path: /tmp/sha
 
+      - name: WTF
+        run: ls -alh /tmp/sha
+
       - name: Store latest SHA as output
         id: get_sha
         run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
