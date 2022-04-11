@@ -1,12 +1,10 @@
 ---
-name: Release
+name: Test
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
-    paths:
-      - VERSION
+      - master
   workflow_dispatch:
 
 jobs:
