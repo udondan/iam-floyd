@@ -1,0 +1,260 @@
+---
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-standalone:
+    name: "STANDALONE: Build package"
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
+      - name: Build source
+        uses: udondan/jsii-publish@v0.12.0
+        with:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          BUILD_SOURCE: true
+
+      - name: Build packages
+        uses: udondan/jsii-publish@v0.12.0
+        with:
+          BUILD_PACKAGES: true
+
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: dist/**/*
+
+  build-cdk:
+    name: "CDK: Build package"
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
+      - name: Build CDK variant
+        run: make install cdk
+
+      - name: Build source
+        uses: udondan/jsii-publish@v0.12.0
+        with:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          BUILD_SOURCE: true
+
+      - name: Build packages
+        uses: udondan/jsii-publish@v0.12.0
+        with:
+          BUILD_PACKAGES: true
+
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist/**/*
+
+  test-standalone-node:
+    name: "STANDALONE: Test Node.js package"
+    needs: build-standalone
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
+      - name: Install package
+        run: |
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/iam-floyd@*.jsii.tgz
+          npm i -g typescript
+
+      - name: Test npm package
+        run: make test-typescript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-standalone-python:
+    name: "STANDALONE: Test Python package"
+    needs: build-standalone
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
+      - name: Test Python package
+        run: make test-python
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-cdk-node:
+    name: "CDK: Test Node.js package"
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
+
+      - name: Install package
+        run: |
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk-iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
+          npm i -g typescript
+
+      - name: Test npm package
+        run: make test-typescript-cdk
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-cdk-python:
+    name: "CDK: Test Python package"
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
+
+      - name: Test Python package
+        run: make test-python-cdk
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
