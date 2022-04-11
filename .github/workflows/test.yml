@@ -41,7 +41,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -86,7 +86,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -134,7 +134,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -177,7 +177,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -213,7 +213,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -256,7 +256,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/${{ github.run_id }})
 
       - name: Checkout code
         uses: actions/checkout@v2
