@@ -9,42 +9,13 @@ on:
 
 jobs:
   finalize:
-    name: Finalize
+    name: Prepare
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          persist-credentials: false
           fetch-depth: 0
-
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::$(cat VERSION)
-
-      - name: Update version references
-        run: make update-version-refs
-
-      - name: Re-format Python documentation examples
-        run: |
-          pip install autopep8
-          make python-examples-adjust-indention
-
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
-
-      - name: Push changes
-        run: >
-          [[ "${{ github.ref }}" == refs/tags/* ]] ||
-          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
@@ -52,7 +23,7 @@ jobs:
       - name: Store SHA as artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: sha
+          name: ${{ github.run_id }}
           path: /tmp/sha
 
   build-standalone:
