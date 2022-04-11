@@ -1,24 +1,85 @@
 ---
-name: Test
+name: Release
 
 on:
-  pull_request:
+  push:
     branches:
       - main
+    paths:
+      - VERSION
   workflow_dispatch:
 
 jobs:
-  build-standalone:
-    name: "STANDALONE: Build package"
+  finalize:
+    name: Finalize
     runs-on: ubuntu-latest
-    container:
-      image: jsii/superchain
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
+      - name: Update version references
+        run: make update-version-refs
+
+      - name: Re-format Python documentation examples
+        run: |
+          pip install autopep8
+          make python-examples-adjust-indention
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
+
+      - name: Push changes
+        run: >
+          [[ "${{ github.ref }}" == refs/tags/* ]] ||
+          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
+
+      - name: Get current SHA
+        run: git rev-parse HEAD > /tmp/sha
+
+      - name: Store SHA as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+  build-standalone:
+    name: "STANDALONE: Build package"
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Get the version
         id: get_version
@@ -43,15 +104,27 @@ jobs:
 
   build-cdk:
     name: "CDK: Build package"
+    needs: finalize
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain
     steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Get the version
         id: get_version
