@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Get current SHA
-        run: git rev-parse HEAD > /tmp/sha
+        run: git rev-parse HEAD > /tmp/sha/${{ github.run_id }}
 
       - name: Store SHA as artifacts
         uses: actions/upload-artifact@v2
