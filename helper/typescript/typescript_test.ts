@@ -13,18 +13,19 @@ export function out(statements: any[]) {
 
 export async function deploy(statements: any[], type = 'policy') {
   try {
-  if (type == 'policy') {
-    await deployPolicy(statements);
-  } else if (type == 'assume') {
-    await deployAssume(statements);
-  } else if (type == 'access') {
-    await deployAccess(statements);
-  } else {
-    throw new Error(`Unknown deploy type: ${type}`);
+    if (type == 'policy') {
+      await deployPolicy(statements);
+    } else if (type == 'assume') {
+      await deployAssume(statements);
+    } else if (type == 'access') {
+      await deployAccess(statements);
+    } else {
+      throw new Error(`Unknown deploy type: ${type}`);
+    }
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   }
-} catch (error) {
-  console.error(error);
-  process.exit(1);
 }
 
 function deployPolicy(statements: any[]): Promise<void> {
