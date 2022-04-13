@@ -51,13 +51,15 @@ def deploy_assume(statements):
 
     document = make_policy_document(statements)
 
-    response = client.create_role(
+    client.create_role(
         RoleName=role_name,
         AssumeRolePolicyDocument=document,
         Description='Testing assume policy creation',
     )
 
-    # @TODO: delete role
+    client.delete_role(
+        RoleName=role_name
+    )
 
 
 def deploy_access(statements):
