@@ -11,13 +11,13 @@ export function out(statements: any[]) {
   });
 }
 
-export function deploy(statements: any[], type = 'policy') {
+export async function deploy(statements: any[], type = 'policy') {
   if (type == 'policy') {
-    deployPolicy(statements);
+    await deployPolicy(statements);
   } else if (type == 'assume') {
-    deployAssume(statements);
+    await deployAssume(statements);
   } else if (type == 'access') {
-    deployAccess(statements);
+    await deployAccess(statements);
   } else {
     throw new Error(`Unknown deploy type: ${type}`);
   }
