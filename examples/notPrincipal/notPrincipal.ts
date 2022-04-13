@@ -15,4 +15,4 @@ function getStatement() {
 }
 const s = [getStatement()];
 out(s);
-deploy(s, 'access');
+//deploy(s, 'access'); //Disabled, because we need valid principals to test
