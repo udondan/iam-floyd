@@ -6,7 +6,7 @@
 export class PolicyStatementBase {
   /**
    * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]). In
-   * CDK applications, this is a reference to the current parition, otherwise, 'aws'.
+   * CDK applications, this is a reference to the current partition, otherwise, 'aws'.
    */
   protected static readonly defaultPartition = 'aws';
 
