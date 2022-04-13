@@ -1,8 +1,11 @@
+import * as cdk from 'aws-cdk-lib';
+import iam = require('aws-cdk-lib/aws-iam');
 import AWS = require('aws-sdk');
+import { Construct } from 'constructs';
 import crypto = require('crypto');
 
-const iam = new AWS.IAM();
-const s3 = new AWS.S3();
+const ciam = new AWS.IAM();
+const cs3 = new AWS.S3();
 
 export function out(statements: any[]) {
   statements.forEach((statement) => {
@@ -19,6 +22,8 @@ export async function deploy(statements: any[], type = 'policy') {
       await deployAssume(statements);
     } else if (type == 'access') {
       await deployAccess(statements);
+    } else if (type == 'cdk') {
+      deployCdk(statements);
     } else {
       throw new Error(`Unknown deploy type: ${type}`);
     }
@@ -41,12 +46,12 @@ function deployPolicy(statements: any[]): Promise<void> {
       PolicyDocument: document,
       Description: 'Testing policy creation',
     };
-    iam.createPolicy(params, (err, data) => {
+    ciam.createPolicy(params, (err, data) => {
       if (err) return reject(err);
 
       log(`Deleting test policy ${policyName}`);
 
-      iam.deletePolicy(
+      ciam.deletePolicy(
         {
           PolicyArn: data.Policy!.Arn!,
         },
@@ -72,11 +77,11 @@ function deployAssume(statements: any[]): Promise<void> {
       AssumeRolePolicyDocument: document,
       Description: 'Testing policy creation',
     };
-    iam.createRole(params, (err, data) => {
+    ciam.createRole(params, (err, data) => {
       if (err) return reject(err);
 
       log(`Deleting test role ${roleName}`);
-      iam.deleteRole(
+      ciam.deleteRole(
         {
           RoleName: data.Role!.RoleName!,
         },
@@ -98,7 +103,7 @@ function deployAccess(statements: any[]): Promise<void> {
 
     const document = makePolicyDocument(statements);
 
-    s3.createBucket(
+    cs3.createBucket(
       {
         Bucket: bucketName,
       },
@@ -107,7 +112,7 @@ function deployAccess(statements: any[]): Promise<void> {
 
         log('Attaching bucket policy...');
 
-        s3.putBucketPolicy(
+        cs3.putBucketPolicy(
           {
             Bucket: bucketName,
             Policy: document,
@@ -116,7 +121,7 @@ function deployAccess(statements: any[]): Promise<void> {
             if (err) return reject(err);
             log(`Deleting test bucket ${bucketName}`);
 
-            s3.deleteBucket({ Bucket: bucketName }, (err, _) => {
+            cs3.deleteBucket({ Bucket: bucketName }, (err, _) => {
               if (err) return reject(err);
               resolve();
             });
@@ -125,6 +130,27 @@ function deployAccess(statements: any[]): Promise<void> {
       }
     );
   });
+}
+
+interface StackProps extends cdk.StackProps {
+  statements: iam.PolicyStatement[];
+}
+
+class Stack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props: StackProps) {
+    super(scope, id, props);
+    new iam.Policy(this, 'Policy', {
+      statements: props.statements,
+    });
+  }
+}
+
+function deployCdk(statements: iam.PolicyStatement[]) {
+  const app = new cdk.App();
+  new Stack(app, 'TestStack' + newRandomName(), {
+    statements: statements,
+  });
+  app.synth();
 }
 
 function makePolicyDocument(statements: any[]) {
