@@ -22,11 +22,11 @@ def get_policy():
             'Statement': list(map(lambda x: x.to_json(), statements)),
     }
     # doc-end
-    return policy
+    return policy, statements
 
 
-policy = get_policy()
+policy, statements = get_policy()
 pretty = json.dumps(policy, indent=4)
 print(pretty)
 
-deploy(policy.get('Statement'))
+deploy(statements)
