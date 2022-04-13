@@ -2,12 +2,16 @@ chatbot:CreateChimeWebhookConfiguration;Write
 chatbot:CreateSlackChannelConfiguration;Write
 chatbot:DeleteChimeWebhookConfiguration;Write
 chatbot:DeleteSlackChannelConfiguration;Write
+chatbot:DeleteSlackUserIdentity;Write
 chatbot:DeleteSlackWorkspaceAuthorization;Write
 chatbot:DescribeChimeWebhookConfigurations;Read
 chatbot:DescribeSlackChannelConfigurations;Read
 chatbot:DescribeSlackChannels;Read
+chatbot:DescribeSlackUserIdentities;Read
 chatbot:DescribeSlackWorkspaces;Read
+chatbot:GetAccountPreferences;Read
 chatbot:GetSlackOauthParameters;Read
 chatbot:RedeemSlackOauthCode;Write
+chatbot:UpdateAccountPreferences;Write
 chatbot:UpdateChimeWebhookConfiguration;Write
 chatbot:UpdateSlackChannelConfiguration;Write

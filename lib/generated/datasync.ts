@@ -75,6 +75,21 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint for Amazon FSx for OpenZFS
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOpenZfs.html
+   */
+  public toCreateLocationFsxOpenZfs() {
+    return this.to('CreateLocationFsxOpenZfs');
+  }
+
+  /**
    * Grants permission to create an endpoint for an Amazon FSx Windows File Server file system
    *
    * Access Level: Write
@@ -243,6 +258,17 @@ export class Datasync extends PolicyStatement {
    */
   public toDescribeLocationFsxLustre() {
     return this.to('DescribeLocationFsxLustre');
+  }
+
+  /**
+   * Grants permission to view metadata, such as the path information about an Amazon FSx OpenZFS sync location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxOpenZfs.html
+   */
+  public toDescribeLocationFsxOpenZfs() {
+    return this.to('DescribeLocationFsxOpenZfs');
   }
 
   /**
@@ -511,6 +537,7 @@ export class Datasync extends PolicyStatement {
       'CreateAgent',
       'CreateLocationEfs',
       'CreateLocationFsxLustre',
+      'CreateLocationFsxOpenZfs',
       'CreateLocationFsxWindows',
       'CreateLocationHdfs',
       'CreateLocationNfs',
@@ -534,6 +561,7 @@ export class Datasync extends PolicyStatement {
       'DescribeAgent',
       'DescribeLocationEfs',
       'DescribeLocationFsxLustre',
+      'DescribeLocationFsxOpenZfs',
       'DescribeLocationFsxWindows',
       'DescribeLocationHdfs',
       'DescribeLocationNfs',

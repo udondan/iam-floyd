@@ -177,7 +177,7 @@ export class MediapackageVod extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags assigned to a PackagingGroup, PackagingConfiguration, or Asset.
+   * Grants permission to list the tags assigned to a PackagingGroup, PackagingConfiguration, or Asset
    *
    * Access Level: Read
    *
@@ -188,7 +188,7 @@ export class MediapackageVod extends PolicyStatement {
   }
 
   /**
-   * Grants permission to assign tags to a PackagingGroup, PackagingConfiguration, or Asset.
+   * Grants permission to assign tags to a PackagingGroup, PackagingConfiguration, or Asset
    *
    * Access Level: Tagging
    *
@@ -203,7 +203,7 @@ export class MediapackageVod extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags from a PackagingGroup, PackagingConfiguration, or Asset.
+   * Grants permission to delete tags from a PackagingGroup, PackagingConfiguration, or Asset
    *
    * Access Level: Tagging
    *

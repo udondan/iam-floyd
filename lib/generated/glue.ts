@@ -347,6 +347,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateRegistry
    */
   public toCreateRegistry() {
@@ -357,6 +361,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a new schema container
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateSchema
    */
@@ -1349,6 +1357,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListBlueprints
    */
   public toListBlueprints() {
@@ -1359,6 +1371,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all crawlers
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawlers
    */
@@ -1371,6 +1387,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-ListDevEndpoints
    */
   public toListDevEndpoints() {
@@ -1382,6 +1402,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-ListJobs
    */
   public toListJobs() {
@@ -1392,6 +1416,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all ML Transforms
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-ListMLTransforms
    */
@@ -1458,6 +1486,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all triggers
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-ListTriggers
    */

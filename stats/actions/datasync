@@ -2,6 +2,7 @@ datasync:CancelTaskExecution;Write
 datasync:CreateAgent;Write
 datasync:CreateLocationEfs;Write
 datasync:CreateLocationFsxLustre;Write
+datasync:CreateLocationFsxOpenZfs;Write
 datasync:CreateLocationFsxWindows;Write
 datasync:CreateLocationHdfs;Write
 datasync:CreateLocationNfs;Write
@@ -15,6 +16,7 @@ datasync:DeleteTask;Write
 datasync:DescribeAgent;Read
 datasync:DescribeLocationEfs;Read
 datasync:DescribeLocationFsxLustre;Read
+datasync:DescribeLocationFsxOpenZfs;Read
 datasync:DescribeLocationFsxWindows;Read
 datasync:DescribeLocationHdfs;Read
 datasync:DescribeLocationNfs;Read

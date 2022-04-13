@@ -55,6 +55,15 @@ export class Chatbot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS Chatbot Slack User Identity
+   *
+   * Access Level: Write
+   */
+  public toDeleteSlackUserIdentity() {
+    return this.to('DeleteSlackUserIdentity');
+  }
+
+  /**
    * Grants permission to delete the Slack workspace authorization with AWS Chatbot, associated with an AWS account
    *
    * Access Level: Write
@@ -91,12 +100,30 @@ export class Chatbot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe AWS Chatbot Slack User Identities
+   *
+   * Access Level: Read
+   */
+  public toDescribeSlackUserIdentities() {
+    return this.to('DescribeSlackUserIdentities');
+  }
+
+  /**
    * Grants permission to list all authorized Slack workspaces connected to the AWS Account onboarded with AWS Chatbot service
    *
    * Access Level: Read
    */
   public toDescribeSlackWorkspaces() {
     return this.to('DescribeSlackWorkspaces');
+  }
+
+  /**
+   * Grants permission to retrieve AWS Chatbot account preferences
+   *
+   * Access Level: Read
+   */
+  public toGetAccountPreferences() {
+    return this.to('GetAccountPreferences');
   }
 
   /**
@@ -115,6 +142,15 @@ export class Chatbot extends PolicyStatement {
    */
   public toRedeemSlackOauthCode() {
     return this.to('RedeemSlackOauthCode');
+  }
+
+  /**
+   * Grants permission to update AWS Chatbot account preferences
+   *
+   * Access Level: Write
+   */
+  public toUpdateAccountPreferences() {
+    return this.to('UpdateAccountPreferences');
   }
 
   /**
@@ -141,8 +177,10 @@ export class Chatbot extends PolicyStatement {
       'CreateSlackChannelConfiguration',
       'DeleteChimeWebhookConfiguration',
       'DeleteSlackChannelConfiguration',
+      'DeleteSlackUserIdentity',
       'DeleteSlackWorkspaceAuthorization',
       'RedeemSlackOauthCode',
+      'UpdateAccountPreferences',
       'UpdateChimeWebhookConfiguration',
       'UpdateSlackChannelConfiguration'
     ],
@@ -150,7 +188,9 @@ export class Chatbot extends PolicyStatement {
       'DescribeChimeWebhookConfigurations',
       'DescribeSlackChannelConfigurations',
       'DescribeSlackChannels',
+      'DescribeSlackUserIdentities',
       'DescribeSlackWorkspaces',
+      'GetAccountPreferences',
       'GetSlackOauthParameters'
     ]
   };
@@ -158,11 +198,14 @@ export class Chatbot extends PolicyStatement {
   /**
    * Adds a resource of type ChatbotConfiguration to the statement
    *
+   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   *
+   * @param configurationType - Identifier for the configurationType.
    * @param chatbotConfigurationName - Identifier for the chatbotConfigurationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onChatbotConfiguration(chatbotConfigurationName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chatbot::${ account || '*' }:chat-configuration/${ chatbotConfigurationName }`);
+  public onChatbotConfiguration(configurationType: string, chatbotConfigurationName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:chatbot::${ account || '*' }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
   }
 }
