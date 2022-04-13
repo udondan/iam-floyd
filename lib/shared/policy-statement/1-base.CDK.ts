@@ -6,10 +6,9 @@ import { Aws, aws_iam as iam } from 'aws-cdk-lib';
  * Base class for the Policy Statement
  */
 export class PolicyStatementBase extends iam.PolicyStatement {
-
   /**
    * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]). In
-   * CDK applications, this is a reference to the current parition, otherwise, 'aws'.
+   * CDK applications, this is a reference to the current partition, otherwise, 'aws'.
    */
   protected static readonly defaultPartition = Aws.PARTITION;
 
