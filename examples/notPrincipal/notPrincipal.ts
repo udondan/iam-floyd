@@ -15,4 +15,4 @@ function getStatement() {
 }
 const s = [getStatement()];
 out(s);
-deploy(s);
+deploy(s, 'access');

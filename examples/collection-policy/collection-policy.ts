@@ -1,3 +1,4 @@
+import { deploy } from '../../helper/typescript/typescript_test';
 import * as statement from '../../lib';
 
 function getPolicy() {
@@ -18,3 +19,5 @@ function getPolicy() {
 const policy = getPolicy();
 const str = JSON.stringify(policy, null, 4);
 console.log(str);
+
+deploy(policy.Statement);
