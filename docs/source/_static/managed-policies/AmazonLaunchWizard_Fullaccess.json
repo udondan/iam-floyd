@@ -318,11 +318,22 @@
 				"ssm:ListDocument*",
 				"ssm:ListInstanceAssociations",
 				"ssm:SendAutomationSignal",
-				"ssm:StartAutomationExecution",
-				"ssm:StopAutomationExecution",
 				"tag:Get*"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:StartAutomationExecution",
+				"ssm:StopAutomationExecution"
+			],
+			"Resource": "arn:aws:ssm:*:*:automation-definition/LaunchWizard-*:*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": "launchwizard.amazonaws.com"
+				}
+			}
 		},
 		{
 			"Effect": "Allow",
