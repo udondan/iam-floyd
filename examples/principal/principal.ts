@@ -75,4 +75,4 @@ function getStatements() {
 }
 const s = getStatements();
 out(s);
-deploy(s);
+// deploy(s); //Disabled, because we need valid principals to test
