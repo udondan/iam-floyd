@@ -15,7 +15,7 @@ deploy = getattr(test, 'deploy')
 
 s = (
     # doc-start
-    statement.Ec2() \
+    statement.S3() \
         .allow() \
         .all_write_actions()
     # doc-end
@@ -23,4 +23,4 @@ s = (
 
 all = [s]
 out(all)
-# deploy(all) disabled, bc exceeds policy size limit
+deploy(all)

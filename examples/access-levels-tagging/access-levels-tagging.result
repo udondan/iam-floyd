@@ -1,7 +1,15 @@
 {
     "Action": [
-        "ec2:CreateTags",
-        "ec2:DeleteTags"
+        "s3:DeleteJobTagging",
+        "s3:DeleteObjectTagging",
+        "s3:DeleteObjectVersionTagging",
+        "s3:DeleteStorageLensConfigurationTagging",
+        "s3:PutBucketTagging",
+        "s3:PutJobTagging",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging",
+        "s3:PutStorageLensConfigurationTagging",
+        "s3:ReplicateTags"
     ],
     "Resource": "*",
     "Effect": "Allow"

@@ -4,7 +4,7 @@ import * as statement from '../../lib';
 function getStatement() {
   return (
     // doc-start
-    new statement.Ec2() //
+    new statement.S3() //
       .allow()
       .allTaggingActions()
     // doc-end
