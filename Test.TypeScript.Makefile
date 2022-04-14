@@ -1,9 +1,10 @@
 .PHONY: test test-cdk
 
-install-cdk:
-	npm i aws-cdk-lib constructs@^10.0.0
+install:
+	npm i aws-cdk-lib constructs@^10.0.0 crypto
+	npm i --save-dev @types/node
 
-test: install-cdk
+test: install
 	@echo "Compiling TypeScript to JS"
 	@tsc -p examples/tsconfig.json
 	@for f in examples/**/*.js; do \
@@ -13,7 +14,7 @@ test: install-cdk
 		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
 
-test-cdk: install-cdk
+test-cdk: install
 	@echo "Compiling TypeScript to JS"
 	@tsc -p examples/tsconfig.cdk.json
 	@for f in examples/**/*.cdk.js; do \
