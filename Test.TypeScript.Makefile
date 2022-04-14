@@ -1,6 +1,7 @@
 .PHONY: test test-cdk
 
 install:
+	npx ts-node bin/mkcdk.ts --package-json
 	npm i aws-cdk-lib constructs@^10.0.0 crypto
 	npm i --save-dev @types/node
 
