@@ -344,13 +344,13 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
   }
 
   /**
@@ -360,13 +360,13 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * @param controlPanelId - Identifier for the controlPanelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onControlpanel(controlPanelId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
+    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
   }
 
   /**
@@ -377,10 +377,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param controlPanelId - Identifier for the controlPanelId.
    * @param routingControlId - Identifier for the routingControlId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
   }
 
   /**
@@ -391,12 +391,12 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param controlPanelId - Identifier for the controlPanelId.
    * @param safetyRuleId - Identifier for the safetyRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSafetyrule(controlPanelId: string, safetyRuleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
+    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
   }
 }

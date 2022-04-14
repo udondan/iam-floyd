@@ -396,13 +396,13 @@ export class Mediaconvert extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
   }
 
   /**
@@ -413,13 +413,13 @@ export class Mediaconvert extends PolicyStatement {
    * @param queueName - Identifier for the queueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
+    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
   }
 
   /**
@@ -430,13 +430,13 @@ export class Mediaconvert extends PolicyStatement {
    * @param presetName - Identifier for the presetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
+    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
   }
 
   /**
@@ -447,13 +447,13 @@ export class Mediaconvert extends PolicyStatement {
    * @param jobTemplateName - Identifier for the jobTemplateName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
+    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
   }
 
   /**
@@ -464,9 +464,9 @@ export class Mediaconvert extends PolicyStatement {
    * @param certificateArn - Identifier for the certificateArn.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
+    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
   }
 }

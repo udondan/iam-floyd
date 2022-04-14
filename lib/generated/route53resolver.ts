@@ -840,13 +840,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResolverDnssecConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-dnssec-config/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-dnssec-config/${ resourceId }`);
   }
 
   /**
@@ -857,13 +857,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResolverQueryLogConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-query-log-config/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-query-log-config/${ resourceId }`);
   }
 
   /**
@@ -874,13 +874,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResolverRule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-rule/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-rule/${ resourceId }`);
   }
 
   /**
@@ -891,13 +891,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-endpoint/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-endpoint/${ resourceId }`);
   }
 
   /**
@@ -908,13 +908,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group/${ resourceId }`);
   }
 
   /**
@@ -925,13 +925,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group-association/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group-association/${ resourceId }`);
   }
 
   /**
@@ -942,13 +942,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-domain-list/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-domain-list/${ resourceId }`);
   }
 
   /**
@@ -959,13 +959,13 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
   }
 
   /**
@@ -976,9 +976,9 @@ export class Route53resolver extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
   }
 }

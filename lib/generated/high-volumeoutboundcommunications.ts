@@ -280,12 +280,12 @@ export class ConnectCampaigns extends PolicyStatement {
    * @param campaignId - Identifier for the campaignId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
+    return this.on(`arn:${ partition || ConnectCampaigns.defaultPartition }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
   }
 }

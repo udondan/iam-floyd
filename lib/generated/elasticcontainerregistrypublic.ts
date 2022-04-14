@@ -326,14 +326,14 @@ export class EcrPublic extends PolicyStatement {
    *
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ecr-public::${ account || '*' }:repository/${ repositoryName }`);
+    return this.on(`arn:${ partition || EcrPublic.defaultPartition }:ecr-public::${ account || '*' }:repository/${ repositoryName }`);
   }
 
   /**
@@ -343,10 +343,10 @@ export class EcrPublic extends PolicyStatement {
    *
    * @param registryId - Identifier for the registryId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegistry(registryId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ecr-public::${ account || '*' }:registry/${ registryId }`);
+    return this.on(`arn:${ partition || EcrPublic.defaultPartition }:ecr-public::${ account || '*' }:registry/${ registryId }`);
   }
 
   /**

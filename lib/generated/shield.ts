@@ -527,10 +527,10 @@ export class Shield extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAttack(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:attack/${ id }`);
+    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:attack/${ id }`);
   }
 
   /**
@@ -540,13 +540,13 @@ export class Shield extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProtection(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:protection/${ id }`);
+    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:protection/${ id }`);
   }
 
   /**
@@ -556,12 +556,12 @@ export class Shield extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProtectionGroup(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:protection-group/${ id }`);
+    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:protection-group/${ id }`);
   }
 }

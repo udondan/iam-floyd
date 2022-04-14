@@ -19,7 +19,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Create a quote
+   * Grants permission to create a quote
    *
    * Access Level: Tagging
    *
@@ -34,7 +34,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Describe a quote
+   * Grants permission to describe a quote
    *
    * Access Level: Read
    *
@@ -45,7 +45,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * List the quotes in the user account
+   * Grants permission to list the quotes in the user account
    *
    * Access Level: List
    *
@@ -56,7 +56,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an AWS Elemental Appliances and Software resource
+   * Grants permission to lists tags for an AWS Elemental Appliances and Software resource
    *
    * Access Level: Read
    *
@@ -67,7 +67,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * This action tags an AWS Elemental Appliances and Software resource
+   * Grants permission to tag an AWS Elemental Appliances and Software resource
    *
    * Access Level: Tagging
    *
@@ -82,7 +82,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an AWS Elemental Appliances and Software resource
+   * Grants permission to remove a tag from an AWS Elemental Appliances and Software resource
    *
    * Access Level: Tagging
    *
@@ -96,7 +96,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Modify a quote
+   * Grants permission to modify a quote
    *
    * Access Level: Write
    *
@@ -132,12 +132,12 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuote(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elemental-appliances-software:${ region || '*' }:${ account || '*' }:quote/${ resourceId }`);
+    return this.on(`arn:${ partition || ElementalAppliancesSoftware.defaultPartition }:elemental-appliances-software:${ region || '*' }:${ account || '*' }:quote/${ resourceId }`);
   }
 }

@@ -315,13 +315,13 @@ export class Fis extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAction(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
+    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
   }
 
   /**
@@ -332,13 +332,13 @@ export class Fis extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperiment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
+    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
   }
 
   /**
@@ -349,13 +349,13 @@ export class Fis extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
+    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
   }
 
   /**

@@ -463,12 +463,12 @@ export class Worklink extends PolicyStatement {
    *
    * @param fleetName - Identifier for the fleetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:worklink::${ account || '*' }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition || Worklink.defaultPartition }:worklink::${ account || '*' }:fleet/${ fleetName }`);
   }
 }

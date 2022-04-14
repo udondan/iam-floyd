@@ -609,13 +609,13 @@ export class Logs extends PolicyStatement {
    * @param logGroupName - Identifier for the logGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
   }
 
   /**
@@ -627,10 +627,10 @@ export class Logs extends PolicyStatement {
    * @param logStreamName - Identifier for the logStreamName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
   }
 
   /**
@@ -641,9 +641,9 @@ export class Logs extends PolicyStatement {
    * @param destinationName - Identifier for the destinationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
   }
 }

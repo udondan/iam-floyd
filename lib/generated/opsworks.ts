@@ -19,7 +19,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Assign a registered instance to a layer
+   * Grants permission to assign a registered instance to a layer
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Assigns one of the stack's registered Amazon EBS volumes to a specified instance
+   * Grants permission to assign one of the stack's registered Amazon EBS volumes to a specified instance
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Associates one of the stack's registered Elastic IP addresses with a specified instance
+   * Grants permission to associate one of the stack's registered Elastic IP addresses with a specified instance
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Attaches an Elastic Load Balancing load balancer to a specified layer
+   * Grants permission to attach an Elastic Load Balancing load balancer to a specified layer
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates a clone of a specified stack
+   * Grants permission to create a clone of a specified stack
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates an app for a specified stack
+   * Grants permission to create an app for a specified stack
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Runs deployment or stack commands
+   * Grants permission to run deployment or stack commands
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates an instance in a specified stack
+   * Grants permission to create an instance in a specified stack
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates a layer
+   * Grants permission to create a layer
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates a new stack
+   * Grants permission to create a new stack
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Creates a new user profile
+   * Grants permission to create a new user profile
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified app
+   * Grants permission to delete a specified app
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified instance, which terminates the associated Amazon EC2 instance
+   * Grants permission to delete a specified instance, which terminates the associated Amazon EC2 instance
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified layer
+   * Grants permission to delete a specified layer
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified stack
+   * Grants permission to delete a specified stack
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a user profile
+   * Grants permission to delete a user profile
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deletes a user profile
+   * Grants permission to delete a user profile
    *
    * Access Level: Write
    *
@@ -206,7 +206,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deregisters a specified Elastic IP address
+   * Grants permission to deregister a specified Elastic IP address
    *
    * Access Level: Write
    *
@@ -217,7 +217,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deregister a registered Amazon EC2 or on-premises instance
+   * Grants permission to deregister a registered Amazon EC2 or on-premises instance
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deregisters an Amazon RDS instance
+   * Grants permission to deregister an Amazon RDS instance
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Deregisters an Amazon EBS volume
+   * Grants permission to deregister an Amazon EBS volume
    *
    * Access Level: Write
    *
@@ -250,7 +250,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes the available AWS OpsWorks agent versions
+   * Grants permission to describe the available AWS OpsWorks agent versions
    *
    * Access Level: List
    *
@@ -261,7 +261,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of a specified set of apps
+   * Grants permission to request a description of a specified set of apps
    *
    * Access Level: List
    *
@@ -272,7 +272,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes the results of specified commands
+   * Grants permission to describe the results of specified commands
    *
    * Access Level: List
    *
@@ -283,7 +283,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of a specified set of deployments
+   * Grants permission to request a description of a specified set of deployments
    *
    * Access Level: List
    *
@@ -294,7 +294,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes Amazon ECS clusters that are registered with a stack
+   * Grants permission to describe Amazon ECS clusters that are registered with a stack
    *
    * Access Level: List
    *
@@ -305,7 +305,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes Elastic IP addresses
+   * Grants permission to describe Elastic IP addresses
    *
    * Access Level: List
    *
@@ -316,7 +316,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes a stack's Elastic Load Balancing instances
+   * Grants permission to describe a stack's Elastic Load Balancing instances
    *
    * Access Level: List
    *
@@ -327,7 +327,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of a set of instances
+   * Grants permission to request a description of a set of instances
    *
    * Access Level: List
    *
@@ -338,7 +338,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of one or more layers in a specified stack
+   * Grants permission to request a description of one or more layers in a specified stack
    *
    * Access Level: List
    *
@@ -349,7 +349,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes load-based auto scaling configurations for specified layers
+   * Grants permission to describe load-based auto scaling configurations for specified layers
    *
    * Access Level: List
    *
@@ -360,7 +360,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes a user's SSH information
+   * Grants permission to describe a user's SSH information
    *
    * Access Level: List
    *
@@ -371,7 +371,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes the operating systems that are supported by AWS OpsWorks Stacks
+   * Grants permission to describe the operating systems that are supported by AWS OpsWorks Stacks
    *
    * Access Level: List
    *
@@ -382,7 +382,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes the permissions for a specified stack
+   * Grants permission to describe the permissions for a specified stack
    *
    * Access Level: List
    *
@@ -393,7 +393,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describe an instance's RAID arrays
+   * Grants permission to describe an instance's RAID arrays
    *
    * Access Level: List
    *
@@ -404,7 +404,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes Amazon RDS instances
+   * Grants permission to describe Amazon RDS instances
    *
    * Access Level: List
    *
@@ -415,7 +415,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes AWS OpsWorks service errors
+   * Grants permission to describe AWS OpsWorks service errors
    *
    * Access Level: List
    *
@@ -426,7 +426,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of a stack's provisioning parameters
+   * Grants permission to request a description of a stack's provisioning parameters
    *
    * Access Level: List
    *
@@ -437,7 +437,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as running_setup or online
+   * Grants permission to describe the number of layers and apps in a specified stack, and the number of instances in each state, such as running_setup or online
    *
    * Access Level: List
    *
@@ -448,7 +448,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Requests a description of one or more stacks
+   * Grants permission to request a description of one or more stacks
    *
    * Access Level: List
    *
@@ -459,7 +459,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes time-based auto scaling configurations for specified instances
+   * Grants permission to describe time-based auto scaling configurations for specified instances
    *
    * Access Level: List
    *
@@ -470,7 +470,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describe specified users
+   * Grants permission to describe specified users
    *
    * Access Level: List
    *
@@ -481,7 +481,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Describes an instance's Amazon EBS volumes
+   * Grants permission to describe an instance's Amazon EBS volumes
    *
    * Access Level: List
    *
@@ -492,7 +492,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Detaches a specified Elastic Load Balancing instance from its layer
+   * Grants permission to detache a specified Elastic Load Balancing instance from its layer
    *
    * Access Level: Write
    *
@@ -503,7 +503,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Disassociates an Elastic IP address from its instance
+   * Grants permission to disassociate an Elastic IP address from its instance
    *
    * Access Level: Write
    *
@@ -514,7 +514,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Gets a generated host name for the specified layer, based on the current host name theme
+   * Grants permission to get a generated host name for the specified layer, based on the current host name theme
    *
    * Access Level: Read
    *
@@ -525,7 +525,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Grants RDP access to a Windows instance for a specified time period
+   * Grants permission to grant RDP access to a Windows instance for a specified time period
    *
    * Access Level: Write
    *
@@ -536,7 +536,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Returns a list of tags that are applied to the specified stack or layer
+   * Grants permission to return a list of tags that are applied to the specified stack or layer
    *
    * Access Level: List
    *
@@ -547,7 +547,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Reboots a specified instance
+   * Grants permission to reboot a specified instance
    *
    * Access Level: Write
    *
@@ -558,7 +558,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Registers a specified Amazon ECS cluster with a stack
+   * Grants permission to register a specified Amazon ECS cluster with a stack
    *
    * Access Level: Write
    *
@@ -569,7 +569,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Registers an Elastic IP address with a specified stack
+   * Grants permission to register an Elastic IP address with a specified stack
    *
    * Access Level: Write
    *
@@ -580,7 +580,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Registers instances with a specified stack that were created outside of AWS OpsWorks
+   * Grants permission to register instances with a specified stack that were created outside of AWS OpsWorks
    *
    * Access Level: Write
    *
@@ -591,7 +591,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Registers an Amazon RDS instance with a stack
+   * Grants permission to register an Amazon RDS instance with a stack
    *
    * Access Level: Write
    *
@@ -602,7 +602,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Registers an Amazon EBS volume with a specified stack
+   * Grants permission to register an Amazon EBS volume with a specified stack
    *
    * Access Level: Write
    *
@@ -613,7 +613,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Specify the load-based auto scaling configuration for a specified layer
+   * Grants permission to specify the load-based auto scaling configuration for a specified layer
    *
    * Access Level: Write
    *
@@ -624,7 +624,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Specifies a user's permissions
+   * Grants permission to specify a user's permissions
    *
    * Access Level: Permissions management
    *
@@ -635,7 +635,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Specify the time-based auto scaling configuration for a specified instance
+   * Grants permission to specify the time-based auto scaling configuration for a specified instance
    *
    * Access Level: Write
    *
@@ -646,7 +646,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Starts a specified instance
+   * Grants permission to start a specified instance
    *
    * Access Level: Write
    *
@@ -657,7 +657,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Starts a stack's instances
+   * Grants permission to start a stack's instances
    *
    * Access Level: Write
    *
@@ -668,7 +668,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Stops a specified instance
+   * Grants permission to stop a specified instance
    *
    * Access Level: Write
    *
@@ -679,7 +679,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Stops a specified stack
+   * Grants permission to stop a specified stack
    *
    * Access Level: Write
    *
@@ -690,7 +690,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Apply tags to a specified stack or layer
+   * Grants permission to apply tags to a specified stack or layer
    *
    * Access Level: Tagging
    *
@@ -701,7 +701,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Unassigns a registered instance from all of it's layers
+   * Grants permission to unassign a registered instance from all of it's layers
    *
    * Access Level: Write
    *
@@ -712,7 +712,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Unassigns an assigned Amazon EBS volume
+   * Grants permission to unassign an assigned Amazon EBS volume
    *
    * Access Level: Write
    *
@@ -723,7 +723,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Removes tags from a specified stack or layer
+   * Grants permission to remove tags from a specified stack or layer
    *
    * Access Level: Tagging
    *
@@ -734,7 +734,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a specified app
+   * Grants permission to update a specified app
    *
    * Access Level: Write
    *
@@ -745,7 +745,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a registered Elastic IP address's name
+   * Grants permission to update a registered Elastic IP address's name
    *
    * Access Level: Write
    *
@@ -756,7 +756,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a specified instance
+   * Grants permission to update a specified instance
    *
    * Access Level: Write
    *
@@ -767,7 +767,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a specified layer
+   * Grants permission to update a specified layer
    *
    * Access Level: Write
    *
@@ -778,7 +778,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a user's SSH public key
+   * Grants permission to update a user's SSH public key
    *
    * Access Level: Write
    *
@@ -789,7 +789,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates an Amazon RDS instance
+   * Grants permission to update an Amazon RDS instance
    *
    * Access Level: Write
    *
@@ -800,7 +800,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a specified stack
+   * Grants permission to update a specified stack
    *
    * Access Level: Write
    *
@@ -811,7 +811,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates a specified user profile
+   * Grants permission to update a specified user profile
    *
    * Access Level: Permissions management
    *
@@ -822,7 +822,7 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
-   * Updates an Amazon EBS volume's name or mount point
+   * Grants permission to update an Amazon EBS volume's name or mount point
    *
    * Access Level: Write
    *
@@ -927,9 +927,9 @@ export class Opsworks extends PolicyStatement {
    * @param stackId - Identifier for the stackId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStack(stackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:opsworks:${ region || '*' }:${ account || '*' }:stack/${ stackId }/`);
+    return this.on(`arn:${ partition || Opsworks.defaultPartition }:opsworks:${ region || '*' }:${ account || '*' }:stack/${ stackId }/`);
   }
 }

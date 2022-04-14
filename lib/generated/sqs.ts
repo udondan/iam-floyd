@@ -241,9 +241,9 @@ export class Sqs extends PolicyStatement {
    * @param queueName - Identifier for the queueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sqs:${ region || '*' }:${ account || '*' }:${ queueName }`);
+    return this.on(`arn:${ partition || Sqs.defaultPartition }:sqs:${ region || '*' }:${ account || '*' }:${ queueName }`);
   }
 }

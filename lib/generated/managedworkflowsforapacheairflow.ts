@@ -195,10 +195,10 @@ export class Airflow extends PolicyStatement {
    * @param environmentName - Identifier for the environmentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(environmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:airflow:${ region || '*' }:${ account || '*' }:environment/${ environmentName }`);
+    return this.on(`arn:${ partition || Airflow.defaultPartition }:airflow:${ region || '*' }:${ account || '*' }:environment/${ environmentName }`);
   }
 
   /**
@@ -210,9 +210,9 @@ export class Airflow extends PolicyStatement {
    * @param roleName - Identifier for the roleName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRbacRole(environmentName: string, roleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:airflow:${ region || '*' }:${ account || '*' }:role/${ environmentName }/${ roleName }`);
+    return this.on(`arn:${ partition || Airflow.defaultPartition }:airflow:${ region || '*' }:${ account || '*' }:role/${ environmentName }/${ roleName }`);
   }
 }

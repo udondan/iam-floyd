@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
+ * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Datapipeline extends PolicyStatement {
   public servicePrefix = 'datapipeline';
 
   /**
-   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
+   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.
+   * Grants permission to validate the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Adds or modifies tags for the specified pipeline.
+   * Grants permission to add or modify tags for the specified pipeline
    *
    * Access Level: Tagging
    *
@@ -50,11 +50,13 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Creates a new, empty pipeline.
+   * Grants permission to create a new, empty pipeline
    *
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
@@ -64,7 +66,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Deactivates the specified running pipeline.
+   * Grants permission to Deactivate the specified running pipeline
    *
    * Access Level: Write
    *
@@ -80,7 +82,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Deletes a pipeline, its pipeline definition, and its run history.
+   * Grants permission to delete a pipeline, its pipeline definition, and its run history
    *
    * Access Level: Write
    *
@@ -95,7 +97,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Gets the object definitions for a set of objects associated with the pipeline.
+   * Grants permission to get the object definitions for a set of objects associated with the pipeline
    *
    * Access Level: Read
    *
@@ -110,7 +112,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Retrieves metadata about one or more pipelines.
+   * Grants permission to retrieves metadata about one or more pipelines
    *
    * Access Level: List
    *
@@ -125,7 +127,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Task runners call EvaluateExpression to evaluate a string in the context of the specified object.
+   * Grants permission to task runners to call EvaluateExpression, to evaluate a string in the context of the specified object
    *
    * Access Level: Read
    *
@@ -140,7 +142,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Description for GetAccountLimits
+   * Grants permission to call GetAccountLimits
    *
    * Access Level: List
    *
@@ -151,7 +153,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Gets the definition of the specified pipeline.
+   * Grants permission to gets the definition of the specified pipeline
    *
    * Access Level: Read
    *
@@ -167,7 +169,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Lists the pipeline identifiers for all active pipelines that you have permission to access.
+   * Grants permission to list the pipeline identifiers for all active pipelines that you have permission to access
    *
    * Access Level: List
    *
@@ -178,7 +180,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Task runners call PollForTask to receive a task to perform from AWS Data Pipeline.
+   * Grants permission to task runners to call PollForTask, to receive a task to perform from AWS Data Pipeline
    *
    * Access Level: Write
    *
@@ -192,7 +194,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Description for PutAccountLimits
+   * Grants permission to call PutAccountLimits
    *
    * Access Level: Write
    *
@@ -203,7 +205,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Adds tasks, schedules, and preconditions to the specified pipeline.
+   * Grants permission to add tasks, schedules, and preconditions to the specified pipeline
    *
    * Access Level: Write
    *
@@ -219,7 +221,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Queries the specified pipeline for the names of objects that match the specified set of conditions.
+   * Grants permission to query the specified pipeline for the names of objects that match the specified set of conditions
    *
    * Access Level: Read
    *
@@ -234,7 +236,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Removes existing tags from the specified pipeline.
+   * Grants permission to remove existing tags from the specified pipeline
    *
    * Access Level: Tagging
    *
@@ -249,7 +251,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Task runners call ReportTaskProgress when assigned a task to acknowledge that it has the task.
+   * Grants permission to task runners to call ReportTaskProgress, when they are assigned a task to acknowledge that it has the task
    *
    * Access Level: Write
    *
@@ -260,7 +262,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational.
+   * Grants permission to task runners to call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational
    *
    * Access Level: Write
    *
@@ -271,7 +273,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline.
+   * Grants permission to requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline
    *
    * Access Level: Write
    *
@@ -286,7 +288,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Task runners call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status.
+   * Grants permission to task runners to call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status
    *
    * Access Level: Write
    *
@@ -297,7 +299,7 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
-   * Validates the specified pipeline definition to ensure that it is well formed and can be run without error.
+   * Grants permission to validate the specified pipeline definition to ensure that it is well formed and can be run without error
    *
    * Access Level: Read
    *
@@ -345,7 +347,7 @@ export class Datapipeline extends PolicyStatement {
   };
 
   /**
-   * The IAM user that created the pipeline.
+   * Filters access by the IAM user that created the pipeline
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-example-tag-policies.html#ex3
    *
@@ -365,14 +367,14 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPipelineCreator(value: string | string[], operator?: Operator | string) {
-    return this.if(`PipelineCreator`, value, operator || 'ArnLike');
+    return this.if(`PipelineCreator`, value, operator || 'StringLike');
   }
 
   /**
-   * A customer-specified key/value pair that can be attached to a resource.
+   * Filters access by customer-specified key/value pair that can be attached to a resource
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-tags
    *
@@ -393,14 +395,14 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTag(value: string | string[], operator?: Operator | string) {
-    return this.if(`Tag`, value, operator || 'ArnLike');
+    return this.if(`Tag`, value, operator || 'StringLike');
   }
 
   /**
-   * The name of a worker group for which a Task Runner retrieves work.
+   * Filters access by the name of a worker group for which a Task Runner retrieves work
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-workergroup
    *
@@ -413,9 +415,9 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWorkerGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`workerGroup`, value, operator || 'ArnLike');
+    return this.if(`workerGroup`, value, operator || 'StringLike');
   }
 }

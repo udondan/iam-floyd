@@ -627,13 +627,13 @@ export class LicenseManager extends PolicyStatement {
    * @param licenseConfigurationId - Identifier for the licenseConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -643,10 +643,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * @param licenseId - Identifier for the licenseId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:license-manager::${ account || '*' }:license:${ licenseId }`);
+    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:license:${ licenseId }`);
   }
 
   /**
@@ -656,10 +656,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * @param grantId - Identifier for the grantId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:license-manager::${ account || '*' }:grant:${ grantId }`);
+    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:grant:${ grantId }`);
   }
 
   /**
@@ -670,13 +670,13 @@ export class LicenseManager extends PolicyStatement {
    * @param reportGeneratorId - Identifier for the reportGeneratorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
+    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
   }
 
   /**

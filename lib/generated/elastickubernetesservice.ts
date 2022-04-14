@@ -490,13 +490,13 @@ export class Eks extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -509,13 +509,13 @@ export class Eks extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
   }
 
   /**
@@ -528,13 +528,13 @@ export class Eks extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
   }
 
   /**
@@ -547,13 +547,13 @@ export class Eks extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
   }
 
   /**
@@ -567,13 +567,13 @@ export class Eks extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
   }
 
   /**

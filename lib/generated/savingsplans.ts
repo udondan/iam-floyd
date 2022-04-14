@@ -164,12 +164,12 @@ export class Savingsplans extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSavingsplan(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:savingsplans::${ account || '*' }:savingsplan/${ resourceId }`);
+    return this.on(`arn:${ partition || Savingsplans.defaultPartition }:savingsplans::${ account || '*' }:savingsplan/${ resourceId }`);
   }
 }

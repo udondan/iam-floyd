@@ -1151,13 +1151,13 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDistribution(distributionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:distribution/${ distributionId }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:distribution/${ distributionId }`);
   }
 
   /**
@@ -1167,13 +1167,13 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:streaming-distribution/${ distributionId }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:streaming-distribution/${ distributionId }`);
   }
 
   /**
@@ -1183,10 +1183,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:origin-access-identity/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:origin-access-identity/${ id }`);
   }
 
   /**
@@ -1196,10 +1196,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFieldLevelEncryption(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:field-level-encryption/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:field-level-encryption/${ id }`);
   }
 
   /**
@@ -1209,10 +1209,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFieldLevelEncryptionProfile(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:field-level-encryption-profile/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:field-level-encryption-profile/${ id }`);
   }
 
   /**
@@ -1222,10 +1222,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCachePolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:cache-policy/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:cache-policy/${ id }`);
   }
 
   /**
@@ -1235,10 +1235,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:origin-request-policy/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:origin-request-policy/${ id }`);
   }
 
   /**
@@ -1248,10 +1248,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:realtime-log-config/${ name }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:realtime-log-config/${ name }`);
   }
 
   /**
@@ -1261,10 +1261,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunction(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:function/${ name }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:function/${ name }`);
   }
 
   /**
@@ -1274,9 +1274,9 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResponseHeadersPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:response-headers-policy/${ id }`);
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:response-headers-policy/${ id }`);
   }
 }

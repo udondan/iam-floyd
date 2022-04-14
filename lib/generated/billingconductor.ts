@@ -424,13 +424,13 @@ export class Billingconductor extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBillingGroup(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:billingconductor::${ account || '*' }:billinggroup/${ resourceId }`);
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:billinggroup/${ resourceId }`);
   }
 
   /**
@@ -440,13 +440,13 @@ export class Billingconductor extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPricingPlan(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:billingconductor::${ account || '*' }:pricingplan/${ resourceId }`);
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingplan/${ resourceId }`);
   }
 
   /**
@@ -456,13 +456,13 @@ export class Billingconductor extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPricingRule(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:billingconductor::${ account || '*' }:pricingrule/${ resourceId }`);
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingrule/${ resourceId }`);
   }
 
   /**
@@ -472,12 +472,12 @@ export class Billingconductor extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomLineItem(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:billingconductor::${ account || '*' }:customlineitem/${ resourceId }`);
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ resourceId }`);
   }
 }

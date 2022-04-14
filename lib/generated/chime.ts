@@ -3196,13 +3196,13 @@ export class Chime extends PolicyStatement {
    *
    * @param meetingId - Identifier for the meetingId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMeeting(meetingId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chime::${ accountId || '*' }:meeting/${ meetingId }`);
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime::${ accountId || '*' }:meeting/${ meetingId }`);
   }
 
   /**
@@ -3213,13 +3213,13 @@ export class Chime extends PolicyStatement {
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppInstance(appInstanceId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }`);
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }`);
   }
 
   /**
@@ -3231,13 +3231,13 @@ export class Chime extends PolicyStatement {
    * @param appInstanceUserId - Identifier for the appInstanceUserId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
   }
 
   /**
@@ -3249,13 +3249,13 @@ export class Chime extends PolicyStatement {
    * @param channelId - Identifier for the channelId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(appInstanceId: string, channelId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel/${ channelId }`);
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel/${ channelId }`);
   }
 
   /**
@@ -3267,12 +3267,12 @@ export class Chime extends PolicyStatement {
    * @param channelFlowId - Identifier for the channelFlowId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannelFlow(appInstanceId: string, channelFlowId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
   }
 }

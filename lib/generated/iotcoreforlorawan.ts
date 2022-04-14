@@ -1146,13 +1146,13 @@ export class Iotwireless extends PolicyStatement {
    * @param wirelessDeviceId - Identifier for the wirelessDeviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDevice/${ wirelessDeviceId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDevice/${ wirelessDeviceId }`);
   }
 
   /**
@@ -1163,13 +1163,13 @@ export class Iotwireless extends PolicyStatement {
    * @param wirelessGatewayId - Identifier for the wirelessGatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGateway/${ wirelessGatewayId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGateway/${ wirelessGatewayId }`);
   }
 
   /**
@@ -1180,13 +1180,13 @@ export class Iotwireless extends PolicyStatement {
    * @param deviceProfileId - Identifier for the deviceProfileId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceProfile(deviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:DeviceProfile/${ deviceProfileId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:DeviceProfile/${ deviceProfileId }`);
   }
 
   /**
@@ -1197,13 +1197,13 @@ export class Iotwireless extends PolicyStatement {
    * @param serviceProfileId - Identifier for the serviceProfileId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:ServiceProfile/${ serviceProfileId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:ServiceProfile/${ serviceProfileId }`);
   }
 
   /**
@@ -1214,13 +1214,13 @@ export class Iotwireless extends PolicyStatement {
    * @param destinationName - Identifier for the destinationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:Destination/${ destinationName }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:Destination/${ destinationName }`);
   }
 
   /**
@@ -1231,13 +1231,13 @@ export class Iotwireless extends PolicyStatement {
    * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:SidewalkAccount/${ sidewalkAccountId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:SidewalkAccount/${ sidewalkAccountId }`);
   }
 
   /**
@@ -1248,13 +1248,13 @@ export class Iotwireless extends PolicyStatement {
    * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
   }
 
   /**
@@ -1265,13 +1265,13 @@ export class Iotwireless extends PolicyStatement {
    * @param fuotaTaskId - Identifier for the fuotaTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFuotaTask(fuotaTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:FuotaTask/${ fuotaTaskId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:FuotaTask/${ fuotaTaskId }`);
   }
 
   /**
@@ -1282,13 +1282,13 @@ export class Iotwireless extends PolicyStatement {
    * @param multicastGroupId - Identifier for the multicastGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMulticastGroup(multicastGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:MulticastGroup/${ multicastGroupId }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:MulticastGroup/${ multicastGroupId }`);
   }
 
   /**
@@ -1299,10 +1299,10 @@ export class Iotwireless extends PolicyStatement {
    * @param thingName - Identifier for the thingName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
   }
 
   /**
@@ -1313,9 +1313,9 @@ export class Iotwireless extends PolicyStatement {
    * @param certificate - Identifier for the certificate.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
   }
 }

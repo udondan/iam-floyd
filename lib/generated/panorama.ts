@@ -836,13 +836,13 @@ export class Panorama extends PolicyStatement {
    * @param deviceId - Identifier for the deviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:device/${ deviceId }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:device/${ deviceId }`);
   }
 
   /**
@@ -853,13 +853,13 @@ export class Panorama extends PolicyStatement {
    * @param packageId - Identifier for the packageId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackage(packageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:package/${ packageId }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:package/${ packageId }`);
   }
 
   /**
@@ -870,13 +870,13 @@ export class Panorama extends PolicyStatement {
    * @param applicationInstanceId - Identifier for the applicationInstanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:applicationInstance/${ applicationInstanceId }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:applicationInstance/${ applicationInstanceId }`);
   }
 
   /**
@@ -888,13 +888,13 @@ export class Panorama extends PolicyStatement {
    * @param dataSourceName - Identifier for the dataSourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataSource(deviceId: string, dataSourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:dataSource/${ deviceId }/${ dataSourceName }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:dataSource/${ deviceId }/${ dataSourceName }`);
   }
 
   /**
@@ -905,13 +905,13 @@ export class Panorama extends PolicyStatement {
    * @param modelName - Identifier for the modelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
   }
 
   /**
@@ -922,13 +922,13 @@ export class Panorama extends PolicyStatement {
    * @param appName - Identifier for the appName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApp(appName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }`);
   }
 
   /**
@@ -940,9 +940,9 @@ export class Panorama extends PolicyStatement {
    * @param appVersion - Identifier for the appVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppVersion(appName: string, appVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }:${ appVersion }`);
+    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }:${ appVersion }`);
   }
 }

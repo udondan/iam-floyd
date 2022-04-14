@@ -171,12 +171,12 @@ export class Freertos extends PolicyStatement {
    * @param configurationName - Identifier for the configurationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:freertos:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }`);
+    return this.on(`arn:${ partition || Freertos.defaultPartition }:freertos:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }`);
   }
 }

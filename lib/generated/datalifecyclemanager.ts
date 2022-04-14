@@ -145,12 +145,12 @@ export class Dlm extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPolicy(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dlm:${ region || '*' }:${ account || '*' }:policy/${ resourceName }`);
+    return this.on(`arn:${ partition || Dlm.defaultPartition }:dlm:${ region || '*' }:${ account || '*' }:policy/${ resourceName }`);
   }
 }

@@ -392,10 +392,10 @@ export class Cloudtrail extends PolicyStatement {
    * @param trailName - Identifier for the trailName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
+    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
   }
 
   /**
@@ -406,12 +406,12 @@ export class Cloudtrail extends PolicyStatement {
    * @param eventDataStoreId - Identifier for the eventDataStoreId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
+    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
   }
 }

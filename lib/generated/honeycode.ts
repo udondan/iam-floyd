@@ -397,10 +397,10 @@ export class Honeycode extends PolicyStatement {
    * @param workbookId - Identifier for the workbookId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkbook(workbookId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:workbook:workbook/${ workbookId }`);
+    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:workbook:workbook/${ workbookId }`);
   }
 
   /**
@@ -412,10 +412,10 @@ export class Honeycode extends PolicyStatement {
    * @param tableId - Identifier for the tableId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(workbookId: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:table:workbook/${ workbookId }/table/${ tableId }`);
+    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:table:workbook/${ workbookId }/table/${ tableId }`);
   }
 
   /**
@@ -428,10 +428,10 @@ export class Honeycode extends PolicyStatement {
    * @param screenId - Identifier for the screenId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onScreen(workbookId: string, appId: string, screenId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:screen:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }`);
+    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }`);
   }
 
   /**
@@ -445,9 +445,9 @@ export class Honeycode extends PolicyStatement {
    * @param automationId - Identifier for the automationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onScreenAutomation(workbookId: string, appId: string, screenId: string, automationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
+    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
   }
 }

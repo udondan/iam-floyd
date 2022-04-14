@@ -225,13 +225,13 @@ export class Finspace extends PolicyStatement {
    * @param environmentId - Identifier for the environmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:finspace:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
   }
 
   /**
@@ -242,12 +242,12 @@ export class Finspace extends PolicyStatement {
    * @param userId - Identifier for the userId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:finspace:${ region || '*' }:${ account || '*' }:user/${ userId }`);
+    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:user/${ userId }`);
   }
 }

@@ -522,13 +522,13 @@ export class Wellarchitected extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
+    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
   }
 
   /**
@@ -539,9 +539,9 @@ export class Wellarchitected extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
+    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
   }
 }

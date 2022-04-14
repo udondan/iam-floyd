@@ -262,12 +262,12 @@ export class ResourceGroups extends PolicyStatement {
    * @param groupName - Identifier for the groupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
+    return this.on(`arn:${ partition || ResourceGroups.defaultPartition }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
   }
 }

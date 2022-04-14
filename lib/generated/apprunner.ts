@@ -60,6 +60,21 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS App Runner observability configuration resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateObservabilityConfiguration.html
+   */
+  public toCreateObservabilityConfiguration() {
+    return this.to('CreateObservabilityConfiguration');
+  }
+
+  /**
    * Grants permission to create an AWS App Runner service resource
    *
    * Access Level: Write
@@ -69,6 +84,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifConnectionArn()
    * - .ifAutoScalingConfigurationArn()
+   * - .ifObservabilityConfigurationArn()
    * - .ifVpcConnectorArn()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html
@@ -115,6 +131,17 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS App Runner observability configuration resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteObservabilityConfiguration.html
+   */
+  public toDeleteObservabilityConfiguration() {
+    return this.to('DeleteObservabilityConfiguration');
+  }
+
+  /**
    * Grants permission to delete an AWS App Runner service resource
    *
    * Access Level: Write
@@ -156,6 +183,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toDescribeCustomDomains() {
     return this.to('DescribeCustomDomains');
+  }
+
+  /**
+   * Grants permission to retrieve the description of an AWS App Runner observability configuration resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeObservabilityConfiguration.html
+   */
+  public toDescribeObservabilityConfiguration() {
+    return this.to('DescribeObservabilityConfiguration');
   }
 
   /**
@@ -222,6 +260,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toListConnections() {
     return this.to('ListConnections');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS App Runner observability configurations in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_ListObservabilityConfigurations.html
+   */
+  public toListObservabilityConfigurations() {
+    return this.to('ListObservabilityConfigurations');
   }
 
   /**
@@ -338,6 +387,7 @@ export class Apprunner extends PolicyStatement {
    * Possible conditions:
    * - .ifConnectionArn()
    * - .ifAutoScalingConfigurationArn()
+   * - .ifObservabilityConfigurationArn()
    * - .ifVpcConnectorArn()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateService.html
@@ -351,10 +401,12 @@ export class Apprunner extends PolicyStatement {
       'AssociateCustomDomain',
       'CreateAutoScalingConfiguration',
       'CreateConnection',
+      'CreateObservabilityConfiguration',
       'CreateService',
       'CreateVpcConnector',
       'DeleteAutoScalingConfiguration',
       'DeleteConnection',
+      'DeleteObservabilityConfiguration',
       'DeleteService',
       'DeleteVpcConnector',
       'DisassociateCustomDomain',
@@ -366,6 +418,7 @@ export class Apprunner extends PolicyStatement {
     Read: [
       'DescribeAutoScalingConfiguration',
       'DescribeCustomDomains',
+      'DescribeObservabilityConfiguration',
       'DescribeOperation',
       'DescribeService',
       'DescribeVpcConnector',
@@ -374,6 +427,7 @@ export class Apprunner extends PolicyStatement {
     List: [
       'ListAutoScalingConfigurations',
       'ListConnections',
+      'ListObservabilityConfigurations',
       'ListOperations',
       'ListServices',
       'ListVpcConnectors'
@@ -391,13 +445,13 @@ export class Apprunner extends PolicyStatement {
    * @param serviceId - Identifier for the serviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -407,13 +461,13 @@ export class Apprunner extends PolicyStatement {
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
   }
 
   /**
@@ -424,13 +478,30 @@ export class Apprunner extends PolicyStatement {
    * @param autoscalingConfigurationId - Identifier for the autoscalingConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAutoscalingconfiguration(autoscalingConfigurationName: string, autoscalingConfigurationVersion: string, autoscalingConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type observabilityconfiguration to the statement
+   *
+   * @param observabilityConfigurationName - Identifier for the observabilityConfigurationName.
+   * @param observabilityConfigurationVersion - Identifier for the observabilityConfigurationVersion.
+   * @param observabilityConfigurationId - Identifier for the observabilityConfigurationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onObservabilityconfiguration(observabilityConfigurationName: string, observabilityConfigurationVersion: string, observabilityConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
   }
 
   /**
@@ -441,13 +512,13 @@ export class Apprunner extends PolicyStatement {
    * @param vpcConnectorId - Identifier for the vpcConnectorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcconnector(vpcConnectorName: string, vpcConnectorVersion: string, vpcConnectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
   }
 
   /**
@@ -476,6 +547,20 @@ export class Apprunner extends PolicyStatement {
    */
   public ifConnectionArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ConnectionArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the CreateService and UpdateService actions based on the ARN of an associated ObservabilityConfiguration resource
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifObservabilityConfigurationArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ObservabilityConfigurationArn`, value, operator || 'ArnLike');
   }
 
   /**

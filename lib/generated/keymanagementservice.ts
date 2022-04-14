@@ -901,10 +901,10 @@ export class Kms extends PolicyStatement {
    * @param alias - Identifier for the alias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlias(alias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:alias/${ alias }`);
+    return this.on(`arn:${ partition || Kms.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:alias/${ alias }`);
   }
 
   /**
@@ -915,7 +915,7 @@ export class Kms extends PolicyStatement {
    * @param keyId - Identifier for the keyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -927,7 +927,7 @@ export class Kms extends PolicyStatement {
    * - .ifResourceAliases()
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+    return this.on(`arn:${ partition || Kms.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 
   /**

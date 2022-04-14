@@ -817,13 +817,13 @@ export class Workspaces extends PolicyStatement {
    * @param directoryId - Identifier for the directoryId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
   }
 
   /**
@@ -834,13 +834,13 @@ export class Workspaces extends PolicyStatement {
    * @param bundleId - Identifier for the bundleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspacebundle/${ bundleId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspacebundle/${ bundleId }`);
   }
 
   /**
@@ -851,13 +851,13 @@ export class Workspaces extends PolicyStatement {
    * @param workspaceId - Identifier for the workspaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -868,13 +868,13 @@ export class Workspaces extends PolicyStatement {
    * @param imageId - Identifier for the imageId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceimage(imageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspaceimage/${ imageId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceimage/${ imageId }`);
   }
 
   /**
@@ -885,13 +885,13 @@ export class Workspaces extends PolicyStatement {
    * @param groupId - Identifier for the groupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspaceipgroup/${ groupId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceipgroup/${ groupId }`);
   }
 
   /**
@@ -902,12 +902,12 @@ export class Workspaces extends PolicyStatement {
    * @param connectionAliasId - Identifier for the connectionAliasId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
   }
 }

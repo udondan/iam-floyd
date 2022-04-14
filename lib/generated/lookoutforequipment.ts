@@ -321,13 +321,13 @@ export class Lookoutequipment extends PolicyStatement {
    * @param datasetId - Identifier for the datasetId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataset(datasetName: string, datasetId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ accountId || '*' }:dataset/${ datasetName }/${ datasetId }`);
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ accountId || '*' }:dataset/${ datasetName }/${ datasetId }`);
   }
 
   /**
@@ -339,13 +339,13 @@ export class Lookoutequipment extends PolicyStatement {
    * @param modelId - Identifier for the modelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }`);
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }`);
   }
 
   /**
@@ -357,12 +357,12 @@ export class Lookoutequipment extends PolicyStatement {
    * @param inferenceSchedulerId - Identifier for the inferenceSchedulerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInferenceScheduler(inferenceSchedulerName: string, inferenceSchedulerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
   }
 }

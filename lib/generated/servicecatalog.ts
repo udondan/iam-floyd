@@ -1456,13 +1456,13 @@ export class Servicecatalog extends PolicyStatement {
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
   }
 
   /**
@@ -1473,13 +1473,13 @@ export class Servicecatalog extends PolicyStatement {
    * @param attributeGroupId - Identifier for the attributeGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
+    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
   }
 
   /**
@@ -1490,13 +1490,13 @@ export class Servicecatalog extends PolicyStatement {
    * @param portfolioId - Identifier for the portfolioId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
+    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
   }
 
   /**
@@ -1507,13 +1507,13 @@ export class Servicecatalog extends PolicyStatement {
    * @param productId - Identifier for the productId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
+    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
   }
 
   /**

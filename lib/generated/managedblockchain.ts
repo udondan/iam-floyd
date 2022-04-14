@@ -350,13 +350,13 @@ export class Managedblockchain extends PolicyStatement {
    *
    * @param networkId - Identifier for the networkId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }::networks/${ networkId }`);
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }::networks/${ networkId }`);
   }
 
   /**
@@ -367,13 +367,13 @@ export class Managedblockchain extends PolicyStatement {
    * @param memberId - Identifier for the memberId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:members/${ memberId }`);
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:members/${ memberId }`);
   }
 
   /**
@@ -384,13 +384,13 @@ export class Managedblockchain extends PolicyStatement {
    * @param nodeId - Identifier for the nodeId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:nodes/${ nodeId }`);
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:nodes/${ nodeId }`);
   }
 
   /**
@@ -400,13 +400,13 @@ export class Managedblockchain extends PolicyStatement {
    *
    * @param proposalId - Identifier for the proposalId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }::proposals/${ proposalId }`);
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }::proposals/${ proposalId }`);
   }
 
   /**
@@ -417,12 +417,12 @@ export class Managedblockchain extends PolicyStatement {
    * @param invitationId - Identifier for the invitationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
   }
 }

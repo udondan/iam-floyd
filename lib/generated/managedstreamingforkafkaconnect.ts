@@ -204,10 +204,10 @@ export class Kafkaconnect extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
+    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
   }
 
   /**
@@ -219,10 +219,10 @@ export class Kafkaconnect extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
+    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
   }
 
   /**
@@ -234,9 +234,9 @@ export class Kafkaconnect extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
+    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
   }
 }

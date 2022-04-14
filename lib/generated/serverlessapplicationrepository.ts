@@ -201,10 +201,10 @@ export class Serverlessrepo extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplications(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:serverlessrepo:${ region || '*' }:${ account || '*' }:applications/${ resourceId }`);
+    return this.on(`arn:${ partition || Serverlessrepo.defaultPartition }:serverlessrepo:${ region || '*' }:${ account || '*' }:applications/${ resourceId }`);
   }
 
   /**

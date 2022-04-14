@@ -252,12 +252,12 @@ export class Kinesisanalytics extends PolicyStatement {
    * @param applicationName - Identifier for the applicationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kinesisanalytics:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || Kinesisanalytics.defaultPartition }:kinesisanalytics:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 }

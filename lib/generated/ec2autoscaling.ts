@@ -822,14 +822,14 @@ export class Autoscaling extends PolicyStatement {
    * @param groupFriendlyName - Identifier for the groupFriendlyName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
+    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
   }
 
   /**
@@ -841,10 +841,10 @@ export class Autoscaling extends PolicyStatement {
    * @param launchConfigurationName - Identifier for the launchConfigurationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLaunchConfiguration(id: string, launchConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
+    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
   }
 
   /**

@@ -615,13 +615,13 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * @param acceleratorId - Identifier for the acceleratorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
   }
 
   /**
@@ -632,13 +632,13 @@ export class Globalaccelerator extends PolicyStatement {
    * @param acceleratorId - Identifier for the acceleratorId.
    * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
   }
 
   /**
@@ -650,12 +650,12 @@ export class Globalaccelerator extends PolicyStatement {
    * @param listenerId - Identifier for the listenerId.
    * @param endpointGroupId - Identifier for the endpointGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
   }
 }

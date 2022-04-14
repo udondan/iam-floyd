@@ -2074,14 +2074,14 @@ export class Rds extends PolicyStatement {
    * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**
@@ -2092,13 +2092,13 @@ export class Rds extends PolicyStatement {
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
   }
 
   /**
@@ -2109,14 +2109,14 @@ export class Rds extends PolicyStatement {
    * @param clusterParameterGroupName - Identifier for the clusterParameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
   }
 
   /**
@@ -2127,14 +2127,14 @@ export class Rds extends PolicyStatement {
    * @param clusterSnapshotName - Identifier for the clusterSnapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
   }
 
   /**
@@ -2145,7 +2145,7 @@ export class Rds extends PolicyStatement {
    * @param dbInstanceName - Identifier for the dbInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -2160,7 +2160,7 @@ export class Rds extends PolicyStatement {
    * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
   }
 
   /**
@@ -2171,14 +2171,14 @@ export class Rds extends PolicyStatement {
    * @param subscriptionName - Identifier for the subscriptionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
   }
 
   /**
@@ -2188,10 +2188,10 @@ export class Rds extends PolicyStatement {
    *
    * @param globalCluster - Identifier for the globalCluster.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
   }
 
   /**
@@ -2202,14 +2202,14 @@ export class Rds extends PolicyStatement {
    * @param optionGroupName - Identifier for the optionGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
   }
 
   /**
@@ -2220,14 +2220,14 @@ export class Rds extends PolicyStatement {
    * @param parameterGroupName - Identifier for the parameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
   }
 
   /**
@@ -2238,13 +2238,13 @@ export class Rds extends PolicyStatement {
    * @param dbProxyId - Identifier for the dbProxyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
   }
 
   /**
@@ -2255,13 +2255,13 @@ export class Rds extends PolicyStatement {
    * @param dbProxyEndpointId - Identifier for the dbProxyEndpointId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
   }
 
   /**
@@ -2272,14 +2272,14 @@ export class Rds extends PolicyStatement {
    * @param reservedDbInstanceName - Identifier for the reservedDbInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
   }
 
   /**
@@ -2290,14 +2290,14 @@ export class Rds extends PolicyStatement {
    * @param securityGroupName - Identifier for the securityGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
   }
 
   /**
@@ -2308,14 +2308,14 @@ export class Rds extends PolicyStatement {
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -2326,14 +2326,14 @@ export class Rds extends PolicyStatement {
    * @param subnetGroupName - Identifier for the subnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
   }
 
   /**
@@ -2344,10 +2344,10 @@ export class Rds extends PolicyStatement {
    * @param targetId - Identifier for the targetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
   }
 
   /**
@@ -2358,13 +2358,13 @@ export class Rds extends PolicyStatement {
    * @param targetGroupId - Identifier for the targetGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
   }
 
   /**
@@ -2377,13 +2377,13 @@ export class Rds extends PolicyStatement {
    * @param customDbEngineVersionId - Identifier for the customDbEngineVersionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
   }
 
   /**

@@ -872,13 +872,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param assetId - Identifier for the assetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:asset/${ assetId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset/${ assetId }`);
   }
 
   /**
@@ -889,13 +889,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param assetModelId - Identifier for the assetModelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
   }
 
   /**
@@ -906,10 +906,10 @@ export class Iotsitewise extends PolicyStatement {
    * @param timeSeriesId - Identifier for the timeSeriesId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:time-series/${ timeSeriesId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:time-series/${ timeSeriesId }`);
   }
 
   /**
@@ -920,13 +920,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -937,13 +937,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param portalId - Identifier for the portalId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
   }
 
   /**
@@ -954,13 +954,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param projectId - Identifier for the projectId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -971,13 +971,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param dashboardId - Identifier for the dashboardId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }`);
   }
 
   /**
@@ -988,13 +988,13 @@ export class Iotsitewise extends PolicyStatement {
    * @param accessPolicyId - Identifier for the accessPolicyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
+    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
   }
 
   /**

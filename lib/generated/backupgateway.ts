@@ -276,13 +276,13 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:backup-gateway::${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -290,13 +290,13 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param hypervisorId - Identifier for the hypervisorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHypervisor(hypervisorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:backup-gateway::${ account || '*' }:hypervisor/${ hypervisorId }`);
+    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:hypervisor/${ hypervisorId }`);
   }
 
   /**
@@ -304,12 +304,12 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param virtualmachineId - Identifier for the virtualmachineId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualmachine(virtualmachineId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:backup-gateway::${ account || '*' }:vm/${ virtualmachineId }`);
+    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:vm/${ virtualmachineId }`);
   }
 }

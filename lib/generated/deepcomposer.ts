@@ -280,13 +280,13 @@ export class Deepcomposer extends PolicyStatement {
    * @param modelId - Identifier for the modelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:model/${ modelId }`);
+    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:model/${ modelId }`);
   }
 
   /**
@@ -297,13 +297,13 @@ export class Deepcomposer extends PolicyStatement {
    * @param compositionId - Identifier for the compositionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:composition/${ compositionId }`);
+    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:composition/${ compositionId }`);
   }
 
   /**
@@ -314,9 +314,9 @@ export class Deepcomposer extends PolicyStatement {
    * @param audioId - Identifier for the audioId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:audio/${ audioId }`);
+    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:audio/${ audioId }`);
   }
 }

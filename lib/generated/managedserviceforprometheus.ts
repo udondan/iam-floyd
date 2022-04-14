@@ -534,7 +534,7 @@ export class Aps extends PolicyStatement {
    * @param workspaceId - Identifier for the workspaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -542,7 +542,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:aps:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -554,7 +554,7 @@ export class Aps extends PolicyStatement {
    * @param namespace - Identifier for the namespace.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -562,6 +562,6 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onRulegroupsnamespace(workspaceId: string, namespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
+    return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
   }
 }

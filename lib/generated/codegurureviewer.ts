@@ -291,10 +291,10 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }`);
+    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }`);
   }
 
   /**
@@ -303,10 +303,10 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param codeReviewUuid - Identifier for the codeReviewUuid.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
+    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
   }
 
   /**
@@ -317,13 +317,13 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
+    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
   }
 
   /**
@@ -334,9 +334,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
+    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
   }
 }

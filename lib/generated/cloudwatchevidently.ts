@@ -443,13 +443,13 @@ export class Evidently extends PolicyStatement {
    * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(ownerAccountId: string, projectName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }`);
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }`);
   }
 
   /**
@@ -461,13 +461,13 @@ export class Evidently extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param featureName - Identifier for the featureName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFeature(ownerAccountId: string, projectName: string, featureName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/feature/${ featureName }`);
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/feature/${ featureName }`);
   }
 
   /**
@@ -479,13 +479,13 @@ export class Evidently extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param experimentName - Identifier for the experimentName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperiment(ownerAccountId: string, projectName: string, experimentName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/experiment/${ experimentName }`);
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/experiment/${ experimentName }`);
   }
 
   /**
@@ -497,12 +497,12 @@ export class Evidently extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param launchName - Identifier for the launchName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLaunch(ownerAccountId: string, projectName: string, launchName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/launch/${ launchName }`);
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/launch/${ launchName }`);
   }
 }

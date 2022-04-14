@@ -233,12 +233,12 @@ export class Acm extends PolicyStatement {
    * @param certificateId - Identifier for the certificateId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition || Acm.defaultPartition }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
   }
 }

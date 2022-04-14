@@ -141,9 +141,9 @@ export class Cloudshell extends PolicyStatement {
    * @param environmentId - Identifier for the environmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudshell:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || Cloudshell.defaultPartition }:cloudshell:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
   }
 }

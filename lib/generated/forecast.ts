@@ -638,13 +638,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -655,13 +655,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
   }
 
   /**
@@ -672,13 +672,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
   }
 
   /**
@@ -687,10 +687,10 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-choosing-recipes.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlgorithm(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:::algorithm/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:::algorithm/${ resourceId }`);
   }
 
   /**
@@ -701,13 +701,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:predictor/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor/${ resourceId }`);
   }
 
   /**
@@ -718,13 +718,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPredictorBacktestExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:predictor-backtest-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor-backtest-export-job/${ resourceId }`);
   }
 
   /**
@@ -735,13 +735,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:forecast/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast/${ resourceId }`);
   }
 
   /**
@@ -752,13 +752,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:forecast-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-export-job/${ resourceId }`);
   }
 
   /**
@@ -769,13 +769,13 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExplainability(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:explainability/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability/${ resourceId }`);
   }
 
   /**
@@ -786,12 +786,12 @@ export class Forecast extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
   }
 }

@@ -312,13 +312,13 @@ export class AppIntegrations extends PolicyStatement {
    * @param eventIntegrationName - Identifier for the eventIntegrationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventIntegration(eventIntegrationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration/${ eventIntegrationName }`);
+    return this.on(`arn:${ partition || AppIntegrations.defaultPartition }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration/${ eventIntegrationName }`);
   }
 
   /**
@@ -330,13 +330,13 @@ export class AppIntegrations extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
+    return this.on(`arn:${ partition || AppIntegrations.defaultPartition }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
   }
 
   /**
@@ -347,13 +347,13 @@ export class AppIntegrations extends PolicyStatement {
    * @param dataIntegrationId - Identifier for the dataIntegrationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataIntegration(dataIntegrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration/${ dataIntegrationId }`);
+    return this.on(`arn:${ partition || AppIntegrations.defaultPartition }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration/${ dataIntegrationId }`);
   }
 
   /**
@@ -365,12 +365,12 @@ export class AppIntegrations extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataIntegrationAssociation(dataIntegrationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration-association/${ dataIntegrationId }/${ resourceId }`);
+    return this.on(`arn:${ partition || AppIntegrations.defaultPartition }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration-association/${ dataIntegrationId }/${ resourceId }`);
   }
 }

@@ -258,7 +258,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAppId()
@@ -267,7 +267,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
+    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
   }
 
   /**
@@ -280,7 +280,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAppId()
@@ -289,7 +289,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
+    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
   }
 
   /**

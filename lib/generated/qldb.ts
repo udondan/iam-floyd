@@ -471,13 +471,13 @@ export class Qldb extends PolicyStatement {
    * @param ledgerName - Identifier for the ledgerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }`);
+    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }`);
   }
 
   /**
@@ -489,13 +489,13 @@ export class Qldb extends PolicyStatement {
    * @param streamId - Identifier for the streamId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:stream/${ ledgerName }/${ streamId }`);
+    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:stream/${ ledgerName }/${ streamId }`);
   }
 
   /**
@@ -507,13 +507,13 @@ export class Qldb extends PolicyStatement {
    * @param tableId - Identifier for the tableId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTable(ledgerName: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/table/${ tableId }`);
+    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/table/${ tableId }`);
   }
 
   /**
@@ -524,13 +524,13 @@ export class Qldb extends PolicyStatement {
    * @param ledgerName - Identifier for the ledgerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/information_schema/user_tables`);
+    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/information_schema/user_tables`);
   }
 
   /**

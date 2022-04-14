@@ -617,13 +617,13 @@ export class Lex extends PolicyStatement {
    * @param botName - Identifier for the botName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }`);
   }
 
   /**
@@ -635,13 +635,13 @@ export class Lex extends PolicyStatement {
    * @param botVersion - Identifier for the botVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botVersion }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botVersion }`);
   }
 
   /**
@@ -653,13 +653,13 @@ export class Lex extends PolicyStatement {
    * @param botAlias - Identifier for the botAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botAlias }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -672,13 +672,13 @@ export class Lex extends PolicyStatement {
    * @param channelName - Identifier for the channelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
   }
 
   /**
@@ -690,10 +690,10 @@ export class Lex extends PolicyStatement {
    * @param intentVersion - Identifier for the intentVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntentVersion(intentName: string, intentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:intent:${ intentName }:${ intentVersion }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:intent:${ intentName }:${ intentVersion }`);
   }
 
   /**
@@ -705,10 +705,10 @@ export class Lex extends PolicyStatement {
    * @param slotVersion - Identifier for the slotVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSlottypeVersion(slotName: string, slotVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:slottype:${ slotName }:${ slotVersion }`);
+    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:slottype:${ slotName }:${ slotVersion }`);
   }
 
   /**

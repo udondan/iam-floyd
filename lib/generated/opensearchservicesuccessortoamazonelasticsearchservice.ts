@@ -940,13 +940,13 @@ export class Es extends PolicyStatement {
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:es:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
+    return this.on(`arn:${ partition || Es.defaultPartition }:es:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 
   /**
@@ -955,13 +955,13 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/slr.html
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEsRole(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
+    return this.on(`arn:${ partition || Es.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 
   /**
@@ -970,12 +970,12 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/slr.html
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOpensearchserviceRole(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
+    return this.on(`arn:${ partition || Es.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 }

@@ -276,13 +276,13 @@ export class Signer extends PolicyStatement {
    * @param profileName - Identifier for the profileName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:signer:${ region || '*' }:${ account || '*' }:/signing-profiles/${ profileName }`);
+    return this.on(`arn:${ partition || Signer.defaultPartition }:signer:${ region || '*' }:${ account || '*' }:/signing-profiles/${ profileName }`);
   }
 
   /**
@@ -293,10 +293,10 @@ export class Signer extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:signer:${ region || '*' }:${ account || '*' }:/signing-jobs/${ jobId }`);
+    return this.on(`arn:${ partition || Signer.defaultPartition }:signer:${ region || '*' }:${ account || '*' }:/signing-jobs/${ jobId }`);
   }
 
   /**

@@ -420,13 +420,13 @@ export class Kinesisvideo extends PolicyStatement {
    * @param creationTime - Identifier for the creationTime.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
+    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
   }
 
   /**
@@ -438,12 +438,12 @@ export class Kinesisvideo extends PolicyStatement {
    * @param creationTime - Identifier for the creationTime.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
+    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
   }
 }

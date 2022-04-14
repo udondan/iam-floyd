@@ -2246,10 +2246,10 @@ export class Glue extends PolicyStatement {
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCatalog(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:catalog`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:catalog`);
   }
 
   /**
@@ -2260,10 +2260,10 @@ export class Glue extends PolicyStatement {
    * @param databaseName - Identifier for the databaseName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
   }
 
   /**
@@ -2275,10 +2275,10 @@ export class Glue extends PolicyStatement {
    * @param tableName - Identifier for the tableName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:table/${ databaseName }/${ tableName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:table/${ databaseName }/${ tableName }`);
   }
 
   /**
@@ -2291,10 +2291,10 @@ export class Glue extends PolicyStatement {
    * @param tableVersionName - Identifier for the tableVersionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
   }
 
   /**
@@ -2305,10 +2305,10 @@ export class Glue extends PolicyStatement {
    * @param connectionName - Identifier for the connectionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
   }
 
   /**
@@ -2320,10 +2320,10 @@ export class Glue extends PolicyStatement {
    * @param userDefinedFunctionName - Identifier for the userDefinedFunctionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
   }
 
   /**
@@ -2334,13 +2334,13 @@ export class Glue extends PolicyStatement {
    * @param devEndpointName - Identifier for the devEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:devEndpoint/${ devEndpointName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:devEndpoint/${ devEndpointName }`);
   }
 
   /**
@@ -2351,13 +2351,13 @@ export class Glue extends PolicyStatement {
    * @param jobName - Identifier for the jobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
   }
 
   /**
@@ -2368,13 +2368,13 @@ export class Glue extends PolicyStatement {
    * @param triggerName - Identifier for the triggerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:trigger/${ triggerName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:trigger/${ triggerName }`);
   }
 
   /**
@@ -2385,13 +2385,13 @@ export class Glue extends PolicyStatement {
    * @param crawlerName - Identifier for the crawlerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:crawler/${ crawlerName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:crawler/${ crawlerName }`);
   }
 
   /**
@@ -2402,13 +2402,13 @@ export class Glue extends PolicyStatement {
    * @param workflowName - Identifier for the workflowName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
   }
 
   /**
@@ -2419,13 +2419,13 @@ export class Glue extends PolicyStatement {
    * @param blueprintName - Identifier for the blueprintName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
   }
 
   /**
@@ -2436,13 +2436,13 @@ export class Glue extends PolicyStatement {
    * @param transformId - Identifier for the transformId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:mlTransform/${ transformId }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:mlTransform/${ transformId }`);
   }
 
   /**
@@ -2453,13 +2453,13 @@ export class Glue extends PolicyStatement {
    * @param registryName - Identifier for the registryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
   }
 
   /**
@@ -2470,13 +2470,13 @@ export class Glue extends PolicyStatement {
    * @param schemaName - Identifier for the schemaName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
   }
 
   /**
@@ -2487,13 +2487,13 @@ export class Glue extends PolicyStatement {
    * @param sessionId - Identifier for the sessionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
   }
 
   /**

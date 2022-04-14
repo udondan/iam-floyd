@@ -540,13 +540,13 @@ export class Appmesh extends PolicyStatement {
    * @param meshName - Identifier for the meshName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }`);
   }
 
   /**
@@ -558,13 +558,13 @@ export class Appmesh extends PolicyStatement {
    * @param virtualServiceName - Identifier for the virtualServiceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
   }
 
   /**
@@ -576,13 +576,13 @@ export class Appmesh extends PolicyStatement {
    * @param virtualNodeName - Identifier for the virtualNodeName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
   }
 
   /**
@@ -594,13 +594,13 @@ export class Appmesh extends PolicyStatement {
    * @param virtualRouterName - Identifier for the virtualRouterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
   }
 
   /**
@@ -613,13 +613,13 @@ export class Appmesh extends PolicyStatement {
    * @param routeName - Identifier for the routeName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
   }
 
   /**
@@ -631,13 +631,13 @@ export class Appmesh extends PolicyStatement {
    * @param virtualGatewayName - Identifier for the virtualGatewayName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
   }
 
   /**
@@ -650,12 +650,12 @@ export class Appmesh extends PolicyStatement {
    * @param gatewayRouteName - Identifier for the gatewayRouteName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
+    return this.on(`arn:${ partition || Appmesh.defaultPartition }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
   }
 }

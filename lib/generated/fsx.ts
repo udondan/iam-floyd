@@ -627,13 +627,13 @@ export class Fsx extends PolicyStatement {
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -644,13 +644,13 @@ export class Fsx extends PolicyStatement {
    * @param backupId - Identifier for the backupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:backup/${ backupId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:backup/${ backupId }`);
   }
 
   /**
@@ -662,13 +662,13 @@ export class Fsx extends PolicyStatement {
    * @param storageVirtualMachineId - Identifier for the storageVirtualMachineId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStorageVirtualMachine(fileSystemId: string, storageVirtualMachineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
   }
 
   /**
@@ -679,13 +679,13 @@ export class Fsx extends PolicyStatement {
    * @param taskId - Identifier for the taskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -697,13 +697,13 @@ export class Fsx extends PolicyStatement {
    * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssociation(fileSystemId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemId }/${ dataRepositoryAssociationId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemId }/${ dataRepositoryAssociationId }`);
   }
 
   /**
@@ -715,13 +715,13 @@ export class Fsx extends PolicyStatement {
    * @param volumeId - Identifier for the volumeId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
   }
 
   /**
@@ -733,13 +733,13 @@ export class Fsx extends PolicyStatement {
    * @param snapshotId - Identifier for the snapshotId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:snapshot/${ volumeId }/${ snapshotId }`);
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**

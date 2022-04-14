@@ -396,13 +396,13 @@ export class Servicediscovery extends PolicyStatement {
    * @param namespaceId - Identifier for the namespaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:servicediscovery:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition || Servicediscovery.defaultPartition }:servicediscovery:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -413,13 +413,13 @@ export class Servicediscovery extends PolicyStatement {
    * @param serviceId - Identifier for the serviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:servicediscovery:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
+    return this.on(`arn:${ partition || Servicediscovery.defaultPartition }:servicediscovery:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
   }
 
   /**

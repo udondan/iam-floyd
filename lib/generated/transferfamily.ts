@@ -459,13 +459,13 @@ export class Transfer extends PolicyStatement {
    * @param userName - Identifier for the userName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
   }
 
   /**
@@ -476,13 +476,13 @@ export class Transfer extends PolicyStatement {
    * @param serverId - Identifier for the serverId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
   }
 
   /**
@@ -493,12 +493,12 @@ export class Transfer extends PolicyStatement {
    * @param workflowId - Identifier for the workflowId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
   }
 }

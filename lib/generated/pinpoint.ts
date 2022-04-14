@@ -1564,13 +1564,13 @@ export class Mobiletargeting extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -1582,13 +1582,13 @@ export class Mobiletargeting extends PolicyStatement {
    * @param campaignId - Identifier for the campaignId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCampaigns(appId: string, campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/campaigns/${ campaignId }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/campaigns/${ campaignId }`);
   }
 
   /**
@@ -1600,13 +1600,13 @@ export class Mobiletargeting extends PolicyStatement {
    * @param journeyId - Identifier for the journeyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJourneys(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/journeys/${ journeyId }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/journeys/${ journeyId }`);
   }
 
   /**
@@ -1618,13 +1618,13 @@ export class Mobiletargeting extends PolicyStatement {
    * @param segmentId - Identifier for the segmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSegments(appId: string, segmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/segments/${ segmentId }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/segments/${ segmentId }`);
   }
 
   /**
@@ -1636,13 +1636,13 @@ export class Mobiletargeting extends PolicyStatement {
    * @param channelType - Identifier for the channelType.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTemplates(templateName: string, channelType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:templates/${ templateName }/${ channelType }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:templates/${ templateName }/${ channelType }`);
   }
 
   /**
@@ -1653,10 +1653,10 @@ export class Mobiletargeting extends PolicyStatement {
    * @param recommenderId - Identifier for the recommenderId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommenders(recommenderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:recommenders/${ recommenderId }`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:recommenders/${ recommenderId }`);
   }
 
   /**
@@ -1666,9 +1666,9 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:phone/number/validate`);
+    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:phone/number/validate`);
   }
 }

@@ -724,14 +724,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCertTag()
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
   }
 
   /**
@@ -742,14 +742,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifEndpointTag()
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
   }
 
   /**
@@ -760,14 +760,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifEsTag()
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
   }
 
   /**
@@ -778,14 +778,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifRepTag()
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
   }
 
   /**
@@ -796,14 +796,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifSubgrpTag()
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
   }
 
   /**
@@ -814,14 +814,14 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifTaskTag()
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
   }
 
   /**
@@ -832,10 +832,10 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
   }
 
   /**
@@ -846,10 +846,10 @@ export class Dms extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
   }
 
   /**

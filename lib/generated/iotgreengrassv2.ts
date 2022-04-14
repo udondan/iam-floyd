@@ -448,10 +448,10 @@ export class GreengrassV2 extends PolicyStatement {
    * @param thingName - Identifier for the thingName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
+    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
   }
 
   /**
@@ -462,13 +462,13 @@ export class GreengrassV2 extends PolicyStatement {
    * @param componentName - Identifier for the componentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }`);
+    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }`);
   }
 
   /**
@@ -480,13 +480,13 @@ export class GreengrassV2 extends PolicyStatement {
    * @param componentVersion - Identifier for the componentVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }:versions:${ componentVersion }`);
+    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }:versions:${ componentVersion }`);
   }
 
   /**
@@ -497,13 +497,13 @@ export class GreengrassV2 extends PolicyStatement {
    * @param coreDeviceThingName - Identifier for the coreDeviceThingName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCoreDevice(coreDeviceThingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:coreDevices:${ coreDeviceThingName }`);
+    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:coreDevices:${ coreDeviceThingName }`);
   }
 
   /**
@@ -514,12 +514,12 @@ export class GreengrassV2 extends PolicyStatement {
    * @param deploymentId - Identifier for the deploymentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeployment(deploymentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:deployments:${ deploymentId }`);
+    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:deployments:${ deploymentId }`);
   }
 }

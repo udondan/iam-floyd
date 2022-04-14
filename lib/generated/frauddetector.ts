@@ -933,13 +933,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBatchPrediction(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:batch-prediction/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:batch-prediction/${ resourcePath }`);
   }
 
   /**
@@ -950,13 +950,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDetector(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:detector/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:detector/${ resourcePath }`);
   }
 
   /**
@@ -967,13 +967,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDetectorVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:detector-version/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:detector-version/${ resourcePath }`);
   }
 
   /**
@@ -984,13 +984,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEntityType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:entity-type/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:entity-type/${ resourcePath }`);
   }
 
   /**
@@ -1001,13 +1001,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExternalModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:external-model/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:external-model/${ resourcePath }`);
   }
 
   /**
@@ -1018,13 +1018,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:event-type/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:event-type/${ resourcePath }`);
   }
 
   /**
@@ -1035,13 +1035,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLabel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:label/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:label/${ resourcePath }`);
   }
 
   /**
@@ -1052,13 +1052,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:model/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:model/${ resourcePath }`);
   }
 
   /**
@@ -1069,13 +1069,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModelVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:model-version/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:model-version/${ resourcePath }`);
   }
 
   /**
@@ -1086,13 +1086,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOutcome(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:outcome/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:outcome/${ resourcePath }`);
   }
 
   /**
@@ -1103,13 +1103,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:rule/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:rule/${ resourcePath }`);
   }
 
   /**
@@ -1120,13 +1120,13 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVariable(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:variable/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:variable/${ resourcePath }`);
   }
 
   /**
@@ -1137,12 +1137,12 @@ export class Frauddetector extends PolicyStatement {
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:batch-import/${ resourcePath }`);
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:batch-import/${ resourcePath }`);
   }
 }

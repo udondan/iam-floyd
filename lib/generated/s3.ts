@@ -2864,10 +2864,10 @@ export class S3 extends PolicyStatement {
    * @param accessPointName - Identifier for the accessPointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2876,10 +2876,10 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
    *
    * @param bucketName - Identifier for the bucketName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:::${ bucketName }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:::${ bucketName }`);
   }
 
   /**
@@ -2889,10 +2889,10 @@ export class S3 extends PolicyStatement {
    *
    * @param bucketName - Identifier for the bucketName.
    * @param objectName - Identifier for the objectName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObject(bucketName: string, objectName: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:::${ bucketName }/${ objectName }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:::${ bucketName }/${ objectName }`);
   }
 
   /**
@@ -2903,10 +2903,10 @@ export class S3 extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -2917,13 +2917,13 @@ export class S3 extends PolicyStatement {
    * @param configId - Identifier for the configId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStoragelensconfiguration(configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:storage-lens/${ configId }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:storage-lens/${ configId }`);
   }
 
   /**
@@ -2934,10 +2934,10 @@ export class S3 extends PolicyStatement {
    * @param accessPointName - Identifier for the accessPointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2947,10 +2947,10 @@ export class S3 extends PolicyStatement {
    *
    * @param accessPointAlias - Identifier for the accessPointAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3::${ account || '*' }:accesspoint/${ accessPointAlias }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3::${ account || '*' }:accesspoint/${ accessPointAlias }`);
   }
 
   /**
@@ -2961,10 +2961,10 @@ export class S3 extends PolicyStatement {
    * @param operation - Identifier for the operation.
    * @param token - Identifier for the token.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
   }
 
   /**

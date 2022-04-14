@@ -208,13 +208,13 @@ export class Synthetics extends PolicyStatement {
    * @param canaryName - Identifier for the canaryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:synthetics:${ region || '*' }:${ account || '*' }:canary:${ canaryName }`);
+    return this.on(`arn:${ partition || Synthetics.defaultPartition }:synthetics:${ region || '*' }:${ account || '*' }:canary:${ canaryName }`);
   }
 
   /**

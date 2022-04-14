@@ -724,13 +724,13 @@ export class Kendra extends PolicyStatement {
    * @param indexId - Identifier for the indexId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
   }
 
   /**
@@ -742,13 +742,13 @@ export class Kendra extends PolicyStatement {
    * @param dataSourceId - Identifier for the dataSourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -760,13 +760,13 @@ export class Kendra extends PolicyStatement {
    * @param faqId - Identifier for the faqId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
   }
 
   /**
@@ -778,10 +778,10 @@ export class Kendra extends PolicyStatement {
    * @param experienceId - Identifier for the experienceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**
@@ -793,13 +793,13 @@ export class Kendra extends PolicyStatement {
    * @param thesaurusId - Identifier for the thesaurusId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -811,12 +811,12 @@ export class Kendra extends PolicyStatement {
    * @param querySuggestionsBlockListId - Identifier for the querySuggestionsBlockListId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
   }
 }

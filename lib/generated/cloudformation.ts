@@ -940,13 +940,13 @@ export class Cloudformation extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:changeSet/${ changeSetName }/${ id }`);
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:changeSet/${ changeSetName }/${ id }`);
   }
 
   /**
@@ -958,13 +958,13 @@ export class Cloudformation extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stack/${ stackName }/${ id }`);
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:stack/${ stackName }/${ id }`);
   }
 
   /**
@@ -976,13 +976,13 @@ export class Cloudformation extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stackset/${ stackSetName }:${ id }`);
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:stackset/${ stackSetName }:${ id }`);
   }
 
   /**
@@ -993,10 +993,10 @@ export class Cloudformation extends PolicyStatement {
    * @param stackSetTarget - Identifier for the stackSetTarget.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStacksetTarget(stackSetTarget: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stackset-target/${ stackSetTarget }`);
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:stackset-target/${ stackSetTarget }`);
   }
 
   /**
@@ -1007,10 +1007,10 @@ export class Cloudformation extends PolicyStatement {
    * @param type - Identifier for the type.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onType(type: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:type/resource/${ type }`);
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:type/resource/${ type }`);
   }
 
   /**

@@ -536,13 +536,13 @@ export class Gamesparks extends PolicyStatement {
    * @param gameId - Identifier for the gameId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGame(gameId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }`);
+    return this.on(`arn:${ partition || Gamesparks.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }`);
   }
 
   /**
@@ -554,12 +554,12 @@ export class Gamesparks extends PolicyStatement {
    * @param stageName - Identifier for the stageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStage(gameId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }/stage/${ stageName }`);
+    return this.on(`arn:${ partition || Gamesparks.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }/stage/${ stageName }`);
   }
 }

@@ -886,10 +886,10 @@ export class Lambda extends PolicyStatement {
    * @param codeSigningConfigId - Identifier for the codeSigningConfigId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:code-signing-config:${ codeSigningConfigId }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:code-signing-config:${ codeSigningConfigId }`);
   }
 
   /**
@@ -900,10 +900,10 @@ export class Lambda extends PolicyStatement {
    * @param uUID - Identifier for the uUID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:event-source-mapping:${ uUID }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:event-source-mapping:${ uUID }`);
   }
 
   /**
@@ -914,10 +914,10 @@ export class Lambda extends PolicyStatement {
    * @param functionName - Identifier for the functionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunction(functionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }`);
   }
 
   /**
@@ -929,10 +929,10 @@ export class Lambda extends PolicyStatement {
    * @param alias - Identifier for the alias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunctionAlias(functionName: string, alias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ alias }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ alias }`);
   }
 
   /**
@@ -944,10 +944,10 @@ export class Lambda extends PolicyStatement {
    * @param version - Identifier for the version.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ version }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ version }`);
   }
 
   /**
@@ -958,10 +958,10 @@ export class Lambda extends PolicyStatement {
    * @param layerName - Identifier for the layerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLayer(layerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:layer:${ layerName }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:layer:${ layerName }`);
   }
 
   /**
@@ -973,10 +973,10 @@ export class Lambda extends PolicyStatement {
    * @param layerVersion - Identifier for the layerVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLayerVersion(layerName: string, layerVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lambda:${ region || '*' }:${ account || '*' }:layer:${ layerName }:${ layerVersion }`);
+    return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:layer:${ layerName }:${ layerVersion }`);
   }
 
   /**

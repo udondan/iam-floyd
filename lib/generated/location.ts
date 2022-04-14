@@ -689,13 +689,13 @@ export class Geo extends PolicyStatement {
    * @param geofenceCollectionName - Identifier for the geofenceCollectionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
+    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
   }
 
   /**
@@ -706,13 +706,13 @@ export class Geo extends PolicyStatement {
    * @param mapName - Identifier for the mapName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
+    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
   }
 
   /**
@@ -723,13 +723,13 @@ export class Geo extends PolicyStatement {
    * @param indexName - Identifier for the indexName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
+    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
   }
 
   /**
@@ -740,13 +740,13 @@ export class Geo extends PolicyStatement {
    * @param calculatorName - Identifier for the calculatorName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
+    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
   }
 
   /**
@@ -757,12 +757,12 @@ export class Geo extends PolicyStatement {
    * @param trackerName - Identifier for the trackerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
+    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
   }
 }

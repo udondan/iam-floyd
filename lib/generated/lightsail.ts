@@ -1931,13 +1931,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Domain/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Domain/${ id }`);
   }
 
   /**
@@ -1948,13 +1948,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInstance(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Instance/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Instance/${ id }`);
   }
 
   /**
@@ -1965,13 +1965,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:InstanceSnapshot/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:InstanceSnapshot/${ id }`);
   }
 
   /**
@@ -1982,13 +1982,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:KeyPair/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:KeyPair/${ id }`);
   }
 
   /**
@@ -1999,13 +1999,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:StaticIp/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:StaticIp/${ id }`);
   }
 
   /**
@@ -2016,13 +2016,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDisk(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Disk/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Disk/${ id }`);
   }
 
   /**
@@ -2033,13 +2033,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:DiskSnapshot/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:DiskSnapshot/${ id }`);
   }
 
   /**
@@ -2050,13 +2050,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancer/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancer/${ id }`);
   }
 
   /**
@@ -2067,10 +2067,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancerTlsCertificate/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancerTlsCertificate/${ id }`);
   }
 
   /**
@@ -2081,10 +2081,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ExportSnapshotRecord/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:ExportSnapshotRecord/${ id }`);
   }
 
   /**
@@ -2095,10 +2095,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:CloudFormationStackRecord/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:CloudFormationStackRecord/${ id }`);
   }
 
   /**
@@ -2109,13 +2109,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabase/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabase/${ id }`);
   }
 
   /**
@@ -2126,13 +2126,13 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabaseSnapshot/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabaseSnapshot/${ id }`);
   }
 
   /**
@@ -2143,10 +2143,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlarm(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Alarm/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Alarm/${ id }`);
   }
 
   /**
@@ -2157,10 +2157,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Certificate/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Certificate/${ id }`);
   }
 
   /**
@@ -2171,10 +2171,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ContactMethod/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:ContactMethod/${ id }`);
   }
 
   /**
@@ -2185,10 +2185,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContainerService(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ContainerService/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:ContainerService/${ id }`);
   }
 
   /**
@@ -2199,10 +2199,10 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDistribution(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Distribution/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Distribution/${ id }`);
   }
 
   /**
@@ -2213,12 +2213,12 @@ export class Lightsail extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBucket(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Bucket/${ id }`);
+    return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Bucket/${ id }`);
   }
 }

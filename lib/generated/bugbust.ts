@@ -317,12 +317,12 @@ export class Bugbust extends PolicyStatement {
    * @param eventId - Identifier for the eventId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:bugbust:${ region || '*' }:${ account || '*' }:events/${ eventId }`);
+    return this.on(`arn:${ partition || Bugbust.defaultPartition }:bugbust:${ region || '*' }:${ account || '*' }:events/${ eventId }`);
   }
 }

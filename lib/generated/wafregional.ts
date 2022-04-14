@@ -1040,10 +1040,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBytematchset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:bytematchset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:bytematchset/${ id }`);
   }
 
   /**
@@ -1054,10 +1054,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIpset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:ipset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:ipset/${ id }`);
   }
 
   /**
@@ -1069,10 +1069,10 @@ export class WafRegional extends PolicyStatement {
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -1083,13 +1083,13 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRatebasedrule(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:ratebasedrule/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:ratebasedrule/${ id }`);
   }
 
   /**
@@ -1100,13 +1100,13 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:rule/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:rule/${ id }`);
   }
 
   /**
@@ -1117,10 +1117,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSizeconstraintset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:sizeconstraintset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:sizeconstraintset/${ id }`);
   }
 
   /**
@@ -1131,10 +1131,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSqlinjectionmatchset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:sqlinjectionset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:sqlinjectionset/${ id }`);
   }
 
   /**
@@ -1145,13 +1145,13 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWebacl(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:webacl/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:webacl/${ id }`);
   }
 
   /**
@@ -1162,10 +1162,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onXssmatchset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:xssmatchset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:xssmatchset/${ id }`);
   }
 
   /**
@@ -1176,10 +1176,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegexmatchset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:regexmatch/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:regexmatch/${ id }`);
   }
 
   /**
@@ -1190,10 +1190,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegexpatternset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:regexpatternset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:regexpatternset/${ id }`);
   }
 
   /**
@@ -1204,10 +1204,10 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGeomatchset(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:geomatchset/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:geomatchset/${ id }`);
   }
 
   /**
@@ -1218,12 +1218,12 @@ export class WafRegional extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRulegroup(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:waf-regional:${ region || '*' }:${ account || '*' }:rulegroup/${ id }`);
+    return this.on(`arn:${ partition || WafRegional.defaultPartition }:waf-regional:${ region || '*' }:${ account || '*' }:rulegroup/${ id }`);
   }
 }

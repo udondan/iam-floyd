@@ -405,10 +405,10 @@ export class SsmContacts extends PolicyStatement {
    * @param contactAlias - Identifier for the contactAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
+    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
   }
 
   /**
@@ -420,10 +420,10 @@ export class SsmContacts extends PolicyStatement {
    * @param contactChannelId - Identifier for the contactChannelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactchannel(contactAlias: string, contactChannelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
+    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
   }
 
   /**
@@ -435,10 +435,10 @@ export class SsmContacts extends PolicyStatement {
    * @param engagementId - Identifier for the engagementId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEngagement(contactAlias: string, engagementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
+    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
   }
 
   /**
@@ -450,9 +450,9 @@ export class SsmContacts extends PolicyStatement {
    * @param pageId - Identifier for the pageId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPage(contactAlias: string, pageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
+    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
   }
 }

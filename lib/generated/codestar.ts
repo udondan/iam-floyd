@@ -306,13 +306,13 @@ export class Codestar extends PolicyStatement {
    * @param projectId - Identifier for the projectId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codestar:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
+    return this.on(`arn:${ partition || Codestar.defaultPartition }:codestar:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -321,13 +321,13 @@ export class Codestar extends PolicyStatement {
    * @param userNameWithPath - Identifier for the userNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifIamResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam:${ region || '*' }:${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || Codestar.defaultPartition }:iam:${ region || '*' }:${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

@@ -1099,13 +1099,13 @@ export class Config extends PolicyStatement {
    * @param aggregatorRegion - Identifier for the aggregatorRegion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
   }
 
   /**
@@ -1116,13 +1116,13 @@ export class Config extends PolicyStatement {
    * @param aggregatorId - Identifier for the aggregatorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:config-aggregator/${ aggregatorId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-aggregator/${ aggregatorId }`);
   }
 
   /**
@@ -1133,13 +1133,13 @@ export class Config extends PolicyStatement {
    * @param configRuleId - Identifier for the configRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:config-rule/${ configRuleId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-rule/${ configRuleId }`);
   }
 
   /**
@@ -1151,13 +1151,13 @@ export class Config extends PolicyStatement {
    * @param conformancePackId - Identifier for the conformancePackId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
   }
 
   /**
@@ -1168,10 +1168,10 @@ export class Config extends PolicyStatement {
    * @param organizationConfigRuleId - Identifier for the organizationConfigRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
   }
 
   /**
@@ -1182,10 +1182,10 @@ export class Config extends PolicyStatement {
    * @param organizationConformancePackId - Identifier for the organizationConformancePackId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
   }
 
   /**
@@ -1196,10 +1196,10 @@ export class Config extends PolicyStatement {
    * @param remediationConfigurationId - Identifier for the remediationConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:remediation-configuration/${ remediationConfigurationId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:remediation-configuration/${ remediationConfigurationId }`);
   }
 
   /**
@@ -1211,9 +1211,9 @@ export class Config extends PolicyStatement {
    * @param storedQueryId - Identifier for the storedQueryId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);
+    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);
   }
 }

@@ -573,13 +573,13 @@ export class Resiliencehub extends PolicyStatement {
    * @param resiliencyPolicyID - Identifier for the resiliencyPolicyID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResiliencyPolicy(resiliencyPolicyID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resiliencehub:${ region || '*' }:${ account || '*' }:resiliency-policy/${ resiliencyPolicyID }`);
+    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:resiliency-policy/${ resiliencyPolicyID }`);
   }
 
   /**
@@ -590,13 +590,13 @@ export class Resiliencehub extends PolicyStatement {
    * @param appID - Identifier for the appID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(appID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resiliencehub:${ region || '*' }:${ account || '*' }:app/${ appID }`);
+    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app/${ appID }`);
   }
 
   /**
@@ -607,13 +607,13 @@ export class Resiliencehub extends PolicyStatement {
    * @param appAssessmentID - Identifier for the appAssessmentID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppAssessment(appAssessmentID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resiliencehub:${ region || '*' }:${ account || '*' }:app-assessment/${ appAssessmentID }`);
+    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app-assessment/${ appAssessmentID }`);
   }
 
   /**
@@ -624,12 +624,12 @@ export class Resiliencehub extends PolicyStatement {
    * @param recommendationTemplateID - Identifier for the recommendationTemplateID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecommendationTemplate(recommendationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resiliencehub:${ region || '*' }:${ account || '*' }:recommendation-template/${ recommendationTemplateID }`);
+    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:recommendation-template/${ recommendationTemplateID }`);
   }
 }

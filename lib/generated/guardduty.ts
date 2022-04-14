@@ -764,13 +764,13 @@ export class Guardduty extends PolicyStatement {
    * @param detectorId - Identifier for the detectorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }`);
+    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }`);
   }
 
   /**
@@ -782,13 +782,13 @@ export class Guardduty extends PolicyStatement {
    * @param filterName - Identifier for the filterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/filter/${ filterName }`);
+    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/filter/${ filterName }`);
   }
 
   /**
@@ -800,13 +800,13 @@ export class Guardduty extends PolicyStatement {
    * @param iPSetId - Identifier for the iPSetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/ipset/${ iPSetId }`);
+    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/ipset/${ iPSetId }`);
   }
 
   /**
@@ -818,13 +818,13 @@ export class Guardduty extends PolicyStatement {
    * @param threatIntelSetId - Identifier for the threatIntelSetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
+    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
   }
 
   /**
@@ -836,9 +836,9 @@ export class Guardduty extends PolicyStatement {
    * @param publishingDestinationId - Identifier for the publishingDestinationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
+    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
   }
 }

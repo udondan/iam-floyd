@@ -352,10 +352,10 @@ export class CodestarConnections extends PolicyStatement {
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
+    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
   }
 
   /**
@@ -366,10 +366,10 @@ export class CodestarConnections extends PolicyStatement {
    * @param hostId - Identifier for the hostId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHost(hostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codestar-connections:${ region || '*' }:${ account || '*' }:host/${ hostId }`);
+    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:host/${ hostId }`);
   }
 
   /**

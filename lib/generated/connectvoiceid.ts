@@ -324,12 +324,12 @@ export class Voiceid extends PolicyStatement {
    * @param domainId - Identifier for the domainId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:voiceid:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
+    return this.on(`arn:${ partition || Voiceid.defaultPartition }:voiceid:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
   }
 }

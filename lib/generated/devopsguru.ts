@@ -34,6 +34,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete specified insight in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DeleteInsight.html
+   */
+  public toDeleteInsight() {
+    return this.to('DeleteInsight');
+  }
+
+  /**
    * Grants permission to view the health of operations in your AWS account
    *
    * Access Level: Read
@@ -337,6 +348,7 @@ export class DevopsGuru extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddNotificationChannel',
+      'DeleteInsight',
       'PutFeedback',
       'RemoveNotificationChannel',
       'UpdateEventSourcesConfig',
@@ -379,9 +391,9 @@ export class DevopsGuru extends PolicyStatement {
    * @param topicName - Identifier for the topicName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sns:${ region || '*' }:${ account || '*' }:${ topicName }`);
+    return this.on(`arn:${ partition || DevopsGuru.defaultPartition }:sns:${ region || '*' }:${ account || '*' }:${ topicName }`);
   }
 }

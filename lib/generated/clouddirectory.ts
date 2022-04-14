@@ -831,10 +831,10 @@ export class Clouddirectory extends PolicyStatement {
    * @param version - Identifier for the version.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppliedSchema(directoryId: string, schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
   }
 
   /**
@@ -845,10 +845,10 @@ export class Clouddirectory extends PolicyStatement {
    * @param schemaName - Identifier for the schemaName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevelopmentSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/development/${ schemaName }`);
+    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/development/${ schemaName }`);
   }
 
   /**
@@ -859,10 +859,10 @@ export class Clouddirectory extends PolicyStatement {
    * @param directoryId - Identifier for the directoryId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
   }
 
   /**
@@ -874,9 +874,9 @@ export class Clouddirectory extends PolicyStatement {
    * @param version - Identifier for the version.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishedSchema(schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/published/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/published/${ schemaName }/${ version }`);
   }
 }

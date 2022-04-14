@@ -701,13 +701,13 @@ export class Wafv2 extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -720,13 +720,13 @@ export class Wafv2 extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
   }
 
   /**
@@ -739,10 +739,10 @@ export class Wafv2 extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
   }
 
   /**
@@ -755,13 +755,13 @@ export class Wafv2 extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -774,13 +774,13 @@ export class Wafv2 extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
   }
 
   /**
@@ -792,10 +792,10 @@ export class Wafv2 extends PolicyStatement {
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -807,10 +807,10 @@ export class Wafv2 extends PolicyStatement {
    * @param stageName - Identifier for the stageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -821,9 +821,9 @@ export class Wafv2 extends PolicyStatement {
    * @param graphQLAPIId - Identifier for the graphQLAPIId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
 }

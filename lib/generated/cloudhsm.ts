@@ -448,13 +448,13 @@ export class Cloudhsm extends PolicyStatement {
    * @param cloudHsmBackupInstanceName - Identifier for the cloudHsmBackupInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudhsm:${ region || '*' }:${ account || '*' }:backup/${ cloudHsmBackupInstanceName }`);
+    return this.on(`arn:${ partition || Cloudhsm.defaultPartition }:cloudhsm:${ region || '*' }:${ account || '*' }:backup/${ cloudHsmBackupInstanceName }`);
   }
 
   /**
@@ -465,12 +465,12 @@ export class Cloudhsm extends PolicyStatement {
    * @param cloudHsmClusterInstanceName - Identifier for the cloudHsmClusterInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudhsm:${ region || '*' }:${ account || '*' }:cluster/${ cloudHsmClusterInstanceName }`);
+    return this.on(`arn:${ partition || Cloudhsm.defaultPartition }:cloudhsm:${ region || '*' }:${ account || '*' }:cluster/${ cloudHsmClusterInstanceName }`);
   }
 }

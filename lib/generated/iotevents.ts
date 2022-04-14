@@ -512,13 +512,13 @@ export class Iotevents extends PolicyStatement {
    * @param detectorModelName - Identifier for the detectorModelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
+    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
   }
 
   /**
@@ -529,13 +529,13 @@ export class Iotevents extends PolicyStatement {
    * @param alarmModelName - Identifier for the alarmModelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlarmModel(alarmModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
+    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
   }
 
   /**
@@ -546,13 +546,13 @@ export class Iotevents extends PolicyStatement {
    * @param inputName - Identifier for the inputName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
+    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
   }
 
   /**

@@ -606,13 +606,13 @@ export class Ce extends PolicyStatement {
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalysubscription(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
+    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
   }
 
   /**
@@ -622,13 +622,13 @@ export class Ce extends PolicyStatement {
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalymonitor(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
+    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
   }
 
   /**
@@ -638,12 +638,12 @@ export class Ce extends PolicyStatement {
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCostcategory(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:costcategory/${ identifier }`);
+    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:costcategory/${ identifier }`);
   }
 }

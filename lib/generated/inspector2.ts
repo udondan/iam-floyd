@@ -414,13 +414,13 @@ export class Inspector2 extends PolicyStatement {
    * @param filterId - Identifier for the filterId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFilter(ownerId: string, filterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:inspector2:${ region || '*' }:${ account || '*' }:owner/${ ownerId }/filter/${ filterId }`);
+    return this.on(`arn:${ partition || Inspector2.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:owner/${ ownerId }/filter/${ filterId }`);
   }
 
   /**
@@ -431,9 +431,9 @@ export class Inspector2 extends PolicyStatement {
    * @param findingId - Identifier for the findingId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFinding(findingId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:inspector2:${ region || '*' }:${ account || '*' }:finding/${ findingId }`);
+    return this.on(`arn:${ partition || Inspector2.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:finding/${ findingId }`);
   }
 }

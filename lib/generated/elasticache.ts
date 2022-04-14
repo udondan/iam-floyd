@@ -1160,13 +1160,13 @@ export class Elasticache extends PolicyStatement {
    * @param cacheParameterGroupName - Identifier for the cacheParameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
   }
 
   /**
@@ -1177,13 +1177,13 @@ export class Elasticache extends PolicyStatement {
    * @param cacheSecurityGroupName - Identifier for the cacheSecurityGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
   }
 
   /**
@@ -1194,13 +1194,13 @@ export class Elasticache extends PolicyStatement {
    * @param cacheSubnetGroupName - Identifier for the cacheSubnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
   }
 
   /**
@@ -1211,13 +1211,13 @@ export class Elasticache extends PolicyStatement {
    * @param replicationGroupId - Identifier for the replicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
   }
 
   /**
@@ -1228,13 +1228,13 @@ export class Elasticache extends PolicyStatement {
    * @param cacheClusterId - Identifier for the cacheClusterId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
   }
 
   /**
@@ -1245,13 +1245,13 @@ export class Elasticache extends PolicyStatement {
    * @param reservedCacheNodeId - Identifier for the reservedCacheNodeId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
   }
 
   /**
@@ -1262,13 +1262,13 @@ export class Elasticache extends PolicyStatement {
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -1278,10 +1278,10 @@ export class Elasticache extends PolicyStatement {
    *
    * @param globalReplicationGroupId - Identifier for the globalReplicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
   }
 
   /**
@@ -1292,13 +1292,13 @@ export class Elasticache extends PolicyStatement {
    * @param userId - Identifier for the userId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
   }
 
   /**
@@ -1309,13 +1309,13 @@ export class Elasticache extends PolicyStatement {
    * @param userGroupId - Identifier for the userGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
   }
 
   /**

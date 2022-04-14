@@ -634,13 +634,13 @@ export class Memorydb extends PolicyStatement {
    * @param parameterGroupName - Identifier for the parameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
   }
 
   /**
@@ -651,13 +651,13 @@ export class Memorydb extends PolicyStatement {
    * @param subnetGroupName - Identifier for the subnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
   }
 
   /**
@@ -668,13 +668,13 @@ export class Memorydb extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -685,13 +685,13 @@ export class Memorydb extends PolicyStatement {
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
   }
 
   /**
@@ -702,13 +702,13 @@ export class Memorydb extends PolicyStatement {
    * @param userName - Identifier for the userName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
   }
 
   /**
@@ -719,12 +719,12 @@ export class Memorydb extends PolicyStatement {
    * @param aclName - Identifier for the aclName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
   }
 }

@@ -436,13 +436,13 @@ export class Wisdom extends PolicyStatement {
    * @param assistantId - Identifier for the assistantId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssistant(assistantId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
+    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
   }
 
   /**
@@ -454,13 +454,13 @@ export class Wisdom extends PolicyStatement {
    * @param assistantAssociationId - Identifier for the assistantAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssistantAssociation(assistantId: string, assistantAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
+    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
   }
 
   /**
@@ -472,13 +472,13 @@ export class Wisdom extends PolicyStatement {
    * @param contentId - Identifier for the contentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContent(knowledgeBaseId: string, contentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
+    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
   }
 
   /**
@@ -489,13 +489,13 @@ export class Wisdom extends PolicyStatement {
    * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -507,12 +507,12 @@ export class Wisdom extends PolicyStatement {
    * @param sessionId - Identifier for the sessionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSession(assistantId: string, sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
+    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
   }
 }

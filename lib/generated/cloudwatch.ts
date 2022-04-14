@@ -498,13 +498,13 @@ export class Cloudwatch extends PolicyStatement {
    * @param alarmName - Identifier for the alarmName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:alarm:${ alarmName }`);
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:alarm:${ alarmName }`);
   }
 
   /**
@@ -514,10 +514,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * @param dashboardName - Identifier for the dashboardName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudwatch::${ account || '*' }:dashboard/${ dashboardName }`);
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch::${ account || '*' }:dashboard/${ dashboardName }`);
   }
 
   /**
@@ -528,13 +528,13 @@ export class Cloudwatch extends PolicyStatement {
    * @param insightRuleName - Identifier for the insightRuleName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:insight-rule/${ insightRuleName }`);
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:insight-rule/${ insightRuleName }`);
   }
 
   /**
@@ -545,13 +545,13 @@ export class Cloudwatch extends PolicyStatement {
    * @param metricStreamName - Identifier for the metricStreamName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMetricStream(metricStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:metric-stream/${ metricStreamName }`);
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:metric-stream/${ metricStreamName }`);
   }
 
   /**

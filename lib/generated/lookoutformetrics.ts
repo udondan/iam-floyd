@@ -393,13 +393,13 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param anomalyDetectorName - Identifier for the anomalyDetectorName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(anomalyDetectorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:AnomalyDetector:${ anomalyDetectorName }`);
+    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:AnomalyDetector:${ anomalyDetectorName }`);
   }
 
   /**
@@ -411,13 +411,13 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param metricSetName - Identifier for the metricSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
+    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
   }
 
   /**
@@ -428,12 +428,12 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param alertName - Identifier for the alertName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlert(alertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:Alert:${ alertName }`);
+    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:Alert:${ alertName }`);
   }
 }

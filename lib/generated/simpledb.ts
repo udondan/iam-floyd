@@ -155,9 +155,9 @@ export class Sdb extends PolicyStatement {
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sdb:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
+    return this.on(`arn:${ partition || Sdb.defaultPartition }:sdb:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 }

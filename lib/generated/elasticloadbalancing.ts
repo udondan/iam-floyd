@@ -385,14 +385,14 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/${ loadBalancerName }`);
+    return this.on(`arn:${ partition || Elasticloadbalancing.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/${ loadBalancerName }`);
   }
 
   /**

@@ -752,13 +752,13 @@ export class Macie2 extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
+    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
   }
 
   /**
@@ -769,13 +769,13 @@ export class Macie2 extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
+    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
   }
 
   /**
@@ -786,13 +786,13 @@ export class Macie2 extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
+    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
   }
 
   /**
@@ -803,12 +803,12 @@ export class Macie2 extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
+    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
   }
 }

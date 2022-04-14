@@ -185,10 +185,10 @@ export class IdentitySync extends PolicyStatement {
    * @param syncProfileName - Identifier for the syncProfileName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSyncProfileResource(syncProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`^arn:${ partition || 'aws' }:identity-sync:${ region || '*' }:${ account || '*' }:profile/${ syncProfileName }`);
+    return this.on(`^arn:${ partition || IdentitySync.defaultPartition }:identity-sync:${ region || '*' }:${ account || '*' }:profile/${ syncProfileName }`);
   }
 
   /**
@@ -200,9 +200,9 @@ export class IdentitySync extends PolicyStatement {
    * @param syncTargetName - Identifier for the syncTargetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSyncTargetResource(syncProfileName: string, syncTargetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`^arn:${ partition || 'aws' }:identity-sync:${ region || '*' }:${ account || '*' }:target/${ syncProfileName }/${ syncTargetName }`);
+    return this.on(`^arn:${ partition || IdentitySync.defaultPartition }:identity-sync:${ region || '*' }:${ account || '*' }:target/${ syncProfileName }/${ syncTargetName }`);
   }
 }

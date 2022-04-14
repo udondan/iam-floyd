@@ -146,12 +146,12 @@ export class Rbin extends PolicyStatement {
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:rbin:${ region || '*' }:${ account || '*' }:rule/${ resourceName }`);
+    return this.on(`arn:${ partition || Rbin.defaultPartition }:rbin:${ region || '*' }:${ account || '*' }:rule/${ resourceName }`);
   }
 }

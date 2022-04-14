@@ -253,13 +253,13 @@ export class Sts extends PolicyStatement {
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition || Sts.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -269,10 +269,10 @@ export class Sts extends PolicyStatement {
    *
    * @param userNameWithPath - Identifier for the userNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || Sts.defaultPartition }:iam::${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

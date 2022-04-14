@@ -1,4 +1,5 @@
 devops-guru:AddNotificationChannel;Write
+devops-guru:DeleteInsight;Write
 devops-guru:DescribeAccountHealth;Read
 devops-guru:DescribeAccountOverview;Read
 devops-guru:DescribeAnomaly;Read

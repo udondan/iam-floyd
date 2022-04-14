@@ -1736,13 +1736,13 @@ export class Redshift extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
   }
 
   /**
@@ -1754,13 +1754,13 @@ export class Redshift extends PolicyStatement {
    * @param dataShareName - Identifier for the dataShareName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatashare(producerClusterNamespace: string, dataShareName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
   }
 
   /**
@@ -1772,13 +1772,13 @@ export class Redshift extends PolicyStatement {
    * @param dbGroup - Identifier for the dbGroup.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbgroup:${ clusterName }/${ dbGroup }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbgroup:${ clusterName }/${ dbGroup }`);
   }
 
   /**
@@ -1790,13 +1790,13 @@ export class Redshift extends PolicyStatement {
    * @param dbName - Identifier for the dbName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbname:${ clusterName }/${ dbName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbname:${ clusterName }/${ dbName }`);
   }
 
   /**
@@ -1808,13 +1808,13 @@ export class Redshift extends PolicyStatement {
    * @param dbUser - Identifier for the dbUser.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbuser:${ clusterName }/${ dbUser }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbuser:${ clusterName }/${ dbUser }`);
   }
 
   /**
@@ -1825,13 +1825,13 @@ export class Redshift extends PolicyStatement {
    * @param eventSubscriptionName - Identifier for the eventSubscriptionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:eventsubscription:${ eventSubscriptionName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:eventsubscription:${ eventSubscriptionName }`);
   }
 
   /**
@@ -1842,13 +1842,13 @@ export class Redshift extends PolicyStatement {
    * @param hSMClientCertificateId - Identifier for the hSMClientCertificateId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:hsmclientcertificate:${ hSMClientCertificateId }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmclientcertificate:${ hSMClientCertificateId }`);
   }
 
   /**
@@ -1859,13 +1859,13 @@ export class Redshift extends PolicyStatement {
    * @param hSMConfigurationId - Identifier for the hSMConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:hsmconfiguration:${ hSMConfigurationId }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmconfiguration:${ hSMConfigurationId }`);
   }
 
   /**
@@ -1876,13 +1876,13 @@ export class Redshift extends PolicyStatement {
    * @param parameterGroupName - Identifier for the parameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:parametergroup:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:parametergroup:${ parameterGroupName }`);
   }
 
   /**
@@ -1895,13 +1895,13 @@ export class Redshift extends PolicyStatement {
    * @param ec2SecurityGroupId - Identifier for the ec2SecurityGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
   }
 
   /**
@@ -1913,13 +1913,13 @@ export class Redshift extends PolicyStatement {
    * @param ipRange - Identifier for the ipRange.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
   }
 
   /**
@@ -1932,13 +1932,13 @@ export class Redshift extends PolicyStatement {
    * @param ece2SecuritygroupId - Identifier for the ece2SecuritygroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
   }
 
   /**
@@ -1950,13 +1950,13 @@ export class Redshift extends PolicyStatement {
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshot:${ clusterName }/${ snapshotName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshot:${ clusterName }/${ snapshotName }`);
   }
 
   /**
@@ -1967,13 +1967,13 @@ export class Redshift extends PolicyStatement {
    * @param snapshotCopyGrantName - Identifier for the snapshotCopyGrantName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshotcopygrant:${ snapshotCopyGrantName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotcopygrant:${ snapshotCopyGrantName }`);
   }
 
   /**
@@ -1984,13 +1984,13 @@ export class Redshift extends PolicyStatement {
    * @param parameterGroupName - Identifier for the parameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshotschedule:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotschedule:${ parameterGroupName }`);
   }
 
   /**
@@ -2001,13 +2001,13 @@ export class Redshift extends PolicyStatement {
    * @param subnetGroupName - Identifier for the subnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:subnetgroup:${ subnetGroupName }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:subnetgroup:${ subnetGroupName }`);
   }
 
   /**
@@ -2018,13 +2018,13 @@ export class Redshift extends PolicyStatement {
    * @param usageLimitId - Identifier for the usageLimitId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
   }
 
   /**

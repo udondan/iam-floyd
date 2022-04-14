@@ -395,10 +395,10 @@ export class SsmIncidents extends PolicyStatement {
    *
    * @param responsePlan - Identifier for the responsePlan.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResponsePlan(responsePlan: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
+    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
   }
 
   /**
@@ -409,10 +409,10 @@ export class SsmIncidents extends PolicyStatement {
    * @param responsePlan - Identifier for the responsePlan.
    * @param incidentRecord - Identifier for the incidentRecord.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIncidentRecord(responsePlan: string, incidentRecord: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
+    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
   }
 
   /**
@@ -422,9 +422,9 @@ export class SsmIncidents extends PolicyStatement {
    *
    * @param replicationSet - Identifier for the replicationSet.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationSet(replicationSet: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
+    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
   }
 }

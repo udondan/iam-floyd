@@ -44,9 +44,9 @@ export class NeptuneDb extends PolicyStatement {
    * @param database - Identifier for the database.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatabase(cluster: string, database: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:neptune-db:${ region || '*' }:${ account || '*' }:${ cluster }/${ database }`);
+    return this.on(`arn:${ partition || NeptuneDb.defaultPartition }:neptune-db:${ region || '*' }:${ account || '*' }:${ cluster }/${ database }`);
   }
 }

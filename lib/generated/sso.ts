@@ -1068,13 +1068,13 @@ export class Sso extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param permissionSetId - Identifier for the permissionSetId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPermissionSet(instanceId: string, permissionSetId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
   }
 
   /**
@@ -1083,10 +1083,10 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html
    *
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sso:::account/${ accountId || '*' }`);
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso:::account/${ accountId || '*' }`);
   }
 
   /**
@@ -1095,9 +1095,9 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onInstance(instanceId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sso:::instance/${ instanceId }`);
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso:::instance/${ instanceId }`);
   }
 }

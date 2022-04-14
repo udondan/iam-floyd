@@ -263,10 +263,10 @@ export class OpsworksCm extends PolicyStatement {
    * @param serverName - Identifier for the serverName.
    * @param uniqueId - Identifier for the uniqueId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServer(serverName: string, uniqueId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:opsworks-cm::${ account || '*' }:server/${ serverName }/${ uniqueId }`);
+    return this.on(`arn:${ partition || OpsworksCm.defaultPartition }:opsworks-cm::${ account || '*' }:server/${ serverName }/${ uniqueId }`);
   }
 
   /**
@@ -274,9 +274,9 @@ export class OpsworksCm extends PolicyStatement {
    *
    * @param serverName - Identifier for the serverName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackup(serverName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:opsworks-cm::${ account || '*' }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
+    return this.on(`arn:${ partition || OpsworksCm.defaultPartition }:opsworks-cm::${ account || '*' }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
   }
 }

@@ -800,10 +800,10 @@ export class Auditmanager extends PolicyStatement {
    * @param assessmentId - Identifier for the assessmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessment(assessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }`);
+    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }`);
   }
 
   /**
@@ -814,10 +814,10 @@ export class Auditmanager extends PolicyStatement {
    * @param assessmentFrameworkId - Identifier for the assessmentFrameworkId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessmentFramework/${ assessmentFrameworkId }`);
+    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessmentFramework/${ assessmentFrameworkId }`);
   }
 
   /**
@@ -829,10 +829,10 @@ export class Auditmanager extends PolicyStatement {
    * @param controlSetId - Identifier for the controlSetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
+    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
   }
 
   /**
@@ -843,12 +843,12 @@ export class Auditmanager extends PolicyStatement {
    * @param controlId - Identifier for the controlId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onControl(controlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
+    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
   }
 }

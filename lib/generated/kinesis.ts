@@ -385,10 +385,10 @@ export class Kinesis extends PolicyStatement {
    * @param streamName - Identifier for the streamName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStream(streamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kinesis:${ region || '*' }:${ account || '*' }:stream/${ streamName }`);
+    return this.on(`arn:${ partition || Kinesis.defaultPartition }:kinesis:${ region || '*' }:${ account || '*' }:stream/${ streamName }`);
   }
 
   /**
@@ -402,10 +402,10 @@ export class Kinesis extends PolicyStatement {
    * @param consumerCreationTimpstamp - Identifier for the consumerCreationTimpstamp.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConsumer(streamType: string, streamName: string, consumerName: string, consumerCreationTimpstamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kinesis:${ region || '*' }:${ account || '*' }:${ streamType }/${ streamName }/consumer/${ consumerName }:${ consumerCreationTimpstamp }`);
+    return this.on(`arn:${ partition || Kinesis.defaultPartition }:kinesis:${ region || '*' }:${ account || '*' }:${ streamType }/${ streamName }/consumer/${ consumerName }:${ consumerCreationTimpstamp }`);
   }
 
   /**
@@ -416,9 +416,9 @@ export class Kinesis extends PolicyStatement {
    * @param keyId - Identifier for the keyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+    return this.on(`arn:${ partition || Kinesis.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 }

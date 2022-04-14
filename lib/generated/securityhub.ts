@@ -873,13 +873,13 @@ export class Securityhub extends PolicyStatement {
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHub(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:hub/default`);
+    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:hub/default`);
   }
 
   /**
@@ -891,10 +891,10 @@ export class Securityhub extends PolicyStatement {
    * @param productId - Identifier for the productId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:product/${ company }/${ productId }`);
+    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:product/${ company }/${ productId }`);
   }
 
   /**
@@ -905,10 +905,10 @@ export class Securityhub extends PolicyStatement {
    * @param findingAggregatorId - Identifier for the findingAggregatorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:finding-aggregator/${ findingAggregatorId }`);
+    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:finding-aggregator/${ findingAggregatorId }`);
   }
 
   /**

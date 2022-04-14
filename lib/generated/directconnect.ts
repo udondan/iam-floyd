@@ -840,13 +840,13 @@ export class Directconnect extends PolicyStatement {
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDxcon(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxcon/${ connectionId }`);
+    return this.on(`arn:${ partition || Directconnect.defaultPartition }:directconnect:${ region || '*' }:${ account || '*' }:dxcon/${ connectionId }`);
   }
 
   /**
@@ -857,13 +857,13 @@ export class Directconnect extends PolicyStatement {
    * @param lagId - Identifier for the lagId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDxlag(lagId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxlag/${ lagId }`);
+    return this.on(`arn:${ partition || Directconnect.defaultPartition }:directconnect:${ region || '*' }:${ account || '*' }:dxlag/${ lagId }`);
   }
 
   /**
@@ -874,13 +874,13 @@ export class Directconnect extends PolicyStatement {
    * @param virtualInterfaceId - Identifier for the virtualInterfaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDxvif(virtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxvif/${ virtualInterfaceId }`);
+    return this.on(`arn:${ partition || Directconnect.defaultPartition }:directconnect:${ region || '*' }:${ account || '*' }:dxvif/${ virtualInterfaceId }`);
   }
 
   /**
@@ -890,9 +890,9 @@ export class Directconnect extends PolicyStatement {
    *
    * @param directConnectGatewayId - Identifier for the directConnectGatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:directconnect::${ account || '*' }:dx-gateway/${ directConnectGatewayId }`);
+    return this.on(`arn:${ partition || Directconnect.defaultPartition }:directconnect::${ account || '*' }:dx-gateway/${ directConnectGatewayId }`);
   }
 }

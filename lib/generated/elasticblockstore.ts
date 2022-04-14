@@ -127,7 +127,7 @@ export class Ebs extends PolicyStatement {
    *
    * @param snapshotId - Identifier for the snapshotId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -138,7 +138,7 @@ export class Ebs extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition || Ebs.defaultPartition }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
   }
 
   /**

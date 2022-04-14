@@ -737,13 +737,13 @@ export class Organizations extends PolicyStatement {
    * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAccount(masterAccountId: string, organizationId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:account/o-${ organizationId }/${ accountId || '*' }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:account/o-${ organizationId }/${ accountId || '*' }`);
   }
 
   /**
@@ -755,10 +755,10 @@ export class Organizations extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param handshakeType - Identifier for the handshakeType.
    * @param handshakeId - Identifier for the handshakeId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHandshake(masterAccountId: string, organizationId: string, handshakeType: string, handshakeId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
   }
 
   /**
@@ -768,10 +768,10 @@ export class Organizations extends PolicyStatement {
    *
    * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOrganization(masterAccountId: string, organizationId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:organization/o-${ organizationId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:organization/o-${ organizationId }`);
   }
 
   /**
@@ -782,13 +782,13 @@ export class Organizations extends PolicyStatement {
    * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param organizationalUnitId - Identifier for the organizationalUnitId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOrganizationalunit(masterAccountId: string, organizationId: string, organizationalUnitId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
   }
 
   /**
@@ -800,13 +800,13 @@ export class Organizations extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPolicy(masterAccountId: string, organizationId: string, policyType: string, policyId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -816,10 +816,10 @@ export class Organizations extends PolicyStatement {
    *
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAwspolicy(policyType: string, policyId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -830,13 +830,13 @@ export class Organizations extends PolicyStatement {
    * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param rootId - Identifier for the rootId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRoot(masterAccountId: string, organizationId: string, rootId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:root/o-${ organizationId }/r-${ rootId }`);
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ masterAccountId }:root/o-${ organizationId }/r-${ rootId }`);
   }
 
   /**

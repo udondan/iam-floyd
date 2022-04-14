@@ -57,9 +57,9 @@ export class Sumerian extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:sumerian:${ region || '*' }:${ account || '*' }:project:${ projectName }`);
+    return this.on(`arn:${ partition || Sumerian.defaultPartition }:sumerian:${ region || '*' }:${ account || '*' }:project:${ projectName }`);
   }
 }

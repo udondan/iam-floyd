@@ -261,10 +261,10 @@ export class CognitoSync extends PolicyStatement {
    * @param datasetName - Identifier for the datasetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(identityPoolId: string, identityId: string, datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }/dataset/${ datasetName }`);
+    return this.on(`arn:${ partition || CognitoSync.defaultPartition }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }/dataset/${ datasetName }`);
   }
 
   /**
@@ -276,10 +276,10 @@ export class CognitoSync extends PolicyStatement {
    * @param identityId - Identifier for the identityId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentity(identityPoolId: string, identityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }`);
+    return this.on(`arn:${ partition || CognitoSync.defaultPartition }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }`);
   }
 
   /**
@@ -290,9 +290,9 @@ export class CognitoSync extends PolicyStatement {
    * @param identityPoolId - Identifier for the identityPoolId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
+    return this.on(`arn:${ partition || CognitoSync.defaultPartition }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
   }
 }

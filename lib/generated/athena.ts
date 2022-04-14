@@ -484,13 +484,13 @@ export class Athena extends PolicyStatement {
    * @param dataCatalogName - Identifier for the dataCatalogName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:athena:${ region || '*' }:${ account || '*' }:datacatalog/${ dataCatalogName }`);
+    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:datacatalog/${ dataCatalogName }`);
   }
 
   /**
@@ -501,12 +501,12 @@ export class Athena extends PolicyStatement {
    * @param workGroupName - Identifier for the workGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:athena:${ region || '*' }:${ account || '*' }:workgroup/${ workGroupName }`);
+    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:workgroup/${ workGroupName }`);
   }
 }

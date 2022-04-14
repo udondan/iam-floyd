@@ -361,7 +361,7 @@ export class Groundstation extends PolicyStatement {
    * @param configId - Identifier for the configId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -369,7 +369,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
   }
 
   /**
@@ -380,14 +380,14 @@ export class Groundstation extends PolicyStatement {
    * @param contactId - Identifier for the contactId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
   }
 
   /**
@@ -398,14 +398,14 @@ export class Groundstation extends PolicyStatement {
    * @param dataflowEndpointGroupId - Identifier for the dataflowEndpointGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
   }
 
   /**
@@ -416,13 +416,13 @@ export class Groundstation extends PolicyStatement {
    * @param groundStationId - Identifier for the groundStationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
   }
 
   /**
@@ -433,14 +433,14 @@ export class Groundstation extends PolicyStatement {
    * @param missionProfileId - Identifier for the missionProfileId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
   }
 
   /**
@@ -451,13 +451,13 @@ export class Groundstation extends PolicyStatement {
    * @param satelliteId - Identifier for the satelliteId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
   }
 
   /**

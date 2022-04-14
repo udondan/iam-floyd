@@ -562,10 +562,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param campaignName - Identifier for the campaignName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCampaign(campaignName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:campaign/${ campaignName }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:campaign/${ campaignName }`);
   }
 
   /**
@@ -576,10 +576,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDecodermanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:decoder-manifest/${ name }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:decoder-manifest/${ name }`);
   }
 
   /**
@@ -590,10 +590,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
   }
 
   /**
@@ -604,10 +604,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onModelmanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:model-manifest/${ name }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:model-manifest/${ name }`);
   }
 
   /**
@@ -618,10 +618,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSignalcatalog(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:signal-catalog/${ name }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:signal-catalog/${ name }`);
   }
 
   /**
@@ -632,10 +632,10 @@ export class Iotfleetwise extends PolicyStatement {
    * @param vehicleId - Identifier for the vehicleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVehicle(vehicleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotfleetwise:${ region || '*' }:${ account || '*' }:vehicle/${ vehicleId }`);
+    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:vehicle/${ vehicleId }`);
   }
 
   /**

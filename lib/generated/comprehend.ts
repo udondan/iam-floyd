@@ -984,13 +984,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:targeted-sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:targeted-sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -999,13 +999,13 @@ export class Comprehend extends PolicyStatement {
    * @param documentClassifierName - Identifier for the documentClassifierName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier/${ documentClassifierName }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier/${ documentClassifierName }`);
   }
 
   /**
@@ -1014,13 +1014,13 @@ export class Comprehend extends PolicyStatement {
    * @param documentClassifierEndpointName - Identifier for the documentClassifierEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
   }
 
   /**
@@ -1029,13 +1029,13 @@ export class Comprehend extends PolicyStatement {
    * @param entityRecognizerName - Identifier for the entityRecognizerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer/${ entityRecognizerName }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer/${ entityRecognizerName }`);
   }
 
   /**
@@ -1044,13 +1044,13 @@ export class Comprehend extends PolicyStatement {
    * @param entityRecognizerEndpointName - Identifier for the entityRecognizerEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
   }
 
   /**
@@ -1059,13 +1059,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:dominant-language-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:dominant-language-detection-job/${ jobId }`);
   }
 
   /**
@@ -1074,13 +1074,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1089,13 +1089,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:pii-entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:pii-entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1104,13 +1104,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:events-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:events-detection-job/${ jobId }`);
   }
 
   /**
@@ -1119,13 +1119,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:key-phrases-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:key-phrases-detection-job/${ jobId }`);
   }
 
   /**
@@ -1134,13 +1134,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1149,13 +1149,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:topics-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:topics-detection-job/${ jobId }`);
   }
 
   /**
@@ -1164,13 +1164,13 @@ export class Comprehend extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classification-job/${ jobId }`);
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classification-job/${ jobId }`);
   }
 
   /**

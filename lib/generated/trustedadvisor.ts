@@ -346,9 +346,9 @@ export class Trustedadvisor extends PolicyStatement {
    * @param checkId - Identifier for the checkId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChecks(categoryCode: string, checkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:trustedadvisor:${ region || '*' }:${ account || '*' }:checks/${ categoryCode }/${ checkId }`);
+    return this.on(`arn:${ partition || Trustedadvisor.defaultPartition }:trustedadvisor:${ region || '*' }:${ account || '*' }:checks/${ categoryCode }/${ checkId }`);
   }
 }

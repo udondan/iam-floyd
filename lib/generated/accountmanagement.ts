@@ -120,10 +120,10 @@ export class Account extends PolicyStatement {
    * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:account::${ account || '*' }:account`);
+    return this.on(`arn:${ partition || Account.defaultPartition }:account::${ account || '*' }:account`);
   }
 
   /**
@@ -134,10 +134,10 @@ export class Account extends PolicyStatement {
    * @param managementAccountId - Identifier for the managementAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param memberAccountId - Identifier for the memberAccountId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccountInOrganization(managementAccountId: string, organizationId: string, memberAccountId: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:account::${ managementAccountId }:account/o-${ organizationId }/${ memberAccountId }`);
+    return this.on(`arn:${ partition || Account.defaultPartition }:account::${ managementAccountId }:account/o-${ organizationId }/${ memberAccountId }`);
   }
 
   /**

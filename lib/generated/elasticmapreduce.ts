@@ -989,14 +989,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param clusterId - Identifier for the clusterId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
   }
 
   /**
@@ -1007,14 +1007,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param editorId - Identifier for the editorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
+    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
   }
 
   /**
@@ -1025,14 +1025,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param notebookExecutionId - Identifier for the notebookExecutionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
+    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
   }
 
   /**
@@ -1043,14 +1043,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param studioId - Identifier for the studioId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
   }
 
   /**

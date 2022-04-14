@@ -693,10 +693,10 @@ export class Codebuild extends PolicyStatement {
    * @param buildId - Identifier for the buildId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -707,10 +707,10 @@ export class Codebuild extends PolicyStatement {
    * @param buildBatchId - Identifier for the buildBatchId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuildBatch(buildBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:build-batch/${ buildBatchId }`);
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build-batch/${ buildBatchId }`);
   }
 
   /**
@@ -721,13 +721,13 @@ export class Codebuild extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -738,13 +738,13 @@ export class Codebuild extends PolicyStatement {
    * @param reportGroupName - Identifier for the reportGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:report-group/${ reportGroupName }`);
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report-group/${ reportGroupName }`);
   }
 
   /**
@@ -756,9 +756,9 @@ export class Codebuild extends PolicyStatement {
    * @param reportId - Identifier for the reportId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
   }
 }

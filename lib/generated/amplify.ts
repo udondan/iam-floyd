@@ -500,13 +500,13 @@ export class Amplify extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
+    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -518,13 +518,13 @@ export class Amplify extends PolicyStatement {
    * @param branchName - Identifier for the branchName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }`);
+    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }`);
   }
 
   /**
@@ -537,10 +537,10 @@ export class Amplify extends PolicyStatement {
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
+    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
   }
 
   /**
@@ -552,12 +552,12 @@ export class Amplify extends PolicyStatement {
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/domains/${ domainName }`);
+    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/domains/${ domainName }`);
   }
 }

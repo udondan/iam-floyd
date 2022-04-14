@@ -157,10 +157,10 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/account`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/account`);
   }
 
   /**
@@ -170,13 +170,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param apiKeyId - Identifier for the apiKeyId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApiKey(apiKeyId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/apikeys/${ apiKeyId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/apikeys/${ apiKeyId }`);
   }
 
   /**
@@ -185,13 +185,13 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApiKeys(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/apikeys`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/apikeys`);
   }
 
   /**
@@ -202,7 +202,7 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param authorizerId - Identifier for the authorizerId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestAuthorizerType()
@@ -212,7 +212,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(restApiId: string, authorizerId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/authorizers/${ authorizerId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/authorizers/${ authorizerId }`);
   }
 
   /**
@@ -222,7 +222,7 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestAuthorizerType()
@@ -230,7 +230,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizers(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/authorizers`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/authorizers`);
   }
 
   /**
@@ -241,13 +241,13 @@ export class Apigateway extends PolicyStatement {
    * @param domainName - Identifier for the domainName.
    * @param basePath - Identifier for the basePath.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBasePathMapping(domainName: string, basePath: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/domainnames/${ domainName }/basepathmappings/${ basePath }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/domainnames/${ domainName }/basepathmappings/${ basePath }`);
   }
 
   /**
@@ -257,13 +257,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBasePathMappings(domainName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/domainnames/${ domainName }/basepathmappings`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/domainnames/${ domainName }/basepathmappings`);
   }
 
   /**
@@ -273,13 +273,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param clientCertificateId - Identifier for the clientCertificateId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClientCertificate(clientCertificateId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/clientcertificates/${ clientCertificateId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/clientcertificates/${ clientCertificateId }`);
   }
 
   /**
@@ -288,13 +288,13 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClientCertificates(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/clientcertificates`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/clientcertificates`);
   }
 
   /**
@@ -305,13 +305,13 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param deploymentId - Identifier for the deploymentId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeployment(restApiId: string, deploymentId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/deployments/${ deploymentId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/deployments/${ deploymentId }`);
   }
 
   /**
@@ -321,13 +321,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestStageName()
    */
   public onDeployments(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/deployments`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/deployments`);
   }
 
   /**
@@ -338,13 +338,13 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param documentationPartId - Identifier for the documentationPartId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDocumentationPart(restApiId: string, documentationPartId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/parts/${ documentationPartId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/parts/${ documentationPartId }`);
   }
 
   /**
@@ -354,13 +354,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDocumentationParts(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/parts`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/parts`);
   }
 
   /**
@@ -371,10 +371,10 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param documentationVersionId - Identifier for the documentationVersionId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDocumentationVersion(restApiId: string, documentationVersionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/versions/${ documentationVersionId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/versions/${ documentationVersionId }`);
   }
 
   /**
@@ -384,10 +384,10 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDocumentationVersions(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/versions`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/documentation/versions`);
   }
 
   /**
@@ -397,7 +397,7 @@ export class Apigateway extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestEndpointType()
@@ -411,7 +411,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomainName(domainName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/domainnames/${ domainName }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/domainnames/${ domainName }`);
   }
 
   /**
@@ -420,7 +420,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestEndpointType()
@@ -430,7 +430,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomainNames(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/domainnames`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/domainnames`);
   }
 
   /**
@@ -441,13 +441,13 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param responseType - Identifier for the responseType.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGatewayResponse(restApiId: string, responseType: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/gatewayresponses/${ responseType }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/gatewayresponses/${ responseType }`);
   }
 
   /**
@@ -457,13 +457,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGatewayResponses(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/gatewayresponses`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/gatewayresponses`);
   }
 
   /**
@@ -475,13 +475,13 @@ export class Apigateway extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param httpMethodType - Identifier for the httpMethodType.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIntegration(restApiId: string, resourceId: string, httpMethodType: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/integration`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/integration`);
   }
 
   /**
@@ -494,10 +494,10 @@ export class Apigateway extends PolicyStatement {
    * @param httpMethodType - Identifier for the httpMethodType.
    * @param statusCode - Identifier for the statusCode.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntegrationResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/integration/responses/${ statusCode }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/integration/responses/${ statusCode }`);
   }
 
   /**
@@ -509,7 +509,7 @@ export class Apigateway extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param httpMethodType - Identifier for the httpMethodType.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestApiKeyRequired()
@@ -519,7 +519,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMethod(restApiId: string, resourceId: string, httpMethodType: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }`);
   }
 
   /**
@@ -532,10 +532,10 @@ export class Apigateway extends PolicyStatement {
    * @param httpMethodType - Identifier for the httpMethodType.
    * @param statusCode - Identifier for the statusCode.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMethodResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/responses/${ statusCode }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/responses/${ statusCode }`);
   }
 
   /**
@@ -546,13 +546,13 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param modelName - Identifier for the modelName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModel(restApiId: string, modelName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/models/${ modelName }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/models/${ modelName }`);
   }
 
   /**
@@ -562,13 +562,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModels(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/models`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/models`);
   }
 
   /**
@@ -579,10 +579,10 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param requestValidatorId - Identifier for the requestValidatorId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRequestValidator(restApiId: string, requestValidatorId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/requestvalidators/${ requestValidatorId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/requestvalidators/${ requestValidatorId }`);
   }
 
   /**
@@ -592,10 +592,10 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRequestValidators(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/requestvalidators`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/requestvalidators`);
   }
 
   /**
@@ -606,13 +606,13 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResource(restApiId: string, resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources/${ resourceId }`);
   }
 
   /**
@@ -622,13 +622,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResources(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/resources`);
   }
 
   /**
@@ -638,7 +638,7 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestApiKeyRequired()
@@ -658,7 +658,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRestApi(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }`);
   }
 
   /**
@@ -667,7 +667,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestApiKeyRequired()
@@ -680,7 +680,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRestApis(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis`);
   }
 
   /**
@@ -692,10 +692,10 @@ export class Apigateway extends PolicyStatement {
    * @param stageName - Identifier for the stageName.
    * @param sdkType - Identifier for the sdkType.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSdk(restApiId: string, stageName: string, sdkType: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages/${ stageName }/sdks/${ sdkType }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages/${ stageName }/sdks/${ sdkType }`);
   }
 
   /**
@@ -706,7 +706,7 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param stageName - Identifier for the stageName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestAccessLoggingDestination()
@@ -716,7 +716,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(restApiId: string, stageName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages/${ stageName }`);
   }
 
   /**
@@ -726,7 +726,7 @@ export class Apigateway extends PolicyStatement {
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRequestAccessLoggingDestination()
@@ -734,7 +734,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStages(restApiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/${ restApiId }/stages`);
   }
 
   /**
@@ -744,10 +744,10 @@ export class Apigateway extends PolicyStatement {
    *
    * @param modelName - Identifier for the modelName.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(modelName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/restapis/models/${ modelName }/template`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/restapis/models/${ modelName }/template`);
   }
 
   /**
@@ -757,13 +757,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUsagePlan(usagePlanId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }`);
   }
 
   /**
@@ -772,13 +772,13 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUsagePlans(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/usageplans`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/usageplans`);
   }
 
   /**
@@ -789,10 +789,10 @@ export class Apigateway extends PolicyStatement {
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param id - Identifier for the id.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUsagePlanKey(usagePlanId: string, id: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }/keys/${ id }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }/keys/${ id }`);
   }
 
   /**
@@ -802,10 +802,10 @@ export class Apigateway extends PolicyStatement {
    *
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUsagePlanKeys(usagePlanId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }/keys`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/usageplans/${ usagePlanId }/keys`);
   }
 
   /**
@@ -815,13 +815,13 @@ export class Apigateway extends PolicyStatement {
    *
    * @param vpcLinkId - Identifier for the vpcLinkId.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcLink(vpcLinkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/vpclinks/${ vpcLinkId }`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/vpclinks/${ vpcLinkId }`);
   }
 
   /**
@@ -830,13 +830,13 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcLinks(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }::/vpclinks`);
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/vpclinks`);
   }
 
   /**

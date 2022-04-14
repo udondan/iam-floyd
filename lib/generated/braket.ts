@@ -206,13 +206,13 @@ export class Braket extends PolicyStatement {
    * @param randomId - Identifier for the randomId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuantumTask(randomId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:braket:${ region || '*' }:${ account || '*' }:quantum-task/${ randomId }`);
+    return this.on(`arn:${ partition || Braket.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:quantum-task/${ randomId }`);
   }
 
   /**
@@ -223,12 +223,12 @@ export class Braket extends PolicyStatement {
    * @param jobName - Identifier for the jobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:braket:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
+    return this.on(`arn:${ partition || Braket.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
   }
 }

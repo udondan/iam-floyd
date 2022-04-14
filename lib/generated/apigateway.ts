@@ -68,9 +68,9 @@ export class ExecuteApi extends PolicyStatement {
    * @param apiSpecificResourcePath - Identifier for the apiSpecificResourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExecuteApiGeneral(apiId: string, stage: string, method: string, apiSpecificResourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:execute-api:${ region || '*' }:${ account || '*' }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
+    return this.on(`arn:${ partition || ExecuteApi.defaultPartition }:execute-api:${ region || '*' }:${ account || '*' }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
   }
 }

@@ -167,13 +167,13 @@ export class RedshiftData extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
   }
 
   /**

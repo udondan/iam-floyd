@@ -723,13 +723,13 @@ export class Swf extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:swf::${ account || '*' }:/domain/${ domainName }`);
+    return this.on(`arn:${ partition || Swf.defaultPartition }:swf::${ account || '*' }:/domain/${ domainName }`);
   }
 
   /**

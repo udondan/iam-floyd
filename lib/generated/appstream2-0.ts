@@ -936,13 +936,13 @@ export class Appstream extends PolicyStatement {
    * @param fleetName - Identifier for the fleetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }`);
   }
 
   /**
@@ -953,13 +953,13 @@ export class Appstream extends PolicyStatement {
    * @param imageName - Identifier for the imageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
   }
 
   /**
@@ -970,13 +970,13 @@ export class Appstream extends PolicyStatement {
    * @param imageBuilderName - Identifier for the imageBuilderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:image-builder/${ imageBuilderName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image-builder/${ imageBuilderName }`);
   }
 
   /**
@@ -987,13 +987,13 @@ export class Appstream extends PolicyStatement {
    * @param stackName - Identifier for the stackName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
   }
 
   /**
@@ -1004,13 +1004,13 @@ export class Appstream extends PolicyStatement {
    * @param appBlockName - Identifier for the appBlockName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppBlock(appBlockName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
   }
 
   /**
@@ -1021,13 +1021,13 @@ export class Appstream extends PolicyStatement {
    * @param applicationName - Identifier for the applicationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 
   /**

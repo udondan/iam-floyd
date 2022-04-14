@@ -1189,10 +1189,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
   }
 
   /**
@@ -1203,13 +1203,13 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
   }
 
   /**
@@ -1220,13 +1220,13 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:device/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:device/${ resourceId }`);
   }
 
   /**
@@ -1237,10 +1237,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:skill-group/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:skill-group/${ resourceId }`);
   }
 
   /**
@@ -1251,13 +1251,13 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
   }
 
   /**
@@ -1268,10 +1268,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:address-book/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:address-book/${ resourceId }`);
   }
 
   /**
@@ -1282,10 +1282,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:conference-provider/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:conference-provider/${ resourceId }`);
   }
 
   /**
@@ -1296,10 +1296,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:contact/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:contact/${ resourceId }`);
   }
 
   /**
@@ -1310,10 +1310,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
   }
 
   /**
@@ -1324,10 +1324,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:network-profile/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:network-profile/${ resourceId }`);
   }
 
   /**
@@ -1338,10 +1338,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGateway(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:gateway/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway/${ resourceId }`);
   }
 
   /**
@@ -1352,10 +1352,10 @@ export class A4b extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewaygroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:gateway-group/${ resourceId }`);
+    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway-group/${ resourceId }`);
   }
 
   /**

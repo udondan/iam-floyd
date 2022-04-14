@@ -469,7 +469,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param channelName - Identifier for the channelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -477,7 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
+    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
   }
 
   /**
@@ -488,7 +488,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param datasetName - Identifier for the datasetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -496,7 +496,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
+    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
   }
 
   /**
@@ -507,7 +507,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param datastoreName - Identifier for the datastoreName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -515,7 +515,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
+    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
   }
 
   /**
@@ -526,7 +526,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param pipelineName - Identifier for the pipelineName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -534,7 +534,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
   }
 
   /**
