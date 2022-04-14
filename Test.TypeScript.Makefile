@@ -4,10 +4,8 @@ install-cdk:
 	npm i aws-cdk-lib constructs@^10.0.0
 
 test: install-cdk
-	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
-	@rm /tmp/ts.result
+	@tsc -p examples/tsconfig.json
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\
@@ -16,10 +14,8 @@ test: install-cdk
 	done
 
 test-cdk: install-cdk
-	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc -p test/tsconfig.json @/tmp/ts.result
-	@rm /tmp/ts.result
+	@tsc -p examples/tsconfig.cdk.json
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
 		node "$$f" > "$${f%.js}.ts.result" || exit ;\
