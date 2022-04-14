@@ -3,7 +3,7 @@
 install-cdk:
 	npm i aws-cdk-lib constructs@^10.0.0
 
-test:
+test: install-cdk
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
 	@tsc @/tmp/ts.result
