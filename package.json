@@ -45,7 +45,8 @@
       "test/*",
       "**/*CDK*",
       "examples/*",
-      "twitter/*"
+      "twitter/*",
+      "helper/*"
     ],
     "targets": {
       "python": {
