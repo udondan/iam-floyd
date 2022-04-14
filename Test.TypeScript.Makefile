@@ -2,7 +2,7 @@
 
 install:
 	npx ts-node bin/mkcdk.ts --package-json
-	npm i aws-cdk-lib constructs@^10.0.0 crypto
+	cd examples && cat package.json
 	cd examples && npm i
 
 test: install
