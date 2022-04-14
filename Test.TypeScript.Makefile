@@ -18,7 +18,7 @@ test: install-cdk
 test-cdk: install-cdk
 	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
+	@tsc --target ES2018 @/tmp/ts.result
 	@rm /tmp/ts.result
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
