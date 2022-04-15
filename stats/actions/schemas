@@ -18,7 +18,7 @@ schemas:ListDiscoverers;List
 schemas:ListRegistries;List
 schemas:ListSchemaVersions;List
 schemas:ListSchemas;List
-schemas:ListTagsForResource;List
+schemas:ListTagsForResource;Read
 schemas:PutCodeBinding;Write
 schemas:PutResourcePolicy;Write
 schemas:SearchSchemas;List

@@ -637,6 +637,10 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
   public toUpdateInputSecurityGroup() {

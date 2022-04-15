@@ -19,9 +19,13 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents
+   * Grants permission to create an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer
    */
@@ -30,9 +34,13 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Create a new schema registry in your account.
+   * Grants permission to create a new schema registry in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#CreateRegistry
    */
@@ -41,9 +49,13 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Create a new schema in your account.
+   * Grants permission to create a new schema in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#CreateSchema
    */
@@ -52,7 +64,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Deletes discoverer in your account.
+   * Grants permission to delete discoverer in your account
    *
    * Access Level: Write
    *
@@ -63,7 +75,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing registry in your account.
+   * Grants permission to delete an existing registry in your account
    *
    * Access Level: Write
    *
@@ -74,7 +86,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Delete the resource-based policy attached to a given registry.
+   * Grants permission to delete the resource-based policy attached to a given registry
    *
    * Access Level: Write
    *
@@ -85,7 +97,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing schema in your account.
+   * Grants permission to delete an existing schema in your account
    *
    * Access Level: Write
    *
@@ -96,7 +108,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Deletes a specific version of schema in your account.
+   * Grants permission to delete a specific version of schema in your account
    *
    * Access Level: Write
    *
@@ -107,7 +119,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves metadata for generated code for specific schema in your account.
+   * Grants permission to retrieve metadata for generated code for specific schema in your account
    *
    * Access Level: Read
    *
@@ -118,7 +130,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves discoverer metadata in your account.
+   * Grants permission to retrieve discoverer metadata in your account
    *
    * Access Level: Read
    *
@@ -129,7 +141,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Describes an existing registry metadata in your account.
+   * Grants permission to describe an existing registry metadata in your account
    *
    * Access Level: Read
    *
@@ -140,7 +152,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves an existing schema in your account.
+   * Grants permission to retrieve an existing schema in your account
    *
    * Access Level: Read
    *
@@ -151,7 +163,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Allows exporting AWS registry or discovered schemas in OpenAPI 3 format to JSONSchema format.
+   * Grants permission to export the AWS registry or discovered schemas in OpenAPI 3 format to JSONSchema format
    *
    * Access Level: Read
    *
@@ -162,7 +174,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves metadata for generated code for specific schema in your account.
+   * Grants permission to retrieve metadata for generated code for specific schema in your account
    *
    * Access Level: Read
    *
@@ -173,7 +185,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves schema for the provided list of sample events.
+   * Grants permission to retrieve a schema for the provided list of sample events
    *
    * Access Level: Read
    *
@@ -184,7 +196,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Retrieves the resource-based policy attached to a given registry.
+   * Grants permission to retrieve the resource-based policy attached to a given registry
    *
    * Access Level: Read
    *
@@ -195,7 +207,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Lists all the discoverers in your account.
+   * Grants permission to list all discoverers in your account
    *
    * Access Level: List
    *
@@ -206,7 +218,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * List all discoverers in your account.
+   * Grants permission to list all registries in your account
    *
    * Access Level: List
    *
@@ -217,7 +229,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * List all versions of a schema.
+   * Grants permission to list all versions of a schema
    *
    * Access Level: List
    *
@@ -228,7 +240,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * List all schemas.
+   * Grants permission to list all schemas
    *
    * Access Level: List
    *
@@ -239,9 +251,9 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for a resource.
+   * Grants permission to lists tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#ListTagsForResource
    */
@@ -250,7 +262,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Generates code for specific schema in your account.
+   * Grants permission to generate code for specific schema in your account
    *
    * Access Level: Write
    *
@@ -261,7 +273,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Attach resource-based policy to the specific registry.
+   * Grants permission to attach a resource-based policy to a given registry
    *
    * Access Level: Write
    *
@@ -272,7 +284,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Searches schemas based on specified keywords in your account.
+   * Grants permission to search schemas based on specified keywords in your account
    *
    * Access Level: List
    *
@@ -283,7 +295,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Starts the specified discoverer. Once started the discoverer will automatically register schemas for published events to configured source in your account
+   * Grants permission to start the specified discoverer. Once started the discoverer will automatically register schemas for published events to configured source in your account
    *
    * Access Level: Write
    *
@@ -294,7 +306,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Starts the specified discoverer. Once started the discoverer will automatically register schemas for published events to configured source in your account
+   * Grants permission to stop the specified discoverer. Once stopped the discoverer will no longer register schemas for published events to configured source in your account
    *
    * Access Level: Write
    *
@@ -305,7 +317,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * This action tags an resource.
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -320,7 +332,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from on a resource.
+   * Grants permission to remove a tag from a resource
    *
    * Access Level: Tagging
    *
@@ -334,7 +346,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Updates an existing discoverer in your account.
+   * Grants permission to update an existing discoverer in your account
    *
    * Access Level: Write
    *
@@ -345,7 +357,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Updates an existing registry metadata in your account.
+   * Grants permission to update an existing registry metadata in your account
    *
    * Access Level: Write
    *
@@ -356,7 +368,7 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
-   * Updates an existing schema in your account.
+   * Grants permission to update an existing schema in your account
    *
    * Access Level: Write
    *
@@ -392,14 +404,14 @@ export class Schemas extends PolicyStatement {
       'ExportSchema',
       'GetCodeBindingSource',
       'GetDiscoveredSchema',
-      'GetResourcePolicy'
+      'GetResourcePolicy',
+      'ListTagsForResource'
     ],
     List: [
       'ListDiscoverers',
       'ListRegistries',
       'ListSchemaVersions',
       'ListSchemas',
-      'ListTagsForResource',
       'SearchSchemas'
     ],
     Tagging: [

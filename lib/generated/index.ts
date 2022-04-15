@@ -260,6 +260,7 @@ export { AwsMarketplacePrivate } from './marketplaceprivatemarketplace';
 export { AwsMarketplaceProcurementSystemsIntegration } from './marketplaceprocurementsystemsintegration';
 export { Serviceextract } from './microserviceextractorfor-net';
 export { Mgh } from './migrationhub';
+export { MigrationhubOrchestrator } from './migrationhuborchestrator';
 export { RefactorSpaces } from './migrationhubrefactorspaces';
 export { MigrationhubStrategy } from './migrationhubstrategyrecommendations-';
 export { Mobilehub } from './mobilehub';
