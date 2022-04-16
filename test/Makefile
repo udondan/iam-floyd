@@ -7,6 +7,7 @@ test-cdk:
 	@cdk diff
 	@cdk deploy --require-approval never
 	@cdk destroy --force
+	@cat cdk.out/IAM-Floyd-Test.template.json
 
 test:
 	@rm -f main.js
