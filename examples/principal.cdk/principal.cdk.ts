@@ -1,6 +1,6 @@
 import { aws_iam as iam } from 'aws-cdk-lib';
 
-import { deploy, out } from '../../helper/typescript/typescript_test';
+import { out } from '../../helper/typescript/typescript_test';
 import * as statement from '../../lib';
 
 function getStatement() {
@@ -18,4 +18,3 @@ function getStatement() {
 }
 const s = [getStatement()];
 out(s);
-deploy(s, 'cdk');

@@ -1,13 +1,13 @@
 .PHONY: test test-cdk
 
-install:
-	npx ts-node bin/mkcdk.ts --package-json
-	cd examples && cat package.json
-	cd examples && npm i
+install-cdk:
+	npm i aws-cdk-lib constructs@^10.0.0
 
-test: install
+test:
+	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc -p examples/tsconfig.json
+	@tsc @/tmp/ts.result
+	@rm /tmp/ts.result
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\
@@ -15,9 +15,11 @@ test: install
 		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
 
-test-cdk: install
+test-cdk: install-cdk
+	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc -p examples/tsconfig.cdk.json
+	@tsc @/tmp/ts.result
+	@rm /tmp/ts.result
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
 		node "$$f" > "$${f%.js}.ts.result" || exit ;\

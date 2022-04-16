@@ -1,9 +1,9 @@
-import * as cdk from 'aws-cdk-lib';
-import iam = require('aws-cdk-lib/aws-iam');
+//import * as cdk from 'aws-cdk-lib';
+//import iam = require('aws-cdk-lib/aws-iam');
 import AWS = require('aws-sdk');
-import { Construct } from 'constructs';
 import crypto = require('crypto');
 
+//import { Construct } from 'constructs';
 const ciam = new AWS.IAM();
 const cs3 = new AWS.S3();
 
@@ -22,8 +22,8 @@ export async function deploy(statements: any[], type = 'policy') {
       await deployAssume(statements);
     } else if (type == 'access') {
       await deployAccess(statements);
-    } else if (type == 'cdk') {
-      deployCdk(statements);
+      // } else if (type == 'cdk') {
+      //   deployCdk(statements);
     } else {
       throw new Error(`Unknown deploy type: ${type}`);
     }
@@ -131,27 +131,27 @@ function deployAccess(statements: any[]): Promise<void> {
     );
   });
 }
-
-interface StackProps extends cdk.StackProps {
-  statements: iam.PolicyStatement[];
-}
-
-class Stack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props: StackProps) {
-    super(scope, id, props);
-    new iam.Policy(this, 'Policy', {
-      statements: props.statements,
-    });
-  }
-}
-
-function deployCdk(statements: iam.PolicyStatement[]) {
-  const app = new cdk.App();
-  new Stack(app, 'TestStack' + newRandomName(), {
-    statements: statements,
-  });
-  app.synth();
-}
+//
+//interface StackProps extends cdk.StackProps {
+//  statements: iam.PolicyStatement[];
+//}
+//
+//class Stack extends cdk.Stack {
+//  constructor(scope: Construct, id: string, props: StackProps) {
+//    super(scope, id, props);
+//    new iam.Policy(this, 'Policy', {
+//      statements: props.statements,
+//    });
+//  }
+//}
+//
+//function deployCdk(statements: iam.PolicyStatement[]) {
+//  const app = new cdk.App();
+//  new Stack(app, 'TestStack' + newRandomName(), {
+//    statements: statements,
+//  });
+//  app.synth();
+//}
 
 function makePolicyDocument(statements: any[]) {
   const j = {
