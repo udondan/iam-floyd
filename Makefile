@@ -35,11 +35,11 @@ cdk:
 
 test:
 	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
-	$(MAKE) --no-print-directory -f test/Makefile test
+	@cd test && $(MAKE) --no-print-directory -f Makefile test
 
 cdk-test:
 	@echo -e "$(TARGET_COLOR)Running CDK test$(NO_COLOR)"
-	$(MAKE) --no-print-directory -f test/Makefile test-cdk
+	@cd test && $(MAKE) --no-print-directory -f Makefile test-cdk
 
 cdk-all: cdk install build cdk-test
 

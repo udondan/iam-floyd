@@ -2,11 +2,6 @@ test-cdk:
 	@rm -rf node_modules package-lock.json
 	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@npm i
-	pwd
-	ls -alh
-	ls -alh ..
-	ls -alh ../dist
-	ls -alh ../dist/js
 	@npm i --no-save ../dist/js/cdk-iam-floyd@*.jsii.tgz
 	@npm run build
 	@cdk diff
