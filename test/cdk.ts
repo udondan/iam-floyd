@@ -1,8 +1,7 @@
 import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { aws_iam as iam } from 'aws-cdk-lib';
+import * as statement from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
-
-import * as statement from '../lib';
 
 export class TestStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
