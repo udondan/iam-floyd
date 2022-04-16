@@ -12,17 +12,17 @@ export class TestStack extends Stack {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toListDocuments()
           .toListTagsForResource()
           .onInstance('asdf'),
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
           .ifAwsRequestTag('CreatedBy', 'hello'),
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toDeleteDocument()
           .toDescribeDocument()
