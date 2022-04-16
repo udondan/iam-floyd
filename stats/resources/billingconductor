@@ -1,4 +1,4 @@
-billingconductor:billingGroup
-billingconductor:customLineItem
-billingconductor:pricingPlan
-billingconductor:pricingRule
+billingconductor:billinggroup
+billingconductor:customlineitem
+billingconductor:pricingplan
+billingconductor:pricingrule

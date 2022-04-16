@@ -23,7 +23,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_AssociateOriginationIdentity.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html
    */
   public toAssociateOriginationIdentity() {
     return this.to('AssociateOriginationIdentity');
@@ -41,7 +41,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Dependent actions:
    * - sms-voice:TagResource
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreateConfigurationSet.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateConfigurationSet.html
    */
   public toCreateConfigurationSet() {
     return this.to('CreateConfigurationSet');
@@ -55,7 +55,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreateEventDestination.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateEventDestination.html
    */
   public toCreateEventDestination() {
     return this.to('CreateEventDestination');
@@ -73,7 +73,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Dependent actions:
    * - sms-voice:TagResource
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreateOptOutList.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateOptOutList.html
    */
   public toCreateOptOutList() {
     return this.to('CreateOptOutList');
@@ -91,7 +91,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Dependent actions:
    * - sms-voice:TagResource
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreatePool.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreatePool.html
    */
   public toCreatePool() {
     return this.to('CreatePool');
@@ -102,7 +102,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteConfigurationSet.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteConfigurationSet.html
    */
   public toDeleteConfigurationSet() {
     return this.to('DeleteConfigurationSet');
@@ -113,7 +113,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteDefaultMessageType.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteDefaultMessageType.html
    */
   public toDeleteDefaultMessageType() {
     return this.to('DeleteDefaultMessageType');
@@ -124,7 +124,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteDefaultSenderId.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteDefaultSenderId.html
    */
   public toDeleteDefaultSenderId() {
     return this.to('DeleteDefaultSenderId');
@@ -135,7 +135,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteEventDestination.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteEventDestination.html
    */
   public toDeleteEventDestination() {
     return this.to('DeleteEventDestination');
@@ -146,7 +146,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteKeyword.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteKeyword.html
    */
   public toDeleteKeyword() {
     return this.to('DeleteKeyword');
@@ -157,7 +157,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteOptOutList.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteOptOutList.html
    */
   public toDeleteOptOutList() {
     return this.to('DeleteOptOutList');
@@ -168,7 +168,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteOptedOutNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteOptedOutNumber.html
    */
   public toDeleteOptedOutNumber() {
     return this.to('DeleteOptedOutNumber');
@@ -179,7 +179,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeletePool.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeletePool.html
    */
   public toDeletePool() {
     return this.to('DeletePool');
@@ -190,7 +190,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteTextMessageSpendLimitOverride.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteTextMessageSpendLimitOverride.html
    */
   public toDeleteTextMessageSpendLimitOverride() {
     return this.to('DeleteTextMessageSpendLimitOverride');
@@ -201,7 +201,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DeleteVoiceMessageSpendLimitOverride.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVoiceMessageSpendLimitOverride.html
    */
   public toDeleteVoiceMessageSpendLimitOverride() {
     return this.to('DeleteVoiceMessageSpendLimitOverride');
@@ -212,7 +212,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeAccountAttributes.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
     return this.to('DescribeAccountAttributes');
@@ -223,7 +223,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeAccountLimits.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeAccountLimits.html
    */
   public toDescribeAccountLimits() {
     return this.to('DescribeAccountLimits');
@@ -234,7 +234,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeConfigurationSets.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeConfigurationSets.html
    */
   public toDescribeConfigurationSets() {
     return this.to('DescribeConfigurationSets');
@@ -245,7 +245,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeKeywords.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeKeywords.html
    */
   public toDescribeKeywords() {
     return this.to('DescribeKeywords');
@@ -256,7 +256,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeOptOutLists.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeOptOutLists.html
    */
   public toDescribeOptOutLists() {
     return this.to('DescribeOptOutLists');
@@ -267,7 +267,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeOptedOutNumbers.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeOptedOutNumbers.html
    */
   public toDescribeOptedOutNumbers() {
     return this.to('DescribeOptedOutNumbers');
@@ -278,7 +278,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribePhoneNumbers.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html
    */
   public toDescribePhoneNumbers() {
     return this.to('DescribePhoneNumbers');
@@ -289,7 +289,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribePools.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePools.html
    */
   public toDescribePools() {
     return this.to('DescribePools');
@@ -300,7 +300,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeSenderIds.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html
    */
   public toDescribeSenderIds() {
     return this.to('DescribeSenderIds');
@@ -311,7 +311,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeSpendLimits.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSpendLimits.html
    */
   public toDescribeSpendLimits() {
     return this.to('DescribeSpendLimits');
@@ -322,7 +322,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DisassociateOriginationIdentity.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DisassociateOriginationIdentity.html
    */
   public toDisassociateOriginationIdentity() {
     return this.to('DisassociateOriginationIdentity');
@@ -333,7 +333,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_ListPoolOriginationIdentities.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListPoolOriginationIdentities.html
    */
   public toListPoolOriginationIdentities() {
     return this.to('ListPoolOriginationIdentities');
@@ -344,7 +344,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -355,7 +355,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_PutKeyword.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutKeyword.html
    */
   public toPutKeyword() {
     return this.to('PutKeyword');
@@ -366,7 +366,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_PutOptedOutNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutOptedOutNumber.html
    */
   public toPutOptedOutNumber() {
     return this.to('PutOptedOutNumber');
@@ -377,7 +377,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_ReleasePhoneNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleasePhoneNumber.html
    */
   public toReleasePhoneNumber() {
     return this.to('ReleasePhoneNumber');
@@ -396,7 +396,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - sms-voice:AssociateOriginationIdentity
    * - sms-voice:TagResource
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_RequestPhoneNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html
    */
   public toRequestPhoneNumber() {
     return this.to('RequestPhoneNumber');
@@ -407,7 +407,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SendTextMessage.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendTextMessage.html
    */
   public toSendTextMessage() {
     return this.to('SendTextMessage');
@@ -418,7 +418,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SendVoiceMessage.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendVoiceMessage.html
    */
   public toSendVoiceMessage() {
     return this.to('SendVoiceMessage');
@@ -429,7 +429,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SetDefaultMessageType.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetDefaultMessageType.html
    */
   public toSetDefaultMessageType() {
     return this.to('SetDefaultMessageType');
@@ -440,7 +440,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SetDefaultSenderId.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetDefaultSenderId.html
    */
   public toSetDefaultSenderId() {
     return this.to('SetDefaultSenderId');
@@ -451,7 +451,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SetTextMessageSpendLimitOverride.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetTextMessageSpendLimitOverride.html
    */
   public toSetTextMessageSpendLimitOverride() {
     return this.to('SetTextMessageSpendLimitOverride');
@@ -462,7 +462,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_SetVoiceMessageSpendLimitOverride.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetVoiceMessageSpendLimitOverride.html
    */
   public toSetVoiceMessageSpendLimitOverride() {
     return this.to('SetVoiceMessageSpendLimitOverride');
@@ -477,7 +477,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_TagResource.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -492,7 +492,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_UntagResource.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -506,7 +506,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_UpdateEventDestination.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateEventDestination.html
    */
   public toUpdateEventDestination() {
     return this.to('UpdateEventDestination');
@@ -517,7 +517,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_UpdatePhoneNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePhoneNumber.html
    */
   public toUpdatePhoneNumber() {
     return this.to('UpdatePhoneNumber');
@@ -528,7 +528,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_UpdatePool.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html
    */
   public toUpdatePool() {
     return this.to('UpdatePool');
@@ -589,7 +589,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type ConfigurationSet to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreateConfigurationSet.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateConfigurationSet.html
    *
    * @param configurationSetName - Identifier for the configurationSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -606,7 +606,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type OptOutList to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreateOptOutList.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateOptOutList.html
    *
    * @param optOutListName - Identifier for the optOutListName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -623,7 +623,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type PhoneNumber to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_RequestPhoneNumber.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html
    *
    * @param phoneNumberId - Identifier for the phoneNumberId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -640,7 +640,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type Pool to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_CreatePool.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreatePool.html
    *
    * @param poolId - Identifier for the poolId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -657,7 +657,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type SenderId to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice-v2/latest/apireference/API_DescribeSenderIds.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html
    *
    * @param senderId - Identifier for the senderId.
    * @param isoCountryCode - Identifier for the isoCountryCode.

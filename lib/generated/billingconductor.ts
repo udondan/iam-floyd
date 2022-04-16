@@ -298,8 +298,8 @@ export class Billingconductor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListTagsForResource.html
    */
-  public toListTagsResource() {
-    return this.to('ListTagsResource');
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -409,7 +409,7 @@ export class Billingconductor extends PolicyStatement {
       'ListCustomLineItems',
       'ListPricingPlans',
       'ListPricingRules',
-      'ListTagsResource'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -418,66 +418,66 @@ export class Billingconductor extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type billingGroup to the statement
+   * Adds a resource of type billinggroup to the statement
    *
-   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param billingGroupId - Identifier for the billingGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBillingGroup(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:billinggroup/${ resourceId }`);
+  public onBillinggroup(billingGroupId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:billinggroup/${ billingGroupId }`);
   }
 
   /**
-   * Adds a resource of type pricingPlan to the statement
+   * Adds a resource of type pricingplan to the statement
    *
-   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param pricingPlanId - Identifier for the pricingPlanId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onPricingPlan(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingplan/${ resourceId }`);
+  public onPricingplan(pricingPlanId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingplan/${ pricingPlanId }`);
   }
 
   /**
-   * Adds a resource of type pricingRule to the statement
+   * Adds a resource of type pricingrule to the statement
    *
-   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param pricingRuleId - Identifier for the pricingRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onPricingRule(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingrule/${ resourceId }`);
+  public onPricingrule(pricingRuleId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingrule/${ pricingRuleId }`);
   }
 
   /**
-   * Adds a resource of type customLineItem to the statement
+   * Adds a resource of type customlineitem to the statement
    *
-   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param customLineItemId - Identifier for the customLineItemId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCustomLineItem(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ resourceId }`);
+  public onCustomlineitem(customLineItemId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ customLineItemId }`);
   }
 }
