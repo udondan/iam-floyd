@@ -3,6 +3,7 @@ test-cdk:
 	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@npm i
 	pwd
+	ls -alh
 	ls -alh ..
 	ls -alh ../dist
 	ls -alh ../dist/js
