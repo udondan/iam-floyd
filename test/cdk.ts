@@ -15,7 +15,8 @@ export class TestStack extends Stack {
           .allow()
           .toListDocuments()
           .toListTagsForResource()
-          .onInstance('asdf'),
+          .onInstance('asdf')
+          .forAccount(this.account),
         new statement.Ssm()
           .allow()
           .toCreateDocument()
