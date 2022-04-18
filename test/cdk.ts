@@ -1,5 +1,6 @@
 import { App, Stack, StackProps } from 'aws-cdk-lib';
-import { aws_iam as iam } from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as statement from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
@@ -15,12 +16,12 @@ export class TestStack extends Stack {
           .allow()
           .toListDocuments()
           .toListTagsForResource()
-          .onInstance('asdf'),
+          .onInstance('i-1234567890'),
         new statement.Ssm()
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
-          .ifAwsRequestTag('CreatedBy', 'hello'),
+          .ifAwsRequestTag('CreatedBy', 'Bob'),
         new statement.Ssm()
           .allow()
           .toDeleteDocument()
@@ -32,16 +33,27 @@ export class TestStack extends Stack {
           .toUpdateDocumentDefaultVersion()
           .toAddTagsToResource()
           .toRemoveTagsFromResource()
-          .ifResourceTag('CreatedBy', 'hello'),
+          .ifResourceTag('CreatedBy', 'Bob'),
       ],
     });
 
-    new iam.Role(this, 'Role', {
+    const role = new iam.Role(this, 'Role', {
       roleName: `${this.stackName}-testrole`,
       description: 'Test Role',
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [policy],
     });
+
+    const bucket = new s3.Bucket(this, 'Bucket');
+
+    bucket.addToResourcePolicy(
+      new statement.S3() //
+        .allow()
+        .toGetObject()
+        .onObject(bucket.bucketName, '*')
+        .forAccount(this.account)
+        .forCdkPrincipal(role)
+    );
   }
 }
 
