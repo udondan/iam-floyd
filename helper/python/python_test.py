@@ -51,13 +51,15 @@ def deploy_assume(statements):
 
     document = make_policy_document(statements)
 
-    response = client.create_role(
+    client.create_role(
         RoleName=role_name,
         AssumeRolePolicyDocument=document,
         Description='Testing assume policy creation',
     )
 
-    # @TODO: delete role
+    client.delete_role(
+        RoleName=role_name
+    )
 
 
 def deploy_access(statements):
@@ -69,10 +71,10 @@ def deploy_access(statements):
         statements, replace_s3_examples, bucket_name)
 
     s3 = boto3.client('s3')
-    bucket = s3.create_bucket(Bucket=bucket_name)
+    s3.create_bucket(Bucket=bucket_name)
 
     log('Attaching bucket policy...\n')
-    response = s3.put_bucket_policy(
+    s3.put_bucket_policy(
         Bucket=bucket_name,
         Policy=document,
     )

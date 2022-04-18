@@ -35,20 +35,11 @@ cdk:
 
 test:
 	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
-	@rm -f test/main.js
-	@npx ts-node test/main.ts
+	@cd test && $(MAKE) --no-print-directory -f Makefile test
 
 cdk-test:
 	@echo -e "$(TARGET_COLOR)Running CDK test$(NO_COLOR)"
-	@echo -e "$(TARGET_COLOR)Preparing test...$(NO_COLOR)"
-	@rm -rf test/node_modules test/package-lock.json
-	@find test -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
-	@cd test && npm i
-	@cd test && npm run build
-	@echo -e "$(TARGET_COLOR)Running test...$(NO_COLOR)"
-	@cd test && cdk diff
-	@cd test && cdk deploy --require-approval never
-	@cd test && cdk destroy --force
+	@cd test && $(MAKE) --no-print-directory -f Makefile test-cdk
 
 cdk-all: cdk install build cdk-test
 

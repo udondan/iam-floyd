@@ -1,10 +1,20 @@
 {
     "Action": [
-        "ec2:CreateNetworkInterfacePermission",
-        "ec2:DeleteNetworkInterfacePermission",
-        "ec2:ModifySnapshotAttribute",
-        "ec2:ModifyVpcEndpointServicePermissions",
-        "ec2:ResetSnapshotAttribute"
+        "s3:BypassGovernanceRetention",
+        "s3:DeleteAccessPointPolicy",
+        "s3:DeleteAccessPointPolicyForObjectLambda",
+        "s3:DeleteBucketPolicy",
+        "s3:ObjectOwnerOverrideToBucketOwner",
+        "s3:PutAccessPointPolicy",
+        "s3:PutAccessPointPolicyForObjectLambda",
+        "s3:PutAccessPointPublicAccessBlock",
+        "s3:PutAccountPublicAccessBlock",
+        "s3:PutBucketAcl",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutMultiRegionAccessPointPolicy",
+        "s3:PutObjectAcl",
+        "s3:PutObjectVersionAcl"
     ],
     "Resource": "*",
     "Effect": "Allow"

@@ -26,4 +26,4 @@ s = (
 
 all = [s]
 out(all)
-deploy(all, type='access')
+# deploy(all, type='access') Disabled, because we need valid principals to test

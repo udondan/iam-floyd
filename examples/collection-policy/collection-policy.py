@@ -1,5 +1,17 @@
 import json
 import iam_floyd as statement
+import importlib
+import os
+import sys
+import inspect
+
+currentdir = os.path.dirname(os.path.abspath(
+    inspect.getfile(inspect.currentframe())))
+helperDir = '%s/../../helper/python' % currentdir
+sys.path.insert(0, helperDir)
+
+test = importlib.import_module('python_test')
+deploy = getattr(test, 'deploy')
 
 
 def get_policy():
@@ -10,8 +22,11 @@ def get_policy():
             'Statement': list(map(lambda x: x.to_json(), statements)),
     }
     # doc-end
-    return policy
+    return policy, statements
 
 
-pretty = json.dumps(get_policy(), indent=4)
+policy, statements = get_policy()
+pretty = json.dumps(policy, indent=4)
 print(pretty)
+
+deploy(statements)

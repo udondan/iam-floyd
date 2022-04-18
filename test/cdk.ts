@@ -1,8 +1,7 @@
 import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { aws_iam as iam } from 'aws-cdk-lib';
+import * as statement from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
-
-import * as statement from '../lib';
 
 export class TestStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -12,17 +11,17 @@ export class TestStack extends Stack {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toListDocuments()
           .toListTagsForResource()
           .onInstance('asdf'),
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
           .ifAwsRequestTag('CreatedBy', 'hello'),
-        new statement.Ssm({})
+        new statement.Ssm()
           .allow()
           .toDeleteDocument()
           .toDescribeDocument()
@@ -50,6 +49,6 @@ const app = new App();
 new TestStack(app, 'IAM-Floyd-Test', {
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: process.env.CDK_DEFAULT_REGION,
+    region: 'us-east-1',
   },
 });
