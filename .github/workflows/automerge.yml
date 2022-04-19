@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Wait for status checks
         id: waitforstatuschecks
-        uses: WyriHaximus/github-action-wait-for-status@v1.2.0
+        uses: WyriHaximus/github-action-wait-for-status@v1.5.0
         with:
           ignoreActions: worker,WIP
           checkInterval: 300
@@ -19,8 +19,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Automerge
-        uses: pascalgn/automerge-action@v0.11.0
-        if: steps.waitforstatuschecks.outputs.status == "success"
+        uses: pascalgn/automerge-action@v0.15.2
+        if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: update
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
