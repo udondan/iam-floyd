@@ -7,7 +7,9 @@ on:
 jobs:
   worker:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    if: |
+      github.actor == 'dependabot[bot]' &&
+      contains(github.event.pull_request.labels.*.name, 'dependencies')
     steps:
       - name: Wait for status checks
         id: waitforstatuschecks
@@ -22,6 +24,6 @@ jobs:
         uses: pascalgn/automerge-action@v0.15.2
         if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
-          MERGE_LABELS: update
+          MERGE_LABELS: dependencies
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MERGE_DELETE_BRANCH: true
