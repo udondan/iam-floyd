@@ -10,3 +10,8 @@ updates:
     directory: /cdk
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /test
+    schedule:
+      interval: daily
