@@ -98,7 +98,10 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forAccount(...accounts: string[]) {
     accounts.forEach((account) =>
-      this.addPrincipal(PrincipalType.AWS, `arn:aws:iam::${account}:root`)
+      this.addPrincipal(
+        PrincipalType.AWS,
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`
+      )
     );
     return this;
   }
@@ -166,7 +169,9 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forSaml(account: string, ...providerNames: string[]) {
     providerNames.forEach((providerName) =>
-      this.forFederated(`arn:aws:iam::${account}:saml-provider/${providerName}`)
+      this.forFederated(
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`
+      )
     );
     return this;
   }
@@ -181,7 +186,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     users.forEach((user) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:aws:iam::${account}:user/${user}`
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:user/${user}`
       )
     );
     return this;
@@ -197,7 +202,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     roles.forEach((role) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:aws:iam::${account}:role/${role}`
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:role/${role}`
       )
     );
     return this;
@@ -218,7 +223,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     sessionNames.forEach((sessionName) => {
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:aws:sts::${account}:assumed-role/${roleName}/${sessionName}`
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`
       );
     });
     return this;
