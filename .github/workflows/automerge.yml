@@ -16,7 +16,7 @@ jobs:
         uses: WyriHaximus/github-action-wait-for-status@v1.5.0
         with:
           ignoreActions: worker,WIP
-          checkInterval: 300
+          checkInterval: 60
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -25,5 +25,6 @@ jobs:
         if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: dependencies
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          UPDATE_LABELS: dependencies
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
           MERGE_DELETE_BRANCH: true
