@@ -267,7 +267,9 @@ jobs:
           npm i -g typescript
 
       - name: Test npm package
-        run: make test-typescript-cdk
+        run: |
+          make test-typescript-cdk
+          make cdk-test
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

@@ -12,3 +12,4 @@ docs/build
 examples/*/*.*.result
 **/*.pyc
 package-lock.json
+tsconfig.tsbuildinfo
