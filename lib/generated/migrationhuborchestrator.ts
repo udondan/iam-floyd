@@ -364,16 +364,19 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type workflow-template to the statement
+   * Adds a resource of type workflow to the statement
    *
-   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/workflow-template.html
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/workflow.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onWorkflowTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MigrationhubOrchestrator.defaultPartition }:migrationhub-orchestrator:${ region || '*' }:${ account || '*' }:workflow-template/${ resourceId }`);
+  public onWorkflow(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || MigrationhubOrchestrator.defaultPartition }:migrationhub-orchestrator:${ region || '*' }:${ account || '*' }:workflow/${ resourceId }`);
   }
 }

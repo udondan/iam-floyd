@@ -19,7 +19,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a delivery stream
+   * Grants permission to create a delivery stream
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list your delivery streams
+   * Grants permission to list your delivery streams
    *
    * Access Level: List
    *
@@ -67,7 +67,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the tags for the specified delivery stream
+   * Grants permission to list the tags for the specified delivery stream
    *
    * Access Level: List
    *
@@ -78,7 +78,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to write a single data record into an Amazon Kinesis Firehose delivery stream
+   * Grants permission to write a single data record into an Amazon Kinesis Firehose delivery stream
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to write multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records
+   * Grants permission to write multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to enable server-side encryption (SSE) for the delivery stream
+   * Grants permission to enable server-side encryption (SSE) for the delivery stream
    *
    * Access Level: Write
    *
@@ -111,7 +111,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to disable the specified destination of the specified delivery stream
+   * Grants permission to disable the specified destination of the specified delivery stream
    *
    * Access Level: Write
    *
@@ -122,7 +122,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to add or update tags for the specified delivery stream
+   * Grants permission to add or update tags for the specified delivery stream
    *
    * Access Level: Tagging
    *
@@ -137,7 +137,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to remove tags from the specified delivery stream
+   * Grants permission to remove tags from the specified delivery stream
    *
    * Access Level: Tagging
    *
@@ -151,7 +151,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the specified destination of the specified delivery stream
+   * Grants permission to update the specified destination of the specified delivery stream
    *
    * Access Level: Write
    *

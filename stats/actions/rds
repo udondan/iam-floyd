@@ -11,7 +11,6 @@ rds:CopyDBClusterSnapshot;Write
 rds:CopyDBParameterGroup;Write
 rds:CopyDBSnapshot;Write
 rds:CopyOptionGroup;Write
-rds:CreateCustomAvailabilityZone;Write
 rds:CreateCustomDBEngineVersion;Write
 rds:CreateDBCluster;Write
 rds:CreateDBClusterEndpoint;Write
@@ -29,7 +28,6 @@ rds:CreateEventSubscription;Write
 rds:CreateGlobalCluster;Write
 rds:CreateOptionGroup;Write
 rds:CrossRegionCommunication;Write
-rds:DeleteCustomAvailabilityZone;Write
 rds:DeleteCustomDBEngineVersion;Write
 rds:DeleteDBCluster;Write
 rds:DeleteDBClusterEndpoint;Write
@@ -45,12 +43,10 @@ rds:DeleteDBSnapshot;Write
 rds:DeleteDBSubnetGroup;Write
 rds:DeleteEventSubscription;Write
 rds:DeleteGlobalCluster;Write
-rds:DeleteInstallationMedia;Write
 rds:DeleteOptionGroup;Write
 rds:DeregisterDBProxyTargets;Write
 rds:DescribeAccountAttributes;List
 rds:DescribeCertificates;List
-rds:DescribeCustomAvailabilityZones;List
 rds:DescribeDBClusterBacktracks;List
 rds:DescribeDBClusterEndpoints;List
 rds:DescribeDBClusterParameterGroups;List
@@ -79,7 +75,6 @@ rds:DescribeEventSubscriptions;List
 rds:DescribeEvents;List
 rds:DescribeExportTasks;List
 rds:DescribeGlobalClusters;List
-rds:DescribeInstallationMedia;List
 rds:DescribeOptionGroupOptions;List
 rds:DescribeOptionGroups;List
 rds:DescribeOrderableDBInstanceOptions;List
@@ -94,7 +89,6 @@ rds:DownloadCompleteDBLogFile;Read
 rds:DownloadDBLogFilePortion;Read
 rds:FailoverDBCluster;Write
 rds:FailoverGlobalCluster;Write
-rds:ImportInstallationMedia;Write
 rds:ListTagsForResource;Read
 rds:ModifyCertificates;Write
 rds:ModifyCurrentDBClusterCapacity;Write

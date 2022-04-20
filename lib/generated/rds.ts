@@ -208,17 +208,6 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new custom availability zone
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateCustomAvailabilityZone.html
-   */
-  public toCreateCustomAvailabilityZone() {
-    return this.to('CreateCustomAvailabilityZone');
-  }
-
-  /**
    * Grants permission to create a custom engine version
    *
    * Access Level: Write
@@ -534,17 +523,6 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a custom availability zone
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteCustomAvailabilityZone.html
-   */
-  public toDeleteCustomAvailabilityZone() {
-    return this.to('DeleteCustomAvailabilityZone');
-  }
-
-  /**
    * Grants permission to delete an existing custom engine version
    *
    * Access Level: Write
@@ -713,17 +691,6 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an installation media
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteInstallationMedia.html
-   */
-  public toDeleteInstallationMedia() {
-    return this.to('DeleteInstallationMedia');
-  }
-
-  /**
    * Grants permission to delete an existing option group
    *
    * Access Level: Write
@@ -765,17 +732,6 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeCertificates() {
     return this.to('DescribeCertificates');
-  }
-
-  /**
-   * Grants permission to return information about provisioned custom availability zones
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCustomAvailabilityZones.html
-   */
-  public toDescribeCustomAvailabilityZones() {
-    return this.to('DescribeCustomAvailabilityZones');
   }
 
   /**
@@ -1087,17 +1043,6 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about available installation media
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeInstallationMedia.html
-   */
-  public toDescribeInstallationMedia() {
-    return this.to('DescribeInstallationMedia');
-  }
-
-  /**
    * Grants permission to describe all available options
    *
    * Access Level: List
@@ -1249,17 +1194,6 @@ export class Rds extends PolicyStatement {
    */
   public toFailoverGlobalCluster() {
     return this.to('FailoverGlobalCluster');
-  }
-
-  /**
-   * Grants permission to import an installation media for a DB engine
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ImportInstallationMedia.html
-   */
-  public toImportInstallationMedia() {
-    return this.to('ImportInstallationMedia');
   }
 
   /**
@@ -1920,7 +1854,6 @@ export class Rds extends PolicyStatement {
       'CopyDBParameterGroup',
       'CopyDBSnapshot',
       'CopyOptionGroup',
-      'CreateCustomAvailabilityZone',
       'CreateCustomDBEngineVersion',
       'CreateDBCluster',
       'CreateDBClusterEndpoint',
@@ -1938,7 +1871,6 @@ export class Rds extends PolicyStatement {
       'CreateGlobalCluster',
       'CreateOptionGroup',
       'CrossRegionCommunication',
-      'DeleteCustomAvailabilityZone',
       'DeleteCustomDBEngineVersion',
       'DeleteDBCluster',
       'DeleteDBClusterEndpoint',
@@ -1954,12 +1886,10 @@ export class Rds extends PolicyStatement {
       'DeleteDBSubnetGroup',
       'DeleteEventSubscription',
       'DeleteGlobalCluster',
-      'DeleteInstallationMedia',
       'DeleteOptionGroup',
       'DeregisterDBProxyTargets',
       'FailoverDBCluster',
       'FailoverGlobalCluster',
-      'ImportInstallationMedia',
       'ModifyCertificates',
       'ModifyCurrentDBClusterCapacity',
       'ModifyCustomDBEngineVersion',
@@ -2018,7 +1948,6 @@ export class Rds extends PolicyStatement {
     List: [
       'DescribeAccountAttributes',
       'DescribeCertificates',
-      'DescribeCustomAvailabilityZones',
       'DescribeDBClusterBacktracks',
       'DescribeDBClusterEndpoints',
       'DescribeDBClusterParameterGroups',
@@ -2047,7 +1976,6 @@ export class Rds extends PolicyStatement {
       'DescribeEvents',
       'DescribeExportTasks',
       'DescribeGlobalClusters',
-      'DescribeInstallationMedia',
       'DescribeOptionGroupOptions',
       'DescribeOptionGroups',
       'DescribeOrderableDBInstanceOptions',
