@@ -26,6 +26,8 @@ export class Cassandra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toAlter() {
     return this.to('Alter');
@@ -39,6 +41,8 @@ export class Cassandra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toCreate() {
     return this.to('Create');
@@ -48,6 +52,8 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to drop a keyspace or table
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toDrop() {
     return this.to('Drop');
@@ -57,6 +63,8 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to INSERT, UPDATE or DELETE data in a table
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toModify() {
     return this.to('Modify');
@@ -70,6 +78,8 @@ export class Cassandra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toRestore() {
     return this.to('Restore');
@@ -79,6 +89,8 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to SELECT data from a table
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toSelect() {
     return this.to('Select');
@@ -92,6 +104,8 @@ export class Cassandra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -105,9 +119,22 @@ export class Cassandra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to UPDATE the partitioner in a system table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
+   */
+  public toUpdatePartitioner() {
+    return this.to('UpdatePartitioner');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -116,7 +143,8 @@ export class Cassandra extends PolicyStatement {
       'Create',
       'Drop',
       'Modify',
-      'Restore'
+      'Restore',
+      'UpdatePartitioner'
     ],
     Read: [
       'Select'

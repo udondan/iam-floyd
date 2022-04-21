@@ -6,3 +6,4 @@ cassandra:Restore;Write
 cassandra:Select;Read
 cassandra:TagResource;Tagging
 cassandra:UntagResource;Tagging
+cassandra:UpdatePartitioner;Write

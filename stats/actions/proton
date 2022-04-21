@@ -80,7 +80,6 @@ proton:UpdateEnvironmentTemplate;Write
 proton:UpdateEnvironmentTemplateMajorVersion;Write
 proton:UpdateEnvironmentTemplateMinorVersion;Write
 proton:UpdateEnvironmentTemplateVersion;Write
-proton:UpdateRepository;Write
 proton:UpdateService;Write
 proton:UpdateServiceInstance;Write
 proton:UpdateServicePipeline;Write

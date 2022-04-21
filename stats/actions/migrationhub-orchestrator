@@ -12,6 +12,7 @@ migrationhub-orchestrator:GetWorkflow;Read
 migrationhub-orchestrator:GetWorkflowStep;Read
 migrationhub-orchestrator:GetWorkflowStepGroup;Read
 migrationhub-orchestrator:ListPlugins;List
+migrationhub-orchestrator:ListTagsForResource;Read
 migrationhub-orchestrator:ListTemplateStepGroups;List
 migrationhub-orchestrator:ListTemplateSteps;List
 migrationhub-orchestrator:ListTemplates;List
@@ -23,6 +24,8 @@ migrationhub-orchestrator:RetryWorkflowStep;Write
 migrationhub-orchestrator:SendMessage;Write
 migrationhub-orchestrator:StartWorkflow;Write
 migrationhub-orchestrator:StopWorkflow;Write
+migrationhub-orchestrator:TagResource;Tagging
+migrationhub-orchestrator:UntagResource;Tagging
 migrationhub-orchestrator:UpdateWorkflow;Write
 migrationhub-orchestrator:UpdateWorkflowStep;Write
 migrationhub-orchestrator:UpdateWorkflowStepGroup;Write

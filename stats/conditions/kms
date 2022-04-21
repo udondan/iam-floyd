@@ -14,6 +14,7 @@ kms:GranteePrincipal
 kms:KeyOrigin
 kms:KeySpec
 kms:KeyUsage
+kms:MacAlgorithm
 kms:MessageType
 kms:MultiRegion
 kms:MultiRegionKeyType

@@ -398,6 +398,23 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Controls permission to use the AWS KMS key to generate message authentication codes
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMacAlgorithm()
+   * - .ifRequestAlias()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateMac.html
+   */
+  public toGenerateMac() {
+    return this.to('GenerateMac');
+  }
+
+  /**
    * Controls permission to get a cryptographically secure random byte string from AWS KMS
    *
    * Access Level: Write
@@ -830,6 +847,23 @@ export class Kms extends PolicyStatement {
     return this.to('Verify');
   }
 
+  /**
+   * Controls permission to use the AWS KMS key to verify message authentication codes
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMacAlgorithm()
+   * - .ifRequestAlias()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_VerifyMac.html
+   */
+  public toVerifyMac() {
+    return this.to('VerifyMac');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelKeyDeletion',
@@ -851,6 +885,7 @@ export class Kms extends PolicyStatement {
       'GenerateDataKeyPair',
       'GenerateDataKeyPairWithoutPlaintext',
       'GenerateDataKeyWithoutPlaintext',
+      'GenerateMac',
       'GenerateRandom',
       'ImportKeyMaterial',
       'ReEncryptFrom',
@@ -863,7 +898,8 @@ export class Kms extends PolicyStatement {
       'UpdateCustomKeyStore',
       'UpdateKeyDescription',
       'UpdatePrimaryRegion',
-      'Verify'
+      'Verify',
+      'VerifyMac'
     ],
     'Permissions management': [
       'CreateGrant',
@@ -973,6 +1009,7 @@ export class Kms extends PolicyStatement {
    * - .toGenerateDataKeyPair()
    * - .toGenerateDataKeyPairWithoutPlaintext()
    * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toGenerateMac()
    * - .toGetKeyPolicy()
    * - .toGetKeyRotationStatus()
    * - .toGetParametersForImport()
@@ -995,6 +1032,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdateKeyDescription()
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
+   * - .toVerifyMac()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1242,6 +1280,22 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to the GenerateMac and VerifyMac operations based on the MacAlgorithm parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm
+   *
+   * Applies to actions:
+   * - .toGenerateMac()
+   * - .toVerifyMac()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMacAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`MacAlgorithm`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access to the Sign and Verify operations based on the value of the MessageType parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
@@ -1367,11 +1421,13 @@ export class Kms extends PolicyStatement {
    * - .toGenerateDataKeyPair()
    * - .toGenerateDataKeyPairWithoutPlaintext()
    * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toGenerateMac()
    * - .toGetPublicKey()
    * - .toReEncryptFrom()
    * - .toReEncryptTo()
    * - .toSign()
    * - .toVerify()
+   * - .toVerifyMac()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1474,6 +1530,7 @@ export class Kms extends PolicyStatement {
    * - .toGenerateDataKeyPair()
    * - .toGenerateDataKeyPairWithoutPlaintext()
    * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toGenerateMac()
    * - .toGetKeyPolicy()
    * - .toGetKeyRotationStatus()
    * - .toGetParametersForImport()
@@ -1495,6 +1552,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdateKeyDescription()
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
+   * - .toVerifyMac()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -23,6 +23,10 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateWorkflow.html
    */
   public toCreateWorkflow() {
@@ -173,6 +177,17 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of all the tags tied to a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to lists step groups of a template
    *
    * Access Level: List
@@ -294,6 +309,36 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add tags to a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the metadata associated with the workflow
    *
    * Access Level: Write
@@ -350,7 +395,8 @@ export class MigrationhubOrchestrator extends PolicyStatement {
       'GetTemplateStepGroup',
       'GetWorkflow',
       'GetWorkflowStep',
-      'GetWorkflowStepGroup'
+      'GetWorkflowStepGroup',
+      'ListTagsForResource'
     ],
     List: [
       'ListPlugins',
@@ -360,6 +406,10 @@ export class MigrationhubOrchestrator extends PolicyStatement {
       'ListWorkflowStepGroups',
       'ListWorkflowSteps',
       'ListWorkflows'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

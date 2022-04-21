@@ -265,6 +265,9 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartPolicyGeneration.html
    */
   public toStartPolicyGeneration() {

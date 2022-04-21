@@ -20,6 +20,7 @@ kms:GenerateDataKey;Write
 kms:GenerateDataKeyPair;Write
 kms:GenerateDataKeyPairWithoutPlaintext;Write
 kms:GenerateDataKeyWithoutPlaintext;Write
+kms:GenerateMac;Write
 kms:GenerateRandom;Write
 kms:GetKeyPolicy;Read
 kms:GetKeyRotationStatus;Read
@@ -48,3 +49,4 @@ kms:UpdateCustomKeyStore;Write
 kms:UpdateKeyDescription;Write
 kms:UpdatePrimaryRegion;Write
 kms:Verify;Write
+kms:VerifyMac;Write

@@ -170,6 +170,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
@@ -442,7 +446,7 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetAccountRoles.html
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetAccountSettings.html
    */
   public toGetAccountSettings() {
     return this.to('GetAccountSettings');
@@ -928,7 +932,7 @@ export class Proton extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountRoles.html
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountSettings.html
    */
   public toUpdateAccountSettings() {
     return this.to('UpdateAccountSettings');
@@ -1004,17 +1008,6 @@ export class Proton extends PolicyStatement {
    */
   public toUpdateEnvironmentTemplateVersion() {
     return this.to('UpdateEnvironmentTemplateVersion');
-  }
-
-  /**
-   * Grants permission to update a repository
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateRepository.html
-   */
-  public toUpdateRepository() {
-    return this.to('UpdateRepository');
   }
 
   /**
@@ -1157,7 +1150,6 @@ export class Proton extends PolicyStatement {
       'UpdateEnvironmentTemplateMajorVersion',
       'UpdateEnvironmentTemplateMinorVersion',
       'UpdateEnvironmentTemplateVersion',
-      'UpdateRepository',
       'UpdateService',
       'UpdateServiceInstance',
       'UpdateServicePipeline',
@@ -1441,6 +1433,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRepository(provider: string, name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:repository/${ provider }:${ name }`);
