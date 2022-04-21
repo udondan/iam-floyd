@@ -6,6 +6,7 @@
 			"Action": [
 				"lambda:CreateFunction",
 				"lambda:DeleteFunction",
+				"lambda:GetFunction",
 				"lambda:InvokeFunction",
 				"lambda:UpdateFunctionCode"
 			],
@@ -40,6 +41,28 @@
 					]
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"events:DescribeRule",
+				"events:PutRule",
+				"events:PutTargets"
+			],
+			"Resource": [
+				"arn:aws:events:*:*:rule/SageMakerPipelineExecutionEMRStepStatusUpdateRule"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticmapreduce:AddJobFlowSteps",
+				"elasticmapreduce:CancelSteps",
+				"elasticmapreduce:DescribeStep"
+			],
+			"Resource": [
+				"arn:aws:elasticmapreduce:*:*:cluster/*"
+			]
 		}
 	]
 }
