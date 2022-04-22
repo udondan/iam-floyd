@@ -239,6 +239,7 @@ export { Iotfleethub } from './iotfleethubfordevicemanagement';
 export { Iotfleetwise } from './iotfleetwise';
 export { Greengrass } from './iotgreengrass';
 export { GreengrassV2 } from './iotgreengrassv2';
+export { Iotjobsdata } from './iotjobsdataplane';
 export { Iotroborunner } from './iotroborunner';
 export { Iotsitewise } from './iotsitewise';
 export { Iotthingsgraph } from './iotthingsgraph';

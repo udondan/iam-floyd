@@ -5,11 +5,13 @@ connect:AssociateDefaultVocabulary;Write
 connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
 connect:AssociateLexBot;Write
+connect:AssociatePhoneNumberContactFlow;Write
 connect:AssociateQueueQuickConnects;Write
 connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
 connect:BatchAssociateAnalyticsDataSet;Write
 connect:BatchDisassociateAnalyticsDataSet;Write
+connect:ClaimPhoneNumber;Write
 connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
@@ -43,6 +45,7 @@ connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
 connect:DescribeInstanceStorageConfig;Read
+connect:DescribePhoneNumber;List
 connect:DescribeQueue;Read
 connect:DescribeQuickConnect;Read
 connect:DescribeRoutingProfile;Read
@@ -57,6 +60,7 @@ connect:DisassociateCustomerProfilesDomain;Write
 connect:DisassociateInstanceStorageConfig;Write
 connect:DisassociateLambdaFunction;Write
 connect:DisassociateLexBot;Write
+connect:DisassociatePhoneNumberContactFlow;Write
 connect:DisassociateQueueQuickConnects;Write
 connect:DisassociateRoutingProfileQueues;Write
 connect:DisassociateSecurityKey;Write
@@ -80,6 +84,7 @@ connect:ListIntegrationAssociations;List
 connect:ListLambdaFunctions;List
 connect:ListLexBots;List
 connect:ListPhoneNumbers;List
+connect:ListPhoneNumbersV2;List
 connect:ListPrompts;List
 connect:ListQueueQuickConnects;List
 connect:ListQueues;List
@@ -94,7 +99,9 @@ connect:ListTagsForResource;Read
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
+connect:ReleasePhoneNumber;Write
 connect:ResumeContactRecording;Write
+connect:SearchAvailablePhoneNumbers;List
 connect:SearchVocabularies;List
 connect:StartChatContact;Write
 connect:StartContactRecording;Write
@@ -119,6 +126,7 @@ connect:UpdateContactSchedule;Write
 connect:UpdateHoursOfOperation;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
+connect:UpdatePhoneNumber;Write
 connect:UpdateQueueHoursOfOperation;Write
 connect:UpdateQueueMaxContacts;Write
 connect:UpdateQueueName;Write

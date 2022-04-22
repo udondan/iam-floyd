@@ -753,7 +753,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/channels.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param channelId - Identifier for the channelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -761,8 +761,8 @@ export class Medialive extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onChannel(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:channel:${ resourceName }`);
+  public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:channel:${ channelId }`);
   }
 
   /**
@@ -770,7 +770,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/inputs.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param inputId - Identifier for the inputId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -778,8 +778,8 @@ export class Medialive extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onInput(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:input:${ resourceName }`);
+  public onInput(inputId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:input:${ inputId }`);
   }
 
   /**
@@ -787,13 +787,13 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/inputdevices.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param deviceId - Identifier for the deviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onInputDevice(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputDevice:${ resourceName }`);
+  public onInputDevice(deviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputDevice:${ deviceId }`);
   }
 
   /**
@@ -801,7 +801,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/inputsecuritygroups.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param inputSecurityGroupId - Identifier for the inputSecurityGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -809,8 +809,8 @@ export class Medialive extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onInputSecurityGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputSecurityGroup:${ resourceName }`);
+  public onInputSecurityGroup(inputSecurityGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputSecurityGroup:${ inputSecurityGroupId }`);
   }
 
   /**
@@ -818,7 +818,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/multiplexes.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param multiplexId - Identifier for the multiplexId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -826,8 +826,8 @@ export class Medialive extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onMultiplex(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:multiplex:${ resourceName }`);
+  public onMultiplex(multiplexId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:multiplex:${ multiplexId }`);
   }
 
   /**
@@ -835,7 +835,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/reservations.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param reservationId - Identifier for the reservationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -843,8 +843,8 @@ export class Medialive extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onReservation(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:reservation:${ resourceName }`);
+  public onReservation(reservationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:reservation:${ reservationId }`);
   }
 
   /**
@@ -852,12 +852,12 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/input-output-reservations.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param offeringId - Identifier for the offeringId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onOffering(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:offering:${ resourceName }`);
+  public onOffering(offeringId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:offering:${ offeringId }`);
   }
 }

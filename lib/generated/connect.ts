@@ -149,6 +149,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate contact flow resources to phone number resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociatePhoneNumberContactFlow.html
+   */
+  public toAssociatePhoneNumberContactFlow() {
+    return this.to('AssociatePhoneNumberContactFlow');
+  }
+
+  /**
    * Grants permission to associate quick connects with a queue in an Amazon Connect instance
    *
    * Access Level: Write
@@ -218,6 +233,21 @@ export class Connect extends PolicyStatement {
    */
   public toBatchDisassociateAnalyticsDataSet() {
     return this.to('BatchDisassociateAnalyticsDataSet');
+  }
+
+  /**
+   * Grants permission to claim phone number resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html
+   */
+  public toClaimPhoneNumber() {
+    return this.to('ClaimPhoneNumber');
   }
 
   /**
@@ -773,6 +803,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe phone number resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html
+   */
+  public toDescribePhoneNumber() {
+    return this.to('DescribePhoneNumber');
+  }
+
+  /**
    * Grants permission to describe a queue in an Amazon Connect instance
    *
    * Access Level: Read
@@ -993,6 +1037,21 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateLexBot() {
     return this.to('DisassociateLexBot');
+  }
+
+  /**
+   * Grants permission to disassociate contact flow resources from phone number resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociatePhoneNumberContactFlow.html
+   */
+  public toDisassociatePhoneNumberContactFlow() {
+    return this.to('DisassociatePhoneNumberContactFlow');
   }
 
   /**
@@ -1314,6 +1373,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list phone number resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html
+   */
+  public toListPhoneNumbersV2() {
+    return this.to('ListPhoneNumbersV2');
+  }
+
+  /**
    * Grants permission to list prompt resources in an Amazon Connect instance
    *
    * Access Level: List
@@ -1508,6 +1578,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to release phone number resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ReleasePhoneNumber.html
+   */
+  public toReleasePhoneNumber() {
+    return this.to('ReleasePhoneNumber');
+  }
+
+  /**
    * Grants permission to resume recording for the specified contact
    *
    * Access Level: Write
@@ -1516,6 +1600,17 @@ export class Connect extends PolicyStatement {
    */
   public toResumeContactRecording() {
     return this.to('ResumeContactRecording');
+  }
+
+  /**
+   * Grants permission to search phone number resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html
+   */
+  public toSearchAvailablePhoneNumbers() {
+    return this.to('SearchAvailablePhoneNumbers');
   }
 
   /**
@@ -1864,6 +1959,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update phone number resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html
+   */
+  public toUpdatePhoneNumber() {
+    return this.to('UpdatePhoneNumber');
+  }
+
+  /**
    * Grants permission to update queue hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2170,11 +2279,13 @@ export class Connect extends PolicyStatement {
       'AssociateInstanceStorageConfig',
       'AssociateLambdaFunction',
       'AssociateLexBot',
+      'AssociatePhoneNumberContactFlow',
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
       'BatchAssociateAnalyticsDataSet',
       'BatchDisassociateAnalyticsDataSet',
+      'ClaimPhoneNumber',
       'CreateAgentStatus',
       'CreateContactFlow',
       'CreateContactFlowModule',
@@ -2206,10 +2317,12 @@ export class Connect extends PolicyStatement {
       'DisassociateInstanceStorageConfig',
       'DisassociateLambdaFunction',
       'DisassociateLexBot',
+      'DisassociatePhoneNumberContactFlow',
       'DisassociateQueueQuickConnects',
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
       'GetFederationTokens',
+      'ReleasePhoneNumber',
       'ResumeContactRecording',
       'StartChatContact',
       'StartContactRecording',
@@ -2232,6 +2345,7 @@ export class Connect extends PolicyStatement {
       'UpdateHoursOfOperation',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
+      'UpdatePhoneNumber',
       'UpdateQueueHoursOfOperation',
       'UpdateQueueMaxContacts',
       'UpdateQueueName',
@@ -2278,6 +2392,7 @@ export class Connect extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'DescribePhoneNumber',
       'ListAgentStatuses',
       'ListApprovedOrigins',
       'ListBots',
@@ -2293,6 +2408,7 @@ export class Connect extends PolicyStatement {
       'ListLambdaFunctions',
       'ListLexBots',
       'ListPhoneNumbers',
+      'ListPhoneNumbersV2',
       'ListPrompts',
       'ListQueueQuickConnects',
       'ListQueues',
@@ -2305,6 +2421,7 @@ export class Connect extends PolicyStatement {
       'ListUseCases',
       'ListUserHierarchyGroups',
       'ListUsers',
+      'SearchAvailablePhoneNumbers',
       'SearchVocabularies'
     ],
     Tagging: [
@@ -2586,7 +2703,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type phone-number to the statement
+   * Adds a resource of type legacy-phone-number to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
    *
@@ -2596,12 +2713,12 @@ export class Connect extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
+  public onLegacyPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
   }
 
   /**
-   * Adds a resource of type wildcard-phone-number to the statement
+   * Adds a resource of type wildcard-legacy-phone-number to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
    *
@@ -2611,8 +2728,42 @@ export class Connect extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onWildcardPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+  public onWildcardLegacyPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   *
+   * @param phoneNumberId - Identifier for the phoneNumberId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:phone-number/${ phoneNumberId }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWildcardPhoneNumber(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:phone-number/${ resourceName }`);
   }
 
   /**
@@ -2697,6 +2848,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateInstanceStorageConfig()
    * - .toAssociateLambdaFunction()
    * - .toAssociateLexBot()
+   * - .toAssociatePhoneNumberContactFlow()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
@@ -2747,6 +2899,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateInstanceStorageConfig()
    * - .toDisassociateLambdaFunction()
    * - .toDisassociateLexBot()
+   * - .toDisassociatePhoneNumberContactFlow()
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityKey()

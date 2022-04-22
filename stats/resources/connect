@@ -6,6 +6,7 @@ connect:hierarchy-group
 connect:hours-of-operation
 connect:instance
 connect:integration-association
+connect:legacy-phone-number
 connect:phone-number
 connect:queue
 connect:quick-connect
@@ -16,6 +17,7 @@ connect:user
 connect:vocabulary
 connect:wildcard-agent-status
 connect:wildcard-contact-flow
+connect:wildcard-legacy-phone-number
 connect:wildcard-phone-number
 connect:wildcard-queue
 connect:wildcard-quick-connect
