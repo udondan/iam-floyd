@@ -1506,17 +1506,6 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the list of all jobs for a thing that are not in a terminal state
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPendingJobExecutions.html
-   */
-  public toGetPendingJobExecutions() {
-    return this.to('GetPendingJobExecutions');
-  }
-
-  /**
    * Grants permission to get percentiles for IoT fleet index
    *
    * Access Level: Read
@@ -2520,17 +2509,6 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get and start the next pending job execution for a thing
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_StartNextPendingJobExecution.html
-   */
-  public toStartNextPendingJobExecution() {
-    return this.to('StartNextPendingJobExecution');
-  }
-
-  /**
    * Grants permission to start an on-demand Device Defender audit
    *
    * Access Level: Write
@@ -2794,17 +2772,6 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a job execution
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateJobExecution.html
-   */
-  public toUpdateJobExecution() {
-    return this.to('UpdateJobExecution');
-  }
-
-  /**
    * Grants permission to update the definition for the specified mitigation action
    *
    * Access Level: Write
@@ -3043,7 +3010,6 @@ export class Iot extends PolicyStatement {
       'SetV2LoggingOptions',
       'StartAuditMitigationActionsTask',
       'StartDetectMitigationActionsTask',
-      'StartNextPendingJobExecution',
       'StartOnDemandAuditTask',
       'StartThingRegistrationTask',
       'StopThingRegistrationTask',
@@ -3063,7 +3029,6 @@ export class Iot extends PolicyStatement {
       'UpdateFleetMetric',
       'UpdateIndexingConfiguration',
       'UpdateJob',
-      'UpdateJobExecution',
       'UpdateMitigationAction',
       'UpdateProvisioningTemplate',
       'UpdateRoleAlias',
@@ -3126,7 +3091,6 @@ export class Iot extends PolicyStatement {
       'GetJobDocument',
       'GetLoggingOptions',
       'GetOTAUpdate',
-      'GetPendingJobExecutions',
       'GetPercentiles',
       'GetPolicy',
       'GetPolicyVersion',

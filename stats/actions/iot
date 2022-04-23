@@ -125,7 +125,6 @@ iot:GetIndexingConfiguration;Read
 iot:GetJobDocument;Read
 iot:GetLoggingOptions;Read
 iot:GetOTAUpdate;Read
-iot:GetPendingJobExecutions;Read
 iot:GetPercentiles;Read
 iot:GetPolicy;Read
 iot:GetPolicyVersion;Read
@@ -216,7 +215,6 @@ iot:SetV2LoggingLevel;Write
 iot:SetV2LoggingOptions;Write
 iot:StartAuditMitigationActionsTask;Write
 iot:StartDetectMitigationActionsTask;Write
-iot:StartNextPendingJobExecution;Write
 iot:StartOnDemandAuditTask;Write
 iot:StartThingRegistrationTask;Write
 iot:StopThingRegistrationTask;Write
@@ -240,7 +238,6 @@ iot:UpdateEventConfigurations;Write
 iot:UpdateFleetMetric;Write
 iot:UpdateIndexingConfiguration;Write
 iot:UpdateJob;Write
-iot:UpdateJobExecution;Write
 iot:UpdateMitigationAction;Write
 iot:UpdateProvisioningTemplate;Write
 iot:UpdateRoleAlias;Write

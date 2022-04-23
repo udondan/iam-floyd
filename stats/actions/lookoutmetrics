@@ -10,6 +10,7 @@ lookoutmetrics:DescribeAlert;Read
 lookoutmetrics:DescribeAnomalyDetectionExecutions;Read
 lookoutmetrics:DescribeAnomalyDetector;Read
 lookoutmetrics:DescribeMetricSet;Read
+lookoutmetrics:DetectMetricSetConfig;Write
 lookoutmetrics:GetAnomalyGroup;Read
 lookoutmetrics:GetDataQualityMetrics;Read
 lookoutmetrics:GetFeedback;Read

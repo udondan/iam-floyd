@@ -23,6 +23,8 @@ sagemaker:RequestTag/${TagKey}
 sagemaker:ResourceTag/
 sagemaker:ResourceTag/${TagKey}
 sagemaker:RootAccess
+sagemaker:ServerlessMaxConcurrency
+sagemaker:ServerlessMemorySize
 sagemaker:SourceIp
 sagemaker:SourceVpc
 sagemaker:SourceVpce

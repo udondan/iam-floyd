@@ -163,6 +163,17 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detect metric set config from data source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DetectMetricSetConfig.html
+   */
+  public toDetectMetricSetConfig() {
+    return this.to('DetectMetricSetConfig');
+  }
+
+  /**
    * Grants permission to get details about a group of affected metrics
    *
    * Access Level: Read
@@ -356,6 +367,7 @@ export class Lookoutmetrics extends PolicyStatement {
       'DeactivateAnomalyDetector',
       'DeleteAlert',
       'DeleteAnomalyDetector',
+      'DetectMetricSetConfig',
       'PutFeedback',
       'UpdateAnomalyDetector',
       'UpdateMetricSet'

@@ -356,6 +356,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifModelArn()
    * - .ifVolumeKmsKey()
+   * - .ifServerlessMaxConcurrency()
+   * - .ifServerlessMemorySize()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html
    */
@@ -4996,6 +4998,36 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifRootAccess(value: string | string[], operator?: Operator | string) {
     return this.if(`RootAccess`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by limiting maximum concurrency used for Serverless inference in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateEndpointConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifServerlessMaxConcurrency(value: number | number[], operator?: Operator | string) {
+    return this.if(`ServerlessMaxConcurrency`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by limiting memory size used for Serverless inference in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateEndpointConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifServerlessMemorySize(value: number | number[], operator?: Operator | string) {
+    return this.if(`ServerlessMemorySize`, value, operator || 'NumericEquals');
   }
 
   /**
