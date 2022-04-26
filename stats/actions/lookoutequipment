@@ -13,6 +13,7 @@ lookoutequipment:ListDatasets;List
 lookoutequipment:ListInferenceExecutions;Read
 lookoutequipment:ListInferenceSchedulers;List
 lookoutequipment:ListModels;List
+lookoutequipment:ListSensorStatistics;List
 lookoutequipment:ListTagsForResource;Read
 lookoutequipment:StartDataIngestionJob;Write
 lookoutequipment:StartInferenceScheduler;Write

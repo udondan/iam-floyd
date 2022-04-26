@@ -196,6 +196,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the sensor statistics for a particular dataset or an ingestion job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListSensorStatistics.html
+   */
+  public toListSensorStatistics() {
+    return this.to('ListSensorStatistics');
+  }
+
+  /**
    * Grants permission to list the tags for a resource
    *
    * Access Level: Read
@@ -304,7 +315,8 @@ export class Lookoutequipment extends PolicyStatement {
       'ListDataIngestionJobs',
       'ListDatasets',
       'ListInferenceSchedulers',
-      'ListModels'
+      'ListModels',
+      'ListSensorStatistics'
     ],
     Tagging: [
       'TagResource',
