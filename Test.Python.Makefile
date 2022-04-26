@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 install:
 	@pip3 uninstall --no-cache-dir -y iam-floyd
 	@pip3 install --no-cache-dir dist/python/iam-floyd-*.tar.gz

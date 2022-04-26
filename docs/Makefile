@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 # Minimal makefile for Sphinx documentation
 #
 
