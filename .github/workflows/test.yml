@@ -31,7 +31,7 @@ jobs:
     needs: finalize
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -55,13 +55,13 @@ jobs:
         run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.12.0
+        uses: udondan/jsii-publish@v0.13.0
         with:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
           BUILD_SOURCE: true
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.12.0
+        uses: udondan/jsii-publish@v0.13.0
         with:
           BUILD_PACKAGES: true
 
@@ -76,7 +76,7 @@ jobs:
     needs: finalize
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -103,13 +103,13 @@ jobs:
         run: make install cdk
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.12.0
+        uses: udondan/jsii-publish@v0.13.0
         with:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
           BUILD_SOURCE: true
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.12.0
+        uses: udondan/jsii-publish@v0.13.0
         with:
           BUILD_PACKAGES: true
 
@@ -124,7 +124,7 @@ jobs:
     needs: build-standalone
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -167,7 +167,7 @@ jobs:
     needs: build-standalone
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -203,7 +203,7 @@ jobs:
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -248,7 +248,7 @@ jobs:
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain
+      image: jsii/superchain:1-buster-slim
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
