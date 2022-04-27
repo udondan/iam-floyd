@@ -102,6 +102,7 @@ connect:ListUsers;List
 connect:ReleasePhoneNumber;Write
 connect:ResumeContactRecording;Write
 connect:SearchAvailablePhoneNumbers;List
+connect:SearchUsers;Read
 connect:SearchVocabularies;List
 connect:StartChatContact;Write
 connect:StartContactRecording;Write

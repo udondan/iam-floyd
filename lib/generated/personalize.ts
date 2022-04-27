@@ -646,6 +646,28 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a recommender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_StartRecommender.html
+   */
+  public toStartRecommender() {
+    return this.to('StartRecommender');
+  }
+
+  /**
+   * Grants permission to stop a recommender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_StopRecommender.html
+   */
+  public toStopRecommender() {
+    return this.to('StopRecommender');
+  }
+
+  /**
    * Grants permission to stop a solution version creation
    *
    * Access Level: Write
@@ -704,6 +726,8 @@ export class Personalize extends PolicyStatement {
       'PutEvents',
       'PutItems',
       'PutUsers',
+      'StartRecommender',
+      'StopRecommender',
       'StopSolutionVersionCreation',
       'UpdateCampaign',
       'UpdateRecommender'

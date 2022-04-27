@@ -1819,6 +1819,10 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-execution/${ automationExecutionId }`);
@@ -2092,7 +2096,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by verifying that a user has permission to access a document belonging to a specific category
+   * Filters access by verifying that a user has permission to access a document belonging to a specific category enum
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2172,6 +2176,7 @@ export class Ssm extends PolicyStatement {
    * - .toStartSession()
    *
    * Applies to resource types:
+   * - automation-execution
    * - document
    * - instance
    * - maintenancewindow

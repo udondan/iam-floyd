@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonglacier.html).
+ * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3glacier.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Glacier extends PolicyStatement {
   public servicePrefix = 'glacier';
 
   /**
-   * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonglacier.html).
+   * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3glacier.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Aborts a multipart upload identified by the upload ID
+   * Grants permission to abort a multipart upload identified by the upload ID
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Aborts the vault locking process if the vault lock is not in the Locked state
+   * Grants permission to abort the vault locking process if the vault lock is not in the Locked state
    *
    * Access Level: Permissions management
    *
@@ -41,9 +41,13 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to a vault
+   * Grants permission to add the specified tags to a vault
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html
    */
@@ -52,7 +56,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Completes a multipart upload process
+   * Grants permission to complete a multipart upload process
    *
    * Access Level: Write
    *
@@ -63,7 +67,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Completes the vault locking process
+   * Grants permission to complete the vault locking process
    *
    * Access Level: Permissions management
    *
@@ -74,7 +78,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Creates a new vault with the specified name
+   * Grants permission to create a new vault with the specified name
    *
    * Access Level: Write
    *
@@ -85,7 +89,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Deletes an archive from a vault
+   * Grants permission to delete an archive from a vault
    *
    * Access Level: Write
    *
@@ -99,7 +103,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Deletes a vault
+   * Grants permission to delete a vault
    *
    * Access Level: Write
    *
@@ -110,7 +114,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Deletes the access policy associated with the specified vault
+   * Grants permission to delete the access policy associated with the specified vault
    *
    * Access Level: Permissions management
    *
@@ -121,7 +125,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Deletes the notification configuration set for a vault
+   * Grants permission to delete the notification configuration set for a vault
    *
    * Access Level: Write
    *
@@ -132,7 +136,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Returns information about a job you previously initiated
+   * Grants permission to get information about a job previously initiated
    *
    * Access Level: Read
    *
@@ -143,18 +147,18 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Returns information about a vault
+   * Grants permission to get information about a vault
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get..html
+   * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html
    */
   public toDescribeVault() {
     return this.to('DescribeVault');
   }
 
   /**
-   * Returns the current data retrieval policy for the account and region specified in the GET request
+   * Grants permission to get the data retrieval policy
    *
    * Access Level: Read
    *
@@ -165,7 +169,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Downloads the output of the job you initiated
+   * Grants permission to download the output of the job specified
    *
    * Access Level: Read
    *
@@ -176,7 +180,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Retrieves the access-policy subresource set on the vault
+   * Grants permission to retrieve the access-policy subresource set on the vault
    *
    * Access Level: Read
    *
@@ -187,7 +191,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Retrieves attributes from the lock-policy subresource set on the specified vault
+   * Grants permission to retrieve attributes from the lock-policy subresource set on the specified vault
    *
    * Access Level: Read
    *
@@ -198,7 +202,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Retrieves the notification-configuration subresource set on the vault
+   * Grants permission to retrieve the notification-configuration subresource set on the vault
    *
    * Access Level: Read
    *
@@ -209,7 +213,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Initiates a job of the specified type
+   * Grants permission to initiate a job of the specified type
    *
    * Access Level: Write
    *
@@ -223,7 +227,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Initiates a multipart upload
+   * Grants permission to initiate a multipart upload
    *
    * Access Level: Write
    *
@@ -234,7 +238,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Initiates the vault locking process
+   * Grants permission to initiate the vault locking process
    *
    * Access Level: Permissions management
    *
@@ -245,7 +249,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Lists jobs for a vault that are in-progress and jobs that have recently finished
+   * Grants permission to list jobs for a vault that are in-progress and jobs that have recently finished
    *
    * Access Level: List
    *
@@ -256,7 +260,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Lists in-progress multipart uploads for the specified vault
+   * Grants permission to list in-progress multipart uploads for the specified vault
    *
    * Access Level: List
    *
@@ -267,7 +271,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Lists the parts of an archive that have been uploaded in a specific multipart upload
+   * Grants permission to list the parts of an archive that have been uploaded in a specific multipart upload
    *
    * Access Level: List
    *
@@ -278,7 +282,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * This operation lists the provisioned capacity for the specified AWS account.
+   * Grants permission to list the provisioned capacity for the specified AWS account
    *
    * Access Level: List
    *
@@ -289,7 +293,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Lists all the tags attached to a vault
+   * Grants permission to list all the tags attached to a vault
    *
    * Access Level: List
    *
@@ -300,7 +304,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Lists all vaults
+   * Grants permission to list all vaults
    *
    * Access Level: List
    *
@@ -311,7 +315,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * This operation purchases a provisioned capacity unit for an AWS account.
+   * Grants permission to purchases a provisioned capacity unit for an AWS account
    *
    * Access Level: Write
    *
@@ -322,7 +326,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the set of tags attached to a vault
+   * Grants permission to remove one or more tags from the set of tags attached to a vault
    *
    * Access Level: Tagging
    *
@@ -333,7 +337,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Sets and then enacts a data retrieval policy in the region specified in the PUT request
+   * Grants permission to set and then enacts a data retrieval policy in the region specified in the PUT request
    *
    * Access Level: Permissions management
    *
@@ -344,7 +348,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Configures an access policy for a vault and will overwrite an existing policy
+   * Grants permission to configure an access policy for a vault; will overwrite an existing policy
    *
    * Access Level: Permissions management
    *
@@ -355,7 +359,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Configures vault notifications
+   * Grants permission to configure vault notifications
    *
    * Access Level: Write
    *
@@ -366,7 +370,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Adds an archive to a vault
+   * Grants permission to upload an archive to a vault
    *
    * Access Level: Write
    *
@@ -377,7 +381,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * Uploads a part of an archive
+   * Grants permission to upload a part of an archive
    *
    * Access Level: Write
    *
@@ -448,7 +452,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * How long an archive has been stored in the vault, in days.
+   * Filters access by how long an archive has been stored in the vault, in days
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions
    *
@@ -464,7 +468,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * A customer-defined tag.
+   * Filters access by a customer-defined tag
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions
    *

@@ -55,6 +55,8 @@ personalize:ListSolutions;List
 personalize:PutEvents;Write
 personalize:PutItems;Write
 personalize:PutUsers;Write
+personalize:StartRecommender;Write
+personalize:StopRecommender;Write
 personalize:StopSolutionVersionCreation;Write
 personalize:UpdateCampaign;Write
 personalize:UpdateRecommender;Write

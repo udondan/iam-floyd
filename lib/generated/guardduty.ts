@@ -79,6 +79,10 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html
    */
   public toCreateIPSet() {
@@ -259,7 +263,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a GuardDuty member account from its GuardDuty master account
+   * Grants permission to disassociate a GuardDuty member account from its GuardDuty administrator account
    *
    * Access Level: Write
    *
@@ -270,7 +274,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate GuardDuty member accounts from their master GuardDuty account
+   * Grants permission to disassociate GuardDuty member accounts from their administrator GuardDuty account
    *
    * Access Level: Write
    *
@@ -358,7 +362,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details of the GuardDuty master account associated with a member account
+   * Grants permission to retrieve details of the GuardDuty administrator account associated with a member account
    *
    * Access Level: Read
    *
@@ -380,7 +384,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the member accounts associated with a master account
+   * Grants permission to retrieve the member accounts associated with an administrator account
    *
    * Access Level: Read
    *
@@ -468,7 +472,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a lists of all of the GuardDuty membership invitations that were sent to an AWS account
+   * Grants permission to retrieve a list of all of the GuardDuty membership invitations that were sent to an AWS account
    *
    * Access Level: List
    *
@@ -479,7 +483,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrierve a lsit of GuardDuty member accounts associated with a master account
+   * Grants permission to retrieve a list of GuardDuty member accounts associated with an administrator account
    *
    * Access Level: List
    *
@@ -633,6 +637,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateIPSet.html
    */
   public toUpdateIPSet() {
@@ -680,6 +688,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to updates the GuardDuty ThreatIntelSets
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatIntelSet.html
    */

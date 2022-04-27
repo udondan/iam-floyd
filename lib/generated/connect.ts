@@ -1614,6 +1614,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search user resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeUser
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUsers.html
+   */
+  public toSearchUsers() {
+    return this.to('SearchUsers');
+  }
+
+  /**
    * Grants permission to search vocabularies in a Amazon Connect instance
    *
    * Access Level: List
@@ -2389,7 +2407,8 @@ export class Connect extends PolicyStatement {
       'GetFederationToken',
       'GetMetricData',
       'ListRealtimeContactAnalysisSegments',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'SearchUsers'
     ],
     List: [
       'DescribePhoneNumber',
@@ -2927,6 +2946,7 @@ export class Connect extends PolicyStatement {
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
+   * - .toSearchUsers()
    * - .toSearchVocabularies()
    * - .toStartTaskContact()
    * - .toStopContact()
@@ -2968,6 +2988,22 @@ export class Connect extends PolicyStatement {
    */
   public ifInstanceId(value: string | string[], operator?: Operator | string) {
     return this.if(`InstanceId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by TagFilter condition passed in the search request
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toSearchUsers()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSearchTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`SearchTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
