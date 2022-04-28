@@ -63,6 +63,39 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve computed aggregates for multiple asset properties
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html
+   */
+  public toBatchGetAssetPropertyAggregates() {
+    return this.to('BatchGetAssetPropertyAggregates');
+  }
+
+  /**
+   * Grants permission to retrieve the latest value for multiple asset properties
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html
+   */
+  public toBatchGetAssetPropertyValue() {
+    return this.to('BatchGetAssetPropertyValue');
+  }
+
+  /**
+   * Grants permission to retrieve the value history for multiple asset properties
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html
+   */
+  public toBatchGetAssetPropertyValueHistory() {
+    return this.to('BatchGetAssetPropertyValueHistory');
+  }
+
+  /**
    * Grants permission to put property values for asset properties
    *
    * Access Level: Write
@@ -826,6 +859,9 @@ export class Iotsitewise extends PolicyStatement {
       'UpdateProject'
     ],
     Read: [
+      'BatchGetAssetPropertyAggregates',
+      'BatchGetAssetPropertyValue',
+      'BatchGetAssetPropertyValueHistory',
       'DescribeAccessPolicy',
       'DescribeAsset',
       'DescribeAssetModel',

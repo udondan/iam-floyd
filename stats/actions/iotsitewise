@@ -2,6 +2,9 @@ iotsitewise:AssociateAssets;Write
 iotsitewise:AssociateTimeSeriesToAssetProperty;Write
 iotsitewise:BatchAssociateProjectAssets;Write
 iotsitewise:BatchDisassociateProjectAssets;Write
+iotsitewise:BatchGetAssetPropertyAggregates;Read
+iotsitewise:BatchGetAssetPropertyValue;Read
+iotsitewise:BatchGetAssetPropertyValueHistory;Read
 iotsitewise:BatchPutAssetPropertyValue;Write
 iotsitewise:CreateAccessPolicy;Write
 iotsitewise:CreateAsset;Write

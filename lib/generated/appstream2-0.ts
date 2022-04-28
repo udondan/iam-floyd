@@ -105,6 +105,7 @@ export class Appstream extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
@@ -120,6 +121,7 @@ export class Appstream extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
@@ -230,6 +232,7 @@ export class Appstream extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *

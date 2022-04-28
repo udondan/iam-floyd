@@ -164,6 +164,7 @@ iotwireless
 iq
 iq-permission
 ivs
+ivschat
 kafka
 kafka-cluster
 kafkaconnect

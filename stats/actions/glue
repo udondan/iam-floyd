@@ -5,6 +5,7 @@ glue:BatchDeleteTable;Write
 glue:BatchDeleteTableVersion;Write
 glue:BatchGetBlueprints;Read
 glue:BatchGetCrawlers;Read
+glue:BatchGetCustomEntityTypes;Read
 glue:BatchGetDevEndpoints;Read
 glue:BatchGetJobs;Read
 glue:BatchGetPartition;Read
@@ -19,6 +20,7 @@ glue:CreateBlueprint;Write
 glue:CreateClassifier;Write
 glue:CreateConnection;Write
 glue:CreateCrawler;Write
+glue:CreateCustomEntityType;Write
 glue:CreateDatabase;Write
 glue:CreateDevEndpoint;Write
 glue:CreateJob;Write
@@ -40,6 +42,7 @@ glue:DeleteColumnStatisticsForPartition;Write
 glue:DeleteColumnStatisticsForTable;Write
 glue:DeleteConnection;Write
 glue:DeleteCrawler;Write
+glue:DeleteCustomEntityType;Write
 glue:DeleteDatabase;Write
 glue:DeleteDevEndpoint;Write
 glue:DeleteJob;Write
@@ -70,6 +73,7 @@ glue:GetConnections;Read
 glue:GetCrawler;Read
 glue:GetCrawlerMetrics;Read
 glue:GetCrawlers;Read
+glue:GetCustomEntityType;Read
 glue:GetDataCatalogEncryptionSettings;Read
 glue:GetDatabase;Read
 glue:GetDatabases;Read
@@ -117,6 +121,7 @@ glue:GetWorkflowRuns;Read
 glue:ImportCatalogToGlue;Write
 glue:ListBlueprints;List
 glue:ListCrawlers;List
+glue:ListCustomEntityTypes;List
 glue:ListDevEndpoints;List
 glue:ListJobs;List
 glue:ListMLTransforms;List

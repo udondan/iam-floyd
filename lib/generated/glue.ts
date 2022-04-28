@@ -96,6 +96,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve one or more Custom Entity Types
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-BatchGetCustomEntityTypes
+   */
+  public toBatchGetCustomEntityTypes() {
+    return this.to('BatchGetCustomEntityTypes');
+  }
+
+  /**
    * Grants permission to retrieve one or more development endpoints
    *
    * Access Level: Read
@@ -259,6 +270,17 @@ export class Glue extends PolicyStatement {
    */
   public toCreateCrawler() {
     return this.to('CreateCrawler');
+  }
+
+  /**
+   * Grants permission to create a Custom Entity Type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-CreateCustomEntityType
+   */
+  public toCreateCustomEntityType() {
+    return this.to('CreateCustomEntityType');
   }
 
   /**
@@ -525,6 +547,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteCrawler() {
     return this.to('DeleteCrawler');
+  }
+
+  /**
+   * Grants permission to delete a Custom Entity Type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-DeleteCustomEntityType
+   */
+  public toDeleteCustomEntityType() {
+    return this.to('DeleteCustomEntityType');
   }
 
   /**
@@ -855,6 +888,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetCrawlers() {
     return this.to('GetCrawlers');
+  }
+
+  /**
+   * Grants permission to read a Custom Entity Type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-GetCustomEntityType
+   */
+  public toGetCustomEntityType() {
+    return this.to('GetCustomEntityType');
   }
 
   /**
@@ -1380,6 +1424,21 @@ export class Glue extends PolicyStatement {
    */
   public toListCrawlers() {
     return this.to('ListCrawlers');
+  }
+
+  /**
+   * Grants permission to retrieve all Custom Entity Types
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-ListGetCustomEntityTypes
+   */
+  public toListCustomEntityTypes() {
+    return this.to('ListCustomEntityTypes');
   }
 
   /**
@@ -2064,6 +2123,7 @@ export class Glue extends PolicyStatement {
       'CreateClassifier',
       'CreateConnection',
       'CreateCrawler',
+      'CreateCustomEntityType',
       'CreateDatabase',
       'CreateDevEndpoint',
       'CreateJob',
@@ -2085,6 +2145,7 @@ export class Glue extends PolicyStatement {
       'DeleteColumnStatisticsForTable',
       'DeleteConnection',
       'DeleteCrawler',
+      'DeleteCustomEntityType',
       'DeleteDatabase',
       'DeleteDevEndpoint',
       'DeleteJob',
@@ -2149,6 +2210,7 @@ export class Glue extends PolicyStatement {
     Read: [
       'BatchGetBlueprints',
       'BatchGetCrawlers',
+      'BatchGetCustomEntityTypes',
       'BatchGetDevEndpoints',
       'BatchGetJobs',
       'BatchGetPartition',
@@ -2168,6 +2230,7 @@ export class Glue extends PolicyStatement {
       'GetCrawler',
       'GetCrawlerMetrics',
       'GetCrawlers',
+      'GetCustomEntityType',
       'GetDataCatalogEncryptionSettings',
       'GetDatabase',
       'GetDatabases',
@@ -2221,6 +2284,7 @@ export class Glue extends PolicyStatement {
       'GetMLTransforms',
       'ListBlueprints',
       'ListCrawlers',
+      'ListCustomEntityTypes',
       'ListDevEndpoints',
       'ListJobs',
       'ListMLTransforms',

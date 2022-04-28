@@ -23,6 +23,9 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CancelQuery.html
    */
   public toCancelQuery() {
@@ -37,6 +40,9 @@ export class Timestream extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDatabase.html
    */
@@ -55,8 +61,9 @@ export class Timestream extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - timestream:DescribeEndpoints
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CreateScheduledQuery.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateScheduledQuery.html
    */
   public toCreateScheduledQuery() {
     return this.to('CreateScheduledQuery');
@@ -71,6 +78,9 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateTable.html
    */
   public toCreateTable() {
@@ -81,6 +91,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to delete a database in your account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDatabase.html
    */
@@ -93,7 +106,10 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DeleteScheduledQuery.html
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteScheduledQuery.html
    */
   public toDeleteScheduledQuery() {
     return this.to('DeleteScheduledQuery');
@@ -103,6 +119,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to delete a table in your account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteTable.html
    */
@@ -114,6 +133,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to describe a database in your account
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeDatabase.html
    */
@@ -137,7 +159,10 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DescribeScheduledQuery.html
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeScheduledQuery.html
    */
   public toDescribeScheduledQuery() {
     return this.to('DescribeScheduledQuery');
@@ -147,6 +172,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to describe a table in your account
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeTable.html
    */
@@ -159,7 +187,10 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_ExecuteScheduledQuery.html
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ExecuteScheduledQuery.html
    */
   public toExecuteScheduledQuery() {
     return this.to('ExecuteScheduledQuery');
@@ -169,6 +200,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to list databases in your account
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDatabases.html
    */
@@ -181,6 +215,9 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toListMeasures() {
@@ -190,9 +227,12 @@ export class Timestream extends PolicyStatement {
   /**
    * Grants permission to list scheduled queries in your account
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_ListScheduledQueries.html
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListScheduledQueries.html
    */
   public toListScheduledQueries() {
     return this.to('ListScheduledQueries');
@@ -203,6 +243,9 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTables.html
    */
   public toListTables() {
@@ -212,7 +255,10 @@ export class Timestream extends PolicyStatement {
   /**
    * Grants permission to list tags of a resource in your account
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html
    */
@@ -223,7 +269,11 @@ export class Timestream extends PolicyStatement {
   /**
    * Grants permission to issue prepare queries
    *
-   * Access Level: Write
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   * - timestream:Select
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_PrepareQuery.html
    */
@@ -236,6 +286,9 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toSelect() {
@@ -246,6 +299,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to issue 'select 1' queries
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
@@ -262,6 +318,9 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html
    */
   public toTagResource() {
@@ -276,6 +335,9 @@ export class Timestream extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html
    */
   public toUntagResource() {
@@ -286,6 +348,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to update a database in your account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDatabase.html
    */
@@ -298,7 +363,10 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_UpdateScheduledQuery.html
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateScheduledQuery.html
    */
   public toUpdateScheduledQuery() {
     return this.to('UpdateScheduledQuery');
@@ -308,6 +376,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to update a table in your account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateTable.html
    */
@@ -319,6 +390,9 @@ export class Timestream extends PolicyStatement {
    * Grants permission to ingest data to a table in your account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_WriteRecords.html
    */
@@ -336,7 +410,6 @@ export class Timestream extends PolicyStatement {
       'DeleteScheduledQuery',
       'DeleteTable',
       'ExecuteScheduledQuery',
-      'PrepareQuery',
       'UpdateDatabase',
       'UpdateScheduledQuery',
       'UpdateTable',
@@ -346,7 +419,8 @@ export class Timestream extends PolicyStatement {
       'DescribeDatabase',
       'DescribeScheduledQuery',
       'DescribeTable',
-      'ListScheduledQueries',
+      'ListTagsForResource',
+      'PrepareQuery',
       'Select',
       'SelectValues'
     ],
@@ -354,8 +428,8 @@ export class Timestream extends PolicyStatement {
       'DescribeEndpoints',
       'ListDatabases',
       'ListMeasures',
-      'ListTables',
-      'ListTagsForResource'
+      'ListScheduledQueries',
+      'ListTables'
     ],
     Tagging: [
       'TagResource',

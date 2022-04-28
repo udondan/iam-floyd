@@ -63,6 +63,7 @@ export { Honeycode } from './honeycode';
 export { Inspector } from './inspector';
 export { Inspector2 } from './inspector2';
 export { Ivs } from './interactivevideoservice';
+export { Ivschat } from './interactivevideoservicechat';
 export { Kendra } from './kendra';
 export { Cassandra } from './keyspacesforapachecassandra';
 export { Kinesis } from './kinesis';
