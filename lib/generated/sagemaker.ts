@@ -761,11 +761,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsSourceIp()
-   * - .ifAwsSourceVpc()
-   * - .ifAwsSourceVpce()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePresignedDomainUrl.html
    */
   public toCreatePresignedDomainUrl() {

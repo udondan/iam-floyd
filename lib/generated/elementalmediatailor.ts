@@ -48,6 +48,21 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new live source on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
+   */
+  public toCreateLiveSource() {
+    return this.to('CreateLiveSource');
+  }
+
+  /**
    * Grants permission to create a prefetch schedule for the playback configuration with the specified playback configuration name
    *
    * Access Level: Write
@@ -122,6 +137,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the live source with the specified live source name on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
+   */
+  public toDeleteLiveSource() {
+    return this.to('DeleteLiveSource');
+  }
+
+  /**
    * Grants permission to delete the specified playback configuration
    *
    * Access Level: Write
@@ -185,6 +211,17 @@ export class Mediatailor extends PolicyStatement {
    */
   public toDescribeChannel() {
     return this.to('DescribeChannel');
+  }
+
+  /**
+   * Grants permission to retrieve the live source with the specified live source name on the source location with the specified source location name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
+   */
+  public toDescribeLiveSource() {
+    return this.to('DescribeLiveSource');
   }
 
   /**
@@ -284,6 +321,17 @@ export class Mediatailor extends PolicyStatement {
    */
   public toListChannels() {
     return this.to('ListChannels');
+  }
+
+  /**
+   * Grants permission to retrieve the list of existing live sources on the source location with the specified source location name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesources.html
+   */
+  public toListLiveSources() {
+    return this.to('ListLiveSources');
   }
 
   /**
@@ -431,6 +479,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the live source with the specified live source name on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
+   */
+  public toUpdateLiveSource() {
+    return this.to('UpdateLiveSource');
+  }
+
+  /**
    * Grants permission to update the source location with the specified source location name
    *
    * Access Level: Write
@@ -456,11 +515,13 @@ export class Mediatailor extends PolicyStatement {
     Write: [
       'ConfigureLogsForPlaybackConfiguration',
       'CreateChannel',
+      'CreateLiveSource',
       'CreatePrefetchSchedule',
       'CreateProgram',
       'CreateSourceLocation',
       'CreateVodSource',
       'DeleteChannel',
+      'DeleteLiveSource',
       'DeletePlaybackConfiguration',
       'DeletePrefetchSchedule',
       'DeleteProgram',
@@ -470,6 +531,7 @@ export class Mediatailor extends PolicyStatement {
       'StartChannel',
       'StopChannel',
       'UpdateChannel',
+      'UpdateLiveSource',
       'UpdateSourceLocation',
       'UpdateVodSource'
     ],
@@ -479,6 +541,7 @@ export class Mediatailor extends PolicyStatement {
     ],
     Read: [
       'DescribeChannel',
+      'DescribeLiveSource',
       'DescribeProgram',
       'DescribeSourceLocation',
       'DescribeVodSource',
@@ -488,6 +551,7 @@ export class Mediatailor extends PolicyStatement {
       'GetPrefetchSchedule',
       'ListAlerts',
       'ListChannels',
+      'ListLiveSources',
       'ListSourceLocations',
       'ListTagsForResource',
       'ListVodSources'
@@ -559,9 +623,6 @@ export class Mediatailor extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onProgram(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ resourceId }`);
@@ -599,5 +660,22 @@ export class Mediatailor extends PolicyStatement {
    */
   public onVodSource(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type liveSource to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLiveSource(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:liveSource/${ resourceId }`);
   }
 }

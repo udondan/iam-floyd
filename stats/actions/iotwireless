@@ -10,6 +10,7 @@ iotwireless:CreateDestination;Write
 iotwireless:CreateDeviceProfile;Write
 iotwireless:CreateFuotaTask;Write
 iotwireless:CreateMulticastGroup;Write
+iotwireless:CreateNetworkAnalyzerConfiguration;Write
 iotwireless:CreateServiceProfile;Write
 iotwireless:CreateWirelessDevice;Write
 iotwireless:CreateWirelessGateway;Write
@@ -19,6 +20,7 @@ iotwireless:DeleteDestination;Write
 iotwireless:DeleteDeviceProfile;Write
 iotwireless:DeleteFuotaTask;Write
 iotwireless:DeleteMulticastGroup;Write
+iotwireless:DeleteNetworkAnalyzerConfiguration;Write
 iotwireless:DeleteQueuedMessages;Write
 iotwireless:DeleteServiceProfile;Write
 iotwireless:DeleteWirelessDevice;Write
@@ -34,6 +36,7 @@ iotwireless:DisassociateWirelessGatewayFromCertificate;Write
 iotwireless:DisassociateWirelessGatewayFromThing;Write
 iotwireless:GetDestination;Read
 iotwireless:GetDeviceProfile;Read
+iotwireless:GetEventConfigurationsByResourceTypes;Read
 iotwireless:GetFuotaTask;Read
 iotwireless:GetLogLevelsByResourceTypes;Read
 iotwireless:GetMulticastGroup;Read
@@ -54,9 +57,11 @@ iotwireless:GetWirelessGatewayTask;Read
 iotwireless:GetWirelessGatewayTaskDefinition;Read
 iotwireless:ListDestinations;Read
 iotwireless:ListDeviceProfiles;Read
+iotwireless:ListEventConfigurations;Read
 iotwireless:ListFuotaTasks;Read
 iotwireless:ListMulticastGroups;Read
 iotwireless:ListMulticastGroupsByFuotaTask;Read
+iotwireless:ListNetworkAnalyzerConfigurations;Read
 iotwireless:ListPartnerAccounts;Read
 iotwireless:ListQueuedMessages;Read
 iotwireless:ListServiceProfiles;Read
@@ -78,6 +83,7 @@ iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
 iotwireless:UntagResource;Tagging
 iotwireless:UpdateDestination;Write
+iotwireless:UpdateEventConfigurationsByResourceTypes;Write
 iotwireless:UpdateFuotaTask;Write
 iotwireless:UpdateLogLevelsByResourceTypes;Write
 iotwireless:UpdateMulticastGroup;Write

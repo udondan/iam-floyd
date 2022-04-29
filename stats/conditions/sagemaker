@@ -25,9 +25,6 @@ sagemaker:ResourceTag/${TagKey}
 sagemaker:RootAccess
 sagemaker:ServerlessMaxConcurrency
 sagemaker:ServerlessMemorySize
-sagemaker:SourceIp
-sagemaker:SourceVpc
-sagemaker:SourceVpce
 sagemaker:TagKeys
 sagemaker:TargetModel
 sagemaker:VolumeKmsKey

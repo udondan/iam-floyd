@@ -177,6 +177,21 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a NetworkAnalyzerConfiguration resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html
+   */
+  public toCreateNetworkAnalyzerConfiguration() {
+    return this.to('CreateNetworkAnalyzerConfiguration');
+  }
+
+  /**
    * Grants permission to create a ServiceProfile resource
    *
    * Access Level: Write
@@ -289,6 +304,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toDeleteMulticastGroup() {
     return this.to('DeleteMulticastGroup');
+  }
+
+  /**
+   * Grants permission to delete the NetworkAnalyzerConfiguration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteNetworkAnalyzerConfiguration.html
+   */
+  public toDeleteNetworkAnalyzerConfiguration() {
+    return this.to('DeleteNetworkAnalyzerConfiguration');
   }
 
   /**
@@ -460,6 +486,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toGetDeviceProfile() {
     return this.to('GetDeviceProfile');
+  }
+
+  /**
+   * Grants permission to get event configurations by resource types
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetEventConfigurationsByResourceTypes.html
+   */
+  public toGetEventConfigurationsByResourceTypes() {
+    return this.to('GetEventConfigurationsByResourceTypes');
   }
 
   /**
@@ -683,6 +720,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list information of available event configurations based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListEventConfigurations.html
+   */
+  public toListEventConfigurations() {
+    return this.to('ListEventConfigurations');
+  }
+
+  /**
    * Grants permission to list information of available FuotaTasks based on the AWS account
    *
    * Access Level: Read
@@ -713,6 +761,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toListMulticastGroupsByFuotaTask() {
     return this.to('ListMulticastGroupsByFuotaTask');
+  }
+
+  /**
+   * Grants permission to list information of available NetworkAnalyzerConfigurations based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListNetworkAnalyzerConfigurations.html
+   */
+  public toListNetworkAnalyzerConfigurations() {
+    return this.to('ListNetworkAnalyzerConfigurations');
   }
 
   /**
@@ -954,6 +1013,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update event configurations by resource types
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateEventConfigurationsByResourceTypes.html
+   */
+  public toUpdateEventConfigurationsByResourceTypes() {
+    return this.to('UpdateEventConfigurationsByResourceTypes');
+  }
+
+  /**
    * Grants permission to update the FuotaTask
    *
    * Access Level: Write
@@ -1055,6 +1125,7 @@ export class Iotwireless extends PolicyStatement {
       'CreateDeviceProfile',
       'CreateFuotaTask',
       'CreateMulticastGroup',
+      'CreateNetworkAnalyzerConfiguration',
       'CreateServiceProfile',
       'CreateWirelessDevice',
       'CreateWirelessGateway',
@@ -1064,6 +1135,7 @@ export class Iotwireless extends PolicyStatement {
       'DeleteDeviceProfile',
       'DeleteFuotaTask',
       'DeleteMulticastGroup',
+      'DeleteNetworkAnalyzerConfiguration',
       'DeleteQueuedMessages',
       'DeleteServiceProfile',
       'DeleteWirelessDevice',
@@ -1089,6 +1161,7 @@ export class Iotwireless extends PolicyStatement {
       'StartNetworkAnalyzerStream',
       'TestWirelessDevice',
       'UpdateDestination',
+      'UpdateEventConfigurationsByResourceTypes',
       'UpdateFuotaTask',
       'UpdateLogLevelsByResourceTypes',
       'UpdateMulticastGroup',
@@ -1101,6 +1174,7 @@ export class Iotwireless extends PolicyStatement {
     Read: [
       'GetDestination',
       'GetDeviceProfile',
+      'GetEventConfigurationsByResourceTypes',
       'GetFuotaTask',
       'GetLogLevelsByResourceTypes',
       'GetMulticastGroup',
@@ -1121,9 +1195,11 @@ export class Iotwireless extends PolicyStatement {
       'GetWirelessGatewayTaskDefinition',
       'ListDestinations',
       'ListDeviceProfiles',
+      'ListEventConfigurations',
       'ListFuotaTasks',
       'ListMulticastGroups',
       'ListMulticastGroupsByFuotaTask',
+      'ListNetworkAnalyzerConfigurations',
       'ListPartnerAccounts',
       'ListQueuedMessages',
       'ListServiceProfiles',
@@ -1289,6 +1365,23 @@ export class Iotwireless extends PolicyStatement {
    */
   public onMulticastGroup(multicastGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:MulticastGroup/${ multicastGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type NetworkAnalyzerConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html
+   *
+   * @param networkAnalyzerConfigurationName - Identifier for the networkAnalyzerConfigurationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetworkAnalyzerConfiguration(networkAnalyzerConfigurationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:NetworkAnalyzerConfiguration/${ networkAnalyzerConfigurationName }`);
   }
 
   /**

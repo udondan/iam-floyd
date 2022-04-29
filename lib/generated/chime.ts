@@ -431,6 +431,10 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMediaCapturePipeline.html
    */
   public toCreateMediaCapturePipeline() {
@@ -3274,5 +3278,22 @@ export class Chime extends PolicyStatement {
    */
   public onChannelFlow(appInstanceId: string, channelFlowId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
+  }
+
+  /**
+   * Adds a resource of type media-pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_MediaPipeline.html
+   *
+   * @param mediaPipelineId - Identifier for the mediaPipelineId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMediaPipeline(mediaPipelineId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-pipeline/${ mediaPipelineId }`);
   }
 }

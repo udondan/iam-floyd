@@ -2,4 +2,5 @@ chime:app-instance
 chime:app-instance-user
 chime:channel
 chime:channel-flow
+chime:media-pipeline
 chime:meeting
