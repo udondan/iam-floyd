@@ -44,7 +44,8 @@
 				"sso:*",
 				"sso-directory:*",
 				"identitystore:*",
-				"ds:CreateAlias"
+				"ds:CreateAlias",
+				"access-analyzer:ValidatePolicy"
 			],
 			"Resource": "*"
 		}
