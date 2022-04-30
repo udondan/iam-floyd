@@ -124,6 +124,24 @@
 				"sns:Unsubscribe"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "WorkforceVPC",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateVpcEndpoint",
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DeleteVpcEndpoints"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringLikeIfExists": {
+					"ec2:VpceServiceName": [
+						"*sagemaker-task-resources*",
+						"aws.sagemaker*labeling*"
+					]
+				}
+			}
 		}
 	]
 }

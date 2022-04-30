@@ -122,8 +122,12 @@
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"events:source": "aws.securityhub",
 					"events:detail-type": "Security Hub Findings - Imported"
+				},
+				"ForAllValues:StringEquals": {
+					"events:source": [
+						"aws.securityhub"
+					]
 				}
 			}
 		},
