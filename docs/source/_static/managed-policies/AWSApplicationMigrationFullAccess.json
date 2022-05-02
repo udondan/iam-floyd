@@ -56,6 +56,13 @@
 			"Effect": "Allow",
 			"Action": "iam:ListInstanceProfiles",
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"servicequotas:GetServiceQuota"
+			],
+			"Resource": "*"
 		}
 	]
 }

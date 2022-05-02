@@ -23,6 +23,13 @@
 				"ec2:DescribeSubnets"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"servicequotas:GetServiceQuota"
+			],
+			"Resource": "*"
 		}
 	]
 }
