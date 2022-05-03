@@ -468,6 +468,13 @@
 				"arn:aws:redshift:*:*:dbuser:*/sagemaker_access*",
 				"arn:aws:redshift:*:*:dbname:*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:ListStackResources"
+			],
+			"Resource": "arn:aws:cloudformation:*:*:stack/SC-*"
 		}
 	]
 }
