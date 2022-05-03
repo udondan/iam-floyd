@@ -1578,6 +1578,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to switch User Status in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_PutUserStatus.html
+   */
+  public toPutUserStatus() {
+    return this.to('PutUserStatus');
+  }
+
+  /**
    * Grants permission to release phone number resources in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2340,6 +2355,7 @@ export class Connect extends PolicyStatement {
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
       'GetFederationTokens',
+      'PutUserStatus',
       'ReleasePhoneNumber',
       'ResumeContactRecording',
       'StartChatContact',
@@ -2946,6 +2962,7 @@ export class Connect extends PolicyStatement {
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
+   * - .toPutUserStatus()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
    * - .toStartTaskContact()

@@ -99,6 +99,7 @@ connect:ListTagsForResource;Read
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
+connect:PutUserStatus;Write
 connect:ReleasePhoneNumber;Write
 connect:ResumeContactRecording;Write
 connect:SearchAvailablePhoneNumbers;List
