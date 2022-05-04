@@ -173,6 +173,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the assets for your Outpost
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListAssets.html
+   */
+  public toListAssets() {
+    return this.to('ListAssets');
+  }
+
+  /**
    * Grants permission to list all catalog items
    *
    * Access Level: List
@@ -318,6 +329,7 @@ export class Outposts extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAssets',
       'ListCatalogItems',
       'ListOrders',
       'ListOutposts',

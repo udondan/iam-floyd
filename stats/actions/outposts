@@ -12,6 +12,7 @@ outposts:GetOutpostInstanceTypes;Read
 outposts:GetPrivateConnectivityConfig;Read
 outposts:GetSite;Read
 outposts:GetSiteAddress;Read
+outposts:ListAssets;List
 outposts:ListCatalogItems;List
 outposts:ListOrders;List
 outposts:ListOutposts;List
