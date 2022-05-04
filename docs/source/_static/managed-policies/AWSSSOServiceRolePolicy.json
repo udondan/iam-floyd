@@ -91,7 +91,8 @@
 			"Action": [
 				"organizations:DescribeAccount",
 				"organizations:DescribeOrganization",
-				"organizations:ListAccounts"
+				"organizations:ListAccounts",
+				"organizations:ListDelegatedAdministrators"
 			],
 			"Resource": [
 				"*"
