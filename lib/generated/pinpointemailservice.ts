@@ -24,6 +24,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -39,6 +40,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSetEventDestination.html
@@ -53,6 +55,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -68,6 +71,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -83,6 +87,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -98,6 +103,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSet.html
@@ -112,6 +118,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSetEventDestination.html
@@ -126,6 +133,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteDedicatedIpPool.html
@@ -140,6 +148,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteEmailIdentity.html
@@ -153,6 +162,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetAccount.html
    */
   public toGetAccount() {
@@ -163,6 +175,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to retrieve a list of the deny lists on which your dedicated IP addresses appear
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetBlacklistReports.html
    */
@@ -176,6 +191,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSet.html
@@ -190,6 +206,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSetEventDestinations.html
@@ -203,6 +220,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIp.html
    */
   public toGetDedicatedIp() {
@@ -215,6 +235,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIps.html
@@ -228,6 +249,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityDashboardOptions.html
    */
   public toGetDeliverabilityDashboardOptions() {
@@ -240,6 +264,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityTestReport.html
@@ -253,6 +278,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainDeliverabilityCampaign.html
    */
   public toGetDomainDeliverabilityCampaign() {
@@ -265,6 +293,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainStatisticsReport.html
@@ -279,6 +308,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetEmailIdentity.html
@@ -292,6 +322,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListConfigurationSets.html
    */
   public toListConfigurationSets() {
@@ -302,6 +335,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to list all of the dedicated IP pools that exist in your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDedicatedIpPools.html
    */
@@ -314,6 +350,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDeliverabilityTestReports.html
    */
   public toListDeliverabilityTestReports() {
@@ -324,6 +363,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDomainDeliverabilityCampaigns.html
    */
@@ -336,6 +378,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListEmailIdentities.html
    */
   public toListEmailIdentities() {
@@ -346,6 +391,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to retrieve a list of the tags (keys and values) that are associated with a specific resource
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListTagsForResource.html
    */
@@ -358,6 +406,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountDedicatedIpWarmupAttributes.html
    */
   public toPutAccountDedicatedIpWarmupAttributes() {
@@ -368,6 +419,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to enable or disable the ability of your account to send email
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountSendingAttributes.html
    */
@@ -381,6 +435,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html
@@ -395,6 +450,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetReputationOptions.html
@@ -409,6 +465,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetSendingOptions.html
@@ -423,6 +480,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetTrackingOptions.html
@@ -437,6 +495,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpInPool.html
@@ -450,6 +509,9 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpWarmupAttributes.html
    */
   public toPutDedicatedIpWarmupAttributes() {
@@ -460,6 +522,9 @@ export class SesPinpoint extends PolicyStatement {
    * Grants permission to enable or disable the Deliverability dashboard
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDeliverabilityDashboardOption.html
    */
@@ -473,6 +538,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityDkimAttributes.html
@@ -487,6 +553,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityFeedbackAttributes.html
@@ -501,6 +568,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityMailFromAttributes.html
@@ -515,6 +583,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -532,6 +601,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -547,6 +617,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UntagResource.html
@@ -561,6 +632,7 @@ export class SesPinpoint extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UpdateConfigurationSetEventDestination.html
@@ -688,6 +760,62 @@ export class SesPinpoint extends PolicyStatement {
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+  }
+
+  /**
+   * Filters actions based on the SES API version
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateConfigurationSetEventDestination()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toDeleteConfigurationSet()
+   * - .toDeleteConfigurationSetEventDestination()
+   * - .toDeleteDedicatedIpPool()
+   * - .toDeleteEmailIdentity()
+   * - .toGetAccount()
+   * - .toGetBlacklistReports()
+   * - .toGetConfigurationSet()
+   * - .toGetConfigurationSetEventDestinations()
+   * - .toGetDedicatedIp()
+   * - .toGetDedicatedIps()
+   * - .toGetDeliverabilityDashboardOptions()
+   * - .toGetDeliverabilityTestReport()
+   * - .toGetDomainDeliverabilityCampaign()
+   * - .toGetDomainStatisticsReport()
+   * - .toGetEmailIdentity()
+   * - .toListConfigurationSets()
+   * - .toListDedicatedIpPools()
+   * - .toListDeliverabilityTestReports()
+   * - .toListDomainDeliverabilityCampaigns()
+   * - .toListEmailIdentities()
+   * - .toListTagsForResource()
+   * - .toPutAccountDedicatedIpWarmupAttributes()
+   * - .toPutAccountSendingAttributes()
+   * - .toPutConfigurationSetDeliveryOptions()
+   * - .toPutConfigurationSetReputationOptions()
+   * - .toPutConfigurationSetSendingOptions()
+   * - .toPutConfigurationSetTrackingOptions()
+   * - .toPutDedicatedIpInPool()
+   * - .toPutDedicatedIpWarmupAttributes()
+   * - .toPutDeliverabilityDashboardOption()
+   * - .toPutEmailIdentityDkimAttributes()
+   * - .toPutEmailIdentityFeedbackAttributes()
+   * - .toPutEmailIdentityMailFromAttributes()
+   * - .toSendEmail()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateConfigurationSetEventDestination()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifApiVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`ApiVersion`, value, operator || 'StringLike');
   }
 
   /**

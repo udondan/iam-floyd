@@ -24,6 +24,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -39,6 +40,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateConfigurationSetEventDestination.html
@@ -53,6 +55,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateContact.html
@@ -67,6 +70,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -81,6 +85,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateCustomVerificationEmailTemplate.html
    */
   public toCreateCustomVerificationEmailTemplate() {
@@ -93,6 +100,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -108,6 +116,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -123,6 +132,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -138,6 +148,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Permissions management
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateEmailIdentityPolicy.html
@@ -151,6 +162,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateEmailTemplate.html
    */
   public toCreateEmailTemplate() {
@@ -161,6 +175,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to creates an import job for a data destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html
    */
@@ -174,6 +191,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteConfigurationSet.html
@@ -188,6 +206,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteConfigurationSetEventDestination.html
@@ -202,6 +221,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteContact.html
@@ -216,6 +236,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteContactList.html
@@ -229,6 +250,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteCustomVerificationEmailTemplate.html
    */
   public toDeleteCustomVerificationEmailTemplate() {
@@ -241,6 +265,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteDedicatedIpPool.html
@@ -255,6 +280,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteEmailIdentity.html
@@ -269,6 +295,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Permissions management
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteEmailIdentityPolicy.html
@@ -282,6 +309,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteEmailTemplate.html
    */
   public toDeleteEmailTemplate() {
@@ -292,6 +322,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to remove an email address from the suppression list for your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html
    */
@@ -304,6 +337,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetAccount.html
    */
   public toGetAccount() {
@@ -314,6 +350,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to retrieve a list of the deny lists on which your dedicated IP addresses or tracked domains appear
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetBlacklistReports.html
    */
@@ -327,6 +366,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetConfigurationSet.html
@@ -341,6 +381,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetConfigurationSetEventDestinations.html
@@ -355,6 +396,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetContact.html
@@ -368,6 +410,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetContactList.html
    */
   public toGetContactList() {
@@ -379,6 +424,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetCustomVerificationEmailTemplate.html
    */
   public toGetCustomVerificationEmailTemplate() {
@@ -389,6 +437,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to get information about a dedicated IP address
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDedicatedIp.html
    */
@@ -402,6 +453,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDedicatedIps.html
@@ -415,6 +467,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDeliverabilityDashboardOptions.html
    */
   public toGetDeliverabilityDashboardOptions() {
@@ -427,6 +482,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDeliverabilityTestReport.html
@@ -440,6 +496,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDomainDeliverabilityCampaign.html
    */
   public toGetDomainDeliverabilityCampaign() {
@@ -452,6 +511,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDomainStatisticsReport.html
@@ -466,6 +526,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailIdentity.html
@@ -480,6 +541,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailIdentityPolicies.html
@@ -493,6 +555,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailTemplate.html
    */
   public toGetEmailTemplate() {
@@ -503,6 +568,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to provide information about an import job
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetImportJob.html
    */
@@ -515,6 +583,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetSuppressedDestination.html
    */
   public toGetSuppressedDestination() {
@@ -525,6 +596,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list all of the configuration sets for your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListConfigurationSets.html
    */
@@ -537,6 +611,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListContactLists.html
    */
   public toListContactLists() {
@@ -547,6 +624,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list the contacts present in a specific contact list
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListContacts.html
    */
@@ -559,6 +639,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListCustomVerificationEmailTemplates.html
    */
   public toListCustomVerificationEmailTemplates() {
@@ -569,6 +652,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list all of the dedicated IP pools for your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListDedicatedIpPools.html
    */
@@ -581,6 +667,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListDeliverabilityTestReports.html
    */
   public toListDeliverabilityTestReports() {
@@ -591,6 +680,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list deliverability data for campaigns that used a specific domain to send email during a specified time range
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListDomainDeliverabilityCampaigns.html
    */
@@ -603,6 +695,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListEmailIdentities.html
    */
   public toListEmailIdentities() {
@@ -613,6 +708,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list all of the email templates for your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListEmailTemplates.html
    */
@@ -625,6 +723,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListImportJobs.html
    */
   public toListImportJobs() {
@@ -635,6 +736,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to list email addresses that are on the suppression list for your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListSuppressedDestinations.html
    */
@@ -647,6 +751,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -657,6 +764,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to enable or disable the automatic warm-up feature for dedicated IP addresses
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountDedicatedIpWarmupAttributes.html
    */
@@ -669,6 +779,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountDetails.html
    */
   public toPutAccountDetails() {
@@ -680,6 +793,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountSendingAttributes.html
    */
   public toPutAccountSendingAttributes() {
@@ -690,6 +806,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to change the settings for the account-level suppression list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountSuppressionAttributes.html
    */
@@ -703,6 +822,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetDeliveryOptions.html
@@ -717,6 +837,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetReputationOptions.html
@@ -731,6 +852,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetSendingOptions.html
@@ -745,6 +867,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetSuppressionOptions.html
@@ -759,6 +882,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetTrackingOptions.html
@@ -773,6 +897,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutDedicatedIpInPool.html
@@ -786,6 +911,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutDedicatedIpWarmupAttributes.html
    */
   public toPutDedicatedIpWarmupAttributes() {
@@ -796,6 +924,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to enable or disable the Deliverability dashboard
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutDeliverabilityDashboardOption.html
    */
@@ -809,6 +940,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutEmailIdentityConfigurationSetAttributes.html
@@ -823,6 +955,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutEmailIdentityDkimAttributes.html
@@ -837,6 +970,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutEmailIdentityDkimSigningAttributes.html
@@ -851,6 +985,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutEmailIdentityFeedbackAttributes.html
@@ -865,6 +1000,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutEmailIdentityMailFromAttributes.html
@@ -878,6 +1014,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutSuppressedDestination.html
    */
   public toPutSuppressedDestination() {
@@ -889,6 +1028,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html
    */
   public toSendBulkEmail() {
@@ -899,6 +1041,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to add an email address to the list of identities and attempts to verify it
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendCustomVerificationEmail.html
    */
@@ -912,6 +1057,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -929,6 +1075,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
@@ -943,6 +1090,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_TestRenderEmailTemplate.html
    */
   public toTestRenderEmailTemplate() {
@@ -955,6 +1105,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UntagResource.html
@@ -969,6 +1120,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html
@@ -983,6 +1135,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateContact.html
@@ -997,6 +1150,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateContactList.html
@@ -1010,6 +1164,9 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateCustomVerificationEmailTemplate.html
    */
   public toUpdateCustomVerificationEmailTemplate() {
@@ -1022,6 +1179,7 @@ export class SesV2 extends PolicyStatement {
    * Access Level: Permissions management
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateEmailIdentityPolicy.html
@@ -1034,6 +1192,9 @@ export class SesV2 extends PolicyStatement {
    * Grants permission to update an email template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateEmailTemplate.html
    */
@@ -1260,6 +1421,101 @@ export class SesV2 extends PolicyStatement {
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
+  }
+
+  /**
+   * Filters actions based on the SES API version
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateConfigurationSetEventDestination()
+   * - .toCreateContact()
+   * - .toCreateContactList()
+   * - .toCreateCustomVerificationEmailTemplate()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toCreateEmailIdentityPolicy()
+   * - .toCreateEmailTemplate()
+   * - .toCreateImportJob()
+   * - .toDeleteConfigurationSet()
+   * - .toDeleteConfigurationSetEventDestination()
+   * - .toDeleteContact()
+   * - .toDeleteContactList()
+   * - .toDeleteCustomVerificationEmailTemplate()
+   * - .toDeleteDedicatedIpPool()
+   * - .toDeleteEmailIdentity()
+   * - .toDeleteEmailIdentityPolicy()
+   * - .toDeleteEmailTemplate()
+   * - .toDeleteSuppressedDestination()
+   * - .toGetAccount()
+   * - .toGetBlacklistReports()
+   * - .toGetConfigurationSet()
+   * - .toGetConfigurationSetEventDestinations()
+   * - .toGetContact()
+   * - .toGetContactList()
+   * - .toGetCustomVerificationEmailTemplate()
+   * - .toGetDedicatedIp()
+   * - .toGetDedicatedIps()
+   * - .toGetDeliverabilityDashboardOptions()
+   * - .toGetDeliverabilityTestReport()
+   * - .toGetDomainDeliverabilityCampaign()
+   * - .toGetDomainStatisticsReport()
+   * - .toGetEmailIdentity()
+   * - .toGetEmailIdentityPolicies()
+   * - .toGetEmailTemplate()
+   * - .toGetImportJob()
+   * - .toGetSuppressedDestination()
+   * - .toListConfigurationSets()
+   * - .toListContactLists()
+   * - .toListContacts()
+   * - .toListCustomVerificationEmailTemplates()
+   * - .toListDedicatedIpPools()
+   * - .toListDeliverabilityTestReports()
+   * - .toListDomainDeliverabilityCampaigns()
+   * - .toListEmailIdentities()
+   * - .toListEmailTemplates()
+   * - .toListImportJobs()
+   * - .toListSuppressedDestinations()
+   * - .toListTagsForResource()
+   * - .toPutAccountDedicatedIpWarmupAttributes()
+   * - .toPutAccountDetails()
+   * - .toPutAccountSendingAttributes()
+   * - .toPutAccountSuppressionAttributes()
+   * - .toPutConfigurationSetDeliveryOptions()
+   * - .toPutConfigurationSetReputationOptions()
+   * - .toPutConfigurationSetSendingOptions()
+   * - .toPutConfigurationSetSuppressionOptions()
+   * - .toPutConfigurationSetTrackingOptions()
+   * - .toPutDedicatedIpInPool()
+   * - .toPutDedicatedIpWarmupAttributes()
+   * - .toPutDeliverabilityDashboardOption()
+   * - .toPutEmailIdentityConfigurationSetAttributes()
+   * - .toPutEmailIdentityDkimAttributes()
+   * - .toPutEmailIdentityDkimSigningAttributes()
+   * - .toPutEmailIdentityFeedbackAttributes()
+   * - .toPutEmailIdentityMailFromAttributes()
+   * - .toPutSuppressedDestination()
+   * - .toSendBulkEmail()
+   * - .toSendCustomVerificationEmail()
+   * - .toSendEmail()
+   * - .toTagResource()
+   * - .toTestRenderEmailTemplate()
+   * - .toUntagResource()
+   * - .toUpdateConfigurationSetEventDestination()
+   * - .toUpdateContact()
+   * - .toUpdateContactList()
+   * - .toUpdateCustomVerificationEmailTemplate()
+   * - .toUpdateEmailIdentityPolicy()
+   * - .toUpdateEmailTemplate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifApiVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`ApiVersion`, value, operator || 'StringLike');
   }
 
   /**

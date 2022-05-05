@@ -1,3 +1,4 @@
+ses:ApiVersion
 ses:FeedbackAddress
 ses:FromAddress
 ses:FromDisplayName

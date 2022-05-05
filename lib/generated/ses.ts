@@ -23,6 +23,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html
    */
   public toCloneReceiptRuleSet() {
@@ -33,6 +36,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to create a new configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html
    */
@@ -45,6 +51,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetEventDestination.html
    */
   public toCreateConfigurationSetEventDestination() {
@@ -55,6 +64,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to creates an association between a configuration set and a custom domain for open and click event tracking
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html
    */
@@ -67,6 +79,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateCustomVerificationEmailTemplate.html
    */
   public toCreateCustomVerificationEmailTemplate() {
@@ -77,6 +92,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to create a new IP address filter
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html
    */
@@ -89,6 +107,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html
    */
   public toCreateReceiptRule() {
@@ -99,6 +120,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to create an empty receipt rule set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRuleSet.html
    */
@@ -111,6 +135,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html
    */
   public toCreateTemplate() {
@@ -121,6 +148,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete an existing configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html
    */
@@ -133,6 +163,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html
    */
   public toDeleteConfigurationSetEventDestination() {
@@ -143,6 +176,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete an association between a configuration set and a custom domain for open and click event tracking
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetTrackingOptions.html
    */
@@ -155,6 +191,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteCustomVerificationEmailTemplate.html
    */
   public toDeleteCustomVerificationEmailTemplate() {
@@ -165,6 +204,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete the specified identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html
    */
@@ -177,6 +219,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html
    */
   public toDeleteIdentityPolicy() {
@@ -187,6 +232,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete the specified IP address filter
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html
    */
@@ -199,6 +247,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html
    */
   public toDeleteReceiptRule() {
@@ -209,6 +260,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete the specified receipt rule set and all of the receipt rules it contains
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html
    */
@@ -221,6 +275,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteTemplate.html
    */
   public toDeleteTemplate() {
@@ -231,6 +288,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to delete the specified email address from the list of verified addresses
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteVerifiedEmailAddress.html
    */
@@ -243,6 +303,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeActiveReceiptRuleSet.html
    */
   public toDescribeActiveReceiptRuleSet() {
@@ -253,6 +316,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the details of the specified configuration set
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html
    */
@@ -265,6 +331,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRule.html
    */
   public toDescribeReceiptRule() {
@@ -275,6 +344,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the details of the specified receipt rule set
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRuleSet.html
    */
@@ -287,6 +359,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetAccountSendingEnabled.html
    */
   public toGetAccountSendingEnabled() {
@@ -297,6 +372,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the custom email verification template for the template name you specify
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetCustomVerificationEmailTemplate.html
    */
@@ -309,6 +387,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityDkimAttributes.html
    */
   public toGetIdentityDkimAttributes() {
@@ -319,6 +400,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityMailFromDomainAttributes.html
    */
@@ -331,6 +415,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html
    */
   public toGetIdentityNotificationAttributes() {
@@ -341,6 +428,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the requested sending authorization policies for the given identity (an email address or a domain)
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html
    */
@@ -353,6 +443,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html
    */
   public toGetIdentityVerificationAttributes() {
@@ -363,6 +456,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the user's current sending limits
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendQuota.html
    */
@@ -375,6 +471,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendStatistics.html
    */
   public toGetSendStatistics() {
@@ -385,6 +484,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to return the template object, which includes the subject line, HTML par, and text part for the template you specify
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetTemplate.html
    */
@@ -397,6 +499,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html
    */
   public toListConfigurationSets() {
@@ -407,6 +512,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to list all of the existing custom verification email templates for your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListCustomVerificationEmailTemplates.html
    */
@@ -419,6 +527,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html
    */
   public toListIdentities() {
@@ -429,6 +540,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to list all of the email templates for your account
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html
    */
@@ -441,6 +555,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html
    */
   public toListReceiptFilters() {
@@ -451,6 +568,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to list the receipt rule sets that exist under your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptRuleSets.html
    */
@@ -463,6 +583,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListTemplates.html
    */
   public toListTemplates() {
@@ -473,6 +596,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to list all of the email addresses that have been verified in your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListVerifiedEmailAddresses.html
    */
@@ -485,6 +611,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html
    */
   public toPutConfigurationSetDeliveryOptions() {
@@ -496,6 +625,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html
    */
   public toPutIdentityPolicy() {
@@ -506,6 +638,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to reorder the receipt rules within a receipt rule set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html
    */
@@ -519,6 +654,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFromAddress()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html
@@ -533,6 +669,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -550,6 +687,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -567,6 +705,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -584,6 +723,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -601,6 +741,7 @@ export class Ses extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifApiVersion()
    * - .ifFeedbackAddress()
    * - .ifFromAddress()
    * - .ifFromDisplayName()
@@ -617,6 +758,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html
    */
   public toSetActiveReceiptRuleSet() {
@@ -627,6 +771,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to enable or disable Easy DKIM signing of email sent from an identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityDkimEnabled.html
    */
@@ -639,6 +786,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html
    */
   public toSetIdentityFeedbackForwardingEnabled() {
@@ -649,6 +799,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to set whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type for a given identity (an email address or a domain)
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html
    */
@@ -661,6 +814,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html
    */
   public toSetIdentityMailFromDomain() {
@@ -671,6 +827,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to set an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications for a verified identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html
    */
@@ -683,6 +842,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html
    */
   public toSetReceiptRulePosition() {
@@ -693,6 +855,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to create a preview of the MIME content of an email when provided with a template and a set of replacement data
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_TestRenderTemplate.html
    */
@@ -705,6 +870,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html
    */
   public toUpdateAccountSendingEnabled() {
@@ -715,6 +883,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to update the event destination of a configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html
    */
@@ -727,6 +898,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetReputationMetricsEnabled.html
    */
   public toUpdateConfigurationSetReputationMetricsEnabled() {
@@ -737,6 +911,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to enable or disable email sending for messages sent using a specific configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html
    */
@@ -749,6 +926,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetTrackingOptions.html
    */
   public toUpdateConfigurationSetTrackingOptions() {
@@ -759,6 +939,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to update an existing custom verification email template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateCustomVerificationEmailTemplate.html
    */
@@ -771,6 +954,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html
    */
   public toUpdateReceiptRule() {
@@ -781,6 +967,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to update an email template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateTemplate.html
    */
@@ -793,6 +982,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainDkim.html
    */
   public toVerifyDomainDkim() {
@@ -803,6 +995,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to verify a domain
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html
    */
@@ -815,6 +1010,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailAddress.html
    */
   public toVerifyEmailAddress() {
@@ -825,6 +1023,9 @@ export class Ses extends PolicyStatement {
    * Grants permission to verify an email identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html
    */
@@ -968,6 +1169,91 @@ export class Ses extends PolicyStatement {
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ses.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
+  }
+
+  /**
+   * Filters actions based on the SES API version
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toCloneReceiptRuleSet()
+   * - .toCreateConfigurationSet()
+   * - .toCreateConfigurationSetEventDestination()
+   * - .toCreateConfigurationSetTrackingOptions()
+   * - .toCreateCustomVerificationEmailTemplate()
+   * - .toCreateReceiptFilter()
+   * - .toCreateReceiptRule()
+   * - .toCreateReceiptRuleSet()
+   * - .toCreateTemplate()
+   * - .toDeleteConfigurationSet()
+   * - .toDeleteConfigurationSetEventDestination()
+   * - .toDeleteConfigurationSetTrackingOptions()
+   * - .toDeleteCustomVerificationEmailTemplate()
+   * - .toDeleteIdentity()
+   * - .toDeleteIdentityPolicy()
+   * - .toDeleteReceiptFilter()
+   * - .toDeleteReceiptRule()
+   * - .toDeleteReceiptRuleSet()
+   * - .toDeleteTemplate()
+   * - .toDeleteVerifiedEmailAddress()
+   * - .toDescribeActiveReceiptRuleSet()
+   * - .toDescribeConfigurationSet()
+   * - .toDescribeReceiptRule()
+   * - .toDescribeReceiptRuleSet()
+   * - .toGetAccountSendingEnabled()
+   * - .toGetCustomVerificationEmailTemplate()
+   * - .toGetIdentityDkimAttributes()
+   * - .toGetIdentityMailFromDomainAttributes()
+   * - .toGetIdentityNotificationAttributes()
+   * - .toGetIdentityPolicies()
+   * - .toGetIdentityVerificationAttributes()
+   * - .toGetSendQuota()
+   * - .toGetSendStatistics()
+   * - .toGetTemplate()
+   * - .toListConfigurationSets()
+   * - .toListCustomVerificationEmailTemplates()
+   * - .toListIdentities()
+   * - .toListIdentityPolicies()
+   * - .toListReceiptFilters()
+   * - .toListReceiptRuleSets()
+   * - .toListTemplates()
+   * - .toListVerifiedEmailAddresses()
+   * - .toPutConfigurationSetDeliveryOptions()
+   * - .toPutIdentityPolicy()
+   * - .toReorderReceiptRuleSet()
+   * - .toSendBounce()
+   * - .toSendBulkTemplatedEmail()
+   * - .toSendCustomVerificationEmail()
+   * - .toSendEmail()
+   * - .toSendRawEmail()
+   * - .toSendTemplatedEmail()
+   * - .toSetActiveReceiptRuleSet()
+   * - .toSetIdentityDkimEnabled()
+   * - .toSetIdentityFeedbackForwardingEnabled()
+   * - .toSetIdentityHeadersInNotificationsEnabled()
+   * - .toSetIdentityMailFromDomain()
+   * - .toSetIdentityNotificationTopic()
+   * - .toSetReceiptRulePosition()
+   * - .toTestRenderTemplate()
+   * - .toUpdateAccountSendingEnabled()
+   * - .toUpdateConfigurationSetEventDestination()
+   * - .toUpdateConfigurationSetReputationMetricsEnabled()
+   * - .toUpdateConfigurationSetSendingEnabled()
+   * - .toUpdateConfigurationSetTrackingOptions()
+   * - .toUpdateCustomVerificationEmailTemplate()
+   * - .toUpdateReceiptRule()
+   * - .toUpdateTemplate()
+   * - .toVerifyDomainDkim()
+   * - .toVerifyDomainIdentity()
+   * - .toVerifyEmailAddress()
+   * - .toVerifyEmailIdentity()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifApiVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`ApiVersion`, value, operator || 'StringLike');
   }
 
   /**
