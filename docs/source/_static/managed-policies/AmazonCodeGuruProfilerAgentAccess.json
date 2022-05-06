@@ -8,7 +8,7 @@
 				"codeguru-profiler:CreateProfilingGroup",
 				"codeguru-profiler:PostAgentProfile"
 			],
-			"Resource": "*"
+			"Resource": "arn:aws:codeguru-profiler:*:*:profilingGroup/*"
 		}
 	]
 }

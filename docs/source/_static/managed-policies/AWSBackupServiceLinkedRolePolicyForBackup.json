@@ -26,7 +26,8 @@
 				"rds:DescribeDBInstances",
 				"rds:DescribeDBClusters",
 				"fsx:DescribeFileSystems",
-				"s3:ListAllMyBuckets"
+				"s3:ListAllMyBuckets",
+				"s3:GetBucketTagging"
 			],
 			"Resource": "*"
 		},
