@@ -1,193 +1,195 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "synthetics:*"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:CreateBucket",
-                "s3:PutEncryptionConfiguration"
-            ],
-            "Resource": [
-                "arn:aws:s3:::cw-syn-results-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListRoles",
-                "s3:ListAllMyBuckets",
-									   
-                "xray:GetTraceSummaries",
-                "xray:BatchGetTraces",
-                "apigateway:GET"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "arn:aws:s3:::*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::cw-syn-*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObjectVersion"
-            ],
-            "Resource": "arn:aws:s3:::aws-synthetics-library-*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:PassRole"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:role/service-role/CloudWatchSyntheticsRole*"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "iam:PassedToService": [
-                        "lambda.amazonaws.com",
-                        "synthetics.amazonaws.com"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:GetRole"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:role/service-role/CloudWatchSyntheticsRole*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudwatch:GetMetricData",
-                "cloudwatch:GetMetricStatistics"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudwatch:PutMetricAlarm",
-                "cloudwatch:DeleteAlarms"
-            ],
-            "Resource": [
-                "arn:aws:cloudwatch:*:*:alarm:Synthetics-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudwatch:DescribeAlarms"
-            ],
-            "Resource": [
-                "arn:aws:cloudwatch:*:*:alarm:*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "lambda:CreateFunction",
-                "lambda:AddPermission",
-                "lambda:PublishVersion",
-                "lambda:UpdateFunctionCode",
-                "lambda:UpdateFunctionConfiguration",
-                "lambda:GetFunctionConfiguration"
-            ],
-            "Resource": [
-                "arn:aws:lambda:*:*:function:cwsyn-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "lambda:GetLayerVersion",
-                "lambda:PublishLayerVersion"
-            ],
-            "Resource": [
-                "arn:aws:lambda:*:*:layer:cwsyn-*",
-                "arn:aws:lambda:*:*:layer:Synthetics:*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sns:ListTopics"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sns:CreateTopic",
-                "sns:Subscribe",
-                "sns:ListSubscriptionsByTopic"
-            ],
-            "Resource": [
-                "arn:*:sns:*:*:Synthetics-*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kms:ListAliases"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kms:DescribeKey"
-            ],
-            "Resource": "arn:aws:kms:*:*:key/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kms:Decrypt"
-            ],
-            "Resource": "arn:aws:kms:*:*:key/*",
-            "Condition": {
-                "StringLike": {
-                    "kms:ViaService": [
-                        "s3.*.amazonaws.com"
-                    ]
-                }
-            }
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"synthetics:*"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:CreateBucket",
+				"s3:PutEncryptionConfiguration"
+			],
+			"Resource": [
+				"arn:aws:s3:::cw-syn-results-*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:ListRoles",
+				"s3:ListAllMyBuckets",
+				"xray:GetTraceSummaries",
+				"xray:BatchGetTraces",
+				"apigateway:GET"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetBucketLocation"
+			],
+			"Resource": "arn:aws:s3:::*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:ListBucket"
+			],
+			"Resource": "arn:aws:s3:::cw-syn-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObjectVersion"
+			],
+			"Resource": "arn:aws:s3:::aws-synthetics-library-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:PassRole"
+			],
+			"Resource": [
+				"arn:aws:iam::*:role/service-role/CloudWatchSyntheticsRole*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"iam:PassedToService": [
+						"lambda.amazonaws.com",
+						"synthetics.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:GetRole",
+				"iam:ListAttachedRolePolicies"
+			],
+			"Resource": [
+				"arn:aws:iam::*:role/service-role/CloudWatchSyntheticsRole*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudwatch:GetMetricData",
+				"cloudwatch:GetMetricStatistics"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudwatch:PutMetricAlarm",
+				"cloudwatch:DeleteAlarms"
+			],
+			"Resource": [
+				"arn:aws:cloudwatch:*:*:alarm:Synthetics-*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudwatch:DescribeAlarms"
+			],
+			"Resource": [
+				"arn:aws:cloudwatch:*:*:alarm:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lambda:CreateFunction",
+				"lambda:AddPermission",
+				"lambda:PublishVersion",
+				"lambda:UpdateFunctionCode",
+				"lambda:UpdateFunctionConfiguration",
+				"lambda:GetFunctionConfiguration",
+				"lambda:DeleteFunction"
+			],
+			"Resource": [
+				"arn:aws:lambda:*:*:function:cwsyn-*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lambda:GetLayerVersion",
+				"lambda:PublishLayerVersion",
+				"lambda:DeleteLayerVersion"
+			],
+			"Resource": [
+				"arn:aws:lambda:*:*:layer:cwsyn-*",
+				"arn:aws:lambda:*:*:layer:Synthetics:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeVpcs",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeSecurityGroups"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sns:ListTopics"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sns:CreateTopic",
+				"sns:Subscribe",
+				"sns:ListSubscriptionsByTopic"
+			],
+			"Resource": [
+				"arn:*:sns:*:*:Synthetics-*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:ListAliases"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:DescribeKey"
+			],
+			"Resource": "arn:aws:kms:*:*:key/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:Decrypt"
+			],
+			"Resource": "arn:aws:kms:*:*:key/*",
+			"Condition": {
+				"StringLike": {
+					"kms:ViaService": [
+						"s3.*.amazonaws.com"
+					]
+				}
+			}
+		}
+	]
 }
