@@ -17,6 +17,15 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"glue:BatchGetCustomEntityTypes"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"s3:ListBucket",
 				"s3:GetObject"
 			],
