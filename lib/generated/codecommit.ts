@@ -63,7 +63,7 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get return information about one or more commits in an AWS CodeCommit repository.
+   * Grants permission to get return information about one or more commits in an AWS CodeCommit repository
    *
    * Access Level: Read
    *
@@ -132,7 +132,7 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add, copy, move or update single or multiple files in a branch in an AWS CodeCommit repository, and generate a commit for the changes in the specified branch.
+   * Grants permission to add, copy, move or update single or multiple files in a branch in an AWS CodeCommit repository, and generate a commit for the changes in the specified branch
    *
    * Access Level: Write
    *

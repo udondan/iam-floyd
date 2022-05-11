@@ -966,6 +966,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifRecursive()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html
    */
   public toGetParametersByPath() {
@@ -1256,6 +1259,7 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifOverwrite()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
    */
@@ -2111,9 +2115,12 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by controlling whether the values for specified resources can be overwritten
+   * Controls whether Systems Manager parameters can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toPutParameter()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2123,9 +2130,12 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by resources created in a hierarchical structure
+   * Filters access to Systems Manager parameters created in a hierarchical structure
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toGetParametersByPath()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
