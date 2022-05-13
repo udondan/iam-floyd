@@ -19,7 +19,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Creates an ACM Private CA and its associated private key and configuration.
+   * Grants permission to create an ACM Private CA and its associated private key and configuration
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Creates an audit report for an ACM Private CA.
+   * Grants permission to create an audit report for an ACM Private CA
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Creates a permission for an ACM Private CA.
+   * Grants permission to create a permission for an ACM Private CA
    *
    * Access Level: Permissions management
    *
@@ -56,7 +56,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Deletes an ACM Private CA and its associated private key and configuration.
+   * Grants permission to delete an ACM Private CA and its associated private key and configuration
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Deletes a permission for an ACM Private CA.
+   * Grants permission to delete a permission for an ACM Private CA
    *
    * Access Level: Permissions management
    *
@@ -78,7 +78,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Deletes the policy for an ACM Private CA.
+   * Grants permission to delete the policy for an ACM Private CA
    *
    * Access Level: Permissions management
    *
@@ -89,7 +89,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the configuration and status fields contained in the specified ACM Private CA.
+   * Grants permission to return a list of the configuration and status fields contained in the specified ACM Private CA
    *
    * Access Level: Read
    *
@@ -100,7 +100,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Returns the status and information about an ACM Private CA audit report.
+   * Grants permission to return the status and information about an ACM Private CA audit report
    *
    * Access Level: Read
    *
@@ -111,7 +111,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.
+   * Grants permission to retrieve an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN
    *
    * Access Level: Read
    *
@@ -122,7 +122,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.
+   * Grants permission to retrieve an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN
    *
    * Access Level: Read
    *
@@ -133,7 +133,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Retrieves an ACM Private CA certificate signing request (CSR) for the certificate-authority specified by an ARN.
+   * Grants permission to retrieve an ACM Private CA certificate signing request (CSR) for the certificate-authority specified by an ARN
    *
    * Access Level: Read
    *
@@ -144,7 +144,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Retrieves the policy on an ACM Private CA.
+   * Grants permission to retrieve the policy on an ACM Private CA
    *
    * Access Level: Read
    *
@@ -155,7 +155,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Imports an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA.
+   * Grants permission to import an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA
    *
    * Access Level: Write
    *
@@ -166,7 +166,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Issues an ACM Private CA certificate.
+   * Grants permission to issue an ACM Private CA certificate
    *
    * Access Level: Write
    *
@@ -180,7 +180,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of the ACM Private CA certificate authority ARNs, and a summary of the status of each CA in the calling account.
+   * Grants permission to retrieve a list of the ACM Private CA certificate authority ARNs, and a summary of the status of each CA in the calling account
    *
    * Access Level: List
    *
@@ -191,7 +191,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Lists the permissions that have been applied to the ACM Private CA certificate authority.
+   * Grants permission to list the permissions that have been applied to the ACM Private CA certificate authority
    *
    * Access Level: Read
    *
@@ -202,7 +202,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Lists the tags that have been applied to the ACM Private CA certificate authority.
+   * Grants permission to list the tags that have been applied to the ACM Private CA certificate authority
    *
    * Access Level: Read
    *
@@ -213,7 +213,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Puts a policy on an ACM Private CA.
+   * Grants permission to put a policy on an ACM Private CA
    *
    * Access Level: Permissions management
    *
@@ -224,7 +224,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Restores an ACM Private CA from the deleted state to the state it was in when deleted.
+   * Grants permission to restore an ACM Private CA from the deleted state to the state it was in when deleted
    *
    * Access Level: Write
    *
@@ -235,7 +235,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Revokes a certificate issued by an ACM Private CA.
+   * Grants permission to revoke a certificate issued by an ACM Private CA
    *
    * Access Level: Write
    *
@@ -246,7 +246,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Adds one or more tags to an ACM Private CA.
+   * Grants permission to add one or more tags to an ACM Private CA
    *
    * Access Level: Tagging
    *
@@ -261,7 +261,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Remove one or more tags from an ACM Private CA.
+   * Grants permission to remove one or more tags from an ACM Private CA
    *
    * Access Level: Tagging
    *
@@ -275,7 +275,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Updates the configuration of an ACM Private CA.
+   * Grants permission to update the configuration of an ACM Private CA
    *
    * Access Level: Write
    *
@@ -339,7 +339,9 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Filters issue certificate requests based on the presence of TemplateArn in the request.
+   * Filters issue certificate requests based on the presence of TemplateArn in the request
+   *
+   * https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-varieties
    *
    * Applies to actions:
    * - .toIssueCertificate()

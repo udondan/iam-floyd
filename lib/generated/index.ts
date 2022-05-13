@@ -138,7 +138,6 @@ export { Timestream } from './timestream';
 export { Transcribe } from './transcribe';
 export { Translate } from './translate';
 export { Workdocs } from './workdocs';
-export { Worklink } from './worklink';
 export { Workmail } from './workmail';
 export { Workmailmessageflow } from './workmailmessageflow';
 export { Workspaces } from './workspaces';

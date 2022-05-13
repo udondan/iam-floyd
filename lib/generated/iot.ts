@@ -2421,6 +2421,22 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rotate the access token of a tunnel
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifThingGroupArn()
+   * - .ifTunnelDestinationService()
+   * - .ifClientMode()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_RotateTunnelAccessToken.html
+   */
+  public toRotateTunnelAccessToken() {
+    return this.to('RotateTunnelAccessToken');
+  }
+
+  /**
    * Grants permission to search IoT fleet index
    *
    * Access Level: Read
@@ -3005,6 +3021,7 @@ export class Iot extends PolicyStatement {
       'RemoveThingFromThingGroup',
       'ReplaceTopicRule',
       'RetainPublish',
+      'RotateTunnelAccessToken',
       'SetLoggingOptions',
       'SetV2LoggingLevel',
       'SetV2LoggingOptions',
@@ -3649,6 +3666,21 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Filters access by the mode of the client for IoT Tunnel
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toRotateTunnelAccessToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifClientMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`ClientMode`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by a flag indicating whether or not to also delete an IoT Tunnel immediately when making iot:CloseTunnel request
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
@@ -3684,6 +3716,7 @@ export class Iot extends PolicyStatement {
    *
    * Applies to actions:
    * - .toOpenTunnel()
+   * - .toRotateTunnelAccessToken()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3699,6 +3732,7 @@ export class Iot extends PolicyStatement {
    *
    * Applies to actions:
    * - .toOpenTunnel()
+   * - .toRotateTunnelAccessToken()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

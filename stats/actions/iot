@@ -207,6 +207,7 @@ iot:RemoveThingFromBillingGroup;Write
 iot:RemoveThingFromThingGroup;Write
 iot:ReplaceTopicRule;Write
 iot:RetainPublish;Write
+iot:RotateTunnelAccessToken;Write
 iot:SearchIndex;Read
 iot:SetDefaultAuthorizer;Permissions management
 iot:SetDefaultPolicyVersion;Permissions management

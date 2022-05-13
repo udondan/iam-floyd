@@ -1,3 +1,4 @@
+iot:ClientMode
 iot:Delete
 iot:DomainName
 iot:RequestTag/${TagKey}
