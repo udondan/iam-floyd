@@ -92,7 +92,8 @@
 				"organizations:DescribeAccount",
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",
-				"organizations:ListDelegatedAdministrators"
+				"organizations:ListDelegatedAdministrators",
+				"organizations:ListAWSServiceAccessForOrganization"
 			],
 			"Resource": [
 				"*"
