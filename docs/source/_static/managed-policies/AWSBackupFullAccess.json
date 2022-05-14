@@ -219,6 +219,16 @@
 			"Resource": "*"
 		},
 		{
+			"Effect": "Allow",
+			"Action": "fsx:DescribeVolumes",
+			"Resource": "arn:aws:fsx:*:*:volume/*/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "fsx:DescribeStorageVirtualMachines",
+			"Resource": "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+		},
+		{
 			"Action": "fsx:DeleteBackup",
 			"Effect": "Allow",
 			"Resource": "arn:aws:fsx:*:*:backup/*",
