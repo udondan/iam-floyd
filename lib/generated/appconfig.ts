@@ -352,6 +352,10 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html
    */
   public toStartDeployment() {

@@ -75,6 +75,9 @@ export class Ram extends PolicyStatement {
    * - .ifRequestedAllowsExternalPrincipals()
    * - .ifPrincipal()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
   public toCreateResourceShare() {
@@ -131,6 +134,11 @@ export class Ram extends PolicyStatement {
    * Grants permission to access customer's organization and create a SLR in the customer's account
    *
    * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html
    */
