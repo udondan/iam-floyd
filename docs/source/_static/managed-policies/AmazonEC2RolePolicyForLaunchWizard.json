@@ -151,7 +151,8 @@
 			"Effect": "Allow",
 			"Action": [
 				"fsx:DescribeFileSystems",
-				"fsx:ListTagsForResource"
+				"fsx:ListTagsForResource",
+				"fsx:DescribeStorageVirtualMachines"
 			],
 			"Resource": "*",
 			"Condition": {
