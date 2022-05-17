@@ -1,6 +1,8 @@
 grafana:AssociateLicense;Write
 grafana:CreateWorkspace;Write
+grafana:CreateWorkspaceApiKey;Write
 grafana:DeleteWorkspace;Write
+grafana:DeleteWorkspaceApiKey;Write
 grafana:DescribeWorkspace;Read
 grafana:DescribeWorkspaceAuthentication;Read
 grafana:DisassociateLicense;Write

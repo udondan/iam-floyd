@@ -1,0 +1,3 @@
+worklink:RequestTag/${TagKey}
+worklink:ResourceTag/${TagKey}
+worklink:TagKeys

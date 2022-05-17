@@ -54,6 +54,17 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create API keys for a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toCreateWorkspaceApiKey() {
+    return this.to('CreateWorkspaceApiKey');
+  }
+
+  /**
    * Grants permission to delete a workspace
    *
    * Access Level: Write
@@ -65,6 +76,17 @@ export class Grafana extends PolicyStatement {
    */
   public toDeleteWorkspace() {
     return this.to('DeleteWorkspace');
+  }
+
+  /**
+   * Grants permission to delete API keys from a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toDeleteWorkspaceApiKey() {
+    return this.to('DeleteWorkspaceApiKey');
   }
 
   /**
@@ -200,7 +222,9 @@ export class Grafana extends PolicyStatement {
     Write: [
       'AssociateLicense',
       'CreateWorkspace',
+      'CreateWorkspaceApiKey',
       'DeleteWorkspace',
+      'DeleteWorkspaceApiKey',
       'DisassociateLicense',
       'UpdateWorkspace',
       'UpdateWorkspaceAuthentication'
