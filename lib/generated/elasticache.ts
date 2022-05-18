@@ -131,15 +131,6 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifCacheNodeType()
-   * - .ifEngineVersion()
-   * - .ifEngineType()
-   * - .ifMultiAZEnabled()
-   * - .ifAuthTokenEnabled()
-   * - .ifSnapshotRetentionLimit()
-   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -162,6 +153,7 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifCacheParameterGroupName()
@@ -181,6 +173,7 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -199,6 +192,7 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -232,22 +226,6 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifNumNodeGroups()
-   * - .ifCacheNodeType()
-   * - .ifReplicasPerNodeGroup()
-   * - .ifEngineVersion()
-   * - .ifEngineType()
-   * - .ifAtRestEncryptionEnabled()
-   * - .ifTransitEncryptionEnabled()
-   * - .ifAutomaticFailoverEnabled()
-   * - .ifMultiAZEnabled()
-   * - .ifClusterModeEnabled()
-   * - .ifAuthTokenEnabled()
-   * - .ifSnapshotRetentionLimit()
-   * - .ifKmsKeyId()
-   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -271,9 +249,6 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifKmsKeyId()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -293,8 +268,9 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -311,8 +287,6 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    *
    * Dependent actions:
@@ -364,9 +338,6 @@ export class Elasticache extends PolicyStatement {
    * Grants permission to delete a previously provisioned cluster
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -446,9 +417,6 @@ export class Elasticache extends PolicyStatement {
    * Grants permission to delete an existing replication group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -818,12 +786,6 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifCacheNodeType()
-   * - .ifEngineVersion()
-   * - .ifMultiAZEnabled()
-   * - .ifAuthTokenEnabled()
-   * - .ifSnapshotRetentionLimit()
-   * - .ifCacheParameterGroupName()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html
    */
@@ -883,13 +845,6 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifCacheNodeType()
-   * - .ifEngineVersion()
-   * - .ifAutomaticFailoverEnabled()
-   * - .ifMultiAZEnabled()
-   * - .ifAuthTokenEnabled()
-   * - .ifSnapshotRetentionLimit()
-   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -960,8 +915,9 @@ export class Elasticache extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -1163,7 +1119,10 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCacheParameterGroupName()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
@@ -1180,7 +1139,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
@@ -1197,7 +1158,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
@@ -1214,7 +1177,23 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAtRestEncryptionEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifAutomaticFailoverEnabled()
+   * - .ifCacheNodeType()
+   * - .ifCacheParameterGroupName()
+   * - .ifClusterModeEnabled()
+   * - .ifEngineType()
+   * - .ifEngineVersion()
+   * - .ifKmsKeyId()
+   * - .ifMultiAZEnabled()
+   * - .ifNumNodeGroups()
+   * - .ifReplicasPerNodeGroup()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifTransitEncryptionEnabled()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
@@ -1231,7 +1210,16 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAuthTokenEnabled()
+   * - .ifCacheNodeType()
+   * - .ifCacheParameterGroupName()
+   * - .ifEngineType()
+   * - .ifEngineVersion()
+   * - .ifMultiAZEnabled()
+   * - .ifSnapshotRetentionLimit()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
@@ -1248,7 +1236,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
@@ -1265,7 +1255,10 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifKmsKeyId()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
@@ -1279,6 +1272,22 @@ export class Elasticache extends PolicyStatement {
    * @param globalReplicationGroupId - Identifier for the globalReplicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAtRestEncryptionEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifAutomaticFailoverEnabled()
+   * - .ifCacheNodeType()
+   * - .ifCacheParameterGroupName()
+   * - .ifClusterModeEnabled()
+   * - .ifEngineType()
+   * - .ifEngineVersion()
+   * - .ifKmsKeyId()
+   * - .ifMultiAZEnabled()
+   * - .ifNumNodeGroups()
+   * - .ifReplicasPerNodeGroup()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifTransitEncryptionEnabled()
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
@@ -1295,7 +1304,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
@@ -1312,7 +1323,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
@@ -1325,6 +1338,10 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1343,6 +1360,11 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyCacheCluster()
    * - .toModifyReplicationGroup()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAuthTokenEnabled(value?: boolean) {
@@ -1358,6 +1380,10 @@ export class Elasticache extends PolicyStatement {
    * - .toCreateReplicationGroup()
    * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1376,6 +1402,11 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyCacheCluster()
    * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1399,6 +1430,12 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyReplicationGroup()
    * - .toResetCacheParameterGroup()
    *
+   * Applies to resource types:
+   * - parametergroup
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1414,6 +1451,10 @@ export class Elasticache extends PolicyStatement {
    * Applies to actions:
    * - .toCreateReplicationGroup()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifClusterModeEnabled(value?: boolean) {
@@ -1428,6 +1469,11 @@ export class Elasticache extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCacheCluster()
    * - .toCreateReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1448,6 +1494,11 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1464,6 +1515,11 @@ export class Elasticache extends PolicyStatement {
    * - .toCopySnapshot()
    * - .toCreateReplicationGroup()
    * - .toCreateSnapshot()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - snapshot
+   * - globalreplicationgroup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1483,6 +1539,11 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyCacheCluster()
    * - .toModifyReplicationGroup()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifMultiAZEnabled(value?: boolean) {
@@ -1500,6 +1561,10 @@ export class Elasticache extends PolicyStatement {
    * - .toIncreaseNodeGroupsInGlobalReplicationGroup()
    * - .toModifyReplicationGroupShardConfiguration()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -1516,6 +1581,10 @@ export class Elasticache extends PolicyStatement {
    * - .toCreateReplicationGroup()
    * - .toDecreaseReplicaCount()
    * - .toIncreaseReplicaCount()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -1535,6 +1604,11 @@ export class Elasticache extends PolicyStatement {
    * - .toModifyCacheCluster()
    * - .toModifyReplicationGroup()
    *
+   * Applies to resource types:
+   * - replicationgroup
+   * - cluster
+   * - globalreplicationgroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -1549,6 +1623,10 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   * - globalreplicationgroup
    *
    * @param value `true` or `false`. **Default:** `true`
    */
