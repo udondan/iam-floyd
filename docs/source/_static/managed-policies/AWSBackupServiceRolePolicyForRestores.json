@@ -216,6 +216,53 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": [
+				"fsx:DescribeVolumes"
+			],
+			"Resource": "arn:aws:fsx:*:*:volume/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:CreateVolumeFromBackup",
+				"fsx:TagResource"
+			],
+			"Resource": [
+				"arn:aws:fsx:*:*:volume/*"
+			],
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"aws:backup:source-resource"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:CreateVolumeFromBackup"
+			],
+			"Resource": [
+				"arn:aws:fsx:*:*:storage-virtual-machine/*",
+				"arn:aws:fsx:*:*:backup/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:DeleteVolume",
+				"fsx:UntagResource"
+			],
+			"Resource": "arn:aws:fsx:*:*:volume/*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/aws:backup:source-resource": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": "ds:DescribeDirectories",
 			"Resource": "*"
 		},
