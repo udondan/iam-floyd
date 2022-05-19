@@ -30,6 +30,17 @@ export class Iotevents extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a detector instance within the AWS IoT Events system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html
+   */
+  public toBatchDeleteDetector() {
+    return this.to('BatchDeleteDetector');
+  }
+
+  /**
    * Grants permission to disable one or more alarm instances
    *
    * Access Level: Write
@@ -458,6 +469,7 @@ export class Iotevents extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchAcknowledgeAlarm',
+      'BatchDeleteDetector',
       'BatchDisableAlarm',
       'BatchEnableAlarm',
       'BatchPutMessage',

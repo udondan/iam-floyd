@@ -133,6 +133,7 @@ quicksight:UpdateFolderPermissions;Permissions management
 quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateIpRestriction;Write
+quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
 quicksight:UpdateTemplatePermissions;Permissions management

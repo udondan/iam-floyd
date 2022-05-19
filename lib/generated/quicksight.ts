@@ -1671,6 +1671,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable public sharing on an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html
+   */
+  public toUpdatePublicSharingSettings() {
+    return this.to('UpdatePublicSharingSettings');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -1813,6 +1824,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateGroup',
       'UpdateIAMPolicyAssignment',
       'UpdateIpRestriction',
+      'UpdatePublicSharingSettings',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',

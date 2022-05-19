@@ -1,4 +1,5 @@
 iotevents:BatchAcknowledgeAlarm;Write
+iotevents:BatchDeleteDetector;Write
 iotevents:BatchDisableAlarm;Write
 iotevents:BatchEnableAlarm;Write
 iotevents:BatchPutMessage;Write
