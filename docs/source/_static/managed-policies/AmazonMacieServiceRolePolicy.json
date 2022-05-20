@@ -4,11 +4,6 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"cloudtrail:DescribeTrails",
-				"cloudtrail:GetEventSelectors",
-				"cloudtrail:GetTrailStatus",
-				"cloudtrail:ListTags",
-				"cloudtrail:LookupEvents",
 				"iam:ListAccountAliases",
 				"organizations:DescribeAccount",
 				"organizations:ListAccounts",
@@ -32,37 +27,6 @@
 				"s3:GetObjectTagging"
 			],
 			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"cloudtrail:CreateTrail",
-				"cloudtrail:StartLogging",
-				"cloudtrail:StopLogging",
-				"cloudtrail:UpdateTrail",
-				"cloudtrail:DeleteTrail",
-				"cloudtrail:PutEventSelectors"
-			],
-			"Resource": "arn:aws:cloudtrail:*:*:trail/AWSMacieTrail-DO-NOT-EDIT"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"s3:CreateBucket",
-				"s3:DeleteBucket",
-				"s3:DeleteBucketPolicy",
-				"s3:DeleteBucketWebsite",
-				"s3:DeleteObject",
-				"s3:DeleteObjectTagging",
-				"s3:DeleteObjectVersion",
-				"s3:DeleteObjectVersionTagging",
-				"s3:PutBucketPolicy"
-			],
-			"Resource": [
-				"arn:aws:s3:::awsmacie-*",
-				"arn:aws:s3:::awsmacietrail-*",
-				"arn:aws:s3:::*-awsmacietrail-*"
-			]
 		},
 		{
 			"Effect": "Allow",
