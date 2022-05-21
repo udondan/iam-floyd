@@ -131,7 +131,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"organizations:DescribePolicy"
+				"organizations:DescribePolicy",
+				"organizations:DescribeOrganization"
 			],
 			"Resource": "*",
 			"Sid": "OrganizationsAccess"
@@ -158,10 +159,13 @@
 			"Action": [
 				"events:PutRule"
 			],
-			"Resource": "*",
+			"Resource": "arn:aws:events:*:*:rule/AuditManagerSecurityHubFindingsReceiver",
 			"Condition": {
 				"StringEquals": {
 					"events:detail-type": "Security Hub Findings - Imported"
+				},
+				"Null": {
+					"events:source": "false"
 				},
 				"ForAllValues:StringEquals": {
 					"events:source": [
