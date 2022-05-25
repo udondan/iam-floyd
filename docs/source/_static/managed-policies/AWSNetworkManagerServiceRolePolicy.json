@@ -20,7 +20,12 @@
 				"ec2:DescribeTransitGatewayPeeringAttachments",
 				"ec2:DescribeTransitGatewayConnects",
 				"ec2:DescribeTransitGatewayConnectPeers",
-                "ec2:DescribeRegions"
+				"ec2:DescribeRegions",
+				"organizations:DescribeAccount",
+				"organizations:DescribeOrganization",
+				"organizations:ListAccounts",
+				"organizations:ListAWSServiceAccessForOrganization",
+				"organizations:ListDelegatedAdministrators"
 			],
 			"Resource": "*"
 		}
