@@ -729,6 +729,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list organization service access status
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListOrganizationServiceAccessStatus.html
+   */
+  public toListOrganizationServiceAccessStatus() {
+    return this.to('ListOrganizationServiceAccessStatus');
+  }
+
+  /**
    * Grants permission to list tags for a Network Manager resource
    *
    * Access Level: Read
@@ -798,6 +809,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toRestoreCoreNetworkPolicyVersion() {
     return this.to('RestoreCoreNetworkPolicyVersion');
+  }
+
+  /**
+   * Grants permission to start organization service access update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartOrganizationServiceAccessUpdate.html
+   */
+  public toStartOrganizationServiceAccessUpdate() {
+    return this.to('StartOrganizationServiceAccessUpdate');
   }
 
   /**
@@ -972,6 +994,7 @@ export class Networkmanager extends PolicyStatement {
       'RegisterTransitGateway',
       'RejectAttachment',
       'RestoreCoreNetworkPolicyVersion',
+      'StartOrganizationServiceAccessUpdate',
       'StartRouteAnalysis',
       'UpdateConnection',
       'UpdateCoreNetwork',
@@ -995,7 +1018,8 @@ export class Networkmanager extends PolicyStatement {
       'ListAttachments',
       'ListConnectPeers',
       'ListCoreNetworkPolicyVersions',
-      'ListCoreNetworks'
+      'ListCoreNetworks',
+      'ListOrganizationServiceAccessStatus'
     ],
     Read: [
       'GetConnectAttachment',

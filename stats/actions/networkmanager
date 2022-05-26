@@ -57,12 +57,14 @@ networkmanager:ListAttachments;List
 networkmanager:ListConnectPeers;List
 networkmanager:ListCoreNetworkPolicyVersions;List
 networkmanager:ListCoreNetworks;List
+networkmanager:ListOrganizationServiceAccessStatus;List
 networkmanager:ListTagsForResource;Read
 networkmanager:PutCoreNetworkPolicy;Write
 networkmanager:PutResourcePolicy;Write
 networkmanager:RegisterTransitGateway;Write
 networkmanager:RejectAttachment;Write
 networkmanager:RestoreCoreNetworkPolicyVersion;Write
+networkmanager:StartOrganizationServiceAccessUpdate;Write
 networkmanager:StartRouteAnalysis;Write
 networkmanager:TagResource;Tagging
 networkmanager:UntagResource;Tagging
