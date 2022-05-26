@@ -21,6 +21,34 @@
 			"Resource": "*"
 		},
 		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AllocateAddress"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:elastic-ip/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/Redshift": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ReleaseAddress"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:elastic-ip/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/Redshift": "true"
+				}
+			}
+		},
+		{
 			"Sid": "EnableCreationAndManagementOfRedshiftCloudwatchLogGroups",
 			"Effect": "Allow",
 			"Action": [
@@ -89,7 +117,8 @@
 				"arn:aws:ec2:*:*:route-table/*",
 				"arn:aws:ec2:*:*:security-group/*",
 				"arn:aws:ec2:*:*:vpc/*",
-				"arn:aws:ec2:*:*:internet-gateway/*"
+				"arn:aws:ec2:*:*:internet-gateway/*",
+				"arn:aws:ec2:*:*:elastic-ip/*"
 			],
 			"Condition": {
 				"StringEquals": {
@@ -114,7 +143,8 @@
 						"CreateSecurityGroup",
 						"CreateSubnet",
 						"CreateInternetGateway",
-						"CreateRouteTable"
+						"CreateRouteTable",
+						"AllocateAddress"
 					]
 				}
 			}
@@ -131,6 +161,20 @@
 				"ec2:DescribeRouteTables"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudwatch:PutMetricData"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": [
+						"AWS/Redshift-Serverless"
+					]
+				}
+			}
 		}
 	]
 }
