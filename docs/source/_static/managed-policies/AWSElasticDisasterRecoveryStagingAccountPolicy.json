@@ -1,0 +1,32 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:DescribeSourceServers",
+				"drs:DescribeRecoverySnapshots",
+				"drs:CreateConvertedSnapshotForDrs",
+				"drs:GetReplicationConfiguration",
+				"drs:DescribeJobs",
+				"drs:DescribeJobLogItems"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ModifySnapshotAttribute"
+			],
+			"Resource": "arn:aws:ec2:*:*:snapshot/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:Add/userId": "${aws:SourceIdentity}"
+				},
+				"Null": {
+					"aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+				}
+			}
+		}
+	]
+}
