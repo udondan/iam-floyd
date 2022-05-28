@@ -1,3 +1,4 @@
+drs:CreateAction
 drs:EC2InstanceARN
 drs:RequestTag/${TagKey}
 drs:ResourceTag/${TagKey}

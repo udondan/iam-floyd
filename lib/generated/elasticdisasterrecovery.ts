@@ -52,6 +52,36 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create converted snapshot
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toCreateConvertedSnapshotForDrs() {
+    return this.to('CreateConvertedSnapshotForDrs');
+  }
+
+  /**
+   * Grants permission to extend a source server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateExtendedSourceServer.html
+   */
+  public toCreateExtendedSourceServer() {
+    return this.to('CreateExtendedSourceServer');
+  }
+
+  /**
    * Grants permission to create recovery instance
    *
    * Access Level: Write
@@ -436,6 +466,28 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list extensible source servers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListExtensibleSourceServers.html
+   */
+  public toListExtensibleSourceServers() {
+    return this.to('ListExtensibleSourceServers');
+  }
+
+  /**
+   * Grants permission to list staging accounts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListStagingAccounts.html
+   */
+  public toListStagingAccounts() {
+    return this.to('ListStagingAccounts');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -664,6 +716,7 @@ export class Drs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_TagResource.html
    */
@@ -843,6 +896,8 @@ export class Drs extends PolicyStatement {
       'AssociateFailbackClientToRecoveryInstanceForDrs',
       'BatchCreateVolumeSnapshotGroupForDrs',
       'BatchDeleteSnapshotRequestForDrs',
+      'CreateConvertedSnapshotForDrs',
+      'CreateExtendedSourceServer',
       'CreateRecoveryInstanceForDrs',
       'CreateReplicationConfigurationTemplate',
       'CreateSessionForDrs',
@@ -906,6 +961,8 @@ export class Drs extends PolicyStatement {
       'GetLaunchConfiguration',
       'GetReplicationConfiguration',
       'GetSuggestedFailbackClientDeviceMappingForDrs',
+      'ListExtensibleSourceServers',
+      'ListStagingAccounts',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -981,6 +1038,21 @@ export class Drs extends PolicyStatement {
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/supported-iam-actions-tagging.html
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
   }
 
   /**

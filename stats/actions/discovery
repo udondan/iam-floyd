@@ -14,6 +14,7 @@ discovery:DescribeTags;Read
 discovery:DisassociateConfigurationItemsFromApplication;Write
 discovery:ExportConfigurations;Write
 discovery:GetDiscoverySummary;Read
+discovery:GetNetworkConnectionGraph;Read
 discovery:ListConfigurations;List
 discovery:ListServerNeighbors;List
 discovery:StartContinuousExport;Write

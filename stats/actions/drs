@@ -1,6 +1,8 @@
 drs:AssociateFailbackClientToRecoveryInstanceForDrs;Write
 drs:BatchCreateVolumeSnapshotGroupForDrs;Write
 drs:BatchDeleteSnapshotRequestForDrs;Write
+drs:CreateConvertedSnapshotForDrs;Write
+drs:CreateExtendedSourceServer;Write
 drs:CreateRecoveryInstanceForDrs;Write
 drs:CreateReplicationConfigurationTemplate;Write
 drs:CreateSessionForDrs;Write
@@ -34,6 +36,8 @@ drs:GetReplicationConfiguration;Read
 drs:GetSuggestedFailbackClientDeviceMappingForDrs;Read
 drs:InitializeService;Write
 drs:IssueAgentCertificateForDrs;Write
+drs:ListExtensibleSourceServers;Read
+drs:ListStagingAccounts;Read
 drs:ListTagsForResource;Read
 drs:NotifyAgentAuthenticationForDrs;Write
 drs:NotifyAgentConnectedForDrs;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_applicationdiscovery.html).
+ * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationdiscoveryservice.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Discovery extends PolicyStatement {
   public servicePrefix = 'discovery';
 
   /**
-   * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_applicationdiscovery.html).
+   * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationdiscoveryservice.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Associates one or more configuration items with an application.
+   * Grants permission to AssociateConfigurationItemsToApplication API. AssociateConfigurationItemsToApplication associates one or more configuration items with an application
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Deletes one or more Migration Hub import tasks, each identified by their import ID. Each import task has a number of records, which can identify servers or applications.
+   * Grants permission to BatchDeleteImportData API. BatchDeleteImportData deletes one or more Migration Hub import tasks, each identified by their import ID. Each import task has a number of records, which can identify servers or applications
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Creates an application with the given name and description.
+   * Grants permission to CreateApplication API. CreateApplication creates an application with the given name and description
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.
+   * Grants permission to CreateTags API. CreateTags creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items
    *
    * Access Level: Tagging
    *
@@ -63,7 +63,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Deletes a list of applications and their associations with configuration items.
+   * Grants permission to DeleteApplications API. DeleteApplications deletes a list of applications and their associations with configuration items
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.
+   * Grants permission to DeleteTags API. DeleteTags deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items
    *
    * Access Level: Tagging
    *
@@ -85,7 +85,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an ID.
+   * Grants permission to DescribeAgents API. DescribeAgents lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an ID
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a server configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards.
+   * Grants permission to DescribeConfigurations API. DescribeConfigurations retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a server configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call DescribeContinuousExports as is without passing any parameters.
+   * Grants permission to DescribeContinuousExports API. DescribeContinuousExports lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call DescribeContinuousExports as is without passing any parameters
    *
    * Access Level: Read
    *
@@ -118,7 +118,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.
+   * Grants permission to DescribeExportConfigurations API. DescribeExportConfigurations retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes
    *
    * Access Level: Read
    *
@@ -129,7 +129,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+   * Grants permission to DescribeExportTasks API. DescribeExportTasks retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks
    *
    * Access Level: Read
    *
@@ -140,7 +140,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
+   * Grants permission to DescribeImportTasks API. DescribeImportTasks returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more
    *
    * Access Level: List
    *
@@ -151,7 +151,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves a list of all tags assigned to a specific configuration item.
+   * Grants permission to DescribeTags API. DescribeTags retrieves a list of configuration items that are tagged with a specific tag. Or retrieves a list of all tags assigned to a specific configuration item
    *
    * Access Level: Read
    *
@@ -162,7 +162,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Disassociates one or more configuration items from an application.
+   * Grants permission to DisassociateConfigurationItemsFromApplication API. DisassociateConfigurationItemsFromApplication disassociates one or more configuration items from an application
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance.
+   * Grants permission to ExportConfigurations API. ExportConfigurations exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves a short summary of discovered assets.
+   * Grants permission to GetDiscoverySummary API. GetDiscoverySummary retrieves a short summary of discovered assets
    *
    * Access Level: Read
    *
@@ -195,7 +195,18 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria identify relationship requirements.
+   * Grants permission to GetNetworkConnectionGraph API. GetNetworkConnectionGraph accepts input list of one of - Ip Addresses, server ids or node ids. Returns a list of nodes and edges which help customer visualize network connection graph. This API is used for visualize network graph functionality in MigrationHub console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_GetNetworkConnectionGraph.html
+   */
+  public toGetNetworkConnectionGraph() {
+    return this.to('GetNetworkConnectionGraph');
+  }
+
+  /**
+   * Grants permission to ListConfigurations API. ListConfigurations retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria identify relationship requirements
    *
    * Access Level: List
    *
@@ -206,7 +217,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of servers which are one network hop away from a specified server.
+   * Grants permission to ListServerNeighbors API. ListServerNeighbors retrieves a list of servers which are one network hop away from a specified server
    *
    * Access Level: List
    *
@@ -217,9 +228,15 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Start the continuous flow of agent's discovered data into Amazon Athena.
+   * Grants permission to StartContinuousExport API. StartContinuousExport start the continuous flow of agent's discovered data into Amazon Athena
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreatePolicy
+   * - iam:CreateRole
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartContinuousExport.html
    */
@@ -228,7 +245,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Instructs the specified agents or Connectors to start collecting data.
+   * Grants permission to StartDataCollectionByAgentIds API. StartDataCollectionByAgentIds instructs the specified agents or Connectors to start collecting data
    *
    * Access Level: Write
    *
@@ -239,7 +256,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Export the configuration data about discovered configuration items and relationships to an S3 bucket in a specified format.
+   * Grants permission to StartExportTask API. StartExportTask export the configuration data about discovered configuration items and relationships to an S3 bucket in a specified format
    *
    * Access Level: Write
    *
@@ -250,9 +267,15 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Starts an import task. The Migration Hub import feature allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data including the ability to group your devices as applications and track their migration status.
+   * Grants permission to StartImportTask API. StartImportTask starts an import task. The Migration Hub import feature allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data including the ability to group your devices as applications and track their migration status
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - discovery:AssociateConfigurationItemsToApplication
+   * - discovery:CreateApplication
+   * - discovery:CreateTags
+   * - discovery:ListConfigurations
    *
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartImportTask.html
    */
@@ -261,7 +284,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Stop the continuous flow of agent's discovered data into Amazon Athena.
+   * Grants permission to StopContinuousExport API. StopContinuousExport stops the continuous flow of agent's discovered data into Amazon Athena
    *
    * Access Level: Write
    *
@@ -272,7 +295,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Instructs the specified agents or Connectors to stop collecting data.
+   * Grants permission to StopDataCollectionByAgentIds API. StopDataCollectionByAgentIds instructs the specified agents or Connectors to stop collecting data
    *
    * Access Level: Write
    *
@@ -283,7 +306,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Updates metadata about an application.
+   * Grants permission to UpdateApplication API. UpdateApplication updates metadata about an application
    *
    * Access Level: Write
    *
@@ -320,7 +343,8 @@ export class Discovery extends PolicyStatement {
       'DescribeExportConfigurations',
       'DescribeExportTasks',
       'DescribeTags',
-      'GetDiscoverySummary'
+      'GetDiscoverySummary',
+      'GetNetworkConnectionGraph'
     ],
     List: [
       'DescribeImportTasks',
