@@ -55,7 +55,10 @@
 		},
 		{
 			"Effect": "Allow",
-			"Action": "iam:ListInstanceProfiles",
+			"Action": [
+				"iam:ListInstanceProfiles",
+				"iam:ListRoles"
+			],
 			"Resource": "*"
 		},
 		{

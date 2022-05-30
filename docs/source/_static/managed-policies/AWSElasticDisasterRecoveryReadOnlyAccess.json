@@ -13,6 +13,8 @@
 				"drs:GetFailbackReplicationConfiguration",
 				"drs:GetLaunchConfiguration",
 				"drs:GetReplicationConfiguration",
+				"drs:ListExtensibleSourceServers",
+				"drs:ListStagingAccounts",
 				"drs:ListTagsForResource"
 			],
 			"Resource": "*"
@@ -25,6 +27,11 @@
 				"ec2:DescribeSecurityGroups",
 				"ec2:DescribeSubnets"
 			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:ListRoles",
 			"Resource": "*"
 		}
 	]
