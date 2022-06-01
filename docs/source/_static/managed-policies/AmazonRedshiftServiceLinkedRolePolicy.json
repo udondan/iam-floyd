@@ -117,8 +117,7 @@
 				"arn:aws:ec2:*:*:route-table/*",
 				"arn:aws:ec2:*:*:security-group/*",
 				"arn:aws:ec2:*:*:vpc/*",
-				"arn:aws:ec2:*:*:internet-gateway/*",
-				"arn:aws:ec2:*:*:elastic-ip/*"
+				"arn:aws:ec2:*:*:internet-gateway/*"
 			],
 			"Condition": {
 				"StringEquals": {
@@ -134,7 +133,8 @@
 				"arn:aws:ec2:*:*:route-table/*",
 				"arn:aws:ec2:*:*:security-group/*",
 				"arn:aws:ec2:*:*:vpc/*",
-				"arn:aws:ec2:*:*:internet-gateway/*"
+				"arn:aws:ec2:*:*:internet-gateway/*",
+				"arn:aws:ec2:*:*:elastic-ip/*"
 			],
 			"Condition": {
 				"StringEquals": {

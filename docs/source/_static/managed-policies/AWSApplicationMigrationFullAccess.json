@@ -59,6 +59,106 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": "iam:PassRole",
+			"Resource": [
+				"arn:aws:iam::*:role/service-role/AWSApplicationMigrationLaunchInstanceWithSsmRole",
+				"arn:aws:iam::*:role/service-role/AWSApplicationMigrationLaunchInstanceWithDrsRole"
+			],
+			"Condition": {
+				"StringEquals": {
+					"iam:PassedToService": "ec2.amazonaws.com"
+				},
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:DescribeSourceServers"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:SendCommand"
+			],
+			"Resource": [
+				"arn:aws:ssm:*:*:document/AWSDisasterRecovery-InstallDRAgentOnInstance",
+				"arn:aws:ssm:*:*:document/AWSMigration-ConvertCentOsToRockyLinuxDistribution",
+				"arn:aws:ssm:*:*:document/AWSMigration-ReplaceSuseSubscriptionWithAwsSubscription"
+			],
+			"Condition": {
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:SendCommand"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:instance/*"
+			],
+			"Condition": {
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				},
+				"Null": {
+					"aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:ListCommandInvocations"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:DescribeInstanceInformation",
+				"ssm:GetCommandInvocation"
+			],
+			"Resource": "*",
+			"Condition": {
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:DescribeDocument"
+			],
+			"Resource": [
+				"arn:aws:ssm:*:*:document/AWSDisasterRecovery-InstallDRAgentOnInstance",
+				"arn:aws:ssm:*:*:document/AWSMigration-ConvertCentOsToRockyLinuxDistribution",
+				"arn:aws:ssm:*:*:document/AWSMigration-ReplaceSuseSubscriptionWithAwsSubscription"
+			],
+			"Condition": {
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:GetParameter",
+				"ssm:PutParameter"
+			],
+			"Resource": "arn:aws:ssm:*:*:parameter/ManagedByAWSApplicationMigrationService-*"
+		},
+		{
+			"Effect": "Allow",
 			"Action": [
 				"servicequotas:GetServiceQuota"
 			],

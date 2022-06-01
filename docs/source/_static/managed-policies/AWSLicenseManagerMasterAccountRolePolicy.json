@@ -186,6 +186,21 @@
 				"arn:aws:glue:*:*:database/license_manager_resource_inventory_db",
 				"arn:aws:glue:*:*:database/license_manager_resource_sync"
 			]
+		},
+		{
+			"Sid": "RGPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"resource-groups:PutGroupPolicy"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"ram.amazonaws.com"
+					]
+				}
+			}
 		}
 	]
 }
