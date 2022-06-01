@@ -17,7 +17,7 @@ s = (
     # doc-start
     statement.S3() \
         .allow() \
-        .not_actions() \
+        .not_action() \
         .to_delete_bucket() \
         .on_bucket('example-bucket')
     # doc-end
