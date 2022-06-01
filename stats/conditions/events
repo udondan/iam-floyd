@@ -2,8 +2,6 @@ events:EventBusArn
 events:ManagedBy
 events:RequestTag/${TagKey}
 events:ResourceTag/${TagKey}
-events:SourceAccount
-events:SourceArn
 events:TagKeys
 events:TargetArn
 events:creatorAccount

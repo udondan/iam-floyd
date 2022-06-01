@@ -47,6 +47,7 @@ export { Eks } from './elastickubernetesservice';
 export { Elasticmapreduce } from './elasticmapreduce';
 export { Elastictranscoder } from './elastictranscoder';
 export { EmrContainers } from './emroneksemrcontainers';
+export { EmrServerless } from './emrserverless';
 export { Events } from './eventbridge';
 export { Schemas } from './eventbridgeschemas';
 export { Finspace } from './finspace';

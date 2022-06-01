@@ -517,8 +517,6 @@ export class Events extends PolicyStatement {
    * - .ifDetailType()
    * - .ifSource()
    * - .ifEventBusInvocation()
-   * - .ifAwsSourceArn()
-   * - .ifAwsSourceAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html
    */
