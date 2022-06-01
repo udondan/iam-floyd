@@ -128,7 +128,7 @@ If instead you have an ARN ready, use the ``on()`` method:
 
 .. example:: resource-raw
 
-To invert the policy you can use ``notActions()``, ``notResources()`` and ``notPrincipals()``:
+To invert the policy you can use ``notAction()``, ``notResource()`` and ``notPrincipal()``:
 
 .. example:: notAction
 

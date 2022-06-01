@@ -19,7 +19,7 @@ export interface Conditions {
  * Adds "condition" functionality to the Policy Statement
  */
 export class PolicyStatementWithCondition extends PolicyStatementBase {
-  protected conditions: Conditions = {};
+  protected floydConditions: Conditions = {};
   private cdkConditionsApplied = false;
 
   /**
@@ -36,7 +36,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     const statement = super.toJSON();
 
     if (this.hasConditions()) {
-      statement.Condition = this.conditions;
+      statement.Condition = this.floydConditions;
     }
 
     return statement;
@@ -50,10 +50,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
 
   private cdkApplyConditions() {
     if (this.hasConditions() && !this.cdkConditionsApplied) {
-      Object.keys(this.conditions).forEach((operator) => {
-        Object.keys(this.conditions[operator]).forEach((key) => {
+      Object.keys(this.floydConditions).forEach((operator) => {
+        Object.keys(this.floydConditions[operator]).forEach((key) => {
           const condition: any = {};
-          condition[key] = this.conditions[operator][key];
+          condition[key] = this.floydConditions[operator][key];
           // @ts-ignore only available after swapping 1-base
           this.addCondition(operator, condition);
         });
@@ -66,7 +66,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * Checks weather a condition was applied to the policy.
    */
   public hasConditions(): boolean {
-    return Object.keys(this.conditions).length > 0;
+    return Object.keys(this.floydConditions).length > 0;
   }
 
   /**
@@ -99,10 +99,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       value = value.toString();
     }
 
-    if (!(op in this.conditions)) {
-      this.conditions[op] = {};
+    if (!(op in this.floydConditions)) {
+      this.floydConditions[op] = {};
     }
-    this.conditions[op][key] = value;
+    this.floydConditions[op][key] = value;
 
     return this;
   }

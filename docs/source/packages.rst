@@ -17,5 +17,11 @@ There are two different package variants available:
    | **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:
    | |cdk-iam-floyd-npm-v1|_ |cdk-iam-floyd-pypi-v1|_
 
+   Starting with CDK v1.152.0 you have to use cdk-iam-floyd v0.286.0.
+
+   Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.
+
+   Starting with CDK v2.26.0 you have to use cdk-iam-floyd >= v0.377.0.
+
 
 Find them all on `libraries.io`_.

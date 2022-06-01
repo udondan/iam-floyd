@@ -22,7 +22,7 @@ export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipa
 
   protected cdkApplyPrincipals() {
     if (!this.cdkPrincipalsApplied) {
-      const mode = this.useNotPrincipals ? 'addNotPrincipals' : 'addPrincipals';
+      const mode = this.useNotPrincipal ? 'addNotPrincipals' : 'addPrincipals';
       // @ts-ignore only available after swapping 1-base
       this[mode](...this.cdkPrincipals);
       if (this.hasPrincipals()) {

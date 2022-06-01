@@ -15,7 +15,7 @@ export interface ResourceType {
  * Adds "resource" functionality to the Policy Statement
  */
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
-  private useNotResources = false;
+  private useNotResource = false;
   protected resources: string[] = [];
   protected skipAutoResource = false;
   private cdkResourcesApplied = false;
@@ -31,7 +31,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
       this.cdkApplyResources();
       return super.toJSON();
     }
-    const mode = this.useNotResources ? 'NotResource' : 'Resource';
+    const mode = this.useNotResource ? 'NotResource' : 'Resource';
     const statement = super.toJSON();
     const self = this;
 
@@ -56,7 +56,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
 
   private cdkApplyResources() {
     if (!this.cdkResourcesApplied) {
-      const mode = this.useNotResources ? 'addNotResources' : 'addResources';
+      const mode = this.useNotResource ? 'addNotResources' : 'addResources';
       const self = this;
       const uniqueResources = this.resources.filter((elem, pos) => {
         return self.resources.indexOf(elem) == pos;
@@ -70,8 +70,8 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   /**
    * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
    */
-  public notResources() {
-    this.useNotResources = true;
+  public notResource() {
+    this.useNotResource = true;
     return this;
   }
 
