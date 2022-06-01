@@ -15,8 +15,8 @@ export interface ResourceType {
  * Adds "resource" functionality to the Policy Statement
  */
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
-  private useNotResources = false;
-  protected resources: string[] = [];
+  private useNotResource = false;
+  protected floydResources: string[] = [];
   protected skipAutoResource = false;
   private cdkResourcesApplied = false;
 
@@ -31,15 +31,15 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
       this.cdkApplyResources();
       return super.toJSON();
     }
-    const mode = this.useNotResources ? 'NotResource' : 'Resource';
+    const mode = this.useNotResource ? 'NotResource' : 'Resource';
     const statement = super.toJSON();
     const self = this;
 
     this.ensureResource();
 
-    if (this.resources.length) {
-      const resources = this.resources.filter((elem, pos) => {
-        return self.resources.indexOf(elem) == pos;
+    if (this.floydResources.length) {
+      const resources = this.floydResources.filter((elem, pos) => {
+        return self.floydResources.indexOf(elem) == pos;
       });
       statement[mode] = resources.length > 1 ? resources : resources[0];
     }
@@ -56,10 +56,10 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
 
   private cdkApplyResources() {
     if (!this.cdkResourcesApplied) {
-      const mode = this.useNotResources ? 'addNotResources' : 'addResources';
+      const mode = this.useNotResource ? 'addNotResources' : 'addResources';
       const self = this;
-      const uniqueResources = this.resources.filter((elem, pos) => {
-        return self.resources.indexOf(elem) == pos;
+      const uniqueResources = this.floydResources.filter((elem, pos) => {
+        return self.floydResources.indexOf(elem) == pos;
       });
       // @ts-ignore only available after swapping 1-base
       this[mode](...uniqueResources);
@@ -70,8 +70,8 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   /**
    * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
    */
-  public notResources() {
-    this.useNotResources = true;
+  public notResource() {
+    this.useNotResource = true;
     return this;
   }
 
@@ -79,7 +79,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
    * Checks weather any resource was applied to the policy.
    */
   public hasResources(): boolean {
-    return this.resources.length > 0;
+    return this.floydResources.length > 0;
   }
 
   /**
@@ -88,7 +88,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
    * To allow all resources, pass `*`
    */
   public on(...arns: string[]) {
-    this.resources.push(...arns);
+    this.floydResources.push(...arns);
     return this;
   }
 
@@ -98,7 +98,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
    * This is the default behavior, unless the statement has principals.
    */
   public onAllResources() {
-    this.resources.push('*');
+    this.floydResources.push('*');
     return this;
   }
 

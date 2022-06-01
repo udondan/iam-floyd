@@ -44,7 +44,8 @@ There are two different package variants available:
   [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.286.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.286.0/)
 
   Starting with CDK v1.152.0 you have to use cdk-iam-floyd v0.286.0.<br>
-  Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.
+  Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.<br>
+  Starting with CDK v2.26.0 you have to use cdk-iam-floyd >= v0.377.0.
 
 Find them all on [libraries.io].
 

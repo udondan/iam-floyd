@@ -19,8 +19,8 @@ export interface Action {
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected accessLevelList: AccessLevelList = {};
-  private useNotActions = false;
-  protected actions: string[] = [];
+  private useNotAction = false;
+  protected floydActions: string[] = [];
   private cdkActionsApplied = false;
   private isCompact = false;
 
@@ -35,7 +35,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       this.cdkApplyActions();
       return super.toJSON();
     }
-    const mode = this.useNotActions ? 'NotAction' : 'Action';
+    const mode = this.useNotAction ? 'NotAction' : 'Action';
     const statement = super.toJSON();
     const self = this;
 
@@ -43,9 +43,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       if (this.isCompact) {
         this.compactActions();
       }
-      const actions = this.actions
+      const actions = this.floydActions
         .filter((elem, pos) => {
-          return self.actions.indexOf(elem) == pos;
+          return self.floydActions.indexOf(elem) == pos;
         })
         .sort();
       statement[mode] = actions.length > 1 ? actions : actions[0];
@@ -62,14 +62,14 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
 
   private cdkApplyActions() {
     if (!this.cdkActionsApplied) {
-      const mode = this.useNotActions ? 'addNotActions' : 'addActions';
+      const mode = this.useNotAction ? 'addNotActions' : 'addActions';
       const self = this;
       if (this.isCompact) {
         this.compactActions();
       }
-      const uniqueActions = this.actions
+      const uniqueActions = this.floydActions
         .filter((elem, pos) => {
-          return self.actions.indexOf(elem) == pos;
+          return self.floydActions.indexOf(elem) == pos;
         })
         .sort();
       // @ts-ignore only available after swapping 1-base
@@ -81,8 +81,8 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   /**
    * Switches the statement to use [`NotAction`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
    */
-  public notActions() {
-    this.useNotActions = true;
+  public notAction() {
+    this.useNotAction = true;
     return this;
   }
 
@@ -90,15 +90,15 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * Checks weather actions have been applied to the policy.
    */
   public hasActions(): boolean {
-    return this.actions.length > 0;
+    return this.floydActions.length > 0;
   }
 
   /**
    * Adds actions by name.
    *
-   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotActions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
+   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotAction`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
    *
-   * The mode can be switched by calling `notActions()`.
+   * The mode can be switched by calling `notAction()`.
    *
    * If the action does not contain a colon, the action will be prefixed with the service prefix of the class, e.g. `ec2:`
    *
@@ -109,7 +109,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       action = this.servicePrefix + ':' + action;
     }
 
-    this.actions.push(action);
+    this.floydActions.push(action);
     return this;
   }
 
@@ -229,7 +229,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
 
   private compactActions() {
     // actions that will be included, service prefix is removed
-    const includeActions = this.actions.map((elem) => {
+    const includeActions = this.floydActions.map((elem) => {
       return elem.substr(elem.indexOf(':') + 1);
     });
 
@@ -307,6 +307,6 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       });
 
     // we're done. override action list
-    this.actions = compactActionList;
+    this.floydActions = compactActionList;
   }
 }

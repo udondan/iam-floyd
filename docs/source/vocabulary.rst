@@ -172,22 +172,22 @@ The CDK variant of the package has an additional method ``forCdkPrincipal``, whi
 .. WARNING::
    Make sure, you well understand the concepts of `notAction <NotAction_>`_, `notResource <NotResource_>`_ and `notPrincipal <NotPrincipal_>`_. This is where things quickly go wrong, especially when used in combination.
 
-notActions
-^^^^^^^^^^
+notAction
+^^^^^^^^^
 
 Switches the policy provider to use `NotAction`_.
 
 .. example:: notAction
 
-notResources
-^^^^^^^^^^^^
+notResource
+^^^^^^^^^^^
 
 Switches the policy provider to use `NotResource`_.
 
 .. example:: notResource
 
-notPrincipals
-^^^^^^^^^^^^^
+notPrincipal
+^^^^^^^^^^^^
 
 Switches the policy provider to use `NotPrincipal`_.
 

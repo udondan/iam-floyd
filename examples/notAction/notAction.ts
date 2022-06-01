@@ -6,7 +6,7 @@ function getStatement() {
     // doc-start
     new statement.S3()
       .allow()
-      .notActions()
+      .notAction()
       .toDeleteBucket()
       .onBucket('example-bucket')
     // doc-end

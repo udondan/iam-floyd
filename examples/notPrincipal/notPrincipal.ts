@@ -7,7 +7,7 @@ function getStatement() {
     new statement.S3()
       .deny()
       .allActions()
-      .notPrincipals()
+      .notPrincipal()
       .forUser('1234567890', 'Bob')
       .onObject('example-bucket', '*')
     // doc-end

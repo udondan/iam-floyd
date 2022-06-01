@@ -18,7 +18,7 @@ export enum PrincipalType {
  * Adds "principal" functionality to the Policy Statement
  */
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
-  protected useNotPrincipals = false;
+  protected useNotPrincipal = false;
   protected myPrincipals: Principals = {};
 
   /**
@@ -33,7 +33,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
       return super.toJSON();
     }
 
-    const mode = this.useNotPrincipals ? 'NotPrincipal' : 'Principal';
+    const mode = this.useNotPrincipal ? 'NotPrincipal' : 'Principal';
     const statement = super.toJSON();
 
     if (this.hasPrincipals()) {
@@ -54,8 +54,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   /**
    * Switches the statement to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
    */
-  public notPrincipals() {
-    this.useNotPrincipals = true;
+  public notPrincipal() {
+    this.useNotPrincipal = true;
     return this;
   }
 
@@ -98,7 +98,10 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forAccount(...accounts: string[]) {
     accounts.forEach((account) =>
-      this.addPrincipal(PrincipalType.AWS, `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`)
+      this.addPrincipal(
+        PrincipalType.AWS,
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`
+      )
     );
     return this;
   }
@@ -166,7 +169,9 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forSaml(account: string, ...providerNames: string[]) {
     providerNames.forEach((providerName) =>
-      this.forFederated(`arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`)
+      this.forFederated(
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`
+      )
     );
     return this;
   }
