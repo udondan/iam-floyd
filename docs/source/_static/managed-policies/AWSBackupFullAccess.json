@@ -85,7 +85,8 @@
 				"ec2:DescribeSubnets",
 				"ec2:DescribePlacementGroups",
 				"ec2:DescribeInstances",
-				"ec2:DescribeInstanceTypes"
+				"ec2:DescribeInstanceTypes",
+				"ec2:DescribeVpcEndpoints"
 			],
 			"Effect": "Allow",
 			"Resource": "*"
@@ -276,6 +277,11 @@
 				"backup-gateway:UpdateHypervisor"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "backup-gateway:GetGateway",
+			"Resource": "arn:aws:backup-gateway:*:*:gateway/*"
 		}
 	]
 }
