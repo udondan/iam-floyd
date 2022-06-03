@@ -4,6 +4,7 @@ backup-gateway:CreateGateway;Write
 backup-gateway:DeleteGateway;Write
 backup-gateway:DeleteHypervisor;Write
 backup-gateway:DisassociateGatewayFromServer;Write
+backup-gateway:GetGateway;Read
 backup-gateway:ImportHypervisorConfiguration;Write
 backup-gateway:ListGateways;Read
 backup-gateway:ListHypervisors;Read
@@ -15,4 +16,5 @@ backup-gateway:TagResource;Tagging
 backup-gateway:TestHypervisorConfiguration;Write
 backup-gateway:UntagResource;Tagging
 backup-gateway:UpdateGatewayInformation;Write
+backup-gateway:UpdateGatewaySoftwareNow;Write
 backup-gateway:UpdateHypervisor;Write

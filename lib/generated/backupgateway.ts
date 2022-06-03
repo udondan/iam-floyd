@@ -23,7 +23,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_AssociateGatewayToServer.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_AssociateGatewayToServer.html
    */
   public toAssociateGatewayToServer() {
     return this.to('AssociateGatewayToServer');
@@ -38,7 +38,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_Backup.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html
    */
   public toBackup() {
     return this.to('Backup');
@@ -53,7 +53,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateGateway.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_CreateGateway.html
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
@@ -64,7 +64,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteGateway.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_DeleteGateway.html
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
@@ -75,7 +75,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteHypervisor.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_DeleteHypervisor.html
    */
   public toDeleteHypervisor() {
     return this.to('DeleteHypervisor');
@@ -86,10 +86,21 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateGatewayFromServer.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_DisassociateGatewayFromServer.html
    */
   public toDisassociateGatewayFromServer() {
     return this.to('DisassociateGatewayFromServer');
+  }
+
+  /**
+   * Grants permission to GetGateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_GetGateway.html
+   */
+  public toGetGateway() {
+    return this.to('GetGateway');
   }
 
   /**
@@ -101,7 +112,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ImportHypervisorConfiguration.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ImportHypervisorConfiguration.html
    */
   public toImportHypervisorConfiguration() {
     return this.to('ImportHypervisorConfiguration');
@@ -112,7 +123,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListGateways.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html
    */
   public toListGateways() {
     return this.to('ListGateways');
@@ -123,7 +134,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListHypervisors.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListHypervisors.html
    */
   public toListHypervisors() {
     return this.to('ListHypervisors');
@@ -138,7 +149,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -149,7 +160,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListVirtualMachines.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListVirtualMachines.html
    */
   public toListVirtualMachines() {
     return this.to('ListVirtualMachines');
@@ -160,7 +171,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutMaintenanceStartTime.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_PutMaintenanceStartTime.html
    */
   public toPutMaintenanceStartTime() {
     return this.to('PutMaintenanceStartTime');
@@ -175,7 +186,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_Restore.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html
    */
   public toRestore() {
     return this.to('Restore');
@@ -190,7 +201,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -201,7 +212,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TestHypervisorConfiguration.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_TestHypervisorConfiguration.html
    */
   public toTestHypervisorConfiguration() {
     return this.to('TestHypervisorConfiguration');
@@ -216,7 +227,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -227,10 +238,21 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGatewayInformation.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_UpdateGatewayInformation.html
    */
   public toUpdateGatewayInformation() {
     return this.to('UpdateGatewayInformation');
+  }
+
+  /**
+   * Grants permission to UpdateGatewaySoftwareNow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_UpdateGatewaySoftwareNow.html
+   */
+  public toUpdateGatewaySoftwareNow() {
+    return this.to('UpdateGatewaySoftwareNow');
   }
 
   /**
@@ -238,7 +260,7 @@ export class BackupGateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateHypervisor.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_UpdateHypervisor.html
    */
   public toUpdateHypervisor() {
     return this.to('UpdateHypervisor');
@@ -257,9 +279,11 @@ export class BackupGateway extends PolicyStatement {
       'Restore',
       'TestHypervisorConfiguration',
       'UpdateGatewayInformation',
+      'UpdateGatewaySoftwareNow',
       'UpdateHypervisor'
     ],
     Read: [
+      'GetGateway',
       'ListGateways',
       'ListHypervisors',
       'ListTagsForResource',
