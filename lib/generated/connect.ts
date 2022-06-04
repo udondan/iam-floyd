@@ -434,6 +434,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a task template in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTaskTemplate.html
+   */
+  public toCreateTaskTemplate() {
+    return this.to('CreateTaskTemplate');
+  }
+
+  /**
    * Grants permission to create a use case for an integration association
    *
    * Access Level: Write
@@ -616,6 +627,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteSecurityProfile() {
     return this.to('DeleteSecurityProfile');
+  }
+
+  /**
+   * Grants permission to delete a task template in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTaskTemplate.html
+   */
+  public toDeleteTaskTemplate() {
+    return this.to('DeleteTaskTemplate');
   }
 
   /**
@@ -1171,6 +1197,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details about specified task template in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetTaskTemplate.html
+   */
+  public toGetTaskTemplate() {
+    return this.to('GetTaskTemplate');
+  }
+
+  /**
    * Grants permission to list agent statuses in an Amazon Connect instance
    *
    * Access Level: List
@@ -1532,6 +1573,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list task template resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTaskTemplates.html
+   */
+  public toListTaskTemplates() {
+    return this.to('ListTaskTemplates');
+  }
+
+  /**
    * Grants permission to list the use cases of an integration association
    *
    * Access Level: List
@@ -1778,6 +1830,20 @@ export class Connect extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to transfer the contact to another queue or agent
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_TransferContact.html
+   */
+  public toTransferContact() {
+    return this.to('TransferContact');
   }
 
   /**
@@ -2186,6 +2252,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update task template belonging to a Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTaskTemplate.html
+   */
+  public toUpdateTaskTemplate() {
+    return this.to('UpdateTaskTemplate');
+  }
+
+  /**
    * Grants permission to update a hierarchy group for a user in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2329,6 +2410,7 @@ export class Connect extends PolicyStatement {
       'CreateQuickConnect',
       'CreateRoutingProfile',
       'CreateSecurityProfile',
+      'CreateTaskTemplate',
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
@@ -2340,6 +2422,7 @@ export class Connect extends PolicyStatement {
       'DeleteIntegrationAssociation',
       'DeleteQuickConnect',
       'DeleteSecurityProfile',
+      'DeleteTaskTemplate',
       'DeleteUseCase',
       'DeleteUser',
       'DeleteUserHierarchyGroup',
@@ -2367,6 +2450,7 @@ export class Connect extends PolicyStatement {
       'StopContactRecording',
       'StopContactStreaming',
       'SuspendContactRecording',
+      'TransferContact',
       'UpdateAgentStatus',
       'UpdateContact',
       'UpdateContactAttributes',
@@ -2392,6 +2476,7 @@ export class Connect extends PolicyStatement {
       'UpdateRoutingProfileName',
       'UpdateRoutingProfileQueues',
       'UpdateSecurityProfile',
+      'UpdateTaskTemplate',
       'UpdateUserHierarchy',
       'UpdateUserHierarchyGroupName',
       'UpdateUserHierarchyStructure',
@@ -2422,6 +2507,7 @@ export class Connect extends PolicyStatement {
       'GetCurrentMetricData',
       'GetFederationToken',
       'GetMetricData',
+      'GetTaskTemplate',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
       'SearchUsers'
@@ -2453,6 +2539,7 @@ export class Connect extends PolicyStatement {
       'ListSecurityKeys',
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
+      'ListTaskTemplates',
       'ListUseCases',
       'ListUserHierarchyGroups',
       'ListUsers',
@@ -2651,6 +2738,24 @@ export class Connect extends PolicyStatement {
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
+  }
+
+  /**
+   * Adds a resource of type task-template to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param taskTemplateId - Identifier for the taskTemplateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTaskTemplate(instanceId: string, taskTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
   }
 
   /**
@@ -2909,6 +3014,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteIntegrationAssociation()
    * - .toDeleteQuickConnect()
    * - .toDeleteSecurityProfile()
+   * - .toDeleteTaskTemplate()
    * - .toDeleteUseCase()
    * - .toDeleteUser()
    * - .toDeleteUserHierarchyGroup()
@@ -2942,6 +3048,7 @@ export class Connect extends PolicyStatement {
    * - .toGetCurrentMetricData()
    * - .toGetFederationToken()
    * - .toGetMetricData()
+   * - .toGetTaskTemplate()
    * - .toListApprovedOrigins()
    * - .toListBots()
    * - .toListContactReferences()
@@ -2967,6 +3074,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchVocabularies()
    * - .toStartTaskContact()
    * - .toStopContact()
+   * - .toTransferContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
@@ -2991,6 +3099,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateRoutingProfileName()
    * - .toUpdateRoutingProfileQueues()
    * - .toUpdateSecurityProfile()
+   * - .toUpdateTaskTemplate()
    * - .toUpdateUserHierarchy()
    * - .toUpdateUserHierarchyGroupName()
    * - .toUpdateUserHierarchyStructure()

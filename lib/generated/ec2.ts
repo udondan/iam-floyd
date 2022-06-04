@@ -5514,6 +5514,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the binary representation of the UEFI variable store
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData.html
+   */
+  public toGetInstanceUefiData() {
+    return this.to('GetInstanceUefiData');
+  }
+
+  /**
    * Grants permission to retrieve historical information about a CIDR within an Amazon VPC IP Address Manager (IPAM) scope
    *
    * Access Level: Read
@@ -8194,6 +8208,7 @@ export class Ec2 extends PolicyStatement {
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
       'GetInstanceTypesFromInstanceRequirements',
+      'GetInstanceUefiData',
       'GetIpamAddressHistory',
       'GetIpamPoolAllocations',
       'GetIpamPoolCidrs',
@@ -8718,6 +8733,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifMetadataHttpTokens()
    * - .ifNewInstanceProfile()
    * - .ifPlacementGroup()
+   * - .ifProductCode()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifRootDeviceType()
@@ -10419,6 +10435,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportInstance()
@@ -10755,6 +10772,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11047,6 +11065,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11098,6 +11117,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportInstance()
@@ -11155,6 +11175,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11206,6 +11227,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11259,6 +11281,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11318,6 +11341,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11562,6 +11586,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11615,6 +11640,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11668,6 +11694,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -11773,6 +11800,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateIamInstanceProfile()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toModifyPrivateDnsNameOptions()
    * - .toReplaceIamInstanceProfileAssociation()
    *
@@ -12159,6 +12187,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -12264,6 +12293,42 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the product code that is associated with the AMI
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toAssociateAddress()
+   * - .toAssociateIamInstanceProfile()
+   * - .toAttachNetworkInterface()
+   * - .toAttachVolume()
+   * - .toCreateImage()
+   * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateTags()
+   * - .toDescribeInstanceAttribute()
+   * - .toDetachNetworkInterface()
+   * - .toDetachVolume()
+   * - .toDisassociateIamInstanceProfile()
+   * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
+   * - .toGetLaunchTemplateData()
+   * - .toGetPasswordData()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
+   * - .toMonitorInstances()
+   * - .toRebootInstances()
+   * - .toReplaceIamInstanceProfileAssociation()
+   * - .toResetInstanceAttribute()
+   * - .toRunInstances()
+   * - .toUnmonitorInstances()
+   *
+   * Applies to resource types:
+   * - instance
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -12745,6 +12810,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetGroupsForCapacityReservation()
    * - .toGetHostReservationPurchasePreview()
    * - .toGetInstanceTypesFromInstanceRequirements()
+   * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
@@ -13338,6 +13404,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
@@ -13588,6 +13655,7 @@ export class Ec2 extends PolicyStatement {
    * - .toExportImage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportImage()
@@ -14059,6 +14127,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -14444,6 +14513,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
    *
    * Applies to actions:
+   * - .toCreateTrafficMirrorTarget()
    * - .toCreateVpcEndpoint()
    * - .toDeleteVpcEndpoints()
    *
@@ -14463,6 +14533,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
    *
    * Applies to actions:
+   * - .toCreateTrafficMirrorTarget()
    * - .toCreateVpcEndpoint()
    *
    * Applies to resource types:

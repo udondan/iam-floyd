@@ -377,6 +377,7 @@ ec2:GetFlowLogsIntegrationTemplate;Read
 ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
 ec2:GetInstanceTypesFromInstanceRequirements;Read
+ec2:GetInstanceUefiData;Read
 ec2:GetIpamAddressHistory;Read
 ec2:GetIpamPoolAllocations;Read
 ec2:GetIpamPoolCidrs;Read

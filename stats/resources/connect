@@ -12,6 +12,7 @@ connect:queue
 connect:quick-connect
 connect:routing-profile
 connect:security-profile
+connect:task-template
 connect:use-case
 connect:user
 connect:vocabulary

@@ -22,6 +22,7 @@ connect:CreateQueue;Write
 connect:CreateQuickConnect;Write
 connect:CreateRoutingProfile;Write
 connect:CreateSecurityProfile;Write
+connect:CreateTaskTemplate;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
@@ -33,6 +34,7 @@ connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
 connect:DeleteSecurityProfile;Write
+connect:DeleteTaskTemplate;Write
 connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
@@ -69,6 +71,7 @@ connect:GetCurrentMetricData;Read
 connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
+connect:GetTaskTemplate;Read
 connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
 connect:ListBots;List
@@ -96,6 +99,7 @@ connect:ListSecurityKeys;List
 connect:ListSecurityProfilePermissions;List
 connect:ListSecurityProfiles;List
 connect:ListTagsForResource;Read
+connect:ListTaskTemplates;List
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
@@ -115,6 +119,7 @@ connect:StopContactRecording;Write
 connect:StopContactStreaming;Write
 connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
+connect:TransferContact;Write
 connect:UntagResource;Tagging
 connect:UpdateAgentStatus;Write
 connect:UpdateContact;Write
@@ -141,6 +146,7 @@ connect:UpdateRoutingProfileDefaultOutboundQueue;Write
 connect:UpdateRoutingProfileName;Write
 connect:UpdateRoutingProfileQueues;Write
 connect:UpdateSecurityProfile;Write
+connect:UpdateTaskTemplate;Write
 connect:UpdateUserHierarchy;Write
 connect:UpdateUserHierarchyGroupName;Write
 connect:UpdateUserHierarchyStructure;Write
