@@ -44,6 +44,17 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or delete CIDR blocks within a CIDR collection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeCidrCollection.html
+   */
+  public toChangeCidrCollection() {
+    return this.to('ChangeCidrCollection');
+  }
+
+  /**
    * Grants permission to create, update, or delete a record, which contains authoritative DNS information for a specified domain or subdomain name
    *
    * Access Level: Write
@@ -63,6 +74,17 @@ export class Route53 extends PolicyStatement {
    */
   public toChangeTagsForResource() {
     return this.to('ChangeTagsForResource');
+  }
+
+  /**
+   * Grants permission to create a new CIDR collection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateCidrCollection.html
+   */
+  public toCreateCidrCollection() {
+    return this.to('CreateCidrCollection');
   }
 
   /**
@@ -176,6 +198,17 @@ export class Route53 extends PolicyStatement {
    */
   public toDeactivateKeySigningKey() {
     return this.to('DeactivateKeySigningKey');
+  }
+
+  /**
+   * Grants permission to delete a CIDR collection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteCidrCollection.html
+   */
+  public toDeleteCidrCollection() {
+    return this.to('DeleteCidrCollection');
   }
 
   /**
@@ -501,6 +534,39 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of the CIDR blocks within a specified CIDR collection
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListCidrBlocks.html
+   */
+  public toListCidrBlocks() {
+    return this.to('ListCidrBlocks');
+  }
+
+  /**
+   * Grants permission to get a list of the CIDR collections that are associated with the current AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListCidrCollections.html
+   */
+  public toListCidrCollections() {
+    return this.to('ListCidrCollections');
+  }
+
+  /**
+   * Grants permission to get a list of the CIDR locations that belong to a specified CIDR collection
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListCidrLocations.html
+   */
+  public toListCidrLocations() {
+    return this.to('ListCidrLocations');
+  }
+
+  /**
    * Grants permission to get a list of geographic locations that Route 53 supports for geolocation
    *
    * Access Level: Read
@@ -738,7 +804,9 @@ export class Route53 extends PolicyStatement {
     Write: [
       'ActivateKeySigningKey',
       'AssociateVPCWithHostedZone',
+      'ChangeCidrCollection',
       'ChangeResourceRecordSets',
+      'CreateCidrCollection',
       'CreateHealthCheck',
       'CreateHostedZone',
       'CreateKeySigningKey',
@@ -749,6 +817,7 @@ export class Route53 extends PolicyStatement {
       'CreateTrafficPolicyVersion',
       'CreateVPCAssociationAuthorization',
       'DeactivateKeySigningKey',
+      'DeleteCidrCollection',
       'DeleteHealthCheck',
       'DeleteHostedZone',
       'DeleteKeySigningKey',
@@ -796,6 +865,9 @@ export class Route53 extends PolicyStatement {
       'GetHostedZone',
       'GetHostedZoneCount',
       'GetReusableDelegationSet',
+      'ListCidrBlocks',
+      'ListCidrCollections',
+      'ListCidrLocations',
       'ListHostedZones',
       'ListHostedZonesByName',
       'ListHostedZonesByVPC',
@@ -808,6 +880,16 @@ export class Route53 extends PolicyStatement {
       'ListVPCAssociationAuthorizations'
     ]
   };
+
+  /**
+   * Adds a resource of type cidrcollection to the statement
+   *
+   * @param id - Identifier for the id.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCidrcollection(id: string, partition?: string) {
+    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::cidrcollection/${ id }`);
+  }
 
   /**
    * Adds a resource of type change to the statement

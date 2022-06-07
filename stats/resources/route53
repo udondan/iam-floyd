@@ -1,4 +1,5 @@
 route53:change
+route53:cidrcollection
 route53:delegationset
 route53:healthcheck
 route53:hostedzone

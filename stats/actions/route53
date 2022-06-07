@@ -1,7 +1,9 @@
 route53:ActivateKeySigningKey;Write
 route53:AssociateVPCWithHostedZone;Write
+route53:ChangeCidrCollection;Write
 route53:ChangeResourceRecordSets;Write
 route53:ChangeTagsForResource;Tagging
+route53:CreateCidrCollection;Write
 route53:CreateHealthCheck;Write
 route53:CreateHostedZone;Write
 route53:CreateKeySigningKey;Write
@@ -12,6 +14,7 @@ route53:CreateTrafficPolicyInstance;Write
 route53:CreateTrafficPolicyVersion;Write
 route53:CreateVPCAssociationAuthorization;Write
 route53:DeactivateKeySigningKey;Write
+route53:DeleteCidrCollection;Write
 route53:DeleteHealthCheck;Write
 route53:DeleteHostedZone;Write
 route53:DeleteKeySigningKey;Write
@@ -41,6 +44,9 @@ route53:GetReusableDelegationSetLimit;Read
 route53:GetTrafficPolicy;Read
 route53:GetTrafficPolicyInstance;Read
 route53:GetTrafficPolicyInstanceCount;Read
+route53:ListCidrBlocks;List
+route53:ListCidrCollections;List
+route53:ListCidrLocations;List
 route53:ListGeoLocations;Read
 route53:ListHealthChecks;Read
 route53:ListHostedZones;List

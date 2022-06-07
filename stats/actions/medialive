@@ -41,8 +41,10 @@ medialive:ListOfferings;List
 medialive:ListReservations;List
 medialive:ListTagsForResource;List
 medialive:PurchaseOffering;Write
+medialive:RebootInputDevice;Write
 medialive:RejectInputDeviceTransfer;Write
 medialive:StartChannel;Write
+medialive:StartInputDeviceMaintenanceWindow;Write
 medialive:StartMultiplex;Write
 medialive:StopChannel;Write
 medialive:StopMultiplex;Write

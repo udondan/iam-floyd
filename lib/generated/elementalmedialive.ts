@@ -67,7 +67,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/batching-actions.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/submitting-batch-command.html
    */
   public toBatchUpdateSchedule() {
     return this.to('BatchUpdateSchedule');
@@ -149,7 +149,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/creating-multiplex.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html
    */
   public toCreateMultiplex() {
     return this.to('CreateMultiplex');
@@ -175,7 +175,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/create-partner-input.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/input-create-cdi-partners.html
    */
   public toCreatePartnerInput() {
     return this.to('CreatePartnerInput');
@@ -234,7 +234,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html
    */
   public toDeleteMultiplex() {
     return this.to('DeleteMultiplex');
@@ -314,7 +314,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html
    */
   public toDescribeInputDevice() {
     return this.to('DescribeInputDevice');
@@ -325,7 +325,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html
    */
   public toDescribeInputDeviceThumbnail() {
     return this.to('DescribeInputDeviceThumbnail');
@@ -347,7 +347,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html
    */
   public toDescribeMultiplex() {
     return this.to('DescribeMultiplex');
@@ -391,7 +391,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/viewing-actions-schedule.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-view.html
    */
   public toDescribeSchedule() {
     return this.to('DescribeSchedule');
@@ -424,7 +424,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html
    */
   public toListInputDevices() {
     return this.to('ListInputDevices');
@@ -468,7 +468,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html
    */
   public toListMultiplexes() {
     return this.to('ListMultiplexes');
@@ -523,6 +523,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reboot an input device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toRebootInputDevice() {
+    return this.to('RebootInputDevice');
+  }
+
+  /**
    * Grants permission to reject an input device transfer
    *
    * Access Level: Write
@@ -545,11 +556,22 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a maintenance window for an input device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toStartInputDeviceMaintenanceWindow() {
+    return this.to('StartInputDeviceMaintenanceWindow');
+  }
+
+  /**
    * Grants permission to start a multiplex
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/start-multiplex.html
    */
   public toStartMultiplex() {
     return this.to('StartMultiplex');
@@ -571,7 +593,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/stop-multiplex.title.html
    */
   public toStopMultiplex() {
     return this.to('StopMultiplex');
@@ -626,7 +648,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html
    */
   public toUpdateInputDevice() {
     return this.to('UpdateInputDevice');
@@ -652,7 +674,7 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html
    */
   public toUpdateMultiplex() {
     return this.to('UpdateMultiplex');
@@ -703,8 +725,10 @@ export class Medialive extends PolicyStatement {
       'DeleteReservation',
       'DeleteSchedule',
       'PurchaseOffering',
+      'RebootInputDevice',
       'RejectInputDeviceTransfer',
       'StartChannel',
+      'StartInputDeviceMaintenanceWindow',
       'StartMultiplex',
       'StopChannel',
       'StopMultiplex',
@@ -785,7 +809,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Adds a resource of type input-device to the statement
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/inputdevices.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
    *
    * @param deviceId - Identifier for the deviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -816,7 +840,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Adds a resource of type multiplex to the statement
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/multiplexes.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-multiplex.html
    *
    * @param multiplexId - Identifier for the multiplexId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
