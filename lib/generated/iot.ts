@@ -191,7 +191,7 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifDelete()
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_CloseTunnel.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_CloseTunnel.html
    */
   public toCloseTunnel() {
     return this.to('CloseTunnel');
@@ -1345,7 +1345,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeTunnel.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_DescribeTunnel.html
    */
   public toDescribeTunnel() {
     return this.to('DescribeTunnel');
@@ -2236,7 +2236,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTunnels.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_ListTunnels.html
    */
   public toListTunnels() {
     return this.to('ListTunnels');
@@ -2275,7 +2275,7 @@ export class Iot extends PolicyStatement {
    * - .ifThingGroupArn()
    * - .ifTunnelDestinationService()
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_OpenTunnel.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_OpenTunnel.html
    */
   public toOpenTunnel() {
     return this.to('OpenTunnel');
@@ -2430,7 +2430,7 @@ export class Iot extends PolicyStatement {
    * - .ifTunnelDestinationService()
    * - .ifClientMode()
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/API_RotateTunnelAccessToken.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_RotateTunnelAccessToken.html
    */
   public toRotateTunnelAccessToken() {
     return this.to('RotateTunnelAccessToken');

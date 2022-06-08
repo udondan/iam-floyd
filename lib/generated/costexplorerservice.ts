@@ -404,6 +404,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Cost Allocation Tags
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostAllocationTags.html
+   */
+  public toListCostAllocationTags() {
+    return this.to('ListCostAllocationTags');
+  }
+
+  /**
    * Grants permission to retrieve names, ARN, and effective dates for all Cost Categories
    *
    * Access Level: List
@@ -499,6 +510,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update existing Cost Allocation Tags status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostAllocationTagsStatus.html
+   */
+  public toUpdateCostAllocationTagsStatus() {
+    return this.to('UpdateCostAllocationTagsStatus');
+  }
+
+  /**
    * Grants permission to update an existing Cost Category
    *
    * Access Level: Write
@@ -560,6 +582,7 @@ export class Ce extends PolicyStatement {
       'ProvideAnomalyFeedback',
       'UpdateAnomalyMonitor',
       'UpdateAnomalySubscription',
+      'UpdateCostAllocationTagsStatus',
       'UpdateCostCategoryDefinition',
       'UpdateNotificationSubscription',
       'UpdatePreferences',
@@ -591,6 +614,7 @@ export class Ce extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListCostAllocationTags',
       'ListCostCategoryDefinitions'
     ],
     Tagging: [

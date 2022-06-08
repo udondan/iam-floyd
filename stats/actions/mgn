@@ -1,14 +1,17 @@
 mgn:BatchCreateVolumeSnapshotGroupForMgn;Write
 mgn:BatchDeleteSnapshotRequestForMgn;Write
 mgn:ChangeServerLifeCycleState;Write
+mgn:CreateLaunchConfigurationTemplate;Write
 mgn:CreateReplicationConfigurationTemplate;Write
 mgn:CreateVcenterClientForMgn;Write
 mgn:DeleteJob;Write
+mgn:DeleteLaunchConfigurationTemplate;Write
 mgn:DeleteReplicationConfigurationTemplate;Write
 mgn:DeleteSourceServer;Write
 mgn:DeleteVcenterClient;Write
 mgn:DescribeJobLogItems;Read
 mgn:DescribeJobs;List
+mgn:DescribeLaunchConfigurationTemplates;List
 mgn:DescribeReplicationConfigurationTemplates;List
 mgn:DescribeReplicationServerAssociationsForMgn;Read
 mgn:DescribeSnapshotRequestsForMgn;Read
@@ -27,6 +30,7 @@ mgn:GetLaunchConfiguration;Read
 mgn:GetReplicationConfiguration;Read
 mgn:GetVcenterClientCommandsForMgn;Read
 mgn:InitializeService;Write
+mgn:IssueClientCertificateForMgn;Write
 mgn:ListTagsForResource;Read
 mgn:MarkAsArchived;Write
 mgn:NotifyAgentAuthenticationForMgn;Write
@@ -56,6 +60,8 @@ mgn:UpdateAgentReplicationInfoForMgn;Write
 mgn:UpdateAgentReplicationProcessStateForMgn;Write
 mgn:UpdateAgentSourcePropertiesForMgn;Write
 mgn:UpdateLaunchConfiguration;Write
+mgn:UpdateLaunchConfigurationTemplate;Write
 mgn:UpdateReplicationConfiguration;Write
 mgn:UpdateReplicationConfigurationTemplate;Write
 mgn:UpdateSourceServerReplicationType;Write
+mgn:VerifyClientRoleForMgn;Read

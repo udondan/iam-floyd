@@ -1,4 +1,5 @@
 mgn:JobResource
+mgn:LaunchConfigurationTemplateResource
 mgn:ReplicationConfigurationTemplateResource
 mgn:SourceServerResource
 mgn:VcenterClientResource

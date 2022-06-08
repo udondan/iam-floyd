@@ -1153,6 +1153,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve current user data in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentUserData.html
+   */
+  public toGetCurrentUserData() {
+    return this.to('GetCurrentUserData');
+  }
+
+  /**
    * Grants permission to federate into an Amazon Connect instance when using SAML-based authentication for identity management
    *
    * Access Level: Read
@@ -2505,6 +2519,7 @@ export class Connect extends PolicyStatement {
       'DescribeVocabulary',
       'GetContactAttributes',
       'GetCurrentMetricData',
+      'GetCurrentUserData',
       'GetFederationToken',
       'GetMetricData',
       'GetTaskTemplate',
@@ -3046,6 +3061,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateSecurityKey()
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
+   * - .toGetCurrentUserData()
    * - .toGetFederationToken()
    * - .toGetMetricData()
    * - .toGetTaskTemplate()

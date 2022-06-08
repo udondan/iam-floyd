@@ -52,6 +52,21 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create launch configuration template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateLaunchConfigurationTemplate.html
+   */
+  public toCreateLaunchConfigurationTemplate() {
+    return this.to('CreateLaunchConfigurationTemplate');
+  }
+
+  /**
    * Grants permission to create replication configuration template
    *
    * Access Level: Write
@@ -90,6 +105,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDeleteJob() {
     return this.to('DeleteJob');
+  }
+
+  /**
+   * Grants permission to delete launch configuration template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteLaunchConfigurationTemplate.html
+   */
+  public toDeleteLaunchConfigurationTemplate() {
+    return this.to('DeleteLaunchConfigurationTemplate');
   }
 
   /**
@@ -145,6 +171,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDescribeJobs() {
     return this.to('DescribeJobs');
+  }
+
+  /**
+   * Grants permission to describe launch configuration template
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeLaunchConfigurationTemplates.html
+   */
+  public toDescribeLaunchConfigurationTemplates() {
+    return this.to('DescribeLaunchConfigurationTemplates');
   }
 
   /**
@@ -349,6 +386,17 @@ export class Mgn extends PolicyStatement {
    */
   public toInitializeService() {
     return this.to('InitializeService');
+  }
+
+  /**
+   * Grants permission to issue a client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toIssueClientCertificateForMgn() {
+    return this.to('IssueClientCertificateForMgn');
   }
 
   /**
@@ -777,6 +825,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update launch configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateLaunchConfigurationTemplate.html
+   */
+  public toUpdateLaunchConfigurationTemplate() {
+    return this.to('UpdateLaunchConfigurationTemplate');
+  }
+
+  /**
    * Grants permission to update replication configuration
    *
    * Access Level: Write
@@ -809,20 +868,34 @@ export class Mgn extends PolicyStatement {
     return this.to('UpdateSourceServerReplicationType');
   }
 
+  /**
+   * Grants permission to verify client role
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toVerifyClientRoleForMgn() {
+    return this.to('VerifyClientRoleForMgn');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreateVolumeSnapshotGroupForMgn',
       'BatchDeleteSnapshotRequestForMgn',
       'ChangeServerLifeCycleState',
+      'CreateLaunchConfigurationTemplate',
       'CreateReplicationConfigurationTemplate',
       'CreateVcenterClientForMgn',
       'DeleteJob',
+      'DeleteLaunchConfigurationTemplate',
       'DeleteReplicationConfigurationTemplate',
       'DeleteSourceServer',
       'DeleteVcenterClient',
       'DisconnectFromService',
       'FinalizeCutover',
       'InitializeService',
+      'IssueClientCertificateForMgn',
       'MarkAsArchived',
       'NotifyAgentAuthenticationForMgn',
       'NotifyAgentConnectedForMgn',
@@ -849,6 +922,7 @@ export class Mgn extends PolicyStatement {
       'UpdateAgentReplicationProcessStateForMgn',
       'UpdateAgentSourcePropertiesForMgn',
       'UpdateLaunchConfiguration',
+      'UpdateLaunchConfigurationTemplate',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate',
       'UpdateSourceServerReplicationType'
@@ -867,10 +941,12 @@ export class Mgn extends PolicyStatement {
       'GetLaunchConfiguration',
       'GetReplicationConfiguration',
       'GetVcenterClientCommandsForMgn',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'VerifyClientRoleForMgn'
     ],
     List: [
       'DescribeJobs',
+      'DescribeLaunchConfigurationTemplates',
       'DescribeReplicationConfigurationTemplates',
       'DescribeSourceServers',
       'DescribeVcenterClients'
@@ -913,6 +989,23 @@ export class Mgn extends PolicyStatement {
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+  }
+
+  /**
+   * Adds a resource of type LaunchConfigurationTemplateResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/launch-settings-template.html
+   *
+   * @param launchConfigurationTemplateID - Identifier for the launchConfigurationTemplateID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
   }
 
   /**

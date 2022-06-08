@@ -68,6 +68,7 @@ connect:DisassociateRoutingProfileQueues;Write
 connect:DisassociateSecurityKey;Write
 connect:GetContactAttributes;Read
 connect:GetCurrentMetricData;Read
+connect:GetCurrentUserData;Read
 connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
