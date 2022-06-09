@@ -52,6 +52,24 @@
 				"ds:DescribeTrusts"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kinesis:DescribeStream",
+				"kinesis:ListStreams"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:DescribeLogGroups",
+				"logs:DescribeLogStreams",
+				"logs:GetLogEvents",
+				"logs:CreateLogGroup"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/monitron/*"
 		}
 	]
 }
