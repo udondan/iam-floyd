@@ -86,13 +86,13 @@ jobs:
         run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
           BUILD_SOURCE: true
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           BUILD_PACKAGES: true
 
@@ -134,13 +134,13 @@ jobs:
         run: make install cdk
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
           BUILD_SOURCE: true
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           BUILD_PACKAGES: true
 
@@ -369,7 +369,7 @@ jobs:
           path: dist
 
       - name: Publish to npm
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -385,7 +385,7 @@ jobs:
           path: dist
 
       - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
@@ -401,7 +401,7 @@ jobs:
           path: dist
 
       - name: Publish to npm
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -417,6 +417,6 @@ jobs:
           path: dist
 
       - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.13.0
+        uses: udondan/jsii-publish@v0.14.0
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
