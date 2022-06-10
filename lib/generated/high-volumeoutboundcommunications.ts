@@ -45,6 +45,28 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove configuration information for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toDeleteConnectInstanceConfig() {
+    return this.to('DeleteConnectInstanceConfig');
+  }
+
+  /**
+   * Grants permission to remove onboarding job for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toDeleteInstanceOnboardingJob() {
+    return this.to('DeleteInstanceOnboardingJob');
+  }
+
+  /**
    * Grants permission to describe a specific campaign
    *
    * Access Level: Read
@@ -87,6 +109,28 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get configuration information for an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toGetConnectInstanceConfig() {
+    return this.to('GetConnectInstanceConfig');
+  }
+
+  /**
+   * Grants permission to get onboarding job status for an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toGetInstanceOnboardingJobStatus() {
+    return this.to('GetInstanceOnboardingJobStatus');
+  }
+
+  /**
    * Grants permission to provide summary of all campaigns
    *
    * Access Level: List
@@ -126,17 +170,6 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add configuration information for an Amazon Connect instance
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
-   */
-  public toPutConnectInstanceConfig() {
-    return this.to('PutConnectInstanceConfig');
-  }
-
-  /**
    * Grants permission to create dial requests for the specified campaign
    *
    * Access Level: Write
@@ -167,6 +200,17 @@ export class ConnectCampaigns extends PolicyStatement {
    */
   public toStartCampaign() {
     return this.to('StartCampaign');
+  }
+
+  /**
+   * Grants permission to start onboarding job for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toStartInstanceOnboardingJob() {
+    return this.to('StartInstanceOnboardingJob');
   }
 
   /**
@@ -247,11 +291,13 @@ export class ConnectCampaigns extends PolicyStatement {
     Write: [
       'CreateCampaign',
       'DeleteCampaign',
+      'DeleteConnectInstanceConfig',
+      'DeleteInstanceOnboardingJob',
       'PauseCampaign',
-      'PutConnectInstanceConfig',
       'PutDialRequestBatch',
       'ResumeCampaign',
       'StartCampaign',
+      'StartInstanceOnboardingJob',
       'StopCampaign',
       'UpdateCampaignDialerConfig',
       'UpdateCampaignName',
@@ -261,6 +307,8 @@ export class ConnectCampaigns extends PolicyStatement {
       'DescribeCampaign',
       'GetCampaignState',
       'GetCampaignStateBatch',
+      'GetConnectInstanceConfig',
+      'GetInstanceOnboardingJobStatus',
       'ListTagsForResource'
     ],
     List: [
