@@ -15,7 +15,8 @@
 			"Action": [
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",
-				"organizations:ListAWSServiceAccessForOrganization"
+				"organizations:ListAWSServiceAccessForOrganization",
+				"organizations:ListDelegatedAdministrators"
 			],
 			"Resource": [
 				"*"
@@ -35,6 +36,15 @@
 			"Action": [
 				"autoscaling:DescribeAutoScalingInstances",
 				"autoscaling:DescribeAutoScalingGroups"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Ec2Access",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeVolumes"
 			],
 			"Resource": "*"
 		}
