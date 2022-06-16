@@ -44,7 +44,8 @@
 				"servicecatalog:DeleteAttributeGroup",
 				"servicecatalog:GetAttributeGroup",
 				"servicecatalog:ListAttributeGroups",
-				"servicecatalog:SyncResource"
+				"servicecatalog:SyncResource",
+				"servicecatalog:ListAttributeGroupsForApplication"
 			],
 			"Resource": "*"
 		},

@@ -46,6 +46,7 @@
 				"sqlworkbench:DeleteTab",
 				"sqlworkbench:GenerateSession",
 				"sqlworkbench:GetAccountInfo",
+				"sqlworkbench:GetAccountSettings",
 				"sqlworkbench:GetUserInfo",
 				"sqlworkbench:GetUserWorkspaceSettings",
 				"sqlworkbench:PutUserWorkspaceSettings",

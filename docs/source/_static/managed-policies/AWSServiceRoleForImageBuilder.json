@@ -13,7 +13,8 @@
 				"arn:aws:ec2:*:*:network-interface/*",
 				"arn:aws:ec2:*:*:security-group/*",
 				"arn:aws:ec2:*:*:key-pair/*",
-				"arn:aws:ec2:*:*:launch-template/*"
+				"arn:aws:ec2:*:*:launch-template/*",
+				"arn:aws:license-manager:*:*:license-configuration:*"
 			]
 		},
 		{
