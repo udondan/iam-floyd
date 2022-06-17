@@ -4,6 +4,7 @@ dist
 /tsconfig.json
 **/*.js
 **/*.d.ts
+**/*.d.ts.map
 lib/generated/.cache
 stats/*/.cache
 test/package-lock.json

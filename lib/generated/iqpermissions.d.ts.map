@@ -1,1 +1,0 @@
-{"version":3,"file":"iqpermissions.d.ts","sourceRoot":"","sources":["iqpermissions.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,wBAAwB,CAAC;AACzD,OAAO,EAAE,eAAe,EAAE,MAAM,WAAW,CAAC;AAE5C;;;;GAIG;AACH,qBAAa,YAAa,SAAQ,eAAe;IACxC,aAAa,SAAmB;IAEvC;;;;OAIG;gBACS,GAAG,CAAC,EAAE,MAAM;IAIxB;;;;;;OAMG;IACI,oBAAoB;IAI3B,SAAS,CAAC,eAAe,EAAE,eAAe,CAIxC;CACH"}
