@@ -168,7 +168,7 @@ export function conditionFixer(
     fixed = 2;
     condition.key = keyOverride;
   }
-  const keyWithoutPrefix = condition.key.split(':')[-1];
+  const keyWithoutPrefix = condition.key.split(':').at(-1);
 
   const operatorType = get(
     fixes,
@@ -196,18 +196,13 @@ export function conditionFixer(
   return condition;
 }
 
-export function conditionKeyFixer(
-  service: string,
-  conditionKey: string
-): string {
-  let key = conditionKey;
-
-  const split = conditionKey.split(':');
+export function conditionKeyFixer(service: string, key: string): string {
+  const split = key.split(':');
   key = split[1];
 
   const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
   if (typeof keyOverride !== 'undefined') {
-    return keyOverride;
+    return split[0] + ':' + keyOverride;
   }
 
   return split[0] + ':' + key;

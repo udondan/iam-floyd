@@ -881,11 +881,8 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
           $(element).text().trim()
         );
       });
-    console.log(conditionKeys);
-    console.log(module.conditions);
 
     conditionKeys.forEach((condition) => {
-      console.log('NOW', condition);
       if (!('relatedResourceTypes' in module.conditions![condition])) {
         module.conditions![condition].relatedResourceTypes = [];
       }
@@ -928,7 +925,6 @@ function addConditions($: CheerioStatic, module: Module): Module {
     }
   });
   module.conditions = conditions;
-  console.log(JSON.stringify(conditions, null, 2));
   return module;
 }
 
