@@ -994,7 +994,7 @@ export class Mgn extends PolicyStatement {
   /**
    * Adds a resource of type LaunchConfigurationTemplateResource to the statement
    *
-   * https://docs.aws.amazon.com/mgn/latest/ug/post-launch-settings.html
+   * https://docs.aws.amazon.com/mgn/latest/ug/launch-settings-template.html
    *
    * @param launchConfigurationTemplateID - Identifier for the launchConfigurationTemplateID.
    * @param account - Account of the resource; defaults to empty string: all accounts.

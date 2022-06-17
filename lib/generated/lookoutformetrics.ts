@@ -336,17 +336,6 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an alert for an anomaly detector
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UpdateAlert.html
-   */
-  public toUpdateAlert() {
-    return this.to('UpdateAlert');
-  }
-
-  /**
    * Grants permission to update an anomaly detector
    *
    * Access Level: Write
@@ -380,7 +369,6 @@ export class Lookoutmetrics extends PolicyStatement {
       'DeleteAnomalyDetector',
       'DetectMetricSetConfig',
       'PutFeedback',
-      'UpdateAlert',
       'UpdateAnomalyDetector',
       'UpdateMetricSet'
     ],

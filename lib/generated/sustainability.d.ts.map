@@ -1,0 +1,1 @@
+{"version":3,"file":"sustainability.d.ts","sourceRoot":"","sources":["sustainability.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,wBAAwB,CAAC;AACzD,OAAO,EAAE,eAAe,EAAE,MAAM,WAAW,CAAC;AAE5C;;;;GAIG;AACH,qBAAa,cAAe,SAAQ,eAAe;IAC1C,aAAa,SAAoB;IAExC;;;;OAIG;gBACS,GAAG,CAAC,EAAE,MAAM;IAIxB;;;;;;OAMG;IACI,2BAA2B;IAIlC,SAAS,CAAC,eAAe,EAAE,eAAe,CAIxC;CACH"}

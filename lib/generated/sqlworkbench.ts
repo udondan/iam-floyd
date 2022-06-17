@@ -207,17 +207,6 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get account settings
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toGetAccountSettings() {
-    return this.to('GetAccountSettings');
-  }
-
-  /**
    * Grants permission to get charts on your account
    *
    * Access Level: Read
@@ -435,17 +424,6 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update general account-wide settings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toUpdateAccountGeneralSettings() {
-    return this.to('UpdateAccountGeneralSettings');
-  }
-
-  /**
    * Grants permission to update a chart on your account
    *
    * Access Level: Write
@@ -532,7 +510,6 @@ export class Sqlworkbench extends PolicyStatement {
       'PutTab',
       'PutUserWorkspaceSettings',
       'UpdateAccountExportSettings',
-      'UpdateAccountGeneralSettings',
       'UpdateChart',
       'UpdateConnection',
       'UpdateFileFolder',
@@ -541,7 +518,6 @@ export class Sqlworkbench extends PolicyStatement {
     ],
     Read: [
       'GetAccountInfo',
-      'GetAccountSettings',
       'GetChart',
       'GetConnection',
       'GetSavedQuery',
