@@ -489,14 +489,14 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get event configurations by resource types
+   * Grants permission to get event configuration by resource types
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetEventConfigurationsByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetEventConfigurationByResourceTypes.html
    */
-  public toGetEventConfigurationsByResourceTypes() {
-    return this.to('GetEventConfigurationsByResourceTypes');
+  public toGetEventConfigurationByResourceTypes() {
+    return this.to('GetEventConfigurationByResourceTypes');
   }
 
   /**
@@ -1013,14 +1013,14 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update event configurations by resource types
+   * Grants permission to update event configuration by resource types
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateEventConfigurationsByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateEventConfigurationByResourceTypes.html
    */
-  public toUpdateEventConfigurationsByResourceTypes() {
-    return this.to('UpdateEventConfigurationsByResourceTypes');
+  public toUpdateEventConfigurationByResourceTypes() {
+    return this.to('UpdateEventConfigurationByResourceTypes');
   }
 
   /**
@@ -1161,7 +1161,7 @@ export class Iotwireless extends PolicyStatement {
       'StartNetworkAnalyzerStream',
       'TestWirelessDevice',
       'UpdateDestination',
-      'UpdateEventConfigurationsByResourceTypes',
+      'UpdateEventConfigurationByResourceTypes',
       'UpdateFuotaTask',
       'UpdateLogLevelsByResourceTypes',
       'UpdateMulticastGroup',
@@ -1174,7 +1174,7 @@ export class Iotwireless extends PolicyStatement {
     Read: [
       'GetDestination',
       'GetDeviceProfile',
-      'GetEventConfigurationsByResourceTypes',
+      'GetEventConfigurationByResourceTypes',
       'GetFuotaTask',
       'GetLogLevelsByResourceTypes',
       'GetMulticastGroup',

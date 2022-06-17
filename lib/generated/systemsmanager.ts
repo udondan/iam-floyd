@@ -23,6 +23,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
@@ -66,6 +70,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html
    */
@@ -304,6 +312,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html
    */
@@ -741,6 +752,15 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details of a specific calendar
+   *
+   * Access Level: Read
+   */
+  public toGetCalendar() {
+    return this.to('GetCalendar');
+  }
+
+  /**
    * Grants permission to view the calendar state for a change calendar or a list of change calendars
    *
    * Access Level: Read
@@ -766,6 +786,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view the Session Manager connection status for a specified managed instance
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html
    */
@@ -1044,7 +1068,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to list information about command invocations sent to a specified instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html
    */
@@ -1055,7 +1079,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to list the commands sent to a specified instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html
    */
@@ -1143,7 +1167,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to view details about OpsItemEvents
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListOpsItemEvents.html
    */
@@ -1154,7 +1178,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to view details about OpsItem RelatedItems
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListOpsItemRelatedItems.html
    */
@@ -1201,7 +1225,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to view a list of resource tags for a specified resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html
    */
@@ -1218,6 +1242,15 @@ export class Ssm extends PolicyStatement {
    */
   public toModifyDocumentPermission() {
     return this.to('ModifyDocumentPermission');
+  }
+
+  /**
+   * Grants permission to create/edit a specific calendar
+   *
+   * Access Level: Write
+   */
+  public toPutCalendar() {
+    return this.to('PutCalendar');
   }
 
   /**
@@ -1331,6 +1364,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
@@ -1411,6 +1447,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to initiate the execution of an Automation Change Template document
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAutoApprove()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartChangeRequestExecution.html
    */
@@ -1580,6 +1619,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html
    */
   public toUpdateManagedInstanceRole() {
@@ -1678,6 +1720,7 @@ export class Ssm extends PolicyStatement {
       'DeregisterTaskFromMaintenanceWindow',
       'DisassociateOpsItemRelatedItem',
       'LabelParameterVersion',
+      'PutCalendar',
       'PutComplianceItems',
       'PutInventory',
       'PutParameter',
@@ -1736,6 +1779,7 @@ export class Ssm extends PolicyStatement {
       'DescribeInventoryDeletions',
       'DescribeOpsItems',
       'GetAutomationExecution',
+      'GetCalendar',
       'GetCalendarState',
       'GetCommandInvocation',
       'GetConnectionStatus',
@@ -1760,11 +1804,6 @@ export class Ssm extends PolicyStatement {
       'GetPatchBaseline',
       'GetPatchBaselineForPatchGroup',
       'GetServiceSetting',
-      'ListCommandInvocations',
-      'ListCommands',
-      'ListOpsItemEvents',
-      'ListOpsItemRelatedItems',
-      'ListTagsForResource',
       'PutConfigurePackageResult'
     ],
     List: [
@@ -1784,6 +1823,8 @@ export class Ssm extends PolicyStatement {
       'DescribeSessions',
       'ListAssociationVersions',
       'ListAssociations',
+      'ListCommandInvocations',
+      'ListCommands',
       'ListComplianceItems',
       'ListComplianceSummaries',
       'ListDocumentMetadataHistory',
@@ -1791,9 +1832,12 @@ export class Ssm extends PolicyStatement {
       'ListDocuments',
       'ListInstanceAssociations',
       'ListInventoryEntries',
+      'ListOpsItemEvents',
+      'ListOpsItemRelatedItems',
       'ListOpsMetadata',
       'ListResourceComplianceSummaries',
-      'ListResourceDataSync'
+      'ListResourceDataSync',
+      'ListTagsForResource'
     ],
     'Permissions management': [
       'ModifyDocumentPermission'
@@ -1869,7 +1913,7 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifResourceTag()
+   * - .ifDocumentCategories()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
@@ -1961,7 +2005,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type opsmetadata to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/API_OpsMetadata.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/application-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2100,12 +2144,30 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by verifying that a user has permission to start Change Manager workflows without a review step (with the exception of change freeze events)
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-auto-approval-access.html
+   *
+   * Applies to actions:
+   * - .toStartChangeRequestExecution()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAutoApprove(value: string | string[], operator?: Operator | string) {
+    return this.if(`AutoApprove`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by verifying that a user has permission to access a document belonging to a specific category enum
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
    * - .toGetDocument()
+   *
+   * Applies to resource types:
+   * - document
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2182,12 +2244,14 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
+   * - .toDeregisterManagedInstance()
+   * - .toGetConnectionStatus()
    * - .toSendCommand()
    * - .toStartSession()
+   * - .toUpdateManagedInstanceRole()
    *
    * Applies to resource types:
    * - automation-execution
-   * - document
    * - instance
    * - maintenancewindow
    * - managed-instance
@@ -2200,6 +2264,6 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`resourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

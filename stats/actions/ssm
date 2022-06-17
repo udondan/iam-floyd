@@ -61,6 +61,7 @@ ssm:DescribePatchProperties;List
 ssm:DescribeSessions;List
 ssm:DisassociateOpsItemRelatedItem;Write
 ssm:GetAutomationExecution;Read
+ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
 ssm:GetCommandInvocation;Read
 ssm:GetConnectionStatus;Read
@@ -88,8 +89,8 @@ ssm:GetServiceSetting;Read
 ssm:LabelParameterVersion;Write
 ssm:ListAssociationVersions;List
 ssm:ListAssociations;List
-ssm:ListCommandInvocations;Read
-ssm:ListCommands;Read
+ssm:ListCommandInvocations;List
+ssm:ListCommands;List
 ssm:ListComplianceItems;List
 ssm:ListComplianceSummaries;List
 ssm:ListDocumentMetadataHistory;List
@@ -97,13 +98,14 @@ ssm:ListDocumentVersions;List
 ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
 ssm:ListInventoryEntries;List
-ssm:ListOpsItemEvents;Read
-ssm:ListOpsItemRelatedItems;Read
+ssm:ListOpsItemEvents;List
+ssm:ListOpsItemRelatedItems;List
 ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
-ssm:ListTagsForResource;Read
+ssm:ListTagsForResource;List
 ssm:ModifyDocumentPermission;Permissions management
+ssm:PutCalendar;Write
 ssm:PutComplianceItems;Write
 ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write

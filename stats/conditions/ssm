@@ -1,3 +1,4 @@
+ssm:AutoApprove
 ssm:DocumentCategories
 ssm:Overwrite
 ssm:Recursive
@@ -6,3 +7,4 @@ ssm:ResourceTag/${TagKey}
 ssm:SessionDocumentAccessCheck
 ssm:SyncType
 ssm:TagKeys
+ssm:resourceTag/${TagKey}

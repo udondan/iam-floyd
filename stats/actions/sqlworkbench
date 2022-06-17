@@ -14,6 +14,7 @@ sqlworkbench:DeleteTab;Write
 sqlworkbench:DriverExecute;Write
 sqlworkbench:GenerateSession;Write
 sqlworkbench:GetAccountInfo;Read
+sqlworkbench:GetAccountSettings;Read
 sqlworkbench:GetChart;Read
 sqlworkbench:GetConnection;Read
 sqlworkbench:GetSavedQuery;Read
@@ -33,6 +34,7 @@ sqlworkbench:PutUserWorkspaceSettings;Write
 sqlworkbench:TagResource;Tagging
 sqlworkbench:UntagResource;Tagging
 sqlworkbench:UpdateAccountExportSettings;Write
+sqlworkbench:UpdateAccountGeneralSettings;Write
 sqlworkbench:UpdateChart;Write
 sqlworkbench:UpdateConnection;Write
 sqlworkbench:UpdateFileFolder;Write
