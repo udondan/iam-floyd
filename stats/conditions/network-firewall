@@ -1,3 +1,0 @@
-network-firewall:RequestTag/${TagKey}
-network-firewall:ResourceTag/${TagKey}
-network-firewall:TagKeys

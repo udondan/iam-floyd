@@ -1,3 +1,0 @@
-route53-recovery-readiness:RequestTag/${TagKey}
-route53-recovery-readiness:ResourceTag/${TagKey}
-route53-recovery-readiness:TagKeys

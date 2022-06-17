@@ -1,4 +1,0 @@
-servicequotas:RequestTag/${TagKey}
-servicequotas:ResourceTag/${TagKey}
-servicequotas:TagKeys
-servicequotas:service

@@ -1,8 +1,0 @@
-refactor-spaces:ApplicationCreatedByAccount
-refactor-spaces:CreatedByAccountIds
-refactor-spaces:RequestTag/${TagKey}
-refactor-spaces:ResourceTag/${TagKey}
-refactor-spaces:RouteCreatedByAccount
-refactor-spaces:ServiceCreatedByAccount
-refactor-spaces:SourcePath
-refactor-spaces:TagKeys

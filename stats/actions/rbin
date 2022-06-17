@@ -1,8 +1,0 @@
-rbin:CreateRule;Write
-rbin:DeleteRule;Write
-rbin:GetRule;Read
-rbin:ListRules;Read
-rbin:ListTagsForResource;Read
-rbin:TagResource;Tagging
-rbin:UntagResource;Tagging
-rbin:UpdateRule;Write

@@ -1,4 +1,0 @@
-s3-object-lambda:TlsVersion
-s3-object-lambda:authType
-s3-object-lambda:signatureAge
-s3-object-lambda:versionid

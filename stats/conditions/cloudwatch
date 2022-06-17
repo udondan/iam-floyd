@@ -1,6 +1,0 @@
-cloudwatch:AlarmActions
-cloudwatch:RequestTag/${TagKey}
-cloudwatch:ResourceTag/${TagKey}
-cloudwatch:TagKeys
-cloudwatch:namespace
-cloudwatch:requestInsightRuleLogGroups

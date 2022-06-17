@@ -1,3 +1,0 @@
-ssm-guiconnect:CancelConnection;Write
-ssm-guiconnect:GetConnection;Read
-ssm-guiconnect:StartConnection;Write

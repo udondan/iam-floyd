@@ -1,5 +1,0 @@
-apprunner:autoscalingconfiguration
-apprunner:connection
-apprunner:observabilityconfiguration
-apprunner:service
-apprunner:vpcconnector

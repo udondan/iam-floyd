@@ -1,3 +1,0 @@
-elasticmapreduce:RequestTag/${TagKey}
-elasticmapreduce:ResourceTag/${TagKey}
-elasticmapreduce:TagKeys

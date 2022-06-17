@@ -1,3 +1,0 @@
-xray:RequestTag/${TagKey}
-xray:ResourceTag/${TagKey}
-xray:TagKeys

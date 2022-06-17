@@ -1,3 +1,0 @@
-freertos:RequestTag/${TagKey}
-freertos:ResourceTag/${TagKey}
-freertos:TagKeys

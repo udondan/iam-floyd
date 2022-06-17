@@ -1,8 +1,0 @@
-ssm:DocumentCategories
-ssm:Overwrite
-ssm:Recursive
-ssm:RequestTag/${TagKey}
-ssm:ResourceTag/${TagKey}
-ssm:SessionDocumentAccessCheck
-ssm:SyncType
-ssm:TagKeys

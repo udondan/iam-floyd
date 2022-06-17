@@ -1,3 +1,0 @@
-backup-gateway:RequestTag/${TagKey}
-backup-gateway:ResourceTag/${TagKey}
-backup-gateway:TagKeys

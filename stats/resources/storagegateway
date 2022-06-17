@@ -1,8 +1,0 @@
-storagegateway:device
-storagegateway:fs-association
-storagegateway:gateway
-storagegateway:share
-storagegateway:tape
-storagegateway:tapepool
-storagegateway:target
-storagegateway:volume

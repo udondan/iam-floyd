@@ -1,7 +1,0 @@
-imagebuilder:CreatedResourceTag/<key>
-imagebuilder:CreatedResourceTagKeys
-imagebuilder:Ec2MetadataHttpTokens
-imagebuilder:RequestTag/${TagKey}
-imagebuilder:ResourceTag/${TagKey}
-imagebuilder:StatusTopicArn
-imagebuilder:TagKeys

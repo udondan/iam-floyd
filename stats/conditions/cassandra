@@ -1,3 +1,0 @@
-cassandra:RequestTag/${TagKey}
-cassandra:ResourceTag/${TagKey}
-cassandra:TagKeys

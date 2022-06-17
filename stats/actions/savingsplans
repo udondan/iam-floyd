@@ -1,9 +1,0 @@
-savingsplans:CreateSavingsPlan;Write
-savingsplans:DeleteQueuedSavingsPlan;Write
-savingsplans:DescribeSavingsPlanRates;Read
-savingsplans:DescribeSavingsPlans;Read
-savingsplans:DescribeSavingsPlansOfferingRates;Read
-savingsplans:DescribeSavingsPlansOfferings;Read
-savingsplans:ListTagsForResource;List
-savingsplans:TagResource;Tagging
-savingsplans:UntagResource;Tagging

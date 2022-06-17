@@ -1,6 +1,0 @@
-ebs:CompleteSnapshot;Write
-ebs:GetSnapshotBlock;Read
-ebs:ListChangedBlocks;Read
-ebs:ListSnapshotBlocks;Read
-ebs:PutSnapshotBlock;Write
-ebs:StartSnapshot;Write

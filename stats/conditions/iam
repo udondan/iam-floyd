@@ -1,9 +1,0 @@
-iam:AWSServiceName
-iam:AssociatedResourceArn
-iam:OrganizationsPolicyId
-iam:PassedToService
-iam:PermissionsBoundary
-iam:PolicyARN
-iam:RequestTag/${TagKey}
-iam:ResourceTag/${TagKey}
-iam:TagKeys

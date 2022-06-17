@@ -1,3 +1,0 @@
-connect-campaigns:RequestTag/${TagKey}
-connect-campaigns:ResourceTag/${TagKey}
-connect-campaigns:TagKeys

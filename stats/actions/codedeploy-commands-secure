@@ -1,4 +1,0 @@
-codedeploy-commands-secure:GetDeploymentSpecification;Read
-codedeploy-commands-secure:PollHostCommand;Read
-codedeploy-commands-secure:PutHostCommandAcknowledgement;Write
-codedeploy-commands-secure:PutHostCommandComplete;Write

@@ -1,4 +1,0 @@
-identitystore:DescribeGroup;Read
-identitystore:DescribeUser;Read
-identitystore:ListGroups;List
-identitystore:ListUsers;List

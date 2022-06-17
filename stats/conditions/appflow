@@ -1,3 +1,0 @@
-appflow:RequestTag/${TagKey}
-appflow:ResourceTag/${TagKey}
-appflow:TagKeys

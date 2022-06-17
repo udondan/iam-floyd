@@ -1,4 +1,0 @@
-glacier:ArchiveAgeInDays
-glacier:RequestTag/${TagKey}
-glacier:ResourceTag/
-glacier:TagKeys

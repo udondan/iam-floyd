@@ -1,8 +1,0 @@
-ses:configuration-set
-ses:contact-list
-ses:custom-verification-email-template
-ses:dedicated-ip-pool
-ses:deliverability-test-report
-ses:identity
-ses:import-job
-ses:template

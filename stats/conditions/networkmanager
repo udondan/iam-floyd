@@ -1,9 +1,0 @@
-networkmanager:RequestTag/${TagKey}
-networkmanager:ResourceTag/${TagKey}
-networkmanager:TagKeys
-networkmanager:cgwArn
-networkmanager:subnetArns
-networkmanager:tgwArn
-networkmanager:tgwConnectPeerArn
-networkmanager:vpcArn
-networkmanager:vpnConnectionArn

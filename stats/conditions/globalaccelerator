@@ -1,3 +1,0 @@
-globalaccelerator:RequestTag/${TagKey}
-globalaccelerator:ResourceTag/${TagKey}
-globalaccelerator:TagKeys

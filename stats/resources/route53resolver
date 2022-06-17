@@ -1,9 +1,0 @@
-route53resolver:firewall-config
-route53resolver:firewall-domain-list
-route53resolver:firewall-rule-group
-route53resolver:firewall-rule-group-association
-route53resolver:resolver-config
-route53resolver:resolver-dnssec-config
-route53resolver:resolver-endpoint
-route53resolver:resolver-query-log-config
-route53resolver:resolver-rule

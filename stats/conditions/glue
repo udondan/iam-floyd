@@ -1,8 +1,0 @@
-glue:CredentialIssuingService
-glue:RequestTag/${TagKey}
-glue:ResourceTag/${TagKey}
-glue:RoleAssumedBy
-glue:SecurityGroupIds
-glue:SubnetIds
-glue:TagKeys
-glue:VpcIds

@@ -1,5 +1,0 @@
-datapipeline:PipelineCreator
-datapipeline:RequestTag/${TagKey}
-datapipeline:Tag
-datapipeline:TagKeys
-datapipeline:workerGroup

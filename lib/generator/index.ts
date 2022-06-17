@@ -9,7 +9,7 @@ import { Project, QuoteKind, Scope } from 'ts-morph';
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
-import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
+import { arnFixer, conditionFixer, conditionKeyFixer, fixes, serviceFixer } from './fixes';
 import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
@@ -117,7 +117,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
         var match: RegExpExecArray;
         const services: string[] = [];
         do {
-          match = re.exec(body);
+          match = re.exec(body)!;
           if (match) {
             services.push(match[1]);
           }
@@ -263,14 +263,14 @@ export function createModule(module: Module): Promise<void> {
 
     module.servicePrefix = moduleFile
       .getClasses()[0]
-      .getProperty('servicePrefix')
-      .getInitializer()
+      .getProperty('servicePrefix')!
+      .getInitializer()!
       .getText()
       .split("'")
       .join('');
   }
 
-  serviceStats.push(module.servicePrefix);
+  serviceStats.push(module.servicePrefix!);
 
   if (typeof module.name === 'undefined') {
     restoreFileFromCache(`stats/actions/${module.servicePrefix}`);
@@ -305,7 +305,7 @@ export function createModule(module: Module): Promise<void> {
   });
 
   const classDeclaration = sourceFile.addClass({
-    name: camelCase(module.name),
+    name: camelCase(module.name!),
     extends: 'PolicyStatement',
     isExported: true,
   });
@@ -355,16 +355,16 @@ export function createModule(module: Module): Promise<void> {
 
     if ('conditions' in action) {
       desc += '\n\nPossible conditions:';
-      action.conditions.forEach((condition) => {
+      action.conditions?.forEach((condition) => {
         desc += `\n- .${createConditionName(
-          module.conditions[condition].key,
-          module.servicePrefix
+          module.conditions![condition].key,
+          module.servicePrefix!
         )}()`;
       });
     }
     if ('dependentActions' in action) {
       desc += '\n\nDependent actions:';
-      action.dependentActions.forEach((dependentAction) => {
+      action.dependentActions?.forEach((dependentAction) => {
         desc += `\n- ${dependentAction}`;
       });
     }
@@ -440,8 +440,8 @@ export function createModule(module: Module): Promise<void> {
       desc += '\n\nPossible conditions:';
       resourceType.conditionKeys.forEach((key) => {
         desc += `\n- .${createConditionName(
-          module.conditions[key].key,
-          module.servicePrefix
+          module.conditions![key].key,
+          module.servicePrefix!
         )}()`;
       });
     }
@@ -482,12 +482,11 @@ export function createModule(module: Module): Promise<void> {
     if (condition.url.length) {
       desc += `\n${condition.url}\n`;
     }
-
-    if ('relatedActions' in condition && condition.relatedActions.length) {
+    if ('relatedActions' in condition && condition.relatedActions?.length) {
       desc += '\nApplies to actions:\n';
       condition.relatedActions
         .filter((elem, pos) => {
-          return condition.relatedActions.indexOf(elem) == pos;
+          return condition.relatedActions?.indexOf(elem) == pos;
         })
         .forEach((relatedAction) => {
           desc += `- .to${camelCase(relatedAction)}()\n`;
@@ -496,12 +495,12 @@ export function createModule(module: Module): Promise<void> {
 
     if (
       'relatedResourceTypes' in condition &&
-      condition.relatedResourceTypes.length
+      condition.relatedResourceTypes?.length
     ) {
       desc += '\nApplies to resource types:\n';
       condition.relatedResourceTypes
         .filter((elem, pos) => {
-          return condition.relatedResourceTypes.indexOf(elem) == pos;
+          return condition.relatedResourceTypes?.indexOf(elem) == pos;
         })
         .forEach((resourceType) => {
           desc += `- ${resourceType}\n`;
@@ -512,7 +511,7 @@ export function createModule(module: Module): Promise<void> {
 
     const methodBody: string[] = [];
 
-    var methodName = createConditionName(key, module.servicePrefix);
+    var methodName = createConditionName(key, module.servicePrefix!);
     if (name.length > 1 && !name[1].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
@@ -550,7 +549,7 @@ export function createModule(module: Module): Promise<void> {
     if (type in conditionTypeDefaults) {
       var types = [...conditionTypeDefaults[type].type];
       if ('typeOverride' in condition) {
-        types = condition.typeOverride;
+        types = condition.typeOverride!;
       }
       if (types.length > 1) {
         types.push(`(${types.join('|')})[]`);
@@ -627,7 +626,7 @@ export function createModule(module: Module): Promise<void> {
 
   formatCode(sourceFile);
   const done = sourceFile.save();
-  writeStats(module.servicePrefix, stats);
+  writeStats(module.servicePrefix!, stats);
   console.log('Done'.green);
   return done;
 }
@@ -646,11 +645,11 @@ export function createIndex() {
     const source = project.addSourceFileAtPath(
       `./lib/generated/${module.filename}.ts`
     );
-    const exports = [];
+    const exports: string[] = [];
 
     source.getClasses().forEach((item) => {
       if (item.isExported()) {
-        exports.push(item.getName());
+        exports.push(item.getName()!);
       }
     });
 
@@ -677,17 +676,17 @@ function cleanDescription(description: string): string {
 export function getArnPlaceholders(arn: string): RegExpMatchArray {
   const matches = arn.match(/(?<=\$\{)[a-z0-9_-]+(?=\})/gi);
 
-  const toTheEnd = [];
-  while (matches.length) {
+  const toTheEnd: string[] = [];
+  while (matches?.length) {
     if (/^(Partition|Region|Account(Id)?)$/.test(matches[0])) {
-      toTheEnd.push(matches.shift());
+      toTheEnd.push(matches.shift()!);
     } else {
       break;
     }
   }
 
-  matches.push(...toTheEnd.reverse());
-  return matches;
+  matches?.push(...toTheEnd.reverse());
+  return matches!;
 }
 
 function upperFirst(str: string): string {
@@ -739,7 +738,7 @@ function restoreFileFromCache(filename: string) {
   const splitPath = filename.split('/');
   const file = splitPath.pop();
   splitPath.push('.cache');
-  splitPath.push(file);
+  splitPath.push(file!);
   const cachedFile = splitPath.join('/');
   if (!fs.existsSync(cachedFile)) {
     return;
@@ -812,19 +811,22 @@ function addActions($: CheerioStatic, module: Module): Module {
     const conditions: string[] = [];
     if (conditionKeys.length) {
       conditionKeys.each((_, conditionKey) => {
-        const condition = cleanDescription($(conditionKey).text());
+        const condition = conditionKeyFixer(
+          module.servicePrefix!,
+          cleanDescription($(conditionKey).text())
+        );
         conditions.push(condition);
-        if (!('relatedActions' in module.conditions[condition])) {
-          module.conditions[condition].relatedActions = [];
+        if (!('relatedActions' in module.conditions![condition])) {
+          module.conditions![condition].relatedActions = [];
         }
-        module.conditions[condition].relatedActions.push(action);
+        module.conditions![condition].relatedActions?.push(action);
       });
     }
 
     if (dependentActions.length) {
       actions[action].dependentActions = [];
       dependentActions.each((_, dependentAction) => {
-        actions[action].dependentActions.push(
+        actions[action].dependentActions?.push(
           cleanDescription($(dependentAction).text())
         );
       });
@@ -874,21 +876,28 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       .find('p')
       .toArray()
       .map((element) => {
-        return $(element).text().trim();
+        return conditionKeyFixer(
+          module.servicePrefix!,
+          $(element).text().trim(),
+          false
+        );
       });
+    console.log(conditionKeys);
+    console.log(module.conditions);
 
     conditionKeys.forEach((condition) => {
-      if (!('relatedResourceTypes' in module.conditions[condition])) {
-        module.conditions[condition].relatedResourceTypes = [];
+      console.log('NOW', condition);
+      if (!('relatedResourceTypes' in module.conditions![condition])) {
+        module.conditions![condition].relatedResourceTypes = [];
       }
-      module.conditions[condition].relatedResourceTypes.push(name);
+      module.conditions![condition].relatedResourceTypes?.push(name);
     });
 
     if (name.length) {
       resourceTypes[name] = {
         name: name,
         url: url,
-        arn: arnFixer(module.servicePrefix, name, arn),
+        arn: arnFixer(module.servicePrefix!, name, arn),
         conditionKeys: conditionKeys,
       };
     }
@@ -908,7 +917,7 @@ function addConditions($: CheerioStatic, module: Module): Module {
     const type = tds.first().next().next().text().trim();
 
     if (key.length) {
-      const condition = conditionFixer(module.servicePrefix, {
+      const condition = conditionFixer(module.servicePrefix!, {
         key: key,
         description: description,
         type: type,
@@ -916,10 +925,11 @@ function addConditions($: CheerioStatic, module: Module): Module {
         isGlobal: key.startsWith('aws:'),
       });
 
-      conditions[key] = condition;
+      conditions[condition.key] = condition;
     }
   });
   module.conditions = conditions;
+  console.log(JSON.stringify(conditions, null, 2));
   return module;
 }
 

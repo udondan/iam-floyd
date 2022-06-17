@@ -1,7 +1,0 @@
-lambda:code signing config
-lambda:eventSourceMapping
-lambda:function
-lambda:function alias
-lambda:function version
-lambda:layer
-lambda:layerVersion

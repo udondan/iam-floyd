@@ -1,6 +1,0 @@
-account:DeleteAlternateContact;Write
-account:DisableRegion;Write
-account:EnableRegion;Write
-account:GetAlternateContact;Read
-account:ListRegions;List
-account:PutAlternateContact;Write

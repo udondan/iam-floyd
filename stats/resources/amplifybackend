@@ -1,8 +1,0 @@
-amplifybackend:api
-amplifybackend:auth
-amplifybackend:backend
-amplifybackend:config
-amplifybackend:environment
-amplifybackend:job
-amplifybackend:storage
-amplifybackend:token

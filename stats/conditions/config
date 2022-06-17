@@ -1,3 +1,0 @@
-config:RequestTag/${TagKey}
-config:ResourceTag/${TagKey}
-config:TagKeys
