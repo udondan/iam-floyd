@@ -1,1 +1,0 @@
-{"version":3,"file":"iq.d.ts","sourceRoot":"","sources":["iq.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,wBAAwB,CAAC;AACzD,OAAO,EAAE,eAAe,EAAE,MAAM,WAAW,CAAC;AAE5C;;;;GAIG;AACH,qBAAa,EAAG,SAAQ,eAAe;IAC9B,aAAa,SAAQ;IAE5B;;;;OAIG;gBACS,GAAG,CAAC,EAAE,MAAM;IAIxB;;;;;;OAMG;IACI,eAAe;IAItB,SAAS,CAAC,eAAe,EAAE,eAAe,CAIxC;CACH"}
