@@ -1,1 +1,0 @@
-{"version":3,"file":"backupstorage.d.ts","sourceRoot":"","sources":["backupstorage.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,wBAAwB,CAAC;AACzD,OAAO,EAAE,eAAe,EAAE,MAAM,WAAW,CAAC;AAE5C;;;;GAIG;AACH,qBAAa,aAAc,SAAQ,eAAe;IACzC,aAAa,SAAoB;IAExC;;;;OAIG;gBACS,GAAG,CAAC,EAAE,MAAM;IAIxB;;;;;;OAMG;IACI,cAAc;IAIrB,SAAS,CAAC,eAAe,EAAE,eAAe,CAIxC;CACH"}
