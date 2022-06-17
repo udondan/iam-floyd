@@ -168,10 +168,11 @@ export function conditionFixer(
     fixed = 2;
     condition.key = keyOverride;
   }
+  const keyWithoutPrefix = condition.key.split(':')[-1];
 
   const operatorType = get(
     fixes,
-    `${service}.conditions.${condition.key}.operator.type`
+    `${service}.conditions.${keyWithoutPrefix}.operator.type`
   );
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
@@ -180,7 +181,7 @@ export function conditionFixer(
 
   const operatorTypeOverride = get(
     fixes,
-    `${service}.conditions.${condition.key}.operator.override`
+    `${service}.conditions.${keyWithoutPrefix}.operator.override`
   );
   if (typeof operatorTypeOverride !== 'undefined') {
     fixed = 2;
@@ -189,7 +190,7 @@ export function conditionFixer(
 
   if (fixed > 0) {
     process.stdout.write(
-      colors.yellow(`[L${fixed} fix for condition ${condition.key}] `)
+      colors.yellow(`[L${fixed} fix for condition ${keyWithoutPrefix}] `)
     );
   }
   return condition;
