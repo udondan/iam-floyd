@@ -1,0 +1,10 @@
+groundstation:ConfigId
+groundstation:ConfigType
+groundstation:ContactId
+groundstation:DataflowEndpointGroupId
+groundstation:GroundStationId
+groundstation:MissionProfileId
+groundstation:RequestTag/${TagKey}
+groundstation:ResourceTag/${TagKey}
+groundstation:SatelliteId
+groundstation:TagKeys

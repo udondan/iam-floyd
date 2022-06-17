@@ -1,0 +1,3 @@
+mq:RequestTag/${TagKey}
+mq:ResourceTag/${TagKey}
+mq:TagKeys

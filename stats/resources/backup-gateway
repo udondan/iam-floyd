@@ -1,0 +1,3 @@
+backup-gateway:gateway
+backup-gateway:hypervisor
+backup-gateway:virtualmachine

@@ -1,0 +1,3 @@
+auditmanager:RequestTag/${TagKey}
+auditmanager:ResourceTag/${TagKey}
+auditmanager:TagKeys

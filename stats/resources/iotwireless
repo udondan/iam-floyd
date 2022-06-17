@@ -1,0 +1,12 @@
+iotwireless:Destination
+iotwireless:DeviceProfile
+iotwireless:FuotaTask
+iotwireless:MulticastGroup
+iotwireless:NetworkAnalyzerConfiguration
+iotwireless:ServiceProfile
+iotwireless:SidewalkAccount
+iotwireless:WirelessDevice
+iotwireless:WirelessGateway
+iotwireless:WirelessGatewayTaskDefinition
+iotwireless:cert
+iotwireless:thing

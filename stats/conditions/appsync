@@ -1,0 +1,3 @@
+appsync:RequestTag/${TagKey}
+appsync:ResourceTag/${TagKey}
+appsync:TagKeys

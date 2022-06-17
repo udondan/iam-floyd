@@ -1,0 +1,3 @@
+cloudfront:RequestTag/${TagKey}
+cloudfront:ResourceTag/${TagKey}
+cloudfront:TagKeys

@@ -1,0 +1,3 @@
+forecast:RequestTag/${TagKey}
+forecast:ResourceTag/${TagKey}
+forecast:TagKeys

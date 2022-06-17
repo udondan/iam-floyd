@@ -1,0 +1,3 @@
+cognito-identity:RequestTag/${TagKey}
+cognito-identity:ResourceTag/${TagKey}
+cognito-identity:TagKeys

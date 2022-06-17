@@ -1,0 +1,3 @@
+appmesh:RequestTag/${TagKey}
+appmesh:ResourceTag/${TagKey}
+appmesh:TagKeys

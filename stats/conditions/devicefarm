@@ -1,0 +1,3 @@
+devicefarm:RequestTag/${TagKey}
+devicefarm:ResourceTag/${TagKey}
+devicefarm:TagKeys

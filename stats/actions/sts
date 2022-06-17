@@ -1,0 +1,11 @@
+sts:AssumeRole;Write
+sts:AssumeRoleWithSAML;Write
+sts:AssumeRoleWithWebIdentity;Write
+sts:DecodeAuthorizationMessage;Write
+sts:GetAccessKeyInfo;Read
+sts:GetCallerIdentity;Read
+sts:GetFederationToken;Read
+sts:GetServiceBearerToken;Read
+sts:GetSessionToken;Read
+sts:SetSourceIdentity;Write
+sts:TagSession;Tagging

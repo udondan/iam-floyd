@@ -1,0 +1,3 @@
+resource-groups:RequestTag/${TagKey}
+resource-groups:ResourceTag/${TagKey}
+resource-groups:TagKeys

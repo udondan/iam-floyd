@@ -1,0 +1,6 @@
+pi:DescribeDimensionKeys;Read
+pi:GetDimensionKeyDetails;Read
+pi:GetResourceMetadata;Read
+pi:GetResourceMetrics;Read
+pi:ListAvailableResourceDimensions;Read
+pi:ListAvailableResourceMetrics;Read

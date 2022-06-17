@@ -1,0 +1,3 @@
+kendra:RequestTag/${TagKey}
+kendra:ResourceTag/${TagKey}
+kendra:TagKeys

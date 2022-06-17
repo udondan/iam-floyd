@@ -1,0 +1,10 @@
+dms:RequestTag/${TagKey}
+dms:ResourceTag/${TagKey}
+dms:TagKeys
+dms:cert-tag/${TagKey}
+dms:endpoint-tag/${TagKey}
+dms:es-tag/${TagKey}
+dms:rep-tag/${TagKey}
+dms:req-tag/${TagKey}
+dms:subgrp-tag/${TagKey}
+dms:task-tag/${TagKey}

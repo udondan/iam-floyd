@@ -1,0 +1,6 @@
+elasticfilesystem:AccessPointArn
+elasticfilesystem:AccessedViaMountTarget
+elasticfilesystem:Encrypted
+elasticfilesystem:RequestTag/${TagKey}
+elasticfilesystem:ResourceTag/${TagKey}
+elasticfilesystem:TagKeys

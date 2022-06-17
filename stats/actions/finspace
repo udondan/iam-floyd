@@ -1,0 +1,15 @@
+finspace:CreateEnvironment;Write
+finspace:CreateUser;Write
+finspace:DeleteEnvironment;Write
+finspace:GetEnvironment;Read
+finspace:GetLoadSampleDataSetGroupIntoEnvironmentStatus;Read
+finspace:GetUser;Read
+finspace:ListEnvironments;List
+finspace:ListTagsForResource;Read
+finspace:ListUsers;List
+finspace:LoadSampleDataSetGroupIntoEnvironment;Write
+finspace:ResetUserPassword;Write
+finspace:TagResource;Tagging
+finspace:UntagResource;Tagging
+finspace:UpdateEnvironment;Write
+finspace:UpdateUser;Write

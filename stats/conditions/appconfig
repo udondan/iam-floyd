@@ -1,0 +1,3 @@
+appconfig:RequestTag/${TagKey}
+appconfig:ResourceTag/${TagKey}
+appconfig:TagKeys

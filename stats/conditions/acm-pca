@@ -1,0 +1,4 @@
+acm-pca:RequestTag/${TagKey}
+acm-pca:ResourceTag/${TagKey}
+acm-pca:TagKeys
+acm-pca:TemplateArn

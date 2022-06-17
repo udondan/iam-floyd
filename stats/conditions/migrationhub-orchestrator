@@ -1,0 +1,3 @@
+migrationhub-orchestrator:RequestTag/${TagKey}
+migrationhub-orchestrator:ResourceTag/${TagKey}
+migrationhub-orchestrator:TagKeys

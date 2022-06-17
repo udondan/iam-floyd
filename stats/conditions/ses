@@ -1,0 +1,8 @@
+ses:ApiVersion
+ses:FeedbackAddress
+ses:FromAddress
+ses:FromDisplayName
+ses:Recipients
+ses:RequestTag/${TagKey}
+ses:ResourceTag/${TagKey}
+ses:TagKeys

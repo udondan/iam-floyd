@@ -1,0 +1,17 @@
+devicefarm:artifact
+devicefarm:device
+devicefarm:deviceinstance
+devicefarm:devicepool
+devicefarm:instanceprofile
+devicefarm:job
+devicefarm:networkprofile
+devicefarm:project
+devicefarm:run
+devicefarm:sample
+devicefarm:session
+devicefarm:suite
+devicefarm:test
+devicefarm:testgrid-project
+devicefarm:testgrid-session
+devicefarm:upload
+devicefarm:vpceconfiguration

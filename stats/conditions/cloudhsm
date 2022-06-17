@@ -1,0 +1,3 @@
+cloudhsm:RequestTag/${TagKey}
+cloudhsm:ResourceTag/${TagKey}
+cloudhsm:TagKeys

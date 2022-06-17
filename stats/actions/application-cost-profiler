@@ -1,0 +1,6 @@
+application-cost-profiler:DeleteReportDefinition;Write
+application-cost-profiler:GetReportDefinition;Read
+application-cost-profiler:ImportApplicationUsage;Write
+application-cost-profiler:ListReportDefinitions;Read
+application-cost-profiler:PutReportDefinition;Write
+application-cost-profiler:UpdateReportDefinition;Write

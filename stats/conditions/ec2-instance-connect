@@ -1,0 +1,2 @@
+ec2-instance-connect:ResourceTag/${TagKey}
+ec2-instance-connect:osuser

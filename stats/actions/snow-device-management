@@ -1,0 +1,13 @@
+snow-device-management:CancelTask;Write
+snow-device-management:CreateTask;Write
+snow-device-management:DescribeDevice;Read
+snow-device-management:DescribeDeviceEc2Instances;Read
+snow-device-management:DescribeExecution;Read
+snow-device-management:DescribeTask;Read
+snow-device-management:ListDeviceResources;List
+snow-device-management:ListDevices;List
+snow-device-management:ListExecutions;List
+snow-device-management:ListTagsForResource;Read
+snow-device-management:ListTasks;List
+snow-device-management:TagResource;Tagging
+snow-device-management:UntagResource;Tagging

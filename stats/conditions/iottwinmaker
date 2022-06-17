@@ -1,0 +1,3 @@
+iottwinmaker:RequestTag/${TagKey}
+iottwinmaker:ResourceTag/${TagKey}
+iottwinmaker:TagKeys

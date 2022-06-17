@@ -1,0 +1,3 @@
+codeartifact:RequestTag/${TagKey}
+codeartifact:ResourceTag/${TagKey}
+codeartifact:TagKeys

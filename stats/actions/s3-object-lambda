@@ -1,0 +1,26 @@
+s3-object-lambda:AbortMultipartUpload;Write
+s3-object-lambda:DeleteObject;Write
+s3-object-lambda:DeleteObjectTagging;Tagging
+s3-object-lambda:DeleteObjectVersion;Write
+s3-object-lambda:DeleteObjectVersionTagging;Tagging
+s3-object-lambda:GetObject;Read
+s3-object-lambda:GetObjectAcl;Read
+s3-object-lambda:GetObjectLegalHold;Read
+s3-object-lambda:GetObjectRetention;Read
+s3-object-lambda:GetObjectTagging;Read
+s3-object-lambda:GetObjectVersion;Read
+s3-object-lambda:GetObjectVersionAcl;Read
+s3-object-lambda:GetObjectVersionTagging;Read
+s3-object-lambda:ListBucket;List
+s3-object-lambda:ListBucketMultipartUploads;List
+s3-object-lambda:ListBucketVersions;List
+s3-object-lambda:ListMultipartUploadParts;List
+s3-object-lambda:PutObject;Write
+s3-object-lambda:PutObjectAcl;Permissions management
+s3-object-lambda:PutObjectLegalHold;Write
+s3-object-lambda:PutObjectRetention;Write
+s3-object-lambda:PutObjectTagging;Tagging
+s3-object-lambda:PutObjectVersionAcl;Permissions management
+s3-object-lambda:PutObjectVersionTagging;Tagging
+s3-object-lambda:RestoreObject;Write
+s3-object-lambda:WriteGetObjectResponse;Write

@@ -1,0 +1,4 @@
+codedeploy:application
+codedeploy:deploymentconfig
+codedeploy:deploymentgroup
+codedeploy:instance

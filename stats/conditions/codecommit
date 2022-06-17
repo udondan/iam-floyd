@@ -1,0 +1,4 @@
+codecommit:References
+codecommit:RequestTag/${TagKey}
+codecommit:ResourceTag/${TagKey}
+codecommit:TagKeys

@@ -1,0 +1,3 @@
+rekognition:RequestTag/${TagKey}
+rekognition:ResourceTag/${TagKey}
+rekognition:TagKeys

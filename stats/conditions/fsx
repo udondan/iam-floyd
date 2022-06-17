@@ -1,0 +1,7 @@
+fsx:IsBackupCopyDestination
+fsx:IsBackupCopySource
+fsx:ParentVolumeId
+fsx:RequestTag/${TagKey}
+fsx:ResourceTag/${TagKey}
+fsx:StorageVirtualMachineId
+fsx:TagKeys

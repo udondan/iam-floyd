@@ -1,0 +1,3 @@
+braket:RequestTag/${TagKey}
+braket:ResourceTag/${TagKey}
+braket:TagKeys

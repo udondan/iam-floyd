@@ -1,0 +1,14 @@
+codestar-connections:BranchName
+codestar-connections:FullRepositoryId
+codestar-connections:HostArn
+codestar-connections:InstallationId
+codestar-connections:OwnerId
+codestar-connections:PassedToService
+codestar-connections:ProviderAction
+codestar-connections:ProviderPermissionsRequired
+codestar-connections:ProviderType
+codestar-connections:ProviderTypeFilter
+codestar-connections:RepositoryName
+codestar-connections:RequestTag/${TagKey}
+codestar-connections:ResourceTag/${TagKey}
+codestar-connections:TagKeys

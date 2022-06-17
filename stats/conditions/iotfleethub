@@ -1,0 +1,3 @@
+iotfleethub:RequestTag/${TagKey}
+iotfleethub:ResourceTag/${TagKey}
+iotfleethub:TagKeys

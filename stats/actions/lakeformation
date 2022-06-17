@@ -1,0 +1,43 @@
+lakeformation:AddLFTagsToResource;Tagging
+lakeformation:BatchGrantPermissions;Permissions management
+lakeformation:BatchRevokePermissions;Permissions management
+lakeformation:CancelTransaction;Write
+lakeformation:CommitTransaction;Write
+lakeformation:CreateDataCellsFilter;Write
+lakeformation:CreateLFTag;Write
+lakeformation:DeleteDataCellsFilter;Write
+lakeformation:DeleteLFTag;Write
+lakeformation:DeleteObjectsOnCancel;Write
+lakeformation:DeregisterResource;Write
+lakeformation:DescribeResource;Read
+lakeformation:DescribeTransaction;Read
+lakeformation:ExtendTransaction;Write
+lakeformation:GetDataAccess;Write
+lakeformation:GetDataLakeSettings;Read
+lakeformation:GetEffectivePermissionsForPath;Read
+lakeformation:GetLFTag;Read
+lakeformation:GetQueryState;Read
+lakeformation:GetQueryStatistics;Read
+lakeformation:GetResourceLFTags;Read
+lakeformation:GetTableObjects;Read
+lakeformation:GetWorkUnitResults;Read
+lakeformation:GetWorkUnits;Read
+lakeformation:GrantPermissions;Permissions management
+lakeformation:ListDataCellsFilter;List
+lakeformation:ListLFTags;Read
+lakeformation:ListPermissions;List
+lakeformation:ListResources;List
+lakeformation:ListTableStorageOptimizers;List
+lakeformation:ListTransactions;List
+lakeformation:PutDataLakeSettings;Permissions management
+lakeformation:RegisterResource;Write
+lakeformation:RemoveLFTagsFromResource;Tagging
+lakeformation:RevokePermissions;Permissions management
+lakeformation:SearchDatabasesByLFTags;Read
+lakeformation:SearchTablesByLFTags;Read
+lakeformation:StartQueryPlanning;Write
+lakeformation:StartTransaction;Write
+lakeformation:UpdateLFTag;Write
+lakeformation:UpdateResource;Write
+lakeformation:UpdateTableObjects;Write
+lakeformation:UpdateTableStorageOptimizer;Write

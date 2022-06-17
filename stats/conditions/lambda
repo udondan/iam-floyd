@@ -1,0 +1,8 @@
+lambda:CodeSigningConfigArn
+lambda:FunctionArn
+lambda:FunctionUrlAuthType
+lambda:Layer
+lambda:Principal
+lambda:SecurityGroupIds
+lambda:SubnetIds
+lambda:VpcIds

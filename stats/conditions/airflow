@@ -1,0 +1,3 @@
+airflow:RequestTag/${TagKey}
+airflow:ResourceTag/${TagKey}
+airflow:TagKeys

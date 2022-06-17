@@ -1,0 +1,3 @@
+databrew:RequestTag/${TagKey}
+databrew:ResourceTag/${TagKey}
+databrew:TagKeys

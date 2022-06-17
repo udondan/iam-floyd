@@ -1,0 +1,3 @@
+fms:RequestTag/${TagKey}
+fms:ResourceTag/${TagKey}
+fms:TagKeys

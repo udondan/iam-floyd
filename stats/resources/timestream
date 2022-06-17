@@ -1,0 +1,3 @@
+timestream:database
+timestream:scheduled-query
+timestream:table

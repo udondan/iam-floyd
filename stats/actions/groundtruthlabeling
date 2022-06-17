@@ -1,0 +1,5 @@
+groundtruthlabeling:AssociatePatchToManifestJob;Write
+groundtruthlabeling:DescribeConsoleJob;Read
+groundtruthlabeling:ListDatasetObjects;Read
+groundtruthlabeling:RunFilterOrSampleDatasetJob;Write
+groundtruthlabeling:RunGenerateManifestByCrawlingJob;Write

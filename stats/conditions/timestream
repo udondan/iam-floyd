@@ -1,0 +1,3 @@
+timestream:RequestTag/${TagKey}
+timestream:ResourceTag/${TagKey}
+timestream:TagKeys

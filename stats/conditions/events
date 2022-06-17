@@ -1,0 +1,13 @@
+events:EventBusArn
+events:ManagedBy
+events:RequestTag/${TagKey}
+events:ResourceTag/${TagKey}
+events:TagKeys
+events:TargetArn
+events:creatorAccount
+events:detail-type
+events:detail.eventTypeCode
+events:detail.service
+events:detail.userIdentity.principalId
+events:eventBusInvocation
+events:source

@@ -1,0 +1,12 @@
+batch:AWSLogsCreateGroup
+batch:AWSLogsGroup
+batch:AWSLogsRegion
+batch:AWSLogsStreamPrefix
+batch:Image
+batch:LogDriver
+batch:Privileged
+batch:RequestTag/${TagKey}
+batch:ResourceTag/${TagKey}
+batch:ShareIdentifier
+batch:TagKeys
+batch:User

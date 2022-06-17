@@ -1,0 +1,3 @@
+emr-serverless:RequestTag/${TagKey}
+emr-serverless:ResourceTag/${TagKey}
+emr-serverless:TagKeys

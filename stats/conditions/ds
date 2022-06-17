@@ -1,0 +1,3 @@
+ds:RequestTag/${TagKey}
+ds:ResourceTag/${TagKey}
+ds:TagKeys

@@ -1,0 +1,17 @@
+autoscaling:ImageId
+autoscaling:InstanceType
+autoscaling:InstanceTypes
+autoscaling:LaunchConfigurationName
+autoscaling:LaunchTemplateVersionSpecified
+autoscaling:LoadBalancerNames
+autoscaling:MaxSize
+autoscaling:MetadataHttpEndpoint
+autoscaling:MetadataHttpPutResponseHopLimit
+autoscaling:MetadataHttpTokens
+autoscaling:MinSize
+autoscaling:RequestTag/${TagKey}
+autoscaling:ResourceTag/${TagKey}
+autoscaling:SpotPrice
+autoscaling:TagKeys
+autoscaling:TargetGroupARNs
+autoscaling:VPCZoneIdentifiers

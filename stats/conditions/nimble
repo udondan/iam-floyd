@@ -1,0 +1,8 @@
+nimble:RequestTag/${TagKey}
+nimble:ResourceTag/${TagKey}
+nimble:TagKeys
+nimble:createdBy
+nimble:ownedBy
+nimble:principalId
+nimble:requesterPrincipalId
+nimble:studioId

@@ -1,0 +1,3 @@
+acm:RequestTag/${TagKey}
+acm:ResourceTag/${TagKey}
+acm:TagKeys

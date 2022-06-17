@@ -1,0 +1,12 @@
+ivschat:CreateChatToken;Write
+ivschat:CreateRoom;Write
+ivschat:DeleteMessage;Write
+ivschat:DeleteRoom;Write
+ivschat:DisconnectUser;Write
+ivschat:GetRoom;Read
+ivschat:ListRooms;List
+ivschat:ListTagsForResource;Read
+ivschat:SendEvent;Write
+ivschat:TagResource;Tagging
+ivschat:UntagResource;Tagging
+ivschat:UpdateRoom;Write

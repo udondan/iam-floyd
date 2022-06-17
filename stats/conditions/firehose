@@ -1,0 +1,3 @@
+firehose:RequestTag/${TagKey}
+firehose:ResourceTag/${TagKey}
+firehose:TagKeys

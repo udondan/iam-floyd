@@ -1,0 +1,7 @@
+deepracer:car
+deepracer:evaluation_job
+deepracer:leaderboard
+deepracer:leaderboard_evaluation_job
+deepracer:reinforcement_learning_model
+deepracer:track
+deepracer:training_job

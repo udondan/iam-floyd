@@ -1,0 +1,3 @@
+frauddetector:RequestTag/${TagKey}
+frauddetector:ResourceTag/${TagKey}
+frauddetector:TagKeys

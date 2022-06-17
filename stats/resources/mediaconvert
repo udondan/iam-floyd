@@ -1,0 +1,5 @@
+mediaconvert:CertificateAssociation
+mediaconvert:Job
+mediaconvert:JobTemplate
+mediaconvert:Preset
+mediaconvert:Queue

@@ -1,0 +1,5 @@
+guardduty:detector
+guardduty:filter
+guardduty:ipset
+guardduty:publishingDestination
+guardduty:threatintelset

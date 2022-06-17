@@ -1,0 +1,3 @@
+guardduty:RequestTag/${TagKey}
+guardduty:ResourceTag/${TagKey}
+guardduty:TagKeys

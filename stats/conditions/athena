@@ -1,0 +1,3 @@
+athena:RequestTag/${TagKey}
+athena:ResourceTag/${TagKey}
+athena:TagKeys

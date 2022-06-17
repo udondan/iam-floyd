@@ -1,0 +1,3 @@
+workmail:RequestTag/${TagKey}
+workmail:ResourceTag/${TagKey}
+workmail:TagKeys

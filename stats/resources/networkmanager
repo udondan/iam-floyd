@@ -1,0 +1,8 @@
+networkmanager:attachment
+networkmanager:connect-peer
+networkmanager:connection
+networkmanager:core-network
+networkmanager:device
+networkmanager:global-network
+networkmanager:link
+networkmanager:site

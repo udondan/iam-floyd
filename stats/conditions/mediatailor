@@ -1,0 +1,3 @@
+mediatailor:RequestTag/${TagKey}
+mediatailor:ResourceTag/${TagKey}
+mediatailor:TagKeys

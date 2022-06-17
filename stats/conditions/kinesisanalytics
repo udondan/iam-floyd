@@ -1,0 +1,3 @@
+kinesisanalytics:RequestTag/${TagKey}
+kinesisanalytics:ResourceTag/${TagKey}
+kinesisanalytics:TagKeys

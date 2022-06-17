@@ -1,0 +1,24 @@
+deeplens:AssociateServiceRoleToAccount;Permissions management
+deeplens:BatchGetDevice;Read
+deeplens:BatchGetModel;Read
+deeplens:BatchGetProject;Read
+deeplens:CreateDeviceCertificates;Write
+deeplens:CreateModel;Write
+deeplens:CreateProject;Write
+deeplens:DeleteModel;Write
+deeplens:DeleteProject;Write
+deeplens:DeployProject;Write
+deeplens:DeregisterDevice;Write
+deeplens:GetAssociatedResources;Read
+deeplens:GetDeploymentStatus;Read
+deeplens:GetDevice;Read
+deeplens:GetModel;Read
+deeplens:GetProject;Read
+deeplens:ImportProjectFromTemplate;Write
+deeplens:ListDeployments;List
+deeplens:ListDevices;List
+deeplens:ListModels;List
+deeplens:ListProjects;List
+deeplens:RegisterDevice;Write
+deeplens:RemoveProject;Write
+deeplens:UpdateProject;Write

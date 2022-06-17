@@ -1,0 +1,3 @@
+dlm:RequestTag/${TagKey}
+dlm:ResourceTag/${TagKey}
+dlm:TagKeys

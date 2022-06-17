@@ -1,0 +1,3 @@
+mediapackage:RequestTag/${TagKey}
+mediapackage:ResourceTag/${TagKey}
+mediapackage:TagKeys

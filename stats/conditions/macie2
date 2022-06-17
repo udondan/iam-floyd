@@ -1,0 +1,3 @@
+macie2:RequestTag/${TagKey}
+macie2:ResourceTag/${TagKey}
+macie2:TagKeys

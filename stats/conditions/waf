@@ -1,0 +1,3 @@
+waf:RequestTag/${TagKey}
+waf:ResourceTag/${TagKey}
+waf:TagKeys

@@ -1,0 +1,5 @@
+sns:Endpoint
+sns:Protocol
+sns:RequestTag/${TagKey}
+sns:ResourceTag/${TagKey}
+sns:TagKeys

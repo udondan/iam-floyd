@@ -1,0 +1,10 @@
+elasticache:cluster
+elasticache:globalreplicationgroup
+elasticache:parametergroup
+elasticache:replicationgroup
+elasticache:reserved-instance
+elasticache:securitygroup
+elasticache:snapshot
+elasticache:subnetgroup
+elasticache:user
+elasticache:usergroup

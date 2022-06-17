@@ -1,0 +1,3 @@
+storagegateway:RequestTag/${TagKey}
+storagegateway:ResourceTag/${TagKey}
+storagegateway:TagKeys

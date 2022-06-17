@@ -1,0 +1,13 @@
+dbqms:CreateFavoriteQuery;Write
+dbqms:CreateQueryHistory;Write
+dbqms:CreateTab;Write
+dbqms:DeleteFavoriteQueries;Write
+dbqms:DeleteQueryHistory;Write
+dbqms:DeleteTab;Write
+dbqms:DescribeFavoriteQueries;List
+dbqms:DescribeQueryHistory;List
+dbqms:DescribeTabs;List
+dbqms:GetQueryString;Read
+dbqms:UpdateFavoriteQuery;Write
+dbqms:UpdateQueryHistory;Write
+dbqms:UpdateTab;Write

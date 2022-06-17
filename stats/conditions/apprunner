@@ -1,0 +1,7 @@
+apprunner:AutoScalingConfigurationArn
+apprunner:ConnectionArn
+apprunner:ObservabilityConfigurationArn
+apprunner:RequestTag/${TagKey}
+apprunner:ResourceTag/${TagKey}
+apprunner:TagKeys
+apprunner:VpcConnectorArn

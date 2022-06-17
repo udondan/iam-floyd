@@ -1,0 +1,3 @@
+elemental-activations:RequestTag/${TagKey}
+elemental-activations:ResourceTag/${TagKey}
+elemental-activations:TagKeys

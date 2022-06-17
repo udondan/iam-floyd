@@ -1,0 +1,6 @@
+dynamodb:backup
+dynamodb:export
+dynamodb:global-table
+dynamodb:index
+dynamodb:stream
+dynamodb:table

@@ -1,0 +1,3 @@
+lookoutvision:RequestTag/${TagKey}
+lookoutvision:ResourceTag/${TagKey}
+lookoutvision:TagKeys

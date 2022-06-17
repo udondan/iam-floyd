@@ -1,0 +1,3 @@
+schemas:RequestTag/${TagKey}
+schemas:ResourceTag/${TagKey}
+schemas:TagKeys

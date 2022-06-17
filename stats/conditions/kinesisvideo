@@ -1,0 +1,3 @@
+kinesisvideo:RequestTag/${TagKey}
+kinesisvideo:ResourceTag/${TagKey}
+kinesisvideo:TagKeys

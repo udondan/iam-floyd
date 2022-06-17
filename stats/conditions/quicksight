@@ -1,0 +1,8 @@
+quicksight:DirectoryType
+quicksight:Edition
+quicksight:IamArn
+quicksight:RequestTag/${TagKey}
+quicksight:ResourceTag/${TagKey}
+quicksight:SessionName
+quicksight:TagKeys
+quicksight:UserName

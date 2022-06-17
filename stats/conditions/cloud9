@@ -1,0 +1,10 @@
+cloud9:EnvironmentId
+cloud9:EnvironmentName
+cloud9:InstanceType
+cloud9:OwnerArn
+cloud9:Permissions
+cloud9:RequestTag/${TagKey}
+cloud9:ResourceTag/${TagKey}
+cloud9:SubnetId
+cloud9:TagKeys
+cloud9:UserArn

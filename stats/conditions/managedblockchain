@@ -1,0 +1,3 @@
+managedblockchain:RequestTag/${TagKey}
+managedblockchain:ResourceTag/${TagKey}
+managedblockchain:TagKeys

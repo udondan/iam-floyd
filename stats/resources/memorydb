@@ -1,0 +1,6 @@
+memorydb:acl
+memorydb:cluster
+memorydb:parametergroup
+memorydb:snapshot
+memorydb:subnetgroup
+memorydb:user

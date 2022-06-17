@@ -1,0 +1,9 @@
+greengrass:CurrentTime
+greengrass:EpochTime
+greengrass:MultiFactorAuthAge
+greengrass:MultiFactorAuthPresent
+greengrass:RequestTag/${TagKey}
+greengrass:ResourceTag/${TagKey}
+greengrass:SecureTransport
+greengrass:TagKeys
+greengrass:UserAgent

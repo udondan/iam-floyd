@@ -1,0 +1,3 @@
+mediastore:RequestTag/${TagKey}
+mediastore:ResourceTag/${TagKey}
+mediastore:TagKeys

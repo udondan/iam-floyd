@@ -1,0 +1,10 @@
+cloudfront:cache-policy
+cloudfront:distribution
+cloudfront:field-level-encryption
+cloudfront:field-level-encryption-profile
+cloudfront:function
+cloudfront:origin-access-identity
+cloudfront:origin-request-policy
+cloudfront:realtime-log-config
+cloudfront:response-headers-policy
+cloudfront:streaming-distribution
