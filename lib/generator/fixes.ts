@@ -168,7 +168,8 @@ export function conditionFixer(
     fixed = 2;
     condition.key = keyOverride;
   }
-  const keyWithoutPrefix = condition.key.split(':').at(-1);
+  const keySplit = condition.key.split(':');
+  const keyWithoutPrefix = keySplit[keySplit.length - 1];
 
   const operatorType = get(
     fixes,
