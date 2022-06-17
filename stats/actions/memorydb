@@ -1,4 +1,4 @@
-memorydb:BatchUpdateClusters;Write
+memorydb:BatchUpdateCluster;Write
 memorydb:CopySnapshot;Write
 memorydb:CreateAcl;Write
 memorydb:CreateCluster;Write
@@ -23,7 +23,7 @@ memorydb:DescribeSnapshots;Read
 memorydb:DescribeSubnetGroups;Read
 memorydb:DescribeUsers;Read
 memorydb:FailoverShard;Write
-memorydb:ListNodeTypeUpdates;Read
+memorydb:ListAllowedNodeTypeUpdates;Read
 memorydb:ListTags;Read
 memorydb:ResetParameterGroup;Write
 memorydb:TagResource;Tagging

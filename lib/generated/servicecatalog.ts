@@ -78,6 +78,9 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cloudformation:DescribeStacks
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html
    */
   public toAssociateResource() {
@@ -793,7 +796,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the applications in your account
+   * Grants permission to list your applications
    *
    * Access Level: List
    *
@@ -826,7 +829,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the attribute groups in your account
+   * Grants permission to list your attribute groups
    *
    * Access Level: List
    *
@@ -834,6 +837,17 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toListAttributeGroups() {
     return this.to('ListAttributeGroups');
+  }
+
+  /**
+   * Grants permission to list the associated attribute groups for a given application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListAttributeGroupsForApplication.html
+   */
+  public toListAttributeGroupsForApplication() {
+    return this.to('ListAttributeGroupsForApplication');
   }
 
   /**
@@ -1420,6 +1434,7 @@ export class Servicecatalog extends PolicyStatement {
       'ListAssociatedAttributeGroups',
       'ListAssociatedResources',
       'ListAttributeGroups',
+      'ListAttributeGroupsForApplication',
       'ListBudgetsForResource',
       'ListConstraintsForPortfolio',
       'ListLaunchPaths',

@@ -137,6 +137,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCertificate.html
    */
   public toCreateCertificate() {
@@ -169,6 +173,10 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create an Amazon Lightsail container service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerService.html
    */
@@ -247,6 +255,10 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create an Amazon Lightsail content delivery network (CDN) distribution
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDistribution.html
    */
@@ -724,6 +736,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html
    */
   public toExportSnapshot() {
@@ -1171,7 +1187,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Grants permision to get information about a load balancer
+   * Grants permission to get information about a load balancer
    *
    * Access Level: Read
    *
@@ -1201,6 +1217,17 @@ export class Lightsail extends PolicyStatement {
    */
   public toGetLoadBalancerTlsCertificates() {
     return this.to('GetLoadBalancerTlsCertificates');
+  }
+
+  /**
+   * Grants permission to get a list of TLS security policies that you can apply to Lightsail load balancers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html
+   */
+  public toGetLoadBalancerTlsPolicies() {
+    return this.to('GetLoadBalancerTlsPolicies');
   }
 
   /**
@@ -1897,6 +1924,7 @@ export class Lightsail extends PolicyStatement {
       'GetLoadBalancer',
       'GetLoadBalancerMetricData',
       'GetLoadBalancerTlsCertificates',
+      'GetLoadBalancerTlsPolicies',
       'GetLoadBalancers',
       'GetOperation',
       'GetOperations',
@@ -2158,6 +2186,9 @@ export class Lightsail extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCertificate(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Certificate/${ id }`);
@@ -2186,6 +2217,9 @@ export class Lightsail extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onContainerService(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:ContainerService/${ id }`);
@@ -2200,6 +2234,9 @@ export class Lightsail extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDistribution(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Distribution/${ id }`);

@@ -34,10 +34,10 @@ export class Memorydb extends PolicyStatement {
    * - ec2:DescribeVpcs
    * - s3:GetObject
    *
-   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_BatchUpdateClusters.html
+   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_BatchUpdateCluster.html
    */
-  public toBatchUpdateClusters() {
-    return this.to('BatchUpdateClusters');
+  public toBatchUpdateCluster() {
+    return this.to('BatchUpdateCluster');
   }
 
   /**
@@ -440,10 +440,10 @@ export class Memorydb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListNodeTypeUpdates.html
+   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListAllowedNodeTypeUpdates.html
    */
-  public toListNodeTypeUpdates() {
-    return this.to('ListNodeTypeUpdates');
+  public toListAllowedNodeTypeUpdates() {
+    return this.to('ListAllowedNodeTypeUpdates');
   }
 
   /**
@@ -584,7 +584,7 @@ export class Memorydb extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'BatchUpdateClusters',
+      'BatchUpdateCluster',
       'CopySnapshot',
       'CreateAcl',
       'CreateCluster',
@@ -617,7 +617,7 @@ export class Memorydb extends PolicyStatement {
       'DescribeSnapshots',
       'DescribeSubnetGroups',
       'DescribeUsers',
-      'ListNodeTypeUpdates',
+      'ListAllowedNodeTypeUpdates',
       'ListTags'
     ],
     Tagging: [

@@ -67,6 +67,7 @@ servicecatalog:ListApplications;List
 servicecatalog:ListAssociatedAttributeGroups;List
 servicecatalog:ListAssociatedResources;List
 servicecatalog:ListAttributeGroups;List
+servicecatalog:ListAttributeGroupsForApplication;List
 servicecatalog:ListBudgetsForResource;List
 servicecatalog:ListConstraintsForPortfolio;List
 servicecatalog:ListLaunchPaths;List

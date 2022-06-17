@@ -101,6 +101,7 @@ lightsail:GetKeyPairs;Read
 lightsail:GetLoadBalancer;Read
 lightsail:GetLoadBalancerMetricData;Read
 lightsail:GetLoadBalancerTlsCertificates;Read
+lightsail:GetLoadBalancerTlsPolicies;Read
 lightsail:GetLoadBalancers;Read
 lightsail:GetOperation;Read
 lightsail:GetOperations;Read
