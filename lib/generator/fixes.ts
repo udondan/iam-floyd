@@ -125,7 +125,7 @@ export const fixes: Fixes = {
   ssm: {
     conditions: {
       'resourceTag/tag-key': {
-        key: 'ResourceTag/${TagKey}',
+        key: 'resourceTag/${TagKey}',
       },
     },
     resourceTypes: {
@@ -163,17 +163,17 @@ export function conditionFixer(
     condition.type = 'numeric';
   }
 
-  const split = condition.key.split(':');
-  let key = split[1];
-
-  const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
-  if (typeof keyOverride !== 'undefined') {
+  const keyOverride = conditionKeyFixer(service, condition.key);
+  if (condition.key !== keyOverride) {
     fixed = 2;
-    key = keyOverride;
-    condition.key = `${split[0]}:${key}`;
+    condition.key = keyOverride;
   }
+  const keyWithoutPrefix = condition.key.split(':').at(-1);
 
-  const operatorType = get(fixes, `${service}.conditions.${key}.operator.type`);
+  const operatorType = get(
+    fixes,
+    `${service}.conditions.${keyWithoutPrefix}.operator.type`
+  );
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
     condition.type = operatorType;
@@ -181,7 +181,7 @@ export function conditionFixer(
 
   const operatorTypeOverride = get(
     fixes,
-    `${service}.conditions.${key}.operator.override`
+    `${service}.conditions.${keyWithoutPrefix}.operator.override`
   );
   if (typeof operatorTypeOverride !== 'undefined') {
     fixed = 2;
@@ -190,10 +190,22 @@ export function conditionFixer(
 
   if (fixed > 0) {
     process.stdout.write(
-      colors.yellow(`[L${fixed} fix for condition ${key}] `)
+      colors.yellow(`[L${fixed} fix for condition ${keyWithoutPrefix}] `)
     );
   }
   return condition;
+}
+
+export function conditionKeyFixer(service: string, key: string): string {
+  const split = key.split(':');
+  key = split[1];
+
+  const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
+  if (typeof keyOverride !== 'undefined') {
+    return split[0] + ':' + keyOverride;
+  }
+
+  return split[0] + ':' + key;
 }
 
 export function arnFixer(
