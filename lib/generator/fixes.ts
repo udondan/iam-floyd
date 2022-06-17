@@ -197,23 +197,19 @@ export function conditionFixer(
 
 export function conditionKeyFixer(
   service: string,
-  conditionKey: string,
-  shouldSplit: boolean = true
+  conditionKey: string
 ): string {
   let key = conditionKey;
 
   const split = conditionKey.split(':');
-  const keySplit = split[1];
-  if (shouldSplit) {
-    key = keySplit;
-  }
+  key = split[1];
 
-  const keyOverride = get(fixes, `${service}.conditions.${keySplit}.key`);
+  const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
   if (typeof keyOverride !== 'undefined') {
     return keyOverride;
   }
 
-  return key;
+  return split[0] + ':' + key;
 }
 
 export function arnFixer(

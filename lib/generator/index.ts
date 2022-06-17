@@ -878,8 +878,7 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       .map((element) => {
         return conditionKeyFixer(
           module.servicePrefix!,
-          $(element).text().trim(),
-          false
+          $(element).text().trim()
         );
       });
     console.log(conditionKeys);
