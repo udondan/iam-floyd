@@ -1,5 +1,3 @@
-rbin:Attribute/ResourceType
-rbin:Request/ResourceType
 rbin:RequestTag/${TagKey}
 rbin:ResourceTag/${TagKey}
 rbin:TagKeys

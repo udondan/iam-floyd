@@ -36,7 +36,7 @@ iotwireless:DisassociateWirelessGatewayFromCertificate;Write
 iotwireless:DisassociateWirelessGatewayFromThing;Write
 iotwireless:GetDestination;Read
 iotwireless:GetDeviceProfile;Read
-iotwireless:GetEventConfigurationByResourceTypes;Read
+iotwireless:GetEventConfigurationsByResourceTypes;Read
 iotwireless:GetFuotaTask;Read
 iotwireless:GetLogLevelsByResourceTypes;Read
 iotwireless:GetMulticastGroup;Read
@@ -83,7 +83,7 @@ iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
 iotwireless:UntagResource;Tagging
 iotwireless:UpdateDestination;Write
-iotwireless:UpdateEventConfigurationByResourceTypes;Write
+iotwireless:UpdateEventConfigurationsByResourceTypes;Write
 iotwireless:UpdateFuotaTask;Write
 iotwireless:UpdateLogLevelsByResourceTypes;Write
 iotwireless:UpdateMulticastGroup;Write

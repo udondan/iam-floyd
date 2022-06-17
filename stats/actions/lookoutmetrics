@@ -25,6 +25,5 @@ lookoutmetrics:ListTagsForResource;Read
 lookoutmetrics:PutFeedback;Write
 lookoutmetrics:TagResource;Tagging
 lookoutmetrics:UntagResource;Tagging
-lookoutmetrics:UpdateAlert;Write
 lookoutmetrics:UpdateAnomalyDetector;Write
 lookoutmetrics:UpdateMetricSet;Write
