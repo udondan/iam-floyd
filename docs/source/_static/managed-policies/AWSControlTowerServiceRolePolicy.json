@@ -151,11 +151,27 @@
 		},
 		{
 			"Effect": "Allow",
-			"Action": "organizations:EnableAWSServiceAccess",
+			"Action": [
+				"organizations:EnableAWSServiceAccess",
+				"organizations:DisableAWSServiceAccess"
+			],
 			"Resource": "*",
 			"Condition": {
 				"StringLike": {
-					"organizations:ServicePrincipal": "config.amazonaws.com"
+					"organizations:ServicePrincipal": [
+						"config.amazonaws.com",
+						"cloudtrail.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "cloudtrail.amazonaws.com"
 				}
 			}
 		}

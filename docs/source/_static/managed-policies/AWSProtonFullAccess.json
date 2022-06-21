@@ -37,6 +37,16 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/sync.proton.amazonaws.com/AWSServiceRoleForProtonSync",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "sync.proton.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": [
 				"codestar-connections:PassConnection"
 			],
