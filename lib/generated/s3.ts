@@ -74,7 +74,7 @@ export class S3 extends PolicyStatement {
    * - .ifObjectLockRemainingRetentionDays()
    * - .ifObjectLockLegalHold()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-bypass
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-bypass
    */
   public toBypassGovernanceRetention() {
     return this.to('BypassGovernanceRetention');
@@ -188,7 +188,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -376,7 +375,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -544,7 +542,6 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -1157,7 +1154,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -1179,7 +1175,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -1201,7 +1196,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -1454,7 +1448,7 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-config-for-kms-objects.html
    */
   public toGetObjectVersionForReplication() {
     return this.to('GetObjectVersionForReplication');
@@ -1478,7 +1472,7 @@ export class S3 extends PolicyStatement {
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toGetObjectVersionTagging() {
     return this.to('GetObjectVersionTagging');
@@ -1574,7 +1568,7 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_dashboard.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_dashboard.html
    */
   public toGetStorageLensDashboard() {
     return this.to('GetStorageLensDashboard');
@@ -1588,7 +1582,7 @@ export class S3 extends PolicyStatement {
    * Possible conditions:
    * - .ifResourceAccount()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toInitiateReplication() {
     return this.to('InitiateReplication');
@@ -1748,7 +1742,6 @@ export class S3 extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -1815,7 +1808,7 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html#repl-ownership-add-role-permission
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-change-owner.html#repl-ownership-add-role-permission
    */
   public toObjectOwnerOverrideToBucketOwner() {
     return this.to('ObjectOwnerOverrideToBucketOwner');
@@ -1910,6 +1903,8 @@ export class S3 extends PolicyStatement {
    * Grants permission to associate public access block configurations with a specified access point, while creating a access point
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html#access-control-block-public-access-examples-access-point
    */
   public toPutAccessPointPublicAccessBlock() {
     return this.to('PutAccessPointPublicAccessBlock');
@@ -2313,7 +2308,6 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
-   * - .ifAwsRequestedRegion()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureversion()
@@ -2603,7 +2597,7 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toReplicateDelete() {
     return this.to('ReplicateDelete');
@@ -2624,7 +2618,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toReplicateObject() {
     return this.to('ReplicateObject');
@@ -2643,7 +2637,7 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toReplicateTags() {
     return this.to('ReplicateTags');
@@ -2859,7 +2853,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type accesspoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
    *
    * @param accessPointName - Identifier for the accessPointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2873,7 +2867,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type bucket to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html
    *
    * @param bucketName - Identifier for the bucketName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -2885,7 +2879,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type object to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html
    *
    * @param bucketName - Identifier for the bucketName.
    * @param objectName - Identifier for the objectName.
@@ -2898,7 +2892,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-managing-jobs.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2912,7 +2906,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type storagelensconfiguration to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html
    *
    * @param configId - Identifier for the configId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2929,7 +2923,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type objectlambdaaccesspoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/transforming-objects.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html
    *
    * @param accessPointName - Identifier for the accessPointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2943,7 +2937,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type multiregionaccesspoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/MultiRegionAccessPointRequests.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
    *
    * @param accessPointAlias - Identifier for the accessPointAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2956,7 +2950,7 @@ export class S3 extends PolicyStatement {
   /**
    * Adds a resource of type multiregionaccesspointrequestarn to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/MultiRegionAccessPointRequests.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
    *
    * @param operation - Identifier for the operation.
    * @param token - Identifier for the token.
@@ -2970,7 +2964,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the network origin (Internet or VPC)
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -3034,7 +3028,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the AWS Account ID that owns the access point
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -3098,7 +3092,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by an access point Amazon Resource Name (ARN)
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -3162,7 +3156,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by operation to updating the job priority
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
    *
    * Applies to actions:
    * - .toDeleteJobTagging()
@@ -3180,7 +3174,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by priority range to cancelling existing jobs
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
    *
    * Applies to actions:
    * - .toDeleteJobTagging()
@@ -3198,7 +3192,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by existing object tag key and value
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toDeleteObjectTagging()
@@ -3227,7 +3221,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific job suspended cause (for example, AWAITING_CONFIRMATION) to cancelling suspended jobs
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
    *
    * Applies to actions:
    * - .toUpdateJobStatus()
@@ -3242,7 +3236,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific Region
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3254,7 +3248,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by operation to creating jobs
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
    *
    * Applies to actions:
    * - .toCreateJob()
@@ -3269,7 +3263,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by priority range to creating new jobs
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
    *
    * Applies to actions:
    * - .toCreateJob()
@@ -3285,7 +3279,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the tag keys and values to be added to objects
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3304,7 +3298,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the tag keys to be added to objects
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3322,7 +3316,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the resource owner AWS account ID
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-object-resource-account
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-object-resource-account
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -3601,7 +3595,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific object version
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3753,7 +3747,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by delimiter parameter
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/walkthrough1.html
    *
    * Applies to actions:
    * - .toListBucket()
@@ -3769,7 +3763,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific Region
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
    *
    * Applies to actions:
    * - .toCreateAccessPoint()
@@ -3785,7 +3779,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by maximum number of keys returned in a ListBucket request
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-numeric-condition-operators
    *
    * Applies to actions:
    * - .toListBucket()
@@ -3801,7 +3795,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by object legal hold status
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-legal-holds
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3818,7 +3812,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by object retention mode (COMPLIANCE or GOVERNANCE)
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-modes
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3835,7 +3829,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by remaining object retention days
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-retention-limits
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-retention-limits
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3843,16 +3837,16 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectRetention()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: Operator | string) {
-    return this.if(`object-lock-remaining-retention-days`, value, operator || 'StringLike');
+  public ifObjectLockRemainingRetentionDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`object-lock-remaining-retention-days`, value, operator || 'NumericEquals');
   }
 
   /**
    * Filters access by object retain-until date
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-periods
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -3860,16 +3854,26 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectRetention()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifObjectLockRetainUntilDate(value: string | string[], operator?: Operator | string) {
-    return this.if(`object-lock-retain-until-date`, value, operator || 'StringLike');
+  public ifObjectLockRetainUntilDate(value: Date | string | (Date | string)[], operator?: Operator | string) {
+    if (typeof (value as Date).getMonth === "function") {
+      value = (value as Date).toISOString();
+    } else if (Array.isArray(value)) {
+      value = value.map((item) => {
+        if (typeof (item as Date).getMonth === "function") {
+          item = (item as Date).toISOString();
+        }
+        return item;
+      });
+    }
+    return this.if(`object-lock-retain-until-date`, value, operator || 'DateEquals');
   }
 
   /**
    * Filters access by key name prefix
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
    *
    * Applies to actions:
    * - .toListBucket()
@@ -4165,7 +4169,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific object version
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
    *
    * Applies to actions:
    * - .toDeleteObjectVersion()
@@ -4188,7 +4192,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by canned ACL in the request's x-amz-acl header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4339,7 +4343,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by copy source bucket, prefix, or object in the copy object requests
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4355,7 +4359,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by x-amz-grant-full-control (full control) header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4375,7 +4379,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by x-amz-grant-read (read access) header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4395,7 +4399,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the x-amz-grant-read-acp (read permissions for the ACL) header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4415,7 +4419,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the x-amz-grant-write (write access) header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4435,7 +4439,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the x-amz-grant-write-acp (write permissions for the ACL) header
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4471,7 +4475,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by Object Ownership
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/ensure-object-ownership.html#object-ownership-requiring-bucket-owner-enforced
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ensure-object-ownership.html#object-ownership-requiring-bucket-owner-enforced
    *
    * Applies to actions:
    * - .toCreateBucket()
@@ -4486,7 +4490,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by server-side encryption
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4503,7 +4507,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by AWS KMS customer managed CMK for server-side encryption
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html#require-sse-kms
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html#require-sse-kms
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4520,7 +4524,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by storage class
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-howtoset
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-howtoset
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -4538,7 +4542,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by a specific website redirect location for buckets that are configured as static websites
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#page-redirect-using-rest-api
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-page-redirect.html#page-redirect-using-rest-api
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
