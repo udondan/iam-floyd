@@ -6,6 +6,7 @@ outposts:CreateSite;Write
 outposts:DeleteOutpost;Write
 outposts:DeleteSite;Write
 outposts:GetCatalogItem;Read
+outposts:GetConnection;Read
 outposts:GetOrder;Read
 outposts:GetOutpost;Read
 outposts:GetOutpostInstanceTypes;Read
@@ -18,6 +19,7 @@ outposts:ListOrders;List
 outposts:ListOutposts;List
 outposts:ListSites;List
 outposts:ListTagsForResource;Read
+outposts:StartConnection;Write
 outposts:TagResource;Tagging
 outposts:UntagResource;Tagging
 outposts:UpdateOutpost;Write

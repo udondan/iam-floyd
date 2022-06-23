@@ -170,6 +170,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html
    */
   public toGetLens() {
@@ -238,6 +241,10 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to import a new lens
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ImportLens.html
    */
@@ -540,6 +547,9 @@ export class Wellarchitected extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);

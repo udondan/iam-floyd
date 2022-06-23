@@ -107,6 +107,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the connection for your Outpost server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetConnection.html
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
    * Grants permission to get information about an order
    *
    * Access Level: Read
@@ -239,6 +250,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a connection for your Outpost server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_StartConnection.html
+   */
+  public toStartConnection() {
+    return this.to('StartConnection');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -313,6 +335,7 @@ export class Outposts extends PolicyStatement {
       'CreateSite',
       'DeleteOutpost',
       'DeleteSite',
+      'StartConnection',
       'UpdateOutpost',
       'UpdateSite',
       'UpdateSiteAddress',
@@ -320,6 +343,7 @@ export class Outposts extends PolicyStatement {
     ],
     Read: [
       'GetCatalogItem',
+      'GetConnection',
       'GetOrder',
       'GetOutpost',
       'GetOutpostInstanceTypes',
