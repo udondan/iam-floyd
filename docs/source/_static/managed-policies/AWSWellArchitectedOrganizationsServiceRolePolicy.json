@@ -1,0 +1,18 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"organizations:DescribeAccount",
+				"organizations:DescribeOrganization",
+				"organizations:ListAccounts",
+				"organizations:ListAccountsForParent",
+				"organizations:ListChildren",
+				"organizations:ListParents",
+				"organizations:ListRoots"
+			],
+			"Resource": "*"
+		}
+	]
+}
