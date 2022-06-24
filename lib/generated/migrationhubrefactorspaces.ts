@@ -269,7 +269,7 @@ export class RefactorSpaces extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListEnvironment.html
+   * https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListEnvironments.html
    */
   public toListEnvironments() {
     return this.to('ListEnvironments');
@@ -361,6 +361,25 @@ export class RefactorSpaces extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update a route from an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationCreatedByAccount()
+   * - .ifServiceCreatedByAccount()
+   * - .ifRouteCreatedByAccount()
+   * - .ifCreatedByAccountIds()
+   * - .ifSourcePath()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_UpdateRoute.html
+   */
+  public toUpdateRoute() {
+    return this.to('UpdateRoute');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApplication',
@@ -372,7 +391,8 @@ export class RefactorSpaces extends PolicyStatement {
       'DeleteResourcePolicy',
       'DeleteRoute',
       'DeleteService',
-      'PutResourcePolicy'
+      'PutResourcePolicy',
+      'UpdateRoute'
     ],
     Read: [
       'GetApplication',
@@ -493,6 +513,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .toGetService()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateRoute()
    *
    * Applies to resource types:
    * - application
@@ -523,6 +544,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .toGetService()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateRoute()
    *
    * Applies to resource types:
    * - application
@@ -547,6 +569,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .toGetRoute()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateRoute()
    *
    * Applies to resource types:
    * - route
@@ -572,6 +595,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .toGetService()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateRoute()
    *
    * Applies to resource types:
    * - service
@@ -595,6 +619,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .toGetRoute()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateRoute()
    *
    * Applies to resource types:
    * - route

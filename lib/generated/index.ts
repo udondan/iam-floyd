@@ -81,7 +81,6 @@ export { Lookoutmetrics } from './lookoutformetrics';
 export { Lookoutvision } from './lookoutforvision';
 export { Machinelearning } from './machinelearning';
 export { Macie2 } from './macie';
-export { Macie } from './macieclassic';
 export { Managedblockchain } from './managedblockchain';
 export { Grafana } from './managedgrafana';
 export { Aps } from './managedserviceforprometheus';

@@ -21,3 +21,4 @@ refactor-spaces:ListTagsForResource;Read
 refactor-spaces:PutResourcePolicy;Write
 refactor-spaces:TagResource;Tagging
 refactor-spaces:UntagResource;Tagging
+refactor-spaces:UpdateRoute;Write
