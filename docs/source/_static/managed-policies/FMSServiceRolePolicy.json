@@ -199,7 +199,27 @@
 			],
 			"Resource": [
 				"arn:aws:ec2:*:*:security-group/*"
-			]
+			],
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateSecurityGroup"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteTags",
+				"ec2:CreateTags"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:security-group/*"
+			],
+			"Condition": {
+				"StringLike": {
+					"aws:ResourceTag/FMManaged": "*"
+				}
+			}
 		},
 		{
 			"Effect": "Allow",
