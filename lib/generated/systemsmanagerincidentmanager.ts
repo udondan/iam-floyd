@@ -37,8 +37,13 @@ export class SsmIncidents extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - iam:PassRole
+   * - ssm-incidents:TagResource
    *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateResponsePlan.html
    */
@@ -260,6 +265,10 @@ export class SsmIncidents extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -270,6 +279,9 @@ export class SsmIncidents extends PolicyStatement {
    * Grants permission to remove tags from a response plan
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UntagResource.html
    */
@@ -326,8 +338,13 @@ export class SsmIncidents extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - iam:PassRole
+   * - ssm-incidents:TagResource
    *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateResponsePlan.html
    */
@@ -396,6 +413,9 @@ export class SsmIncidents extends PolicyStatement {
    * @param responsePlan - Identifier for the responsePlan.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onResponsePlan(responsePlan: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
@@ -404,12 +424,15 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Adds a resource of type incident-record to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-record.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/tracking-details.html
    *
    * @param responsePlan - Identifier for the responsePlan.
    * @param incidentRecord - Identifier for the incidentRecord.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIncidentRecord(responsePlan: string, incidentRecord: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
@@ -418,7 +441,7 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Adds a resource of type replication-set to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/userguide/replication-set.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/disaster-recovery-resiliency.html#replication
    *
    * @param replicationSet - Identifier for the replicationSet.
    * @param account - Account of the resource; defaults to empty string: all accounts.

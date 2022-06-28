@@ -1,1 +1,3 @@
-
+ssm-incidents:RequestTag/${TagKey}
+ssm-incidents:ResourceTag/${TagKey}
+ssm-incidents:TagKeys
