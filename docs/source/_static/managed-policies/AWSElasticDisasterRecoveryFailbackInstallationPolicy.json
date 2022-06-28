@@ -18,6 +18,7 @@
 				"drs:IssueAgentCertificateForDrs",
 				"drs:AssociateFailbackClientToRecoveryInstanceForDrs",
 				"drs:GetSuggestedFailbackClientDeviceMappingForDrs",
+				"drs:UpdateAgentReplicationInfoForDrs",
 				"drs:UpdateFailbackClientDeviceMappingForDrs"
 			],
 			"Resource": "arn:aws:drs:*:*:recovery-instance/*"

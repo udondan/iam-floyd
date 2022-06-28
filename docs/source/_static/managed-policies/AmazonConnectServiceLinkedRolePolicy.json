@@ -75,8 +75,7 @@
 				"profile:ListProfileObjects"
 			],
 			"Resource": [
-				"arn:aws:profile:*:*:domains/amazon-connect-*/object-types/CTR",
-				"arn:aws:profile:*:*:domains/amazon-connect-*/object-types/_asset"
+				"arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
 			]
 		},
 		{
