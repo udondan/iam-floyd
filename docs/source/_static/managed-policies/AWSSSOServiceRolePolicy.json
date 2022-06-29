@@ -10,7 +10,9 @@
 				"iam:PutRolePolicy",
 				"iam:UpdateRole",
 				"iam:UpdateRoleDescription",
-				"iam:UpdateAssumeRolePolicy"
+				"iam:UpdateAssumeRolePolicy",
+				"iam:PutRolePermissionsBoundary",
+				"iam:DeleteRolePermissionsBoundary"
 			],
 			"Resource": [
 				"arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/*"
