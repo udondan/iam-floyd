@@ -410,6 +410,17 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"glue:UpdateTable"
+			],
+			"Resource": [
+				"arn:aws:glue:*:*:table/sagemaker_featurestore/*",
+				"arn:aws:glue:*:*:catalog",
+				"arn:aws:glue:*:*:database/sagemaker_featurestore"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"glue:DeleteTable"
 			],
 			"Resource": [
