@@ -26,7 +26,6 @@ chime:CreateAppInstanceAdmin;Write
 chime:CreateAppInstanceUser;Write
 chime:CreateAttendee;Write
 chime:CreateBot;Write
-chime:CreateBotMembership;Write
 chime:CreateCDRBucket;Write
 chime:CreateChannel;Write
 chime:CreateChannelBan;Write
@@ -214,6 +213,7 @@ chime:ResetPersonalPIN;Write
 chime:RestorePhoneNumber;Write
 chime:RetrieveDataExports;Read
 chime:SearchAvailablePhoneNumbers;Read
+chime:SearchChannels;List
 chime:SendChannelMessage;Write
 chime:StartDataExport;Write
 chime:StartMeetingTranscription;Write

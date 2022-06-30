@@ -67,7 +67,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_AssociateChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_AssociateChannelFlow.html
    */
   public toAssociateChannelFlow() {
     return this.to('AssociateChannelFlow');
@@ -144,7 +144,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html
    */
   public toBatchCreateChannelMembership() {
     return this.to('BatchCreateChannelMembership');
@@ -221,7 +221,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ChannelFlowCallback.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ChannelFlowCallback.html
    */
   public toChannelFlowCallback() {
     return this.to('ChannelFlowCallback');
@@ -232,7 +232,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_Connect.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_Connect.html
    */
   public toConnect() {
     return this.to('Connect');
@@ -283,7 +283,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_CreateAppInstance.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstance.html
    */
   public toCreateAppInstance() {
     return this.to('CreateAppInstance');
@@ -294,7 +294,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html
    */
   public toCreateAppInstanceAdmin() {
     return this.to('CreateAppInstanceAdmin');
@@ -309,7 +309,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_CreateAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceUser.html
    */
   public toCreateAppInstanceUser() {
     return this.to('CreateAppInstanceUser');
@@ -338,17 +338,6 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a bot to a chat room in your Amazon Chime Enterprise account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateBotMembership.html
-   */
-  public toCreateBotMembership() {
-    return this.to('CreateBotMembership');
-  }
-
-  /**
    * Grants permission to create a new Call Detail Record S3 bucket
    *
    * Access Level: Write
@@ -372,7 +361,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_CreateChannel.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannel.html
    */
   public toCreateChannel() {
     return this.to('CreateChannel');
@@ -383,7 +372,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_CreateChannelBan.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelBan.html
    */
   public toCreateChannelBan() {
     return this.to('CreateChannelBan');
@@ -398,7 +387,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_CreateChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelFlow.html
    */
   public toCreateChannelFlow() {
     return this.to('CreateChannelFlow');
@@ -409,7 +398,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_CreateChannelMembership.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html
    */
   public toCreateChannelMembership() {
     return this.to('CreateChannelMembership');
@@ -420,7 +409,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_CreateChannelModerator.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelModerator.html
    */
   public toCreateChannelModerator() {
     return this.to('CreateChannelModerator');
@@ -435,7 +424,10 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMediaCapturePipeline.html
+   * Dependent actions:
+   * - s3:GetBucketPolicy
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaCapturePipeline.html
    */
   public toCreateMediaCapturePipeline() {
     return this.to('CreateMediaCapturePipeline');
@@ -630,7 +622,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DeleteAppInstance.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstance.html
    */
   public toDeleteAppInstance() {
     return this.to('DeleteAppInstance');
@@ -641,7 +633,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html
    */
   public toDeleteAppInstanceAdmin() {
     return this.to('DeleteAppInstanceAdmin');
@@ -652,7 +644,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAppInstanceStreamingConfigurations.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_DeleteAppInstanceStreamingConfigurations.html
    */
   public toDeleteAppInstanceStreamingConfigurations() {
     return this.to('DeleteAppInstanceStreamingConfigurations');
@@ -663,7 +655,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html
    */
   public toDeleteAppInstanceUser() {
     return this.to('DeleteAppInstanceUser');
@@ -699,7 +691,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannel.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannel.html
    */
   public toDeleteChannel() {
     return this.to('DeleteChannel');
@@ -710,7 +702,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannelBan.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelBan.html
    */
   public toDeleteChannelBan() {
     return this.to('DeleteChannelBan');
@@ -721,7 +713,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelFlow.html
    */
   public toDeleteChannelFlow() {
     return this.to('DeleteChannelFlow');
@@ -732,7 +724,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html
    */
   public toDeleteChannelMembership() {
     return this.to('DeleteChannelMembership');
@@ -743,7 +735,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html
    */
   public toDeleteChannelMessage() {
     return this.to('DeleteChannelMessage');
@@ -754,7 +746,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html
    */
   public toDeleteChannelModerator() {
     return this.to('DeleteChannelModerator');
@@ -809,7 +801,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteMediaCapturePipeline.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaCapturePipeline.html
    */
   public toDeleteMediaCapturePipeline() {
     return this.to('DeleteMediaCapturePipeline');
@@ -896,6 +888,12 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete the specified Amazon Chime Voice Connector
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - logs:CreateLogDelivery
+   * - logs:DeleteLogDelivery
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnector.html
    */
@@ -985,7 +983,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DeregisterAppInstanceUserEndpoint.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeregisterAppInstanceUserEndpoint.html
    */
   public toDeregisterAppInstanceUserEndpoint() {
     return this.to('DeregisterAppInstanceUserEndpoint');
@@ -996,7 +994,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DescribeAppInstance.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstance.html
    */
   public toDescribeAppInstance() {
     return this.to('DescribeAppInstance');
@@ -1007,7 +1005,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html
    */
   public toDescribeAppInstanceAdmin() {
     return this.to('DescribeAppInstanceAdmin');
@@ -1018,7 +1016,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html
    */
   public toDescribeAppInstanceUser() {
     return this.to('DescribeAppInstanceUser');
@@ -1029,7 +1027,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_DescribeAppInstanceUserEndpoint.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUserEndpoint.html
    */
   public toDescribeAppInstanceUserEndpoint() {
     return this.to('DescribeAppInstanceUserEndpoint');
@@ -1040,7 +1038,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannel.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannel.html
    */
   public toDescribeChannel() {
     return this.to('DescribeChannel');
@@ -1051,7 +1049,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelBan.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelBan.html
    */
   public toDescribeChannelBan() {
     return this.to('DescribeChannelBan');
@@ -1062,7 +1060,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelFlow.html
    */
   public toDescribeChannelFlow() {
     return this.to('DescribeChannelFlow');
@@ -1073,7 +1071,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html
    */
   public toDescribeChannelMembership() {
     return this.to('DescribeChannelMembership');
@@ -1084,7 +1082,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html
    */
   public toDescribeChannelMembershipForAppInstanceUser() {
     return this.to('DescribeChannelMembershipForAppInstanceUser');
@@ -1095,7 +1093,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html
    */
   public toDescribeChannelModeratedByAppInstanceUser() {
     return this.to('DescribeChannelModeratedByAppInstanceUser');
@@ -1106,7 +1104,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html
    */
   public toDescribeChannelModerator() {
     return this.to('DescribeChannelModerator');
@@ -1117,7 +1115,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_DisassociateChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DisassociateChannelFlow.html
    */
   public toDisassociateChannelFlow() {
     return this.to('DisassociateChannelFlow');
@@ -1227,7 +1225,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html
    */
   public toGetAppInstanceRetentionSettings() {
     return this.to('GetAppInstanceRetentionSettings');
@@ -1238,7 +1236,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAppInstanceStreamingConfigurations.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_GetAppInstanceStreamingConfigurations.html
    */
   public toGetAppInstanceStreamingConfigurations() {
     return this.to('GetAppInstanceStreamingConfigurations');
@@ -1289,7 +1287,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_GetChannelMembershipPreferences.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMembershipPreferences.html
    */
   public toGetChannelMembershipPreferences() {
     return this.to('GetChannelMembershipPreferences');
@@ -1300,7 +1298,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_GetChannelMessage.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html
    */
   public toGetChannelMessage() {
     return this.to('GetChannelMessage');
@@ -1311,7 +1309,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_GetChannelMessageStatus.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessageStatus.html
    */
   public toGetChannelMessageStatus() {
     return this.to('GetChannelMessageStatus');
@@ -1355,7 +1353,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetMediaCapturePipeline.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaCapturePipeline.html
    */
   public toGetMediaCapturePipeline() {
     return this.to('GetMediaCapturePipeline');
@@ -1388,7 +1386,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_GetMessagingSessionEndpoint.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingSessionEndpoint.html
    */
   public toGetMessagingSessionEndpoint() {
     return this.to('GetMessagingSessionEndpoint');
@@ -1673,6 +1671,8 @@ export class Chime extends PolicyStatement {
    * Grants permission to invite users from a third party provider to your Amazon Chime account
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toInviteUsersFromProvider() {
     return this.to('InviteUsersFromProvider');
@@ -1716,7 +1716,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html
    */
   public toListAppInstanceAdmins() {
     return this.to('ListAppInstanceAdmins');
@@ -1727,7 +1727,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_ListAppInstanceUserEndpoints.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUserEndpoints.html
    */
   public toListAppInstanceUserEndpoints() {
     return this.to('ListAppInstanceUserEndpoints');
@@ -1738,7 +1738,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html
    */
   public toListAppInstanceUsers() {
     return this.to('ListAppInstanceUsers');
@@ -1749,7 +1749,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_ListAppInstances.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstances.html
    */
   public toListAppInstances() {
     return this.to('ListAppInstances');
@@ -1819,7 +1819,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelBans.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html
    */
   public toListChannelBans() {
     return this.to('ListChannelBans');
@@ -1830,7 +1830,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelFlows.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelFlows.html
    */
   public toListChannelFlows() {
     return this.to('ListChannelFlows');
@@ -1841,7 +1841,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMemberships.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMemberships.html
    */
   public toListChannelMemberships() {
     return this.to('ListChannelMemberships');
@@ -1852,7 +1852,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html
    */
   public toListChannelMembershipsForAppInstanceUser() {
     return this.to('ListChannelMembershipsForAppInstanceUser');
@@ -1863,7 +1863,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMessages.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMessages.html
    */
   public toListChannelMessages() {
     return this.to('ListChannelMessages');
@@ -1874,7 +1874,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelModerators.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html
    */
   public toListChannelModerators() {
     return this.to('ListChannelModerators');
@@ -1885,7 +1885,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannels.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html
    */
   public toListChannels() {
     return this.to('ListChannels');
@@ -1896,7 +1896,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelFlows.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsAssociatedWithChannelFlow.html
    */
   public toListChannelsAssociatedWithChannelFlow() {
     return this.to('ListChannelsAssociatedWithChannelFlow');
@@ -1907,7 +1907,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html
    */
   public toListChannelsModeratedByAppInstanceUser() {
     return this.to('ListChannelsModeratedByAppInstanceUser');
@@ -1962,7 +1962,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMediaCapturePipelines.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaCapturePipelines.html
    */
   public toListMediaCapturePipelines() {
     return this.to('ListMediaCapturePipelines');
@@ -2169,7 +2169,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html
    */
   public toPutAppInstanceRetentionSettings() {
     return this.to('PutAppInstanceRetentionSettings');
@@ -2180,7 +2180,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutAppInstanceStreamingConfigurations.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_PutAppInstanceStreamingConfigurations.html
    */
   public toPutAppInstanceStreamingConfigurations() {
     return this.to('PutAppInstanceStreamingConfigurations');
@@ -2191,7 +2191,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_PutChannelMembershipPreferences.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutChannelMembershipPreferences.html
    */
   public toPutChannelMembershipPreferences() {
     return this.to('PutChannelMembershipPreferences');
@@ -2320,7 +2320,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_RedactChannelMessage.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_RedactChannelMessage.html
    */
   public toRedactChannelMessage() {
     return this.to('RedactChannelMessage');
@@ -2364,7 +2364,10 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_RegisterAppInstanceUserEndpoint.html
+   * Dependent actions:
+   * - mobiletargeting:GetApp
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_RegisterAppInstanceUserEndpoint.html
    */
   public toRegisterAppInstanceUserEndpoint() {
     return this.to('RegisterAppInstanceUserEndpoint');
@@ -2448,11 +2451,22 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search channels that an AppInstanceUser belongs to, or search channels across the AppInstance for an AppInstaceAdmin
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SearchChannels.html
+   */
+  public toSearchChannels() {
+    return this.to('SearchChannels');
+  }
+
+  /**
    * Grants permission to send a message to a particular channel that the member is a part of
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_SendChannelMessage.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SendChannelMessage.html
    */
   public toSendChannelMessage() {
     return this.to('SendChannelMessage');
@@ -2594,6 +2608,9 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
@@ -2649,7 +2666,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_UpdateAppInstance.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstance.html
    */
   public toUpdateAppInstance() {
     return this.to('UpdateAppInstance');
@@ -2660,7 +2677,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html
    */
   public toUpdateAppInstanceUser() {
     return this.to('UpdateAppInstanceUser');
@@ -2671,7 +2688,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_identity-chime_UpdateAppInstanceUserEndpoint.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUserEndpoint.html
    */
   public toUpdateAppInstanceUserEndpoint() {
     return this.to('UpdateAppInstanceUserEndpoint');
@@ -2709,7 +2726,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_UpdateChannel.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannel.html
    */
   public toUpdateChannel() {
     return this.to('UpdateChannel');
@@ -2720,7 +2737,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_UpdateChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelFlow.html
    */
   public toUpdateChannelFlow() {
     return this.to('UpdateChannelFlow');
@@ -2731,7 +2748,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html
    */
   public toUpdateChannelMessage() {
     return this.to('UpdateChannelMessage');
@@ -2742,7 +2759,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html
    */
   public toUpdateChannelReadMarker() {
     return this.to('UpdateChannelReadMarker');
@@ -2954,7 +2971,6 @@ export class Chime extends PolicyStatement {
       'CreateAppInstanceUser',
       'CreateAttendee',
       'CreateBot',
-      'CreateBotMembership',
       'CreateCDRBucket',
       'CreateChannel',
       'CreateChannelBan',
@@ -3181,7 +3197,8 @@ export class Chime extends PolicyStatement {
       'ListUsers',
       'ListVoiceConnectorGroups',
       'ListVoiceConnectorTerminationCredentials',
-      'ListVoiceConnectors'
+      'ListVoiceConnectors',
+      'SearchChannels'
     ],
     Tagging: [
       'TagAttendee',
@@ -3212,7 +3229,7 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type app-instance to the statement
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_AppInstance.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstance.html
    *
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -3229,7 +3246,7 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type app-instance-user to the statement
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_AppInstanceUser.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceUser.html
    *
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param appInstanceUserId - Identifier for the appInstanceUserId.
@@ -3247,7 +3264,7 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type channel to the statement
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_Channel.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_Channel.html
    *
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param channelId - Identifier for the channelId.
@@ -3265,7 +3282,7 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type channel-flow to the statement
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ChannelFlow.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ChannelFlow.html
    *
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param channelFlowId - Identifier for the channelFlowId.
@@ -3283,7 +3300,7 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type media-pipeline to the statement
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_MediaPipeline.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaCapturePipeline.html
    *
    * @param mediaPipelineId - Identifier for the mediaPipelineId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
