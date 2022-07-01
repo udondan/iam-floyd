@@ -13,7 +13,8 @@
 				"lookoutequipment:ListModels",
 				"lookoutequipment:ListInferenceSchedulers",
 				"lookoutequipment:ListInferenceExecutions",
-				"lookoutequipment:ListTagsForResource"
+				"lookoutequipment:ListTagsForResource",
+				"lookoutequipment:ListSensorStatistics"
 			],
 			"Resource": "*"
 		}
