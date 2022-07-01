@@ -6,5 +6,6 @@ forecast:explainability
 forecast:explainabilityExport
 forecast:forecast
 forecast:forecastExport
+forecast:monitor
 forecast:predictor
 forecast:predictorBacktestExportJob

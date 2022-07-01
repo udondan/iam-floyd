@@ -139,6 +139,21 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an monitor using a Predictor resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html
+   */
+  public toCreateMonitor() {
+    return this.to('CreateMonitor');
+  }
+
+  /**
    * Grants permission to create a predictor
    *
    * Access Level: Write
@@ -243,6 +258,17 @@ export class Forecast extends PolicyStatement {
    */
   public toDeleteForecastExportJob() {
     return this.to('DeleteForecastExportJob');
+  }
+
+  /**
+   * Grants permission to delete a monitor resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteMonitor.html
+   */
+  public toDeleteMonitor() {
+    return this.to('DeleteMonitor');
   }
 
   /**
@@ -367,6 +393,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an monitor resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeMonitor.html
+   */
+  public toDescribeMonitor() {
+    return this.to('DescribeMonitor');
+  }
+
+  /**
    * Grants permission to describe a predictor
    *
    * Access Level: Read
@@ -477,6 +514,28 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the monitor evaluation result for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListMonitorEvaluations.html
+   */
+  public toListMonitorEvaluations() {
+    return this.to('ListMonitorEvaluations');
+  }
+
+  /**
+   * Grants permission to list all the monitor resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListMonitors.html
+   */
+  public toListMonitors() {
+    return this.to('ListMonitors');
+  }
+
+  /**
    * Grants permission to list all the predictor backtest export jobs
    *
    * Access Level: Read
@@ -518,6 +577,21 @@ export class Forecast extends PolicyStatement {
    */
   public toQueryForecast() {
     return this.to('QueryForecast');
+  }
+
+  /**
+   * Grants permission to resume Amazon Forecast resource jobs
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ResumeResource.html
+   */
+  public toResumeResource() {
+    return this.to('ResumeResource');
   }
 
   /**
@@ -585,6 +659,7 @@ export class Forecast extends PolicyStatement {
       'CreateExplainabilityExport',
       'CreateForecast',
       'CreateForecastExportJob',
+      'CreateMonitor',
       'CreatePredictor',
       'CreatePredictorBacktestExportJob',
       'DeleteDataset',
@@ -594,9 +669,11 @@ export class Forecast extends PolicyStatement {
       'DeleteExplainabilityExport',
       'DeleteForecast',
       'DeleteForecastExportJob',
+      'DeleteMonitor',
       'DeletePredictor',
       'DeletePredictorBacktestExportJob',
       'DeleteResourceTree',
+      'ResumeResource',
       'StopResource',
       'UpdateDatasetGroup'
     ],
@@ -609,6 +686,7 @@ export class Forecast extends PolicyStatement {
       'DescribeExplainabilityExport',
       'DescribeForecast',
       'DescribeForecastExportJob',
+      'DescribeMonitor',
       'DescribePredictor',
       'DescribePredictorBacktestExportJob',
       'GetAccuracyMetrics',
@@ -619,6 +697,8 @@ export class Forecast extends PolicyStatement {
       'ListExplainabilityExports',
       'ListForecastExportJobs',
       'ListForecasts',
+      'ListMonitorEvaluations',
+      'ListMonitors',
       'ListPredictorBacktestExportJobs',
       'ListPredictors',
       'ListTagsForResource',
@@ -793,5 +873,22 @@ export class Forecast extends PolicyStatement {
    */
   public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type monitor to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMonitor(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:monitor/${ resourceId }`);
   }
 }

@@ -1,0 +1,7 @@
+sagemaker-groundtruth-synthetic:CreateProject;Write
+sagemaker-groundtruth-synthetic:DeleteProject;Write
+sagemaker-groundtruth-synthetic:GetBatch;Read
+sagemaker-groundtruth-synthetic:GetProject;Read
+sagemaker-groundtruth-synthetic:ListBatchSummaries;List
+sagemaker-groundtruth-synthetic:ListProjectSummaries;List
+sagemaker-groundtruth-synthetic:UpdateBatch;Write

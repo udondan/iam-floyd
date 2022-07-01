@@ -252,6 +252,7 @@ s3
 s3-object-lambda
 s3-outposts
 sagemaker
+sagemaker-groundtruth-synthetic
 savingsplans
 schemas
 sdb

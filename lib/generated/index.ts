@@ -124,6 +124,7 @@ export { Glacier } from './s3glacier';
 export { S3ObjectLambda } from './s3objectlambda';
 export { S3Outposts } from './s3onoutposts';
 export { Sagemaker } from './sagemaker';
+export { SagemakerGroundtruthSynthetic } from './sagemakergroundtruthsynthetic';
 export { Ses } from './ses';
 export { Ssmmessages } from './sessionmanagermessagegatewayservice';
 export { Sdb } from './simpledb';

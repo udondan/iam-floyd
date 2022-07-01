@@ -6,6 +6,7 @@ forecast:CreateExplainability;Write
 forecast:CreateExplainabilityExport;Write
 forecast:CreateForecast;Write
 forecast:CreateForecastExportJob;Write
+forecast:CreateMonitor;Write
 forecast:CreatePredictor;Write
 forecast:CreatePredictorBacktestExportJob;Write
 forecast:DeleteDataset;Write
@@ -15,6 +16,7 @@ forecast:DeleteExplainability;Write
 forecast:DeleteExplainabilityExport;Write
 forecast:DeleteForecast;Write
 forecast:DeleteForecastExportJob;Write
+forecast:DeleteMonitor;Write
 forecast:DeletePredictor;Write
 forecast:DeletePredictorBacktestExportJob;Write
 forecast:DeleteResourceTree;Write
@@ -26,6 +28,7 @@ forecast:DescribeExplainability;Read
 forecast:DescribeExplainabilityExport;Read
 forecast:DescribeForecast;Read
 forecast:DescribeForecastExportJob;Read
+forecast:DescribeMonitor;Read
 forecast:DescribePredictor;Read
 forecast:DescribePredictorBacktestExportJob;Read
 forecast:GetAccuracyMetrics;Read
@@ -36,10 +39,13 @@ forecast:ListExplainabilities;Read
 forecast:ListExplainabilityExports;Read
 forecast:ListForecastExportJobs;Read
 forecast:ListForecasts;Read
+forecast:ListMonitorEvaluations;Read
+forecast:ListMonitors;Read
 forecast:ListPredictorBacktestExportJobs;Read
 forecast:ListPredictors;Read
 forecast:ListTagsForResource;Read
 forecast:QueryForecast;Read
+forecast:ResumeResource;Write
 forecast:StopResource;Write
 forecast:TagResource;Tagging
 forecast:UntagResource;Tagging

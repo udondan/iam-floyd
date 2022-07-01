@@ -15,6 +15,7 @@ sagemaker:ImageVersionArns
 sagemaker:InstanceTypes
 sagemaker:InterContainerTrafficEncryption
 sagemaker:MaxRuntimeInSeconds
+sagemaker:MinimumInstanceMetadataServiceVersion
 sagemaker:ModelApprovalStatus
 sagemaker:ModelArn
 sagemaker:NetworkIsolation

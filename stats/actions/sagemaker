@@ -112,6 +112,7 @@ sagemaker:DescribeEndpoint;Read
 sagemaker:DescribeEndpointConfig;Read
 sagemaker:DescribeExperiment;Read
 sagemaker:DescribeFeatureGroup;Read
+sagemaker:DescribeFeatureMetadata;Read
 sagemaker:DescribeFlowDefinition;Read
 sagemaker:DescribeHumanLoop;Read
 sagemaker:DescribeHumanTaskUi;Read
@@ -253,6 +254,8 @@ sagemaker:UpdateDomain;Write
 sagemaker:UpdateEndpoint;Write
 sagemaker:UpdateEndpointWeightsAndCapacities;Write
 sagemaker:UpdateExperiment;Write
+sagemaker:UpdateFeatureGroup;Write
+sagemaker:UpdateFeatureMetadata;Write
 sagemaker:UpdateImage;Write
 sagemaker:UpdateModelPackage;Write
 sagemaker:UpdateMonitoringSchedule;Write

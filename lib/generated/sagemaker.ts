@@ -23,7 +23,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddAssociation.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddAssociation.html
    */
   public toAddAssociation() {
     return this.to('AddAssociation');
@@ -38,7 +38,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddTags.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
     return this.to('AddTags');
@@ -49,7 +49,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AssociateTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AssociateTrialComponent.html
    */
   public toAssociateTrialComponent() {
     return this.to('AssociateTrialComponent');
@@ -60,7 +60,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_BatchDescribeModelPackage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchDescribeModelPackage.html
    */
   public toBatchDescribeModelPackage() {
     return this.to('BatchDescribeModelPackage');
@@ -80,7 +80,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_BatchGetRecord.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_BatchGetRecord.html
    */
   public toBatchGetRecord() {
     return this.to('BatchGetRecord');
@@ -104,7 +104,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAction.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAction.html
    */
   public toCreateAction() {
     return this.to('CreateAction');
@@ -119,7 +119,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAlgorithm.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAlgorithm.html
    */
   public toCreateAlgorithm() {
     return this.to('CreateAlgorithm');
@@ -137,7 +137,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateApp.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateApp.html
    */
   public toCreateApp() {
     return this.to('CreateApp');
@@ -152,7 +152,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAppImageConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAppImageConfig.html
    */
   public toCreateAppImageConfig() {
     return this.to('CreateAppImageConfig');
@@ -167,7 +167,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateArtifact.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateArtifact.html
    */
   public toCreateArtifact() {
     return this.to('CreateArtifact');
@@ -190,7 +190,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAutoMLJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html
    */
   public toCreateAutoMLJob() {
     return this.to('CreateAutoMLJob');
@@ -205,7 +205,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCodeRepository.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCodeRepository.html
    */
   public toCreateCodeRepository() {
     return this.to('CreateCodeRepository');
@@ -223,7 +223,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCompilationJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html
    */
   public toCreateCompilationJob() {
     return this.to('CreateCompilationJob');
@@ -238,7 +238,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateContext.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateContext.html
    */
   public toCreateContext() {
     return this.to('CreateContext');
@@ -264,7 +264,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDataQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDataQualityJobDefinition.html
    */
   public toCreateDataQualityJobDefinition() {
     return this.to('CreateDataQualityJobDefinition');
@@ -282,7 +282,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDeviceFleet.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDeviceFleet.html
    */
   public toCreateDeviceFleet() {
     return this.to('CreateDeviceFleet');
@@ -309,7 +309,7 @@ export class Sagemaker extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDomain.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
@@ -327,7 +327,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEdgePackagingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgePackagingJob.html
    */
   public toCreateEdgePackagingJob() {
     return this.to('CreateEdgePackagingJob');
@@ -342,7 +342,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
     return this.to('CreateEndpoint');
@@ -363,7 +363,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifServerlessMaxConcurrency()
    * - .ifServerlessMemorySize()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html
    */
   public toCreateEndpointConfig() {
     return this.to('CreateEndpointConfig');
@@ -378,7 +378,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateExperiment.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateExperiment.html
    */
   public toCreateExperiment() {
     return this.to('CreateExperiment');
@@ -399,7 +399,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFeatureGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFeatureGroup.html
    */
   public toCreateFeatureGroup() {
     return this.to('CreateFeatureGroup');
@@ -419,7 +419,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFlowDefinition.html
    */
   public toCreateFlowDefinition() {
     return this.to('CreateFlowDefinition');
@@ -434,7 +434,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHumanTaskUi.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHumanTaskUi.html
    */
   public toCreateHumanTaskUi() {
     return this.to('CreateHumanTaskUi');
@@ -464,7 +464,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHyperParameterTuningJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html
    */
   public toCreateHyperParameterTuningJob() {
     return this.to('CreateHyperParameterTuningJob');
@@ -482,7 +482,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateImage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateImage.html
    */
   public toCreateImage() {
     return this.to('CreateImage');
@@ -493,7 +493,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateImageVersion.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateImageVersion.html
    */
   public toCreateImageVersion() {
     return this.to('CreateImageVersion');
@@ -511,7 +511,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateInferenceRecommendationsJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html
    */
   public toCreateInferenceRecommendationsJob() {
     return this.to('CreateInferenceRecommendationsJob');
@@ -533,7 +533,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLabelingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html
    */
   public toCreateLabelingJob() {
     return this.to('CreateLabelingJob');
@@ -544,7 +544,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLineageGroupPolicy.html
    */
   public toCreateLineageGroupPolicy() {
     return this.to('CreateLineageGroupPolicy');
@@ -565,7 +565,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html
    */
   public toCreateModel() {
     return this.to('CreateModel');
@@ -591,7 +591,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelBiasJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelBiasJobDefinition.html
    */
   public toCreateModelBiasJobDefinition() {
     return this.to('CreateModelBiasJobDefinition');
@@ -617,7 +617,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelExplainabilityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelExplainabilityJobDefinition.html
    */
   public toCreateModelExplainabilityJobDefinition() {
     return this.to('CreateModelExplainabilityJobDefinition');
@@ -633,7 +633,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifModelApprovalStatus()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html
    */
   public toCreateModelPackage() {
     return this.to('CreateModelPackage');
@@ -648,7 +648,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackageGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackageGroup.html
    */
   public toCreateModelPackageGroup() {
     return this.to('CreateModelPackageGroup');
@@ -674,7 +674,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelQualityJobDefinition.html
    */
   public toCreateModelQualityJobDefinition() {
     return this.to('CreateModelQualityJobDefinition');
@@ -700,7 +700,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMonitoringSchedule.html
    */
   public toCreateMonitoringSchedule() {
     return this.to('CreateMonitoringSchedule');
@@ -717,6 +717,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAcceleratorTypes()
    * - .ifDirectInternetAccess()
    * - .ifInstanceTypes()
+   * - .ifMinimumInstanceMetadataServiceVersion()
    * - .ifRootAccess()
    * - .ifVolumeKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -725,7 +726,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstance.html
    */
   public toCreateNotebookInstance() {
     return this.to('CreateNotebookInstance');
@@ -736,7 +737,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstanceLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html
    */
   public toCreateNotebookInstanceLifecycleConfig() {
     return this.to('CreateNotebookInstanceLifecycleConfig');
@@ -754,7 +755,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePipeline.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
     return this.to('CreatePipeline');
@@ -765,7 +766,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePresignedDomainUrl.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedDomainUrl.html
    */
   public toCreatePresignedDomainUrl() {
     return this.to('CreatePresignedDomainUrl');
@@ -776,7 +777,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePresignedNotebookInstanceUrl.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedNotebookInstanceUrl.html
    */
   public toCreatePresignedNotebookInstanceUrl() {
     return this.to('CreatePresignedNotebookInstanceUrl');
@@ -802,7 +803,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProcessingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html
    */
   public toCreateProcessingJob() {
     return this.to('CreateProcessingJob');
@@ -817,7 +818,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProject.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
@@ -828,7 +829,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateStudioLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateStudioLifecycleConfig.html
    */
   public toCreateStudioLifecycleConfig() {
     return this.to('CreateStudioLifecycleConfig');
@@ -858,7 +859,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
    */
   public toCreateTrainingJob() {
     return this.to('CreateTrainingJob');
@@ -877,7 +878,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifOutputKmsKey()
    * - .ifVolumeKmsKey()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTransformJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html
    */
   public toCreateTransformJob() {
     return this.to('CreateTransformJob');
@@ -892,7 +893,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrial.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html
    */
   public toCreateTrial() {
     return this.to('CreateTrial');
@@ -907,7 +908,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html
    */
   public toCreateTrialComponent() {
     return this.to('CreateTrialComponent');
@@ -930,7 +931,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateUserProfile.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html
    */
   public toCreateUserProfile() {
     return this.to('CreateUserProfile');
@@ -945,7 +946,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkforce.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkforce.html
    */
   public toCreateWorkforce() {
     return this.to('CreateWorkforce');
@@ -960,7 +961,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkteam.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkteam.html
    */
   public toCreateWorkteam() {
     return this.to('CreateWorkteam');
@@ -971,7 +972,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAction.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAction.html
    */
   public toDeleteAction() {
     return this.to('DeleteAction');
@@ -982,7 +983,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAlgorithm.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAlgorithm.html
    */
   public toDeleteAlgorithm() {
     return this.to('DeleteAlgorithm');
@@ -993,7 +994,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteApp.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteApp.html
    */
   public toDeleteApp() {
     return this.to('DeleteApp');
@@ -1004,7 +1005,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAppImageConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAppImageConfig.html
    */
   public toDeleteAppImageConfig() {
     return this.to('DeleteAppImageConfig');
@@ -1015,7 +1016,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteArtifact.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteArtifact.html
    */
   public toDeleteArtifact() {
     return this.to('DeleteArtifact');
@@ -1026,7 +1027,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAssociation.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAssociation.html
    */
   public toDeleteAssociation() {
     return this.to('DeleteAssociation');
@@ -1037,7 +1038,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteCodeRepository.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteCodeRepository.html
    */
   public toDeleteCodeRepository() {
     return this.to('DeleteCodeRepository');
@@ -1048,7 +1049,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteContext.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteContext.html
    */
   public toDeleteContext() {
     return this.to('DeleteContext');
@@ -1059,7 +1060,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDataQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteDataQualityJobDefinition.html
    */
   public toDeleteDataQualityJobDefinition() {
     return this.to('DeleteDataQualityJobDefinition');
@@ -1070,7 +1071,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDeviceFleet.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteDeviceFleet.html
    */
   public toDeleteDeviceFleet() {
     return this.to('DeleteDeviceFleet');
@@ -1081,7 +1082,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDomain.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteDomain.html
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
@@ -1092,7 +1093,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteEndpoint.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html
    */
   public toDeleteEndpoint() {
     return this.to('DeleteEndpoint');
@@ -1103,7 +1104,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteEndpointConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpointConfig.html
    */
   public toDeleteEndpointConfig() {
     return this.to('DeleteEndpointConfig');
@@ -1114,7 +1115,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteExperiment.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteExperiment.html
    */
   public toDeleteExperiment() {
     return this.to('DeleteExperiment');
@@ -1128,7 +1129,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteFeatureGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteFeatureGroup.html
    */
   public toDeleteFeatureGroup() {
     return this.to('DeleteFeatureGroup');
@@ -1139,7 +1140,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteFlowDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteFlowDefinition.html
    */
   public toDeleteFlowDefinition() {
     return this.to('DeleteFlowDefinition');
@@ -1150,7 +1151,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteHumanLoop.html
+   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_DeleteHumanLoop.html
    */
   public toDeleteHumanLoop() {
     return this.to('DeleteHumanLoop');
@@ -1161,7 +1162,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteHumanTaskUi.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHumanTaskUi.html
    */
   public toDeleteHumanTaskUi() {
     return this.to('DeleteHumanTaskUi');
@@ -1172,7 +1173,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteImage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteImage.html
    */
   public toDeleteImage() {
     return this.to('DeleteImage');
@@ -1183,7 +1184,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteImageVersion.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteImageVersion.html
    */
   public toDeleteImageVersion() {
     return this.to('DeleteImageVersion');
@@ -1194,7 +1195,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteLineageGroupPolicy.html
    */
   public toDeleteLineageGroupPolicy() {
     return this.to('DeleteLineageGroupPolicy');
@@ -1205,7 +1206,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModel.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModel.html
    */
   public toDeleteModel() {
     return this.to('DeleteModel');
@@ -1216,7 +1217,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelBiasJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelBiasJobDefinition.html
    */
   public toDeleteModelBiasJobDefinition() {
     return this.to('DeleteModelBiasJobDefinition');
@@ -1227,7 +1228,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelExplainabilityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelExplainabilityJobDefinition.html
    */
   public toDeleteModelExplainabilityJobDefinition() {
     return this.to('DeleteModelExplainabilityJobDefinition');
@@ -1238,7 +1239,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelPackage.html
    */
   public toDeleteModelPackage() {
     return this.to('DeleteModelPackage');
@@ -1249,7 +1250,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackageGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelPackageGroup.html
    */
   public toDeleteModelPackageGroup() {
     return this.to('DeleteModelPackageGroup');
@@ -1260,7 +1261,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelPackageGroupPolicy.html
    */
   public toDeleteModelPackageGroupPolicy() {
     return this.to('DeleteModelPackageGroupPolicy');
@@ -1271,7 +1272,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelQualityJobDefinition.html
    */
   public toDeleteModelQualityJobDefinition() {
     return this.to('DeleteModelQualityJobDefinition');
@@ -1282,7 +1283,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteMonitoringSchedule.html
    */
   public toDeleteMonitoringSchedule() {
     return this.to('DeleteMonitoringSchedule');
@@ -1293,7 +1294,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteNotebookInstance.html
    */
   public toDeleteNotebookInstance() {
     return this.to('DeleteNotebookInstance');
@@ -1304,7 +1305,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteNotebookInstanceLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteNotebookInstanceLifecycleConfig.html
    */
   public toDeleteNotebookInstanceLifecycleConfig() {
     return this.to('DeleteNotebookInstanceLifecycleConfig');
@@ -1315,7 +1316,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeletePipeline.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
     return this.to('DeletePipeline');
@@ -1326,7 +1327,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteProject.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
@@ -1337,7 +1338,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteRecord.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html
    */
   public toDeleteRecord() {
     return this.to('DeleteRecord');
@@ -1348,7 +1349,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteStudioLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteStudioLifecycleConfig.html
    */
   public toDeleteStudioLifecycleConfig() {
     return this.to('DeleteStudioLifecycleConfig');
@@ -1362,7 +1363,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTags.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
     return this.to('DeleteTags');
@@ -1373,7 +1374,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTrial.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTrial.html
    */
   public toDeleteTrial() {
     return this.to('DeleteTrial');
@@ -1384,7 +1385,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTrialComponent.html
    */
   public toDeleteTrialComponent() {
     return this.to('DeleteTrialComponent');
@@ -1395,7 +1396,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteUserProfile.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteUserProfile.html
    */
   public toDeleteUserProfile() {
     return this.to('DeleteUserProfile');
@@ -1406,7 +1407,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteWorkforce.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkforce.html
    */
   public toDeleteWorkforce() {
     return this.to('DeleteWorkforce');
@@ -1417,7 +1418,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteWorkteam.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html
    */
   public toDeleteWorkteam() {
     return this.to('DeleteWorkteam');
@@ -1428,7 +1429,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeregisterDevices.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeregisterDevices.html
    */
   public toDeregisterDevices() {
     return this.to('DeregisterDevices');
@@ -1439,7 +1440,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAction.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAction.html
    */
   public toDescribeAction() {
     return this.to('DescribeAction');
@@ -1450,7 +1451,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAlgorithm.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAlgorithm.html
    */
   public toDescribeAlgorithm() {
     return this.to('DescribeAlgorithm');
@@ -1461,7 +1462,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeApp.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeApp.html
    */
   public toDescribeApp() {
     return this.to('DescribeApp');
@@ -1472,7 +1473,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAppImageConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAppImageConfig.html
    */
   public toDescribeAppImageConfig() {
     return this.to('DescribeAppImageConfig');
@@ -1483,7 +1484,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeArtifact.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeArtifact.html
    */
   public toDescribeArtifact() {
     return this.to('DescribeArtifact');
@@ -1494,7 +1495,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAutoMLJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html
    */
   public toDescribeAutoMLJob() {
     return this.to('DescribeAutoMLJob');
@@ -1505,7 +1506,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeCodeRepository.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCodeRepository.html
    */
   public toDescribeCodeRepository() {
     return this.to('DescribeCodeRepository');
@@ -1516,7 +1517,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeCompilationJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html
    */
   public toDescribeCompilationJob() {
     return this.to('DescribeCompilationJob');
@@ -1527,7 +1528,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeContext.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeContext.html
    */
   public toDescribeContext() {
     return this.to('DescribeContext');
@@ -1538,7 +1539,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDataQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeDataQualityJobDefinition.html
    */
   public toDescribeDataQualityJobDefinition() {
     return this.to('DescribeDataQualityJobDefinition');
@@ -1549,7 +1550,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDevice.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeDevice.html
    */
   public toDescribeDevice() {
     return this.to('DescribeDevice');
@@ -1560,7 +1561,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDeviceFleet.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeDeviceFleet.html
    */
   public toDescribeDeviceFleet() {
     return this.to('DescribeDeviceFleet');
@@ -1571,7 +1572,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDomain.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeDomain.html
    */
   public toDescribeDomain() {
     return this.to('DescribeDomain');
@@ -1582,7 +1583,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEdgePackagingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEdgePackagingJob.html
    */
   public toDescribeEdgePackagingJob() {
     return this.to('DescribeEdgePackagingJob');
@@ -1593,7 +1594,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html
    */
   public toDescribeEndpoint() {
     return this.to('DescribeEndpoint');
@@ -1604,7 +1605,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpointConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html
    */
   public toDescribeEndpointConfig() {
     return this.to('DescribeEndpointConfig');
@@ -1615,7 +1616,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeExperiment.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeExperiment.html
    */
   public toDescribeExperiment() {
     return this.to('DescribeExperiment');
@@ -1626,10 +1627,21 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeFeatureGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeFeatureGroup.html
    */
   public toDescribeFeatureGroup() {
     return this.to('DescribeFeatureGroup');
+  }
+
+  /**
+   * Grants permission to return information about a feature metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeFeatureMetadata.html
+   */
+  public toDescribeFeatureMetadata() {
+    return this.to('DescribeFeatureMetadata');
   }
 
   /**
@@ -1637,7 +1649,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeFlowDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeFlowDefinition.html
    */
   public toDescribeFlowDefinition() {
     return this.to('DescribeFlowDefinition');
@@ -1648,7 +1660,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHumanLoop.html
+   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_DescribeHumanLoop.html
    */
   public toDescribeHumanLoop() {
     return this.to('DescribeHumanLoop');
@@ -1659,7 +1671,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHumanTaskUi.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeHumanTaskUi.html
    */
   public toDescribeHumanTaskUi() {
     return this.to('DescribeHumanTaskUi');
@@ -1670,7 +1682,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHyperParameterTuningJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeHyperParameterTuningJob.html
    */
   public toDescribeHyperParameterTuningJob() {
     return this.to('DescribeHyperParameterTuningJob');
@@ -1681,7 +1693,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeImage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeImage.html
    */
   public toDescribeImage() {
     return this.to('DescribeImage');
@@ -1692,7 +1704,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeImageVersion.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeImageVersion.html
    */
   public toDescribeImageVersion() {
     return this.to('DescribeImageVersion');
@@ -1703,7 +1715,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeInferenceRecommendationsJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRecommendationsJob.html
    */
   public toDescribeInferenceRecommendationsJob() {
     return this.to('DescribeInferenceRecommendationsJob');
@@ -1714,7 +1726,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeLabelingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeLabelingJob.html
    */
   public toDescribeLabelingJob() {
     return this.to('DescribeLabelingJob');
@@ -1725,7 +1737,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeLineageGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeLineageGroup.html
    */
   public toDescribeLineageGroup() {
     return this.to('DescribeLineageGroup');
@@ -1736,7 +1748,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModel.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModel.html
    */
   public toDescribeModel() {
     return this.to('DescribeModel');
@@ -1747,7 +1759,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelBiasJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelBiasJobDefinition.html
    */
   public toDescribeModelBiasJobDefinition() {
     return this.to('DescribeModelBiasJobDefinition');
@@ -1758,7 +1770,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelExplainabilityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelExplainabilityJobDefinition.html
    */
   public toDescribeModelExplainabilityJobDefinition() {
     return this.to('DescribeModelExplainabilityJobDefinition');
@@ -1769,7 +1781,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelPackage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelPackage.html
    */
   public toDescribeModelPackage() {
     return this.to('DescribeModelPackage');
@@ -1780,7 +1792,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelPackageGroup.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelPackageGroup.html
    */
   public toDescribeModelPackageGroup() {
     return this.to('DescribeModelPackageGroup');
@@ -1791,7 +1803,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelQualityJobDefinition.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelQualityJobDefinition.html
    */
   public toDescribeModelQualityJobDefinition() {
     return this.to('DescribeModelQualityJobDefinition');
@@ -1802,7 +1814,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeMonitoringSchedule.html
    */
   public toDescribeMonitoringSchedule() {
     return this.to('DescribeMonitoringSchedule');
@@ -1813,7 +1825,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeNotebookInstance.html
    */
   public toDescribeNotebookInstance() {
     return this.to('DescribeNotebookInstance');
@@ -1824,7 +1836,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeNotebookInstanceLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeNotebookInstanceLifecycleConfig.html
    */
   public toDescribeNotebookInstanceLifecycleConfig() {
     return this.to('DescribeNotebookInstanceLifecycleConfig');
@@ -1835,7 +1847,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipeline.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribePipeline.html
    */
   public toDescribePipeline() {
     return this.to('DescribePipeline');
@@ -1846,7 +1858,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipelineDefinitionForExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribePipelineDefinitionForExecution.html
    */
   public toDescribePipelineDefinitionForExecution() {
     return this.to('DescribePipelineDefinitionForExecution');
@@ -1857,7 +1869,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribePipelineExecution.html
    */
   public toDescribePipelineExecution() {
     return this.to('DescribePipelineExecution');
@@ -1868,7 +1880,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeProcessingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeProcessingJob.html
    */
   public toDescribeProcessingJob() {
     return this.to('DescribeProcessingJob');
@@ -1879,7 +1891,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeProject.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeProject.html
    */
   public toDescribeProject() {
     return this.to('DescribeProject');
@@ -1890,7 +1902,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeStudioLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeStudioLifecycleConfig.html
    */
   public toDescribeStudioLifecycleConfig() {
     return this.to('DescribeStudioLifecycleConfig');
@@ -1901,7 +1913,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeSubscribedWorkteam.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeSubscribedWorkteam.html
    */
   public toDescribeSubscribedWorkteam() {
     return this.to('DescribeSubscribedWorkteam');
@@ -1912,7 +1924,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrainingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html
    */
   public toDescribeTrainingJob() {
     return this.to('DescribeTrainingJob');
@@ -1923,7 +1935,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTransformJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTransformJob.html
    */
   public toDescribeTransformJob() {
     return this.to('DescribeTransformJob');
@@ -1934,7 +1946,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrial.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html
    */
   public toDescribeTrial() {
     return this.to('DescribeTrial');
@@ -1945,7 +1957,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html
    */
   public toDescribeTrialComponent() {
     return this.to('DescribeTrialComponent');
@@ -1956,7 +1968,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeUserProfile.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeUserProfile.html
    */
   public toDescribeUserProfile() {
     return this.to('DescribeUserProfile');
@@ -1967,7 +1979,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeWorkforce.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkforce.html
    */
   public toDescribeWorkforce() {
     return this.to('DescribeWorkforce');
@@ -1978,7 +1990,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeWorkteam.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkteam.html
    */
   public toDescribeWorkteam() {
     return this.to('DescribeWorkteam');
@@ -1989,7 +2001,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DisableSagemakerServicecatalogPortfolio.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisableSagemakerServicecatalogPortfolio.html
    */
   public toDisableSagemakerServicecatalogPortfolio() {
     return this.to('DisableSagemakerServicecatalogPortfolio');
@@ -2000,7 +2012,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DisassociateTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html
    */
   public toDisassociateTrialComponent() {
     return this.to('DisassociateTrialComponent');
@@ -2011,7 +2023,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_EnableSagemakerServicecatalogPortfolio.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EnableSagemakerServicecatalogPortfolio.html
    */
   public toEnableSagemakerServicecatalogPortfolio() {
     return this.to('EnableSagemakerServicecatalogPortfolio');
@@ -2022,7 +2034,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetDeviceFleetReport.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetDeviceFleetReport.html
    */
   public toGetDeviceFleetReport() {
     return this.to('GetDeviceFleetReport');
@@ -2033,7 +2045,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetDeviceRegistration.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_edge_GetDeviceRegistration.html
    */
   public toGetDeviceRegistration() {
     return this.to('GetDeviceRegistration');
@@ -2044,7 +2056,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetLineageGroupPolicy.html
    */
   public toGetLineageGroupPolicy() {
     return this.to('GetLineageGroupPolicy');
@@ -2055,7 +2067,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetModelPackageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetModelPackageGroupPolicy.html
    */
   public toGetModelPackageGroupPolicy() {
     return this.to('GetModelPackageGroupPolicy');
@@ -2066,7 +2078,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetRecord.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html
    */
   public toGetRecord() {
     return this.to('GetRecord');
@@ -2077,7 +2089,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetSagemakerServicecatalogPortfolioStatus.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSagemakerServicecatalogPortfolioStatus.html
    */
   public toGetSagemakerServicecatalogPortfolioStatus() {
     return this.to('GetSagemakerServicecatalogPortfolioStatus');
@@ -2088,7 +2100,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetSearchSuggestions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSearchSuggestions.html
    */
   public toGetSearchSuggestions() {
     return this.to('GetSearchSuggestions');
@@ -2102,7 +2114,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifTargetModel()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpoint.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html
    */
   public toInvokeEndpoint() {
     return this.to('InvokeEndpoint');
@@ -2113,7 +2125,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpointAsync.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html
    */
   public toInvokeEndpointAsync() {
     return this.to('InvokeEndpointAsync');
@@ -2124,7 +2136,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListActions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListActions.html
    */
   public toListActions() {
     return this.to('ListActions');
@@ -2135,7 +2147,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAlgorithms.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAlgorithms.html
    */
   public toListAlgorithms() {
     return this.to('ListAlgorithms');
@@ -2146,7 +2158,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAppImageConfigs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAppImageConfigs.html
    */
   public toListAppImageConfigs() {
     return this.to('ListAppImageConfigs');
@@ -2157,7 +2169,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListApps.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListApps.html
    */
   public toListApps() {
     return this.to('ListApps');
@@ -2168,7 +2180,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListArtifacts.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListArtifacts.html
    */
   public toListArtifacts() {
     return this.to('ListArtifacts');
@@ -2179,7 +2191,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAssociations.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAssociations.html
    */
   public toListAssociations() {
     return this.to('ListAssociations');
@@ -2190,7 +2202,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAutoMLJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAutoMLJobs.html
    */
   public toListAutoMLJobs() {
     return this.to('ListAutoMLJobs');
@@ -2201,7 +2213,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCandidatesForAutoMLJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCandidatesForAutoMLJob.html
    */
   public toListCandidatesForAutoMLJob() {
     return this.to('ListCandidatesForAutoMLJob');
@@ -2212,7 +2224,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCodeRepositories.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCodeRepositories.html
    */
   public toListCodeRepositories() {
     return this.to('ListCodeRepositories');
@@ -2223,7 +2235,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCompilationJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html
    */
   public toListCompilationJobs() {
     return this.to('ListCompilationJobs');
@@ -2234,7 +2246,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListContexts.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListContexts.html
    */
   public toListContexts() {
     return this.to('ListContexts');
@@ -2245,7 +2257,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDataQualityJobDefinitions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListDataQualityJobDefinitions.html
    */
   public toListDataQualityJobDefinitions() {
     return this.to('ListDataQualityJobDefinitions');
@@ -2256,7 +2268,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDeviceFleets.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListDeviceFleets.html
    */
   public toListDeviceFleets() {
     return this.to('ListDeviceFleets');
@@ -2267,7 +2279,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDevices.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListDevices.html
    */
   public toListDevices() {
     return this.to('ListDevices');
@@ -2278,7 +2290,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDomains.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListDomains.html
    */
   public toListDomains() {
     return this.to('ListDomains');
@@ -2289,7 +2301,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEdgePackagingJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEdgePackagingJobs.html
    */
   public toListEdgePackagingJobs() {
     return this.to('ListEdgePackagingJobs');
@@ -2300,7 +2312,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEndpointConfigs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpointConfigs.html
    */
   public toListEndpointConfigs() {
     return this.to('ListEndpointConfigs');
@@ -2311,7 +2323,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEndpoints.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html
    */
   public toListEndpoints() {
     return this.to('ListEndpoints');
@@ -2322,7 +2334,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListExperiments.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListExperiments.html
    */
   public toListExperiments() {
     return this.to('ListExperiments');
@@ -2333,7 +2345,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListFeatureGroups.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListFeatureGroups.html
    */
   public toListFeatureGroups() {
     return this.to('ListFeatureGroups');
@@ -2344,7 +2356,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListFlowDefinitions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListFlowDefinitions.html
    */
   public toListFlowDefinitions() {
     return this.to('ListFlowDefinitions');
@@ -2355,7 +2367,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHumanLoops.html
+   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_ListHumanLoops.html
    */
   public toListHumanLoops() {
     return this.to('ListHumanLoops');
@@ -2366,7 +2378,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHumanTaskUis.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html
    */
   public toListHumanTaskUis() {
     return this.to('ListHumanTaskUis');
@@ -2377,7 +2389,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHyperParameterTuningJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHyperParameterTuningJobs.html
    */
   public toListHyperParameterTuningJobs() {
     return this.to('ListHyperParameterTuningJobs');
@@ -2388,7 +2400,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListImageVersions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListImageVersions.html
    */
   public toListImageVersions() {
     return this.to('ListImageVersions');
@@ -2399,7 +2411,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListImages.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListImages.html
    */
   public toListImages() {
     return this.to('ListImages');
@@ -2410,7 +2422,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListInferenceRecommendationsJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobs.html
    */
   public toListInferenceRecommendationsJobs() {
     return this.to('ListInferenceRecommendationsJobs');
@@ -2421,7 +2433,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLabelingJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListLabelingJobs.html
    */
   public toListLabelingJobs() {
     return this.to('ListLabelingJobs');
@@ -2432,7 +2444,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLabelingJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListLabelingJobs.html
    */
   public toListLabelingJobsForWorkteam() {
     return this.to('ListLabelingJobsForWorkteam');
@@ -2443,7 +2455,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLineageGroups.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListLineageGroups.html
    */
   public toListLineageGroups() {
     return this.to('ListLineageGroups');
@@ -2454,7 +2466,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelBiasJobDefinitions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelBiasJobDefinitions.html
    */
   public toListModelBiasJobDefinitions() {
     return this.to('ListModelBiasJobDefinitions');
@@ -2465,7 +2477,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelExplainabilityJobDefinitions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelExplainabilityJobDefinitions.html
    */
   public toListModelExplainabilityJobDefinitions() {
     return this.to('ListModelExplainabilityJobDefinitions');
@@ -2476,7 +2488,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelMetadata.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelMetadata.html
    */
   public toListModelMetadata() {
     return this.to('ListModelMetadata');
@@ -2487,7 +2499,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelPackageGroups.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelPackageGroups.html
    */
   public toListModelPackageGroups() {
     return this.to('ListModelPackageGroups');
@@ -2498,7 +2510,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelPackages.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelPackages.html
    */
   public toListModelPackages() {
     return this.to('ListModelPackages');
@@ -2509,7 +2521,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelQualityJobDefinitions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelQualityJobDefinitions.html
    */
   public toListModelQualityJobDefinitions() {
     return this.to('ListModelQualityJobDefinitions');
@@ -2520,7 +2532,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModels.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModels.html
    */
   public toListModels() {
     return this.to('ListModels');
@@ -2531,7 +2543,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListMonitoringExecutions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMonitoringExecutions.html
    */
   public toListMonitoringExecutions() {
     return this.to('ListMonitoringExecutions');
@@ -2542,7 +2554,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListMonitoringSchedules.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMonitoringSchedules.html
    */
   public toListMonitoringSchedules() {
     return this.to('ListMonitoringSchedules');
@@ -2553,7 +2565,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListNotebookInstanceLifecycleConfigs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListNotebookInstanceLifecycleConfigs.html
    */
   public toListNotebookInstanceLifecycleConfigs() {
     return this.to('ListNotebookInstanceLifecycleConfigs');
@@ -2564,7 +2576,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListNotebookInstances.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListNotebookInstances.html
    */
   public toListNotebookInstances() {
     return this.to('ListNotebookInstances');
@@ -2575,7 +2587,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineExecutionSteps.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineExecutionSteps.html
    */
   public toListPipelineExecutionSteps() {
     return this.to('ListPipelineExecutionSteps');
@@ -2586,7 +2598,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineExecutions.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineExecutions.html
    */
   public toListPipelineExecutions() {
     return this.to('ListPipelineExecutions');
@@ -2597,7 +2609,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineParametersForExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineParametersForExecution.html
    */
   public toListPipelineParametersForExecution() {
     return this.to('ListPipelineParametersForExecution');
@@ -2608,7 +2620,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelines.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelines.html
    */
   public toListPipelines() {
     return this.to('ListPipelines');
@@ -2619,7 +2631,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListProcessingJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListProcessingJobs.html
    */
   public toListProcessingJobs() {
     return this.to('ListProcessingJobs');
@@ -2630,7 +2642,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListProjects.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
     return this.to('ListProjects');
@@ -2641,7 +2653,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListStudioLifecycleConfigs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListStudioLifecycleConfigs.html
    */
   public toListStudioLifecycleConfigs() {
     return this.to('ListStudioLifecycleConfigs');
@@ -2652,7 +2664,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListSubscribedWorkteams.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListSubscribedWorkteams.html
    */
   public toListSubscribedWorkteams() {
     return this.to('ListSubscribedWorkteams');
@@ -2663,7 +2675,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTags.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTags.html
    */
   public toListTags() {
     return this.to('ListTags');
@@ -2674,7 +2686,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrainingJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrainingJobs.html
    */
   public toListTrainingJobs() {
     return this.to('ListTrainingJobs');
@@ -2685,7 +2697,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ ListTrainingJobsForHyperParameterTuningJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrainingJobsForHyperParameterTuningJob.html
    */
   public toListTrainingJobsForHyperParameterTuningJob() {
     return this.to('ListTrainingJobsForHyperParameterTuningJob');
@@ -2696,7 +2708,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTransformJobs.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTransformJobs.html
    */
   public toListTransformJobs() {
     return this.to('ListTransformJobs');
@@ -2707,7 +2719,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrialComponents.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrialComponents.html
    */
   public toListTrialComponents() {
     return this.to('ListTrialComponents');
@@ -2718,7 +2730,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrials.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html
    */
   public toListTrials() {
     return this.to('ListTrials');
@@ -2729,7 +2741,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListUserProfiles.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListUserProfiles.html
    */
   public toListUserProfiles() {
     return this.to('ListUserProfiles');
@@ -2740,7 +2752,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListWorkforces.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html
    */
   public toListWorkforces() {
     return this.to('ListWorkforces');
@@ -2751,7 +2763,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListWorkteams.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkteams.html
    */
   public toListWorkteams() {
     return this.to('ListWorkteams');
@@ -2762,7 +2774,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutLineageGroupPolicy.html
    */
   public toPutLineageGroupPolicy() {
     return this.to('PutLineageGroupPolicy');
@@ -2773,7 +2785,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutModelPackageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutModelPackageGroupPolicy.html
    */
   public toPutModelPackageGroupPolicy() {
     return this.to('PutModelPackageGroupPolicy');
@@ -2784,7 +2796,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutRecord.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_PutRecord.html
    */
   public toPutRecord() {
     return this.to('PutRecord');
@@ -2795,7 +2807,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_QueryLineage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_QueryLineage.html
    */
   public toQueryLineage() {
     return this.to('QueryLineage');
@@ -2810,7 +2822,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RegisterDevices.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RegisterDevices.html
    */
   public toRegisterDevices() {
     return this.to('RegisterDevices');
@@ -2824,7 +2836,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RenderUiTemplate.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RenderUiTemplate.html
    */
   public toRenderUiTemplate() {
     return this.to('RenderUiTemplate');
@@ -2835,7 +2847,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RetryPipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RetryPipelineExecution.html
    */
   public toRetryPipelineExecution() {
     return this.to('RetryPipelineExecution');
@@ -2846,7 +2858,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_Search.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html
    */
   public toSearch() {
     return this.to('Search');
@@ -2857,7 +2869,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendHeartbeat.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SendHeartbeat.html
    */
   public toSendHeartbeat() {
     return this.to('SendHeartbeat');
@@ -2868,7 +2880,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendPipelineExecutionStepFailure.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SendPipelineExecutionStepFailure.html
    */
   public toSendPipelineExecutionStepFailure() {
     return this.to('SendPipelineExecutionStepFailure');
@@ -2879,7 +2891,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendPipelineExecutionStepSuccess.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SendPipelineExecutionStepSuccess.html
    */
   public toSendPipelineExecutionStepSuccess() {
     return this.to('SendPipelineExecutionStepSuccess');
@@ -2890,7 +2902,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartHumanLoop.html
+   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_StartHumanLoop.html
    */
   public toStartHumanLoop() {
     return this.to('StartHumanLoop');
@@ -2901,7 +2913,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartMonitoringSchedule.html
    */
   public toStartMonitoringSchedule() {
     return this.to('StartMonitoringSchedule');
@@ -2912,7 +2924,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartNotebookInstance.html
    */
   public toStartNotebookInstance() {
     return this.to('StartNotebookInstance');
@@ -2923,7 +2935,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartPipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html
    */
   public toStartPipelineExecution() {
     return this.to('StartPipelineExecution');
@@ -2934,7 +2946,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopAutoMLJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopAutoMLJob.html
    */
   public toStopAutoMLJob() {
     return this.to('StopAutoMLJob');
@@ -2945,7 +2957,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopCompilationJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopCompilationJob.html
    */
   public toStopCompilationJob() {
     return this.to('StopCompilationJob');
@@ -2956,7 +2968,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopEdgePackagingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopEdgePackagingJob.html
    */
   public toStopEdgePackagingJob() {
     return this.to('StopEdgePackagingJob');
@@ -2967,7 +2979,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopHumanLoop.html
+   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_StopHumanLoop.html
    */
   public toStopHumanLoop() {
     return this.to('StopHumanLoop');
@@ -2978,7 +2990,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopHyperParameterTuningJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopHyperParameterTuningJob.html
    */
   public toStopHyperParameterTuningJob() {
     return this.to('StopHyperParameterTuningJob');
@@ -2989,7 +3001,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopInferenceRecommendationsJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceRecommendationsJob.html
    */
   public toStopInferenceRecommendationsJob() {
     return this.to('StopInferenceRecommendationsJob');
@@ -3000,7 +3012,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopLabelingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopLabelingJob.html
    */
   public toStopLabelingJob() {
     return this.to('StopLabelingJob');
@@ -3011,7 +3023,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopMonitoringSchedule.html
    */
   public toStopMonitoringSchedule() {
     return this.to('StopMonitoringSchedule');
@@ -3022,7 +3034,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopNotebookInstance.html
    */
   public toStopNotebookInstance() {
     return this.to('StopNotebookInstance');
@@ -3033,7 +3045,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopPipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopPipelineExecution.html
    */
   public toStopPipelineExecution() {
     return this.to('StopPipelineExecution');
@@ -3044,7 +3056,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopProcessingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopProcessingJob.html
    */
   public toStopProcessingJob() {
     return this.to('StopProcessingJob');
@@ -3055,7 +3067,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopTrainingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopTrainingJob.html
    */
   public toStopTrainingJob() {
     return this.to('StopTrainingJob');
@@ -3066,7 +3078,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopTransformJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopTransformJob.html
    */
   public toStopTransformJob() {
     return this.to('StopTransformJob');
@@ -3077,7 +3089,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateAction.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateAction.html
    */
   public toUpdateAction() {
     return this.to('UpdateAction');
@@ -3088,7 +3100,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateAppImageConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateAppImageConfig.html
    */
   public toUpdateAppImageConfig() {
     return this.to('UpdateAppImageConfig');
@@ -3099,7 +3111,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateArtifact.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateArtifact.html
    */
   public toUpdateArtifact() {
     return this.to('UpdateArtifact');
@@ -3110,7 +3122,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateCodeRepository.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCodeRepository.html
    */
   public toUpdateCodeRepository() {
     return this.to('UpdateCodeRepository');
@@ -3121,7 +3133,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateContext.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateContext.html
    */
   public toUpdateContext() {
     return this.to('UpdateContext');
@@ -3132,7 +3144,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDeviceFleet.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDeviceFleet.html
    */
   public toUpdateDeviceFleet() {
     return this.to('UpdateDeviceFleet');
@@ -3143,7 +3155,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDevices.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDevices.html
    */
   public toUpdateDevices() {
     return this.to('UpdateDevices');
@@ -3161,7 +3173,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDomain.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDomain.html
    */
   public toUpdateDomain() {
     return this.to('UpdateDomain');
@@ -3172,7 +3184,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html
    */
   public toUpdateEndpoint() {
     return this.to('UpdateEndpoint');
@@ -3183,7 +3195,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpointWeightsAndCapacities.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html
    */
   public toUpdateEndpointWeightsAndCapacities() {
     return this.to('UpdateEndpointWeightsAndCapacities');
@@ -3194,10 +3206,32 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateExperiment.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateExperiment.html
    */
   public toUpdateExperiment() {
     return this.to('UpdateExperiment');
+  }
+
+  /**
+   * Grants permission to update a feature group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateFeatureGroup.html
+   */
+  public toUpdateFeatureGroup() {
+    return this.to('UpdateFeatureGroup');
+  }
+
+  /**
+   * Grants permission to update a feature metadata
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateFeatureMetadata.html
+   */
+  public toUpdateFeatureMetadata() {
+    return this.to('UpdateFeatureMetadata');
   }
 
   /**
@@ -3208,7 +3242,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateImage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateImage.html
    */
   public toUpdateImage() {
     return this.to('UpdateImage');
@@ -3222,7 +3256,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifModelApprovalStatus()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateModelPackage.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateModelPackage.html
    */
   public toUpdateModelPackage() {
     return this.to('UpdateModelPackage');
@@ -3248,7 +3282,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateMonitoringSchedule.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateMonitoringSchedule.html
    */
   public toUpdateMonitoringSchedule() {
     return this.to('UpdateMonitoringSchedule');
@@ -3262,9 +3296,10 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAcceleratorTypes()
    * - .ifInstanceTypes()
+   * - .ifMinimumInstanceMetadataServiceVersion()
    * - .ifRootAccess()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateNotebookInstance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateNotebookInstance.html
    */
   public toUpdateNotebookInstance() {
     return this.to('UpdateNotebookInstance');
@@ -3275,7 +3310,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ UpdateNotebookInstanceLifecycleConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateNotebookInstanceLifecycleConfig.html
    */
   public toUpdateNotebookInstanceLifecycleConfig() {
     return this.to('UpdateNotebookInstanceLifecycleConfig');
@@ -3289,7 +3324,7 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdatePipeline.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipeline.html
    */
   public toUpdatePipeline() {
     return this.to('UpdatePipeline');
@@ -3300,7 +3335,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdatePipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipelineExecution.html
    */
   public toUpdatePipelineExecution() {
     return this.to('UpdatePipelineExecution');
@@ -3315,7 +3350,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateProject.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
     return this.to('UpdateProject');
@@ -3329,7 +3364,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifInstanceTypes()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrainingJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrainingJob.html
    */
   public toUpdateTrainingJob() {
     return this.to('UpdateTrainingJob');
@@ -3340,7 +3375,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrial.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrial.html
    */
   public toUpdateTrial() {
     return this.to('UpdateTrial');
@@ -3351,7 +3386,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrialComponent.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrialComponent.html
    */
   public toUpdateTrialComponent() {
     return this.to('UpdateTrialComponent');
@@ -3370,7 +3405,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateUserProfile.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateUserProfile.html
    */
   public toUpdateUserProfile() {
     return this.to('UpdateUserProfile');
@@ -3381,7 +3416,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateWorkforce.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html
    */
   public toUpdateWorkforce() {
     return this.to('UpdateWorkforce');
@@ -3392,7 +3427,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateWorkteam.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkteam.html
    */
   public toUpdateWorkteam() {
     return this.to('UpdateWorkteam');
@@ -3530,6 +3565,8 @@ export class Sagemaker extends PolicyStatement {
       'UpdateEndpoint',
       'UpdateEndpointWeightsAndCapacities',
       'UpdateExperiment',
+      'UpdateFeatureGroup',
+      'UpdateFeatureMetadata',
       'UpdateImage',
       'UpdateModelPackage',
       'UpdateMonitoringSchedule',
@@ -3571,6 +3608,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeEndpointConfig',
       'DescribeExperiment',
       'DescribeFeatureGroup',
+      'DescribeFeatureMetadata',
       'DescribeFlowDefinition',
       'DescribeHumanLoop',
       'DescribeHumanTaskUi',
@@ -4830,6 +4868,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifMaxRuntimeInSeconds(value: number | number[], operator?: Operator | string) {
     return this.if(`MaxRuntimeInSeconds`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the minimum instance metadata service version used by the resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateNotebookInstance()
+   * - .toUpdateNotebookInstance()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMinimumInstanceMetadataServiceVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`MinimumInstanceMetadataServiceVersion`, value, operator || 'StringLike');
   }
 
   /**
