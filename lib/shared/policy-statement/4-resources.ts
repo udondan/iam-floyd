@@ -57,9 +57,9 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   public freeze() {
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
-      this.cdkApplyRes else {
-        console.log('CANNOT APPLY RESOURCES: ALREADY FROZEN!')
-      }ources();
+      this.cdkApplyResources();
+    } else {
+      console.log('CANNOT APPLY RESOURCES: ALREADY FROZEN!');
     }
     return super.freeze();
   }
