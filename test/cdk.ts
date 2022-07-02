@@ -21,7 +21,8 @@ export class TestStack extends Stack {
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
-          .ifAwsRequestTag('CreatedBy', 'Bob'),
+          .ifAwsRequestTag('CreatedBy', 'Bob')
+          .on('*'),
         new statement.Ssm()
           .allow()
           .toDeleteDocument()
@@ -33,7 +34,8 @@ export class TestStack extends Stack {
           .toUpdateDocumentDefaultVersion()
           .toAddTagsToResource()
           .toRemoveTagsFromResource()
-          .ifResourceTag('CreatedBy', 'Bob'),
+          .ifResourceTag('CreatedBy', 'Bob')
+          .on('*'),
       ],
     });
 
