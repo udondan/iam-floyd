@@ -49,6 +49,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   public freeze() {
+    console.log("I'm freezing!");
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
       this.cdkApplyConditions();
