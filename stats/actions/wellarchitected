@@ -32,6 +32,7 @@ wellarchitected:ListWorkloads;List
 wellarchitected:TagResource;Tagging
 wellarchitected:UntagResource;Tagging
 wellarchitected:UpdateAnswer;Write
+wellarchitected:UpdateGlobalSettings;Write
 wellarchitected:UpdateLensReview;Write
 wellarchitected:UpdateShareInvitation;Write
 wellarchitected:UpdateWorkload;Write

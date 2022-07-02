@@ -417,6 +417,17 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update settings to enable aws-organization support
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateGlobalSettings.html
+   */
+  public toUpdateGlobalSettings() {
+    return this.to('UpdateGlobalSettings');
+  }
+
+  /**
    * Grants permission to update properties of the specified lens review
    *
    * Access Level: Write
@@ -486,6 +497,7 @@ export class Wellarchitected extends PolicyStatement {
       'DisassociateLenses',
       'ImportLens',
       'UpdateAnswer',
+      'UpdateGlobalSettings',
       'UpdateLensReview',
       'UpdateShareInvitation',
       'UpdateWorkload',
