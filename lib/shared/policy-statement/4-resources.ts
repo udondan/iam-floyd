@@ -54,6 +54,15 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     return super.toStatementJson();
   }
 
+  public freeze() {
+    // @ts-ignore only available after swapping 1-base
+    if (!this.frozen) {
+      this.cdkApplyResources();
+    }
+    super.freeze();
+    return this;
+  }
+
   private cdkApplyResources() {
     if (!this.cdkResourcesApplied) {
       const mode = this.useNotResource ? 'addNotResources' : 'addResources';

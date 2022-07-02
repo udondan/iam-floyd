@@ -48,6 +48,16 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return super.toStatementJson();
   }
 
+  public freeze() {
+    // @ts-ignore only available after swapping 1-base
+    if (!this.frozen) {
+      this.cdkApplyConditions();
+    }
+    // @ts-ignore only available after swapping 1-base
+    super.freeze();
+    return this;
+  }
+
   private cdkApplyConditions() {
     if (this.hasConditions() && !this.cdkConditionsApplied) {
       Object.keys(this.floydConditions).forEach((operator) => {

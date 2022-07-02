@@ -60,6 +60,15 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     return super.toStatementJson();
   }
 
+  public freeze() {
+    // @ts-ignore only available after swapping 1-base
+    if (!this.frozen) {
+      this.cdkApplyActions();
+    }
+    super.freeze();
+    return this;
+  }
+
   private cdkApplyActions() {
     if (!this.cdkActionsApplied) {
       const mode = this.useNotAction ? 'addNotActions' : 'addActions';

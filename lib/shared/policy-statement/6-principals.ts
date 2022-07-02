@@ -49,6 +49,15 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     return super.toStatementJson();
   }
 
+  public freeze() {
+    // @ts-ignore only available after swapping 1-base
+    if (!this.frozen) {
+      this.cdkApplyPrincipals();
+    }
+    super.freeze();
+    return this;
+  }
+
   protected cdkApplyPrincipals() {}
 
   /**
