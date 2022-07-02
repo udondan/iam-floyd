@@ -52,6 +52,8 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
       this.cdkApplyConditions();
+    } else {
+      console.log('CANNOT APPLY CONDITIONS: ALREADY FROZEN!');
     }
     // @ts-ignore only available after swapping 1-base
     return super.freeze();
