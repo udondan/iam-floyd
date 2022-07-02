@@ -59,8 +59,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     if (!this.frozen) {
       this.cdkApplyResources();
     }
-    super.freeze();
-    return this;
+    return super.freeze();
   }
 
   private cdkApplyResources() {

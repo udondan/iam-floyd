@@ -54,8 +54,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       this.cdkApplyConditions();
     }
     // @ts-ignore only available after swapping 1-base
-    super.freeze();
-    return this;
+    return super.freeze();
   }
 
   private cdkApplyConditions() {

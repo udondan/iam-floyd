@@ -65,8 +65,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     if (!this.frozen) {
       this.cdkApplyActions();
     }
-    super.freeze();
-    return this;
+    return super.freeze();
   }
 
   private cdkApplyActions() {

@@ -54,8 +54,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     if (!this.frozen) {
       this.cdkApplyPrincipals();
     }
-    super.freeze();
-    return this;
+    return super.freeze();
   }
 
   protected cdkApplyPrincipals() {}
