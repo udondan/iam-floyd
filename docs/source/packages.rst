@@ -23,5 +23,8 @@ There are two different package variants available:
 
    Starting with CDK v2.26.0 you have to use cdk-iam-floyd >= v0.377.0.
 
+   **There is no compatible version available for CDK v2.29.x!**<br>
+
+   Starting with CDK v2.30.0 you have to use cdk-iam-floyd >= v0.391.0.
 
 Find them all on `libraries.io`_.
