@@ -61,12 +61,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   }
 
   public freeze() {
-    console.log("I'm freezing!");
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
       this.cdkApplyActions();
-    } else {
-      console.log('CANNOT APPLY ACTIONS: ALREADY FROZEN!');
     }
     return super.freeze();
   }

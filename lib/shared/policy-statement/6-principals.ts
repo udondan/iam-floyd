@@ -50,12 +50,9 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   public freeze() {
-    console.log("I'm freezing!");
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
       this.cdkApplyPrincipals();
-    } else {
-      console.log('CANNOT APPLY PRINCIPALS: ALREADY FROZEN!');
     }
     return super.freeze();
   }
