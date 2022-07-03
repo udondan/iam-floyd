@@ -58,6 +58,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     console.log("I'm freezing!");
     // @ts-ignore only available after swapping 1-base
     if (!this.frozen) {
+      this.ensureResource();
       this.cdkApplyResources();
     } else {
       console.log('CANNOT APPLY RESOURCES: ALREADY FROZEN!');
@@ -123,14 +124,5 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
 
     // a statement requires resources. if none was added, we assume the user wants all resources
     this.onAllResources();
-  }
-
-  /**
-   * Dummy method. Will be overridden by 6-principal.ts
-   *
-   * We just need it here so we can reference it in method `ensureResource`
-   */
-  public hasPrincipals(): boolean {
-    return false;
   }
 }
