@@ -43,13 +43,19 @@ There are two different package variants available:
   [![npm CDK v1](https://img.shields.io/badge/npm-0.286.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0)
   [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.286.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.286.0/)
 
-  Starting with CDK v1.152.0 you have to use cdk-iam-floyd v0.286.0.<br>
-  Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.<br>
-  Starting with CDK v2.26.0 you have to use cdk-iam-floyd >= v0.377.0.<br>
-  **There is no compatible version available for CDK v2.29.x!**<br>
-  Starting with CDK v2.30.0 you have to use cdk-iam-floyd >= v0.391.0.
+  Find them all on [libraries.io].
 
-Find them all on [libraries.io].
+## CDK Compatibility Matrix
+
+| CDK        | cdk-iam-floyd |
+| ---------- | ------------- |
+| <= 1.151.0 | <= 0.285.0    |
+| >= 1.152.0 | 0.286.0       |
+| >= 2.0.0   | >= 0.300.0    |
+| >= 2.20.0  | >= 0.351.0    |
+| >= 2.26.0  | >= 0.377.0    |
+| 2.29.x     | **No compatible version!** |
+| >= 2.30.0  | >= 0.391.0    |
 
 ---
 
