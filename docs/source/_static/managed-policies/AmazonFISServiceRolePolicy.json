@@ -56,7 +56,8 @@
 				"ecs:DescribeClusters",
 				"ecs:DescribeTasks",
 				"ecs:ListTasks",
-				"eks:DescribeNodegroup"
+				"eks:DescribeNodegroup",
+				"eks:DescribeCluster"
 			],
 			"Resource": "*"
 		}
