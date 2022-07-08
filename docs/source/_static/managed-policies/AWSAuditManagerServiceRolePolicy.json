@@ -39,7 +39,8 @@
 				"ec2:DescribeNetworkAcls",
 				"ec2:DescribeRouteTables",
 				"ec2:DescribeSnapshots",
-				"ec2:DescribeVpcEndpoints"
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DescribeVolumes"
 			],
 			"Resource": "*",
 			"Sid": "EC2Access"
@@ -75,7 +76,10 @@
 			"Action": [
 				"kms:ListKeys",
 				"kms:DescribeKey",
-				"kms:ListGrants"
+				"kms:ListGrants",
+				"kms:GetKeyRotationStatus",
+				"kms:GetKeyPolicy",
+				"kms:ListKeyPolicies"
 			],
 			"Resource": "*",
 			"Sid": "KMSAccess"
@@ -91,7 +95,9 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"s3:GetLifecycleConfiguration"
+				"s3:GetLifecycleConfiguration",
+				"s3:GetEncryptionConfiguration",
+				"s3:ListAllMyBuckets"
 			],
 			"Resource": "*",
 			"Sid": "S3Access"
@@ -127,6 +133,31 @@
 			],
 			"Resource": "*",
 			"Sid": "Route53Access"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:DescribeTable",
+				"dynamodb:ListTables"
+			],
+			"Resource": "*",
+			"Sid": "DynamoDBAccess"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeClusters"
+			],
+			"Resource": "*",
+			"Sid": "RedshiftAccess"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"rds:DescribeDBInstances"
+			],
+			"Resource": "*",
+			"Sid": "RDSAccess"
 		},
 		{
 			"Effect": "Allow",
