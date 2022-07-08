@@ -43,6 +43,8 @@ iotwireless:GetMulticastGroup;Read
 iotwireless:GetMulticastGroupSession;Read
 iotwireless:GetNetworkAnalyzerConfiguration;Read
 iotwireless:GetPartnerAccount;Read
+iotwireless:GetPosition;Read
+iotwireless:GetPositionConfiguration;Read
 iotwireless:GetResourceEventConfiguration;Read
 iotwireless:GetResourceLogLevel;Read
 iotwireless:GetServiceEndpoint;Read
@@ -63,12 +65,14 @@ iotwireless:ListMulticastGroups;Read
 iotwireless:ListMulticastGroupsByFuotaTask;Read
 iotwireless:ListNetworkAnalyzerConfigurations;Read
 iotwireless:ListPartnerAccounts;Read
+iotwireless:ListPositionConfigurations;Read
 iotwireless:ListQueuedMessages;Read
 iotwireless:ListServiceProfiles;Read
 iotwireless:ListTagsForResource;Read
 iotwireless:ListWirelessDevices;Read
 iotwireless:ListWirelessGatewayTaskDefinitions;Read
 iotwireless:ListWirelessGateways;Read
+iotwireless:PutPositionConfiguration;Write
 iotwireless:PutResourceLogLevel;Write
 iotwireless:ResetAllResourceLogLevels;Write
 iotwireless:ResetResourceLogLevel;Write
@@ -89,6 +93,7 @@ iotwireless:UpdateLogLevelsByResourceTypes;Write
 iotwireless:UpdateMulticastGroup;Write
 iotwireless:UpdateNetworkAnalyzerConfiguration;Write
 iotwireless:UpdatePartnerAccount;Write
+iotwireless:UpdatePosition;Write
 iotwireless:UpdateResourceEventConfiguration;Write
 iotwireless:UpdateWirelessDevice;Write
 iotwireless:UpdateWirelessGateway;Write

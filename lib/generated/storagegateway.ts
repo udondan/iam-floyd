@@ -201,6 +201,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
@@ -211,6 +215,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to initiate a snapshot of a gateway from a volume recovery point
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html
    */
@@ -1044,6 +1052,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to update a snapshot schedule configured for a gateway volume
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSnapshotSchedule.html
    */

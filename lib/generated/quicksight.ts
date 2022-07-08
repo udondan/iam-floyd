@@ -60,13 +60,20 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to provision Amazon QuickSight administrators, authors, and readers
+   * Grants permission to subscribe to QuickSight
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccountSubscription.html
+   */
+  public toCreateAccountSubscription() {
+    return this.to('CreateAccountSubscription');
+  }
+
+  /**
+   * Grants permission to provision Amazon QuickSight administrators, authors, and readers
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -194,10 +201,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
@@ -250,10 +253,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - ds:CreateIdentityPoolDirectory
    *
@@ -267,10 +266,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to provision Amazon QuickSight readers
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -342,10 +337,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to provision Amazon QuickSight authors and readers
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -615,6 +606,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeAccountSettings() {
     return this.to('DescribeAccountSettings');
+  }
+
+  /**
+   * Grants permission to describe a QuickSight account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountSubscription.html
+   */
+  public toDescribeAccountSubscription() {
+    return this.to('DescribeAccountSubscription');
   }
 
   /**
@@ -954,7 +956,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toGetAnonymousUserEmbedUrl() {
     return this.to('GetAnonymousUserEmbedUrl');
@@ -1763,6 +1765,7 @@ export class Quicksight extends PolicyStatement {
       'AccountConfigurations',
       'CancelIngestion',
       'CreateAccountCustomization',
+      'CreateAccountSubscription',
       'CreateAdmin',
       'CreateAnalysis',
       'CreateDashboard',
@@ -1848,6 +1851,7 @@ export class Quicksight extends PolicyStatement {
     Read: [
       'DescribeAccountCustomization',
       'DescribeAccountSettings',
+      'DescribeAccountSubscription',
       'DescribeAnalysis',
       'DescribeAnalysisPermissions',
       'DescribeDashboard',
@@ -1913,6 +1917,20 @@ export class Quicksight extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type account to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Account.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccount(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:account/${ resourceId }`);
+  }
 
   /**
    * Adds a resource of type user to the statement
@@ -2095,7 +2113,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type namespace to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Namespace.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_NamespaceInfoV2.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2135,6 +2153,18 @@ export class Quicksight extends PolicyStatement {
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the allowed embedding domains
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/embedded-dashboards-for-authenticated-users-step-1.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAllowedEmbeddingDomains(value: string | string[], operator?: Operator | string) {
+    return this.if(`AllowedEmbeddingDomains`, value, operator || 'StringLike');
   }
 
   /**

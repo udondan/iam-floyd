@@ -566,6 +566,28 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get position for a given resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPosition.html
+   */
+  public toGetPosition() {
+    return this.to('GetPosition');
+  }
+
+  /**
+   * Grants permission to get position configuration for a given resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionConfiguration.html
+   */
+  public toGetPositionConfiguration() {
+    return this.to('GetPositionConfiguration');
+  }
+
+  /**
    * Grants permission to get an event configuration for an identifier
    *
    * Access Level: Read
@@ -786,6 +808,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list information of available position configurations based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPositionConfigurations.html
+   */
+  public toListPositionConfigurations() {
+    return this.to('ListPositionConfigurations');
+  }
+
+  /**
    * Grants permission to list the Queued Messages
    *
    * Access Level: Read
@@ -849,6 +882,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toListWirelessGateways() {
     return this.to('ListWirelessGateways');
+  }
+
+  /**
+   * Grants permission to put position configuration for a given resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutPositionConfiguration.html
+   */
+  public toPutPositionConfiguration() {
+    return this.to('PutPositionConfiguration');
   }
 
   /**
@@ -1079,6 +1123,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update position for a given resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePosition.html
+   */
+  public toUpdatePosition() {
+    return this.to('UpdatePosition');
+  }
+
+  /**
    * Grants permission to update an event configuration for an identifier
    *
    * Access Level: Write
@@ -1149,6 +1204,7 @@ export class Iotwireless extends PolicyStatement {
       'DisassociateWirelessDeviceFromThing',
       'DisassociateWirelessGatewayFromCertificate',
       'DisassociateWirelessGatewayFromThing',
+      'PutPositionConfiguration',
       'PutResourceLogLevel',
       'ResetAllResourceLogLevels',
       'ResetResourceLogLevel',
@@ -1167,6 +1223,7 @@ export class Iotwireless extends PolicyStatement {
       'UpdateMulticastGroup',
       'UpdateNetworkAnalyzerConfiguration',
       'UpdatePartnerAccount',
+      'UpdatePosition',
       'UpdateResourceEventConfiguration',
       'UpdateWirelessDevice',
       'UpdateWirelessGateway'
@@ -1181,6 +1238,8 @@ export class Iotwireless extends PolicyStatement {
       'GetMulticastGroupSession',
       'GetNetworkAnalyzerConfiguration',
       'GetPartnerAccount',
+      'GetPosition',
+      'GetPositionConfiguration',
       'GetResourceEventConfiguration',
       'GetResourceLogLevel',
       'GetServiceEndpoint',
@@ -1201,6 +1260,7 @@ export class Iotwireless extends PolicyStatement {
       'ListMulticastGroupsByFuotaTask',
       'ListNetworkAnalyzerConfigurations',
       'ListPartnerAccounts',
+      'ListPositionConfigurations',
       'ListQueuedMessages',
       'ListServiceProfiles',
       'ListTagsForResource',

@@ -1,6 +1,7 @@
 quicksight:AccountConfigurations;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
+quicksight:CreateAccountSubscription;Write
 quicksight:CreateAdmin;Write
 quicksight:CreateAnalysis;Write
 quicksight:CreateCustomPermissions;Permissions management
@@ -44,6 +45,7 @@ quicksight:DeleteUserByPrincipalId;Write
 quicksight:DeleteVPCConnection;Write
 quicksight:DescribeAccountCustomization;Read
 quicksight:DescribeAccountSettings;Read
+quicksight:DescribeAccountSubscription;Read
 quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
 quicksight:DescribeCustomPermissions;Write
