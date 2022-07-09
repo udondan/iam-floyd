@@ -5,7 +5,7 @@
 			"Sid": "DataAPIPermissions",
 			"Effect": "Allow",
 			"Action": [
-			    "redshift-data:BatchExecuteStatement",
+				"redshift-data:BatchExecuteStatement",
 				"redshift-data:ExecuteStatement",
 				"redshift-data:CancelStatement",
 				"redshift-data:ListStatements",
@@ -39,6 +39,17 @@
 				"arn:aws:redshift:*:*:dbname:*/*",
 				"arn:aws:redshift:*:*:dbuser:*/redshift_data_api_user"
 			]
+		},
+		{
+			"Sid": "GetCredentialsForServerless",
+			"Effect": "Allow",
+			"Action": "redshift-serverless:GetCredentials",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/RedshiftDataFullAccess": "*"
+				}
+			}
 		},
 		{
 			"Sid": "DenyCreateAPIUser",

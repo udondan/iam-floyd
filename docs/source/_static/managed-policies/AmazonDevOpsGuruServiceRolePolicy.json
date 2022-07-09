@@ -54,7 +54,9 @@
 				"rds:DescribeOptionGroups",
 				"rds:DescribeDBClusterParameters",
 				"rds:DescribeDBInstanceAutomatedBackups",
-				"rds:DescribeAccountAttributes"
+				"rds:DescribeAccountAttributes",
+				"logs:DescribeLogGroups",
+				"logs:DescribeLogStreams"
 			],
 			"Resource": "*"
 		},
@@ -126,6 +128,19 @@
 			"Condition": {
 				"StringEquals": {
 					"events:ManagedBy": "devops-guru.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Sid": "AllowTagBasedFilterLogEvents",
+			"Effect": "Allow",
+			"Action": [
+				"logs:FilterLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/DevOps-Guru-Analysis": "true"
 				}
 			}
 		}
