@@ -1,0 +1,5 @@
+redshift-serverless:endpointAccess
+redshift-serverless:namespace
+redshift-serverless:recoveryPoint
+redshift-serverless:snapshot
+redshift-serverless:workgroup

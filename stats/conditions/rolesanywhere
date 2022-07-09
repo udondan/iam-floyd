@@ -1,0 +1,3 @@
+rolesanywhere:RequestTag/${TagKey}
+rolesanywhere:ResourceTag/${TagKey}
+rolesanywhere:TagKeys
