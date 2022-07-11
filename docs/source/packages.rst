@@ -31,6 +31,8 @@ CDK Compatibility Matrix
      - <= 0.285.0
    * - >= 1.152.0
      - 0.286.0
+   * - >= 1.158.0
+     - **No compatible version!**
    * - >= 2.0.0
      - >= 0.300.0
    * - >= 2.20.0
