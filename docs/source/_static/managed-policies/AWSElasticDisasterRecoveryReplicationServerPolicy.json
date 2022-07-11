@@ -29,7 +29,9 @@
 				"drs:UpdateAgentReplicationProcessStateForDrs",
 				"drs:NotifyAgentReplicationProgressForDrs",
 				"drs:NotifyAgentConnectedForDrs",
-				"drs:NotifyAgentDisconnectedForDrs"
+				"drs:NotifyAgentDisconnectedForDrs",
+				"drs:NotifyVolumeEventForDrs",
+				"drs:SendVolumeStatsForDrs"
 			],
 			"Resource": "*"
 		},
