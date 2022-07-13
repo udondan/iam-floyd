@@ -46,7 +46,7 @@
 			"Action": "redshift-serverless:GetCredentials",
 			"Resource": "*",
 			"Condition": {
-				"StringEquals": {
+				"StringLike": {
 					"aws:ResourceTag/RedshiftDataFullAccess": "*"
 				}
 			}

@@ -25,7 +25,11 @@
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",
 				"organizations:ListAWSServiceAccessForOrganization",
-				"organizations:ListDelegatedAdministrators"
+				"organizations:ListDelegatedAdministrators",
+				"ec2:DescribeTransitGatewayRouteTableAnnouncements",
+				"ec2:DescribeTransitGatewayPolicyTables",
+				"ec2:GetTransitGatewayPolicyTableAssociations",
+				"ec2:GetTransitGatewayPolicyTableEntries"
 			],
 			"Resource": "*"
 		}
