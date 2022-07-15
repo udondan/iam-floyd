@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+ * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
 
   /**
-   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -219,6 +219,38 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Transit Gateway peering
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTgwArn()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayPeering.html
+   */
+  public toCreateTransitGatewayPeering() {
+    return this.to('CreateTransitGatewayPeering');
+  }
+
+  /**
+   * Grants permission to create a TGW RTB attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTgwRtbArn()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayRouteTableAttachment.html
+   */
+  public toCreateTransitGatewayRouteTableAttachment() {
+    return this.to('CreateTransitGatewayRouteTableAttachment');
+  }
+
+  /**
    * Grants permission to create a VPC attachment
    *
    * Access Level: Write
@@ -321,6 +353,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toDeleteLink() {
     return this.to('DeleteLink');
+  }
+
+  /**
+   * Grants permission to delete a peering
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeletePeering.html
+   */
+  public toDeletePeering() {
+    return this.to('DeletePeering');
   }
 
   /**
@@ -484,6 +527,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toGetCoreNetwork() {
     return this.to('GetCoreNetwork');
+  }
+
+  /**
+   * Grants permission to retrieve a list of core network change events
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkChangeEvents.html
+   */
+  public toGetCoreNetworkChangeEvents() {
+    return this.to('GetCoreNetworkChangeEvents');
   }
 
   /**
@@ -663,6 +717,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Transit Gateway peering
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayPeering.html
+   */
+  public toGetTransitGatewayPeering() {
+    return this.to('GetTransitGatewayPeering');
+  }
+
+  /**
    * Grants permission to describe transit gateway registrations
    *
    * Access Level: List
@@ -671,6 +736,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toGetTransitGatewayRegistrations() {
     return this.to('GetTransitGatewayRegistrations');
+  }
+
+  /**
+   * Grants permission to retrieve a TGW RTB attachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRouteTableAttachment.html
+   */
+  public toGetTransitGatewayRouteTableAttachment() {
+    return this.to('GetTransitGatewayRouteTableAttachment');
   }
 
   /**
@@ -737,6 +813,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toListOrganizationServiceAccessStatus() {
     return this.to('ListOrganizationServiceAccessStatus');
+  }
+
+  /**
+   * Grants permission to describe peerings
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListPeerings.html
+   */
+  public toListPeerings() {
+    return this.to('ListPeerings');
   }
 
   /**
@@ -972,6 +1059,8 @@ export class Networkmanager extends PolicyStatement {
       'CreateLink',
       'CreateSite',
       'CreateSiteToSiteVpnAttachment',
+      'CreateTransitGatewayPeering',
+      'CreateTransitGatewayRouteTableAttachment',
       'CreateVpcAttachment',
       'DeleteAttachment',
       'DeleteConnectPeer',
@@ -981,6 +1070,7 @@ export class Networkmanager extends PolicyStatement {
       'DeleteDevice',
       'DeleteGlobalNetwork',
       'DeleteLink',
+      'DeletePeering',
       'DeleteResourcePolicy',
       'DeleteSite',
       'DeregisterTransitGateway',
@@ -1019,13 +1109,15 @@ export class Networkmanager extends PolicyStatement {
       'ListConnectPeers',
       'ListCoreNetworkPolicyVersions',
       'ListCoreNetworks',
-      'ListOrganizationServiceAccessStatus'
+      'ListOrganizationServiceAccessStatus',
+      'ListPeerings'
     ],
     Read: [
       'GetConnectAttachment',
       'GetConnectPeer',
       'GetConnectPeerAssociations',
       'GetCoreNetwork',
+      'GetCoreNetworkChangeEvents',
       'GetCoreNetworkChangeSet',
       'GetCoreNetworkPolicy',
       'GetNetworkResourceCounts',
@@ -1036,6 +1128,8 @@ export class Networkmanager extends PolicyStatement {
       'GetResourcePolicy',
       'GetRouteAnalysis',
       'GetSiteToSiteVpnAttachment',
+      'GetTransitGatewayPeering',
+      'GetTransitGatewayRouteTableAttachment',
       'GetVpcAttachment',
       'ListTagsForResource'
     ],
@@ -1178,6 +1272,22 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type peering to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPeering(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:peering/${ resourceId }`);
+  }
+
+  /**
    * Filters access by which customer gateways can be associated or disassociated
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
@@ -1210,11 +1320,12 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by which transit gateways can be registered or deregistered
+   * Filters access by which transit gateways can be registered, deregistered, or peered
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
    * Applies to actions:
+   * - .toCreateTransitGatewayPeering()
    * - .toDeregisterTransitGateway()
    * - .toRegisterTransitGateway()
    *
@@ -1239,6 +1350,21 @@ export class Networkmanager extends PolicyStatement {
    */
   public ifTgwConnectPeerArn(value: string | string[], operator?: Operator | string) {
     return this.if(`tgwConnectPeerArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by which Transit Gateway Route Table can be used to create an attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateTransitGatewayRouteTableAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTgwRtbArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`tgwRtbArn`, value, operator || 'StringLike');
   }
 
   /**

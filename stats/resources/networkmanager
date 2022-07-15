@@ -5,4 +5,5 @@ networkmanager:core-network
 networkmanager:device
 networkmanager:global-network
 networkmanager:link
+networkmanager:peering
 networkmanager:site

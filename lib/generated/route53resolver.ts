@@ -645,6 +645,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html
    */
   public toTagResource() {
@@ -655,6 +659,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to remove one or more tags from a specified resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html
    */

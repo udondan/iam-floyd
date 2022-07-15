@@ -430,6 +430,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about the configurable settings for the specified directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSettings.html
+   */
+  public toDescribeSettings() {
+    return this.to('DescribeSettings');
+  }
+
+  /**
    * Grants permission to return the shared directories in your account
    *
    * Access Level: Read
@@ -821,6 +832,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the configurable settings for the specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateSettings.html
+   */
+  public toUpdateSettings() {
+    return this.to('UpdateSettings');
+  }
+
+  /**
    * Grants permission to update the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active Directory
    *
    * Access Level: Write
@@ -888,6 +910,7 @@ export class Ds extends PolicyStatement {
       'UpdateConditionalForwarder',
       'UpdateNumberOfDomainControllers',
       'UpdateRadius',
+      'UpdateSettings',
       'UpdateTrust'
     ],
     Tagging: [
@@ -903,6 +926,7 @@ export class Ds extends PolicyStatement {
       'DescribeEventTopics',
       'DescribeLDAPSSettings',
       'DescribeRegions',
+      'DescribeSettings',
       'DescribeSharedDirectories',
       'DescribeSnapshots',
       'DescribeTrusts',

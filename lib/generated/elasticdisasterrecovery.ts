@@ -565,6 +565,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to notify replicator volume events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyVolumeEventForDrs() {
+    return this.to('NotifyVolumeEventForDrs');
+  }
+
+  /**
    * Grants permission to retry data replication
    *
    * Access Level: Write
@@ -628,6 +639,17 @@ export class Drs extends PolicyStatement {
    */
   public toSendClientMetricsForDrs() {
     return this.to('SendClientMetricsForDrs');
+  }
+
+  /**
+   * Grants permission to send volume throughput statistics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendVolumeStatsForDrs() {
+    return this.to('SendVolumeStatsForDrs');
   }
 
   /**
@@ -916,12 +938,14 @@ export class Drs extends PolicyStatement {
       'NotifyAgentReplicationProgressForDrs',
       'NotifyConsistencyAttainedForDrs',
       'NotifyReplicationServerAuthenticationForDrs',
+      'NotifyVolumeEventForDrs',
       'RetryDataReplication',
       'SendAgentLogsForDrs',
       'SendAgentMetricsForDrs',
       'SendChannelCommandResultForDrs',
       'SendClientLogsForDrs',
       'SendClientMetricsForDrs',
+      'SendVolumeStatsForDrs',
       'StartFailbackLaunch',
       'StartRecovery',
       'StopFailback',

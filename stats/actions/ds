@@ -30,6 +30,7 @@ ds:DescribeDomainControllers;Read
 ds:DescribeEventTopics;Read
 ds:DescribeLDAPSSettings;Read
 ds:DescribeRegions;Read
+ds:DescribeSettings;Read
 ds:DescribeSharedDirectories;Read
 ds:DescribeSnapshots;Read
 ds:DescribeTrusts;Read
@@ -65,5 +66,6 @@ ds:UnshareDirectory;Write
 ds:UpdateConditionalForwarder;Write
 ds:UpdateNumberOfDomainControllers;Write
 ds:UpdateRadius;Write
+ds:UpdateSettings;Write
 ds:UpdateTrust;Write
 ds:VerifyTrust;Read

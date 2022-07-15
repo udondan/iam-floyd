@@ -12,6 +12,8 @@ networkmanager:CreateGlobalNetwork;Write
 networkmanager:CreateLink;Write
 networkmanager:CreateSite;Write
 networkmanager:CreateSiteToSiteVpnAttachment;Write
+networkmanager:CreateTransitGatewayPeering;Write
+networkmanager:CreateTransitGatewayRouteTableAttachment;Write
 networkmanager:CreateVpcAttachment;Write
 networkmanager:DeleteAttachment;Write
 networkmanager:DeleteConnectPeer;Write
@@ -21,6 +23,7 @@ networkmanager:DeleteCoreNetworkPolicyVersion;Write
 networkmanager:DeleteDevice;Write
 networkmanager:DeleteGlobalNetwork;Write
 networkmanager:DeleteLink;Write
+networkmanager:DeletePeering;Write
 networkmanager:DeleteResourcePolicy;Write
 networkmanager:DeleteSite;Write
 networkmanager:DeregisterTransitGateway;Write
@@ -35,6 +38,7 @@ networkmanager:GetConnectPeer;Read
 networkmanager:GetConnectPeerAssociations;Read
 networkmanager:GetConnections;List
 networkmanager:GetCoreNetwork;Read
+networkmanager:GetCoreNetworkChangeEvents;Read
 networkmanager:GetCoreNetworkChangeSet;Read
 networkmanager:GetCoreNetworkPolicy;Read
 networkmanager:GetCustomerGatewayAssociations;List
@@ -51,13 +55,16 @@ networkmanager:GetRouteAnalysis;Read
 networkmanager:GetSiteToSiteVpnAttachment;Read
 networkmanager:GetSites;List
 networkmanager:GetTransitGatewayConnectPeerAssociations;List
+networkmanager:GetTransitGatewayPeering;Read
 networkmanager:GetTransitGatewayRegistrations;List
+networkmanager:GetTransitGatewayRouteTableAttachment;Read
 networkmanager:GetVpcAttachment;Read
 networkmanager:ListAttachments;List
 networkmanager:ListConnectPeers;List
 networkmanager:ListCoreNetworkPolicyVersions;List
 networkmanager:ListCoreNetworks;List
 networkmanager:ListOrganizationServiceAccessStatus;List
+networkmanager:ListPeerings;List
 networkmanager:ListTagsForResource;Read
 networkmanager:PutCoreNetworkPolicy;Write
 networkmanager:PutResourcePolicy;Write
