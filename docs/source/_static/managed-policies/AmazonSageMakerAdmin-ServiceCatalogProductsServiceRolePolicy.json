@@ -285,6 +285,20 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": "lambda:TagResource",
+			"Resource": [
+				"arn:aws:lambda:*:*:function:sagemaker-*"
+			],
+			"Condition": {
+				"ForAllValues:StringLike": {
+					"aws:TagKeys": [
+						"sagemaker:*"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": [
 				"logs:CreateLogGroup",
 				"logs:CreateLogStream",
