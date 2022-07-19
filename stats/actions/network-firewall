@@ -23,6 +23,7 @@ network-firewall:TagResource;Tagging
 network-firewall:UntagResource;Tagging
 network-firewall:UpdateFirewallDeleteProtection;Write
 network-firewall:UpdateFirewallDescription;Write
+network-firewall:UpdateFirewallEncryptionConfiguration;Write
 network-firewall:UpdateFirewallPolicy;Write
 network-firewall:UpdateFirewallPolicyChangeProtection;Write
 network-firewall:UpdateLoggingConfiguration;Write

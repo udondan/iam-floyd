@@ -14,8 +14,10 @@ devops-guru:DescribeServiceIntegration;Read
 devops-guru:GetCostEstimation;Read
 devops-guru:GetResourceCollection;Read
 devops-guru:ListAnomaliesForInsight;List
+devops-guru:ListAnomalousLogGroups;List
 devops-guru:ListEvents;List
 devops-guru:ListInsights;List
+devops-guru:ListMonitoredResources;List
 devops-guru:ListNotificationChannels;List
 devops-guru:ListOrganizationInsights;List
 devops-guru:ListRecommendations;List

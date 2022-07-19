@@ -30,6 +30,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel component deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelComponentDeployment.html
+   */
+  public toCancelComponentDeployment() {
+    return this.to('CancelComponentDeployment');
+  }
+
+  /**
    * Grants permission to cancel an environment deployment
    *
    * Access Level: Write
@@ -69,6 +80,21 @@ export class Proton extends PolicyStatement {
    */
   public toCancelServicePipelineDeployment() {
     return this.to('CancelServicePipelineDeployment');
+  }
+
+  /**
+   * Grants permission to create component
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateComponent.html
+   */
+  public toCreateComponent() {
+    return this.to('CreateComponent');
   }
 
   /**
@@ -282,6 +308,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteComponent.html
+   */
+  public toDeleteComponent() {
+    return this.to('DeleteComponent');
+  }
+
+  /**
    * Grants permission to delete an environment
    *
    * Access Level: Write
@@ -450,6 +487,17 @@ export class Proton extends PolicyStatement {
    */
   public toGetAccountSettings() {
     return this.to('GetAccountSettings');
+  }
+
+  /**
+   * Grants permission to describe a component
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetComponent.html
+   */
+  public toGetComponent() {
+    return this.to('GetComponent');
   }
 
   /**
@@ -626,6 +674,39 @@ export class Proton extends PolicyStatement {
    */
   public toGetTemplateSyncStatus() {
     return this.to('GetTemplateSyncStatus');
+  }
+
+  /**
+   * Grants permission to list component outputs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListComponentOutputs.html
+   */
+  public toListComponentOutputs() {
+    return this.to('ListComponentOutputs');
+  }
+
+  /**
+   * Grants permission to list component provisioned resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListComponentProvisionedResources.html
+   */
+  public toListComponentProvisionedResources() {
+    return this.to('ListComponentProvisionedResources');
+  }
+
+  /**
+   * Grants permission to list components
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListComponents.html
+   */
+  public toListComponents() {
+    return this.to('ListComponents');
   }
 
   /**
@@ -939,6 +1020,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateComponent.html
+   */
+  public toUpdateComponent() {
+    return this.to('UpdateComponent');
+  }
+
+  /**
    * Grants permission to update an environment
    *
    * Access Level: Write
@@ -1110,9 +1202,11 @@ export class Proton extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptEnvironmentAccountConnection',
+      'CancelComponentDeployment',
       'CancelEnvironmentDeployment',
       'CancelServiceInstanceDeployment',
       'CancelServicePipelineDeployment',
+      'CreateComponent',
       'CreateEnvironment',
       'CreateEnvironmentAccountConnection',
       'CreateEnvironmentTemplate',
@@ -1127,6 +1221,7 @@ export class Proton extends PolicyStatement {
       'CreateServiceTemplateVersion',
       'CreateTemplateSyncConfig',
       'DeleteAccountRoles',
+      'DeleteComponent',
       'DeleteEnvironment',
       'DeleteEnvironmentAccountConnection',
       'DeleteEnvironmentTemplate',
@@ -1144,6 +1239,7 @@ export class Proton extends PolicyStatement {
       'RejectEnvironmentAccountConnection',
       'UpdateAccountRoles',
       'UpdateAccountSettings',
+      'UpdateComponent',
       'UpdateEnvironment',
       'UpdateEnvironmentAccountConnection',
       'UpdateEnvironmentTemplate',
@@ -1162,6 +1258,7 @@ export class Proton extends PolicyStatement {
     Read: [
       'GetAccountRoles',
       'GetAccountSettings',
+      'GetComponent',
       'GetEnvironment',
       'GetEnvironmentAccountConnection',
       'GetEnvironmentTemplate',
@@ -1181,6 +1278,9 @@ export class Proton extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListComponentOutputs',
+      'ListComponentProvisionedResources',
+      'ListComponents',
       'ListEnvironmentAccountConnections',
       'ListEnvironmentOutputs',
       'ListEnvironmentProvisionedResources',
@@ -1442,7 +1542,24 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on specified environment template related to resource
+   * Adds a resource of type component to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComponent(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:component/${ id }`);
+  }
+
+  /**
+   * Filters access by specified environment template related to resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
@@ -1460,7 +1577,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on specified service template related to resource
+   * Filters access by specified service template related to resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *

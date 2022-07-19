@@ -30,7 +30,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Create a job.
+   * Create a job
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Create a preset.
+   * Create a preset
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Get a list of all presets associated with the current AWS account.
+   * Get a list of all presets associated with the current AWS account
    *
    * Access Level: List
    *
@@ -151,7 +151,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Get detailed information about a preset.
+   * Get detailed information about a preset
    *
    * Access Level: Read
    *
@@ -195,7 +195,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline.
+   * Pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline
    *
    * Access Level: Write
    *

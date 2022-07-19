@@ -1,7 +1,9 @@
 proton:AcceptEnvironmentAccountConnection;Write
+proton:CancelComponentDeployment;Write
 proton:CancelEnvironmentDeployment;Write
 proton:CancelServiceInstanceDeployment;Write
 proton:CancelServicePipelineDeployment;Write
+proton:CreateComponent;Write
 proton:CreateEnvironment;Write
 proton:CreateEnvironmentAccountConnection;Write
 proton:CreateEnvironmentTemplate;Write
@@ -16,6 +18,7 @@ proton:CreateServiceTemplateMinorVersion;Write
 proton:CreateServiceTemplateVersion;Write
 proton:CreateTemplateSyncConfig;Write
 proton:DeleteAccountRoles;Write
+proton:DeleteComponent;Write
 proton:DeleteEnvironment;Write
 proton:DeleteEnvironmentAccountConnection;Write
 proton:DeleteEnvironmentTemplate;Write
@@ -31,6 +34,7 @@ proton:DeleteServiceTemplateVersion;Write
 proton:DeleteTemplateSyncConfig;Write
 proton:GetAccountRoles;Read
 proton:GetAccountSettings;Read
+proton:GetComponent;Read
 proton:GetEnvironment;Read
 proton:GetEnvironmentAccountConnection;Read
 proton:GetEnvironmentTemplate;Read
@@ -47,6 +51,9 @@ proton:GetServiceTemplateMinorVersion;Read
 proton:GetServiceTemplateVersion;Read
 proton:GetTemplateSyncConfig;Read
 proton:GetTemplateSyncStatus;Read
+proton:ListComponentOutputs;List
+proton:ListComponentProvisionedResources;List
+proton:ListComponents;List
 proton:ListEnvironmentAccountConnections;List
 proton:ListEnvironmentOutputs;List
 proton:ListEnvironmentProvisionedResources;List
@@ -74,6 +81,7 @@ proton:TagResource;Tagging
 proton:UntagResource;Tagging
 proton:UpdateAccountRoles;Write
 proton:UpdateAccountSettings;Write
+proton:UpdateComponent;Write
 proton:UpdateEnvironment;Write
 proton:UpdateEnvironmentAccountConnection;Write
 proton:UpdateEnvironmentTemplate;Write

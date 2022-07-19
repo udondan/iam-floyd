@@ -14,6 +14,7 @@ chime:BatchCreateRoomMembership;Write
 chime:BatchDeletePhoneNumber;Write
 chime:BatchSuspendUser;Write
 chime:BatchUnsuspendUser;Write
+chime:BatchUpdateAttendeeCapabilitiesExcept;Write
 chime:BatchUpdatePhoneNumber;Write
 chime:BatchUpdateUser;Write
 chime:ChannelFlowCallback;Write
@@ -234,6 +235,7 @@ chime:UpdateAccountSettings;Write
 chime:UpdateAppInstance;Write
 chime:UpdateAppInstanceUser;Write
 chime:UpdateAppInstanceUserEndpoint;Write
+chime:UpdateAttendeeCapabilities;Write
 chime:UpdateBot;Write
 chime:UpdateCDRSettings;Write
 chime:UpdateChannel;Write

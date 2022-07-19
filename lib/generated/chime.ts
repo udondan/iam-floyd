@@ -195,6 +195,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update AttendeeCapabilities except the capabilities listed in an ExcludedAttendeeIds table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_BatchUpdateAttendeeCapabilitiesExcept.html
+   */
+  public toBatchUpdateAttendeeCapabilitiesExcept() {
+    return this.to('BatchUpdateAttendeeCapabilitiesExcept');
+  }
+
+  /**
    * Grants permission to update phone number details within the UpdatePhoneNumberRequestItem object for up to 50 phone numbers
    *
    * Access Level: Write
@@ -2695,6 +2706,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to the capabilties that you want to update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_UpdateAttendeeCapabilities.html
+   */
+  public toUpdateAttendeeCapabilities() {
+    return this.to('UpdateAttendeeCapabilities');
+  }
+
+  /**
    * Grants permission to update the status of the specified bot
    *
    * Access Level: Write
@@ -2959,6 +2981,7 @@ export class Chime extends PolicyStatement {
       'BatchDeletePhoneNumber',
       'BatchSuspendUser',
       'BatchUnsuspendUser',
+      'BatchUpdateAttendeeCapabilitiesExcept',
       'BatchUpdatePhoneNumber',
       'BatchUpdateUser',
       'ChannelFlowCallback',
@@ -3074,6 +3097,7 @@ export class Chime extends PolicyStatement {
       'UpdateAppInstance',
       'UpdateAppInstanceUser',
       'UpdateAppInstanceUserEndpoint',
+      'UpdateAttendeeCapabilities',
       'UpdateBot',
       'UpdateCDRSettings',
       'UpdateChannel',

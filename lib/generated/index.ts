@@ -264,6 +264,7 @@ export { AwsMarketplaceManagement } from './marketplacemanagementportal';
 export { AwsMarketplaceMeteringService } from './marketplacemeteringservice';
 export { AwsMarketplacePrivate } from './marketplaceprivatemarketplace';
 export { AwsMarketplaceProcurementSystemsIntegration } from './marketplaceprocurementsystemsintegration';
+export { VendorInsights } from './marketplacevendorinsights';
 export { Serviceextract } from './microserviceextractorfor-net';
 export { Mgh } from './migrationhub';
 export { MigrationhubOrchestrator } from './migrationhuborchestrator';

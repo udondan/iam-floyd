@@ -56,3 +56,4 @@ rekognition:StopStreamProcessor;Write
 rekognition:TagResource;Tagging
 rekognition:UntagResource;Tagging
 rekognition:UpdateDatasetEntries;Write
+rekognition:UpdateStreamProcessor;Write

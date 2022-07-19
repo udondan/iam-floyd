@@ -115,7 +115,7 @@ export class DevopsGuru extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationAccountHealth.html
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationHealth.html
    */
   public toDescribeOrganizationHealth() {
     return this.to('DescribeOrganizationHealth');
@@ -199,6 +199,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list log anomalies of a given insight in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListAnomalousLogGroups.html
+   */
+  public toListAnomalousLogGroups() {
+    return this.to('ListAnomalousLogGroups');
+  }
+
+  /**
    * Grants permission to list resource events that are evaluated by DevOps Guru
    *
    * Access Level: List
@@ -218,6 +229,17 @@ export class DevopsGuru extends PolicyStatement {
    */
   public toListInsights() {
     return this.to('ListInsights');
+  }
+
+  /**
+   * Grants permission to list resource monitored by DevOps Guru in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListMonitoredResources.html
+   */
+  public toListMonitoredResources() {
+    return this.to('ListMonitoredResources');
   }
 
   /**
@@ -373,8 +395,10 @@ export class DevopsGuru extends PolicyStatement {
     ],
     List: [
       'ListAnomaliesForInsight',
+      'ListAnomalousLogGroups',
       'ListEvents',
       'ListInsights',
+      'ListMonitoredResources',
       'ListNotificationChannels',
       'ListOrganizationInsights',
       'ListRecommendations',
@@ -386,7 +410,7 @@ export class DevopsGuru extends PolicyStatement {
   /**
    * Adds a resource of type topic to the statement
    *
-   * https://docs.aws.amazon.com/devops-guru/latest/userguide/CreateTopic.html
+   * https://docs.aws.amazon.com/devops-guru/latest/userguide/setting-up.html#setting-up-notifications
    *
    * @param topicName - Identifier for the topicName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

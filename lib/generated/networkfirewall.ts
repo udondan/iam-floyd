@@ -316,6 +316,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the encryption configuration of a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallEncryptionConfiguration.html
+   */
+  public toUpdateFirewallEncryptionConfiguration() {
+    return this.to('UpdateFirewallEncryptionConfiguration');
+  }
+
+  /**
    * Grants permission to modify a firewall policy
    *
    * Access Level: Write
@@ -385,6 +396,7 @@ export class NetworkFirewall extends PolicyStatement {
       'PutResourcePolicy',
       'UpdateFirewallDeleteProtection',
       'UpdateFirewallDescription',
+      'UpdateFirewallEncryptionConfiguration',
       'UpdateFirewallPolicy',
       'UpdateFirewallPolicyChangeProtection',
       'UpdateLoggingConfiguration',

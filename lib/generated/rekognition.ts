@@ -211,7 +211,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessorh.html
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessor.html
    */
   public toDescribeStreamProcessor() {
     return this.to('DescribeStreamProcessor');
@@ -675,6 +675,17 @@ export class Rekognition extends PolicyStatement {
     return this.to('UpdateDatasetEntries');
   }
 
+  /**
+   * Grants permission to modify properties for a stream processor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateStreamProcessor.html
+   */
+  public toUpdateStreamProcessor() {
+    return this.to('UpdateStreamProcessor');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'CompareFaces',
@@ -733,7 +744,8 @@ export class Rekognition extends PolicyStatement {
       'StartTextDetection',
       'StopProjectVersion',
       'StopStreamProcessor',
-      'UpdateDatasetEntries'
+      'UpdateDatasetEntries',
+      'UpdateStreamProcessor'
     ],
     List: [
       'ListStreamProcessors'
@@ -753,6 +765,9 @@ export class Rekognition extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
@@ -767,6 +782,9 @@ export class Rekognition extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:streamprocessor/${ streamprocessorId }`);
@@ -798,6 +816,9 @@ export class Rekognition extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
