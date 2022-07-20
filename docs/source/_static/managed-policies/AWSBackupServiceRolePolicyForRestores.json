@@ -142,6 +142,13 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"rds:CreateDBInstance"
+			],
+			"Resource": "arn:aws:rds:*:*:db:*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ec2:DeleteSnapshot",
 				"ec2:DeleteTags"
 			],
