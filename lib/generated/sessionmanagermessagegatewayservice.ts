@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ssmmessages](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsessionmanagermessagegatewayservice.html).
@@ -22,6 +22,9 @@ export class Ssmmessages extends PolicyStatement {
    * Grants permission to register a control channel for an instance to send control messages to Systems Manager service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSsmSourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html
    */
@@ -70,4 +73,19 @@ export class Ssmmessages extends PolicyStatement {
       'OpenDataChannel'
     ]
   };
+
+  /**
+   * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateControlChannel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSsmSourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`ssm:SourceInstanceARN`, value, operator || 'StringLike');
+  }
 }

@@ -1,5 +1,6 @@
 sso:AssociateDirectory;Write
 sso:AssociateProfile;Write
+sso:AttachCustomerManagedPolicyReferenceToPermissionSet;Permissions management
 sso:AttachManagedPolicyToPermissionSet;Permissions management
 sso:CreateAccountAssignment;Write
 sso:CreateApplicationInstance;Write
@@ -16,6 +17,7 @@ sso:DeleteInlinePolicyFromPermissionSet;Write
 sso:DeleteInstanceAccessControlAttributeConfiguration;Write
 sso:DeleteManagedApplicationInstance;Write
 sso:DeletePermissionSet;Write
+sso:DeletePermissionsBoundaryFromPermissionSet;Permissions management
 sso:DeletePermissionsPolicy;Permissions management
 sso:DeleteProfile;Write
 sso:DescribeAccountAssignmentCreationStatus;Read
@@ -25,6 +27,7 @@ sso:DescribePermissionSet;Read
 sso:DescribePermissionSetProvisioningStatus;Read
 sso:DescribePermissionsPolicies;Read
 sso:DescribeRegisteredRegions;Read
+sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management
 sso:DetachManagedPolicyFromPermissionSet;Permissions management
 sso:DisassociateDirectory;Write
 sso:DisassociateProfile;Write
@@ -34,6 +37,7 @@ sso:GetInlinePolicyForPermissionSet;Read
 sso:GetManagedApplicationInstance;Read
 sso:GetMfaDeviceManagementForDirectory;Read
 sso:GetPermissionSet;Read
+sso:GetPermissionsBoundaryForPermissionSet;Read
 sso:GetPermissionsPolicy;Read
 sso:GetProfile;Read
 sso:GetSSOStatus;Read
@@ -49,6 +53,7 @@ sso:ListApplicationInstanceCertificates;Read
 sso:ListApplicationInstances;List
 sso:ListApplicationTemplates;List
 sso:ListApplications;List
+sso:ListCustomerManagedPolicyReferencesInPermissionSet;List
 sso:ListDirectoryAssociations;Read
 sso:ListInstances;List
 sso:ListManagedPoliciesInPermissionSet;List
@@ -61,6 +66,7 @@ sso:ListTagsForResource;Read
 sso:ProvisionPermissionSet;Write
 sso:PutInlinePolicyToPermissionSet;Write
 sso:PutMfaDeviceManagementForDirectory;Write
+sso:PutPermissionsBoundaryToPermissionSet;Permissions management
 sso:PutPermissionsPolicy;Permissions management
 sso:SearchGroups;Read
 sso:SearchUsers;Read

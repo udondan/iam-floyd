@@ -1522,6 +1522,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
    */
   public toUpdateAssociationStatus() {
@@ -1565,6 +1568,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
    */
   public toUpdateInstanceAssociationStatus() {
     return this.to('UpdateInstanceAssociationStatus');
@@ -1574,6 +1580,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -1894,6 +1903,8 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type bucket to the statement
    *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
+   *
    * @param bucketName - Identifier for the bucketName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
@@ -1921,6 +1932,8 @@ export class Ssm extends PolicyStatement {
 
   /**
    * Adds a resource of type instance to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceId - Identifier for the instanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2177,7 +2190,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Controls whether Systems Manager parameters can be overwritten
+   * Filters access by allowing Systems Manager parameters to be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2192,7 +2205,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access to Systems Manager parameters created in a hierarchical structure
+   * Filters access by allowing traversing hierarchical structure of the Systems Manager parameters
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2221,6 +2234,23 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
+   *
+   * Applies to actions:
+   * - .toUpdateAssociationStatus()
+   * - .toUpdateInstanceAssociationStatus()
+   * - .toUpdateInstanceInformation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceInstanceARN`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
@@ -2239,7 +2269,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by based on a tag key-value pair assigned to the Systems Manager resource
+   * Filters access by allowing access based on a tag key-value pair assigned to the Systems Manager resource
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *

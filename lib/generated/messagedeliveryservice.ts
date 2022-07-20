@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ec2messages](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html).
@@ -67,6 +67,9 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifSsmSourceInstanceARN()
+   *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
    */
   public toGetMessages() {
@@ -77,6 +80,9 @@ export class Ec2messages extends PolicyStatement {
    * Grants permission to send replies from clients/instances to upstream service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSsmSourceInstanceARN()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
    */
@@ -96,4 +102,20 @@ export class Ec2messages extends PolicyStatement {
       'GetMessages'
     ]
   };
+
+  /**
+   * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
+   *
+   * Applies to actions:
+   * - .toGetMessages()
+   * - .toSendReply()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSsmSourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`ssm:SourceInstanceARN`, value, operator || 'StringLike');
+  }
 }

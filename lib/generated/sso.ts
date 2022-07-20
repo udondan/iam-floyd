@@ -44,6 +44,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a customer managed policy reference to a permission set
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachCustomerManagedPolicyReferenceToPermissionSet.html
+   */
+  public toAttachCustomerManagedPolicyReferenceToPermissionSet() {
+    return this.to('AttachCustomerManagedPolicyReferenceToPermissionSet');
+  }
+
+  /**
    * Grants permission to attach an AWS managed policy to a permission set
    *
    * Access Level: Permissions management
@@ -91,6 +102,18 @@ export class Sso extends PolicyStatement {
    * Grants permission to enable the instance for ABAC and specify the attributes
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateRole
+   * - iam:DeleteRole
+   * - iam:DeleteRolePolicy
+   * - iam:DetachRolePolicy
+   * - iam:GetRole
+   * - iam:ListAttachedRolePolicies
+   * - iam:ListRolePolicies
+   * - iam:PutRolePolicy
+   * - iam:UpdateAssumeRolePolicy
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstanceAccessControlAttributeConfiguration.html
    */
@@ -222,6 +245,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove permissions boundary from a permission set
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionsBoundaryFromPermissionSet.html
+   */
+  public toDeletePermissionsBoundaryFromPermissionSet() {
+    return this.to('DeletePermissionsBoundaryFromPermissionSet');
+  }
+
+  /**
    * Grants permission to delete the permission policy associated with a permission set
    *
    * Access Level: Permissions management
@@ -318,6 +352,17 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeRegisteredRegions() {
     return this.to('DescribeRegisteredRegions');
+  }
+
+  /**
+   * Grants permission to detach a customer managed policy reference from a permission set
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachCustomerManagedPolicyReferenceFromPermissionSet.html
+   */
+  public toDetachCustomerManagedPolicyReferenceFromPermissionSet() {
+    return this.to('DetachCustomerManagedPolicyReferenceFromPermissionSet');
   }
 
   /**
@@ -420,6 +465,17 @@ export class Sso extends PolicyStatement {
    */
   public toGetPermissionSet() {
     return this.to('GetPermissionSet');
+  }
+
+  /**
+   * Grants permission to get permissions boundary for a permission set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetPermissionsBoundaryForPermissionSet.html
+   */
+  public toGetPermissionsBoundaryForPermissionSet() {
+    return this.to('GetPermissionsBoundaryForPermissionSet');
   }
 
   /**
@@ -597,6 +653,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the customer managed policy references that are attached to a permission set
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListCustomerManagedPolicyReferencesInPermissionSet.html
+   */
+  public toListCustomerManagedPolicyReferencesInPermissionSet() {
+    return this.to('ListCustomerManagedPolicyReferencesInPermissionSet');
+  }
+
+  /**
    * Grants permission to retrieve details about the directory connected to AWS Single Sign-On
    *
    * Access Level: Read
@@ -727,6 +794,17 @@ export class Sso extends PolicyStatement {
    */
   public toPutMfaDeviceManagementForDirectory() {
     return this.to('PutMfaDeviceManagementForDirectory');
+  }
+
+  /**
+   * Grants permission to add permissions boundary to a permission set
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutPermissionsBoundaryToPermissionSet.html
+   */
+  public toPutPermissionsBoundaryToPermissionSet() {
+    return this.to('PutPermissionsBoundaryToPermissionSet');
   }
 
   /**
@@ -1007,9 +1085,13 @@ export class Sso extends PolicyStatement {
       'UpdateTrust'
     ],
     'Permissions management': [
+      'AttachCustomerManagedPolicyReferenceToPermissionSet',
       'AttachManagedPolicyToPermissionSet',
+      'DeletePermissionsBoundaryFromPermissionSet',
       'DeletePermissionsPolicy',
+      'DetachCustomerManagedPolicyReferenceFromPermissionSet',
       'DetachManagedPolicyFromPermissionSet',
+      'PutPermissionsBoundaryToPermissionSet',
       'PutPermissionsPolicy',
       'UpdatePermissionSet'
     ],
@@ -1027,6 +1109,7 @@ export class Sso extends PolicyStatement {
       'GetManagedApplicationInstance',
       'GetMfaDeviceManagementForDirectory',
       'GetPermissionSet',
+      'GetPermissionsBoundaryForPermissionSet',
       'GetPermissionsPolicy',
       'GetProfile',
       'GetSSOStatus',
@@ -1048,6 +1131,7 @@ export class Sso extends PolicyStatement {
       'ListApplicationInstances',
       'ListApplicationTemplates',
       'ListApplications',
+      'ListCustomerManagedPolicyReferencesInPermissionSet',
       'ListInstances',
       'ListManagedPoliciesInPermissionSet',
       'ListPermissionSetProvisioningStatus',
