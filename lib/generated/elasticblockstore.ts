@@ -123,7 +123,7 @@ export class Ebs extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html
    *
    * @param snapshotId - Identifier for the snapshotId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -144,6 +144,8 @@ export class Ebs extends PolicyStatement {
   /**
    * Filters access by the description of the snapshot being created
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys
+   *
    * Applies to actions:
    * - .toStartSnapshot()
    *
@@ -160,6 +162,8 @@ export class Ebs extends PolicyStatement {
   /**
    * Filters access by the ID of the parent snapshot
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys
+   *
    * Applies to actions:
    * - .toStartSnapshot()
    *
@@ -175,6 +179,8 @@ export class Ebs extends PolicyStatement {
 
   /**
    * Filters access by the size of the volume for the snapshot being created, in GiB
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys
    *
    * Applies to actions:
    * - .toStartSnapshot()

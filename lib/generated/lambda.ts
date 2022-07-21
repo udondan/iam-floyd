@@ -91,6 +91,8 @@ export class Lambda extends PolicyStatement {
    * - .ifSubnetIds()
    * - .ifSecurityGroupIds()
    * - .ifCodeSigningConfigArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -681,6 +683,10 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html
    */
   public toTagResource() {
@@ -691,6 +697,9 @@ export class Lambda extends PolicyStatement {
    * Grants permission to remove tags from an AWS Lambda function
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html
    */
@@ -915,6 +924,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFunction(functionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }`);
@@ -930,6 +942,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFunctionAlias(functionName: string, alias: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ alias }`);
@@ -945,6 +960,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lambda.defaultPartition }:lambda:${ region || '*' }:${ account || '*' }:function:${ functionName }:${ version }`);

@@ -33,6 +33,7 @@ sqlworkbench:PutTab;Write
 sqlworkbench:PutUserWorkspaceSettings;Write
 sqlworkbench:TagResource;Tagging
 sqlworkbench:UntagResource;Tagging
+sqlworkbench:UpdateAccountConnectionSettings;Write
 sqlworkbench:UpdateAccountExportSettings;Write
 sqlworkbench:UpdateAccountGeneralSettings;Write
 sqlworkbench:UpdateChart;Write

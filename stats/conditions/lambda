@@ -3,6 +3,9 @@ lambda:FunctionArn
 lambda:FunctionUrlAuthType
 lambda:Layer
 lambda:Principal
+lambda:RequestTag/${TagKey}
+lambda:ResourceTag/${TagKey}
 lambda:SecurityGroupIds
 lambda:SubnetIds
+lambda:TagKeys
 lambda:VpcIds

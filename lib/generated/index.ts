@@ -230,7 +230,7 @@ export { Health } from './healthapisandnotifications';
 export { AccessAnalyzer } from './iamaccessanalyzer';
 export { Rolesanywhere } from './identityandaccessmanagementrolesanywhere';
 export { Identitystore } from './identitystore';
-export { IdentitySync } from './identitysynchronizationservice';
+export { IdentitySync } from './identitysync';
 export { Importexport } from './importexportdiskservice';
 export { Iot } from './iot';
 export { Iot1click } from './iot1-click';

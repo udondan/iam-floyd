@@ -424,6 +424,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update account-wide connection settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toUpdateAccountConnectionSettings() {
+    return this.to('UpdateAccountConnectionSettings');
+  }
+
+  /**
    * Grants permission to update account-wide export settings
    *
    * Access Level: Write
@@ -435,7 +446,7 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update general account-wide settings
+   * Grants permission to update account-wide general settings
    *
    * Access Level: Write
    *
@@ -531,6 +542,7 @@ export class Sqlworkbench extends PolicyStatement {
       'GenerateSession',
       'PutTab',
       'PutUserWorkspaceSettings',
+      'UpdateAccountConnectionSettings',
       'UpdateAccountExportSettings',
       'UpdateAccountGeneralSettings',
       'UpdateChart',
