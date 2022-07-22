@@ -93,6 +93,28 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the image generation configuration of your Kinesis video stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeImageGenerationConfiguration.html
+   */
+  public toDescribeImageGenerationConfiguration() {
+    return this.to('DescribeImageGenerationConfiguration');
+  }
+
+  /**
+   * Grants permission to describe the notification configuration of your Kinesis video stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeNotificationConfiguration.html
+   */
+  public toDescribeNotificationConfiguration() {
+    return this.to('DescribeNotificationConfiguration');
+  }
+
+  /**
    * Grants permission to describe the specified signaling channel
    *
    * Access Level: List
@@ -167,6 +189,17 @@ export class Kinesisvideo extends PolicyStatement {
    */
   public toGetIceServerConfig() {
     return this.to('GetIceServerConfig');
+  }
+
+  /**
+   * Grants permission to get generated images from your Kinesis video stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetImages.html
+   */
+  public toGetImages() {
+    return this.to('GetImages');
   }
 
   /**
@@ -349,6 +382,28 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the image generation configuration of your Kinesis video stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateImageGenerationConfiguration.html
+   */
+  public toUpdateImageGenerationConfiguration() {
+    return this.to('UpdateImageGenerationConfiguration');
+  }
+
+  /**
+   * Grants permission to update the notification configuration of your Kinesis video stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateNotificationConfiguration.html
+   */
+  public toUpdateNotificationConfiguration() {
+    return this.to('UpdateNotificationConfiguration');
+  }
+
+  /**
    * Grants permission to update an existing signaling channel
    *
    * Access Level: Write
@@ -381,8 +436,25 @@ export class Kinesisvideo extends PolicyStatement {
       'PutMedia',
       'SendAlexaOfferToMaster',
       'UpdateDataRetention',
+      'UpdateImageGenerationConfiguration',
+      'UpdateNotificationConfiguration',
       'UpdateSignalingChannel',
       'UpdateStream'
+    ],
+    Read: [
+      'DescribeImageGenerationConfiguration',
+      'DescribeNotificationConfiguration',
+      'GetClip',
+      'GetDASHStreamingSessionURL',
+      'GetDataEndpoint',
+      'GetHLSStreamingSessionURL',
+      'GetIceServerConfig',
+      'GetImages',
+      'GetMedia',
+      'GetMediaForFragmentList',
+      'GetSignalingChannelEndpoint',
+      'ListTagsForResource',
+      'ListTagsForStream'
     ],
     List: [
       'DescribeSignalingChannel',
@@ -390,18 +462,6 @@ export class Kinesisvideo extends PolicyStatement {
       'ListFragments',
       'ListSignalingChannels',
       'ListStreams'
-    ],
-    Read: [
-      'GetClip',
-      'GetDASHStreamingSessionURL',
-      'GetDataEndpoint',
-      'GetHLSStreamingSessionURL',
-      'GetIceServerConfig',
-      'GetMedia',
-      'GetMediaForFragmentList',
-      'GetSignalingChannelEndpoint',
-      'ListTagsForResource',
-      'ListTagsForStream'
     ],
     Tagging: [
       'TagResource',

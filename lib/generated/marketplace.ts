@@ -23,10 +23,32 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toAcceptAgreementApprovalRequest() {
     return this.to('AcceptAgreementApprovalRequest');
+  }
+
+  /**
+   * Grants permission to users to accept their agreement requests. Note that this action is not applicable to Marketplace purchases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toAcceptAgreementRequest() {
+    return this.to('AcceptAgreementRequest');
+  }
+
+  /**
+   * Grants permission to users to cancel their agreements. Note that this action is not applicable to Marketplace purchases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toCancelAgreement() {
+    return this.to('CancelAgreement');
   }
 
   /**
@@ -34,10 +56,21 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toCancelAgreementRequest() {
     return this.to('CancelAgreementRequest');
+  }
+
+  /**
+   * Grants permission to users to create an agreement request. Note that this action is not applicable to Marketplace purchases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toCreateAgreementRequest() {
+    return this.to('CreateAgreementRequest');
   }
 
   /**
@@ -45,7 +78,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toDescribeAgreement() {
     return this.to('DescribeAgreement');
@@ -56,7 +89,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toGetAgreementApprovalRequest() {
     return this.to('GetAgreementApprovalRequest');
@@ -67,7 +100,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toGetAgreementRequest() {
     return this.to('GetAgreementRequest');
@@ -78,7 +111,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toGetAgreementTerms() {
     return this.to('GetAgreementTerms');
@@ -89,7 +122,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toListAgreementApprovalRequests() {
     return this.to('ListAgreementApprovalRequests');
@@ -100,7 +133,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toListAgreementRequests() {
     return this.to('ListAgreementRequests');
@@ -111,7 +144,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toRejectAgreementApprovalRequest() {
     return this.to('RejectAgreementApprovalRequest');
@@ -122,7 +155,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toSearchAgreements() {
     return this.to('SearchAgreements');
@@ -133,7 +166,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toSubscribe() {
     return this.to('Subscribe');
@@ -144,7 +177,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toUnsubscribe() {
     return this.to('Unsubscribe');
@@ -155,7 +188,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toUpdateAgreementApprovalRequest() {
     return this.to('UpdateAgreementApprovalRequest');
@@ -166,7 +199,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.htmlControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
   public toViewSubscriptions() {
     return this.to('ViewSubscriptions');
@@ -175,7 +208,10 @@ export class AwsMarketplace extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreementApprovalRequest',
+      'AcceptAgreementRequest',
+      'CancelAgreement',
       'CancelAgreementRequest',
+      'CreateAgreementRequest',
       'RejectAgreementApprovalRequest',
       'Subscribe',
       'Unsubscribe',
@@ -196,7 +232,9 @@ export class AwsMarketplace extends PolicyStatement {
   };
 
   /**
-   * Filters access by the type of the agreement.
+   * Filters access by the type of the agreement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -206,7 +244,9 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Filters access by the party type of the agreement.
+   * Filters access by the party type of the agreement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -216,7 +256,9 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Filters access to AWS Marketplace RedHat OpenShift products in the RedHat console, based on the ProductID of the product. Note: This condition key only applies to the RedHat console, and using it will not allow access to products in AWS Marketplace.
+   * Filters access by product id for AWS Marketplace RedHat OpenShift products in the RedHat console. Note: This condition key only applies to the RedHat console, and using it will not restrict access to products in AWS Marketplace
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

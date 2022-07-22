@@ -4,6 +4,8 @@ kinesisvideo:CreateSignalingChannel;Write
 kinesisvideo:CreateStream;Write
 kinesisvideo:DeleteSignalingChannel;Write
 kinesisvideo:DeleteStream;Write
+kinesisvideo:DescribeImageGenerationConfiguration;Read
+kinesisvideo:DescribeNotificationConfiguration;Read
 kinesisvideo:DescribeSignalingChannel;List
 kinesisvideo:DescribeStream;List
 kinesisvideo:GetClip;Read
@@ -11,6 +13,7 @@ kinesisvideo:GetDASHStreamingSessionURL;Read
 kinesisvideo:GetDataEndpoint;Read
 kinesisvideo:GetHLSStreamingSessionURL;Read
 kinesisvideo:GetIceServerConfig;Read
+kinesisvideo:GetImages;Read
 kinesisvideo:GetMedia;Read
 kinesisvideo:GetMediaForFragmentList;Read
 kinesisvideo:GetSignalingChannelEndpoint;Read
@@ -26,5 +29,7 @@ kinesisvideo:TagStream;Tagging
 kinesisvideo:UntagResource;Tagging
 kinesisvideo:UntagStream;Tagging
 kinesisvideo:UpdateDataRetention;Write
+kinesisvideo:UpdateImageGenerationConfiguration;Write
+kinesisvideo:UpdateNotificationConfiguration;Write
 kinesisvideo:UpdateSignalingChannel;Write
 kinesisvideo:UpdateStream;Write
