@@ -148,6 +148,17 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about a package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackage.html
+   */
+  public toDescribePackage() {
+    return this.to('DescribePackage');
+  }
+
+  /**
    * Grants permission to return information about a package version
    *
    * Access Level: Read
@@ -379,6 +390,17 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set origin configuration for a package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutPackageOriginConfiguration.html
+   */
+  public toPutPackageOriginConfiguration() {
+    return this.to('PutPackageOriginConfiguration');
+  }
+
+  /**
    * Grants permission to attach a resource policy to a repository
    *
    * Access Level: Write
@@ -466,6 +488,7 @@ export class Codeartifact extends PolicyStatement {
       'PublishPackageVersion',
       'PutDomainPermissionsPolicy',
       'PutPackageMetadata',
+      'PutPackageOriginConfiguration',
       'PutRepositoryPermissionsPolicy',
       'UpdatePackageVersionsStatus',
       'UpdateRepository'
@@ -476,6 +499,7 @@ export class Codeartifact extends PolicyStatement {
     ],
     Read: [
       'DescribeDomain',
+      'DescribePackage',
       'DescribePackageVersion',
       'DescribeRepository',
       'GetAuthorizationToken',

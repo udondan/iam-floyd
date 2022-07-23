@@ -19,7 +19,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Adds a user to the team for an AWS CodeStar project.
+   * Grants permission to add a user to the team for an AWS CodeStar project
    *
    * Access Level: Permissions management
    *
@@ -30,7 +30,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Creates a project with minimal structure, customer policies, and no resources.
+   * Grants permission to create a project with minimal structure, customer policies, and no resources
    *
    * Access Level: Permissions management
    *
@@ -45,7 +45,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Creates a profile for a user that includes user preferences, display name, and email.
+   * Grants permission to create a profile for a user that includes user preferences, display name, and email
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Grants access to extended delete APIs.
+   * Grants permission to extended delete APIs
    *
    * Access Level: Write
    */
@@ -65,7 +65,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Deletes a project, including project resources. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project.
+   * Grants permission to delete a project, including project resources. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project
    *
    * Access Level: Permissions management
    *
@@ -76,7 +76,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Deletes a user profile in AWS CodeStar, including all personal preference data associated with that profile, such as display name and email address. It does not delete the history of that user, for example the history of commits made by that user.
+   * Grants permission to delete a user profile in AWS CodeStar, including all personal preference data associated with that profile, such as display name and email address. It does not delete the history of that user, for example the history of commits made by that user
    *
    * Access Level: Write
    *
@@ -87,7 +87,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Describes a project and its resources.
+   * Grants permission to describe a project and its resources
    *
    * Access Level: Read
    *
@@ -98,7 +98,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Describes a user in AWS CodeStar and the user attributes across all projects.
+   * Grants permission to describe a user in AWS CodeStar and the user attributes across all projects
    *
    * Access Level: Read
    *
@@ -109,7 +109,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Removes a user from a project. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources.
+   * Grants permission to remove a user from a project. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources
    *
    * Access Level: Permissions management
    *
@@ -120,7 +120,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Grants access to extended read APIs.
+   * Grants permission to extended read APIs
    *
    * Access Level: Read
    */
@@ -129,7 +129,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists all projects in CodeStar associated with your AWS account.
+   * Grants permission to list all projects in CodeStar associated with your AWS account
    *
    * Access Level: List
    *
@@ -140,7 +140,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists all resources associated with a project in CodeStar.
+   * Grants permission to list all resources associated with a project in CodeStar
    *
    * Access Level: List
    *
@@ -151,7 +151,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists the tags associated with a project in CodeStar.
+   * Grants permission to list the tags associated with a project in CodeStar
    *
    * Access Level: List
    *
@@ -162,7 +162,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists all team members associated with a project.
+   * Grants permission to list all team members associated with a project
    *
    * Access Level: List
    *
@@ -173,7 +173,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists user profiles in AWS CodeStar.
+   * Grants permission to list user profiles in AWS CodeStar
    *
    * Access Level: List
    *
@@ -184,7 +184,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Grants access to extended write APIs.
+   * Grants permission to extended write APIs
    *
    * Access Level: Write
    */
@@ -193,7 +193,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Adds tags to a project in CodeStar.
+   * Grants permission to add tags to a project in CodeStar
    *
    * Access Level: Tagging
    *
@@ -208,7 +208,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Removes tags from a project in CodeStar.
+   * Grants permission to remove tags from a project in CodeStar
    *
    * Access Level: Tagging
    *
@@ -222,7 +222,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Updates a project in CodeStar.
+   * Grants permission to update a project in CodeStar
    *
    * Access Level: Write
    *
@@ -233,7 +233,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Updates team member attributes within a CodeStar project.
+   * Grants permission to update team member attributes within a CodeStar project
    *
    * Access Level: Permissions management
    *
@@ -244,7 +244,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Updates a profile for a user that includes user preferences, display name, and email.
+   * Grants permission to update a profile for a user that includes user preferences, display name, and email
    *
    * Access Level: Write
    *
@@ -255,7 +255,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Verifies whether the AWS CodeStar service role exists in the customer's account.
+   * Grants permission to verify whether the AWS CodeStar service role exists in the customer's account
    *
    * Access Level: List
    */
@@ -318,6 +318,8 @@ export class Codestar extends PolicyStatement {
   /**
    * Adds a resource of type user to the statement
    *
+   * https://docs.aws.amazon.com/codestar/latest/userguide/working-with-user-info.html
+   *
    * @param userNameWithPath - Identifier for the userNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -331,6 +333,8 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
+   * Filters access by actions based on tag-value associated with the resource
+   *
    * Applies to resource types:
    * - user
    *

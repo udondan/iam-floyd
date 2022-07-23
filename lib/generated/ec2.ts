@@ -336,6 +336,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a policy table with a transit gateway attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayPolicyTable.html
+   */
+  public toAssociateTransitGatewayPolicyTable() {
+    return this.to('AssociateTransitGatewayPolicyTable');
+  }
+
+  /**
    * Grants permission to associate an attachment with a transit gateway route table
    *
    * Access Level: Write
@@ -1653,6 +1667,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a transit gateway policy table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPolicyTable.html
+   */
+  public toCreateTransitGatewayPolicyTable() {
+    return this.to('CreateTransitGatewayPolicyTable');
+  }
+
+  /**
    * Grants permission to create a transit gateway prefix list reference
    *
    * Access Level: Write
@@ -1695,6 +1726,23 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateTransitGatewayRouteTable() {
     return this.to('CreateTransitGatewayRouteTable');
+  }
+
+  /**
+   * Grants permission to create an announcement for a transit gateway route table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRouteTableAnnouncement.html
+   */
+  public toCreateTransitGatewayRouteTableAnnouncement() {
+    return this.to('CreateTransitGatewayRouteTableAnnouncement');
   }
 
   /**
@@ -2456,6 +2504,7 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html
@@ -2591,6 +2640,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a transit gateway policy table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPolicyTable.html
+   */
+  public toDeleteTransitGatewayPolicyTable() {
+    return this.to('DeleteTransitGatewayPolicyTable');
+  }
+
+  /**
    * Grants permission to delete a transit gateway prefix list reference
    *
    * Access Level: Write
@@ -2630,6 +2693,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteTransitGatewayRouteTable() {
     return this.to('DeleteTransitGatewayRouteTable');
+  }
+
+  /**
+   * Grants permission to delete a transit gateway route table announcement
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRouteTableAnnouncement.html
+   */
+  public toDeleteTransitGatewayRouteTableAnnouncement() {
+    return this.to('DeleteTransitGatewayRouteTableAnnouncement');
   }
 
   /**
@@ -4453,6 +4530,34 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a transit gateway policy table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayPolicyTables.html
+   */
+  public toDescribeTransitGatewayPolicyTables() {
+    return this.to('DescribeTransitGatewayPolicyTables');
+  }
+
+  /**
+   * Grants permission to describe a transit gateway route table announcement
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayRouteTableAnnouncements.html
+   */
+  public toDescribeTransitGatewayRouteTableAnnouncements() {
+    return this.to('DescribeTransitGatewayRouteTableAnnouncements');
+  }
+
+  /**
    * Grants permission to describe one or more transit gateway route tables
    *
    * Access Level: List
@@ -5069,6 +5174,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisassociateTransitGatewayMulticastDomain() {
     return this.to('DisassociateTransitGatewayMulticastDomain');
+  }
+
+  /**
+   * Grants permission to disassociate a policy table from a transit gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayPolicyTable.html
+   */
+  public toDisassociateTransitGatewayPolicyTable() {
+    return this.to('DisassociateTransitGatewayPolicyTable');
   }
 
   /**
@@ -5763,6 +5882,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetTransitGatewayMulticastDomainAssociations() {
     return this.to('GetTransitGatewayMulticastDomainAssociations');
+  }
+
+  /**
+   * Grants permission to get information about associations for a transit gateway policy table
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPolicyTableAssociations.html
+   */
+  public toGetTransitGatewayPolicyTableAssociations() {
+    return this.to('GetTransitGatewayPolicyTableAssociations');
+  }
+
+  /**
+   * Grants permission to get information about associations for a transit gateway policy table entry
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPolicyTableEntries.html
+   */
+  public toGetTransitGatewayPolicyTableEntries() {
+    return this.to('GetTransitGatewayPolicyTableEntries');
   }
 
   /**
@@ -7706,6 +7853,7 @@ export class Ec2 extends PolicyStatement {
       'AssociateRouteTable',
       'AssociateSubnetCidrBlock',
       'AssociateTransitGatewayMulticastDomain',
+      'AssociateTransitGatewayPolicyTable',
       'AssociateTransitGatewayRouteTable',
       'AssociateTrunkInterface',
       'AssociateVpcCidrBlock',
@@ -7788,9 +7936,11 @@ export class Ec2 extends PolicyStatement {
       'CreateTransitGatewayConnectPeer',
       'CreateTransitGatewayMulticastDomain',
       'CreateTransitGatewayPeeringAttachment',
+      'CreateTransitGatewayPolicyTable',
       'CreateTransitGatewayPrefixListReference',
       'CreateTransitGatewayRoute',
       'CreateTransitGatewayRouteTable',
+      'CreateTransitGatewayRouteTableAnnouncement',
       'CreateTransitGatewayVpcAttachment',
       'CreateVolume',
       'CreateVpc',
@@ -7851,9 +8001,11 @@ export class Ec2 extends PolicyStatement {
       'DeleteTransitGatewayConnectPeer',
       'DeleteTransitGatewayMulticastDomain',
       'DeleteTransitGatewayPeeringAttachment',
+      'DeleteTransitGatewayPolicyTable',
       'DeleteTransitGatewayPrefixListReference',
       'DeleteTransitGatewayRoute',
       'DeleteTransitGatewayRouteTable',
+      'DeleteTransitGatewayRouteTableAnnouncement',
       'DeleteTransitGatewayVpcAttachment',
       'DeleteVolume',
       'DeleteVpc',
@@ -7871,6 +8023,8 @@ export class Ec2 extends PolicyStatement {
       'DeregisterInstanceEventNotificationAttributes',
       'DeregisterTransitGatewayMulticastGroupMembers',
       'DeregisterTransitGatewayMulticastGroupSources',
+      'DescribeTransitGatewayPolicyTables',
+      'DescribeTransitGatewayRouteTableAnnouncements',
       'DetachClassicLinkVpc',
       'DetachInternetGateway',
       'DetachNetworkInterface',
@@ -7894,6 +8048,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateRouteTable',
       'DisassociateSubnetCidrBlock',
       'DisassociateTransitGatewayMulticastDomain',
+      'DisassociateTransitGatewayPolicyTable',
       'DisassociateTransitGatewayRouteTable',
       'DisassociateTrunkInterface',
       'DisassociateVpcCidrBlock',
@@ -8174,6 +8329,8 @@ export class Ec2 extends PolicyStatement {
       'GetGroupsForCapacityReservation',
       'GetTransitGatewayAttachmentPropagations',
       'GetTransitGatewayMulticastDomainAssociations',
+      'GetTransitGatewayPolicyTableAssociations',
+      'GetTransitGatewayPolicyTableEntries',
       'GetTransitGatewayPrefixListReferences',
       'GetTransitGatewayRouteTableAssociations',
       'GetTransitGatewayRouteTablePropagations',
@@ -8503,7 +8660,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type export-image-task to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vmimport-image-import.html#export-vm-image
+   * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#export-vm-image
    *
    * @param exportImageTaskId - Identifier for the exportImageTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -8642,7 +8799,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type import-image-task to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vmimport-image-import.html#import-vm-image
+   * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#import-vm-image
    *
    * @param importImageTaskId - Identifier for the importImageTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -8663,7 +8820,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type import-snapshot-task to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vmimport-import-snapshot.html
+   * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html
    *
    * @param importSnapshotTaskId - Identifier for the importSnapshotTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -8776,6 +8933,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAttribute()
@@ -8797,6 +8955,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAttribute()
@@ -8818,6 +8977,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAttribute()
@@ -9116,6 +9276,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -9136,6 +9297,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -9270,7 +9432,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type replace-root-volume-task to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-replace-root-volume-task.html
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html
    *
    * @param replaceRootVolumeTaskId - Identifier for the replaceRootVolumeTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -9718,6 +9880,48 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type transit-gateway-policy-table to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param transitGatewayPolicyTableId - Identifier for the transitGatewayPolicyTableId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onTransitGatewayPolicyTable(transitGatewayPolicyTableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-policy-table/${ transitGatewayPolicyTableId }`);
+  }
+
+  /**
+   * Adds a resource of type transit-gateway-route-table-announcement to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param transitGatewayRouteTableAnnouncementId - Identifier for the transitGatewayRouteTableAnnouncementId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onTransitGatewayRouteTableAnnouncement(transitGatewayRouteTableAnnouncementId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-route-table-announcement/${ transitGatewayRouteTableAnnouncementId }`);
+  }
+
+  /**
    * Adds a resource of type transit-gateway-route-table to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html
@@ -9900,7 +10104,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type vpn-connection-device-type to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VPC_VPN.html
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
    *
    * @param vpnConnectionDeviceTypeId - Identifier for the vpnConnectionDeviceTypeId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -9908,11 +10112,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifRegion()
-   * - .ifResourceTag()
    */
   public onVpnConnectionDeviceType(vpnConnectionDeviceTypeId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection-device-type/${ vpnConnectionDeviceTypeId }`);
@@ -12453,6 +12653,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
+   * - .toAssociateTransitGatewayPolicyTable()
    * - .toAssociateTransitGatewayRouteTable()
    * - .toAssociateTrunkInterface()
    * - .toAssociateVpcCidrBlock()
@@ -12537,9 +12738,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayConnectPeer()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPolicyTable()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
+   * - .toCreateTransitGatewayRouteTableAnnouncement()
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVolume()
    * - .toCreateVpc()
@@ -12602,9 +12805,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayConnectPeer()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
+   * - .toDeleteTransitGatewayPolicyTable()
    * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
+   * - .toDeleteTransitGatewayRouteTableAnnouncement()
    * - .toDeleteTransitGatewayVpcAttachment()
    * - .toDeleteVolume()
    * - .toDeleteVpc()
@@ -12735,6 +12940,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeTransitGatewayConnects()
    * - .toDescribeTransitGatewayMulticastDomains()
    * - .toDescribeTransitGatewayPeeringAttachments()
+   * - .toDescribeTransitGatewayPolicyTables()
+   * - .toDescribeTransitGatewayRouteTableAnnouncements()
    * - .toDescribeTransitGatewayRouteTables()
    * - .toDescribeTransitGatewayVpcAttachments()
    * - .toDescribeTransitGateways()
@@ -12779,6 +12986,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toDisassociateTransitGatewayPolicyTable()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateTrunkInterface()
    * - .toDisassociateVpcCidrBlock()
@@ -12828,6 +13036,8 @@ export class Ec2 extends PolicyStatement {
    * - .toGetSubnetCidrReservations()
    * - .toGetTransitGatewayAttachmentPropagations()
    * - .toGetTransitGatewayMulticastDomainAssociations()
+   * - .toGetTransitGatewayPolicyTableAssociations()
+   * - .toGetTransitGatewayPolicyTableEntries()
    * - .toGetTransitGatewayPrefixListReferences()
    * - .toGetTransitGatewayRouteTableAssociations()
    * - .toGetTransitGatewayRouteTablePropagations()
@@ -13026,6 +13236,8 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-connect-peer
    * - transit-gateway
    * - transit-gateway-multicast-domain
+   * - transit-gateway-policy-table
+   * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
    * - volume
    * - vpc-endpoint
@@ -13221,6 +13433,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
+   * - .toAssociateTransitGatewayPolicyTable()
    * - .toAssociateTransitGatewayRouteTable()
    * - .toAssociateVpcCidrBlock()
    * - .toAttachClassicLinkVpc()
@@ -13272,9 +13485,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayConnectPeer()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPolicyTable()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
+   * - .toCreateTransitGatewayRouteTableAnnouncement()
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
@@ -13330,9 +13545,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayConnectPeer()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
+   * - .toDeleteTransitGatewayPolicyTable()
    * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
+   * - .toDeleteTransitGatewayRouteTableAnnouncement()
    * - .toDeleteTransitGatewayVpcAttachment()
    * - .toDeleteVolume()
    * - .toDeleteVpc()
@@ -13386,6 +13603,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toDisassociateTransitGatewayPolicyTable()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableFastLaunch()
@@ -13414,6 +13632,8 @@ export class Ec2 extends PolicyStatement {
    * - .toGetManagedPrefixListEntries()
    * - .toGetPasswordData()
    * - .toGetResourcePolicy()
+   * - .toGetTransitGatewayPolicyTableAssociations()
+   * - .toGetTransitGatewayPolicyTableEntries()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
@@ -13512,6 +13732,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRevokeSecurityGroupIngress()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
+   * - .toSearchLocalGatewayRoutes()
    * - .toSearchTransitGatewayRoutes()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
@@ -13589,6 +13810,8 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-connect-peer
    * - transit-gateway
    * - transit-gateway-multicast-domain
+   * - transit-gateway-policy-table
+   * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
    * - volume
    * - vpc-endpoint
@@ -13596,7 +13819,6 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
-   * - vpn-connection-device-type
    * - vpn-connection
    * - vpn-gateway
    *

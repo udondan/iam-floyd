@@ -214,6 +214,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get runtime statistics for the specified query execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryRuntimeStatistics.html
+   */
+  public toGetQueryRuntimeStatistics() {
+    return this.to('GetQueryRuntimeStatistics');
+  }
+
+  /**
    * Grants permission to get a metadata about a table for a given datacatalog
    *
    * Access Level: Read
@@ -440,6 +451,7 @@ export class Athena extends PolicyStatement {
       'GetQueryExecution',
       'GetQueryResults',
       'GetQueryResultsStream',
+      'GetQueryRuntimeStatistics',
       'GetTableMetadata',
       'GetWorkGroup',
       'ListEngineVersions',

@@ -1,9 +1,12 @@
 aws-marketplace:AcceptAgreementApprovalRequest;Write
+aws-marketplace:AcceptAgreementRequest;Write
 aws-marketplace:AssociateProductsWithPrivateMarketplace;Write
 aws-marketplace:BatchMeterUsage;Write
+aws-marketplace:CancelAgreement;Write
 aws-marketplace:CancelAgreementRequest;Write
 aws-marketplace:CancelChangeSet;Write
 aws-marketplace:CompleteTask;Write
+aws-marketplace:CreateAgreementRequest;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
 aws-marketplace:DescribeAgreement;Read
 aws-marketplace:DescribeBuilds;Read

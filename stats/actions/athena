@@ -15,6 +15,7 @@ athena:GetPreparedStatement;Read
 athena:GetQueryExecution;Read
 athena:GetQueryResults;Read
 athena:GetQueryResultsStream;Read
+athena:GetQueryRuntimeStatistics;Read
 athena:GetTableMetadata;Read
 athena:GetWorkGroup;Read
 athena:ListDataCatalogs;List

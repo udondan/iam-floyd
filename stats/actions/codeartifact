@@ -9,6 +9,7 @@ codeartifact:DeletePackageVersions;Write
 codeartifact:DeleteRepository;Write
 codeartifact:DeleteRepositoryPermissionsPolicy;Permissions management
 codeartifact:DescribeDomain;Read
+codeartifact:DescribePackage;Read
 codeartifact:DescribePackageVersion;Read
 codeartifact:DescribeRepository;Read
 codeartifact:DisassociateExternalConnection;Write
@@ -30,6 +31,7 @@ codeartifact:ListTagsForResource;List
 codeartifact:PublishPackageVersion;Write
 codeartifact:PutDomainPermissionsPolicy;Write
 codeartifact:PutPackageMetadata;Write
+codeartifact:PutPackageOriginConfiguration;Write
 codeartifact:PutRepositoryPermissionsPolicy;Write
 codeartifact:ReadFromRepository;Read
 codeartifact:TagResource;Tagging

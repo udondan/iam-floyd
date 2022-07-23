@@ -20,6 +20,7 @@ ec2:AssociateInstanceEventWindow;Write
 ec2:AssociateRouteTable;Write
 ec2:AssociateSubnetCidrBlock;Write
 ec2:AssociateTransitGatewayMulticastDomain;Write
+ec2:AssociateTransitGatewayPolicyTable;Write
 ec2:AssociateTransitGatewayRouteTable;Write
 ec2:AssociateTrunkInterface;Write
 ec2:AssociateVpcCidrBlock;Write
@@ -104,9 +105,11 @@ ec2:CreateTransitGatewayConnect;Write
 ec2:CreateTransitGatewayConnectPeer;Write
 ec2:CreateTransitGatewayMulticastDomain;Write
 ec2:CreateTransitGatewayPeeringAttachment;Write
+ec2:CreateTransitGatewayPolicyTable;Write
 ec2:CreateTransitGatewayPrefixListReference;Write
 ec2:CreateTransitGatewayRoute;Write
 ec2:CreateTransitGatewayRouteTable;Write
+ec2:CreateTransitGatewayRouteTableAnnouncement;Write
 ec2:CreateTransitGatewayVpcAttachment;Write
 ec2:CreateVolume;Write
 ec2:CreateVpc;Write
@@ -169,9 +172,11 @@ ec2:DeleteTransitGatewayConnect;Write
 ec2:DeleteTransitGatewayConnectPeer;Write
 ec2:DeleteTransitGatewayMulticastDomain;Write
 ec2:DeleteTransitGatewayPeeringAttachment;Write
+ec2:DeleteTransitGatewayPolicyTable;Write
 ec2:DeleteTransitGatewayPrefixListReference;Write
 ec2:DeleteTransitGatewayRoute;Write
 ec2:DeleteTransitGatewayRouteTable;Write
+ec2:DeleteTransitGatewayRouteTableAnnouncement;Write
 ec2:DeleteTransitGatewayVpcAttachment;Write
 ec2:DeleteVolume;Write
 ec2:DeleteVpc;Write
@@ -302,6 +307,8 @@ ec2:DescribeTransitGatewayConnectPeers;List
 ec2:DescribeTransitGatewayConnects;List
 ec2:DescribeTransitGatewayMulticastDomains;List
 ec2:DescribeTransitGatewayPeeringAttachments;List
+ec2:DescribeTransitGatewayPolicyTables;Write
+ec2:DescribeTransitGatewayRouteTableAnnouncements;Write
 ec2:DescribeTransitGatewayRouteTables;List
 ec2:DescribeTransitGatewayVpcAttachments;List
 ec2:DescribeTransitGateways;List
@@ -346,6 +353,7 @@ ec2:DisassociateInstanceEventWindow;Write
 ec2:DisassociateRouteTable;Write
 ec2:DisassociateSubnetCidrBlock;Write
 ec2:DisassociateTransitGatewayMulticastDomain;Write
+ec2:DisassociateTransitGatewayPolicyTable;Write
 ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateTrunkInterface;Write
 ec2:DisassociateVpcCidrBlock;Write
@@ -395,6 +403,8 @@ ec2:GetSpotPlacementScores;Read
 ec2:GetSubnetCidrReservations;Read
 ec2:GetTransitGatewayAttachmentPropagations;List
 ec2:GetTransitGatewayMulticastDomainAssociations;List
+ec2:GetTransitGatewayPolicyTableAssociations;List
+ec2:GetTransitGatewayPolicyTableEntries;List
 ec2:GetTransitGatewayPrefixListReferences;List
 ec2:GetTransitGatewayRouteTableAssociations;List
 ec2:GetTransitGatewayRouteTablePropagations;List

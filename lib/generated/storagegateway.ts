@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonstoragegateway.html).
+ * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Storagegateway extends PolicyStatement {
   public servicePrefix = 'storagegateway';
 
   /**
-   * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonstoragegateway.html).
+   * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -100,6 +100,16 @@ export class Storagegateway extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   * - ec2:DescribeNetworkInterfaces
+   * - fsx:DescribeFileSystems
+   * - iam:CreateServiceLinkedRole
+   * - logs:CreateLogDelivery
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:UpdateLogDelivery
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssociateFileSystem.html
    */
@@ -953,6 +963,13 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to update a file system association
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - logs:CreateLogDelivery
+   * - logs:DeleteLogDelivery
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:UpdateLogDelivery
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateFileSystemAssociation.html
    */

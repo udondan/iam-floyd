@@ -190,6 +190,8 @@
                 "ec2:GetSubnetCidrReservations",
                 "ec2:GetTransitGatewayAttachmentPropagations",
                 "ec2:GetTransitGatewayMulticastDomainAssociations",
+                "ec2:GetTransitGatewayPolicyTableAssociations",
+                "ec2:GetTransitGatewayPolicyTableEntries",
                 "ec2:GetTransitGatewayPrefixListReferences",
                 "ec2:GetTransitGatewayRouteTableAssociations",
                 "ec2:GetTransitGatewayRouteTablePropagations",

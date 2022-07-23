@@ -111,6 +111,7 @@ export class Cloudformation extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
    * - .ifTargetRegion()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html
@@ -748,6 +749,10 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -769,6 +774,9 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to untag cloudformation resources
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UntagResource.html
    */

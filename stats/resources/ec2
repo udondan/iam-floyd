@@ -64,7 +64,9 @@ ec2:transit-gateway
 ec2:transit-gateway-attachment
 ec2:transit-gateway-connect-peer
 ec2:transit-gateway-multicast-domain
+ec2:transit-gateway-policy-table
 ec2:transit-gateway-route-table
+ec2:transit-gateway-route-table-announcement
 ec2:volume
 ec2:vpc
 ec2:vpc-endpoint
