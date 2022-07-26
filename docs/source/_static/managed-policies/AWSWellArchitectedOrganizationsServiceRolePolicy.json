@@ -4,6 +4,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"organizations:ListAWSServiceAccessForOrganization",
 				"organizations:DescribeAccount",
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",

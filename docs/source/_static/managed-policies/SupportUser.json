@@ -94,6 +94,7 @@
 				"ec2:DescribeNatGateways",
 				"ec2:DescribeReservedInstancesModifications",
 				"ec2:DescribeTags",
+				"ec2:SearchLocalGatewayRoutes",
 				"ecr:GetRepositoryPolicy",
 				"ecr:BatchCheckLayerAvailability",
 				"ecr:DescribeRepositories",
