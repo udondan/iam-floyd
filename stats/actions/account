@@ -2,5 +2,7 @@ account:DeleteAlternateContact;Write
 account:DisableRegion;Write
 account:EnableRegion;Write
 account:GetAlternateContact;Read
+account:GetContactInformation;Read
 account:ListRegions;List
 account:PutAlternateContact;Write
+account:PutContactInformation;Write

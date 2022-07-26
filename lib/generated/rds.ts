@@ -1208,6 +1208,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a database activity stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyActivityStream.html
+   */
+  public toModifyActivityStream() {
+    return this.to('ModifyActivityStream');
+  }
+
+  /**
    * Grants permission to modify the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances
    *
    * Access Level: Write
@@ -1841,6 +1852,17 @@ export class Rds extends PolicyStatement {
     return this.to('StopDBInstanceAutomatedBackupsReplication');
   }
 
+  /**
+   * Grants permission to switch over a read replica, making it the new primary database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverReadReplica.html
+   */
+  public toSwitchoverReadReplica() {
+    return this.to('SwitchoverReadReplica');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddRoleToDBCluster',
@@ -1890,6 +1912,7 @@ export class Rds extends PolicyStatement {
       'DeregisterDBProxyTargets',
       'FailoverDBCluster',
       'FailoverGlobalCluster',
+      'ModifyActivityStream',
       'ModifyCertificates',
       'ModifyCurrentDBClusterCapacity',
       'ModifyCustomDBEngineVersion',
@@ -1936,7 +1959,8 @@ export class Rds extends PolicyStatement {
       'StopActivityStream',
       'StopDBCluster',
       'StopDBInstance',
-      'StopDBInstanceAutomatedBackupsReplication'
+      'StopDBInstanceAutomatedBackupsReplication',
+      'SwitchoverReadReplica'
     ],
     Tagging: [
       'AddTagsToResource',

@@ -90,6 +90,7 @@ rds:DownloadDBLogFilePortion;Read
 rds:FailoverDBCluster;Write
 rds:FailoverGlobalCluster;Write
 rds:ListTagsForResource;Read
+rds:ModifyActivityStream;Write
 rds:ModifyCertificates;Write
 rds:ModifyCurrentDBClusterCapacity;Write
 rds:ModifyCustomDBEngineVersion;Write
@@ -138,3 +139,4 @@ rds:StopActivityStream;Write
 rds:StopDBCluster;Write
 rds:StopDBInstance;Write
 rds:StopDBInstanceAutomatedBackupsReplication;Write
+rds:SwitchoverReadReplica;Write

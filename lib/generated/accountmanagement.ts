@@ -75,6 +75,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the primary contact information for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetContactInformation.html
+   */
+  public toGetContactInformation() {
+    return this.to('GetContactInformation');
+  }
+
+  /**
    * Grants permission to list the available Regions
    *
    * Access Level: List
@@ -99,15 +110,28 @@ export class Account extends PolicyStatement {
     return this.to('PutAlternateContact');
   }
 
+  /**
+   * Grants permission to update the primary contact information for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_PutContactInformation.html
+   */
+  public toPutContactInformation() {
+    return this.to('PutContactInformation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'DeleteAlternateContact',
       'DisableRegion',
       'EnableRegion',
-      'PutAlternateContact'
+      'PutAlternateContact',
+      'PutContactInformation'
     ],
     Read: [
-      'GetAlternateContact'
+      'GetAlternateContact',
+      'GetContactInformation'
     ],
     List: [
       'ListRegions'

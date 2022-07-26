@@ -26,7 +26,8 @@
                 "account:DeleteAlternateContact",
                 "account:DisableRegion",
                 "account:EnableRegion",
-                "account:PutAlternateContact"
+                "account:PutAlternateContact",
+                "account:PutContactInformation"
             ],
             "Resource": "*",
             "Effect": "Deny"
