@@ -1,4 +1,6 @@
 detective:AcceptInvitation;Write
+detective:BatchGetGraphMemberDatasources;Read
+detective:BatchGetMembershipDatasources;Read
 detective:CreateGraph;Write
 detective:CreateMembers;Write
 detective:DeleteGraph;Write
@@ -12,6 +14,7 @@ detective:GetGraphIngestState;Read
 detective:GetMembers;Read
 detective:GetPricingInformation;Read
 detective:GetUsageInformation;Read
+detective:ListDatasourcePackages;Read
 detective:ListGraphs;List
 detective:ListInvitations;List
 detective:ListMembers;List
@@ -22,4 +25,5 @@ detective:SearchGraph;Read
 detective:StartMonitoringMember;Write
 detective:TagResource;Tagging
 detective:UntagResource;Tagging
+detective:UpdateDatasourcePackages;Write
 detective:UpdateOrganizationConfiguration;Write

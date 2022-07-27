@@ -23,7 +23,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
@@ -34,7 +34,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateComponent.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
     return this.to('CreateComponent');
@@ -45,7 +45,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateLogPattern.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateLogPattern.html
    */
   public toCreateLogPattern() {
     return this.to('CreateLogPattern');
@@ -56,7 +56,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteApplication.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteApplication.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
@@ -67,7 +67,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteComponent.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteComponent.html
    */
   public toDeleteComponent() {
     return this.to('DeleteComponent');
@@ -78,7 +78,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteLogPattern.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteLogPattern.html
    */
   public toDeleteLogPattern() {
     return this.to('DeleteLogPattern');
@@ -89,7 +89,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeApplication.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeApplication.html
    */
   public toDescribeApplication() {
     return this.to('DescribeApplication');
@@ -100,7 +100,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponent.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponent.html
    */
   public toDescribeComponent() {
     return this.to('DescribeComponent');
@@ -111,7 +111,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfiguration.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponentConfiguration.html
    */
   public toDescribeComponentConfiguration() {
     return this.to('DescribeComponentConfiguration');
@@ -122,7 +122,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html
    */
   public toDescribeComponentConfigurationRecommendation() {
     return this.to('DescribeComponentConfigurationRecommendation');
@@ -133,7 +133,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeLogPattern.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeLogPattern.html
    */
   public toDescribeLogPattern() {
     return this.to('DescribeLogPattern');
@@ -144,7 +144,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeObservation.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeObservation.html
    */
   public toDescribeObservation() {
     return this.to('DescribeObservation');
@@ -155,7 +155,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblem.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeProblem.html
    */
   public toDescribeProblem() {
     return this.to('DescribeProblem');
@@ -166,7 +166,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblemObservations.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeProblemObservations.html
    */
   public toDescribeProblemObservations() {
     return this.to('DescribeProblemObservations');
@@ -177,7 +177,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListApplications.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -188,7 +188,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListComponents.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListComponents.html
    */
   public toListComponents() {
     return this.to('ListComponents');
@@ -199,7 +199,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListConfigurationHistory.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListConfigurationHistory.html
    */
   public toListConfigurationHistory() {
     return this.to('ListConfigurationHistory');
@@ -210,7 +210,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListLogPatternSets.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListLogPatternSets.html
    */
   public toListLogPatternSets() {
     return this.to('ListLogPatternSets');
@@ -221,7 +221,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListLogPatterns.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListLogPatterns.html
    */
   public toListLogPatterns() {
     return this.to('ListLogPatterns');
@@ -232,7 +232,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListProblems.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListProblems.html
    */
   public toListProblems() {
     return this.to('ListProblems');
@@ -243,7 +243,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -254,7 +254,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -265,7 +265,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -276,7 +276,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateApplication.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
@@ -287,7 +287,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponent.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateComponent.html
    */
   public toUpdateComponent() {
     return this.to('UpdateComponent');
@@ -298,7 +298,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponentConfiguration.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateComponentConfiguration.html
    */
   public toUpdateComponentConfiguration() {
     return this.to('UpdateComponentConfiguration');
@@ -309,7 +309,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateLogPattern.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateLogPattern.html
    */
   public toUpdateLogPattern() {
     return this.to('UpdateLogPattern');

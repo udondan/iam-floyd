@@ -33,6 +33,57 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add an agreement associated with a server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateAgreement.html
+   */
+  public toCreateAgreement() {
+    return this.to('CreateAgreement');
+  }
+
+  /**
+   * Grants permission to create a connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateConnector.html
+   */
+  public toCreateConnector() {
+    return this.to('CreateConnector');
+  }
+
+  /**
+   * Grants permission to create a profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateProfile.html
+   */
+  public toCreateProfile() {
+    return this.to('CreateProfile');
+  }
+
+  /**
    * Grants permission to create a server
    *
    * Access Level: Write
@@ -95,6 +146,50 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete agreement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteAgreement.html
+   */
+  public toDeleteAgreement() {
+    return this.to('DeleteAgreement');
+  }
+
+  /**
+   * Grants permission to delete certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteCertificate.html
+   */
+  public toDeleteCertificate() {
+    return this.to('DeleteCertificate');
+  }
+
+  /**
+   * Grants permission to delete connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteConnector.html
+   */
+  public toDeleteConnector() {
+    return this.to('DeleteConnector');
+  }
+
+  /**
+   * Grants permission to delete profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteProfile.html
+   */
+  public toDeleteProfile() {
+    return this.to('DeleteProfile');
+  }
+
+  /**
    * Grants permission to delete a server
    *
    * Access Level: Write
@@ -150,6 +245,39 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an agreement assigned to a server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeAgreement.html
+   */
+  public toDescribeAgreeement() {
+    return this.to('DescribeAgreeement');
+  }
+
+  /**
+   * Grants permission to describe a certificate
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeCertificate.html
+   */
+  public toDescribeCertificate() {
+    return this.to('DescribeCertificate');
+  }
+
+  /**
+   * Grants permission to describe a connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeConnector.html
+   */
+  public toDescribeConnector() {
+    return this.to('DescribeConnector');
+  }
+
+  /**
    * Grants permission to describe an execution associated with a workflow
    *
    * Access Level: Read
@@ -158,6 +286,17 @@ export class Transfer extends PolicyStatement {
    */
   public toDescribeExecution() {
     return this.to('DescribeExecution');
+  }
+
+  /**
+   * Grants permission to describe a profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribProfile.html
+   */
+  public toDescribeProfile() {
+    return this.to('DescribeProfile');
   }
 
   /**
@@ -205,6 +344,21 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a certificate
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportCertificate.html
+   */
+  public toImportCertificate() {
+    return this.to('ImportCertificate');
+  }
+
+  /**
    * Grants permission to add an SSH public key to a user
    *
    * Access Level: Write
@@ -227,6 +381,39 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list agreements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListAgreements.html
+   */
+  public toListAgreements() {
+    return this.to('ListAgreements');
+  }
+
+  /**
+   * Grants permission to list certificates
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListCertificates.html
+   */
+  public toListCertificates() {
+    return this.to('ListCertificates');
+  }
+
+  /**
+   * Grants permission to list connectors
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
+  }
+
+  /**
    * Grants permission to list executions associated with a workflow
    *
    * Access Level: Read
@@ -235,6 +422,17 @@ export class Transfer extends PolicyStatement {
    */
   public toListExecutions() {
     return this.to('ListExecutions');
+  }
+
+  /**
+   * Grants permission to list profiles
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListProfiles.html
+   */
+  public toListProfiles() {
+    return this.to('ListProfiles');
   }
 
   /**
@@ -380,6 +578,56 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an agreement
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateAgreement.html
+   */
+  public toUpdateAgreement() {
+    return this.to('UpdateAgreement');
+  }
+
+  /**
+   * Grants permission to update a certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateCertificate.html
+   */
+  public toUpdateCertificate() {
+    return this.to('UpdateCertificate');
+  }
+
+  /**
+   * Grants permission to update a connector
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateConnector.html
+   */
+  public toUpdateConnector() {
+    return this.to('UpdateConnector');
+  }
+
+  /**
+   * Grants permission to update a profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateProfile.html
+   */
+  public toUpdateProfile() {
+    return this.to('UpdateProfile');
+  }
+
+  /**
    * Grants permission to update the configuration of a server
    *
    * Access Level: Write
@@ -410,31 +658,51 @@ export class Transfer extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccess',
+      'CreateAgreement',
+      'CreateConnector',
+      'CreateProfile',
       'CreateServer',
       'CreateUser',
       'CreateWorkflow',
       'DeleteAccess',
+      'DeleteAgreement',
+      'DeleteCertificate',
+      'DeleteConnector',
+      'DeleteProfile',
       'DeleteServer',
       'DeleteSshPublicKey',
       'DeleteUser',
       'DeleteWorkflow',
+      'ImportCertificate',
       'ImportSshPublicKey',
       'SendWorkflowStepState',
       'StartServer',
       'StopServer',
       'UpdateAccess',
+      'UpdateAgreement',
+      'UpdateCertificate',
+      'UpdateConnector',
+      'UpdateProfile',
       'UpdateServer',
       'UpdateUser'
     ],
     Read: [
       'DescribeAccess',
+      'DescribeAgreeement',
+      'DescribeCertificate',
+      'DescribeConnector',
       'DescribeExecution',
+      'DescribeProfile',
       'DescribeSecurityPolicy',
       'DescribeServer',
       'DescribeUser',
       'DescribeWorkflow',
       'ListAccesses',
+      'ListAgreements',
+      'ListCertificates',
+      'ListConnectors',
       'ListExecutions',
+      'ListProfiles',
       'ListTagsForResource',
       'TestIdentityProvider'
     ],
@@ -500,5 +768,73 @@ export class Transfer extends PolicyStatement {
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
+  }
+
+  /**
+   * Adds a resource of type certificate to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
+   *
+   * @param certificateId - Identifier for the certificateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+  }
+
+  /**
+   * Adds a resource of type connector to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
+   *
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:connector/${ connectorId }`);
+  }
+
+  /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
+   *
+   * @param profileId - Identifier for the profileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
+  }
+
+  /**
+   * Adds a resource of type agreement to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
+   *
+   * @param agreementId - Identifier for the agreementId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:agreement/${ agreementId }`);
   }
 }

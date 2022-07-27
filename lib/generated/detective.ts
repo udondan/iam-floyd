@@ -30,6 +30,28 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the datasource package history for the specified member accounts in a behavior graph managed by this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_BatchGetGraphMemberDatasources.html
+   */
+  public toBatchGetGraphMemberDatasources() {
+    return this.to('BatchGetGraphMemberDatasources');
+  }
+
+  /**
+   * Grants permission to retrieve the datasource package history of the caller account for the specified graphs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_BatchGetMembershipDatasources.html
+   */
+  public toBatchGetMembershipDatasources() {
+    return this.to('BatchGetMembershipDatasources');
+  }
+
+  /**
    * Grants permission to create a behavior graph and begin to aggregate security information
    *
    * Access Level: Write
@@ -189,6 +211,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list a graph's datasource package ingest states and timestamps for the most recent state changes in a behavior graph managed by this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListDatasourcePackages.html
+   */
+  public toListDatasourcePackages() {
+    return this.to('ListDatasourcePackages');
+  }
+
+  /**
    * Grants permission to list behavior graphs managed by this account
    *
    * Access Level: List
@@ -313,6 +346,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable datasource package(s) in a behavior graph managed by this account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateDatasourcePackages.html
+   */
+  public toUpdateDatasourcePackages() {
+    return this.to('UpdateDatasourcePackages');
+  }
+
+  /**
    * Grants permission to update the current configuration related to the Amazon Detective integration with AWS Organizations
    *
    * Access Level: Write
@@ -338,15 +382,19 @@ export class Detective extends PolicyStatement {
       'EnableOrganizationAdminAccount',
       'RejectInvitation',
       'StartMonitoringMember',
+      'UpdateDatasourcePackages',
       'UpdateOrganizationConfiguration'
     ],
     Read: [
+      'BatchGetGraphMemberDatasources',
+      'BatchGetMembershipDatasources',
       'DescribeOrganizationConfiguration',
       'GetFreeTrialEligibility',
       'GetGraphIngestState',
       'GetMembers',
       'GetPricingInformation',
       'GetUsageInformation',
+      'ListDatasourcePackages',
       'ListTagsForResource',
       'SearchGraph'
     ],

@@ -30,6 +30,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about one or more prepared statements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetPreparedStatement.html
+   */
+  public toBatchGetPreparedStatement() {
+    return this.to('BatchGetPreparedStatement');
+  }
+
+  /**
    * Grants permission to get information about one or more query executions
    *
    * Access Level: Read
@@ -443,6 +454,7 @@ export class Athena extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetNamedQuery',
+      'BatchGetPreparedStatement',
       'BatchGetQueryExecution',
       'GetDataCatalog',
       'GetDatabase',

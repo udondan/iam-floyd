@@ -1,4 +1,5 @@
 athena:BatchGetNamedQuery;Read
+athena:BatchGetPreparedStatement;Read
 athena:BatchGetQueryExecution;Read
 athena:CreateDataCatalog;Write
 athena:CreateNamedQuery;Write
