@@ -35,7 +35,7 @@
 		{
 			"Effect": "Allow",
 			"Action": "iam:GetRole",
-			"Resource": "arn:aws:iam::*:role/aws-service-role/*guardduty.amazonaws.com/*"
+			"Resource": "arn:aws:iam::*:role/*AWSServiceRoleForAmazonGuardDutyMalwareProtection"
 		}
 	]
 }

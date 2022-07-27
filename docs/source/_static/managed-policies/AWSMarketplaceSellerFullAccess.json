@@ -63,6 +63,18 @@
 					"iam:PassedToService": "assets.marketplace.amazonaws.com"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"vendor-insights:GetDataSource",
+				"vendor-insights:ListDataSources",
+				"vendor-insights:ListSecurityProfiles",
+				"vendor-insights:GetSecurityProfile",
+				"vendor-insights:GetSecurityProfileSnapshot",
+				"vendor-insights:ListSecurityProfileSnapshots"
+			],
+			"Resource": "*"
 		}
 	]
 }
