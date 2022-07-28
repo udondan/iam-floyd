@@ -16,6 +16,7 @@
 				"ec2:DescribeVpnConnections",
 				"ec2:DescribeVpcs",
 				"ec2:GetTransitGatewayRouteTableAssociations",
+				"ec2:GetTransitGatewayRouteTablePropagations",
 				"ec2:SearchTransitGatewayRoutes",
 				"ec2:DescribeTransitGatewayPeeringAttachments",
 				"ec2:DescribeTransitGatewayConnects",
