@@ -33,6 +33,9 @@ macie2:GetInvitationsCount;Read
 macie2:GetMacieSession;Read
 macie2:GetMasterAccount;Read
 macie2:GetMember;Read
+macie2:GetRevealConfiguration;Read
+macie2:GetSensitiveDataOccurrences;Read
+macie2:GetSensitiveDataOccurrencesAvailability;Read
 macie2:GetUsageStatistics;Read
 macie2:GetUsageTotals;Read
 macie2:ListClassificationJobs;List
@@ -55,3 +58,4 @@ macie2:UpdateFindingsFilter;Write
 macie2:UpdateMacieSession;Write
 macie2:UpdateMemberSession;Write
 macie2:UpdateOrganizationConfiguration;Write
+macie2:UpdateRevealConfiguration;Write

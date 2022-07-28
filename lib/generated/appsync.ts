@@ -227,6 +227,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to evaluate template mapping
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_EvaluateMappingTemplate.html
+   */
+  public toEvaluateMappingTemplate() {
+    return this.to('EvaluateMappingTemplate');
+  }
+
+  /**
    * Grants permission to flush an API cache in AppSync
    *
    * Access Level: Write
@@ -643,6 +654,7 @@ export class Appsync extends PolicyStatement {
       'UpdateType'
     ],
     Read: [
+      'EvaluateMappingTemplate',
       'GetApiAssociation',
       'GetApiCache',
       'GetDataSource',

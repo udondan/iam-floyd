@@ -420,6 +420,39 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status and configuration settings for retrieving occurrences of sensitive data reported by findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/reveal-configuration.html
+   */
+  public toGetRevealConfiguration() {
+    return this.to('GetRevealConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve occurrences of sensitive data reported by a finding
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-findingid-reveal.html
+   */
+  public toGetSensitiveDataOccurrences() {
+    return this.to('GetSensitiveDataOccurrences');
+  }
+
+  /**
+   * Grants permission to check whether occurrences of sensitive data can be retrieved for a finding
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-findingid-reveal-availability.html
+   */
+  public toGetSensitiveDataOccurrencesAvailability() {
+    return this.to('GetSensitiveDataOccurrencesAvailability');
+  }
+
+  /**
    * Grants permission to retrieve quotas and aggregated usage data for one or more accounts
    *
    * Access Level: Read
@@ -676,6 +709,17 @@ export class Macie2 extends PolicyStatement {
     return this.to('UpdateOrganizationConfiguration');
   }
 
+  /**
+   * Grants permission to update the status and configuration settings for retrieving occurrences of sensitive data reported by findings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/reveal-configuration.html
+   */
+  public toUpdateRevealConfiguration() {
+    return this.to('UpdateRevealConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInvitation',
@@ -704,7 +748,8 @@ export class Macie2 extends PolicyStatement {
       'UpdateFindingsFilter',
       'UpdateMacieSession',
       'UpdateMemberSession',
-      'UpdateOrganizationConfiguration'
+      'UpdateOrganizationConfiguration',
+      'UpdateRevealConfiguration'
     ],
     Read: [
       'BatchGetCustomDataIdentifiers',
@@ -723,6 +768,9 @@ export class Macie2 extends PolicyStatement {
       'GetMacieSession',
       'GetMasterAccount',
       'GetMember',
+      'GetRevealConfiguration',
+      'GetSensitiveDataOccurrences',
+      'GetSensitiveDataOccurrencesAvailability',
       'GetUsageStatistics',
       'GetUsageTotals',
       'ListTagsForResource',

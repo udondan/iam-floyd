@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssso.html).
+ * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-on.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sso extends PolicyStatement {
   public servicePrefix = 'sso';
 
   /**
-   * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssso.html).
+   * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-on.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to connect a directory to be used by AWS Single Sign-On
+   * Grants permission to connect a directory to be used by AWS IAM Identity Center
    *
    * Access Level: Write
    *
@@ -77,7 +77,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add an application instance to AWS Single Sign-On
+   * Grants permission to add an application instance to AWS IAM Identity Center
    *
    * Access Level: Write
    *
@@ -122,7 +122,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a managed application instance to AWS Single Sign-On
+   * Grants permission to add a managed application instance to AWS IAM Identity Center
    *
    * Access Level: Write
    *
@@ -344,7 +344,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to obtain the regions where your organization has enabled AWS Single Sign-on
+   * Grants permission to obtain the regions where your organization has enabled AWS IAM Identity Center
    *
    * Access Level: Read
    *
@@ -377,7 +377,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a directory to be used by AWS Single Sign-On
+   * Grants permission to disassociate a directory to be used by AWS IAM Identity Center
    *
    * Access Level: Write
    *
@@ -504,7 +504,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check if AWS Single Sign-On is enabled
+   * Grants permission to check if AWS IAM Identity Center is enabled
    *
    * Access Level: Read
    *
@@ -664,7 +664,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about the directory connected to AWS Single Sign-On
+   * Grants permission to retrieve details about the directory connected to AWS IAM Identity Center
    *
    * Access Level: Read
    *
@@ -847,7 +847,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to initialize AWS Single Sign-On
+   * Grants permission to initialize AWS IAM Identity Center
    *
    * Access Level: Write
    *

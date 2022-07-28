@@ -15,6 +15,7 @@ guardduty:DeleteInvitations;Write
 guardduty:DeleteMembers;Write
 guardduty:DeletePublishingDestination;Write
 guardduty:DeleteThreatIntelSet;Write
+guardduty:DescribeMalwareScans;Read
 guardduty:DescribeOrganizationConfiguration;Read
 guardduty:DescribePublishingDestination;Read
 guardduty:DisableOrganizationAdminAccount;Write
@@ -27,6 +28,7 @@ guardduty:GetFindings;Read
 guardduty:GetFindingsStatistics;Read
 guardduty:GetIPSet;Read
 guardduty:GetInvitationsCount;Read
+guardduty:GetMalwareScanSettings;Read
 guardduty:GetMasterAccount;Read
 guardduty:GetMemberDetectors;Read
 guardduty:GetMembers;Read
@@ -52,6 +54,7 @@ guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write
 guardduty:UpdateIPSet;Write
+guardduty:UpdateMalwareScanSettings;Write
 guardduty:UpdateMemberDetectors;Write
 guardduty:UpdateOrganizationConfiguration;Write
 guardduty:UpdatePublishingDestination;Write

@@ -287,7 +287,7 @@ export class Lakeformation extends PolicyStatement {
    * Access Level: Read
    *
    * Dependent actions:
-   * - lakeaformation:StartQueryPlanning
+   * - lakeformation:StartQueryPlanning
    *
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetWorkUnits
    */

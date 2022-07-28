@@ -52,6 +52,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html
    */
   public toAssociateResolverQueryLogConfig() {
@@ -364,6 +367,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html
    */
   public toGetResolverQueryLogConfig() {
@@ -557,6 +563,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html
    */
   public toListResolverQueryLogConfigAssociations() {
@@ -567,6 +576,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to list information about the specified query logging configurations, which define where you want Resolver to save DNS query logs and specify the VPCs that you want to log queries for
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html
    */

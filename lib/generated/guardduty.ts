@@ -230,6 +230,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details about malware scans
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html
+   */
+  public toDescribeMalwareScans() {
+    return this.to('DescribeMalwareScans');
+  }
+
+  /**
    * Grants permission to retrieve details about the delegated administrator associated with a GuardDuty detector
    *
    * Access Level: Read
@@ -359,6 +370,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toGetInvitationsCount() {
     return this.to('GetInvitationsCount');
+  }
+
+  /**
+   * Grants permission to retrieve the malware scan settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMalwareScanSettings.html
+   */
+  public toGetMalwareScanSettings() {
+    return this.to('GetMalwareScanSettings');
   }
 
   /**
@@ -648,6 +670,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the malware scan settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateMalwareScanSettings.html
+   */
+  public toUpdateMalwareScanSettings() {
+    return this.to('UpdateMalwareScanSettings');
+  }
+
+  /**
    * Grants permission to update which data sources are enabled for member accounts detectors
    *
    * Access Level: Write
@@ -730,12 +763,14 @@ export class Guardduty extends PolicyStatement {
       'UpdateFilter',
       'UpdateFindingsFeedback',
       'UpdateIPSet',
+      'UpdateMalwareScanSettings',
       'UpdateMemberDetectors',
       'UpdateOrganizationConfiguration',
       'UpdatePublishingDestination',
       'UpdateThreatIntelSet'
     ],
     Read: [
+      'DescribeMalwareScans',
       'DescribeOrganizationConfiguration',
       'DescribePublishingDestination',
       'GetDetector',
@@ -744,6 +779,7 @@ export class Guardduty extends PolicyStatement {
       'GetFindingsStatistics',
       'GetIPSet',
       'GetInvitationsCount',
+      'GetMalwareScanSettings',
       'GetMasterAccount',
       'GetMemberDetectors',
       'GetMembers',
