@@ -207,6 +207,34 @@
 				"storagegateway:DescribeStorediSCSIVolumes"
 			],
 			"Resource": "arn:aws:storagegateway:*:*:gateway/*/volume/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"events:DeleteRule",
+				"events:PutTargets",
+				"events:DescribeRule",
+				"events:EnableRule",
+				"events:PutRule",
+				"events:RemoveTargets",
+				"events:ListTargetsByRule",
+				"events:DisableRule"
+			],
+			"Resource": [
+				"arn:aws:events:*:*:rule/AwsBackupManagedRule*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": "events:ListRules",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sysops-sap:GetOperation"
+			],
+			"Resource": "*"
 		}
 	]
 }

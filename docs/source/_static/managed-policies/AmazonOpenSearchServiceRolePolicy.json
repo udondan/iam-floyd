@@ -40,7 +40,6 @@
 			"Resource": [
 				"arn:aws:ec2:*:*:network-interface/*",
 				"arn:aws:ec2:*:*:security-group/*"
-				
 			]
 		},
 		{
@@ -93,6 +92,14 @@
 			"Effect": "Allow",
 			"Action": [
 				"ec2:DescribeTags"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973196",
+			"Effect": "Allow",
+			"Action": [
+				"acm:DescribeCertificate"
 			],
 			"Resource": "*"
 		}
