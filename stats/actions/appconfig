@@ -2,11 +2,15 @@ appconfig:CreateApplication;Write
 appconfig:CreateConfigurationProfile;Write
 appconfig:CreateDeploymentStrategy;Write
 appconfig:CreateEnvironment;Write
+appconfig:CreateExtension;Write
+appconfig:CreateExtensionAssociation;Write
 appconfig:CreateHostedConfigurationVersion;Write
 appconfig:DeleteApplication;Write
 appconfig:DeleteConfigurationProfile;Write
 appconfig:DeleteDeploymentStrategy;Write
 appconfig:DeleteEnvironment;Write
+appconfig:DeleteExtension;Write
+appconfig:DeleteExtensionAssociation;Write
 appconfig:DeleteHostedConfigurationVersion;Write
 appconfig:GetApplication;Read
 appconfig:GetConfiguration;Read
@@ -14,6 +18,8 @@ appconfig:GetConfigurationProfile;Read
 appconfig:GetDeployment;Read
 appconfig:GetDeploymentStrategy;Read
 appconfig:GetEnvironment;Read
+appconfig:GetExtension;Read
+appconfig:GetExtensionAssociation;Read
 appconfig:GetHostedConfigurationVersion;Read
 appconfig:GetLatestConfiguration;Read
 appconfig:ListApplications;List
@@ -21,6 +27,8 @@ appconfig:ListConfigurationProfiles;List
 appconfig:ListDeploymentStrategies;List
 appconfig:ListDeployments;List
 appconfig:ListEnvironments;List
+appconfig:ListExtensionAssociations;List
+appconfig:ListExtensions;List
 appconfig:ListHostedConfigurationVersions;List
 appconfig:ListTagsForResource;Read
 appconfig:StartConfigurationSession;Write
@@ -32,4 +40,6 @@ appconfig:UpdateApplication;Write
 appconfig:UpdateConfigurationProfile;Write
 appconfig:UpdateDeploymentStrategy;Write
 appconfig:UpdateEnvironment;Write
+appconfig:UpdateExtension;Write
+appconfig:UpdateExtensionAssociation;Write
 appconfig:ValidateConfiguration;Write

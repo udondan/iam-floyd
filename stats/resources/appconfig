@@ -4,4 +4,6 @@ appconfig:configurationprofile
 appconfig:deployment
 appconfig:deploymentstrategy
 appconfig:environment
+appconfig:extension
+appconfig:extensionassociation
 appconfig:hostedconfigurationversion

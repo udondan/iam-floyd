@@ -79,6 +79,36 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an extension
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExtension.html
+   */
+  public toCreateExtension() {
+    return this.to('CreateExtension');
+  }
+
+  /**
+   * Grants permission to create an extension association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExtensionAssociation.html
+   */
+  public toCreateExtensionAssociation() {
+    return this.to('CreateExtensionAssociation');
+  }
+
+  /**
    * Grants permission to create a hosted configuration version
    *
    * Access Level: Write
@@ -131,6 +161,28 @@ export class Appconfig extends PolicyStatement {
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to delete an extension
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExtension.html
+   */
+  public toDeleteExtension() {
+    return this.to('DeleteExtension');
+  }
+
+  /**
+   * Grants permission to delete an extension association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExtensionAssociation.html
+   */
+  public toDeleteExtensionAssociation() {
+    return this.to('DeleteExtensionAssociation');
   }
 
   /**
@@ -229,6 +281,34 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about an extension
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtension.html
+   */
+  public toGetExtension() {
+    return this.to('GetExtension');
+  }
+
+  /**
+   * Grants permission to view details about an extension association
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtensionAssociation.html
+   */
+  public toGetExtensionAssociation() {
+    return this.to('GetExtensionAssociation');
+  }
+
+  /**
    * Grants permission to view details about a hosted configuration version
    *
    * Access Level: Read
@@ -306,6 +386,28 @@ export class Appconfig extends PolicyStatement {
    */
   public toListEnvironments() {
     return this.to('ListEnvironments');
+  }
+
+  /**
+   * Grants permission to list the extension associations in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExtensionAssociations.html
+   */
+  public toListExtensionAssociations() {
+    return this.to('ListExtensionAssociations');
+  }
+
+  /**
+   * Grants permission to list the extensions in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExtensions.html
+   */
+  public toListExtensions() {
+    return this.to('ListExtensions');
   }
 
   /**
@@ -460,6 +562,34 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an extension
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtension.html
+   */
+  public toUpdateExtension() {
+    return this.to('UpdateExtension');
+  }
+
+  /**
+   * Grants permission to modify an extension association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtensionAssociation.html
+   */
+  public toUpdateExtensionAssociation() {
+    return this.to('UpdateExtensionAssociation');
+  }
+
+  /**
    * Grants permission to validate a configuration
    *
    * Access Level: Write
@@ -476,11 +606,15 @@ export class Appconfig extends PolicyStatement {
       'CreateConfigurationProfile',
       'CreateDeploymentStrategy',
       'CreateEnvironment',
+      'CreateExtension',
+      'CreateExtensionAssociation',
       'CreateHostedConfigurationVersion',
       'DeleteApplication',
       'DeleteConfigurationProfile',
       'DeleteDeploymentStrategy',
       'DeleteEnvironment',
+      'DeleteExtension',
+      'DeleteExtensionAssociation',
       'DeleteHostedConfigurationVersion',
       'StartConfigurationSession',
       'StartDeployment',
@@ -489,6 +623,8 @@ export class Appconfig extends PolicyStatement {
       'UpdateConfigurationProfile',
       'UpdateDeploymentStrategy',
       'UpdateEnvironment',
+      'UpdateExtension',
+      'UpdateExtensionAssociation',
       'ValidateConfiguration'
     ],
     Read: [
@@ -498,6 +634,8 @@ export class Appconfig extends PolicyStatement {
       'GetDeployment',
       'GetDeploymentStrategy',
       'GetEnvironment',
+      'GetExtension',
+      'GetExtensionAssociation',
       'GetHostedConfigurationVersion',
       'GetLatestConfiguration',
       'ListTagsForResource'
@@ -508,6 +646,8 @@ export class Appconfig extends PolicyStatement {
       'ListDeploymentStrategies',
       'ListDeployments',
       'ListEnvironments',
+      'ListExtensionAssociations',
+      'ListExtensions',
       'ListHostedConfigurationVersions'
     ],
     Tagging: [
@@ -638,5 +778,40 @@ export class Appconfig extends PolicyStatement {
    */
   public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type extension to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html
+   *
+   * @param extensionId - Identifier for the extensionId.
+   * @param extensionVersionNumber - Identifier for the extensionVersionNumber.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExtension(extensionId: string, extensionVersionNumber: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extension/${ extensionId }/${ extensionVersionNumber }`);
+  }
+
+  /**
+   * Adds a resource of type extensionassociation to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html
+   *
+   * @param extensionAssociationId - Identifier for the extensionAssociationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExtensionassociation(extensionAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extensionassociation/${ extensionAssociationId }`);
   }
 }
