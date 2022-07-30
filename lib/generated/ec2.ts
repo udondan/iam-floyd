@@ -122,6 +122,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -139,6 +141,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -481,6 +485,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -498,6 +504,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -697,6 +705,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -714,6 +724,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -731,6 +743,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -748,6 +762,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -765,6 +781,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -810,6 +828,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -855,6 +875,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -872,6 +894,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -889,6 +913,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -906,6 +932,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -924,6 +952,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -941,6 +971,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -958,6 +990,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -975,6 +1009,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -992,6 +1028,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1009,6 +1047,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1027,6 +1067,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1044,6 +1086,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1061,6 +1105,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1078,6 +1124,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1137,6 +1185,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1154,6 +1204,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1171,6 +1223,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1188,6 +1242,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1219,6 +1275,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1236,6 +1294,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1253,6 +1313,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1284,6 +1346,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1301,6 +1365,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1318,6 +1384,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1349,6 +1417,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1380,6 +1450,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1397,6 +1469,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1414,6 +1488,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1431,6 +1507,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1476,6 +1554,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1522,6 +1602,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1553,6 +1635,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1570,6 +1654,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1587,6 +1673,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1604,6 +1692,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1621,6 +1711,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1638,6 +1730,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1655,6 +1749,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1672,6 +1768,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1717,6 +1815,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1734,6 +1834,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1751,6 +1853,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1768,6 +1872,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1785,6 +1891,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1802,6 +1910,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1834,6 +1944,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1851,6 +1963,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1868,6 +1982,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -1899,6 +2015,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -5425,6 +5543,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -5920,7 +6040,7 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPrefixListReference.html
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPrefixListReferences.html
    */
   public toGetTransitGatewayPrefixListReferences() {
     return this.to('GetTransitGatewayPrefixListReferences');
@@ -6002,6 +6122,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -6033,6 +6155,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -6050,6 +6174,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -6853,7 +6979,7 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelCertificate
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelCertificate.html
    */
   public toModifyVpnTunnelCertificate() {
     return this.to('ModifyVpnTunnelCertificate');
@@ -7319,6 +7445,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -7546,6 +7674,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -7661,6 +7791,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -7678,6 +7810,8 @@ export class Ec2 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    *
    * Dependent actions:
@@ -10194,7 +10328,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpcPeeringConnection()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toRejectVpcPeeringConnection()
-   * - .toReplaceRoute()
    *
    * Applies to resource types:
    * - vpc-peering-connection
@@ -10278,7 +10411,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
-   * - .toReplaceRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10528,7 +10660,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
-   * - .toReplaceRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10662,7 +10793,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRegisterTransitGatewayMulticastGroupSources()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toReplaceNetworkAclAssociation()
-   * - .toReplaceRoute()
    * - .toReplaceRouteTableAssociation()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
@@ -10986,7 +11116,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11333,7 +11462,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11389,7 +11517,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11495,7 +11622,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11556,7 +11682,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11589,7 +11714,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteInternetGateway()
    * - .toDetachInternetGateway()
-   * - .toReplaceRoute()
    *
    * Applies to resource types:
    * - internet-gateway
@@ -11800,7 +11924,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11854,7 +11977,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11908,7 +12030,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -11974,7 +12095,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
-   * - .toReplaceRoute()
    * - .toRequestSpotInstances()
    * - .toResetNetworkInterfaceAttribute()
    * - .toRunInstances()
@@ -12401,7 +12521,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toRunInstances()
    * - .toStartInstances()
    * - .toStopInstances()
@@ -13366,7 +13485,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpcPeeringConnection()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toRejectVpcPeeringConnection()
-   * - .toReplaceRoute()
    *
    * Applies to resource types:
    * - vpc-peering-connection
@@ -13895,7 +14013,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetImageAttribute()
@@ -14237,7 +14354,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
-   * - .toReplaceRoute()
    * - .toRequestSpotInstances()
    * - .toResetNetworkInterfaceAttribute()
    * - .toRunInstances()
@@ -14366,7 +14482,6 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -14717,7 +14832,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpcPeeringConnection()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toRejectVpcPeeringConnection()
-   * - .toReplaceRoute()
    *
    * Applies to resource types:
    * - vpc-peering-connection

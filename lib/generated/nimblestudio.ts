@@ -144,6 +144,7 @@ export class Nimble extends PolicyStatement {
    * - ds:DescribeDirectories
    * - ec2:DescribeSecurityGroups
    * - fsx:DescribeFileSystems
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStudioComponent.html
    */
@@ -691,6 +692,7 @@ export class Nimble extends PolicyStatement {
    * - ds:DescribeDirectories
    * - ec2:DescribeSecurityGroups
    * - fsx:DescribeFileSystems
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStudioComponent.html
    */
@@ -866,11 +868,6 @@ export class Nimble extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
@@ -887,9 +884,6 @@ export class Nimble extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifStudioId()
    */
   public onEulaAcceptance(eulaAcceptanceId: string, account?: string, region?: string, partition?: string) {

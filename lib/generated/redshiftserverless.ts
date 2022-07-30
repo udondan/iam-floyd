@@ -495,7 +495,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Adds a resource of type namespace to the statement
    *
-   * https://docs.aws.amazon.com/redshift-serverless/latest/mgmt/working-with-namespaces.html
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-workgroup-namespace.html
    *
    * @param namespaceId - Identifier for the namespaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -512,7 +512,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
-   * https://docs.aws.amazon.com/redshift-serverless/latest/mgmt/working-with-snapshots.html
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html
    *
    * @param snapshotId - Identifier for the snapshotId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -526,7 +526,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Adds a resource of type workgroup to the statement
    *
-   * https://docs.aws.amazon.com/redshift-serverless/latest/mgmt/working-with-workgroups.html
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-workgroup-namespace.html
    *
    * @param workgroupId - Identifier for the workgroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -543,7 +543,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Adds a resource of type recoveryPoint to the statement
    *
-   * https://docs.aws.amazon.com/redshift-serverless/latest/mgmt/working-with-recovery-points.html
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html
    *
    * @param recoveryPointId - Identifier for the recoveryPointId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -557,7 +557,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Adds a resource of type endpointAccess to the statement
    *
-   * https://docs.aws.amazon.com/redshift-serverless/latest/mgmt/working-with-endpoint-access.html
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-connecting.html
    *
    * @param endpointAccessId - Identifier for the endpointAccessId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -571,7 +571,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Filters access by the endpoint access identifier
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-endpointaccessid
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -583,7 +583,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Filters access by the namespace identifier
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-namespaceid
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -595,7 +595,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Filters access by the recovery point identifier
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-recoverypointid
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -607,7 +607,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Filters access by the snapshot identifier
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-snapshotid
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -619,7 +619,7 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Filters access by the workgroup identifier
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-workgroupid
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
