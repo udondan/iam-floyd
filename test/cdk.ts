@@ -1,4 +1,4 @@
-import { App, Stack, StackProps } from 'aws-cdk-lib';
+import { App, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as statement from 'cdk-iam-floyd';
@@ -44,7 +44,9 @@ export class TestStack extends Stack {
       managedPolicies: [policy],
     });
 
-    const bucket = new s3.Bucket(this, 'Bucket');
+    const bucket = new s3.Bucket(this, 'Bucket', {
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
 
     bucket.addToResourcePolicy(
       new statement.S3() //
