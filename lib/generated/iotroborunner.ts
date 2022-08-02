@@ -23,7 +23,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateAction.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateAction.html
    */
   public toCreateAction() {
     return this.to('CreateAction');
@@ -34,7 +34,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateActionTemplate.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateActionTemplate.html
    */
   public toCreateActionTemplate() {
     return this.to('CreateActionTemplate');
@@ -45,7 +45,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateActionTemplateDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateActionTemplateDependency.html
    */
   public toCreateActionTemplateDependency() {
     return this.to('CreateActionTemplateDependency');
@@ -56,7 +56,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateActivity.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateActivity.html
    */
   public toCreateActivity() {
     return this.to('CreateActivity');
@@ -67,7 +67,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateActivityDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateActivityDependency.html
    */
   public toCreateActivityDependency() {
     return this.to('CreateActivityDependency');
@@ -78,7 +78,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateDestination.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateDestination.html
    */
   public toCreateDestination() {
     return this.to('CreateDestination');
@@ -89,7 +89,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateDestinationRelationship.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateDestinationRelationship.html
    */
   public toCreateDestinationRelationship() {
     return this.to('CreateDestinationRelationship');
@@ -100,7 +100,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateSite.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateSite.html
    */
   public toCreateSite() {
     return this.to('CreateSite');
@@ -111,7 +111,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateTask.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateTask.html
    */
   public toCreateTask() {
     return this.to('CreateTask');
@@ -122,7 +122,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateTaskDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateTaskDependency.html
    */
   public toCreateTaskDependency() {
     return this.to('CreateTaskDependency');
@@ -133,7 +133,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateWorker.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateWorker.html
    */
   public toCreateWorker() {
     return this.to('CreateWorker');
@@ -144,7 +144,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_CreateWorkerFleet.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateWorkerFleet.html
    */
   public toCreateWorkerFleet() {
     return this.to('CreateWorkerFleet');
@@ -155,7 +155,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteAction.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteAction.html
    */
   public toDeleteAction() {
     return this.to('DeleteAction');
@@ -166,7 +166,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteActionTemplate.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteActionTemplate.html
    */
   public toDeleteActionTemplate() {
     return this.to('DeleteActionTemplate');
@@ -177,7 +177,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteActionTemplateDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteActionTemplateDependency.html
    */
   public toDeleteActionTemplateDependency() {
     return this.to('DeleteActionTemplateDependency');
@@ -188,7 +188,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteActivity.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteActivity.html
    */
   public toDeleteActivity() {
     return this.to('DeleteActivity');
@@ -199,7 +199,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteActivityDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteActivityDependency.html
    */
   public toDeleteActivityDependency() {
     return this.to('DeleteActivityDependency');
@@ -210,7 +210,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteDestination.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteDestination.html
    */
   public toDeleteDestination() {
     return this.to('DeleteDestination');
@@ -221,7 +221,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteDestinationRelationship.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteDestinationRelationship.html
    */
   public toDeleteDestinationRelationship() {
     return this.to('DeleteDestinationRelationship');
@@ -232,7 +232,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteSite.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteSite.html
    */
   public toDeleteSite() {
     return this.to('DeleteSite');
@@ -243,7 +243,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteTask.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteTask.html
    */
   public toDeleteTask() {
     return this.to('DeleteTask');
@@ -254,7 +254,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteTaskDependency.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteTaskDependency.html
    */
   public toDeleteTaskDependency() {
     return this.to('DeleteTaskDependency');
@@ -265,7 +265,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteWorker.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteWorker.html
    */
   public toDeleteWorker() {
     return this.to('DeleteWorker');
@@ -276,7 +276,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_DeleteWorkerFleet.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_DeleteWorkerFleet.html
    */
   public toDeleteWorkerFleet() {
     return this.to('DeleteWorkerFleet');
@@ -287,7 +287,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetAction.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetAction.html
    */
   public toGetAction() {
     return this.to('GetAction');
@@ -298,7 +298,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetActionTemplate.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetActionTemplate.html
    */
   public toGetActionTemplate() {
     return this.to('GetActionTemplate');
@@ -309,7 +309,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetActivity.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetActivity.html
    */
   public toGetActivity() {
     return this.to('GetActivity');
@@ -320,7 +320,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetDestination.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetDestination.html
    */
   public toGetDestination() {
     return this.to('GetDestination');
@@ -331,7 +331,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetDestinationRelationship.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetDestinationRelationship.html
    */
   public toGetDestinationRelationship() {
     return this.to('GetDestinationRelationship');
@@ -342,7 +342,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetSite.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetSite.html
    */
   public toGetSite() {
     return this.to('GetSite');
@@ -353,7 +353,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetTask.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetTask.html
    */
   public toGetTask() {
     return this.to('GetTask');
@@ -364,7 +364,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetWorker.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetWorker.html
    */
   public toGetWorker() {
     return this.to('GetWorker');
@@ -375,7 +375,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_GetWorkerFleet.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_GetWorkerFleet.html
    */
   public toGetWorkerFleet() {
     return this.to('GetWorkerFleet');
@@ -386,7 +386,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListActionTemplates.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListActionTemplates.html
    */
   public toListActionTemplates() {
     return this.to('ListActionTemplates');
@@ -397,7 +397,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListActions.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListActions.html
    */
   public toListActions() {
     return this.to('ListActions');
@@ -408,7 +408,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListActivities.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListActivities.html
    */
   public toListActivities() {
     return this.to('ListActivities');
@@ -419,7 +419,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListDestinationRelationships.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListDestinationRelationships.html
    */
   public toListDestinationRelationships() {
     return this.to('ListDestinationRelationships');
@@ -430,7 +430,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListDestinations.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListDestinations.html
    */
   public toListDestinations() {
     return this.to('ListDestinations');
@@ -441,7 +441,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListSites.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListSites.html
    */
   public toListSites() {
     return this.to('ListSites');
@@ -452,7 +452,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListTasks.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListTasks.html
    */
   public toListTasks() {
     return this.to('ListTasks');
@@ -463,7 +463,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListWorkerFleets.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListWorkerFleets.html
    */
   public toListWorkerFleets() {
     return this.to('ListWorkerFleets');
@@ -474,7 +474,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_ListWorkers.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_ListWorkers.html
    */
   public toListWorkers() {
     return this.to('ListWorkers');
@@ -485,7 +485,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateActionState.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateActionState.html
    */
   public toUpdateActionState() {
     return this.to('UpdateActionState');
@@ -496,7 +496,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateActivity.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateActivity.html
    */
   public toUpdateActivity() {
     return this.to('UpdateActivity');
@@ -507,7 +507,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateDestination.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateDestination.html
    */
   public toUpdateDestination() {
     return this.to('UpdateDestination');
@@ -518,7 +518,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateSite.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateSite.html
    */
   public toUpdateSite() {
     return this.to('UpdateSite');
@@ -529,7 +529,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateTask.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateTask.html
    */
   public toUpdateTask() {
     return this.to('UpdateTask');
@@ -540,7 +540,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateWorker.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateWorker.html
    */
   public toUpdateWorker() {
     return this.to('UpdateWorker');
@@ -551,7 +551,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/API_UpdateWorkerFleet.html
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/API_UpdateWorkerFleet.html
    */
   public toUpdateWorkerFleet() {
     return this.to('UpdateWorkerFleet');
@@ -616,7 +616,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type ActionResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param actionId - Identifier for the actionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -633,7 +633,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type ActionTemplateResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param actionTemplateId - Identifier for the actionTemplateId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -650,7 +650,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type ActivityResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param activityId - Identifier for the activityId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -667,7 +667,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type DestinationRelationshipResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param destinationRelationshipId - Identifier for the destinationRelationshipId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -684,7 +684,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type DestinationResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param destinationId - Identifier for the destinationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -701,7 +701,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type SiteResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param siteId - Identifier for the siteId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -718,7 +718,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type TaggingResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param tagKey - Identifier for the tagKey.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -735,7 +735,7 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type TaskResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param taskId - Identifier for the taskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -752,8 +752,9 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Adds a resource of type WorkerFleetResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
+   * @param siteId - Identifier for the siteId.
    * @param workerFleetId - Identifier for the workerFleetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -762,15 +763,17 @@ export class Iotroborunner extends PolicyStatement {
    * Possible conditions:
    * - .ifWorkerFleetResourceId()
    */
-  public onWorkerFleetResource(workerFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:worker-fleet/${ workerFleetId }`);
+  public onWorkerFleetResource(siteId: string, workerFleetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
   }
 
   /**
    * Adds a resource of type WorkerResource to the statement
    *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/
+   * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
+   * @param siteId - Identifier for the siteId.
+   * @param workerFleetId - Identifier for the workerFleetId.
    * @param workerId - Identifier for the workerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -779,8 +782,8 @@ export class Iotroborunner extends PolicyStatement {
    * Possible conditions:
    * - .ifWorkerResourceId()
    */
-  public onWorkerResource(workerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:worker/${ workerId }`);
+  public onWorkerResource(siteId: string, workerFleetId: string, workerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
   }
 
   /**

@@ -75,6 +75,21 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint for Amazon FSx for ONTAP
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html
+   */
+  public toCreateLocationFsxOntap() {
+    return this.to('CreateLocationFsxOntap');
+  }
+
+  /**
    * Grants permission to create an endpoint for Amazon FSx for OpenZFS
    *
    * Access Level: Write
@@ -258,6 +273,17 @@ export class Datasync extends PolicyStatement {
    */
   public toDescribeLocationFsxLustre() {
     return this.to('DescribeLocationFsxLustre');
+  }
+
+  /**
+   * Grants permission to view metadata, such as the path information about an Amazon FSx for ONTAP sync location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxOntap.html
+   */
+  public toDescribeLocationFsxOntap() {
+    return this.to('DescribeLocationFsxOntap');
   }
 
   /**
@@ -537,6 +563,7 @@ export class Datasync extends PolicyStatement {
       'CreateAgent',
       'CreateLocationEfs',
       'CreateLocationFsxLustre',
+      'CreateLocationFsxOntap',
       'CreateLocationFsxOpenZfs',
       'CreateLocationFsxWindows',
       'CreateLocationHdfs',
@@ -561,6 +588,7 @@ export class Datasync extends PolicyStatement {
       'DescribeAgent',
       'DescribeLocationEfs',
       'DescribeLocationFsxLustre',
+      'DescribeLocationFsxOntap',
       'DescribeLocationFsxOpenZfs',
       'DescribeLocationFsxWindows',
       'DescribeLocationHdfs',
