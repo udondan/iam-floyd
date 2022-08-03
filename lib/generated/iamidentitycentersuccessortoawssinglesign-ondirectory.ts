@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [sso-directory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsssodirectory.html).
+ * Statement provider for service [sso-directory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-ondirectory.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class SsoDirectory extends PolicyStatement {
   public servicePrefix = 'sso-directory';
 
   /**
-   * Statement provider for service [sso-directory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsssodirectory.html).
+   * Statement provider for service [sso-directory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-ondirectory.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a member to a group in the directory that AWS SSO provides by default
+   * Grants permission to add a member to a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an alias for the directory that AWS SSO provides by default
+   * Grants permission to create an alias for the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a group in the directory that AWS SSO provides by default
+   * Grants permission to create a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user in the directory that AWS SSO provides by default
+   * Grants permission to create a user in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a group from the directory that AWS SSO provides by default
+   * Grants permission to delete a group from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a user from the directory that AWS SSO provides by default
+   * Grants permission to delete a user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -217,7 +217,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about groups from the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about groups from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -239,7 +239,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a user from the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about a user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -261,7 +261,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about user from the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -283,7 +283,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deactivate a user in the directory that AWS SSO provides by default
+   * Grants permission to deactivate a user in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -305,7 +305,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to activate user in the directory that AWS SSO provides by default
+   * Grants permission to activate user in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -316,7 +316,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the AWS SSO Service Provider configurations for the directory
+   * Grants permission to retrieve the AWS IAM Identity Center Service Provider configurations for the directory
    *
    * Access Level: Read
    *
@@ -349,7 +349,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check if a member is a part of the group in the directory that AWS SSO provides by default
+   * Grants permission to check if a member is a part of the group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -404,7 +404,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list groups for a user from the directory that AWS SSO provides by default
+   * Grants permission to list groups for a user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -415,7 +415,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all members that are part of a group in the directory that AWS SSO provides by default
+   * Grants permission to retrieve all members that are part of a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
    *
@@ -448,7 +448,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a member that is part of a group in the directory that AWS SSO provides by default
+   * Grants permission to remove a member that is part of a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -514,7 +514,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update information about a group in the directory that AWS SSO provides by default
+   * Grants permission to update information about a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -547,7 +547,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default
+   * Grants permission to update a password by sending password reset link via email or generating one time password for a user in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
@@ -558,7 +558,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update user information in the directory that AWS SSO provides by default
+   * Grants permission to update user information in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *

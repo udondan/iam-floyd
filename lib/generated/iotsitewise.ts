@@ -152,6 +152,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create bulk import job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateBulkImportJob.html
+   */
+  public toCreateBulkImportJob() {
+    return this.to('CreateBulkImportJob');
+  }
+
+  /**
    * Grants permission to create a dashboard in a project
    *
    * Access Level: Write
@@ -348,6 +359,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeAssetProperty() {
     return this.to('DescribeAssetProperty');
+  }
+
+  /**
+   * Grants permission to describe bulk import job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeBulkImportJob.html
+   */
+  public toDescribeBulkImportJob() {
+    return this.to('DescribeBulkImportJob');
   }
 
   /**
@@ -568,6 +590,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListAssociatedAssets() {
     return this.to('ListAssociatedAssets');
+  }
+
+  /**
+   * Grants permission to list bulk import jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListBulkImportJobs.html
+   */
+  public toListBulkImportJobs() {
+    return this.to('ListBulkImportJobs');
   }
 
   /**
@@ -830,6 +863,7 @@ export class Iotsitewise extends PolicyStatement {
       'CreateAccessPolicy',
       'CreateAsset',
       'CreateAssetModel',
+      'CreateBulkImportJob',
       'CreateDashboard',
       'CreateGateway',
       'CreatePortal',
@@ -866,6 +900,7 @@ export class Iotsitewise extends PolicyStatement {
       'DescribeAsset',
       'DescribeAssetModel',
       'DescribeAssetProperty',
+      'DescribeBulkImportJob',
       'DescribeDashboard',
       'DescribeDefaultEncryptionConfiguration',
       'DescribeGateway',
@@ -887,6 +922,7 @@ export class Iotsitewise extends PolicyStatement {
       'ListAssetRelationships',
       'ListAssets',
       'ListAssociatedAssets',
+      'ListBulkImportJobs',
       'ListDashboards',
       'ListGateways',
       'ListPortals',

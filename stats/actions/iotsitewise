@@ -9,6 +9,7 @@ iotsitewise:BatchPutAssetPropertyValue;Write
 iotsitewise:CreateAccessPolicy;Write
 iotsitewise:CreateAsset;Write
 iotsitewise:CreateAssetModel;Write
+iotsitewise:CreateBulkImportJob;Write
 iotsitewise:CreateDashboard;Write
 iotsitewise:CreateGateway;Write
 iotsitewise:CreatePortal;Write
@@ -25,6 +26,7 @@ iotsitewise:DescribeAccessPolicy;Read
 iotsitewise:DescribeAsset;Read
 iotsitewise:DescribeAssetModel;Read
 iotsitewise:DescribeAssetProperty;Read
+iotsitewise:DescribeBulkImportJob;Read
 iotsitewise:DescribeDashboard;Read
 iotsitewise:DescribeDefaultEncryptionConfiguration;Read
 iotsitewise:DescribeGateway;Read
@@ -45,6 +47,7 @@ iotsitewise:ListAssetModels;List
 iotsitewise:ListAssetRelationships;List
 iotsitewise:ListAssets;List
 iotsitewise:ListAssociatedAssets;List
+iotsitewise:ListBulkImportJobs;List
 iotsitewise:ListDashboards;List
 iotsitewise:ListGateways;List
 iotsitewise:ListPortals;List
