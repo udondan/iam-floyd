@@ -1,21 +1,29 @@
-{  
-    "Version":"2012-10-17",
-    "Statement":[  
-        {  
-            "Sid":"Stmt1480452973134",
-            "Action":[  
-                "ec2:CreateNetworkInterface",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:ModifyNetworkInterfaceAttribute",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "elasticloadbalancing:AddListenerCertificates",
-                "elasticloadbalancing:RemoveListenerCertificates"
-            ],
-            "Effect":"Allow",
-            "Resource":"*"
-        }
-    ]
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Stmt1480452973134",
+			"Action": [
+				"ec2:CreateNetworkInterface",
+				"ec2:DeleteNetworkInterface",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:ModifyNetworkInterfaceAttribute",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeVpcs",
+				"elasticloadbalancing:AddListenerCertificates",
+				"elasticloadbalancing:RemoveListenerCertificates"
+			],
+			"Effect": "Allow",
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973135",
+			"Effect": "Allow",
+			"Action": [
+				"acm:DescribeCertificate"
+			],
+			"Resource": "*"
+		}
+	]
 }

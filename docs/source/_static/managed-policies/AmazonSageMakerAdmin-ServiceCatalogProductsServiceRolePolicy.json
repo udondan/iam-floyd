@@ -376,6 +376,27 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"sagemaker:AddTags"
+			],
+			"Resource": [
+				"arn:aws:sagemaker:*:*:endpoint/*",
+				"arn:aws:sagemaker:*:*:endpoint-config/*",
+				"arn:aws:sagemaker:*:*:model/*",
+				"arn:aws:sagemaker:*:*:pipeline/*",
+				"arn:aws:sagemaker:*:*:project/*",
+				"arn:aws:sagemaker:*:*:model-package/*"
+			],
+			"Condition": {
+				"ForAllValues:StringLike": {
+					"aws:TagKeys": [
+						"sagemaker:*"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"sagemaker:CreateImage",
 				"sagemaker:DeleteImage",
 				"sagemaker:DescribeImage",
