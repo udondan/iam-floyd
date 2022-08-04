@@ -19,7 +19,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Adds input to the application.
+   * Grants permission to add input to the application
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Adds output to the application.
+   * Grants permission to add output to the application
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Adds reference data source to the application.
+   * Grants permission to add reference data source to the application
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Creates an application.
+   * Grants permission to create an application
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the application.
+   * Grants permission to delete the application
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified output of the application.
+   * Grants permission to delete the specified output of the application
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified reference data source of the application.
+   * Grants permission to delete the specified reference data source of the application
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Describes the specified application.
+   * Grants permission to describe the specified application
    *
    * Access Level: Read
    *
@@ -111,7 +111,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Discovers the input schema for the application.
+   * Grants permission to discover the input schema for the application
    *
    * Access Level: Read
    *
@@ -122,7 +122,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Grant permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications.
+   * Grants permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications
    *
    * Access Level: Read
    *
@@ -133,7 +133,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * List applications for the account
+   * Grants permission to list applications for the account
    *
    * Access Level: List
    *
@@ -144,7 +144,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Fetch the tags associated with the application.
+   * Grants permission to fetch the tags associated with the application
    *
    * Access Level: Read
    *
@@ -155,18 +155,18 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Starts the application.
+   * Grants permission to start the application
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartApplication.html
    */
   public toStartApplication() {
     return this.to('StartApplication');
   }
 
   /**
-   * Stops the application.
+   * Grants permission to stop the application
    *
    * Access Level: Write
    *
@@ -177,7 +177,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Add tags to the application.
+   * Grants permission to add tags to the application
    *
    * Access Level: Tagging
    *
@@ -192,7 +192,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Remove the specified tags from the application.
+   * Grants permission to remove the specified tags from the application
    *
    * Access Level: Tagging
    *
@@ -206,7 +206,7 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Updates the application.
+   * Grants permission to update the application
    *
    * Access Level: Write
    *

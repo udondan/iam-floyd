@@ -1,0 +1,10 @@
+license-manager-user-subscriptions:AssociateUser;Write
+license-manager-user-subscriptions:DeregisterIdentityProvider;Write
+license-manager-user-subscriptions:DisassociateUser;Write
+license-manager-user-subscriptions:ListIdentityProviders;List
+license-manager-user-subscriptions:ListInstances;List
+license-manager-user-subscriptions:ListProductSubscriptions;List
+license-manager-user-subscriptions:ListUserAssociations;List
+license-manager-user-subscriptions:RegisterIdentityProvider;Write
+license-manager-user-subscriptions:StartProductSubscription;Write
+license-manager-user-subscriptions:StopProductSubscription;Write

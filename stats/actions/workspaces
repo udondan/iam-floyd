@@ -8,6 +8,7 @@ workspaces:CreateIpGroup;Write
 workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
+workspaces:CreateWorkspaceImage;Write
 workspaces:CreateWorkspaces;Write
 workspaces:DeleteClientBranding;Write
 workspaces:DeleteConnectClientAddIn;Write
@@ -41,6 +42,7 @@ workspaces:ListAvailableManagementCidrRanges;List
 workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
 workspaces:ModifyClientProperties;Write
+workspaces:ModifySamlProperties;Write
 workspaces:ModifySelfservicePermissions;Permissions management
 workspaces:ModifyWorkspaceAccessProperties;Write
 workspaces:ModifyWorkspaceCreationProperties;Write
@@ -53,6 +55,7 @@ workspaces:RestoreWorkspace;Write
 workspaces:RevokeIpRules;Write
 workspaces:StartWorkspaces;Write
 workspaces:StopWorkspaces;Write
+workspaces:Stream;Write
 workspaces:TerminateWorkspaces;Write
 workspaces:UpdateConnectClientAddIn;Write
 workspaces:UpdateConnectionAliasPermission;Permissions management

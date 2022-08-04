@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html).
@@ -156,6 +156,21 @@ export class Workspaces extends PolicyStatement {
    */
   public toCreateWorkspaceBundle() {
     return this.to('CreateWorkspaceBundle');
+  }
+
+  /**
+   * Grants permission to create a new WorkSpace image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceImage.html
+   */
+  public toCreateWorkspaceImage() {
+    return this.to('CreateWorkspaceImage');
   }
 
   /**
@@ -534,6 +549,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the SAML properties of a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifySamlProperties.html
+   */
+  public toModifySamlProperties() {
+    return this.to('ModifySamlProperties');
+  }
+
+  /**
    * Grants permission to modify the self-service WorkSpace management capabilities for your users
    *
    * Access Level: Permissions management
@@ -670,6 +696,20 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to federated users to sign in by using their existing credentials and stream their workspace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserId()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Stream.html
+   */
+  public toStream() {
+    return this.to('Stream');
+  }
+
+  /**
    * Grants permission to terminate WorkSpaces
    *
    * Access Level: Write
@@ -746,6 +786,7 @@ export class Workspaces extends PolicyStatement {
       'CreateIpGroup',
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
+      'CreateWorkspaceImage',
       'CreateWorkspaces',
       'DeleteClientBranding',
       'DeleteConnectClientAddIn',
@@ -761,6 +802,7 @@ export class Workspaces extends PolicyStatement {
       'MigrateWorkspace',
       'ModifyAccount',
       'ModifyClientProperties',
+      'ModifySamlProperties',
       'ModifyWorkspaceAccessProperties',
       'ModifyWorkspaceCreationProperties',
       'ModifyWorkspaceProperties',
@@ -772,6 +814,7 @@ export class Workspaces extends PolicyStatement {
       'RevokeIpRules',
       'StartWorkspaces',
       'StopWorkspaces',
+      'Stream',
       'TerminateWorkspaces',
       'UpdateConnectClientAddIn',
       'UpdateRulesOfIpGroup',
@@ -909,5 +952,20 @@ export class Workspaces extends PolicyStatement {
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
+  }
+
+  /**
+   * Filters access by the ID of the Workspaces user
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
+   *
+   * Applies to actions:
+   * - .toStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`userId`, value, operator || 'StringLike');
   }
 }
