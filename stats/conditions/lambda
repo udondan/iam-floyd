@@ -6,6 +6,7 @@ lambda:Principal
 lambda:RequestTag/${TagKey}
 lambda:ResourceTag/${TagKey}
 lambda:SecurityGroupIds
+lambda:SourceFunctionArn
 lambda:SubnetIds
 lambda:TagKeys
 lambda:VpcIds

@@ -1107,6 +1107,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of the AWS Lambda function from which the request originated
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifSourceFunctionArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceFunctionArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the ID of subnets configured for the AWS Lambda function
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html

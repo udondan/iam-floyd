@@ -302,7 +302,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StartsApplication.html
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StartApplication.html
    */
   public toStartApplication() {
     return this.to('StartApplication');
@@ -415,7 +415,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   /**
    * Adds a resource of type application to the statement
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/how-it-works.html
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-it-works.html
    *
    * @param applicationName - Identifier for the applicationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
