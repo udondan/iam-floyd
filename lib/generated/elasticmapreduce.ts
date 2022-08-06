@@ -45,6 +45,9 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifExecutionRoleArn()
+   *
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddJobFlowSteps.html
    */
   public toAddJobFlowSteps() {
@@ -1051,6 +1054,21 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+  }
+
+  /**
+   * Filters access by whether the execution role ARN is provided with the action
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-security
+   *
+   * Applies to actions:
+   * - .toAddJobFlowSteps()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ExecutionRoleArn`, value, operator || 'StringLike');
   }
 
   /**

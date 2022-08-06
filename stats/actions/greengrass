@@ -27,6 +27,7 @@ greengrass:DeleteComponent;Write
 greengrass:DeleteConnectorDefinition;Write
 greengrass:DeleteCoreDefinition;Write
 greengrass:DeleteCoreDevice;Write
+greengrass:DeleteDeployment;Write
 greengrass:DeleteDeviceDefinition;Write
 greengrass:DeleteFunctionDefinition;Write
 greengrass:DeleteGroup;Write

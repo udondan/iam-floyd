@@ -108,7 +108,7 @@ export class Fis extends PolicyStatement {
    * - .ifPercentage()
    * - .ifTargets()
    *
-   * https://docs.aws.amazon.com/fis/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
    */
   public toInjectApiInternalError() {
     return this.to('InjectApiInternalError');
@@ -125,7 +125,7 @@ export class Fis extends PolicyStatement {
    * - .ifPercentage()
    * - .ifTargets()
    *
-   * https://docs.aws.amazon.com/fis/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
    */
   public toInjectApiThrottleError() {
     return this.to('InjectApiThrottleError');
@@ -142,7 +142,7 @@ export class Fis extends PolicyStatement {
    * - .ifPercentage()
    * - .ifTargets()
    *
-   * https://docs.aws.amazon.com/fis/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
    */
   public toInjectApiUnavailableError() {
     return this.to('InjectApiUnavailableError');

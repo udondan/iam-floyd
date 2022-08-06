@@ -56,6 +56,10 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - ssm-contacts:AssociateContact
    *
@@ -107,17 +111,6 @@ export class SsmContacts extends PolicyStatement {
    */
   public toDeleteContactChannel() {
     return this.to('DeleteContactChannel');
-  }
-
-  /**
-   * Grants permission to delete a contact's resource policy
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContactPolicy.html
-   */
-  public toDeleteContactPolicy() {
-    return this.to('DeleteContactPolicy');
   }
 
   /**
@@ -224,7 +217,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByContacts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByContact.html
    */
   public toListPagesByContact() {
     return this.to('ListPagesByContact');
@@ -301,6 +294,10 @@ export class SsmContacts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_TagResource.html
    */
   public toTagResource() {
@@ -311,6 +308,9 @@ export class SsmContacts extends PolicyStatement {
    * Grants permission to remove tags from a response plan
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UntagResource.html
    */
@@ -343,17 +343,6 @@ export class SsmContacts extends PolicyStatement {
     return this.to('UpdateContactChannel');
   }
 
-  /**
-   * Grants permission to update a contact's resource policy
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContactPolicy.html
-   */
-  public toUpdateContactPolicy() {
-    return this.to('UpdateContactPolicy');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptPage',
@@ -363,14 +352,12 @@ export class SsmContacts extends PolicyStatement {
       'DeactivateContactChannel',
       'DeleteContact',
       'DeleteContactChannel',
-      'DeleteContactPolicy',
       'PutContactPolicy',
       'SendActivationCode',
       'StartEngagement',
       'StopEngagement',
       'UpdateContact',
-      'UpdateContactChannel',
-      'UpdateContactPolicy'
+      'UpdateContactChannel'
     ],
     'Permissions management': [
       'AssociateContact'
@@ -400,12 +387,15 @@ export class SsmContacts extends PolicyStatement {
   /**
    * Adds a resource of type contact to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/contacts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
@@ -414,7 +404,7 @@ export class SsmContacts extends PolicyStatement {
   /**
    * Adds a resource of type contactchannel to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/contacts.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param contactChannelId - Identifier for the contactChannelId.
@@ -429,7 +419,7 @@ export class SsmContacts extends PolicyStatement {
   /**
    * Adds a resource of type engagement to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/escalation.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/escalation.html
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param engagementId - Identifier for the engagementId.
@@ -444,7 +434,7 @@ export class SsmContacts extends PolicyStatement {
   /**
    * Adds a resource of type page to the statement
    *
-   * https://docs.aws.amazon.com/incident-manager/latest/UserGuide/escalation.html
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/escalation.html
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param pageId - Identifier for the pageId.

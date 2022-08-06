@@ -142,6 +142,20 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a deployment. To delete an active deployment, it needs to be cancelled first
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iot:DeleteJob
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DeleteDeployment.html
+   */
+  public toDeleteDeployment() {
+    return this.to('DeleteDeployment');
+  }
+
+  /**
    * Grants permission to retrieve metadata for a version of a component
    *
    * Access Level: Read
@@ -411,6 +425,7 @@ export class GreengrassV2 extends PolicyStatement {
       'CreateDeployment',
       'DeleteComponent',
       'DeleteCoreDevice',
+      'DeleteDeployment',
       'DisassociateServiceRoleFromAccount',
       'UpdateConnectivityInfo'
     ],

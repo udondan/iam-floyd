@@ -19,6 +19,21 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a resource with a group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_AssociateResource.html
+   */
+  public toAssociateResource() {
+    return this.to('AssociateResource');
+  }
+
+  /**
    * Grants permission to create a canary
    *
    * Access Level: Write
@@ -34,14 +49,48 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateGroup.html
+   */
+  public toCreateGroup() {
+    return this.to('CreateGroup');
+  }
+
+  /**
    * Grants permission to delete a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html
    */
   public toDeleteCanary() {
     return this.to('DeleteCanary');
+  }
+
+  /**
+   * Grants permission to delete a group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteGroup.html
+   */
+  public toDeleteGroup() {
+    return this.to('DeleteGroup');
   }
 
   /**
@@ -84,9 +133,28 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a canary details
+   * Grants permission to disassociate a resource from a group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DisassociateResource.html
+   */
+  public toDisassociateResource() {
+    return this.to('DisassociateResource');
+  }
+
+  /**
+   * Grants permission to view the details of a canary
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html
    */
@@ -99,6 +167,10 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html
    */
   public toGetCanaryRuns() {
@@ -106,7 +178,63 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all tags and values associated with a canary
+   * Grants permission to view the details of a group
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetGroup.html
+   */
+  public toGetGroup() {
+    return this.to('GetGroup');
+  }
+
+  /**
+   * Grants permission to list information about the associated groups of a canary
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListAssociatedGroups.html
+   */
+  public toListAssociatedGroups() {
+    return this.to('ListAssociatedGroups');
+  }
+
+  /**
+   * Grants permission to list information about canaries in a group
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListGroupResources.html
+   */
+  public toListGroupResources() {
+    return this.to('ListGroupResources');
+  }
+
+  /**
+   * Grants permission to list information of all groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListGroups.html
+   */
+  public toListGroups() {
+    return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list all tags and values associated with a resource
    *
    * Access Level: Read
    *
@@ -121,6 +249,10 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanary.html
    */
   public toStartCanary() {
@@ -132,6 +264,10 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StopCanary.html
    */
   public toStopCanary() {
@@ -139,7 +275,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more tags to a canary
+   * Grants permission to add one or more tags to a resource
    *
    * Access Level: Tagging
    *
@@ -154,11 +290,12 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove one or more tags from a canary
+   * Grants permission to remove one or more tags from a resource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html
@@ -172,6 +309,10 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html
    */
   public toUpdateCanary() {
@@ -180,8 +321,12 @@ export class Synthetics extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateResource',
       'CreateCanary',
+      'CreateGroup',
       'DeleteCanary',
+      'DeleteGroup',
+      'DisassociateResource',
       'StartCanary',
       'StopCanary',
       'UpdateCanary'
@@ -192,7 +337,13 @@ export class Synthetics extends PolicyStatement {
       'DescribeRuntimeVersions',
       'GetCanary',
       'GetCanaryRuns',
+      'GetGroup',
       'ListTagsForResource'
+    ],
+    List: [
+      'ListAssociatedGroups',
+      'ListGroupResources',
+      'ListGroups'
     ],
     Tagging: [
       'TagResource',
@@ -215,6 +366,23 @@ export class Synthetics extends PolicyStatement {
    */
   public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Synthetics.defaultPartition }:synthetics:${ region || '*' }:${ account || '*' }:canary:${ canaryName }`);
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Groups.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Synthetics.defaultPartition }:synthetics:${ region || '*' }:${ account || '*' }:group:${ groupId }`);
   }
 
   /**

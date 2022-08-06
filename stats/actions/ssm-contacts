@@ -6,7 +6,6 @@ ssm-contacts:CreateContactChannel;Write
 ssm-contacts:DeactivateContactChannel;Write
 ssm-contacts:DeleteContact;Write
 ssm-contacts:DeleteContactChannel;Write
-ssm-contacts:DeleteContactPolicy;Write
 ssm-contacts:DescribeEngagement;Read
 ssm-contacts:DescribePage;Read
 ssm-contacts:GetContact;Read
@@ -27,4 +26,3 @@ ssm-contacts:TagResource;Tagging
 ssm-contacts:UntagResource;Tagging
 ssm-contacts:UpdateContact;Write
 ssm-contacts:UpdateContactChannel;Write
-ssm-contacts:UpdateContactPolicy;Write
