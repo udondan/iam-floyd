@@ -142,7 +142,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ARG/latest/APIReference/LM_REDIRECT
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
    */
   public toPutGroupPolicy() {
     return this.to('PutGroupPolicy');
@@ -257,7 +257,7 @@ export class ResourceGroups extends PolicyStatement {
   /**
    * Adds a resource of type group to the statement
    *
-   * https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html
+   * https://docs.aws.amazon.com/ARG/latest/userguide/resource-groups.html
    *
    * @param groupName - Identifier for the groupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -67,6 +67,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2347,6 +2348,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2617,6 +2619,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
@@ -3234,18 +3237,6 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access by a specific Region
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifLocationConstraint(value: string | string[], operator?: Operator | string) {
-    return this.if(`LocationConstraint`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by operation to creating jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
@@ -3590,18 +3581,6 @@ export class S3 extends PolicyStatement {
    */
   public ifTlsVersion(value: number | number[], operator?: Operator | string) {
     return this.if(`TlsVersion`, value, operator || 'NumericEquals');
-  }
-
-  /**
-   * Filters access by a specific object version
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVersionId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VersionId`, value, operator || 'StringLike');
   }
 
   /**
@@ -4519,6 +4498,23 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by customer specified algorithm for server-side encryption
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html
+   *
+   * Applies to actions:
+   * - .toBypassGovernanceRetention()
+   * - .toPutObject()
+   * - .toReplicateObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzServerSideEncryptionCustomerAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-server-side-encryption-customer-algorithm`, value, operator || 'StringLike');
   }
 
   /**

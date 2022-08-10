@@ -5,7 +5,6 @@ s3:ExistingJobOperation
 s3:ExistingJobPriority
 s3:ExistingObjectTag/<key>
 s3:JobSuspendedCause
-s3:LocationConstraint
 s3:RequestJobOperation
 s3:RequestJobPriority
 s3:RequestObjectTag/<key>
@@ -15,7 +14,6 @@ s3:ResourceAccount
 s3:ResourceTag/${TagKey}
 s3:TagKeys
 s3:TlsVersion
-s3:VersionId
 s3:authType
 s3:delimiter
 s3:locationconstraint
@@ -40,5 +38,6 @@ s3:x-amz-metadata-directive
 s3:x-amz-object-ownership
 s3:x-amz-server-side-encryption
 s3:x-amz-server-side-encryption-aws-kms-key-id
+s3:x-amz-server-side-encryption-customer-algorithm
 s3:x-amz-storage-class
 s3:x-amz-website-redirect-location
