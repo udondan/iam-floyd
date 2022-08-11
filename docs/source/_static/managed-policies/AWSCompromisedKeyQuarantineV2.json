@@ -4,6 +4,7 @@
 		{
 			"Effect": "Deny",
 			"Action": [
+				"cloudtrail:LookupEvents",
 				"ec2:RequestSpotInstances",
 				"ec2:RunInstances",
 				"ec2:StartInstances",
