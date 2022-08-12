@@ -80,10 +80,7 @@
 				"ssm:DescribeAssociation",
 				"ssm:DescribeInstanceInformation",
 				"ssm:ListAssociations",
-				"ssm:ListResourceDataSync",
-				"ssm:StartAssociationsOnce",
-				"ssm:DeleteAssociation",
-				"ssm:UpdateAssociation"
+				"ssm:ListResourceDataSync"
 			],
 			"Resource": "*"
 		},
@@ -91,12 +88,16 @@
 			"Sid": "GatherInventory",
 			"Effect": "Allow",
 			"Action": [
-				"ssm:CreateAssociation"
+				"ssm:CreateAssociation",
+				"ssm:StartAssociationsOnce",
+				"ssm:DeleteAssociation",
+				"ssm:UpdateAssociation"
 			],
 			"Resource": [
 				"arn:*:ec2:*:*:instance/*",
 				"arn:aws:ssm:*:*:document/AWS-GatherSoftwareInventory",
-				"arn:*:ssm:*:*:managed-instance/*"
+				"arn:*:ssm:*:*:managed-instance/*",
+				"arn:*:ssm:*:*:association/*"
 			]
 		},
 		{

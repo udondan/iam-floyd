@@ -152,6 +152,21 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"drs:DisconnectSourceServer"
+			],
+			"Resource": "arn:aws:drs:*:*:source-server/*",
+			"Condition": {
+				"Bool": {
+					"aws:ViaAWSService": "true"
+				},
+				"Null": {
+					"aws:ResourceTag/AWSApplicationMigrationServiceConfiguredDR": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ssm:GetParameter",
 				"ssm:PutParameter"
 			],
