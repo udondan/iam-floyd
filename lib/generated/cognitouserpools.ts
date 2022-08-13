@@ -19,7 +19,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Adds additional user attributes to the user pool schema
+   * Grants permission to add user attributes to the user pool schema
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Adds the specified user to the specified group
+   * Grants permission to add any user to any group
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Confirms user registration as an admin without using a confirmation code. Works on any user
+   * Grants permission to confirm any user's registration without a confirmation code
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS)
+   * Grants permission to create new users and send welcome messages via email or SMS
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes a user as an administrator. Works on any user
+   * Grants permission to delete any user
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes the user attributes in a user pool as an administrator. Works on any user
+   * Grants permission to delete attributes from any user
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Disables the user from signing in with the specified external (SAML or social) identity provider
+   * Grants permission to unlink any user pool user from a third-party identity provider (IdP) user
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Disables the specified user as an administrator. Works on any user
+   * Grants permission to deactivate any user
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Enables the specified user as an administrator. Works on any user
+   * Grants permission to activate any user
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Forgets the device, as an administrator
+   * Grants permission to deregister any user's devices
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the device, as an administrator
+   * Grants permission to get information about any user's devices
    *
    * Access Level: Read
    *
@@ -140,7 +140,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the specified user by user name in a user pool as an administrator. Works on any user
+   * Grants permission to look up any user by user name
    *
    * Access Level: Read
    *
@@ -151,7 +151,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Authenticates a user in a user pool as an administrator. Works on any user
+   * Grants permission to authenticate any user
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Links an existing user account in a user pool (DestinationUser) to an identity from an external identity provider (SourceUser) based on a specified attribute name and value from the external identity provider
+   * Grants permission to link any user pool user to a third-party IdP user
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists devices, as an administrator
+   * Grants permission to list any user's remembered devices
    *
    * Access Level: List
    *
@@ -184,7 +184,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the groups that the user belongs to
+   * Grants permission to list the groups that any user belongs to
    *
    * Access Level: List
    *
@@ -195,7 +195,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the authentication events for the user
+   * Grants permission to lists sign-in events for any user
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Removes the specified user from the specified group
+   * Grants permission to remove any user from any group
    *
    * Access Level: Write
    *
@@ -217,7 +217,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Resets the specified user's password in a user pool as an administrator. Works on any user
+   * Grants permission to reset any user's password
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Responds to an authentication challenge, as an administrator
+   * Grants permission to respond to an authentication challenge during the authentication of any user
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets MFA preference for the user in the userpool
+   * Grants permission to set any user's preferred MFA method
    *
    * Access Level: Write
    *
@@ -250,7 +250,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets the specified user's password in a user pool as an administrator. Works on any user
+   * Grants permission to set any user's password
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets all the user settings for a specified user name. Works on any user
+   * Grants permission to set user settings for any user
    *
    * Access Level: Write
    *
@@ -272,7 +272,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the feedback for the user authentication event
+   * Grants permission to update advanced security feedback for any user's authentication event
    *
    * Access Level: Write
    *
@@ -283,7 +283,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the device status as an administrator
+   * Grants permission to update the status of any user's remembered devices
    *
    * Access Level: Write
    *
@@ -294,7 +294,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the specified user's attributes, including developer attributes, as an administrator
+   * Grants permission to updates any user's standard or custom attributes
    *
    * Access Level: Write
    *
@@ -305,7 +305,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Signs out users from all devices, as an administrator
+   * Grants permission to sign out any user from all sessions
    *
    * Access Level: Write
    *
@@ -324,6 +324,15 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toAssociateSoftwareToken() {
     return this.to('AssociateSoftwareToken');
+  }
+
+  /**
+   * Grants permission to associate the user pool with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toAssociateWebACL() {
+    return this.to('AssociateWebACL');
   }
 
   /**
@@ -371,7 +380,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates a new group in the specified user pool
+   * Grants permission to create new user pool groups
    *
    * Access Level: Write
    *
@@ -382,7 +391,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates an identity provider for a user pool
+   * Grants permission to add identity providers to user pools
    *
    * Access Level: Write
    *
@@ -393,7 +402,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates a new OAuth2.0 resource server and defines custom scopes in it
+   * Grants permission to create and configure scopes for OAuth 2.0 resource servers
    *
    * Access Level: Write
    *
@@ -404,7 +413,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates the user import job
+   * Grants permission to create user CSV import jobs
    *
    * Access Level: Write
    *
@@ -415,7 +424,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon Cognito user pool and sets the password policy for the pool
+   * Grants permission to create and set password policy for user pools
    *
    * Access Level: Write
    *
@@ -431,7 +440,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates the user pool client
+   * Grants permission to create user pool app clients
    *
    * Access Level: Write
    *
@@ -442,7 +451,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Creates a new domain for a user pool
+   * Grants permission to add user pool domains
    *
    * Access Level: Write
    *
@@ -453,7 +462,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes a group. Currently only groups with no members can be deleted
+   * Grants permission to delete any empty user pool group
    *
    * Access Level: Write
    *
@@ -464,7 +473,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes an identity provider for a user pool
+   * Grants permission to delete any identity provider from user pools
    *
    * Access Level: Write
    *
@@ -475,7 +484,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes a resource server
+   * Grants permission to delete any OAuth 2.0 resource server from user pools
    *
    * Access Level: Write
    *
@@ -508,7 +517,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified Amazon Cognito user pool
+   * Grants permission to delete user pools
    *
    * Access Level: Write
    *
@@ -519,7 +528,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Allows the developer to delete the user pool client
+   * Grants permission to delete any user pool app client
    *
    * Access Level: Write
    *
@@ -530,7 +539,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes a domain for a user pool
+   * Grants permission to delete any user pool domain
    *
    * Access Level: Write
    *
@@ -541,7 +550,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets information about a specific identity provider
+   * Grants permission to describe any user pool identity provider
    *
    * Access Level: Read
    *
@@ -552,7 +561,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Describes a resource server
+   * Grants permission to describe any OAuth 2.0 resource server
    *
    * Access Level: Read
    *
@@ -563,7 +572,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Describes the risk configuration setting for the userpool / userpool client
+   * Grants permission to describe the risk configuration settings of user pools and app clients
    *
    * Access Level: Read
    *
@@ -574,7 +583,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Describes the user import job
+   * Grants permission to describe any user import job
    *
    * Access Level: Read
    *
@@ -585,7 +594,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Returns the configuration information and metadata of the specified user pool
+   * Grants permission to describe user pools
    *
    * Access Level: Read
    *
@@ -596,7 +605,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Client method for returning the configuration information and metadata of the specified user pool client
+   * Grants permission to describe any user pool app client
    *
    * Access Level: Read
    *
@@ -607,7 +616,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets information about a domain
+   * Grants permission to describe any user pool domain
    *
    * Access Level: Read
    *
@@ -615,6 +624,15 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toDescribeUserPoolDomain() {
     return this.to('DescribeUserPoolDomain');
+  }
+
+  /**
+   * Grants permission to disassociate the user pool with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toDisassociateWebACL() {
+    return this.to('DisassociateWebACL');
   }
 
   /**
@@ -640,7 +658,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the header information for the .csv file to be used as input for the user import job
+   * Grants permission to generate headers for a user import .csv file
    *
    * Access Level: Read
    *
@@ -662,7 +680,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets a group
+   * Grants permission to describe a user pool group
    *
    * Access Level: Read
    *
@@ -673,7 +691,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the specified identity provider
+   * Grants permission to correlate a user pool IdP identifier to the IdP Name
    *
    * Access Level: Read
    *
@@ -684,7 +702,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Returns the signing certificate
+   * Grants permission to look up signing certificates for user pools
    *
    * Access Level: Read
    *
@@ -695,7 +713,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the UI Customization information for a particular app client's app UI, if there is something set
+   * Grants permission to get UI customization information for the hosted UI of any app client
    *
    * Access Level: Read
    *
@@ -728,7 +746,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the MFA configuration for the userpool
+   * Grants permission to look up the MFA configuration of user pools
    *
    * Access Level: Read
    *
@@ -736,6 +754,15 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toGetUserPoolMfaConfig() {
     return this.to('GetUserPoolMfaConfig');
+  }
+
+  /**
+   * Grants permission to get the AWS WAF web ACL that is associated with an Amazon Cognito user pool
+   *
+   * Access Level: Read
+   */
+  public toGetWebACLForResource() {
+    return this.to('GetWebACLForResource');
   }
 
   /**
@@ -772,7 +799,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the groups associated with a user pool
+   * Grants permission to list all groups in user pools
    *
    * Access Level: List
    *
@@ -783,7 +810,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists information about all identity providers for a user pool
+   * Grants permission to list all identity providers in user pools
    *
    * Access Level: List
    *
@@ -794,7 +821,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the resource servers for a user pool
+   * Grants permission to list all resource servers in user pools
    *
    * Access Level: List
    *
@@ -805,7 +832,16 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the tags that are assigned to an Amazon Cognito user pool
+   * Grants permission to list the user pools that are associated with an AWS WAF web ACL
+   *
+   * Access Level: List
+   */
+  public toListResourcesForWebACL() {
+    return this.to('ListResourcesForWebACL');
+  }
+
+  /**
+   * Grants permission to list the tags that are assigned to an Amazon Cognito user pool
    *
    * Access Level: List
    *
@@ -816,7 +852,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the user import jobs
+   * Grants permission to list all user import jobs
    *
    * Access Level: List
    *
@@ -827,7 +863,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the clients that have been created for the specified user pool
+   * Grants permission to list all app clients in user pools
    *
    * Access Level: List
    *
@@ -838,7 +874,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the user pools associated with an AWS account
+   * Grants permission to list all user pools
    *
    * Access Level: List
    *
@@ -849,7 +885,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the users in the Amazon Cognito user pool
+   * Grants permission to list all user pool users
    *
    * Access Level: List
    *
@@ -860,7 +896,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the users in the specified group
+   * Grants permission to list the users in any group
    *
    * Access Level: List
    *
@@ -904,7 +940,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * sets the risk configuration setting for the userpool / userpool client
+   * Grants permission to set risk configuration for user pools and app clients
    *
    * Access Level: Write
    *
@@ -915,7 +951,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets the UI customization information for a user pool's built-in app UI
+   * Grants permission to customize the hosted UI for any app client
    *
    * Access Level: Write
    *
@@ -937,7 +973,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets the MFA configuration for the userpool
+   * Grants permission to set user pool MFA configuration
    *
    * Access Level: Write
    *
@@ -970,7 +1006,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Starts the user import
+   * Grants permission to start any user import job
    *
    * Access Level: Write
    *
@@ -981,7 +1017,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Stops the user import job
+   * Grants permission to stop any user import job
    *
    * Access Level: Write
    *
@@ -992,7 +1028,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Assigns a set of tags to an Amazon Cognito user pool
+   * Grants permission to tag a user pool
    *
    * Access Level: Tagging
    *
@@ -1007,7 +1043,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Removes the specified tags from an Amazon Cognito user pool
+   * Grants permission to untag a user pool
    *
    * Access Level: Tagging
    *
@@ -1043,7 +1079,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the specified group with the specified attributes
+   * Grants permission to update the configuration of any group
    *
    * Access Level: Write
    *
@@ -1054,7 +1090,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates identity provider information for a user pool
+   * Grants permission to update the configuration of any user pool IdP
    *
    * Access Level: Write
    *
@@ -1065,7 +1101,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the name and scopes of resource server
+   * Grants permission to update the configuration of any OAuth 2.0 resource server
    *
    * Access Level: Write
    *
@@ -1087,7 +1123,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the specified user pool with the specified attributes
+   * Grants permission to updates the configuration of user pools
    *
    * Access Level: Write
    *
@@ -1102,7 +1138,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Allows the developer to update the specified user pool client and password policy
+   * Grants permission to update any user pool client
    *
    * Access Level: Write
    *
@@ -1113,7 +1149,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool
+   * Grants permission to replace the certificate for any custom domain
    *
    * Access Level: Write
    *
@@ -1170,6 +1206,7 @@ export class CognitoIdp extends PolicyStatement {
       'AdminUpdateUserAttributes',
       'AdminUserGlobalSignOut',
       'AssociateSoftwareToken',
+      'AssociateWebACL',
       'ChangePassword',
       'ConfirmDevice',
       'ConfirmForgotPassword',
@@ -1189,6 +1226,7 @@ export class CognitoIdp extends PolicyStatement {
       'DeleteUserPool',
       'DeleteUserPoolClient',
       'DeleteUserPoolDomain',
+      'DisassociateWebACL',
       'ForgetDevice',
       'ForgotPassword',
       'GlobalSignOut',
@@ -1235,7 +1273,8 @@ export class CognitoIdp extends PolicyStatement {
       'GetUICustomization',
       'GetUser',
       'GetUserAttributeVerificationCode',
-      'GetUserPoolMfaConfig'
+      'GetUserPoolMfaConfig',
+      'GetWebACLForResource'
     ],
     List: [
       'AdminListDevices',
@@ -1244,6 +1283,7 @@ export class CognitoIdp extends PolicyStatement {
       'ListGroups',
       'ListIdentityProviders',
       'ListResourceServers',
+      'ListResourcesForWebACL',
       'ListTagsForResource',
       'ListUserImportJobs',
       'ListUserPoolClients',
@@ -1260,7 +1300,7 @@ export class CognitoIdp extends PolicyStatement {
   /**
    * Adds a resource of type userpool to the statement
    *
-   * https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names
+   * https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html
    *
    * @param userPoolId - Identifier for the userPoolId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1272,5 +1312,21 @@ export class CognitoIdp extends PolicyStatement {
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+  }
+
+  /**
+   * Adds a resource of type webacl to the statement
+   *
+   * https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 }

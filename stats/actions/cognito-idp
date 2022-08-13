@@ -26,6 +26,7 @@ cognito-idp:AdminUpdateDeviceStatus;Write
 cognito-idp:AdminUpdateUserAttributes;Write
 cognito-idp:AdminUserGlobalSignOut;Write
 cognito-idp:AssociateSoftwareToken;Write
+cognito-idp:AssociateWebACL;Write
 cognito-idp:ChangePassword;Write
 cognito-idp:ConfirmDevice;Write
 cognito-idp:ConfirmForgotPassword;Write
@@ -52,6 +53,7 @@ cognito-idp:DescribeUserImportJob;Read
 cognito-idp:DescribeUserPool;Read
 cognito-idp:DescribeUserPoolClient;Read
 cognito-idp:DescribeUserPoolDomain;Read
+cognito-idp:DisassociateWebACL;Write
 cognito-idp:ForgetDevice;Write
 cognito-idp:ForgotPassword;Write
 cognito-idp:GetCSVHeader;Read
@@ -63,12 +65,14 @@ cognito-idp:GetUICustomization;Read
 cognito-idp:GetUser;Read
 cognito-idp:GetUserAttributeVerificationCode;Read
 cognito-idp:GetUserPoolMfaConfig;Read
+cognito-idp:GetWebACLForResource;Read
 cognito-idp:GlobalSignOut;Write
 cognito-idp:InitiateAuth;Write
 cognito-idp:ListDevices;List
 cognito-idp:ListGroups;List
 cognito-idp:ListIdentityProviders;List
 cognito-idp:ListResourceServers;List
+cognito-idp:ListResourcesForWebACL;List
 cognito-idp:ListTagsForResource;List
 cognito-idp:ListUserImportJobs;List
 cognito-idp:ListUserPoolClients;List

@@ -1,9 +1,11 @@
+trustedadvisor:DeleteNotificationConfigurationForDelegatedAdmin;Write
 trustedadvisor:DescribeAccount;Read
 trustedadvisor:DescribeAccountAccess;Read
 trustedadvisor:DescribeCheckItems;Read
 trustedadvisor:DescribeCheckRefreshStatuses;Read
 trustedadvisor:DescribeCheckSummaries;Read
 trustedadvisor:DescribeChecks;Read
+trustedadvisor:DescribeNotificationConfigurations;Read
 trustedadvisor:DescribeNotificationPreferences;Read
 trustedadvisor:DescribeOrganization;Read
 trustedadvisor:DescribeOrganizationAccounts;Read
@@ -22,5 +24,6 @@ trustedadvisor:ListRoots;Read
 trustedadvisor:RefreshCheck;Write
 trustedadvisor:SetAccountAccess;Write
 trustedadvisor:SetOrganizationAccess;Write
+trustedadvisor:UpdateNotificationConfigurations;Write
 trustedadvisor:UpdateNotificationPreferences;Write
 trustedadvisor:UpdateRiskStatus;Write

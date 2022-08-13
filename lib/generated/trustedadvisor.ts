@@ -19,6 +19,17 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to the organization management account to delete email notification preferences from a delegated administrator account for Trusted Advisor Priority
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDeleteNotificationConfigurationForDelegatedAdmin() {
+    return this.to('DeleteNotificationConfigurationForDelegatedAdmin');
+  }
+
+  /**
    * Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences
    *
    * Access Level: Read
@@ -82,6 +93,17 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toDescribeChecks() {
     return this.to('DescribeChecks');
+  }
+
+  /**
+   * Grants permission to get your email notification preferences for Trusted Advisor Priority
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeNotificationConfigurations() {
+    return this.to('DescribeNotificationConfigurations');
   }
 
   /**
@@ -283,6 +305,17 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update your email notification preferences for Trusted Advisor Priority
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toUpdateNotificationConfigurations() {
+    return this.to('UpdateNotificationConfigurations');
+  }
+
+  /**
    * Grants permission to update notification preferences for AWS Trusted Advisor
    *
    * Access Level: Write
@@ -305,6 +338,18 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'DeleteNotificationConfigurationForDelegatedAdmin',
+      'ExcludeCheckItems',
+      'GenerateReport',
+      'IncludeCheckItems',
+      'RefreshCheck',
+      'SetAccountAccess',
+      'SetOrganizationAccess',
+      'UpdateNotificationConfigurations',
+      'UpdateNotificationPreferences',
+      'UpdateRiskStatus'
+    ],
     Read: [
       'DescribeAccount',
       'DescribeAccountAccess',
@@ -312,6 +357,7 @@ export class Trustedadvisor extends PolicyStatement {
       'DescribeCheckRefreshStatuses',
       'DescribeCheckSummaries',
       'DescribeChecks',
+      'DescribeNotificationConfigurations',
       'DescribeNotificationPreferences',
       'DescribeOrganization',
       'DescribeOrganizationAccounts',
@@ -324,16 +370,6 @@ export class Trustedadvisor extends PolicyStatement {
       'ListAccountsForParent',
       'ListOrganizationalUnitsForParent',
       'ListRoots'
-    ],
-    Write: [
-      'ExcludeCheckItems',
-      'GenerateReport',
-      'IncludeCheckItems',
-      'RefreshCheck',
-      'SetAccountAccess',
-      'SetOrganizationAccess',
-      'UpdateNotificationPreferences',
-      'UpdateRiskStatus'
     ]
   };
 

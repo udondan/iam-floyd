@@ -1,0 +1,5 @@
+private-networks:device-identifier
+private-networks:network
+private-networks:network-resource
+private-networks:network-site
+private-networks:order
