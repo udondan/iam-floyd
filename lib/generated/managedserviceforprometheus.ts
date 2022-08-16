@@ -47,6 +47,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateLoggingConfiguration
+   */
+  public toCreateLoggingConfiguration() {
+    return this.to('CreateLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to create a rule groups namespace
    *
    * Access Level: Write
@@ -105,6 +119,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteLoggingConfiguration
+   */
+  public toDeleteLoggingConfiguration() {
+    return this.to('DeleteLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to delete a rule groups namespace
    *
    * Access Level: Write
@@ -144,6 +172,20 @@ export class Aps extends PolicyStatement {
    */
   public toDescribeAlertManagerDefinition() {
     return this.to('DescribeAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to describe a logging configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeLoggingConfiguration
+   */
+  public toDescribeLoggingConfiguration() {
+    return this.to('DescribeLoggingConfiguration');
   }
 
   /**
@@ -469,6 +511,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateLoggingConfiguration
+   */
+  public toUpdateLoggingConfiguration() {
+    return this.to('UpdateLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to modify the alias of existing AMP workspace
    *
    * Access Level: Write
@@ -486,20 +542,24 @@ export class Aps extends PolicyStatement {
     Write: [
       'CreateAlertManagerAlerts',
       'CreateAlertManagerDefinition',
+      'CreateLoggingConfiguration',
       'CreateRuleGroupsNamespace',
       'CreateWorkspace',
       'DeleteAlertManagerDefinition',
       'DeleteAlertManagerSilence',
+      'DeleteLoggingConfiguration',
       'DeleteRuleGroupsNamespace',
       'DeleteWorkspace',
       'PutAlertManagerDefinition',
       'PutAlertManagerSilences',
       'PutRuleGroupsNamespace',
       'RemoteWrite',
+      'UpdateLoggingConfiguration',
       'UpdateWorkspaceAlias'
     ],
     Read: [
       'DescribeAlertManagerDefinition',
+      'DescribeLoggingConfiguration',
       'DescribeRuleGroupsNamespace',
       'DescribeWorkspace',
       'GetAlertManagerSilence',

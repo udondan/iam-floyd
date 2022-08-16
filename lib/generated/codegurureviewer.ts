@@ -251,7 +251,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_UnTagResource.html
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_UntagResource.html
    */
   public toUnTagResource() {
     return this.to('UnTagResource');
@@ -288,6 +288,8 @@ export class CodeguruReviewer extends PolicyStatement {
   /**
    * Adds a resource of type association to the statement
    *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-repositories.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -299,6 +301,8 @@ export class CodeguruReviewer extends PolicyStatement {
 
   /**
    * Adds a resource of type codereview to the statement
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-reviews.html
    *
    * @param codeReviewUuid - Identifier for the codeReviewUuid.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -312,7 +316,7 @@ export class CodeguruReviewer extends PolicyStatement {
   /**
    * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/repositories.html
    *
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

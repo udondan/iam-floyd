@@ -1,12 +1,15 @@
 aps:CreateAlertManagerAlerts;Write
 aps:CreateAlertManagerDefinition;Write
+aps:CreateLoggingConfiguration;Write
 aps:CreateRuleGroupsNamespace;Write
 aps:CreateWorkspace;Write
 aps:DeleteAlertManagerDefinition;Write
 aps:DeleteAlertManagerSilence;Write
+aps:DeleteLoggingConfiguration;Write
 aps:DeleteRuleGroupsNamespace;Write
 aps:DeleteWorkspace;Write
 aps:DescribeAlertManagerDefinition;Read
+aps:DescribeLoggingConfiguration;Read
 aps:DescribeRuleGroupsNamespace;Read
 aps:DescribeWorkspace;Read
 aps:GetAlertManagerSilence;Read
@@ -30,4 +33,5 @@ aps:QueryMetrics;Read
 aps:RemoteWrite;Write
 aps:TagResource;Tagging
 aps:UntagResource;Tagging
+aps:UpdateLoggingConfiguration;Write
 aps:UpdateWorkspaceAlias;Write
