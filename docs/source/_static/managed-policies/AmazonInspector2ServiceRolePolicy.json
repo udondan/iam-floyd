@@ -95,7 +95,7 @@
 			],
 			"Resource": [
 				"arn:*:ec2:*:*:instance/*",
-				"arn:aws:ssm:*:*:document/AWS-GatherSoftwareInventory",
+				"arn:*:ssm:*:*:document/AWS-GatherSoftwareInventory",
 				"arn:*:ssm:*:*:managed-instance/*",
 				"arn:*:ssm:*:*:association/*"
 			]
