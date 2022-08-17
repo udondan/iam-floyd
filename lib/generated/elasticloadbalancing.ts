@@ -19,7 +19,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
+   * Grants permission to add the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
    *
    * Access Level: Tagging
    *
@@ -34,7 +34,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Associates one or more security groups with your load balancer in a virtual private cloud (VPC)
+   * Grants permission to associate one or more security groups with your load balancer in a virtual private cloud (VPC)
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds one or more subnets to the set of configured subnets for the specified load balancer
+   * Grants permission to add one or more subnets to the set of configured subnets for the specified load balancer
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Specifies the health check settings to use when evaluating the health state of your back-end instances
+   * Grants permission to specify the health check settings to use when evaluating the health state of your back-end instances
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie
+   * Grants permission to generate a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period
+   * Grants permission to generate a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer
+   * Grants permission to create a load balancer
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates one or more listeners for the specified load balancer
+   * Grants permission to create one or more listeners for the specified load balancer
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates a policy with the specified attributes for the specified load balancer
+   * Grants permission to create a policy with the specified attributes for the specified load balancer
    *
    * Access Level: Write
    *
@@ -126,7 +126,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified load balancer
+   * Grants permission to delete the specified load balancer
    *
    * Access Level: Write
    *
@@ -137,7 +137,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified listeners from the specified load balancer
+   * Grants permission to delete the specified listeners from the specified load balancer
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners
+   * Grants permission to delete the specified policy from the specified load balancer. This policy must not be enabled for any listeners
    *
    * Access Level: Write
    *
@@ -159,7 +159,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deregisters the specified instances from the specified load balancer
+   * Grants permission to deregister the specified instances from the specified load balancer
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the state of the specified instances with respect to the specified load balancer
+   * Grants permission to describe the state of the specified instances with respect to the specified load balancer
    *
    * Access Level: Read
    *
@@ -181,7 +181,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified load balancer
+   * Grants permission to describe the attributes for the specified load balancer
    *
    * Access Level: Read
    *
@@ -192,7 +192,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified policies
+   * Grants permission to describe the specified policies
    *
    * Access Level: Read
    *
@@ -203,7 +203,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified load balancer policy types
+   * Grants permission to describe the specified load balancer policy types
    *
    * Access Level: Read
    *
@@ -214,7 +214,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
+   * Grants permission to describe the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
    *
    * Access Level: List
    *
@@ -225,7 +225,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified load balancers
+   * Grants permission to describe the tags associated with the specified load balancers
    *
    * Access Level: Read
    *
@@ -236,7 +236,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes the specified subnets from the set of configured subnets for the load balancer
+   * Grants permission to remove the specified subnets from the set of configured subnets for the load balancer
    *
    * Access Level: Write
    *
@@ -247,7 +247,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer
+   * Grants permission to remove the specified Availability Zones from the set of Availability Zones for the specified load balancer
    *
    * Access Level: Write
    *
@@ -258,7 +258,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer
+   * Grants permission to add the specified Availability Zones to the set of Availability Zones for the specified load balancer
    *
    * Access Level: Write
    *
@@ -269,7 +269,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Modifies the attributes of the specified load balancer
+   * Grants permission to modify the attributes of the specified load balancer
    *
    * Access Level: Write
    *
@@ -280,7 +280,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified instances to the specified load balancer
+   * Grants permission to add the specified instances to the specified load balancer
    *
    * Access Level: Write
    *
@@ -291,7 +291,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified load balancer
+   * Grants permission to remove one or more tags from the specified load balancer
    *
    * Access Level: Tagging
    *
@@ -306,7 +306,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Sets the certificate that terminates the specified listener's SSL connections
+   * Grants permission to set the certificate that terminates the specified listener's SSL connections
    *
    * Access Level: Write
    *
@@ -317,7 +317,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies
+   * Grants permission to replace the set of policies associated with the specified port on which the back-end server is listening with a new set of policies
    *
    * Access Level: Write
    *
@@ -328,7 +328,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Replaces the current set of policies for the specified load balancer port with the specified set of policies
+   * Grants permission to replace the current set of policies for the specified load balancer port with the specified set of policies
    *
    * Access Level: Write
    *

@@ -19,7 +19,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Adds the specified certificates to the specified secure listener
+   * Grants permission to add the specified certificates to the specified secure listener
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
+   * Grants permission to add the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
    *
    * Access Level: Tagging
    *
@@ -45,7 +45,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a listener for the specified Application Load Balancer
+   * Grants permission to create a listener for the specified Application Load Balancer
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer
+   * Grants permission to create a load balancer
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a rule for the specified listener
+   * Grants permission to create a rule for the specified listener
    *
    * Access Level: Write
    *
@@ -90,7 +90,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a target group
+   * Grants permission to create a target group
    *
    * Access Level: Write
    *
@@ -105,7 +105,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified listener
+   * Grants permission to delete the specified listener
    *
    * Access Level: Write
    *
@@ -116,7 +116,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified load balancer
+   * Grants permission to delete the specified load balancer
    *
    * Access Level: Write
    *
@@ -127,7 +127,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified rule
+   * Grants permission to delete the specified rule
    *
    * Access Level: Write
    *
@@ -138,7 +138,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified target group
+   * Grants permission to delete the specified target group
    *
    * Access Level: Write
    *
@@ -149,7 +149,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deregisters the specified targets from the specified target group
+   * Grants permission to deregister the specified targets from the specified target group
    *
    * Access Level: Write
    *
@@ -160,7 +160,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the Elastic Load Balancing resource limits for the AWS account
+   * Grants permission to describe the Elastic Load Balancing resource limits for the AWS account
    *
    * Access Level: Read
    *
@@ -171,7 +171,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the certificates for the specified secure listener
+   * Grants permission to describe the certificates for the specified secure listener
    *
    * Access Level: Read
    *
@@ -182,7 +182,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified listeners or the listeners for the specified Application Load Balancer
+   * Grants permission to describe the specified listeners or the listeners for the specified Application Load Balancer
    *
    * Access Level: Read
    *
@@ -193,7 +193,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified load balancer
+   * Grants permission to describe the attributes for the specified load balancer
    *
    * Access Level: Read
    *
@@ -204,7 +204,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
+   * Grants permission to describe the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
    *
    * Access Level: Read
    *
@@ -215,7 +215,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified rules or the rules for the specified listener
+   * Grants permission to describe the specified rules or the rules for the specified listener
    *
    * Access Level: Read
    *
@@ -226,7 +226,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified policies or all policies used for SSL negotiation
+   * Grants permission to describe the specified policies or all policies used for SSL negotiation
    *
    * Access Level: Read
    *
@@ -237,7 +237,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified resource
+   * Grants permission to describe the tags associated with the specified resource
    *
    * Access Level: Read
    *
@@ -248,7 +248,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified target group
+   * Grants permission to describe the attributes for the specified target group
    *
    * Access Level: Read
    *
@@ -259,7 +259,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified target groups or all of your target groups
+   * Grants permission to describe the specified target groups or all of your target groups
    *
    * Access Level: Read
    *
@@ -270,7 +270,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the health of the specified targets or all of your targets
+   * Grants permission to describe the health of the specified targets or all of your targets
    *
    * Access Level: Read
    *
@@ -281,7 +281,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified properties of the specified listener
+   * Grants permission to modify the specified properties of the specified listener
    *
    * Access Level: Write
    *
@@ -292,7 +292,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the attributes of the specified load balancer
+   * Grants permission to modify the attributes of the specified load balancer
    *
    * Access Level: Write
    *
@@ -303,7 +303,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified rule
+   * Grants permission to modify the specified rule
    *
    * Access Level: Write
    *
@@ -314,7 +314,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the health checks used when evaluating the health state of the targets in the specified target group
+   * Grants permission to modify the health checks used when evaluating the health state of the targets in the specified target group
    *
    * Access Level: Write
    *
@@ -325,7 +325,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified attributes of the specified target group
+   * Grants permission to modify the specified attributes of the specified target group
    *
    * Access Level: Write
    *
@@ -336,7 +336,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Registers the specified targets with the specified target group
+   * Grants permission to register the specified targets with the specified target group
    *
    * Access Level: Write
    *
@@ -347,7 +347,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Removes the specified certificates of the specified secure listener
+   * Grants permission to remove the specified certificates of the specified secure listener
    *
    * Access Level: Write
    *
@@ -358,7 +358,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified load balancer
+   * Grants permission to remove one or more tags from the specified load balancer
    *
    * Access Level: Tagging
    *
@@ -373,7 +373,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Not found
+   * Grants permission to set the type of IP addresses used by the subnets of the specified load balancer
    *
    * Access Level: Write
    *
@@ -384,7 +384,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Sets the priorities of the specified rules
+   * Grants permission to set the priorities of the specified rules
    *
    * Access Level: Write
    *
@@ -395,7 +395,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Associates the specified security groups with the specified load balancer
+   * Grants permission to associate the specified security groups with the specified load balancer
    *
    * Access Level: Write
    *
@@ -406,7 +406,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Enables the Availability Zone for the specified subnets for the specified load balancer
+   * Grants permission to enable the Availability Zone for the specified subnets for the specified load balancer
    *
    * Access Level: Write
    *
@@ -417,9 +417,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Gives WebAcl permission to WAF
+   * Grants permission to give WebAcl permission to WAF
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetWebAcl.html
    */
   public toSetWebAcl() {
     return this.to('SetWebAcl');

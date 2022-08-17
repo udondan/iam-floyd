@@ -45,6 +45,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifConsumerArn()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AssociateDataShareConsumer.html
    */
   public toAssociateDataShareConsumer() {
@@ -1069,6 +1072,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifConsumerArn()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisassociateDataShareConsumer.html
    */
   public toDisassociateDataShareConsumer() {
@@ -1869,6 +1875,23 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/concepts.html
+   *
+   * @param producerClusterNamespace - Identifier for the producerClusterNamespace.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNamespace(producerClusterNamespace: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:namespace:${ producerClusterNamespace }`);
+  }
+
+  /**
    * Adds a resource of type parametergroup to the statement
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html
@@ -2025,6 +2048,22 @@ export class Redshift extends PolicyStatement {
    */
   public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
+  }
+
+  /**
+   * Filters access by the datashare consumer arn
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toAssociateDataShareConsumer()
+   * - .toDisassociateDataShareConsumer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConsumerArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ConsumerArn`, value, operator || 'StringLike');
   }
 
   /**

@@ -6,6 +6,7 @@ redshift:dbuser
 redshift:eventsubscription
 redshift:hsmclientcertificate
 redshift:hsmconfiguration
+redshift:namespace
 redshift:parametergroup
 redshift:securitygroup
 redshift:securitygroupingress-cidr

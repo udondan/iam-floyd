@@ -1,3 +1,4 @@
+redshift:ConsumerArn
 redshift:ConsumerIdentifier
 redshift:DbName
 redshift:DbUser

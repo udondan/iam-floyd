@@ -30,8 +30,8 @@ Support for:
 
 - 319 Services
 - 12688 Actions
-- 1338 Resource Types
-- 1346 Condition keys
+- 1339 Resource Types
+- 1347 Condition keys
 
 ..
    /stats
