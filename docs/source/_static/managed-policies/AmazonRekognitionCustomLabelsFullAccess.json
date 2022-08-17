@@ -37,7 +37,11 @@
 				"rekognition:DescribeDataset",
 				"rekognition:UpdateDatasetEntries",
 				"rekognition:DistributeDatasetEntries",
-				"rekognition:DeleteDataset"
+				"rekognition:DeleteDataset",
+				"rekognition:CopyProjectVersion",
+				"rekognition:PutProjectPolicy",
+				"rekognition:ListProjectPolicies",
+				"rekognition:DeleteProjectPolicy"
 			],
 			"Resource": "*"
 		}

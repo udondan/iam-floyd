@@ -32,7 +32,8 @@
 				"rekognition:ListTagsForResource",
 				"rekognition:ListDatasetEntries",
 				"rekognition:ListDatasetLabels",
-				"rekognition:DescribeDataset"
+				"rekognition:DescribeDataset",
+				"rekognition:ListProjectPolicies"
 			],
 			"Resource": "*"
 		}
