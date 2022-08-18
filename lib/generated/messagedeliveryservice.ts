@@ -23,7 +23,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toAcknowledgeMessage() {
     return this.to('AcknowledgeMessage');
@@ -34,7 +34,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toDeleteMessage() {
     return this.to('DeleteMessage');
@@ -45,7 +45,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toFailMessage() {
     return this.to('FailMessage');
@@ -56,7 +56,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toGetEndpoint() {
     return this.to('GetEndpoint');
@@ -70,7 +70,7 @@ export class Ec2messages extends PolicyStatement {
    * Possible conditions:
    * - .ifSsmSourceInstanceARN()
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toGetMessages() {
     return this.to('GetMessages');
@@ -84,7 +84,7 @@ export class Ec2messages extends PolicyStatement {
    * Possible conditions:
    * - .ifSsmSourceInstanceARN()
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toSendReply() {
     return this.to('SendReply');

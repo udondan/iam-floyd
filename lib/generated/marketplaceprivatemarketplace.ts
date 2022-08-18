@@ -19,7 +19,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add new approved products to the Private Marketplace. Also allows to approve a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.
+   * Grants permission to approve a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new request for a product or products to be associated with the Private Marketplace. This action can be performed by any account in an in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.
+   * Grants permission to create a new request for a product or products to be associated with the Private Marketplace. This action can be performed by any account in an in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe requests and associated products in the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.
+   * Grants permission to describe requests and associated products in the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it
    *
    * Access Level: List
    *
@@ -52,7 +52,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove approved products from the Private Marketplace. Also allows to decline a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.
+   * Grants permission to decline a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a queryable list for requests and associated products in the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.
+   * Grants permission to get a queryable list for requests and associated products in the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it
    *
    * Access Level: List
    *

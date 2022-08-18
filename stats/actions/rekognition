@@ -1,4 +1,5 @@
 rekognition:CompareFaces;Read
+rekognition:CopyProjectVersion;Write
 rekognition:CreateCollection;Write
 rekognition:CreateDataset;Write
 rekognition:CreateProject;Write
@@ -8,6 +9,7 @@ rekognition:DeleteCollection;Write
 rekognition:DeleteDataset;Write
 rekognition:DeleteFaces;Write
 rekognition:DeleteProject;Write
+rekognition:DeleteProjectPolicy;Write
 rekognition:DeleteProjectVersion;Write
 rekognition:DeleteStreamProcessor;Write
 rekognition:DescribeCollection;Read
@@ -36,8 +38,10 @@ rekognition:ListCollections;Read
 rekognition:ListDatasetEntries;Read
 rekognition:ListDatasetLabels;Read
 rekognition:ListFaces;Read
+rekognition:ListProjectPolicies;Read
 rekognition:ListStreamProcessors;List
 rekognition:ListTagsForResource;Read
+rekognition:PutProjectPolicy;Write
 rekognition:RecognizeCelebrities;Read
 rekognition:SearchFaces;Read
 rekognition:SearchFacesByImage;Read

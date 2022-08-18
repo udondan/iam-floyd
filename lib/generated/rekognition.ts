@@ -23,10 +23,25 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html
    */
   public toCompareFaces() {
     return this.to('CompareFaces');
+  }
+
+  /**
+   * Grants permission to copy an existing model version to a new model version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html
+   */
+  public toCopyProjectVersion() {
+    return this.to('CopyProjectVersion');
   }
 
   /**
@@ -38,7 +53,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateCollection.html
    */
   public toCreateCollection() {
     return this.to('CreateCollection');
@@ -49,7 +64,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateDataset.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
     return this.to('CreateDataset');
@@ -60,7 +75,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
@@ -75,7 +90,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProjectVersion.html
    */
   public toCreateProjectVersion() {
     return this.to('CreateProjectVersion');
@@ -90,7 +105,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html
    */
   public toCreateStreamProcessor() {
     return this.to('CreateStreamProcessor');
@@ -101,7 +116,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html
    */
   public toDeleteCollection() {
     return this.to('DeleteCollection');
@@ -112,7 +127,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteDataset.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteDataset.html
    */
   public toDeleteDataset() {
     return this.to('DeleteDataset');
@@ -123,7 +138,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html
    */
   public toDeleteFaces() {
     return this.to('DeleteFaces');
@@ -134,10 +149,21 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
+  }
+
+  /**
+   * Grants permission to delete a resource policy attached to a project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html
+   */
+  public toDeleteProjectPolicy() {
+    return this.to('DeleteProjectPolicy');
   }
 
   /**
@@ -145,7 +171,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProjectVersion.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectVersion.html
    */
   public toDeleteProjectVersion() {
     return this.to('DeleteProjectVersion');
@@ -156,7 +182,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteStreamProcessor.html
    */
   public toDeleteStreamProcessor() {
     return this.to('DeleteStreamProcessor');
@@ -167,7 +193,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeCollection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeCollection.html
    */
   public toDescribeCollection() {
     return this.to('DescribeCollection');
@@ -178,7 +204,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeDataset.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeDataset.html
    */
   public toDescribeDataset() {
     return this.to('DescribeDataset');
@@ -189,7 +215,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjectVersions.html
    */
   public toDescribeProjectVersions() {
     return this.to('DescribeProjectVersions');
@@ -200,7 +226,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjects.html
    */
   public toDescribeProjects() {
     return this.to('DescribeProjects');
@@ -211,7 +237,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeStreamProcessor.html
    */
   public toDescribeStreamProcessor() {
     return this.to('DescribeStreamProcessor');
@@ -222,7 +248,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectCustomLabels.html
    */
   public toDetectCustomLabels() {
     return this.to('DetectCustomLabels');
@@ -233,7 +259,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectFaces.html
    */
   public toDetectFaces() {
     return this.to('DetectFaces');
@@ -244,7 +270,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectLabels.html
    */
   public toDetectLabels() {
     return this.to('DetectLabels');
@@ -255,7 +281,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectModerationLabels.html
    */
   public toDetectModerationLabels() {
     return this.to('DetectModerationLabels');
@@ -266,7 +292,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectProtectiveEquipment.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectProtectiveEquipment.html
    */
   public toDetectProtectiveEquipment() {
     return this.to('DetectProtectiveEquipment');
@@ -277,7 +303,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectText.html
    */
   public toDetectText() {
     return this.to('DetectText');
@@ -288,7 +314,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DistributeDatasetEntries.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DistributeDatasetEntries.html
    */
   public toDistributeDatasetEntries() {
     return this.to('DistributeDatasetEntries');
@@ -299,7 +325,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html
    */
   public toGetCelebrityInfo() {
     return this.to('GetCelebrityInfo');
@@ -310,7 +336,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityRecognition.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityRecognition.html
    */
   public toGetCelebrityRecognition() {
     return this.to('GetCelebrityRecognition');
@@ -321,7 +347,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetContentModeration.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html
    */
   public toGetContentModeration() {
     return this.to('GetContentModeration');
@@ -332,7 +358,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceDetection.html
    */
   public toGetFaceDetection() {
     return this.to('GetFaceDetection');
@@ -343,7 +369,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceSearch.html
    */
   public toGetFaceSearch() {
     return this.to('GetFaceSearch');
@@ -354,7 +380,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetLabelDetection.html
    */
   public toGetLabelDetection() {
     return this.to('GetLabelDetection');
@@ -365,7 +391,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetPersonTracking.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetPersonTracking.html
    */
   public toGetPersonTracking() {
     return this.to('GetPersonTracking');
@@ -376,7 +402,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetSegmentDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetSegmentDetection.html
    */
   public toGetSegmentDetection() {
     return this.to('GetSegmentDetection');
@@ -387,7 +413,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetTextDetection.html
    */
   public toGetTextDetection() {
     return this.to('GetTextDetection');
@@ -398,7 +424,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html
    */
   public toIndexFaces() {
     return this.to('IndexFaces');
@@ -409,7 +435,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html
    */
   public toListCollections() {
     return this.to('ListCollections');
@@ -420,7 +446,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetEntries.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetEntries.html
    */
   public toListDatasetEntries() {
     return this.to('ListDatasetEntries');
@@ -431,7 +457,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetLabels.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html
    */
   public toListDatasetLabels() {
     return this.to('ListDatasetLabels');
@@ -442,10 +468,21 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html
    */
   public toListFaces() {
     return this.to('ListFaces');
+  }
+
+  /**
+   * Grants permission to list the resource policies attached to a project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html
+   */
+  public toListProjectPolicies() {
+    return this.to('ListProjectPolicies');
   }
 
   /**
@@ -453,7 +490,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListStreamProcessors.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListStreamProcessors.html
    */
   public toListStreamProcessors() {
     return this.to('ListStreamProcessors');
@@ -464,10 +501,21 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to attach a resource policy to a project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html
+   */
+  public toPutProjectPolicy() {
+    return this.to('PutProjectPolicy');
   }
 
   /**
@@ -475,7 +523,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html
    */
   public toRecognizeCelebrities() {
     return this.to('RecognizeCelebrities');
@@ -486,7 +534,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFaces.html
    */
   public toSearchFaces() {
     return this.to('SearchFaces');
@@ -497,7 +545,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html
    */
   public toSearchFacesByImage() {
     return this.to('SearchFacesByImage');
@@ -508,7 +556,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartCelebrityRecognition.html
    */
   public toStartCelebrityRecognition() {
     return this.to('StartCelebrityRecognition');
@@ -519,7 +567,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html
    */
   public toStartContentModeration() {
     return this.to('StartContentModeration');
@@ -530,7 +578,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceDetection.html
    */
   public toStartFaceDetection() {
     return this.to('StartFaceDetection');
@@ -541,7 +589,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceSearch.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceSearch.html
    */
   public toStartFaceSearch() {
     return this.to('StartFaceSearch');
@@ -552,7 +600,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartLabelDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartLabelDetection.html
    */
   public toStartLabelDetection() {
     return this.to('StartLabelDetection');
@@ -563,7 +611,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartPersonTracking.html
    */
   public toStartPersonTracking() {
     return this.to('StartPersonTracking');
@@ -574,7 +622,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartProjectVersion.html
    */
   public toStartProjectVersion() {
     return this.to('StartProjectVersion');
@@ -585,7 +633,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartSegmentDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartSegmentDetection.html
    */
   public toStartSegmentDetection() {
     return this.to('StartSegmentDetection');
@@ -596,7 +644,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartStreamProcessor.html
    */
   public toStartStreamProcessor() {
     return this.to('StartStreamProcessor');
@@ -607,7 +655,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartTextDetection.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartTextDetection.html
    */
   public toStartTextDetection() {
     return this.to('StartTextDetection');
@@ -618,7 +666,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopProjectVersion.html
    */
   public toStopProjectVersion() {
     return this.to('StopProjectVersion');
@@ -629,7 +677,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html
    */
   public toStopStreamProcessor() {
     return this.to('StopStreamProcessor');
@@ -644,7 +692,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_TagResource.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -658,7 +706,7 @@ export class Rekognition extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UntagResource.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -669,7 +717,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateDatasetEntries.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateDatasetEntries.html
    */
   public toUpdateDatasetEntries() {
     return this.to('UpdateDatasetEntries');
@@ -680,7 +728,7 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateStreamProcessor.html
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html
    */
   public toUpdateStreamProcessor() {
     return this.to('UpdateStreamProcessor');
@@ -713,12 +761,14 @@ export class Rekognition extends PolicyStatement {
       'ListDatasetEntries',
       'ListDatasetLabels',
       'ListFaces',
+      'ListProjectPolicies',
       'ListTagsForResource',
       'RecognizeCelebrities',
       'SearchFaces',
       'SearchFacesByImage'
     ],
     Write: [
+      'CopyProjectVersion',
       'CreateCollection',
       'CreateDataset',
       'CreateProject',
@@ -728,10 +778,12 @@ export class Rekognition extends PolicyStatement {
       'DeleteDataset',
       'DeleteFaces',
       'DeleteProject',
+      'DeleteProjectPolicy',
       'DeleteProjectVersion',
       'DeleteStreamProcessor',
       'DistributeDatasetEntries',
       'IndexFaces',
+      'PutProjectPolicy',
       'StartCelebrityRecognition',
       'StartContentModeration',
       'StartFaceDetection',
@@ -759,7 +811,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type collection to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html
+   * https://docs.aws.amazon.com/rekognition/latest/dg/collections.html
    *
    * @param collectionId - Identifier for the collectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -776,7 +828,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type streamprocessor to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/using-rekognition-video-stream-processor.html
+   * https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html
    *
    * @param streamprocessorId - Identifier for the streamprocessorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -793,7 +845,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type project to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/cp-create-project.html
+   * https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/mp-create-project.html
    *
    * @param projectName - Identifier for the projectName.
    * @param creationTimestamp - Identifier for the creationTimestamp.
@@ -808,7 +860,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type projectversion to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
+   * https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/training-model.html
    *
    * @param projectName - Identifier for the projectName.
    * @param versionName - Identifier for the versionName.
@@ -827,7 +879,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type dataset to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/cd-create-dataset.html
+   * https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/creating-datasets.html
    *
    * @param projectName - Identifier for the projectName.
    * @param datasetType - Identifier for the datasetType.
