@@ -17,12 +17,14 @@ sqlworkbench:GetAccountInfo;Read
 sqlworkbench:GetAccountSettings;Read
 sqlworkbench:GetChart;Read
 sqlworkbench:GetConnection;Read
+sqlworkbench:GetQueryExecutionHistory;Read
 sqlworkbench:GetSavedQuery;Read
 sqlworkbench:GetUserInfo;Read
 sqlworkbench:GetUserWorkspaceSettings;Read
 sqlworkbench:ListConnections;List
 sqlworkbench:ListDatabases;List
 sqlworkbench:ListFiles;List
+sqlworkbench:ListQueryExecutionHistory;List
 sqlworkbench:ListRedshiftClusters;List
 sqlworkbench:ListSampleDatabases;Read
 sqlworkbench:ListSavedQueryVersions;List

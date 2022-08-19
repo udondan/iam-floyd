@@ -19,7 +19,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to link partner accounts with Aws account
+   * Grants permission to link partner accounts with AWS account
    *
    * Access Level: Write
    *

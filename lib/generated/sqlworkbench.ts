@@ -240,6 +240,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the query execution history on your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetQueryExecutionHistory() {
+    return this.to('GetQueryExecutionHistory');
+  }
+
+  /**
    * Grants permission to get saved query on your account
    *
    * Access Level: Read
@@ -303,6 +314,17 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toListFiles() {
     return this.to('ListFiles');
+  }
+
+  /**
+   * Grants permission to list the query execution history on your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListQueryExecutionHistory() {
+    return this.to('ListQueryExecutionHistory');
   }
 
   /**
@@ -556,6 +578,7 @@ export class Sqlworkbench extends PolicyStatement {
       'GetAccountSettings',
       'GetChart',
       'GetConnection',
+      'GetQueryExecutionHistory',
       'GetSavedQuery',
       'GetUserInfo',
       'GetUserWorkspaceSettings',
@@ -567,6 +590,7 @@ export class Sqlworkbench extends PolicyStatement {
       'ListConnections',
       'ListDatabases',
       'ListFiles',
+      'ListQueryExecutionHistory',
       'ListRedshiftClusters',
       'ListSavedQueryVersions',
       'ListTabs'
