@@ -251,8 +251,8 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeAgreement.html
    */
-  public toDescribeAgreeement() {
-    return this.to('DescribeAgreeement');
+  public toDescribeAgreement() {
+    return this.to('DescribeAgreement');
   }
 
   /**
@@ -293,7 +293,7 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribProfile.html
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeProfile.html
    */
   public toDescribeProfile() {
     return this.to('DescribeProfile');
@@ -458,7 +458,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for a server, a user, or a workflow
+   * Grants permission to list tags for an AWS Transfer Family resource
    *
    * Access Level: Read
    *
@@ -524,7 +524,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a server or a user
+   * Grants permission to tag an AWS Transfer Family resource
    *
    * Access Level: Tagging
    *
@@ -550,7 +550,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a server, a user, or a workflow
+   * Grants permission to untag an AWS Transfer Family resource
    *
    * Access Level: Tagging
    *
@@ -688,7 +688,7 @@ export class Transfer extends PolicyStatement {
     ],
     Read: [
       'DescribeAccess',
-      'DescribeAgreeement',
+      'DescribeAgreement',
       'DescribeCertificate',
       'DescribeConnector',
       'DescribeExecution',

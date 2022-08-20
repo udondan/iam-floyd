@@ -19,6 +19,7 @@ cloudwatch:GetMetricStatistics;Read
 cloudwatch:GetMetricStream;Read
 cloudwatch:GetMetricWidgetImage;Read
 cloudwatch:ListDashboards;List
+cloudwatch:ListManagedInsightRules;Read
 cloudwatch:ListMetricStreams;List
 cloudwatch:ListMetrics;List
 cloudwatch:ListTagsForResource;List
@@ -26,6 +27,7 @@ cloudwatch:PutAnomalyDetector;Write
 cloudwatch:PutCompositeAlarm;Write
 cloudwatch:PutDashboard;Write
 cloudwatch:PutInsightRule;Write
+cloudwatch:PutManagedInsightRules;Write
 cloudwatch:PutMetricAlarm;Write
 cloudwatch:PutMetricData;Write
 cloudwatch:PutMetricStream;Write

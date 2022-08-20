@@ -15,7 +15,7 @@ transfer:DeleteSshPublicKey;Write
 transfer:DeleteUser;Write
 transfer:DeleteWorkflow;Write
 transfer:DescribeAccess;Read
-transfer:DescribeAgreeement;Read
+transfer:DescribeAgreement;Read
 transfer:DescribeCertificate;Read
 transfer:DescribeConnector;Read
 transfer:DescribeExecution;Read

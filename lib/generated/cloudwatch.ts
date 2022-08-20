@@ -250,6 +250,22 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list available managed Insight Rules for a given Resource ARN
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestManagedResourceARNs()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListManagedInsightRules.html
+   */
+  public toListManagedInsightRules() {
+    return this.to('ListManagedInsightRules');
+  }
+
+  /**
    * Grants permission to return a list of all CloudWatch metric streams in your account
    *
    * Access Level: List
@@ -334,6 +350,22 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toPutInsightRule() {
     return this.to('PutInsightRule');
+  }
+
+  /**
+   * Grants permission to create managed Insight Rules
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestManagedResourceARNs()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutManagedInsightRules.html
+   */
+  public toPutManagedInsightRules() {
+    return this.to('PutManagedInsightRules');
   }
 
   /**
@@ -458,6 +490,7 @@ export class Cloudwatch extends PolicyStatement {
       'PutCompositeAlarm',
       'PutDashboard',
       'PutInsightRule',
+      'PutManagedInsightRules',
       'PutMetricAlarm',
       'PutMetricData',
       'PutMetricStream',
@@ -476,7 +509,8 @@ export class Cloudwatch extends PolicyStatement {
       'GetMetricData',
       'GetMetricStatistics',
       'GetMetricStream',
-      'GetMetricWidgetImage'
+      'GetMetricWidgetImage',
+      'ListManagedInsightRules'
     ],
     List: [
       'ListDashboards',
@@ -598,5 +632,21 @@ export class Cloudwatch extends PolicyStatement {
    */
   public ifRequestInsightRuleLogGroups(value: string | string[], operator?: Operator | string) {
     return this.if(`requestInsightRuleLogGroups`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the Resource ARNs specified in a managed Insight Rule
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-contributor.html
+   *
+   * Applies to actions:
+   * - .toListManagedInsightRules()
+   * - .toPutManagedInsightRules()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestManagedResourceARNs(value: string | string[], operator?: Operator | string) {
+    return this.if(`requestManagedResourceARNs`, value, operator || 'StringLike');
   }
 }
