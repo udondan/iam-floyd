@@ -15,6 +15,7 @@ dynamodb:DescribeContributorInsights;Read
 dynamodb:DescribeExport;Read
 dynamodb:DescribeGlobalTable;Read
 dynamodb:DescribeGlobalTableSettings;Read
+dynamodb:DescribeImport;Read
 dynamodb:DescribeKinesisStreamingDestination;Read
 dynamodb:DescribeLimits;Read
 dynamodb:DescribeReservedCapacity;Read
@@ -29,10 +30,12 @@ dynamodb:ExportTableToPointInTime;Write
 dynamodb:GetItem;Read
 dynamodb:GetRecords;Read
 dynamodb:GetShardIterator;Read
+dynamodb:ImportTable;Write
 dynamodb:ListBackups;List
 dynamodb:ListContributorInsights;List
 dynamodb:ListExports;List
 dynamodb:ListGlobalTables;List
+dynamodb:ListImports;List
 dynamodb:ListStreams;Read
 dynamodb:ListTables;List
 dynamodb:ListTagsOfResource;Read

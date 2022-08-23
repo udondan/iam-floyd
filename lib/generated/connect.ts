@@ -358,6 +358,9 @@ export class Connect extends PolicyStatement {
    * - ds:DescribeDirectories
    * - events:PutRule
    * - events:PutTargets
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
    * - mobiletargeting:GetApp
    * - voiceid:DescribeDomain
    * - wisdom:GetAssistant
@@ -1695,6 +1698,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search security profile resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeSecurityProfile
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchSecurityProfiles.html
+   */
+  public toSearchSecurityProfiles() {
+    return this.to('SearchSecurityProfiles');
+  }
+
+  /**
    * Grants permission to search user resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2525,6 +2546,7 @@ export class Connect extends PolicyStatement {
       'GetTaskTemplate',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
+      'SearchSecurityProfiles',
       'SearchUsers'
     ],
     List: [
@@ -3086,6 +3108,7 @@ export class Connect extends PolicyStatement {
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
    * - .toPutUserStatus()
+   * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
    * - .toStartTaskContact()
@@ -3138,6 +3161,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    *
    * @param tagKey The tag key to check

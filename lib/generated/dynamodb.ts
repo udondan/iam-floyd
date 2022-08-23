@@ -230,6 +230,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an existing import
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeImport.html
+   */
+  public toDescribeImport() {
+    return this.to('DescribeImport');
+  }
+
+  /**
    * Grants permission to grant permission to describe the status of Kinesis streaming and related details for a given table
    *
    * Access Level: Read
@@ -387,6 +398,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate an import from S3 to a DynamoDB table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ImportTable.html
+   */
+  public toImportTable() {
+    return this.to('ImportTable');
+  }
+
+  /**
    * Grants permission to list backups associated with the account and endpoint
    *
    * Access Level: List
@@ -428,6 +450,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public toListGlobalTables() {
     return this.to('ListGlobalTables');
+  }
+
+  /**
+   * Grants permission to list imports associated with the account and endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListImports.html
+   */
+  public toListImports() {
+    return this.to('ListImports');
   }
 
   /**
@@ -764,6 +797,7 @@ export class Dynamodb extends PolicyStatement {
       'DescribeExport',
       'DescribeGlobalTable',
       'DescribeGlobalTableSettings',
+      'DescribeImport',
       'DescribeKinesisStreamingDestination',
       'DescribeLimits',
       'DescribeReservedCapacity',
@@ -794,6 +828,7 @@ export class Dynamodb extends PolicyStatement {
       'DisableKinesisStreamingDestination',
       'EnableKinesisStreamingDestination',
       'ExportTableToPointInTime',
+      'ImportTable',
       'PartiQLDelete',
       'PartiQLInsert',
       'PartiQLUpdate',
@@ -817,6 +852,7 @@ export class Dynamodb extends PolicyStatement {
       'ListContributorInsights',
       'ListExports',
       'ListGlobalTables',
+      'ListImports',
       'ListTables'
     ],
     Tagging: [
@@ -887,7 +923,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type export to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataExport.HowItWorks.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport.HowItWorks.html
    *
    * @param tableName - Identifier for the tableName.
    * @param exportName - Identifier for the exportName.
@@ -910,6 +946,21 @@ export class Dynamodb extends PolicyStatement {
    */
   public onGlobalTable(globalTableName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb::${ account || '*' }:global-table/${ globalTableName }`);
+  }
+
+  /**
+   * Adds a resource of type import to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlS3DataImport.HowItWorks.html
+   *
+   * @param tableName - Identifier for the tableName.
+   * @param importName - Identifier for the importName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onImport(tableName: string, importName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/import/${ importName }`);
   }
 
   /**

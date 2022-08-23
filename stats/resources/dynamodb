@@ -1,6 +1,7 @@
 dynamodb:backup
 dynamodb:export
 dynamodb:global-table
+dynamodb:import
 dynamodb:index
 dynamodb:stream
 dynamodb:table

@@ -108,6 +108,7 @@ connect:PutUserStatus;Write
 connect:ReleasePhoneNumber;Write
 connect:ResumeContactRecording;Write
 connect:SearchAvailablePhoneNumbers;List
+connect:SearchSecurityProfiles;Read
 connect:SearchUsers;Read
 connect:SearchVocabularies;List
 connect:StartChatContact;Write
