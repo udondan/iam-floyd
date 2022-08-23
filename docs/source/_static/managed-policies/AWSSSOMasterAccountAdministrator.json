@@ -41,6 +41,7 @@
 				"organizations:ListChildren",
 				"organizations:DescribeAccount",
 				"organizations:ListParents",
+				"organizations:ListDelegatedAdministrators",
 				"sso:*",
 				"sso-directory:*",
 				"identitystore:*",
@@ -48,6 +49,20 @@
 				"access-analyzer:ValidatePolicy"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "AWSSSOManageDelegatedAdministrator",
+			"Effect": "Allow",
+			"Action": [
+				"organizations:RegisterDelegatedAdministrator",
+				"organizations:DeregisterDelegatedAdministrator"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"organizations:ServicePrincipal": "sso.amazonaws.com"
+				}
+			}
 		}
 	]
 }

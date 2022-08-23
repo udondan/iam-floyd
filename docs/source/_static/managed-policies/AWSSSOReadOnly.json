@@ -16,6 +16,7 @@
 				"organizations:ListRoots",
 				"organizations:ListAccountsForParent",
 				"organizations:ListOrganizationalUnitsForParent",
+				"organizations:ListDelegatedAdministrators",
 				"sso:Describe*",
 				"sso:Get*",
 				"sso:List*",
