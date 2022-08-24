@@ -78,6 +78,7 @@
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",
 				"ssm:DescribeAssociation",
+				"ssm:DescribeAssociationExecutions",
 				"ssm:DescribeInstanceInformation",
 				"ssm:ListAssociations",
 				"ssm:ListResourceDataSync"
@@ -95,6 +96,7 @@
 			],
 			"Resource": [
 				"arn:*:ec2:*:*:instance/*",
+				"arn:*:ssm:*:*:document/AmazonInspector2-*",
 				"arn:*:ssm:*:*:document/AWS-GatherSoftwareInventory",
 				"arn:*:ssm:*:*:managed-instance/*",
 				"arn:*:ssm:*:*:association/*"
