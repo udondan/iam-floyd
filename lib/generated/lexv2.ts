@@ -787,6 +787,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a bot recommendation for an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StopBotRecommendation.html
+   */
+  public toStopBotRecommendation() {
+    return this.to('StopBotRecommendation');
+  }
+
+  /**
    * Grants permission to add or overwrite tags of a Lex resource
    *
    * Access Level: Tagging
@@ -961,6 +972,7 @@ export class LexV2 extends PolicyStatement {
       'StartBotRecommendation',
       'StartConversation',
       'StartImport',
+      'StopBotRecommendation',
       'UpdateBot',
       'UpdateBotAlias',
       'UpdateBotLocale',

@@ -96,6 +96,7 @@ lex:StartBotRecommendation;Write
 lex:StartConversation;Write
 lex:StartImport;Write
 lex:StartMigration;Write
+lex:StopBotRecommendation;Write
 lex:TagResource;Tagging
 lex:UntagResource;Tagging
 lex:UpdateBot;Write
