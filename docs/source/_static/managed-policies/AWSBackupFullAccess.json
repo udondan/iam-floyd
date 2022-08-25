@@ -282,6 +282,11 @@
 			"Effect": "Allow",
 			"Action": "backup-gateway:GetGateway",
 			"Resource": "arn:aws:backup-gateway:*:*:gateway/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cloudwatch:GetMetricData",
+			"Resource": "*"
 		}
 	]
 }
