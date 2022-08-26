@@ -1,3 +1,4 @@
 sqlworkbench:chart
 sqlworkbench:connection
+sqlworkbench:notebook
 sqlworkbench:query

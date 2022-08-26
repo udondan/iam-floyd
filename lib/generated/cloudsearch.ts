@@ -19,7 +19,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Attaches resource tags to an Amazon CloudSearch domain.
+   * Attaches resource tags to an Amazon CloudSearch domain
    *
    * Access Level: Tagging
    *
@@ -30,7 +30,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Indexes the search suggestions.
+   * Indexes the search suggestions
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Creates a new search domain.
+   * Creates a new search domain
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures an analysis scheme that can be applied to a text or text-array field to define language-specific text processing options.
+   * Configures an analysis scheme that can be applied to a text or text-array field to define language-specific text processing options
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures an Expression for the search domain.
+   * Configures an Expression for the search domain
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures an IndexField for the search domain.
+   * Configures an IndexField for the search domain
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures a suggester for a domain.
+   * Configures a suggester for a domain
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Deletes an analysis scheme.
+   * Deletes an analysis scheme
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a search domain and all of its data.
+   * Permanently deletes a search domain and all of its data
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Removes an Expression from the search domain.
+   * Removes an Expression from the search domain
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Removes an IndexField from the search domain.
+   * Removes an IndexField from the search domain
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Deletes a suggester.
+   * Deletes a suggester
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the analysis schemes configured for a domain.
+   * Gets the analysis schemes configured for a domain
    *
    * Access Level: Read
    *
@@ -162,7 +162,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the availability options configured for a domain.
+   * Gets the availability options configured for a domain
    *
    * Access Level: Read
    *
@@ -173,7 +173,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the domain endpoint options configured for a domain.
+   * Gets the domain endpoint options configured for a domain
    *
    * Access Level: Read
    *
@@ -184,7 +184,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets information about the search domains owned by this account.
+   * Gets information about the search domains owned by this account
    *
    * Access Level: List
    *
@@ -195,7 +195,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the expressions configured for the search domain.
+   * Gets the expressions configured for the search domain
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets information about the index fields configured for the search domain.
+   * Gets information about the index fields configured for the search domain
    *
    * Access Level: Read
    *
@@ -217,7 +217,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the scaling parameters configured for a domain.
+   * Gets the scaling parameters configured for a domain
    *
    * Access Level: Read
    *
@@ -228,7 +228,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets information about the access policies that control access to the domain's document and search endpoints.
+   * Gets information about the access policies that control access to the domain's document and search endpoints
    *
    * Access Level: Read
    *
@@ -239,7 +239,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Gets the suggesters configured for a domain.
+   * Gets the suggesters configured for a domain
    *
    * Access Level: Read
    *
@@ -250,7 +250,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Tells the search domain to start indexing its documents using the latest indexing options.
+   * Tells the search domain to start indexing its documents using the latest indexing options
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Lists all search domains owned by an account.
+   * Lists all search domains owned by an account
    *
    * Access Level: List
    *
@@ -272,7 +272,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Displays all of the resource tags for an Amazon CloudSearch domain.
+   * Displays all of the resource tags for an Amazon CloudSearch domain
    *
    * Access Level: Read
    *
@@ -283,7 +283,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Removes the specified resource tags from an Amazon ES domain.
+   * Removes the specified resource tags from an Amazon ES domain
    *
    * Access Level: Tagging
    *
@@ -294,7 +294,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures the availability options for a domain.
+   * Configures the availability options for a domain
    *
    * Access Level: Write
    *
@@ -305,7 +305,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures the domain endpoint options for a domain.
+   * Configures the domain endpoint options for a domain
    *
    * Access Level: Write
    *
@@ -316,7 +316,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures scaling parameters for a domain.
+   * Configures scaling parameters for a domain
    *
    * Access Level: Write
    *
@@ -327,7 +327,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Configures the access rules that control access to the domain's document and search endpoints.
+   * Configures the access rules that control access to the domain's document and search endpoints
    *
    * Access Level: Permissions management
    *
@@ -338,7 +338,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Allows access to the document service operations.
+   * Allows access to the document service operations
    *
    * Access Level: Write
    *
@@ -349,7 +349,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Allows access to the search operations.
+   * Allows access to the search operations
    *
    * Access Level: Read
    *
@@ -360,7 +360,7 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   /**
-   * Allows access to the suggest operations.
+   * Allows access to the suggest operations
    *
    * Access Level: Read
    *

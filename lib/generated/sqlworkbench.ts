@@ -63,6 +63,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get notebook cells content on your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toBatchGetNotebookCell() {
+    return this.to('BatchGetNotebookCell');
+  }
+
+  /**
    * Grants permission to create SQLWorkbench account
    *
    * Access Level: Write
@@ -115,6 +126,66 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new notebook on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCreateNotebook() {
+    return this.to('CreateNotebook');
+  }
+
+  /**
+   * Grants permission to create a notebook cell on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCreateNotebookCell() {
+    return this.to('CreateNotebookCell');
+  }
+
+  /**
+   * Grants permission to create a new notebook from a notebook version on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCreateNotebookFromVersion() {
+    return this.to('CreateNotebookFromVersion');
+  }
+
+  /**
+   * Grants permission to create a notebook version on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCreateNotebookVersion() {
+    return this.to('CreateNotebookVersion');
+  }
+
+  /**
    * Grants permission to create a new saved query on your account
    *
    * Access Level: Write
@@ -152,6 +223,39 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove notebooks on your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteNotebook() {
+    return this.to('DeleteNotebook');
+  }
+
+  /**
+   * Grants permission to remove notebooks cells on your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteNotebookCell() {
+    return this.to('DeleteNotebookCell');
+  }
+
+  /**
+   * Grants permission to remove notebooks cells on your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteNotebookVersion() {
+    return this.to('DeleteNotebookVersion');
+  }
+
+  /**
    * Grants permission to remove saved queries on your account
    *
    * Access Level: Write
@@ -182,6 +286,32 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toDriverExecute() {
     return this.to('DriverExecute');
+  }
+
+  /**
+   * Grants permission to create a new notebook by duplicating an existing one on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDuplicateNotebook() {
+    return this.to('DuplicateNotebook');
+  }
+
+  /**
+   * Grants permission to export a notebook on your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toExportNotebook() {
+    return this.to('ExportNotebook');
   }
 
   /**
@@ -240,6 +370,28 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get notebook metadata on your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetNotebook() {
+    return this.to('GetNotebook');
+  }
+
+  /**
+   * Grants permission to get the content of a notebook version on your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetNotebookVersion() {
+    return this.to('GetNotebookVersion');
+  }
+
+  /**
    * Grants permission to get the query execution history on your account
    *
    * Access Level: Read
@@ -284,6 +436,21 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import a notebook on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toImportNotebook() {
+    return this.to('ImportNotebook');
+  }
+
+  /**
    * Grants permission to list the connections on your account
    *
    * Access Level: List
@@ -314,6 +481,28 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toListFiles() {
     return this.to('ListFiles');
+  }
+
+  /**
+   * Grants permission to get notebook versions metadata on your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListNotebookVersions() {
+    return this.to('ListNotebookVersions');
+  }
+
+  /**
+   * Grants permission to list the notebooks on your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListNotebooks() {
+    return this.to('ListNotebooks');
   }
 
   /**
@@ -413,6 +602,21 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toPutUserWorkspaceSettings() {
     return this.to('PutUserWorkspaceSettings');
+  }
+
+  /**
+   * Grants permission to restore a notebook on your account to a version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toRestoreNotebookVersion() {
+    return this.to('RestoreNotebookVersion');
   }
 
   /**
@@ -531,6 +735,51 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a notebook metadata on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toUpdateNotebook() {
+    return this.to('UpdateNotebook');
+  }
+
+  /**
+   * Grants permission to update a notebook cell content on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toUpdateNotebookCellContent() {
+    return this.to('UpdateNotebookCellContent');
+  }
+
+  /**
+   * Grants permission to update a notebook cell layout on your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toUpdateNotebookCellLayout() {
+    return this.to('UpdateNotebookCellLayout');
+  }
+
+  /**
    * Grants permission to update a saved query on your account
    *
    * Access Level: Write
@@ -555,15 +804,25 @@ export class Sqlworkbench extends PolicyStatement {
       'CreateChart',
       'CreateConnection',
       'CreateFolder',
+      'CreateNotebook',
+      'CreateNotebookCell',
+      'CreateNotebookFromVersion',
+      'CreateNotebookVersion',
       'CreateSavedQuery',
       'DeleteChart',
       'DeleteConnection',
+      'DeleteNotebook',
+      'DeleteNotebookCell',
+      'DeleteNotebookVersion',
       'DeleteSavedQuery',
       'DeleteTab',
       'DriverExecute',
+      'DuplicateNotebook',
       'GenerateSession',
+      'ImportNotebook',
       'PutTab',
       'PutUserWorkspaceSettings',
+      'RestoreNotebookVersion',
       'UpdateAccountConnectionSettings',
       'UpdateAccountExportSettings',
       'UpdateAccountGeneralSettings',
@@ -571,13 +830,20 @@ export class Sqlworkbench extends PolicyStatement {
       'UpdateConnection',
       'UpdateFileFolder',
       'UpdateFolder',
+      'UpdateNotebook',
+      'UpdateNotebookCellContent',
+      'UpdateNotebookCellLayout',
       'UpdateSavedQuery'
     ],
     Read: [
+      'BatchGetNotebookCell',
+      'ExportNotebook',
       'GetAccountInfo',
       'GetAccountSettings',
       'GetChart',
       'GetConnection',
+      'GetNotebook',
+      'GetNotebookVersion',
       'GetQueryExecutionHistory',
       'GetSavedQuery',
       'GetUserInfo',
@@ -590,6 +856,8 @@ export class Sqlworkbench extends PolicyStatement {
       'ListConnections',
       'ListDatabases',
       'ListFiles',
+      'ListNotebookVersions',
+      'ListNotebooks',
       'ListQueryExecutionHistory',
       'ListRedshiftClusters',
       'ListSavedQueryVersions',
@@ -650,5 +918,22 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:chart/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type notebook to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:notebook/${ resourceId }`);
   }
 }
