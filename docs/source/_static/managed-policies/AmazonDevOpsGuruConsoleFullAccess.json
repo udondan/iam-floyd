@@ -81,6 +81,19 @@
 				"pi:DescribeDimensionKeys"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "CloudWatchLogsFilterLogEventsAccess",
+			"Effect": "Allow",
+			"Action": [
+				"logs:FilterLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/DevOps-Guru-Analysis": "true"
+				}
+			}
 		}
 	]
 }

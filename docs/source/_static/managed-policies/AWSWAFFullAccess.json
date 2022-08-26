@@ -12,7 +12,11 @@
 				"apigateway:SetWebACL",
 				"appsync:SetWebACL",
 				"logs:DescribeResourcePolicies",
-				"logs:DescribeLogGroups"
+				"logs:DescribeLogGroups",
+				"cognito-idp:AssociateWebACL",
+				"cognito-idp:DisassociateWebACL",
+				"cognito-idp:ListResourcesForWebACL",
+				"cognito-idp:GetWebACLForResource"
 			],
 			"Resource": "*"
 		},

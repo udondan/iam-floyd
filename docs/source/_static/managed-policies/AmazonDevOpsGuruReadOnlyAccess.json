@@ -18,6 +18,8 @@
 				"devops-guru:ListAnomaliesForInsight",
 				"devops-guru:ListEvents",
 				"devops-guru:ListInsights",
+				"devops-guru:ListAnomalousLogGroups",
+				"devops-guru:ListMonitoredResources",
 				"devops-guru:ListNotificationChannels",
 				"devops-guru:ListRecommendations",
 				"devops-guru:SearchInsights",
@@ -56,6 +58,19 @@
 				"rds:DescribeDBInstances"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "CloudWatchLogsFilterLogEventsAccess",
+			"Effect": "Allow",
+			"Action": [
+				"logs:FilterLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/DevOps-Guru-Analysis": "true"
+				}
+			}
 		}
 	]
 }

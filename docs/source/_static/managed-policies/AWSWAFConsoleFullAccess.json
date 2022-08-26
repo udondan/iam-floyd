@@ -23,7 +23,12 @@
 				"wafv2:*",
 				"s3:ListAllMyBuckets",
 				"logs:DescribeResourcePolicies",
-				"logs:DescribeLogGroups"
+				"logs:DescribeLogGroups",
+				"cognito-idp:ListUserPools",
+				"cognito-idp:AssociateWebACL",
+				"cognito-idp:DisassociateWebACL",
+				"cognito-idp:ListResourcesForWebACL",
+				"cognito-idp:GetWebACLForResource"
 			],
 			"Resource": "*"
 		},
