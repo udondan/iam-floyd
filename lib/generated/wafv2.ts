@@ -826,4 +826,18 @@ export class Wafv2 extends PolicyStatement {
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Wafv2.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
+
+  /**
+   * Adds a resource of type userpool to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param userPoolId - Identifier for the userPoolId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+  }
 }

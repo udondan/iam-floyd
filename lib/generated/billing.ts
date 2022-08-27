@@ -19,7 +19,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to modify Account Settings.
+   * Allow or deny IAM users permission to modify Account Settings
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to modify billing settings.
+   * Allow or deny IAM users permission to modify billing settings
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to modify payment methods.
+   * Allow or deny IAM users permission to modify payment methods
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to view account settings.
+   * Allow or deny IAM users permission to view account settings
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to view billing pages in the console.
+   * Allow or deny IAM users permission to view billing pages in the console
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to view payment methods.
+   * Allow or deny IAM users permission to view payment methods
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to view AWS usage reports.
+   * Allow or deny IAM users permission to view AWS usage reports
    *
    * Access Level: Read
    *

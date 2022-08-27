@@ -5,4 +5,5 @@ wafv2:loadbalancer/app/
 wafv2:managedruleset
 wafv2:regexpatternset
 wafv2:rulegroup
+wafv2:userpool
 wafv2:webacl
