@@ -24,7 +24,8 @@
 				"glue:GetTableVersions",
 				"glue:SearchTables",
 				"glue:UpdatePartition",
-				"glue:UpdateTable"
+				"glue:UpdateTable",
+				"glue:GetUserDefinedFunctions"
 			],
 			"Resource": [
 				"arn:aws:glue:*:*:catalog",
