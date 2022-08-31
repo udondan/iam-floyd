@@ -405,6 +405,27 @@
 				"amplify:UpdateBranch"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "AmplifySSRViewLogGroups",
+			"Effect": "Allow",
+			"Action": "logs:DescribeLogGroups",
+			"Resource": "arn:aws:logs:*:*:log-group:*"
+		},
+		{
+			"Sid": "AmplifySSRCreateLogGroup",
+			"Effect": "Allow",
+			"Action": "logs:CreateLogGroup",
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/amplify/*"
+		},
+		{
+			"Sid": "AmplifySSRPushLogs",
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/amplify/*:log-stream:*"
 		}
 	]
 }
