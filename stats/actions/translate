@@ -5,6 +5,7 @@ translate:DescribeTextTranslationJob;Read
 translate:GetParallelData;Read
 translate:GetTerminology;Read
 translate:ImportTerminology;Write
+translate:ListLanguages;List
 translate:ListParallelData;List
 translate:ListTerminologies;List
 translate:ListTextTranslationJobs;List

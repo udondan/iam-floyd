@@ -19,153 +19,183 @@ export class Serverlessrepo extends PolicyStatement {
   }
 
   /**
-   * Creates an application, optionally including an AWS SAM file to create the first application version in the same call.
+   * Grants permission to create an application, optionally including an AWS SAM file to create the first application version in the same call
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
   }
 
   /**
-   * Creates an application version.
+   * Grants permission to create an application version
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-versions-semanticversion.html
    */
   public toCreateApplicationVersion() {
     return this.to('CreateApplicationVersion');
   }
 
   /**
-   * Creates an AWS CloudFormation ChangeSet for the given application.
+   * Grants permission to create an AWS CloudFormation ChangeSet for the given application
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-changesets.html
    */
   public toCreateCloudFormationChangeSet() {
     return this.to('CreateCloudFormationChangeSet');
   }
 
   /**
-   * Creates an AWS CloudFormation template
+   * Grants permission to create an AWS CloudFormation template
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-templates.html
    */
   public toCreateCloudFormationTemplate() {
     return this.to('CreateCloudFormationTemplate');
   }
 
   /**
-   * Deletes the specified application
+   * Grants permission to delete the specified application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
   }
 
   /**
-   * Gets the specified application.
+   * Grants permission to get the specified application
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html
    */
   public toGetApplication() {
     return this.to('GetApplication');
   }
 
   /**
-   * Gets the policy for the specified application.
+   * Grants permission to get the policy for the specified application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-policy.html
    */
   public toGetApplicationPolicy() {
     return this.to('GetApplicationPolicy');
   }
 
   /**
-   * Gets the specified AWS CloudFormation template
+   * Grants permission to get the specified AWS CloudFormation template
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-templates-templateid.html
    */
   public toGetCloudFormationTemplate() {
     return this.to('GetCloudFormationTemplate');
   }
 
   /**
-   * Retrieves the list of applications nested in the containing application
+   * Grants permission to retrieve the list of applications nested in the containing application
    *
    * Access Level: List
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-dependencies.html
    */
   public toListApplicationDependencies() {
     return this.to('ListApplicationDependencies');
   }
 
   /**
-   * Lists versions for the specified application owned by the requester.
+   * Grants permission to list versions for the specified application owned by the requester
    *
    * Access Level: List
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-versions.html
    */
   public toListApplicationVersions() {
     return this.to('ListApplicationVersions');
   }
 
   /**
-   * Lists applications owned by the requester.
+   * Grants permission to list applications owned by the requester
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
   }
 
   /**
-   * Puts the policy for the specified application.
+   * Grants permission to put the policy for the specified application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-policy.html
    */
   public toPutApplicationPolicy() {
     return this.to('PutApplicationPolicy');
   }
 
   /**
-   * Gets all applications authorized for this user
+   * Grants permission to get all applications authorized for this user
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifApplicationType()
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html
    */
   public toSearchApplications() {
     return this.to('SearchApplications');
   }
 
   /**
-   * Unshares the specified application
+   * Grants permission to unshare the specified application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html
    */
   public toUnshareApplication() {
     return this.to('UnshareApplication');
   }
 
   /**
-   * Updates meta-data of the application
+   * Grants permission to update meta-data of the application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
@@ -198,6 +228,8 @@ export class Serverlessrepo extends PolicyStatement {
   /**
    * Adds a resource of type applications to the statement
    *
+   * https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -208,7 +240,9 @@ export class Serverlessrepo extends PolicyStatement {
   }
 
   /**
-   * Application type
+   * Filters access by application type
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/applications.html
    *
    * Applies to actions:
    * - .toCreateCloudFormationChangeSet()

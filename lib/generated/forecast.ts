@@ -124,6 +124,21 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint using a Predictor resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toCreateForecastEndpoint() {
+    return this.to('CreateForecastEndpoint');
+  }
+
+  /**
    * Grants permission to create a forecast export job using a forecast resource
    *
    * Access Level: Write
@@ -181,6 +196,51 @@ export class Forecast extends PolicyStatement {
    */
   public toCreatePredictorBacktestExportJob() {
     return this.to('CreatePredictorBacktestExportJob');
+  }
+
+  /**
+   * Grants permission to create a what-if analysis
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfAnalysis.html
+   */
+  public toCreateWhatIfAnalysis() {
+    return this.to('CreateWhatIfAnalysis');
+  }
+
+  /**
+   * Grants permission to create a what-if forecast
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecast.html
+   */
+  public toCreateWhatIfForecast() {
+    return this.to('CreateWhatIfForecast');
+  }
+
+  /**
+   * Grants permission to create a what-if forecast export using what-if forecast resources
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html
+   */
+  public toCreateWhatIfForecastExport() {
+    return this.to('CreateWhatIfForecastExport');
   }
 
   /**
@@ -250,6 +310,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an endpoint resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDeleteForecastEndpoint() {
+    return this.to('DeleteForecastEndpoint');
+  }
+
+  /**
    * Grants permission to delete a forecast export job
    *
    * Access Level: Write
@@ -302,6 +373,39 @@ export class Forecast extends PolicyStatement {
    */
   public toDeleteResourceTree() {
     return this.to('DeleteResourceTree');
+  }
+
+  /**
+   * Grants permission to delete a what-if analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfAnalysis.html
+   */
+  public toDeleteWhatIfAnalysis() {
+    return this.to('DeleteWhatIfAnalysis');
+  }
+
+  /**
+   * Grants permission to delete a what-if forecast
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfForecast.html
+   */
+  public toDeleteWhatIfForecast() {
+    return this.to('DeleteWhatIfForecast');
+  }
+
+  /**
+   * Grants permission to delete a what-if forecast export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfForecastExport.html
+   */
+  public toDeleteWhatIfForecastExport() {
+    return this.to('DeleteWhatIfForecastExport');
   }
 
   /**
@@ -382,6 +486,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an endpoint resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDescribeForecastEndpoint() {
+    return this.to('DescribeForecastEndpoint');
+  }
+
+  /**
    * Grants permission to describe a forecast export job
    *
    * Access Level: Read
@@ -426,6 +541,39 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a what-if analysis
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfAnalysis.html
+   */
+  public toDescribeWhatIfAnalysis() {
+    return this.to('DescribeWhatIfAnalysis');
+  }
+
+  /**
+   * Grants permission to describe a what-if forecast
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfForecast.html
+   */
+  public toDescribeWhatIfForecast() {
+    return this.to('DescribeWhatIfForecast');
+  }
+
+  /**
+   * Grants permission to describe a what-if forecast export
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfForecastExport.html
+   */
+  public toDescribeWhatIfForecastExport() {
+    return this.to('DescribeWhatIfForecastExport');
+  }
+
+  /**
    * Grants permission to get the Accuracy Metrics for a predictor
    *
    * Access Level: Read
@@ -434,6 +582,28 @@ export class Forecast extends PolicyStatement {
    */
   public toGetAccuracyMetrics() {
     return this.to('GetAccuracyMetrics');
+  }
+
+  /**
+   * Grants permission to get the forecast context of a timeseries for an endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toGetRecentForecastContext() {
+    return this.to('GetRecentForecastContext');
+  }
+
+  /**
+   * Grants permission to invoke the endpoint to get forecast for a timeseries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toInvokeForecastEndpoint() {
+    return this.to('InvokeForecastEndpoint');
   }
 
   /**
@@ -569,6 +739,39 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the what-if analyses
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfAnalyses.html
+   */
+  public toListWhatIfAnalyses() {
+    return this.to('ListWhatIfAnalyses');
+  }
+
+  /**
+   * Grants permission to list all the what-if forecast exports
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfForecastExports.html
+   */
+  public toListWhatIfForecastExports() {
+    return this.to('ListWhatIfForecastExports');
+  }
+
+  /**
+   * Grants permission to list all the what-if forecasts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfForecasts.html
+   */
+  public toListWhatIfForecasts() {
+    return this.to('ListWhatIfForecasts');
+  }
+
+  /**
    * Grants permission to retrieve a forecast for a single item
    *
    * Access Level: Read
@@ -577,6 +780,17 @@ export class Forecast extends PolicyStatement {
    */
   public toQueryForecast() {
     return this.to('QueryForecast');
+  }
+
+  /**
+   * Grants permission to retrieve a what-if forecast for a single item
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_forecastquery_QueryWhatIfForecast.html
+   */
+  public toQueryWhatIfForecast() {
+    return this.to('QueryWhatIfForecast');
   }
 
   /**
@@ -658,21 +872,29 @@ export class Forecast extends PolicyStatement {
       'CreateExplainability',
       'CreateExplainabilityExport',
       'CreateForecast',
+      'CreateForecastEndpoint',
       'CreateForecastExportJob',
       'CreateMonitor',
       'CreatePredictor',
       'CreatePredictorBacktestExportJob',
+      'CreateWhatIfAnalysis',
+      'CreateWhatIfForecast',
+      'CreateWhatIfForecastExport',
       'DeleteDataset',
       'DeleteDatasetGroup',
       'DeleteDatasetImportJob',
       'DeleteExplainability',
       'DeleteExplainabilityExport',
       'DeleteForecast',
+      'DeleteForecastEndpoint',
       'DeleteForecastExportJob',
       'DeleteMonitor',
       'DeletePredictor',
       'DeletePredictorBacktestExportJob',
       'DeleteResourceTree',
+      'DeleteWhatIfAnalysis',
+      'DeleteWhatIfForecast',
+      'DeleteWhatIfForecastExport',
       'ResumeResource',
       'StopResource',
       'UpdateDatasetGroup'
@@ -685,11 +907,17 @@ export class Forecast extends PolicyStatement {
       'DescribeExplainability',
       'DescribeExplainabilityExport',
       'DescribeForecast',
+      'DescribeForecastEndpoint',
       'DescribeForecastExportJob',
       'DescribeMonitor',
       'DescribePredictor',
       'DescribePredictorBacktestExportJob',
+      'DescribeWhatIfAnalysis',
+      'DescribeWhatIfForecast',
+      'DescribeWhatIfForecastExport',
       'GetAccuracyMetrics',
+      'GetRecentForecastContext',
+      'InvokeForecastEndpoint',
       'ListDatasetGroups',
       'ListDatasetImportJobs',
       'ListDatasets',
@@ -702,7 +930,11 @@ export class Forecast extends PolicyStatement {
       'ListPredictorBacktestExportJobs',
       'ListPredictors',
       'ListTagsForResource',
-      'QueryForecast'
+      'ListWhatIfAnalyses',
+      'ListWhatIfForecastExports',
+      'ListWhatIfForecasts',
+      'QueryForecast',
+      'QueryWhatIfForecast'
     ],
     Tagging: [
       'TagResource',
@@ -890,5 +1122,73 @@ export class Forecast extends PolicyStatement {
    */
   public onMonitor(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:monitor/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type whatIfAnalysis to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfAnalysis.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWhatIfAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-analysis/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type whatIfForecast to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecast.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWhatIfForecast(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type whatIfForecastExport to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWhatIfForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast-export/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-endpoint/${ resourceId }`);
   }
 }

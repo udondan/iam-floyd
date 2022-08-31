@@ -2,6 +2,7 @@ forecast:algorithm
 forecast:dataset
 forecast:datasetGroup
 forecast:datasetImportJob
+forecast:endpoint
 forecast:explainability
 forecast:explainabilityExport
 forecast:forecast
@@ -9,3 +10,6 @@ forecast:forecastExport
 forecast:monitor
 forecast:predictor
 forecast:predictorBacktestExportJob
+forecast:whatIfAnalysis
+forecast:whatIfForecast
+forecast:whatIfForecastExport

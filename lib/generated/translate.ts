@@ -96,6 +96,17 @@ export class Translate extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list supported languages
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_ListLanguages.html
+   */
+  public toListLanguages() {
+    return this.to('ListLanguages');
+  }
+
+  /**
    * Grants permission to list Parallel Data associated with your account
    *
    * Access Level: List
@@ -189,9 +200,38 @@ export class Translate extends PolicyStatement {
       'TranslateText'
     ],
     List: [
+      'ListLanguages',
       'ListParallelData',
       'ListTerminologies',
       'ListTextTranslationJobs'
     ]
   };
+
+  /**
+   * Adds a resource of type terminology to the statement
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTerminology(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Translate.defaultPartition }:translate:${ region || '*' }:${ account || '*' }:terminology/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type parallel-data to the statement
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onParallelData(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Translate.defaultPartition }:translate:${ region || '*' }:${ account || '*' }:parallel-data/${ resourceName }`);
+  }
 }
