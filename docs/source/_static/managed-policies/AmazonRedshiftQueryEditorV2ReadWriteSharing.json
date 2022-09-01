@@ -56,7 +56,9 @@
 				"sqlworkbench:UpdateFolder",
 				"sqlworkbench:ListRedshiftClusters",
 				"sqlworkbench:DriverExecute",
-				"sqlworkbench:ListTaggedResources"
+				"sqlworkbench:ListTaggedResources",
+				"sqlworkbench:ListQueryExecutionHistory",
+				"sqlworkbench:GetQueryExecutionHistory"
 			],
 			"Resource": "*"
 		},
