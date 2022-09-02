@@ -49,6 +49,7 @@
 				"s3:ListBucket",
 				"s3:GetBucketVersioning",
 				"s3:GetBucketLocation",
+				"s3:GetBucketAcl",
 				"s3:PutInventoryConfiguration",
 				"s3:GetBucketNotification",
 				"s3:PutBucketNotification"

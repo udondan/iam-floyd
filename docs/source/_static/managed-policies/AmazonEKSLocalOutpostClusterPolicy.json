@@ -42,7 +42,8 @@
 				"arn:aws:ecr:*:*:repository/eks/eks-certificates-controller-public",
 				"arn:aws:ecr:*:*:repository/bottlerocket-admin",
 				"arn:aws:ecr:*:*:repository/bottlerocket-control-eks",
-				"arn:aws:ecr:*:*:repository/diagnostics-collector-eks"
+				"arn:aws:ecr:*:*:repository/diagnostics-collector-eks",
+				"arn:aws:ecr:*:*:repository/kubelet-config-updater"
 			]
 		},
 		{
