@@ -1,1 +1,7 @@
-
+identitystore:AllGroupMemberships
+identitystore:AllGroups
+identitystore:AllUsers
+identitystore:Group
+identitystore:GroupMembership
+identitystore:Identitystore
+identitystore:User

@@ -19,7 +19,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an account managed by AWS Control Tower.
+   * Grants permission to create an account managed by AWS Control Tower
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister an account created through the account factory from AWS Control Tower.
+   * Grants permission to deregister an account created through the account factory from AWS Control Tower
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister an organizational unit from AWS Control Tower management.
+   * Grants permission to deregister an organizational unit from AWS Control Tower management
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current account factory configuration.
+   * Grants permission to describe the current account factory configuration
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe resources managed by core accounts in AWS Control Tower.
+   * Grants permission to describe resources managed by core accounts in AWS Control Tower
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a guardrail.
+   * Grants permission to describe a guardrail
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a guardrail for a organizational unit.
+   * Grants permission to describe a guardrail for a organizational unit
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an account created through account factory.
+   * Grants permission to describe an account created through account factory
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an AWS Organizations organizational unit managed by AWS Control Tower.
+   * Grants permission to describe an AWS Organizations organizational unit managed by AWS Control Tower
    *
    * Access Level: Read
    *
@@ -118,7 +118,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current AWS Control Tower SSO configuration.
+   * Grants permission to describe the current AWS Control Tower SSO configuration
    *
    * Access Level: Read
    *
@@ -129,7 +129,18 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable a guardrail from an organizational unit.
+   * Grants permission to remove a control from an organizational unit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableControl.html
+   */
+  public toDisableControl() {
+    return this.to('DisableControl');
+  }
+
+  /**
+   * Grants permission to disable a guardrail from an organizational unit
    *
    * Access Level: Write
    *
@@ -140,7 +151,18 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable a guardrail to an organizational unit.
+   * Grants permission to activate a control for an organizational unit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html
+   */
+  public toEnableControl() {
+    return this.to('EnableControl');
+  }
+
+  /**
+   * Grants permission to enable a guardrail to an organizational unit
    *
    * Access Level: Write
    *
@@ -151,7 +173,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list available updates for the current AWS Control Tower deployment.
+   * Grants permission to list available updates for the current AWS Control Tower deployment
    *
    * Access Level: Read
    *
@@ -162,7 +184,18 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the current compliance status of a guardrail.
+   * Grants permission to get the current status of a particular EnabledControl or DisableControl operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetControlOperation.html
+   */
+  public toGetControlOperation() {
+    return this.to('GetControlOperation');
+  }
+
+  /**
+   * Grants permission to get the current compliance status of a guardrail
    *
    * Access Level: Read
    *
@@ -173,7 +206,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the home region of the AWS Control Tower setup.
+   * Grants permission to get the home region of the AWS Control Tower setup
    *
    * Access Level: Read
    *
@@ -184,7 +217,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the current status of the landing zone setup.
+   * Grants permission to get the current status of the landing zone setup
    *
    * Access Level: Read
    *
@@ -195,7 +228,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the current directory groups available through SSO.
+   * Grants permission to list the current directory groups available through SSO
    *
    * Access Level: List
    *
@@ -206,7 +239,18 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list currently enabled guardrails.
+   * Grants permission to list all enabled controls in a specified organizational unit
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledControls.html
+   */
+  public toListEnabledControls() {
+    return this.to('ListEnabledControls');
+  }
+
+  /**
+   * Grants permission to list currently enabled guardrails
    *
    * Access Level: List
    *
@@ -217,7 +261,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list existing guardrail violations.
+   * Grants permission to list existing guardrail violations
    *
    * Access Level: List
    *
@@ -228,7 +272,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all available guardrails.
+   * Grants permission to list all available guardrails
    *
    * Access Level: List
    *
@@ -239,7 +283,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list guardrails and their current state for a organizational unit.
+   * Grants permission to list guardrails and their current state for a organizational unit
    *
    * Access Level: List
    *
@@ -250,7 +294,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list accounts managed through AWS Control Tower.
+   * Grants permission to list accounts managed through AWS Control Tower
    *
    * Access Level: List
    *
@@ -261,7 +305,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list managed accounts with a specified guardrail applied.
+   * Grants permission to list managed accounts with a specified guardrail applied
    *
    * Access Level: List
    *
@@ -272,7 +316,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list managed accounts under an organizational unit.
+   * Grants permission to list managed accounts under an organizational unit
    *
    * Access Level: List
    *
@@ -283,7 +327,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list organizational units managed by AWS Control Tower.
+   * Grants permission to list organizational units managed by AWS Control Tower
    *
    * Access Level: List
    *
@@ -294,7 +338,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list managed organizational units that have a specified guardrail applied.
+   * Grants permission to list managed organizational units that have a specified guardrail applied
    *
    * Access Level: List
    *
@@ -305,7 +349,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set up an organizational unit to be managed by AWS Control Tower.
+   * Grants permission to set up an organizational unit to be managed by AWS Control Tower
    *
    * Access Level: Write
    *
@@ -316,7 +360,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set up or update AWS Control Tower landing zone.
+   * Grants permission to set up or update AWS Control Tower landing zone
    *
    * Access Level: Write
    *
@@ -327,7 +371,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the account factory configuration.
+   * Grants permission to update the account factory configuration
    *
    * Access Level: Write
    *
@@ -342,7 +386,9 @@ export class Controltower extends PolicyStatement {
       'CreateManagedAccount',
       'DeregisterManagedAccount',
       'DeregisterOrganizationalUnit',
+      'DisableControl',
       'DisableGuardrail',
+      'EnableControl',
       'EnableGuardrail',
       'ManageOrganizationalUnit',
       'SetupLandingZone',
@@ -357,12 +403,14 @@ export class Controltower extends PolicyStatement {
       'DescribeManagedOrganizationalUnit',
       'DescribeSingleSignOn',
       'GetAvailableUpdates',
+      'GetControlOperation',
       'GetGuardrailComplianceStatus',
       'GetHomeRegion',
       'GetLandingZoneStatus'
     ],
     List: [
       'ListDirectoryGroups',
+      'ListEnabledControls',
       'ListEnabledGuardrails',
       'ListGuardrailViolations',
       'ListGuardrails',

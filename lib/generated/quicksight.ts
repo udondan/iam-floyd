@@ -933,6 +933,7 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAllowedEmbeddingDomains()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
    */
@@ -944,6 +945,9 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user registered with QuickSight
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAllowedEmbeddingDomains()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html
    */
@@ -1684,6 +1688,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update resource-level permissions in QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html
+   */
+  public toUpdateResourcePermissions() {
+    return this.to('UpdateResourcePermissions');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -1828,6 +1843,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateIAMPolicyAssignment',
       'UpdateIpRestriction',
       'UpdatePublicSharingSettings',
+      'UpdateResourcePermissions',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',
@@ -1921,7 +1937,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type account to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Account.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountInfo.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2159,6 +2175,10 @@ export class Quicksight extends PolicyStatement {
    * Filters access by the allowed embedding domains
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/embedded-dashboards-for-authenticated-users-step-1.html
+   *
+   * Applies to actions:
+   * - .toGenerateEmbedUrlForAnonymousUser()
+   * - .toGenerateEmbedUrlForRegisteredUser()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -8,13 +8,17 @@ controltower:DescribeGuardrailForTarget;Read
 controltower:DescribeManagedAccount;Read
 controltower:DescribeManagedOrganizationalUnit;Read
 controltower:DescribeSingleSignOn;Read
+controltower:DisableControl;Write
 controltower:DisableGuardrail;Write
+controltower:EnableControl;Write
 controltower:EnableGuardrail;Write
 controltower:GetAvailableUpdates;Read
+controltower:GetControlOperation;Read
 controltower:GetGuardrailComplianceStatus;Read
 controltower:GetHomeRegion;Read
 controltower:GetLandingZoneStatus;Read
 controltower:ListDirectoryGroups;List
+controltower:ListEnabledControls;List
 controltower:ListEnabledGuardrails;List
 controltower:ListGuardrailViolations;List
 controltower:ListGuardrails;List

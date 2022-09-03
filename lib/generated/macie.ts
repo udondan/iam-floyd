@@ -41,6 +41,21 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create and define the settings for an allow list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/allow-lists.html
+   */
+  public toCreateAllowList() {
+    return this.to('CreateAllowList');
+  }
+
+  /**
    * Grants permission to create and define the settings for a sensitive data discovery job
    *
    * Access Level: Write
@@ -131,6 +146,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toDeclineInvitations() {
     return this.to('DeclineInvitations');
+  }
+
+  /**
+   * Grants permission to delete an allow list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/allow-lists-id.html
+   */
+  public toDeleteAllowList() {
+    return this.to('DeleteAllowList');
   }
 
   /**
@@ -233,7 +259,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie member account with permission to disassociate from its Macie administrator account
+   * Grants permission to an Amazon Macie member account to disassociate from its Macie administrator account
    *
    * Access Level: Write
    *
@@ -244,7 +270,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * (Deprecated) Grants an Amazon Macie member account with permission to disassociate from its Macie administrator account
+   * Grants permission to an Amazon Macie member account to disassociate from its Macie administrator account
    *
    * Access Level: Write
    *
@@ -255,7 +281,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie administrator account with permission to disassociate from a Macie member account
+   * Grants permission to an Amazon Macie administrator account to disassociate from a Macie member account
    *
    * Access Level: Write
    *
@@ -296,6 +322,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toGetAdministratorAccount() {
     return this.to('GetAdministratorAccount');
+  }
+
+  /**
+   * Grants permission to retrieve the settings and status of an allow list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/allow-lists-id.html
+   */
+  public toGetAllowList() {
+    return this.to('GetAllowList');
   }
 
   /**
@@ -398,7 +435,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * (Deprecated) Grants permission to retrieve information about the Amazon Macie administrator account for an account
+   * Grants permission to retrieve information about the Amazon Macie administrator account for an account
    *
    * Access Level: Read
    *
@@ -472,6 +509,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toGetUsageTotals() {
     return this.to('GetUsageTotals');
+  }
+
+  /**
+   * Grants permission to retrieve a subset of information about all the allow lists for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/allow-lists.html
+   */
+  public toListAllowLists() {
+    return this.to('ListAllowLists');
   }
 
   /**
@@ -647,6 +695,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the settings for an allow list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/allow-lists-id.html
+   */
+  public toUpdateAllowList() {
+    return this.to('UpdateAllowList');
+  }
+
+  /**
    * Grants permission to change the status of a sensitive data discovery job
    *
    * Access Level: Write
@@ -688,7 +747,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie administrator account with permission to suspend or re-enable a Macie member account
+   * Grants permission to an Amazon Macie administrator account to suspend or re-enable a Macie member account
    *
    * Access Level: Write
    *
@@ -723,6 +782,7 @@ export class Macie2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInvitation',
+      'CreateAllowList',
       'CreateClassificationJob',
       'CreateCustomDataIdentifier',
       'CreateFindingsFilter',
@@ -730,6 +790,7 @@ export class Macie2 extends PolicyStatement {
       'CreateMember',
       'CreateSampleFindings',
       'DeclineInvitations',
+      'DeleteAllowList',
       'DeleteCustomDataIdentifier',
       'DeleteFindingsFilter',
       'DeleteInvitations',
@@ -744,6 +805,7 @@ export class Macie2 extends PolicyStatement {
       'PutClassificationExportConfiguration',
       'PutFindingsPublicationConfiguration',
       'TestCustomDataIdentifier',
+      'UpdateAllowList',
       'UpdateClassificationJob',
       'UpdateFindingsFilter',
       'UpdateMacieSession',
@@ -757,6 +819,7 @@ export class Macie2 extends PolicyStatement {
       'DescribeClassificationJob',
       'DescribeOrganizationConfiguration',
       'GetAdministratorAccount',
+      'GetAllowList',
       'GetBucketStatistics',
       'GetClassificationExportConfiguration',
       'GetCustomDataIdentifier',
@@ -777,6 +840,7 @@ export class Macie2 extends PolicyStatement {
       'SearchResources'
     ],
     List: [
+      'ListAllowLists',
       'ListClassificationJobs',
       'ListCustomDataIdentifiers',
       'ListFindings',
@@ -791,6 +855,23 @@ export class Macie2 extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type AllowList to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAllowList(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:allow-list/${ resourceId }`);
+  }
 
   /**
    * Adds a resource of type ClassificationJob to the statement

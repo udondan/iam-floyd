@@ -1,3 +1,4 @@
+macie2:AllowList
 macie2:ClassificationJob
 macie2:CustomDataIdentifier
 macie2:FindingsFilter
