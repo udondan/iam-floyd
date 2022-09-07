@@ -32,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -77,6 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -125,6 +127,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -168,6 +171,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -204,6 +208,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
@@ -249,6 +254,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v2
