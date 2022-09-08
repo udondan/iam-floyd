@@ -35,6 +35,7 @@ backup
 backup-gateway
 backup-storage
 batch
+billing
 billingconductor
 braket
 budgets
