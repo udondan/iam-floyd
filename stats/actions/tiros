@@ -1,3 +1,4 @@
 tiros:CreateQuery;Write
+tiros:ExtendQuery;Write
 tiros:GetQueryAnswer;Read
 tiros:GetQueryExplanation;Read

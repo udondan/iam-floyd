@@ -55,6 +55,15 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list batch data transfers
+   *
+   * Access Level: List
+   */
+  public toListBatchDataTransfers() {
+    return this.to('ListBatchDataTransfers');
+  }
+
+  /**
    * Grants permission to list batch summaries
    *
    * Access Level: List
@@ -64,12 +73,39 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list project data transfers
+   *
+   * Access Level: List
+   */
+  public toListProjectDataTransfers() {
+    return this.to('ListProjectDataTransfers');
+  }
+
+  /**
    * Grants permission to list project summaries
    *
    * Access Level: List
    */
   public toListProjectSummaries() {
     return this.to('ListProjectSummaries');
+  }
+
+  /**
+   * Grants permission to start a batch data transfer
+   *
+   * Access Level: Write
+   */
+  public toStartBatchDataTransfer() {
+    return this.to('StartBatchDataTransfer');
+  }
+
+  /**
+   * Grants permission to start a project data transfer
+   *
+   * Access Level: Write
+   */
+  public toStartProjectDataTransfer() {
+    return this.to('StartProjectDataTransfer');
   }
 
   /**
@@ -85,6 +121,8 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
     Write: [
       'CreateProject',
       'DeleteProject',
+      'StartBatchDataTransfer',
+      'StartProjectDataTransfer',
       'UpdateBatch'
     ],
     Read: [
@@ -92,7 +130,9 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
       'GetProject'
     ],
     List: [
+      'ListBatchDataTransfers',
       'ListBatchSummaries',
+      'ListProjectDataTransfers',
       'ListProjectSummaries'
     ]
   };

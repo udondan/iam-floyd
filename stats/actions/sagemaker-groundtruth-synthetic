@@ -2,6 +2,10 @@ sagemaker-groundtruth-synthetic:CreateProject;Write
 sagemaker-groundtruth-synthetic:DeleteProject;Write
 sagemaker-groundtruth-synthetic:GetBatch;Read
 sagemaker-groundtruth-synthetic:GetProject;Read
+sagemaker-groundtruth-synthetic:ListBatchDataTransfers;List
 sagemaker-groundtruth-synthetic:ListBatchSummaries;List
+sagemaker-groundtruth-synthetic:ListProjectDataTransfers;List
 sagemaker-groundtruth-synthetic:ListProjectSummaries;List
+sagemaker-groundtruth-synthetic:StartBatchDataTransfer;Write
+sagemaker-groundtruth-synthetic:StartProjectDataTransfer;Write
 sagemaker-groundtruth-synthetic:UpdateBatch;Write
