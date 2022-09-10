@@ -1924,7 +1924,6 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */

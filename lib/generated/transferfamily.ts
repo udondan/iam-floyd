@@ -179,6 +179,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a host key associated with a server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteHostKey.html
+   */
+  public toDeleteHostKey() {
+    return this.to('DeleteHostKey');
+  }
+
+  /**
    * Grants permission to delete profile
    *
    * Access Level: Write
@@ -289,6 +300,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a host key associated with a server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeHostKey.html
+   */
+  public toDescribeHostKey() {
+    return this.to('DescribeHostKey');
+  }
+
+  /**
    * Grants permission to describe a profile
    *
    * Access Level: Read
@@ -359,6 +381,21 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a host key to a server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportHostKey.html
+   */
+  public toImportHostKey() {
+    return this.to('ImportHostKey');
+  }
+
+  /**
    * Grants permission to add an SSH public key to a user
    *
    * Access Level: Write
@@ -422,6 +459,17 @@ export class Transfer extends PolicyStatement {
    */
   public toListExecutions() {
     return this.to('ListExecutions');
+  }
+
+  /**
+   * Grants permission to list host keys associated with a server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListHostKeys.html
+   */
+  public toListHostKeys() {
+    return this.to('ListHostKeys');
   }
 
   /**
@@ -499,6 +547,17 @@ export class Transfer extends PolicyStatement {
    */
   public toSendWorkflowStepState() {
     return this.to('SendWorkflowStepState');
+  }
+
+  /**
+   * Grants permission to initiate a connector file transfer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartFileTransfer.html
+   */
+  public toStartFileTransfer() {
+    return this.to('StartFileTransfer');
   }
 
   /**
@@ -617,6 +676,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a host key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateHostKey.html
+   */
+  public toUpdateHostKey() {
+    return this.to('UpdateHostKey');
+  }
+
+  /**
    * Grants permission to update a profile
    *
    * Access Level: Write
@@ -668,20 +738,24 @@ export class Transfer extends PolicyStatement {
       'DeleteAgreement',
       'DeleteCertificate',
       'DeleteConnector',
+      'DeleteHostKey',
       'DeleteProfile',
       'DeleteServer',
       'DeleteSshPublicKey',
       'DeleteUser',
       'DeleteWorkflow',
       'ImportCertificate',
+      'ImportHostKey',
       'ImportSshPublicKey',
       'SendWorkflowStepState',
+      'StartFileTransfer',
       'StartServer',
       'StopServer',
       'UpdateAccess',
       'UpdateAgreement',
       'UpdateCertificate',
       'UpdateConnector',
+      'UpdateHostKey',
       'UpdateProfile',
       'UpdateServer',
       'UpdateUser'
@@ -692,6 +766,7 @@ export class Transfer extends PolicyStatement {
       'DescribeCertificate',
       'DescribeConnector',
       'DescribeExecution',
+      'DescribeHostKey',
       'DescribeProfile',
       'DescribeSecurityPolicy',
       'DescribeServer',
@@ -702,6 +777,7 @@ export class Transfer extends PolicyStatement {
       'ListCertificates',
       'ListConnectors',
       'ListExecutions',
+      'ListHostKeys',
       'ListProfiles',
       'ListTagsForResource',
       'TestIdentityProvider'
@@ -836,5 +912,23 @@ export class Transfer extends PolicyStatement {
    */
   public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:agreement/${ agreementId }`);
+  }
+
+  /**
+   * Adds a resource of type host-key to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html
+   *
+   * @param serverId - Identifier for the serverId.
+   * @param hostKeyId - Identifier for the hostKeyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHostKey(serverId: string, hostKeyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:host-key/${ serverId }/${ hostKeyId }`);
   }
 }
