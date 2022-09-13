@@ -102,6 +102,17 @@
 				"acm:DescribeCertificate"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973197",
+			"Effect": "Allow",
+			"Action": "cloudwatch:PutMetricData",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": "AWS/ES"
+				}
+			}
 		}
 	]
 }
