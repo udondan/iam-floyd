@@ -49,6 +49,32 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a label
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateLabel.html
+   */
+  public toCreateLabel() {
+    return this.to('CreateLabel');
+  }
+
+  /**
+   * Grants permission to create a label group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateLabelGroup.html
+   */
+  public toCreateLabelGroup() {
+    return this.to('CreateLabelGroup');
+  }
+
+  /**
    * Grants permission to create a model that is trained on a dataset
    *
    * Access Level: Write
@@ -83,6 +109,28 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toDeleteInferenceScheduler() {
     return this.to('DeleteInferenceScheduler');
+  }
+
+  /**
+   * Grants permission to delete a label
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteLabel.html
+   */
+  public toDeleteLabel() {
+    return this.to('DeleteLabel');
+  }
+
+  /**
+   * Grants permission to delete a label group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteLabelGroup.html
+   */
+  public toDeleteLabelGroup() {
+    return this.to('DeleteLabelGroup');
   }
 
   /**
@@ -130,6 +178,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a label group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeLabelGroup.html
+   */
+  public toDescribeLabelGroup() {
+    return this.to('DescribeLabelGroup');
+  }
+
+  /**
    * Grants permission to describe a model
    *
    * Access Level: Read
@@ -138,6 +197,17 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toDescribeModel() {
     return this.to('DescribeModel');
+  }
+
+  /**
+   * Grants permission to describe a label
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeLabel.html
+   */
+  public toDescribelabel() {
+    return this.to('Describelabel');
   }
 
   /**
@@ -182,6 +252,28 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toListInferenceSchedulers() {
     return this.to('ListInferenceSchedulers');
+  }
+
+  /**
+   * Grants permission to list the label groups in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListLabelGroups.html
+   */
+  public toListLabelGroups() {
+    return this.to('ListLabelGroups');
+  }
+
+  /**
+   * Grants permission to list the labels in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListLabels.html
+   */
+  public toListLabels() {
+    return this.to('ListLabels');
   }
 
   /**
@@ -290,24 +382,42 @@ export class Lookoutequipment extends PolicyStatement {
     return this.to('UpdateInferenceScheduler');
   }
 
+  /**
+   * Grants permission to update a label group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateLabelGroup.html
+   */
+  public toUpdateLabelGroup() {
+    return this.to('UpdateLabelGroup');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateDataset',
       'CreateInferenceScheduler',
+      'CreateLabel',
+      'CreateLabelGroup',
       'CreateModel',
       'DeleteDataset',
       'DeleteInferenceScheduler',
+      'DeleteLabel',
+      'DeleteLabelGroup',
       'DeleteModel',
       'StartDataIngestionJob',
       'StartInferenceScheduler',
       'StopInferenceScheduler',
-      'UpdateInferenceScheduler'
+      'UpdateInferenceScheduler',
+      'UpdateLabelGroup'
     ],
     Read: [
       'DescribeDataIngestionJob',
       'DescribeDataset',
       'DescribeInferenceScheduler',
+      'DescribeLabelGroup',
       'DescribeModel',
+      'Describelabel',
       'ListInferenceExecutions',
       'ListTagsForResource'
     ],
@@ -315,6 +425,8 @@ export class Lookoutequipment extends PolicyStatement {
       'ListDataIngestionJobs',
       'ListDatasets',
       'ListInferenceSchedulers',
+      'ListLabelGroups',
+      'ListLabels',
       'ListModels',
       'ListSensorStatistics'
     ],
@@ -331,15 +443,15 @@ export class Lookoutequipment extends PolicyStatement {
    *
    * @param datasetName - Identifier for the datasetName.
    * @param datasetId - Identifier for the datasetId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataset(datasetName: string, datasetId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ accountId || '*' }:dataset/${ datasetName }/${ datasetId }`);
+  public onDataset(datasetName: string, datasetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }/${ datasetId }`);
   }
 
   /**
@@ -376,5 +488,23 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public onInferenceScheduler(inferenceSchedulerName: string, inferenceSchedulerId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
+  }
+
+  /**
+   * Adds a resource of type label-group to the statement
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/label-group.html
+   *
+   * @param labelGroupName - Identifier for the labelGroupName.
+   * @param labelGroupId - Identifier for the labelGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLabelGroup(labelGroupName: string, labelGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:label-group/${ labelGroupName }/${ labelGroupId }`);
   }
 }
