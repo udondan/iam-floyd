@@ -83,10 +83,29 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   *
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
+  }
+
+  /**
+   * Grants permission to create a segment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html
+   */
+  public toCreateSegment() {
+    return this.to('CreateSegment');
   }
 
   /**
@@ -131,6 +150,17 @@ export class Evidently extends PolicyStatement {
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
+  }
+
+  /**
+   * Grants permission to delete a segment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteSegment.html
+   */
+  public toDeleteSegment() {
+    return this.to('DeleteSegment');
   }
 
   /**
@@ -200,6 +230,17 @@ export class Evidently extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get segment details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetSegment.html
+   */
+  public toGetSegment() {
+    return this.to('GetSegment');
+  }
+
+  /**
    * Grants permission to list experiments
    *
    * Access Level: Read
@@ -241,6 +282,28 @@ export class Evidently extends PolicyStatement {
    */
   public toListProjects() {
     return this.to('ListProjects');
+  }
+
+  /**
+   * Grants permission to list resources referencing a segment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListSegmentReferences.html
+   */
+  public toListSegmentReferences() {
+    return this.to('ListSegmentReferences');
+  }
+
+  /**
+   * Grants permission to list segments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListSegments.html
+   */
+  public toListSegments() {
+    return this.to('ListSegments');
   }
 
   /**
@@ -325,6 +388,17 @@ export class Evidently extends PolicyStatement {
   }
 
   /**
+   * Grants permission to test a segment pattern
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TestSegmentPattern.html
+   */
+  public toTestSegmentPattern() {
+    return this.to('TestSegmentPattern');
+  }
+
+  /**
    * Grants permission to untag resources
    *
    * Access Level: Tagging
@@ -377,6 +451,10 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   *
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
@@ -401,10 +479,12 @@ export class Evidently extends PolicyStatement {
       'CreateFeature',
       'CreateLaunch',
       'CreateProject',
+      'CreateSegment',
       'DeleteExperiment',
       'DeleteFeature',
       'DeleteLaunch',
       'DeleteProject',
+      'DeleteSegment',
       'EvaluateFeature',
       'PutProjectEvents',
       'StartExperiment',
@@ -423,11 +503,15 @@ export class Evidently extends PolicyStatement {
       'GetFeature',
       'GetLaunch',
       'GetProject',
+      'GetSegment',
       'ListExperiments',
       'ListFeatures',
       'ListLaunches',
       'ListProjects',
-      'ListTagsForResource'
+      'ListSegmentReferences',
+      'ListSegments',
+      'ListTagsForResource',
+      'TestSegmentPattern'
     ],
     Tagging: [
       'TagResource',
@@ -438,71 +522,88 @@ export class Evidently extends PolicyStatement {
   /**
    * Adds a resource of type Project to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/projects.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Project.html
    *
-   * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onProject(ownerAccountId: string, projectName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }`);
+  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
    * Adds a resource of type Feature to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/features.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Feature.html
    *
-   * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
    * @param featureName - Identifier for the featureName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onFeature(ownerAccountId: string, projectName: string, featureName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/feature/${ featureName }`);
+  public onFeature(projectName: string, featureName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/feature/${ featureName }`);
   }
 
   /**
    * Adds a resource of type Experiment to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/experiments.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Experiment.html
    *
-   * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
    * @param experimentName - Identifier for the experimentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onExperiment(ownerAccountId: string, projectName: string, experimentName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/experiment/${ experimentName }`);
+  public onExperiment(projectName: string, experimentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/experiment/${ experimentName }`);
   }
 
   /**
    * Adds a resource of type Launch to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/launches.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Launch.html
    *
-   * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
    * @param launchName - Identifier for the launchName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onLaunch(ownerAccountId: string, projectName: string, launchName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ ownerAccountId }:project/${ projectName }/launch/${ launchName }`);
+  public onLaunch(projectName: string, launchName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/launch/${ launchName }`);
+  }
+
+  /**
+   * Adds a resource of type Segment to the statement
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Segment.html
+   *
+   * @param segmentName - Identifier for the segmentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSegment(segmentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:segment/${ segmentName }`);
   }
 }
