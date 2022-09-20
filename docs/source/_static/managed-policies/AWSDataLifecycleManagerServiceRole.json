@@ -15,7 +15,9 @@
 				"ec2:DisableFastSnapshotRestores",
 				"ec2:CopySnapshot",
 				"ec2:ModifySnapshotAttribute",
-				"ec2:DescribeSnapshotAttribute"
+				"ec2:DescribeSnapshotAttribute",
+				"ec2:DescribeSnapshotTierStatus",
+				"ec2:ModifySnapshotTier"
 			],
 			"Resource": "*"
 		},
