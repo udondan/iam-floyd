@@ -11,6 +11,7 @@ sagemaker:data-quality-job-definition
 sagemaker:device
 sagemaker:device-fleet
 sagemaker:domain
+sagemaker:edge-deployment-plan
 sagemaker:edge-packaging-job
 sagemaker:endpoint
 sagemaker:endpoint-config

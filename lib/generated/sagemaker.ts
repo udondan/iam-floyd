@@ -70,6 +70,8 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/
    */
   public toBatchGetMetrics() {
     return this.to('BatchGetMetrics');
@@ -90,6 +92,8 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/
    */
   public toBatchPutMetrics() {
     return this.to('BatchPutMetrics');
@@ -103,6 +107,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAction.html
    */
@@ -118,6 +125,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAlgorithm.html
    */
@@ -137,6 +147,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateApp.html
    */
   public toCreateApp() {
@@ -152,6 +165,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAppImageConfig.html
    */
   public toCreateAppImageConfig() {
@@ -166,6 +182,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateArtifact.html
    */
@@ -189,6 +208,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html
    */
@@ -204,6 +224,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCodeRepository.html
    */
@@ -222,6 +245,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html
    */
@@ -237,6 +261,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateContext.html
    */
@@ -263,6 +290,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDataQualityJobDefinition.html
    */
@@ -281,6 +309,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDeviceFleet.html
    */
@@ -308,11 +337,50 @@ export class Sagemaker extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
+  }
+
+  /**
+   * Grants permission to create an edge deployment plan
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgeDeploymentPlan.html
+   */
+  public toCreateEdgeDeploymentPlan() {
+    return this.to('CreateEdgeDeploymentPlan');
+  }
+
+  /**
+   * Grants permission to create an edge deployment stage
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgeDeploymentStage.html
+   */
+  public toCreateEdgeDeploymentStage() {
+    return this.to('CreateEdgeDeploymentStage');
   }
 
   /**
@@ -326,6 +394,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgePackagingJob.html
    */
@@ -341,6 +410,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html
    */
@@ -363,6 +435,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifServerlessMaxConcurrency()
    * - .ifServerlessMemorySize()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html
    */
   public toCreateEndpointConfig() {
@@ -377,6 +452,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateExperiment.html
    */
@@ -398,6 +476,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFeatureGroup.html
    */
@@ -418,6 +497,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFlowDefinition.html
    */
@@ -433,6 +513,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHumanTaskUi.html
    */
@@ -463,6 +546,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html
    */
@@ -481,6 +565,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateImage.html
    */
@@ -510,6 +595,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html
    */
@@ -532,6 +618,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html
    */
@@ -544,7 +631,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/Welcome.html
    */
   public toCreateLineageGroupPolicy() {
     return this.to('CreateLineageGroupPolicy');
@@ -564,6 +651,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html
    */
@@ -590,6 +678,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelBiasJobDefinition.html
    */
@@ -616,6 +705,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelExplainabilityJobDefinition.html
    */
@@ -632,6 +722,10 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifModelApprovalStatus()
+   * - .ifCustomerMetadataProperties()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html
    */
@@ -647,6 +741,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackageGroup.html
    */
@@ -673,6 +770,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelQualityJobDefinition.html
    */
@@ -699,6 +797,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMonitoringSchedule.html
    */
@@ -725,6 +824,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstance.html
    */
@@ -754,6 +854,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePipeline.html
    */
@@ -802,6 +903,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html
    */
@@ -818,6 +920,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
@@ -828,6 +933,13 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a Studio Lifecycle Configuration that can be deployed using Amazon SageMaker
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateStudioLifecycleConfig.html
    */
@@ -858,6 +970,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
    */
@@ -878,6 +991,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifOutputKmsKey()
    * - .ifVolumeKmsKey()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html
    */
   public toCreateTransformJob() {
@@ -893,6 +1009,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html
    */
   public toCreateTrial() {
@@ -907,6 +1026,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html
    */
@@ -930,6 +1052,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html
    */
@@ -946,6 +1069,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkforce.html
    */
   public toCreateWorkforce() {
@@ -960,6 +1086,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkteam.html
    */
@@ -1089,6 +1218,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an edge deployment plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEdgeDeploymentPlan.html
+   */
+  public toDeleteEdgeDeploymentPlan() {
+    return this.to('DeleteEdgeDeploymentPlan');
+  }
+
+  /**
+   * Grants permission to delete an edge deployment stage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEdgeDeploymentStage.html
+   */
+  public toDeleteEdgeDeploymentStage() {
+    return this.to('DeleteEdgeDeploymentStage');
+  }
+
+  /**
    * Grants permission to delete an endpoint. Amazon SageMaker frees up all the resources that were deployed when the endpoint was created
    *
    * Access Level: Write
@@ -1151,7 +1302,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_DeleteHumanLoop.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHumanLoop.html
    */
   public toDeleteHumanLoop() {
     return this.to('DeleteHumanLoop');
@@ -1195,7 +1346,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/Welcome.html
    */
   public toDeleteLineageGroupPolicy() {
     return this.to('DeleteLineageGroupPolicy');
@@ -1579,6 +1730,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access information about an edge deployment plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEdgeDeploymentPlan.html
+   */
+  public toDescribeEdgeDeploymentPlan() {
+    return this.to('DescribeEdgeDeploymentPlan');
+  }
+
+  /**
    * Grants permission to access information about an edge packaging job
    *
    * Access Level: Read
@@ -1660,7 +1822,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_DescribeHumanLoop.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeHumanLoop.html
    */
   public toDescribeHumanLoop() {
     return this.to('DescribeHumanLoop');
@@ -2297,6 +2459,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list edge deployment plans
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEdgeDeploymentPlans.html
+   */
+  public toListEdgeDeploymentPlans() {
+    return this.to('ListEdgeDeploymentPlans');
+  }
+
+  /**
    * Grants permission to list edge packaging jobs
    *
    * Access Level: List
@@ -2367,7 +2540,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_ListHumanLoops.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanLoops.html
    */
   public toListHumanLoops() {
     return this.to('ListHumanLoops');
@@ -2649,6 +2822,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list stage devices
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListStageDevices.html
+   */
+  public toListStageDevices() {
+    return this.to('ListStageDevices');
+  }
+
+  /**
    * Grants permission to list the Studio Lifecycle Configurations that can be deployed using Amazon SageMaker
    *
    * Access Level: List
@@ -2774,7 +2958,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutLineageGroupPolicy.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/Welcome.html
    */
   public toPutLineageGroupPolicy() {
     return this.to('PutLineageGroupPolicy');
@@ -2869,7 +3053,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SendHeartbeat.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_edge_SendHeartbeat.html
    */
   public toSendHeartbeat() {
     return this.to('SendHeartbeat');
@@ -2898,11 +3082,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an edge deployment stage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartEdgeDeploymentStage.html
+   */
+  public toStartEdgeDeploymentStage() {
+    return this.to('StartEdgeDeploymentStage');
+  }
+
+  /**
    * Grants permission to start a human loop
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_StartHumanLoop.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartHumanLoop.html
    */
   public toStartHumanLoop() {
     return this.to('StartHumanLoop');
@@ -2964,6 +3159,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an edge deployment stage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopEdgeDeploymentStage.html
+   */
+  public toStopEdgeDeploymentStage() {
+    return this.to('StopEdgeDeploymentStage');
+  }
+
+  /**
    * Grants permission to stop an edge packaging job
    *
    * Access Level: Write
@@ -2979,7 +3185,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_StopHumanLoop.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopHumanLoop.html
    */
   public toStopHumanLoop() {
     return this.to('StopHumanLoop');
@@ -3255,6 +3461,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifModelApprovalStatus()
+   * - .ifCustomerMetadataProperties()
+   * - .ifCustomerMetadataPropertiesToRemove()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateModelPackage.html
    */
@@ -3289,7 +3497,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC security groups
+   * Grants permission to update a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements
    *
    * Access Level: Write
    *
@@ -3450,6 +3658,8 @@ export class Sagemaker extends PolicyStatement {
       'CreateDataQualityJobDefinition',
       'CreateDeviceFleet',
       'CreateDomain',
+      'CreateEdgeDeploymentPlan',
+      'CreateEdgeDeploymentStage',
       'CreateEdgePackagingJob',
       'CreateEndpoint',
       'CreateEndpointConfig',
@@ -3496,6 +3706,8 @@ export class Sagemaker extends PolicyStatement {
       'DeleteDataQualityJobDefinition',
       'DeleteDeviceFleet',
       'DeleteDomain',
+      'DeleteEdgeDeploymentPlan',
+      'DeleteEdgeDeploymentStage',
       'DeleteEndpoint',
       'DeleteEndpointConfig',
       'DeleteExperiment',
@@ -3537,12 +3749,14 @@ export class Sagemaker extends PolicyStatement {
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
+      'StartEdgeDeploymentStage',
       'StartHumanLoop',
       'StartMonitoringSchedule',
       'StartNotebookInstance',
       'StartPipelineExecution',
       'StopAutoMLJob',
       'StopCompilationJob',
+      'StopEdgeDeploymentStage',
       'StopEdgePackagingJob',
       'StopHumanLoop',
       'StopHyperParameterTuningJob',
@@ -3603,6 +3817,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeDevice',
       'DescribeDeviceFleet',
       'DescribeDomain',
+      'DescribeEdgeDeploymentPlan',
       'DescribeEdgePackagingJob',
       'DescribeEndpoint',
       'DescribeEndpointConfig',
@@ -3669,6 +3884,7 @@ export class Sagemaker extends PolicyStatement {
       'ListDeviceFleets',
       'ListDevices',
       'ListDomains',
+      'ListEdgeDeploymentPlans',
       'ListEdgePackagingJobs',
       'ListEndpointConfigs',
       'ListEndpoints',
@@ -3701,6 +3917,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListStageDevices',
       'ListStudioLifecycleConfigs',
       'ListSubscribedWorkteams',
       'ListTags',
@@ -3772,6 +3989,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type edge-deployment-plan to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge.html
+   *
+   * @param edgeDeploymentPlanName - Identifier for the edgeDeploymentPlanName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-deployment/${ edgeDeploymentPlanName }`);
+  }
+
+  /**
    * Adds a resource of type human-loop to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html
@@ -3824,7 +4059,7 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type inference-recommendations-job to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommendations-job
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommender-recommendation-jobs.html
    *
    * @param inferenceRecommendationsJobName - Identifier for the inferenceRecommendationsJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3954,7 +4189,7 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type app-image-config to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi-sdk-create-image.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi-create.html
    *
    * @param appImageConfigName - Identifier for the appImageConfigName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4277,6 +4512,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:compilation-job/${ compilationJobName }`);
@@ -4597,6 +4836,38 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
     return this.if(`AppNetworkAccessType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a metadata key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateModelPackage()
+   * - .toUpdateModelPackage()
+   *
+   * @param metadataKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCustomerMetadataProperties(metadataKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`CustomerMetadataProperties/${ metadataKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of metadata properties associated with the model-package resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toUpdateModelPackage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCustomerMetadataPropertiesToRemove(value: string | string[], operator?: Operator | string) {
+    return this.if(`CustomerMetadataPropertiesToRemove`, value, operator || 'StringLike');
   }
 
   /**
@@ -4988,6 +5259,7 @@ export class Sagemaker extends PolicyStatement {
    * - device
    * - device-fleet
    * - edge-packaging-job
+   * - edge-deployment-plan
    * - flow-definition
    * - human-task-ui
    * - inference-recommendations-job
@@ -5013,6 +5285,7 @@ export class Sagemaker extends PolicyStatement {
    * - endpoint-config
    * - endpoint
    * - transform-job
+   * - compilation-job
    * - automl-job
    * - monitoring-schedule
    * - data-quality-job-definition
