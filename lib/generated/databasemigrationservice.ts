@@ -346,6 +346,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about pending maintenance actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribePendingMaintenanceActions.html
+   */
+  public toDescribePendingMaintenanceActions() {
+    return this.to('DescribePendingMaintenanceActions');
+  }
+
+  /**
    * Grants permission to returns the status of the RefreshSchemas operation
    *
    * Access Level: Read
@@ -701,6 +712,7 @@ export class Dms extends PolicyStatement {
       'DescribeEventSubscriptions',
       'DescribeEvents',
       'DescribeOrderableReplicationInstances',
+      'DescribePendingMaintenanceActions',
       'DescribeRefreshSchemasStatus',
       'DescribeReplicationInstanceTaskLogs',
       'DescribeReplicationInstances',
@@ -853,7 +865,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for Certificate
+   * Filters access by the presence of tag key-value pairs in the request for Certificate
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_cert-tag___TagKey_
    *
@@ -869,7 +881,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for Endpoint
+   * Filters access by the presence of tag key-value pairs in the request for Endpoint
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_endpoint-tag___TagKey_
    *
@@ -885,7 +897,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for EventSubscription
+   * Filters access by the presence of tag key-value pairs in the request for EventSubscription
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_es-tag___TagKey_
    *
@@ -901,7 +913,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for ReplicationInstance
+   * Filters access by the presence of tag key-value pairs in the request for ReplicationInstance
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_rep-tag___TagKey_
    *
@@ -917,7 +929,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag key-value pairs in the request
+   * Filters access by the presence of tag key-value pairs in the given request
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_req-tag___TagKey_
    *
@@ -938,7 +950,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for ReplicationSubnetGroup
+   * Filters access by the presence of tag key-value pairs in the request for ReplicationSubnetGroup
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_subgrp-tag___TagKey_
    *
@@ -954,7 +966,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request for ReplicationTask
+   * Filters access by the presence of tag key-value pairs in the request for ReplicationTask
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_task-tag___TagKey_
    *
