@@ -374,6 +374,17 @@ export class NeptuneDb extends PolicyStatement {
     return this.to('WriteDataViaQuery');
   }
 
+  /**
+   * Grants permission to all data-access actions in engine versions prior to 1.2.0.0
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html
+   */
+  public toConnect() {
+    return this.to('connect');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelLoaderJob',
@@ -391,7 +402,8 @@ export class NeptuneDb extends PolicyStatement {
       'StartMLDataProcessingJob',
       'StartMLModelTrainingJob',
       'StartMLModelTransformJob',
-      'WriteDataViaQuery'
+      'WriteDataViaQuery',
+      'connect'
     ],
     Read: [
       'GetEngineStatus',
@@ -417,7 +429,7 @@ export class NeptuneDb extends PolicyStatement {
   /**
    * Adds a resource of type database to the statement
    *
-   * https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html
+   * https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-resources.html
    *
    * @param cluster - Identifier for the cluster.
    * @param database - Identifier for the database.

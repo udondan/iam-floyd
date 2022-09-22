@@ -29,3 +29,4 @@ neptune-db:StartMLDataProcessingJob;Write
 neptune-db:StartMLModelTrainingJob;Write
 neptune-db:StartMLModelTransformJob;Write
 neptune-db:WriteDataViaQuery;Write
+neptune-db:connect;Write
