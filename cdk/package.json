@@ -8,6 +8,12 @@
     "url": "https://www.udondan.com/",
     "twitter": "udondan"
   },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/udondan"
+    }
+  ],
   "awscdkio": {
     "twitter": "udondan"
   },
