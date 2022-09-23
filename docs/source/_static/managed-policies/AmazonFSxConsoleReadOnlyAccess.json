@@ -5,6 +5,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"cloudwatch:DescribeAlarms",
+				"cloudwatch:GetMetricData",
 				"ds:DescribeDirectories",
 				"ec2:DescribeNetworkInterfaceAttribute",
 				"ec2:DescribeSecurityGroups",

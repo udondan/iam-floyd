@@ -5,6 +5,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"cloudwatch:DescribeAlarms",
+				"cloudwatch:GetMetricData",
 				"ds:DescribeDirectories",
 				"ec2:DescribeNetworkInterfaceAttribute",
 				"ec2:DescribeRouteTables",
@@ -44,21 +45,23 @@
 			}
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags"
-            ],
-            "Resource": [
-                "arn:aws:ec2:*:*:route-table/*"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
-                },
-                "ForAnyValue:StringEquals": {
-                    "aws:CalledVia": ["fsx.amazonaws.com"]
-                }
-            }
-        }
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:route-table/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
+				},
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"fsx.amazonaws.com"
+					]
+				}
+			}
+		}
 	]
 }
