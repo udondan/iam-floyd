@@ -593,7 +593,7 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
-   * Filters access based on whether an API key is required or not. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import and reimport
+   * Filters access by the requirement of API. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import and reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
@@ -792,7 +792,7 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
-   * Filters access based on whether an API key is required or not for the existing Route resource. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
+   * Filters access by the requirement of API key for the existing Route resource. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
@@ -907,7 +907,7 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
-   * ilters access by authorization type of the existing Route resource, for example NONE, AWS_IAM, CUSTOM. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
+   * Filters access by authorization type of the existing Route resource, for example NONE, AWS_IAM, CUSTOM. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
