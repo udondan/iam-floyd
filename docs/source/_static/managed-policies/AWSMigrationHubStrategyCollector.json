@@ -35,7 +35,8 @@
 				"migrationhub-strategy:GetMessage",
 				"migrationhub-strategy:SendMessage",
 				"migrationhub-strategy:ListAntiPatterns",
-				"migrationhub-strategy:ListJarArtifacts"
+				"migrationhub-strategy:ListJarArtifacts",
+				"migrationhub-strategy:UpdateCollectorConfiguration"
 			],
 			"Resource": "arn:aws:migrationhub-strategy:*:*:*"
 		},
