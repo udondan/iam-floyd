@@ -166,6 +166,17 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about the Amazon Inspector configuration settings for an AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetConfiguration.html
+   */
+  public toGetConfiguration() {
+    return this.to('GetConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve information about the Amazon Inspector administrator account for an account
    *
    * Access Level: Read
@@ -339,6 +350,17 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update information about the Amazon Inspector configuration settings for an AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConfiguration.html
+   */
+  public toUpdateConfiguration() {
+    return this.to('UpdateConfiguration');
+  }
+
+  /**
    * Grants permission to update the settings for a findings filter
    *
    * Access Level: Write
@@ -376,6 +398,7 @@ export class Inspector2 extends PolicyStatement {
       'DisassociateMember',
       'Enable',
       'EnableDelegatedAdminAccount',
+      'UpdateConfiguration',
       'UpdateFilter',
       'UpdateOrganizationConfiguration'
     ],
@@ -383,6 +406,7 @@ export class Inspector2 extends PolicyStatement {
       'BatchGetAccountStatus',
       'BatchGetFreeTrialInfo',
       'DescribeOrganizationConfiguration',
+      'GetConfiguration',
       'GetDelegatedAdminAccount',
       'GetFindingsReportStatus',
       'GetMember',

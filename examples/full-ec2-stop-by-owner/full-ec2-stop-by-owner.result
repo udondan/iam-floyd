@@ -136,6 +136,8 @@
                 "ec2:DescribeTransitGatewayConnects",
                 "ec2:DescribeTransitGatewayMulticastDomains",
                 "ec2:DescribeTransitGatewayPeeringAttachments",
+                "ec2:DescribeTransitGatewayPolicyTables",
+                "ec2:DescribeTransitGatewayRouteTableAnnouncements",
                 "ec2:DescribeTransitGatewayRouteTables",
                 "ec2:DescribeTransitGatewayVpcAttachments",
                 "ec2:DescribeTransitGateways",

@@ -3362,7 +3362,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe an Elastic Graphics accelerator that is associated with an instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -3404,7 +3404,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe fast-launch enabled Windows AMIs
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -3418,7 +3418,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe the state of fast snapshot restores for snapshots
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4286,7 +4286,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to find available schedules for Scheduled Instances
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4300,7 +4300,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more Scheduled Instances in your account
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4524,7 +4524,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more tags for an Amazon EC2 resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4650,7 +4650,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe a transit gateway policy table
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4664,7 +4664,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe a transit gateway route table announcement
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4776,7 +4776,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe the current modification status of one or more EBS volumes
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4944,7 +4944,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more VPN connections
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -5741,7 +5741,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to view a list of instance types with specified instance attributes
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -5783,7 +5783,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to get a list of all the CIDR allocations in an Amazon VPC IP Address Manager (IPAM) pool
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -6591,6 +6591,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyLaunchTemplate() {
     return this.to('ModifyLaunchTemplate');
+  }
+
+  /**
+   * Grants permission to modify a local gateway route
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLocalGatewayRoute.html
+   */
+  public toModifyLocalGatewayRoute() {
+    return this.to('ModifyLocalGatewayRoute');
   }
 
   /**
@@ -8157,8 +8171,6 @@ export class Ec2 extends PolicyStatement {
       'DeregisterInstanceEventNotificationAttributes',
       'DeregisterTransitGatewayMulticastGroupMembers',
       'DeregisterTransitGatewayMulticastGroupSources',
-      'DescribeTransitGatewayPolicyTables',
-      'DescribeTransitGatewayRouteTableAnnouncements',
       'DetachClassicLinkVpc',
       'DetachInternetGateway',
       'DetachNetworkInterface',
@@ -8231,6 +8243,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyIpamResourceCidr',
       'ModifyIpamScope',
       'ModifyLaunchTemplate',
+      'ModifyLocalGatewayRoute',
       'ModifyManagedPrefixList',
       'ModifyNetworkInterfaceAttribute',
       'ModifyPrivateDnsNameOptions',
@@ -8355,8 +8368,11 @@ export class Ec2 extends PolicyStatement {
       'DescribeCustomerGateways',
       'DescribeDhcpOptions',
       'DescribeEgressOnlyInternetGateways',
+      'DescribeElasticGpus',
       'DescribeExportImageTasks',
       'DescribeExportTasks',
+      'DescribeFastLaunchImages',
+      'DescribeFastSnapshotRestores',
       'DescribeFleetHistory',
       'DescribeFleetInstances',
       'DescribeFleets',
@@ -8418,6 +8434,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeReservedInstancesModifications',
       'DescribeReservedInstancesOfferings',
       'DescribeRouteTables',
+      'DescribeScheduledInstanceAvailability',
+      'DescribeScheduledInstances',
       'DescribeSecurityGroupReferences',
       'DescribeSecurityGroupRules',
       'DescribeSecurityGroups',
@@ -8433,6 +8451,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeStaleSecurityGroups',
       'DescribeStoreImageTasks',
       'DescribeSubnets',
+      'DescribeTags',
       'DescribeTrafficMirrorFilters',
       'DescribeTrafficMirrorSessions',
       'DescribeTrafficMirrorTargets',
@@ -8441,6 +8460,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeTransitGatewayConnects',
       'DescribeTransitGatewayMulticastDomains',
       'DescribeTransitGatewayPeeringAttachments',
+      'DescribeTransitGatewayPolicyTables',
+      'DescribeTransitGatewayRouteTableAnnouncements',
       'DescribeTransitGatewayRouteTables',
       'DescribeTransitGatewayVpcAttachments',
       'DescribeTransitGateways',
@@ -8448,6 +8469,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeVolumeAttribute',
       'DescribeVolumeStatus',
       'DescribeVolumes',
+      'DescribeVolumesModifications',
       'DescribeVpcAttribute',
       'DescribeVpcClassicLink',
       'DescribeVpcClassicLinkDnsSupport',
@@ -8459,8 +8481,11 @@ export class Ec2 extends PolicyStatement {
       'DescribeVpcEndpoints',
       'DescribeVpcPeeringConnections',
       'DescribeVpcs',
+      'DescribeVpnConnections',
       'DescribeVpnGateways',
       'GetGroupsForCapacityReservation',
+      'GetInstanceTypesFromInstanceRequirements',
+      'GetIpamPoolAllocations',
       'GetTransitGatewayAttachmentPropagations',
       'GetTransitGatewayMulticastDomainAssociations',
       'GetTransitGatewayPolicyTableAssociations',
@@ -8477,14 +8502,6 @@ export class Ec2 extends PolicyStatement {
       'SearchTransitGatewayRoutes'
     ],
     Read: [
-      'DescribeElasticGpus',
-      'DescribeFastLaunchImages',
-      'DescribeFastSnapshotRestores',
-      'DescribeScheduledInstanceAvailability',
-      'DescribeScheduledInstances',
-      'DescribeTags',
-      'DescribeVolumesModifications',
-      'DescribeVpnConnections',
       'ExportClientVpnClientCertificateRevocationList',
       'ExportClientVpnClientConfiguration',
       'GetAssociatedEnclaveCertificateIamRoles',
@@ -8498,10 +8515,8 @@ export class Ec2 extends PolicyStatement {
       'GetEbsEncryptionByDefault',
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
-      'GetInstanceTypesFromInstanceRequirements',
       'GetInstanceUefiData',
       'GetIpamAddressHistory',
-      'GetIpamPoolAllocations',
       'GetIpamPoolCidrs',
       'GetIpamResourceCidrs',
       'GetLaunchTemplateData',
@@ -10411,6 +10426,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10660,6 +10676,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10682,6 +10699,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
    * Applies to resource types:
@@ -10779,6 +10797,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -12092,6 +12111,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
@@ -12303,6 +12323,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
    * Applies to resource types:
@@ -13196,6 +13217,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -13692,7 +13714,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFastLaunchImages()
    * - .toDescribeFleetHistory()
    * - .toDescribeFleetInstances()
-   * - .toDescribeFleets()
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
@@ -13780,6 +13801,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -14351,6 +14373,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
@@ -14735,6 +14758,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportInstance()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifySecurityGroupRules()
    * - .toModifySpotFleetRequest()

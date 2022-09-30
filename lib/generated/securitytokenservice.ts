@@ -25,14 +25,12 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
    * - .ifExternalId()
    * - .ifRoleSessionName()
    * - .ifIamResourceTag()
    * - .ifSourceIdentity()
-   * - .ifAwsSourceIdentity()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
@@ -79,7 +77,6 @@ export class Sts extends PolicyStatement {
    * - .ifSamlUid()
    * - .ifSamlX500UniqueIdentifier()
    * - .ifAwsTagKeys()
-   * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
    * - .ifSourceIdentity()
@@ -108,7 +105,6 @@ export class Sts extends PolicyStatement {
    * - .ifGoogleOaud()
    * - .ifGoogleSub()
    * - .ifAwsTagKeys()
-   * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
    * - .ifSourceIdentity()
@@ -160,7 +156,6 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
@@ -201,7 +196,6 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSourceIdentity()
-   * - .ifAwsSourceIdentity()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html#id_credentials_temp_control-access_monitor-perms
    */
@@ -216,9 +210,9 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
+   * - .ifSamlAud()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
@@ -321,18 +315,6 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters access by the IdP that was used to authenticate the user
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_federatedprovider
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsFederatedProvider(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:FederatedProvider`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by the login information for Amazon Cognito
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
@@ -430,6 +412,7 @@ export class Sts extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssumeRoleWithSAML()
+   * - .toTagSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

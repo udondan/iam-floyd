@@ -308,6 +308,7 @@ export { Sqlworkbench } from './sqlworkbench';
 export { States } from './stepfunctions';
 export { Storagegateway } from './storagegateway';
 export { Support } from './support';
+export { Supportplans } from './supportplans';
 export { Sustainability } from './sustainability';
 export { Ssm } from './systemsmanager';
 export { SsmGuiconnect } from './systemsmanagerguiconnect';
