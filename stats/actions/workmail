@@ -3,6 +3,7 @@ workmail:AssociateDelegateToResource;Write
 workmail:AssociateMemberToGroup;Write
 workmail:CancelMailboxExportJob;Write
 workmail:CreateAlias;Write
+workmail:CreateAvailabilityConfiguration;Write
 workmail:CreateGroup;Write
 workmail:CreateInboundMailFlowRule;Write
 workmail:CreateMailDomain;Write
@@ -15,6 +16,7 @@ workmail:CreateSmtpGateway;Write
 workmail:CreateUser;Write
 workmail:DeleteAccessControlRule;Write
 workmail:DeleteAlias;Write
+workmail:DeleteAvailabilityConfiguration;Write
 workmail:DeleteEmailMonitoringConfiguration;Write
 workmail:DeleteGroup;Write
 workmail:DeleteInboundMailFlowRule;Write
@@ -69,6 +71,7 @@ workmail:GetMobileDevicesForUser;Read
 workmail:GetMobilePolicyDetails;Read
 workmail:ListAccessControlRules;Read
 workmail:ListAliases;List
+workmail:ListAvailabilityConfigurations;Read
 workmail:ListGroupMembers;List
 workmail:ListGroups;List
 workmail:ListInboundMailFlowRules;List
@@ -105,9 +108,11 @@ workmail:SetMailUserDetails;Write
 workmail:SetMobilePolicyDetails;Write
 workmail:StartMailboxExportJob;Write
 workmail:TagResource;Tagging
+workmail:TestAvailabilityConfiguration;Read
 workmail:TestInboundMailFlowRules;Write
 workmail:TestOutboundMailFlowRules;Write
 workmail:UntagResource;Tagging
+workmail:UpdateAvailabilityConfiguration;Write
 workmail:UpdateDefaultMailDomain;Write
 workmail:UpdateInboundMailFlowRule;Write
 workmail:UpdateMailboxQuota;Write

@@ -515,6 +515,14 @@ export class WorkspacesWeb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateTags
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteNetworkInterfacePermission
+   * - ec2:ModifyNetworkInterfaceAttribute
+   *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateNetworkSettings.html
    */
   public toUpdateNetworkSettings() {

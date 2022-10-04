@@ -74,6 +74,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AvailabilityConfiguration for the given Amazon WorkMail organization and domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateAvailabilityConfiguration.html
+   */
+  public toCreateAvailabilityConfiguration() {
+    return this.to('CreateAvailabilityConfiguration');
+  }
+
+  /**
    * Grants permission to create a group that can be used in WorkMail by calling the RegisterToWorkMail operation
    *
    * Access Level: Write
@@ -203,6 +214,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDeleteAlias() {
     return this.to('DeleteAlias');
+  }
+
+  /**
+   * Grants permission to delete the AvailabilityConfiguration for the given Amazon WorkMail organization and domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAvailabilityConfiguration.html
+   */
+  public toDeleteAvailabilityConfiguration() {
+    return this.to('DeleteAvailabilityConfiguration');
   }
 
   /**
@@ -800,6 +822,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the AvailabilityConfiguration's for the given Amazon WorkMail organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAvailabilityConfigurations.html
+   */
+  public toListAvailabilityConfigurations() {
+    return this.to('ListAvailabilityConfigurations');
+  }
+
+  /**
    * Grants permission to read an overview of the members of a group. Users and groups can be members of a group
    *
    * Access Level: List
@@ -1204,6 +1237,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to performs a test on an availability provider to ensure that access is allowed
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_TestAvailabilityConfiguration.html
+   */
+  public toTestAvailabilityConfiguration() {
+    return this.to('TestAvailabilityConfiguration');
+  }
+
+  /**
    * Grants permission to test what inbound rules will apply to an email with a given sender and recipient
    *
    * Access Level: Write
@@ -1238,6 +1282,17 @@ export class Workmail extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an existing AvailabilityConfiguration for the given Amazon WorkMail organization and domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateAvailabilityConfiguration.html
+   */
+  public toUpdateAvailabilityConfiguration() {
+    return this.to('UpdateAvailabilityConfiguration');
   }
 
   /**
@@ -1346,6 +1401,7 @@ export class Workmail extends PolicyStatement {
       'AssociateMemberToGroup',
       'CancelMailboxExportJob',
       'CreateAlias',
+      'CreateAvailabilityConfiguration',
       'CreateGroup',
       'CreateInboundMailFlowRule',
       'CreateMailDomain',
@@ -1358,6 +1414,7 @@ export class Workmail extends PolicyStatement {
       'CreateUser',
       'DeleteAccessControlRule',
       'DeleteAlias',
+      'DeleteAvailabilityConfiguration',
       'DeleteEmailMonitoringConfiguration',
       'DeleteGroup',
       'DeleteInboundMailFlowRule',
@@ -1401,6 +1458,7 @@ export class Workmail extends PolicyStatement {
       'StartMailboxExportJob',
       'TestInboundMailFlowRules',
       'TestOutboundMailFlowRules',
+      'UpdateAvailabilityConfiguration',
       'UpdateDefaultMailDomain',
       'UpdateInboundMailFlowRule',
       'UpdateMailboxQuota',
@@ -1458,10 +1516,12 @@ export class Workmail extends PolicyStatement {
       'GetMobileDevicesForUser',
       'GetMobilePolicyDetails',
       'ListAccessControlRules',
+      'ListAvailabilityConfigurations',
       'ListMembersInMailGroup',
       'ListMobileDeviceAccessOverrides',
       'ListMobileDeviceAccessRules',
-      'SearchMembers'
+      'SearchMembers',
+      'TestAvailabilityConfiguration'
     ],
     Tagging: [
       'TagResource',

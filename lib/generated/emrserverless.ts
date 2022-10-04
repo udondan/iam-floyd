@@ -67,6 +67,17 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get job run dashboard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetDashboardForJobRun.html
+   */
+  public toGetDashboardForJobRun() {
+    return this.to('GetDashboardForJobRun');
+  }
+
+  /**
    * Grants permission to get a job run
    *
    * Access Level: Read
@@ -202,6 +213,7 @@ export class EmrServerless extends PolicyStatement {
     ],
     Read: [
       'GetApplication',
+      'GetDashboardForJobRun',
       'GetJobRun',
       'ListTagsForResource'
     ],

@@ -12,8 +12,10 @@ cases:GetDomain;Read
 cases:GetLayout;Read
 cases:GetTemplate;Read
 cases:ListCasesForContact;List
+cases:ListDomains;List
 cases:ListFieldOptions;List
 cases:ListFields;List
+cases:ListLayouts;List
 cases:ListTagsForResource;Read
 cases:ListTemplates;List
 cases:PutCaseEventConfiguration;Write

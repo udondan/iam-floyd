@@ -124,6 +124,32 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new, empty, Amazon file cache
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - fsx:CreateDataRepositoryAssociation
+   * - fsx:TagResource
+   * - logs:CreateLogGroup
+   * - logs:CreateLogStream
+   * - logs:PutLogEvents
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileCache.html
+   */
+  public toCreateFileCache() {
+    return this.to('CreateFileCache');
+  }
+
+  /**
    * Grants permission to create a new, empty, Amazon FSx file system
    *
    * Access Level: Write
@@ -257,6 +283,24 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a file cache, deleting its contents
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:DeleteDataRepositoryAssociation
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileCache.html
+   */
+  public toDeleteFileCache() {
+    return this.to('DeleteFileCache');
+  }
+
+  /**
    * Grants permission to delete a file system, deleting its contents and any existing automatic backups of the file system
    *
    * Access Level: Write
@@ -356,6 +400,17 @@ export class Fsx extends PolicyStatement {
    */
   public toDescribeDataRepositoryTasks() {
     return this.to('DescribeDataRepositoryTasks');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all file caches owned by your AWS account in the AWS Region of the endpoint that you're calling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html
+   */
+  public toDescribeFileCaches() {
+    return this.to('DescribeFileCaches');
   }
 
   /**
@@ -520,6 +575,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update file cache configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileCache.html
+   */
+  public toUpdateFileCache() {
+    return this.to('UpdateFileCache');
+  }
+
+  /**
    * Grants permission to update file system configuration
    *
    * Access Level: Write
@@ -576,6 +642,7 @@ export class Fsx extends PolicyStatement {
       'CreateBackup',
       'CreateDataRepositoryAssociation',
       'CreateDataRepositoryTask',
+      'CreateFileCache',
       'CreateFileSystem',
       'CreateFileSystemFromBackup',
       'CreateSnapshot',
@@ -584,6 +651,7 @@ export class Fsx extends PolicyStatement {
       'CreateVolumeFromBackup',
       'DeleteBackup',
       'DeleteDataRepositoryAssociation',
+      'DeleteFileCache',
       'DeleteFileSystem',
       'DeleteSnapshot',
       'DeleteStorageVirtualMachine',
@@ -593,6 +661,7 @@ export class Fsx extends PolicyStatement {
       'ReleaseFileSystemNfsV3Locks',
       'RestoreVolumeFromSnapshot',
       'UpdateDataRepositoryAssociation',
+      'UpdateFileCache',
       'UpdateFileSystem',
       'UpdateSnapshot',
       'UpdateStorageVirtualMachine',
@@ -603,6 +672,7 @@ export class Fsx extends PolicyStatement {
       'DescribeBackups',
       'DescribeDataRepositoryAssociations',
       'DescribeDataRepositoryTasks',
+      'DescribeFileCaches',
       'DescribeFileSystemAliases',
       'DescribeFileSystems',
       'DescribeSnapshots',
@@ -634,6 +704,23 @@ export class Fsx extends PolicyStatement {
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
+  }
+
+  /**
+   * Adds a resource of type file-cache to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/security-iam.html
+   *
+   * @param fileCacheId - Identifier for the fileCacheId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFileCache(fileCacheId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-cache/${ fileCacheId }`);
   }
 
   /**
@@ -693,7 +780,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
    *
-   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param fileSystemIdOrFileCacheId - Identifier for the fileSystemIdOrFileCacheId.
    * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -702,8 +789,8 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAssociation(fileSystemId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemId }/${ dataRepositoryAssociationId }`);
+  public onAssociation(fileSystemIdOrFileCacheId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
   }
 
   /**
@@ -762,6 +849,36 @@ export class Fsx extends PolicyStatement {
    */
   public ifIsBackupCopySource(value?: boolean) {
     return this.if(`IsBackupCopySource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by NFS data repositories which support authentication
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateFileCache.html
+   *
+   * Applies to actions:
+   * - .toCreateFileCache()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNfsDataRepositoryAuthenticationEnabled(value: string | string[], operator?: Operator | string) {
+    return this.if(`NfsDataRepositoryAuthenticationEnabled`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by NFS data repositories which support encryption-in-transit
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateFileCache.html
+   *
+   * Applies to actions:
+   * - .toCreateFileCache()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNfsDataRepositoryEncryptionInTransitEnabled(value: string | string[], operator?: Operator | string) {
+    return this.if(`NfsDataRepositoryEncryptionInTransitEnabled`, value, operator || 'StringLike');
   }
 
   /**

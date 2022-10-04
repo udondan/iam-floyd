@@ -27,6 +27,12 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - appflow:CreateFlow
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
    */
   public toCreateDataIntegration() {
@@ -52,6 +58,11 @@ export class AppIntegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html
    */

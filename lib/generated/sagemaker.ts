@@ -967,6 +967,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVolumeKmsKey()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
+   * - .ifKeepAlivePeriod()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -3571,6 +3572,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceTypes()
+   * - .ifKeepAlivePeriod()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrainingJob.html
    */
@@ -5116,6 +5118,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifInterContainerTrafficEncryption(value?: boolean) {
     return this.if(`InterContainerTrafficEncryption`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the keep-alive period associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateTrainingJob()
+   * - .toUpdateTrainingJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifKeepAlivePeriod(value: number | number[], operator?: Operator | string) {
+    return this.if(`KeepAlivePeriod`, value, operator || 'NumericEquals');
   }
 
   /**

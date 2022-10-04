@@ -16,6 +16,7 @@ sagemaker:ImageArns
 sagemaker:ImageVersionArns
 sagemaker:InstanceTypes
 sagemaker:InterContainerTrafficEncryption
+sagemaker:KeepAlivePeriod
 sagemaker:MaxRuntimeInSeconds
 sagemaker:MinimumInstanceMetadataServiceVersion
 sagemaker:ModelApprovalStatus
