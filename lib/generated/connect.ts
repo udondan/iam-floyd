@@ -354,6 +354,7 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - app-integrations:CreateEventIntegrationAssociation
+   * - cases:GetDomain
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
    * - events:PutRule
