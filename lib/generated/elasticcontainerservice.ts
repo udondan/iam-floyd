@@ -78,6 +78,8 @@ export class Ecs extends PolicyStatement {
    * - .ifCapacityProvider()
    * - .ifService()
    * - .ifTaskDefinition()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
@@ -801,7 +803,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -895,7 +897,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type capacity-provider to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity_provider_definitions.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html
    *
    * @param capacityProviderName - Identifier for the capacityProviderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -913,7 +915,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type task-set to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-external.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param serviceName - Identifier for the serviceName.
