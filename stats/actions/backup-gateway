@@ -5,6 +5,7 @@ backup-gateway:DeleteGateway;Write
 backup-gateway:DeleteHypervisor;Write
 backup-gateway:DisassociateGatewayFromServer;Write
 backup-gateway:GetGateway;Read
+backup-gateway:GetVirtualMachine;Read
 backup-gateway:ImportHypervisorConfiguration;Write
 backup-gateway:ListGateways;Read
 backup-gateway:ListHypervisors;Read

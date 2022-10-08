@@ -51,6 +51,8 @@ ec2:CreateCapacityReservationFleet;Write
 ec2:CreateCarrierGateway;Write
 ec2:CreateClientVpnEndpoint;Write
 ec2:CreateClientVpnRoute;Write
+ec2:CreateCoipCidr;Write
+ec2:CreateCoipPool;Write
 ec2:CreateCoipPoolPermission;Write
 ec2:CreateCustomerGateway;Write
 ec2:CreateDefaultSubnet;Write
@@ -71,7 +73,9 @@ ec2:CreateKeyPair;Write
 ec2:CreateLaunchTemplate;Write
 ec2:CreateLaunchTemplateVersion;Write
 ec2:CreateLocalGatewayRoute;Write
+ec2:CreateLocalGatewayRouteTable;Write
 ec2:CreateLocalGatewayRouteTablePermission;Write
+ec2:CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:CreateLocalGatewayRouteTableVpcAssociation;Write
 ec2:CreateManagedPrefixList;Write
 ec2:CreateNatGateway;Write
@@ -123,6 +127,8 @@ ec2:CreateVpnGateway;Write
 ec2:DeleteCarrierGateway;Write
 ec2:DeleteClientVpnEndpoint;Write
 ec2:DeleteClientVpnRoute;Write
+ec2:DeleteCoipCidr;Write
+ec2:DeleteCoipPool;Write
 ec2:DeleteCoipPoolPermission;Write
 ec2:DeleteCustomerGateway;Write
 ec2:DeleteDhcpOptions;Write
@@ -139,7 +145,9 @@ ec2:DeleteKeyPair;Write
 ec2:DeleteLaunchTemplate;Write
 ec2:DeleteLaunchTemplateVersions;Write
 ec2:DeleteLocalGatewayRoute;Write
+ec2:DeleteLocalGatewayRouteTable;Write
 ec2:DeleteLocalGatewayRouteTablePermission;Write
+ec2:DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:DeleteLocalGatewayRouteTableVpcAssociation;Write
 ec2:DeleteManagedPrefixList;Write
 ec2:DeleteNatGateway;Write

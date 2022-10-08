@@ -104,6 +104,17 @@ export class BackupGateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to GetVirtualMachine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_GetVirtualMachine.html
+   */
+  public toGetVirtualMachine() {
+    return this.to('GetVirtualMachine');
+  }
+
+  /**
    * Grants permission to ImportHypervisorConfiguration
    *
    * Access Level: Write
@@ -284,6 +295,7 @@ export class BackupGateway extends PolicyStatement {
     ],
     Read: [
       'GetGateway',
+      'GetVirtualMachine',
       'ListGateways',
       'ListHypervisors',
       'ListTagsForResource',
@@ -297,6 +309,8 @@ export class BackupGateway extends PolicyStatement {
 
   /**
    * Adds a resource of type gateway to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Gateway.html
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -312,6 +326,8 @@ export class BackupGateway extends PolicyStatement {
   /**
    * Adds a resource of type hypervisor to the statement
    *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Hypervisor.html
+   *
    * @param hypervisorId - Identifier for the hypervisorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -325,6 +341,8 @@ export class BackupGateway extends PolicyStatement {
 
   /**
    * Adds a resource of type virtualmachine to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_VirtualMachine.html
    *
    * @param virtualmachineId - Identifier for the virtualmachineId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

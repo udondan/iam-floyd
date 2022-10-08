@@ -22,6 +22,8 @@ export class Tiros extends PolicyStatement {
    * Grants permission to create a VPC reachability query
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
    */
   public toCreateQuery() {
     return this.to('CreateQuery');
@@ -31,6 +33,8 @@ export class Tiros extends PolicyStatement {
    * Grants permission to extend a VPC reachability query to include the calling principals account
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
    */
   public toExtendQuery() {
     return this.to('ExtendQuery');
@@ -40,6 +44,8 @@ export class Tiros extends PolicyStatement {
    * Grants permission to list accounts that might be useful in a new query
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
    */
   public toGetExtensionAccounts() {
     return this.to('GetExtensionAccounts');
@@ -49,6 +55,8 @@ export class Tiros extends PolicyStatement {
    * Grants permission to get VPC reachability query answers
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
    */
   public toGetQueryAnswer() {
     return this.to('GetQueryAnswer');
@@ -58,6 +66,8 @@ export class Tiros extends PolicyStatement {
    * Grants permission to get VPC reachability query explanations
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
    */
   public toGetQueryExplanation() {
     return this.to('GetQueryExplanation');

@@ -3,6 +3,7 @@ ec2:capacity-reservation-fleet
 ec2:carrier-gateway
 ec2:certificate
 ec2:client-vpn-endpoint
+ec2:coip-pool
 ec2:customer-gateway
 ec2:dedicated-host
 ec2:dhcp-options
@@ -70,7 +71,9 @@ ec2:transit-gateway-route-table-announcement
 ec2:volume
 ec2:vpc
 ec2:vpc-endpoint
+ec2:vpc-endpoint-connection
 ec2:vpc-endpoint-service
+ec2:vpc-endpoint-service-permission
 ec2:vpc-flow-log
 ec2:vpc-peering-connection
 ec2:vpn-connection
