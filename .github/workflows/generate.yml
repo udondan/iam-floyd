@@ -55,36 +55,36 @@ jobs:
       # code.
       - name: Failsafe
         run: test -e lib/index.ts || exit 1
-        if: &changed steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Configure git
         run: |
           set -x
           git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Update version refs
         run: |
           set -x
           perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION
           make update-version-refs
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Update stats in documentation
         run: make stats
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Generate changelog for next release
         run: |
           set -x
           make changelog
           git add CHANGELOG/*
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Regenerate code example results
         run: make regenerate-code-example-results
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -96,4 +96,4 @@ jobs:
           git add * &&
           git commit -m "Adds latest IAM updates from AWS" &&
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-        if: *changed
+        if: steps.changes.outputs.CHANGED >= 3
