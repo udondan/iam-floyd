@@ -369,6 +369,15 @@
 				"arn:aws:logs:*:*:log-group:*",
 				"arn:aws:logs:*:*:destination:AmazonCloudWatch-ApplicationInsights-LogIngestionDestination*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticfilesystem:DescribeFileSystems"
+			],
+			"Resource": [
+				"*"
+			]
 		}
 	]
 }
