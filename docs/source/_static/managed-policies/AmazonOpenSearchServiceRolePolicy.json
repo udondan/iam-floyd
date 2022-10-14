@@ -113,6 +113,66 @@
 					"cloudwatch:namespace": "AWS/ES"
 				}
 			}
+		},
+		{
+			"Sid": "Stmt1480452973198",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateVpcEndpoint",
+				"ec2:ModifyVpcEndpoint"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:vpc/*",
+				"arn:aws:ec2:*:*:security-group/*",
+				"arn:aws:ec2:*:*:subnet/*",
+				"arn:aws:ec2:*:*:route-table/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973199",
+			"Effect": "Allow",
+			"Action": "ec2:CreateVpcEndpoint",
+			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/OpenSearchManaged": "true"
+				}
+			}
+		},
+		{
+			"Sid": "Stmt1480452973200",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ModifyVpcEndpoint",
+				"ec2:DeleteVpcEndpoints"
+			],
+			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/OpenSearchManaged": "true"
+				}
+			}
+		},
+		{
+			"Sid": "Stmt1480452973201",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeVpcEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973202",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateVpcEndpoint"
+				}
+			}
 		}
 	]
 }
