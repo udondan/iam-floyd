@@ -93,7 +93,19 @@ jobs:
         run: |
           set -x
           rm -rf package-lock.json node_modules tsconfig.json &&
-          git add * &&
-          git commit -m "Adds latest IAM updates from AWS" &&
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+          git add *
+        if: steps.changes.outputs.CHANGED >= 3
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.OVERRIDE_TOKEN }}
+          commit-message: Adds latest IAM updates from AWS
+          title: Adds latest IAM updates from AWS
+          body: Adds latest IAM updates from AWS
+          branch: iam-updates
+          delete-branch: true
+          committer: udondan <${{ secrets.RELEASE_MAIL }}>
+          author: udondan <${{ secrets.RELEASE_MAIL }}>
+          labels: automerge
         if: steps.changes.outputs.CHANGED >= 3
