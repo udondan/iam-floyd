@@ -19,7 +19,7 @@ export class Codeguru extends PolicyStatement {
   }
 
   /**
-   * Gets free trial summary for the CodeGuru service which includes expiration date.
+   * Grants permission to get free trial summary for the CodeGuru service which includes expiration date
    *
    * Access Level: Read
    *

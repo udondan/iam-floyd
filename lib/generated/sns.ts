@@ -419,7 +419,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to allow a topic owner to set an attribute of the topic to a new value
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Dependent actions:
    * - iam:PassRole
@@ -500,7 +500,8 @@ export class Sns extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddPermission',
-      'RemovePermission'
+      'RemovePermission',
+      'SetTopicAttributes'
     ],
     Read: [
       'CheckIfPhoneNumberIsOptedOut',
@@ -531,7 +532,6 @@ export class Sns extends PolicyStatement {
       'SetPlatformApplicationAttributes',
       'SetSMSAttributes',
       'SetSubscriptionAttributes',
-      'SetTopicAttributes',
       'Subscribe',
       'Unsubscribe',
       'VerifySMSSandboxPhoneNumber'

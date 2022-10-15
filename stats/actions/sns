@@ -33,7 +33,7 @@ sns:SetEndpointAttributes;Write
 sns:SetPlatformApplicationAttributes;Write
 sns:SetSMSAttributes;Write
 sns:SetSubscriptionAttributes;Write
-sns:SetTopicAttributes;Write
+sns:SetTopicAttributes;Permissions management
 sns:Subscribe;Write
 sns:TagResource;Tagging
 sns:Unsubscribe;Write
