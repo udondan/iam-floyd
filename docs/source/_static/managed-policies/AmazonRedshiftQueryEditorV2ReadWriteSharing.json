@@ -58,7 +58,8 @@
 				"sqlworkbench:DriverExecute",
 				"sqlworkbench:ListTaggedResources",
 				"sqlworkbench:ListQueryExecutionHistory",
-				"sqlworkbench:GetQueryExecutionHistory"
+				"sqlworkbench:GetQueryExecutionHistory",
+				"sqlworkbench:ListNotebooks"
 			],
 			"Resource": "*"
 		},
@@ -68,7 +69,11 @@
 			"Action": [
 				"sqlworkbench:CreateConnection",
 				"sqlworkbench:CreateSavedQuery",
-				"sqlworkbench:CreateChart"
+				"sqlworkbench:CreateChart",
+				"sqlworkbench:CreateNotebook",
+				"sqlworkbench:DuplicateNotebook",
+				"sqlworkbench:CreateNotebookFromVersion",
+				"sqlworkbench:ImportNotebook"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -95,7 +100,24 @@
 				"sqlworkbench:AssociateQueryWithTab",
 				"sqlworkbench:AssociateConnectionWithChart",
 				"sqlworkbench:UpdateFileFolder",
-				"sqlworkbench:ListTagsForResource"
+				"sqlworkbench:ListTagsForResource",
+				"sqlworkbench:GetNotebook",
+				"sqlworkbench:UpdateNotebook",
+				"sqlworkbench:DeleteNotebook",
+				"sqlworkbench:DuplicateNotebook",
+				"sqlworkbench:CreateNotebookCell",
+				"sqlworkbench:DeleteNotebookCell",
+				"sqlworkbench:UpdateNotebookCellContent",
+				"sqlworkbench:UpdateNotebookCellLayout",
+				"sqlworkbench:BatchGetNotebookCell",
+				"sqlworkbench:ListNotebookVersions",
+				"sqlworkbench:CreateNotebookVersion",
+				"sqlworkbench:GetNotebookVersion",
+				"sqlworkbench:DeleteNotebookVersion",
+				"sqlworkbench:RestoreNotebookVersion",
+				"sqlworkbench:CreateNotebookFromVersion",
+				"sqlworkbench:ExportNotebook",
+				"sqlworkbench:ImportNotebook"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -133,7 +155,14 @@
 				"sqlworkbench:UpdateSavedQuery",
 				"sqlworkbench:AssociateConnectionWithTab",
 				"sqlworkbench:AssociateQueryWithTab",
-				"sqlworkbench:AssociateConnectionWithChart"
+				"sqlworkbench:AssociateConnectionWithChart",
+				"sqlworkbench:GetNotebook",
+				"sqlworkbench:DuplicateNotebook",
+				"sqlworkbench:BatchGetNotebookCell",
+				"sqlworkbench:ListNotebookVersions",
+				"sqlworkbench:GetNotebookVersion",
+				"sqlworkbench:CreateNotebookFromVersion",
+				"sqlworkbench:ExportNotebook"
 			],
 			"Resource": "*",
 			"Condition": {

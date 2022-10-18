@@ -39,7 +39,7 @@
 				"ecr:BatchGetImage"
 			],
 			"Resource": [
-				"arn:aws:ecr:*:*:repository/eks/eks-certificates-controller-public",
+				"arn:aws:ecr:*:*:repository/eks/*",
 				"arn:aws:ecr:*:*:repository/bottlerocket-admin",
 				"arn:aws:ecr:*:*:repository/bottlerocket-control-eks",
 				"arn:aws:ecr:*:*:repository/diagnostics-collector-eks",

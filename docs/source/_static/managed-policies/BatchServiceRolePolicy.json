@@ -24,6 +24,7 @@
 				"autoscaling:DescribeAutoScalingGroups",
 				"autoscaling:DescribeLaunchConfigurations",
 				"autoscaling:DescribeAutoScalingInstances",
+				"eks:DescribeCluster",
 				"ecs:DescribeClusters",
 				"ecs:DescribeContainerInstances",
 				"ecs:DescribeTaskDefinition",

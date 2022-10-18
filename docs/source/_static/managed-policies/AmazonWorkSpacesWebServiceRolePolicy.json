@@ -49,6 +49,15 @@
 					]
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kinesis:PutRecord",
+				"kinesis:PutRecords",
+				"kinesis:DescribeStreamSummary"
+			],
+			"Resource": "arn:aws:kinesis:*:*:stream/amazon-workspaces-web-*"
 		}
 	]
 }
