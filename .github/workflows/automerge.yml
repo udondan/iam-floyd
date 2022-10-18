@@ -26,11 +26,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Automerge
+      - name: Automerge "dependencies"
         uses: pascalgn/automerge-action@v0.15.3
         if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: dependencies
           UPDATE_LABELS: dependencies
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          MERGE_DELETE_BRANCH: true
+
+      - name: Automerge "automerge"
+        uses: pascalgn/automerge-action@v0.15.3
+        if: steps.waitforstatuschecks.outputs.status == 'success'
+        env:
+          MERGE_LABELS: automerge
+          UPDATE_LABELS: automerge
           GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
           MERGE_DELETE_BRANCH: true
