@@ -7,6 +7,7 @@ on:
 
 jobs:
   automerge_dependabot:
+    name: Automerge Dependabot
     runs-on: ubuntu-latest
     if: |
       github.actor == 'dependabot[bot]' &&
@@ -16,8 +17,8 @@ jobs:
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1.7.1
         with:
-          ignoreActions: worker,automerge_dependabot,automerge_ci,WIP
-          checkInterval: 60
+          ignoreActions: Automerge Dependabot
+          checkInterval: 30
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -31,6 +32,7 @@ jobs:
           MERGE_DELETE_BRANCH: true
 
   automerge_ci:
+    name: Automerge CI
     runs-on: ubuntu-latest
     if: |
       github.actor == 'udondan' &&
@@ -40,8 +42,8 @@ jobs:
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1.7.1
         with:
-          ignoreActions: worker,automerge_dependabot,automerge_ci,WIP
-          checkInterval: 60
+          ignoreActions: Automerge CI
+          checkInterval: 30
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
