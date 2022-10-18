@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
-        if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: dependencies
           UPDATE_LABELS: dependencies
@@ -31,7 +30,6 @@ jobs:
     steps:
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
-        if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: automerge
           UPDATE_LABELS: automerge
