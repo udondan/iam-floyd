@@ -1190,7 +1190,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type field-level-encryption to the statement
+   * Adds a resource of type field-level-encryption-config to the statement
    *
    * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html
    *
@@ -1198,8 +1198,8 @@ export class Cloudfront extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onFieldLevelEncryption(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:field-level-encryption/${ id }`);
+  public onFieldLevelEncryptionConfig(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:field-level-encryption-config/${ id }`);
   }
 
   /**

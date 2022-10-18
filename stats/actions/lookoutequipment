@@ -16,6 +16,7 @@ lookoutequipment:DescribeModel;Read
 lookoutequipment:Describelabel;Read
 lookoutequipment:ListDataIngestionJobs;List
 lookoutequipment:ListDatasets;List
+lookoutequipment:ListInferenceEvents;Read
 lookoutequipment:ListInferenceExecutions;Read
 lookoutequipment:ListInferenceSchedulers;List
 lookoutequipment:ListLabelGroups;List
