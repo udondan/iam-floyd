@@ -21,6 +21,7 @@ jobs:
           checkName: success
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           timeoutSeconds: 1200
+          intervalSeconds: 30
 
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
@@ -46,6 +47,7 @@ jobs:
           checkName: success
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           timeoutSeconds: 1200
+          intervalSeconds: 30
 
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
