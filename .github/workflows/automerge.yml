@@ -19,6 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           checkName: success
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
@@ -42,6 +43,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           checkName: success
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
