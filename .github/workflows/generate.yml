@@ -89,7 +89,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Commit and push all changes
+      - name: Add all changes
         run: |
           set -x
           rm -rf package-lock.json node_modules tsconfig.json &&
