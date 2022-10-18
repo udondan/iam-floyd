@@ -16,7 +16,7 @@ jobs:
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1.7.1
         with:
-          ignoreActions: automerge_dependabot,automerge_ci,WIP
+          ignoreActions: worker,automerge_dependabot,automerge_ci,WIP
           checkInterval: 60
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,7 +40,7 @@ jobs:
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1.7.1
         with:
-          ignoreActions: automerge_dependabot,automerge_ci,WIP
+          ignoreActions: worker,automerge_dependabot,automerge_ci,WIP
           checkInterval: 60
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
