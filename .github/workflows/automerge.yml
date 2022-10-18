@@ -13,8 +13,18 @@ jobs:
       github.actor == 'dependabot[bot]' &&
       contains(github.event.pull_request.labels.*.name, 'dependencies')
     steps:
+      - name: Wait for status checks
+        id: waitforstatuschecks
+        uses: WyriHaximus/github-action-wait-for-status@v1.7.1
+        with:
+          ignoreActions: Automerge Dependabot
+          checkInterval: 30
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
+        if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: dependencies
           UPDATE_LABELS: dependencies
@@ -28,8 +38,18 @@ jobs:
       github.actor == 'udondan' &&
       contains(github.event.pull_request.labels.*.name, 'automerge')
     steps:
+      - name: Wait for status checks
+        id: waitforstatuschecks
+        uses: WyriHaximus/github-action-wait-for-status@v1.7.1
+        with:
+          ignoreActions: Automerge CI
+          checkInterval: 30
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
+        if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
           MERGE_LABELS: automerge
           UPDATE_LABELS: automerge
