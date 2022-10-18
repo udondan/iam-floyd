@@ -233,6 +233,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the inference events for an inference scheduler
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListInferenceEvents.html
+   */
+  public toListInferenceEvents() {
+    return this.to('ListInferenceEvents');
+  }
+
+  /**
    * Grants permission to list the inference executions for an inference scheduler
    *
    * Access Level: Read
@@ -418,6 +429,7 @@ export class Lookoutequipment extends PolicyStatement {
       'DescribeLabelGroup',
       'DescribeModel',
       'Describelabel',
+      'ListInferenceEvents',
       'ListInferenceExecutions',
       'ListTagsForResource'
     ],
