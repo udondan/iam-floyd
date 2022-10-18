@@ -171,7 +171,8 @@
 			"Condition": {
 				"StringEquals": {
 					"cloudwatch:namespace": [
-						"AWS/Redshift-Serverless"
+						"AWS/Redshift-Serverless",
+						"AWS/Redshift"
 					]
 				}
 			}

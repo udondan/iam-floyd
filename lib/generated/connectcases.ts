@@ -173,6 +173,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all domains in the aws account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_ListDomains.html
+   */
+  public toListDomains() {
+    return this.to('ListDomains');
+  }
+
+  /**
    * Grants permission to list field options for a single select field in the case domain
    *
    * Access Level: List
@@ -192,6 +203,17 @@ export class Cases extends PolicyStatement {
    */
   public toListFields() {
     return this.to('ListFields');
+  }
+
+  /**
+   * Grants permission to list layouts in the case domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_ListLayouts.html
+   */
+  public toListLayouts() {
+    return this.to('ListLayouts');
   }
 
   /**
@@ -255,8 +277,8 @@ export class Cases extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_TagResource.html
    */
@@ -350,8 +372,10 @@ export class Cases extends PolicyStatement {
     ],
     List: [
       'ListCasesForContact',
+      'ListDomains',
       'ListFieldOptions',
       'ListFields',
+      'ListLayouts',
       'ListTemplates'
     ],
     Tagging: [
@@ -359,6 +383,24 @@ export class Cases extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type Case to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/cases.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param caseId - Identifier for the caseId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCase(domainId: string, caseId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }`);
+  }
 
   /**
    * Adds a resource of type Domain to the statement
@@ -414,42 +456,6 @@ export class Cases extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type Template to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/case-templates.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param templateId - Identifier for the templateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTemplate(domainId: string, templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/template/${ templateId }`);
-  }
-
-  /**
-   * Adds a resource of type Case to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/cases.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param caseId - Identifier for the caseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCase(domainId: string, caseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }`);
-  }
-
-  /**
    * Adds a resource of type RelatedItem to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/associatecontactandcase.html
@@ -466,5 +472,23 @@ export class Cases extends PolicyStatement {
    */
   public onRelatedItem(domainId: string, caseId: string, relatedItemId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
+  }
+
+  /**
+   * Adds a resource of type Template to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/case-templates.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param templateId - Identifier for the templateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTemplate(domainId: string, templateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/template/${ templateId }`);
   }
 }

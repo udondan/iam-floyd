@@ -30,6 +30,28 @@ export class Tiros extends PolicyStatement {
   }
 
   /**
+   * Grants permission to extend a VPC reachability query to include the calling principals account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
+   */
+  public toExtendQuery() {
+    return this.to('ExtendQuery');
+  }
+
+  /**
+   * Grants permission to list accounts that might be useful in a new query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
+   */
+  public toGetExtensionAccounts() {
+    return this.to('GetExtensionAccounts');
+  }
+
+  /**
    * Grants permission to get VPC reachability query answers
    *
    * Access Level: Read
@@ -53,9 +75,11 @@ export class Tiros extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'CreateQuery'
+      'CreateQuery',
+      'ExtendQuery'
     ],
     Read: [
+      'GetExtensionAccounts',
       'GetQueryAnswer',
       'GetQueryExplanation'
     ]

@@ -5,6 +5,7 @@ fsx:CopyBackup;Write
 fsx:CreateBackup;Write
 fsx:CreateDataRepositoryAssociation;Write
 fsx:CreateDataRepositoryTask;Write
+fsx:CreateFileCache;Write
 fsx:CreateFileSystem;Write
 fsx:CreateFileSystemFromBackup;Write
 fsx:CreateSnapshot;Write
@@ -13,6 +14,7 @@ fsx:CreateVolume;Write
 fsx:CreateVolumeFromBackup;Write
 fsx:DeleteBackup;Write
 fsx:DeleteDataRepositoryAssociation;Write
+fsx:DeleteFileCache;Write
 fsx:DeleteFileSystem;Write
 fsx:DeleteSnapshot;Write
 fsx:DeleteStorageVirtualMachine;Write
@@ -21,6 +23,7 @@ fsx:DescribeAssociatedFileGateways;Read
 fsx:DescribeBackups;Read
 fsx:DescribeDataRepositoryAssociations;Read
 fsx:DescribeDataRepositoryTasks;Read
+fsx:DescribeFileCaches;Read
 fsx:DescribeFileSystemAliases;Read
 fsx:DescribeFileSystems;Read
 fsx:DescribeSnapshots;Read
@@ -35,6 +38,7 @@ fsx:RestoreVolumeFromSnapshot;Write
 fsx:TagResource;Tagging
 fsx:UntagResource;Tagging
 fsx:UpdateDataRepositoryAssociation;Write
+fsx:UpdateFileCache;Write
 fsx:UpdateFileSystem;Write
 fsx:UpdateSnapshot;Write
 fsx:UpdateStorageVirtualMachine;Write

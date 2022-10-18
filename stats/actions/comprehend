@@ -3,6 +3,7 @@ comprehend:BatchDetectEntities;Read
 comprehend:BatchDetectKeyPhrases;Read
 comprehend:BatchDetectSentiment;Read
 comprehend:BatchDetectSyntax;Read
+comprehend:BatchDetectTargetedSentiment;Read
 comprehend:ClassifyDocument;Read
 comprehend:ContainsPiiEntities;Read
 comprehend:CreateDocumentClassifier;Write
@@ -31,6 +32,7 @@ comprehend:DetectKeyPhrases;Read
 comprehend:DetectPiiEntities;Read
 comprehend:DetectSentiment;Read
 comprehend:DetectSyntax;Read
+comprehend:DetectTargetedSentiment;Read
 comprehend:ImportModel;Write
 comprehend:ListDocumentClassificationJobs;Read
 comprehend:ListDocumentClassifierSummaries;Read

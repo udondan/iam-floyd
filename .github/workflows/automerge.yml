@@ -1,30 +1,59 @@
 ---
-name: Dependabot Automerge - Action
+name: Automerge
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [labeled]
 
 jobs:
-  worker:
+  automerge_dependabot:
+    name: Automerge Dependabot
     runs-on: ubuntu-latest
     if: |
       github.actor == 'dependabot[bot]' &&
       contains(github.event.pull_request.labels.*.name, 'dependencies')
     steps:
-      - name: Wait for status checks
-        id: waitforstatuschecks
-        uses: WyriHaximus/github-action-wait-for-status@v1.5.0
+      - name: Wait for tests to succeed
+        uses: fountainhead/action-wait-for-check@v1.1.0
+        id: wait-for-ci
         with:
-          ignoreActions: worker,WIP
-          checkInterval: 60
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: success
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          timeoutSeconds: 1200
+          intervalSeconds: 30
 
       - name: Automerge
-        uses: pascalgn/automerge-action@v0.15.2
-        if: steps.waitforstatuschecks.outputs.status == 'success'
+        uses: pascalgn/automerge-action@v0.15.3
+        if: steps.wait-for-ci.outputs.conclusion == 'success'
         env:
           MERGE_LABELS: dependencies
           UPDATE_LABELS: dependencies
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          MERGE_DELETE_BRANCH: true
+
+  automerge_ci:
+    name: Automerge CI
+    runs-on: ubuntu-latest
+    if: |
+      github.actor == 'udondan' &&
+      contains(github.event.pull_request.labels.*.name, 'automerge')
+    steps:
+      - name: Wait for tests to succeed
+        uses: fountainhead/action-wait-for-check@v1.1.0
+        id: wait-for-ci
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: success
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          timeoutSeconds: 1200
+          intervalSeconds: 30
+
+      - name: Automerge
+        uses: pascalgn/automerge-action@v0.15.3
+        if: steps.wait-for-ci.outputs.conclusion == 'success'
+        env:
+          MERGE_LABELS: automerge
+          UPDATE_LABELS: automerge
           GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
           MERGE_DELETE_BRANCH: true

@@ -567,7 +567,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Grants permission to repair the studio's AWS SSO configuration
+   * Grants permission to repair the studio's AWS IAM Identity Center configuration
    *
    * Access Level: Write
    *

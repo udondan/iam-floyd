@@ -9,6 +9,7 @@ transfer:DeleteAccess;Write
 transfer:DeleteAgreement;Write
 transfer:DeleteCertificate;Write
 transfer:DeleteConnector;Write
+transfer:DeleteHostKey;Write
 transfer:DeleteProfile;Write
 transfer:DeleteServer;Write
 transfer:DeleteSshPublicKey;Write
@@ -19,18 +20,21 @@ transfer:DescribeAgreement;Read
 transfer:DescribeCertificate;Read
 transfer:DescribeConnector;Read
 transfer:DescribeExecution;Read
+transfer:DescribeHostKey;Read
 transfer:DescribeProfile;Read
 transfer:DescribeSecurityPolicy;Read
 transfer:DescribeServer;Read
 transfer:DescribeUser;Read
 transfer:DescribeWorkflow;Read
 transfer:ImportCertificate;Write
+transfer:ImportHostKey;Write
 transfer:ImportSshPublicKey;Write
 transfer:ListAccesses;Read
 transfer:ListAgreements;Read
 transfer:ListCertificates;Read
 transfer:ListConnectors;Read
 transfer:ListExecutions;Read
+transfer:ListHostKeys;Read
 transfer:ListProfiles;Read
 transfer:ListSecurityPolicies;List
 transfer:ListServers;List
@@ -38,6 +42,7 @@ transfer:ListTagsForResource;Read
 transfer:ListUsers;List
 transfer:ListWorkflows;List
 transfer:SendWorkflowStepState;Write
+transfer:StartFileTransfer;Write
 transfer:StartServer;Write
 transfer:StopServer;Write
 transfer:TagResource;Tagging
@@ -47,6 +52,7 @@ transfer:UpdateAccess;Write
 transfer:UpdateAgreement;Write
 transfer:UpdateCertificate;Write
 transfer:UpdateConnector;Write
+transfer:UpdateHostKey;Write
 transfer:UpdateProfile;Write
 transfer:UpdateServer;Write
 transfer:UpdateUser;Write

@@ -3,6 +3,7 @@ migrationhub-strategy:GetApplicationComponentDetails;Read
 migrationhub-strategy:GetApplicationComponentStrategies;Read
 migrationhub-strategy:GetAssessment;Read
 migrationhub-strategy:GetImportFileTask;Read
+migrationhub-strategy:GetLatestAssessmentId;Read
 migrationhub-strategy:GetMessage;Read
 migrationhub-strategy:GetPortfolioPreferences;Read
 migrationhub-strategy:GetPortfolioSummary;Read
@@ -23,4 +24,5 @@ migrationhub-strategy:StartImportFileTask;Write
 migrationhub-strategy:StartRecommendationReportGeneration;Write
 migrationhub-strategy:StopAssessment;Write
 migrationhub-strategy:UpdateApplicationComponentConfig;Write
+migrationhub-strategy:UpdateCollectorConfiguration;Write
 migrationhub-strategy:UpdateServerConfig;Write

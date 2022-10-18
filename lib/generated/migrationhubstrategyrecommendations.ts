@@ -74,6 +74,17 @@ export class MigrationhubStrategy extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the latest assessment id
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetLatestAssessmentId.html
+   */
+  public toGetLatestAssessmentId() {
+    return this.to('GetLatestAssessmentId');
+  }
+
+  /**
    * Grants permission to the collector to receive information from the service
    *
    * Access Level: Read
@@ -294,6 +305,17 @@ export class MigrationhubStrategy extends PolicyStatement {
   }
 
   /**
+   * Grants permission to the collector to send configuration information to the service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_UpdateCollectorConfiguration.html
+   */
+  public toUpdateCollectorConfiguration() {
+    return this.to('UpdateCollectorConfiguration');
+  }
+
+  /**
    * Grants permission to update info on a server along with the recommended strategy
    *
    * Access Level: Write
@@ -311,6 +333,7 @@ export class MigrationhubStrategy extends PolicyStatement {
       'GetApplicationComponentStrategies',
       'GetAssessment',
       'GetImportFileTask',
+      'GetLatestAssessmentId',
       'GetMessage',
       'GetPortfolioPreferences',
       'GetPortfolioSummary',
@@ -335,6 +358,7 @@ export class MigrationhubStrategy extends PolicyStatement {
       'StartRecommendationReportGeneration',
       'StopAssessment',
       'UpdateApplicationComponentConfig',
+      'UpdateCollectorConfiguration',
       'UpdateServerConfig'
     ]
   };

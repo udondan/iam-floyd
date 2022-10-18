@@ -21,6 +21,23 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": "arn:aws:ec2:*:*:network-interface/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateNetworkInterface"
+				},
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"WorkSpacesWebManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"cloudwatch:PutMetricData"
 			],
 			"Resource": "*",
@@ -32,6 +49,15 @@
 					]
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kinesis:PutRecord",
+				"kinesis:PutRecords",
+				"kinesis:DescribeStreamSummary"
+			],
+			"Resource": "arn:aws:kinesis:*:*:stream/amazon-workspaces-web-*"
 		}
 	]
 }

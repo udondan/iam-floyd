@@ -23,7 +23,11 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_CreateParallelData.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_CreateParallelData.html
    */
   public toCreateParallelData() {
     return this.to('CreateParallelData');
@@ -34,7 +38,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_DeleteParallelData.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_DeleteParallelData.html
    */
   public toDeleteParallelData() {
     return this.to('DeleteParallelData');
@@ -45,7 +49,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_DeleteTerminology.html
    */
   public toDeleteTerminology() {
     return this.to('DeleteTerminology');
@@ -56,7 +60,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_DescribeTextTranslationJob.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_DescribeTextTranslationJob.html
    */
   public toDescribeTextTranslationJob() {
     return this.to('DescribeTextTranslationJob');
@@ -67,7 +71,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_GetParallelData.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_GetParallelData.html
    */
   public toGetParallelData() {
     return this.to('GetParallelData');
@@ -78,7 +82,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_GetTerminology.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_GetTerminology.html
    */
   public toGetTerminology() {
     return this.to('GetTerminology');
@@ -89,7 +93,11 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_ImportTerminology.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ImportTerminology.html
    */
   public toImportTerminology() {
     return this.to('ImportTerminology');
@@ -100,7 +108,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_ListLanguages.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ListLanguages.html
    */
   public toListLanguages() {
     return this.to('ListLanguages');
@@ -111,10 +119,21 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_ListParallelData.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ListParallelData.html
    */
   public toListParallelData() {
     return this.to('ListParallelData');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -122,7 +141,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTerminologies.html
    */
   public toListTerminologies() {
     return this.to('ListTerminologies');
@@ -133,7 +152,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_ListTextTranslationJobs.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTextTranslationJobs.html
    */
   public toListTextTranslationJobs() {
     return this.to('ListTextTranslationJobs');
@@ -144,7 +163,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_StartTextTranslationJob.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_StartTextTranslationJob.html
    */
   public toStartTextTranslationJob() {
     return this.to('StartTextTranslationJob');
@@ -155,10 +174,25 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_StopTextTranslationJob.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_StopTextTranslationJob.html
    */
   public toStopTextTranslationJob() {
     return this.to('StopTextTranslationJob');
+  }
+
+  /**
+   * Grants permission to tag a resource with given key value pairs
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
   }
 
   /**
@@ -166,10 +200,24 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_TranslateText.html
    */
   public toTranslateText() {
     return this.to('TranslateText');
+  }
+
+  /**
+   * Grants permission to untag a resource with given key
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -177,7 +225,7 @@ export class Translate extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/translate/latest/dg/API_UpdateParallelData.html
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_UpdateParallelData.html
    */
   public toUpdateParallelData() {
     return this.to('UpdateParallelData');
@@ -197,6 +245,7 @@ export class Translate extends PolicyStatement {
       'DescribeTextTranslationJob',
       'GetParallelData',
       'GetTerminology',
+      'ListTagsForResource',
       'TranslateText'
     ],
     List: [
@@ -204,6 +253,10 @@ export class Translate extends PolicyStatement {
       'ListParallelData',
       'ListTerminologies',
       'ListTextTranslationJobs'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -216,6 +269,9 @@ export class Translate extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTerminology(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Translate.defaultPartition }:translate:${ region || '*' }:${ account || '*' }:terminology/${ resourceName }`);
@@ -230,6 +286,9 @@ export class Translate extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onParallelData(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Translate.defaultPartition }:translate:${ region || '*' }:${ account || '*' }:parallel-data/${ resourceName }`);

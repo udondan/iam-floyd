@@ -35,6 +35,7 @@
 				"lambda:GetFunctionConcurrency",
 				"lambda:GetFunctionConfiguration",
 				"lambda:GetProvisionedConcurrencyConfig",
+				"lambda:ListProvisionedConcurrencyConfigs",
 				"lambda:ListAliases",
 				"lambda:ListVersionsByFunction"
 			],

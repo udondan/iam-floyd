@@ -126,7 +126,7 @@ export class Iot1click extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DissacociateDeviceFromPlacement.html
+   * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DisassociateDeviceFromPlacement.html
    */
   public toDisassociateDeviceFromPlacement() {
     return this.to('DisassociateDeviceFromPlacement');

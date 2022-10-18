@@ -17,6 +17,12 @@
     "url": "https://www.udondan.com/",
     "twitter": "udondan"
   },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/udondan"
+    }
+  ],
   "awscdkio": {
     "twitter": "udondan"
   },
@@ -74,7 +80,7 @@
     "ts-morph": "^15.1.0",
     "ts-node": "^10.0.0",
     "twit": "^2.2.11",
-    "typescript": "~4.7.4"
+    "typescript": "~4.8.4"
   },
   "dependencies": {
     "@udondan/common-substrings": "^3.0.2",

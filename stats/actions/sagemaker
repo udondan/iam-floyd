@@ -17,6 +17,8 @@ sagemaker:CreateContext;Write
 sagemaker:CreateDataQualityJobDefinition;Write
 sagemaker:CreateDeviceFleet;Write
 sagemaker:CreateDomain;Write
+sagemaker:CreateEdgeDeploymentPlan;Write
+sagemaker:CreateEdgeDeploymentStage;Write
 sagemaker:CreateEdgePackagingJob;Write
 sagemaker:CreateEndpoint;Write
 sagemaker:CreateEndpointConfig;Write
@@ -63,6 +65,8 @@ sagemaker:DeleteContext;Write
 sagemaker:DeleteDataQualityJobDefinition;Write
 sagemaker:DeleteDeviceFleet;Write
 sagemaker:DeleteDomain;Write
+sagemaker:DeleteEdgeDeploymentPlan;Write
+sagemaker:DeleteEdgeDeploymentStage;Write
 sagemaker:DeleteEndpoint;Write
 sagemaker:DeleteEndpointConfig;Write
 sagemaker:DeleteExperiment;Write
@@ -107,6 +111,7 @@ sagemaker:DescribeDataQualityJobDefinition;Read
 sagemaker:DescribeDevice;Read
 sagemaker:DescribeDeviceFleet;Read
 sagemaker:DescribeDomain;Read
+sagemaker:DescribeEdgeDeploymentPlan;Read
 sagemaker:DescribeEdgePackagingJob;Read
 sagemaker:DescribeEndpoint;Read
 sagemaker:DescribeEndpointConfig;Read
@@ -172,6 +177,7 @@ sagemaker:ListDataQualityJobDefinitions;List
 sagemaker:ListDeviceFleets;List
 sagemaker:ListDevices;List
 sagemaker:ListDomains;List
+sagemaker:ListEdgeDeploymentPlans;List
 sagemaker:ListEdgePackagingJobs;List
 sagemaker:ListEndpointConfigs;List
 sagemaker:ListEndpoints;List
@@ -204,6 +210,7 @@ sagemaker:ListPipelineParametersForExecution;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListStageDevices;List
 sagemaker:ListStudioLifecycleConfigs;List
 sagemaker:ListSubscribedWorkteams;List
 sagemaker:ListTags;List
@@ -226,12 +233,14 @@ sagemaker:Search;Read
 sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write
 sagemaker:SendPipelineExecutionStepSuccess;Write
+sagemaker:StartEdgeDeploymentStage;Write
 sagemaker:StartHumanLoop;Write
 sagemaker:StartMonitoringSchedule;Write
 sagemaker:StartNotebookInstance;Write
 sagemaker:StartPipelineExecution;Write
 sagemaker:StopAutoMLJob;Write
 sagemaker:StopCompilationJob;Write
+sagemaker:StopEdgeDeploymentStage;Write
 sagemaker:StopEdgePackagingJob;Write
 sagemaker:StopHumanLoop;Write
 sagemaker:StopHyperParameterTuningJob;Write

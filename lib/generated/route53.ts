@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
@@ -58,6 +58,11 @@ export class Route53 extends PolicyStatement {
    * Grants permission to create, update, or delete a record, which contains authoritative DNS information for a specified domain or subdomain name
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifChangeResourceRecordSetsNormalizedRecordNames()
+   * - .ifChangeResourceRecordSetsRecordTypes()
+   * - .ifChangeResourceRecordSetsActions()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html
    */
@@ -987,5 +992,50 @@ export class Route53 extends PolicyStatement {
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Route53.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
+  }
+
+  /**
+   * Filters access by the change actions, CREATE, UPSERT, or DELETE, in a ChangeResourceRecordSets request
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   *
+   * Applies to actions:
+   * - .toChangeResourceRecordSets()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifChangeResourceRecordSetsActions(value: string | string[], operator?: Operator | string) {
+    return this.if(`ChangeResourceRecordSetsActions`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the normalized DNS record names in a ChangeResourceRecordSets request
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   *
+   * Applies to actions:
+   * - .toChangeResourceRecordSets()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifChangeResourceRecordSetsNormalizedRecordNames(value: string | string[], operator?: Operator | string) {
+    return this.if(`ChangeResourceRecordSetsNormalizedRecordNames`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the DNS record types in a ChangeResourceRecordSets request
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   *
+   * Applies to actions:
+   * - .toChangeResourceRecordSets()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifChangeResourceRecordSetsRecordTypes(value: string | string[], operator?: Operator | string) {
+    return this.if(`ChangeResourceRecordSetsRecordTypes`, value, operator || 'StringLike');
   }
 }

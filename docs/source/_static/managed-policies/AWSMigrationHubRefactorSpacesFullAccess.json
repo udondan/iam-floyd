@@ -21,7 +21,6 @@
 				"ec2:DescribeTransitGatewayVpcAttachments",
 				"ec2:DescribeTransitGateways",
 				"ec2:DescribeTags",
-				"ec2:DescribeTransitGateways",
 				"ec2:DescribeAccountAttributes",
 				"ec2:DescribeInternetGateways"
 			],
@@ -94,9 +93,10 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"elasticloadbalancing:AddTags",
 				"elasticloadbalancing:CreateLoadBalancer"
 			],
-			"Resource": "*",
+			"Resource": "arn:*:elasticloadbalancing:*:*:loadbalancer/net/refactor-spaces-nlb-*",
 			"Condition": {
 				"Null": {
 					"aws:RequestTag/refactor-spaces:application-id": "false"

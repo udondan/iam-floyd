@@ -809,7 +809,38 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to allow a service to access a customer owned IP (CoIP) pool
+   * Grants permission to create a range of customer-owned IP (CoIP) addresses
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCoipCidr.html
+   */
+  public toCreateCoipCidr() {
+    return this.to('CreateCoipCidr');
+  }
+
+  /**
+   * Grants permission to create a pool of customer-owned IP (CoIP) addresses
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCoipPool.html
+   */
+  public toCreateCoipPool() {
+    return this.to('CreateCoipPool');
+  }
+
+  /**
+   * Grants permission to allow a service to access a customer-owned IP (CoIP) pool
    *
    * Access Level: Write
    *
@@ -1166,6 +1197,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a local gateway route table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   */
+  public toCreateLocalGatewayRouteTable() {
+    return this.to('CreateLocalGatewayRouteTable');
+  }
+
+  /**
    * Grants permission to allow a service to access a local gateway route table
    *
    * Access Level: Write
@@ -1177,6 +1225,25 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateLocalGatewayRouteTablePermission() {
     return this.to('CreateLocalGatewayRouteTablePermission');
+  }
+
+  /**
+   * Grants permission to create a local gateway route table virtual interface group association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation.html
+   */
+  public toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation() {
+    return this.to('CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation');
   }
 
   /**
@@ -2071,7 +2138,31 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deny a service from accessing a customer owned IP (CoIP) pool
+   * Grants permission to delete a range of customer-owned IP (CoIP) addresses
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   */
+  public toDeleteCoipCidr() {
+    return this.to('DeleteCoipCidr');
+  }
+
+  /**
+   * Grants permission to delete a pool of customer-owned IP (CoIP) addresses
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   */
+  public toDeleteCoipPool() {
+    return this.to('DeleteCoipPool');
+  }
+
+  /**
+   * Grants permission to deny a service from accessing a customer-owned IP (CoIP) pool
    *
    * Access Level: Write
    *
@@ -2295,6 +2386,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a local gateway route table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   */
+  public toDeleteLocalGatewayRouteTable() {
+    return this.to('DeleteLocalGatewayRouteTable');
+  }
+
+  /**
    * Grants permission to deny a service from accessing a local gateway route table
    *
    * Access Level: Write
@@ -2306,6 +2409,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteLocalGatewayRouteTablePermission() {
     return this.to('DeleteLocalGatewayRouteTablePermission');
+  }
+
+  /**
+   * Grants permission to delete a local gateway route table virtual interface group association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation.html
+   */
+  public toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation() {
+    return this.to('DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation');
   }
 
   /**
@@ -3362,7 +3479,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe an Elastic Graphics accelerator that is associated with an instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -3404,7 +3521,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe fast-launch enabled Windows AMIs
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -3418,7 +3535,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe the state of fast snapshot restores for snapshots
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4286,7 +4403,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to find available schedules for Scheduled Instances
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4300,7 +4417,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more Scheduled Instances in your account
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4524,7 +4641,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more tags for an Amazon EC2 resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4650,7 +4767,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe a transit gateway policy table
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4664,7 +4781,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe a transit gateway route table announcement
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4776,7 +4893,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe the current modification status of one or more EBS volumes
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -4944,7 +5061,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to describe one or more VPN connections
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -5741,7 +5858,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to view a list of instance types with specified instance attributes
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -5783,7 +5900,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to get a list of all the CIDR allocations in an Amazon VPC IP Address Manager (IPAM) pool
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifRegion()
@@ -6591,6 +6708,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyLaunchTemplate() {
     return this.to('ModifyLaunchTemplate');
+  }
+
+  /**
+   * Grants permission to modify a local gateway route
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLocalGatewayRoute.html
+   */
+  public toModifyLocalGatewayRoute() {
+    return this.to('ModifyLocalGatewayRoute');
   }
 
   /**
@@ -8018,6 +8149,8 @@ export class Ec2 extends PolicyStatement {
       'CreateCarrierGateway',
       'CreateClientVpnEndpoint',
       'CreateClientVpnRoute',
+      'CreateCoipCidr',
+      'CreateCoipPool',
       'CreateCoipPoolPermission',
       'CreateCustomerGateway',
       'CreateDefaultSubnet',
@@ -8038,7 +8171,9 @@ export class Ec2 extends PolicyStatement {
       'CreateLaunchTemplate',
       'CreateLaunchTemplateVersion',
       'CreateLocalGatewayRoute',
+      'CreateLocalGatewayRouteTable',
       'CreateLocalGatewayRouteTablePermission',
+      'CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation',
       'CreateLocalGatewayRouteTableVpcAssociation',
       'CreateManagedPrefixList',
       'CreateNatGateway',
@@ -8088,6 +8223,8 @@ export class Ec2 extends PolicyStatement {
       'DeleteCarrierGateway',
       'DeleteClientVpnEndpoint',
       'DeleteClientVpnRoute',
+      'DeleteCoipCidr',
+      'DeleteCoipPool',
       'DeleteCoipPoolPermission',
       'DeleteCustomerGateway',
       'DeleteDhcpOptions',
@@ -8104,7 +8241,9 @@ export class Ec2 extends PolicyStatement {
       'DeleteLaunchTemplate',
       'DeleteLaunchTemplateVersions',
       'DeleteLocalGatewayRoute',
+      'DeleteLocalGatewayRouteTable',
       'DeleteLocalGatewayRouteTablePermission',
+      'DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation',
       'DeleteLocalGatewayRouteTableVpcAssociation',
       'DeleteManagedPrefixList',
       'DeleteNatGateway',
@@ -8157,8 +8296,6 @@ export class Ec2 extends PolicyStatement {
       'DeregisterInstanceEventNotificationAttributes',
       'DeregisterTransitGatewayMulticastGroupMembers',
       'DeregisterTransitGatewayMulticastGroupSources',
-      'DescribeTransitGatewayPolicyTables',
-      'DescribeTransitGatewayRouteTableAnnouncements',
       'DetachClassicLinkVpc',
       'DetachInternetGateway',
       'DetachNetworkInterface',
@@ -8231,6 +8368,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyIpamResourceCidr',
       'ModifyIpamScope',
       'ModifyLaunchTemplate',
+      'ModifyLocalGatewayRoute',
       'ModifyManagedPrefixList',
       'ModifyNetworkInterfaceAttribute',
       'ModifyPrivateDnsNameOptions',
@@ -8355,8 +8493,11 @@ export class Ec2 extends PolicyStatement {
       'DescribeCustomerGateways',
       'DescribeDhcpOptions',
       'DescribeEgressOnlyInternetGateways',
+      'DescribeElasticGpus',
       'DescribeExportImageTasks',
       'DescribeExportTasks',
+      'DescribeFastLaunchImages',
+      'DescribeFastSnapshotRestores',
       'DescribeFleetHistory',
       'DescribeFleetInstances',
       'DescribeFleets',
@@ -8418,6 +8559,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeReservedInstancesModifications',
       'DescribeReservedInstancesOfferings',
       'DescribeRouteTables',
+      'DescribeScheduledInstanceAvailability',
+      'DescribeScheduledInstances',
       'DescribeSecurityGroupReferences',
       'DescribeSecurityGroupRules',
       'DescribeSecurityGroups',
@@ -8433,6 +8576,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeStaleSecurityGroups',
       'DescribeStoreImageTasks',
       'DescribeSubnets',
+      'DescribeTags',
       'DescribeTrafficMirrorFilters',
       'DescribeTrafficMirrorSessions',
       'DescribeTrafficMirrorTargets',
@@ -8441,6 +8585,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeTransitGatewayConnects',
       'DescribeTransitGatewayMulticastDomains',
       'DescribeTransitGatewayPeeringAttachments',
+      'DescribeTransitGatewayPolicyTables',
+      'DescribeTransitGatewayRouteTableAnnouncements',
       'DescribeTransitGatewayRouteTables',
       'DescribeTransitGatewayVpcAttachments',
       'DescribeTransitGateways',
@@ -8448,6 +8594,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeVolumeAttribute',
       'DescribeVolumeStatus',
       'DescribeVolumes',
+      'DescribeVolumesModifications',
       'DescribeVpcAttribute',
       'DescribeVpcClassicLink',
       'DescribeVpcClassicLinkDnsSupport',
@@ -8459,8 +8606,11 @@ export class Ec2 extends PolicyStatement {
       'DescribeVpcEndpoints',
       'DescribeVpcPeeringConnections',
       'DescribeVpcs',
+      'DescribeVpnConnections',
       'DescribeVpnGateways',
       'GetGroupsForCapacityReservation',
+      'GetInstanceTypesFromInstanceRequirements',
+      'GetIpamPoolAllocations',
       'GetTransitGatewayAttachmentPropagations',
       'GetTransitGatewayMulticastDomainAssociations',
       'GetTransitGatewayPolicyTableAssociations',
@@ -8477,14 +8627,6 @@ export class Ec2 extends PolicyStatement {
       'SearchTransitGatewayRoutes'
     ],
     Read: [
-      'DescribeElasticGpus',
-      'DescribeFastLaunchImages',
-      'DescribeFastSnapshotRestores',
-      'DescribeScheduledInstanceAvailability',
-      'DescribeScheduledInstances',
-      'DescribeTags',
-      'DescribeVolumesModifications',
-      'DescribeVpnConnections',
       'ExportClientVpnClientCertificateRevocationList',
       'ExportClientVpnClientConfiguration',
       'GetAssociatedEnclaveCertificateIamRoles',
@@ -8498,10 +8640,8 @@ export class Ec2 extends PolicyStatement {
       'GetEbsEncryptionByDefault',
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
-      'GetInstanceTypesFromInstanceRequirements',
       'GetInstanceUefiData',
       'GetIpamAddressHistory',
-      'GetIpamPoolAllocations',
       'GetIpamPoolCidrs',
       'GetIpamResourceCidrs',
       'GetLaunchTemplateData',
@@ -9120,6 +9260,27 @@ export class Ec2 extends PolicyStatement {
    */
   public onIpamScope(ipamScopeId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-scope/${ ipamScopeId }`);
+  }
+
+  /**
+   * Adds a resource of type coip-pool to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipv4PoolCoipId - Identifier for the ipv4PoolCoipId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onCoipPool(ipv4PoolCoipId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:coip-pool/${ ipv4PoolCoipId }`);
   }
 
   /**
@@ -10113,6 +10274,27 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vpc-endpoint-connection to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
+   *
+   * @param vpcEndpointConnectionId - Identifier for the vpcEndpointConnectionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVpcEndpointConnection(vpcEndpointConnectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-connection/${ vpcEndpointConnectionId }`);
+  }
+
+  /**
    * Adds a resource of type vpc-endpoint to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
@@ -10159,6 +10341,27 @@ export class Ec2 extends PolicyStatement {
    */
   public onVpcEndpointService(vpcEndpointServiceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service/${ vpcEndpointServiceId }`);
+  }
+
+  /**
+   * Adds a resource of type vpc-endpoint-service-permission to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html#vpc-endpoint-policies
+   *
+   * @param vpcEndpointServicePermissionId - Identifier for the vpcEndpointServicePermissionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVpcEndpointServicePermission(vpcEndpointServicePermissionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service-permission/${ vpcEndpointServicePermissionId }`);
   }
 
   /**
@@ -10411,6 +10614,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10660,6 +10864,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
@@ -10682,6 +10887,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
    * Applies to resource types:
@@ -10779,6 +10985,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -12092,6 +12299,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
@@ -12303,6 +12511,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
    * Applies to resource types:
@@ -12803,6 +13012,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
+   * - .toCreateCoipCidr()
+   * - .toCreateCoipPool()
    * - .toCreateCoipPoolPermission()
    * - .toCreateCustomerGateway()
    * - .toCreateDefaultSubnet()
@@ -12823,7 +13034,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
+   * - .toCreateLocalGatewayRouteTable()
    * - .toCreateLocalGatewayRouteTablePermission()
+   * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
@@ -12875,6 +13088,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
+   * - .toDeleteCoipCidr()
+   * - .toDeleteCoipPool()
    * - .toDeleteCoipPoolPermission()
    * - .toDeleteCustomerGateway()
    * - .toDeleteDhcpOptions()
@@ -12891,7 +13106,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
    * - .toDeleteLocalGatewayRoute()
+   * - .toDeleteLocalGatewayRouteTable()
    * - .toDeleteLocalGatewayRouteTablePermission()
+   * - .toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
@@ -13196,6 +13413,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -13318,6 +13536,7 @@ export class Ec2 extends PolicyStatement {
    * - ipam
    * - ipam-pool
    * - ipam-scope
+   * - coip-pool
    * - ipv4pool-ec2
    * - ipv6pool-ec2
    * - key-pair
@@ -13359,8 +13578,10 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
    * - volume
+   * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
+   * - vpc-endpoint-service-permission
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
@@ -13516,18 +13737,6 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the preface string for a tag key and value pair that are attached to a resource
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifResourceTagExists(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by a tag key and value pair of a resource
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
@@ -13571,6 +13780,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
+   * - .toCreateCoipCidr()
+   * - .toCreateCoipPool()
    * - .toCreateEgressOnlyInternetGateway()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
@@ -13580,7 +13791,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
+   * - .toCreateLocalGatewayRouteTable()
    * - .toCreateLocalGatewayRouteTablePermission()
+   * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
@@ -13618,6 +13831,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
+   * - .toDeleteCoipCidr()
+   * - .toDeleteCoipPool()
    * - .toDeleteCustomerGateway()
    * - .toDeleteDhcpOptions()
    * - .toDeleteEgressOnlyInternetGateway()
@@ -13633,7 +13848,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
    * - .toDeleteLocalGatewayRoute()
+   * - .toDeleteLocalGatewayRouteTable()
    * - .toDeleteLocalGatewayRouteTablePermission()
+   * - .toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
@@ -13692,7 +13909,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFastLaunchImages()
    * - .toDescribeFleetHistory()
    * - .toDescribeFleetInstances()
-   * - .toDescribeFleets()
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
@@ -13736,6 +13952,7 @@ export class Ec2 extends PolicyStatement {
    * - .toExportClientVpnClientConfiguration()
    * - .toExportImage()
    * - .toGetCapacityReservationUsage()
+   * - .toGetCoipPoolUsage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
@@ -13780,6 +13997,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -13892,6 +14110,7 @@ export class Ec2 extends PolicyStatement {
    * - ipam
    * - ipam-pool
    * - ipam-scope
+   * - coip-pool
    * - ipv4pool-ec2
    * - ipv6pool-ec2
    * - key-pair
@@ -13932,8 +14151,10 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
    * - volume
+   * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
+   * - vpc-endpoint-service-permission
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
@@ -14309,7 +14530,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCopySnapshot()
    * - .toCreateImage()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -14351,6 +14571,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toModifyFleet()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
@@ -14735,6 +14956,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportInstance()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
+   * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifySecurityGroupRules()
    * - .toModifySpotFleetRequest()

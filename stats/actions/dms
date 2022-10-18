@@ -25,6 +25,7 @@ dms:DescribeEventCategories;Read
 dms:DescribeEventSubscriptions;Read
 dms:DescribeEvents;Read
 dms:DescribeOrderableReplicationInstances;Read
+dms:DescribePendingMaintenanceActions;Read
 dms:DescribeRefreshSchemasStatus;Read
 dms:DescribeReplicationInstanceTaskLogs;Read
 dms:DescribeReplicationInstances;Read

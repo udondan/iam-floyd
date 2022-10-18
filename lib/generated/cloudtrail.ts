@@ -23,6 +23,10 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
@@ -56,9 +60,22 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a service-linked channel that specifies the settings for delivery of log data to an AWS service
+   *
+   * Access Level: Write
+   */
+  public toCreateServiceLinkedChannel() {
+    return this.to('CreateServiceLinkedChannel');
+  }
+
+  /**
    * Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - s3:PutObject
@@ -78,6 +95,15 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toDeleteEventDataStore() {
     return this.to('DeleteEventDataStore');
+  }
+
+  /**
+   * Grants permission to delete a service-linked channel
+   *
+   * Access Level: Write
+   */
+  public toDeleteServiceLinkedChannel() {
+    return this.to('DeleteServiceLinkedChannel');
   }
 
   /**
@@ -158,6 +184,15 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list settings for the service-linked channel
+   *
+   * Access Level: Read
+   */
+  public toGetServiceLinkedChannel() {
+    return this.to('GetServiceLinkedChannel');
+  }
+
+  /**
    * Grants permission to list settings for the trail
    *
    * Access Level: Read
@@ -210,6 +245,15 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toListQueries() {
     return this.to('ListQueries');
+  }
+
+  /**
+   * Grants permission to list service-linked channels associated with the current region for a specified account
+   *
+   * Access Level: List
+   */
+  public toListServiceLinkedChannels() {
+    return this.to('ListServiceLinkedChannels');
   }
 
   /**
@@ -271,6 +315,9 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to remove tags from a trail
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html
    */
@@ -337,6 +384,15 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to update the settings that specify delivery of log files
    *
    * Access Level: Write
+   */
+  public toUpdateServiceLinkedChannel() {
+    return this.to('UpdateServiceLinkedChannel');
+  }
+
+  /**
+   * Grants permission to update the settings that specify delivery of log files
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html
    */
@@ -352,8 +408,10 @@ export class Cloudtrail extends PolicyStatement {
     Write: [
       'CancelQuery',
       'CreateEventDataStore',
+      'CreateServiceLinkedChannel',
       'CreateTrail',
       'DeleteEventDataStore',
+      'DeleteServiceLinkedChannel',
       'DeleteTrail',
       'PutEventSelectors',
       'PutInsightSelectors',
@@ -362,6 +420,7 @@ export class Cloudtrail extends PolicyStatement {
       'StartQuery',
       'StopLogging',
       'UpdateEventDataStore',
+      'UpdateServiceLinkedChannel',
       'UpdateTrail'
     ],
     Read: [
@@ -371,6 +430,7 @@ export class Cloudtrail extends PolicyStatement {
       'GetEventSelectors',
       'GetInsightSelectors',
       'GetQueryResults',
+      'GetServiceLinkedChannel',
       'GetTrail',
       'GetTrailStatus',
       'ListPublicKeys',
@@ -380,6 +440,7 @@ export class Cloudtrail extends PolicyStatement {
     List: [
       'ListEventDataStores',
       'ListQueries',
+      'ListServiceLinkedChannels',
       'ListTrails'
     ]
   };
@@ -393,6 +454,9 @@ export class Cloudtrail extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
@@ -413,5 +477,19 @@ export class Cloudtrail extends PolicyStatement {
    */
   public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html
+   *
+   * @param channelId - Identifier for the channelId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:channel/${ channelId }`);
   }
 }

@@ -1,8 +1,10 @@
 cloudtrail:AddTags;Tagging
 cloudtrail:CancelQuery;Write
 cloudtrail:CreateEventDataStore;Write
+cloudtrail:CreateServiceLinkedChannel;Write
 cloudtrail:CreateTrail;Write
 cloudtrail:DeleteEventDataStore;Write
+cloudtrail:DeleteServiceLinkedChannel;Write
 cloudtrail:DeleteTrail;Write
 cloudtrail:DescribeQuery;Read
 cloudtrail:DescribeTrails;Read
@@ -10,11 +12,13 @@ cloudtrail:GetEventDataStore;Read
 cloudtrail:GetEventSelectors;Read
 cloudtrail:GetInsightSelectors;Read
 cloudtrail:GetQueryResults;Read
+cloudtrail:GetServiceLinkedChannel;Read
 cloudtrail:GetTrail;Read
 cloudtrail:GetTrailStatus;Read
 cloudtrail:ListEventDataStores;List
 cloudtrail:ListPublicKeys;Read
 cloudtrail:ListQueries;List
+cloudtrail:ListServiceLinkedChannels;List
 cloudtrail:ListTags;Read
 cloudtrail:ListTrails;List
 cloudtrail:LookupEvents;Read
@@ -26,4 +30,5 @@ cloudtrail:StartLogging;Write
 cloudtrail:StartQuery;Write
 cloudtrail:StopLogging;Write
 cloudtrail:UpdateEventDataStore;Write
+cloudtrail:UpdateServiceLinkedChannel;Write
 cloudtrail:UpdateTrail;Write

@@ -34,6 +34,8 @@ chime:CreateChannelFlow;Write
 chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
 chime:CreateMediaCapturePipeline;Write
+chime:CreateMediaConcatenationPipeline;Write
+chime:CreateMediaLiveConnectorPipeline;Write
 chime:CreateMeeting;Write
 chime:CreateMeetingDialOut;Write
 chime:CreateMeetingWithAttendees;Write
@@ -67,6 +69,7 @@ chime:DeleteDomain;Write
 chime:DeleteEventsConfiguration;Write
 chime:DeleteGroups;Write
 chime:DeleteMediaCapturePipeline;Write
+chime:DeleteMediaPipeline;Write
 chime:DeleteMeeting;Write
 chime:DeletePhoneNumber;Write
 chime:DeleteProxySession;Write
@@ -116,6 +119,7 @@ chime:GetDomain;Read
 chime:GetEventsConfiguration;Read
 chime:GetGlobalSettings;Read
 chime:GetMediaCapturePipeline;Read
+chime:GetMediaPipeline;Read
 chime:GetMeeting;Read
 chime:GetMeetingDetail;Read
 chime:GetMessagingSessionEndpoint;Read
@@ -171,6 +175,7 @@ chime:ListDirectories;List
 chime:ListDomains;List
 chime:ListGroups;List
 chime:ListMediaCapturePipelines;List
+chime:ListMediaPipelines;List
 chime:ListMeetingEvents;List
 chime:ListMeetingTags;List
 chime:ListMeetings;List
@@ -182,6 +187,7 @@ chime:ListRoomMemberships;List
 chime:ListRooms;List
 chime:ListSipMediaApplications;List
 chime:ListSipRules;List
+chime:ListSubChannels;List
 chime:ListSupportedPhoneNumberCountries;List
 chime:ListTagsForResource;Read
 chime:ListUsers;List

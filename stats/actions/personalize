@@ -52,11 +52,14 @@ personalize:ListRecommenders;List
 personalize:ListSchemas;List
 personalize:ListSolutionVersions;List
 personalize:ListSolutions;List
+personalize:ListTagsForResource;List
 personalize:PutEvents;Write
 personalize:PutItems;Write
 personalize:PutUsers;Write
 personalize:StartRecommender;Write
 personalize:StopRecommender;Write
 personalize:StopSolutionVersionCreation;Write
+personalize:TagResource;Tagging
+personalize:UntagResource;Tagging
 personalize:UpdateCampaign;Write
 personalize:UpdateRecommender;Write

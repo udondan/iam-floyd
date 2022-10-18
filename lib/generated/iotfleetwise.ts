@@ -23,10 +23,10 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_AssociateVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_AssociateVehicleFleet.html
    */
-  public toAssociateVehicle() {
-    return this.to('AssociateVehicle');
+  public toAssociateVehicleFleet() {
+    return this.to('AssociateVehicleFleet');
   }
 
   /**
@@ -34,7 +34,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateCampaign.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html
    */
   public toCreateCampaign() {
     return this.to('CreateCampaign');
@@ -45,7 +49,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateDecoderManifest.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateDecoderManifest.html
    */
   public toCreateDecoderManifest() {
     return this.to('CreateDecoderManifest');
@@ -56,7 +64,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateFleet.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateFleet.html
    */
   public toCreateFleet() {
     return this.to('CreateFleet');
@@ -67,7 +79,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateModelManifest.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateModelManifest.html
    */
   public toCreateModelManifest() {
     return this.to('CreateModelManifest');
@@ -78,7 +94,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateSignalCatalog.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateSignalCatalog.html
    */
   public toCreateSignalCatalog() {
     return this.to('CreateSignalCatalog');
@@ -89,11 +109,15 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iot:CreateThing
    * - iot:DescribeThing
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_CreateVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateVehicle.html
    */
   public toCreateVehicle() {
     return this.to('CreateVehicle');
@@ -104,7 +128,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteCampaign.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteCampaign.html
    */
   public toDeleteCampaign() {
     return this.to('DeleteCampaign');
@@ -115,7 +139,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteDecoderManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteDecoderManifest.html
    */
   public toDeleteDecoderManifest() {
     return this.to('DeleteDecoderManifest');
@@ -126,7 +150,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteFleet.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteFleet.html
    */
   public toDeleteFleet() {
     return this.to('DeleteFleet');
@@ -137,7 +161,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteModelManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteModelManifest.html
    */
   public toDeleteModelManifest() {
     return this.to('DeleteModelManifest');
@@ -148,7 +172,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteSignalCatalog.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteSignalCatalog.html
    */
   public toDeleteSignalCatalog() {
     return this.to('DeleteSignalCatalog');
@@ -159,7 +183,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DeleteVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteVehicle.html
    */
   public toDeleteVehicle() {
     return this.to('DeleteVehicle');
@@ -170,10 +194,10 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_DisassociateVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DisassociateVehicleFleet.html
    */
-  public toDisassociateVehicle() {
-    return this.to('DisassociateVehicle');
+  public toDisassociateVehicleFleet() {
+    return this.to('DisassociateVehicleFleet');
   }
 
   /**
@@ -181,7 +205,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetCampaign.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetCampaign.html
    */
   public toGetCampaign() {
     return this.to('GetCampaign');
@@ -192,7 +216,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetDecoderManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetDecoderManifest.html
    */
   public toGetDecoderManifest() {
     return this.to('GetDecoderManifest');
@@ -203,10 +227,21 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetFleet.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetFleet.html
    */
   public toGetFleet() {
     return this.to('GetFleet');
+  }
+
+  /**
+   * Grants permission to get the logging options for the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetLoggingOptions.html
+   */
+  public toGetLoggingOptions() {
+    return this.to('GetLoggingOptions');
   }
 
   /**
@@ -214,7 +249,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetModelManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetModelManifest.html
    */
   public toGetModelManifest() {
     return this.to('GetModelManifest');
@@ -225,7 +260,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetRegisterAccountStatus.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetRegisterAccountStatus.html
    */
   public toGetRegisterAccountStatus() {
     return this.to('GetRegisterAccountStatus');
@@ -236,7 +271,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetSignalCatalog.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetSignalCatalog.html
    */
   public toGetSignalCatalog() {
     return this.to('GetSignalCatalog');
@@ -247,7 +282,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetVehicle.html
    */
   public toGetVehicle() {
     return this.to('GetVehicle');
@@ -258,7 +293,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_GetVehicleStatus.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetVehicleStatus.html
    */
   public toGetVehicleStatus() {
     return this.to('GetVehicleStatus');
@@ -269,7 +304,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ImportDecoderManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ImportDecoderManifest.html
    */
   public toImportDecoderManifest() {
     return this.to('ImportDecoderManifest');
@@ -280,7 +315,11 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ImportSignalCatalog.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ImportSignalCatalog.html
    */
   public toImportSignalCatalog() {
     return this.to('ImportSignalCatalog');
@@ -291,7 +330,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListCampaigns.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListCampaigns.html
    */
   public toListCampaigns() {
     return this.to('ListCampaigns');
@@ -302,7 +341,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListDecoderManifestNetworkInterfaces.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListDecoderManifestNetworkInterfaces.html
    */
   public toListDecoderManifestNetworkInterfaces() {
     return this.to('ListDecoderManifestNetworkInterfaces');
@@ -313,7 +352,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListDecoderManifestSignals.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListDecoderManifestSignals.html
    */
   public toListDecoderManifestSignals() {
     return this.to('ListDecoderManifestSignals');
@@ -324,7 +363,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListDecoderManifests.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListDecoderManifests.html
    */
   public toListDecoderManifests() {
     return this.to('ListDecoderManifests');
@@ -335,7 +374,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListFleets.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListFleets.html
    */
   public toListFleets() {
     return this.to('ListFleets');
@@ -346,7 +385,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListFleetsForVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListFleetsForVehicle.html
    */
   public toListFleetsForVehicle() {
     return this.to('ListFleetsForVehicle');
@@ -357,7 +396,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListModelManifestNodes.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListModelManifestNodes.html
    */
   public toListModelManifestNodes() {
     return this.to('ListModelManifestNodes');
@@ -368,7 +407,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListModelManifests.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListModelManifests.html
    */
   public toListModelManifests() {
     return this.to('ListModelManifests');
@@ -379,7 +418,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListSignalCatalogNodes.html
    */
   public toListSignalCatalogNodes() {
     return this.to('ListSignalCatalogNodes');
@@ -390,10 +429,21 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListSignalCatalogs.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListSignalCatalogs.html
    */
   public toListSignalCatalogs() {
     return this.to('ListSignalCatalogs');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -401,7 +451,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListVehicles.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListVehicles.html
    */
   public toListVehicles() {
     return this.to('ListVehicles');
@@ -412,10 +462,21 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_ListVehiclesInFleet.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListVehiclesInFleet.html
    */
   public toListVehiclesInFleet() {
     return this.to('ListVehiclesInFleet');
+  }
+
+  /**
+   * Grants permission to put the logging options for the AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_PutLoggingOptions.html
+   */
+  public toPutLoggingOptions() {
+    return this.to('PutLoggingOptions');
   }
 
   /**
@@ -426,10 +487,39 @@ export class Iotfleetwise extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_RegisterAccount.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_RegisterAccount.html
    */
   public toRegisterAccount() {
     return this.to('RegisterAccount');
+  }
+
+  /**
+   * Grants permission to add tags to a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -437,7 +527,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateCampaign.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateCampaign.html
    */
   public toUpdateCampaign() {
     return this.to('UpdateCampaign');
@@ -448,7 +538,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateDecoderManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateDecoderManifest.html
    */
   public toUpdateDecoderManifest() {
     return this.to('UpdateDecoderManifest');
@@ -459,7 +549,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateFleet.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateFleet.html
    */
   public toUpdateFleet() {
     return this.to('UpdateFleet');
@@ -470,7 +560,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateModelManifest.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateModelManifest.html
    */
   public toUpdateModelManifest() {
     return this.to('UpdateModelManifest');
@@ -481,7 +571,7 @@ export class Iotfleetwise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateSignalCatalog.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateSignalCatalog.html
    */
   public toUpdateSignalCatalog() {
     return this.to('UpdateSignalCatalog');
@@ -496,7 +586,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifUpdateToModelManifestArn()
    * - .ifUpdateToDecoderManifestArn()
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/apireference/API_UpdateVehicle.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateVehicle.html
    */
   public toUpdateVehicle() {
     return this.to('UpdateVehicle');
@@ -504,7 +594,7 @@ export class Iotfleetwise extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'AssociateVehicle',
+      'AssociateVehicleFleet',
       'CreateCampaign',
       'CreateDecoderManifest',
       'CreateFleet',
@@ -517,9 +607,10 @@ export class Iotfleetwise extends PolicyStatement {
       'DeleteModelManifest',
       'DeleteSignalCatalog',
       'DeleteVehicle',
-      'DisassociateVehicle',
+      'DisassociateVehicleFleet',
       'ImportDecoderManifest',
       'ImportSignalCatalog',
+      'PutLoggingOptions',
       'RegisterAccount',
       'UpdateCampaign',
       'UpdateDecoderManifest',
@@ -532,6 +623,7 @@ export class Iotfleetwise extends PolicyStatement {
       'GetCampaign',
       'GetDecoderManifest',
       'GetFleet',
+      'GetLoggingOptions',
       'GetModelManifest',
       'GetRegisterAccountStatus',
       'GetSignalCatalog',
@@ -544,6 +636,7 @@ export class Iotfleetwise extends PolicyStatement {
       'ListModelManifests',
       'ListSignalCatalogNodes',
       'ListSignalCatalogs',
+      'ListTagsForResource',
       'ListVehicles',
       'ListVehiclesInFleet'
     ],
@@ -551,18 +644,25 @@ export class Iotfleetwise extends PolicyStatement {
       'ListDecoderManifestNetworkInterfaces',
       'ListDecoderManifestSignals',
       'ListModelManifestNodes'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
    * Adds a resource of type campaign to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/campaigns.html
    *
    * @param campaignName - Identifier for the campaignName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCampaign(campaignName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:campaign/${ campaignName }`);
@@ -571,12 +671,15 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Adds a resource of type decodermanifest to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/decoder-manifests.html
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDecodermanifest(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:decoder-manifest/${ name }`);
@@ -585,12 +688,15 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleets.html
    *
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
@@ -599,12 +705,15 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Adds a resource of type modelmanifest to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/vehicle-models.html
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onModelmanifest(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:model-manifest/${ name }`);
@@ -613,12 +722,15 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Adds a resource of type signalcatalog to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/signal-catalogs.html
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSignalcatalog(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:signal-catalog/${ name }`);
@@ -627,12 +739,15 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Adds a resource of type vehicle to the statement
    *
-   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/iot-vehicle-wise.html
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/vehicles.html
    *
    * @param vehicleId - Identifier for the vehicleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onVehicle(vehicleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:vehicle/${ vehicleId }`);

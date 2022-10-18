@@ -5,4 +5,5 @@ events:endpoint
 events:event-bus
 events:event-source
 events:replay
-events:rule
+events:rule-on-custom-event-bus
+events:rule-on-default-event-bus

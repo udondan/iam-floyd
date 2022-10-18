@@ -25,7 +25,7 @@ jobs:
           node-version: "14"
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -41,14 +41,13 @@ jobs:
         run: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Check for changes
+      - name: Check for changes # we expect at least 3 changes or we won't trigger a new release
         id: changes
         run: |
           set -x +e
           git stash -- package-lock.json
           git diff
-          git diff --quiet
-          echo ::set-output name=CHANGED::$?
+          echo ::set-output name=CHANGED::$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)
 
       # fail if the index file does not exist.
       # this could happen if we cannot reach the AWS documentation, or the
@@ -56,45 +55,57 @@ jobs:
       # code.
       - name: Failsafe
         run: test -e lib/index.ts || exit 1
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Configure git
         run: |
           set -x
           git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Update version refs
         run: |
           set -x
           perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION
           make update-version-refs
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Update stats in documentation
         run: make stats
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Generate changelog for next release
         run: |
           set -x
           make changelog
           git add CHANGELOG/*
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
 
       - name: Regenerate code example results
         run: make regenerate-code-example-results
-        if: steps.changes.outputs.CHANGED == '1'
+        if: steps.changes.outputs.CHANGED >= 3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Commit and push all changes
+      - name: Add all changes
         run: |
           set -x
           rm -rf package-lock.json node_modules tsconfig.json &&
-          git add * &&
-          git commit -m "Adds latest IAM updates from AWS" &&
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-        if: steps.changes.outputs.CHANGED == '1'
+          git add *
+        if: steps.changes.outputs.CHANGED >= 3
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.OVERRIDE_TOKEN }}
+          commit-message: Adds latest IAM updates from AWS
+          title: Adds latest IAM updates from AWS
+          body: Adds latest IAM updates from AWS
+          branch: iam-updates
+          delete-branch: true
+          committer: udondan <${{ secrets.RELEASE_MAIL }}>
+          author: udondan <${{ secrets.RELEASE_MAIL }}>
+          labels: automerge
+        if: steps.changes.outputs.CHANGED >= 3

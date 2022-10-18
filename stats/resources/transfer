@@ -1,6 +1,7 @@
 transfer:agreement
 transfer:certificate
 transfer:connector
+transfer:host-key
 transfer:profile
 transfer:server
 transfer:user

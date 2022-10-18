@@ -1,28 +1,30 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-	"Action": [
-	   "workspaces:CreateWorkspaces",
-	   "workspaces:DescribeWorkspaces",
-	   "workspaces:RebootWorkspaces",
-	   "workspaces:RebuildWorkspaces",
- 	   "workspaces:TerminateWorkspaces",
-	   "workspaces:DescribeWorkspaceDirectories",
-	   "workspaces:DescribeWorkspaceBundles",
-	   "workspaces:ModifyWorkspaceProperties",
-	   "workspaces:StopWorkspaces",
-	   "workspaces:StartWorkspaces",
-	   "workspaces:DescribeWorkspacesConnectionStatus",
-	   "workspaces:CreateTags",
-	   "workspaces:DeleteTags",
-	   "workspaces:DescribeTags",
-	   "kms:ListKeys",
-	   "kms:ListAliases",
-	   "kms:DescribeKey"
-	],
-	"Effect": "Allow",
-	"Resource": "*"
-    }
-  ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:DescribeKey",
+				"kms:ListAliases",
+				"kms:ListKeys",
+				"workspaces:CreateTags",
+				"workspaces:CreateWorkspaces",
+				"workspaces:CreateWorkspaceImage",
+				"workspaces:DeleteTags",
+				"workspaces:DescribeTags",
+				"workspaces:DescribeWorkspaceBundles",
+				"workspaces:DescribeWorkspaceDirectories",
+				"workspaces:DescribeWorkspaces",
+				"workspaces:DescribeWorkspacesConnectionStatus",
+				"workspaces:ModifyWorkspaceProperties",
+				"workspaces:ModifySamlProperties",
+				"workspaces:RebootWorkspaces",
+				"workspaces:RebuildWorkspaces",
+				"workspaces:StartWorkspaces",
+				"workspaces:StopWorkspaces",
+				"workspaces:TerminateWorkspaces"
+			],
+			"Resource": "*"
+		}
+	]
 }

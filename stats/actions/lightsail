@@ -149,6 +149,7 @@ lightsail:UpdateContainerService;Write
 lightsail:UpdateDistribution;Write
 lightsail:UpdateDistributionBundle;Write
 lightsail:UpdateDomainEntry;Write
+lightsail:UpdateInstanceMetadataOptions;Write
 lightsail:UpdateLoadBalancerAttribute;Write
 lightsail:UpdateRelationalDatabase;Write
 lightsail:UpdateRelationalDatabaseParameters;Write

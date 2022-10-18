@@ -41,7 +41,7 @@
 				"logs:PutLogEvents"
 			],
 			"Resource": [
-				"arn:aws:logs:*:*:log-group:/aws/fsx/*:log-group:*"
+				"arn:aws:logs:*:*:log-group:/aws/fsx/*"
 			]
 		},
 		{
@@ -54,21 +54,39 @@
 			]
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags"
-            ],
-            "Resource": [
-                "arn:aws:ec2:*:*:route-table/*"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
-                },
-                "ForAnyValue:StringEquals": {
-                    "aws:CalledVia": ["fsx.amazonaws.com"]
-                }
-            }
-        }
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:route-table/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
+				},
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"fsx.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeVpcs"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"fsx.amazonaws.com"
+					]
+				}
+			}
+		}
 	]
 }

@@ -184,7 +184,7 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource.html
    */
   public toDeleteEventBus() {
     return this.to('DeleteEventBus');
@@ -195,7 +195,7 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource.html
    */
   public toDeletePartnerEventSource() {
     return this.to('DeletePartnerEventSource');
@@ -783,7 +783,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type event-source to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param eventSourceName - Identifier for the eventSourceName.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -796,7 +796,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type event-bus to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param eventBusName - Identifier for the eventBusName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -811,9 +811,9 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type rule to the statement
+   * Adds a resource of type rule-on-default-event-bus to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param ruleName - Identifier for the ruleName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -823,14 +823,32 @@ export class Events extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
+  public onRuleOnDefaultEventBus(ruleName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
+  }
+
+  /**
+   * Adds a resource of type rule-on-custom-event-bus to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param eventBusName - Identifier for the eventBusName.
+   * @param ruleName - Identifier for the ruleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRuleOnCustomEventBus(eventBusName: string, ruleName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ eventBusName }/${ ruleName }`);
   }
 
   /**
    * Adds a resource of type archive to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param archiveName - Identifier for the archiveName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -844,7 +862,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type replay to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param replayName - Identifier for the replayName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -858,7 +876,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type connection to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param connectionName - Identifier for the connectionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -872,7 +890,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type api-destination to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param apiDestinationName - Identifier for the apiDestinationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -886,7 +904,7 @@ export class Events extends PolicyStatement {
   /**
    * Adds a resource of type endpoint to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param endpointName - Identifier for the endpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

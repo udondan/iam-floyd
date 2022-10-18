@@ -1,4 +1,4 @@
-iotfleetwise:AssociateVehicle;Write
+iotfleetwise:AssociateVehicleFleet;Write
 iotfleetwise:CreateCampaign;Write
 iotfleetwise:CreateDecoderManifest;Write
 iotfleetwise:CreateFleet;Write
@@ -11,10 +11,11 @@ iotfleetwise:DeleteFleet;Write
 iotfleetwise:DeleteModelManifest;Write
 iotfleetwise:DeleteSignalCatalog;Write
 iotfleetwise:DeleteVehicle;Write
-iotfleetwise:DisassociateVehicle;Write
+iotfleetwise:DisassociateVehicleFleet;Write
 iotfleetwise:GetCampaign;Read
 iotfleetwise:GetDecoderManifest;Read
 iotfleetwise:GetFleet;Read
+iotfleetwise:GetLoggingOptions;Read
 iotfleetwise:GetModelManifest;Read
 iotfleetwise:GetRegisterAccountStatus;Read
 iotfleetwise:GetSignalCatalog;Read
@@ -32,9 +33,13 @@ iotfleetwise:ListModelManifestNodes;List
 iotfleetwise:ListModelManifests;Read
 iotfleetwise:ListSignalCatalogNodes;Read
 iotfleetwise:ListSignalCatalogs;Read
+iotfleetwise:ListTagsForResource;Read
 iotfleetwise:ListVehicles;Read
 iotfleetwise:ListVehiclesInFleet;Read
+iotfleetwise:PutLoggingOptions;Write
 iotfleetwise:RegisterAccount;Write
+iotfleetwise:TagResource;Tagging
+iotfleetwise:UntagResource;Tagging
 iotfleetwise:UpdateCampaign;Write
 iotfleetwise:UpdateDecoderManifest;Write
 iotfleetwise:UpdateFleet;Write

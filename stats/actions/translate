@@ -7,9 +7,12 @@ translate:GetTerminology;Read
 translate:ImportTerminology;Write
 translate:ListLanguages;List
 translate:ListParallelData;List
+translate:ListTagsForResource;Read
 translate:ListTerminologies;List
 translate:ListTextTranslationJobs;List
 translate:StartTextTranslationJob;Write
 translate:StopTextTranslationJob;Write
+translate:TagResource;Tagging
 translate:TranslateText;Read
+translate:UntagResource;Tagging
 translate:UpdateParallelData;Write

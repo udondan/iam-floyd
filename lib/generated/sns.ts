@@ -150,6 +150,17 @@ export class Sns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the data protection policy of the topic
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sns/latest/api/API_GetDataProtectionPolicy.html
+   */
+  public toGetDataProtectionPolicy() {
+    return this.to('GetDataProtectionPolicy');
+  }
+
+  /**
    * Grants permission to retrieve the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS
    *
    * Access Level: Read
@@ -337,6 +348,17 @@ export class Sns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow a topic owner to set the data protection policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sns/latest/api/API_PutDataProtectionPolicy.html
+   */
+  public toPutDataProtectionPolicy() {
+    return this.to('PutDataProtectionPolicy');
+  }
+
+  /**
    * Grants permission to remove a statement from a topic's access control policy
    *
    * Access Level: Permissions management
@@ -397,7 +419,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to allow a topic owner to set an attribute of the topic to a new value
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Dependent actions:
    * - iam:PassRole
@@ -478,10 +500,12 @@ export class Sns extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddPermission',
-      'RemovePermission'
+      'RemovePermission',
+      'SetTopicAttributes'
     ],
     Read: [
       'CheckIfPhoneNumberIsOptedOut',
+      'GetDataProtectionPolicy',
       'GetEndpointAttributes',
       'GetPlatformApplicationAttributes',
       'GetSMSAttributes',
@@ -503,11 +527,11 @@ export class Sns extends PolicyStatement {
       'DeleteTopic',
       'OptInPhoneNumber',
       'Publish',
+      'PutDataProtectionPolicy',
       'SetEndpointAttributes',
       'SetPlatformApplicationAttributes',
       'SetSMSAttributes',
       'SetSubscriptionAttributes',
-      'SetTopicAttributes',
       'Subscribe',
       'Unsubscribe',
       'VerifySMSSandboxPhoneNumber'

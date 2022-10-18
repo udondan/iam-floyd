@@ -1,5 +1,7 @@
 sagemaker:AcceleratorTypes
 sagemaker:AppNetworkAccessType
+sagemaker:CustomerMetadataProperties/${MetadataKey}
+sagemaker:CustomerMetadataPropertiesToRemove
 sagemaker:DirectInternetAccess
 sagemaker:DomainSharingOutputKmsKey
 sagemaker:FeatureGroupOfflineStoreKmsKey
@@ -14,6 +16,7 @@ sagemaker:ImageArns
 sagemaker:ImageVersionArns
 sagemaker:InstanceTypes
 sagemaker:InterContainerTrafficEncryption
+sagemaker:KeepAlivePeriod
 sagemaker:MaxRuntimeInSeconds
 sagemaker:MinimumInstanceMetadataServiceVersion
 sagemaker:ModelApprovalStatus

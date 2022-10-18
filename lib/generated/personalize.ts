@@ -613,6 +613,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to put real time event data
    *
    * Access Level: Write
@@ -676,6 +687,28 @@ export class Personalize extends PolicyStatement {
    */
   public toStopSolutionVersionCreation() {
     return this.to('StopSolutionVersionCreation');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -767,7 +800,12 @@ export class Personalize extends PolicyStatement {
       'ListRecommenders',
       'ListSchemas',
       'ListSolutionVersions',
-      'ListSolutions'
+      'ListSolutions',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

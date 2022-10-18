@@ -1756,6 +1756,17 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update metadata options for an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateInstanceMetadataOptions.html
+   */
+  public toUpdateInstanceMetadataOptions() {
+    return this.to('UpdateInstanceMetadataOptions');
+  }
+
+  /**
    * Grants permission to update a load balancer attribute, such as the health check path and session stickiness
    *
    * Access Level: Write
@@ -1877,6 +1888,7 @@ export class Lightsail extends PolicyStatement {
       'UpdateDistribution',
       'UpdateDistributionBundle',
       'UpdateDomainEntry',
+      'UpdateInstanceMetadataOptions',
       'UpdateLoadBalancerAttribute',
       'UpdateRelationalDatabase',
       'UpdateRelationalDatabaseParameters'

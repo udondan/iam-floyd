@@ -74,6 +74,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detect the sentiments associated with specific entities (such as brands or products) within the given list of text documents
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectTargetedSentiment.html
+   */
+  public toBatchDetectTargetedSentiment() {
+    return this.to('BatchDetectTargetedSentiment');
+  }
+
+  /**
    * Grants permission to create a new document classification request to analyze a single document in real-time, using a previously created and trained custom model and an endpoint
    *
    * Access Level: Read
@@ -400,6 +411,17 @@ export class Comprehend extends PolicyStatement {
    */
   public toDetectSyntax() {
     return this.to('DetectSyntax');
+  }
+
+  /**
+   * Grants permission to detect the sentiments associated with specific entities (such as brands or products) in a document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectTargetedSentiment.html
+   */
+  public toDetectTargetedSentiment() {
+    return this.to('DetectTargetedSentiment');
   }
 
   /**
@@ -905,6 +927,7 @@ export class Comprehend extends PolicyStatement {
       'BatchDetectKeyPhrases',
       'BatchDetectSentiment',
       'BatchDetectSyntax',
+      'BatchDetectTargetedSentiment',
       'ClassifyDocument',
       'ContainsPiiEntities',
       'DescribeDocumentClassificationJob',
@@ -926,6 +949,7 @@ export class Comprehend extends PolicyStatement {
       'DetectPiiEntities',
       'DetectSentiment',
       'DetectSyntax',
+      'DetectTargetedSentiment',
       'ListDocumentClassificationJobs',
       'ListDocumentClassifierSummaries',
       'ListDocumentClassifiers',
@@ -981,6 +1005,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type targeted-sentiment-detection-job to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTargetedSentimentDetectionJob.html
+   *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -995,6 +1021,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type document-classifier to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification-training.html
    *
    * @param documentClassifierName - Identifier for the documentClassifierName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1011,6 +1039,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type document-classifier-endpoint to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/custom-realtime-analysis.html
+   *
    * @param documentClassifierEndpointName - Identifier for the documentClassifierEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1025,6 +1055,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type entity-recognizer to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/training-recognizers.html
    *
    * @param entityRecognizerName - Identifier for the entityRecognizerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1041,6 +1073,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type entity-recognizer-endpoint to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/custom-realtime-analysis.html
+   *
    * @param entityRecognizerEndpointName - Identifier for the entityRecognizerEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1055,6 +1089,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type dominant-language-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1071,6 +1107,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type entities-detection-job to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html
+   *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1085,6 +1123,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type pii-entities-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartPiiEntitiesDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1101,6 +1141,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type events-detection-job to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEventsDetectionJob.html
+   *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1115,6 +1157,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type key-phrases-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1131,6 +1175,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type sentiment-detection-job to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html
+   *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1146,6 +1192,8 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type topics-detection-job to the statement
    *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html
+   *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1160,6 +1208,8 @@ export class Comprehend extends PolicyStatement {
 
   /**
    * Adds a resource of type document-classification-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

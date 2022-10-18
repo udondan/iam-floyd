@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -21,7 +21,7 @@ jobs:
         run: git rev-parse HEAD > /tmp/sha
 
       - name: Store SHA as artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -32,9 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -44,7 +45,7 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -66,7 +67,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Store packages as artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: packages
           path: dist/**/*
@@ -77,9 +78,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -89,7 +91,7 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -114,7 +116,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Store packages as artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cdk-packages
           path: dist/**/*
@@ -125,9 +127,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -137,14 +140,14 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Download package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: packages
           path: dist
@@ -168,9 +171,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -180,14 +184,14 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Download package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: packages
           path: dist
@@ -204,9 +208,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -216,14 +221,14 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Download package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: cdk-packages
           path: dist
@@ -249,9 +254,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain:1-buster-slim
+      options: --group-add sudo
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -261,14 +267,14 @@ jobs:
         run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Download package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: cdk-packages
           path: dist
@@ -278,3 +284,15 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  report-status:
+    name: success
+    runs-on: ubuntu-latest
+    needs:
+      - test-standalone-node
+      - test-standalone-python
+      - test-cdk-python
+      - test-cdk-node
+    steps:
+      - name: Report success
+        run: echo 'Success'

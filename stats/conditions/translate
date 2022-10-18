@@ -1,1 +1,3 @@
-
+translate:RequestTag/${TagKey}
+translate:ResourceTag/${TagKey}
+translate:TagKeys

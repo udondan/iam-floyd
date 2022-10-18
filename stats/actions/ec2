@@ -51,6 +51,8 @@ ec2:CreateCapacityReservationFleet;Write
 ec2:CreateCarrierGateway;Write
 ec2:CreateClientVpnEndpoint;Write
 ec2:CreateClientVpnRoute;Write
+ec2:CreateCoipCidr;Write
+ec2:CreateCoipPool;Write
 ec2:CreateCoipPoolPermission;Write
 ec2:CreateCustomerGateway;Write
 ec2:CreateDefaultSubnet;Write
@@ -71,7 +73,9 @@ ec2:CreateKeyPair;Write
 ec2:CreateLaunchTemplate;Write
 ec2:CreateLaunchTemplateVersion;Write
 ec2:CreateLocalGatewayRoute;Write
+ec2:CreateLocalGatewayRouteTable;Write
 ec2:CreateLocalGatewayRouteTablePermission;Write
+ec2:CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:CreateLocalGatewayRouteTableVpcAssociation;Write
 ec2:CreateManagedPrefixList;Write
 ec2:CreateNatGateway;Write
@@ -123,6 +127,8 @@ ec2:CreateVpnGateway;Write
 ec2:DeleteCarrierGateway;Write
 ec2:DeleteClientVpnEndpoint;Write
 ec2:DeleteClientVpnRoute;Write
+ec2:DeleteCoipCidr;Write
+ec2:DeleteCoipPool;Write
 ec2:DeleteCoipPoolPermission;Write
 ec2:DeleteCustomerGateway;Write
 ec2:DeleteDhcpOptions;Write
@@ -139,7 +145,9 @@ ec2:DeleteKeyPair;Write
 ec2:DeleteLaunchTemplate;Write
 ec2:DeleteLaunchTemplateVersions;Write
 ec2:DeleteLocalGatewayRoute;Write
+ec2:DeleteLocalGatewayRouteTable;Write
 ec2:DeleteLocalGatewayRouteTablePermission;Write
+ec2:DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:DeleteLocalGatewayRouteTableVpcAssociation;Write
 ec2:DeleteManagedPrefixList;Write
 ec2:DeleteNatGateway;Write
@@ -215,11 +223,11 @@ ec2:DescribeConversionTasks;List
 ec2:DescribeCustomerGateways;List
 ec2:DescribeDhcpOptions;List
 ec2:DescribeEgressOnlyInternetGateways;List
-ec2:DescribeElasticGpus;Read
+ec2:DescribeElasticGpus;List
 ec2:DescribeExportImageTasks;List
 ec2:DescribeExportTasks;List
-ec2:DescribeFastLaunchImages;Read
-ec2:DescribeFastSnapshotRestores;Read
+ec2:DescribeFastLaunchImages;List
+ec2:DescribeFastSnapshotRestores;List
 ec2:DescribeFleetHistory;List
 ec2:DescribeFleetInstances;List
 ec2:DescribeFleets;List
@@ -281,8 +289,8 @@ ec2:DescribeReservedInstancesListings;List
 ec2:DescribeReservedInstancesModifications;List
 ec2:DescribeReservedInstancesOfferings;List
 ec2:DescribeRouteTables;List
-ec2:DescribeScheduledInstanceAvailability;Read
-ec2:DescribeScheduledInstances;Read
+ec2:DescribeScheduledInstanceAvailability;List
+ec2:DescribeScheduledInstances;List
 ec2:DescribeSecurityGroupReferences;List
 ec2:DescribeSecurityGroupRules;List
 ec2:DescribeSecurityGroups;List
@@ -298,7 +306,7 @@ ec2:DescribeSpotPriceHistory;List
 ec2:DescribeStaleSecurityGroups;List
 ec2:DescribeStoreImageTasks;List
 ec2:DescribeSubnets;List
-ec2:DescribeTags;Read
+ec2:DescribeTags;List
 ec2:DescribeTrafficMirrorFilters;List
 ec2:DescribeTrafficMirrorSessions;List
 ec2:DescribeTrafficMirrorTargets;List
@@ -307,8 +315,8 @@ ec2:DescribeTransitGatewayConnectPeers;List
 ec2:DescribeTransitGatewayConnects;List
 ec2:DescribeTransitGatewayMulticastDomains;List
 ec2:DescribeTransitGatewayPeeringAttachments;List
-ec2:DescribeTransitGatewayPolicyTables;Write
-ec2:DescribeTransitGatewayRouteTableAnnouncements;Write
+ec2:DescribeTransitGatewayPolicyTables;List
+ec2:DescribeTransitGatewayRouteTableAnnouncements;List
 ec2:DescribeTransitGatewayRouteTables;List
 ec2:DescribeTransitGatewayVpcAttachments;List
 ec2:DescribeTransitGateways;List
@@ -316,7 +324,7 @@ ec2:DescribeTrunkInterfaceAssociations;List
 ec2:DescribeVolumeAttribute;List
 ec2:DescribeVolumeStatus;List
 ec2:DescribeVolumes;List
-ec2:DescribeVolumesModifications;Read
+ec2:DescribeVolumesModifications;List
 ec2:DescribeVpcAttribute;List
 ec2:DescribeVpcClassicLink;List
 ec2:DescribeVpcClassicLinkDnsSupport;List
@@ -328,7 +336,7 @@ ec2:DescribeVpcEndpointServices;List
 ec2:DescribeVpcEndpoints;List
 ec2:DescribeVpcPeeringConnections;List
 ec2:DescribeVpcs;List
-ec2:DescribeVpnConnections;Read
+ec2:DescribeVpnConnections;List
 ec2:DescribeVpnGateways;List
 ec2:DetachClassicLinkVpc;Write
 ec2:DetachInternetGateway;Write
@@ -384,10 +392,10 @@ ec2:GetEbsEncryptionByDefault;Read
 ec2:GetFlowLogsIntegrationTemplate;Read
 ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
-ec2:GetInstanceTypesFromInstanceRequirements;Read
+ec2:GetInstanceTypesFromInstanceRequirements;List
 ec2:GetInstanceUefiData;Read
 ec2:GetIpamAddressHistory;Read
-ec2:GetIpamPoolAllocations;Read
+ec2:GetIpamPoolAllocations;List
 ec2:GetIpamPoolCidrs;Read
 ec2:GetIpamResourceCidrs;Read
 ec2:GetLaunchTemplateData;Read
@@ -444,6 +452,7 @@ ec2:ModifyIpamPool;Write
 ec2:ModifyIpamResourceCidr;Write
 ec2:ModifyIpamScope;Write
 ec2:ModifyLaunchTemplate;Write
+ec2:ModifyLocalGatewayRoute;Write
 ec2:ModifyManagedPrefixList;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
 ec2:ModifyPrivateDnsNameOptions;Write

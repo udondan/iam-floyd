@@ -354,6 +354,7 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - app-integrations:CreateEventIntegrationAssociation
+   * - cases:GetDomain
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
    * - events:PutRule
@@ -1698,6 +1699,42 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search queue resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeQueue
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchQueues.html
+   */
+  public toSearchQueues() {
+    return this.to('SearchQueues');
+  }
+
+  /**
+   * Grants permission to search routing profile resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeRoutingProfile
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html
+   */
+  public toSearchRoutingProfiles() {
+    return this.to('SearchRoutingProfiles');
+  }
+
+  /**
    * Grants permission to search security profile resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -1888,7 +1925,6 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
@@ -2546,6 +2582,8 @@ export class Connect extends PolicyStatement {
       'GetTaskTemplate',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
+      'SearchQueues',
+      'SearchRoutingProfiles',
       'SearchSecurityProfiles',
       'SearchUsers'
     ],
@@ -2696,7 +2734,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type queue to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Queue.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param queueId - Identifier for the queueId.
@@ -2714,7 +2752,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type wildcard-queue to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Queue.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
@@ -2831,7 +2869,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type hours-of-operation to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_HoursOfOperation.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
@@ -2849,7 +2887,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type agent-status to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-status.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param agentStatusId - Identifier for the agentStatusId.
@@ -2867,7 +2905,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type wildcard-agent-status to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-status.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
@@ -3108,6 +3146,8 @@ export class Connect extends PolicyStatement {
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
    * - .toPutUserStatus()
+   * - .toSearchQueues()
+   * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
@@ -3161,6 +3201,8 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toSearchQueues()
+   * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    *

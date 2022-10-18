@@ -11,6 +11,7 @@ inspector2:DisableDelegatedAdminAccount;Write
 inspector2:DisassociateMember;Write
 inspector2:Enable;Write
 inspector2:EnableDelegatedAdminAccount;Write
+inspector2:GetConfiguration;Read
 inspector2:GetDelegatedAdminAccount;Read
 inspector2:GetFindingsReportStatus;Read
 inspector2:GetMember;Read
@@ -26,5 +27,6 @@ inspector2:ListTagsForResource;Read
 inspector2:ListUsageTotals;List
 inspector2:TagResource;Tagging
 inspector2:UntagResource;Tagging
+inspector2:UpdateConfiguration;Write
 inspector2:UpdateFilter;Write
 inspector2:UpdateOrganizationConfiguration;Write

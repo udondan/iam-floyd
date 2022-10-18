@@ -6,6 +6,7 @@
 			"Action": [
 				"mgn:SendAgentMetricsForMgn",
 				"mgn:SendAgentLogsForMgn",
+				"mgn:SendClientMetricsForMgn",
 				"mgn:SendClientLogsForMgn"
 			],
 			"Resource": "*"

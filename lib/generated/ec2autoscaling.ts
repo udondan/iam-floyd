@@ -118,6 +118,10 @@ export class Autoscaling extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateAutoScalingGroup.html
    */
   public toCreateAutoScalingGroup() {
@@ -735,6 +739,9 @@ export class Autoscaling extends PolicyStatement {
    * - .ifMinSize()
    * - .ifVPCZoneIdentifiers()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_UpdateAutoScalingGroup.html
    */
   public toUpdateAutoScalingGroup() {
@@ -848,7 +855,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the AMI used to create the instance
+   * Filters access based on the AMI ID for the launch configuration
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -863,7 +870,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the type of instance, in terms of the hardware resources available
+   * Filters access based on the instance type for the launch configuration
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -878,7 +885,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the types of instances, in terms of the hardware resources available
+   * Filters access based on the instance types present as overrides to a launch template for a mixed instances policy. Use it to qualify which instance types can be explicitly defined in the policy
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -942,7 +949,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the maximum scaling size
+   * Filters access based on the maximum scaling size in the request
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1004,7 +1011,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the minimum scaling size
+   * Filters access based on the minimum scaling size in the request
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1021,7 +1028,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the value of a tag attached to a resource
+   * Filters access based on the tags associated with the resource
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1077,7 +1084,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the spot price associated with an instance
+   * Filters access based on the price for Spot Instances for the launch configuration
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *

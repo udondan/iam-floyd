@@ -9,6 +9,7 @@ sns:DeleteEndpoint;Write
 sns:DeletePlatformApplication;Write
 sns:DeleteSMSSandboxPhoneNumber;Write
 sns:DeleteTopic;Write
+sns:GetDataProtectionPolicy;Read
 sns:GetEndpointAttributes;Read
 sns:GetPlatformApplicationAttributes;Read
 sns:GetSMSAttributes;Read
@@ -26,12 +27,13 @@ sns:ListTagsForResource;Read
 sns:ListTopics;List
 sns:OptInPhoneNumber;Write
 sns:Publish;Write
+sns:PutDataProtectionPolicy;Write
 sns:RemovePermission;Permissions management
 sns:SetEndpointAttributes;Write
 sns:SetPlatformApplicationAttributes;Write
 sns:SetSMSAttributes;Write
 sns:SetSubscriptionAttributes;Write
-sns:SetTopicAttributes;Write
+sns:SetTopicAttributes;Permissions management
 sns:Subscribe;Write
 sns:TagResource;Tagging
 sns:Unsubscribe;Write

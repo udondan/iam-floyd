@@ -5,6 +5,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"mgn:GetAgentInstallationAssetsForMgn",
+				"mgn:SendClientMetricsForMgn",
 				"mgn:SendClientLogsForMgn",
 				"mgn:RegisterAgentForMgn",
 				"mgn:VerifyClientRoleForMgn"
