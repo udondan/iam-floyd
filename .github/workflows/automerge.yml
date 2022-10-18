@@ -6,27 +6,22 @@ on:
     types: [labeled]
 
 jobs:
-  worker:
+  automerge_dependabot:
     runs-on: ubuntu-latest
     if: |
-      (
-        github.actor == 'dependabot[bot]' &&
-        contains(github.event.pull_request.labels.*.name, 'dependencies')
-      ) || (
-        github.actor == 'udondan' &&
-        contains(github.event.pull_request.labels.*.name, 'automerge')
-      )
+      github.actor == 'dependabot[bot]' &&
+      contains(github.event.pull_request.labels.*.name, 'dependencies')
     steps:
       - name: Wait for status checks
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1.7.1
         with:
-          ignoreActions: worker,WIP
+          ignoreActions: automerge_dependabot,automerge_ci,WIP
           checkInterval: 60
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Automerge "dependencies"
+      - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
         if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
@@ -35,7 +30,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
           MERGE_DELETE_BRANCH: true
 
-      - name: Automerge "automerge"
+  automerge_ci:
+    runs-on: ubuntu-latest
+    if: |
+      github.actor == 'udondan' &&
+      contains(github.event.pull_request.labels.*.name, 'automerge')
+    steps:
+      - name: Wait for status checks
+        id: waitforstatuschecks
+        uses: WyriHaximus/github-action-wait-for-status@v1.7.1
+        with:
+          ignoreActions: automerge_dependabot,automerge_ci,WIP
+          checkInterval: 60
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Automerge
         uses: pascalgn/automerge-action@v0.15.3
         if: steps.waitforstatuschecks.outputs.status == 'success'
         env:
