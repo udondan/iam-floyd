@@ -52,6 +52,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to assume an impersonation role for the given Amazon WorkMail organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssumeImpersonationRole.html
+   */
+  public toAssumeImpersonationRole() {
+    return this.to('AssumeImpersonationRole');
+  }
+
+  /**
    * Grants permission to cancel a currently running mailbox export job
    *
    * Access Level: Write
@@ -93,6 +104,17 @@ export class Workmail extends PolicyStatement {
    */
   public toCreateGroup() {
     return this.to('CreateGroup');
+  }
+
+  /**
+   * Grants permission to create an impersonation role for the given Amazon WorkMail organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateImpersonationRole.html
+   */
+  public toCreateImpersonationRole() {
+    return this.to('CreateImpersonationRole');
   }
 
   /**
@@ -247,6 +269,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDeleteGroup() {
     return this.to('DeleteGroup');
+  }
+
+  /**
+   * Grants permission to delete an impersonation role for the given Amazon WorkMail organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteImpersonationRole.html
+   */
+  public toDeleteImpersonationRole() {
+    return this.to('DeleteImpersonationRole');
   }
 
   /**
@@ -679,6 +712,28 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an impersonation role for the given Amazon WorkMail organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetImpersonationRole.html
+   */
+  public toGetImpersonationRole() {
+    return this.to('GetImpersonationRole');
+  }
+
+  /**
+   * Grants permission to get the effect of the rules associated to an impersonation role for a specific user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetImpersonationRoleEffect.html
+   */
+  public toGetImpersonationRoleEffect() {
+    return this.to('GetImpersonationRoleEffect');
+  }
+
+  /**
    * Grants permission to read the configured journaling and fallback email addresses for email journaling
    *
    * Access Level: Read
@@ -852,6 +907,17 @@ export class Workmail extends PolicyStatement {
    */
   public toListGroups() {
     return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list the impersonation roles for the given Amazon WorkMail organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListImpersonationRoles.html
+   */
+  public toListImpersonationRoles() {
+    return this.to('ListImpersonationRoles');
   }
 
   /**
@@ -1307,6 +1373,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing impersonation role for the given Amazon WorkMail organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateImpersonationRole.html
+   */
+  public toUpdateImpersonationRole() {
+    return this.to('UpdateImpersonationRole');
+  }
+
+  /**
    * Grants permission to update the details of an inbound email flow rule which will apply to all email sent to an organization
    *
    * Access Level: Write
@@ -1399,10 +1476,12 @@ export class Workmail extends PolicyStatement {
       'AddMembersToGroup',
       'AssociateDelegateToResource',
       'AssociateMemberToGroup',
+      'AssumeImpersonationRole',
       'CancelMailboxExportJob',
       'CreateAlias',
       'CreateAvailabilityConfiguration',
       'CreateGroup',
+      'CreateImpersonationRole',
       'CreateInboundMailFlowRule',
       'CreateMailDomain',
       'CreateMailUser',
@@ -1417,6 +1496,7 @@ export class Workmail extends PolicyStatement {
       'DeleteAvailabilityConfiguration',
       'DeleteEmailMonitoringConfiguration',
       'DeleteGroup',
+      'DeleteImpersonationRole',
       'DeleteInboundMailFlowRule',
       'DeleteMailDomain',
       'DeleteMailboxPermissions',
@@ -1460,6 +1540,7 @@ export class Workmail extends PolicyStatement {
       'TestOutboundMailFlowRules',
       'UpdateAvailabilityConfiguration',
       'UpdateDefaultMailDomain',
+      'UpdateImpersonationRole',
       'UpdateInboundMailFlowRule',
       'UpdateMailboxQuota',
       'UpdateMobileDeviceAccessRule',
@@ -1483,6 +1564,7 @@ export class Workmail extends PolicyStatement {
       'ListAliases',
       'ListGroupMembers',
       'ListGroups',
+      'ListImpersonationRoles',
       'ListInboundMailFlowRules',
       'ListMailDomains',
       'ListMailboxExportJobs',
@@ -1504,6 +1586,8 @@ export class Workmail extends PolicyStatement {
       'DescribeSmtpGateway',
       'GetAccessControlEffect',
       'GetDefaultRetentionPolicy',
+      'GetImpersonationRole',
+      'GetImpersonationRoleEffect',
       'GetJournalingRules',
       'GetMailDomain',
       'GetMailDomainDetails',

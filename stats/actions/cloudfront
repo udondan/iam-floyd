@@ -8,10 +8,12 @@ cloudfront:CreateFunction;Write
 cloudfront:CreateInvalidation;Write
 cloudfront:CreateKeyGroup;Write
 cloudfront:CreateMonitoringSubscription;Write
+cloudfront:CreateOriginAccessControl;Write
 cloudfront:CreateOriginRequestPolicy;Write
 cloudfront:CreatePublicKey;Write
 cloudfront:CreateRealtimeLogConfig;Write
 cloudfront:CreateResponseHeadersPolicy;Write
+cloudfront:CreateSavingsPlan;Write
 cloudfront:CreateStreamingDistribution;Write
 cloudfront:CreateStreamingDistributionWithTags;Write
 cloudfront:DeleteCachePolicy;Write
@@ -22,6 +24,7 @@ cloudfront:DeleteFieldLevelEncryptionProfile;Write
 cloudfront:DeleteFunction;Write
 cloudfront:DeleteKeyGroup;Write
 cloudfront:DeleteMonitoringSubscription;Write
+cloudfront:DeleteOriginAccessControl;Write
 cloudfront:DeleteOriginRequestPolicy;Write
 cloudfront:DeletePublicKey;Write
 cloudfront:DeleteRealtimeLogConfig;Write
@@ -43,6 +46,8 @@ cloudfront:GetInvalidation;Read
 cloudfront:GetKeyGroup;Read
 cloudfront:GetKeyGroupConfig;Read
 cloudfront:GetMonitoringSubscription;Read
+cloudfront:GetOriginAccessControl;Read
+cloudfront:GetOriginAccessControlConfig;Read
 cloudfront:GetOriginRequestPolicy;Read
 cloudfront:GetOriginRequestPolicyConfig;Read
 cloudfront:GetPublicKey;Read
@@ -50,6 +55,7 @@ cloudfront:GetPublicKeyConfig;Read
 cloudfront:GetRealtimeLogConfig;Read
 cloudfront:GetResponseHeadersPolicy;Read
 cloudfront:GetResponseHeadersPolicyConfig;Read
+cloudfront:GetSavingsPlan;Read
 cloudfront:GetStreamingDistribution;Read
 cloudfront:GetStreamingDistributionConfig;Read
 cloudfront:ListCachePolicies;List
@@ -68,12 +74,16 @@ cloudfront:ListFieldLevelEncryptionProfiles;List
 cloudfront:ListFunctions;List
 cloudfront:ListInvalidations;List
 cloudfront:ListKeyGroups;List
+cloudfront:ListOriginAccessControls;List
 cloudfront:ListOriginRequestPolicies;List
 cloudfront:ListPublicKeys;List
+cloudfront:ListRateCards;List
 cloudfront:ListRealtimeLogConfigs;List
 cloudfront:ListResponseHeadersPolicies;List
+cloudfront:ListSavingsPlans;List
 cloudfront:ListStreamingDistributions;List
 cloudfront:ListTagsForResource;Read
+cloudfront:ListUsages;List
 cloudfront:PublishFunction;Write
 cloudfront:TagResource;Tagging
 cloudfront:TestFunction;Write
@@ -85,8 +95,10 @@ cloudfront:UpdateFieldLevelEncryptionConfig;Write
 cloudfront:UpdateFieldLevelEncryptionProfile;Write
 cloudfront:UpdateFunction;Write
 cloudfront:UpdateKeyGroup;Write
+cloudfront:UpdateOriginAccessControl;Write
 cloudfront:UpdateOriginRequestPolicy;Write
 cloudfront:UpdatePublicKey;Write
 cloudfront:UpdateRealtimeLogConfig;Write
 cloudfront:UpdateResponseHeadersPolicy;Write
+cloudfront:UpdateSavingsPlan;Write
 cloudfront:UpdateStreamingDistribution;Write

@@ -1,10 +1,12 @@
 workmail:AddMembersToGroup;Write
 workmail:AssociateDelegateToResource;Write
 workmail:AssociateMemberToGroup;Write
+workmail:AssumeImpersonationRole;Write
 workmail:CancelMailboxExportJob;Write
 workmail:CreateAlias;Write
 workmail:CreateAvailabilityConfiguration;Write
 workmail:CreateGroup;Write
+workmail:CreateImpersonationRole;Write
 workmail:CreateInboundMailFlowRule;Write
 workmail:CreateMailDomain;Write
 workmail:CreateMailUser;Write
@@ -19,6 +21,7 @@ workmail:DeleteAlias;Write
 workmail:DeleteAvailabilityConfiguration;Write
 workmail:DeleteEmailMonitoringConfiguration;Write
 workmail:DeleteGroup;Write
+workmail:DeleteImpersonationRole;Write
 workmail:DeleteInboundMailFlowRule;Write
 workmail:DeleteMailDomain;Write
 workmail:DeleteMailboxPermissions;Write
@@ -58,6 +61,8 @@ workmail:EnableMailGroups;Write
 workmail:EnableMailUsers;Write
 workmail:GetAccessControlEffect;Read
 workmail:GetDefaultRetentionPolicy;Read
+workmail:GetImpersonationRole;Read
+workmail:GetImpersonationRoleEffect;Read
 workmail:GetJournalingRules;Read
 workmail:GetMailDomain;Read
 workmail:GetMailDomainDetails;Read
@@ -74,6 +79,7 @@ workmail:ListAliases;List
 workmail:ListAvailabilityConfigurations;Read
 workmail:ListGroupMembers;List
 workmail:ListGroups;List
+workmail:ListImpersonationRoles;List
 workmail:ListInboundMailFlowRules;List
 workmail:ListMailDomains;List
 workmail:ListMailboxExportJobs;List
@@ -114,6 +120,7 @@ workmail:TestOutboundMailFlowRules;Write
 workmail:UntagResource;Tagging
 workmail:UpdateAvailabilityConfiguration;Write
 workmail:UpdateDefaultMailDomain;Write
+workmail:UpdateImpersonationRole;Write
 workmail:UpdateInboundMailFlowRule;Write
 workmail:UpdateMailboxQuota;Write
 workmail:UpdateMobileDeviceAccessRule;Write
