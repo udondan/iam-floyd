@@ -19,7 +19,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload.
+   * Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to activate the specified user. Only active users can access Amazon WorkDocs.
+   * Grants permission to activate the specified user. Only active users can access Amazon WorkDocs
    *
    * Access Level: Write
    *
@@ -41,7 +41,18 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a set of permissions for the specified folder or document.
+   * Grants permission to add principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toAddNotificationPermissions() {
+    return this.to('AddNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to create a set of permissions for the specified folder or document
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a user to a group.
+   * Grants permission to add a user to a group
    *
    * Access Level: Write
    *
@@ -63,7 +74,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check an alias.
+   * Grants permission to check an alias
    *
    * Access Level: Read
    *
@@ -74,7 +85,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a new comment to the specified document version.
+   * Grants permission to add a new comment to the specified document version
    *
    * Access Level: Write
    *
@@ -85,7 +96,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more custom properties to the specified resource.
+   * Grants permission to add one or more custom properties to the specified resource
    *
    * Access Level: Write
    *
@@ -96,7 +107,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a folder with the specified name and parent folder.
+   * Grants permission to create a folder with the specified name and parent folder
    *
    * Access Level: Write
    *
@@ -107,7 +118,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an instance.
+   * Grants permission to create an instance
    *
    * Access Level: Write
    *
@@ -118,7 +129,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add labels to the given resource.
+   * Grants permission to add labels to the given resource
    *
    * Access Level: Write
    *
@@ -129,7 +140,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to configure WorkDocs to use Amazon SNS notifications.
+   * Grants permission to configure WorkDocs to use Amazon SNS notifications
    *
    * Access Level: Write
    *
@@ -140,7 +151,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user in a Simple AD or Microsoft AD directory.
+   * Grants permission to create a user in a Simple AD or Microsoft AD directory
    *
    * Access Level: Write
    *
@@ -151,7 +162,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deactivate the specified user, which revokes the user's access to Amazon WorkDocs.
+   * Grants permission to deactivate the specified user, which revokes the user's access to Amazon WorkDocs
    *
    * Access Level: Write
    *
@@ -162,7 +173,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified comment from the document version.
+   * Grants permission to delete the specified comment from the document version
    *
    * Access Level: Write
    *
@@ -173,7 +184,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete custom metadata from the specified resource.
+   * Grants permission to delete custom metadata from the specified resource
    *
    * Access Level: Write
    *
@@ -184,7 +195,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to permanently delete the specified document and its associated metadata.
+   * Grants permission to permanently delete the specified document and its associated metadata
    *
    * Access Level: Write
    *
@@ -195,7 +206,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to permanently delete the specified folder and its contents.
+   * Grants permission to permanently delete the specified folder and its contents
    *
    * Access Level: Write
    *
@@ -206,7 +217,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the contents of the specified folder.
+   * Grants permission to delete the contents of the specified folder
    *
    * Access Level: Write
    *
@@ -217,7 +228,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an instance.
+   * Grants permission to delete an instance
    *
    * Access Level: Write
    *
@@ -228,7 +239,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete one or more labels from a resource.
+   * Grants permission to delete one or more labels from a resource
    *
    * Access Level: Write
    *
@@ -239,7 +250,18 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified subscription from the specified organization.
+   * Grants permission to delete principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toDeleteNotificationPermissions() {
+    return this.to('DeleteNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to delete the specified subscription from the specified organization
    *
    * Access Level: Write
    *
@@ -250,7 +272,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified user from a Simple AD or Microsoft AD directory.
+   * Grants permission to delete the specified user from a Simple AD or Microsoft AD directory
    *
    * Access Level: Write
    *
@@ -261,7 +283,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister a directory.
+   * Grants permission to deregister a directory
    *
    * Access Level: Write
    *
@@ -272,7 +294,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch user activities in a specified time period.
+   * Grants permission to fetch user activities in a specified time period
    *
    * Access Level: List
    *
@@ -283,7 +305,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe available directories.
+   * Grants permission to describe available directories
    *
    * Access Level: List
    *
@@ -294,7 +316,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the comments for the specified document version.
+   * Grants permission to list all the comments for the specified document version
    *
    * Access Level: List
    *
@@ -305,7 +327,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the document versions for the specified document.
+   * Grants permission to retrieve the document versions for the specified document
    *
    * Access Level: List
    *
@@ -316,7 +338,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the contents of the specified folder, including its documents and sub-folders.
+   * Grants permission to describe the contents of the specified folder, including its documents and sub-folders
    *
    * Access Level: List
    *
@@ -327,7 +349,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the user groups.
+   * Grants permission to describe the user groups
    *
    * Access Level: List
    *
@@ -338,7 +360,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe instances.
+   * Grants permission to describe instances
    *
    * Access Level: List
    *
@@ -349,7 +371,18 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the specified notification subscriptions.
+   * Grants permission to describe principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toDescribeNotificationPermissions() {
+    return this.to('DescribeNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to list the specified notification subscriptions
    *
    * Access Level: List
    *
@@ -360,7 +393,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of a specified resource's permissions.
+   * Grants permission to view a description of a specified resource's permissions
    *
    * Access Level: List
    *
@@ -371,7 +404,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the root folders.
+   * Grants permission to describe the root folders
    *
    * Access Level: List
    *
@@ -382,7 +415,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the specified users. You can describe all users or filter the results (for example, by status or organization).
+   * Grants permission to view a description of the specified users. You can describe all users or filter the results (for example, by status or organization)
    *
    * Access Level: List
    *
@@ -393,7 +426,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to download a specified document version.
+   * Grants permission to download a specified document version
    *
    * Access Level: Read
    *
@@ -404,7 +437,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the details of the current user.
+   * Grants permission to retrieve the details of the current user
    *
    * Access Level: Read
    *
@@ -415,7 +448,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the specified document object.
+   * Grants permission to retrieve the specified document object
    *
    * Access Level: Read
    *
@@ -426,7 +459,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the path information (the hierarchy from the root folder) for the requested document.
+   * Grants permission to retrieve the path information (the hierarchy from the root folder) for the requested document
    *
    * Access Level: Read
    *
@@ -437,7 +470,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve version metadata for the specified document.
+   * Grants permission to retrieve version metadata for the specified document
    *
    * Access Level: Read
    *
@@ -448,7 +481,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the metadata of the specified folder.
+   * Grants permission to retrieve the metadata of the specified folder
    *
    * Access Level: Read
    *
@@ -459,7 +492,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the path information (the hierarchy from the root folder) for the specified folder.
+   * Grants permission to retrieve the path information (the hierarchy from the root folder) for the specified folder
    *
    * Access Level: Read
    *
@@ -470,7 +503,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details for the specified group.
+   * Grants permission to retrieve details for the specified group
    *
    * Access Level: Read
    *
@@ -481,7 +514,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a collection of resources.
+   * Grants permission to get a collection of resources
    *
    * Access Level: Read
    *
@@ -492,7 +525,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new document object and version object.
+   * Grants permission to create a new document object and version object
    *
    * Access Level: Write
    *
@@ -503,7 +536,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register a directory.
+   * Grants permission to register a directory
    *
    * Access Level: Write
    *
@@ -514,7 +547,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove all the permissions from the specified resource.
+   * Grants permission to remove all the permissions from the specified resource
    *
    * Access Level: Write
    *
@@ -525,7 +558,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the permission for the specified principal from the specified resource.
+   * Grants permission to remove the permission for the specified principal from the specified resource
    *
    * Access Level: Write
    *
@@ -536,7 +569,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified attributes of the specified document.
+   * Grants permission to update the specified attributes of the specified document
    *
    * Access Level: Write
    *
@@ -547,7 +580,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to change the status of the document version to ACTIVE.
+   * Grants permission to change the status of the document version to ACTIVE
    *
    * Access Level: Write
    *
@@ -558,7 +591,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified attributes of the specified folder.
+   * Grants permission to update the specified attributes of the specified folder
    *
    * Access Level: Write
    *
@@ -569,7 +602,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an instance alias.
+   * Grants permission to update an instance alias
    *
    * Access Level: Write
    *
@@ -580,7 +613,7 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.
+   * Grants permission to update the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site
    *
    * Access Level: Write
    *
@@ -594,6 +627,7 @@ export class Workdocs extends PolicyStatement {
     Write: [
       'AbortDocumentVersionUpload',
       'ActivateUser',
+      'AddNotificationPermissions',
       'AddResourcePermissions',
       'AddUserToGroup',
       'CreateComment',
@@ -611,6 +645,7 @@ export class Workdocs extends PolicyStatement {
       'DeleteFolderContents',
       'DeleteInstance',
       'DeleteLabels',
+      'DeleteNotificationPermissions',
       'DeleteNotificationSubscription',
       'DeleteUser',
       'DeregisterDirectory',
@@ -644,6 +679,7 @@ export class Workdocs extends PolicyStatement {
       'DescribeFolderContents',
       'DescribeGroups',
       'DescribeInstances',
+      'DescribeNotificationPermissions',
       'DescribeNotificationSubscriptions',
       'DescribeResourcePermissions',
       'DescribeRootFolders',

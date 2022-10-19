@@ -1,5 +1,6 @@
 workdocs:AbortDocumentVersionUpload;Write
 workdocs:ActivateUser;Write
+workdocs:AddNotificationPermissions;Write
 workdocs:AddResourcePermissions;Write
 workdocs:AddUserToGroup;Write
 workdocs:CheckAlias;Read
@@ -18,6 +19,7 @@ workdocs:DeleteFolder;Write
 workdocs:DeleteFolderContents;Write
 workdocs:DeleteInstance;Write
 workdocs:DeleteLabels;Write
+workdocs:DeleteNotificationPermissions;Write
 workdocs:DeleteNotificationSubscription;Write
 workdocs:DeleteUser;Write
 workdocs:DeregisterDirectory;Write
@@ -28,6 +30,7 @@ workdocs:DescribeDocumentVersions;List
 workdocs:DescribeFolderContents;List
 workdocs:DescribeGroups;List
 workdocs:DescribeInstances;List
+workdocs:DescribeNotificationPermissions;List
 workdocs:DescribeNotificationSubscriptions;List
 workdocs:DescribeResourcePermissions;List
 workdocs:DescribeRootFolders;List

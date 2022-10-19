@@ -3,6 +3,7 @@ cloudfront:distribution
 cloudfront:field-level-encryption-config
 cloudfront:field-level-encryption-profile
 cloudfront:function
+cloudfront:origin-access-control
 cloudfront:origin-access-identity
 cloudfront:origin-request-policy
 cloudfront:realtime-log-config

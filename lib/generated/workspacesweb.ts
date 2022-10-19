@@ -60,6 +60,21 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate user access logging settings with web portals
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kinesis:PutRecord
+   * - kinesis:PutRecords
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateUserAccessLoggingSettings.html
+   */
+  public toAssociateUserAccessLoggingSettings() {
+    return this.to('AssociateUserAccessLoggingSettings');
+  }
+
+  /**
    * Grants permission to associate user settings with web portals
    *
    * Access Level: Write
@@ -158,6 +173,21 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create user access logging settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html
+   */
+  public toCreateUserAccessLoggingSettings() {
+    return this.to('CreateUserAccessLoggingSettings');
+  }
+
+  /**
    * Grants permission to create user settings
    *
    * Access Level: Write
@@ -228,6 +258,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete user access logging settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteUserAccessLoggingSettings.html
+   */
+  public toDeleteUserAccessLoggingSettings() {
+    return this.to('DeleteUserAccessLoggingSettings');
+  }
+
+  /**
    * Grants permission to delete user settings
    *
    * Access Level: Write
@@ -269,6 +310,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toDisassociateTrustStore() {
     return this.to('DisassociateTrustStore');
+  }
+
+  /**
+   * Grants permission to disassociate user access logging settings from web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateUserAccessLoggingSettings.html
+   */
+  public toDisassociateUserAccessLoggingSettings() {
+    return this.to('DisassociateUserAccessLoggingSettings');
   }
 
   /**
@@ -360,6 +412,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details on user access logging settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetUserAccessLoggingSettings.html
+   */
+  public toGetUserAccessLoggingSettings() {
+    return this.to('GetUserAccessLoggingSettings');
+  }
+
+  /**
    * Grants permission to get details on user settings
    *
    * Access Level: Read
@@ -445,6 +508,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toListTrustStores() {
     return this.to('ListTrustStores');
+  }
+
+  /**
+   * Grants permission to list user access logging settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListUserAccessLoggingSettings.html
+   */
+  public toListUserAccessLoggingSettings() {
+    return this.to('ListUserAccessLoggingSettings');
   }
 
   /**
@@ -552,6 +626,21 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update user access logging settings
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kinesis:PutRecord
+   * - kinesis:PutRecords
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateUserAccessLoggingSettings.html
+   */
+  public toUpdateUserAccessLoggingSettings() {
+    return this.to('UpdateUserAccessLoggingSettings');
+  }
+
+  /**
    * Grants permission to update user settings
    *
    * Access Level: Write
@@ -567,28 +656,33 @@ export class WorkspacesWeb extends PolicyStatement {
       'AssociateBrowserSettings',
       'AssociateNetworkSettings',
       'AssociateTrustStore',
+      'AssociateUserAccessLoggingSettings',
       'AssociateUserSettings',
       'CreateBrowserSettings',
       'CreateIdentityProvider',
       'CreateNetworkSettings',
       'CreatePortal',
       'CreateTrustStore',
+      'CreateUserAccessLoggingSettings',
       'CreateUserSettings',
       'DeleteBrowserSettings',
       'DeleteIdentityProvider',
       'DeleteNetworkSettings',
       'DeletePortal',
       'DeleteTrustStore',
+      'DeleteUserAccessLoggingSettings',
       'DeleteUserSettings',
       'DisassociateBrowserSettings',
       'DisassociateNetworkSettings',
       'DisassociateTrustStore',
+      'DisassociateUserAccessLoggingSettings',
       'DisassociateUserSettings',
       'UpdateBrowserSettings',
       'UpdateIdentityProvider',
       'UpdateNetworkSettings',
       'UpdatePortal',
       'UpdateTrustStore',
+      'UpdateUserAccessLoggingSettings',
       'UpdateUserSettings'
     ],
     Read: [
@@ -599,6 +693,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'GetPortalServiceProviderMetadata',
       'GetTrustStore',
       'GetTrustStoreCertificate',
+      'GetUserAccessLoggingSettings',
       'GetUserSettings',
       'ListBrowserSettings',
       'ListIdentityProviders',
@@ -607,6 +702,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'ListTagsForResource',
       'ListTrustStoreCertificates',
       'ListTrustStores',
+      'ListUserAccessLoggingSettings',
       'ListUserSettings'
     ],
     Tagging: [
@@ -698,5 +794,22 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public onUserSettings(userSettingsId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userSettings/${ userSettingsId }`);
+  }
+
+  /**
+   * Adds a resource of type userAccessLoggingSettings to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html
+   *
+   * @param userAccessLoggingSettingsId - Identifier for the userAccessLoggingSettingsId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUserAccessLoggingSettings(userAccessLoggingSettingsId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
   }
 }

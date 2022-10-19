@@ -129,6 +129,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new origin access control
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginAccessControl.html
+   */
+  public toCreateOriginAccessControl() {
+    return this.to('CreateOriginAccessControl');
+  }
+
+  /**
    * Grants permission to add a new origin request policy to CloudFront
    *
    * Access Level: Write
@@ -170,6 +181,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreateResponseHeadersPolicy() {
     return this.to('CreateResponseHeadersPolicy');
+  }
+
+  /**
+   * Grants permission to create a new savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toCreateSavingsPlan() {
+    return this.to('CreateSavingsPlan');
   }
 
   /**
@@ -284,6 +306,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteMonitoringSubscription() {
     return this.to('DeleteMonitoringSubscription');
+  }
+
+  /**
+   * Grants permission to delete an origin access control
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginAccessControl.html
+   */
+  public toDeleteOriginAccessControl() {
+    return this.to('DeleteOriginAccessControl');
   }
 
   /**
@@ -518,6 +551,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the origin access control
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginAccessControl.html
+   */
+  public toGetOriginAccessControl() {
+    return this.to('GetOriginAccessControl');
+  }
+
+  /**
+   * Grants permission to get the origin access control configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginAccessControlConfig.html
+   */
+  public toGetOriginAccessControlConfig() {
+    return this.to('GetOriginAccessControlConfig');
+  }
+
+  /**
    * Grants permission to get the origin request policy
    *
    * Access Level: Read
@@ -592,6 +647,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetResponseHeadersPolicyConfig() {
     return this.to('GetResponseHeadersPolicyConfig');
+  }
+
+  /**
+   * Grants permission to get a savings plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toGetSavingsPlan() {
+    return this.to('GetSavingsPlan');
   }
 
   /**
@@ -687,7 +753,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByLambdaFunction.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
    */
   public toListDistributionsByLambdaFunction() {
     return this.to('ListDistributionsByLambdaFunction');
@@ -793,6 +859,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all origin access controls in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginAccessControls.html
+   */
+  public toListOriginAccessControls() {
+    return this.to('ListOriginAccessControls');
+  }
+
+  /**
    * Grants permission to list all origin request policies that have been created in CloudFront for this account
    *
    * Access Level: List
@@ -812,6 +889,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListPublicKeys() {
     return this.to('ListPublicKeys');
+  }
+
+  /**
+   * Grants permission to list CloudFront rate cards for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListRateCards() {
+    return this.to('ListRateCards');
   }
 
   /**
@@ -837,6 +925,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list savings plans in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListSavingsPlans() {
+    return this.to('ListSavingsPlans');
+  }
+
+  /**
    * Grants permission to list your RTMP distributions
    *
    * Access Level: List
@@ -856,6 +955,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list CloudFront usage
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListUsages() {
+    return this.to('ListUsages');
   }
 
   /**
@@ -987,6 +1097,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an origin access control
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginAccessControl.html
+   */
+  public toUpdateOriginAccessControl() {
+    return this.to('UpdateOriginAccessControl');
+  }
+
+  /**
    * Grants permission to update an origin request policy
    *
    * Access Level: Write
@@ -1031,6 +1152,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toUpdateSavingsPlan() {
+    return this.to('UpdateSavingsPlan');
+  }
+
+  /**
    * Grants permission to update the configuration for an RTMP distribution
    *
    * Access Level: Write
@@ -1053,10 +1185,12 @@ export class Cloudfront extends PolicyStatement {
       'CreateInvalidation',
       'CreateKeyGroup',
       'CreateMonitoringSubscription',
+      'CreateOriginAccessControl',
       'CreateOriginRequestPolicy',
       'CreatePublicKey',
       'CreateRealtimeLogConfig',
       'CreateResponseHeadersPolicy',
+      'CreateSavingsPlan',
       'CreateStreamingDistribution',
       'CreateStreamingDistributionWithTags',
       'DeleteCachePolicy',
@@ -1067,6 +1201,7 @@ export class Cloudfront extends PolicyStatement {
       'DeleteFunction',
       'DeleteKeyGroup',
       'DeleteMonitoringSubscription',
+      'DeleteOriginAccessControl',
       'DeleteOriginRequestPolicy',
       'DeletePublicKey',
       'DeleteRealtimeLogConfig',
@@ -1081,10 +1216,12 @@ export class Cloudfront extends PolicyStatement {
       'UpdateFieldLevelEncryptionProfile',
       'UpdateFunction',
       'UpdateKeyGroup',
+      'UpdateOriginAccessControl',
       'UpdateOriginRequestPolicy',
       'UpdatePublicKey',
       'UpdateRealtimeLogConfig',
       'UpdateResponseHeadersPolicy',
+      'UpdateSavingsPlan',
       'UpdateStreamingDistribution'
     ],
     Read: [
@@ -1104,6 +1241,8 @@ export class Cloudfront extends PolicyStatement {
       'GetKeyGroup',
       'GetKeyGroupConfig',
       'GetMonitoringSubscription',
+      'GetOriginAccessControl',
+      'GetOriginAccessControlConfig',
       'GetOriginRequestPolicy',
       'GetOriginRequestPolicyConfig',
       'GetPublicKey',
@@ -1111,6 +1250,7 @@ export class Cloudfront extends PolicyStatement {
       'GetRealtimeLogConfig',
       'GetResponseHeadersPolicy',
       'GetResponseHeadersPolicyConfig',
+      'GetSavingsPlan',
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
       'ListTagsForResource'
@@ -1132,11 +1272,15 @@ export class Cloudfront extends PolicyStatement {
       'ListFunctions',
       'ListInvalidations',
       'ListKeyGroups',
+      'ListOriginAccessControls',
       'ListOriginRequestPolicies',
       'ListPublicKeys',
+      'ListRateCards',
       'ListRealtimeLogConfigs',
       'ListResponseHeadersPolicies',
-      'ListStreamingDistributions'
+      'ListSavingsPlans',
+      'ListStreamingDistributions',
+      'ListUsages'
     ],
     Tagging: [
       'TagResource',
@@ -1278,5 +1422,18 @@ export class Cloudfront extends PolicyStatement {
    */
   public onResponseHeadersPolicy(id: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:response-headers-policy/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type origin-access-control to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOriginAccessControl(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:origin-access-control/${ id }`);
   }
 }

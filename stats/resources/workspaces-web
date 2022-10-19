@@ -2,4 +2,5 @@ workspaces-web:browserSettings
 workspaces-web:networkSettings
 workspaces-web:portal
 workspaces-web:trustStore
+workspaces-web:userAccessLoggingSettings
 workspaces-web:userSettings
