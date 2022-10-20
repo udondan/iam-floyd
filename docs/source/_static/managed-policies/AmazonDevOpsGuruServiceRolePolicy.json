@@ -56,7 +56,20 @@
 				"rds:DescribeDBInstanceAutomatedBackups",
 				"rds:DescribeAccountAttributes",
 				"logs:DescribeLogGroups",
-				"logs:DescribeLogStreams"
+				"logs:DescribeLogStreams",
+				"s3:GetBucketNotification",
+				"s3:GetBucketPolicy",
+				"s3:GetBucketPublicAccessBlock",
+				"s3:GetBucketTagging",
+				"s3:GetBucketWebsite",
+				"s3:GetIntelligentTieringConfiguration",
+				"s3:GetLifecycleConfiguration",
+				"s3:GetReplicationConfiguration",
+				"s3:ListAllMyBuckets",
+				"s3:ListStorageLensConfigurations",
+				"servicequotas:GetServiceQuota",
+				"servicequotas:ListRequestedServiceQuotaChangeHistory",
+				"servicequotas:ListServiceQuotas"
 			],
 			"Resource": "*"
 		},
@@ -143,6 +156,15 @@
 					"aws:ResourceTag/DevOps-Guru-Analysis": "true"
 				}
 			}
+		},
+		{
+			"Sid": "AllowAPIGatewayGetIntegrations",
+			"Effect": "Allow",
+			"Action": "apigateway:GET",
+			"Resource": [
+				"arn:aws:apigateway:*::/restapis/*/resources",
+				"arn:aws:apigateway:*::/restapis/*/resources/*/methods/*/integration"
+			]
 		}
 	]
 }
