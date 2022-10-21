@@ -13,6 +13,7 @@ connect:quick-connect
 connect:routing-profile
 connect:security-profile
 connect:task-template
+connect:traffic-distribution-group
 connect:use-case
 connect:user
 connect:vocabulary

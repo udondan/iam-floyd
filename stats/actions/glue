@@ -121,6 +121,7 @@ glue:GetWorkflowRuns;Read
 glue:ImportCatalogToGlue;Write
 glue:ListBlueprints;List
 glue:ListCrawlers;List
+glue:ListCrawls;List
 glue:ListCustomEntityTypes;List
 glue:ListDevEndpoints;List
 glue:ListJobs;List
@@ -179,4 +180,5 @@ glue:UpdateTable;Write
 glue:UpdateTrigger;Write
 glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write
+glue:UseGlueStudio;Permissions management
 glue:UseMLTransforms;Write

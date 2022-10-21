@@ -253,7 +253,7 @@ export class Gamesparks extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/gamesparks/latest/api/svc/API_ImportGameDocument.html
+   * https://docs.aws.amazon.com/gamesparks/latest/api/svc/API_ImportGameConfiguration.html
    */
   public toImportGameConfiguration() {
     return this.to('ImportGameConfiguration');
@@ -420,6 +420,10 @@ export class Gamesparks extends PolicyStatement {
    * Grants permission to remove tags from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/gamesparks/latest/api/svc/API_UntagResource.html
    */

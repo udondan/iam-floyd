@@ -114,6 +114,7 @@ export class ElementalActivations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -128,6 +129,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */

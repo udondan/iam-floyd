@@ -46,6 +46,7 @@ ses:GetContact;Read
 ses:GetContactList;Read
 ses:GetCustomVerificationEmailTemplate;Read
 ses:GetDedicatedIp;Read
+ses:GetDedicatedIpPool;Read
 ses:GetDedicatedIps;Read
 ses:GetDeliverabilityDashboardOptions;Read
 ses:GetDeliverabilityTestReport;Read

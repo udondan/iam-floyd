@@ -236,7 +236,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to claim phone number resources in an Amazon Connect instance
+   * Grants permission to claim phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
    *
@@ -449,6 +449,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a traffic distribution group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html
+   */
+  public toCreateTrafficDistributionGroup() {
+    return this.to('CreateTrafficDistributionGroup');
+  }
+
+  /**
    * Grants permission to create a use case for an integration association
    *
    * Access Level: Write
@@ -649,6 +665,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a traffic distribution group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html
+   */
+  public toDeleteTrafficDistributionGroup() {
+    return this.to('DeleteTrafficDistributionGroup');
+  }
+
+  /**
    * Grants permission to delete a use case from an integration association
    *
    * Access Level: Write
@@ -833,9 +863,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe phone number resources in an Amazon Connect instance
+   * Grants permission to describe phone number resources in an Amazon Connect instance or traffic distribution group
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -904,6 +934,20 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeSecurityProfile() {
     return this.to('DescribeSecurityProfile');
+  }
+
+  /**
+   * Grants permission to describe a traffic distribution group
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeTrafficDistributionGroup.html
+   */
+  public toDescribeTrafficDistributionGroup() {
+    return this.to('DescribeTrafficDistributionGroup');
   }
 
   /**
@@ -1227,6 +1271,20 @@ export class Connect extends PolicyStatement {
    */
   public toGetTaskTemplate() {
     return this.to('GetTaskTemplate');
+  }
+
+  /**
+   * Grants permission to read traffic distribution for a traffic distribution group
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetTrafficDistribution.html
+   */
+  public toGetTrafficDistribution() {
+    return this.to('GetTrafficDistribution');
   }
 
   /**
@@ -1602,6 +1660,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list traffic distribution groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTrafficDistributionGroups.html
+   */
+  public toListTrafficDistributionGroups() {
+    return this.to('ListTrafficDistributionGroups');
+  }
+
+  /**
    * Grants permission to list the use cases of an integration association
    *
    * Access Level: List
@@ -1677,6 +1746,34 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a replica of an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ds:AuthorizeApplication
+   * - ds:CheckAlias
+   * - ds:CreateAlias
+   * - ds:CreateDirectory
+   * - ds:CreateIdentityPoolDirectory
+   * - ds:DeleteDirectory
+   * - ds:DescribeDirectories
+   * - ds:UnauthorizeApplication
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
+   * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toReplicateInstance() {
+    return this.to('ReplicateInstance');
+  }
+
+  /**
    * Grants permission to resume recording for the specified contact
    *
    * Access Level: Write
@@ -1688,7 +1785,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search phone number resources in an Amazon Connect instance
+   * Grants permission to search phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: List
    *
@@ -2129,7 +2226,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update phone number resources in an Amazon Connect instance
+   * Grants permission to update phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
    *
@@ -2338,6 +2435,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update traffic distribution for a traffic distribution group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html
+   */
+  public toUpdateTrafficDistribution() {
+    return this.to('UpdateTrafficDistribution');
+  }
+
+  /**
    * Grants permission to update a hierarchy group for a user in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2482,6 +2593,7 @@ export class Connect extends PolicyStatement {
       'CreateRoutingProfile',
       'CreateSecurityProfile',
       'CreateTaskTemplate',
+      'CreateTrafficDistributionGroup',
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
@@ -2494,6 +2606,7 @@ export class Connect extends PolicyStatement {
       'DeleteQuickConnect',
       'DeleteSecurityProfile',
       'DeleteTaskTemplate',
+      'DeleteTrafficDistributionGroup',
       'DeleteUseCase',
       'DeleteUser',
       'DeleteUserHierarchyGroup',
@@ -2511,6 +2624,7 @@ export class Connect extends PolicyStatement {
       'GetFederationTokens',
       'PutUserStatus',
       'ReleasePhoneNumber',
+      'ReplicateInstance',
       'ResumeContactRecording',
       'StartChatContact',
       'StartContactRecording',
@@ -2548,6 +2662,7 @@ export class Connect extends PolicyStatement {
       'UpdateRoutingProfileQueues',
       'UpdateSecurityProfile',
       'UpdateTaskTemplate',
+      'UpdateTrafficDistribution',
       'UpdateUserHierarchy',
       'UpdateUserHierarchyGroupName',
       'UpdateUserHierarchyStructure',
@@ -2566,10 +2681,12 @@ export class Connect extends PolicyStatement {
       'DescribeInstance',
       'DescribeInstanceAttribute',
       'DescribeInstanceStorageConfig',
+      'DescribePhoneNumber',
       'DescribeQueue',
       'DescribeQuickConnect',
       'DescribeRoutingProfile',
       'DescribeSecurityProfile',
+      'DescribeTrafficDistributionGroup',
       'DescribeUser',
       'DescribeUserHierarchyGroup',
       'DescribeUserHierarchyStructure',
@@ -2588,7 +2705,7 @@ export class Connect extends PolicyStatement {
       'SearchUsers'
     ],
     List: [
-      'DescribePhoneNumber',
+      'GetTrafficDistribution',
       'ListAgentStatuses',
       'ListApprovedOrigins',
       'ListBots',
@@ -2615,6 +2732,7 @@ export class Connect extends PolicyStatement {
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
       'ListTaskTemplates',
+      'ListTrafficDistributionGroups',
       'ListUseCases',
       'ListUserHierarchyGroups',
       'ListUsers',
@@ -3036,6 +3154,23 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type traffic-distribution-group to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/traffic-distribution-groups.html
+   *
+   * @param trafficDistributionGroupId - Identifier for the trafficDistributionGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrafficDistributionGroup(trafficDistributionGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:traffic-distribution-group/${ trafficDistributionGroupId }`);
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -3078,6 +3213,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateQuickConnect()
    * - .toCreateRoutingProfile()
    * - .toCreateSecurityProfile()
+   * - .toCreateTrafficDistributionGroup()
    * - .toCreateUseCase()
    * - .toCreateUser()
    * - .toCreateUserHierarchyGroup()

@@ -23,6 +23,7 @@ connect:CreateQuickConnect;Write
 connect:CreateRoutingProfile;Write
 connect:CreateSecurityProfile;Write
 connect:CreateTaskTemplate;Write
+connect:CreateTrafficDistributionGroup;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
@@ -35,6 +36,7 @@ connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
 connect:DeleteSecurityProfile;Write
 connect:DeleteTaskTemplate;Write
+connect:DeleteTrafficDistributionGroup;Write
 connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
@@ -47,11 +49,12 @@ connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
 connect:DescribeInstanceStorageConfig;Read
-connect:DescribePhoneNumber;List
+connect:DescribePhoneNumber;Read
 connect:DescribeQueue;Read
 connect:DescribeQuickConnect;Read
 connect:DescribeRoutingProfile;Read
 connect:DescribeSecurityProfile;Read
+connect:DescribeTrafficDistributionGroup;Read
 connect:DescribeUser;Read
 connect:DescribeUserHierarchyGroup;Read
 connect:DescribeUserHierarchyStructure;Read
@@ -73,6 +76,7 @@ connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
 connect:GetTaskTemplate;Read
+connect:GetTrafficDistribution;List
 connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
 connect:ListBots;List
@@ -101,11 +105,13 @@ connect:ListSecurityProfilePermissions;List
 connect:ListSecurityProfiles;List
 connect:ListTagsForResource;Read
 connect:ListTaskTemplates;List
+connect:ListTrafficDistributionGroups;List
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
 connect:PutUserStatus;Write
 connect:ReleasePhoneNumber;Write
+connect:ReplicateInstance;Write
 connect:ResumeContactRecording;Write
 connect:SearchAvailablePhoneNumbers;List
 connect:SearchQueues;Read
@@ -151,6 +157,7 @@ connect:UpdateRoutingProfileName;Write
 connect:UpdateRoutingProfileQueues;Write
 connect:UpdateSecurityProfile;Write
 connect:UpdateTaskTemplate;Write
+connect:UpdateTrafficDistribution;Write
 connect:UpdateUserHierarchy;Write
 connect:UpdateUserHierarchyGroupName;Write
 connect:UpdateUserHierarchyStructure;Write

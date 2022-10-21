@@ -474,6 +474,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the updates of a directory for a particular update type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeUpdateDirectory.html
+   */
+  public toDescribeUpdateDirectory() {
+    return this.to('DescribeUpdateDirectory');
+  }
+
+  /**
    * Grants permission to disable alternative client authentication methods for the specified directory
    *
    * Access Level: Write
@@ -810,6 +821,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the directory for a particular update type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateDirectorySetup.html
+   */
+  public toUpdateDirectorySetup() {
+    return this.to('UpdateDirectorySetup');
+  }
+
+  /**
    * Grants permission to add or remove domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request
    *
    * Access Level: Write
@@ -908,6 +930,7 @@ export class Ds extends PolicyStatement {
       'UnauthorizeApplication',
       'UnshareDirectory',
       'UpdateConditionalForwarder',
+      'UpdateDirectorySetup',
       'UpdateNumberOfDomainControllers',
       'UpdateRadius',
       'UpdateSettings',
@@ -930,6 +953,7 @@ export class Ds extends PolicyStatement {
       'DescribeSharedDirectories',
       'DescribeSnapshots',
       'DescribeTrusts',
+      'DescribeUpdateDirectory',
       'GetAuthorizedApplicationDetails',
       'GetDirectoryLimits',
       'GetSnapshotLimits',

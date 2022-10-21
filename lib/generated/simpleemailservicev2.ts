@@ -448,6 +448,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a dedicated IP pool
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDedicatedIpPool.html
+   */
+  public toGetDedicatedIpPool() {
+    return this.to('GetDedicatedIpPool');
+  }
+
+  /**
    * Grants permission to list the dedicated IP addresses a dedicated IP pool
    *
    * Access Level: Read
@@ -1265,6 +1280,7 @@ export class SesV2 extends PolicyStatement {
       'GetContactList',
       'GetCustomVerificationEmailTemplate',
       'GetDedicatedIp',
+      'GetDedicatedIpPool',
       'GetDedicatedIps',
       'GetDeliverabilityDashboardOptions',
       'GetDeliverabilityTestReport',
@@ -1458,6 +1474,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetContactList()
    * - .toGetCustomVerificationEmailTemplate()
    * - .toGetDedicatedIp()
+   * - .toGetDedicatedIpPool()
    * - .toGetDedicatedIps()
    * - .toGetDeliverabilityDashboardOptions()
    * - .toGetDeliverabilityTestReport()
