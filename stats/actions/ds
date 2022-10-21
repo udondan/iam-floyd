@@ -34,6 +34,7 @@ ds:DescribeSettings;Read
 ds:DescribeSharedDirectories;Read
 ds:DescribeSnapshots;Read
 ds:DescribeTrusts;Read
+ds:DescribeUpdateDirectory;Read
 ds:DisableClientAuthentication;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
@@ -64,6 +65,7 @@ ds:StartSchemaExtension;Write
 ds:UnauthorizeApplication;Write
 ds:UnshareDirectory;Write
 ds:UpdateConditionalForwarder;Write
+ds:UpdateDirectorySetup;Write
 ds:UpdateNumberOfDomainControllers;Write
 ds:UpdateRadius;Write
 ds:UpdateSettings;Write

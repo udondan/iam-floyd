@@ -100,7 +100,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-BatchGetCustomEntityTypes
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-BatchGetCustomEntityTypes
    */
   public toBatchGetCustomEntityTypes() {
     return this.to('BatchGetCustomEntityTypes');
@@ -199,7 +199,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-CancelStatement
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-CancelStatement
    */
   public toCancelStatement() {
     return this.to('CancelStatement');
@@ -277,7 +277,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-CreateCustomEntityType
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-CreateCustomEntityType
    */
   public toCreateCustomEntityType() {
     return this.to('CreateCustomEntityType');
@@ -425,7 +425,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-api-session-CreateSession
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-api-interactive-sessions-CreateSession
    */
   public toCreateSession() {
     return this.to('CreateSession');
@@ -554,7 +554,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-DeleteCustomEntityType
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-DeleteCustomEntityType
    */
   public toDeleteCustomEntityType() {
     return this.to('DeleteCustomEntityType');
@@ -686,7 +686,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-DeleteSession
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-DeleteSession
    */
   public toDeleteSession() {
     return this.to('DeleteSession');
@@ -895,7 +895,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-GetCustomEntityType
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-GetCustomEntityType
    */
   public toGetCustomEntityType() {
     return this.to('GetCustomEntityType');
@@ -1225,7 +1225,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-GetSession
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-GetSession
    */
   public toGetSession() {
     return this.to('GetSession');
@@ -1236,7 +1236,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-GetStatement
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-GetStatement
    */
   public toGetStatement() {
     return this.to('GetStatement');
@@ -1427,6 +1427,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve crawl run history for a crawler
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawls
+   */
+  public toListCrawls() {
+    return this.to('ListCrawls');
+  }
+
+  /**
    * Grants permission to retrieve all Custom Entity Types
    *
    * Access Level: List
@@ -1435,7 +1446,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-sensitive-data-api.html#aws-glue-sensitive-data-api-ListGetCustomEntityTypes
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-ListGetCustomEntityTypes
    */
   public toListCustomEntityTypes() {
     return this.to('ListCustomEntityTypes');
@@ -1524,7 +1535,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-ListSessions
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-ListSessions
    */
   public toListSessions() {
     return this.to('ListSessions');
@@ -1535,7 +1546,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-ListStatements
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-ListStatements
    */
   public toListStatements() {
     return this.to('ListStatements');
@@ -1682,7 +1693,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-RunStatement
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-RunStatement
    */
   public toRunStatement() {
     return this.to('RunStatement');
@@ -1836,7 +1847,7 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-StopSession
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-StopSession
    */
   public toStopSession() {
     return this.to('StopSession');
@@ -2098,6 +2109,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use Glue Studio and access its internal APIs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
+   */
+  public toUseGlueStudio() {
+    return this.to('UseGlueStudio');
+  }
+
+  /**
    * Grants permission to use an ML Transform from within a Glue ETL Script
    *
    * Access Level: Write
@@ -2277,13 +2299,15 @@ export class Glue extends PolicyStatement {
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
-      'PutResourcePolicy'
+      'PutResourcePolicy',
+      'UseGlueStudio'
     ],
     List: [
       'GetMLTaskRuns',
       'GetMLTransforms',
       'ListBlueprints',
       'ListCrawlers',
+      'ListCrawls',
       'ListCustomEntityTypes',
       'ListDevEndpoints',
       'ListJobs',
@@ -2370,6 +2394,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);

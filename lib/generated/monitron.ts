@@ -29,6 +29,7 @@ export class Monitron extends PolicyStatement {
    * - sso:GetManagedApplicationInstance
    * - sso:GetProfile
    * - sso:ListDirectoryAssociations
+   * - sso:ListProfileAssociations
    * - sso:ListProfiles
    *
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html
@@ -110,6 +111,7 @@ export class Monitron extends PolicyStatement {
    * Dependent actions:
    * - sso-directory:DescribeUsers
    * - sso:GetManagedApplicationInstance
+   * - sso:ListProfileAssociations
    *
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
    */

@@ -1,0 +1,10 @@
+supportapp:CreateSlackChannelConfiguration;Write
+supportapp:DeleteAccountAlias;Write
+supportapp:DeleteSlackChannelConfiguration;Write
+supportapp:DeleteSlackWorkspaceConfiguration;Write
+supportapp:GetAccountAlias;Read
+supportapp:ListSlackChannelConfigurations;Read
+supportapp:ListSlackWorkspaceConfigurations;Read
+supportapp:PutAccountAlias;Write
+supportapp:RegisterSlackWorkspaceForOrganization;Write
+supportapp:UpdateSlackChannelConfiguration;Write
