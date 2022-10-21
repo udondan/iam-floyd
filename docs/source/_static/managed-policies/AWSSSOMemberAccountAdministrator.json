@@ -23,6 +23,7 @@
 				"sso:*",
 				"sso-directory:*",
 				"identitystore:*",
+				"identitystore-auth:*",
 				"ds:CreateAlias",
 				"access-analyzer:ValidatePolicy"
 			],

@@ -62,11 +62,10 @@
 			]
 		},
 		{
-			"Sid": "IAMSAMLProviderProvisioningActions",
+			"Sid": "IAMSAMLProviderCreationAction",
 			"Effect": "Allow",
 			"Action": [
-				"iam:CreateSAMLProvider",
-				"iam:UpdateSAMLProvider"
+				"iam:CreateSAMLProvider"
 			],
 			"Resource": [
 				"arn:aws:iam::*:saml-provider/AWSSSO_*"
@@ -76,6 +75,16 @@
 					"aws:PrincipalOrgMasterAccountId": "${aws:PrincipalAccount}"
 				}
 			}
+		},
+		{
+			"Sid": "IAMSAMLProviderUpdateAction",
+			"Effect": "Allow",
+			"Action": [
+				"iam:UpdateSAMLProvider"
+			],
+			"Resource": [
+				"arn:aws:iam::*:saml-provider/AWSSSO_*"
+			]
 		},
 		{
 			"Sid": "IAMSAMLProviderCleanupActions",
