@@ -1,9 +1,11 @@
 ---
 name: Automerge
 
+concurrency: automerge
+
 on:
   pull_request_target:
-    types: [labeled]
+    types: [labeled, synchronize]
 
 jobs:
   automerge_dependabot:

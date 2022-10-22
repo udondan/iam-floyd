@@ -1,6 +1,8 @@
 ---
 name: Test
 
+concurrency: test
+
 on:
   pull_request:
     branches:
