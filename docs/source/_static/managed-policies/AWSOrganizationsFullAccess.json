@@ -17,6 +17,14 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": [
+				"account:GetContactInformation",
+				"account:PutContactInformation"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
 			"Action": "iam:CreateServiceLinkedRole",
 			"Resource": "*",
 			"Condition": {
