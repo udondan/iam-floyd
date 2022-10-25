@@ -234,6 +234,7 @@ export { Sso } from './iamidentitycentersuccessortoawssinglesign-on';
 export { SsoDirectory } from './iamidentitycentersuccessortoawssinglesign-ondirectory';
 export { Rolesanywhere } from './identityandaccessmanagementrolesanywhere';
 export { Identitystore } from './identitystore';
+export { IdentitystoreAuth } from './identitystoreauth';
 export { IdentitySync } from './identitysync';
 export { Importexport } from './importexportdiskservice';
 export { Iot } from './iot';

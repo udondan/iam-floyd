@@ -30,6 +30,17 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add an endpoint to a standard accelerator endpoint group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddEndpoints.html
+   */
+  public toAddEndpoints() {
+    return this.to('AddEndpoints');
+  }
+
+  /**
    * Grants permission to advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP)
    *
    * Access Level: Write
@@ -434,6 +445,17 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an endpoint from a standard accelerator endpoint group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveEndpoints.html
+   */
+  public toRemoveEndpoints() {
+    return this.to('RemoveEndpoints');
+  }
+
+  /**
    * Grants permission to add tags to a globalaccelerator resource
    *
    * Access Level: Tagging
@@ -553,6 +575,7 @@ export class Globalaccelerator extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddCustomRoutingEndpoints',
+      'AddEndpoints',
       'AdvertiseByoipCidr',
       'AllowCustomRoutingTraffic',
       'CreateAccelerator',
@@ -571,6 +594,7 @@ export class Globalaccelerator extends PolicyStatement {
       'DeprovisionByoipCidr',
       'ProvisionByoipCidr',
       'RemoveCustomRoutingEndpoints',
+      'RemoveEndpoints',
       'UpdateAccelerator',
       'UpdateAcceleratorAttributes',
       'UpdateCustomRoutingAccelerator',

@@ -364,4 +364,32 @@ export class Outposts extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type outpost to the statement
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
+   *
+   * @param outpostId - Identifier for the outpostId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:outpost:${ outpostId }`);
+  }
+
+  /**
+   * Adds a resource of type site to the statement
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
+   *
+   * @param siteId - Identifier for the siteId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSite(siteId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+  }
 }
