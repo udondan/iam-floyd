@@ -1,4 +1,5 @@
 globalaccelerator:AddCustomRoutingEndpoints;Write
+globalaccelerator:AddEndpoints;Write
 globalaccelerator:AdvertiseByoipCidr;Write
 globalaccelerator:AllowCustomRoutingTraffic;Write
 globalaccelerator:CreateAccelerator;Write
@@ -35,6 +36,7 @@ globalaccelerator:ListListeners;List
 globalaccelerator:ListTagsForResource;Read
 globalaccelerator:ProvisionByoipCidr;Write
 globalaccelerator:RemoveCustomRoutingEndpoints;Write
+globalaccelerator:RemoveEndpoints;Write
 globalaccelerator:TagResource;Tagging
 globalaccelerator:UntagResource;Tagging
 globalaccelerator:UpdateAccelerator;Write

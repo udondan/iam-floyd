@@ -1,0 +1,3 @@
+identitystore-auth:BatchDeleteSession;Write
+identitystore-auth:BatchGetSession;Read
+identitystore-auth:ListSessions;List
