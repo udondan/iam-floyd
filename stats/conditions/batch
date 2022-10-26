@@ -2,6 +2,11 @@ batch:AWSLogsCreateGroup
 batch:AWSLogsGroup
 batch:AWSLogsRegion
 batch:AWSLogsStreamPrefix
+batch:EKSImage
+batch:EKSPrivileged
+batch:EKSRunAsGroup
+batch:EKSRunAsUser
+batch:EKSServiceAccountName
 batch:Image
 batch:LogDriver
 batch:Privileged

@@ -1,5 +1,5 @@
 tiros:CreateQuery;Write
 tiros:ExtendQuery;Write
-tiros:GetExtensionAccounts;Read
 tiros:GetQueryAnswer;Read
 tiros:GetQueryExplanation;Read
+tiros:GetQueryExtensionAccounts;Read

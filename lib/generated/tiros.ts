@@ -41,17 +41,6 @@ export class Tiros extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list accounts that might be useful in a new query
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
-   */
-  public toGetExtensionAccounts() {
-    return this.to('GetExtensionAccounts');
-  }
-
-  /**
    * Grants permission to get VPC reachability query answers
    *
    * Access Level: Read
@@ -73,15 +62,26 @@ export class Tiros extends PolicyStatement {
     return this.to('GetQueryExplanation');
   }
 
+  /**
+   * Grants permission to list accounts that might be useful in a new query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html
+   */
+  public toGetQueryExtensionAccounts() {
+    return this.to('GetQueryExtensionAccounts');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateQuery',
       'ExtendQuery'
     ],
     Read: [
-      'GetExtensionAccounts',
       'GetQueryAnswer',
-      'GetQueryExplanation'
+      'GetQueryExplanation',
+      'GetQueryExtensionAccounts'
     ]
   };
 }
