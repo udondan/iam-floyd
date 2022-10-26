@@ -1,0 +1,325 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "App2ContainerAccess",
+			"Effect": "Allow",
+			"Action": [
+				"a2c:GetContainerizationJobDetails",
+				"a2c:GetDeploymentJobDetails",
+				"a2c:StartContainerizationJob",
+				"a2c:StartDeploymentJob"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "CloudformationExecutionAccess",
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:CreateChangeSet",
+				"cloudformation:CreateStack",
+				"cloudformation:DescribeChangeSet",
+				"cloudformation:DescribeStackEvents",
+				"cloudformation:ExecuteChangeSet",
+				"cloudformation:UpdateStack"
+			],
+			"Resource": [
+				"arn:*:cloudformation:*:*:stack/a2c-app-*",
+				"arn:*:cloudformation:*:*:stack/a2c-build-*"
+			]
+		},
+		{
+			"Sid": "CodeBuildCreateAccess",
+			"Effect": "Allow",
+			"Action": [
+				"codebuild:CreateProject",
+				"codebuild:UpdateProject"
+			],
+			"Resource": "arn:aws:codebuild:*:*:project/*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "CodeBuildExecutionAccess",
+			"Effect": "Allow",
+			"Action": [
+				"codebuild:StartBuild"
+			],
+			"Resource": "arn:aws:codebuild:*:*:project/*"
+		},
+		{
+			"Sid": "CreateSecurityGroupAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateSecurityGroup"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Ec2CreateAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssociateRouteTable",
+				"ec2:AttachInternetGateway",
+				"ec2:AuthorizeSecurityGroupIngress",
+				"ec2:CreateInternetGateway",
+				"ec2:CreateKeyPair",
+				"ec2:CreateRoute",
+				"ec2:CreateRouteTable",
+				"ec2:CreateSubnet",
+				"ec2:CreateTags",
+				"ec2:CreateVpc",
+				"ec2:ModifySubnetAttribute",
+				"ec2:ModifyVpcAttribute"
+			],
+			"Resource": "*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "Ec2ModifyAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssociateRouteTable",
+				"ec2:AttachInternetGateway",
+				"ec2:AuthorizeSecurityGroupIngress",
+				"ec2:CreateInternetGateway",
+				"ec2:CreateKeyPair",
+				"ec2:CreateRoute",
+				"ec2:CreateRouteTable",
+				"ec2:CreateSubnet",
+				"ec2:CreateTags",
+				"ec2:CreateVpc",
+				"ec2:DeleteTags",
+				"ec2:ModifySubnetAttribute",
+				"ec2:ModifyVpcAttribute",
+				"ec2:RevokeSecurityGroupIngress"
+			],
+			"Resource": "*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "EcrCreateAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ecr:CreateRepository",
+				"ecr:TagResource"
+			],
+			"Resource": "arn:*:ecr:*:*:repository/*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "EcrModifyAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ecr:GetLifecyclePolicy",
+				"ecr:GetRepositoryPolicy",
+				"ecr:ListImages",
+				"ecr:ListTagsForResource",
+				"ecr:TagResource",
+				"ecr:UntagResource"
+			],
+			"Resource": "arn:*:ecr:*:*:repository/*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "EcsCreateAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ecs:CreateCluster",
+				"ecs:CreateService",
+				"ecs:RegisterTaskDefinition",
+				"ecs:TagResource"
+			],
+			"Resource": "*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "EcsModifyAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ecs:TagResource",
+				"ecs:UntagResource",
+				"ecs:UpdateService"
+			],
+			"Resource": "*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/a2c-generated": "false"
+				}
+			}
+		},
+		{
+			"Sid": "EcsReadTaskDefinitionAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ecs:DescribeTaskDefinition"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": "cloudformation.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Sid": "EcsExecuteCommandInSidecar",
+			"Effect": "Allow",
+			"Action": [
+				"ecs:ExecuteCommand"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringLike": {
+					"ecs:container-name": "a2c-sidecar"
+				}
+			}
+		},
+		{
+			"Sid": "CreateEcsServiceLinkedRoleAccess",
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+			"Condition": {
+				"StringLike": {
+					"iam:AWSServiceName": "ecs.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Sid": "CloudwatchAccess",
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogGroup",
+				"logs:GetLogEvents"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:/aws/codebuild/*:*",
+				"arn:aws:logs:*:*:log-group:/aws/ecs/containerinsights/*:*",
+				"arn:aws:logs:*:*:log-group:/aws/ecs/container-logs/*:*"
+			]
+		},
+		{
+			"Sid": "SsmParameterAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ssm:AddTagsToResource",
+				"ssm:GetParameters",
+				"ssm:PutParameter",
+				"ssm:RemoveTagsFromResource"
+			],
+			"Resource": "arn:aws:ssm:*:*:parameter/a2c-generated-check-ecs-slr-*"
+		},
+		{
+			"Sid": "SsmMessagesAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ssm:DescribeSessions",
+				"ssmmessages:CreateControlChannel",
+				"ssmmessages:CreateDataChannel",
+				"ssmmessages:OpenControlChannel",
+				"ssmmessages:OpenDataChannel"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "S3ObjectAccess",
+			"Effect": "Allow",
+			"Action": [
+				"s3:DeleteObject",
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::*/refactoringtoolkit*",
+				"arn:aws:s3:::*/a2c-generated*"
+			]
+		},
+		{
+			"Sid": "S3ListAccess",
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket"
+			],
+			"Resource": "arn:aws:s3:::*",
+			"Condition": {
+				"StringLike": {
+					"s3:prefix": "refactoringtoolkit*"
+				}
+			}
+		},
+		{
+			"Sid": "ReadOnlyAccess",
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:DescribeStacks",
+				"clouddirectory:ListDirectories",
+				"codebuild:BatchGetProjects",
+				"codebuild:BatchGetBuilds",
+				"ds:DescribeDirectories",
+				"ec2:DescribeAccountAttributes",
+				"ec2:DescribeAvailabilityZones",
+				"ec2:DescribeImages",
+				"ec2:DescribeInternetGateways",
+				"ec2:DescribeKeyPairs",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeVpcs",
+				"ecr:DescribeImages",
+				"ecr:DescribeRepositories",
+				"ecs:DescribeClusters",
+				"ecs:DescribeServices",
+				"ecs:DescribeTasks",
+				"ecs:ListTagsForResource",
+				"ecs:ListTasks",
+				"iam:ListRoles",
+				"s3:GetBucketLocation",
+				"s3:GetBucketVersioning",
+				"s3:ListAllMyBuckets",
+				"secretsmanager:ListSecrets"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "GetECSSLR",
+			"Effect": "Allow",
+			"Action": "iam:GetRole",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
+		},
+		{
+			"Sid": "PortingAssistantFullAccess",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::aws.portingassistant.dotnet.datastore",
+				"arn:aws:s3:::aws.portingassistant.dotnet.datastore/*"
+			]
+		}
+	]
+}

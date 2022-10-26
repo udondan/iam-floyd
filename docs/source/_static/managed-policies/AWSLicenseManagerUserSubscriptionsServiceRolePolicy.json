@@ -40,7 +40,8 @@
 				"StringEquals": {
 					"ec2:productCode": [
 						"bz0vcy31ooqlzk5tsash4r1ik",
-						"d44g89hc0gp9jdzm99rznthpw"
+						"d44g89hc0gp9jdzm99rznthpw",
+						"77yzkpa7kvee1y1tt7wnsdwoc"
 					]
 				}
 			},
