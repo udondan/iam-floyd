@@ -47,6 +47,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"ec2:DescribeInstances",
+				"ec2:DescribeSubnets",
 				"iam:GetUser",
 				"iam:GetRole",
 				"iam:ListUsers",
