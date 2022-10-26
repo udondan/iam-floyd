@@ -2592,6 +2592,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list inference recommendations job steps
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobSteps.html
+   */
+  public toListInferenceRecommendationsJobSteps() {
+    return this.to('ListInferenceRecommendationsJobSteps');
+  }
+
+  /**
    * Grants permission to list inference recommendations jobs
    *
    * Access Level: List
@@ -3898,6 +3909,7 @@ export class Sagemaker extends PolicyStatement {
       'ListHyperParameterTuningJobs',
       'ListImageVersions',
       'ListImages',
+      'ListInferenceRecommendationsJobSteps',
       'ListInferenceRecommendationsJobs',
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',

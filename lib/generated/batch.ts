@@ -220,6 +220,11 @@ export class Batch extends PolicyStatement {
    * - .ifAWSLogsRegion()
    * - .ifAWSLogsStreamPrefix()
    * - .ifAWSLogsCreateGroup()
+   * - .ifEKSServiceAccountName()
+   * - .ifEKSImage()
+   * - .ifEKSRunAsUser()
+   * - .ifEKSRunAsGroup()
+   * - .ifEKSPrivileged()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -238,6 +243,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifShareIdentifier()
+   * - .ifEKSImage()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
@@ -425,7 +431,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type scheduling-policy to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/scheduling-policy.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/scheduling-policies.html
    *
    * @param schedulingPolicyName - Identifier for the schedulingPolicyName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -499,7 +505,82 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access by on the image used to start a container
+   * Filters access by the image used to start a container for an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   * - .toSubmitJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEKSImage(value: string | string[], operator?: Operator | string) {
+    return this.if(`EKSImage`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user) for an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEKSPrivileged(value?: boolean) {
+    return this.if(`EKSPrivileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the specified group numeric ID (gid) used to start a container in an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifEKSRunAsGroup(value: number | number[], operator?: Operator | string) {
+    return this.if(`EKSRunAsGroup`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the specified user numeric ID (uid) used to start a a container in an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifEKSRunAsUser(value: number | number[], operator?: Operator | string) {
+    return this.if(`EKSRunAsUser`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the name of the service account used to run the pod for an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEKSServiceAccountName(value: string | string[], operator?: Operator | string) {
+    return this.if(`EKSServiceAccountName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the image used to start a container
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *

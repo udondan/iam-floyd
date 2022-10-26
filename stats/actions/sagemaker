@@ -189,6 +189,7 @@ sagemaker:ListHumanTaskUis;List
 sagemaker:ListHyperParameterTuningJobs;List
 sagemaker:ListImageVersions;List
 sagemaker:ListImages;List
+sagemaker:ListInferenceRecommendationsJobSteps;List
 sagemaker:ListInferenceRecommendationsJobs;List
 sagemaker:ListLabelingJobs;List
 sagemaker:ListLabelingJobsForWorkteam;List
