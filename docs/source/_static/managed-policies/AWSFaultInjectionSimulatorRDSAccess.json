@@ -1,0 +1,23 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"rds:FailoverDBCluster"
+			],
+			"Resource": [
+				"arn:aws:rds:*:*:cluster:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"rds:RebootDBInstance"
+			],
+			"Resource": [
+				"arn:aws:rds:*:*:db:*"
+			]
+		}
+	]
+}

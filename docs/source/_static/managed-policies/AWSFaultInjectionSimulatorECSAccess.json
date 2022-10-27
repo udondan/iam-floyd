@@ -1,0 +1,35 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecs:DescribeClusters",
+				"ecs:ListContainerInstances"
+			],
+			"Resource": [
+				"arn:aws:ecs:*:*:cluster/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecs:DescribeTasks",
+				"ecs:StopTask"
+			],
+			"Resource": [
+				"arn:aws:ecs:*:*:task/*/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecs:ListTasks",
+				"ecs:UpdateContainerInstancesState"
+			],
+			"Resource": [
+				"arn:aws:ecs:*:*:container-instance/*/*"
+			]
+		}
+	]
+}
