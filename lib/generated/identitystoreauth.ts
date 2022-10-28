@@ -23,7 +23,7 @@ export class IdentitystoreAuth extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html
    */
   public toBatchDeleteSession() {
     return this.to('BatchDeleteSession');
@@ -34,7 +34,7 @@ export class IdentitystoreAuth extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html
    */
   public toBatchGetSession() {
     return this.to('BatchGetSession');
@@ -45,7 +45,7 @@ export class IdentitystoreAuth extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html
    */
   public toListSessions() {
     return this.to('ListSessions');

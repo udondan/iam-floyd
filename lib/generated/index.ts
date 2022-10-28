@@ -154,6 +154,7 @@ export { Activate } from './activate';
 export { Amplify } from './amplify';
 export { Amplifybackend } from './amplifyadmin';
 export { Amplifyuibuilder } from './amplifyuibuilder';
+export { A2c } from './app2container';
 export { Appconfig } from './appconfig';
 export { ApplicationAutoscaling } from './applicationautoscaling';
 export { ApplicationCostProfiler } from './applicationcostprofilerservice';
