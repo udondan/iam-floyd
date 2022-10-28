@@ -23,8 +23,13 @@ export class SsmIncidents extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - ssm-incidents:TagResource
    *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateReplicationSet.html
    */
@@ -446,6 +451,9 @@ export class SsmIncidents extends PolicyStatement {
    * @param replicationSet - Identifier for the replicationSet.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onReplicationSet(replicationSet: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);

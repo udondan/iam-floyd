@@ -1,10 +1,17 @@
+rum:BatchCreateRumMetricDefinitions;Write
+rum:BatchDeleteRumMetricDefinitions;Write
+rum:BatchGetRumMetricDefinitions;Read
 rum:CreateAppMonitor;Write
 rum:DeleteAppMonitor;Write
+rum:DeleteRumMetricsDestination;Write
 rum:GetAppMonitor;Read
 rum:GetAppMonitorData;Read
 rum:ListAppMonitors;List
+rum:ListRumMetricsDestinations;Read
 rum:ListTagsForResource;Read
 rum:PutRumEvents;Write
+rum:PutRumMetricsDestination;Write
 rum:TagResource;Tagging
 rum:UntagResource;Tagging
 rum:UpdateAppMonitor;Write
+rum:UpdateRumMetricDefinition;Write

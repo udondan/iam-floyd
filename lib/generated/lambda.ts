@@ -94,6 +94,9 @@ export class Lambda extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
   public toCreateFunction() {

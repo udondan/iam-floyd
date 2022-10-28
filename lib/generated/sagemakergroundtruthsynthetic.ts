@@ -37,6 +37,15 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get account details
+   *
+   * Access Level: Read
+   */
+  public toGetAccountDetails() {
+    return this.to('GetAccountDetails');
+  }
+
+  /**
    * Grants permission to get a batch
    *
    * Access Level: Read
@@ -126,6 +135,7 @@ export class SagemakerGroundtruthSynthetic extends PolicyStatement {
       'UpdateBatch'
     ],
     Read: [
+      'GetAccountDetails',
       'GetBatch',
       'GetProject'
     ],

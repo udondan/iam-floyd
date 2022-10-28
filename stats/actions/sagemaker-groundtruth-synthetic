@@ -1,5 +1,6 @@
 sagemaker-groundtruth-synthetic:CreateProject;Write
 sagemaker-groundtruth-synthetic:DeleteProject;Write
+sagemaker-groundtruth-synthetic:GetAccountDetails;Read
 sagemaker-groundtruth-synthetic:GetBatch;Read
 sagemaker-groundtruth-synthetic:GetProject;Read
 sagemaker-groundtruth-synthetic:ListBatchDataTransfers;List
