@@ -6,7 +6,9 @@
 			"Action": [
 				"rum:GetAppMonitor",
 				"rum:GetAppMonitorData",
-				"rum:ListAppMonitors"
+				"rum:ListAppMonitors",
+				"rum:ListRumMetricsDestinations",
+				"rum:BatchGetRumMetricDefinitions"
 			],
 			"Resource": "*"
 		}

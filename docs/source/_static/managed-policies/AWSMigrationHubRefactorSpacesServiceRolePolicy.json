@@ -127,6 +127,18 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"elasticloadbalancing:DeregisterTargets"
+			],
+			"Resource": "arn:*:elasticloadbalancing:*:*:targetgroup/refactor-spaces-tg-*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/refactor-spaces:route-id": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"elasticloadbalancing:AddTags",
 				"elasticloadbalancing:CreateTargetGroup"
 			],
