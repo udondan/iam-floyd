@@ -6,7 +6,9 @@
 			"Effect": "Allow",
 			"Action": [
 				"ssmmessages:OpenControlChannel",
-				"ssmmessages:CreateControlChannel"
+				"ssmmessages:CreateControlChannel",
+				"ssmmessages:OpenDataChannel",
+				"ssmmessages:CreateDataChannel"
 			],
 			"Resource": "*"
 		},
