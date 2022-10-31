@@ -37,6 +37,43 @@
 				"ec2:DescribeInstanceTypes"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:GetAgentInstallationAssetsForDrs",
+				"drs:SendClientLogsForDrs",
+				"drs:CreateSourceServerForDrs"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:TagResource"
+			],
+			"Resource": "arn:aws:drs:*:*:source-server/*",
+			"Condition": {
+				"StringEquals": {
+					"drs:CreateAction": "CreateSourceServerForDrs"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:SendAgentMetricsForDrs",
+				"drs:SendAgentLogsForDrs",
+				"drs:UpdateAgentSourcePropertiesForDrs",
+				"drs:UpdateAgentReplicationInfoForDrs",
+				"drs:UpdateAgentConversionInfoForDrs",
+				"drs:GetAgentCommandForDrs",
+				"drs:GetAgentConfirmedResumeInfoForDrs",
+				"drs:GetAgentRuntimeConfigurationForDrs",
+				"drs:UpdateAgentBacklogForDrs",
+				"drs:GetAgentReplicationInfoForDrs"
+			],
+			"Resource": "arn:aws:drs:*:*:source-server/*"
 		}
 	]
 }
