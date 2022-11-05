@@ -94,6 +94,7 @@ redshift:EnableSnapshotCopy;Write
 redshift:ExecuteQuery;Write
 redshift:FetchResults;Read
 redshift:GetClusterCredentials;Write
+redshift:GetClusterCredentialsWithIAM;Write
 redshift:GetReservedNodeExchangeConfigurationOptions;Read
 redshift:GetReservedNodeExchangeOfferings;Read
 redshift:JoinGroup;Permissions management

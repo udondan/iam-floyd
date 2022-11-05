@@ -109,6 +109,24 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS App Runner VpcIngressConnection resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifServiceArn()
+   * - .ifVpcId()
+   * - .ifVpcEndpointId()
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcIngressConnection.html
+   */
+  public toCreateVpcIngressConnection() {
+    return this.to('CreateVpcIngressConnection');
+  }
+
+  /**
    * Grants permission to delete an AWS App Runner automatic scaling configuration resource
    *
    * Access Level: Write
@@ -161,6 +179,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toDeleteVpcConnector() {
     return this.to('DeleteVpcConnector');
+  }
+
+  /**
+   * Grants permission to delete an AWS App Runner VpcIngressConnection resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteVpcIngressConnection.html
+   */
+  public toDeleteVpcIngressConnection() {
+    return this.to('DeleteVpcIngressConnection');
   }
 
   /**
@@ -227,6 +256,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toDescribeVpcConnector() {
     return this.to('DescribeVpcConnector');
+  }
+
+  /**
+   * Grants permission to retrieve the description of an AWS App Runner VpcIngressConnection resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeVpcIngressConnection.html
+   */
+  public toDescribeVpcIngressConnection() {
+    return this.to('DescribeVpcIngressConnection');
   }
 
   /**
@@ -318,6 +358,17 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of AWS App Runner VpcIngressConnections in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_ListVpcConnections.html
+   */
+  public toListVpcIngressConnections() {
+    return this.to('ListVpcIngressConnections');
+  }
+
+  /**
    * Grants permission to pause an active AWS App Runner service
    *
    * Access Level: Write
@@ -396,6 +447,21 @@ export class Apprunner extends PolicyStatement {
     return this.to('UpdateService');
   }
 
+  /**
+   * Grants permission to update an AWS App Runner VpcIngressConnection resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVpcId()
+   * - .ifVpcEndpointId()
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateVpcIngressConnection.html
+   */
+  public toUpdateVpcIngressConnection() {
+    return this.to('UpdateVpcIngressConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateCustomDomain',
@@ -404,16 +470,19 @@ export class Apprunner extends PolicyStatement {
       'CreateObservabilityConfiguration',
       'CreateService',
       'CreateVpcConnector',
+      'CreateVpcIngressConnection',
       'DeleteAutoScalingConfiguration',
       'DeleteConnection',
       'DeleteObservabilityConfiguration',
       'DeleteService',
       'DeleteVpcConnector',
+      'DeleteVpcIngressConnection',
       'DisassociateCustomDomain',
       'PauseService',
       'ResumeService',
       'StartDeployment',
-      'UpdateService'
+      'UpdateService',
+      'UpdateVpcIngressConnection'
     ],
     Read: [
       'DescribeAutoScalingConfiguration',
@@ -422,6 +491,7 @@ export class Apprunner extends PolicyStatement {
       'DescribeOperation',
       'DescribeService',
       'DescribeVpcConnector',
+      'DescribeVpcIngressConnection',
       'ListTagsForResource'
     ],
     List: [
@@ -430,7 +500,8 @@ export class Apprunner extends PolicyStatement {
       'ListObservabilityConfigurations',
       'ListOperations',
       'ListServices',
-      'ListVpcConnectors'
+      'ListVpcConnectors',
+      'ListVpcIngressConnections'
     ],
     Tagging: [
       'TagResource',
@@ -522,6 +593,22 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vpcingressconnection to the statement
+   *
+   * @param vpcIngressConnectionName - Identifier for the vpcIngressConnectionName.
+   * @param vpcIngressConnectionId - Identifier for the vpcIngressConnectionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcingressconnection(vpcIngressConnectionName: string, vpcIngressConnectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
+  }
+
+  /**
    * Filters access by the CreateService and UpdateService actions based on the ARN of an associated AutoScalingConfiguration resource
    *
    * Applies to actions:
@@ -564,6 +651,19 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Filters access by the CreateVpcIngressConnection action based on the ARN of an associated Service resource
+   *
+   * Applies to actions:
+   * - .toCreateVpcIngressConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifServiceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the CreateService and UpdateService actions based on the ARN of an associated VpcConnector resource
    *
    * Applies to actions:
@@ -575,5 +675,33 @@ export class Apprunner extends PolicyStatement {
    */
   public ifVpcConnectorArn(value: string | string[], operator?: Operator | string) {
     return this.if(`VpcConnectorArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the CreateVpcIngressConnection and UpdateVpcIngressConnection actions based on the VPC Endpoint in the request
+   *
+   * Applies to actions:
+   * - .toCreateVpcIngressConnection()
+   * - .toUpdateVpcIngressConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcEndpointId(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcEndpointId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the CreateVpcIngressConnection and UpdateVpcIngressConnection actions based on the VPC in the request
+   *
+   * Applies to actions:
+   * - .toCreateVpcIngressConnection()
+   * - .toUpdateVpcIngressConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcId(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcId`, value, operator || 'StringLike');
   }
 }

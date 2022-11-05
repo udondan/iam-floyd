@@ -22,6 +22,7 @@ qldb:PartiQLDropIndex;Write
 qldb:PartiQLDropTable;Write
 qldb:PartiQLHistoryFunction;Read
 qldb:PartiQLInsert;Write
+qldb:PartiQLRedact;Write
 qldb:PartiQLSelect;Read
 qldb:PartiQLUndropTable;Write
 qldb:PartiQLUpdate;Write

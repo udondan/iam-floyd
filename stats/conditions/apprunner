@@ -3,5 +3,8 @@ apprunner:ConnectionArn
 apprunner:ObservabilityConfigurationArn
 apprunner:RequestTag/${TagKey}
 apprunner:ResourceTag/${TagKey}
+apprunner:ServiceArn
 apprunner:TagKeys
 apprunner:VpcConnectorArn
+apprunner:VpcEndpointId
+apprunner:VpcId

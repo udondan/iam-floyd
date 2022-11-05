@@ -462,6 +462,17 @@ export class Kafka extends PolicyStatement {
     return this.to('UpdateSecurity');
   }
 
+  /**
+   * Grants permission to update the EBS storage (size or provisioned throughput) associated with MSK brokers or set cluster storage mode to TIERED
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-storage.html#UpdateStorage
+   */
+  public toUpdateStorage() {
+    return this.to('UpdateStorage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchAssociateScramSecret',
@@ -480,7 +491,8 @@ export class Kafka extends PolicyStatement {
       'UpdateConfiguration',
       'UpdateConnectivity',
       'UpdateMonitoring',
-      'UpdateSecurity'
+      'UpdateSecurity',
+      'UpdateStorage'
     ],
     Read: [
       'DescribeCluster',

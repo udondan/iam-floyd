@@ -19,7 +19,7 @@ export class RedshiftData extends PolicyStatement {
   }
 
   /**
-   * Grants permission to execute multiple queries under a single connection.
+   * Grants permission to execute multiple queries under a single connection
    *
    * Access Level: Write
    *
@@ -174,6 +174,23 @@ export class RedshiftData extends PolicyStatement {
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+  }
+
+  /**
+   * Adds a resource of type workgroup to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html
+   *
+   * @param workgroupId - Identifier for the workgroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
   }
 
   /**

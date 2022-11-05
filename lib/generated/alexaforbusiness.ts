@@ -111,6 +111,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateAddressBook.html
    */
   public toCreateAddressBook() {
@@ -121,6 +125,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to create a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateBusinessReportSchedule.html
    */
@@ -133,6 +141,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateConferenceProvider.html
    */
   public toCreateConferenceProvider() {
@@ -143,6 +155,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to create a contact with the specified details
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateContact.html
    */
@@ -155,6 +171,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateGatewayGroup.html
    */
   public toCreateGatewayGroup() {
@@ -165,6 +185,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to create a network profile with the specified details
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateNetworkProfile.html
    */
@@ -177,6 +201,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateProfile.html
    */
   public toCreateProfile() {
@@ -187,6 +215,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to create room with the specified details
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateRoom.html
    */
@@ -199,6 +231,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateSkillGroup.html
    */
   public toCreateSkillGroup() {
@@ -209,6 +245,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to create a user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateUser.html
    */
@@ -749,6 +789,10 @@ export class A4b extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_RegisterAVSDevice.html
    */
   public toRegisterAVSDevice() {
@@ -935,6 +979,10 @@ export class A4b extends PolicyStatement {
    * Grants permission to add metadata tags to a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_TagResource.html
    */
