@@ -240,7 +240,11 @@ function writeStats(module: string, stats: Stats) {
 }
 
 function writeServiceStats() {
-  writeStatsFile('./stats/services', serviceStats);
+  const servicesFile = './stats/services';
+  if (fs.existsSync(servicesFile)) {
+    fs.unlinkSync(servicesFile);
+  }
+  writeStatsFile(servicesFile, serviceStats);
 }
 
 export function createModule(module: Module): Promise<void> {
