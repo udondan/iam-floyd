@@ -98,6 +98,8 @@
 				"cloudformation:DescribeType",
 				"cloudformation:GetResource",
 				"cloudformation:ListResources",
+				"cloudformation:ListStackResources",
+				"cloudformation:ListStacks",
 				"cloudformation:ListTypes",
 				"cloudfront:ListDistributions",
 				"cloudfront:ListTagsForResource",

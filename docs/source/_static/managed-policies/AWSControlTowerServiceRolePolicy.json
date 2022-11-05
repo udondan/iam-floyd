@@ -83,7 +83,8 @@
 				"sts:AssumeRole"
 			],
 			"Resource": [
-				"arn:aws:iam::*:role/AWSControlTowerExecution"
+				"arn:aws:iam::*:role/AWSControlTowerExecution",
+				"arn:aws:iam::*:role/AWSControlTowerBlueprintAccess"
 			]
 		},
 		{

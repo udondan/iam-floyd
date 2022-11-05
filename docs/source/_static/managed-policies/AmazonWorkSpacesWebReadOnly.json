@@ -12,6 +12,7 @@
 				"workspaces-web:GetTrustStore",
 				"workspaces-web:GetTrustStoreCertificate",
 				"workspaces-web:GetUserSettings",
+				"workspaces-web:GetUserAccessLoggingSettings",
 				"workspaces-web:ListBrowserSettings",
 				"workspaces-web:ListIdentityProviders",
 				"workspaces-web:ListNetworkSettings",
@@ -19,7 +20,8 @@
 				"workspaces-web:ListTagsForResource",
 				"workspaces-web:ListTrustStoreCertificates",
 				"workspaces-web:ListTrustStores",
-				"workspaces-web:ListUserSettings"
+				"workspaces-web:ListUserSettings",
+				"workspaces-web:ListUserAccessLoggingSettings"
 			],
 			"Resource": "arn:aws:workspaces-web:*:*:*"
 		},
@@ -28,7 +30,8 @@
 			"Action": [
 				"ec2:DescribeVpcs",
 				"ec2:DescribeSubnets",
-				"ec2:DescribeSecurityGroups"
+				"ec2:DescribeSecurityGroups",
+				"kinesis:ListStreams"
 			],
 			"Resource": "*"
 		}
