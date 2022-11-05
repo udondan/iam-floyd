@@ -33,3 +33,4 @@ kafka:UpdateConfiguration;Write
 kafka:UpdateConnectivity;Write
 kafka:UpdateMonitoring;Write
 kafka:UpdateSecurity;Write
+kafka:UpdateStorage;Write

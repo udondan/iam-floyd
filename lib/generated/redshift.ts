@@ -1142,6 +1142,21 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get enhanced temporary credentials to access an Amazon Redshift database by the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDbName()
+   * - .ifDurationSeconds()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentialsWithIAM.html
+   */
+  public toGetClusterCredentialsWithIAM() {
+    return this.to('GetClusterCredentialsWithIAM');
+  }
+
+  /**
    * Grants permission to get the configuration options for the reserved-node exchange
    *
    * Access Level: Read
@@ -1634,6 +1649,7 @@ export class Redshift extends PolicyStatement {
       'EnableSnapshotCopy',
       'ExecuteQuery',
       'GetClusterCredentials',
+      'GetClusterCredentialsWithIAM',
       'ModifyAquaConfiguration',
       'ModifyAuthenticationProfile',
       'ModifyCluster',
@@ -2089,6 +2105,7 @@ export class Redshift extends PolicyStatement {
    *
    * Applies to actions:
    * - .toGetClusterCredentials()
+   * - .toGetClusterCredentialsWithIAM()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2120,6 +2137,7 @@ export class Redshift extends PolicyStatement {
    *
    * Applies to actions:
    * - .toGetClusterCredentials()
+   * - .toGetClusterCredentialsWithIAM()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

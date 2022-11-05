@@ -259,7 +259,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks.html
+   * https://docs.aws.amazon.com/recovery-readiness/latest/api/crossaccountauthorizations.html
    */
   public toListCrossAccountAuthorizations() {
     return this.to('ListCrossAccountAuthorizations');

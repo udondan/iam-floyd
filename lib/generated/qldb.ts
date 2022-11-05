@@ -297,6 +297,17 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to redact historic revisions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-stored-procedures.redact_revision.html
+   */
+  public toPartiQLRedact() {
+    return this.to('PartiQLRedact');
+  }
+
+  /**
    * Grants permission to select documents from a table
    *
    * Access Level: Read
@@ -432,6 +443,7 @@ export class Qldb extends PolicyStatement {
       'PartiQLDropIndex',
       'PartiQLDropTable',
       'PartiQLInsert',
+      'PartiQLRedact',
       'PartiQLUndropTable',
       'PartiQLUpdate',
       'SendCommand',

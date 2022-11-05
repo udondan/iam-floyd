@@ -19,6 +19,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get metric data on your activity
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_BatchGetMetricData.html
+   */
+  public toBatchGetMetricData() {
+    return this.to('BatchGetMetricData');
+  }
+
+  /**
    * Grants permission to create a new configuration set
    *
    * Access Level: Write
@@ -748,6 +763,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list recommendations for your account
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListRecommendations.html
+   */
+  public toListRecommendations() {
+    return this.to('ListRecommendations');
+  }
+
+  /**
    * Grants permission to list email addresses that are on the suppression list for your account
    *
    * Access Level: Read
@@ -832,6 +862,20 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to change the settings for VDM for your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountVdmAttributes.html
+   */
+  public toPutAccountVdmAttributes() {
+    return this.to('PutAccountVdmAttributes');
+  }
+
+  /**
    * Grants permission to associate a configuration set with a dedicated IP pool
    *
    * Access Level: Write
@@ -904,6 +948,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toPutConfigurationSetTrackingOptions() {
     return this.to('PutConfigurationSetTrackingOptions');
+  }
+
+  /**
+   * Grants permission to override account-level VDM settings for a particular configuration set
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetVdmOptions.html
+   */
+  public toPutConfigurationSetVdmOptions() {
+    return this.to('PutConfigurationSetVdmOptions');
   }
 
   /**
@@ -1218,6 +1277,32 @@ export class SesV2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'BatchGetMetricData',
+      'GetAccount',
+      'GetBlacklistReports',
+      'GetConfigurationSet',
+      'GetConfigurationSetEventDestinations',
+      'GetContact',
+      'GetContactList',
+      'GetCustomVerificationEmailTemplate',
+      'GetDedicatedIp',
+      'GetDedicatedIpPool',
+      'GetDedicatedIps',
+      'GetDeliverabilityDashboardOptions',
+      'GetDeliverabilityTestReport',
+      'GetDomainDeliverabilityCampaign',
+      'GetDomainStatisticsReport',
+      'GetEmailIdentity',
+      'GetEmailIdentityPolicies',
+      'GetEmailTemplate',
+      'GetImportJob',
+      'GetSuppressedDestination',
+      'ListDomainDeliverabilityCampaigns',
+      'ListRecommendations',
+      'ListSuppressedDestinations',
+      'ListTagsForResource'
+    ],
     Write: [
       'CreateConfigurationSet',
       'CreateConfigurationSetEventDestination',
@@ -1242,11 +1327,13 @@ export class SesV2 extends PolicyStatement {
       'PutAccountDetails',
       'PutAccountSendingAttributes',
       'PutAccountSuppressionAttributes',
+      'PutAccountVdmAttributes',
       'PutConfigurationSetDeliveryOptions',
       'PutConfigurationSetReputationOptions',
       'PutConfigurationSetSendingOptions',
       'PutConfigurationSetSuppressionOptions',
       'PutConfigurationSetTrackingOptions',
+      'PutConfigurationSetVdmOptions',
       'PutDedicatedIpInPool',
       'PutDedicatedIpWarmupAttributes',
       'PutDeliverabilityDashboardOption',
@@ -1270,30 +1357,6 @@ export class SesV2 extends PolicyStatement {
       'CreateEmailIdentityPolicy',
       'DeleteEmailIdentityPolicy',
       'UpdateEmailIdentityPolicy'
-    ],
-    Read: [
-      'GetAccount',
-      'GetBlacklistReports',
-      'GetConfigurationSet',
-      'GetConfigurationSetEventDestinations',
-      'GetContact',
-      'GetContactList',
-      'GetCustomVerificationEmailTemplate',
-      'GetDedicatedIp',
-      'GetDedicatedIpPool',
-      'GetDedicatedIps',
-      'GetDeliverabilityDashboardOptions',
-      'GetDeliverabilityTestReport',
-      'GetDomainDeliverabilityCampaign',
-      'GetDomainStatisticsReport',
-      'GetEmailIdentity',
-      'GetEmailIdentityPolicies',
-      'GetEmailTemplate',
-      'GetImportJob',
-      'GetSuppressedDestination',
-      'ListDomainDeliverabilityCampaigns',
-      'ListSuppressedDestinations',
-      'ListTagsForResource'
     ],
     List: [
       'ListConfigurationSets',
@@ -1445,6 +1508,7 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
+   * - .toBatchGetMetricData()
    * - .toCreateConfigurationSet()
    * - .toCreateConfigurationSetEventDestination()
    * - .toCreateContact()
@@ -1495,17 +1559,20 @@ export class SesV2 extends PolicyStatement {
    * - .toListEmailIdentities()
    * - .toListEmailTemplates()
    * - .toListImportJobs()
+   * - .toListRecommendations()
    * - .toListSuppressedDestinations()
    * - .toListTagsForResource()
    * - .toPutAccountDedicatedIpWarmupAttributes()
    * - .toPutAccountDetails()
    * - .toPutAccountSendingAttributes()
    * - .toPutAccountSuppressionAttributes()
+   * - .toPutAccountVdmAttributes()
    * - .toPutConfigurationSetDeliveryOptions()
    * - .toPutConfigurationSetReputationOptions()
    * - .toPutConfigurationSetSendingOptions()
    * - .toPutConfigurationSetSuppressionOptions()
    * - .toPutConfigurationSetTrackingOptions()
+   * - .toPutConfigurationSetVdmOptions()
    * - .toPutDedicatedIpInPool()
    * - .toPutDedicatedIpWarmupAttributes()
    * - .toPutDeliverabilityDashboardOption()

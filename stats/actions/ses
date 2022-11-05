@@ -1,3 +1,4 @@
+ses:BatchGetMetricData;Read
 ses:CloneReceiptRuleSet;Write
 ses:CreateConfigurationSet;Write
 ses:CreateConfigurationSetEventDestination;Write
@@ -79,6 +80,7 @@ ses:ListIdentityPolicies;List
 ses:ListImportJobs;List
 ses:ListReceiptFilters;Read
 ses:ListReceiptRuleSets;Read
+ses:ListRecommendations;Read
 ses:ListSuppressedDestinations;Read
 ses:ListTagsForResource;Read
 ses:ListTemplates;List
@@ -87,11 +89,13 @@ ses:PutAccountDedicatedIpWarmupAttributes;Write
 ses:PutAccountDetails;Write
 ses:PutAccountSendingAttributes;Write
 ses:PutAccountSuppressionAttributes;Write
+ses:PutAccountVdmAttributes;Write
 ses:PutConfigurationSetDeliveryOptions;Write
 ses:PutConfigurationSetReputationOptions;Write
 ses:PutConfigurationSetSendingOptions;Write
 ses:PutConfigurationSetSuppressionOptions;Write
 ses:PutConfigurationSetTrackingOptions;Write
+ses:PutConfigurationSetVdmOptions;Write
 ses:PutDedicatedIpInPool;Write
 ses:PutDedicatedIpWarmupAttributes;Write
 ses:PutDeliverabilityDashboardOption;Write
