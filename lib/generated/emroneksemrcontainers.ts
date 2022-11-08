@@ -30,6 +30,21 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a job template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateJobTemplate.html
+   */
+  public toCreateJobTemplate() {
+    return this.to('CreateJobTemplate');
+  }
+
+  /**
    * Grants permission to create a managed endpoint
    *
    * Access Level: Write
@@ -58,6 +73,17 @@ export class EmrContainers extends PolicyStatement {
    */
   public toCreateVirtualCluster() {
     return this.to('CreateVirtualCluster');
+  }
+
+  /**
+   * Grants permission to delete a job template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DeleteJobTemplate.html
+   */
+  public toDeleteJobTemplate() {
+    return this.to('DeleteJobTemplate');
   }
 
   /**
@@ -94,6 +120,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a job template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DescribeJobTemplate.html
+   */
+  public toDescribeJobTemplate() {
+    return this.to('DescribeJobTemplate');
+  }
+
+  /**
    * Grants permission to describe a managed endpoint
    *
    * Access Level: Read
@@ -124,6 +161,17 @@ export class EmrContainers extends PolicyStatement {
    */
   public toListJobRuns() {
     return this.to('ListJobRuns');
+  }
+
+  /**
+   * Grants permission to list job templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListJobTemplates.html
+   */
+  public toListJobTemplates() {
+    return this.to('ListJobTemplates');
   }
 
   /**
@@ -168,6 +216,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifExecutionRoleArn()
+   * - .ifJobTemplateArn()
    *
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_StartJobRun.html
    */
@@ -207,19 +256,23 @@ export class EmrContainers extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJobRun',
+      'CreateJobTemplate',
       'CreateManagedEndpoint',
       'CreateVirtualCluster',
+      'DeleteJobTemplate',
       'DeleteManagedEndpoint',
       'DeleteVirtualCluster',
       'StartJobRun'
     ],
     Read: [
       'DescribeJobRun',
+      'DescribeJobTemplate',
       'DescribeManagedEndpoint',
       'DescribeVirtualCluster'
     ],
     List: [
       'ListJobRuns',
+      'ListJobTemplates',
       'ListManagedEndpoints',
       'ListTagsForResource',
       'ListVirtualClusters'
@@ -266,7 +319,26 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type jobTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/job-templates.html
+   *
+   * @param jobTemplateId - Identifier for the jobTemplateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onJobTemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/jobtemplates/${ jobTemplateId }`);
+  }
+
+  /**
    * Adds a resource of type managedEndpoint to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-create-eks-cluster.html#emr-studio-create-managed-endpoint
    *
    * @param virtualClusterId - Identifier for the virtualClusterId.
    * @param endpointId - Identifier for the endpointId.
@@ -295,5 +367,20 @@ export class EmrContainers extends PolicyStatement {
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ExecutionRoleArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on whether the execution role arn is provided with the action
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/iam-job-template.html
+   *
+   * Applies to actions:
+   * - .toStartJobRun()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifJobTemplateArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`JobTemplateArn`, value, operator || 'StringLike');
   }
 }
