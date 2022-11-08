@@ -65,14 +65,16 @@
 				"profile:SearchProfiles",
 				"profile:CreateProfile",
 				"profile:UpdateProfile",
-				"profile:AddProfileKey"
+				"profile:AddProfileKey",
+				"profile:ListProfileObjectTypes"
 			],
 			"Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
 		},
 		{
 			"Effect": "Allow",
 			"Action": [
-				"profile:ListProfileObjects"
+				"profile:ListProfileObjects",
+				"profile:GetProfileObjectType"
 			],
 			"Resource": [
 				"arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
@@ -84,6 +86,14 @@
 				"profile:ListAccountIntegrations"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"profile:ListProfileObjectTypeTemplates",
+				"profile:GetProfileObjectTypeTemplate"
+			],
+			"Resource": "arn:aws:profile:*:*:/templates*"
 		},
 		{
 			"Effect": "Allow",
