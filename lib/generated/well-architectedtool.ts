@@ -264,6 +264,28 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the check-details for the workload
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckDetails.html
+   */
+  public toListCheckDetails() {
+    return this.to('ListCheckDetails');
+  }
+
+  /**
+   * Grants permission to list the check-summaries for the workload
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckSummaries.html
+   */
+  public toListCheckSummaries() {
+    return this.to('ListCheckSummaries');
+  }
+
+  /**
    * Grants permission to list the improvements of the specified lens review
    *
    * Access Level: List
@@ -517,6 +539,8 @@ export class Wellarchitected extends PolicyStatement {
     ],
     List: [
       'ListAnswers',
+      'ListCheckDetails',
+      'ListCheckSummaries',
       'ListLensReviewImprovements',
       'ListLensReviews',
       'ListLensShares',

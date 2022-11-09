@@ -6,6 +6,7 @@ cloudtrail:CreateTrail;Write
 cloudtrail:DeleteEventDataStore;Write
 cloudtrail:DeleteServiceLinkedChannel;Write
 cloudtrail:DeleteTrail;Write
+cloudtrail:DeregisterOrganizationDelegatedAdmin;Write
 cloudtrail:DescribeQuery;Read
 cloudtrail:DescribeTrails;Read
 cloudtrail:GetEventDataStore;Read
@@ -24,6 +25,7 @@ cloudtrail:ListTrails;List
 cloudtrail:LookupEvents;Read
 cloudtrail:PutEventSelectors;Write
 cloudtrail:PutInsightSelectors;Write
+cloudtrail:RegisterOrganizationDelegatedAdmin;Write
 cloudtrail:RemoveTags;Tagging
 cloudtrail:RestoreEventDataStore;Write
 cloudtrail:StartLogging;Write
