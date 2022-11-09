@@ -9002,6 +9002,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param fpgaImageId - Identifier for the fpgaImageId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
@@ -9016,8 +9017,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onFpgaImage(fpgaImageId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }::fpga-image/${ fpgaImageId }`);
+  public onFpgaImage(fpgaImageId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:fpga-image/${ fpgaImageId }`);
   }
 
   /**
@@ -10734,7 +10735,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toDescribeFpgaImageAttribute()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
@@ -11070,7 +11070,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
@@ -11107,7 +11106,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
@@ -11144,7 +11142,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
@@ -11236,7 +11233,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
@@ -12053,7 +12049,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateFleet()
    * - .toCreateVolume()
-   * - .toDescribeVolumeAttribute()
    *
    * Applies to resource types:
    * - volume
@@ -12878,7 +12873,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeregisterImage()
    * - .toDescribeFastLaunchImages()
-   * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
@@ -14322,7 +14316,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
@@ -14400,7 +14393,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
-   * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()

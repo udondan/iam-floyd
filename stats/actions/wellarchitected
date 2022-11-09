@@ -19,6 +19,8 @@ wellarchitected:GetMilestone;Read
 wellarchitected:GetWorkload;Read
 wellarchitected:ImportLens;Write
 wellarchitected:ListAnswers;List
+wellarchitected:ListCheckDetails;List
+wellarchitected:ListCheckSummaries;List
 wellarchitected:ListLensReviewImprovements;List
 wellarchitected:ListLensReviews;List
 wellarchitected:ListLensShares;List

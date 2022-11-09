@@ -118,6 +118,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister an AWS Organizations member account as a delegated administrator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeregisterOrganizationDelegatedAdmin.html
+   */
+  public toDeregisterOrganizationDelegatedAdmin() {
+    return this.to('DeregisterOrganizationDelegatedAdmin');
+  }
+
+  /**
    * Grants permission to list details for the query
    *
    * Access Level: Read
@@ -312,6 +323,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register an AWS Organizations member account as a delegated administrator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RegisterOrganizationDelegatedAdmin.html
+   */
+  public toRegisterOrganizationDelegatedAdmin() {
+    return this.to('RegisterOrganizationDelegatedAdmin');
+  }
+
+  /**
    * Grants permission to remove tags from a trail
    *
    * Access Level: Tagging
@@ -413,8 +435,10 @@ export class Cloudtrail extends PolicyStatement {
       'DeleteEventDataStore',
       'DeleteServiceLinkedChannel',
       'DeleteTrail',
+      'DeregisterOrganizationDelegatedAdmin',
       'PutEventSelectors',
       'PutInsightSelectors',
+      'RegisterOrganizationDelegatedAdmin',
       'RestoreEventDataStore',
       'StartLogging',
       'StartQuery',

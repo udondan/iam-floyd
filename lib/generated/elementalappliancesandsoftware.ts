@@ -19,6 +19,28 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
+   * Grants permission to complete an upload of an attachment for a quote or order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toCompleteUpload() {
+    return this.to('CompleteUpload');
+  }
+
+  /**
+   * Grants permission to create an order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toCreateOrderV1() {
+    return this.to('CreateOrderV1');
+  }
+
+  /**
    * Grants permission to create a quote
    *
    * Access Level: Tagging
@@ -34,6 +56,61 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
+   * Grants permission to validate an address
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetAvsCorrectAddress() {
+    return this.to('GetAvsCorrectAddress');
+  }
+
+  /**
+   * Grants permission to list the billing addresses in the user account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetBillingAddresses() {
+    return this.to('GetBillingAddresses');
+  }
+
+  /**
+   * Grants permission to list the delivery addresses in the user account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetDeliveryAddressesV2() {
+    return this.to('GetDeliveryAddressesV2');
+  }
+
+  /**
+   * Grants permission to describe an order
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetOrder() {
+    return this.to('GetOrder');
+  }
+
+  /**
+   * Grants permission to list the orders in the user account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetOrdersV2() {
+    return this.to('GetOrdersV2');
+  }
+
+  /**
    * Grants permission to describe a quote
    *
    * Access Level: Read
@@ -42,6 +119,17 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    */
   public toGetQuote() {
     return this.to('GetQuote');
+  }
+
+  /**
+   * Grants permission to calculate taxes for an order
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toGetTaxes() {
+    return this.to('GetTaxes');
   }
 
   /**
@@ -64,6 +152,28 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to start an upload of an attachment for a quote or order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toStartUpload() {
+    return this.to('StartUpload');
+  }
+
+  /**
+   * Grants permission to submit an order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toSubmitOrderV1() {
+    return this.to('SubmitOrderV1');
   }
 
   /**
@@ -107,20 +217,30 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'CompleteUpload',
+      'CreateOrderV1',
+      'StartUpload',
+      'SubmitOrderV1',
+      'UpdateQuote'
+    ],
     Tagging: [
       'CreateQuote',
       'TagResource',
       'UntagResource'
     ],
     Read: [
+      'GetAvsCorrectAddress',
+      'GetBillingAddresses',
+      'GetDeliveryAddressesV2',
+      'GetOrder',
+      'GetOrdersV2',
       'GetQuote',
+      'GetTaxes',
       'ListTagsForResource'
     ],
     List: [
       'ListQuotes'
-    ],
-    Write: [
-      'UpdateQuote'
     ]
   };
 
