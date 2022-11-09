@@ -38,7 +38,10 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"discovery:GetDiscoverySummary"
+				"discovery:GetDiscoverySummary",
+				"discovery:DescribeTags",
+				"discovery:DescribeConfigurations",
+				"discovery:ListConfigurations"
 			],
 			"Resource": "*"
 		},
