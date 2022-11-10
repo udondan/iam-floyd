@@ -15,6 +15,7 @@ billingconductor:DisassociatePricingRules;Write
 billingconductor:ListAccountAssociations;List
 billingconductor:ListBillingGroupCostReports;Read
 billingconductor:ListBillingGroups;Read
+billingconductor:ListCustomLineItemVersions;Read
 billingconductor:ListCustomLineItems;Read
 billingconductor:ListPricingPlans;Read
 billingconductor:ListPricingPlansAssociatedWithPricingRule;List

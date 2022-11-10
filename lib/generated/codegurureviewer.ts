@@ -28,8 +28,10 @@ export class CodeguruReviewer extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - codecommit:GetRepository
    * - codecommit:ListRepositories
    * - codecommit:TagResource
+   * - codestar-connections:PassConnection
    * - events:PutRule
    * - events:PutTargets
    * - iam:CreateServiceLinkedRole
@@ -65,6 +67,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to perform webbased oauth handshake for 3rd party providers
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
    */
   public toCreateConnectionToken() {
     return this.to('CreateConnectionToken');
@@ -135,6 +139,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to view pull request metrics in console
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
    */
   public toGetMetricsData() {
     return this.to('GetMetricsData');
@@ -208,6 +214,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list 3rd party providers repositories in console
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
    */
   public toListThirdPartyRepositories() {
     return this.to('ListThirdPartyRepositories');
@@ -311,36 +319,5 @@ export class CodeguruReviewer extends PolicyStatement {
    */
   public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
-  }
-
-  /**
-   * Adds a resource of type repository to the statement
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/repositories.html
-   *
-   * @param repositoryName - Identifier for the repositoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
-  }
-
-  /**
-   * Adds a resource of type connection to the statement
-   *
-   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
-   *
-   * @param connectionId - Identifier for the connectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
   }
 }

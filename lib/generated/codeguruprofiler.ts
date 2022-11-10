@@ -41,7 +41,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permission for an agent to register with the orchestration service and retrieve profiling configuration information
+   * Grants permission to register with the orchestration service and retrieve profiling configuration information, used by agents
    *
    * Access Level: Write
    *
