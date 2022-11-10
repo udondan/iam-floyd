@@ -114,6 +114,7 @@ export class Autoscaling extends PolicyStatement {
    * - .ifMaxSize()
    * - .ifMinSize()
    * - .ifTargetGroupARNs()
+   * - .ifTrafficSourceIdentifiers()
    * - .ifVPCZoneIdentifiers()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
@@ -1113,6 +1114,21 @@ export class Autoscaling extends PolicyStatement {
    */
   public ifTargetGroupARNs(value: string | string[], operator?: Operator | string) {
     return this.if(`TargetGroupARNs`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access based on the identifiers of the traffic sources
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifTrafficSourceIdentifiers(value: string | string[], operator?: Operator | string) {
+    return this.if(`TrafficSourceIdentifiers`, value, operator || 'ArnLike');
   }
 
   /**

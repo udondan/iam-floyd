@@ -222,6 +222,17 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view custom line item versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListCustomLineItemVersions.html
+   */
+  public toListCustomLineItemVersions() {
+    return this.to('ListCustomLineItemVersions');
+  }
+
+  /**
    * Grants permission to view custom line item details
    *
    * Access Level: Read
@@ -406,6 +417,7 @@ export class Billingconductor extends PolicyStatement {
     Read: [
       'ListBillingGroupCostReports',
       'ListBillingGroups',
+      'ListCustomLineItemVersions',
       'ListCustomLineItems',
       'ListPricingPlans',
       'ListPricingRules',

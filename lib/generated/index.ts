@@ -293,6 +293,7 @@ export { PurchaseOrders } from './purchaseordersconsole';
 export { Rbin } from './recyclebin';
 export { Resiliencehub } from './resiliencehubservice';
 export { Ram } from './resourceaccessmanager';
+export { ResourceExplorer2 } from './resourceexplorer';
 export { ResourceGroups } from './resourcegroups';
 export { Robomaker } from './robomaker';
 export { Savingsplans } from './savingsplans';
