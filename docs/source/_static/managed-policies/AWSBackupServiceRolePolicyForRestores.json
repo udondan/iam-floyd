@@ -340,6 +340,31 @@
 				"ec2:DescribeInternetGateways"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:StartAwsRestoreJob",
+				"timestream:GetAwsRestoreStatus",
+				"timestream:ListTables",
+				"timestream:ListTagsForResource",
+				"timestream:ListDatabases",
+				"timestream:DescribeTable",
+				"timestream:DescribeDatabase"
+			],
+			"Resource": [
+				"arn:aws:timestream:*:*:database/*/table/*",
+				"arn:aws:timestream:*:*:database/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:DescribeEndpoints"
+			],
+			"Resource": [
+				"*"
+			]
 		}
 	]
 }

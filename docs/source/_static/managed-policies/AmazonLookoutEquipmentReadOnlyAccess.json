@@ -4,17 +4,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"lookoutequipment:DescribeDataset",
-				"lookoutequipment:DescribeDataIngestionJob",
-				"lookoutequipment:DescribeModel",
-				"lookoutequipment:DescribeInferenceScheduler",
-				"lookoutequipment:ListDatasets",
-				"lookoutequipment:ListDataIngestionJobs",
-				"lookoutequipment:ListModels",
-				"lookoutequipment:ListInferenceSchedulers",
-				"lookoutequipment:ListInferenceExecutions",
-				"lookoutequipment:ListTagsForResource",
-				"lookoutequipment:ListSensorStatistics"
+				"lookoutequipment:Describe*",
+				"lookoutequipment:List*"
 			],
 			"Resource": "*"
 		}

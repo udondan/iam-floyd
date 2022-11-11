@@ -232,9 +232,62 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"sysops-sap:GetOperation"
+				"sysops-sap:GetOperation",
+				"ssm-sap:GetOperation"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:ListDatabases",
+				"timestream:ListTables",
+				"timestream:ListTagsForResource",
+				"timestream:DescribeDatabase",
+				"timestream:DescribeTable",
+				"timestream:GetAwsBackupStatus",
+				"timestream:GetAwsRestoreStatus"
+			],
+			"Resource": [
+				"arn:aws:timestream:*:*:database/*/table/*",
+				"arn:aws:timestream:*:*:database/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:DescribeEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeClusterSnapshots",
+				"redshift:DescribeTags"
+			],
+			"Resource": [
+				"arn:aws:redshift:*:*:snapshot:*/*",
+				"arn:aws:redshift:*:*:cluster:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DeleteClusterSnapshot"
+			],
+			"Resource": [
+				"arn:aws:redshift:*:*:snapshot:*/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeClusters"
+			],
+			"Resource": [
+				"arn:aws:redshift:*:*:cluster:*"
+			]
 		}
 	]
 }

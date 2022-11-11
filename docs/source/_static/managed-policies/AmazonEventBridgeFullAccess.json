@@ -2,11 +2,17 @@
 	"Version": "2012-10-17",
 	"Statement": [
 		{
+			"Sid": "EventBridgeActions",
 			"Effect": "Allow",
-			"Action": "events:*",
+			"Action": [
+				"events:*",
+				"schemas:*",
+				"scheduler:*"
+			],
 			"Resource": "*"
 		},
 		{
+			"Sid": "IAMCreateServiceLinkedRoleForApiDestinations",
 			"Effect": "Allow",
 			"Action": "iam:CreateServiceLinkedRole",
 			"Resource": "arn:aws:iam::*:role/aws-service-role/AmazonEventBridgeApiDestinationsServiceRolePolicy",
@@ -17,6 +23,18 @@
 			}
 		},
 		{
+			"Sid": "IAMCreateServiceLinkedRoleForAmazonEventBridgeSchemas",
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/schemas.amazonaws.com/AWSServiceRoleForSchemas",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "schemas.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Sid": "SecretsManagerAccessForApiDestinations",
 			"Effect": "Allow",
 			"Action": [
 				"secretsmanager:CreateSecret",
@@ -28,12 +46,24 @@
 			"Resource": "arn:aws:secretsmanager:*:*:secret:events!*"
 		},
 		{
+			"Sid": "IAMPassRoleAccessForEventBridge",
 			"Effect": "Allow",
 			"Action": "iam:PassRole",
 			"Resource": "arn:aws:iam::*:role/*",
 			"Condition": {
 				"StringLike": {
 					"iam:PassedToService": "events.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Sid": "IAMPassRoleAccessForScheduler",
+			"Effect": "Allow",
+			"Action": "iam:PassRole",
+			"Resource": "arn:aws:iam::*:role/*",
+			"Condition": {
+				"StringLike": {
+					"iam:PassedToService": "scheduler.amazonaws.com"
 				}
 			}
 		}
