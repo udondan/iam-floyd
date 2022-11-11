@@ -61,7 +61,8 @@
 				"ec2:DescribePlacementGroups",
 				"ec2:DescribeInstances",
 				"ec2:DescribeInstanceTypes",
-				"ec2:DescribeVpcEndpoints"
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DescribeAddresses"
 			],
 			"Effect": "Allow",
 			"Resource": "*"
@@ -185,6 +186,81 @@
 			"Effect": "Allow",
 			"Action": "cloudwatch:GetMetricData",
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:ListDatabases",
+				"timestream:ListTables"
+			],
+			"Resource": [
+				"arn:aws:timestream:*:*:database/*/table/*",
+				"arn:aws:timestream:*:*:database/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:DescribeEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "arn:aws:s3:::*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeClusters",
+				"redshift:DescribeClusterSubnetGroups",
+				"redshift:DescribeClusterSnapshots",
+				"redshift:DescribeSnapshotSchedules"
+			],
+			"Resource": [
+				"arn:aws:redshift:*:*:cluster:*",
+				"arn:aws:redshift:*:*:subnetgroup:*",
+				"arn:aws:redshift:*:*:snapshot:*/*",
+				"arn:aws:redshift:*:*:snapshotschedule:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeNodeConfigurationOptions",
+				"redshift:DescribeOrderableClusterOptions",
+				"redshift:DescribeClusterParameterGroups",
+				"redshift:DescribeClusterTracks"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:ListStacks"
+			],
+			"Resource": [
+				"arn:aws:cloudformation:*:*:stack/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm-sap:GetOperation",
+				"ssm-sap:ListDatabases"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm-sap:GetDatabase",
+				"ssm-sap:ListTagsForResource"
+			],
+			"Resource": "arn:aws:ssm-sap:*:*:*"
 		}
 	]
 }

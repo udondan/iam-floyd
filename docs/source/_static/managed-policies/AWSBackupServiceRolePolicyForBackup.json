@@ -350,6 +350,47 @@
 			"Resource": [
 				"arn:aws:redshift:*:*:snapshot:*/*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:StartAwsBackupJob",
+				"timestream:GetAwsBackupStatus",
+				"timestream:ListTables",
+				"timestream:ListDatabases",
+				"timestream:ListTagsForResource",
+				"timestream:DescribeTable",
+				"timestream:DescribeDatabase"
+			],
+			"Resource": [
+				"arn:aws:timestream:*:*:database/*/table/*",
+				"arn:aws:timestream:*:*:database/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"timestream:DescribeEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm-sap:GetOperation",
+				"ssm-sap:ListDatabases"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm-sap:BackupDatabase",
+				"ssm-sap:UpdateHanaBackupSettings",
+				"ssm-sap:GetDatabase",
+				"ssm-sap:ListTagsForResource"
+			],
+			"Resource": "arn:aws:ssm-sap:*:*:*"
 		}
 	]
 }
