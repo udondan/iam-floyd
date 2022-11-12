@@ -1,0 +1,12 @@
+scheduler:CreateSchedule;Write
+scheduler:CreateScheduleGroup;Write
+scheduler:DeleteSchedule;Write
+scheduler:DeleteScheduleGroup;Write
+scheduler:GetSchedule;Read
+scheduler:GetScheduleGroup;Read
+scheduler:ListScheduleGroups;List
+scheduler:ListSchedules;List
+scheduler:ListTagsForResource;Read
+scheduler:TagResource;Tagging
+scheduler:UntagResource;Tagging
+scheduler:UpdateSchedule;Write

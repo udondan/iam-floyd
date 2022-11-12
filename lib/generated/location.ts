@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html).
@@ -23,7 +23,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_AssociateTrackerConsumer.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_AssociateTrackerConsumer.html
    */
   public toAssociateTrackerConsumer() {
     return this.to('AssociateTrackerConsumer');
@@ -34,7 +34,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchDeleteDevicePositionHistory.html
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchDeleteDevicePositionHistory.html
    */
   public toBatchDeleteDevicePositionHistory() {
     return this.to('BatchDeleteDevicePositionHistory');
@@ -45,7 +48,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchDeleteGeofence.html
+   * Possible conditions:
+   * - .ifGeofenceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchDeleteGeofence.html
    */
   public toBatchDeleteGeofence() {
     return this.to('BatchDeleteGeofence');
@@ -56,7 +62,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchEvaluateGeofences.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchEvaluateGeofences.html
    */
   public toBatchEvaluateGeofences() {
     return this.to('BatchEvaluateGeofences');
@@ -67,7 +73,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchGetDevicePosition.html
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchGetDevicePosition.html
    */
   public toBatchGetDevicePosition() {
     return this.to('BatchGetDevicePosition');
@@ -78,7 +87,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchPutGeofence.html
+   * Possible conditions:
+   * - .ifGeofenceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchPutGeofence.html
    */
   public toBatchPutGeofence() {
     return this.to('BatchPutGeofence');
@@ -89,7 +101,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchUpdateDevicePosition.html
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_BatchUpdateDevicePosition.html
    */
   public toBatchUpdateDevicePosition() {
     return this.to('BatchUpdateDevicePosition');
@@ -100,7 +115,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CalculateRoute.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRoute.html
    */
   public toCalculateRoute() {
     return this.to('CalculateRoute');
@@ -111,7 +126,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CalculateRouteMatrix.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRouteMatrix.html
    */
   public toCalculateRouteMatrix() {
     return this.to('CalculateRouteMatrix');
@@ -126,7 +141,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateGeofenceCollection.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CreateGeofenceCollection.html
    */
   public toCreateGeofenceCollection() {
     return this.to('CreateGeofenceCollection');
@@ -141,7 +156,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateMap.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CreateMap.html
    */
   public toCreateMap() {
     return this.to('CreateMap');
@@ -156,7 +171,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreatePlaceIndex.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CreatePlaceIndex.html
    */
   public toCreatePlaceIndex() {
     return this.to('CreatePlaceIndex');
@@ -171,7 +186,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateRouteCalculator.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CreateRouteCalculator.html
    */
   public toCreateRouteCalculator() {
     return this.to('CreateRouteCalculator');
@@ -186,7 +201,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateTracker.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_CreateTracker.html
    */
   public toCreateTracker() {
     return this.to('CreateTracker');
@@ -197,7 +212,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteGeofenceCollection.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteGeofenceCollection.html
    */
   public toDeleteGeofenceCollection() {
     return this.to('DeleteGeofenceCollection');
@@ -208,7 +223,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteMap.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteMap.html
    */
   public toDeleteMap() {
     return this.to('DeleteMap');
@@ -219,7 +234,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeletePlaceIndex.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DeletePlaceIndex.html
    */
   public toDeletePlaceIndex() {
     return this.to('DeletePlaceIndex');
@@ -230,7 +245,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteRouteCalculator.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteRouteCalculator.html
    */
   public toDeleteRouteCalculator() {
     return this.to('DeleteRouteCalculator');
@@ -241,7 +256,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteTracker.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteTracker.html
    */
   public toDeleteTracker() {
     return this.to('DeleteTracker');
@@ -252,7 +267,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeGeofenceCollection.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeGeofenceCollection.html
    */
   public toDescribeGeofenceCollection() {
     return this.to('DescribeGeofenceCollection');
@@ -263,7 +278,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeMap.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeMap.html
    */
   public toDescribeMap() {
     return this.to('DescribeMap');
@@ -274,7 +289,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribePlaceIndex.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DescribePlaceIndex.html
    */
   public toDescribePlaceIndex() {
     return this.to('DescribePlaceIndex');
@@ -285,7 +300,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeRouteCalculator.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeRouteCalculator.html
    */
   public toDescribeRouteCalculator() {
     return this.to('DescribeRouteCalculator');
@@ -296,7 +311,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeTracker.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeTracker.html
    */
   public toDescribeTracker() {
     return this.to('DescribeTracker');
@@ -307,7 +322,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_DisassociateTrackerConsumer.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_DisassociateTrackerConsumer.html
    */
   public toDisassociateTrackerConsumer() {
     return this.to('DisassociateTrackerConsumer');
@@ -318,7 +333,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetDevicePosition.html
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetDevicePosition.html
    */
   public toGetDevicePosition() {
     return this.to('GetDevicePosition');
@@ -329,7 +347,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetDevicePositionHistory.html
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetDevicePositionHistory.html
    */
   public toGetDevicePositionHistory() {
     return this.to('GetDevicePositionHistory');
@@ -340,7 +361,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetGeofence.html
+   * Possible conditions:
+   * - .ifGeofenceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetGeofence.html
    */
   public toGetGeofence() {
     return this.to('GetGeofence');
@@ -351,7 +375,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapGlyphs.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html
    */
   public toGetMapGlyphs() {
     return this.to('GetMapGlyphs');
@@ -362,7 +386,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapSprites.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapSprites.html
    */
   public toGetMapSprites() {
     return this.to('GetMapSprites');
@@ -373,7 +397,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapStyleDescriptor.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapStyleDescriptor.html
    */
   public toGetMapStyleDescriptor() {
     return this.to('GetMapStyleDescriptor');
@@ -384,10 +408,21 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapTile.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapTile.html
    */
   public toGetMapTile() {
     return this.to('GetMapTile');
+  }
+
+  /**
+   * Grants permission to find a place by its unique ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_GetPlace.html
+   */
+  public toGetPlace() {
+    return this.to('GetPlace');
   }
 
   /**
@@ -395,7 +430,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListDevicePositions.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListDevicePositions.html
    */
   public toListDevicePositions() {
     return this.to('ListDevicePositions');
@@ -406,7 +441,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListGeofenceCollections.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListGeofenceCollections.html
    */
   public toListGeofenceCollections() {
     return this.to('ListGeofenceCollections');
@@ -417,7 +452,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListGeofences.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListGeofences.html
    */
   public toListGeofences() {
     return this.to('ListGeofences');
@@ -428,7 +463,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListMaps.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListMaps.html
    */
   public toListMaps() {
     return this.to('ListMaps');
@@ -439,7 +474,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListPlaceIndexes.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListPlaceIndexes.html
    */
   public toListPlaceIndexes() {
     return this.to('ListPlaceIndexes');
@@ -450,7 +485,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListRouteCalculators.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListRouteCalculators.html
    */
   public toListRouteCalculators() {
     return this.to('ListRouteCalculators');
@@ -461,7 +496,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -472,7 +507,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTrackerConsumers.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListTrackerConsumers.html
    */
   public toListTrackerConsumers() {
     return this.to('ListTrackerConsumers');
@@ -483,7 +518,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTrackers.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ListTrackers.html
    */
   public toListTrackers() {
     return this.to('ListTrackers');
@@ -494,7 +529,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_PutGeofence.html
+   * Possible conditions:
+   * - .ifGeofenceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_PutGeofence.html
    */
   public toPutGeofence() {
     return this.to('PutGeofence');
@@ -505,7 +543,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForPosition.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForPosition.html
    */
   public toSearchPlaceIndexForPosition() {
     return this.to('SearchPlaceIndexForPosition');
@@ -516,7 +554,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForSuggestions.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForSuggestions.html
    */
   public toSearchPlaceIndexForSuggestions() {
     return this.to('SearchPlaceIndexForSuggestions');
@@ -527,7 +565,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForText.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForText.html
    */
   public toSearchPlaceIndexForText() {
     return this.to('SearchPlaceIndexForText');
@@ -542,7 +580,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_TagResource.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -557,7 +595,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -568,7 +606,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateGeofenceCollection.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateGeofenceCollection.html
    */
   public toUpdateGeofenceCollection() {
     return this.to('UpdateGeofenceCollection');
@@ -579,7 +617,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateMap.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateMap.html
    */
   public toUpdateMap() {
     return this.to('UpdateMap');
@@ -590,7 +628,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdatePlaceIndex.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UpdatePlaceIndex.html
    */
   public toUpdatePlaceIndex() {
     return this.to('UpdatePlaceIndex');
@@ -601,7 +639,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateRouteCalculator.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateRouteCalculator.html
    */
   public toUpdateRouteCalculator() {
     return this.to('UpdateRouteCalculator');
@@ -612,7 +650,7 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateTracker.html
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateTracker.html
    */
   public toUpdateTracker() {
     return this.to('UpdateTracker');
@@ -660,6 +698,7 @@ export class Geo extends PolicyStatement {
       'GetMapSprites',
       'GetMapStyleDescriptor',
       'GetMapTile',
+      'GetPlace',
       'ListDevicePositions',
       'ListGeofences',
       'ListTagsForResource',
@@ -684,7 +723,7 @@ export class Geo extends PolicyStatement {
   /**
    * Adds a resource of type geofence-collection to the statement
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#geofence-overview
+   * https://docs.aws.amazon.com/location/latest/developerguide/geofence-tracker-concepts.html
    *
    * @param geofenceCollectionName - Identifier for the geofenceCollectionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -693,6 +732,7 @@ export class Geo extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifGeofenceIds()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
@@ -701,7 +741,7 @@ export class Geo extends PolicyStatement {
   /**
    * Adds a resource of type map to the statement
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#map-overview
+   * https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html
    *
    * @param mapName - Identifier for the mapName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -718,7 +758,7 @@ export class Geo extends PolicyStatement {
   /**
    * Adds a resource of type place-index to the statement
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#places-overview
+   * https://docs.aws.amazon.com/location/latest/developerguide/places-concepts.html
    *
    * @param indexName - Identifier for the indexName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -735,7 +775,7 @@ export class Geo extends PolicyStatement {
   /**
    * Adds a resource of type route-calculator to the statement
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#routes-overview
+   * https://docs.aws.amazon.com/location/latest/developerguide/route-concepts.html
    *
    * @param calculatorName - Identifier for the calculatorName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -752,7 +792,7 @@ export class Geo extends PolicyStatement {
   /**
    * Adds a resource of type tracker to the statement
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#tracking-overview
+   * https://docs.aws.amazon.com/location/latest/developerguide/geofence-tracker-concepts.html
    *
    * @param trackerName - Identifier for the trackerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -761,8 +801,52 @@ export class Geo extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifDeviceIds()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
+  }
+
+  /**
+   * Filters access by the presence of device ids in the request
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toBatchDeleteDevicePositionHistory()
+   * - .toBatchGetDevicePosition()
+   * - .toBatchUpdateDevicePosition()
+   * - .toGetDevicePosition()
+   * - .toGetDevicePositionHistory()
+   *
+   * Applies to resource types:
+   * - tracker
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDeviceIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`DeviceIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of geofence ids in the request
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toBatchDeleteGeofence()
+   * - .toBatchPutGeofence()
+   * - .toGetGeofence()
+   * - .toPutGeofence()
+   *
+   * Applies to resource types:
+   * - geofence-collection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifGeofenceIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`GeofenceIds`, value, operator || 'StringLike');
   }
 }

@@ -4,7 +4,7 @@ datapipeline:CreatePipeline;Write
 datapipeline:DeactivatePipeline;Write
 datapipeline:DeletePipeline;Write
 datapipeline:DescribeObjects;Read
-datapipeline:DescribePipelines;List
+datapipeline:DescribePipelines;Read
 datapipeline:EvaluateExpression;Read
 datapipeline:GetAccountLimits;List
 datapipeline:GetPipelineDefinition;Read

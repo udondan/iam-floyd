@@ -51,6 +51,7 @@ export { Elastictranscoder } from './elastictranscoder';
 export { EmrContainers } from './emroneksemrcontainers';
 export { EmrServerless } from './emrserverless';
 export { Events } from './eventbridge';
+export { Scheduler } from './eventbridgescheduler';
 export { Schemas } from './eventbridgeschemas';
 export { Finspace } from './finspace';
 export { Forecast } from './forecast';

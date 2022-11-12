@@ -1,3 +1,5 @@
+geo:DeviceIds
+geo:GeofenceIds
 geo:RequestTag/${TagKey}
 geo:ResourceTag/${TagKey}
 geo:TagKeys

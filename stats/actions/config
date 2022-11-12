@@ -52,12 +52,15 @@ config:GetComplianceSummaryByConfigRule;Read
 config:GetComplianceSummaryByResourceType;Read
 config:GetConformancePackComplianceDetails;Read
 config:GetConformancePackComplianceSummary;Read
+config:GetCustomRulePolicy;Read
 config:GetDiscoveredResourceCounts;Read
 config:GetOrganizationConfigRuleDetailedStatus;Read
 config:GetOrganizationConformancePackDetailedStatus;Read
+config:GetOrganizationCustomRulePolicy;Read
 config:GetResourceConfigHistory;Read
 config:GetStoredQuery;Read
 config:ListAggregateDiscoveredResources;List
+config:ListConformancePackComplianceScores;List
 config:ListDiscoveredResources;List
 config:ListStoredQueries;List
 config:ListTagsForResource;Read
