@@ -30,6 +30,7 @@ geo:GetMapGlyphs;Read
 geo:GetMapSprites;Read
 geo:GetMapStyleDescriptor;Read
 geo:GetMapTile;Read
+geo:GetPlace;Read
 geo:ListDevicePositions;Read
 geo:ListGeofenceCollections;List
 geo:ListGeofences;Read

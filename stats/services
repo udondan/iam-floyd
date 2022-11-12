@@ -261,6 +261,7 @@ s3-outposts
 sagemaker
 sagemaker-groundtruth-synthetic
 savingsplans
+scheduler
 schemas
 sdb
 secretsmanager

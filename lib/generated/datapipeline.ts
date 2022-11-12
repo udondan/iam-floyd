@@ -42,6 +42,8 @@ export class Datapipeline extends PolicyStatement {
    * Possible conditions:
    * - .ifPipelineCreator()
    * - .ifTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
@@ -58,6 +60,9 @@ export class Datapipeline extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifTag()
+   *
+   * Dependent actions:
+   * - datapipeline:AddTags
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
@@ -114,7 +119,7 @@ export class Datapipeline extends PolicyStatement {
   /**
    * Grants permission to retrieves metadata about one or more pipelines
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifPipelineCreator()
@@ -243,6 +248,8 @@ export class Datapipeline extends PolicyStatement {
    * Possible conditions:
    * - .ifPipelineCreator()
    * - .ifTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
@@ -334,17 +341,34 @@ export class Datapipeline extends PolicyStatement {
     ],
     Read: [
       'DescribeObjects',
+      'DescribePipelines',
       'EvaluateExpression',
       'GetPipelineDefinition',
       'QueryObjects',
       'ValidatePipelineDefinition'
     ],
     List: [
-      'DescribePipelines',
       'GetAccountLimits',
       'ListPipelines'
     ]
   };
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html
+   *
+   * @param pipelineId - Identifier for the pipelineId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Datapipeline.defaultPartition }:datapipeline:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
+  }
 
   /**
    * Filters access by the IAM user that created the pipeline

@@ -613,6 +613,17 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the policy definition containing the logic for your AWS Config Custom Policy rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetCustomRulePolicy.html
+   */
+  public toGetCustomRulePolicy() {
+    return this.to('GetCustomRulePolicy');
+  }
+
+  /**
    * Grants permission to return the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account
    *
    * Access Level: Read
@@ -646,6 +657,17 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the policy definition containing the logic for your organization AWS Config Custom Policy rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationCustomRulePolicy.html
+   */
+  public toGetOrganizationCustomRulePolicy() {
+    return this.to('GetOrganizationCustomRulePolicy');
+  }
+
+  /**
    * Grants permission to return a list of configuration items for the specified resource
    *
    * Access Level: Read
@@ -676,6 +698,17 @@ export class Config extends PolicyStatement {
    */
   public toListAggregateDiscoveredResources() {
     return this.to('ListAggregateDiscoveredResources');
+  }
+
+  /**
+   * Grants permission to return the percentage of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ListConformancePackComplianceScores.html
+   */
+  public toListConformancePackComplianceScores() {
+    return this.to('ListConformancePackComplianceScores');
   }
 
   /**
@@ -750,6 +783,11 @@ export class Config extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListDelegatedAdministrators
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html
    */
   public toPutConfigurationAggregator() {
@@ -771,6 +809,13 @@ export class Config extends PolicyStatement {
    * Grants permission to create or update a conformance pack
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - s3:GetObject
+   * - s3:ListBucket
+   * - ssm:GetDocument
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html
    */
@@ -816,6 +861,12 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListDelegatedAdministrators
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html
    */
   public toPutOrganizationConfigRule() {
@@ -826,6 +877,13 @@ export class Config extends PolicyStatement {
    * Grants permission to add or update organization conformance pack for your entire organization evaluating whether your AWS resources comply with your desired configurations
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListDelegatedAdministrators
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html
    */
@@ -1022,9 +1080,11 @@ export class Config extends PolicyStatement {
       'GetComplianceSummaryByResourceType',
       'GetConformancePackComplianceDetails',
       'GetConformancePackComplianceSummary',
+      'GetCustomRulePolicy',
       'GetDiscoveredResourceCounts',
       'GetOrganizationConfigRuleDetailedStatus',
       'GetOrganizationConformancePackDetailedStatus',
+      'GetOrganizationCustomRulePolicy',
       'GetResourceConfigHistory',
       'GetStoredQuery',
       'ListTagsForResource',
@@ -1081,6 +1141,7 @@ export class Config extends PolicyStatement {
       'DescribeRemediationExceptions',
       'DescribeRetentionConfigurations',
       'ListAggregateDiscoveredResources',
+      'ListConformancePackComplianceScores',
       'ListDiscoveredResources',
       'ListStoredQueries'
     ],
@@ -1169,6 +1230,9 @@ export class Config extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
@@ -1183,6 +1247,9 @@ export class Config extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
@@ -1212,6 +1279,9 @@ export class Config extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);

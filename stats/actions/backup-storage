@@ -1,1 +1,15 @@
+backup-storage:CommitBackupJob;Write
+backup-storage:DeleteObjects;Write
+backup-storage:DescribeBackupJob;Write
+backup-storage:GetBaseBackup;Write
+backup-storage:GetChunk;Write
+backup-storage:GetIncrementalBaseBackup;Write
+backup-storage:GetObjectMetadata;Write
+backup-storage:ListChunks;Write
+backup-storage:ListObjects;Write
 backup-storage:MountCapsule;Write
+backup-storage:NotifyObjectComplete;Write
+backup-storage:PutChunk;Write
+backup-storage:PutObject;Write
+backup-storage:StartObject;Write
+backup-storage:UpdateObjectComplete;Write
