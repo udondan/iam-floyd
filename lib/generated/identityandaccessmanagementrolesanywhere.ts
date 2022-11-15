@@ -27,6 +27,9 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateProfile.html
    */
   public toCreateProfile() {
@@ -129,6 +132,9 @@ export class Rolesanywhere extends PolicyStatement {
    * Grants permission to enable a profile
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_EnableProfile.html
    */
@@ -307,6 +313,9 @@ export class Rolesanywhere extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_UpdateProfile.html
    */
   public toUpdateProfile() {
@@ -368,13 +377,14 @@ export class Rolesanywhere extends PolicyStatement {
    *
    * @param trustAnchorId - Identifier for the trustAnchorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onTrustAnchor(trustAnchorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere::${ account || '*' }:trust-anchor/${ trustAnchorId }`);
+  public onTrustAnchor(trustAnchorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:trust-anchor/${ trustAnchorId }`);
   }
 
   /**
@@ -384,13 +394,14 @@ export class Rolesanywhere extends PolicyStatement {
    *
    * @param profileId - Identifier for the profileId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onProfile(profileId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere::${ account || '*' }:profile/${ profileId }`);
+  public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
   }
 
   /**
@@ -400,13 +411,14 @@ export class Rolesanywhere extends PolicyStatement {
    *
    * @param subjectId - Identifier for the subjectId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSubject(subjectId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere::${ account || '*' }:subject/${ subjectId }`);
+  public onSubject(subjectId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:subject/${ subjectId }`);
   }
 
   /**
@@ -416,12 +428,13 @@ export class Rolesanywhere extends PolicyStatement {
    *
    * @param crlId - Identifier for the crlId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCrl(crlId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere::${ account || '*' }:crl/${ crlId }`);
+  public onCrl(crlId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:crl/${ crlId }`);
   }
 }

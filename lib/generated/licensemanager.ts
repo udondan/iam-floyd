@@ -423,6 +423,17 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list received grants for organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedGrantsForOrganization.html
+   */
+  public toListReceivedGrantsForOrganization() {
+    return this.to('ListReceivedGrantsForOrganization');
+  }
+
+  /**
    * Grants permission to list received licenses
    *
    * Access Level: List
@@ -431,6 +442,17 @@ export class LicenseManager extends PolicyStatement {
    */
   public toListReceivedLicenses() {
     return this.to('ListReceivedLicenses');
+  }
+
+  /**
+   * Grants permission to list received licenses for organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicensesForOrganization.html
+   */
+  public toListReceivedLicensesForOrganization() {
+    return this.to('ListReceivedLicensesForOrganization');
   }
 
   /**
@@ -605,7 +627,9 @@ export class LicenseManager extends PolicyStatement {
       'ListLicenseSpecificationsForResource',
       'ListLicenseVersions',
       'ListReceivedGrants',
+      'ListReceivedGrantsForOrganization',
       'ListReceivedLicenses',
+      'ListReceivedLicensesForOrganization',
       'ListResourceInventory',
       'ListTokens',
       'ListUsageForLicenseConfiguration'

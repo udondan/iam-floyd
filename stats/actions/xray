@@ -1,8 +1,10 @@
+xray:BatchGetTraceSummaryById;Read
 xray:BatchGetTraces;List
 xray:CreateGroup;Write
 xray:CreateSamplingRule;Write
 xray:DeleteGroup;Write
 xray:DeleteSamplingRule;Write
+xray:GetDistinctTraceGraphs;Read
 xray:GetEncryptionConfig;Read
 xray:GetGroup;Read
 xray:GetGroups;Read
