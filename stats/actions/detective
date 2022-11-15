@@ -16,9 +16,10 @@ detective:GetPricingInformation;Read
 detective:GetUsageInformation;Read
 detective:ListDatasourcePackages;Read
 detective:ListGraphs;List
+detective:ListHighDegreeEntities;Read
 detective:ListInvitations;List
 detective:ListMembers;List
-detective:ListOrganizationAdminAccounts;List
+detective:ListOrganizationAdminAccount;List
 detective:ListTagsForResource;Read
 detective:RejectInvitation;Write
 detective:SearchGraph;Read

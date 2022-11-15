@@ -233,6 +233,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to high volume entities whose relationships cannot be stored by Detective
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html
+   */
+  public toListHighDegreeEntities() {
+    return this.to('ListHighDegreeEntities');
+  }
+
+  /**
    * Grants permission to retrieve details on the behavior graphs to which this account has been invited to join
    *
    * Access Level: List
@@ -264,8 +275,8 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListOrganizationAdminAccounts.html
    */
-  public toListOrganizationAdminAccounts() {
-    return this.to('ListOrganizationAdminAccounts');
+  public toListOrganizationAdminAccount() {
+    return this.to('ListOrganizationAdminAccount');
   }
 
   /**
@@ -395,6 +406,7 @@ export class Detective extends PolicyStatement {
       'GetPricingInformation',
       'GetUsageInformation',
       'ListDatasourcePackages',
+      'ListHighDegreeEntities',
       'ListTagsForResource',
       'SearchGraph'
     ],
@@ -402,7 +414,7 @@ export class Detective extends PolicyStatement {
       'ListGraphs',
       'ListInvitations',
       'ListMembers',
-      'ListOrganizationAdminAccounts'
+      'ListOrganizationAdminAccount'
     ],
     Tagging: [
       'TagResource',

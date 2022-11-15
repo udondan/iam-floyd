@@ -19,6 +19,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve metadata for a list of traces specified by ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toBatchGetTraceSummaryById() {
+    return this.to('BatchGetTraceSummaryById');
+  }
+
+  /**
    * Grants permission to retrieve a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs
    *
    * Access Level: List
@@ -85,6 +96,17 @@ export class Xray extends PolicyStatement {
    */
   public toDeleteSamplingRule() {
     return this.to('DeleteSamplingRule');
+  }
+
+  /**
+   * Grants permission to retrieve distinct service graphs for one or more specific trace IDs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toGetDistinctTraceGraphs() {
+    return this.to('GetDistinctTraceGraphs');
   }
 
   /**
@@ -346,21 +368,9 @@ export class Xray extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    List: [
-      'BatchGetTraces',
-      'ListTagsForResource'
-    ],
-    Write: [
-      'CreateGroup',
-      'CreateSamplingRule',
-      'DeleteGroup',
-      'DeleteSamplingRule',
-      'PutTelemetryRecords',
-      'PutTraceSegments',
-      'UpdateGroup',
-      'UpdateSamplingRule'
-    ],
     Read: [
+      'BatchGetTraceSummaryById',
+      'GetDistinctTraceGraphs',
       'GetEncryptionConfig',
       'GetGroup',
       'GetGroups',
@@ -375,6 +385,20 @@ export class Xray extends PolicyStatement {
       'GetTimeSeriesServiceStatistics',
       'GetTraceGraph',
       'GetTraceSummaries'
+    ],
+    List: [
+      'BatchGetTraces',
+      'ListTagsForResource'
+    ],
+    Write: [
+      'CreateGroup',
+      'CreateSamplingRule',
+      'DeleteGroup',
+      'DeleteSamplingRule',
+      'PutTelemetryRecords',
+      'PutTraceSegments',
+      'UpdateGroup',
+      'UpdateSamplingRule'
     ],
     'Permissions management': [
       'PutEncryptionConfig'
