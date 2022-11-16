@@ -16,6 +16,7 @@
 				"xray:GetGroups",
 				"xray:GetGroup",
 				"xray:ListTagsForResource",
+				"xray:ListResourcePolicies",
 				"xray:GetTimeSeriesServiceStatistics",
 				"xray:GetInsightSummaries",
 				"xray:GetInsight",
