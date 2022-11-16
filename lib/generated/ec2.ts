@@ -19,6 +19,25 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept an Elastic IP address transfer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptAddressTransfer.html
+   */
+  public toAcceptAddressTransfer() {
+    return this.to('AcceptAddressTransfer');
+  }
+
+  /**
    * Grants permission to accept a Convertible Reserved Instance exchange quote
    *
    * Access Level: Write
@@ -599,6 +618,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toCancelExportTask() {
     return this.to('CancelExportTask');
+  }
+
+  /**
+   * Grants permission to remove your AWS account from the launch permissions for the specified AMI
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImageLaunchPermission.html
+   */
+  public toCancelImageLaunchPermission() {
+    return this.to('CancelImageLaunchPermission');
   }
 
   /**
@@ -3197,6 +3230,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an Elastic IP address transfer
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddressTransfers.html
+   */
+  public toDescribeAddressTransfers() {
+    return this.to('DescribeAddressTransfers');
+  }
+
+  /**
    * Grants permission to describe one or more Elastic IP addresses
    *
    * Access Level: List
@@ -5157,6 +5204,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable Elastic IP address transfer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableAddressTransfer.html
+   */
+  public toDisableAddressTransfer() {
+    return this.to('DisableAddressTransfer');
+  }
+
+  /**
    * Grants permission to disable EBS encryption by default for your account
    *
    * Access Level: Write
@@ -5465,6 +5526,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisassociateVpcCidrBlock() {
     return this.to('DisassociateVpcCidrBlock');
+  }
+
+  /**
+   * Grants permission to enable Elastic IP address transfer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableAddressTransfer.html
+   */
+  public toEnableAddressTransfer() {
+    return this.to('EnableAddressTransfer');
   }
 
   /**
@@ -8096,6 +8171,7 @@ export class Ec2 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptAddressTransfer',
       'AcceptReservedInstancesExchangeQuote',
       'AcceptTransitGatewayMulticastDomainAssociations',
       'AcceptTransitGatewayPeeringAttachment',
@@ -8136,6 +8212,7 @@ export class Ec2 extends PolicyStatement {
       'CancelCapacityReservationFleets',
       'CancelConversionTask',
       'CancelExportTask',
+      'CancelImageLaunchPermission',
       'CancelImportTask',
       'CancelReservedInstancesListing',
       'CancelSpotFleetRequests',
@@ -8301,6 +8378,7 @@ export class Ec2 extends PolicyStatement {
       'DetachNetworkInterface',
       'DetachVolume',
       'DetachVpnGateway',
+      'DisableAddressTransfer',
       'DisableEbsEncryptionByDefault',
       'DisableFastLaunch',
       'DisableFastSnapshotRestores',
@@ -8323,6 +8401,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateTransitGatewayRouteTable',
       'DisassociateTrunkInterface',
       'DisassociateVpcCidrBlock',
+      'EnableAddressTransfer',
       'EnableEbsEncryptionByDefault',
       'EnableFastLaunch',
       'EnableFastSnapshotRestores',
@@ -8473,6 +8552,7 @@ export class Ec2 extends PolicyStatement {
     ],
     List: [
       'DescribeAccountAttributes',
+      'DescribeAddressTransfers',
       'DescribeAddresses',
       'DescribeAddressesAttribute',
       'DescribeAggregateIdFormat',
@@ -8922,13 +9002,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastic-inference/latest/developerguide/what-is-ei.html
    *
-   * @param elasticInferenceAcceleratorId - Identifier for the elasticInferenceAcceleratorId.
+   * @param acceleratorId - Identifier for the acceleratorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onElasticInference(elasticInferenceAcceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ elasticInferenceAcceleratorId }`);
+  public onElasticInference(acceleratorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 
   /**
@@ -9387,7 +9467,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration/${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -10585,11 +10665,14 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
+   * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
    * - .toResetAddressAttribute()
@@ -11261,11 +11344,14 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
+   * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
    * - .toResetAddressAttribute()
@@ -11461,9 +11547,11 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an image
    *
    * Applies to actions:
+   * - .toCancelImageLaunchPermission()
    * - .toCopyImage()
    * - .toCreateFleet()
    * - .toCreateImage()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRestoreImageTask()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
@@ -11504,7 +11592,9 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toCancelImageLaunchPermission()
    * - .toCreateFleet()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeregisterImage()
@@ -11917,6 +12007,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteInternetGateway()
    * - .toDetachInternetGateway()
+   * - .toDisassociateRouteTable()
    *
    * Applies to resource types:
    * - internet-gateway
@@ -12369,6 +12460,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toCancelImageLaunchPermission()
    * - .toCopyFpgaImage()
    * - .toCopyImage()
    * - .toCreateFleet()
@@ -12749,7 +12841,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreatePlacementGroup()
    * - .toCreateTags()
    * - .toDeletePlacementGroup()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
    * - .toModifyInstancePlacement()
+   * - .toPutResourcePolicy()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
@@ -12775,7 +12870,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreatePlacementGroup()
    * - .toCreateTags()
    * - .toDeletePlacementGroup()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
    * - .toModifyInstancePlacement()
+   * - .toPutResourcePolicy()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
@@ -12866,8 +12964,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toCancelImageLaunchPermission()
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeleteFpgaImage()
@@ -12909,11 +13009,14 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
+   * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
    * - .toResetAddressAttribute()
@@ -12953,6 +13056,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAcceptAddressTransfer()
    * - .toAcceptReservedInstancesExchangeQuote()
    * - .toAcceptTransitGatewayMulticastDomainAssociations()
    * - .toAcceptTransitGatewayPeeringAttachment()
@@ -12993,6 +13097,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelCapacityReservationFleets()
    * - .toCancelConversionTask()
    * - .toCancelExportTask()
+   * - .toCancelImageLaunchPermission()
    * - .toCancelImportTask()
    * - .toCancelReservedInstancesListing()
    * - .toCancelSpotFleetRequests()
@@ -13158,6 +13263,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDescribeAccountAttributes()
+   * - .toDescribeAddressTransfers()
    * - .toDescribeAddresses()
    * - .toDescribeAddressesAttribute()
    * - .toDescribeAggregateIdFormat()
@@ -13298,6 +13404,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableAddressTransfer()
    * - .toDisableEbsEncryptionByDefault()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
@@ -13320,6 +13427,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateTrunkInterface()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableAddressTransfer()
    * - .toEnableEbsEncryptionByDefault()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
@@ -13768,6 +13876,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelCapacityReservation()
    * - .toCancelCapacityReservationFleets()
    * - .toCancelExportTask()
+   * - .toCancelImageLaunchPermission()
    * - .toCancelImportTask()
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
@@ -13776,6 +13885,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateClientVpnRoute()
    * - .toCreateCoipCidr()
    * - .toCreateCoipPool()
+   * - .toCreateCoipPoolPermission()
    * - .toCreateEgressOnlyInternetGateway()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
@@ -13827,6 +13937,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnRoute()
    * - .toDeleteCoipCidr()
    * - .toDeleteCoipPool()
+   * - .toDeleteCoipPoolPermission()
    * - .toDeleteCustomerGateway()
    * - .toDeleteDhcpOptions()
    * - .toDeleteEgressOnlyInternetGateway()
@@ -13917,6 +14028,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableAddressTransfer()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImageDeprecation()
@@ -13934,6 +14046,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayPolicyTable()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableAddressTransfer()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImageDeprecation()
@@ -14186,6 +14299,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCancelImageLaunchPermission()
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()

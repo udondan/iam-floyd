@@ -1,3 +1,4 @@
+ec2:AcceptAddressTransfer;Write
 ec2:AcceptReservedInstancesExchangeQuote;Write
 ec2:AcceptTransitGatewayMulticastDomainAssociations;Write
 ec2:AcceptTransitGatewayPeeringAttachment;Write
@@ -38,6 +39,7 @@ ec2:CancelCapacityReservation;Write
 ec2:CancelCapacityReservationFleets;Write
 ec2:CancelConversionTask;Write
 ec2:CancelExportTask;Write
+ec2:CancelImageLaunchPermission;Write
 ec2:CancelImportTask;Write
 ec2:CancelReservedInstancesListing;Write
 ec2:CancelSpotFleetRequests;Write
@@ -203,6 +205,7 @@ ec2:DeregisterInstanceEventNotificationAttributes;Write
 ec2:DeregisterTransitGatewayMulticastGroupMembers;Write
 ec2:DeregisterTransitGatewayMulticastGroupSources;Write
 ec2:DescribeAccountAttributes;List
+ec2:DescribeAddressTransfers;List
 ec2:DescribeAddresses;List
 ec2:DescribeAddressesAttribute;List
 ec2:DescribeAggregateIdFormat;List
@@ -343,6 +346,7 @@ ec2:DetachInternetGateway;Write
 ec2:DetachNetworkInterface;Write
 ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
+ec2:DisableAddressTransfer;Write
 ec2:DisableEbsEncryptionByDefault;Write
 ec2:DisableFastLaunch;Write
 ec2:DisableFastSnapshotRestores;Write
@@ -365,6 +369,7 @@ ec2:DisassociateTransitGatewayPolicyTable;Write
 ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateTrunkInterface;Write
 ec2:DisassociateVpcCidrBlock;Write
+ec2:EnableAddressTransfer;Write
 ec2:EnableEbsEncryptionByDefault;Write
 ec2:EnableFastLaunch;Write
 ec2:EnableFastSnapshotRestores;Write

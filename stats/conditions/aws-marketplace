@@ -2,3 +2,6 @@ aws-marketplace:AgreementType
 aws-marketplace:ChangeType
 aws-marketplace:PartyType
 aws-marketplace:ProductId
+aws-marketplace:RequestTag/${TagKey}
+aws-marketplace:ResourceTag/${TagKey}
+aws-marketplace:TagKeys

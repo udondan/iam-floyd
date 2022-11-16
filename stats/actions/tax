@@ -1,2 +1,6 @@
 tax:GetExemptions;Read
+tax:GetTaxInterview;Read
+tax:GetTaxRegistration;Read
+tax:PutTaxInterview;Write
+tax:PutTaxRegistration;Write
 tax:UpdateExemptions;Write

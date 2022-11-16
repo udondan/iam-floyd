@@ -26,6 +26,7 @@ aws-marketplace:ListBuilds;Read
 aws-marketplace:ListChangeSets;List
 aws-marketplace:ListEntities;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
+aws-marketplace:ListTagsForResource;Read
 aws-marketplace:ListTasks;List
 aws-marketplace:MeterUsage;Write
 aws-marketplace:PutProcurementSystemConfiguration;Write
@@ -36,7 +37,9 @@ aws-marketplace:SearchAgreements;List
 aws-marketplace:StartBuild;Write
 aws-marketplace:StartChangeSet;Write
 aws-marketplace:Subscribe;Write
+aws-marketplace:TagResource;Tagging
 aws-marketplace:Unsubscribe;Write
+aws-marketplace:UntagResource;Tagging
 aws-marketplace:UpdateAgreementApprovalRequest;Write
 aws-marketplace:UpdateTask;Write
 aws-marketplace:ViewSubscriptions;List
