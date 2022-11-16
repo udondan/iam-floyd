@@ -8,7 +8,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.4.0",
+    "aws-cdk-lib": "2.50.0",
     "@types/aws-lambda": "^8.10.84",
     "@types/node": "15.6.1",
     "@types/twit": "^2.2.30",
