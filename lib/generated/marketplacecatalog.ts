@@ -96,6 +96,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags on an existing entity or a change set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list existing tasks
    *
    * Access Level: List
@@ -107,17 +118,48 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to request a new change set. (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)
+   * Grants permission to request a new change set (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCatalogChangeType()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html
    */
   public toStartChangeSet() {
     return this.to('StartChangeSet');
+  }
+
+  /**
+   * Grants permission to tag an existing entity or a change set
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag an existing entity or a change set
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -141,12 +183,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     Read: [
       'DescribeChangeSet',
       'DescribeEntity',
-      'DescribeTask'
+      'DescribeTask',
+      'ListTagsForResource'
     ],
     List: [
       'ListChangeSets',
       'ListEntities',
       'ListTasks'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -161,6 +208,10 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalogChangeType()
    */
   public onEntity(catalog: string, entityType: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/${ entityType }/${ resourceId }`);
@@ -176,6 +227,10 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalogChangeType()
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
@@ -188,6 +243,10 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartChangeSet()
+   *
+   * Applies to resource types:
+   * - Entity
+   * - ChangeSet
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

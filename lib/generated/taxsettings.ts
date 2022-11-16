@@ -30,6 +30,42 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve tax interview data
+   *
+   * Access Level: Read
+   */
+  public toGetTaxInterview() {
+    return this.to('GetTaxInterview');
+  }
+
+  /**
+   * Grants permission to view tax registrations data
+   *
+   * Access Level: Read
+   */
+  public toGetTaxRegistration() {
+    return this.to('GetTaxRegistration');
+  }
+
+  /**
+   * Grants permission to update tax interview data
+   *
+   * Access Level: Write
+   */
+  public toPutTaxInterview() {
+    return this.to('PutTaxInterview');
+  }
+
+  /**
+   * Grants permission to update tax registrations data
+   *
+   * Access Level: Write
+   */
+  public toPutTaxRegistration() {
+    return this.to('PutTaxRegistration');
+  }
+
+  /**
    * Grants permission to update tax exemptions data
    *
    * Access Level: Write
@@ -42,9 +78,13 @@ export class Tax extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Read: [
-      'GetExemptions'
+      'GetExemptions',
+      'GetTaxInterview',
+      'GetTaxRegistration'
     ],
     Write: [
+      'PutTaxInterview',
+      'PutTaxRegistration',
       'UpdateExemptions'
     ]
   };
