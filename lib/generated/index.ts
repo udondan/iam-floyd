@@ -317,6 +317,7 @@ export { Supportapp } from './supportappinslack';
 export { Supportplans } from './supportplans';
 export { Sustainability } from './sustainability';
 export { Ssm } from './systemsmanager';
+export { SsmSap } from './systemsmanagerforsap';
 export { SsmGuiconnect } from './systemsmanagerguiconnect';
 export { SsmIncidents } from './systemsmanagerincidentmanager';
 export { SsmContacts } from './systemsmanagerincidentmanagercontacts';
