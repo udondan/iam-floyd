@@ -3,6 +3,7 @@ xray:BatchGetTraces;List
 xray:CreateGroup;Write
 xray:CreateSamplingRule;Write
 xray:DeleteGroup;Write
+xray:DeleteResourcePolicy;Write
 xray:DeleteSamplingRule;Write
 xray:GetDistinctTraceGraphs;Read
 xray:GetEncryptionConfig;Read
@@ -19,8 +20,10 @@ xray:GetServiceGraph;Read
 xray:GetTimeSeriesServiceStatistics;Read
 xray:GetTraceGraph;Read
 xray:GetTraceSummaries;Read
+xray:ListResourcePolicies;List
 xray:ListTagsForResource;List
 xray:PutEncryptionConfig;Permissions management
+xray:PutResourcePolicy;Write
 xray:PutTelemetryRecords;Write
 xray:PutTraceSegments;Write
 xray:TagResource;Tagging

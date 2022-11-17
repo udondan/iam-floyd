@@ -85,6 +85,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete resource policies
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a sampling rule
    *
    * Access Level: Write
@@ -267,6 +278,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resource policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_ListResourcePolicies.html
+   */
+  public toListResourcePolicies() {
+    return this.to('ListResourcePolicies');
+  }
+
+  /**
    * Grants permission to list tags for an X-Ray resource
    *
    * Access Level: List
@@ -286,6 +308,17 @@ export class Xray extends PolicyStatement {
    */
   public toPutEncryptionConfig() {
     return this.to('PutEncryptionConfig');
+  }
+
+  /**
+   * Grants permission to create or update resource policies
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -388,13 +421,16 @@ export class Xray extends PolicyStatement {
     ],
     List: [
       'BatchGetTraces',
+      'ListResourcePolicies',
       'ListTagsForResource'
     ],
     Write: [
       'CreateGroup',
       'CreateSamplingRule',
       'DeleteGroup',
+      'DeleteResourcePolicy',
       'DeleteSamplingRule',
+      'PutResourcePolicy',
       'PutTelemetryRecords',
       'PutTraceSegments',
       'UpdateGroup',
