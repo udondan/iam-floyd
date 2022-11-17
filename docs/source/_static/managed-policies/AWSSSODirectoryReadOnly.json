@@ -10,7 +10,9 @@
 				"sso-directory:List*",
 				"sso-directory:Get*",
 				"identitystore:Describe*",
-				"identitystore:List*"
+				"identitystore:List*",
+				"identitystore-auth:ListSessions",
+				"identitystore-auth:BatchGetSession"
 			],
 			"Resource": "*"
 		}

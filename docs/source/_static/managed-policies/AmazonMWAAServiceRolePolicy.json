@@ -75,6 +75,18 @@
 					"aws:TagKeys": "AmazonMWAAManaged"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cloudwatch:PutMetricData",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": [
+						"AWS/MWAA"
+					]
+				}
+			}
 		}
 	]
 }
