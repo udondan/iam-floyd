@@ -86,6 +86,16 @@
 			"Resource": "*"
 		},
 		{
+			"Sid": "LambdaPackageVulnerabilityScanning",
+			"Effect": "Allow",
+			"Action": [
+				"lambda:ListFunctions",
+				"lambda:GetFunction",
+				"lambda:GetLayerVersion"
+			],
+			"Resource": "*"
+		},
+		{
 			"Sid": "GatherInventory",
 			"Effect": "Allow",
 			"Action": [

@@ -1,0 +1,26 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm-sap:*"
+			],
+			"Resource": "arn:*:ssm-sap:*:*:*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:CreateServiceLinkedRole"
+			],
+			"Resource": [
+				"arn:aws:iam::*:role/aws-service-role/ssm-sap.amazonaws.com/AWSServiceRoleForSSMForSAP"
+			],
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "ssm-sap.amazonaws.com"
+				}
+			}
+		}
+	]
+}

@@ -12,7 +12,8 @@
 				"servicecatalog:GetAttributeGroup",
 				"servicecatalog:ListAttributeGroups",
 				"servicecatalog:ListTagsForResource",
-				"servicecatalog:ListAttributeGroupsForApplication"
+				"servicecatalog:ListAttributeGroupsForApplication",
+				"servicecatalog:GetConfiguration"
 			],
 			"Resource": "*"
 		}

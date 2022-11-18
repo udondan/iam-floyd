@@ -15,6 +15,24 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": [
+				"resource-groups:CreateGroup",
+				"resource-groups:DeleteGroup",
+				"resource-groups:GetGroup",
+				"resource-groups:GetTags",
+				"resource-groups:Tag",
+				"resource-groups:Untag",
+				"resource-groups:GetGroupConfiguration"
+			],
+			"Resource": "arn:aws:resource-groups:*:*:group/AWS_*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": "servicecatalog-appregistry.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": "iam:CreateServiceLinkedRole",
 			"Resource": "arn:aws:iam::*:role/aws-service-role/servicecatalog-appregistry.amazonaws.com/AWSServiceRoleForAWSServiceCatalogAppRegistry*",
 			"Condition": {
@@ -45,7 +63,9 @@
 				"servicecatalog:GetAttributeGroup",
 				"servicecatalog:ListAttributeGroups",
 				"servicecatalog:SyncResource",
-				"servicecatalog:ListAttributeGroupsForApplication"
+				"servicecatalog:ListAttributeGroupsForApplication",
+				"servicecatalog:GetConfiguration",
+				"servicecatalog:PutConfiguration"
 			],
 			"Resource": "*"
 		},
