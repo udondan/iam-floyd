@@ -7,8 +7,10 @@ iottwinmaker:DeleteComponentType;Write
 iottwinmaker:DeleteEntity;Write
 iottwinmaker:DeleteScene;Write
 iottwinmaker:DeleteWorkspace;Write
+iottwinmaker:ExecuteQuery;Read
 iottwinmaker:GetComponentType;Read
 iottwinmaker:GetEntity;Read
+iottwinmaker:GetPricingPlan;Read
 iottwinmaker:GetPropertyValue;Read
 iottwinmaker:GetPropertyValueHistory;Read
 iottwinmaker:GetScene;Read
@@ -22,5 +24,6 @@ iottwinmaker:TagResource;Tagging
 iottwinmaker:UntagResource;Tagging
 iottwinmaker:UpdateComponentType;Write
 iottwinmaker:UpdateEntity;Write
+iottwinmaker:UpdatePricingPlan;Write
 iottwinmaker:UpdateScene;Write
 iottwinmaker:UpdateWorkspace;Write

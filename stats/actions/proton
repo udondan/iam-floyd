@@ -43,6 +43,8 @@ proton:GetEnvironmentTemplateMinorVersion;Read
 proton:GetEnvironmentTemplateVersion;Read
 proton:GetRepository;Read
 proton:GetRepositorySyncStatus;Read
+proton:GetResourceTemplateVersionStatusCounts;Read
+proton:GetResourcesSummary;Read
 proton:GetService;Read
 proton:GetServiceInstance;Read
 proton:GetServiceTemplate;Read

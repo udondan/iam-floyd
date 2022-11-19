@@ -78,6 +78,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceType()
+   * - .ifResource()
+   *
    * Dependent actions:
    * - cloudformation:DescribeStacks
    *
@@ -647,6 +651,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceType()
+   * - .ifResource()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DisassociateResource.html
    */
   public toDisassociateResource() {
@@ -745,6 +753,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifResourceType()
+   * - .ifResource()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetAssociatedResource.html
    */
   public toGetAssociatedResource() {
@@ -760,6 +772,17 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toGetAttributeGroup() {
     return this.to('GetAttributeGroup');
+  }
+
+  /**
+   * Grants permission to read AppRegistry configurations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetConfiguration.html
+   */
+  public toGetConfiguration() {
+    return this.to('GetConfiguration');
   }
 
   /**
@@ -1080,6 +1103,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to assign AppRegistry configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_PutConfiguration.html
+   */
+  public toPutConfiguration() {
+    return this.to('PutConfiguration');
+  }
+
+  /**
    * Grants permission to reject a portfolio that has been shared with you that you previously accepted
    *
    * Access Level: Write
@@ -1385,6 +1419,7 @@ export class Servicecatalog extends PolicyStatement {
       'ExecuteProvisionedProductServiceAction',
       'ImportAsProvisionedProduct',
       'ProvisionProduct',
+      'PutConfiguration',
       'RejectPortfolioShare',
       'SyncResource',
       'TerminateProvisionedProduct',
@@ -1424,6 +1459,7 @@ export class Servicecatalog extends PolicyStatement {
       'GetApplication',
       'GetAssociatedResource',
       'GetAttributeGroup',
+      'GetConfiguration',
       'GetProvisionedProductOutputs',
       'ListTagsForResource'
     ],
@@ -1529,6 +1565,40 @@ export class Servicecatalog extends PolicyStatement {
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
+  }
+
+  /**
+   * Filters access by controlling what value can be specified as the Resource parameter in an AppRegistry associate resource API
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
+   *
+   * Applies to actions:
+   * - .toAssociateResource()
+   * - .toDisassociateResource()
+   * - .toGetAssociatedResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResource(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by controlling what value can be specified as the ResourceType parameter in an AppRegistry associate resource API
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
+   *
+   * Applies to actions:
+   * - .toAssociateResource()
+   * - .toDisassociateResource()
+   * - .toGetAssociatedResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceType`, value, operator || 'StringLike');
   }
 
   /**

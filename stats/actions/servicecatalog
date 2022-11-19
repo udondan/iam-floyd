@@ -60,6 +60,7 @@ servicecatalog:GetAWSOrganizationsAccessStatus;Read
 servicecatalog:GetApplication;Read
 servicecatalog:GetAssociatedResource;Read
 servicecatalog:GetAttributeGroup;Read
+servicecatalog:GetConfiguration;Read
 servicecatalog:GetProvisionedProductOutputs;Read
 servicecatalog:ImportAsProvisionedProduct;Write
 servicecatalog:ListAcceptedPortfolioShares;List
@@ -87,6 +88,7 @@ servicecatalog:ListStackInstancesForProvisionedProduct;List
 servicecatalog:ListTagOptions;List
 servicecatalog:ListTagsForResource;Read
 servicecatalog:ProvisionProduct;Write
+servicecatalog:PutConfiguration;Write
 servicecatalog:RejectPortfolioShare;Write
 servicecatalog:ScanProvisionedProducts;List
 servicecatalog:SearchProducts;List

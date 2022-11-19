@@ -42,6 +42,9 @@ export class Grafana extends PolicyStatement {
    * - .ifAwsRequestTag()
    *
    * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - iam:CreateServiceLinkedRole
    * - organizations:DescribeOrganization
    * - sso:CreateManagedApplicationInstance
    * - sso:DescribeRegisteredRegions
@@ -200,6 +203,11 @@ export class Grafana extends PolicyStatement {
    * Grants permission to modify a workspace
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */

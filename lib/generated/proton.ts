@@ -589,6 +589,28 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resource template version status counts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetResourceTemplateVersionStatusCounts.html
+   */
+  public toGetResourceTemplateVersionStatusCounts() {
+    return this.to('GetResourceTemplateVersionStatusCounts');
+  }
+
+  /**
+   * Grants permission to get resources summary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetResourcesSummary.html
+   */
+  public toGetResourcesSummary() {
+    return this.to('GetResourcesSummary');
+  }
+
+  /**
    * Grants permission to describe a service
    *
    * Access Level: Read
@@ -1267,6 +1289,8 @@ export class Proton extends PolicyStatement {
       'GetEnvironmentTemplateVersion',
       'GetRepository',
       'GetRepositorySyncStatus',
+      'GetResourceTemplateVersionStatusCounts',
+      'GetResourcesSummary',
       'GetService',
       'GetServiceInstance',
       'GetServiceTemplate',

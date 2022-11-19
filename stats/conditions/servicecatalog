@@ -1,5 +1,7 @@
 servicecatalog:RequestTag/${TagKey}
+servicecatalog:Resource
 servicecatalog:ResourceTag/${TagKey}
+servicecatalog:ResourceType
 servicecatalog:TagKeys
 servicecatalog:accountLevel
 servicecatalog:roleLevel

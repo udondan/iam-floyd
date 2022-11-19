@@ -34,6 +34,21 @@ export class Ivschat extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a logging configuration that allows clients to record room messages
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_CreateLoggingConfiguration.html
+   */
+  public toCreateLoggingConfiguration() {
+    return this.to('CreateLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to create a room that allows clients to connect and pass messages
    *
    * Access Level: Write
@@ -46,6 +61,17 @@ export class Ivschat extends PolicyStatement {
    */
   public toCreateRoom() {
     return this.to('CreateRoom');
+  }
+
+  /**
+   * Grants permission to delete the logging configuration for a specified logging configuration ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_DeleteLoggingConfiguration.html
+   */
+  public toDeleteLoggingConfiguration() {
+    return this.to('DeleteLoggingConfiguration');
   }
 
   /**
@@ -82,6 +108,17 @@ export class Ivschat extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the logging configuration for a specified logging configuration ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_GetLoggingConfiguration.html
+   */
+  public toGetLoggingConfiguration() {
+    return this.to('GetLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to get the room configuration for a specified room ARN
    *
    * Access Level: Read
@@ -90,6 +127,17 @@ export class Ivschat extends PolicyStatement {
    */
   public toGetRoom() {
     return this.to('GetRoom');
+  }
+
+  /**
+   * Grants permission to get summary information about logging configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_ListLoggingConfigurations.html
+   */
+  public toListLoggingConfigurations() {
+    return this.to('ListLoggingConfigurations');
   }
 
   /**
@@ -159,6 +207,17 @@ export class Ivschat extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the logging configuration for a specified logging configuration ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_UpdateLoggingConfiguration.html
+   */
+  public toUpdateLoggingConfiguration() {
+    return this.to('UpdateLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to update the room configuration for a specified room ARN
    *
    * Access Level: Write
@@ -172,18 +231,23 @@ export class Ivschat extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateChatToken',
+      'CreateLoggingConfiguration',
       'CreateRoom',
+      'DeleteLoggingConfiguration',
       'DeleteMessage',
       'DeleteRoom',
       'DisconnectUser',
       'SendEvent',
+      'UpdateLoggingConfiguration',
       'UpdateRoom'
     ],
     Read: [
+      'GetLoggingConfiguration',
       'GetRoom',
       'ListTagsForResource'
     ],
     List: [
+      'ListLoggingConfigurations',
       'ListRooms'
     ],
     Tagging: [
@@ -206,5 +270,21 @@ export class Ivschat extends PolicyStatement {
    */
   public onRoom(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat::${ account || '*' }:room/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Logging-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_LoggingConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLoggingConfiguration(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat::${ account || '*' }:logging-configuration/${ resourceId }`);
   }
 }

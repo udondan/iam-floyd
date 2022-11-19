@@ -45,6 +45,7 @@ connect:DescribeAgentStatus;Read
 connect:DescribeContact;Read
 connect:DescribeContactFlow;Read
 connect:DescribeContactFlowModule;Read
+connect:DescribeForecastingPlanningSchedulingIntegration;Read
 connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
@@ -69,6 +70,7 @@ connect:DisassociatePhoneNumberContactFlow;Write
 connect:DisassociateQueueQuickConnects;Write
 connect:DisassociateRoutingProfileQueues;Write
 connect:DisassociateSecurityKey;Write
+connect:DismissUserContact;Write
 connect:GetContactAttributes;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
@@ -122,11 +124,13 @@ connect:SearchVocabularies;List
 connect:StartChatContact;Write
 connect:StartContactRecording;Write
 connect:StartContactStreaming;Write
+connect:StartForecastingPlanningSchedulingIntegration;Write
 connect:StartOutboundVoiceContact;Write
 connect:StartTaskContact;Write
 connect:StopContact;Write
 connect:StopContactRecording;Write
 connect:StopContactStreaming;Write
+connect:StopForecastingPlanningSchedulingIntegration;Write
 connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
 connect:TransferContact;Write

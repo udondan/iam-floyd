@@ -15,3 +15,4 @@ elasticache:ResourceTag/${TagKey}
 elasticache:SnapshotRetentionLimit
 elasticache:TagKeys
 elasticache:TransitEncryptionEnabled
+elasticache:UserAuthenticationMode

@@ -15,6 +15,7 @@ workdocs:DeactivateUser;Write
 workdocs:DeleteComment;Write
 workdocs:DeleteCustomMetadata;Write
 workdocs:DeleteDocument;Write
+workdocs:DeleteDocumentVersion;Write
 workdocs:DeleteFolder;Write
 workdocs:DeleteFolderContents;Write
 workdocs:DeleteInstance;Write
@@ -48,6 +49,7 @@ workdocs:InitiateDocumentVersionUpload;Write
 workdocs:RegisterDirectory;Write
 workdocs:RemoveAllResourcePermissions;Write
 workdocs:RemoveResourcePermission;Write
+workdocs:RestoreDocumentVersions;Write
 workdocs:UpdateDocument;Write
 workdocs:UpdateDocumentVersion;Write
 workdocs:UpdateFolder;Write

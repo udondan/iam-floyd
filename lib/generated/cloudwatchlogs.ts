@@ -19,7 +19,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to associate the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group
+   * Grants permission to associate the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to cancel an export task if it is in PENDING or RUNNING state
+   * Grants permission to cancel an export task if it is in PENDING or RUNNING state
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create an ExportTask which allows you to efficiently export data from a Log Group to your Amazon S3 bucket
+   * Grants permission to create an ExportTask which allows you to efficiently export data from a Log Group to your Amazon S3 bucket
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create the log delivery
+   * Grants permission to create the log delivery
    *
    * Access Level: Write
    *
@@ -63,9 +63,13 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a new log group with the specified name
+   * Grants permission to create a new log group with the specified name
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html
    */
@@ -74,7 +78,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a new log stream with the specified name
+   * Grants permission to create a new log stream with the specified name
    *
    * Access Level: Write
    *
@@ -85,7 +89,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the destination with the specified name
+   * Grants permission to delete the destination with the specified name
    *
    * Access Level: Write
    *
@@ -96,7 +100,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the log delivery information for specified log delivery
+   * Grants permission to delete the log delivery information for specified log delivery
    *
    * Access Level: Write
    *
@@ -107,7 +111,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the log group with the specified name
+   * Grants permission to delete the log group with the specified name
    *
    * Access Level: Write
    *
@@ -118,7 +122,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a log stream
+   * Grants permission to delete a log stream
    *
    * Access Level: Write
    *
@@ -129,7 +133,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a metric filter associated with the specified log group
+   * Grants permission to delete a metric filter associated with the specified log group
    *
    * Access Level: Write
    *
@@ -140,7 +144,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a saved CloudWatch Logs Insights query definition
+   * Grants permission to delete a saved CloudWatch Logs Insights query definition
    *
    * Access Level: Write
    *
@@ -151,7 +155,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a resource policy from this account
+   * Grants permission to delete a resource policy from this account
    *
    * Access Level: Permissions management
    *
@@ -162,7 +166,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the retention policy of the specified log group
+   * Grants permission to delete the retention policy of the specified log group
    *
    * Access Level: Write
    *
@@ -173,7 +177,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a subscription filter associated with the specified log group
+   * Grants permission to delete a subscription filter associated with the specified log group
    *
    * Access Level: Write
    *
@@ -184,7 +188,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the destinations that are associated with the AWS account making the request
+   * Grants permission to return all the destinations that are associated with the AWS account making the request
    *
    * Access Level: List
    *
@@ -195,7 +199,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the export tasks that are associated with the AWS account making the request
+   * Grants permission to return all the export tasks that are associated with the AWS account making the request
    *
    * Access Level: List
    *
@@ -206,7 +210,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the log groups that are associated with the AWS account making the request
+   * Grants permission to return all the log groups that are associated with the AWS account making the request
    *
    * Access Level: List
    *
@@ -217,7 +221,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the log streams that are associated with the specified log group
+   * Grants permission to return all the log streams that are associated with the specified log group
    *
    * Access Level: List
    *
@@ -228,7 +232,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the metrics filters associated with the specified log group
+   * Grants permission to return all the metrics filters associated with the specified log group
    *
    * Access Level: List
    *
@@ -239,7 +243,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently in this account
+   * Grants permission to return a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently in this account
    *
    * Access Level: List
    *
@@ -250,7 +254,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a paginated list of your saved CloudWatch Logs Insights query definitions
+   * Grants permission to return a paginated list of your saved CloudWatch Logs Insights query definitions
    *
    * Access Level: List
    *
@@ -261,7 +265,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the resource policies in this account
+   * Grants permission to return all the resource policies in this account
    *
    * Access Level: List
    *
@@ -272,7 +276,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return all the subscription filters associated with the specified log group
+   * Grants permission to return all the subscription filters associated with the specified log group
    *
    * Access Level: List
    *
@@ -283,7 +287,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to disassociate the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified log group
+   * Grants permission to disassociate the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified log group
    *
    * Access Level: Write
    *
@@ -294,7 +298,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve log events, optionally filtered by a filter pattern from the specified log group
+   * Grants permission to retrieve log events, optionally filtered by a filter pattern from the specified log group
    *
    * Access Level: Read
    *
@@ -305,7 +309,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get the log delivery information for specified log delivery
+   * Grants permission to get the log delivery information for specified log delivery
    *
    * Access Level: Read
    *
@@ -316,7 +320,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve log events from the specified log stream
+   * Grants permission to retrieve log events from the specified log stream
    *
    * Access Level: Read
    *
@@ -327,7 +331,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field
+   * Grants permission to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field
    *
    * Access Level: Read
    *
@@ -338,7 +342,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve all the fields and values of a single log event
+   * Grants permission to retrieve all the fields and values of a single log event
    *
    * Access Level: Read
    *
@@ -349,7 +353,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return the results from the specified query
+   * Grants permission to return the results from the specified query
    *
    * Access Level: Read
    *
@@ -360,7 +364,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list all the log deliveries for specified account and/or log source
+   * Grants permission to list all the log deliveries for specified account and/or log source
    *
    * Access Level: List
    *
@@ -371,7 +375,18 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the tags for the specified log group
+   * Grants permission to list the tags for the specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list the tags for the specified log group
    *
    * Access Level: List
    *
@@ -382,9 +397,13 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update a Destination
+   * Grants permission to create or update a Destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -396,7 +415,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update an access policy associated with an existing Destination
+   * Grants permission to create or update an access policy associated with an existing Destination
    *
    * Access Level: Write
    *
@@ -407,7 +426,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to upload a batch of log events to the specified log stream
+   * Grants permission to upload a batch of log events to the specified log stream
    *
    * Access Level: Write
    *
@@ -418,7 +437,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update a metric filter and associates it with the specified log group
+   * Grants permission to create or update a metric filter and associates it with the specified log group
    *
    * Access Level: Write
    *
@@ -429,7 +448,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update a query definition
+   * Grants permission to create or update a query definition
    *
    * Access Level: Write
    *
@@ -440,7 +459,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update a resource policy allowing other AWS services to put log events to this account
+   * Grants permission to create or update a resource policy allowing other AWS services to put log events to this account
    *
    * Access Level: Permissions management
    *
@@ -451,7 +470,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to set the retention of the specified log group
+   * Grants permission to set the retention of the specified log group
    *
    * Access Level: Write
    *
@@ -462,7 +481,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update a subscription filter and associates it with the specified log group
+   * Grants permission to create or update a subscription filter and associates it with the specified log group
    *
    * Access Level: Write
    *
@@ -476,7 +495,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to schedules a query of a log group using CloudWatch Logs Insights
+   * Grants permission to schedule a query of a log group using CloudWatch Logs Insights
    *
    * Access Level: Read
    *
@@ -487,7 +506,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to stop a CloudWatch Logs Insights query that is in progress
+   * Grants permission to stop a CloudWatch Logs Insights query that is in progress
    *
    * Access Level: Read
    *
@@ -498,9 +517,13 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to add or update the specified tags for the specified log group
+   * Grants permission to add or update the specified tags for the specified log group
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html
    */
@@ -509,7 +532,22 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to test the filter pattern of a metric filter against a sample of log event messages
+   * Grants permission to add or update the specified tags for the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to test the filter pattern of a metric filter against a sample of log event messages
    *
    * Access Level: Read
    *
@@ -520,9 +558,12 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to remove the specified tags from the specified log group
+   * Grants permission to remove the specified tags from the specified log group
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html
    */
@@ -531,7 +572,21 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the log delivery information for specified log delivery
+   * Grants permission to remove the specified tags from the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the log delivery information for specified log delivery
    *
    * Access Level: Write
    *
@@ -582,6 +637,7 @@ export class Logs extends PolicyStatement {
       'DescribeResourcePolicies',
       'DescribeSubscriptionFilters',
       'ListLogDeliveries',
+      'ListTagsForResource',
       'ListTagsLogGroup'
     ],
     Read: [
@@ -597,7 +653,9 @@ export class Logs extends PolicyStatement {
     ],
     Tagging: [
       'TagLogGroup',
-      'UntagLogGroup'
+      'TagResource',
+      'UntagLogGroup',
+      'UntagResource'
     ]
   };
 
@@ -642,6 +700,9 @@ export class Logs extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);

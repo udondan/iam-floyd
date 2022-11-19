@@ -102,6 +102,20 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Allows an IAM user or role to connect as a specified EliastCache user to a node in a replication group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth-iam.html
+   */
+  public toConnect() {
+    return this.to('Connect');
+  }
+
+  /**
    * Grants permission to make a copy of an existing snapshot
    *
    * Access Level: Write
@@ -263,7 +277,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Redis user for Redis engine version 6.x and onwards
+   * Grants permission to create a user for Redis. Users are supported from Redis 6.0 onwards.
    *
    * Access Level: Write
    *
@@ -271,6 +285,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserAuthenticationMode()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -282,7 +297,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Redis user group for Redis engine version 6.x and onwards
+   * Grants permission to create a user group for Redis. Groups are supported from Redis 6.0 onwards.
    *
    * Access Level: Write
    *
@@ -888,6 +903,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifUserAuthenticationMode()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUser.html
    */
@@ -1042,6 +1058,7 @@ export class Elasticache extends PolicyStatement {
       'BatchApplyUpdateAction',
       'BatchStopUpdateAction',
       'CompleteMigration',
+      'Connect',
       'CopySnapshot',
       'CreateCacheCluster',
       'CreateCacheParameterGroup',
@@ -1307,6 +1324,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifUserAuthenticationMode()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
@@ -1416,7 +1434,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Filters access by the the CacheParameterGroupName parameter in the request
+   * Filters access by the CacheParameterGroupName parameter in the request
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
    *
@@ -1462,7 +1480,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Filters access by the engine type present in creation requests. For replication group creations, default engine ‘redis’ is used as key if parameter is not present
+   * Filters access by the engine type present in creation requests. For replication group creations, default engine 'redis' is used as key if parameter is not present
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
    *
@@ -1632,5 +1650,24 @@ export class Elasticache extends PolicyStatement {
    */
   public ifTransitEncryptionEnabled(value?: boolean) {
     return this.if(`TransitEncryptionEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the UserAuthenticationMode parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateUser()
+   * - .toModifyUser()
+   *
+   * Applies to resource types:
+   * - user
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserAuthenticationMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserAuthenticationMode`, value, operator || 'StringLike');
   }
 }
