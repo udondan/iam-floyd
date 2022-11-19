@@ -5,9 +5,25 @@
 			"Effect": "Allow",
 			"Action": [
 				"organizations:DisableAWSServiceAccess",
-				"organizations:EnableAWSServiceAccess"
+				"organizations:EnableAWSServiceAccess",
+				"organizations:ListDelegatedAdministrators"
 			],
 			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"organizations:ServicePrincipal": [
+						"backup.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"organizations:RegisterDelegatedAdministrator",
+				"organizations:DeregisterDelegatedAdministrator"
+			],
+			"Resource": "arn:aws:organizations::*:account/*",
 			"Condition": {
 				"StringEquals": {
 					"organizations:ServicePrincipal": [

@@ -26,6 +26,7 @@
 				"proton:GetEnvironmentTemplateVersion",
 				"proton:GetRepository",
 				"proton:GetRepositorySyncStatus",
+				"proton:GetResourcesSummary",
 				"proton:GetService",
 				"proton:GetServiceInstance",
 				"proton:GetServiceTemplate",
