@@ -1,12 +1,17 @@
 ivschat:CreateChatToken;Write
+ivschat:CreateLoggingConfiguration;Write
 ivschat:CreateRoom;Write
+ivschat:DeleteLoggingConfiguration;Write
 ivschat:DeleteMessage;Write
 ivschat:DeleteRoom;Write
 ivschat:DisconnectUser;Write
+ivschat:GetLoggingConfiguration;Read
 ivschat:GetRoom;Read
+ivschat:ListLoggingConfigurations;List
 ivschat:ListRooms;List
 ivschat:ListTagsForResource;Read
 ivschat:SendEvent;Write
 ivschat:TagResource;Tagging
 ivschat:UntagResource;Tagging
+ivschat:UpdateLoggingConfiguration;Write
 ivschat:UpdateRoom;Write

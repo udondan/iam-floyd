@@ -3,6 +3,7 @@ elasticache:AuthorizeCacheSecurityGroupIngress;Write
 elasticache:BatchApplyUpdateAction;Write
 elasticache:BatchStopUpdateAction;Write
 elasticache:CompleteMigration;Write
+elasticache:Connect;Write
 elasticache:CopySnapshot;Write
 elasticache:CreateCacheCluster;Write
 elasticache:CreateCacheParameterGroup;Write

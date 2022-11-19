@@ -45,6 +45,10 @@ export class Sqs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html
    */
   public toCreateQueue() {
@@ -188,6 +192,10 @@ export class Sqs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html
    */
   public toTagQueue() {
@@ -198,6 +206,10 @@ export class Sqs extends PolicyStatement {
    * Grants permission to remove tags from the specified SQS queue
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html
    */
@@ -236,12 +248,15 @@ export class Sqs extends PolicyStatement {
   /**
    * Adds a resource of type queue to the statement
    *
-   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html
+   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-types.html
    *
    * @param queueName - Identifier for the queueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sqs.defaultPartition }:sqs:${ region || '*' }:${ account || '*' }:${ queueName }`);

@@ -30,6 +30,7 @@ logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
 logs:ListLogDeliveries;List
+logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
 logs:PutDestination;Write
 logs:PutDestinationPolicy;Write
@@ -42,6 +43,8 @@ logs:PutSubscriptionFilter;Write
 logs:StartQuery;Read
 logs:StopQuery;Read
 logs:TagLogGroup;Tagging
+logs:TagResource;Tagging
 logs:TestMetricFilter;Read
 logs:UntagLogGroup;Tagging
+logs:UntagResource;Tagging
 logs:UpdateLogDelivery;Write

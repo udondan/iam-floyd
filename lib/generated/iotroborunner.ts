@@ -686,6 +686,7 @@ export class Iotroborunner extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
+   * @param siteId - Identifier for the siteId.
    * @param destinationId - Identifier for the destinationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -694,8 +695,8 @@ export class Iotroborunner extends PolicyStatement {
    * Possible conditions:
    * - .ifDestinationResourceId()
    */
-  public onDestinationResource(destinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:destination/${ destinationId }`);
+  public onDestinationResource(siteId: string, destinationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/destination/${ destinationId }`);
   }
 
   /**

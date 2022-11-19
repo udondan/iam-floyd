@@ -206,6 +206,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete versions of a specified document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteDocumentVersion.html
+   */
+  public toDeleteDocumentVersion() {
+    return this.to('DeleteDocumentVersion');
+  }
+
+  /**
    * Grants permission to permanently delete the specified folder and its contents
    *
    * Access Level: Write
@@ -569,6 +580,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore versions of a specified document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_RestoreDocumentVersions.html
+   */
+  public toRestoreDocumentVersions() {
+    return this.to('RestoreDocumentVersions');
+  }
+
+  /**
    * Grants permission to update the specified attributes of the specified document
    *
    * Access Level: Write
@@ -641,6 +663,7 @@ export class Workdocs extends PolicyStatement {
       'DeleteComment',
       'DeleteCustomMetadata',
       'DeleteDocument',
+      'DeleteDocumentVersion',
       'DeleteFolder',
       'DeleteFolderContents',
       'DeleteInstance',
@@ -653,6 +676,7 @@ export class Workdocs extends PolicyStatement {
       'RegisterDirectory',
       'RemoveAllResourcePermissions',
       'RemoveResourcePermission',
+      'RestoreDocumentVersions',
       'UpdateDocument',
       'UpdateDocumentVersion',
       'UpdateFolder',

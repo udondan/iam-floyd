@@ -139,6 +139,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to execute query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ExecuteQuery.html
+   */
+  public toExecuteQuery() {
+    return this.to('ExecuteQuery');
+  }
+
+  /**
    * Grants permission to get a componentType
    *
    * Access Level: Read
@@ -158,6 +169,17 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public toGetEntity() {
     return this.to('GetEntity');
+  }
+
+  /**
+   * Grants permission to get pricing plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPricingPlan.html
+   */
+  public toGetPricingPlan() {
+    return this.to('GetPricingPlan');
   }
 
   /**
@@ -324,6 +346,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update pricing plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdatePricingPlan.html
+   */
+  public toUpdatePricingPlan() {
+    return this.to('UpdatePricingPlan');
+  }
+
+  /**
    * Grants permission to update a scene
    *
    * Access Level: Write
@@ -358,12 +391,15 @@ export class Iottwinmaker extends PolicyStatement {
       'DeleteWorkspace',
       'UpdateComponentType',
       'UpdateEntity',
+      'UpdatePricingPlan',
       'UpdateScene',
       'UpdateWorkspace'
     ],
     Read: [
+      'ExecuteQuery',
       'GetComponentType',
       'GetEntity',
+      'GetPricingPlan',
       'GetPropertyValue',
       'GetPropertyValueHistory',
       'GetScene',

@@ -247,7 +247,7 @@ export class EmrContainers extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_UnTagResource.html
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -354,7 +354,7 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on whether the execution role arn is provided with the action
+   * Filters access by the execution role arn present in the request
    *
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/iam-execution-role.html
    *
@@ -370,7 +370,7 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on whether the execution role arn is provided with the action
+   * Filters access by the job template arn present in the request
    *
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/iam-job-template.html
    *

@@ -800,6 +800,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the status of forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toDescribeForecastingPlanningSchedulingIntegration() {
+    return this.to('DescribeForecastingPlanningSchedulingIntegration');
+  }
+
+  /**
    * Grants permission to describe hours of operation in an Amazon Connect instance
    *
    * Access Level: Read
@@ -1170,6 +1184,21 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateSecurityKey() {
     return this.to('DisassociateSecurityKey');
+  }
+
+  /**
+   * Grants permission to dismiss terminated Contact from Agent CCP
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DismissUserContact.html
+   */
+  public toDismissUserContact() {
+    return this.to('DismissUserContact');
   }
 
   /**
@@ -1915,6 +1944,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toStartForecastingPlanningSchedulingIntegration() {
+    return this.to('StartForecastingPlanningSchedulingIntegration');
+  }
+
+  /**
    * Grants permission to initiate outbound calls using the Amazon Connect API
    *
    * Access Level: Write
@@ -1973,6 +2016,20 @@ export class Connect extends PolicyStatement {
    */
   public toStopContactStreaming() {
     return this.to('StopContactStreaming');
+  }
+
+  /**
+   * Grants permission to disable forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toStopForecastingPlanningSchedulingIntegration() {
+    return this.to('StopForecastingPlanningSchedulingIntegration');
   }
 
   /**
@@ -2621,6 +2678,7 @@ export class Connect extends PolicyStatement {
       'DisassociateQueueQuickConnects',
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
+      'DismissUserContact',
       'GetFederationTokens',
       'PutUserStatus',
       'ReleasePhoneNumber',
@@ -2629,11 +2687,13 @@ export class Connect extends PolicyStatement {
       'StartChatContact',
       'StartContactRecording',
       'StartContactStreaming',
+      'StartForecastingPlanningSchedulingIntegration',
       'StartOutboundVoiceContact',
       'StartTaskContact',
       'StopContact',
       'StopContactRecording',
       'StopContactStreaming',
+      'StopForecastingPlanningSchedulingIntegration',
       'SuspendContactRecording',
       'TransferContact',
       'UpdateAgentStatus',
@@ -2677,6 +2737,7 @@ export class Connect extends PolicyStatement {
       'DescribeContact',
       'DescribeContactFlow',
       'DescribeContactFlowModule',
+      'DescribeForecastingPlanningSchedulingIntegration',
       'DescribeHoursOfOperation',
       'DescribeInstance',
       'DescribeInstanceAttribute',
@@ -3234,6 +3295,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeContact()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeForecastingPlanningSchedulingIntegration()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
@@ -3255,6 +3317,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityKey()
+   * - .toDismissUserContact()
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
@@ -3287,8 +3350,10 @@ export class Connect extends PolicyStatement {
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
+   * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartTaskContact()
    * - .toStopContact()
+   * - .toStopForecastingPlanningSchedulingIntegration()
    * - .toTransferContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContact()
