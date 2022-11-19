@@ -14,7 +14,7 @@
 				"iam:CreateServiceLinkedRole"
 			],
 			"Resource": [
-				"arn:aws:iam::*:role/aws-service-role/ssm-sap.amazonaws.com/AWSServiceRoleForSSMForSAP"
+				"arn:aws:iam::*:role/aws-service-role/ssm-sap.amazonaws.com/AWSServiceRoleForAWSSSMForSAP"
 			],
 			"Condition": {
 				"StringEquals": {

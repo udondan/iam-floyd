@@ -75,6 +75,15 @@
 				"vendor-insights:ListSecurityProfileSnapshots"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"aws-marketplace:TagResource",
+				"aws-marketplace:UntagResource",
+				"aws-marketplace:ListTagsForResource"
+			],
+			"Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
 		}
 	]
 }
