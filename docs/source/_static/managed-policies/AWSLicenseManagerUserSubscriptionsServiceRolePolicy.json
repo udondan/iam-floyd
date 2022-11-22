@@ -25,7 +25,8 @@
 			"Sid": "EC2ReadPermissions",
 			"Effect": "Allow",
 			"Action": [
-				"ec2:DescribeInstances"
+				"ec2:DescribeInstances",
+				"ec2:DescribeVpcPeeringConnections"
 			],
 			"Resource": "*"
 		},
