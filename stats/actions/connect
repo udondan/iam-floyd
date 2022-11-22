@@ -111,6 +111,7 @@ connect:ListTrafficDistributionGroups;List
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
+connect:MonitorContact;Write
 connect:PutUserStatus;Write
 connect:ReleasePhoneNumber;Write
 connect:ReplicateInstance;Write

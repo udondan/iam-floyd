@@ -12,4 +12,5 @@ quicksight:ingestion
 quicksight:namespace
 quicksight:template
 quicksight:theme
+quicksight:topic
 quicksight:user
