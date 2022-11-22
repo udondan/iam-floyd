@@ -1,5 +1,6 @@
 connect:AttributeType
 connect:InstanceId
+connect:MonitorCapabilities
 connect:RequestTag/${TagKey}
 connect:ResourceTag/${TagKey}
 connect:SearchTag/${TagKey}

@@ -24,5 +24,6 @@ appflow:TagResource;Tagging
 appflow:UnRegisterConnector;Write
 appflow:UntagResource;Tagging
 appflow:UpdateConnectorProfile;Write
+appflow:UpdateConnectorRegistration;Write
 appflow:UpdateFlow;Write
 appflow:UseConnectorProfile;Write

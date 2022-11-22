@@ -296,7 +296,7 @@ export class Appflow extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UnRegisterConnector.html
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UnregisterConnector.html
    */
   public toUnRegisterConnector() {
     return this.to('UnRegisterConnector');
@@ -328,6 +328,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a registered connector configured in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateConnectorRegistration.html
+   */
+  public toUpdateConnectorRegistration() {
+    return this.to('UpdateConnectorRegistration');
+  }
+
+  /**
    * Grants permission to update a flow configured in Amazon AppFlow
    *
    * Access Level: Write
@@ -342,8 +353,6 @@ export class Appflow extends PolicyStatement {
    * Grants permission to use a connector profile while creating a flow in Amazon AppFlow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UseConnectorProfile.html
    */
   public toUseConnectorProfile() {
     return this.to('UseConnectorProfile');
@@ -361,6 +370,7 @@ export class Appflow extends PolicyStatement {
       'StopFlow',
       'UnRegisterConnector',
       'UpdateConnectorProfile',
+      'UpdateConnectorRegistration',
       'UpdateFlow',
       'UseConnectorProfile'
     ],

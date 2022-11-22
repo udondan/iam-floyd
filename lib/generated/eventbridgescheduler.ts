@@ -25,6 +25,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html
    */
   public toCreateSchedule() {
     return this.to('CreateSchedule');
@@ -38,6 +40,8 @@ export class Scheduler extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateScheduleGroup.html
    */
   public toCreateScheduleGroup() {
     return this.to('CreateScheduleGroup');
@@ -50,6 +54,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_DeleteSchedule.html
    */
   public toDeleteSchedule() {
     return this.to('DeleteSchedule');
@@ -62,6 +68,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_DeleteScheduleGroup.html
    */
   public toDeleteScheduleGroup() {
     return this.to('DeleteScheduleGroup');
@@ -74,6 +82,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_GetSchedule.html
    */
   public toGetSchedule() {
     return this.to('GetSchedule');
@@ -86,6 +96,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_GetScheduleGroup.html
    */
   public toGetScheduleGroup() {
     return this.to('GetScheduleGroup');
@@ -95,6 +107,8 @@ export class Scheduler extends PolicyStatement {
    * Grants permission to list the Amazon EventBridge Scheduler schedule groups in your account
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListScheduleGroups.html
    */
   public toListScheduleGroups() {
     return this.to('ListScheduleGroups');
@@ -104,6 +118,8 @@ export class Scheduler extends PolicyStatement {
    * Grants permission to list the Amazon EventBridge Scheduler schedules in your account
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListSchedules.html
    */
   public toListSchedules() {
     return this.to('ListSchedules');
@@ -116,6 +132,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -130,6 +148,8 @@ export class Scheduler extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -143,6 +163,8 @@ export class Scheduler extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -155,6 +177,8 @@ export class Scheduler extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/APIReference/API_UpdateSchedule.html
    */
   public toUpdateSchedule() {
     return this.to('UpdateSchedule');
@@ -186,6 +210,8 @@ export class Scheduler extends PolicyStatement {
   /**
    * Adds a resource of type schedule-group to the statement
    *
+   * https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-schedule-group.html
+   *
    * @param groupName - Identifier for the groupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -200,6 +226,8 @@ export class Scheduler extends PolicyStatement {
 
   /**
    * Adds a resource of type schedule to the statement
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-schedule.html
    *
    * @param groupName - Identifier for the groupName.
    * @param scheduleName - Identifier for the scheduleName.

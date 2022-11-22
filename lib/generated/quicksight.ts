@@ -367,6 +367,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountSubscription.html
+   */
+  public toDeleteAccountSubscription() {
+    return this.to('DeleteAccountSubscription');
+  }
+
+  /**
    * Grants permission to delete an analysis
    *
    * Access Level: Write
@@ -926,7 +937,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
+   * Grants permission to generate a URL used to embed a QuickSight Dashboard or Q Topic for a user not registered with QuickSight
    *
    * Access Level: Write
    *
@@ -1358,6 +1369,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchDashboards() {
     return this.to('SearchDashboards');
+  }
+
+  /**
+   * Grants permission to search for a sub-set of QuickSight DatSets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchDataSets.html
+   */
+  public toSearchDataSets() {
+    return this.to('SearchDataSets');
+  }
+
+  /**
+   * Grants permission to search for a sub-set of QuickSight Data Sources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchDataSources.html
+   */
+  public toSearchDataSources() {
+    return this.to('SearchDataSources');
   }
 
   /**
@@ -1802,6 +1835,7 @@ export class Quicksight extends PolicyStatement {
       'CreateUser',
       'CreateVPCConnection',
       'DeleteAccountCustomization',
+      'DeleteAccountSubscription',
       'DeleteAnalysis',
       'DeleteDashboard',
       'DeleteDataSet',
@@ -1925,6 +1959,8 @@ export class Quicksight extends PolicyStatement {
       'ListUsers',
       'SearchAnalyses',
       'SearchDashboards',
+      'SearchDataSets',
+      'SearchDataSources',
       'SearchDirectoryGroups',
       'SearchGroups'
     ],
@@ -2169,6 +2205,20 @@ export class Quicksight extends PolicyStatement {
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type topic to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Topic.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:topic/${ resourceId }`);
   }
 
   /**

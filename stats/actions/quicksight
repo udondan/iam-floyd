@@ -24,6 +24,7 @@ quicksight:CreateThemeAlias;Write
 quicksight:CreateUser;Write
 quicksight:CreateVPCConnection;Write
 quicksight:DeleteAccountCustomization;Write
+quicksight:DeleteAccountSubscription;Write
 quicksight:DeleteAnalysis;Write
 quicksight:DeleteCustomPermissions;Permissions management
 quicksight:DeleteDashboard;Write
@@ -109,6 +110,8 @@ quicksight:RestoreAnalysis;Write
 quicksight:ScopeDownPolicy;Write
 quicksight:SearchAnalyses;List
 quicksight:SearchDashboards;List
+quicksight:SearchDataSets;List
+quicksight:SearchDataSources;List
 quicksight:SearchDirectoryGroups;List
 quicksight:SearchFolders;Read
 quicksight:SearchGroups;List

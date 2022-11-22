@@ -1746,6 +1746,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to monitor an ongoing contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifMonitorCapabilities()
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_MonitorContact.html
+   */
+  public toMonitorContact() {
+    return this.to('MonitorContact');
+  }
+
+  /**
    * Grants permission to switch User Status in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2680,6 +2696,7 @@ export class Connect extends PolicyStatement {
       'DisassociateSecurityKey',
       'DismissUserContact',
       'GetFederationTokens',
+      'MonitorContact',
       'PutUserStatus',
       'ReleasePhoneNumber',
       'ReplicateInstance',
@@ -3344,6 +3361,7 @@ export class Connect extends PolicyStatement {
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
+   * - .toMonitorContact()
    * - .toPutUserStatus()
    * - .toSearchQueues()
    * - .toSearchRoutingProfiles()
@@ -3394,6 +3412,21 @@ export class Connect extends PolicyStatement {
    */
   public ifInstanceId(value: string | string[], operator?: Operator | string) {
     return this.if(`InstanceId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting the monitor capabilities of the user in the request
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toMonitorContact()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMonitorCapabilities(value: string | string[], operator?: Operator | string) {
+    return this.if(`MonitorCapabilities`, value, operator || 'StringLike');
   }
 
   /**
