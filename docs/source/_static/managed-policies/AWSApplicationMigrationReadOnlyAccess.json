@@ -10,7 +10,12 @@
 				"mgn:DescribeReplicationConfigurationTemplates",
 				"mgn:GetLaunchConfiguration",
 				"mgn:DescribeVcenterClients",
-				"mgn:GetReplicationConfiguration"
+				"mgn:GetReplicationConfiguration",
+				"mgn:DescribeLaunchConfigurationTemplates",
+				"mgn:ListSourceServerActions",
+				"mgn:ListTemplateActions",
+				"mgn:ListApplications",
+				"mgn:ListWaves"
 			],
 			"Resource": "*"
 		},

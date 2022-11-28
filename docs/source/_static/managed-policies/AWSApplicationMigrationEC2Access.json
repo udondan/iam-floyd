@@ -45,6 +45,40 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"ec2:CreateLaunchTemplate"
+			],
+			"Resource": "arn:aws:ec2:*:*:launch-template/*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
+				},
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"mgn.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteLaunchTemplate"
+			],
+			"Resource": "arn:aws:ec2:*:*:launch-template/*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+				},
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"mgn.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ec2:DeleteVolume"
 			],
 			"Resource": "arn:aws:ec2:*:*:volume/*",
@@ -243,7 +277,8 @@
 				"arn:aws:ec2:*:*:security-group/*",
 				"arn:aws:ec2:*:*:volume/*",
 				"arn:aws:ec2:*:*:snapshot/*",
-				"arn:aws:ec2:*:*:instance/*"
+				"arn:aws:ec2:*:*:instance/*",
+				"arn:aws:ec2:*:*:launch-template/*"
 			],
 			"Condition": {
 				"StringEquals": {
@@ -251,7 +286,8 @@
 						"CreateSecurityGroup",
 						"CreateVolume",
 						"CreateSnapshot",
-						"RunInstances"
+						"RunInstances",
+						"CreateLaunchTemplate"
 					]
 				},
 				"Bool": {
