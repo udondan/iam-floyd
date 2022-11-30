@@ -1,0 +1,56 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ModifyNetworkInterfaceAttribute",
+				"ec2:DeleteNetworkInterface"
+			],
+			"Resource": "arn:aws:ec2:*:*:network-interface/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/VerifiedAccessManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ModifyNetworkInterfaceAttribute"
+			],
+			"Resource": "arn:aws:ec2:*:*:security-group/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateNetworkInterface"
+			],
+			"Resource": "arn:aws:ec2:*:*:subnet/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateNetworkInterface"
+			],
+			"Resource": "arn:aws:ec2:*:*:network-interface/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/VerifiedAccessManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": "arn:aws:ec2:*:*:network-interface/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateNetworkInterface"
+				}
+			}
+		}
+	]
+}
