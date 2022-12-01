@@ -19,9 +19,20 @@
 				"vendor-insights:ListSecurityProfiles",
 				"vendor-insights:GetSecurityProfile",
 				"vendor-insights:GetSecurityProfileSnapshot",
-				"vendor-insights:ListSecurityProfileSnapshots"
+				"vendor-insights:ListSecurityProfileSnapshots",
+				"vendor-insights:ListTagsForResource"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"artifact:GetReport",
+				"artifact:GetReportMetadata",
+				"artifact:GetTermForReport",
+				"artifact:ListReports"
+			],
+			"Resource": "arn:aws:artifact:*::report/*"
 		}
 	]
 }

@@ -26,8 +26,13 @@
 				"vendor-insights:UpdateSecurityProfile",
 				"vendor-insights:ActivateSecurityProfile",
 				"vendor-insights:DeactivateSecurityProfile",
+				"vendor-insights:UpdateSecurityProfileSnapshotCreationConfiguration",
+				"vendor-insights:UpdateSecurityProfileSnapshotReleaseConfiguration",
+				"vendor-insights:ListSecurityProfileSnapshots",
 				"vendor-insights:GetSecurityProfileSnapshot",
-				"vendor-insights:ListSecurityProfileSnapshots"
+				"vendor-insights:TagResource",
+				"vendor-insights:UntagResource",
+				"vendor-insights:ListTagsForResource"
 			],
 			"Resource": "*"
 		},
@@ -37,7 +42,9 @@
 				"aws-marketplace:AcceptAgreementApprovalRequest",
 				"aws-marketplace:RejectAgreementApprovalRequest",
 				"aws-marketplace:GetAgreementApprovalRequest",
-				"aws-marketplace:ListAgreementApprovalRequests"
+				"aws-marketplace:ListAgreementApprovalRequests",
+				"aws-marketplace:CancelAgreement",
+				"aws-marketplace:SearchAgreements"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -45,6 +52,16 @@
 					"aws-marketplace:AgreementType": "VendorInsightsAgreement"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"artifact:GetReport",
+				"artifact:GetReportMetadata",
+				"artifact:GetTermForReport",
+				"artifact:ListReports"
+			],
+			"Resource": "arn:aws:artifact:*::report/*"
 		}
 	]
 }
