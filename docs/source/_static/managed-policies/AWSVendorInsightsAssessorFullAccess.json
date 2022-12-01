@@ -19,6 +19,7 @@
 				"aws-marketplace:AcceptAgreementRequest",
 				"aws-marketplace:CancelAgreementRequest",
 				"aws-marketplace:ListAgreementRequests",
+				"aws-marketplace:SearchAgreements",
 				"aws-marketplace:CancelAgreement"
 			],
 			"Resource": "*",
@@ -27,6 +28,16 @@
 					"aws-marketplace:AgreementType": "VendorInsightsAgreement"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"artifact:GetReport",
+				"artifact:GetReportMetadata",
+				"artifact:GetTermForReport",
+				"artifact:ListReports"
+			],
+			"Resource": "arn:aws:artifact:*::report/*"
 		}
 	]
 }

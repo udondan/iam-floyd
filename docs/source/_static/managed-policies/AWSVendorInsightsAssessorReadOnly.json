@@ -9,6 +9,16 @@
 				"vendor-insights:ListEntitledSecurityProfileSnapshots"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"artifact:GetReport",
+				"artifact:GetReportMetadata",
+				"artifact:GetTermForReport",
+				"artifact:ListReports"
+			],
+			"Resource": "arn:aws:artifact:*::report/*"
 		}
 	]
 }

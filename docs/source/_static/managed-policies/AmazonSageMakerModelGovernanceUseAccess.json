@@ -1,0 +1,69 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:ListMonitoringAlerts",
+				"sagemaker:ListMonitoringExecutions",
+				"sagemaker:UpdateMonitoringAlert",
+				"sagemaker:StartMonitoringSchedule",
+				"sagemaker:StopMonitoringSchedule",
+				"sagemaker:ListMonitoringAlertHistory",
+				"sagemaker:CreateModelCard",
+				"sagemaker:DescribeModelCard",
+				"sagemaker:UpdateModelCard",
+				"sagemaker:DeleteModelCard",
+				"sagemaker:ListModelCards",
+				"sagemaker:ListModelCardVersions",
+				"sagemaker:CreateModelCardExportJob",
+				"sagemaker:DescribeModelCardExportJob",
+				"sagemaker:ListModelCardExportJobs"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:ListTrainingJobs",
+				"sagemaker:DescribeTrainingJob",
+				"sagemaker:ListModels",
+				"sagemaker:DescribeModel",
+				"sagemaker:Search",
+				"sagemaker:AddTags",
+				"sagemaker:DeleteTags",
+				"sagemaker:ListTags"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:ListAliases"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:CreateBucket",
+				"s3:GetBucketLocation"
+			],
+			"Resource": [
+				"arn:aws:s3:::*SageMaker*",
+				"arn:aws:s3:::*Sagemaker*",
+				"arn:aws:s3:::*sagemaker*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket",
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "*"
+		}
+	]
+}

@@ -4,13 +4,24 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"sagemaker:*"
+				"sagemaker:*",
+				"sagemaker-geospatial:*"
 			],
 			"NotResource": [
 				"arn:aws:sagemaker:*:*:domain/*",
 				"arn:aws:sagemaker:*:*:user-profile/*",
 				"arn:aws:sagemaker:*:*:app/*",
+				"arn:aws:sagemaker:*:*:space/*",
 				"arn:aws:sagemaker:*:*:flow-definition/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:AddTags"
+			],
+			"Resource": [
+				"arn:aws:sagemaker:*:*:app/*"
 			]
 		},
 		{
@@ -21,6 +32,8 @@
 				"sagemaker:ListDomains",
 				"sagemaker:DescribeUserProfile",
 				"sagemaker:ListUserProfiles",
+				"sagemaker:DescribeSpace",
+				"sagemaker:ListSpaces",
 				"sagemaker:*App",
 				"sagemaker:ListApps"
 			],
@@ -264,7 +277,9 @@
 			"Action": [
 				"s3:GetObject"
 			],
-			"Resource": "*",
+			"Resource": [
+				"arn:aws:s3:::*"
+			],
 			"Condition": {
 				"StringEqualsIgnoreCase": {
 					"s3:ExistingObjectTag/SageMaker": "true"
@@ -276,7 +291,9 @@
 			"Action": [
 				"s3:GetObject"
 			],
-			"Resource": "*",
+			"Resource": [
+				"arn:aws:s3:::*"
+			],
 			"Condition": {
 				"StringEquals": {
 					"s3:ExistingObjectTag/servicecatalog:provisioning": "true"
@@ -478,6 +495,15 @@
 			"Resource": [
 				"arn:aws:redshift:*:*:dbuser:*/sagemaker_access*",
 				"arn:aws:redshift:*:*:dbname:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:ListTags"
+			],
+			"Resource": [
+				"arn:aws:sagemaker:*:*:user-profile/*"
 			]
 		},
 		{
