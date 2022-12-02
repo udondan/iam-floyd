@@ -41,7 +41,10 @@
 				"scheduler:GetScheduleGroup",
 				"scheduler:ListSchedules",
 				"scheduler:ListScheduleGroups",
-				"scheduler:ListTagsForResource"
+				"scheduler:ListTagsForResource",
+				"pipes:DescribePipe",
+				"pipes:ListPipes",
+				"pipes:ListTagsForResource"
 			],
 			"Resource": "*"
 		}
