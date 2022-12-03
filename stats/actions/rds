@@ -11,6 +11,7 @@ rds:CopyDBClusterSnapshot;Write
 rds:CopyDBParameterGroup;Write
 rds:CopyDBSnapshot;Write
 rds:CopyOptionGroup;Write
+rds:CreateBlueGreenDeployment;Write
 rds:CreateCustomDBEngineVersion;Write
 rds:CreateDBCluster;Write
 rds:CreateDBClusterEndpoint;Write
@@ -28,6 +29,7 @@ rds:CreateEventSubscription;Write
 rds:CreateGlobalCluster;Write
 rds:CreateOptionGroup;Write
 rds:CrossRegionCommunication;Write
+rds:DeleteBlueGreenDeployment;Write
 rds:DeleteCustomDBEngineVersion;Write
 rds:DeleteDBCluster;Write
 rds:DeleteDBClusterEndpoint;Write
@@ -46,6 +48,7 @@ rds:DeleteGlobalCluster;Write
 rds:DeleteOptionGroup;Write
 rds:DeregisterDBProxyTargets;Write
 rds:DescribeAccountAttributes;List
+rds:DescribeBlueGreenDeployments;List
 rds:DescribeCertificates;List
 rds:DescribeDBClusterBacktracks;List
 rds:DescribeDBClusterEndpoints;List
@@ -139,4 +142,5 @@ rds:StopActivityStream;Write
 rds:StopDBCluster;Write
 rds:StopDBInstance;Write
 rds:StopDBInstanceAutomatedBackupsReplication;Write
+rds:SwitchoverBlueGreenDeployment;Write
 rds:SwitchoverReadReplica;Write

@@ -1,4 +1,8 @@
 artifact:AcceptAgreement;Write
 artifact:DownloadAgreement;Read
 artifact:Get;Read
+artifact:GetReport;Read
+artifact:GetReportMetadata;Read
+artifact:GetTermForReport;Read
+artifact:ListReports;List
 artifact:TerminateAgreement;Write

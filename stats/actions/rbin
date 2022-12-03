@@ -3,6 +3,8 @@ rbin:DeleteRule;Write
 rbin:GetRule;Read
 rbin:ListRules;Read
 rbin:ListTagsForResource;Read
+rbin:LockRule;Write
 rbin:TagResource;Tagging
+rbin:UnlockRule;Write
 rbin:UntagResource;Tagging
 rbin:UpdateRule;Write

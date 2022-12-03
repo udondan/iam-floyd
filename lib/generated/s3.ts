@@ -181,7 +181,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new multi region access point
+   * Grants permission to create a new Multi-Region Access Point
    *
    * Access Level: Write
    *
@@ -368,7 +368,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the multi region access point named in the URI
+   * Grants permission to delete the Multi-Region Access Point named in the URI
    *
    * Access Level: Write
    *
@@ -538,7 +538,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the configurations for a multi region access point
+   * Grants permission to retrieve the configurations for a Multi-Region Access Point
    *
    * Access Level: Read
    *
@@ -1147,7 +1147,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return configuration information about the specified multi region access point
+   * Grants permission to return configuration information about the specified Multi-Region Access Point
    *
    * Access Level: Read
    *
@@ -1168,7 +1168,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns the access point policy associated with the specified multi region access point
+   * Grants permission to returns the access point policy associated with the specified Multi-Region Access Point
    *
    * Access Level: Read
    *
@@ -1189,7 +1189,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the policy status for a specific multi region access point policy
+   * Grants permission to return the policy status for a specific Multi-Region Access Point policy
    *
    * Access Level: Read
    *
@@ -1207,6 +1207,27 @@ export class S3 extends PolicyStatement {
    */
   public toGetMultiRegionAccessPointPolicyStatus() {
     return this.to('GetMultiRegionAccessPointPolicyStatus');
+  }
+
+  /**
+   * Grants permission to return the route configuration for a Multi-Region Access Point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointRoutes.html
+   */
+  public toGetMultiRegionAccessPointRoutes() {
+    return this.to('GetMultiRegionAccessPointRoutes');
   }
 
   /**
@@ -1738,7 +1759,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list multi region access points
+   * Grants permission to list Multi-Region Access Points
    *
    * Access Level: List
    *
@@ -2301,7 +2322,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an access policy with a specified multi region access point
+   * Grants permission to associate an access policy with a specified Multi-Region Access Point
    *
    * Access Level: Permissions management
    *
@@ -2669,6 +2690,27 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit a route configuration update for a Multi-Region Access Point
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_SubmitMultiRegionAccessPointRoutes.html
+   */
+  public toSubmitMultiRegionAccessPointRoutes() {
+    return this.to('SubmitMultiRegionAccessPointRoutes');
+  }
+
+  /**
    * Grants permission to update the priority of an existing job
    *
    * Access Level: Write
@@ -2753,6 +2795,7 @@ export class S3 extends PolicyStatement {
       'ReplicateDelete',
       'ReplicateObject',
       'RestoreObject',
+      'SubmitMultiRegionAccessPointRoutes',
       'UpdateJobPriority',
       'UpdateJobStatus'
     ],
@@ -2821,6 +2864,7 @@ export class S3 extends PolicyStatement {
       'GetMultiRegionAccessPoint',
       'GetMultiRegionAccessPointPolicy',
       'GetMultiRegionAccessPointPolicyStatus',
+      'GetMultiRegionAccessPointRoutes',
       'GetObject',
       'GetObjectAcl',
       'GetObjectAttributes',
@@ -2994,6 +3038,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3020,6 +3065,7 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3058,6 +3104,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3084,6 +3131,7 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3122,6 +3170,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3148,6 +3197,7 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3367,6 +3417,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3435,6 +3486,7 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
    *
@@ -3506,6 +3558,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3573,6 +3626,7 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
    *
@@ -3646,6 +3700,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3713,6 +3768,7 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
    *
@@ -3928,6 +3984,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -3995,6 +4052,7 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
    *
@@ -4068,6 +4126,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
+   * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectAttributes()
@@ -4135,6 +4194,7 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
    *

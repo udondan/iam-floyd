@@ -208,6 +208,42 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a blue-green deployment for a given source cluster or instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifClusterTag()
+   * - .ifClusterPgTag()
+   * - .ifDbTag()
+   * - .ifPgTag()
+   * - .ifReqTag()
+   * - .ifDatabaseEngine()
+   * - .ifDatabaseName()
+   * - .ifStorageEncrypted()
+   * - .ifDatabaseClass()
+   * - .ifStorageSize()
+   * - .ifMultiAz()
+   * - .ifPiops()
+   * - .ifVpc()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   * - rds:CreateDBCluster
+   * - rds:CreateDBClusterEndpoint
+   * - rds:CreateDBInstance
+   * - rds:CreateDBInstanceReadReplica
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateBlueGreenDeployment.html
+   */
+  public toCreateBlueGreenDeployment() {
+    return this.to('CreateBlueGreenDeployment');
+  }
+
+  /**
    * Grants permission to create a custom engine version
    *
    * Access Level: Write
@@ -523,6 +559,28 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete blue green deployments
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:DeleteDBCluster
+   * - rds:DeleteDBClusterEndpoint
+   * - rds:DeleteDBInstance
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteBlueGreenDeployment.html
+   */
+  public toDeleteBlueGreenDeployment() {
+    return this.to('DeleteBlueGreenDeployment');
+  }
+
+  /**
    * Grants permission to delete an existing custom engine version
    *
    * Access Level: Write
@@ -721,6 +779,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeAccountAttributes() {
     return this.to('DescribeAccountAttributes');
+  }
+
+  /**
+   * Grants permission to describe blue green deployments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeBlueGreenDeployments.html
+   */
+  public toDescribeBlueGreenDeployments() {
+    return this.to('DescribeBlueGreenDeployments');
   }
 
   /**
@@ -1853,6 +1922,29 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to switch a blue-green deployment from source instance or cluster to target
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:ModifyDBCluster
+   * - rds:ModifyDBInstance
+   * - rds:PromoteReadReplica
+   * - rds:PromoteReadReplicaDBCluster
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverBlueGreenDeployment.html
+   */
+  public toSwitchoverBlueGreenDeployment() {
+    return this.to('SwitchoverBlueGreenDeployment');
+  }
+
+  /**
    * Grants permission to switch over a read replica, making it the new primary database
    *
    * Access Level: Write
@@ -1876,6 +1968,7 @@ export class Rds extends PolicyStatement {
       'CopyDBParameterGroup',
       'CopyDBSnapshot',
       'CopyOptionGroup',
+      'CreateBlueGreenDeployment',
       'CreateCustomDBEngineVersion',
       'CreateDBCluster',
       'CreateDBClusterEndpoint',
@@ -1893,6 +1986,7 @@ export class Rds extends PolicyStatement {
       'CreateGlobalCluster',
       'CreateOptionGroup',
       'CrossRegionCommunication',
+      'DeleteBlueGreenDeployment',
       'DeleteCustomDBEngineVersion',
       'DeleteDBCluster',
       'DeleteDBClusterEndpoint',
@@ -1960,6 +2054,7 @@ export class Rds extends PolicyStatement {
       'StopDBCluster',
       'StopDBInstance',
       'StopDBInstanceAutomatedBackupsReplication',
+      'SwitchoverBlueGreenDeployment',
       'SwitchoverReadReplica'
     ],
     Tagging: [
@@ -1971,6 +2066,7 @@ export class Rds extends PolicyStatement {
     ],
     List: [
       'DescribeAccountAttributes',
+      'DescribeBlueGreenDeployments',
       'DescribeCertificates',
       'DescribeDBClusterBacktracks',
       'DescribeDBClusterEndpoints',
@@ -2339,6 +2435,23 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type deployment to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+   *
+   * @param blueGreenDeploymentIdentifier - Identifier for the blueGreenDeploymentIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeployment(blueGreenDeploymentIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:deployment:${ blueGreenDeploymentIdentifier }`);
+  }
+
+  /**
    * Filters access by the type of backup target. One of: REGION, OUTPOSTS
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
@@ -2362,6 +2475,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toModifyDBCluster()
    * - .toRestoreDBClusterFromSnapshot()
@@ -2383,6 +2497,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toRestoreDBClusterFromS3()
    *
@@ -2402,6 +2517,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toRestoreDBClusterFromS3()
    *
@@ -2435,6 +2551,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
+   *
    * Applies to resource types:
    * - db
    *
@@ -2450,6 +2569,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toModifyDBCluster()
    * - .toRestoreDBClusterFromSnapshot()
@@ -2471,6 +2591,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toRestoreDBClusterFromS3()
    *
@@ -2489,6 +2610,7 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
    * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toModifyDBCluster()
    * - .toRestoreDBClusterFromSnapshot()
@@ -2509,6 +2631,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
+   *
    * Applies to resource types:
    * - db
    *
@@ -2522,6 +2647,9 @@ export class Rds extends PolicyStatement {
    * Filters access by the tag attached to a DB cluster parameter group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    *
    * Applies to resource types:
    * - cluster-pg
@@ -2555,6 +2683,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
+   *
    * Applies to resource types:
    * - cluster
    *
@@ -2570,6 +2701,9 @@ export class Rds extends PolicyStatement {
    * Filters access by the tag attached to a DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
    *
    * Applies to resource types:
    * - db
@@ -2619,6 +2753,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
+   *
    * Applies to resource types:
    * - pg
    *
@@ -2637,6 +2774,7 @@ export class Rds extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateBlueGreenDeployment()
    * - .toCreateDBCluster()
    * - .toCreateDBClusterParameterGroup()
    * - .toCreateDBClusterSnapshot()
@@ -2648,6 +2786,7 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
    * - .toCreateOptionGroup()
+   * - .toDeleteBlueGreenDeployment()
    * - .toRemoveTagsFromResource()
    * - .toRestoreDBClusterFromS3()
    * - .toRestoreDBClusterFromSnapshot()
@@ -2655,6 +2794,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
    * - .toRestoreDBInstanceToPointInTime()
+   * - .toSwitchoverBlueGreenDeployment()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

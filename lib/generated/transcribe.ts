@@ -396,6 +396,28 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a protocol where audio is streamed to Transcribe Call Analytics and the transcription results are streamed to your application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartCallAnalyticsStreamTranscription.html
+   */
+  public toStartCallAnalyticsStreamTranscription() {
+    return this.to('StartCallAnalyticsStreamTranscription');
+  }
+
+  /**
+   * Grants permission to start a WebSocket where audio is streamed to Transcribe Call Analytics and the transcription results are streamed to your application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartCallAnalyticsStreamTranscriptionWebSocket.html
+   */
+  public toStartCallAnalyticsStreamTranscriptionWebSocket() {
+    return this.to('StartCallAnalyticsStreamTranscriptionWebSocket');
+  }
+
+  /**
    * Grants permission to start a protocol where audio is streamed to Transcribe Medical and the transcription results are streamed to your application
    *
    * Access Level: Write
@@ -579,6 +601,8 @@ export class Transcribe extends PolicyStatement {
       'DeleteVocabulary',
       'DeleteVocabularyFilter',
       'StartCallAnalyticsJob',
+      'StartCallAnalyticsStreamTranscription',
+      'StartCallAnalyticsStreamTranscriptionWebSocket',
       'StartMedicalStreamTranscription',
       'StartMedicalStreamTranscriptionWebSocket',
       'StartMedicalTranscriptionJob',

@@ -1,0 +1,7 @@
+omics:AnnotationImportJobJobId
+omics:AnnotationStoreName
+omics:RequestTag/${TagKey}
+omics:ResourceTag/${TagKey}
+omics:TagKeys
+omics:VariantImportJobJobId
+omics:VariantStoreName

@@ -1,0 +1,15 @@
+oam:CreateLink;Write
+oam:CreateSink;Write
+oam:DeleteLink;Write
+oam:DeleteSink;Write
+oam:GetLink;Read
+oam:GetSink;Read
+oam:GetSinkPolicy;Read
+oam:ListAttachedLinks;Read
+oam:ListLinks;Read
+oam:ListSinks;Read
+oam:ListTagsForResource;Read
+oam:PutSinkPolicy;Write
+oam:TagResource;Tagging
+oam:UntagResource;Tagging
+oam:UpdateLink;Write

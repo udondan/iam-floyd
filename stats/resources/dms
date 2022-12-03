@@ -1,6 +1,9 @@
 dms:Certificate
+dms:DataProvider
 dms:Endpoint
 dms:EventSubscription
+dms:InstanceProfile
+dms:MigrationProject
 dms:ReplicationInstance
 dms:ReplicationSubnetGroup
 dms:ReplicationTask

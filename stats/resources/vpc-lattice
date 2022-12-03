@@ -1,0 +1,8 @@
+vpc-lattice:AccessLogSubscription
+vpc-lattice:Listener
+vpc-lattice:Rule
+vpc-lattice:Service
+vpc-lattice:ServiceNetwork
+vpc-lattice:ServiceNetworkServiceAssociation
+vpc-lattice:ServiceNetworkVpcAssociation
+vpc-lattice:TargetGroup

@@ -209,6 +209,7 @@ export class Drs extends PolicyStatement {
    * Access Level: Read
    *
    * Dependent actions:
+   * - drs:DescribeSourceServers
    * - ec2:DescribeInstances
    *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeRecoveryInstances.html
@@ -587,6 +588,26 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reverse replication
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - drs:DescribeReplicationConfigurationTemplates
+   * - drs:DescribeSourceServers
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ReverseReplication.html
+   */
+  public toReverseReplication() {
+    return this.to('ReverseReplication');
+  }
+
+  /**
    * Grants permission to send agent logs
    *
    * Access Level: Write
@@ -720,6 +741,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartReplication.html
+   */
+  public toStartReplication() {
+    return this.to('StartReplication');
+  }
+
+  /**
    * Grants permission to stop failback
    *
    * Access Level: Write
@@ -728,6 +760,17 @@ export class Drs extends PolicyStatement {
    */
   public toStopFailback() {
     return this.to('StopFailback');
+  }
+
+  /**
+   * Grants permission to stop replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StopReplication.html
+   */
+  public toStopReplication() {
+    return this.to('StopReplication');
   }
 
   /**
@@ -756,6 +799,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - drs:DescribeSourceServers
    * - ec2:DeleteVolume
    * - ec2:DescribeInstances
    * - ec2:DescribeVolumes
@@ -940,6 +984,7 @@ export class Drs extends PolicyStatement {
       'NotifyReplicationServerAuthenticationForDrs',
       'NotifyVolumeEventForDrs',
       'RetryDataReplication',
+      'ReverseReplication',
       'SendAgentLogsForDrs',
       'SendAgentMetricsForDrs',
       'SendChannelCommandResultForDrs',
@@ -948,7 +993,9 @@ export class Drs extends PolicyStatement {
       'SendVolumeStatsForDrs',
       'StartFailbackLaunch',
       'StartRecovery',
+      'StartReplication',
       'StopFailback',
+      'StopReplication',
       'TerminateRecoveryInstances',
       'UpdateAgentBacklogForDrs',
       'UpdateAgentConversionInfoForDrs',

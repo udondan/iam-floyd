@@ -29,6 +29,8 @@ transcribe:ListTranscriptionJobs;List
 transcribe:ListVocabularies;List
 transcribe:ListVocabularyFilters;List
 transcribe:StartCallAnalyticsJob;Write
+transcribe:StartCallAnalyticsStreamTranscription;Write
+transcribe:StartCallAnalyticsStreamTranscriptionWebSocket;Write
 transcribe:StartMedicalStreamTranscription;Write
 transcribe:StartMedicalStreamTranscriptionWebSocket;Write
 transcribe:StartMedicalTranscriptionJob;Write

@@ -20,6 +20,7 @@ xray:GetServiceGraph;Read
 xray:GetTimeSeriesServiceStatistics;Read
 xray:GetTraceGraph;Read
 xray:GetTraceSummaries;Read
+xray:Link;Write
 xray:ListResourcePolicies;List
 xray:ListTagsForResource;List
 xray:PutEncryptionConfig;Permissions management

@@ -2,6 +2,7 @@ glue:blueprint
 glue:catalog
 glue:connection
 glue:crawler
+glue:dataQualityRuleset
 glue:database
 glue:devendpoint
 glue:job

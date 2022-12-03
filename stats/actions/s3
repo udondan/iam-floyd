@@ -55,6 +55,7 @@ s3:GetMetricsConfiguration;Read
 s3:GetMultiRegionAccessPoint;Read
 s3:GetMultiRegionAccessPointPolicy;Read
 s3:GetMultiRegionAccessPointPolicyStatus;Read
+s3:GetMultiRegionAccessPointRoutes;Read
 s3:GetObject;Read
 s3:GetObjectAcl;Read
 s3:GetObjectAttributes;Read
@@ -124,5 +125,6 @@ s3:ReplicateDelete;Write
 s3:ReplicateObject;Write
 s3:ReplicateTags;Tagging
 s3:RestoreObject;Write
+s3:SubmitMultiRegionAccessPointRoutes;Write
 s3:UpdateJobPriority;Write
 s3:UpdateJobStatus;Write

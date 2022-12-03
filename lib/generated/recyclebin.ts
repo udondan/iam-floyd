@@ -94,6 +94,21 @@ export class Rbin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to lock an existing Recycle Bin retention rule
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAttributeResourceType()
+   *
+   * https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_LockRule.html
+   */
+  public toLockRule() {
+    return this.to('LockRule');
+  }
+
+  /**
    * Grants permission to add or update tags of a resource
    *
    * Access Level: Tagging
@@ -108,6 +123,21 @@ export class Rbin extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to unlock an existing Recycle Bin retention rule
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAttributeResourceType()
+   *
+   * https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_UnlockRule.html
+   */
+  public toUnlockRule() {
+    return this.to('UnlockRule');
   }
 
   /**
@@ -145,6 +175,8 @@ export class Rbin extends PolicyStatement {
     Write: [
       'CreateRule',
       'DeleteRule',
+      'LockRule',
+      'UnlockRule',
       'UpdateRule'
     ],
     Read: [
@@ -184,7 +216,9 @@ export class Rbin extends PolicyStatement {
    * - .toDeleteRule()
    * - .toGetRule()
    * - .toListTagsForResource()
+   * - .toLockRule()
    * - .toTagResource()
+   * - .toUnlockRule()
    * - .toUntagResource()
    * - .toUpdateRule()
    *

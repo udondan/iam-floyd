@@ -19,6 +19,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a legal hold
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CancelLegalHold.html
+   */
+  public toCancelLegalHold() {
+    return this.to('CancelLegalHold');
+  }
+
+  /**
    * Grants permission to copy from a backup vault
    *
    * Access Level: Write
@@ -104,6 +115,21 @@ export class Backup extends PolicyStatement {
    */
   public toCreateFramework() {
     return this.to('CreateFramework');
+  }
+
+  /**
+   * Grants permission to create a new legal hold
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateLegalHold.html
+   */
+  public toCreateLegalHold() {
+    return this.to('CreateLegalHold');
   }
 
   /**
@@ -354,6 +380,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a recovery point from its parent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateRecoveryPointFromParent.html
+   */
+  public toDisassociateRecoveryPointFromParent() {
+    return this.to('DisassociateRecoveryPointFromParent');
+  }
+
+  /**
    * Grants permission to export a backup plan as a JSON
    *
    * Access Level: Read
@@ -428,6 +465,17 @@ export class Backup extends PolicyStatement {
    */
   public toGetBackupVaultNotifications() {
     return this.to('GetBackupVaultNotifications');
+  }
+
+  /**
+   * Grants permission to get a legal hold
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetLegalHold.html
+   */
+  public toGetLegalHold() {
+    return this.to('GetLegalHold');
   }
 
   /**
@@ -541,6 +589,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list legal holds
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListLegalHolds.html
+   */
+  public toListLegalHolds() {
+    return this.to('ListLegalHolds');
+  }
+
+  /**
    * Grants permission to list protected resources by AWS Backup
    *
    * Access Level: List
@@ -560,6 +619,17 @@ export class Backup extends PolicyStatement {
    */
   public toListRecoveryPointsByBackupVault() {
     return this.to('ListRecoveryPointsByBackupVault');
+  }
+
+  /**
+   * Grants permission to list recovery points by legal hold
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByLegalHold.html
+   */
+  public toListRecoveryPointsByLegalHold() {
+    return this.to('ListRecoveryPointsByLegalHold');
   }
 
   /**
@@ -632,6 +702,9 @@ export class Backup extends PolicyStatement {
    * Grants permission to add a lock configuration to the backup vault
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifChangeableForDays()
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultLockConfiguration.html
    */
@@ -826,12 +899,14 @@ export class Backup extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelLegalHold',
       'CopyFromBackupVault',
       'CopyIntoBackupVault',
       'CreateBackupPlan',
       'CreateBackupSelection',
       'CreateBackupVault',
       'CreateFramework',
+      'CreateLegalHold',
       'CreateReportPlan',
       'DeleteBackupPlan',
       'DeleteBackupSelection',
@@ -842,6 +917,7 @@ export class Backup extends PolicyStatement {
       'DeleteRecoveryPoint',
       'DeleteReportPlan',
       'DisassociateRecoveryPoint',
+      'DisassociateRecoveryPointFromParent',
       'PutBackupVaultLockConfiguration',
       'PutBackupVaultNotifications',
       'StartBackupJob',
@@ -879,6 +955,7 @@ export class Backup extends PolicyStatement {
       'GetBackupSelection',
       'GetBackupVaultAccessPolicy',
       'GetBackupVaultNotifications',
+      'GetLegalHold',
       'GetRecoveryPointRestoreMetadata',
       'GetSupportedResourceTypes',
       'ListTags'
@@ -892,8 +969,10 @@ export class Backup extends PolicyStatement {
       'ListBackupVaults',
       'ListCopyJobs',
       'ListFrameworks',
+      'ListLegalHolds',
       'ListProtectedResources',
       'ListRecoveryPointsByBackupVault',
+      'ListRecoveryPointsByLegalHold',
       'ListRecoveryPointsByResource',
       'ListReportJobs',
       'ListReportPlans',
@@ -990,6 +1069,38 @@ export class Backup extends PolicyStatement {
    */
   public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:report-plan:${ reportPlanName }-${ reportPlanId }`);
+  }
+
+  /**
+   * Adds a resource of type legalHold to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/legal-holds.html
+   *
+   * @param legalHoldId - Identifier for the legalHoldId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLegalHold(legalHoldId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:legal-hold:${ legalHoldId }`);
+  }
+
+  /**
+   * Filters access by the value of the ChangeableForDays parameter
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
+   *
+   * Applies to actions:
+   * - .toPutBackupVaultLockConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifChangeableForDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`ChangeableForDays`, value, operator || 'NumericEquals');
   }
 
   /**

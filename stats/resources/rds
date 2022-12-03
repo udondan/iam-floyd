@@ -4,6 +4,7 @@ rds:cluster-endpoint
 rds:cluster-pg
 rds:cluster-snapshot
 rds:db
+rds:deployment
 rds:es
 rds:global-cluster
 rds:og

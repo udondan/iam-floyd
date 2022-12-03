@@ -138,6 +138,21 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to define a new location for a fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html
+   */
+  public toCreateLocation() {
+    return this.to('CreateLocation');
+  }
+
+  /**
    * Grants permission to create a new FlexMatch matchmaker
    *
    * Access Level: Write
@@ -293,6 +308,17 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteLocation.html
+   */
+  public toDeleteLocation() {
+    return this.to('DeleteLocation');
+  }
+
+  /**
    * Grants permission to delete an existing FlexMatch matchmaker
    *
    * Access Level: Write
@@ -359,6 +385,17 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister a compute against a fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html
+   */
+  public toDeregisterCompute() {
+    return this.to('DeregisterCompute');
+  }
+
+  /**
    * Grants permission to remove a game server from a game server group
    *
    * Access Level: Write
@@ -389,6 +426,17 @@ export class Gamelift extends PolicyStatement {
    */
   public toDescribeBuild() {
     return this.to('DescribeBuild');
+  }
+
+  /**
+   * Grants permission to retrieve general properties of the compute such as ARN, fleet details, SDK endpoints, and location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html
+   */
+  public toDescribeCompute() {
+    return this.to('DescribeCompute');
   }
 
   /**
@@ -678,6 +726,28 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve access credentials of the compute
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html
+   */
+  public toGetComputeAccess() {
+    return this.to('GetComputeAccess');
+  }
+
+  /**
+   * Grants permission to retrieve an authorization token for a compute and fleet to use in game server processes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAuthToken.html
+   */
+  public toGetComputeAuthToken() {
+    return this.to('GetComputeAuthToken');
+  }
+
+  /**
    * Grants permission to retrieve the location of stored logs for a game session
    *
    * Access Level: Read
@@ -700,7 +770,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all aliases that are defined in the current region
+   * Grants permission to retrieve all aliases that are defined in the current Region
    *
    * Access Level: List
    *
@@ -711,7 +781,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all game build in the current region
+   * Grants permission to retrieve all game build in the current Region
    *
    * Access Level: List
    *
@@ -722,7 +792,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of fleet IDs for all fleets in the current region
+   * Grants permission to retrieve all compute resources in the current Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html
+   */
+  public toListCompute() {
+    return this.to('ListCompute');
+  }
+
+  /**
+   * Grants permission to retrieve a list of fleet IDs for all fleets in the current Region
    *
    * Access Level: List
    *
@@ -733,7 +814,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all game server groups that are defined in the current region
+   * Grants permission to retrieve all game server groups that are defined in the current Region
    *
    * Access Level: List
    *
@@ -752,6 +833,17 @@ export class Gamelift extends PolicyStatement {
    */
   public toListGameServers() {
     return this.to('ListGameServers');
+  }
+
+  /**
+   * Grants permission to retrieve all locations in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListLocations.html
+   */
+  public toListLocations() {
+    return this.to('ListLocations');
   }
 
   /**
@@ -785,6 +877,17 @@ export class Gamelift extends PolicyStatement {
    */
   public toPutScalingPolicy() {
     return this.to('PutScalingPolicy');
+  }
+
+  /**
+   * Grants permission to register a compute against a fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterCompute.html
+   */
+  public toRegisterCompute() {
+    return this.to('RegisterCompute');
   }
 
   /**
@@ -1113,6 +1216,7 @@ export class Gamelift extends PolicyStatement {
       'CreateGameServerGroup',
       'CreateGameSession',
       'CreateGameSessionQueue',
+      'CreateLocation',
       'CreateMatchmakingConfiguration',
       'CreateMatchmakingRuleSet',
       'CreatePlayerSession',
@@ -1126,14 +1230,17 @@ export class Gamelift extends PolicyStatement {
       'DeleteFleetLocations',
       'DeleteGameServerGroup',
       'DeleteGameSessionQueue',
+      'DeleteLocation',
       'DeleteMatchmakingConfiguration',
       'DeleteMatchmakingRuleSet',
       'DeleteScalingPolicy',
       'DeleteScript',
       'DeleteVpcPeeringAuthorization',
       'DeleteVpcPeeringConnection',
+      'DeregisterCompute',
       'DeregisterGameServer',
       'PutScalingPolicy',
+      'RegisterCompute',
       'RegisterGameServer',
       'ResumeGameServerGroup',
       'StartFleetActions',
@@ -1160,6 +1267,7 @@ export class Gamelift extends PolicyStatement {
     Read: [
       'DescribeAlias',
       'DescribeBuild',
+      'DescribeCompute',
       'DescribeEC2InstanceLimits',
       'DescribeFleetAttributes',
       'DescribeFleetCapacity',
@@ -1186,6 +1294,8 @@ export class Gamelift extends PolicyStatement {
       'DescribeScript',
       'DescribeVpcPeeringAuthorizations',
       'DescribeVpcPeeringConnections',
+      'GetComputeAccess',
+      'GetComputeAuthToken',
       'GetGameSessionLogUrl',
       'GetInstanceAccess',
       'ListTagsForResource',
@@ -1197,9 +1307,11 @@ export class Gamelift extends PolicyStatement {
     List: [
       'ListAliases',
       'ListBuilds',
+      'ListCompute',
       'ListFleets',
       'ListGameServerGroups',
       'ListGameServers',
+      'ListLocations',
       'ListScripts'
     ],
     Tagging: [
@@ -1211,7 +1323,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type alias to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Alias.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-aliases.html
    *
    * @param aliasId - Identifier for the aliasId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1227,7 +1339,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type build to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Build.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-builds.html
    *
    * @param buildId - Identifier for the buildId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -1242,26 +1354,9 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type script to the statement
-   *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Script.html
-   *
-   * @param scriptId - Identifier for the scriptId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
-  }
-
-  /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_FleetAttributes.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-fleets.html
    *
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1276,9 +1371,26 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type gameServerGroup to the statement
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-integrate-gameservergroup.html
+   *
+   * @param gameServerGroupName - Identifier for the gameServerGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
+  }
+
+  /**
    * Adds a resource of type gameSessionQueue to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameSessionQueue.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html
    *
    * @param gameSessionQueueName - Identifier for the gameSessionQueueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1293,9 +1405,25 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type location to the statement
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/locations-console.html
+   *
+   * @param locationId - Identifier for the locationId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLocation(locationId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }::location/${ locationId }`);
+  }
+
+  /**
    * Adds a resource of type matchmakingConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingConfiguration.html
+   * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-create-configuration.html
    *
    * @param matchmakingConfigurationName - Identifier for the matchmakingConfigurationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1312,7 +1440,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type matchmakingRuleSet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingRuleSet.html
+   * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html
    *
    * @param matchmakingRuleSetName - Identifier for the matchmakingRuleSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1327,19 +1455,19 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type gameServerGroup to the statement
+   * Adds a resource of type script to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameServerGroup.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-scripts.html
    *
-   * @param gameServerGroupName - Identifier for the gameServerGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param scriptId - Identifier for the scriptId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
+  public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
   }
 }

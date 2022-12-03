@@ -1,0 +1,3 @@
+sagemaker-geospatial:EarthObservationJob
+sagemaker-geospatial:RasterDataCollection
+sagemaker-geospatial:VectorEnrichmentJob

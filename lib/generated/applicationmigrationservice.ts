@@ -19,6 +19,50 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to archive an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ArchiveApplication.html
+   */
+  public toArchiveApplication() {
+    return this.to('ArchiveApplication');
+  }
+
+  /**
+   * Grants permission to archive a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ArchiveWave.html
+   */
+  public toArchiveWave() {
+    return this.to('ArchiveWave');
+  }
+
+  /**
+   * Grants permission to associate applications to a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_AssociateApplications.html
+   */
+  public toAssociateApplications() {
+    return this.to('AssociateApplications');
+  }
+
+  /**
+   * Grants permission to associate source servers to an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_AssociateSourceServers.html
+   */
+  public toAssociateSourceServers() {
+    return this.to('AssociateSourceServers');
+  }
+
+  /**
    * Grants permission to create volume snapshot group
    *
    * Access Level: Write
@@ -49,6 +93,21 @@ export class Mgn extends PolicyStatement {
    */
   public toChangeServerLifeCycleState() {
     return this.to('ChangeServerLifeCycleState');
+  }
+
+  /**
+   * Grants permission to create an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    return this.to('CreateApplication');
   }
 
   /**
@@ -94,6 +153,32 @@ export class Mgn extends PolicyStatement {
    */
   public toCreateVcenterClientForMgn() {
     return this.to('CreateVcenterClientForMgn');
+  }
+
+  /**
+   * Grants permission to create a wave
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateWave.html
+   */
+  public toCreateWave() {
+    return this.to('CreateWave');
+  }
+
+  /**
+   * Grants permission to delete an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    return this.to('DeleteApplication');
   }
 
   /**
@@ -149,6 +234,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDeleteVcenterClient() {
     return this.to('DeleteVcenterClient');
+  }
+
+  /**
+   * Grants permission to delete a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteWave.html
+   */
+  public toDeleteWave() {
+    return this.to('DeleteWave');
   }
 
   /**
@@ -237,6 +333,28 @@ export class Mgn extends PolicyStatement {
    */
   public toDescribeVcenterClients() {
     return this.to('DescribeVcenterClients');
+  }
+
+  /**
+   * Grants permission to disassociate applications from a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DisassociateApplications.html
+   */
+  public toDisassociateApplications() {
+    return this.to('DisassociateApplications');
+  }
+
+  /**
+   * Grants permission to disassociate source servers from an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DisassociateSourceServers.html
+   */
+  public toDisassociateSourceServers() {
+    return this.to('DisassociateSourceServers');
   }
 
   /**
@@ -400,6 +518,28 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list application summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListApplications.html
+   */
+  public toListApplications() {
+    return this.to('ListApplications');
+  }
+
+  /**
+   * Grants permission to list source server action documents
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListSourceServerActions.html
+   */
+  public toListSourceServerActions() {
+    return this.to('ListSourceServerActions');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -408,6 +548,28 @@ export class Mgn extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list launch configuration template action documents
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListTemplateActions.html
+   */
+  public toListTemplateActions() {
+    return this.to('ListTemplateActions');
+  }
+
+  /**
+   * Grants permission to list wave summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListWaves.html
+   */
+  public toListWaves() {
+    return this.to('ListWaves');
   }
 
   /**
@@ -477,6 +639,28 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put source server action document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_PutSourceServerAction.html
+   */
+  public toPutSourceServerAction() {
+    return this.to('PutSourceServerAction');
+  }
+
+  /**
+   * Grants permission to put launch configuration template action document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_PutTemplateAction.html
+   */
+  public toPutTemplateAction() {
+    return this.to('PutTemplateAction');
+  }
+
+  /**
    * Grants permission to register agent
    *
    * Access Level: Write
@@ -489,6 +673,28 @@ export class Mgn extends PolicyStatement {
    */
   public toRegisterAgentForMgn() {
     return this.to('RegisterAgentForMgn');
+  }
+
+  /**
+   * Grants permission to remove source server action document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_RemoveSourceServerAction.html
+   */
+  public toRemoveSourceServerAction() {
+    return this.to('RemoveSourceServerAction');
+  }
+
+  /**
+   * Grants permission to remove launch configuration template action document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_RemoveTemplateAction.html
+   */
+  public toRemoveTemplateAction() {
+    return this.to('RemoveTemplateAction');
   }
 
   /**
@@ -745,6 +951,28 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to unarchive an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UnarchiveApplication.html
+   */
+  public toUnarchiveApplication() {
+    return this.to('UnarchiveApplication');
+  }
+
+  /**
+   * Grants permission to unarchive a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UnarchiveWave.html
+   */
+  public toUnarchiveWave() {
+    return this.to('UnarchiveWave');
+  }
+
+  /**
    * Grants permission to untag a resource
    *
    * Access Level: Tagging
@@ -814,6 +1042,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateApplication.html
+   */
+  public toUpdateApplication() {
+    return this.to('UpdateApplication');
+  }
+
+  /**
    * Grants permission to update launch configuration
    *
    * Access Level: Write
@@ -869,6 +1108,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a wave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateWave.html
+   */
+  public toUpdateWave() {
+    return this.to('UpdateWave');
+  }
+
+  /**
    * Grants permission to verify client role
    *
    * Access Level: Read
@@ -881,17 +1131,27 @@ export class Mgn extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ArchiveApplication',
+      'ArchiveWave',
+      'AssociateApplications',
+      'AssociateSourceServers',
       'BatchCreateVolumeSnapshotGroupForMgn',
       'BatchDeleteSnapshotRequestForMgn',
       'ChangeServerLifeCycleState',
+      'CreateApplication',
       'CreateLaunchConfigurationTemplate',
       'CreateReplicationConfigurationTemplate',
       'CreateVcenterClientForMgn',
+      'CreateWave',
+      'DeleteApplication',
       'DeleteJob',
       'DeleteLaunchConfigurationTemplate',
       'DeleteReplicationConfigurationTemplate',
       'DeleteSourceServer',
       'DeleteVcenterClient',
+      'DeleteWave',
+      'DisassociateApplications',
+      'DisassociateSourceServers',
       'DisconnectFromService',
       'FinalizeCutover',
       'InitializeService',
@@ -902,7 +1162,11 @@ export class Mgn extends PolicyStatement {
       'NotifyAgentDisconnectedForMgn',
       'NotifyAgentReplicationProgressForMgn',
       'NotifyVcenterClientStartedForMgn',
+      'PutSourceServerAction',
+      'PutTemplateAction',
       'RegisterAgentForMgn',
+      'RemoveSourceServerAction',
+      'RemoveTemplateAction',
       'RetryDataReplication',
       'SendAgentLogsForMgn',
       'SendAgentMetricsForMgn',
@@ -916,16 +1180,20 @@ export class Mgn extends PolicyStatement {
       'StartReplication',
       'StartTest',
       'TerminateTargetInstances',
+      'UnarchiveApplication',
+      'UnarchiveWave',
       'UpdateAgentBacklogForMgn',
       'UpdateAgentConversionInfoForMgn',
       'UpdateAgentReplicationInfoForMgn',
       'UpdateAgentReplicationProcessStateForMgn',
       'UpdateAgentSourcePropertiesForMgn',
+      'UpdateApplication',
       'UpdateLaunchConfiguration',
       'UpdateLaunchConfigurationTemplate',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate',
-      'UpdateSourceServerReplicationType'
+      'UpdateSourceServerReplicationType',
+      'UpdateWave'
     ],
     Read: [
       'DescribeJobLogItems',
@@ -949,7 +1217,11 @@ export class Mgn extends PolicyStatement {
       'DescribeLaunchConfigurationTemplates',
       'DescribeReplicationConfigurationTemplates',
       'DescribeSourceServers',
-      'DescribeVcenterClients'
+      'DescribeVcenterClients',
+      'ListApplications',
+      'ListSourceServerActions',
+      'ListTemplateActions',
+      'ListWaves'
     ],
     Tagging: [
       'TagResource',
@@ -1011,7 +1283,7 @@ export class Mgn extends PolicyStatement {
   /**
    * Adds a resource of type VcenterClientResource to the statement
    *
-   * https://docs.aws.amazon.com/mgn/latest/ug/vcenter-client.html
+   * https://docs.aws.amazon.com/mgn/latest/ug/agentless-mgn.html
    *
    * @param vcenterClientID - Identifier for the vcenterClientID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1040,6 +1312,40 @@ export class Mgn extends PolicyStatement {
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+  }
+
+  /**
+   * Adds a resource of type ApplicationResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/applications.html
+   *
+   * @param applicationID - Identifier for the applicationID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplicationResource(applicationID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:application/${ applicationID }`);
+  }
+
+  /**
+   * Adds a resource of type WaveResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/waves.html
+   *
+   * @param waveID - Identifier for the waveID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWaveResource(waveID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:wave/${ waveID }`);
   }
 
   /**

@@ -23,7 +23,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_AssociateUser.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_AssociateUser.html
    */
   public toAssociateUser() {
     return this.to('AssociateUser');
@@ -34,7 +34,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeregisterIdentityProvider.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_DeregisterIdentityProvider.html
    */
   public toDeregisterIdentityProvider() {
     return this.to('DeregisterIdentityProvider');
@@ -45,18 +45,18 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DisassociateUser.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_DisassociateUser.html
    */
   public toDisassociateUser() {
     return this.to('DisassociateUser');
   }
 
   /**
-   * Grants permission to list all the Identity Providers on license manager user subscriptions
+   * Grants permission to list all the identity providers on license manager user subscriptions
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListIdentityProviders.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListIdentityProviders.html
    */
   public toListIdentityProviders() {
     return this.to('ListIdentityProviders');
@@ -67,7 +67,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListInstances.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListInstances.html
    */
   public toListInstances() {
     return this.to('ListInstances');
@@ -78,7 +78,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListProductSubscriptions.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListProductSubscriptions.html
    */
   public toListProductSubscriptions() {
     return this.to('ListProductSubscriptions');
@@ -89,7 +89,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUserAssociations.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListUserAssociations.html
    */
   public toListUserAssociations() {
     return this.to('ListUserAssociations');
@@ -100,7 +100,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_RegisterIdentityProvider.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_RegisterIdentityProvider.html
    */
   public toRegisterIdentityProvider() {
     return this.to('RegisterIdentityProvider');
@@ -111,7 +111,7 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_StartProductSubscription.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_StartProductSubscription.html
    */
   public toStartProductSubscription() {
     return this.to('StartProductSubscription');
@@ -122,10 +122,21 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_StopProductSubscription.html
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_StopProductSubscription.html
    */
   public toStopProductSubscription() {
     return this.to('StopProductSubscription');
+  }
+
+  /**
+   * Grants permission to update the identity provider configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_UpdateIdentityProviderSettings.html
+   */
+  public toUpdateIdentityProviderSettings() {
+    return this.to('UpdateIdentityProviderSettings');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -135,7 +146,8 @@ export class LicenseManagerUserSubscriptions extends PolicyStatement {
       'DisassociateUser',
       'RegisterIdentityProvider',
       'StartProductSubscription',
-      'StopProductSubscription'
+      'StopProductSubscription',
+      'UpdateIdentityProviderSettings'
     ],
     List: [
       'ListIdentityProviders',

@@ -2,8 +2,11 @@ dms:RequestTag/${TagKey}
 dms:ResourceTag/${TagKey}
 dms:TagKeys
 dms:cert-tag/${TagKey}
+dms:dp-tag/${TagKey}
 dms:endpoint-tag/${TagKey}
 dms:es-tag/${TagKey}
+dms:ip-tag/${TagKey}
+dms:mp-tag/${TagKey}
 dms:rep-tag/${TagKey}
 dms:req-tag/${TagKey}
 dms:subgrp-tag/${TagKey}

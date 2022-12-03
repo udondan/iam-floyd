@@ -1,0 +1,15 @@
+simspaceweaver:DeleteApp;Write
+simspaceweaver:DeleteSimulation;Write
+simspaceweaver:DescribeApp;Read
+simspaceweaver:DescribeSimulation;Read
+simspaceweaver:ListApps;Read
+simspaceweaver:ListSimulations;List
+simspaceweaver:ListTagsForResource;Read
+simspaceweaver:StartApp;Write
+simspaceweaver:StartClock;Write
+simspaceweaver:StartSimulation;Write
+simspaceweaver:StopApp;Write
+simspaceweaver:StopClock;Write
+simspaceweaver:StopSimulation;Write
+simspaceweaver:TagResource;Tagging
+simspaceweaver:UntagResource;Tagging

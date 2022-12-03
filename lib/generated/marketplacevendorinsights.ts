@@ -23,7 +23,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toActivateSecurityProfile() {
     return this.to('ActivateSecurityProfile');
@@ -34,10 +37,13 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * Dependent actions:
    * - vendor-insights:GetDataSource
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toAssociateDataSource() {
     return this.to('AssociateDataSource');
@@ -48,7 +54,15 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - vendor-insights:TagResource
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
@@ -59,7 +73,15 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - vendor-insights:TagResource
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toCreateSecurityProfile() {
     return this.to('CreateSecurityProfile');
@@ -70,7 +92,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toDeactivateSecurityProfile() {
     return this.to('DeactivateSecurityProfile');
@@ -81,7 +106,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
@@ -92,10 +120,13 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * Dependent actions:
    * - vendor-insights:GetDataSource
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toDisassociateDataSource() {
     return this.to('DisassociateDataSource');
@@ -106,7 +137,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
@@ -117,7 +151,7 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html
    */
   public toGetEntitledSecurityProfileSnapshot() {
     return this.to('GetEntitledSecurityProfileSnapshot');
@@ -128,7 +162,7 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html
    */
   public toGetProfileAccessTerms() {
     return this.to('GetProfileAccessTerms');
@@ -139,7 +173,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toGetSecurityProfile() {
     return this.to('GetSecurityProfile');
@@ -150,7 +187,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toGetSecurityProfileSnapshot() {
     return this.to('GetSecurityProfileSnapshot');
@@ -161,7 +201,7 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toListDataSources() {
     return this.to('ListDataSources');
@@ -172,7 +212,7 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html
    */
   public toListEntitledSecurityProfileSnapshots() {
     return this.to('ListEntitledSecurityProfileSnapshots');
@@ -183,7 +223,7 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html
    */
   public toListEntitledSecurityProfiles() {
     return this.to('ListEntitledSecurityProfiles');
@@ -194,7 +234,10 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toListSecurityProfileSnapshots() {
     return this.to('ListSecurityProfileSnapshots');
@@ -205,10 +248,55 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toListSecurityProfiles() {
     return this.to('ListSecurityProfiles');
+  }
+
+  /**
+   * Grants permission to list tags for vendor insights resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to tag vendor insights resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag vendor insights resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -216,10 +304,41 @@ export class VendorInsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
    */
   public toUpdateSecurityProfile() {
     return this.to('UpdateSecurityProfile');
+  }
+
+  /**
+   * Grants permission to update the security profile snapshot creation configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toUpdateSecurityProfileSnapshotCreationConfiguration() {
+    return this.to('UpdateSecurityProfileSnapshotCreationConfiguration');
+  }
+
+  /**
+   * Grants permission to update the security profile snapshot release configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toUpdateSecurityProfileSnapshotReleaseConfiguration() {
+    return this.to('UpdateSecurityProfileSnapshotReleaseConfiguration');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -231,14 +350,17 @@ export class VendorInsights extends PolicyStatement {
       'DeactivateSecurityProfile',
       'DeleteDataSource',
       'DisassociateDataSource',
-      'UpdateSecurityProfile'
+      'UpdateSecurityProfile',
+      'UpdateSecurityProfileSnapshotCreationConfiguration',
+      'UpdateSecurityProfileSnapshotReleaseConfiguration'
     ],
     Read: [
       'GetDataSource',
       'GetEntitledSecurityProfileSnapshot',
       'GetProfileAccessTerms',
       'GetSecurityProfile',
-      'GetSecurityProfileSnapshot'
+      'GetSecurityProfileSnapshot',
+      'ListTagsForResource'
     ],
     List: [
       'ListDataSources',
@@ -246,16 +368,25 @@ export class VendorInsights extends PolicyStatement {
       'ListEntitledSecurityProfiles',
       'ListSecurityProfileSnapshots',
       'ListSecurityProfiles'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
    * Adds a resource of type DataSource to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html#awsmarketplacevendorinsights-resources-for-iam-policies
    *
    * @param resourceId - Identifier for the resourceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onDataSource(resourceId: string, partition?: string) {
     return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::data-source:${ resourceId }`);
@@ -264,10 +395,15 @@ export class VendorInsights extends PolicyStatement {
   /**
    * Adds a resource of type SecurityProfile to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-iam-config-vend-insights.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html#awsmarketplacevendorinsights-resources-for-iam-policies
    *
    * @param resourceId - Identifier for the resourceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onSecurityProfile(resourceId: string, partition?: string) {
     return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);

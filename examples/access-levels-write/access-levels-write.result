@@ -39,6 +39,7 @@
         "s3:ReplicateDelete",
         "s3:ReplicateObject",
         "s3:RestoreObject",
+        "s3:SubmitMultiRegionAccessPointRoutes",
         "s3:UpdateJobPriority",
         "s3:UpdateJobStatus"
     ],

@@ -1,0 +1,8 @@
+vpc-lattice-svcs:Port
+vpc-lattice-svcs:RequestHeader/${HeaderName}
+vpc-lattice-svcs:RequestMethod
+vpc-lattice-svcs:RequestQueryString/${QueryStringKey}
+vpc-lattice-svcs:ServiceArn
+vpc-lattice-svcs:ServiceNetworkArn
+vpc-lattice-svcs:SourceVpc
+vpc-lattice-svcs:SourceVpcOwnerAccount

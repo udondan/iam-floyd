@@ -47,6 +47,7 @@ drs:NotifyConsistencyAttainedForDrs;Write
 drs:NotifyReplicationServerAuthenticationForDrs;Write
 drs:NotifyVolumeEventForDrs;Write
 drs:RetryDataReplication;Write
+drs:ReverseReplication;Write
 drs:SendAgentLogsForDrs;Write
 drs:SendAgentMetricsForDrs;Write
 drs:SendChannelCommandResultForDrs;Write
@@ -55,7 +56,9 @@ drs:SendClientMetricsForDrs;Write
 drs:SendVolumeStatsForDrs;Write
 drs:StartFailbackLaunch;Write
 drs:StartRecovery;Write
+drs:StartReplication;Write
 drs:StopFailback;Write
+drs:StopReplication;Write
 drs:TagResource;Tagging
 drs:TerminateRecoveryInstances;Write
 drs:UntagResource;Tagging
