@@ -588,6 +588,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get position estimate
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionEstimate.html
+   */
+  public toGetPositionEstimate() {
+    return this.to('GetPositionEstimate');
+  }
+
+  /**
    * Grants permission to get an event configuration for an identifier
    *
    * Access Level: Read
@@ -607,6 +618,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toGetResourceLogLevel() {
     return this.to('GetResourceLogLevel');
+  }
+
+  /**
+   * Grants permission to get position for a given resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html
+   */
+  public toGetResourcePosition() {
+    return this.to('GetResourcePosition');
   }
 
   /**
@@ -1145,6 +1167,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update position for a given resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html
+   */
+  public toUpdateResourcePosition() {
+    return this.to('UpdateResourcePosition');
+  }
+
+  /**
    * Grants permission to update a WirelessDevice resource
    *
    * Access Level: Write
@@ -1225,6 +1258,7 @@ export class Iotwireless extends PolicyStatement {
       'UpdatePartnerAccount',
       'UpdatePosition',
       'UpdateResourceEventConfiguration',
+      'UpdateResourcePosition',
       'UpdateWirelessDevice',
       'UpdateWirelessGateway'
     ],
@@ -1240,8 +1274,10 @@ export class Iotwireless extends PolicyStatement {
       'GetPartnerAccount',
       'GetPosition',
       'GetPositionConfiguration',
+      'GetPositionEstimate',
       'GetResourceEventConfiguration',
       'GetResourceLogLevel',
+      'GetResourcePosition',
       'GetServiceEndpoint',
       'GetServiceProfile',
       'GetWirelessDevice',

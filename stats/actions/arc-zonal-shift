@@ -1,0 +1,6 @@
+arc-zonal-shift:CancelZonalShift;Write
+arc-zonal-shift:GetManagedResource;Read
+arc-zonal-shift:ListManagedResources;List
+arc-zonal-shift:ListZonalShifts;List
+arc-zonal-shift:StartZonalShift;Write
+arc-zonal-shift:UpdateZonalShift;Write

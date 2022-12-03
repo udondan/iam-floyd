@@ -1,0 +1,3 @@
+pipes:RequestTag/${TagKey}
+pipes:ResourceTag/${TagKey}
+pipes:TagKeys

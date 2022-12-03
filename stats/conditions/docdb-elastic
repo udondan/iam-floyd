@@ -1,0 +1,3 @@
+docdb-elastic:RequestTag/${TagKey}
+docdb-elastic:ResourceTag/${TagKey}
+docdb-elastic:TagKeys

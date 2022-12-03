@@ -184,6 +184,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a running Data Quality rule recommendation run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-CancelDataQualityRuleRecommendationRun
+   */
+  public toCancelDataQualityRuleRecommendationRun() {
+    return this.to('CancelDataQualityRuleRecommendationRun');
+  }
+
+  /**
+   * Grants permission to stop a running Data Quality ruleset evaluation run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-CancelDataQualityRulesetEvaluationRun
+   */
+  public toCancelDataQualityRulesetEvaluationRun() {
+    return this.to('CancelDataQualityRulesetEvaluationRun');
+  }
+
+  /**
    * Grants permission to stop a running ML Task Run
    *
    * Access Level: Write
@@ -281,6 +303,21 @@ export class Glue extends PolicyStatement {
    */
   public toCreateCustomEntityType() {
     return this.to('CreateCustomEntityType');
+  }
+
+  /**
+   * Grants permission to create a Data Quality ruleset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-CreateDataQualityRuleset
+   */
+  public toCreateDataQualityRuleset() {
+    return this.to('CreateDataQualityRuleset');
   }
 
   /**
@@ -561,6 +598,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Data Quality ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-DeleteDataQualityRuleset
+   */
+  public toDeleteDataQualityRuleset() {
+    return this.to('DeleteDataQualityRuleset');
+  }
+
+  /**
    * Grants permission to delete a database
    *
    * Access Level: Write
@@ -748,6 +796,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to terminate Glue Studio Notebook session
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toDeregisterDataPreview() {
+    return this.to('DeregisterDataPreview');
+  }
+
+  /**
    * Grants permission to retrieve a blueprint
    *
    * Access Level: Read
@@ -913,6 +972,50 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Data Quality result
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityResult
+   */
+  public toGetDataQualityResult() {
+    return this.to('GetDataQualityResult');
+  }
+
+  /**
+   * Grants permission to retrieve a Data Quality rule recommendation run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityRuleRecommendationRun
+   */
+  public toGetDataQualityRuleRecommendationRun() {
+    return this.to('GetDataQualityRuleRecommendationRun');
+  }
+
+  /**
+   * Grants permission to retrieve a Data Quality ruleset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityRuleset
+   */
+  public toGetDataQualityRuleset() {
+    return this.to('GetDataQualityRuleset');
+  }
+
+  /**
+   * Grants permission to retrieve a Data Quality rule recommendation run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityRulesetEvaluationRun
+   */
+  public toGetDataQualityRulesetEvaluationRun() {
+    return this.to('GetDataQualityRulesetEvaluationRun');
+  }
+
+  /**
    * Grants permission to retrieve a database
    *
    * Access Level: Read
@@ -1075,6 +1178,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetMapping() {
     return this.to('GetMapping');
+  }
+
+  /**
+   * Grants permission to retrieve Glue Studio Notebooks session status
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toGetNotebookInstanceStatus() {
+    return this.to('GetNotebookInstanceStatus');
   }
 
   /**
@@ -1386,6 +1500,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access Glue Studio Notebooks
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toGlueNotebookAuthorize() {
+    return this.to('GlueNotebookAuthorize');
+  }
+
+  /**
+   * Grants permission to refresh Glue Studio Notebooks credentials
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toGlueNotebookRefreshCredentials() {
+    return this.to('GlueNotebookRefreshCredentials');
+  }
+
+  /**
    * Grants permission to import an Athena data catalog into AWS Glue
    *
    * Access Level: Write
@@ -1450,6 +1586,54 @@ export class Glue extends PolicyStatement {
    */
   public toListCustomEntityTypes() {
     return this.to('ListCustomEntityTypes');
+  }
+
+  /**
+   * Grants permission to retrieve all Data Quality results
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityResults
+   */
+  public toListDataQualityResults() {
+    return this.to('ListDataQualityResults');
+  }
+
+  /**
+   * Grants permission to retrieve all Data Quality rule recommendation runs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityRuleRecommendationRuns
+   */
+  public toListDataQualityRuleRecommendationRuns() {
+    return this.to('ListDataQualityRuleRecommendationRuns');
+  }
+
+  /**
+   * Grants permission to retrieve all Data Quality rule recommendation runs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityRulesetEvaluationRuns
+   */
+  public toListDataQualityRulesetEvaluationRuns() {
+    return this.to('ListDataQualityRulesetEvaluationRuns');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Data Quality rulesets
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityRulesets
+   */
+  public toListDataQualityRulesets() {
+    return this.to('ListDataQualityRulesets');
   }
 
   /**
@@ -1587,6 +1771,17 @@ export class Glue extends PolicyStatement {
    */
   public toNotifyEvent() {
     return this.to('NotifyEvent');
+  }
+
+  /**
+   * Grants permission to publish Data Quality results
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
+   */
+  public toPublishDataQuality() {
+    return this.to('PublishDataQuality');
   }
 
   /**
@@ -1744,6 +1939,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a Data Quality rule recommendation run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-StartDataQualityRuleRecommendationRun
+   */
+  public toStartDataQualityRuleRecommendationRun() {
+    return this.to('StartDataQualityRuleRecommendationRun');
+  }
+
+  /**
+   * Grants permission to start a Data Quality rule recommendation run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-StartDataQualityRulesetEvaluationRun
+   */
+  public toStartDataQualityRulesetEvaluationRun() {
+    return this.to('StartDataQualityRulesetEvaluationRun');
+  }
+
+  /**
    * Grants permission to start an Export Labels ML Task Run
    *
    * Access Level: Write
@@ -1796,6 +2013,17 @@ export class Glue extends PolicyStatement {
    */
   public toStartMLLabelingSetGenerationTaskRun() {
     return this.to('StartMLLabelingSetGenerationTaskRun');
+  }
+
+  /**
+   * Grants permission to start Glue Studio Notebooks
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toStartNotebook() {
+    return this.to('StartNotebook');
   }
 
   /**
@@ -1891,6 +2119,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to terminate Glue Studio Notebooks
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toTerminateNotebook() {
+    return this.to('TerminateNotebook');
+  }
+
+  /**
    * Grants permission to remove tags associated with a resource
    *
    * Access Level: Tagging
@@ -1980,6 +2219,17 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateCrawlerSchedule() {
     return this.to('UpdateCrawlerSchedule');
+  }
+
+  /**
+   * Grants permission to update a Data Quality ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-UpdateDataQualityRuleset
+   */
+  public toUpdateDataQualityRuleset() {
+    return this.to('UpdateDataQualityRuleset');
   }
 
   /**
@@ -2139,6 +2389,8 @@ export class Glue extends PolicyStatement {
       'BatchDeleteTableVersion',
       'BatchStopJobRun',
       'BatchUpdatePartition',
+      'CancelDataQualityRuleRecommendationRun',
+      'CancelDataQualityRulesetEvaluationRun',
       'CancelMLTaskRun',
       'CancelStatement',
       'CreateBlueprint',
@@ -2146,6 +2398,7 @@ export class Glue extends PolicyStatement {
       'CreateConnection',
       'CreateCrawler',
       'CreateCustomEntityType',
+      'CreateDataQualityRuleset',
       'CreateDatabase',
       'CreateDevEndpoint',
       'CreateJob',
@@ -2168,6 +2421,7 @@ export class Glue extends PolicyStatement {
       'DeleteConnection',
       'DeleteCrawler',
       'DeleteCustomEntityType',
+      'DeleteDataQualityRuleset',
       'DeleteDatabase',
       'DeleteDevEndpoint',
       'DeleteJob',
@@ -2186,6 +2440,7 @@ export class Glue extends PolicyStatement {
       'DeleteWorkflow',
       'ImportCatalogToGlue',
       'NotifyEvent',
+      'PublishDataQuality',
       'PutDataCatalogEncryptionSettings',
       'PutSchemaVersionMetadata',
       'PutWorkflowRunProperties',
@@ -2197,6 +2452,8 @@ export class Glue extends PolicyStatement {
       'StartBlueprintRun',
       'StartCrawler',
       'StartCrawlerSchedule',
+      'StartDataQualityRuleRecommendationRun',
+      'StartDataQualityRulesetEvaluationRun',
       'StartExportLabelsTaskRun',
       'StartImportLabelsTaskRun',
       'StartJobRun',
@@ -2216,6 +2473,7 @@ export class Glue extends PolicyStatement {
       'UpdateConnection',
       'UpdateCrawler',
       'UpdateCrawlerSchedule',
+      'UpdateDataQualityRuleset',
       'UpdateDatabase',
       'UpdateDevEndpoint',
       'UpdateJob',
@@ -2254,6 +2512,10 @@ export class Glue extends PolicyStatement {
       'GetCrawlers',
       'GetCustomEntityType',
       'GetDataCatalogEncryptionSettings',
+      'GetDataQualityResult',
+      'GetDataQualityRuleRecommendationRun',
+      'GetDataQualityRuleset',
+      'GetDataQualityRulesetEvaluationRun',
       'GetDatabase',
       'GetDatabases',
       'GetDataflowGraph',
@@ -2299,7 +2561,13 @@ export class Glue extends PolicyStatement {
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
+      'DeregisterDataPreview',
+      'GetNotebookInstanceStatus',
+      'GlueNotebookAuthorize',
+      'GlueNotebookRefreshCredentials',
       'PutResourcePolicy',
+      'StartNotebook',
+      'TerminateNotebook',
       'UseGlueStudio'
     ],
     List: [
@@ -2309,6 +2577,10 @@ export class Glue extends PolicyStatement {
       'ListCrawlers',
       'ListCrawls',
       'ListCustomEntityTypes',
+      'ListDataQualityResults',
+      'ListDataQualityRuleRecommendationRuns',
+      'ListDataQualityRulesetEvaluationRuns',
+      'ListDataQualityRulesets',
       'ListDevEndpoints',
       'ListJobs',
       'ListMLTransforms',
@@ -2585,6 +2857,23 @@ export class Glue extends PolicyStatement {
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
+  }
+
+  /**
+   * Adds a resource of type dataQualityRuleset to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param rulesetName - Identifier for the rulesetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataQualityRuleset(rulesetName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:dataQualityRuleset/${ rulesetName }`);
   }
 
   /**

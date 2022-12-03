@@ -45,8 +45,10 @@ iotwireless:GetNetworkAnalyzerConfiguration;Read
 iotwireless:GetPartnerAccount;Read
 iotwireless:GetPosition;Read
 iotwireless:GetPositionConfiguration;Read
+iotwireless:GetPositionEstimate;Read
 iotwireless:GetResourceEventConfiguration;Read
 iotwireless:GetResourceLogLevel;Read
+iotwireless:GetResourcePosition;Read
 iotwireless:GetServiceEndpoint;Read
 iotwireless:GetServiceProfile;Read
 iotwireless:GetWirelessDevice;Read
@@ -95,5 +97,6 @@ iotwireless:UpdateNetworkAnalyzerConfiguration;Write
 iotwireless:UpdatePartnerAccount;Write
 iotwireless:UpdatePosition;Write
 iotwireless:UpdateResourceEventConfiguration;Write
+iotwireless:UpdateResourcePosition;Write
 iotwireless:UpdateWirelessDevice;Write
 iotwireless:UpdateWirelessGateway;Write

@@ -3,6 +3,7 @@ gamelift:build
 gamelift:fleet
 gamelift:gameServerGroup
 gamelift:gameSessionQueue
+gamelift:location
 gamelift:matchmakingConfiguration
 gamelift:matchmakingRuleSet
 gamelift:script

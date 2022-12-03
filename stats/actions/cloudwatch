@@ -18,6 +18,7 @@ cloudwatch:GetMetricData;Read
 cloudwatch:GetMetricStatistics;Read
 cloudwatch:GetMetricStream;Read
 cloudwatch:GetMetricWidgetImage;Read
+cloudwatch:Link;Write
 cloudwatch:ListDashboards;List
 cloudwatch:ListManagedInsightRules;Read
 cloudwatch:ListMetricStreams;List

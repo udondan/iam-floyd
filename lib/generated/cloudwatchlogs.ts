@@ -89,6 +89,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a data protection policy attached to a log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDataProtectionPolicy.html
+   */
+  public toDeleteDataProtectionPolicy() {
+    return this.to('DeleteDataProtectionPolicy');
+  }
+
+  /**
    * Grants permission to delete the destination with the specified name
    *
    * Access Level: Write
@@ -309,6 +320,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a data protection policy attached to a log group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDataProtectionPolicy.html
+   */
+  public toGetDataProtectionPolicy() {
+    return this.to('GetDataProtectionPolicy');
+  }
+
+  /**
    * Grants permission to get the log delivery information for specified log delivery
    *
    * Access Level: Read
@@ -364,6 +386,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to list all the log deliveries for specified account and/or log source
    *
    * Access Level: List
@@ -394,6 +427,17 @@ export class Logs extends PolicyStatement {
    */
   public toListTagsLogGroup() {
     return this.to('ListTagsLogGroup');
+  }
+
+  /**
+   * Grants permission to attach a data protection policy to detect and redact sensitive information from log events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html
+   */
+  public toPutDataProtectionPolicy() {
+    return this.to('PutDataProtectionPolicy');
   }
 
   /**
@@ -558,6 +602,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to fetch unmasked log events that have been redacted with a data protection policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html
+   */
+  public toUnmask() {
+    return this.to('Unmask');
+  }
+
+  /**
    * Grants permission to remove the specified tags from the specified log group
    *
    * Access Level: Tagging
@@ -604,6 +659,7 @@ export class Logs extends PolicyStatement {
       'CreateLogDelivery',
       'CreateLogGroup',
       'CreateLogStream',
+      'DeleteDataProtectionPolicy',
       'DeleteDestination',
       'DeleteLogDelivery',
       'DeleteLogGroup',
@@ -613,6 +669,8 @@ export class Logs extends PolicyStatement {
       'DeleteRetentionPolicy',
       'DeleteSubscriptionFilter',
       'DisassociateKmsKey',
+      'Link',
+      'PutDataProtectionPolicy',
       'PutDestination',
       'PutDestinationPolicy',
       'PutLogEvents',
@@ -642,6 +700,7 @@ export class Logs extends PolicyStatement {
     ],
     Read: [
       'FilterLogEvents',
+      'GetDataProtectionPolicy',
       'GetLogDelivery',
       'GetLogEvents',
       'GetLogGroupFields',
@@ -649,7 +708,8 @@ export class Logs extends PolicyStatement {
       'GetQueryResults',
       'StartQuery',
       'StopQuery',
-      'TestMetricFilter'
+      'TestMetricFilter',
+      'Unmask'
     ],
     Tagging: [
       'TagLogGroup',

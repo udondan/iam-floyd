@@ -35,6 +35,7 @@
         "s3:GetMultiRegionAccessPoint",
         "s3:GetMultiRegionAccessPointPolicy",
         "s3:GetMultiRegionAccessPointPolicyStatus",
+        "s3:GetMultiRegionAccessPointRoutes",
         "s3:GetObject",
         "s3:GetObjectAcl",
         "s3:GetObjectAttributes",

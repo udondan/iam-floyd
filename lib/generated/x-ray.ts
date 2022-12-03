@@ -278,6 +278,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share X-Ray resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to list resource policies
    *
    * Access Level: List
@@ -430,6 +441,7 @@ export class Xray extends PolicyStatement {
       'DeleteGroup',
       'DeleteResourcePolicy',
       'DeleteSamplingRule',
+      'Link',
       'PutResourcePolicy',
       'PutTelemetryRecords',
       'PutTraceSegments',

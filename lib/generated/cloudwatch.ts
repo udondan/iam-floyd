@@ -239,6 +239,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to return a list of all CloudWatch dashboards in your account
    *
    * Access Level: List
@@ -486,6 +497,7 @@ export class Cloudwatch extends PolicyStatement {
       'DisableInsightRules',
       'EnableAlarmActions',
       'EnableInsightRules',
+      'Link',
       'PutAnomalyDetector',
       'PutCompositeAlarm',
       'PutDashboard',

@@ -4,6 +4,7 @@ logs:CreateExportTask;Write
 logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
 logs:CreateLogStream;Write
+logs:DeleteDataProtectionPolicy;Write
 logs:DeleteDestination;Write
 logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
@@ -24,14 +25,17 @@ logs:DescribeResourcePolicies;List
 logs:DescribeSubscriptionFilters;List
 logs:DisassociateKmsKey;Write
 logs:FilterLogEvents;Read
+logs:GetDataProtectionPolicy;Read
 logs:GetLogDelivery;Read
 logs:GetLogEvents;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
+logs:Link;Write
 logs:ListLogDeliveries;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
+logs:PutDataProtectionPolicy;Write
 logs:PutDestination;Write
 logs:PutDestinationPolicy;Write
 logs:PutLogEvents;Write
@@ -45,6 +49,7 @@ logs:StopQuery;Read
 logs:TagLogGroup;Tagging
 logs:TagResource;Tagging
 logs:TestMetricFilter;Read
+logs:Unmask;Read
 logs:UntagLogGroup;Tagging
 logs:UntagResource;Tagging
 logs:UpdateLogDelivery;Write

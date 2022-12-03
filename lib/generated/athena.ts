@@ -78,6 +78,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNotebook.html
+   */
+  public toCreateNotebook() {
+    return this.to('CreateNotebook');
+  }
+
+  /**
    * Grants permission to create a prepared statement
    *
    * Access Level: Write
@@ -86,6 +97,17 @@ export class Athena extends PolicyStatement {
    */
   public toCreatePreparedStatement() {
     return this.to('CreatePreparedStatement');
+  }
+
+  /**
+   * Grants permission to create a presigned notebook url
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreatePresignedNotebookUrl.html
+   */
+  public toCreatePresignedNotebookUrl() {
+    return this.to('CreatePresignedNotebookUrl');
   }
 
   /**
@@ -126,6 +148,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNotebook.html
+   */
+  public toDeleteNotebook() {
+    return this.to('DeleteNotebook');
+  }
+
+  /**
    * Grants permission to delete a prepared statement specified
    *
    * Access Level: Write
@@ -145,6 +178,50 @@ export class Athena extends PolicyStatement {
    */
   public toDeleteWorkGroup() {
     return this.to('DeleteWorkGroup');
+  }
+
+  /**
+   * Grants permission to export a notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ExportNotebook.html
+   */
+  public toExportNotebook() {
+    return this.to('ExportNotebook');
+  }
+
+  /**
+   * Grants permission to get a calculation execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecution.html
+   */
+  public toGetCalculationExecution() {
+    return this.to('GetCalculationExecution');
+  }
+
+  /**
+   * Grants permission to get a calculation execution code
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecutionCode.html
+   */
+  public toGetCalculationExecutionCode() {
+    return this.to('GetCalculationExecutionCode');
+  }
+
+  /**
+   * Grants permission to get a calculation execution status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecutionStatus.html
+   */
+  public toGetCalculationExecutionStatus() {
+    return this.to('GetCalculationExecutionStatus');
   }
 
   /**
@@ -178,6 +255,17 @@ export class Athena extends PolicyStatement {
    */
   public toGetNamedQuery() {
     return this.to('GetNamedQuery');
+  }
+
+  /**
+   * Grants permission to get notebook metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNotebookMetadata.html
+   */
+  public toGetNotebookMetadata() {
+    return this.to('GetNotebookMetadata');
   }
 
   /**
@@ -236,11 +324,33 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSession.html
+   */
+  public toGetSession() {
+    return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to get a session status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionStatus.html
+   */
+  public toGetSessionStatus() {
+    return this.to('GetSessionStatus');
+  }
+
+  /**
    * Grants permission to get a metadata about a table for a given datacatalog
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ GetTableMetadata.html
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetTableMetadata.html
    */
   public toGetTableMetadata() {
     return this.to('GetTableMetadata');
@@ -255,6 +365,39 @@ export class Athena extends PolicyStatement {
    */
   public toGetWorkGroup() {
     return this.to('GetWorkGroup');
+  }
+
+  /**
+   * Grants permission to import a notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ImportNotebook.html
+   */
+  public toImportNotebook() {
+    return this.to('ImportNotebook');
+  }
+
+  /**
+   * Grants permission to return a list of ApplicationRuntimeIds
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListApplicationDPUSizes.html
+   */
+  public toListApplicationDPUSizes() {
+    return this.to('ListApplicationDPUSizes');
+  }
+
+  /**
+   * Grants permission to return a list of calculation executions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListCalculationExecutions.html
+   */
+  public toListCalculationExecutions() {
+    return this.to('ListCalculationExecutions');
   }
 
   /**
@@ -291,6 +434,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a list of executors
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListExecutors.html
+   */
+  public toListExecutors() {
+    return this.to('ListExecutors');
+  }
+
+  /**
    * Grants permission to return a list of named queries in Amazon Athena for the specified AWS account
    *
    * Access Level: List
@@ -299,6 +453,28 @@ export class Athena extends PolicyStatement {
    */
   public toListNamedQueries() {
     return this.to('ListNamedQueries');
+  }
+
+  /**
+   * Grants permission to return a list of notebooks for a given workgroup
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNotebookMetadata.html
+   */
+  public toListNotebookMetadata() {
+    return this.to('ListNotebookMetadata');
+  }
+
+  /**
+   * Grants permission to return a list of sessions for a given notebook
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNotebookSessions.html
+   */
+  public toListNotebookSessions() {
+    return this.to('ListNotebookSessions');
   }
 
   /**
@@ -321,6 +497,17 @@ export class Athena extends PolicyStatement {
    */
   public toListQueryExecutions() {
     return this.to('ListQueryExecutions');
+  }
+
+  /**
+   * Grants permission to return a list of sessions for a given workgroup
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
   }
 
   /**
@@ -357,6 +544,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a calculation execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartCalculationExecution.html
+   */
+  public toStartCalculationExecution() {
+    return this.to('StartCalculationExecution');
+  }
+
+  /**
    * Grants permission to start a query execution using an SQL query provided as a string
    *
    * Access Level: Write
@@ -365,6 +563,28 @@ export class Athena extends PolicyStatement {
    */
   public toStartQueryExecution() {
     return this.to('StartQueryExecution');
+  }
+
+  /**
+   * Grants permission to start a session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartSession.html
+   */
+  public toStartSession() {
+    return this.to('StartSession');
+  }
+
+  /**
+   * Grants permission to stop a calculation execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_StopCalculationExecution.html
+   */
+  public toStopCalculationExecution() {
+    return this.to('StopCalculationExecution');
   }
 
   /**
@@ -391,6 +611,17 @@ export class Athena extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to terminate a session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_TerminateSession.html
+   */
+  public toTerminateSession() {
+    return this.to('TerminateSession');
   }
 
   /**
@@ -430,6 +661,28 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateNotebook.html
+   */
+  public toUpdateNotebook() {
+    return this.to('UpdateNotebook');
+  }
+
+  /**
+   * Grants permission to update notebook metadata
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateNotebookMetadata.html
+   */
+  public toUpdateNotebookMetadata() {
+    return this.to('UpdateNotebookMetadata');
+  }
+
+  /**
    * Grants permission to update a prepared statement
    *
    * Access Level: Write
@@ -456,14 +709,20 @@ export class Athena extends PolicyStatement {
       'BatchGetNamedQuery',
       'BatchGetPreparedStatement',
       'BatchGetQueryExecution',
+      'GetCalculationExecution',
+      'GetCalculationExecutionCode',
+      'GetCalculationExecutionStatus',
       'GetDataCatalog',
       'GetDatabase',
       'GetNamedQuery',
+      'GetNotebookMetadata',
       'GetPreparedStatement',
       'GetQueryExecution',
       'GetQueryResults',
       'GetQueryResultsStream',
       'GetQueryRuntimeStatistics',
+      'GetSession',
+      'GetSessionStatus',
       'GetTableMetadata',
       'GetWorkGroup',
       'ListEngineVersions',
@@ -474,24 +733,41 @@ export class Athena extends PolicyStatement {
     Write: [
       'CreateDataCatalog',
       'CreateNamedQuery',
+      'CreateNotebook',
       'CreatePreparedStatement',
+      'CreatePresignedNotebookUrl',
       'CreateWorkGroup',
       'DeleteDataCatalog',
       'DeleteNamedQuery',
+      'DeleteNotebook',
       'DeletePreparedStatement',
       'DeleteWorkGroup',
+      'ExportNotebook',
+      'ImportNotebook',
+      'StartCalculationExecution',
       'StartQueryExecution',
+      'StartSession',
+      'StopCalculationExecution',
       'StopQueryExecution',
+      'TerminateSession',
       'UpdateDataCatalog',
       'UpdateNamedQuery',
+      'UpdateNotebook',
+      'UpdateNotebookMetadata',
       'UpdatePreparedStatement',
       'UpdateWorkGroup'
     ],
     List: [
+      'ListApplicationDPUSizes',
+      'ListCalculationExecutions',
       'ListDataCatalogs',
       'ListDatabases',
+      'ListExecutors',
       'ListNamedQueries',
+      'ListNotebookMetadata',
+      'ListNotebookSessions',
       'ListPreparedStatements',
+      'ListSessions',
       'ListWorkGroups'
     ],
     Tagging: [

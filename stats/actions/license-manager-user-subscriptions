@@ -8,3 +8,4 @@ license-manager-user-subscriptions:ListUserAssociations;List
 license-manager-user-subscriptions:RegisterIdentityProvider;Write
 license-manager-user-subscriptions:StartProductSubscription;Write
 license-manager-user-subscriptions:StopProductSubscription;Write
+license-manager-user-subscriptions:UpdateIdentityProviderSettings;Write

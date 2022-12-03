@@ -1,0 +1,10 @@
+internetmonitor:CreateMonitor;Write
+internetmonitor:DeleteMonitor;Write
+internetmonitor:GetHealthEvent;Read
+internetmonitor:GetMonitor;Read
+internetmonitor:ListHealthEvents;List
+internetmonitor:ListMonitors;List
+internetmonitor:ListTagsForResource;Read
+internetmonitor:TagResource;Tagging
+internetmonitor:UntagResource;Tagging
+internetmonitor:UpdateMonitor;Write

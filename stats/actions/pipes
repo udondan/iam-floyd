@@ -1,0 +1,10 @@
+pipes:CreatePipe;Write
+pipes:DeletePipe;Write
+pipes:DescribePipe;Read
+pipes:ListPipes;List
+pipes:ListTagsForResource;Read
+pipes:StartPipe;Write
+pipes:StopPipe;Write
+pipes:TagResource;Tagging
+pipes:UntagResource;Tagging
+pipes:UpdatePipe;Write

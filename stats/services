@@ -9,6 +9,7 @@ airflow
 amplify
 amplifybackend
 amplifyuibuilder
+aoss
 apigateway
 app-integrations
 appconfig
@@ -22,6 +23,7 @@ apprunner
 appstream
 appsync
 aps
+arc-zonal-shift
 arsenal
 artifact
 athena
@@ -94,6 +96,7 @@ directconnect
 discovery
 dlm
 dms
+docdb-elastic
 drs
 ds
 dynamodb
@@ -152,6 +155,7 @@ imagebuilder
 importexport
 inspector
 inspector2
+internetmonitor
 iot
 iot-device-tester
 iot1click
@@ -216,6 +220,8 @@ neptune-db
 network-firewall
 networkmanager
 nimble
+oam
+omics
 opsworks
 opsworks-cm
 organizations
@@ -223,6 +229,7 @@ outposts
 panorama
 personalize
 pi
+pipes
 polly
 pricing
 private-networks
@@ -259,6 +266,7 @@ s3
 s3-object-lambda
 s3-outposts
 sagemaker
+sagemaker-geospatial
 sagemaker-groundtruth-synthetic
 savingsplans
 scheduler
@@ -266,6 +274,7 @@ schemas
 sdb
 secretsmanager
 securityhub
+securitylake
 serverlessrepo
 servicecatalog
 servicediscovery
@@ -274,6 +283,7 @@ servicequotas
 ses
 shield
 signer
+simspaceweaver
 sms
 sms-voice
 snow-device-management
@@ -310,11 +320,14 @@ translate
 trustedadvisor
 vendor-insights
 voiceid
+vpc-lattice
+vpc-lattice-svcs
 waf
 waf-regional
 wafv2
 wam
 wellarchitected
+wickr
 wisdom
 workdocs
 worklink

@@ -336,6 +336,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the configuration settings and status of automated sensitive data discovery for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/automated-discovery-configuration.html
+   */
+  public toGetAutomatedDiscoveryConfiguration() {
+    return this.to('GetAutomatedDiscoveryConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve aggregated statistical data for all the S3 buckets that Amazon Macie monitors and analyzes
    *
    * Access Level: Read
@@ -355,6 +366,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toGetClassificationExportConfiguration() {
     return this.to('GetClassificationExportConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the classification scope settings for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/classification-scopes-id.html
+   */
+  public toGetClassificationScope() {
+    return this.to('GetClassificationScope');
   }
 
   /**
@@ -457,6 +479,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve sensitive data discovery statistics and the sensitivity score for an S3 bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/resource-profiles.html
+   */
+  public toGetResourceProfile() {
+    return this.to('GetResourceProfile');
+  }
+
+  /**
    * Grants permission to retrieve the status and configuration settings for retrieving occurrences of sensitive data reported by findings
    *
    * Access Level: Read
@@ -487,6 +520,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toGetSensitiveDataOccurrencesAvailability() {
     return this.to('GetSensitiveDataOccurrencesAvailability');
+  }
+
+  /**
+   * Grants permission to retrieve the sensitivity inspection template settings for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/templates-sensitivity-inspections-id.html
+   */
+  public toGetSensitivityInspectionTemplate() {
+    return this.to('GetSensitivityInspectionTemplate');
   }
 
   /**
@@ -531,6 +575,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toListClassificationJobs() {
     return this.to('ListClassificationJobs');
+  }
+
+  /**
+   * Grants permission to retrieve a subset of information about the classification scope for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/classification-scopes.html
+   */
+  public toListClassificationScopes() {
+    return this.to('ListClassificationScopes');
   }
 
   /**
@@ -608,6 +663,39 @@ export class Macie2 extends PolicyStatement {
    */
   public toListOrganizationAdminAccounts() {
     return this.to('ListOrganizationAdminAccounts');
+  }
+
+  /**
+   * Grants permission to retrieve information about objects that were selected from an S3 bucket for automated sensitive data discovery
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/resource-profiles-artifacts.html
+   */
+  public toListResourceProfileArtifacts() {
+    return this.to('ListResourceProfileArtifacts');
+  }
+
+  /**
+   * Grants permission to retrieve information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/resource-profiles-detections.html
+   */
+  public toListResourceProfileDetections() {
+    return this.to('ListResourceProfileDetections');
+  }
+
+  /**
+   * Grants permission to retrieve a subset of information about the sensitivity inspection template for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/templates-sensitivity-inspections.html
+   */
+  public toListSensitivityInspectionTemplates() {
+    return this.to('ListSensitivityInspectionTemplates');
   }
 
   /**
@@ -706,6 +794,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable automated sensitive data discovery for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/automated-discovery-configuration.html
+   */
+  public toUpdateAutomatedDiscoveryConfiguration() {
+    return this.to('UpdateAutomatedDiscoveryConfiguration');
+  }
+
+  /**
    * Grants permission to change the status of a sensitive data discovery job
    *
    * Access Level: Write
@@ -718,6 +817,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toUpdateClassificationJob() {
     return this.to('UpdateClassificationJob');
+  }
+
+  /**
+   * Grants permission to update the classification scope settings for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/classification-scopes-id.html
+   */
+  public toUpdateClassificationScope() {
+    return this.to('UpdateClassificationScope');
   }
 
   /**
@@ -769,6 +879,28 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the sensitivity score for an S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/resource-profiles.html
+   */
+  public toUpdateResourceProfile() {
+    return this.to('UpdateResourceProfile');
+  }
+
+  /**
+   * Grants permission to update the sensitivity scoring settings for an S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/resource-profiles-detections.html
+   */
+  public toUpdateResourceProfileDetections() {
+    return this.to('UpdateResourceProfileDetections');
+  }
+
+  /**
    * Grants permission to update the status and configuration settings for retrieving occurrences of sensitive data reported by findings
    *
    * Access Level: Write
@@ -777,6 +909,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toUpdateRevealConfiguration() {
     return this.to('UpdateRevealConfiguration');
+  }
+
+  /**
+   * Grants permission to update the sensitivity inspection template settings for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/templates-sensitivity-inspections-id.html
+   */
+  public toUpdateSensitivityInspectionTemplate() {
+    return this.to('UpdateSensitivityInspectionTemplate');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -806,12 +949,17 @@ export class Macie2 extends PolicyStatement {
       'PutFindingsPublicationConfiguration',
       'TestCustomDataIdentifier',
       'UpdateAllowList',
+      'UpdateAutomatedDiscoveryConfiguration',
       'UpdateClassificationJob',
+      'UpdateClassificationScope',
       'UpdateFindingsFilter',
       'UpdateMacieSession',
       'UpdateMemberSession',
       'UpdateOrganizationConfiguration',
-      'UpdateRevealConfiguration'
+      'UpdateResourceProfile',
+      'UpdateResourceProfileDetections',
+      'UpdateRevealConfiguration',
+      'UpdateSensitivityInspectionTemplate'
     ],
     Read: [
       'BatchGetCustomDataIdentifiers',
@@ -820,8 +968,10 @@ export class Macie2 extends PolicyStatement {
       'DescribeOrganizationConfiguration',
       'GetAdministratorAccount',
       'GetAllowList',
+      'GetAutomatedDiscoveryConfiguration',
       'GetBucketStatistics',
       'GetClassificationExportConfiguration',
+      'GetClassificationScope',
       'GetCustomDataIdentifier',
       'GetFindingStatistics',
       'GetFindings',
@@ -831,9 +981,11 @@ export class Macie2 extends PolicyStatement {
       'GetMacieSession',
       'GetMasterAccount',
       'GetMember',
+      'GetResourceProfile',
       'GetRevealConfiguration',
       'GetSensitiveDataOccurrences',
       'GetSensitiveDataOccurrencesAvailability',
+      'GetSensitivityInspectionTemplate',
       'GetUsageStatistics',
       'GetUsageTotals',
       'ListTagsForResource',
@@ -842,13 +994,17 @@ export class Macie2 extends PolicyStatement {
     List: [
       'ListAllowLists',
       'ListClassificationJobs',
+      'ListClassificationScopes',
       'ListCustomDataIdentifiers',
       'ListFindings',
       'ListFindingsFilters',
       'ListInvitations',
       'ListManagedDataIdentifiers',
       'ListMembers',
-      'ListOrganizationAdminAccounts'
+      'ListOrganizationAdminAccounts',
+      'ListResourceProfileArtifacts',
+      'ListResourceProfileDetections',
+      'ListSensitivityInspectionTemplates'
     ],
     Tagging: [
       'TagResource',

@@ -302,7 +302,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Modifies AWS CloudHSM cluster.
+   * Modifies AWS CloudHSM cluster
    *
    * Access Level: Write
    *

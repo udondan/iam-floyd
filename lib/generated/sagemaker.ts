@@ -136,7 +136,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an App for a SageMaker Studio UserProfile
+   * Grants permission to create an App for a SageMaker UserProfile or Space
    *
    * Access Level: Write
    *
@@ -506,6 +506,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a hub
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHub.html
+   */
+  public toCreateHub() {
+    return this.to('CreateHub');
+  }
+
+  /**
    * Grants permission to define the settings you will use for the human review workflow user interface
    *
    * Access Level: Write
@@ -582,6 +600,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateImageVersion() {
     return this.to('CreateImageVersion');
+  }
+
+  /**
+   * Grants permission to create an inference experiment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html
+   */
+  public toCreateInferenceExperiment() {
+    return this.to('CreateInferenceExperiment');
   }
 
   /**
@@ -684,6 +721,35 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateModelBiasJobDefinition() {
     return this.to('CreateModelBiasJobDefinition');
+  }
+
+  /**
+   * Grants permission to create a model card
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelCard.html
+   */
+  public toCreateModelCard() {
+    return this.to('CreateModelCard');
+  }
+
+  /**
+   * Grants permission to create an export job for a model card
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelCardExportJob.html
+   */
+  public toCreateModelCardExportJob() {
+    return this.to('CreateModelCardExportJob');
   }
 
   /**
@@ -930,6 +996,27 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Space for a SageMaker Domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateSpace.html
+   */
+  public toCreateSpace() {
+    return this.to('CreateSpace');
+  }
+
+  /**
    * Grants permission to create a Studio Lifecycle Configuration that can be deployed using Amazon SageMaker
    *
    * Access Level: Write
@@ -1038,7 +1125,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a UserProfile for a SageMaker Studio Domain
+   * Grants permission to create a UserProfile for a SageMaker Domain
    *
    * Access Level: Write
    *
@@ -1299,6 +1386,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete hubs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHub.html
+   */
+  public toDeleteHub() {
+    return this.to('DeleteHub');
+  }
+
+  /**
+   * Grants permission to delete hub content
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHubContent.html
+   */
+  public toDeleteHubContent() {
+    return this.to('DeleteHubContent');
+  }
+
+  /**
    * Grants permission to delete a specified human loop
    *
    * Access Level: Write
@@ -1343,6 +1452,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an inference experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteInferenceExperiment.html
+   */
+  public toDeleteInferenceExperiment() {
+    return this.to('DeleteInferenceExperiment');
+  }
+
+  /**
    * Grants permission to delete a lineage group policy
    *
    * Access Level: Write
@@ -1373,6 +1493,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteModelBiasJobDefinition() {
     return this.to('DeleteModelBiasJobDefinition');
+  }
+
+  /**
+   * Grants permission to delete a model card
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteModelCard.html
+   */
+  public toDeleteModelCard() {
+    return this.to('DeleteModelCard');
   }
 
   /**
@@ -1494,6 +1625,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteRecord() {
     return this.to('DeleteRecord');
+  }
+
+  /**
+   * Grants permission to delete a Space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteSpace.html
+   */
+  public toDeleteSpace() {
+    return this.to('DeleteSpace');
   }
 
   /**
@@ -1819,6 +1961,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe hubs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeHub.html
+   */
+  public toDescribeHub() {
+    return this.to('DescribeHub');
+  }
+
+  /**
+   * Grants permission to describe hub content
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeHubContent.html
+   */
+  public toDescribeHubContent() {
+    return this.to('DescribeHubContent');
+  }
+
+  /**
    * Grants permission to return information about the specified human loop
    *
    * Access Level: Read
@@ -1874,6 +2038,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an inference experiment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html
+   */
+  public toDescribeInferenceExperiment() {
+    return this.to('DescribeInferenceExperiment');
+  }
+
+  /**
    * Grants permission to get information about an inference recommendations job
    *
    * Access Level: Read
@@ -1926,6 +2101,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeModelBiasJobDefinition() {
     return this.to('DescribeModelBiasJobDefinition');
+  }
+
+  /**
+   * Grants permission to get information about a model card
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelCard.html
+   */
+  public toDescribeModelCard() {
+    return this.to('DescribeModelCard');
+  }
+
+  /**
+   * Grants permission to get information about a model card export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelCardExportJob.html
+   */
+  public toDescribeModelCardExportJob() {
+    return this.to('DescribeModelCardExportJob');
   }
 
   /**
@@ -2058,6 +2255,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeProject() {
     return this.to('DescribeProject');
+  }
+
+  /**
+   * Grants permission to describe a Space
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeSpace.html
+   */
+  public toDescribeSpace() {
+    return this.to('DescribeSpace');
   }
 
   /**
@@ -2267,6 +2475,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public toGetSearchSuggestions() {
     return this.to('GetSearchSuggestions');
+  }
+
+  /**
+   * Grants permission to import hub content
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ImportHubContent.html
+   */
+  public toImportHubContent() {
+    return this.to('ImportHubContent');
   }
 
   /**
@@ -2537,6 +2763,39 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all versions of hub content
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHubContentVersions.html
+   */
+  public toListHubContentVersions() {
+    return this.to('ListHubContentVersions');
+  }
+
+  /**
+   * Grants permission to list newest versions of hub content
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHubContents.html
+   */
+  public toListHubContents() {
+    return this.to('ListHubContents');
+  }
+
+  /**
+   * Grants permission to list hubs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHubs.html
+   */
+  public toListHubs() {
+    return this.to('ListHubs');
+  }
+
+  /**
    * Grants permission to return summary information about human loops, given the specified parameters
    *
    * Access Level: List
@@ -2589,6 +2848,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListImages() {
     return this.to('ListImages');
+  }
+
+  /**
+   * Grants permission to list inference experiments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceExperiments.html
+   */
+  public toListInferenceExperiments() {
+    return this.to('ListInferenceExperiments');
   }
 
   /**
@@ -2658,6 +2928,39 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list export jobs for a model card
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelCardExportJobs.html
+   */
+  public toListModelCardExportJobs() {
+    return this.to('ListModelCardExportJobs');
+  }
+
+  /**
+   * Grants permission to list versions of a model card
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelCardVersions.html
+   */
+  public toListModelCardVersions() {
+    return this.to('ListModelCardVersions');
+  }
+
+  /**
+   * Grants permission to list model cards
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListModelCards.html
+   */
+  public toListModelCards() {
+    return this.to('ListModelCards');
+  }
+
+  /**
    * Grants permission to list model explainability job definitions
    *
    * Access Level: List
@@ -2721,6 +3024,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListModels() {
     return this.to('ListModels');
+  }
+
+  /**
+   * Grants permission to list the history of a monitoring alert
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMonitoringHistory.html
+   */
+  public toListMonitoringAlertHistory() {
+    return this.to('ListMonitoringAlertHistory');
+  }
+
+  /**
+   * Grants permission to list monitoring alerts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMonitoringAlerts.html
+   */
+  public toListMonitoringAlerts() {
+    return this.to('ListMonitoringAlerts');
   }
 
   /**
@@ -2831,6 +3156,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListProjects() {
     return this.to('ListProjects');
+  }
+
+  /**
+   * Grants permission to list the Spaces in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListSpaces.html
+   */
+  public toListSpaces() {
+    return this.to('ListSpaces');
   }
 
   /**
@@ -3116,6 +3452,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an inference experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartInferenceExperiment.html
+   */
+  public toStartInferenceExperiment() {
+    return this.to('StartInferenceExperiment');
+  }
+
+  /**
    * Grants permission to start a monitoring schedule
    *
    * Access Level: Write
@@ -3212,6 +3559,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStopHyperParameterTuningJob() {
     return this.to('StopHyperParameterTuningJob');
+  }
+
+  /**
+   * Grants permission to stop an inference experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html
+   */
+  public toStopInferenceExperiment() {
+    return this.to('StopInferenceExperiment');
   }
 
   /**
@@ -3453,6 +3811,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update hubs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateHub.html
+   */
+  public toUpdateHub() {
+    return this.to('UpdateHub');
+  }
+
+  /**
    * Grants permission to update the properties of a SageMaker Image
    *
    * Access Level: Write
@@ -3464,6 +3833,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateImage() {
     return this.to('UpdateImage');
+  }
+
+  /**
+   * Grants permission to update an inference experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateInferenceExperiment.html
+   */
+  public toUpdateInferenceExperiment() {
+    return this.to('UpdateInferenceExperiment');
+  }
+
+  /**
+   * Grants permission to update a model card
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateModelCard.html
+   */
+  public toUpdateModelCard() {
+    return this.to('UpdateModelCard');
   }
 
   /**
@@ -3480,6 +3871,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateModelPackage() {
     return this.to('UpdateModelPackage');
+  }
+
+  /**
+   * Grants permission to update a monitoring alert
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateMonitoringAlert.html
+   */
+  public toUpdateMonitoringAlert() {
+    return this.to('UpdateMonitoringAlert');
   }
 
   /**
@@ -3574,6 +3976,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateProject() {
     return this.to('UpdateProject');
+  }
+
+  /**
+   * Grants permission to update a Space
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html
+   */
+  public toUpdateSpace() {
+    return this.to('UpdateSpace');
   }
 
   /**
@@ -3679,15 +4097,19 @@ export class Sagemaker extends PolicyStatement {
       'CreateExperiment',
       'CreateFeatureGroup',
       'CreateFlowDefinition',
+      'CreateHub',
       'CreateHumanTaskUi',
       'CreateHyperParameterTuningJob',
       'CreateImage',
       'CreateImageVersion',
+      'CreateInferenceExperiment',
       'CreateInferenceRecommendationsJob',
       'CreateLabelingJob',
       'CreateLineageGroupPolicy',
       'CreateModel',
       'CreateModelBiasJobDefinition',
+      'CreateModelCard',
+      'CreateModelCardExportJob',
       'CreateModelExplainabilityJobDefinition',
       'CreateModelPackage',
       'CreateModelPackageGroup',
@@ -3700,6 +4122,7 @@ export class Sagemaker extends PolicyStatement {
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
+      'CreateSpace',
       'CreateStudioLifecycleConfig',
       'CreateTrainingJob',
       'CreateTransformJob',
@@ -3726,13 +4149,17 @@ export class Sagemaker extends PolicyStatement {
       'DeleteExperiment',
       'DeleteFeatureGroup',
       'DeleteFlowDefinition',
+      'DeleteHub',
+      'DeleteHubContent',
       'DeleteHumanLoop',
       'DeleteHumanTaskUi',
       'DeleteImage',
       'DeleteImageVersion',
+      'DeleteInferenceExperiment',
       'DeleteLineageGroupPolicy',
       'DeleteModel',
       'DeleteModelBiasJobDefinition',
+      'DeleteModelCard',
       'DeleteModelExplainabilityJobDefinition',
       'DeleteModelPackage',
       'DeleteModelPackageGroup',
@@ -3744,6 +4171,7 @@ export class Sagemaker extends PolicyStatement {
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',
+      'DeleteSpace',
       'DeleteStudioLifecycleConfig',
       'DeleteTrial',
       'DeleteTrialComponent',
@@ -3754,6 +4182,7 @@ export class Sagemaker extends PolicyStatement {
       'DisableSagemakerServicecatalogPortfolio',
       'DisassociateTrialComponent',
       'EnableSagemakerServicecatalogPortfolio',
+      'ImportHubContent',
       'PutLineageGroupPolicy',
       'PutModelPackageGroupPolicy',
       'PutRecord',
@@ -3764,6 +4193,7 @@ export class Sagemaker extends PolicyStatement {
       'SendPipelineExecutionStepSuccess',
       'StartEdgeDeploymentStage',
       'StartHumanLoop',
+      'StartInferenceExperiment',
       'StartMonitoringSchedule',
       'StartNotebookInstance',
       'StartPipelineExecution',
@@ -3773,6 +4203,7 @@ export class Sagemaker extends PolicyStatement {
       'StopEdgePackagingJob',
       'StopHumanLoop',
       'StopHyperParameterTuningJob',
+      'StopInferenceExperiment',
       'StopInferenceRecommendationsJob',
       'StopLabelingJob',
       'StopMonitoringSchedule',
@@ -3794,14 +4225,19 @@ export class Sagemaker extends PolicyStatement {
       'UpdateExperiment',
       'UpdateFeatureGroup',
       'UpdateFeatureMetadata',
+      'UpdateHub',
       'UpdateImage',
+      'UpdateInferenceExperiment',
+      'UpdateModelCard',
       'UpdateModelPackage',
+      'UpdateMonitoringAlert',
       'UpdateMonitoringSchedule',
       'UpdateNotebookInstance',
       'UpdateNotebookInstanceLifecycleConfig',
       'UpdatePipeline',
       'UpdatePipelineExecution',
       'UpdateProject',
+      'UpdateSpace',
       'UpdateTrainingJob',
       'UpdateTrial',
       'UpdateTrialComponent',
@@ -3838,16 +4274,21 @@ export class Sagemaker extends PolicyStatement {
       'DescribeFeatureGroup',
       'DescribeFeatureMetadata',
       'DescribeFlowDefinition',
+      'DescribeHub',
+      'DescribeHubContent',
       'DescribeHumanLoop',
       'DescribeHumanTaskUi',
       'DescribeHyperParameterTuningJob',
       'DescribeImage',
       'DescribeImageVersion',
+      'DescribeInferenceExperiment',
       'DescribeInferenceRecommendationsJob',
       'DescribeLabelingJob',
       'DescribeLineageGroup',
       'DescribeModel',
       'DescribeModelBiasJobDefinition',
+      'DescribeModelCard',
+      'DescribeModelCardExportJob',
       'DescribeModelExplainabilityJobDefinition',
       'DescribeModelPackage',
       'DescribeModelPackageGroup',
@@ -3860,6 +4301,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribePipelineExecution',
       'DescribeProcessingJob',
       'DescribeProject',
+      'DescribeSpace',
       'DescribeStudioLifecycleConfig',
       'DescribeSubscribedWorkteam',
       'DescribeTrainingJob',
@@ -3904,23 +4346,32 @@ export class Sagemaker extends PolicyStatement {
       'ListExperiments',
       'ListFeatureGroups',
       'ListFlowDefinitions',
+      'ListHubContentVersions',
+      'ListHubContents',
+      'ListHubs',
       'ListHumanLoops',
       'ListHumanTaskUis',
       'ListHyperParameterTuningJobs',
       'ListImageVersions',
       'ListImages',
+      'ListInferenceExperiments',
       'ListInferenceRecommendationsJobSteps',
       'ListInferenceRecommendationsJobs',
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',
       'ListLineageGroups',
       'ListModelBiasJobDefinitions',
+      'ListModelCardExportJobs',
+      'ListModelCardVersions',
+      'ListModelCards',
       'ListModelExplainabilityJobDefinitions',
       'ListModelMetadata',
       'ListModelPackageGroups',
       'ListModelPackages',
       'ListModelQualityJobDefinitions',
       'ListModels',
+      'ListMonitoringAlertHistory',
+      'ListMonitoringAlerts',
       'ListMonitoringExecutions',
       'ListMonitoringSchedules',
       'ListNotebookInstanceLifecycleConfigs',
@@ -3931,6 +4382,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListSpaces',
       'ListStageDevices',
       'ListStudioLifecycleConfigs',
       'ListSubscribedWorkteams',
@@ -4071,6 +4523,36 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type hub to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
+   *
+   * @param hubName - Identifier for the hubName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onHub(hubName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub/${ hubName }`);
+  }
+
+  /**
+   * Adds a resource of type hub-content to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
+   *
+   * @param hubName - Identifier for the hubName.
+   * @param hubContentType - Identifier for the hubContentType.
+   * @param hubContentName - Identifier for the hubContentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
+  }
+
+  /**
    * Adds a resource of type inference-recommendations-job to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommender-recommendation-jobs.html
@@ -4086,6 +4568,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
+  }
+
+  /**
+   * Adds a resource of type inference-experiment to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-experiment.html
+   *
+   * @param inferenceExperimentName - Identifier for the inferenceExperimentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-experiment/${ inferenceExperimentName }`);
   }
 
   /**
@@ -4177,6 +4677,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:user-profile/${ domainId }/${ userProfileName }`);
+  }
+
+  /**
+   * Adds a resource of type space to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param spaceName - Identifier for the spaceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:space/${ domainId }/${ spaceName }`);
   }
 
   /**
@@ -4572,6 +5091,21 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type monitoring-schedule-alert to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   *
+   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
+   * @param monitoringScheduleAlertName - Identifier for the monitoringScheduleAlertName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+  }
+
+  /**
    * Adds a resource of type data-quality-job-definition to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html
@@ -4821,6 +5355,43 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type model-card to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelCard.html
+   *
+   * @param modelCardName - Identifier for the modelCardName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelCard(modelCardName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }`);
+  }
+
+  /**
+   * Adds a resource of type model-card-export-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelCardExportJob.html
+   *
+   * @param modelCardName - Identifier for the modelCardName.
+   * @param exportJobName - Identifier for the exportJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelCardExportJob(modelCardName: string, exportJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
+  }
+
+  /**
    * Filters access by the list of all accelerator types associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -5046,8 +5617,10 @@ export class Sagemaker extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApp()
    * - .toCreateDomain()
+   * - .toCreateSpace()
    * - .toCreateUserProfile()
    * - .toUpdateDomain()
+   * - .toUpdateSpace()
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
@@ -5065,8 +5638,10 @@ export class Sagemaker extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApp()
    * - .toCreateDomain()
+   * - .toCreateSpace()
    * - .toCreateUserProfile()
    * - .toUpdateDomain()
+   * - .toUpdateSpace()
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
@@ -5093,12 +5668,14 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
+   * - .toCreateSpace()
    * - .toCreateTrainingJob()
    * - .toCreateTransformJob()
    * - .toCreateUserProfile()
    * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateNotebookInstance()
+   * - .toUpdateSpace()
    * - .toUpdateTrainingJob()
    * - .toUpdateUserProfile()
    *
@@ -5293,11 +5870,13 @@ export class Sagemaker extends PolicyStatement {
    * - flow-definition
    * - human-task-ui
    * - inference-recommendations-job
+   * - inference-experiment
    * - labeling-job
    * - workteam
    * - workforce
    * - domain
    * - user-profile
+   * - space
    * - app
    * - app-image-config
    * - studio-lifecycle-config
@@ -5331,6 +5910,8 @@ export class Sagemaker extends PolicyStatement {
    * - context
    * - action
    * - lineage-group
+   * - model-card
+   * - model-card-export-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

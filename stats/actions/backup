@@ -1,9 +1,11 @@
+backup:CancelLegalHold;Write
 backup:CopyFromBackupVault;Write
 backup:CopyIntoBackupVault;Write
 backup:CreateBackupPlan;Write
 backup:CreateBackupSelection;Write
 backup:CreateBackupVault;Write
 backup:CreateFramework;Write
+backup:CreateLegalHold;Write
 backup:CreateReportPlan;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
@@ -26,6 +28,7 @@ backup:DescribeReportJob;Read
 backup:DescribeReportPlan;Read
 backup:DescribeRestoreJob;Read
 backup:DisassociateRecoveryPoint;Write
+backup:DisassociateRecoveryPointFromParent;Write
 backup:ExportBackupPlanTemplate;Read
 backup:GetBackupPlan;Read
 backup:GetBackupPlanFromJSON;Read
@@ -33,6 +36,7 @@ backup:GetBackupPlanFromTemplate;Read
 backup:GetBackupSelection;Read
 backup:GetBackupVaultAccessPolicy;Read
 backup:GetBackupVaultNotifications;Read
+backup:GetLegalHold;Read
 backup:GetRecoveryPointRestoreMetadata;Read
 backup:GetSupportedResourceTypes;Read
 backup:ListBackupJobs;List
@@ -43,8 +47,10 @@ backup:ListBackupSelections;List
 backup:ListBackupVaults;List
 backup:ListCopyJobs;List
 backup:ListFrameworks;List
+backup:ListLegalHolds;List
 backup:ListProtectedResources;List
 backup:ListRecoveryPointsByBackupVault;List
+backup:ListRecoveryPointsByLegalHold;List
 backup:ListRecoveryPointsByResource;List
 backup:ListReportJobs;List
 backup:ListReportPlans;List
