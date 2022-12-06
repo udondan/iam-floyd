@@ -5,7 +5,6 @@ drs:CreateConvertedSnapshotForDrs;Write
 drs:CreateExtendedSourceServer;Write
 drs:CreateRecoveryInstanceForDrs;Write
 drs:CreateReplicationConfigurationTemplate;Write
-drs:CreateSessionForDrs;Write
 drs:CreateSourceServerForDrs;Write
 drs:DeleteJob;Write
 drs:DeleteRecoveryInstance;Write

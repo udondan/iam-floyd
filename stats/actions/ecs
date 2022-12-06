@@ -24,6 +24,7 @@ ecs:ListAttributes;List
 ecs:ListClusters;List
 ecs:ListContainerInstances;List
 ecs:ListServices;List
+ecs:ListServicesByNamespace;List
 ecs:ListTagsForResource;Read
 ecs:ListTaskDefinitionFamilies;List
 ecs:ListTaskDefinitions;List

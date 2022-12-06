@@ -108,6 +108,28 @@ export class Textract extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve page-level information regarding a lending analysis job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_GetLendingAnalysis.html
+   */
+  public toGetLendingAnalysis() {
+    return this.to('GetLendingAnalysis');
+  }
+
+  /**
+   * Grants permission to retrieve summarized information regarding a lending analysis job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_GetLendingAnalysisSummary.html
+   */
+  public toGetLendingAnalysisSummary() {
+    return this.to('GetLendingAnalysisSummary');
+  }
+
+  /**
    * Grants permission to start an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input
    *
    * Access Level: Write
@@ -149,6 +171,20 @@ export class Textract extends PolicyStatement {
     return this.to('StartExpenseAnalysis');
   }
 
+  /**
+   * Grants permission to start an asynchronous job for detection of entities in a lending document, takes a provided image or PDF as input
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_StartLendingAnalysis.html
+   */
+  public toStartLendingAnalysis() {
+    return this.to('StartLendingAnalysis');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'AnalyzeDocument',
@@ -157,12 +193,15 @@ export class Textract extends PolicyStatement {
       'DetectDocumentText',
       'GetDocumentAnalysis',
       'GetDocumentTextDetection',
-      'GetExpenseAnalysis'
+      'GetExpenseAnalysis',
+      'GetLendingAnalysis',
+      'GetLendingAnalysisSummary'
     ],
     Write: [
       'StartDocumentAnalysis',
       'StartDocumentTextDetection',
-      'StartExpenseAnalysis'
+      'StartExpenseAnalysis',
+      'StartLendingAnalysis'
     ]
   };
 }

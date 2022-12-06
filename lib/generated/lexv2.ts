@@ -19,6 +19,39 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create new items in an existing custom vocabulary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchCreateCustomVocabularyItem.html
+   */
+  public toBatchCreateCustomVocabularyItem() {
+    return this.to('BatchCreateCustomVocabularyItem');
+  }
+
+  /**
+   * Grants permission to delete existing items in an existing custom vocabulary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchDeleteCustomVocabularyItem.html
+   */
+  public toBatchDeleteCustomVocabularyItem() {
+    return this.to('BatchDeleteCustomVocabularyItem');
+  }
+
+  /**
+   * Grants permission to update existing items in an existing custom vocabulary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchUpdateCustomVocabularyItem.html
+   */
+  public toBatchUpdateCustomVocabularyItem() {
+    return this.to('BatchUpdateCustomVocabularyItem');
+  }
+
+  /**
    * Grants permission to build an existing bot locale in a bot
    *
    * Access Level: Write
@@ -613,6 +646,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list items of an existing custom vocabulary
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListCustomVocabularyItems.html
+   */
+  public toListCustomVocabularyItems() {
+    return this.to('ListCustomVocabularyItems');
+  }
+
+  /**
    * Grants permission to list existing exports
    *
    * Access Level: List
@@ -939,6 +983,9 @@ export class LexV2 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchCreateCustomVocabularyItem',
+      'BatchDeleteCustomVocabularyItem',
+      'BatchUpdateCustomVocabularyItem',
       'BuildBotLocale',
       'CreateBot',
       'CreateBotAlias',
@@ -1012,6 +1059,7 @@ export class LexV2 extends PolicyStatement {
       'ListBots',
       'ListBuiltInIntents',
       'ListBuiltInSlotTypes',
+      'ListCustomVocabularyItems',
       'ListExports',
       'ListImports',
       'ListIntents',

@@ -1,3 +1,6 @@
+lex:BatchCreateCustomVocabularyItem;Write
+lex:BatchDeleteCustomVocabularyItem;Write
+lex:BatchUpdateCustomVocabularyItem;Write
 lex:BuildBotLocale;Write
 lex:CreateBot;Write
 lex:CreateBotAlias;Write
@@ -75,6 +78,7 @@ lex:ListBotVersions;List
 lex:ListBots;List
 lex:ListBuiltInIntents;List
 lex:ListBuiltInSlotTypes;List
+lex:ListCustomVocabularyItems;List
 lex:ListExports;List
 lex:ListImports;List
 lex:ListIntents;List

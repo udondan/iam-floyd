@@ -75,6 +75,10 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - drs:DescribeSourceServers
+   * - drs:GetReplicationConfiguration
+   *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateExtendedSourceServer.html
    */
   public toCreateExtendedSourceServer() {
@@ -105,21 +109,19 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:CreateSecurityGroup
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:GetEbsDefaultKmsKeyId
+   * - ec2:GetEbsEncryptionByDefault
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateReplicationConfigurationTemplate.html
    */
   public toCreateReplicationConfigurationTemplate() {
     return this.to('CreateReplicationConfigurationTemplate');
-  }
-
-  /**
-   * Grants permission to create a session
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
-   */
-  public toCreateSessionForDrs() {
-    return this.to('CreateSessionForDrs');
   }
 
   /**
@@ -470,6 +472,9 @@ export class Drs extends PolicyStatement {
    * Grants permission to list extensible source servers
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - drs:DescribeSourceServers
    *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListExtensibleSourceServers.html
    */
@@ -940,6 +945,15 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:CreateSecurityGroup
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:GetEbsDefaultKmsKeyId
+   * - ec2:GetEbsEncryptionByDefault
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateReplicationConfiguration.html
    */
   public toUpdateReplicationConfiguration() {
@@ -950,6 +964,15 @@ export class Drs extends PolicyStatement {
    * Grants permission to update replication configuration template
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateSecurityGroup
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:GetEbsDefaultKmsKeyId
+   * - ec2:GetEbsEncryptionByDefault
+   * - kms:CreateGrant
+   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateReplicationConfigurationTemplate.html
    */
@@ -966,7 +989,6 @@ export class Drs extends PolicyStatement {
       'CreateExtendedSourceServer',
       'CreateRecoveryInstanceForDrs',
       'CreateReplicationConfigurationTemplate',
-      'CreateSessionForDrs',
       'CreateSourceServerForDrs',
       'DeleteJob',
       'DeleteRecoveryInstance',
