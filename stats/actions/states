@@ -4,12 +4,14 @@ states:DeleteActivity;Write
 states:DeleteStateMachine;Write
 states:DescribeActivity;Read
 states:DescribeExecution;Read
+states:DescribeMapRun;Read
 states:DescribeStateMachine;Read
 states:DescribeStateMachineForExecution;Read
 states:GetActivityTask;Write
 states:GetExecutionHistory;Read
 states:ListActivities;List
 states:ListExecutions;Read
+states:ListMapRuns;List
 states:ListStateMachines;List
 states:ListTagsForResource;Read
 states:SendTaskFailure;Write
@@ -20,4 +22,5 @@ states:StartSyncExecution;Write
 states:StopExecution;Write
 states:TagResource;Tagging
 states:UntagResource;Tagging
+states:UpdateMapRun;Write
 states:UpdateStateMachine;Write

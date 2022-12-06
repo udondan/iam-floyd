@@ -59,6 +59,8 @@ export class Ecs extends PolicyStatement {
    * - .ifCapacityProvider()
    * - .ifTaskDefinition()
    * - .ifEnableExecuteCommand()
+   * - .ifEnableServiceConnect()
+   * - .ifNamespace()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -358,6 +360,20 @@ export class Ecs extends PolicyStatement {
    */
   public toListServices() {
     return this.to('ListServices');
+  }
+
+  /**
+   * Grants permission to get a list of services that are running in a specified AWS Cloud Map Namespace
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServicesByNamespace.html
+   */
+  public toListServicesByNamespace() {
+    return this.to('ListServicesByNamespace');
   }
 
   /**
@@ -698,6 +714,8 @@ export class Ecs extends PolicyStatement {
    * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifEnableExecuteCommand()
+   * - .ifEnableServiceConnect()
+   * - .ifNamespace()
    * - .ifTaskDefinition()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
@@ -790,6 +808,7 @@ export class Ecs extends PolicyStatement {
       'ListClusters',
       'ListContainerInstances',
       'ListServices',
+      'ListServicesByNamespace',
       'ListTaskDefinitionFamilies',
       'ListTaskDefinitions',
       'ListTasks'
@@ -1057,6 +1076,39 @@ export class Ecs extends PolicyStatement {
    */
   public ifEnableExecuteCommand(value: string | string[], operator?: Operator | string) {
     return this.if(`enable-execute-command`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the enable field value in the Service Connect configuration
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnableServiceConnect(value: string | string[], operator?: Operator | string) {
+    return this.if(`enable-service-connect`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of AWS Cloud Map namespace which is defined in the Service Connect Configuration
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toListServicesByNamespace()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifNamespace(value: string | string[], operator?: Operator | string) {
+    return this.if(`namespace`, value, operator || 'ArnLike');
   }
 
   /**

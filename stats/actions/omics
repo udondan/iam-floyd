@@ -36,11 +36,11 @@ omics:GetVariantStore;Read
 omics:GetWorkflow;Read
 omics:ListAnnotationImportJobs;List
 omics:ListAnnotationStores;List
-omics:ListReadSetActivationJobs;Read
-omics:ListReadSetExportJobs;Read
-omics:ListReadSetImportJobs;Read
+omics:ListReadSetActivationJobs;List
+omics:ListReadSetExportJobs;List
+omics:ListReadSetImportJobs;List
 omics:ListReadSets;List
-omics:ListReferenceImportJobs;Read
+omics:ListReferenceImportJobs;List
 omics:ListReferenceStores;List
 omics:ListReferences;List
 omics:ListRunGroups;List

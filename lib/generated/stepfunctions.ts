@@ -93,6 +93,17 @@ export class States extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a map run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeMapRun.html
+   */
+  public toDescribeMapRun() {
+    return this.to('DescribeMapRun');
+  }
+
+  /**
    * Grants permission to describe a state machine
    *
    * Access Level: Read
@@ -156,6 +167,17 @@ export class States extends PolicyStatement {
    */
   public toListExecutions() {
     return this.to('ListExecutions');
+  }
+
+  /**
+   * Grants permission to list the map runs of an execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListMapRuns.html
+   */
+  public toListMapRuns() {
+    return this.to('ListMapRuns');
   }
 
   /**
@@ -276,6 +298,17 @@ export class States extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a map run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateMapRun.html
+   */
+  public toUpdateMapRun() {
+    return this.to('UpdateMapRun');
+  }
+
+  /**
    * Grants permission to update a state machine
    *
    * Access Level: Write
@@ -303,11 +336,13 @@ export class States extends PolicyStatement {
       'StartExecution',
       'StartSyncExecution',
       'StopExecution',
+      'UpdateMapRun',
       'UpdateStateMachine'
     ],
     Read: [
       'DescribeActivity',
       'DescribeExecution',
+      'DescribeMapRun',
       'DescribeStateMachine',
       'DescribeStateMachineForExecution',
       'GetExecutionHistory',
@@ -316,6 +351,7 @@ export class States extends PolicyStatement {
     ],
     List: [
       'ListActivities',
+      'ListMapRuns',
       'ListStateMachines'
     ],
     Tagging: [
@@ -357,6 +393,22 @@ export class States extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type express to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param executionId - Identifier for the executionId.
+   * @param expressId - Identifier for the expressId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExpress(stateMachineName: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
+  }
+
+  /**
    * Adds a resource of type statemachine to the statement
    *
    * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
@@ -371,5 +423,21 @@ export class States extends PolicyStatement {
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }`);
+  }
+
+  /**
+   * Adds a resource of type maprun to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param mapRunLabel - Identifier for the mapRunLabel.
+   * @param mapRunId - Identifier for the mapRunId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
   }
 }

@@ -6,6 +6,8 @@ ecs:cluster
 ecs:container-instances
 ecs:container-name
 ecs:enable-execute-command
+ecs:enable-service-connect
+ecs:namespace
 ecs:service
 ecs:task
 ecs:task-definition

@@ -23,7 +23,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_BatchDeleteReadSet.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_BatchDeleteReadSet.html
    */
   public toBatchDeleteReadSet() {
     return this.to('BatchDeleteReadSet');
@@ -34,7 +34,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CancelAnnotationImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CancelAnnotationImportJob.html
    */
   public toCancelAnnotationImportJob() {
     return this.to('CancelAnnotationImportJob');
@@ -45,7 +45,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CancelRun.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CancelRun.html
    */
   public toCancelRun() {
     return this.to('CancelRun');
@@ -56,7 +56,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CancelVariantImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CancelVariantImportJob.html
    */
   public toCancelVariantImportJob() {
     return this.to('CancelVariantImportJob');
@@ -67,7 +67,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateAnnotationStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateAnnotationStore.html
    */
   public toCreateAnnotationStore() {
     return this.to('CreateAnnotationStore');
@@ -82,7 +82,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateReferenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateReferenceStore.html
    */
   public toCreateReferenceStore() {
     return this.to('CreateReferenceStore');
@@ -97,7 +97,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateRunGroup.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateRunGroup.html
    */
   public toCreateRunGroup() {
     return this.to('CreateRunGroup');
@@ -112,7 +112,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateSequenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateSequenceStore.html
    */
   public toCreateSequenceStore() {
     return this.to('CreateSequenceStore');
@@ -123,7 +123,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateVariantStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateVariantStore.html
    */
   public toCreateVariantStore() {
     return this.to('CreateVariantStore');
@@ -138,7 +138,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_CreateWorkflow.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateWorkflow.html
    */
   public toCreateWorkflow() {
     return this.to('CreateWorkflow');
@@ -149,7 +149,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteAnnotationStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteAnnotationStore.html
    */
   public toDeleteAnnotationStore() {
     return this.to('DeleteAnnotationStore');
@@ -160,7 +160,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteReference.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteReference.html
    */
   public toDeleteReference() {
     return this.to('DeleteReference');
@@ -171,7 +171,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteReferenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteReferenceStore.html
    */
   public toDeleteReferenceStore() {
     return this.to('DeleteReferenceStore');
@@ -182,7 +182,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteRun.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteRun.html
    */
   public toDeleteRun() {
     return this.to('DeleteRun');
@@ -193,7 +193,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteRunGroup.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteRunGroup.html
    */
   public toDeleteRunGroup() {
     return this.to('DeleteRunGroup');
@@ -204,7 +204,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteSequenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteSequenceStore.html
    */
   public toDeleteSequenceStore() {
     return this.to('DeleteSequenceStore');
@@ -215,7 +215,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteVariantStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteVariantStore.html
    */
   public toDeleteVariantStore() {
     return this.to('DeleteVariantStore');
@@ -226,7 +226,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_DeleteWorkflow.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteWorkflow.html
    */
   public toDeleteWorkflow() {
     return this.to('DeleteWorkflow');
@@ -237,7 +237,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetAnnotationImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetAnnotationImportJob.html
    */
   public toGetAnnotationImportJob() {
     return this.to('GetAnnotationImportJob');
@@ -248,7 +248,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetAnnotationStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetAnnotationStore.html
    */
   public toGetAnnotationStore() {
     return this.to('GetAnnotationStore');
@@ -259,7 +259,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReadSet.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReadSet.html
    */
   public toGetReadSet() {
     return this.to('GetReadSet');
@@ -270,7 +270,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReadSetActivationJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReadSetActivationJob.html
    */
   public toGetReadSetActivationJob() {
     return this.to('GetReadSetActivationJob');
@@ -281,7 +281,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReadSetExportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReadSetExportJob.html
    */
   public toGetReadSetExportJob() {
     return this.to('GetReadSetExportJob');
@@ -292,7 +292,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReadSetImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReadSetImportJob.html
    */
   public toGetReadSetImportJob() {
     return this.to('GetReadSetImportJob');
@@ -303,7 +303,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReadSetMetadata.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReadSetMetadata.html
    */
   public toGetReadSetMetadata() {
     return this.to('GetReadSetMetadata');
@@ -314,7 +314,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReference.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReference.html
    */
   public toGetReference() {
     return this.to('GetReference');
@@ -325,7 +325,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReferenceImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReferenceImportJob.html
    */
   public toGetReferenceImportJob() {
     return this.to('GetReferenceImportJob');
@@ -336,7 +336,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReferenceMetadata.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReferenceMetadata.html
    */
   public toGetReferenceMetadata() {
     return this.to('GetReferenceMetadata');
@@ -347,7 +347,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetReferenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetReferenceStore.html
    */
   public toGetReferenceStore() {
     return this.to('GetReferenceStore');
@@ -358,7 +358,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetRun.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetRun.html
    */
   public toGetRun() {
     return this.to('GetRun');
@@ -369,7 +369,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetRunGroup.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetRunGroup.html
    */
   public toGetRunGroup() {
     return this.to('GetRunGroup');
@@ -380,7 +380,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetRunTask.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetRunTask.html
    */
   public toGetRunTask() {
     return this.to('GetRunTask');
@@ -391,7 +391,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetSequenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetSequenceStore.html
    */
   public toGetSequenceStore() {
     return this.to('GetSequenceStore');
@@ -402,7 +402,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetVariantImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetVariantImportJob.html
    */
   public toGetVariantImportJob() {
     return this.to('GetVariantImportJob');
@@ -413,7 +413,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetVariantStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetVariantStore.html
    */
   public toGetVariantStore() {
     return this.to('GetVariantStore');
@@ -424,7 +424,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_GetWorkflow.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetWorkflow.html
    */
   public toGetWorkflow() {
     return this.to('GetWorkflow');
@@ -435,7 +435,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListAnnotationImportJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListAnnotationImportJobs.html
    */
   public toListAnnotationImportJobs() {
     return this.to('ListAnnotationImportJobs');
@@ -446,7 +446,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListAnnotationStores.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListAnnotationStores.html
    */
   public toListAnnotationStores() {
     return this.to('ListAnnotationStores');
@@ -455,9 +455,9 @@ export class Omics extends PolicyStatement {
   /**
    * Grants permission to list Read Set activation jobs for the given Sequence Store
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReadSetActivationJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReadSetActivationJobs.html
    */
   public toListReadSetActivationJobs() {
     return this.to('ListReadSetActivationJobs');
@@ -466,9 +466,9 @@ export class Omics extends PolicyStatement {
   /**
    * Grants permission to list Read Set export jobs for the given Sequence Store
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReadSetExportJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReadSetExportJobs.html
    */
   public toListReadSetExportJobs() {
     return this.to('ListReadSetExportJobs');
@@ -477,9 +477,9 @@ export class Omics extends PolicyStatement {
   /**
    * Grants permission to list Read Set import jobs for the given Sequence Store
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReadSetImportJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReadSetImportJobs.html
    */
   public toListReadSetImportJobs() {
     return this.to('ListReadSetImportJobs');
@@ -490,7 +490,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReadSets.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReadSets.html
    */
   public toListReadSets() {
     return this.to('ListReadSets');
@@ -499,9 +499,9 @@ export class Omics extends PolicyStatement {
   /**
    * Grants permission to list Reference import jobs for the given Reference Store
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReferenceImportJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReferenceImportJobs.html
    */
   public toListReferenceImportJobs() {
     return this.to('ListReferenceImportJobs');
@@ -512,7 +512,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReferenceStores.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReferenceStores.html
    */
   public toListReferenceStores() {
     return this.to('ListReferenceStores');
@@ -523,7 +523,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListReferences.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListReferences.html
    */
   public toListReferences() {
     return this.to('ListReferences');
@@ -534,7 +534,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListRunGroups.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListRunGroups.html
    */
   public toListRunGroups() {
     return this.to('ListRunGroups');
@@ -545,7 +545,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListRunTasks.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListRunTasks.html
    */
   public toListRunTasks() {
     return this.to('ListRunTasks');
@@ -556,7 +556,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListRuns.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListRuns.html
    */
   public toListRuns() {
     return this.to('ListRuns');
@@ -567,7 +567,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListSequenceStores.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListSequenceStores.html
    */
   public toListSequenceStores() {
     return this.to('ListSequenceStores');
@@ -578,7 +578,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -589,7 +589,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListVariantImportJobs.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListVariantImportJobs.html
    */
   public toListVariantImportJobs() {
     return this.to('ListVariantImportJobs');
@@ -600,7 +600,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListVariantStores.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListVariantStores.html
    */
   public toListVariantStores() {
     return this.to('ListVariantStores');
@@ -611,7 +611,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_ListWorkflows.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListWorkflows.html
    */
   public toListWorkflows() {
     return this.to('ListWorkflows');
@@ -622,7 +622,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartAnnotationImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartAnnotationImportJob.html
    */
   public toStartAnnotationImportJob() {
     return this.to('StartAnnotationImportJob');
@@ -633,7 +633,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartReadSetActivationJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartReadSetActivationJob.html
    */
   public toStartReadSetActivationJob() {
     return this.to('StartReadSetActivationJob');
@@ -644,7 +644,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartReadSetExportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartReadSetExportJob.html
    */
   public toStartReadSetExportJob() {
     return this.to('StartReadSetExportJob');
@@ -655,7 +655,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartReadSetImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartReadSetImportJob.html
    */
   public toStartReadSetImportJob() {
     return this.to('StartReadSetImportJob');
@@ -666,7 +666,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartReferenceImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartReferenceImportJob.html
    */
   public toStartReferenceImportJob() {
     return this.to('StartReferenceImportJob');
@@ -681,7 +681,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartRun.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartRun.html
    */
   public toStartRun() {
     return this.to('StartRun');
@@ -692,7 +692,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_StartVariantImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartVariantImportJob.html
    */
   public toStartVariantImportJob() {
     return this.to('StartVariantImportJob');
@@ -707,7 +707,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_TagResource.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -721,7 +721,7 @@ export class Omics extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_UntagResource.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -732,7 +732,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_UpdateAnnotationStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateAnnotationStore.html
    */
   public toUpdateAnnotationStore() {
     return this.to('UpdateAnnotationStore');
@@ -743,7 +743,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_UpdateRunGroup.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateRunGroup.html
    */
   public toUpdateRunGroup() {
     return this.to('UpdateRunGroup');
@@ -754,7 +754,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_UpdateVariantStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateVariantStore.html
    */
   public toUpdateVariantStore() {
     return this.to('UpdateVariantStore');
@@ -765,7 +765,7 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_UpdateWorkflow.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateWorkflow.html
    */
   public toUpdateWorkflow() {
     return this.to('UpdateWorkflow');
@@ -821,16 +821,16 @@ export class Omics extends PolicyStatement {
       'GetSequenceStore',
       'GetVariantImportJob',
       'GetVariantStore',
-      'GetWorkflow',
-      'ListReadSetActivationJobs',
-      'ListReadSetExportJobs',
-      'ListReadSetImportJobs',
-      'ListReferenceImportJobs'
+      'GetWorkflow'
     ],
     List: [
       'ListAnnotationImportJobs',
       'ListAnnotationStores',
+      'ListReadSetActivationJobs',
+      'ListReadSetExportJobs',
+      'ListReadSetImportJobs',
       'ListReadSets',
+      'ListReferenceImportJobs',
       'ListReferenceStores',
       'ListReferences',
       'ListRunGroups',
@@ -851,7 +851,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type AnnotationImportJob to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_AnnotationImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationImportJobItem.html
    *
    * @param annotationImportJobId - Identifier for the annotationImportJobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -868,7 +868,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type AnnotationStore to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_AnnotationStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationStoreItem.html
    *
    * @param annotationStoreId - Identifier for the annotationStoreId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -885,7 +885,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type readSet to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_readSet.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ReadSetFiles.html
    *
    * @param sequenceStoreId - Identifier for the sequenceStoreId.
    * @param readSetId - Identifier for the readSetId.
@@ -903,7 +903,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type reference to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_reference.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ReferenceFiles.html
    *
    * @param referenceStoreId - Identifier for the referenceStoreId.
    * @param referenceId - Identifier for the referenceId.
@@ -921,7 +921,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type referenceStore to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_referenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_ReferenceStoreDetail.html
    *
    * @param referenceStoreId - Identifier for the referenceStoreId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -938,7 +938,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type run to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_run.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_RunListItem.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -955,7 +955,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type runGroup to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_runGroup.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_RunGroupListItem.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -972,7 +972,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type sequenceStore to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_sequenceStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_SequenceStoreDetail.html
    *
    * @param sequenceStoreId - Identifier for the sequenceStoreId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -989,7 +989,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type TaggingResource to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_TaggingResource.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_TagResource.html
    *
    * @param tagKey - Identifier for the tagKey.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1003,7 +1003,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type TaskResource to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_TaskResource.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_TaskListItem.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1017,7 +1017,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type VariantImportJob to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_VariantImportJob.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_VariantImportJobItem.html
    *
    * @param variantImportJobId - Identifier for the variantImportJobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1034,7 +1034,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type VariantStore to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_VariantStore.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_VariantStoreItem.html
    *
    * @param variantStoreId - Identifier for the variantStoreId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1051,7 +1051,7 @@ export class Omics extends PolicyStatement {
   /**
    * Adds a resource of type workflow to the statement
    *
-   * https://docs.aws.amazon.com/Omics/latest/api/API_workflow.html
+   * https://docs.aws.amazon.com/omics/latest/api/API_WorkflowListItem.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
