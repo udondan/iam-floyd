@@ -184,7 +184,8 @@
 				"forecast:InvokeForecastEndpoint",
 				"forecast:GetRecentForecastContext",
 				"forecast:DescribePredictor",
-				"forecast:TagResource"
+				"forecast:TagResource",
+				"forecast:DeleteResourceTree"
 			],
 			"Resource": [
 				"arn:aws:forecast:*:*:*Canvas*"

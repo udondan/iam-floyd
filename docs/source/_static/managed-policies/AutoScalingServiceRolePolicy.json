@@ -16,7 +16,7 @@
 				"ec2:RequestSpotInstances",
 				"ec2:RunInstances",
 				"ec2:StartInstances",
-                "ec2:StopInstances",
+				"ec2:StopInstances",
 				"ec2:TerminateInstances"
 			],
 			"Resource": "*"
@@ -93,13 +93,25 @@
 				}
 			}
 		},
-        {
-            "Sid": "SystemsManagerParameterManagement",
-            "Effect": "Allow",
-            "Action": [
-                "ssm:GetParameters"
-            ],
-            "Resource": "*"
-        }
+		{
+			"Sid": "SystemsManagerParameterManagement",
+			"Effect": "Allow",
+			"Action": [
+				"ssm:GetParameters"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "VpcLatticeManagement",
+			"Effect": "Allow",
+			"Action": [
+				"vpc-lattice:DeregisterTargets",
+				"vpc-lattice:GetTargetGroup",
+				"vpc-lattice:ListTargets",
+				"vpc-lattice:ListTargetGroups",
+				"vpc-lattice:RegisterTargets"
+			],
+			"Resource": "*"
+		}
 	]
 }
