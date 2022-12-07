@@ -67,7 +67,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
+   * Grants permission to retrieve metrics associated with SageMaker Resources such as Training Jobs or Trial Components. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Read
    *
@@ -89,7 +89,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
+   * Grants permission to publish metrics associated with a SageMaker Resource such as a Training Job or Trial Component
    *
    * Access Level: Write
    *

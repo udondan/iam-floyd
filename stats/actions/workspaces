@@ -5,6 +5,7 @@ workspaces:CopyWorkspaceImage;Write
 workspaces:CreateConnectClientAddIn;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
+workspaces:CreateStandbyWorkspaces;Write
 workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
@@ -41,6 +42,7 @@ workspaces:ImportWorkspaceImage;Write
 workspaces:ListAvailableManagementCidrRanges;List
 workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
+workspaces:ModifyCertificateBasedAuthProperties;Write
 workspaces:ModifyClientProperties;Write
 workspaces:ModifySamlProperties;Write
 workspaces:ModifySelfservicePermissions;Permissions management

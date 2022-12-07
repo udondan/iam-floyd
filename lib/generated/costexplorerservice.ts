@@ -426,6 +426,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of your historical recommendation generations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListSavingsPlansPurchaseRecommendationGeneration.html
+   */
+  public toListSavingsPlansPurchaseRecommendationGeneration() {
+    return this.to('ListSavingsPlansPurchaseRecommendationGeneration');
+  }
+
+  /**
    * Grants permission to list tags for a Cost Explorer resource
    *
    * Access Level: Read
@@ -448,6 +459,17 @@ export class Ce extends PolicyStatement {
    */
   public toProvideAnomalyFeedback() {
     return this.to('ProvideAnomalyFeedback');
+  }
+
+  /**
+   * Grants permission to request a Savings Plans recommendation generation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartSavingsPlansPurchaseRecommendationGeneration.html
+   */
+  public toStartSavingsPlansPurchaseRecommendationGeneration() {
+    return this.to('StartSavingsPlansPurchaseRecommendationGeneration');
   }
 
   /**
@@ -580,6 +602,7 @@ export class Ce extends PolicyStatement {
       'DeleteNotificationSubscription',
       'DeleteReport',
       'ProvideAnomalyFeedback',
+      'StartSavingsPlansPurchaseRecommendationGeneration',
       'UpdateAnomalyMonitor',
       'UpdateAnomalySubscription',
       'UpdateCostAllocationTagsStatus',
@@ -615,7 +638,8 @@ export class Ce extends PolicyStatement {
     ],
     List: [
       'ListCostAllocationTags',
-      'ListCostCategoryDefinitions'
+      'ListCostCategoryDefinitions',
+      'ListSavingsPlansPurchaseRecommendationGeneration'
     ],
     Tagging: [
       'TagResource',

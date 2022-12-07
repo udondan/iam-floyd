@@ -19,6 +19,7 @@ ec2:DPDTimeoutSeconds
 ec2:DhcpOptionsID
 ec2:DirectoryArn
 ec2:Domain
+ec2:DomainCertificateArn
 ec2:EbsOptimized
 ec2:ElasticGpuType
 ec2:Encrypted
@@ -43,6 +44,7 @@ ec2:KeyPairName
 ec2:KeyPairType
 ec2:KmsKeyId
 ec2:LaunchTemplate
+ec2:LoadBalancerArn
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
 ec2:MetadataHttpTokens

@@ -46,6 +46,7 @@ export class Securitylake extends PolicyStatement {
    * - glue:StartCrawlerSchedule
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:PassRole
    * - iam:PutRolePolicy
    * - kms:CreateGrant
    * - kms:DescribeKey
@@ -72,6 +73,7 @@ export class Securitylake extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:PassRole
    * - iam:PutRolePolicy
    * - kms:CreateGrant
    * - kms:DescribeKey
@@ -177,6 +179,7 @@ export class Securitylake extends PolicyStatement {
    * - events:PutTargets
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:PassRole
    * - s3:GetBucketNotification
    * - s3:PutBucketNotification
    * - sqs:CreateQueue
@@ -534,6 +537,7 @@ export class Securitylake extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:PassRole
    * - iam:PutRolePolicy
    * - s3:CreateBucket
    * - s3:GetBucketNotification
@@ -542,6 +546,7 @@ export class Securitylake extends PolicyStatement {
    * - s3:PutBucketPolicy
    * - s3:PutBucketPublicAccessBlock
    * - s3:PutBucketVersioning
+   * - s3:PutLifecycleConfiguration
    * - sqs:CreateQueue
    * - sqs:DeleteQueue
    * - sqs:GetQueueAttributes

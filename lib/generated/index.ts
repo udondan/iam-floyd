@@ -21,6 +21,7 @@ export { Synthetics } from './cloudwatchsynthetics';
 export { Codeguru } from './codeguru';
 export { CodeguruProfiler } from './codeguruprofiler';
 export { CodeguruReviewer } from './codegurureviewer';
+export { Codewhisperer } from './codewhisperer';
 export { CognitoIdentity } from './cognitoidentity';
 export { CognitoSync } from './cognitosync';
 export { CognitoIdp } from './cognitouserpools';

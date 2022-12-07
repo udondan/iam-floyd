@@ -28,6 +28,7 @@ ec2:AssociateVpcCidrBlock;Write
 ec2:AttachClassicLinkVpc;Write
 ec2:AttachInternetGateway;Write
 ec2:AttachNetworkInterface;Write
+ec2:AttachVerifiedAccessTrustProvider;Write
 ec2:AttachVolume;Write
 ec2:AttachVpnGateway;Write
 ec2:AuthorizeClientVpnIngress;Write
@@ -117,6 +118,10 @@ ec2:CreateTransitGatewayRoute;Write
 ec2:CreateTransitGatewayRouteTable;Write
 ec2:CreateTransitGatewayRouteTableAnnouncement;Write
 ec2:CreateTransitGatewayVpcAttachment;Write
+ec2:CreateVerifiedAccessEndpoint;Write
+ec2:CreateVerifiedAccessGroup;Write
+ec2:CreateVerifiedAccessInstance;Write
+ec2:CreateVerifiedAccessTrustProvider;Write
 ec2:CreateVolume;Write
 ec2:CreateVpc;Write
 ec2:CreateVpcEndpoint;Write
@@ -188,6 +193,10 @@ ec2:DeleteTransitGatewayRoute;Write
 ec2:DeleteTransitGatewayRouteTable;Write
 ec2:DeleteTransitGatewayRouteTableAnnouncement;Write
 ec2:DeleteTransitGatewayVpcAttachment;Write
+ec2:DeleteVerifiedAccessEndpoint;Write
+ec2:DeleteVerifiedAccessGroup;Write
+ec2:DeleteVerifiedAccessInstance;Write
+ec2:DeleteVerifiedAccessTrustProvider;Write
 ec2:DeleteVolume;Write
 ec2:DeleteVpc;Write
 ec2:DeleteVpcEndpointConnectionNotifications;Write
@@ -210,6 +219,7 @@ ec2:DescribeAddresses;List
 ec2:DescribeAddressesAttribute;List
 ec2:DescribeAggregateIdFormat;List
 ec2:DescribeAvailabilityZones;List
+ec2:DescribeAwsNetworkPerformanceMetricSubscriptions;List
 ec2:DescribeBundleTasks;List
 ec2:DescribeByoipCidrs;List
 ec2:DescribeCapacityReservationFleets;List
@@ -324,6 +334,11 @@ ec2:DescribeTransitGatewayRouteTables;List
 ec2:DescribeTransitGatewayVpcAttachments;List
 ec2:DescribeTransitGateways;List
 ec2:DescribeTrunkInterfaceAssociations;List
+ec2:DescribeVerifiedAccessEndpoints;List
+ec2:DescribeVerifiedAccessGroups;List
+ec2:DescribeVerifiedAccessInstanceLoggingConfigurations;List
+ec2:DescribeVerifiedAccessInstances;List
+ec2:DescribeVerifiedAccessTrustProviders;List
 ec2:DescribeVolumeAttribute;List
 ec2:DescribeVolumeStatus;List
 ec2:DescribeVolumes;List
@@ -344,9 +359,11 @@ ec2:DescribeVpnGateways;List
 ec2:DetachClassicLinkVpc;Write
 ec2:DetachInternetGateway;Write
 ec2:DetachNetworkInterface;Write
+ec2:DetachVerifiedAccessTrustProvider;Write
 ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
 ec2:DisableAddressTransfer;Write
+ec2:DisableAwsNetworkPerformanceMetricSubscription;Write
 ec2:DisableEbsEncryptionByDefault;Write
 ec2:DisableFastLaunch;Write
 ec2:DisableFastSnapshotRestores;Write
@@ -370,11 +387,13 @@ ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateTrunkInterface;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableAddressTransfer;Write
+ec2:EnableAwsNetworkPerformanceMetricSubscription;Write
 ec2:EnableEbsEncryptionByDefault;Write
 ec2:EnableFastLaunch;Write
 ec2:EnableFastSnapshotRestores;Write
 ec2:EnableImageDeprecation;Write
 ec2:EnableIpamOrganizationAdminAccount;Write
+ec2:EnableReachabilityAnalyzerOrganizationSharing;Write
 ec2:EnableSerialConsoleAccess;Write
 ec2:EnableTransitGatewayRouteTablePropagation;Write
 ec2:EnableVgwRoutePropagation;Write
@@ -387,6 +406,7 @@ ec2:ExportImage;Write
 ec2:ExportTransitGatewayRoutes;Write
 ec2:GetAssociatedEnclaveCertificateIamRoles;Read
 ec2:GetAssociatedIpv6PoolCidrs;Read
+ec2:GetAwsNetworkPerformanceData;Read
 ec2:GetCapacityReservationUsage;Read
 ec2:GetCoipPoolUsage;Read
 ec2:GetConsoleOutput;Read
@@ -421,6 +441,8 @@ ec2:GetTransitGatewayPolicyTableEntries;List
 ec2:GetTransitGatewayPrefixListReferences;List
 ec2:GetTransitGatewayRouteTableAssociations;List
 ec2:GetTransitGatewayRouteTablePropagations;List
+ec2:GetVerifiedAccessEndpointPolicy;List
+ec2:GetVerifiedAccessGroupPolicy;List
 ec2:GetVpnConnectionDeviceSampleConfiguration;List
 ec2:GetVpnConnectionDeviceTypes;List
 ec2:ImportClientVpnClientCertificateRevocationList;Write
@@ -473,6 +495,13 @@ ec2:ModifyTrafficMirrorSession;Write
 ec2:ModifyTransitGateway;Write
 ec2:ModifyTransitGatewayPrefixListReference;Write
 ec2:ModifyTransitGatewayVpcAttachment;Write
+ec2:ModifyVerifiedAccessEndpoint;Write
+ec2:ModifyVerifiedAccessEndpointPolicy;Write
+ec2:ModifyVerifiedAccessGroup;Write
+ec2:ModifyVerifiedAccessGroupPolicy;Write
+ec2:ModifyVerifiedAccessInstance;Write
+ec2:ModifyVerifiedAccessInstanceLoggingConfiguration;Write
+ec2:ModifyVerifiedAccessTrustProvider;Write
 ec2:ModifyVolume;Write
 ec2:ModifyVolumeAttribute;Write
 ec2:ModifyVpcAttribute;Write
