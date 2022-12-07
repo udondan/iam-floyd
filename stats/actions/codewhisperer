@@ -1,0 +1,4 @@
+codewhisperer:CreateProfile;Write
+codewhisperer:GenerateRecommendations;Read
+codewhisperer:ListProfiles;List
+codewhisperer:UpdateProfile;Write

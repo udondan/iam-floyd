@@ -27,10 +27,31 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
     return this.to('CreateComponent');
+  }
+
+  /**
+   * Grants permission to create a form
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateForm.html
+   */
+  public toCreateForm() {
+    return this.to('CreateForm');
   }
 
   /**
@@ -41,6 +62,9 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateTheme.html
    */
@@ -53,6 +77,9 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteComponent.html
    */
   public toDeleteComponent() {
@@ -60,25 +87,31 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a form
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteForm.html
+   */
+  public toDeleteForm() {
+    return this.to('DeleteForm');
+  }
+
+  /**
    * Grants permission to delete a theme
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteTheme.html
    */
   public toDeleteTheme() {
     return this.to('DeleteTheme');
-  }
-
-  /**
-   * Grants permission to exchange a code for a token
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExchangeCodeForToken.html
-   */
-  public toExchangeCodeForToken() {
-    return this.to('ExchangeCodeForToken');
   }
 
   /**
@@ -90,6 +123,17 @@ export class Amplifyuibuilder extends PolicyStatement {
    */
   public toExportComponents() {
     return this.to('ExportComponents');
+  }
+
+  /**
+   * Grants permission to export forms
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportForms.html
+   */
+  public toExportForms() {
+    return this.to('ExportForms');
   }
 
   /**
@@ -108,6 +152,9 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetComponent.html
    */
   public toGetComponent() {
@@ -115,9 +162,37 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an existing form
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetForm.html
+   */
+  public toGetForm() {
+    return this.to('GetForm');
+  }
+
+  /**
+   * Grants permission to get an existing metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetMetadata.html
+   */
+  public toGetMetadata() {
+    return this.to('GetMetadata');
+  }
+
+  /**
    * Grants permission to get an existing theme
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetTheme.html
    */
@@ -126,9 +201,12 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the components for an app
+   * Grants permission to list components
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListComponents.html
    */
@@ -137,20 +215,26 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for a resource
+   * Grants permission to list forms
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/welcome.html
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListForms.html
    */
-  public toListTagsForResource() {
-    return this.to('ListTagsForResource');
+  public toListForms() {
+    return this.to('ListForms');
   }
 
   /**
-   * Grants permission to list the themes for an app
+   * Grants permission to list themes
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListThemes.html
    */
@@ -159,49 +243,34 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to refresh an access token
+   * Grants permission to put an existing metadata
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_RefreshToken.html
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_PutMetadataFlag.html
    */
-  public toRefreshToken() {
-    return this.to('RefreshToken');
+  public toPutMetadataFlag() {
+    return this.to('PutMetadataFlag');
   }
 
   /**
-   * Grants permission to tag a resource
+   * Grants permission to reset an existing metadata
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/welcome.html
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ResetMetadataFlag.html
    */
-  public toTagResource() {
-    return this.to('TagResource');
-  }
-
-  /**
-   * Grants permission to untag a resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/welcome.html
-   */
-  public toUntagResource() {
-    return this.to('UntagResource');
+  public toResetMetadataFlag() {
+    return this.to('ResetMetadataFlag');
   }
 
   /**
    * Grants permission to update a component
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateComponent.html
    */
@@ -210,9 +279,26 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a form
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateForm.html
+   */
+  public toUpdateForm() {
+    return this.to('UpdateForm');
+  }
+
+  /**
    * Grants permission to update a theme
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateTheme.html
    */
@@ -223,28 +309,30 @@ export class Amplifyuibuilder extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateComponent',
+      'CreateForm',
       'CreateTheme',
       'DeleteComponent',
+      'DeleteForm',
       'DeleteTheme',
-      'ExchangeCodeForToken',
-      'RefreshToken',
+      'PutMetadataFlag',
+      'ResetMetadataFlag',
       'UpdateComponent',
+      'UpdateForm',
       'UpdateTheme'
     ],
     Read: [
       'ExportComponents',
+      'ExportForms',
       'ExportThemes',
       'GetComponent',
-      'GetTheme',
-      'ListTagsForResource'
+      'GetForm',
+      'GetMetadata',
+      'GetTheme'
     ],
     List: [
       'ListComponents',
+      'ListForms',
       'ListThemes'
-    ],
-    Tagging: [
-      'TagResource',
-      'UntagResource'
     ]
   };
 
@@ -261,13 +349,35 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAppId()
-   * - .ifComponentsId()
-   * - .ifEnvironmentName()
+   * - .ifComponentResourceAppId()
+   * - .ifComponentResourceEnvironmentName()
+   * - .ifComponentResourceId()
    * - .ifAwsResourceTag()
    */
   public onComponentResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type FormResource to the statement
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Form.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param environmentName - Identifier for the environmentName.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifFormResourceAppId()
+   * - .ifFormResourceEnvironmentName()
+   * - .ifFormResourceId()
+   * - .ifAwsResourceTag()
+   */
+  public onFormResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
   }
 
   /**
@@ -283,9 +393,9 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAppId()
-   * - .ifEnvironmentName()
-   * - .ifThemesId()
+   * - .ifThemeResourceAppId()
+   * - .ifThemeResourceEnvironmentName()
+   * - .ifThemeResourceId()
    * - .ifAwsResourceTag()
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
@@ -299,13 +409,27 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Applies to resource types:
    * - ComponentResource
-   * - ThemeResource
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AppId`, value, operator || 'StringLike');
+  public ifComponentResourceAppId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ComponentResourceAppId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the backend environment name
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
+   *
+   * Applies to resource types:
+   * - ComponentResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifComponentResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
+    return this.if(`ComponentResourceEnvironmentName`, value, operator || 'StringLike');
   }
 
   /**
@@ -319,8 +443,23 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifComponentsId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ComponentsId`, value, operator || 'StringLike');
+  public ifComponentResourceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ComponentResourceId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the app ID
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
+   *
+   * Applies to resource types:
+   * - FormResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFormResourceAppId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FormResourceAppId`, value, operator || 'StringLike');
   }
 
   /**
@@ -329,14 +468,58 @@ export class Amplifyuibuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
    *
    * Applies to resource types:
-   * - ComponentResource
+   * - FormResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFormResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
+    return this.if(`FormResourceEnvironmentName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the form ID
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Form.html
+   *
+   * Applies to resource types:
+   * - FormResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFormResourceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FormResourceId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the app ID
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
+   *
+   * Applies to resource types:
    * - ThemeResource
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnvironmentName`, value, operator || 'StringLike');
+  public ifThemeResourceAppId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ThemeResourceAppId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the backend environment name
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
+   *
+   * Applies to resource types:
+   * - ThemeResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifThemeResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
+    return this.if(`ThemeResourceEnvironmentName`, value, operator || 'StringLike');
   }
 
   /**
@@ -350,7 +533,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifThemesId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThemesId`, value, operator || 'StringLike');
+  public ifThemeResourceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ThemeResourceId`, value, operator || 'StringLike');
   }
 }

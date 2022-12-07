@@ -1,7 +1,12 @@
-amplifyuibuilder:AppId
-amplifyuibuilder:ComponentsId
-amplifyuibuilder:EnvironmentName
+amplifyuibuilder:ComponentResourceAppId
+amplifyuibuilder:ComponentResourceEnvironmentName
+amplifyuibuilder:ComponentResourceId
+amplifyuibuilder:FormResourceAppId
+amplifyuibuilder:FormResourceEnvironmentName
+amplifyuibuilder:FormResourceId
 amplifyuibuilder:RequestTag/${TagKey}
 amplifyuibuilder:ResourceTag/${TagKey}
 amplifyuibuilder:TagKeys
-amplifyuibuilder:ThemesId
+amplifyuibuilder:ThemeResourceAppId
+amplifyuibuilder:ThemeResourceEnvironmentName
+amplifyuibuilder:ThemeResourceId

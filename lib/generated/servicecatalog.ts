@@ -84,6 +84,9 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Dependent actions:
    * - cloudformation:DescribeStacks
+   * - resource-groups:CreateGroup
+   * - resource-groups:GetGroup
+   * - resource-groups:Tag
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html
    */
@@ -654,6 +657,9 @@ export class Servicecatalog extends PolicyStatement {
    * Possible conditions:
    * - .ifResourceType()
    * - .ifResource()
+   *
+   * Dependent actions:
+   * - resource-groups:DeleteGroup
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DisassociateResource.html
    */

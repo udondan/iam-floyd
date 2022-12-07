@@ -68,6 +68,11 @@ ec2:transit-gateway-multicast-domain
 ec2:transit-gateway-policy-table
 ec2:transit-gateway-route-table
 ec2:transit-gateway-route-table-announcement
+ec2:verified-access-endpoint
+ec2:verified-access-group
+ec2:verified-access-instance
+ec2:verified-access-policy
+ec2:verified-access-trust-provider
 ec2:volume
 ec2:vpc
 ec2:vpc-endpoint

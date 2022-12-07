@@ -111,6 +111,21 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create one or more Standby WorkSpaces
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateStandbyWorkspaces.html
+   */
+  public toCreateStandbyWorkspaces() {
+    return this.to('CreateStandbyWorkspaces');
+  }
+
+  /**
    * Grants permission to create tags for WorkSpaces resources
    *
    * Access Level: Tagging
@@ -538,6 +553,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the certificate-based authorization properties of a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyCertificateBasedAuthProperties.html
+   */
+  public toModifyCertificateBasedAuthProperties() {
+    return this.to('ModifyCertificateBasedAuthProperties');
+  }
+
+  /**
    * Grants permission to modify the properties of WorkSpaces clients
    *
    * Access Level: Write
@@ -784,6 +810,7 @@ export class Workspaces extends PolicyStatement {
       'CreateConnectClientAddIn',
       'CreateConnectionAlias',
       'CreateIpGroup',
+      'CreateStandbyWorkspaces',
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
       'CreateWorkspaceImage',
@@ -801,6 +828,7 @@ export class Workspaces extends PolicyStatement {
       'ImportWorkspaceImage',
       'MigrateWorkspace',
       'ModifyAccount',
+      'ModifyCertificateBasedAuthProperties',
       'ModifyClientProperties',
       'ModifySamlProperties',
       'ModifyWorkspaceAccessProperties',

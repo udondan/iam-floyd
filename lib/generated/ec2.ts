@@ -457,6 +457,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a trust provider to a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVerifiedAccessTrustProvider.html
+   */
+  public toAttachVerifiedAccessTrustProvider() {
+    return this.to('AttachVerifiedAccessTrustProvider');
+  }
+
+  /**
    * Grants permission to attach an EBS volume to a running or stopped instance and expose it to the instance with the specified device name
    *
    * Access Level: Write
@@ -1967,6 +1981,82 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Verified Access endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVerifiedAccessEndpoint.html
+   */
+  public toCreateVerifiedAccessEndpoint() {
+    return this.to('CreateVerifiedAccessEndpoint');
+  }
+
+  /**
+   * Grants permission to create a Verified Access group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVerifiedAccessGroup.html
+   */
+  public toCreateVerifiedAccessGroup() {
+    return this.to('CreateVerifiedAccessGroup');
+  }
+
+  /**
+   * Grants permission to create a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVerifiedAccessInstance.html
+   */
+  public toCreateVerifiedAccessInstance() {
+    return this.to('CreateVerifiedAccessInstance');
+  }
+
+  /**
+   * Grants permission to create a verified trust provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVerifiedAccessTrustProvider.html
+   */
+  public toCreateVerifiedAccessTrustProvider() {
+    return this.to('CreateVerifiedAccessTrustProvider');
+  }
+
+  /**
    * Grants permission to create an EBS volume
    *
    * Access Level: Write
@@ -2992,6 +3082,62 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Verified Access endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVerifiedAccessEndpoint.html
+   */
+  public toDeleteVerifiedAccessEndpoint() {
+    return this.to('DeleteVerifiedAccessEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a Verified Access group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVerifiedAccessGroup.html
+   */
+  public toDeleteVerifiedAccessGroup() {
+    return this.to('DeleteVerifiedAccessGroup');
+  }
+
+  /**
+   * Grants permission to delete a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVerifiedAccessInstance.html
+   */
+  public toDeleteVerifiedAccessInstance() {
+    return this.to('DeleteVerifiedAccessInstance');
+  }
+
+  /**
+   * Grants permission to delete a verified trust provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVerifiedAccessTrustProvider.html
+   */
+  public toDeleteVerifiedAccessTrustProvider() {
+    return this.to('DeleteVerifiedAccessTrustProvider');
+  }
+
+  /**
    * Grants permission to delete an EBS volume
    *
    * Access Level: Write
@@ -3297,6 +3443,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeAvailabilityZones() {
     return this.to('DescribeAvailabilityZones');
+  }
+
+  /**
+   * Grants permission to describe the current infrastructure performance metric subscriptions
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAwsNetworkPerformanceMetricSubscriptions.html
+   */
+  public toDescribeAwsNetworkPerformanceMetricSubscriptions() {
+    return this.to('DescribeAwsNetworkPerformanceMetricSubscriptions');
   }
 
   /**
@@ -4896,6 +5056,76 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the specified Verified Access endpoints or all Verified Access endpoints
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVerifiedAccessEndpoints.html
+   */
+  public toDescribeVerifiedAccessEndpoints() {
+    return this.to('DescribeVerifiedAccessEndpoints');
+  }
+
+  /**
+   * Grants permission to describe the specified Verified Access groups or all Verified Access groups
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVerifiedAccessGroups.html
+   */
+  public toDescribeVerifiedAccessGroups() {
+    return this.to('DescribeVerifiedAccessGroups');
+  }
+
+  /**
+   * Grants permission to describe the current logging configuration for the Verified Access instances
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVerifiedAccessInstanceLoggingConfigurations.html
+   */
+  public toDescribeVerifiedAccessInstanceLoggingConfigurations() {
+    return this.to('DescribeVerifiedAccessInstanceLoggingConfigurations');
+  }
+
+  /**
+   * Grants permission to describe the specified Verified Access instances or all Verified Access instances
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVerifiedAccessInstances.html
+   */
+  public toDescribeVerifiedAccessInstances() {
+    return this.to('DescribeVerifiedAccessInstances');
+  }
+
+  /**
+   * Grants permission to describe details of existing Verified Access trust providers
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVerifiedAccessTrustProviders.html
+   */
+  public toDescribeVerifiedAccessTrustProviders() {
+    return this.to('DescribeVerifiedAccessTrustProviders');
+  }
+
+  /**
    * Grants permission to describe an attribute of an EBS volume
    *
    * Access Level: List
@@ -5176,6 +5406,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detach a trust provider from a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVerifiedAccessTrustProvider.html
+   */
+  public toDetachVerifiedAccessTrustProvider() {
+    return this.to('DetachVerifiedAccessTrustProvider');
+  }
+
+  /**
    * Grants permission to detach an EBS volume from an instance
    *
    * Access Level: Write
@@ -5215,6 +5459,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisableAddressTransfer() {
     return this.to('DisableAddressTransfer');
+  }
+
+  /**
+   * Grants permission to disable infrastructure performance metric subscriptions
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableAwsNetworkPerformanceMetricSubscription.html
+   */
+  public toDisableAwsNetworkPerformanceMetricSubscription() {
+    return this.to('DisableAwsNetworkPerformanceMetricSubscription');
   }
 
   /**
@@ -5543,6 +5801,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable infrastructure performance subscriptions
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableAwsNetworkPerformanceMetricSubscription.html
+   */
+  public toEnableAwsNetworkPerformanceMetricSubscription() {
+    return this.to('EnableAwsNetworkPerformanceMetricSubscription');
+  }
+
+  /**
    * Grants permission to enable EBS encryption by default for your account
    *
    * Access Level: Write
@@ -5615,6 +5887,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableIpamOrganizationAdminAccount() {
     return this.to('EnableIpamOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to enable organization sharing of reachability analyzer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableReachabilityAnalyzerOrganizationSharing.html
+   */
+  public toEnableReachabilityAnalyzerOrganizationSharing() {
+    return this.to('EnableReachabilityAnalyzerOrganizationSharing');
   }
 
   /**
@@ -5788,6 +6074,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetAssociatedIpv6PoolCidrs() {
     return this.to('GetAssociatedIpv6PoolCidrs');
+  }
+
+  /**
+   * Grants permission to get network performance data
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetAwsNetworkPerformanceData.html
+   */
+  public toGetAwsNetworkPerformanceData() {
+    return this.to('GetAwsNetworkPerformanceData');
   }
 
   /**
@@ -6264,6 +6564,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetTransitGatewayRouteTablePropagations() {
     return this.to('GetTransitGatewayRouteTablePropagations');
+  }
+
+  /**
+   * Grants permission to show the Verified Access policy associated with the endpoint
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVerifiedAccessEndpointPolicy.html
+   */
+  public toGetVerifiedAccessEndpointPolicy() {
+    return this.to('GetVerifiedAccessEndpointPolicy');
+  }
+
+  /**
+   * Grants permission to show the contents of the Verified Access policy associated with the group
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVerifiedAccessGroupPolicy.html
+   */
+  public toGetVerifiedAccessGroupPolicy() {
+    return this.to('GetVerifiedAccessGroupPolicy');
   }
 
   /**
@@ -7007,6 +7335,104 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyTransitGatewayVpcAttachment() {
     return this.to('ModifyTransitGatewayVpcAttachment');
+  }
+
+  /**
+   * Grants permission to modify the configuration of a Verified Access endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessEndpoint.html
+   */
+  public toModifyVerifiedAccessEndpoint() {
+    return this.to('ModifyVerifiedAccessEndpoint');
+  }
+
+  /**
+   * Grants permission to modify the specified Verified Access endpoint policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessEndpointPolicy.html
+   */
+  public toModifyVerifiedAccessEndpointPolicy() {
+    return this.to('ModifyVerifiedAccessEndpointPolicy');
+  }
+
+  /**
+   * Grants permission to modify the specified Verified Access Group configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessGroup.html
+   */
+  public toModifyVerifiedAccessGroup() {
+    return this.to('ModifyVerifiedAccessGroup');
+  }
+
+  /**
+   * Grants permission to modify the specified Verified Access group policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessGroupPolicy.html
+   */
+  public toModifyVerifiedAccessGroupPolicy() {
+    return this.to('ModifyVerifiedAccessGroupPolicy');
+  }
+
+  /**
+   * Grants permission to modify the configuration of the specified Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessInstance.html
+   */
+  public toModifyVerifiedAccessInstance() {
+    return this.to('ModifyVerifiedAccessInstance');
+  }
+
+  /**
+   * Grants permission to modify the logging configuration for the specified Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessInstanceLoggingConfiguration.html
+   */
+  public toModifyVerifiedAccessInstanceLoggingConfiguration() {
+    return this.to('ModifyVerifiedAccessInstanceLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to modify the configuration of the specified Verified Access trust provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVerifiedAccessTrustProvider.html
+   */
+  public toModifyVerifiedAccessTrustProvider() {
+    return this.to('ModifyVerifiedAccessTrustProvider');
   }
 
   /**
@@ -8201,6 +8627,7 @@ export class Ec2 extends PolicyStatement {
       'AttachClassicLinkVpc',
       'AttachInternetGateway',
       'AttachNetworkInterface',
+      'AttachVerifiedAccessTrustProvider',
       'AttachVolume',
       'AttachVpnGateway',
       'AuthorizeClientVpnIngress',
@@ -8288,6 +8715,10 @@ export class Ec2 extends PolicyStatement {
       'CreateTransitGatewayRouteTable',
       'CreateTransitGatewayRouteTableAnnouncement',
       'CreateTransitGatewayVpcAttachment',
+      'CreateVerifiedAccessEndpoint',
+      'CreateVerifiedAccessGroup',
+      'CreateVerifiedAccessInstance',
+      'CreateVerifiedAccessTrustProvider',
       'CreateVolume',
       'CreateVpc',
       'CreateVpcEndpoint',
@@ -8357,6 +8788,10 @@ export class Ec2 extends PolicyStatement {
       'DeleteTransitGatewayRouteTable',
       'DeleteTransitGatewayRouteTableAnnouncement',
       'DeleteTransitGatewayVpcAttachment',
+      'DeleteVerifiedAccessEndpoint',
+      'DeleteVerifiedAccessGroup',
+      'DeleteVerifiedAccessInstance',
+      'DeleteVerifiedAccessTrustProvider',
       'DeleteVolume',
       'DeleteVpc',
       'DeleteVpcEndpointConnectionNotifications',
@@ -8376,9 +8811,11 @@ export class Ec2 extends PolicyStatement {
       'DetachClassicLinkVpc',
       'DetachInternetGateway',
       'DetachNetworkInterface',
+      'DetachVerifiedAccessTrustProvider',
       'DetachVolume',
       'DetachVpnGateway',
       'DisableAddressTransfer',
+      'DisableAwsNetworkPerformanceMetricSubscription',
       'DisableEbsEncryptionByDefault',
       'DisableFastLaunch',
       'DisableFastSnapshotRestores',
@@ -8402,11 +8839,13 @@ export class Ec2 extends PolicyStatement {
       'DisassociateTrunkInterface',
       'DisassociateVpcCidrBlock',
       'EnableAddressTransfer',
+      'EnableAwsNetworkPerformanceMetricSubscription',
       'EnableEbsEncryptionByDefault',
       'EnableFastLaunch',
       'EnableFastSnapshotRestores',
       'EnableImageDeprecation',
       'EnableIpamOrganizationAdminAccount',
+      'EnableReachabilityAnalyzerOrganizationSharing',
       'EnableSerialConsoleAccess',
       'EnableTransitGatewayRouteTablePropagation',
       'EnableVgwRoutePropagation',
@@ -8462,6 +8901,13 @@ export class Ec2 extends PolicyStatement {
       'ModifyTransitGateway',
       'ModifyTransitGatewayPrefixListReference',
       'ModifyTransitGatewayVpcAttachment',
+      'ModifyVerifiedAccessEndpoint',
+      'ModifyVerifiedAccessEndpointPolicy',
+      'ModifyVerifiedAccessGroup',
+      'ModifyVerifiedAccessGroupPolicy',
+      'ModifyVerifiedAccessInstance',
+      'ModifyVerifiedAccessInstanceLoggingConfiguration',
+      'ModifyVerifiedAccessTrustProvider',
       'ModifyVolume',
       'ModifyVolumeAttribute',
       'ModifyVpcAttribute',
@@ -8557,6 +9003,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeAddressesAttribute',
       'DescribeAggregateIdFormat',
       'DescribeAvailabilityZones',
+      'DescribeAwsNetworkPerformanceMetricSubscriptions',
       'DescribeBundleTasks',
       'DescribeByoipCidrs',
       'DescribeCapacityReservationFleets',
@@ -8671,6 +9118,11 @@ export class Ec2 extends PolicyStatement {
       'DescribeTransitGatewayVpcAttachments',
       'DescribeTransitGateways',
       'DescribeTrunkInterfaceAssociations',
+      'DescribeVerifiedAccessEndpoints',
+      'DescribeVerifiedAccessGroups',
+      'DescribeVerifiedAccessInstanceLoggingConfigurations',
+      'DescribeVerifiedAccessInstances',
+      'DescribeVerifiedAccessTrustProviders',
       'DescribeVolumeAttribute',
       'DescribeVolumeStatus',
       'DescribeVolumes',
@@ -8698,6 +9150,8 @@ export class Ec2 extends PolicyStatement {
       'GetTransitGatewayPrefixListReferences',
       'GetTransitGatewayRouteTableAssociations',
       'GetTransitGatewayRouteTablePropagations',
+      'GetVerifiedAccessEndpointPolicy',
+      'GetVerifiedAccessGroupPolicy',
       'GetVpnConnectionDeviceSampleConfiguration',
       'GetVpnConnectionDeviceTypes',
       'ListImagesInRecycleBin',
@@ -8711,6 +9165,7 @@ export class Ec2 extends PolicyStatement {
       'ExportClientVpnClientConfiguration',
       'GetAssociatedEnclaveCertificateIamRoles',
       'GetAssociatedIpv6PoolCidrs',
+      'GetAwsNetworkPerformanceData',
       'GetCapacityReservationUsage',
       'GetCoipPoolUsage',
       'GetConsoleOutput',
@@ -10321,6 +10776,113 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type verified-access-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param verifiedAccessEndpointId - Identifier for the verifiedAccessEndpointId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifDomainCertificateArn()
+   * - .ifLoadBalancerArn()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVerifiedAccessEndpoint(verifiedAccessEndpointId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-endpoint/${ verifiedAccessEndpointId }`);
+  }
+
+  /**
+   * Adds a resource of type verified-access-group to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param verifiedAccessGroupId - Identifier for the verifiedAccessGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVerifiedAccessGroup(verifiedAccessGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-group/${ verifiedAccessGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type verified-access-instance to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param verifiedAccessInstanceId - Identifier for the verifiedAccessInstanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-instance/${ verifiedAccessInstanceId }`);
+  }
+
+  /**
+   * Adds a resource of type verified-access-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param verifiedAccessPolicyId - Identifier for the verifiedAccessPolicyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVerifiedAccessPolicy(verifiedAccessPolicyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-policy/${ verifiedAccessPolicyId }`);
+  }
+
+  /**
+   * Adds a resource of type verified-access-trust-provider to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param verifiedAccessTrustProviderId - Identifier for the verifiedAccessTrustProviderId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVerifiedAccessTrustProvider(verifiedAccessTrustProviderId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-trust-provider/${ verifiedAccessTrustProviderId }`);
+  }
+
+  /**
    * Adds a resource of type volume to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
@@ -10696,6 +11258,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
@@ -10945,6 +11508,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterfacePermission()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
@@ -10970,6 +11534,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
@@ -11023,6 +11588,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFlowLogs()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateLocalGatewayRoute()
    * - .toCreateNatGateway()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
@@ -11031,6 +11597,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshots()
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVolume()
    * - .toDeleteClientVpnRoute()
    * - .toDeleteNetworkInterface()
@@ -11075,6 +11642,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
+   * - .toModifyVerifiedAccessEndpoint()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toMonitorInstances()
@@ -11364,6 +11932,29 @@ export class Ec2 extends PolicyStatement {
    */
   public ifDomain(value: string | string[], operator?: Operator | string) {
     return this.if(`Domain`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of an Amazon Certificate Manager certificate
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
+   * - .toDeleteVerifiedAccessEndpoint()
+   * - .toGetVerifiedAccessEndpointPolicy()
+   * - .toModifyVerifiedAccessEndpoint()
+   * - .toModifyVerifiedAccessEndpointPolicy()
+   *
+   * Applies to resource types:
+   * - verified-access-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDomainCertificateArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainCertificateArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -12182,6 +12773,29 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of an Elastic Load Balancer
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
+   * - .toDeleteVerifiedAccessEndpoint()
+   * - .toGetVerifiedAccessEndpointPolicy()
+   * - .toModifyVerifiedAccessEndpoint()
+   * - .toModifyVerifiedAccessEndpointPolicy()
+   *
+   * Applies to resource types:
+   * - verified-access-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifLoadBalancerArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`LoadBalancerArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by whether the HTTP endpoint is enabled for the instance metadata service
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
@@ -12372,12 +12986,14 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
+   * - .toCreateLocalGatewayRoute()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
@@ -12598,6 +13214,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
@@ -13086,6 +13703,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
+   * - .toAttachVerifiedAccessTrustProvider()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
    * - .toAuthorizeClientVpnIngress()
@@ -13175,6 +13793,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayRouteTableAnnouncement()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVerifiedAccessEndpoint()
+   * - .toCreateVerifiedAccessGroup()
+   * - .toCreateVerifiedAccessInstance()
+   * - .toCreateVerifiedAccessTrustProvider()
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
@@ -13246,6 +13868,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayRouteTable()
    * - .toDeleteTransitGatewayRouteTableAnnouncement()
    * - .toDeleteTransitGatewayVpcAttachment()
+   * - .toDeleteVerifiedAccessEndpoint()
+   * - .toDeleteVerifiedAccessGroup()
+   * - .toDeleteVerifiedAccessInstance()
+   * - .toDeleteVerifiedAccessTrustProvider()
    * - .toDeleteVolume()
    * - .toDeleteVpc()
    * - .toDeleteVpcEndpointConnectionNotifications()
@@ -13268,6 +13894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeAddressesAttribute()
    * - .toDescribeAggregateIdFormat()
    * - .toDescribeAvailabilityZones()
+   * - .toDescribeAwsNetworkPerformanceMetricSubscriptions()
    * - .toDescribeBundleTasks()
    * - .toDescribeByoipCidrs()
    * - .toDescribeCapacityReservationFleets()
@@ -13382,6 +14009,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeTransitGatewayVpcAttachments()
    * - .toDescribeTransitGateways()
    * - .toDescribeTrunkInterfaceAssociations()
+   * - .toDescribeVerifiedAccessEndpoints()
+   * - .toDescribeVerifiedAccessGroups()
+   * - .toDescribeVerifiedAccessInstanceLoggingConfigurations()
+   * - .toDescribeVerifiedAccessInstances()
+   * - .toDescribeVerifiedAccessTrustProviders()
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVolumeStatus()
    * - .toDescribeVolumes()
@@ -13402,9 +14034,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
+   * - .toDetachVerifiedAccessTrustProvider()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableAddressTransfer()
+   * - .toDisableAwsNetworkPerformanceMetricSubscription()
    * - .toDisableEbsEncryptionByDefault()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
@@ -13428,11 +14062,13 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTrunkInterface()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableAddressTransfer()
+   * - .toEnableAwsNetworkPerformanceMetricSubscription()
    * - .toEnableEbsEncryptionByDefault()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImageDeprecation()
    * - .toEnableIpamOrganizationAdminAccount()
+   * - .toEnableReachabilityAnalyzerOrganizationSharing()
    * - .toEnableSerialConsoleAccess()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
@@ -13445,6 +14081,7 @@ export class Ec2 extends PolicyStatement {
    * - .toExportTransitGatewayRoutes()
    * - .toGetAssociatedEnclaveCertificateIamRoles()
    * - .toGetAssociatedIpv6PoolCidrs()
+   * - .toGetAwsNetworkPerformanceData()
    * - .toGetCapacityReservationUsage()
    * - .toGetCoipPoolUsage()
    * - .toGetConsoleOutput()
@@ -13479,6 +14116,8 @@ export class Ec2 extends PolicyStatement {
    * - .toGetTransitGatewayPrefixListReferences()
    * - .toGetTransitGatewayRouteTableAssociations()
    * - .toGetTransitGatewayRouteTablePropagations()
+   * - .toGetVerifiedAccessEndpointPolicy()
+   * - .toGetVerifiedAccessGroupPolicy()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toGetVpnConnectionDeviceTypes()
    * - .toImportClientVpnClientCertificateRevocationList()
@@ -13531,6 +14170,13 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTransitGateway()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
+   * - .toModifyVerifiedAccessEndpoint()
+   * - .toModifyVerifiedAccessEndpointPolicy()
+   * - .toModifyVerifiedAccessGroup()
+   * - .toModifyVerifiedAccessGroupPolicy()
+   * - .toModifyVerifiedAccessInstance()
+   * - .toModifyVerifiedAccessInstanceLoggingConfiguration()
+   * - .toModifyVerifiedAccessTrustProvider()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
@@ -13679,6 +14325,11 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
+   * - verified-access-endpoint
+   * - verified-access-group
+   * - verified-access-instance
+   * - verified-access-policy
+   * - verified-access-trust-provider
    * - volume
    * - vpc-endpoint-connection
    * - vpc-endpoint
@@ -13868,6 +14519,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
+   * - .toAttachVerifiedAccessTrustProvider()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
    * - .toAuthorizeClientVpnIngress()
@@ -13926,6 +14578,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayRouteTableAnnouncement()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVerifiedAccessEndpoint()
+   * - .toCreateVerifiedAccessGroup()
    * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
@@ -13991,6 +14645,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayRouteTable()
    * - .toDeleteTransitGatewayRouteTableAnnouncement()
    * - .toDeleteTransitGatewayVpcAttachment()
+   * - .toDeleteVerifiedAccessEndpoint()
+   * - .toDeleteVerifiedAccessGroup()
+   * - .toDeleteVerifiedAccessInstance()
+   * - .toDeleteVerifiedAccessTrustProvider()
    * - .toDeleteVolume()
    * - .toDeleteVpc()
    * - .toDeleteVpcEndpointConnectionNotifications()
@@ -14026,6 +14684,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
+   * - .toDetachVerifiedAccessTrustProvider()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableAddressTransfer()
@@ -14074,8 +14733,11 @@ export class Ec2 extends PolicyStatement {
    * - .toGetManagedPrefixListEntries()
    * - .toGetPasswordData()
    * - .toGetResourcePolicy()
+   * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
    * - .toGetTransitGatewayPolicyTableEntries()
+   * - .toGetVerifiedAccessEndpointPolicy()
+   * - .toGetVerifiedAccessGroupPolicy()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
@@ -14120,6 +14782,13 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTransitGateway()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
+   * - .toModifyVerifiedAccessEndpoint()
+   * - .toModifyVerifiedAccessEndpointPolicy()
+   * - .toModifyVerifiedAccessGroup()
+   * - .toModifyVerifiedAccessGroupPolicy()
+   * - .toModifyVerifiedAccessInstance()
+   * - .toModifyVerifiedAccessInstanceLoggingConfiguration()
+   * - .toModifyVerifiedAccessTrustProvider()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
@@ -14176,6 +14845,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    * - .toSearchLocalGatewayRoutes()
+   * - .toSearchTransitGatewayMulticastGroups()
    * - .toSearchTransitGatewayRoutes()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
@@ -14257,6 +14927,11 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
    * - transit-gateway-route-table
+   * - verified-access-endpoint
+   * - verified-access-group
+   * - verified-access-instance
+   * - verified-access-policy
+   * - verified-access-trust-provider
    * - volume
    * - vpc-endpoint-connection
    * - vpc-endpoint
@@ -14465,6 +15140,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterface()
    * - .toCreateSecurityGroup()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVpcEndpoint()
    * - .toDeleteSecurityGroup()
    * - .toImportInstance()
@@ -14667,9 +15343,11 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
+   * - .toCreateLocalGatewayRoute()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
@@ -14714,6 +15392,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVpcEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDeleteSubnet()
@@ -14725,6 +15404,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
    * - .toModifyTransitGatewayVpcAttachment()
+   * - .toModifyVerifiedAccessEndpoint()
    * - .toModifyVpcEndpoint()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceRouteTableAssociation()
@@ -15033,6 +15713,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
+   * - .toCreateLocalGatewayRoute()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAclEntry()
    * - .toCreateNetworkInsightsPath()
@@ -15041,6 +15722,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRoute()
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDeleteNetworkAcl()
    * - .toDeleteNetworkAclEntry()
@@ -15067,6 +15749,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySecurityGroupRules()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
+   * - .toModifyVerifiedAccessEndpoint()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
    * - .toReplaceNetworkAclAssociation()

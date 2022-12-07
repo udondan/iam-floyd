@@ -19,7 +19,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create and define a response that you can configure to execute once your budget has exceeded a specific budget threshold.
+   * Grants permission to create and define a response that you can configure to execute once your budget has exceeded a specific budget threshold
    *
    * Access Level: Write
    *
@@ -33,7 +33,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an action that is associated with a specific budget.
+   * Grants permission to delete an action that is associated with a specific budget
    *
    * Access Level: Write
    *
@@ -44,7 +44,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the details of specific budget action associated with a budget.
+   * Grants permission to retrieve the details of a specific budget action associated with a budget
    *
    * Access Level: Read
    *
@@ -55,7 +55,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a historical view of the budget actions statuses associated with a particular budget action. These status include statues such as 'Standby', 'Pending' and 'Executed'.
+   * Grants permission to retrieve a historical view of the budget actions statuses associated with a particular budget action. These status include statues such as 'Standby', 'Pending' and 'Executed'
    *
    * Access Level: Read
    *
@@ -66,7 +66,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the details of all of the budget actions associated with your account.
+   * Grants permission to retrieve the details of all of the budget actions associated with your account
    *
    * Access Level: Read
    *
@@ -77,7 +77,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the details of all of the budget actions associated with a budget.
+   * Grants permission to retrieve the details of all of the budget actions associated with a budget
    *
    * Access Level: Read
    *
@@ -88,7 +88,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to initiate a pending budget action as well as reverse a previously executed budget action.
+   * Grants permission to initiate a pending budget action as well as reverse a previously executed budget action
    *
    * Access Level: Write
    *
@@ -99,7 +99,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to modify budgets and budget details
+   * Grants permission to modify budgets and budget details
    *
    * Access Level: Write
    *
@@ -110,7 +110,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the details of a specific budget action associated with a budget.
+   * Grants permission to update the details of a specific budget action associated with a budget
    *
    * Access Level: Write
    *
@@ -124,7 +124,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view budgets and budget details
+   * Grants permission to view budgets and budget details
    *
    * Access Level: Read
    *
