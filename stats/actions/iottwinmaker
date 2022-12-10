@@ -2,10 +2,12 @@ iottwinmaker:BatchPutPropertyValues;Write
 iottwinmaker:CreateComponentType;Write
 iottwinmaker:CreateEntity;Write
 iottwinmaker:CreateScene;Write
+iottwinmaker:CreateSyncJob;Write
 iottwinmaker:CreateWorkspace;Write
 iottwinmaker:DeleteComponentType;Write
 iottwinmaker:DeleteEntity;Write
 iottwinmaker:DeleteScene;Write
+iottwinmaker:DeleteSyncJob;Write
 iottwinmaker:DeleteWorkspace;Write
 iottwinmaker:ExecuteQuery;Read
 iottwinmaker:GetComponentType;Read
@@ -14,10 +16,13 @@ iottwinmaker:GetPricingPlan;Read
 iottwinmaker:GetPropertyValue;Read
 iottwinmaker:GetPropertyValueHistory;Read
 iottwinmaker:GetScene;Read
+iottwinmaker:GetSyncJob;Read
 iottwinmaker:GetWorkspace;Read
 iottwinmaker:ListComponentTypes;List
 iottwinmaker:ListEntities;List
 iottwinmaker:ListScenes;List
+iottwinmaker:ListSyncJobs;List
+iottwinmaker:ListSyncResources;List
 iottwinmaker:ListTagsForResource;List
 iottwinmaker:ListWorkspaces;List
 iottwinmaker:TagResource;Tagging

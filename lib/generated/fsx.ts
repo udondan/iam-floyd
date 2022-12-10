@@ -352,6 +352,9 @@ export class Fsx extends PolicyStatement {
    * - .ifStorageVirtualMachineId()
    * - .ifParentVolumeId()
    *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteVolume.html
    */
   public toDeleteVolume() {
