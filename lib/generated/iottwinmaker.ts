@@ -80,6 +80,21 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a sync job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateSyncJob.html
+   */
+  public toCreateSyncJob() {
+    return this.to('CreateSyncJob');
+  }
+
+  /**
    * Grants permission to create a workspace
    *
    * Access Level: Write
@@ -125,6 +140,17 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public toDeleteScene() {
     return this.to('DeleteScene');
+  }
+
+  /**
+   * Grants permission to delete a sync job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteSyncJob.html
+   */
+  public toDeleteSyncJob() {
+    return this.to('DeleteSyncJob');
   }
 
   /**
@@ -226,6 +252,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a sync job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetSyncJob.html
+   */
+  public toGetSyncJob() {
+    return this.to('GetSyncJob');
+  }
+
+  /**
    * Grants permission to get a workspace
    *
    * Access Level: Read
@@ -267,6 +304,28 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public toListScenes() {
     return this.to('ListScenes');
+  }
+
+  /**
+   * Grants permission to list all sync jobs in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListSyncJobs.html
+   */
+  public toListSyncJobs() {
+    return this.to('ListSyncJobs');
+  }
+
+  /**
+   * Grants permission to list all sync resources for a sync job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListSyncResources.html
+   */
+  public toListSyncResources() {
+    return this.to('ListSyncResources');
   }
 
   /**
@@ -384,10 +443,12 @@ export class Iottwinmaker extends PolicyStatement {
       'CreateComponentType',
       'CreateEntity',
       'CreateScene',
+      'CreateSyncJob',
       'CreateWorkspace',
       'DeleteComponentType',
       'DeleteEntity',
       'DeleteScene',
+      'DeleteSyncJob',
       'DeleteWorkspace',
       'UpdateComponentType',
       'UpdateEntity',
@@ -403,12 +464,15 @@ export class Iottwinmaker extends PolicyStatement {
       'GetPropertyValue',
       'GetPropertyValueHistory',
       'GetScene',
+      'GetSyncJob',
       'GetWorkspace'
     ],
     List: [
       'ListComponentTypes',
       'ListEntities',
       'ListScenes',
+      'ListSyncJobs',
+      'ListSyncResources',
       'ListTagsForResource',
       'ListWorkspaces'
     ],
@@ -487,5 +551,23 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public onScene(workspaceId: string, sceneId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/scene/${ sceneId }`);
+  }
+
+  /**
+   * Adds a resource of type syncJob to the statement
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateSyncJob.html
+   *
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param syncJobId - Identifier for the syncJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSyncJob(workspaceId: string, syncJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
   }
 }

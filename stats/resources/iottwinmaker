@@ -1,4 +1,5 @@
 iottwinmaker:componentType
 iottwinmaker:entity
 iottwinmaker:scene
+iottwinmaker:syncJob
 iottwinmaker:workspace
