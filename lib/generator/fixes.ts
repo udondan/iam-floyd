@@ -53,6 +53,9 @@ export const fixes: Fixes = {
   marketplaceprivatemarketplace: {
     name: 'aws-marketplace-private',
   },
+  marketplacesellerreporting: {
+    name: 'aws-marketplace-seller-reporting',
+  },
   backup: {
     resourceTypes: {
       recoveryPoint: {
