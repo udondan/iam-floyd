@@ -47,6 +47,8 @@ sagemaker:pipeline
 sagemaker:pipeline-execution
 sagemaker:processing-job
 sagemaker:project
+sagemaker:shared-model
+sagemaker:shared-model-event
 sagemaker:space
 sagemaker:studio-lifecycle-config
 sagemaker:training-job

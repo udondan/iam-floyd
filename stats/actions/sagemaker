@@ -50,6 +50,7 @@ sagemaker:CreatePresignedDomainUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
 sagemaker:CreateProject;Write
+sagemaker:CreateSharedModel;Write
 sagemaker:CreateSpace;Write
 sagemaker:CreateStudioLifecycleConfig;Write
 sagemaker:CreateTrainingJob;Write
@@ -156,6 +157,7 @@ sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
 sagemaker:DescribeProcessingJob;Read
 sagemaker:DescribeProject;Read
+sagemaker:DescribeSharedModel;Read
 sagemaker:DescribeSpace;Read
 sagemaker:DescribeStudioLifecycleConfig;Read
 sagemaker:DescribeSubscribedWorkteam;Read
@@ -237,6 +239,9 @@ sagemaker:ListPipelineParametersForExecution;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListSharedModelEvents;List
+sagemaker:ListSharedModelVersions;List
+sagemaker:ListSharedModels;List
 sagemaker:ListSpaces;List
 sagemaker:ListStageDevices;List
 sagemaker:ListStudioLifecycleConfigs;List
@@ -261,6 +266,7 @@ sagemaker:Search;Read
 sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write
 sagemaker:SendPipelineExecutionStepSuccess;Write
+sagemaker:SendSharedModelEvent;Write
 sagemaker:StartEdgeDeploymentStage;Write
 sagemaker:StartHumanLoop;Write
 sagemaker:StartInferenceExperiment;Write
@@ -307,6 +313,7 @@ sagemaker:UpdateNotebookInstanceLifecycleConfig;Write
 sagemaker:UpdatePipeline;Write
 sagemaker:UpdatePipelineExecution;Write
 sagemaker:UpdateProject;Write
+sagemaker:UpdateSharedModel;Write
 sagemaker:UpdateSpace;Write
 sagemaker:UpdateTrainingJob;Write
 sagemaker:UpdateTrial;Write

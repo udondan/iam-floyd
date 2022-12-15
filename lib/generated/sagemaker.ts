@@ -996,6 +996,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a shared model in a SageMaker Studio application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toCreateSharedModel() {
+    return this.to('CreateSharedModel');
+  }
+
+  /**
    * Grants permission to create a Space for a SageMaker Domain
    *
    * Access Level: Write
@@ -2258,6 +2269,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a shared model in a SageMaker Studio application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toDescribeSharedModel() {
+    return this.to('DescribeSharedModel');
+  }
+
+  /**
    * Grants permission to describe a Space
    *
    * Access Level: Read
@@ -3159,6 +3181,39 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list shared model events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModelEvents() {
+    return this.to('ListSharedModelEvents');
+  }
+
+  /**
+   * Grants permission to list shared model versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModelVersions() {
+    return this.to('ListSharedModelVersions');
+  }
+
+  /**
+   * Grants permission to list shared models
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModels() {
+    return this.to('ListSharedModels');
+  }
+
+  /**
    * Grants permission to list the Spaces in your account
    *
    * Access Level: List
@@ -3427,6 +3482,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toSendPipelineExecutionStepSuccess() {
     return this.to('SendPipelineExecutionStepSuccess');
+  }
+
+  /**
+   * Grants permission to send a shared model event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toSendSharedModelEvent() {
+    return this.to('SendSharedModelEvent');
   }
 
   /**
@@ -3979,6 +4045,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a shared model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toUpdateSharedModel() {
+    return this.to('UpdateSharedModel');
+  }
+
+  /**
    * Grants permission to update a Space
    *
    * Access Level: Write
@@ -4122,6 +4199,7 @@ export class Sagemaker extends PolicyStatement {
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
+      'CreateSharedModel',
       'CreateSpace',
       'CreateStudioLifecycleConfig',
       'CreateTrainingJob',
@@ -4191,6 +4269,7 @@ export class Sagemaker extends PolicyStatement {
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
+      'SendSharedModelEvent',
       'StartEdgeDeploymentStage',
       'StartHumanLoop',
       'StartInferenceExperiment',
@@ -4237,6 +4316,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdatePipeline',
       'UpdatePipelineExecution',
       'UpdateProject',
+      'UpdateSharedModel',
       'UpdateSpace',
       'UpdateTrainingJob',
       'UpdateTrial',
@@ -4301,6 +4381,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribePipelineExecution',
       'DescribeProcessingJob',
       'DescribeProject',
+      'DescribeSharedModel',
       'DescribeSpace',
       'DescribeStudioLifecycleConfig',
       'DescribeSubscribedWorkteam',
@@ -4382,6 +4463,9 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListSharedModelEvents',
+      'ListSharedModelVersions',
+      'ListSharedModels',
       'ListSpaces',
       'ListStageDevices',
       'ListStudioLifecycleConfigs',
@@ -5389,6 +5473,34 @@ export class Sagemaker extends PolicyStatement {
    */
   public onModelCardExportJob(modelCardName: string, exportJobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
+  }
+
+  /**
+   * Adds a resource of type shared-model to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   *
+   * @param sharedModelId - Identifier for the sharedModelId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSharedModel(sharedModelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model/${ sharedModelId }`);
+  }
+
+  /**
+   * Adds a resource of type shared-model-event to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   *
+   * @param eventId - Identifier for the eventId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSharedModelEvent(eventId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model-event/${ eventId }`);
   }
 
   /**

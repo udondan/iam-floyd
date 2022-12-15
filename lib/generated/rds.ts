@@ -179,6 +179,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCopyOptionGroup()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -552,7 +553,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   * https://docs.aws.amazon.com/AmazonRDS/latest/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    */
   public toCrossRegionCommunication() {
     return this.to('CrossRegionCommunication');
@@ -1160,7 +1161,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
    */
   public toDescribeRecommendationGroups() {
     return this.to('DescribeRecommendationGroups');
@@ -1171,7 +1172,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
    */
   public toDescribeRecommendations() {
     return this.to('DescribeRecommendations');
@@ -1226,7 +1227,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_LogAccess.html
    */
   public toDownloadCompleteDBLogFile() {
     return this.to('DownloadCompleteDBLogFile');
@@ -1508,7 +1509,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
    */
   public toModifyRecommendation() {
     return this.to('ModifyRecommendation');
@@ -2117,7 +2118,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html
    *
    * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2135,7 +2136,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type cluster-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.Endpoints.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html
    *
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2152,7 +2153,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type cluster-pg to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithParamGroups.html
    *
    * @param clusterParameterGroupName - Identifier for the clusterParameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2170,7 +2171,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type cluster-snapshot to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html
    *
    * @param clusterSnapshotName - Identifier for the clusterSnapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2232,7 +2233,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type global-cluster to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.Aurora.GlobalDB.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html
    *
    * @param globalCluster - Identifier for the globalCluster.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2281,7 +2282,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type proxy to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param dbProxyId - Identifier for the dbProxyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2298,7 +2299,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type proxy-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param dbProxyEndpointId - Identifier for the dbProxyEndpointId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2333,7 +2334,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type secgrp to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html
    *
    * @param securityGroupName - Identifier for the securityGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2387,7 +2388,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type target to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param targetId - Identifier for the targetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2401,7 +2402,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type target-group to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param targetGroupId - Identifier for the targetGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2467,6 +2468,20 @@ export class Rds extends PolicyStatement {
    */
   public ifBackupTarget(value: string | string[], operator?: Operator | string) {
     return this.if(`BackupTarget`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the value that specifies whether the CopyDBSnapshot action requires copying the DB option group
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCopyDBSnapshot()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifCopyOptionGroup(value?: boolean) {
+    return this.if(`CopyOptionGroup`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -41,6 +41,28 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate resources to an AWS Firewall Manager resource set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_BatchAssociateResource.html
+   */
+  public toBatchAssociateResource() {
+    return this.to('BatchAssociateResource');
+  }
+
+  /**
+   * Grants permission to disassociate resources from an AWS Firewall Manager resource set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_BatchDisassociateResource.html
+   */
+  public toBatchDisassociateResource() {
+    return this.to('BatchDisassociateResource');
+  }
+
+  /**
    * Grants permission to permanently deletes an AWS Firewall Manager applications list
    *
    * Access Level: Write
@@ -85,6 +107,20 @@ export class Fms extends PolicyStatement {
    */
   public toDeleteProtocolsList() {
     return this.to('DeleteProtocolsList');
+  }
+
+  /**
+   * Grants permission to permanently delete an AWS Firewall Manager resource set
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteResourceSet.html
+   */
+  public toDeleteResourceSet() {
+    return this.to('DeleteResourceSet');
   }
 
   /**
@@ -187,6 +223,17 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about the specified AWS Firewall Manager resource set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetResourceSet.html
+   */
+  public toGetResourceSet() {
+    return this.to('GetResourceSet');
+  }
+
+  /**
    * Grants permission to retrieve the onboarding status of a Firewall Manager administrator account to third-party firewall vendor tenant
    *
    * Access Level: Read
@@ -231,6 +278,17 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an array of resources in the organization's accounts that are available to be associated with a resource set
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListDiscoveredResources.html
+   */
+  public toListDiscoveredResources() {
+    return this.to('ListDiscoveredResources');
+  }
+
+  /**
    * Grants permission to retrieve an array of member account ids if the caller is FMS admin account
    *
    * Access Level: List
@@ -261,6 +319,28 @@ export class Fms extends PolicyStatement {
    */
   public toListProtocolsLists() {
     return this.to('ListProtocolsLists');
+  }
+
+  /**
+   * Grants permission to retrieve an array of resources that are currently associated to a resource set
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListResourceSetResources.html
+   */
+  public toListResourceSetResources() {
+    return this.to('ListResourceSetResources');
+  }
+
+  /**
+   * Grants permission to retrieve an array of ResourceSetSummary objects
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListResourceSets.html
+   */
+  public toListResourceSets() {
+    return this.to('ListResourceSets');
   }
 
   /**
@@ -342,6 +422,21 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Firewall Manager resource set
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutResourceSet.html
+   */
+  public toPutResourceSet() {
+    return this.to('PutResourceSet');
+  }
+
+  /**
    * Grants permission to add a Tag to a given resource
    *
    * Access Level: Tagging
@@ -374,16 +469,20 @@ export class Fms extends PolicyStatement {
     Write: [
       'AssociateAdminAccount',
       'AssociateThirdPartyFirewall',
+      'BatchAssociateResource',
+      'BatchDisassociateResource',
       'DeleteAppsList',
       'DeleteNotificationChannel',
       'DeletePolicy',
       'DeleteProtocolsList',
+      'DeleteResourceSet',
       'DisassociateAdminAccount',
       'DisassociateThirdPartyFirewall',
       'PutAppsList',
       'PutNotificationChannel',
       'PutPolicy',
-      'PutProtocolsList'
+      'PutProtocolsList',
+      'PutResourceSet'
     ],
     Read: [
       'GetAdminAccount',
@@ -393,6 +492,7 @@ export class Fms extends PolicyStatement {
       'GetPolicy',
       'GetProtectionStatus',
       'GetProtocolsList',
+      'GetResourceSet',
       'GetThirdPartyFirewallAssociationStatus',
       'GetViolationDetails',
       'ListTagsForResource'
@@ -400,9 +500,12 @@ export class Fms extends PolicyStatement {
     List: [
       'ListAppsLists',
       'ListComplianceStatus',
+      'ListDiscoveredResources',
       'ListMemberAccounts',
       'ListPolicies',
       'ListProtocolsLists',
+      'ListResourceSetResources',
+      'ListResourceSets',
       'ListThirdPartyFirewallFirewallPolicies'
     ],
     Tagging: [
@@ -460,5 +563,22 @@ export class Fms extends PolicyStatement {
    */
   public onProtocolsList(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:protocols-list/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type resource-set to the statement
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ResourceSet.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResourceSet(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:resource-set/${ id }`);
   }
 }
