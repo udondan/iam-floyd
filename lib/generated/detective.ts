@@ -213,7 +213,7 @@ export class Detective extends PolicyStatement {
   /**
    * Grants permission to list a graph's datasource package ingest states and timestamps for the most recent state changes in a behavior graph managed by this account
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListDatasourcePackages.html
    */
@@ -233,9 +233,9 @@ export class Detective extends PolicyStatement {
   }
 
   /**
-   * Grants permission to high volume entities whose relationships cannot be stored by Detective
+   * Grants permission to retrieve high volume entities whose relationships cannot be stored by Detective
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html
    */
@@ -282,7 +282,7 @@ export class Detective extends PolicyStatement {
   /**
    * Grants permission to list the tag values that are assigned to a behavior graph
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -405,16 +405,16 @@ export class Detective extends PolicyStatement {
       'GetMembers',
       'GetPricingInformation',
       'GetUsageInformation',
-      'ListDatasourcePackages',
-      'ListHighDegreeEntities',
-      'ListTagsForResource',
       'SearchGraph'
     ],
     List: [
+      'ListDatasourcePackages',
       'ListGraphs',
+      'ListHighDegreeEntities',
       'ListInvitations',
       'ListMembers',
-      'ListOrganizationAdminAccount'
+      'ListOrganizationAdminAccount',
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',

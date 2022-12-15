@@ -1,4 +1,5 @@
 rds:BackupTarget
+rds:CopyOptionGroup
 rds:DatabaseClass
 rds:DatabaseEngine
 rds:DatabaseName

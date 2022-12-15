@@ -14,13 +14,13 @@ detective:GetGraphIngestState;Read
 detective:GetMembers;Read
 detective:GetPricingInformation;Read
 detective:GetUsageInformation;Read
-detective:ListDatasourcePackages;Read
+detective:ListDatasourcePackages;List
 detective:ListGraphs;List
-detective:ListHighDegreeEntities;Read
+detective:ListHighDegreeEntities;List
 detective:ListInvitations;List
 detective:ListMembers;List
 detective:ListOrganizationAdminAccount;List
-detective:ListTagsForResource;Read
+detective:ListTagsForResource;List
 detective:RejectInvitation;Write
 detective:SearchGraph;Read
 detective:StartMonitoringMember;Write
