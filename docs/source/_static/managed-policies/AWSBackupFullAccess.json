@@ -280,7 +280,28 @@
 		},
 		{
 			"Effect": "Allow",
-			"Action": "backup-gateway:GetGateway",
+			"Action": [
+				"backup-gateway:GetHypervisor",
+				"backup-gateway:GetHypervisorPropertyMappings",
+				"backup-gateway:PutHypervisorPropertyMappings",
+				"backup-gateway:StartVirtualMachinesMetadataSync"
+			],
+			"Resource": "arn:aws:backup-gateway:*:*:hypervisor/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"backup-gateway:GetVirtualMachine"
+			],
+			"Resource": "arn:aws:backup-gateway:*:*:vm/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"backup-gateway:GetBandwidthRateLimitSchedule",
+				"backup-gateway:GetGateway",
+				"backup-gateway:PutBandwidthRateLimitSchedule"
+			],
 			"Resource": "arn:aws:backup-gateway:*:*:gateway/*"
 		},
 		{
