@@ -209,17 +209,44 @@
 			}
 		},
 		{
-			"Sid": "CloudwatchAccess",
+			"Sid": "CloudwatchCreateAccess",
 			"Effect": "Allow",
 			"Action": [
 				"logs:CreateLogGroup",
+				"logs:TagResource"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:/aws/codebuild/*:*",
+				"arn:aws:logs:*:*:log-group:/aws/ecs/containerinsights/*:*",
+				"arn:aws:logs:*:*:log-group:/aws/ecs/container-logs/*:*"
+			],
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/a2c-generated": "false"
+				},
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"a2c-generated"
+					]
+				}
+			}
+		},
+		{
+			"Sid": "CloudwatchGetAccess",
+			"Effect": "Allow",
+			"Action": [
 				"logs:GetLogEvents"
 			],
 			"Resource": [
 				"arn:aws:logs:*:*:log-group:/aws/codebuild/*:*",
 				"arn:aws:logs:*:*:log-group:/aws/ecs/containerinsights/*:*",
 				"arn:aws:logs:*:*:log-group:/aws/ecs/container-logs/*:*"
-			]
+			],
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/a2c-generated": "false"
+				}
+			}
 		},
 		{
 			"Sid": "SsmParameterAccess",
