@@ -17,5 +17,9 @@ private-networks:ListNetworkResources;List
 private-networks:ListNetworkSites;List
 private-networks:ListNetworks;List
 private-networks:ListOrders;List
+private-networks:ListTagsForResource;List
+private-networks:Ping;Read
+private-networks:TagResource;Tagging
+private-networks:UntagResource;Tagging
 private-networks:UpdateNetworkSite;Write
 private-networks:UpdateNetworkSitePlan;Write

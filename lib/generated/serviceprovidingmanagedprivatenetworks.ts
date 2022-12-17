@@ -34,6 +34,9 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ActivateDeviceIdentifier.html
    */
   public toActivateDeviceIdentifier() {
@@ -44,6 +47,10 @@ export class PrivateNetworks extends PolicyStatement {
    * Grants permission to activate a network site
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ActivateNetworkSite.html
    */
@@ -67,6 +74,10 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_CreateNetwork.html
    */
   public toCreateNetwork() {
@@ -77,6 +88,10 @@ export class PrivateNetworks extends PolicyStatement {
    * Grants permission to create a network site
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_CreateNetworkSite.html
    */
@@ -122,6 +137,9 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetDeviceIdentifier.html
    */
   public toGetDeviceIdentifier() {
@@ -132,6 +150,9 @@ export class PrivateNetworks extends PolicyStatement {
    * Grants permission to get a network
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetwork.html
    */
@@ -144,6 +165,9 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetworkResource.html
    */
   public toGetNetworkResource() {
@@ -155,6 +179,9 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetworkSite.html
    */
   public toGetNetworkSite() {
@@ -165,6 +192,9 @@ export class PrivateNetworks extends PolicyStatement {
    * Grants permission to get a network order
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetOrder.html
    */
@@ -228,6 +258,57 @@ export class PrivateNetworks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a list of tags for a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to check the health of the service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_Ping.html
+   */
+  public toPing() {
+    return this.to('Ping');
+  }
+
+  /**
+   * Grants permission to adds tags to the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to removes tags from the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update a network site
    *
    * Access Level: Write
@@ -268,14 +349,20 @@ export class PrivateNetworks extends PolicyStatement {
       'GetNetwork',
       'GetNetworkResource',
       'GetNetworkSite',
-      'GetOrder'
+      'GetOrder',
+      'Ping'
     ],
     List: [
       'ListDeviceIdentifiers',
       'ListNetworkResources',
       'ListNetworkSites',
       'ListNetworks',
-      'ListOrders'
+      'ListOrders',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -288,6 +375,9 @@ export class PrivateNetworks extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNetwork(networkName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network/${ networkName }`);
@@ -303,6 +393,9 @@ export class PrivateNetworks extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNetworkSite(networkName: string, networkSiteName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-site/${ networkName }/${ networkSiteName }`);
@@ -318,6 +411,9 @@ export class PrivateNetworks extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNetworkResource(networkName: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-resource/${ networkName }/${ resourceId }`);
@@ -333,6 +429,9 @@ export class PrivateNetworks extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOrder(networkName: string, orderId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:order/${ networkName }/${ orderId }`);
@@ -348,6 +447,9 @@ export class PrivateNetworks extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeviceIdentifier(networkName: string, deviceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:device-identifier/${ networkName }/${ deviceId }`);

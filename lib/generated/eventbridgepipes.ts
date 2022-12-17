@@ -31,7 +31,7 @@ export class Pipes extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_CreatePipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_CreatePipe.html
    */
   public toCreatePipe() {
     return this.to('CreatePipe');
@@ -45,7 +45,7 @@ export class Pipes extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_DeletePipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_DeletePipe.html
    */
   public toDeletePipe() {
     return this.to('DeletePipe');
@@ -59,7 +59,7 @@ export class Pipes extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_DescribePipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_DescribePipe.html
    */
   public toDescribePipe() {
     return this.to('DescribePipe');
@@ -70,7 +70,7 @@ export class Pipes extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_ListPipes.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_ListPipes.html
    */
   public toListPipes() {
     return this.to('ListPipes');
@@ -84,7 +84,7 @@ export class Pipes extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -98,7 +98,7 @@ export class Pipes extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_StartPipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_StartPipe.html
    */
   public toStartPipe() {
     return this.to('StartPipe');
@@ -112,7 +112,7 @@ export class Pipes extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_StopPipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_StopPipe.html
    */
   public toStopPipe() {
     return this.to('StopPipe');
@@ -128,7 +128,7 @@ export class Pipes extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -143,7 +143,7 @@ export class Pipes extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -160,7 +160,7 @@ export class Pipes extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pipes/latest/APIReference/API_UpdatePipe.html
+   * https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_UpdatePipe.html
    */
   public toUpdatePipe() {
     return this.to('UpdatePipe');
