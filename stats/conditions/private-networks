@@ -1,1 +1,3 @@
-
+private-networks:RequestTag/${TagKey}
+private-networks:ResourceTag/${TagKey}
+private-networks:TagKeys

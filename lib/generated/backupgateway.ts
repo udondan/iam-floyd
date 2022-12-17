@@ -93,6 +93,17 @@ export class BackupGateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to GetBandwidthRateLimitSchedule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_GetBandwidthRateLimitSchedule.html
+   */
+  public toGetBandwidthRateLimitSchedule() {
+    return this.to('GetBandwidthRateLimitSchedule');
+  }
+
+  /**
    * Grants permission to GetGateway
    *
    * Access Level: Read
@@ -101,6 +112,28 @@ export class BackupGateway extends PolicyStatement {
    */
   public toGetGateway() {
     return this.to('GetGateway');
+  }
+
+  /**
+   * Grants permission to GetHypervisor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_GetHypervisor.html
+   */
+  public toGetHypervisor() {
+    return this.to('GetHypervisor');
+  }
+
+  /**
+   * Grants permission to GetHypervisorPropertyMappings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_GetHypervisorPropertyMappings.html
+   */
+  public toGetHypervisorPropertyMappings() {
+    return this.to('GetHypervisorPropertyMappings');
   }
 
   /**
@@ -178,6 +211,31 @@ export class BackupGateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to PutBandwidthRateLimitSchedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_PutBandwidthRateLimitSchedule.html
+   */
+  public toPutBandwidthRateLimitSchedule() {
+    return this.to('PutBandwidthRateLimitSchedule');
+  }
+
+  /**
+   * Grants permission to PutHypervisorPropertyMappings
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_PutHypervisorPropertyMappings.html
+   */
+  public toPutHypervisorPropertyMappings() {
+    return this.to('PutHypervisorPropertyMappings');
+  }
+
+  /**
    * Grants permission to PutMaintenanceStartTime
    *
    * Access Level: Write
@@ -201,6 +259,20 @@ export class BackupGateway extends PolicyStatement {
    */
   public toRestore() {
     return this.to('Restore');
+  }
+
+  /**
+   * Grants permission to StartVirtualMachinesMetadataSync
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_StartVirtualMachinesMetadataSync.html
+   */
+  public toStartVirtualMachinesMetadataSync() {
+    return this.to('StartVirtualMachinesMetadataSync');
   }
 
   /**
@@ -286,15 +358,21 @@ export class BackupGateway extends PolicyStatement {
       'DeleteHypervisor',
       'DisassociateGatewayFromServer',
       'ImportHypervisorConfiguration',
+      'PutBandwidthRateLimitSchedule',
+      'PutHypervisorPropertyMappings',
       'PutMaintenanceStartTime',
       'Restore',
+      'StartVirtualMachinesMetadataSync',
       'TestHypervisorConfiguration',
       'UpdateGatewayInformation',
       'UpdateGatewaySoftwareNow',
       'UpdateHypervisor'
     ],
     Read: [
+      'GetBandwidthRateLimitSchedule',
       'GetGateway',
+      'GetHypervisor',
+      'GetHypervisorPropertyMappings',
       'GetVirtualMachine',
       'ListGateways',
       'ListHypervisors',

@@ -93,6 +93,17 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the edge configuration of your Kinesis Video Stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeEdgeConfiguration.html
+   */
+  public toDescribeEdgeConfiguration() {
+    return this.to('DescribeEdgeConfiguration');
+  }
+
+  /**
    * Grants permission to describe the image generation configuration of your Kinesis video stream
    *
    * Access Level: Read
@@ -141,7 +152,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetClip.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetClip.html
    */
   public toGetClip() {
     return this.to('GetClip');
@@ -152,7 +163,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDASHStreamingSessionURL.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetDASHStreamingSessionURL.html
    */
   public toGetDASHStreamingSessionURL() {
     return this.to('GetDASHStreamingSessionURL');
@@ -174,7 +185,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetHLSStreamingSessionURL.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetHLSStreamingSessionURL.html
    */
   public toGetHLSStreamingSessionURL() {
     return this.to('GetHLSStreamingSessionURL');
@@ -185,7 +196,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetIceServerConfig.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuitySignalingService_GetIceServerConfig.html
    */
   public toGetIceServerConfig() {
     return this.to('GetIceServerConfig');
@@ -196,7 +207,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetImages.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetImages.html
    */
   public toGetImages() {
     return this.to('GetImages');
@@ -207,7 +218,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_GetMedia.html
    */
   public toGetMedia() {
     return this.to('GetMedia');
@@ -218,7 +229,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetMediaForFragmentList.html
    */
   public toGetMediaForFragmentList() {
     return this.to('GetMediaForFragmentList');
@@ -240,7 +251,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_ListFragments.html
    */
   public toListFragments() {
     return this.to('ListFragments');
@@ -295,7 +306,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html
    */
   public toPutMedia() {
     return this.to('PutMedia');
@@ -306,10 +317,21 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_SendAlexaOfferToMaster.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuitySignalingService_SendAlexaOfferToMaster.html
    */
   public toSendAlexaOfferToMaster() {
     return this.to('SendAlexaOfferToMaster');
+  }
+
+  /**
+   * Grants permission to start edge configuration update of your Kinesis Video Stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_StartEdgeConfigurationUpdate.html
+   */
+  public toStartEdgeConfigurationUpdate() {
+    return this.to('StartEdgeConfigurationUpdate');
   }
 
   /**
@@ -435,6 +457,7 @@ export class Kinesisvideo extends PolicyStatement {
       'DeleteStream',
       'PutMedia',
       'SendAlexaOfferToMaster',
+      'StartEdgeConfigurationUpdate',
       'UpdateDataRetention',
       'UpdateImageGenerationConfiguration',
       'UpdateNotificationConfiguration',
@@ -442,6 +465,7 @@ export class Kinesisvideo extends PolicyStatement {
       'UpdateStream'
     ],
     Read: [
+      'DescribeEdgeConfiguration',
       'DescribeImageGenerationConfiguration',
       'DescribeNotificationConfiguration',
       'GetClip',

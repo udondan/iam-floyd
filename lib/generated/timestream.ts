@@ -197,6 +197,34 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Status of a Timestream Table Backup
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
+   */
+  public toGetAwsBackupStatus() {
+    return this.to('GetAwsBackupStatus');
+  }
+
+  /**
+   * Grants permission to get Status of a Timestream Table Restore
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
+   */
+  public toGetAwsRestoreStatus() {
+    return this.to('GetAwsRestoreStatus');
+  }
+
+  /**
    * Grants permission to list databases in your account
    *
    * Access Level: List
@@ -310,6 +338,34 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a Backup Job for a Timestream Table
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
+   */
+  public toStartAwsBackupJob() {
+    return this.to('StartAwsBackupJob');
+  }
+
+  /**
+   * Grants permission to start Restore Job for a Backup of Timestream Table
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
+   */
+  public toStartAwsRestoreJob() {
+    return this.to('StartAwsRestoreJob');
+  }
+
+  /**
    * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
@@ -410,6 +466,8 @@ export class Timestream extends PolicyStatement {
       'DeleteScheduledQuery',
       'DeleteTable',
       'ExecuteScheduledQuery',
+      'StartAwsBackupJob',
+      'StartAwsRestoreJob',
       'UpdateDatabase',
       'UpdateScheduledQuery',
       'UpdateTable',
@@ -419,6 +477,8 @@ export class Timestream extends PolicyStatement {
       'DescribeDatabase',
       'DescribeScheduledQuery',
       'DescribeTable',
+      'GetAwsBackupStatus',
+      'GetAwsRestoreStatus',
       'ListTagsForResource',
       'PrepareQuery',
       'Select',

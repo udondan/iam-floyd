@@ -4,6 +4,7 @@ kinesisvideo:CreateSignalingChannel;Write
 kinesisvideo:CreateStream;Write
 kinesisvideo:DeleteSignalingChannel;Write
 kinesisvideo:DeleteStream;Write
+kinesisvideo:DescribeEdgeConfiguration;Read
 kinesisvideo:DescribeImageGenerationConfiguration;Read
 kinesisvideo:DescribeNotificationConfiguration;Read
 kinesisvideo:DescribeSignalingChannel;List
@@ -24,6 +25,7 @@ kinesisvideo:ListTagsForResource;Read
 kinesisvideo:ListTagsForStream;Read
 kinesisvideo:PutMedia;Write
 kinesisvideo:SendAlexaOfferToMaster;Write
+kinesisvideo:StartEdgeConfigurationUpdate;Write
 kinesisvideo:TagResource;Tagging
 kinesisvideo:TagStream;Tagging
 kinesisvideo:UntagResource;Tagging

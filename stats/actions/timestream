@@ -10,6 +10,8 @@ timestream:DescribeEndpoints;List
 timestream:DescribeScheduledQuery;Read
 timestream:DescribeTable;Read
 timestream:ExecuteScheduledQuery;Write
+timestream:GetAwsBackupStatus;Read
+timestream:GetAwsRestoreStatus;Read
 timestream:ListDatabases;List
 timestream:ListMeasures;List
 timestream:ListScheduledQueries;List
@@ -18,6 +20,8 @@ timestream:ListTagsForResource;Read
 timestream:PrepareQuery;Read
 timestream:Select;Read
 timestream:SelectValues;Read
+timestream:StartAwsBackupJob;Write
+timestream:StartAwsRestoreJob;Write
 timestream:TagResource;Tagging
 timestream:UntagResource;Tagging
 timestream:UpdateDatabase;Write
