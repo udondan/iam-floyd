@@ -12,6 +12,22 @@
 				"grafana:ListWorkspaces"
 			],
 			"Resource": "arn:aws:grafana:*:*:/workspaces*"
+		},
+		{
+			"Sid": "IAMIdentityCenterPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"sso:DescribeRegisteredRegions",
+				"sso:GetSharedSsoConfiguration",
+				"sso:ListDirectoryAssociations",
+				"sso:GetManagedApplicationInstance",
+				"sso:ListProfiles",
+				"sso:AssociateProfile",
+				"sso:DisassociateProfile",
+				"sso:GetProfile",
+				"sso:ListProfileAssociations"
+			],
+			"Resource": "*"
 		}
 	]
 }
