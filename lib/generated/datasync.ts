@@ -23,6 +23,9 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
   public toCancelTaskExecution() {
@@ -379,6 +382,9 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
   public toDescribeTaskExecution() {
@@ -423,6 +429,9 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html
    */
   public toListTaskExecutions() {
@@ -444,6 +453,11 @@ export class Datasync extends PolicyStatement {
    * Grants permission to start a specific invocation of a sync task
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
@@ -551,6 +565,9 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTaskExecution.html
    */
   public toUpdateTaskExecution() {
@@ -615,7 +632,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Adds a resource of type agent to the statement
    *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/agent.html
+   * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html
    *
    * @param agentId - Identifier for the agentId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -632,7 +649,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Adds a resource of type location to the statement
    *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/location.html
+   * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html
    *
    * @param locationId - Identifier for the locationId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -649,7 +666,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Adds a resource of type task to the statement
    *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/task.html
+   * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html
    *
    * @param taskId - Identifier for the taskId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -666,13 +683,16 @@ export class Datasync extends PolicyStatement {
   /**
    * Adds a resource of type taskexecution to the statement
    *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/taskexecution.html
+   * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html
    *
    * @param taskId - Identifier for the taskId.
    * @param executionId - Identifier for the executionId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);

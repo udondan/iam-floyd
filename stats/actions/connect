@@ -21,6 +21,7 @@ connect:CreateIntegrationAssociation;Write
 connect:CreateQueue;Write
 connect:CreateQuickConnect;Write
 connect:CreateRoutingProfile;Write
+connect:CreateRule;Write
 connect:CreateSecurityProfile;Write
 connect:CreateTaskTemplate;Write
 connect:CreateTrafficDistributionGroup;Write
@@ -34,6 +35,7 @@ connect:DeleteHoursOfOperation;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
+connect:DeleteRule;Write
 connect:DeleteSecurityProfile;Write
 connect:DeleteTaskTemplate;Write
 connect:DeleteTrafficDistributionGroup;Write
@@ -54,6 +56,7 @@ connect:DescribePhoneNumber;Read
 connect:DescribeQueue;Read
 connect:DescribeQuickConnect;Read
 connect:DescribeRoutingProfile;Read
+connect:DescribeRule;Read
 connect:DescribeSecurityProfile;Read
 connect:DescribeTrafficDistributionGroup;Read
 connect:DescribeUser;Read
@@ -102,6 +105,7 @@ connect:ListQuickConnects;List
 connect:ListRealtimeContactAnalysisSegments;Read
 connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
+connect:ListRule;List
 connect:ListSecurityKeys;List
 connect:ListSecurityProfilePermissions;List
 connect:ListSecurityProfiles;List
@@ -160,6 +164,7 @@ connect:UpdateRoutingProfileConcurrency;Write
 connect:UpdateRoutingProfileDefaultOutboundQueue;Write
 connect:UpdateRoutingProfileName;Write
 connect:UpdateRoutingProfileQueues;Write
+connect:UpdateRule;Write
 connect:UpdateSecurityProfile;Write
 connect:UpdateTaskTemplate;Write
 connect:UpdateTrafficDistribution;Write

@@ -11,6 +11,7 @@ connect:phone-number
 connect:queue
 connect:quick-connect
 connect:routing-profile
+connect:rule
 connect:security-profile
 connect:task-template
 connect:traffic-distribution-group
