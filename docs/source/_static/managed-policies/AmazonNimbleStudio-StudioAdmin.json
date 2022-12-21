@@ -11,6 +11,8 @@
 				"nimble:CreateStreamingSessionStream",
 				"nimble:GetStreamingSessionStream",
 				"nimble:DeleteStreamingSession",
+				"nimble:ListStreamingSessionBackups",
+				"nimble:GetStreamingSessionBackup",
 				"nimble:ListEulas",
 				"nimble:ListEulaAcceptances",
 				"nimble:GetEula",

@@ -1,0 +1,34 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "EC2Permissions",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeRegions"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Sid": "OrganizationPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"organizations:DescribeOrganization",
+				"organizations:ListAccounts",
+				"organizations:DescribeAccount",
+				"organizations:ListChildren",
+				"organizations:ListParents",
+				"organizations:ListAccountsForParent",
+				"organizations:ListRoots",
+				"organizations:ListAWSServiceAccessForOrganization",
+				"organizations:ListDelegatedAdministrators"
+			],
+			"Resource": [
+				"*"
+			]
+		}
+	]
+}
