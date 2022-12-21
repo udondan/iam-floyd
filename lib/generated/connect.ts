@@ -422,6 +422,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a rule in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRule.html
+   */
+  public toCreateRule() {
+    return this.to('CreateRule');
+  }
+
+  /**
    * Grants permission to create a security profile for the specified Amazon Connect instance
    *
    * Access Level: Write
@@ -632,6 +646,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteQuickConnect() {
     return this.to('DeleteQuickConnect');
+  }
+
+  /**
+   * Grants permission to delete a rule in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteRule.html
+   */
+  public toDeleteRule() {
+    return this.to('DeleteRule');
   }
 
   /**
@@ -933,6 +962,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeRoutingProfile() {
     return this.to('DescribeRoutingProfile');
+  }
+
+  /**
+   * Grants permission to describe a rule in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRule.html
+   */
+  public toDescribeRule() {
+    return this.to('DescribeRule');
   }
 
   /**
@@ -1618,6 +1662,20 @@ export class Connect extends PolicyStatement {
    */
   public toListRoutingProfiles() {
     return this.to('ListRoutingProfiles');
+  }
+
+  /**
+   * Grants permission to list rules associated with a Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRules.html
+   */
+  public toListRule() {
+    return this.to('ListRule');
   }
 
   /**
@@ -2478,6 +2536,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a rule for an existing Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toUpdateRule() {
+    return this.to('UpdateRule');
+  }
+
+  /**
    * Grants permission to update a security profile group for a user in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2664,6 +2734,7 @@ export class Connect extends PolicyStatement {
       'CreateQueue',
       'CreateQuickConnect',
       'CreateRoutingProfile',
+      'CreateRule',
       'CreateSecurityProfile',
       'CreateTaskTemplate',
       'CreateTrafficDistributionGroup',
@@ -2677,6 +2748,7 @@ export class Connect extends PolicyStatement {
       'DeleteInstance',
       'DeleteIntegrationAssociation',
       'DeleteQuickConnect',
+      'DeleteRule',
       'DeleteSecurityProfile',
       'DeleteTaskTemplate',
       'DeleteTrafficDistributionGroup',
@@ -2737,6 +2809,7 @@ export class Connect extends PolicyStatement {
       'UpdateRoutingProfileDefaultOutboundQueue',
       'UpdateRoutingProfileName',
       'UpdateRoutingProfileQueues',
+      'UpdateRule',
       'UpdateSecurityProfile',
       'UpdateTaskTemplate',
       'UpdateTrafficDistribution',
@@ -2763,6 +2836,7 @@ export class Connect extends PolicyStatement {
       'DescribeQueue',
       'DescribeQuickConnect',
       'DescribeRoutingProfile',
+      'DescribeRule',
       'DescribeSecurityProfile',
       'DescribeTrafficDistributionGroup',
       'DescribeUser',
@@ -2806,6 +2880,7 @@ export class Connect extends PolicyStatement {
       'ListQuickConnects',
       'ListRoutingProfileQueues',
       'ListRoutingProfiles',
+      'ListRule',
       'ListSecurityKeys',
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
@@ -3249,6 +3324,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type rule to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param ruleId - Identifier for the ruleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRule(instanceId: string, ruleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/rule/${ ruleId }`);
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -3290,6 +3383,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateQueue()
    * - .toCreateQuickConnect()
    * - .toCreateRoutingProfile()
+   * - .toCreateRule()
    * - .toCreateSecurityProfile()
    * - .toCreateTrafficDistributionGroup()
    * - .toCreateUseCase()
@@ -3302,6 +3396,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
    * - .toDeleteQuickConnect()
+   * - .toDeleteRule()
    * - .toDeleteSecurityProfile()
    * - .toDeleteTaskTemplate()
    * - .toDeleteUseCase()
@@ -3320,6 +3415,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeQueue()
    * - .toDescribeQuickConnect()
    * - .toDescribeRoutingProfile()
+   * - .toDescribeRule()
    * - .toDescribeSecurityProfile()
    * - .toDescribeUser()
    * - .toDescribeUserHierarchyGroup()
@@ -3355,6 +3451,7 @@ export class Connect extends PolicyStatement {
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileQueues()
    * - .toListRoutingProfiles()
+   * - .toListRule()
    * - .toListSecurityKeys()
    * - .toListSecurityProfilePermissions()
    * - .toListSecurityProfiles()
@@ -3396,6 +3493,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateRoutingProfileDefaultOutboundQueue()
    * - .toUpdateRoutingProfileName()
    * - .toUpdateRoutingProfileQueues()
+   * - .toUpdateRule()
    * - .toUpdateSecurityProfile()
    * - .toUpdateTaskTemplate()
    * - .toUpdateUserHierarchy()
