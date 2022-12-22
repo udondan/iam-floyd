@@ -30,6 +30,17 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a new delegation signer to a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html
+   */
+  public toAssociateDelegationSignerToDomain() {
+    return this.to('AssociateDelegationSignerToDomain');
+  }
+
+  /**
    * Grants permission to cancel the transfer of a domain from the current AWS account to another AWS account
    *
    * Access Level: Write
@@ -104,6 +115,17 @@ export class Route53domains extends PolicyStatement {
    */
   public toDisableDomainTransferLock() {
     return this.to('DisableDomainTransferLock');
+  }
+
+  /**
+   * Grants permission to disassociate an existing delegation signer from a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisassociateDelegationSignerFromDomain.html
+   */
+  public toDisassociateDelegationSignerFromDomain() {
+    return this.to('DisassociateDelegationSignerFromDomain');
   }
 
   /**
@@ -217,6 +239,17 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
+   * Grants permission to change the IPS tag of .uk domain to initiate a transfer process from Route 53 to another registrar
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_PushDomain.html
+   */
+  public toPushDomain() {
+    return this.to('PushDomain');
+  }
+
+  /**
    * Grants permission to register domains
    *
    * Access Level: Write
@@ -258,6 +291,17 @@ export class Route53domains extends PolicyStatement {
    */
   public toResendContactReachabilityEmail() {
     return this.to('ResendContactReachabilityEmail');
+  }
+
+  /**
+   * Grants permission to resend the operation authorization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html
+   */
+  public toResendOperationAuthorization() {
+    return this.to('ResendOperationAuthorization');
   }
 
   /**
@@ -351,16 +395,20 @@ export class Route53domains extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDomainTransferFromAnotherAwsAccount',
+      'AssociateDelegationSignerToDomain',
       'CancelDomainTransferToAnotherAwsAccount',
       'DeleteDomain',
       'DisableDomainAutoRenew',
       'DisableDomainTransferLock',
+      'DisassociateDelegationSignerFromDomain',
       'EnableDomainAutoRenew',
       'EnableDomainTransferLock',
+      'PushDomain',
       'RegisterDomain',
       'RejectDomainTransferFromAnotherAwsAccount',
       'RenewDomain',
       'ResendContactReachabilityEmail',
+      'ResendOperationAuthorization',
       'RetrieveDomainAuthCode',
       'TransferDomain',
       'TransferDomainToAnotherAwsAccount',

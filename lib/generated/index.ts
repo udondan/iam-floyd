@@ -273,6 +273,7 @@ export { Kms } from './keymanagementservice';
 export { Lakeformation } from './lakeformation';
 export { Lambda } from './lambda';
 export { LicenseManager } from './licensemanager';
+export { LicenseManagerLinuxSubscriptions } from './licensemanagerlinuxsubscriptionsmanager';
 export { LicenseManagerUserSubscriptions } from './licensemanagerusersubscriptions';
 export { M2 } from './mainframemodernizationservice';
 export { AwsMarketplace } from './marketplace';
