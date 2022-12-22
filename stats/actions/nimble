@@ -20,6 +20,7 @@ nimble:GetLaunchProfileInitialization;Read
 nimble:GetLaunchProfileMember;Read
 nimble:GetStreamingImage;Read
 nimble:GetStreamingSession;Read
+nimble:GetStreamingSessionBackup;Read
 nimble:GetStreamingSessionStream;Read
 nimble:GetStudio;Read
 nimble:GetStudioComponent;Read
@@ -29,6 +30,7 @@ nimble:ListEulas;Read
 nimble:ListLaunchProfileMembers;Read
 nimble:ListLaunchProfiles;Read
 nimble:ListStreamingImages;Read
+nimble:ListStreamingSessionBackups;Read
 nimble:ListStreamingSessions;Read
 nimble:ListStudioComponents;Read
 nimble:ListStudioMembers;Read

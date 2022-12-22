@@ -344,6 +344,20 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a streaming session backup
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSessionBackup.html
+   */
+  public toGetStreamingSessionBackup() {
+    return this.to('GetStreamingSessionBackup');
+  }
+
+  /**
    * Grants permission to get a streaming session stream
    *
    * Access Level: Read
@@ -447,6 +461,20 @@ export class Nimble extends PolicyStatement {
    */
   public toListStreamingImages() {
     return this.to('ListStreamingImages');
+  }
+
+  /**
+   * Grants permission to list streaming session backups
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingSessionBackups.html
+   */
+  public toListStreamingSessionBackups() {
+    return this.to('ListStreamingSessionBackups');
   }
 
   /**
@@ -737,6 +765,7 @@ export class Nimble extends PolicyStatement {
       'GetLaunchProfileMember',
       'GetStreamingImage',
       'GetStreamingSession',
+      'GetStreamingSessionBackup',
       'GetStreamingSessionStream',
       'GetStudio',
       'GetStudioComponent',
@@ -746,6 +775,7 @@ export class Nimble extends PolicyStatement {
       'ListLaunchProfileMembers',
       'ListLaunchProfiles',
       'ListStreamingImages',
+      'ListStreamingSessionBackups',
       'ListStreamingSessions',
       'ListStudioComponents',
       'ListStudioMembers',
@@ -860,6 +890,26 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type streaming-session-backup to the statement
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSessionBackup.html
+   *
+   * @param streamingSessionBackupId - Identifier for the streamingSessionBackupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifOwnedBy()
+   */
+  public onStreamingSessionBackup(streamingSessionBackupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session-backup/${ streamingSessionBackupId }`);
+  }
+
+  /**
    * Adds a resource of type eula to the statement
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Eula.html
@@ -918,6 +968,7 @@ export class Nimble extends PolicyStatement {
    *
    * Applies to resource types:
    * - streaming-session
+   * - streaming-session-backup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -950,8 +1001,10 @@ export class Nimble extends PolicyStatement {
    * - .toCreateStreamingSessionStream()
    * - .toDeleteStreamingSession()
    * - .toGetStreamingSession()
+   * - .toGetStreamingSessionBackup()
    * - .toGetStreamingSessionStream()
    * - .toListLaunchProfiles()
+   * - .toListStreamingSessionBackups()
    * - .toListStreamingSessions()
    * - .toStartStreamingSession()
    * - .toStopStreamingSession()
