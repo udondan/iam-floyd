@@ -84,7 +84,8 @@
 				"events:PutTargets",
 				"events:DescribeRule",
 				"events:DeleteRule",
-				"events:PutRule"
+				"events:PutRule",
+				"events:RemoveTargets"
 			],
 			"Resource": "arn:aws:events:*:*:rule/MigrationHubOrchestratorManagedRule*"
 		},
@@ -102,6 +103,23 @@
 				"mgn:ChangeServerLifeCycleState"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeImportImageTasks"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "s3:ListBucket",
+			"Resource": "arn:aws:s3:::*",
+			"Condition": {
+				"StringLike": {
+					"s3:prefix": "migrationhub-orchestrator-vmie-*"
+				}
+			}
 		}
 	]
 }

@@ -176,6 +176,7 @@
 			"Sid": "ELBOperationPermissions",
 			"Effect": "Allow",
 			"Action": [
+				"elasticloadbalancing:AddTags",
 				"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
 				"elasticloadbalancing:ConfigureHealthCheck",
 				"elasticloadbalancing:CreateLoadBalancer",
