@@ -19,6 +19,7 @@
 				"aws-marketplace:DescribeTask",
 				"aws-marketplace:UpdateTask",
 				"aws-marketplace:CompleteTask",
+				"aws-marketplace:GetSellerDashboard",
 				"ec2:DescribeImages",
 				"ec2:DescribeSnapshots",
 				"ec2:ModifyImageAttribute",

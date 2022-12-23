@@ -11,15 +11,12 @@
 			"Action": [
 				"account:PutAlternateContact",
 				"account:DeleteAlternateContact",
-				"account:GetAlternateContact"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
+				"account:GetAlternateContact",
 				"account:GetContactInformation",
-				"account:PutContactInformation"
+				"account:PutContactInformation",
+				"account:ListRegions",
+				"account:EnableRegion",
+				"account:DisableRegion"
 			],
 			"Resource": "*"
 		},

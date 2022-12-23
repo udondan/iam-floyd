@@ -12,14 +12,9 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"account:GetAlternateContact"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"account:GetContactInformation"
+				"account:GetAlternateContact",
+				"account:GetContactInformation",
+				"account:ListRegions"
 			],
 			"Resource": "*"
 		}
