@@ -8,14 +8,15 @@
     "build": "tsc"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.50.0",
-    "@types/aws-lambda": "^8.10.84",
+    "@types/aws-lambda": "^8.10.109",
     "@types/node": "15.6.1",
-    "@types/twit": "^2.2.30",
-    "esbuild": "^0.13.10",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4",
-    "constructs": "^10.0.0"
+    "@types/twit": "^2.2.31",
+    "aws-cdk-lib": "2.56.1",
+    "constructs": "^10.0.0",
+    "esbuild": "^0.16.10",
+    "ts-node": "^10.9.1",
+    "twit": "^2.2.11",
+    "typescript": "^4.9.4"
   },
   "overrides": {
     "colors": "1.4.0"

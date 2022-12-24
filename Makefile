@@ -110,3 +110,7 @@ regenerate-code-example-results:
 tweet: install
 	@echo -e "$(TARGET_COLOR)Running tweet$(NO_COLOR)"
 	@npx ts-node bin/tweet.ts
+
+toot: install
+	@echo -e "$(TARGET_COLOR)Running toot$(NO_COLOR)"
+	@npx ts-node bin/toot.ts

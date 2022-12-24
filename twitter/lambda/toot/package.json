@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "megalodon": "^5.0.1"
+  }
+}
