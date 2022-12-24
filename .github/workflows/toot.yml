@@ -1,5 +1,5 @@
 ---
-name: Tweet IAM changes
+name: Toot IAM changes
 
 on:
   release:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       changelog:
-        description: version to tweet about
+        description: version to toot about
         required: true
 
 jobs:
@@ -26,6 +26,14 @@ jobs:
         with:
           node-version: "14"
 
+      - name: Toot latest version
+        run: make toot
+        if: ${{ github.event_name == 'release' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}
+
       - name: Tweet latest version
         run: make tweet
         if: ${{ github.event_name == 'release' }}
@@ -33,6 +41,15 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SQS_URL: ${{ secrets.AWS_SQS_URL }}
+
+      - name: Toot specified version
+        run: make toot
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          CHANGELOG: ${{ github.event.inputs.changelog }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}
 
       - name: Tweet specified version
         run: make tweet
