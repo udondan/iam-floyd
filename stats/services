@@ -59,6 +59,7 @@ cloudtrail
 cloudwatch
 codeartifact
 codebuild
+codecatalyst
 codecommit
 codedeploy
 codedeploy-commands-secure

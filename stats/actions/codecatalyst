@@ -1,0 +1,11 @@
+codecatalyst:AcceptConnection;Write
+codecatalyst:AssociateIamRoleToConnection;Write
+codecatalyst:DeleteConnection;Write
+codecatalyst:DisassociateIamRoleFromConnection;Write
+codecatalyst:GetBillingAuthorization;Read
+codecatalyst:GetConnection;Read
+codecatalyst:GetPendingConnection;Read
+codecatalyst:ListConnections;List
+codecatalyst:ListIamRolesForConnection;List
+codecatalyst:PutBillingAuthorization;Write
+codecatalyst:RejectConnection;Write

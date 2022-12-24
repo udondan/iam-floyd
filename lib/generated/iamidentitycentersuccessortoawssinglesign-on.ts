@@ -775,6 +775,15 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add assignment configurations to an application
+   *
+   * Access Level: Write
+   */
+  public toPutApplicationAssignmentConfiguration() {
+    return this.to('PutApplicationAssignmentConfiguration');
+  }
+
+  /**
    * Grants permission to attach an IAM inline policy to a permission set
    *
    * Access Level: Write
@@ -1067,6 +1076,7 @@ export class Sso extends PolicyStatement {
       'DisassociateProfile',
       'ImportApplicationInstanceServiceProviderMetadata',
       'ProvisionPermissionSet',
+      'PutApplicationAssignmentConfiguration',
       'PutInlinePolicyToPermissionSet',
       'PutMfaDeviceManagementForDirectory',
       'StartSSO',

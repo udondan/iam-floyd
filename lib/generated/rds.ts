@@ -279,11 +279,18 @@ export class Rds extends PolicyStatement {
    * - .ifDatabaseClass()
    * - .ifStorageSize()
    * - .ifPiops()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
    * - rds:AddTagsToResource
    * - rds:CreateDBInstance
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
@@ -358,10 +365,17 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
    * - rds:AddTagsToResource
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
    */
@@ -1330,10 +1344,18 @@ export class Rds extends PolicyStatement {
    * - .ifDatabaseClass()
    * - .ifStorageSize()
    * - .ifPiops()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
    * - rds:ModifyDBInstance
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
    */
@@ -1379,8 +1401,18 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifManageMasterUserPassword()
+   *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
    */
@@ -1688,10 +1720,17 @@ export class Rds extends PolicyStatement {
    * - .ifDatabaseEngine()
    * - .ifDatabaseName()
    * - .ifStorageEncrypted()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
    * - rds:AddTagsToResource
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
    */
@@ -1777,10 +1816,17 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
    * - rds:AddTagsToResource
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:TagResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
    */
@@ -2559,6 +2605,25 @@ export class Rds extends PolicyStatement {
    */
   public ifEndpointType(value: string | string[], operator?: Operator | string) {
     return this.if(`EndpointType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the value that specifies whether RDS manages master user password in AWS Secrets Manager for the DB instance or cluster
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toCreateDBInstance()
+   * - .toModifyDBCluster()
+   * - .toModifyDBInstance()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBInstanceFromS3()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifManageMasterUserPassword(value?: boolean) {
+    return this.if(`ManageMasterUserPassword`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

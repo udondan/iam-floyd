@@ -64,6 +64,7 @@ sso:ListProfileAssociations;Read
 sso:ListProfiles;List
 sso:ListTagsForResource;Read
 sso:ProvisionPermissionSet;Write
+sso:PutApplicationAssignmentConfiguration;Write
 sso:PutInlinePolicyToPermissionSet;Write
 sso:PutMfaDeviceManagementForDirectory;Write
 sso:PutPermissionsBoundaryToPermissionSet;Permissions management

@@ -18,6 +18,7 @@ export { Internetmonitor } from './cloudwatchinternetmonitor';
 export { Logs } from './cloudwatchlogs';
 export { Oam } from './cloudwatchobservabilityaccessmanager';
 export { Synthetics } from './cloudwatchsynthetics';
+export { Codecatalyst } from './codecatalyst';
 export { Codeguru } from './codeguru';
 export { CodeguruProfiler } from './codeguruprofiler';
 export { CodeguruReviewer } from './codegurureviewer';

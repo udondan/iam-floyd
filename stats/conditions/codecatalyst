@@ -1,0 +1,3 @@
+codecatalyst:RequestTag/${TagKey}
+codecatalyst:ResourceTag/${TagKey}
+codecatalyst:TagKeys
