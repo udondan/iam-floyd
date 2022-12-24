@@ -4,6 +4,7 @@ rds:DatabaseClass
 rds:DatabaseEngine
 rds:DatabaseName
 rds:EndpointType
+rds:ManageMasterUserPassword
 rds:MultiAz
 rds:Piops
 rds:RequestTag/${TagKey}

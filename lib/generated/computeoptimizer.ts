@@ -93,6 +93,22 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export ECS service recommendations to S3 for the provided accounts
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetECSServiceRecommendations
+   * - ecs:ListClusters
+   * - ecs:ListServices
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportECSServiceRecommendations.html
+   */
+  public toExportECSServiceRecommendations() {
+    return this.to('ExportECSServiceRecommendations');
+  }
+
+  /**
    * Grants permission to export Lambda function recommendations to S3 for the provided accounts
    *
    * Access Level: Write
@@ -162,6 +178,32 @@ export class ComputeOptimizer extends PolicyStatement {
    */
   public toGetEC2RecommendationProjectedMetrics() {
     return this.to('GetEC2RecommendationProjectedMetrics');
+  }
+
+  /**
+   * Grants permission to get the recommendation projected metrics of the specified ECS service
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetECSServiceRecommendationProjectedMetrics.html
+   */
+  public toGetECSServiceRecommendationProjectedMetrics() {
+    return this.to('GetECSServiceRecommendationProjectedMetrics');
+  }
+
+  /**
+   * Grants permission to get recommendations for the provided ECS services
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - ecs:ListClusters
+   * - ecs:ListServices
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetECSServiceRecommendations.html
+   */
+  public toGetECSServiceRecommendations() {
+    return this.to('GetECSServiceRecommendations');
   }
 
   /**
@@ -281,6 +323,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'ExportAutoScalingGroupRecommendations',
       'ExportEBSVolumeRecommendations',
       'ExportEC2InstanceRecommendations',
+      'ExportECSServiceRecommendations',
       'ExportLambdaFunctionRecommendations',
       'PutRecommendationPreferences',
       'UpdateEnrollmentStatus'
@@ -291,6 +334,8 @@ export class ComputeOptimizer extends PolicyStatement {
       'GetEBSVolumeRecommendations',
       'GetEC2InstanceRecommendations',
       'GetEC2RecommendationProjectedMetrics',
+      'GetECSServiceRecommendationProjectedMetrics',
+      'GetECSServiceRecommendations',
       'GetEnrollmentStatus',
       'GetEnrollmentStatusesForOrganization',
       'GetLambdaFunctionRecommendations',
