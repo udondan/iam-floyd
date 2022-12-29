@@ -25,7 +25,7 @@
 		{
 			"Effect": "Allow",
 			"Action": "drs:TagResource",
-			"Resource": "arn:aws:drs:*:*:recovery-instance/*",
+			"Resource": "arn:aws:drs:*:*:source-server/*",
 			"Condition": {
 				"StringEquals": {
 					"drs:CreateAction": "CreateRecoveryInstanceForDrs"
