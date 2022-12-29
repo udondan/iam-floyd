@@ -1260,7 +1260,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve current metric data for the queues in an Amazon Connect instance
+   * Grants permission to retrieve current metric data for queues and routing profiles in an Amazon Connect instance
    *
    * Access Level: Read
    *
