@@ -359,6 +359,31 @@ export class Memorydb extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to retrieve reserved nodes
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeReservedNodes.html
+   */
+  public toDescribeReservedNodes() {
+    return this.to('DescribeReservedNodes');
+  }
+
+  /**
+   * Grants permissions to retrieve reserved nodes offerings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeReservedNodesOfferings.html
+   */
+  public toDescribeReservedNodesOfferings() {
+    return this.to('DescribeReservedNodesOfferings');
+  }
+
+  /**
    * Grants permissions to retrieve details of the service updates
    *
    * Access Level: Read
@@ -458,6 +483,25 @@ export class Memorydb extends PolicyStatement {
    */
   public toListTags() {
     return this.to('ListTags');
+  }
+
+  /**
+   * Grants permissions to purchase a new reserved node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_PurchaseReservedNodesOffering.html
+   */
+  public toPurchaseReservedNodesOffering() {
+    return this.to('PurchaseReservedNodesOffering');
   }
 
   /**
@@ -599,6 +643,7 @@ export class Memorydb extends PolicyStatement {
       'DeleteSubnetGroup',
       'DeleteUser',
       'FailoverShard',
+      'PurchaseReservedNodesOffering',
       'ResetParameterGroup',
       'UpdateAcl',
       'UpdateCluster',
@@ -613,6 +658,8 @@ export class Memorydb extends PolicyStatement {
       'DescribeEvents',
       'DescribeParameterGroups',
       'DescribeParameters',
+      'DescribeReservedNodes',
+      'DescribeReservedNodesOfferings',
       'DescribeServiceUpdates',
       'DescribeSnapshots',
       'DescribeSubnetGroups',
@@ -726,5 +773,22 @@ export class Memorydb extends PolicyStatement {
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
+  }
+
+  /**
+   * Adds a resource of type reservednode to the statement
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
+   *
+   * @param reservationID - Identifier for the reservationID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:reservednode/${ reservationID }`);
   }
 }
