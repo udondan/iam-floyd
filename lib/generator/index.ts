@@ -819,6 +819,15 @@ function addActions($: CheerioStatic, module: Module): Module {
           module.servicePrefix!,
           cleanDescription($(conditionKey).text())
         );
+
+        if (!module.conditions![condition]) {
+          console.log(
+            `[Skipping referenced condition, since it is not documented: ${condition}]`
+              .red
+          );
+          return;
+        }
+
         conditions.push(condition);
         if (!('relatedActions' in module.conditions![condition])) {
           module.conditions![condition].relatedActions = [];
