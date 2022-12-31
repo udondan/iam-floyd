@@ -102,7 +102,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Allows an IAM user or role to connect as a specified EliastCache user to a node in a replication group
+   * Allows an IAM user or role to connect as a specified ElastiCache user to a node in a replication group
    *
    * Access Level: Write
    *
@@ -277,7 +277,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user for Redis. Users are supported from Redis 6.0 onwards.
+   * Grants permission to create a user for Redis. Users are supported from Redis 6.0 onwards
    *
    * Access Level: Write
    *
@@ -297,7 +297,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user group for Redis. Groups are supported from Redis 6.0 onwards.
+   * Grants permission to create a user group for Redis. Groups are supported from Redis 6.0 onwards
    *
    * Access Level: Write
    *
@@ -1635,12 +1635,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Filters access by the TransitEncryptionEnabled parameter present in the request or default false value if parameter is not present
+   * Filters access by the TransitEncryptionEnabled parameter present in the request. For replication group creations, default value 'false' is used as key if parameter is not present
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
    *
    * Applies to actions:
    * - .toCreateReplicationGroup()
+   * - .toModifyReplicationGroup()
    *
    * Applies to resource types:
    * - replicationgroup

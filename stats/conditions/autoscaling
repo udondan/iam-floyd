@@ -14,5 +14,4 @@ autoscaling:ResourceTag/${TagKey}
 autoscaling:SpotPrice
 autoscaling:TagKeys
 autoscaling:TargetGroupARNs
-autoscaling:TrafficSourceIdentifiers
 autoscaling:VPCZoneIdentifiers

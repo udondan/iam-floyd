@@ -19,44 +19,44 @@ export class Cur extends PolicyStatement {
   }
 
   /**
-   * Delete Cost and Usage Report Definition
+   * Grants permission to delete Cost and Usage Report Definition
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_DeleteReportDefinition.html
    */
   public toDeleteReportDefinition() {
     return this.to('DeleteReportDefinition');
   }
 
   /**
-   * Get Cost and Usage Report Definitions
+   * Grants permission to get Cost and Usage Report Definitions
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_DescribeReportDefinitions.html
    */
   public toDescribeReportDefinitions() {
     return this.to('DescribeReportDefinitions');
   }
 
   /**
-   * Modify Cost and Usage Report Definition
+   * Grants permission to modify Cost and Usage Report Definition
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_ModifyReportDefinition.html
    */
   public toModifyReportDefinition() {
     return this.to('ModifyReportDefinition');
   }
 
   /**
-   * Write Cost and Usage Report Definition
+   * Grants permission to write Cost and Usage Report Definition
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_PutReportDefinition.html
    */
   public toPutReportDefinition() {
     return this.to('PutReportDefinition');
@@ -76,7 +76,7 @@ export class Cur extends PolicyStatement {
   /**
    * Adds a resource of type cur to the statement
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports
+   * https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html
    *
    * @param reportName - Identifier for the reportName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

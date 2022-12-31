@@ -4,7 +4,6 @@ iotroborunner:ActivityResource
 iotroborunner:DestinationRelationshipResource
 iotroborunner:DestinationResource
 iotroborunner:SiteResource
-iotroborunner:TaggingResource
 iotroborunner:TaskResource
 iotroborunner:WorkerFleetResource
 iotroborunner:WorkerResource

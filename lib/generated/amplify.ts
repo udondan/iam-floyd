@@ -19,7 +19,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amplify App
+   * Grants permission to create a new Amplify App
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Creates a new backend environment for an Amplify App
+   * Grants permission to create a new backend environment for an Amplify App
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Creates a new Branch for an Amplify App
+   * Grants permission to create a new Branch for an Amplify App
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+   * Grants permission to create a deployment for manual deploy apps. (Apps are not connected to repository)
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Create a new DomainAssociation on an App
+   * Grants permission to create a new DomainAssociation on an App
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Create a new webhook on an App
+   * Grants permission to create a new webhook on an App
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Delete an existing Amplify App by appId
+   * Grants permission to delete an existing Amplify App by appId
    *
    * Access Level: Write
    *
@@ -108,7 +108,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Deletes a branch for an Amplify App
+   * Grants permission to delete a branch for an Amplify App
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Deletes a branch for an Amplify App
+   * Grants permission to delete a branch for an Amplify App
    *
    * Access Level: Write
    *
@@ -130,7 +130,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Deletes a DomainAssociation
+   * Grants permission to delete a DomainAssociation
    *
    * Access Level: Write
    *
@@ -141,7 +141,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Delete a job, for an Amplify branch, part of Amplify App
+   * Grants permission to delete a job, for an Amplify branch, part of Amplify App
    *
    * Access Level: Write
    *
@@ -152,7 +152,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Delete a webhook by id
+   * Grants permission to delete a webhook by id
    *
    * Access Level: Write
    *
@@ -163,7 +163,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Generate website access logs for a specific time range via a pre-signed URL
+   * Grants permission to generate website access logs for a specific time range via a pre-signed URL
    *
    * Access Level: Write
    *
@@ -174,7 +174,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves an existing Amplify App by appId
+   * Grants permission to retrieve an existing Amplify App by appId
    *
    * Access Level: Read
    *
@@ -185,7 +185,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves artifact info that corresponds to a artifactId
+   * Grants permission to retrieve artifact info that corresponds to a artifactId
    *
    * Access Level: Read
    *
@@ -196,7 +196,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves a backend environment for an Amplify App
+   * Grants permission to retrieve a backend environment for an Amplify App
    *
    * Access Level: Read
    *
@@ -207,7 +207,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves a branch for an Amplify App
+   * Grants permission to retrieve a branch for an Amplify App
    *
    * Access Level: Read
    *
@@ -218,7 +218,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves domain info that corresponds to an appId and domainName
+   * Grants permission to retrieve domain info that corresponds to an appId and domainName
    *
    * Access Level: Read
    *
@@ -229,7 +229,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Get a job for a branch, part of an Amplify App
+   * Grants permission to get a job for a branch, part of an Amplify App
    *
    * Access Level: Read
    *
@@ -240,7 +240,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Retrieves webhook info that corresponds to a webhookId
+   * Grants permission to retrieve webhook info that corresponds to a webhookId
    *
    * Access Level: Read
    *
@@ -251,7 +251,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Lists existing Amplify Apps
+   * Grants permission to list existing Amplify Apps
    *
    * Access Level: List
    *
@@ -262,7 +262,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * List artifacts with an app, a branch, a job and an artifact type
+   * Grants permission to list artifacts with an app, a branch, a job and an artifact type
    *
    * Access Level: List
    *
@@ -273,7 +273,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Lists backend environments for an Amplify App
+   * Grants permission to list backend environments for an Amplify App
    *
    * Access Level: List
    *
@@ -284,7 +284,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Lists branches for an Amplify App
+   * Grants permission to list branches for an Amplify App
    *
    * Access Level: List
    *
@@ -295,7 +295,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * List domains with an app
+   * Grants permission to list domains with an app
    *
    * Access Level: List
    *
@@ -306,7 +306,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * List Jobs for a branch, part of an Amplify App
+   * Grants permission to list Jobs for a branch, part of an Amplify App
    *
    * Access Level: List
    *
@@ -317,7 +317,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * List tags for an AWS Amplify Console resource
+   * Grants permission to list tags for an AWS Amplify Console resource
    *
    * Access Level: Read
    *
@@ -328,7 +328,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * List webhooks on an App
+   * Grants permission to list webhooks on an App
    *
    * Access Level: List
    *
@@ -339,7 +339,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+   * Grants permission to start a deployment for manual deploy apps. (Apps are not connected to repository)
    *
    * Access Level: Write
    *
@@ -350,7 +350,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Starts a new job for a branch, part of an Amplify App
+   * Grants permission to start a new job for a branch, part of an Amplify App
    *
    * Access Level: Write
    *
@@ -361,7 +361,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Stop a job that is in progress, for an Amplify branch, part of Amplify App
+   * Grants permission to stop a job that is in progress, for an Amplify branch, part of Amplify App
    *
    * Access Level: Write
    *
@@ -372,7 +372,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * This action tags an AWS Amplify Console resource
+   * Grants permission to tag an AWS Amplify Console resource
    *
    * Access Level: Tagging
    *
@@ -387,7 +387,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an AWS Amplify Console resource
+   * Grants permission to remove a tag from an AWS Amplify Console resource
    *
    * Access Level: Tagging
    *
@@ -401,7 +401,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Updates an existing Amplify App
+   * Grants permission to update an existing Amplify App
    *
    * Access Level: Write
    *
@@ -412,7 +412,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Updates a branch for an Amplify App
+   * Grants permission to update a branch for an Amplify App
    *
    * Access Level: Write
    *
@@ -423,7 +423,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Update a DomainAssociation on an App
+   * Grants permission to update a DomainAssociation on an App
    *
    * Access Level: Write
    *
@@ -434,7 +434,7 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Update a webhook
+   * Grants permission to update a webhook
    *
    * Access Level: Write
    *
