@@ -152,6 +152,7 @@ connect:UpdateContactSchedule;Write
 connect:UpdateHoursOfOperation;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
+connect:UpdateParticipantRoleConfig;Write
 connect:UpdatePhoneNumber;Write
 connect:UpdateQueueHoursOfOperation;Write
 connect:UpdateQueueMaxContacts;Write

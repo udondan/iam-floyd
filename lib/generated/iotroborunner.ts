@@ -717,23 +717,6 @@ export class Iotroborunner extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type TaggingResource to the statement
-   *
-   * https://docs.aws.amazon.com/iotroborunner/latest/api/
-   *
-   * @param tagKey - Identifier for the tagKey.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifTaggingResourceTagKey()
-   */
-  public onTaggingResource(tagKey: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:tag/${ tagKey }`);
-  }
-
-  /**
    * Adds a resource of type TaskResource to the statement
    *
    * https://docs.aws.amazon.com/iotroborunner/latest/api/
@@ -875,21 +858,6 @@ export class Iotroborunner extends PolicyStatement {
    */
   public ifSiteResourceId(value: string | string[], operator?: Operator | string) {
     return this.if(`SiteResourceId`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by the metadata tag name
-   *
-   * https://docs.aws.amazon.com/iotroborunner/latest/dev/#Tagging
-   *
-   * Applies to resource types:
-   * - TaggingResource
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifTaggingResourceTagKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`TaggingResourceTagKey`, value, operator || 'StringLike');
   }
 
   /**

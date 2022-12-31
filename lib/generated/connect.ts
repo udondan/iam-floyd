@@ -2357,6 +2357,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update participant role configurations associated with a contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantRoleConfig.html
+   */
+  public toUpdateParticipantRoleConfig() {
+    return this.to('UpdateParticipantRoleConfig');
+  }
+
+  /**
    * Grants permission to update phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
@@ -2797,6 +2811,7 @@ export class Connect extends PolicyStatement {
       'UpdateHoursOfOperation',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
+      'UpdateParticipantRoleConfig',
       'UpdatePhoneNumber',
       'UpdateQueueHoursOfOperation',
       'UpdateQueueMaxContacts',
@@ -3482,6 +3497,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateHoursOfOperation()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateParticipantRoleConfig()
    * - .toUpdateQueueHoursOfOperation()
    * - .toUpdateQueueMaxContacts()
    * - .toUpdateQueueName()
