@@ -47,7 +47,7 @@ jobs:
           set -x +e
           git stash -- package-lock.json
           git diff
-          echo ::set-output name=CHANGED::$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)
+          echo "name=CHANGED::$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)" >> $GITHUB_OUTPUT
 
       # fail if the index file does not exist.
       # this could happen if we cannot reach the AWS documentation, or the

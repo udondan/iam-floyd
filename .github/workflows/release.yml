@@ -29,7 +29,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(cat VERSION)
+        run: echo "name=VERSION::$(cat VERSION)" >> $GITHUB_OUTPUT
 
       - name: Update version references
         run: make update-version-refs
@@ -75,7 +75,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -86,7 +86,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(cat VERSION)
+        run: echo "name=VERSION::$(cat VERSION)" >> $GITHUB_OUTPUT
 
       - name: Build source
         uses: udondan/jsii-publish@v0.14.0
@@ -121,7 +121,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -132,7 +132,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(cat VERSION)
+        run: echo "name=VERSION::$(cat VERSION)" >> $GITHUB_OUTPUT
 
       - name: Build CDK variant
         run: make install cdk
@@ -170,7 +170,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -214,7 +214,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -251,7 +251,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -297,7 +297,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -335,7 +335,7 @@ jobs:
 
       - name: Store latest SHA as output
         id: get_sha
-        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+        run: echo "name=SHA::$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -346,7 +346,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(cat VERSION)
+        run: echo "name=VERSION::$(cat VERSION)" >> $GITHUB_OUTPUT
 
       - name: Create tag
         run: |
