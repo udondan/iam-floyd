@@ -38,7 +38,7 @@ jobs:
           git stash -- package-lock.json
           git diff
           git diff --quiet
-          echo ::set-output name=CHANGED::$?
+          echo "name=CHANGED::$?" >> $GITHUB_OUTPUT
 
       - name: Configure git
         run: |
