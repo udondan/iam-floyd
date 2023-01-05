@@ -4,6 +4,7 @@ install:
 	@pip3 uninstall --no-cache-dir -y iam-floyd
 	@pip3 install --no-cache-dir dist/python/iam-floyd-*.tar.gz
 	@pip3 install --no-cache-dir boto3
+	@pip3 install --force-reinstall "cryptography==38.0.4" # temporary fix https://github.com/aws/aws-sam-cli/issues/4527#issuecomment-1368871248
 
 install-cdk:
 	@pip3 uninstall --no-cache-dir -y cdk-iam-floyd
