@@ -158,6 +158,9 @@ export function conditionFixer(
   } else if (type == 'arrayofarn') {
     fixed = 1;
     condition.type = 'ARN';
+  } else if (type == 'arrayofnumeric') {
+    fixed = 1;
+    condition.type = 'numeric';
   } else if (type == 'arrayofbool' || type == 'bool') {
     fixed = 1;
     condition.type = 'boolean';
