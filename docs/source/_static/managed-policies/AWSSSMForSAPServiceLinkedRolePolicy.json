@@ -76,6 +76,19 @@
 					"iam:AWSServiceName": "servicecatalog-appregistry.amazonaws.com"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cloudwatch:PutMetricData",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": [
+						"AWS/Usage",
+						"AWS/SSMForSAP"
+					]
+				}
+			}
 		}
 	]
 }

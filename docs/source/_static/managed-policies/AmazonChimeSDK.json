@@ -24,7 +24,16 @@
 				"chime:UntagMeeting",
 				"chime:UntagResource",
 				"chime:StartMeetingTranscription",
-				"chime:StopMeetingTranscription"
+				"chime:StopMeetingTranscription",
+				"chime:CreateMediaCapturePipeline",
+				"chime:CreateMediaConcatenationPipeline",
+				"chime:CreateMediaLiveConnectorPipeline",
+				"chime:DeleteMediaCapturePipeline",
+				"chime:DeleteMediaPipeline",
+				"chime:GetMediaCapturePipeline",
+				"chime:GetMediaPipeline",
+				"chime:ListMediaCapturePipelines",
+				"chime:ListMediaPipelines"
 			],
 			"Resource": "*"
 		}
