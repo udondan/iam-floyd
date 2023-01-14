@@ -5,10 +5,16 @@
 			"Effect": "Allow",
 			"Action": [
 				"config:PutConfigRule",
-				"config:DeleteConfigRule",
-				"config:DescribeConfigRules"
+				"config:DeleteConfigRule"
 			],
 			"Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/config-conforms.amazonaws.com*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"config:DescribeConfigRules"
+			],
+			"Resource": "*"
 		},
 		{
 			"Effect": "Allow",

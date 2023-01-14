@@ -162,6 +162,7 @@
 			"Effect": "Allow",
 			"Action": "apigateway:GET",
 			"Resource": [
+				"arn:aws:apigateway:*::/restapis/??????????",
 				"arn:aws:apigateway:*::/restapis/*/resources",
 				"arn:aws:apigateway:*::/restapis/*/resources/*/methods/*/integration"
 			]
