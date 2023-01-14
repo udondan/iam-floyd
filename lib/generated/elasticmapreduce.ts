@@ -389,6 +389,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve HTTP basic credentials associated with a given execution IAM Role for a fine-grained access control enabled EMR Cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifExecutionRoleArn()
+   */
+  public toGetClusterSessionCredentials() {
+    return this.to('GetClusterSessionCredentials');
+  }
+
+  /**
    * Grants permission to retrieve the managed scaling policy associated with a cluster
    *
    * Access Level: Read
@@ -889,6 +901,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to use the EMR console to view events from all clusters
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html
    */
   public toViewEventsFromAllClustersInConsole() {
     return this.to('ViewEventsFromAllClustersInConsole');
@@ -914,6 +928,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'DeleteStudio',
       'DeleteStudioSessionMapping',
       'DetachEditor',
+      'GetClusterSessionCredentials',
       'GetOnClusterAppUIPresignedURL',
       'GetPersistentAppUIPresignedURL',
       'LinkRepository',
@@ -1063,6 +1078,7 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddJobFlowSteps()
+   * - .toGetClusterSessionCredentials()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

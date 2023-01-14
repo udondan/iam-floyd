@@ -2,6 +2,7 @@ es:AcceptInboundConnection;Write
 es:AcceptInboundCrossClusterSearchConnection;Write
 es:AddTags;Tagging
 es:AssociatePackage;Write
+es:AuthorizeVpcEndpointAccess;Write
 es:CancelElasticsearchServiceSoftwareUpdate;Write
 es:CancelServiceSoftwareUpdate;Write
 es:CreateDomain;Write
@@ -11,6 +12,7 @@ es:CreateOutboundConnection;Write
 es:CreateOutboundCrossClusterSearchConnection;Write
 es:CreatePackage;Write
 es:CreateServiceRole;Write
+es:CreateVpcEndpoint;Write
 es:DeleteDomain;Write
 es:DeleteElasticsearchDomain;Write
 es:DeleteElasticsearchServiceRole;Write
@@ -19,6 +21,7 @@ es:DeleteInboundCrossClusterSearchConnection;Write
 es:DeleteOutboundConnection;Write
 es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
+es:DeleteVpcEndpoint;Write
 es:DescribeDomain;Read
 es:DescribeDomainAutoTunes;Read
 es:DescribeDomainChangeProgress;Read
@@ -38,6 +41,7 @@ es:DescribeReservedElasticsearchInstanceOfferings;List
 es:DescribeReservedElasticsearchInstances;List
 es:DescribeReservedInstanceOfferings;List
 es:DescribeReservedInstances;List
+es:DescribeVpcEndpoints;List
 es:DissociatePackage;Write
 es:ESCrossClusterGet;Read
 es:ESHttpDelete;Write
@@ -60,15 +64,20 @@ es:ListInstanceTypeDetails;List
 es:ListPackagesForDomain;List
 es:ListTags;Read
 es:ListVersions;List
+es:ListVpcEndpointAccess;List
+es:ListVpcEndpoints;List
+es:ListVpcEndpointsForDomain;List
 es:PurchaseReservedElasticsearchInstanceOffering;Write
 es:PurchaseReservedInstanceOffering;Write
 es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging
+es:RevokeVpcEndpointAccess;Write
 es:StartElasticsearchServiceSoftwareUpdate;Write
 es:StartServiceSoftwareUpdate;Write
 es:UpdateDomainConfig;Write
 es:UpdateElasticsearchDomainConfig;Write
 es:UpdatePackage;Write
+es:UpdateVpcEndpoint;Write
 es:UpgradeDomain;Write
 es:UpgradeElasticsearchDomain;Write

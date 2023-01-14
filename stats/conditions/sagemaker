@@ -4,6 +4,9 @@ sagemaker:CustomerMetadataProperties/${MetadataKey}
 sagemaker:CustomerMetadataPropertiesToRemove
 sagemaker:DirectInternetAccess
 sagemaker:DomainSharingOutputKmsKey
+sagemaker:FeatureGroupDisableGlueTableCreation
+sagemaker:FeatureGroupEnableOnlineStore
+sagemaker:FeatureGroupOfflineStoreConfig
 sagemaker:FeatureGroupOfflineStoreKmsKey
 sagemaker:FeatureGroupOfflineStoreS3Uri
 sagemaker:FeatureGroupOnlineStoreKmsKey

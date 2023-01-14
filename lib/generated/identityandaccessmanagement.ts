@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identityandaccessmanagement.html).
+ * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagement.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iam extends PolicyStatement {
   public servicePrefix = 'iam';
 
   /**
-   * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identityandaccessmanagement.html).
+   * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagement.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -99,7 +99,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission for an IAM user to to change their own password
+   * Grants permission for an IAM user to change their own password
    *
    * Access Level: Write
    *
@@ -338,6 +338,17 @@ export class Iam extends PolicyStatement {
    */
   public toDeleteAccountPasswordPolicy() {
     return this.to('DeleteAccountPasswordPolicy');
+  }
+
+  /**
+   * Grants permission to delete an existing CloudFront public key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html
+   */
+  public toDeleteCloudFrontPublicKey() {
+    return this.to('DeleteCloudFrontPublicKey');
   }
 
   /**
@@ -694,6 +705,28 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the email address that is associated with the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html
+   */
+  public toGetAccountEmailAddress() {
+    return this.to('GetAccountEmailAddress');
+  }
+
+  /**
+   * Grants permission to retrieve the account name that is associated with the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html
+   */
+  public toGetAccountName() {
+    return this.to('GetAccountName');
+  }
+
+  /**
    * Grants permission to retrieve the password policy for the AWS account
    *
    * Access Level: Read
@@ -713,6 +746,17 @@ export class Iam extends PolicyStatement {
    */
   public toGetAccountSummary() {
     return this.to('GetAccountSummary');
+  }
+
+  /**
+   * Grants permission to retrieve information about the specified CloudFront public key
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html
+   */
+  public toGetCloudFrontPublicKey() {
+    return this.to('GetCloudFrontPublicKey');
   }
 
   /**
@@ -1002,6 +1046,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all current CloudFront public keys for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html
+   */
+  public toListCloudFrontPublicKeys() {
+    return this.to('ListCloudFrontPublicKeys');
+  }
+
+  /**
    * Grants permission to list all IAM identities to which the specified managed policy is attached
    *
    * Access Level: List
@@ -1230,6 +1285,17 @@ export class Iam extends PolicyStatement {
    */
   public toListSSHPublicKeys() {
     return this.to('ListSSHPublicKeys');
+  }
+
+  /**
+   * Grants permission to list the status of all active STS regional endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html
+   */
+  public toListSTSRegionalEndpointsStatus() {
+    return this.to('ListSTSRegionalEndpointsStatus');
   }
 
   /**
@@ -1466,6 +1532,17 @@ export class Iam extends PolicyStatement {
    */
   public toSetDefaultPolicyVersion() {
     return this.to('SetDefaultPolicyVersion');
+  }
+
+  /**
+   * Grants permission to activate or deactivate an STS regional endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html
+   */
+  public toSetSTSRegionalEndpointStatus() {
+    return this.to('SetSTSRegionalEndpointStatus');
   }
 
   /**
@@ -1745,6 +1822,28 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the email address that is associated with the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html
+   */
+  public toUpdateAccountEmailAddress() {
+    return this.to('UpdateAccountEmailAddress');
+  }
+
+  /**
+   * Grants permission to update the account name that is associated with the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html
+   */
+  public toUpdateAccountName() {
+    return this.to('UpdateAccountName');
+  }
+
+  /**
    * Grants permission to update the password policy settings for the AWS account
    *
    * Access Level: Write
@@ -1764,6 +1863,17 @@ export class Iam extends PolicyStatement {
    */
   public toUpdateAssumeRolePolicy() {
     return this.to('UpdateAssumeRolePolicy');
+  }
+
+  /**
+   * Grants permission to update an existing CloudFront public key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html
+   */
+  public toUpdateCloudFrontPublicKey() {
+    return this.to('UpdateCloudFrontPublicKey');
   }
 
   /**
@@ -1888,6 +1998,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to upload a CloudFront public key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html
+   */
+  public toUploadCloudFrontPublicKey() {
+    return this.to('UploadCloudFrontPublicKey');
+  }
+
+  /**
    * Grants permission to upload an SSH public key and associate it with the specified IAM user
    *
    * Access Level: Write
@@ -1945,6 +2066,7 @@ export class Iam extends PolicyStatement {
       'DeactivateMFADevice',
       'DeleteAccessKey',
       'DeleteAccountAlias',
+      'DeleteCloudFrontPublicKey',
       'DeleteGroup',
       'DeleteInstanceProfile',
       'DeleteLoginProfile',
@@ -1965,9 +2087,13 @@ export class Iam extends PolicyStatement {
       'RemoveUserFromGroup',
       'ResetServiceSpecificCredential',
       'ResyncMFADevice',
+      'SetSTSRegionalEndpointStatus',
       'SetSecurityTokenServicePreferences',
       'UpdateAccessKey',
+      'UpdateAccountEmailAddress',
+      'UpdateAccountName',
       'UpdateAccountPasswordPolicy',
+      'UpdateCloudFrontPublicKey',
       'UpdateGroup',
       'UpdateLoginProfile',
       'UpdateOpenIDConnectProviderThumbprint',
@@ -1979,6 +2105,7 @@ export class Iam extends PolicyStatement {
       'UpdateServiceSpecificCredential',
       'UpdateSigningCertificate',
       'UpdateUser',
+      'UploadCloudFrontPublicKey',
       'UploadSSHPublicKey',
       'UploadServerCertificate',
       'UploadSigningCertificate'
@@ -2014,7 +2141,10 @@ export class Iam extends PolicyStatement {
       'GenerateServiceLastAccessedDetails',
       'GetAccessKeyLastUsed',
       'GetAccountAuthorizationDetails',
+      'GetAccountEmailAddress',
+      'GetAccountName',
       'GetAccountPasswordPolicy',
+      'GetCloudFrontPublicKey',
       'GetContextKeysForCustomPolicy',
       'GetContextKeysForPrincipalPolicy',
       'GetCredentialReport',
@@ -2046,6 +2176,7 @@ export class Iam extends PolicyStatement {
       'ListAttachedGroupPolicies',
       'ListAttachedRolePolicies',
       'ListAttachedUserPolicies',
+      'ListCloudFrontPublicKeys',
       'ListEntitiesForPolicy',
       'ListGroupPolicies',
       'ListGroups',
@@ -2067,6 +2198,7 @@ export class Iam extends PolicyStatement {
       'ListSAMLProviderTags',
       'ListSAMLProviders',
       'ListSSHPublicKeys',
+      'ListSTSRegionalEndpointsStatus',
       'ListServerCertificateTags',
       'ListServerCertificates',
       'ListServiceSpecificCredentials',
@@ -2265,7 +2397,7 @@ export class Iam extends PolicyStatement {
   /**
    * Adds a resource of type sms-mfa to the statement
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html
    *
    * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.

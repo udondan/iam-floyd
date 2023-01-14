@@ -28,10 +28,10 @@ AWS IAM policy statement generator with fluent interface.
 
 Support for:
 
-- 341 Services
-- 13630 Actions
+- 347 Services
+- 13738 Actions
 - 1448 Resource Types
-- 1462 Condition keys
+- 1464 Condition keys
 
 ..
    /stats

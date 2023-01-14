@@ -8,6 +8,7 @@ dms:CancelReplicationTaskAssessmentRun;Write
 dms:CreateDataProvider;Write
 dms:CreateEndpoint;Write
 dms:CreateEventSubscription;Write
+dms:CreateFleetAdvisorCollector;Write
 dms:CreateInstanceProfile;Write
 dms:CreateMigrationProject;Write
 dms:CreateReplicationInstance;Write
@@ -18,6 +19,8 @@ dms:DeleteConnection;Write
 dms:DeleteDataProvider;Write
 dms:DeleteEndpoint;Write
 dms:DeleteEventSubscription;Write
+dms:DeleteFleetAdvisorCollector;Write
+dms:DeleteFleetAdvisorDatabases;Write
 dms:DeleteInstanceProfile;Write
 dms:DeleteMigrationProject;Write
 dms:DeleteReplicationInstance;Write
@@ -34,6 +37,11 @@ dms:DescribeEndpoints;Read
 dms:DescribeEventCategories;Read
 dms:DescribeEventSubscriptions;Read
 dms:DescribeEvents;Read
+dms:DescribeFleetAdvisorCollectors;Read
+dms:DescribeFleetAdvisorDatabases;Read
+dms:DescribeFleetAdvisorLsaAnalysis;Read
+dms:DescribeFleetAdvisorSchemaObjectSummary;Read
+dms:DescribeFleetAdvisorSchemas;Read
 dms:DescribeOrderableReplicationInstances;Read
 dms:DescribePendingMaintenanceActions;Read
 dms:DescribeRefreshSchemasStatus;Read
@@ -61,6 +69,8 @@ dms:ListMigrationProjects;Read
 dms:ListTagsForResource;Read
 dms:ModifyEndpoint;Write
 dms:ModifyEventSubscription;Write
+dms:ModifyFleetAdvisorCollector;Write
+dms:ModifyFleetAdvisorCollectorStatuses;Write
 dms:ModifyReplicationInstance;Write
 dms:ModifyReplicationSubnetGroup;Write
 dms:ModifyReplicationTask;Write
@@ -69,6 +79,7 @@ dms:RebootReplicationInstance;Write
 dms:RefreshSchemas;Write
 dms:ReloadTables;Write
 dms:RemoveTagsFromResource;Tagging
+dms:RunFleetAdvisorLsaAnalysis;Write
 dms:StartMetadataModelAssessment;Write
 dms:StartMetadataModelConversion;Write
 dms:StartMetadataModelExportAsScripts;Write
@@ -83,3 +94,5 @@ dms:UpdateConversionConfiguration;Write
 dms:UpdateDataProvider;Write
 dms:UpdateInstanceProfile;Write
 dms:UpdateMigrationProject;Write
+dms:UpdateSubscriptionsToEventBridge;Write
+dms:UploadFileMetadataList;Write

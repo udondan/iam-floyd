@@ -1,1 +1,13 @@
+billing:GetBillingData;Read
+billing:GetBillingDetails;Read
+billing:GetBillingNotifications;Read
+billing:GetBillingPreferences;Read
+billing:GetContractInformation;Read
+billing:GetCredits;Read
+billing:GetIAMAccessPreference;Read
+billing:GetSellerOfRecord;Read
 billing:ListBillingViews;Read
+billing:PutContractInformation;Write
+billing:RedeemCredits;Write
+billing:UpdateBillingPreferences;Write
+billing:UpdateIAMAccessPreference;Write

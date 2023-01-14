@@ -41,6 +41,33 @@ export class Cur extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Bills CSV report
+   *
+   * Access Level: Read
+   */
+  public toGetClassicReport() {
+    return this.to('GetClassicReport');
+  }
+
+  /**
+   * Grants permission to get the classic report enablement status for Usage Reports
+   *
+   * Access Level: Read
+   */
+  public toGetClassicReportPreferences() {
+    return this.to('GetClassicReportPreferences');
+  }
+
+  /**
+   * Grants permission to get list of AWS services, usage type and operation for the Usage Report workflow. Allows or denies download of usage reports too
+   *
+   * Access Level: Read
+   */
+  public toGetUsageReport() {
+    return this.to('GetUsageReport');
+  }
+
+  /**
    * Grants permission to modify Cost and Usage Report Definition
    *
    * Access Level: Write
@@ -49,6 +76,15 @@ export class Cur extends PolicyStatement {
    */
   public toModifyReportDefinition() {
     return this.to('ModifyReportDefinition');
+  }
+
+  /**
+   * Grants permission to enable classic reports
+   *
+   * Access Level: Write
+   */
+  public toPutClassicReportPreferences() {
+    return this.to('PutClassicReportPreferences');
   }
 
   /**
@@ -62,14 +98,28 @@ export class Cur extends PolicyStatement {
     return this.to('PutReportDefinition');
   }
 
+  /**
+   * Grants permission to validates if the s3 bucket exists with appropriate permissions for CUR delivery
+   *
+   * Access Level: Read
+   */
+  public toValidateReportDestination() {
+    return this.to('ValidateReportDestination');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'DeleteReportDefinition',
       'ModifyReportDefinition',
+      'PutClassicReportPreferences',
       'PutReportDefinition'
     ],
     Read: [
-      'DescribeReportDefinitions'
+      'DescribeReportDefinitions',
+      'GetClassicReport',
+      'GetClassicReportPreferences',
+      'GetUsageReport',
+      'ValidateReportDestination'
     ]
   };
 

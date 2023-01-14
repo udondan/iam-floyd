@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancing.html).
+ * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticloadbalancing.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing';
 
   /**
-   * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancing.html).
+   * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticloadbalancing.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -396,7 +396,9 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * The preface string for a tag key and value pair attached to a resource
+   * Filters access by the preface string for a tag key and value pair that are attached to a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -406,7 +408,9 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * A tag key and value pair
+   * Filters access by the preface string for a tag key and value pair that are attached to a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
    * - loadbalancer

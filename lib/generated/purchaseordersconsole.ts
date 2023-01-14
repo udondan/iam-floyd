@@ -19,7 +19,62 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Modify purchase orders and details
+   * Allow or deny IAM users permission to add a new purchase order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toAddPurchaseOrder() {
+    return this.to('AddPurchaseOrder');
+  }
+
+  /**
+   * Allow or deny IAM users permission to delete a purchase order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toDeletePurchaseOrder() {
+    return this.to('DeletePurchaseOrder');
+  }
+
+  /**
+   * Allow or deny IAM users permission to get a purchase order
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetPurchaseOrder() {
+    return this.to('GetPurchaseOrder');
+  }
+
+  /**
+   * Allow or deny IAM users permission to list purchase order invoices
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toListPurchaseOrderInvoices() {
+    return this.to('ListPurchaseOrderInvoices');
+  }
+
+  /**
+   * Allow or deny IAM users permission to get all available purchase orders
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toListPurchaseOrders() {
+    return this.to('ListPurchaseOrders');
+  }
+
+  /**
+   * Grants permission to modify purchase orders and details
    *
    * Access Level: Write
    *
@@ -30,7 +85,29 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * View purchase orders and details
+   * Allow or deny IAM users permission to update an existing purchase order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUpdatePurchaseOrder() {
+    return this.to('UpdatePurchaseOrder');
+  }
+
+  /**
+   * Allow or deny IAM users permission to set purchase order status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUpdatePurchaseOrderStatus() {
+    return this.to('UpdatePurchaseOrderStatus');
+  }
+
+  /**
+   * Grants permission to view purchase orders and details
    *
    * Access Level: Read
    *
@@ -42,10 +119,19 @@ export class PurchaseOrders extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'ModifyPurchaseOrders'
+      'AddPurchaseOrder',
+      'DeletePurchaseOrder',
+      'ModifyPurchaseOrders',
+      'UpdatePurchaseOrder',
+      'UpdatePurchaseOrderStatus'
     ],
     Read: [
+      'GetPurchaseOrder',
       'ViewPurchaseOrders'
+    ],
+    List: [
+      'ListPurchaseOrderInvoices',
+      'ListPurchaseOrders'
     ]
   };
 }

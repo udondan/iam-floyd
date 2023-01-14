@@ -1,0 +1,4 @@
+invoicing:GetInvoiceEmailDeliveryPreferences;Read
+invoicing:GetInvoicePDF;Read
+invoicing:ListInvoiceSummaries;Read
+invoicing:PutInvoiceEmailDeliveryPreferences;Write
