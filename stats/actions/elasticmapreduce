@@ -30,6 +30,7 @@ elasticmapreduce:DescribeStudio;Read
 elasticmapreduce:DetachEditor;Write
 elasticmapreduce:GetAutoTerminationPolicy;Read
 elasticmapreduce:GetBlockPublicAccessConfiguration;Read
+elasticmapreduce:GetClusterSessionCredentials;Write
 elasticmapreduce:GetManagedScalingPolicy;Read
 elasticmapreduce:GetOnClusterAppUIPresignedURL;Write
 elasticmapreduce:GetPersistentAppUIPresignedURL;Write

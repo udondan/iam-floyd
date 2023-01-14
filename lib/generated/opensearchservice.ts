@@ -23,7 +23,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-accept-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AcceptInboundConnection.html
    */
   public toAcceptInboundConnection() {
     return this.to('AcceptInboundConnection');
@@ -34,7 +34,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-accept-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AcceptInboundConnection.html
    */
   public toAcceptInboundCrossClusterSearchConnection() {
     return this.to('AcceptInboundCrossClusterSearchConnection');
@@ -49,7 +49,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-addtags
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
     return this.to('AddTags');
@@ -60,10 +60,21 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-associatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AssociatePackage.html
    */
   public toAssociatePackage() {
     return this.to('AssociatePackage');
+  }
+
+  /**
+   * Grants permission to provide access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AuthorizeVpcEndpointAccess.html
+   */
+  public toAuthorizeVpcEndpointAccess() {
+    return this.to('AuthorizeVpcEndpointAccess');
   }
 
   /**
@@ -71,7 +82,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-stopupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CancelServiceSoftwareUpdate.html
    */
   public toCancelElasticsearchServiceSoftwareUpdate() {
     return this.to('CancelElasticsearchServiceSoftwareUpdate');
@@ -82,7 +93,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-stopupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CancelServiceSoftwareUpdate.html
    */
   public toCancelServiceSoftwareUpdate() {
     return this.to('CancelServiceSoftwareUpdate');
@@ -97,7 +108,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
@@ -112,7 +123,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateDomain.html
    */
   public toCreateElasticsearchDomain() {
     return this.to('CreateElasticsearchDomain');
@@ -123,7 +134,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toCreateElasticsearchServiceRole() {
     return this.to('CreateElasticsearchServiceRole');
@@ -134,7 +145,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-create-outbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateOutboundConnection.html
    */
   public toCreateOutboundConnection() {
     return this.to('CreateOutboundConnection');
@@ -145,7 +156,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-create-outbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateOutboundConnection.html
    */
   public toCreateOutboundCrossClusterSearchConnection() {
     return this.to('CreateOutboundCrossClusterSearchConnection');
@@ -156,7 +167,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createpackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreatePackage.html
    */
   public toCreatePackage() {
     return this.to('CreatePackage');
@@ -167,10 +178,21 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toCreateServiceRole() {
     return this.to('CreateServiceRole');
+  }
+
+  /**
+   * Grants permission to create an Amazon OpenSearch Service-managed VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateVpcEndpoint.html
+   */
+  public toCreateVpcEndpoint() {
+    return this.to('CreateVpcEndpoint');
   }
 
   /**
@@ -178,7 +200,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteDomain.html
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
@@ -189,7 +211,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteDomain.html
    */
   public toDeleteElasticsearchDomain() {
     return this.to('DeleteElasticsearchDomain');
@@ -200,7 +222,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deleteservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Welcome.html
    */
   public toDeleteElasticsearchServiceRole() {
     return this.to('DeleteElasticsearchServiceRole');
@@ -211,7 +233,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteInboundConnection.html
    */
   public toDeleteInboundConnection() {
     return this.to('DeleteInboundConnection');
@@ -222,7 +244,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteInboundConnection.html
    */
   public toDeleteInboundCrossClusterSearchConnection() {
     return this.to('DeleteInboundCrossClusterSearchConnection');
@@ -233,7 +255,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-outbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteOutboundConnection.html
    */
   public toDeleteOutboundConnection() {
     return this.to('DeleteOutboundConnection');
@@ -244,7 +266,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-outbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteOutboundConnection.html
    */
   public toDeleteOutboundCrossClusterSearchConnection() {
     return this.to('DeleteOutboundCrossClusterSearchConnection');
@@ -255,10 +277,21 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeletePackage.html
    */
   public toDeletePackage() {
     return this.to('DeletePackage');
+  }
+
+  /**
+   * Grants permission to delete an Amazon OpenSearch Service-managed interface VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteVpcEndpoint.html
+   */
+  public toDeleteVpcEndpoint() {
+    return this.to('DeleteVpcEndpoint');
   }
 
   /**
@@ -266,7 +299,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomain.html
    */
   public toDescribeDomain() {
     return this.to('DescribeDomain');
@@ -277,7 +310,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeautotune
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainAutoTunes.html
    */
   public toDescribeDomainAutoTunes() {
     return this.to('DescribeDomainAutoTunes');
@@ -288,7 +321,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainchangeprogress
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainChangeProgress.html
    */
   public toDescribeDomainChangeProgress() {
     return this.to('DescribeDomainChangeProgress');
@@ -299,7 +332,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainConfig.html
    */
   public toDescribeDomainConfig() {
     return this.to('DescribeDomainConfig');
@@ -310,7 +343,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomains
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomains.html
    */
   public toDescribeDomains() {
     return this.to('DescribeDomains');
@@ -321,7 +354,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomain.html
    */
   public toDescribeElasticsearchDomain() {
     return this.to('DescribeElasticsearchDomain');
@@ -332,7 +365,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainConfig.html
    */
   public toDescribeElasticsearchDomainConfig() {
     return this.to('DescribeElasticsearchDomainConfig');
@@ -343,7 +376,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomains
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomains.html
    */
   public toDescribeElasticsearchDomains() {
     return this.to('DescribeElasticsearchDomains');
@@ -354,7 +387,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeinstancetypelimits
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInstanceTypeLimits.html
    */
   public toDescribeElasticsearchInstanceTypeLimits() {
     return this.to('DescribeElasticsearchInstanceTypeLimits');
@@ -365,7 +398,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-inbound-cross-cluster-search-connections
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInboundConnections.html
    */
   public toDescribeInboundConnections() {
     return this.to('DescribeInboundConnections');
@@ -376,7 +409,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-inbound-cross-cluster-search-connections
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInboundConnections.html
    */
   public toDescribeInboundCrossClusterSearchConnections() {
     return this.to('DescribeInboundCrossClusterSearchConnections');
@@ -387,7 +420,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeinstancetypelimits
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInstanceTypeLimits.html
    */
   public toDescribeInstanceTypeLimits() {
     return this.to('DescribeInstanceTypeLimits');
@@ -398,7 +431,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-outbound-cross-cluster-search-connections
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeOutboundConnections.html
    */
   public toDescribeOutboundConnections() {
     return this.to('DescribeOutboundConnections');
@@ -409,7 +442,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-outbound-cross-cluster-search-connections
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeOutboundConnections.html
    */
   public toDescribeOutboundCrossClusterSearchConnections() {
     return this.to('DescribeOutboundCrossClusterSearchConnections');
@@ -420,7 +453,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describepackages
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribePackages.html
    */
   public toDescribePackages() {
     return this.to('DescribePackages');
@@ -431,7 +464,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeReservedInstanceOfferings.html
    */
   public toDescribeReservedElasticsearchInstanceOfferings() {
     return this.to('DescribeReservedElasticsearchInstanceOfferings');
@@ -442,7 +475,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstances
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeReservedInstances.html
    */
   public toDescribeReservedElasticsearchInstances() {
     return this.to('DescribeReservedElasticsearchInstances');
@@ -453,7 +486,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeReservedInstanceOfferings.html
    */
   public toDescribeReservedInstanceOfferings() {
     return this.to('DescribeReservedInstanceOfferings');
@@ -464,10 +497,21 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstances
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeReservedInstances.html
    */
   public toDescribeReservedInstances() {
     return this.to('DescribeReservedInstances');
+  }
+
+  /**
+   * Grants permission to describe one or more Amazon OpenSearch Service-managed VPC endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeVpcEndpoints.html
+   */
+  public toDescribeVpcEndpoints() {
+    return this.to('DescribeVpcEndpoints');
   }
 
   /**
@@ -475,7 +519,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-dissociatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DissociatePackage.html
    */
   public toDissociatePackage() {
     return this.to('DissociatePackage');
@@ -486,7 +530,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESCrossClusterGet() {
     return this.to('ESCrossClusterGet');
@@ -497,7 +541,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpDelete() {
     return this.to('ESHttpDelete');
@@ -508,7 +552,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpGet() {
     return this.to('ESHttpGet');
@@ -519,7 +563,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpHead() {
     return this.to('ESHttpHead');
@@ -530,7 +574,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpPatch() {
     return this.to('ESHttpPatch');
@@ -541,7 +585,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpPost() {
     return this.to('ESHttpPost');
@@ -552,7 +596,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html
    */
   public toESHttpPut() {
     return this.to('ESHttpPut');
@@ -563,7 +607,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-compat-vers
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetCompatibleVersions.html
    */
   public toGetCompatibleElasticsearchVersions() {
     return this.to('GetCompatibleElasticsearchVersions');
@@ -574,7 +618,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-compat-vers
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetCompatibleVersions.html
    */
   public toGetCompatibleVersions() {
     return this.to('GetCompatibleVersions');
@@ -585,7 +629,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-pac-ver-hist
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetPackageVersionHistory.html
    */
   public toGetPackageVersionHistory() {
     return this.to('GetPackageVersionHistory');
@@ -596,7 +640,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-upgrade-hist
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetUpgradeHistory.html
    */
   public toGetUpgradeHistory() {
     return this.to('GetUpgradeHistory');
@@ -607,7 +651,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-upgrade-stat
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetUpgradeStatus.html
    */
   public toGetUpgradeStatus() {
     return this.to('GetUpgradeStatus');
@@ -618,7 +662,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listdomainnames
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDomainNames.html
    */
   public toListDomainNames() {
     return this.to('ListDomainNames');
@@ -629,7 +673,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listdomainsforpackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDomainsForPackage.html
    */
   public toListDomainsForPackage() {
     return this.to('ListDomainsForPackage');
@@ -640,7 +684,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listinstancetypedetails
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListInstanceTypeDetails.html
    */
   public toListElasticsearchInstanceTypeDetails() {
     return this.to('ListElasticsearchInstanceTypeDetails');
@@ -651,7 +695,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListInstanceTypeDetails.html
    */
   public toListElasticsearchInstanceTypes() {
     return this.to('ListElasticsearchInstanceTypes');
@@ -662,7 +706,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVersions.html
    */
   public toListElasticsearchVersions() {
     return this.to('ListElasticsearchVersions');
@@ -673,7 +717,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listinstancetypedetails
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListInstanceTypeDetails.html
    */
   public toListInstanceTypeDetails() {
     return this.to('ListInstanceTypeDetails');
@@ -684,7 +728,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listpackagesfordomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListPackagesForDomain.html
    */
   public toListPackagesForDomain() {
     return this.to('ListPackagesForDomain');
@@ -695,7 +739,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listtags
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListTags.html
    */
   public toListTags() {
     return this.to('ListTags');
@@ -706,10 +750,43 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVersions.html
    */
   public toListVersions() {
     return this.to('ListVersions');
+  }
+
+  /**
+   * Grants permission to retrieve information about each AWS principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVpcEndpointAccess.html
+   */
+  public toListVpcEndpointAccess() {
+    return this.to('ListVpcEndpointAccess');
+  }
+
+  /**
+   * Grants permission to retrieve all Amazon OpenSearch Service-managed VPC endpoints in the current AWS account and Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVpcEndpoints.html
+   */
+  public toListVpcEndpoints() {
+    return this.to('ListVpcEndpoints');
+  }
+
+  /**
+   * Grants permission to retrieve all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVpcEndpointsForDomain.html
+   */
+  public toListVpcEndpointsForDomain() {
+    return this.to('ListVpcEndpointsForDomain');
   }
 
   /**
@@ -717,7 +794,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-purchasereservedinstance
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PurchaseReservedInstanceOffering.html
    */
   public toPurchaseReservedElasticsearchInstanceOffering() {
     return this.to('PurchaseReservedElasticsearchInstanceOffering');
@@ -728,7 +805,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-purchasereservedinstance
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PurchaseReservedInstanceOffering.html
    */
   public toPurchaseReservedInstanceOffering() {
     return this.to('PurchaseReservedInstanceOffering');
@@ -739,7 +816,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-reject-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RejectInboundConnection.html
    */
   public toRejectInboundConnection() {
     return this.to('RejectInboundConnection');
@@ -750,7 +827,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-reject-inbound-cross-cluster-search-connection
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RejectInboundConnection.html
    */
   public toRejectInboundCrossClusterSearchConnection() {
     return this.to('RejectInboundCrossClusterSearchConnection');
@@ -764,10 +841,21 @@ export class Es extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-removetags
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
     return this.to('RemoveTags');
+  }
+
+  /**
+   * Grants permission to revoke access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RevokeVpcEndpointAccess.html
+   */
+  public toRevokeVpcEndpointAccess() {
+    return this.to('RevokeVpcEndpointAccess');
   }
 
   /**
@@ -775,7 +863,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-startupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartServiceSoftwareUpdate.html
    */
   public toStartElasticsearchServiceSoftwareUpdate() {
     return this.to('StartElasticsearchServiceSoftwareUpdate');
@@ -786,7 +874,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-startupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartServiceSoftwareUpdate.html
    */
   public toStartServiceSoftwareUpdate() {
     return this.to('StartServiceSoftwareUpdate');
@@ -797,7 +885,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateDomainConfig.html
    */
   public toUpdateDomainConfig() {
     return this.to('UpdateDomainConfig');
@@ -808,7 +896,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateDomainConfig.html
    */
   public toUpdateElasticsearchDomainConfig() {
     return this.to('UpdateElasticsearchDomainConfig');
@@ -819,10 +907,21 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdatePackage.html
    */
   public toUpdatePackage() {
     return this.to('UpdatePackage');
+  }
+
+  /**
+   * Grants permission to modify an Amazon OpenSearch Service-managed interface VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateVpcEndpoint.html
+   */
+  public toUpdateVpcEndpoint() {
+    return this.to('UpdateVpcEndpoint');
   }
 
   /**
@@ -830,7 +929,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-upgrade-domain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpgradeDomain.html
    */
   public toUpgradeDomain() {
     return this.to('UpgradeDomain');
@@ -841,7 +940,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-upgrade-domain
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpgradeDomain.html
    */
   public toUpgradeElasticsearchDomain() {
     return this.to('UpgradeElasticsearchDomain');
@@ -852,6 +951,7 @@ export class Es extends PolicyStatement {
       'AcceptInboundConnection',
       'AcceptInboundCrossClusterSearchConnection',
       'AssociatePackage',
+      'AuthorizeVpcEndpointAccess',
       'CancelElasticsearchServiceSoftwareUpdate',
       'CancelServiceSoftwareUpdate',
       'CreateDomain',
@@ -861,6 +961,7 @@ export class Es extends PolicyStatement {
       'CreateOutboundCrossClusterSearchConnection',
       'CreatePackage',
       'CreateServiceRole',
+      'CreateVpcEndpoint',
       'DeleteDomain',
       'DeleteElasticsearchDomain',
       'DeleteElasticsearchServiceRole',
@@ -869,6 +970,7 @@ export class Es extends PolicyStatement {
       'DeleteOutboundConnection',
       'DeleteOutboundCrossClusterSearchConnection',
       'DeletePackage',
+      'DeleteVpcEndpoint',
       'DissociatePackage',
       'ESHttpDelete',
       'ESHttpPatch',
@@ -878,11 +980,13 @@ export class Es extends PolicyStatement {
       'PurchaseReservedInstanceOffering',
       'RejectInboundConnection',
       'RejectInboundCrossClusterSearchConnection',
+      'RevokeVpcEndpointAccess',
       'StartElasticsearchServiceSoftwareUpdate',
       'StartServiceSoftwareUpdate',
       'UpdateDomainConfig',
       'UpdateElasticsearchDomainConfig',
       'UpdatePackage',
+      'UpdateVpcEndpoint',
       'UpgradeDomain',
       'UpgradeElasticsearchDomain'
     ],
@@ -919,6 +1023,7 @@ export class Es extends PolicyStatement {
       'DescribeReservedElasticsearchInstances',
       'DescribeReservedInstanceOfferings',
       'DescribeReservedInstances',
+      'DescribeVpcEndpoints',
       'GetCompatibleElasticsearchVersions',
       'GetCompatibleVersions',
       'ListDomainNames',
@@ -928,7 +1033,10 @@ export class Es extends PolicyStatement {
       'ListElasticsearchVersions',
       'ListInstanceTypeDetails',
       'ListPackagesForDomain',
-      'ListVersions'
+      'ListVersions',
+      'ListVpcEndpointAccess',
+      'ListVpcEndpoints',
+      'ListVpcEndpointsForDomain'
     ]
   };
 

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [arc-zonal-shift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53applicationrecoverycontroller-zonalshift.html).
@@ -23,6 +23,10 @@ export class ArcZonalShift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
    * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelZonalShift.html
    */
   public toCancelZonalShift() {
@@ -33,6 +37,10 @@ export class ArcZonalShift extends PolicyStatement {
    * Grants permission to get information about a managed resource
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
    *
    * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_GetManagedResource.html
    */
@@ -67,6 +75,10 @@ export class ArcZonalShift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
    * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartZonalShift.html
    */
   public toStartZonalShift() {
@@ -77,6 +89,10 @@ export class ArcZonalShift extends PolicyStatement {
    * Grants permission to update an existing zonal shift
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
    *
    * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateZonalShift.html
    */
@@ -109,6 +125,10 @@ export class ArcZonalShift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
    */
   public onALB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || ArcZonalShift.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
@@ -124,8 +144,35 @@ export class ArcZonalShift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
    */
   public onNLB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || ArcZonalShift.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+  }
+
+  /**
+   * Filters access by the tags associated with the managed resource
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys
+   *
+   * Applies to actions:
+   * - .toCancelZonalShift()
+   * - .toGetManagedResource()
+   * - .toStartZonalShift()
+   * - .toUpdateZonalShift()
+   *
+   * Applies to resource types:
+   * - ALB
+   * - NLB
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifElasticloadbalancingResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

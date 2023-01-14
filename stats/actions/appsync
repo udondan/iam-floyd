@@ -16,6 +16,7 @@ appsync:DeleteGraphqlApi;Write
 appsync:DeleteResolver;Write
 appsync:DeleteType;Write
 appsync:DisassociateApi;Write
+appsync:EvaluateCode;Read
 appsync:EvaluateMappingTemplate;Read
 appsync:FlushApiCache;Write
 appsync:GetApiAssociation;Read

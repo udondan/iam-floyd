@@ -1,9 +1,4 @@
-iotroborunner:ActionResource
-iotroborunner:ActionTemplateResource
-iotroborunner:ActivityResource
-iotroborunner:DestinationRelationshipResource
 iotroborunner:DestinationResource
 iotroborunner:SiteResource
-iotroborunner:TaskResource
 iotroborunner:WorkerFleetResource
 iotroborunner:WorkerResource
