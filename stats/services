@@ -48,6 +48,7 @@ cassandra
 ce
 chatbot
 chime
+cleanrooms
 cloud9
 clouddirectory
 cloudformation
@@ -80,6 +81,7 @@ compute-optimizer
 config
 connect
 connect-campaigns
+consolidatedbilling
 controltower
 cur
 databrew
@@ -134,6 +136,7 @@ fms
 forecast
 frauddetector
 freertos
+freetier
 fsx
 gamelift
 gamesparks
@@ -158,6 +161,7 @@ importexport
 inspector
 inspector2
 internetmonitor
+invoicing
 iot
 iot-device-tester
 iot1click
@@ -179,6 +183,7 @@ kafka
 kafka-cluster
 kafkaconnect
 kendra
+kendra-ranking
 kinesis
 kinesisanalytics
 kinesisvideo
@@ -230,6 +235,7 @@ opsworks-cm
 organizations
 outposts
 panorama
+payments
 personalize
 pi
 pipes

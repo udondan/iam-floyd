@@ -513,7 +513,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more outbound rules to a VPC security group
+   * Grants permission to add one or more outbound rules to a VPC security group. Policies using the security-group-rule resource-level permission are only enforced when the API request includes TagSpecifications
    *
    * Access Level: Write
    *
@@ -532,7 +532,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more inbound rules to a security group
+   * Grants permission to add one or more inbound rules to a VPC security group. Policies using the security-group-rule resource-level permission are only enforced when the API request includes TagSpecifications
    *
    * Access Level: Write
    *
@@ -5896,6 +5896,10 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRegion()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:EnableAWSServiceAccess
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableReachabilityAnalyzerOrganizationSharing.html
    */

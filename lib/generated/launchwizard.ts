@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_launchwizard.html).
+ * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Launchwizard extends PolicyStatement {
   public servicePrefix = 'launchwizard';
 
   /**
-   * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_launchwizard.html).
+   * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Delete an application
+   * Grants permission to delete an application
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Describe provisioning applications
+   * Grants permission to describe provisioning applications
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Describe provisioning events
+   * Grants permission to describe provisioning events
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Get infrastructure suggestion
+   * Grants permission to get infrastructure suggestion
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Get customer's ip address
+   * Grants permission to get customer's ip address
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Get resource cost estimate
+   * Grants permission to get resource cost estimate
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * List provisioning applications
+   * Grants permission to list provisioning applications
    *
    * Access Level: List
    *
@@ -96,7 +96,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Start a provisioning
+   * Grants permission to start a provisioning
    *
    * Access Level: Write
    *

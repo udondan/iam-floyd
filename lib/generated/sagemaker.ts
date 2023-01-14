@@ -473,6 +473,9 @@ export class Sagemaker extends PolicyStatement {
    * - .ifFeatureGroupOnlineStoreKmsKey()
    * - .ifFeatureGroupOfflineStoreKmsKey()
    * - .ifFeatureGroupOfflineStoreS3Uri()
+   * - .ifFeatureGroupEnableOnlineStore()
+   * - .ifFeatureGroupOfflineStoreConfig()
+   * - .ifFeatureGroupDisableGlueTableCreation()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -5598,6 +5601,48 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
     return this.if(`DomainSharingOutputKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the DisableGlueTableCreation flag associated with the feature group resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifFeatureGroupDisableGlueTableCreation(value?: boolean) {
+    return this.if(`FeatureGroupDisableGlueTableCreation`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the EnableOnlineStore flag associated with feature group in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifFeatureGroupEnableOnlineStore(value?: boolean) {
+    return this.if(`FeatureGroupEnableOnlineStore`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the presence of an OfflineStoreConfig in the feature group resource in the request. This access filter only supports the null-conditional operator
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifFeatureGroupOfflineStoreConfig(value?: boolean) {
+    return this.if(`FeatureGroupOfflineStoreConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

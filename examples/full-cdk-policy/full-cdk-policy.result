@@ -23,10 +23,12 @@
         },
         {
             "Action": [
+                "account:CloseAccount",
                 "account:DeleteAlternateContact",
                 "account:DisableRegion",
                 "account:EnableRegion",
                 "account:PutAlternateContact",
+                "account:PutChallengeQuestions",
                 "account:PutContactInformation"
             ],
             "Resource": "*",

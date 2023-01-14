@@ -216,7 +216,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to dettach a GraphQL API to a custom domain name in AppSync
+   * Grants permission to detach a GraphQL API to a custom domain name in AppSync
    *
    * Access Level: Write
    *
@@ -224,6 +224,17 @@ export class Appsync extends PolicyStatement {
    */
   public toDisassociateApi() {
     return this.to('DisassociateApi');
+  }
+
+  /**
+   * Grants permission to evaluate code with a runtime and context
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_EvaluateCode.html
+   */
+  public toEvaluateCode() {
+    return this.to('EvaluateCode');
   }
 
   /**
@@ -654,6 +665,7 @@ export class Appsync extends PolicyStatement {
       'UpdateType'
     ],
     Read: [
+      'EvaluateCode',
       'EvaluateMappingTemplate',
       'GetApiAssociation',
       'GetApiCache',

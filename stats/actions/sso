@@ -22,11 +22,13 @@ sso:DeletePermissionsPolicy;Permissions management
 sso:DeleteProfile;Write
 sso:DescribeAccountAssignmentCreationStatus;Read
 sso:DescribeAccountAssignmentDeletionStatus;Read
+sso:DescribeDirectories;Read
 sso:DescribeInstanceAccessControlAttributeConfiguration;Read
 sso:DescribePermissionSet;Read
 sso:DescribePermissionSetProvisioningStatus;Read
 sso:DescribePermissionsPolicies;Read
 sso:DescribeRegisteredRegions;Read
+sso:DescribeTrusts;Read
 sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management
 sso:DetachManagedPolicyFromPermissionSet;Permissions management
 sso:DisassociateDirectory;Write

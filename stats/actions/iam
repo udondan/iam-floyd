@@ -23,6 +23,7 @@ iam:DeactivateMFADevice;Write
 iam:DeleteAccessKey;Write
 iam:DeleteAccountAlias;Write
 iam:DeleteAccountPasswordPolicy;Permissions management
+iam:DeleteCloudFrontPublicKey;Write
 iam:DeleteGroup;Write
 iam:DeleteGroupPolicy;Permissions management
 iam:DeleteInstanceProfile;Write
@@ -52,8 +53,11 @@ iam:GenerateOrganizationsAccessReport;Read
 iam:GenerateServiceLastAccessedDetails;Read
 iam:GetAccessKeyLastUsed;Read
 iam:GetAccountAuthorizationDetails;Read
+iam:GetAccountEmailAddress;Read
+iam:GetAccountName;Read
 iam:GetAccountPasswordPolicy;Read
 iam:GetAccountSummary;List
+iam:GetCloudFrontPublicKey;Read
 iam:GetContextKeysForCustomPolicy;Read
 iam:GetContextKeysForPrincipalPolicy;Read
 iam:GetCredentialReport;Read
@@ -80,6 +84,7 @@ iam:ListAccountAliases;List
 iam:ListAttachedGroupPolicies;List
 iam:ListAttachedRolePolicies;List
 iam:ListAttachedUserPolicies;List
+iam:ListCloudFrontPublicKeys;List
 iam:ListEntitiesForPolicy;List
 iam:ListGroupPolicies;List
 iam:ListGroups;List
@@ -101,6 +106,7 @@ iam:ListRoles;List
 iam:ListSAMLProviderTags;List
 iam:ListSAMLProviders;List
 iam:ListSSHPublicKeys;List
+iam:ListSTSRegionalEndpointsStatus;List
 iam:ListServerCertificateTags;List
 iam:ListServerCertificates;List
 iam:ListServiceSpecificCredentials;List
@@ -121,6 +127,7 @@ iam:RemoveUserFromGroup;Write
 iam:ResetServiceSpecificCredential;Write
 iam:ResyncMFADevice;Write
 iam:SetDefaultPolicyVersion;Permissions management
+iam:SetSTSRegionalEndpointStatus;Write
 iam:SetSecurityTokenServicePreferences;Write
 iam:SimulateCustomPolicy;Read
 iam:SimulatePrincipalPolicy;Read
@@ -141,8 +148,11 @@ iam:UntagSAMLProvider;Tagging
 iam:UntagServerCertificate;Tagging
 iam:UntagUser;Tagging
 iam:UpdateAccessKey;Write
+iam:UpdateAccountEmailAddress;Write
+iam:UpdateAccountName;Write
 iam:UpdateAccountPasswordPolicy;Write
 iam:UpdateAssumeRolePolicy;Permissions management
+iam:UpdateCloudFrontPublicKey;Write
 iam:UpdateGroup;Write
 iam:UpdateLoginProfile;Write
 iam:UpdateOpenIDConnectProviderThumbprint;Write
@@ -154,6 +164,7 @@ iam:UpdateServerCertificate;Write
 iam:UpdateServiceSpecificCredential;Write
 iam:UpdateSigningCertificate;Write
 iam:UpdateUser;Write
+iam:UploadCloudFrontPublicKey;Write
 iam:UploadSSHPublicKey;Write
 iam:UploadServerCertificate;Write
 iam:UploadSigningCertificate;Write

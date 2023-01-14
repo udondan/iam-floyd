@@ -1,9 +1,4 @@
-iotroborunner:ActionResourceId
-iotroborunner:ActionTemplateResourceId
-iotroborunner:ActivityResourceId
-iotroborunner:DestinationRelationshipResourceId
 iotroborunner:DestinationResourceId
 iotroborunner:SiteResourceId
-iotroborunner:TaskResourceId
 iotroborunner:WorkerFleetResourceId
 iotroborunner:WorkerResourceId

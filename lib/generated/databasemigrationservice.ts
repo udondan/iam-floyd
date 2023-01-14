@@ -149,6 +149,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Fleet Advisor collector using the specified parameters
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateFleetAdvisorCollector.html
+   */
+  public toCreateFleetAdvisorCollector() {
+    return this.to('CreateFleetAdvisorCollector');
+  }
+
+  /**
    * Grants permission to create an instance profile using the provided settings
    *
    * Access Level: Write
@@ -281,6 +292,28 @@ export class Dms extends PolicyStatement {
    */
   public toDeleteEventSubscription() {
     return this.to('DeleteEventSubscription');
+  }
+
+  /**
+   * Grants permission to delete the specified Fleet Advisor collector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteFleetAdvisorCollector.html
+   */
+  public toDeleteFleetAdvisorCollector() {
+    return this.to('DeleteFleetAdvisorCollector');
+  }
+
+  /**
+   * Grants permission to delete the specified Fleet Advisor databases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteFleetAdvisorDatabases.html
+   */
+  public toDeleteFleetAdvisorDatabases() {
+    return this.to('DeleteFleetAdvisorDatabases');
   }
 
   /**
@@ -457,6 +490,61 @@ export class Dms extends PolicyStatement {
    */
   public toDescribeEvents() {
     return this.to('DescribeEvents');
+  }
+
+  /**
+   * Grants permission to return a paginated list of Fleet Advisor collectors in your account based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorCollectors.html
+   */
+  public toDescribeFleetAdvisorCollectors() {
+    return this.to('DescribeFleetAdvisorCollectors');
+  }
+
+  /**
+   * Grants permission to return a paginated list of Fleet Advisor databases in your account based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorDatabases.html
+   */
+  public toDescribeFleetAdvisorDatabases() {
+    return this.to('DescribeFleetAdvisorDatabases');
+  }
+
+  /**
+   * Grants permission to return a paginated list of descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorLsaAnalysis.html
+   */
+  public toDescribeFleetAdvisorLsaAnalysis() {
+    return this.to('DescribeFleetAdvisorLsaAnalysis');
+  }
+
+  /**
+   * Grants permission to return a paginated list of descriptions of schemas discovered by your Fleet Advisor collectors based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorSchemaObjectSummary.html
+   */
+  public toDescribeFleetAdvisorSchemaObjectSummary() {
+    return this.to('DescribeFleetAdvisorSchemaObjectSummary');
+  }
+
+  /**
+   * Grants permission to return a paginated list of schemas discovered by your Fleet Advisor collectors based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorSchemas.html
+   */
+  public toDescribeFleetAdvisorSchemas() {
+    return this.to('DescribeFleetAdvisorSchemas');
   }
 
   /**
@@ -765,6 +853,28 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the name and description of the specified Fleet Advisor collector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyFleetAdvisorCollector() {
+    return this.to('ModifyFleetAdvisorCollector');
+  }
+
+  /**
+   * Grants permission to modify the status of the specified Fleet Advisor collector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyFleetAdvisorCollectorStatuses() {
+    return this.to('ModifyFleetAdvisorCollectorStatuses');
+  }
+
+  /**
    * Grants permission to modify the replication instance to apply new settings
    *
    * Access Level: Write
@@ -853,6 +963,17 @@ export class Dms extends PolicyStatement {
    */
   public toRemoveTagsFromResource() {
     return this.to('RemoveTagsFromResource');
+  }
+
+  /**
+   * Grants permission to run a large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_RunFleetAdvisorLsaAnalysis.html
+   */
+  public toRunFleetAdvisorLsaAnalysis() {
+    return this.to('RunFleetAdvisorLsaAnalysis');
   }
 
   /**
@@ -1009,6 +1130,28 @@ export class Dms extends PolicyStatement {
     return this.to('UpdateMigrationProject');
   }
 
+  /**
+   * Grants permission to migrate DMS subcriptions to Eventbridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_UpdateSubscriptionsToEventBridge.html
+   */
+  public toUpdateSubscriptionsToEventBridge() {
+    return this.to('UpdateSubscriptionsToEventBridge');
+  }
+
+  /**
+   * Grants permission to upload files to your Amazon S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toUploadFileMetadataList() {
+    return this.to('UploadFileMetadataList');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1024,6 +1167,7 @@ export class Dms extends PolicyStatement {
       'CreateDataProvider',
       'CreateEndpoint',
       'CreateEventSubscription',
+      'CreateFleetAdvisorCollector',
       'CreateInstanceProfile',
       'CreateMigrationProject',
       'CreateReplicationInstance',
@@ -1034,6 +1178,8 @@ export class Dms extends PolicyStatement {
       'DeleteDataProvider',
       'DeleteEndpoint',
       'DeleteEventSubscription',
+      'DeleteFleetAdvisorCollector',
+      'DeleteFleetAdvisorDatabases',
       'DeleteInstanceProfile',
       'DeleteMigrationProject',
       'DeleteReplicationInstance',
@@ -1045,6 +1191,8 @@ export class Dms extends PolicyStatement {
       'ImportCertificate',
       'ModifyEndpoint',
       'ModifyEventSubscription',
+      'ModifyFleetAdvisorCollector',
+      'ModifyFleetAdvisorCollectorStatuses',
       'ModifyReplicationInstance',
       'ModifyReplicationSubnetGroup',
       'ModifyReplicationTask',
@@ -1052,6 +1200,7 @@ export class Dms extends PolicyStatement {
       'RebootReplicationInstance',
       'RefreshSchemas',
       'ReloadTables',
+      'RunFleetAdvisorLsaAnalysis',
       'StartMetadataModelAssessment',
       'StartMetadataModelConversion',
       'StartMetadataModelExportAsScripts',
@@ -1064,7 +1213,9 @@ export class Dms extends PolicyStatement {
       'UpdateConversionConfiguration',
       'UpdateDataProvider',
       'UpdateInstanceProfile',
-      'UpdateMigrationProject'
+      'UpdateMigrationProject',
+      'UpdateSubscriptionsToEventBridge',
+      'UploadFileMetadataList'
     ],
     Read: [
       'DescribeAccountAttributes',
@@ -1077,6 +1228,11 @@ export class Dms extends PolicyStatement {
       'DescribeEventCategories',
       'DescribeEventSubscriptions',
       'DescribeEvents',
+      'DescribeFleetAdvisorCollectors',
+      'DescribeFleetAdvisorDatabases',
+      'DescribeFleetAdvisorLsaAnalysis',
+      'DescribeFleetAdvisorSchemaObjectSummary',
+      'DescribeFleetAdvisorSchemas',
       'DescribeOrderableReplicationInstances',
       'DescribePendingMaintenanceActions',
       'DescribeRefreshSchemasStatus',

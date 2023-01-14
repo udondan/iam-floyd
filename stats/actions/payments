@@ -1,0 +1,7 @@
+payments:CreatePaymentInstrument;Write
+payments:DeletePaymentInstrument;Write
+payments:GetPaymentInstrument;List
+payments:GetPaymentStatus;Read
+payments:ListPaymentPreferences;List
+payments:MakePayment;Write
+payments:UpdatePaymentPreferences;Write

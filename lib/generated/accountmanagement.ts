@@ -19,6 +19,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to close an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
+   */
+  public toCloseAccount() {
+    return this.to('CloseAccount');
+  }
+
+  /**
    * Grants permission to delete the alternate contacts for an account
    *
    * Access Level: Write
@@ -61,6 +72,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the account information for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
+   */
+  public toGetAccountInformation() {
+    return this.to('GetAccountInformation');
+  }
+
+  /**
    * Grants permission to retrieve the alternate contacts for an account
    *
    * Access Level: Read
@@ -72,6 +94,17 @@ export class Account extends PolicyStatement {
    */
   public toGetAlternateContact() {
     return this.to('GetAlternateContact');
+  }
+
+  /**
+   * Grants permission to retrieve the challenge questions for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
+   */
+  public toGetChallengeQuestions() {
+    return this.to('GetChallengeQuestions');
   }
 
   /**
@@ -111,6 +144,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the challenge questions for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
+   */
+  public toPutChallengeQuestions() {
+    return this.to('PutChallengeQuestions');
+  }
+
+  /**
    * Grants permission to update the primary contact information for an account
    *
    * Access Level: Write
@@ -123,14 +167,18 @@ export class Account extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CloseAccount',
       'DeleteAlternateContact',
       'DisableRegion',
       'EnableRegion',
       'PutAlternateContact',
+      'PutChallengeQuestions',
       'PutContactInformation'
     ],
     Read: [
+      'GetAccountInformation',
       'GetAlternateContact',
+      'GetChallengeQuestions',
       'GetContactInformation'
     ],
     List: [

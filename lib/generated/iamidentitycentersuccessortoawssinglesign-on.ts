@@ -300,6 +300,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to obtain information about the directories for this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeDirectories() {
+    return this.to('DescribeDirectories');
+  }
+
+  /**
    * Grants permission to get the list of attributes used by the instance for ABAC
    *
    * Access Level: Read
@@ -352,6 +363,17 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeRegisteredRegions() {
     return this.to('DescribeRegisteredRegions');
+  }
+
+  /**
+   * Grants permission to obtain information about the trust relationships for this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeTrusts() {
+    return this.to('DescribeTrusts');
   }
 
   /**
@@ -1108,11 +1130,13 @@ export class Sso extends PolicyStatement {
     Read: [
       'DescribeAccountAssignmentCreationStatus',
       'DescribeAccountAssignmentDeletionStatus',
+      'DescribeDirectories',
       'DescribeInstanceAccessControlAttributeConfiguration',
       'DescribePermissionSet',
       'DescribePermissionSetProvisioningStatus',
       'DescribePermissionsPolicies',
       'DescribeRegisteredRegions',
+      'DescribeTrusts',
       'GetApplicationInstance',
       'GetApplicationTemplate',
       'GetInlinePolicyForPermissionSet',
