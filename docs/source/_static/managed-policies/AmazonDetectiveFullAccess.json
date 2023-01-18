@@ -20,6 +20,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"guardduty:GetFindings",
 				"guardduty:ListDetectors"
 			],
 			"Resource": "*"
