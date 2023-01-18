@@ -39,9 +39,14 @@
 			"Effect": "Allow",
 			"Action": [
 				"s3:GetObject",
-				"s3:ListBucket"
+				"s3:ListBucket",
+				"s3:GetObjectVersion"
 			],
-			"Resource": "*",
+			"Resource": [
+				"arn:aws:s3:::*-nodepackage-store-*",
+				"arn:aws:s3:::*-application-payload-store-*",
+				"arn:aws:s3:*:*:accesspoint/panorama*"
+			],
 			"Condition": {
 				"StringLike": {
 					"s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/panorama*"
