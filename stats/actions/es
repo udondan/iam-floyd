@@ -27,6 +27,7 @@ es:DescribeDomainAutoTunes;Read
 es:DescribeDomainChangeProgress;Read
 es:DescribeDomainConfig;Read
 es:DescribeDomains;List
+es:DescribeDryRunProgress;Read
 es:DescribeElasticsearchDomain;Read
 es:DescribeElasticsearchDomainConfig;Read
 es:DescribeElasticsearchDomains;List

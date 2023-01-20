@@ -5,4 +5,5 @@ redshift-serverless:endpointAccessId
 redshift-serverless:namespaceId
 redshift-serverless:recoveryPointId
 redshift-serverless:snapshotId
+redshift-serverless:tableRestoreRequestId
 redshift-serverless:workgroupId

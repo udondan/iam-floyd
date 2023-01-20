@@ -679,6 +679,17 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the summary of resource evaluations for a specific resource evaluation ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html
+   */
+  public toGetResourceEvaluationSummary() {
+    return this.to('GetResourceEvaluationSummary');
+  }
+
+  /**
    * Grants permission to return the details of a specific stored query
    *
    * Access Level: Read
@@ -720,6 +731,17 @@ export class Config extends PolicyStatement {
    */
   public toListDiscoveredResources() {
     return this.to('ListDiscoveredResources');
+  }
+
+  /**
+   * Grants permission to list the resource evaluation summaries for an AWS account in an AWS Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ListResourceEvaluations.html
+   */
+  public toListResourceEvaluations() {
+    return this.to('ListResourceEvaluations');
   }
 
   /**
@@ -1012,6 +1034,20 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to evaluate your resource details against the AWS Config rules in your account
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudformation:DescribeType
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_StartResourceEvaluation.html
+   */
+  public toStartResourceEvaluation() {
+    return this.to('StartResourceEvaluation');
+  }
+
+  /**
    * Grants permission to stop recording configurations of the AWS resources you have selected to record in your AWS account
    *
    * Access Level: Write
@@ -1086,6 +1122,7 @@ export class Config extends PolicyStatement {
       'GetOrganizationConformancePackDetailedStatus',
       'GetOrganizationCustomRulePolicy',
       'GetResourceConfigHistory',
+      'GetResourceEvaluationSummary',
       'GetStoredQuery',
       'ListTagsForResource',
       'SelectAggregateResourceConfig',
@@ -1125,6 +1162,7 @@ export class Config extends PolicyStatement {
       'StartConfigRulesEvaluation',
       'StartConfigurationRecorder',
       'StartRemediationExecution',
+      'StartResourceEvaluation',
       'StopConfigurationRecorder'
     ],
     List: [
@@ -1143,6 +1181,7 @@ export class Config extends PolicyStatement {
       'ListAggregateDiscoveredResources',
       'ListConformancePackComplianceScores',
       'ListDiscoveredResources',
+      'ListResourceEvaluations',
       'ListStoredQueries'
     ],
     Tagging: [

@@ -26,6 +26,7 @@ aws-marketplace:ListAgreementRequests;List
 aws-marketplace:ListBuilds;Read
 aws-marketplace:ListChangeSets;List
 aws-marketplace:ListEntities;List
+aws-marketplace:ListEntitlementDetails;Read
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListTagsForResource;Read
 aws-marketplace:ListTasks;List

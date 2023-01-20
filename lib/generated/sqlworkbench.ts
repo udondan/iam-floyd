@@ -41,6 +41,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate notebook to a tab
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toAssociateNotebookWithTab() {
+    return this.to('AssociateNotebookWithTab');
+  }
+
+  /**
    * Grants permission to associate query to a tab
    *
    * Access Level: Write
@@ -798,6 +809,7 @@ export class Sqlworkbench extends PolicyStatement {
     Write: [
       'AssociateConnectionWithChart',
       'AssociateConnectionWithTab',
+      'AssociateNotebookWithTab',
       'AssociateQueryWithTab',
       'BatchDeleteFolder',
       'CreateAccount',

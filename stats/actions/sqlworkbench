@@ -1,5 +1,6 @@
 sqlworkbench:AssociateConnectionWithChart;Write
 sqlworkbench:AssociateConnectionWithTab;Write
+sqlworkbench:AssociateNotebookWithTab;Write
 sqlworkbench:AssociateQueryWithTab;Write
 sqlworkbench:BatchDeleteFolder;Write
 sqlworkbench:BatchGetNotebookCell;Read
