@@ -23,6 +23,17 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptAdministratorInvitation.html
+   */
+  public toAcceptAdministratorInvitation() {
+    return this.to('AcceptAdministratorInvitation');
+  }
+
+  /**
+   * Grants permission to accept invitations to become a GuardDuty member account
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptInvitation.html
    */
   public toAcceptInvitation() {
@@ -278,6 +289,17 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateFromAdministratorAccount.html
+   */
+  public toDisassociateFromAdministratorAccount() {
+    return this.to('DisassociateFromAdministratorAccount');
+  }
+
+  /**
+   * Grants permission to disassociate a GuardDuty member account from its GuardDuty administrator account
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateFromMasterAccount.html
    */
   public toDisassociateFromMasterAccount() {
@@ -304,6 +326,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toEnableOrganizationAdminAccount() {
     return this.to('EnableOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to retrieve details of the GuardDuty administrator account associated with a member account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetAdministratorAccount.html
+   */
+  public toGetAdministratorAccount() {
+    return this.to('GetAdministratorAccount');
   }
 
   /**
@@ -414,6 +447,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toGetMembers() {
     return this.to('GetMembers');
+  }
+
+  /**
+   * Grants permission to provide the number of days left for each data source used in the free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetRemainingFreeTrialDays.html
+   */
+  public toGetRemainingFreeTrialDays() {
+    return this.to('GetRemainingFreeTrialDays');
   }
 
   /**
@@ -734,6 +778,7 @@ export class Guardduty extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptAdministratorInvitation',
       'AcceptInvitation',
       'ArchiveFindings',
       'CreateDetector',
@@ -752,6 +797,7 @@ export class Guardduty extends PolicyStatement {
       'DeletePublishingDestination',
       'DeleteThreatIntelSet',
       'DisableOrganizationAdminAccount',
+      'DisassociateFromAdministratorAccount',
       'DisassociateFromMasterAccount',
       'DisassociateMembers',
       'EnableOrganizationAdminAccount',
@@ -773,6 +819,7 @@ export class Guardduty extends PolicyStatement {
       'DescribeMalwareScans',
       'DescribeOrganizationConfiguration',
       'DescribePublishingDestination',
+      'GetAdministratorAccount',
       'GetDetector',
       'GetFilter',
       'GetFindings',
@@ -783,6 +830,7 @@ export class Guardduty extends PolicyStatement {
       'GetMasterAccount',
       'GetMemberDetectors',
       'GetMembers',
+      'GetRemainingFreeTrialDays',
       'GetThreatIntelSet',
       'GetUsageStatistics',
       'ListTagsForResource'

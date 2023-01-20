@@ -1,3 +1,4 @@
+guardduty:AcceptAdministratorInvitation;Write
 guardduty:AcceptInvitation;Write
 guardduty:ArchiveFindings;Write
 guardduty:CreateDetector;Write
@@ -19,9 +20,11 @@ guardduty:DescribeMalwareScans;Read
 guardduty:DescribeOrganizationConfiguration;Read
 guardduty:DescribePublishingDestination;Read
 guardduty:DisableOrganizationAdminAccount;Write
+guardduty:DisassociateFromAdministratorAccount;Write
 guardduty:DisassociateFromMasterAccount;Write
 guardduty:DisassociateMembers;Write
 guardduty:EnableOrganizationAdminAccount;Write
+guardduty:GetAdministratorAccount;Read
 guardduty:GetDetector;Read
 guardduty:GetFilter;Read
 guardduty:GetFindings;Read
@@ -32,6 +35,7 @@ guardduty:GetMalwareScanSettings;Read
 guardduty:GetMasterAccount;Read
 guardduty:GetMemberDetectors;Read
 guardduty:GetMembers;Read
+guardduty:GetRemainingFreeTrialDays;Read
 guardduty:GetThreatIntelSet;Read
 guardduty:GetUsageStatistics;Read
 guardduty:InviteMembers;Write

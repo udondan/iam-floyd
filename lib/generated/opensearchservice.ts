@@ -350,6 +350,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the status of a pre-update validation check on an OpenSearch Service domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDryRunProgress.html
+   */
+  public toDescribeDryRunProgress() {
+    return this.to('DescribeDryRunProgress');
+  }
+
+  /**
    * Grants permission to view a description of the domain configuration for the specified OpenSearch Service domain, including the domain ID, service endpoint, and ARN. This permission is deprecated. Use DescribeDomain instead
    *
    * Access Level: Read
@@ -999,6 +1010,7 @@ export class Es extends PolicyStatement {
       'DescribeDomainAutoTunes',
       'DescribeDomainChangeProgress',
       'DescribeDomainConfig',
+      'DescribeDryRunProgress',
       'DescribeElasticsearchDomain',
       'DescribeElasticsearchDomainConfig',
       'DescribePackages',

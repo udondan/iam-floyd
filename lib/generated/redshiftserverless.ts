@@ -225,6 +225,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get table restore status about a specific snapshot
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetTableRestoreStatus.html
+   */
+  public toGetTableRestoreStatus() {
+    return this.to('GetTableRestoreStatus');
+  }
+
+  /**
    * Grants permission to get information about a usage limit in Amazon Redshift Serverless
    *
    * Access Level: Read
@@ -288,6 +299,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toListSnapshots() {
     return this.to('ListSnapshots');
+  }
+
+  /**
+   * Grants permission to list table restore status
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListTableRestoreStatus.html
+   */
+  public toListTableRestoreStatus() {
+    return this.to('ListTableRestoreStatus');
   }
 
   /**
@@ -357,6 +379,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toRestoreFromSnapshot() {
     return this.to('RestoreFromSnapshot');
+  }
+
+  /**
+   * Grants permission to restore a table from a snapshot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreTableFromSnapshot.html
+   */
+  public toRestoreTableFromSnapshot() {
+    return this.to('RestoreTableFromSnapshot');
   }
 
   /**
@@ -462,6 +495,7 @@ export class RedshiftServerless extends PolicyStatement {
       'PutResourcePolicy',
       'RestoreFromRecoveryPoint',
       'RestoreFromSnapshot',
+      'RestoreTableFromSnapshot',
       'UpdateEndpointAccess',
       'UpdateNamespace',
       'UpdateSnapshot',
@@ -474,6 +508,7 @@ export class RedshiftServerless extends PolicyStatement {
       'GetRecoveryPoint',
       'GetResourcePolicy',
       'GetSnapshot',
+      'GetTableRestoreStatus',
       'GetUsageLimit',
       'GetWorkgroup'
     ],
@@ -482,6 +517,7 @@ export class RedshiftServerless extends PolicyStatement {
       'ListNamespaces',
       'ListRecoveryPoints',
       'ListSnapshots',
+      'ListTableRestoreStatus',
       'ListTagsForResource',
       'ListUsageLimits',
       'ListWorkgroups'
@@ -614,6 +650,18 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public ifSnapshotId(value: string | string[], operator?: Operator | string) {
     return this.if(`snapshotId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the table restore request identifier
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTableRestoreRequestId(value: string | string[], operator?: Operator | string) {
+    return this.if(`tableRestoreRequestId`, value, operator || 'StringLike');
   }
 
   /**

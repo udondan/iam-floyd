@@ -58,10 +58,12 @@ config:GetOrganizationConfigRuleDetailedStatus;Read
 config:GetOrganizationConformancePackDetailedStatus;Read
 config:GetOrganizationCustomRulePolicy;Read
 config:GetResourceConfigHistory;Read
+config:GetResourceEvaluationSummary;Read
 config:GetStoredQuery;Read
 config:ListAggregateDiscoveredResources;List
 config:ListConformancePackComplianceScores;List
 config:ListDiscoveredResources;List
+config:ListResourceEvaluations;List
 config:ListStoredQueries;List
 config:ListTagsForResource;Read
 config:PutAggregationAuthorization;Write
@@ -84,6 +86,7 @@ config:SelectResourceConfig;Read
 config:StartConfigRulesEvaluation;Write
 config:StartConfigurationRecorder;Write
 config:StartRemediationExecution;Write
+config:StartResourceEvaluation;Write
 config:StopConfigurationRecorder;Write
 config:TagResource;Tagging
 config:UntagResource;Tagging
