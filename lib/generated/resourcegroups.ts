@@ -45,6 +45,17 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the current status of optional features in Resource Groups
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetAccountSettings.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
    * Grants permission to get information of a specified resource group
    *
    * Access Level: Read
@@ -205,6 +216,17 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update optional features in Resource Groups
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
    * Grants permission to update a specified resource group
    *
    * Access Level: Write
@@ -234,10 +256,12 @@ export class ResourceGroups extends PolicyStatement {
       'PutGroupConfiguration',
       'PutGroupPolicy',
       'UngroupResources',
+      'UpdateAccountSettings',
       'UpdateGroup',
       'UpdateGroupQuery'
     ],
     Read: [
+      'GetAccountSettings',
       'GetGroup',
       'GetGroupConfiguration',
       'GetGroupQuery',

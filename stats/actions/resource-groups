@@ -1,5 +1,6 @@
 resource-groups:CreateGroup;Write
 resource-groups:DeleteGroup;Write
+resource-groups:GetAccountSettings;Read
 resource-groups:GetGroup;Read
 resource-groups:GetGroupConfiguration;Read
 resource-groups:GetGroupQuery;Read
@@ -13,5 +14,6 @@ resource-groups:SearchResources;List
 resource-groups:Tag;Tagging
 resource-groups:UngroupResources;Write
 resource-groups:Untag;Tagging
+resource-groups:UpdateAccountSettings;Write
 resource-groups:UpdateGroup;Write
 resource-groups:UpdateGroupQuery;Write

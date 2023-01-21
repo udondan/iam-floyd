@@ -288,6 +288,7 @@ export { M2 } from './mainframemodernizationservice';
 export { AwsMarketplace } from './marketplace';
 export { AwsMarketplaceCatalog } from './marketplacecatalog';
 export { Marketplacecommerceanalytics } from './marketplacecommerceanalyticsservice';
+export { AwsMarketplaceDiscovery } from './marketplacediscovery';
 export { AwsMarketplaceEntitlementService } from './marketplaceentitlementservice';
 export { AwsMarketplaceImageBuildingService } from './marketplaceimagebuildingservice';
 export { AwsMarketplaceManagement } from './marketplacemanagementportal';
