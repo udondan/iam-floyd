@@ -67,6 +67,10 @@ async function main() {
     }
   });
 
+  tweets.push(
+    '⚠️ This account will soon be closed!\n\nIf you want to follow me, please do so on Mastodon.\n\n@iamfloyd@awscommunity.social\n\nhttps://spacekaren.sucks/4wubx'
+  );
+
   for (let content of tweets) {
     console.log('tweeting:');
     console.log(content);

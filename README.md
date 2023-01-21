@@ -2,7 +2,6 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
-[![Twitter](https://badgen.net/twitter/follow/heyiamfloyd?icon=twitter)][twitter]
 [![Mastodon](https://badgen.net/badge/Mastodon/iamfloyd@awscommunity.social/blue)][mastodon]
 [![libraries.io](https://img.shields.io/badge/packages-libraries.io-yellow)][libraries.io]
 [![Documentation](https://img.shields.io/badge/Documentation-Read%20the%20Docs-orange)][documentation]
@@ -77,5 +76,4 @@ IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [libraries.io]: https://libraries.io/search?q=iam-floyd
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [twitter]: https://twitter.com/heyiamfloyd
    [mastodon]: https://awscommunity.social/@iamfloyd
