@@ -130,6 +130,7 @@ chime:GetProxySession;Read
 chime:GetRetentionSettings;Read
 chime:GetRoom;Read
 chime:GetSipMediaApplication;Read
+chime:GetSipMediaApplicationAlexaSkillConfiguration;Read
 chime:GetSipMediaApplicationLoggingConfiguration;Read
 chime:GetSipRule;Read
 chime:GetTelephonyLimits;Read
@@ -158,6 +159,7 @@ chime:ListAppInstanceUsers;List
 chime:ListAppInstances;List
 chime:ListAttendeeTags;List
 chime:ListAttendees;List
+chime:ListAvailableVoiceConnectorRegions;List
 chime:ListBots;List
 chime:ListCDRBucket;List
 chime:ListCallingRegions;List
@@ -200,6 +202,7 @@ chime:PutAppInstanceStreamingConfigurations;Write
 chime:PutChannelMembershipPreferences;Write
 chime:PutEventsConfiguration;Write
 chime:PutRetentionSettings;Write
+chime:PutSipMediaApplicationAlexaSkillConfiguration;Write
 chime:PutSipMediaApplicationLoggingConfiguration;Write
 chime:PutVoiceConnectorEmergencyCallingConfiguration;Write
 chime:PutVoiceConnectorLoggingConfiguration;Write
@@ -264,3 +267,4 @@ chime:UpdateUserSettings;Write
 chime:UpdateVoiceConnector;Write
 chime:UpdateVoiceConnectorGroup;Write
 chime:ValidateAccountResource;Read
+chime:ValidateE911Address;Write
