@@ -1536,6 +1536,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Alexa Skill configuration settings for Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSipMediaApplicationAlexaSkillConfiguration.html
+   */
+  public toGetSipMediaApplicationAlexaSkillConfiguration() {
+    return this.to('GetSipMediaApplicationAlexaSkillConfiguration');
+  }
+
+  /**
    * Grants permission to get logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Read
@@ -1841,6 +1852,15 @@ export class Chime extends PolicyStatement {
    */
   public toListAttendees() {
     return this.to('ListAttendees');
+  }
+
+  /**
+   * Grants permission to list the available AWS Regions in which you can create an Amazon Chime SDK Voice Connector
+   *
+   * Access Level: List
+   */
+  public toListAvailableVoiceConnectorRegions() {
+    return this.to('ListAvailableVoiceConnectorRegions');
   }
 
   /**
@@ -2305,6 +2325,17 @@ export class Chime extends PolicyStatement {
    */
   public toPutRetentionSettings() {
     return this.to('PutRetentionSettings');
+  }
+
+  /**
+   * Grants permission to update Alexa Skill configuration settings for Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutSipMediaApplicationAlexaSkillConfiguration.html
+   */
+  public toPutSipMediaApplicationAlexaSkillConfiguration() {
+    return this.to('PutSipMediaApplicationAlexaSkillConfiguration');
   }
 
   /**
@@ -3040,6 +3071,17 @@ export class Chime extends PolicyStatement {
     return this.to('ValidateAccountResource');
   }
 
+  /**
+   * Grants permission to validate an address to be used for 911 calls made with Amazon Chime Voice Connectors
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ValidateE911Address.html
+   */
+  public toValidateE911Address() {
+    return this.to('ValidateE911Address');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDelegate',
@@ -3145,6 +3187,7 @@ export class Chime extends PolicyStatement {
       'PutChannelMembershipPreferences',
       'PutEventsConfiguration',
       'PutRetentionSettings',
+      'PutSipMediaApplicationAlexaSkillConfiguration',
       'PutSipMediaApplicationLoggingConfiguration',
       'PutVoiceConnectorEmergencyCallingConfiguration',
       'PutVoiceConnectorLoggingConfiguration',
@@ -3198,7 +3241,8 @@ export class Chime extends PolicyStatement {
       'UpdateUserLicenses',
       'UpdateUserSettings',
       'UpdateVoiceConnector',
-      'UpdateVoiceConnectorGroup'
+      'UpdateVoiceConnectorGroup',
+      'ValidateE911Address'
     ],
     Read: [
       'DescribeAppInstance',
@@ -3239,6 +3283,7 @@ export class Chime extends PolicyStatement {
       'GetRetentionSettings',
       'GetRoom',
       'GetSipMediaApplication',
+      'GetSipMediaApplicationAlexaSkillConfiguration',
       'GetSipMediaApplicationLoggingConfiguration',
       'GetSipRule',
       'GetTelephonyLimits',
@@ -3271,6 +3316,7 @@ export class Chime extends PolicyStatement {
       'ListAppInstances',
       'ListAttendeeTags',
       'ListAttendees',
+      'ListAvailableVoiceConnectorRegions',
       'ListBots',
       'ListCDRBucket',
       'ListCallingRegions',
