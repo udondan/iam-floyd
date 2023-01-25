@@ -7,6 +7,7 @@ personalize:CreateDatasetGroup;Write
 personalize:CreateDatasetImportJob;Write
 personalize:CreateEventTracker;Write
 personalize:CreateFilter;Write
+personalize:CreateMetricAttribution;Write
 personalize:CreateRecommender;Write
 personalize:CreateSchema;Write
 personalize:CreateSolution;Write
@@ -16,6 +17,7 @@ personalize:DeleteDataset;Write
 personalize:DeleteDatasetGroup;Write
 personalize:DeleteEventTracker;Write
 personalize:DeleteFilter;Write
+personalize:DeleteMetricAttribution;Write
 personalize:DeleteRecommender;Write
 personalize:DeleteSchema;Write
 personalize:DeleteSolution;Write
@@ -30,6 +32,7 @@ personalize:DescribeDatasetImportJob;Read
 personalize:DescribeEventTracker;Read
 personalize:DescribeFeatureTransformation;Read
 personalize:DescribeFilter;Read
+personalize:DescribeMetricAttribution;Read
 personalize:DescribeRecipe;Read
 personalize:DescribeRecommender;Read
 personalize:DescribeSchema;Read
@@ -47,6 +50,8 @@ personalize:ListDatasetImportJobs;List
 personalize:ListDatasets;List
 personalize:ListEventTrackers;List
 personalize:ListFilters;List
+personalize:ListMetricAttributionMetrics;List
+personalize:ListMetricAttributions;List
 personalize:ListRecipes;List
 personalize:ListRecommenders;List
 personalize:ListSchemas;List
@@ -62,4 +67,5 @@ personalize:StopSolutionVersionCreation;Write
 personalize:TagResource;Tagging
 personalize:UntagResource;Tagging
 personalize:UpdateCampaign;Write
+personalize:UpdateMetricAttribution;Write
 personalize:UpdateRecommender;Write

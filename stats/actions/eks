@@ -11,6 +11,7 @@ eks:DeleteFargateProfile;Write
 eks:DeleteNodegroup;Write
 eks:DeregisterCluster;Write
 eks:DescribeAddon;Read
+eks:DescribeAddonConfiguration;Read
 eks:DescribeAddonVersions;Read
 eks:DescribeCluster;Read
 eks:DescribeFargateProfile;Read

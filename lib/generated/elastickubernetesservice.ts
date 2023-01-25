@@ -184,6 +184,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list configuration options about an Amazon EKS add-on
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html
+   */
+  public toDescribeAddonConfiguration() {
+    return this.to('DescribeAddonConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve descriptive version information about the add-ons that Amazon EKS Add-ons supports
    *
    * Access Level: Read
@@ -440,6 +451,7 @@ export class Eks extends PolicyStatement {
     Read: [
       'AccessKubernetesApi',
       'DescribeAddon',
+      'DescribeAddonConfiguration',
       'DescribeAddonVersions',
       'DescribeCluster',
       'DescribeFargateProfile',
@@ -521,7 +533,7 @@ export class Eks extends PolicyStatement {
   /**
    * Adds a resource of type addon to the statement
    *
-   * https://docs.aws.amazon.com/eks/latest/userguide/managed-addons.html
+   * https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param addonName - Identifier for the addonName.
