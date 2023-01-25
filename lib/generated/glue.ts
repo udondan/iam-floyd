@@ -2271,6 +2271,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a job from source control provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJobFromSourceControl
+   */
+  public toUpdateJobFromSourceControl() {
+    return this.to('UpdateJobFromSourceControl');
+  }
+
+  /**
    * Grants permission to update an ML Transform
    *
    * Access Level: Write
@@ -2312,6 +2323,17 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateSchema() {
     return this.to('UpdateSchema');
+  }
+
+  /**
+   * Grants permission to update source control provider from a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateSourceControlFromJob
+   */
+  public toUpdateSourceControlFromJob() {
+    return this.to('UpdateSourceControlFromJob');
   }
 
   /**
@@ -2477,10 +2499,12 @@ export class Glue extends PolicyStatement {
       'UpdateDatabase',
       'UpdateDevEndpoint',
       'UpdateJob',
+      'UpdateJobFromSourceControl',
       'UpdateMLTransform',
       'UpdatePartition',
       'UpdateRegistry',
       'UpdateSchema',
+      'UpdateSourceControlFromJob',
       'UpdateTable',
       'UpdateTrigger',
       'UpdateUserDefinedFunction',

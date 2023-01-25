@@ -194,10 +194,12 @@ glue:UpdateDataQualityRuleset;Write
 glue:UpdateDatabase;Write
 glue:UpdateDevEndpoint;Write
 glue:UpdateJob;Write
+glue:UpdateJobFromSourceControl;Write
 glue:UpdateMLTransform;Write
 glue:UpdatePartition;Write
 glue:UpdateRegistry;Write
 glue:UpdateSchema;Write
+glue:UpdateSourceControlFromJob;Write
 glue:UpdateTable;Write
 glue:UpdateTrigger;Write
 glue:UpdateUserDefinedFunction;Write

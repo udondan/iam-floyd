@@ -118,6 +118,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a metric attribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateMetricAttribution.html
+   */
+  public toCreateMetricAttribution() {
+    return this.to('CreateMetricAttribution');
+  }
+
+  /**
    * Grants permission to create a recommender
    *
    * Access Level: Write
@@ -214,6 +225,17 @@ export class Personalize extends PolicyStatement {
    */
   public toDeleteFilter() {
     return this.to('DeleteFilter');
+  }
+
+  /**
+   * Grants permission to delete a metric attribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteMetricAttribution.html
+   */
+  public toDeleteMetricAttribution() {
+    return this.to('DeleteMetricAttribution');
   }
 
   /**
@@ -368,6 +390,17 @@ export class Personalize extends PolicyStatement {
    */
   public toDescribeFilter() {
     return this.to('DescribeFilter');
+  }
+
+  /**
+   * Grants permission to describe a metric attribution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html
+   */
+  public toDescribeMetricAttribution() {
+    return this.to('DescribeMetricAttribution');
   }
 
   /**
@@ -558,6 +591,28 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list metric attribution metrics
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListMetricAttributionMetrics.html
+   */
+  public toListMetricAttributionMetrics() {
+    return this.to('ListMetricAttributionMetrics');
+  }
+
+  /**
+   * Grants permission to list metric attributions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListMetricAttributions.html
+   */
+  public toListMetricAttributions() {
+    return this.to('ListMetricAttributions');
+  }
+
+  /**
    * Grants permission to list recipes
    *
    * Access Level: List
@@ -723,6 +778,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a metric attribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateMetricAttribution.html
+   */
+  public toUpdateMetricAttribution() {
+    return this.to('UpdateMetricAttribution');
+  }
+
+  /**
    * Grants permission to update a recommender
    *
    * Access Level: Write
@@ -744,6 +810,7 @@ export class Personalize extends PolicyStatement {
       'CreateDatasetImportJob',
       'CreateEventTracker',
       'CreateFilter',
+      'CreateMetricAttribution',
       'CreateRecommender',
       'CreateSchema',
       'CreateSolution',
@@ -753,6 +820,7 @@ export class Personalize extends PolicyStatement {
       'DeleteDatasetGroup',
       'DeleteEventTracker',
       'DeleteFilter',
+      'DeleteMetricAttribution',
       'DeleteRecommender',
       'DeleteSchema',
       'DeleteSolution',
@@ -763,6 +831,7 @@ export class Personalize extends PolicyStatement {
       'StopRecommender',
       'StopSolutionVersionCreation',
       'UpdateCampaign',
+      'UpdateMetricAttribution',
       'UpdateRecommender'
     ],
     Read: [
@@ -777,6 +846,7 @@ export class Personalize extends PolicyStatement {
       'DescribeEventTracker',
       'DescribeFeatureTransformation',
       'DescribeFilter',
+      'DescribeMetricAttribution',
       'DescribeRecipe',
       'DescribeRecommender',
       'DescribeSchema',
@@ -796,6 +866,8 @@ export class Personalize extends PolicyStatement {
       'ListDatasets',
       'ListEventTrackers',
       'ListFilters',
+      'ListMetricAttributionMetrics',
+      'ListMetricAttributions',
       'ListRecipes',
       'ListRecommenders',
       'ListSchemas',
@@ -1017,5 +1089,19 @@ export class Personalize extends PolicyStatement {
    */
   public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:batch-segment-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type metricAttribution to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_MetricAttribution.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMetricAttribution(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:metric-attribution/${ resourceId }`);
   }
 }
