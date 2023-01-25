@@ -105,6 +105,15 @@
 			"Resource": [
 				"*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"pricing:GetProducts"
+			],
+			"Resource": [
+				"*"
+			]
 		}
 	]
 }
