@@ -549,6 +549,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list asset model properties
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModelProperties.html
+   */
+  public toListAssetModelProperties() {
+    return this.to('ListAssetModelProperties');
+  }
+
+  /**
    * Grants permission to list all asset models
    *
    * Access Level: List
@@ -557,6 +568,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListAssetModels() {
     return this.to('ListAssetModels');
+  }
+
+  /**
+   * Grants permission to list asset properties
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetProperties.html
+   */
+  public toListAssetProperties() {
+    return this.to('ListAssetProperties');
   }
 
   /**
@@ -918,7 +940,9 @@ export class Iotsitewise extends PolicyStatement {
     ],
     List: [
       'ListAccessPolicies',
+      'ListAssetModelProperties',
       'ListAssetModels',
+      'ListAssetProperties',
       'ListAssetRelationships',
       'ListAssets',
       'ListAssociatedAssets',

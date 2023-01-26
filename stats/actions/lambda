@@ -31,6 +31,7 @@ lambda:GetLayerVersion;Read
 lambda:GetLayerVersionPolicy;Read
 lambda:GetPolicy;Read
 lambda:GetProvisionedConcurrencyConfig;Read
+lambda:GetRuntimeManagementConfig;Read
 lambda:InvokeAsync;Write
 lambda:InvokeFunction;Write
 lambda:InvokeFunctionUrl;Write
@@ -52,6 +53,7 @@ lambda:PutFunctionCodeSigningConfig;Write
 lambda:PutFunctionConcurrency;Write
 lambda:PutFunctionEventInvokeConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
+lambda:PutRuntimeManagementConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management
 lambda:RemovePermission;Permissions management
 lambda:TagResource;Tagging

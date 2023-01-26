@@ -11,6 +11,7 @@ organizations:DeclineHandshake;Write
 organizations:DeleteOrganization;Write
 organizations:DeleteOrganizationalUnit;Write
 organizations:DeletePolicy;Write
+organizations:DeleteResourcePolicy;Write
 organizations:DeregisterDelegatedAdministrator;Write
 organizations:DescribeAccount;Read
 organizations:DescribeCreateAccountStatus;Read
@@ -19,6 +20,7 @@ organizations:DescribeHandshake;Read
 organizations:DescribeOrganization;Read
 organizations:DescribeOrganizationalUnit;Read
 organizations:DescribePolicy;Read
+organizations:DescribeResourcePolicy;Read
 organizations:DetachPolicy;Write
 organizations:DisableAWSServiceAccess;Write
 organizations:DisablePolicyType;Write
@@ -44,6 +46,7 @@ organizations:ListRoots;List
 organizations:ListTagsForResource;List
 organizations:ListTargetsForPolicy;List
 organizations:MoveAccount;Write
+organizations:PutResourcePolicy;Write
 organizations:RegisterDelegatedAdministrator;Write
 organizations:RemoveAccountFromOrganization;Write
 organizations:TagResource;Tagging

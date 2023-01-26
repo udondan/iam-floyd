@@ -43,7 +43,9 @@ iotsitewise:GetAssetPropertyValue;Read
 iotsitewise:GetAssetPropertyValueHistory;Read
 iotsitewise:GetInterpolatedAssetPropertyValues;Read
 iotsitewise:ListAccessPolicies;List
+iotsitewise:ListAssetModelProperties;List
 iotsitewise:ListAssetModels;List
+iotsitewise:ListAssetProperties;List
 iotsitewise:ListAssetRelationships;List
 iotsitewise:ListAssets;List
 iotsitewise:ListAssociatedAssets;List
