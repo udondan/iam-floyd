@@ -4,4 +4,5 @@ organizations:handshake
 organizations:organization
 organizations:organizationalunit
 organizations:policy
+organizations:resourcepolicy
 organizations:root

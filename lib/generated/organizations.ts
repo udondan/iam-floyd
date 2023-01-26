@@ -191,6 +191,17 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource policy from your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
@@ -285,6 +296,17 @@ export class Organizations extends PolicyStatement {
    */
   public toDescribePolicy() {
     return this.to('DescribePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve information about a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResourcePolicy.html
+   */
+  public toDescribeResourcePolicy() {
+    return this.to('DescribeResourcePolicy');
   }
 
   /**
@@ -594,6 +616,21 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update a resource policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
@@ -687,6 +724,7 @@ export class Organizations extends PolicyStatement {
       'DeleteOrganization',
       'DeleteOrganizationalUnit',
       'DeletePolicy',
+      'DeleteResourcePolicy',
       'DeregisterDelegatedAdministrator',
       'DetachPolicy',
       'DisableAWSServiceAccess',
@@ -697,6 +735,7 @@ export class Organizations extends PolicyStatement {
       'InviteAccountToOrganization',
       'LeaveOrganization',
       'MoveAccount',
+      'PutResourcePolicy',
       'RegisterDelegatedAdministrator',
       'RemoveAccountFromOrganization',
       'UpdateOrganizationalUnit',
@@ -709,7 +748,8 @@ export class Organizations extends PolicyStatement {
       'DescribeHandshake',
       'DescribeOrganization',
       'DescribeOrganizationalUnit',
-      'DescribePolicy'
+      'DescribePolicy',
+      'DescribeResourcePolicy'
     ],
     List: [
       'ListAWSServiceAccessForOrganization',
@@ -813,6 +853,23 @@ export class Organizations extends PolicyStatement {
    */
   public onPolicy(organizationId: string, policyType: string, policyId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
+  }
+
+  /**
+   * Adds a resource of type resourcepolicy to the statement
+   *
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   *
+   * @param organizationId - Identifier for the organizationId.
+   * @param resourcePolicyId - Identifier for the resourcePolicyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResourcepolicy(organizationId: string, resourcePolicyId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:resourcepolicy/o-${ organizationId }/rp-${ resourcePolicyId }`);
   }
 
   /**

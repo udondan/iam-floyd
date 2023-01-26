@@ -239,6 +239,8 @@ export class Lambda extends PolicyStatement {
    * Grants permission to disable replication for a Lambda@Edge function
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
    */
   public toDisableReplication() {
     return this.to('DisableReplication');
@@ -248,6 +250,8 @@ export class Lambda extends PolicyStatement {
    * Grants permission to enable replication for a Lambda@Edge function
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
    */
   public toEnableReplication() {
     return this.to('EnableReplication');
@@ -412,6 +416,17 @@ export class Lambda extends PolicyStatement {
    */
   public toGetProvisionedConcurrencyConfig() {
     return this.to('GetProvisionedConcurrencyConfig');
+  }
+
+  /**
+   * Grants permission to view the runtime management configuration of an AWS Lambda function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetRuntimeManagementConfig.html
+   */
+  public toGetRuntimeManagementConfig() {
+    return this.to('GetRuntimeManagementConfig');
   }
 
   /**
@@ -656,6 +671,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the runtime management configuration of an AWS Lambda function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_PutRuntimeManagementConfig.html
+   */
+  public toPutRuntimeManagementConfig() {
+    return this.to('PutRuntimeManagementConfig');
+  }
+
+  /**
    * Grants permission to remove a statement from the permissions policy for a version of an AWS Lambda layer
    *
    * Access Level: Permissions management
@@ -845,6 +871,7 @@ export class Lambda extends PolicyStatement {
       'PutFunctionConcurrency',
       'PutFunctionEventInvokeConfig',
       'PutProvisionedConcurrencyConfig',
+      'PutRuntimeManagementConfig',
       'UpdateAlias',
       'UpdateCodeSigningConfig',
       'UpdateEventSourceMapping',
@@ -869,6 +896,7 @@ export class Lambda extends PolicyStatement {
       'GetLayerVersionPolicy',
       'GetPolicy',
       'GetProvisionedConcurrencyConfig',
+      'GetRuntimeManagementConfig',
       'ListTags'
     ],
     List: [
