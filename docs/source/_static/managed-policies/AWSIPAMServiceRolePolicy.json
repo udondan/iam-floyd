@@ -10,6 +10,8 @@
 				"ec2:DescribePublicIpv4Pools",
 				"ec2:DescribeSubnets",
 				"ec2:DescribeVpcs",
+				"ec2:GetIpamDiscoveredResourceCidrs",
+				"ec2:GetIpamDiscoveredAccounts",
 				"organizations:DescribeAccount",
 				"organizations:DescribeOrganization",
 				"organizations:ListAccounts",
