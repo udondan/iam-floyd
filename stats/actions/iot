@@ -171,6 +171,7 @@ iot:ListPrincipalPolicies;List
 iot:ListPrincipalThings;List
 iot:ListProvisioningTemplateVersions;List
 iot:ListProvisioningTemplates;List
+iot:ListRelatedResourcesForAuditFinding;List
 iot:ListRetainedMessages;List
 iot:ListRoleAliases;List
 iot:ListScheduledAudits;List

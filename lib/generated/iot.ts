@@ -2012,6 +2012,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list related resources for a single audit finding
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListRelatedResourcesForAuditFinding.html
+   */
+  public toListRelatedResourcesForAuditFinding() {
+    return this.to('ListRelatedResourcesForAuditFinding');
+  }
+
+  /**
    * Grants permission to list the retained messages for your account
    *
    * Access Level: List
@@ -3162,6 +3173,7 @@ export class Iot extends PolicyStatement {
       'ListPrincipalThings',
       'ListProvisioningTemplateVersions',
       'ListProvisioningTemplates',
+      'ListRelatedResourcesForAuditFinding',
       'ListRetainedMessages',
       'ListRoleAliases',
       'ListScheduledAudits',

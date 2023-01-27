@@ -1989,6 +1989,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html
    */
   public toStartChatContact() {
@@ -3480,6 +3483,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
+   * - .toStartChatContact()
    * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartTaskContact()
    * - .toStopContact()
