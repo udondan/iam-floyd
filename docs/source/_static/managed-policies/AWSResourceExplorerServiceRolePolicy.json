@@ -99,6 +99,15 @@
 				"elasticloadbalancing:DescribeLoadBalancers",
 				"elasticloadbalancing:DescribeRules",
 				"elasticloadbalancing:DescribeTargetGroups",
+				"elasticache:DescribeCacheClusters",
+				"elasticache:DescribeGlobalReplicationGroups",
+				"elasticache:DescribeCacheParameterGroups",
+				"elasticache:DescribeReplicationGroups",
+				"elasticache:DescribeReservedCacheNodes",
+				"elasticache:DescribeSnapshots",
+				"elasticache:DescribeCacheSubnetGroups",
+				"elasticache:DescribeUsers",
+				"elasticache:DescribeUserGroups",
 				"es:ListDomainNames",
 				"iam:ListGroups",
 				"iam:ListInstanceProfiles",
@@ -110,6 +119,8 @@
 				"iam:ListUsers",
 				"kinesis:ListStreamConsumers",
 				"kinesis:ListStreams",
+				"lambda:ListCodeSigningConfigs",
+				"lambda:ListEventSourceMappings",
 				"lambda:ListFunctions",
 				"logs:DescribeDestinations",
 				"logs:DescribeLogGroups",
@@ -157,7 +168,8 @@
 				"ssm:DescribeParameters",
 				"ssm:DescribePatchBaselines",
 				"ssm:ListAssociations",
-				"ssm:ListDocuments"
+				"ssm:ListDocuments",
+				"sqs:ListQueues"
 			],
 			"Resource": [
 				"*"
