@@ -5,3 +5,4 @@ dynamodb:LeadingKeys
 dynamodb:ReturnConsumedCapacity
 dynamodb:ReturnValues
 dynamodb:Select
+dynamodb:TagKeys

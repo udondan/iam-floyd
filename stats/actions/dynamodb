@@ -12,6 +12,7 @@ dynamodb:DeleteTableReplica;Write
 dynamodb:DescribeBackup;Read
 dynamodb:DescribeContinuousBackups;Read
 dynamodb:DescribeContributorInsights;Read
+dynamodb:DescribeEndpoints;Read
 dynamodb:DescribeExport;Read
 dynamodb:DescribeGlobalTable;Read
 dynamodb:DescribeGlobalTableSettings;Read
@@ -57,6 +58,7 @@ dynamodb:UpdateContinuousBackups;Write
 dynamodb:UpdateContributorInsights;Write
 dynamodb:UpdateGlobalTable;Write
 dynamodb:UpdateGlobalTableSettings;Write
+dynamodb:UpdateGlobalTableVersion;Write
 dynamodb:UpdateItem;Write
 dynamodb:UpdateTable;Write
 dynamodb:UpdateTableReplicaAutoScaling;Write

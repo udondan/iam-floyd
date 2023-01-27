@@ -62,7 +62,7 @@ export class Dynamodb extends PolicyStatement {
    * - .ifReturnConsumedCapacity()
    * - .ifReturnValues()
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheck.html
    */
   public toConditionCheckItem() {
     return this.to('ConditionCheckItem');
@@ -106,7 +106,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
    */
   public toCreateTableReplica() {
     return this.to('CreateTableReplica');
@@ -157,7 +157,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
    */
   public toDeleteTableReplica() {
     return this.to('DeleteTableReplica');
@@ -194,6 +194,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public toDescribeContributorInsights() {
     return this.to('DescribeContributorInsights');
+  }
+
+  /**
+   * Grants permission to return the regional endpoint information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeEndpoints.html
+   */
+  public toDescribeEndpoints() {
+    return this.to('DescribeEndpoints');
   }
 
   /**
@@ -266,6 +277,8 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to describe one or more of the Reserved Capacity purchased
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
    */
   public toDescribeReservedCapacity() {
     return this.to('DescribeReservedCapacity');
@@ -275,6 +288,8 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to describe Reserved Capacity offerings that are available for purchase
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
    */
   public toDescribeReservedCapacityOfferings() {
     return this.to('DescribeReservedCapacityOfferings');
@@ -285,7 +300,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeStream.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_DescribeStream.html
    */
   public toDescribeStream() {
     return this.to('DescribeStream');
@@ -380,7 +395,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetRecords.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetRecords.html
    */
   public toGetRecords() {
     return this.to('GetRecords');
@@ -391,7 +406,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetShardIterator.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html
    */
   public toGetShardIterator() {
     return this.to('GetShardIterator');
@@ -468,7 +483,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListStreams.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_ListStreams.html
    */
   public toListStreams() {
     return this.to('ListStreams');
@@ -568,6 +583,8 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to purchases reserved capacity for use with your account
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
    */
   public toPurchaseReservedCapacityOfferings() {
     return this.to('PurchaseReservedCapacityOfferings');
@@ -614,7 +631,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromAwsBackup.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
    */
   public toRestoreTableFromAwsBackup() {
     return this.to('RestoreTableFromAwsBackup');
@@ -664,7 +681,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StartAwsBackupJob.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
    */
   public toStartAwsBackupJob() {
     return this.to('StartAwsBackupJob');
@@ -674,6 +691,9 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to associate a set of tags with an Amazon DynamoDB resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html
    */
@@ -685,6 +705,9 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to remove the association of tags from an Amazon DynamoDB resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html
    */
@@ -734,6 +757,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public toUpdateGlobalTableSettings() {
     return this.to('UpdateGlobalTableSettings');
+  }
+
+  /**
+   * Grants permission to update version of the specified global table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html
+   */
+  public toUpdateGlobalTableVersion() {
+    return this.to('UpdateGlobalTableVersion');
   }
 
   /**
@@ -794,6 +828,7 @@ export class Dynamodb extends PolicyStatement {
       'DescribeBackup',
       'DescribeContinuousBackups',
       'DescribeContributorInsights',
+      'DescribeEndpoints',
       'DescribeExport',
       'DescribeGlobalTable',
       'DescribeGlobalTableSettings',
@@ -842,6 +877,7 @@ export class Dynamodb extends PolicyStatement {
       'UpdateContributorInsights',
       'UpdateGlobalTable',
       'UpdateGlobalTableSettings',
+      'UpdateGlobalTableVersion',
       'UpdateItem',
       'UpdateTable',
       'UpdateTableReplicaAutoScaling',
@@ -864,7 +900,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type index to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey
    *
    * @param tableName - Identifier for the tableName.
    * @param indexName - Identifier for the indexName.
@@ -879,7 +915,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type stream to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams
    *
    * @param tableName - Identifier for the tableName.
    * @param streamLabel - Identifier for the streamLabel.
@@ -894,7 +930,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type table to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes
    *
    * @param tableName - Identifier for the tableName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -951,7 +987,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type import to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlS3DataImport.HowItWorks.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataImport.HowItWorks.html
    *
    * @param tableName - Identifier for the tableName.
    * @param importName - Identifier for the importName.
@@ -964,7 +1000,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the attribute (field or column) names of the table
+   * Filters access by attribute (field or column) names of the table
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -991,7 +1027,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa
+   * Filters access by blocking Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1013,7 +1049,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Used to block full table scan
+   * Filters access by blocking full table scan
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html
    *
@@ -1027,7 +1063,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filters based on the partition key of the table
+   * Filters access by the partition key of the table
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1053,7 +1089,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE"
+   * Filters access by the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE"
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1076,7 +1112,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the ReturnValues parameter of request. Contains one of the following: "ALL_OLD", "UPDATED_OLD","ALL_NEW","UPDATED_NEW", or "NONE"
+   * Filters access by the ReturnValues parameter of request. Contains one of the following: "ALL_OLD", "UPDATED_OLD","ALL_NEW","UPDATED_NEW", or "NONE"
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1098,7 +1134,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the Select parameter of a Query or Scan request
+   * Filters access by the Select parameter of a Query or Scan request
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
