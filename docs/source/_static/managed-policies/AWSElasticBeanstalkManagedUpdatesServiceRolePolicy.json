@@ -73,6 +73,7 @@
 				"autoscaling:AttachInstances",
 				"autoscaling:CreateAutoScalingGroup",
 				"autoscaling:CreateLaunchConfiguration",
+				"autoscaling:CreateOrUpdateTags",
 				"autoscaling:DeleteAutoScalingGroup",
 				"autoscaling:DeleteLaunchConfiguration",
 				"autoscaling:DeleteScheduledAction",
