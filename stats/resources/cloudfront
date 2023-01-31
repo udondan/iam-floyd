@@ -1,4 +1,5 @@
 cloudfront:cache-policy
+cloudfront:continuous-deployment-policy
 cloudfront:distribution
 cloudfront:field-level-encryption-config
 cloudfront:field-level-encryption-profile

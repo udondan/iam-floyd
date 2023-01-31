@@ -104,6 +104,17 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackage.html
+   */
+  public toDeletePackage() {
+    return this.to('DeletePackage');
+  }
+
+  /**
    * Grants permission to delete package versions
    *
    * Access Level: Write
@@ -481,6 +492,7 @@ export class Codeartifact extends PolicyStatement {
       'CreateDomain',
       'CreateRepository',
       'DeleteDomain',
+      'DeletePackage',
       'DeletePackageVersions',
       'DeleteRepository',
       'DisassociateExternalConnection',
