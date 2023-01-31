@@ -30,6 +30,21 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to copy an existing distribution and create a new web distribution
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudfront:CreateDistribution
+   * - cloudfront:GetDistribution
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html
+   */
+  public toCopyDistribution() {
+    return this.to('CopyDistribution');
+  }
+
+  /**
    * Grants permission to add a new cache policy to CloudFront
    *
    * Access Level: Write
@@ -49,6 +64,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreateCloudFrontOriginAccessIdentity() {
     return this.to('CreateCloudFrontOriginAccessIdentity');
+  }
+
+  /**
+   * Grants permission to add a new continuous-deployment policy to CloudFront
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateContinuousDeploymentPolicy.html
+   */
+  public toCreateContinuousDeploymentPolicy() {
+    return this.to('CreateContinuousDeploymentPolicy');
   }
 
   /**
@@ -243,6 +269,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a continuous-deployment policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteContinuousDeploymentPolicy.html
+   */
+  public toDeleteContinuousDeploymentPolicy() {
+    return this.to('DeleteContinuousDeploymentPolicy');
+  }
+
+  /**
    * Grants permission to delete a web distribution
    *
    * Access Level: Write
@@ -427,6 +464,28 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetCloudFrontOriginAccessIdentityConfig() {
     return this.to('GetCloudFrontOriginAccessIdentityConfig');
+  }
+
+  /**
+   * Grants permission to get the continuous-deployment policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetContinuousDeploymentPolicy.html
+   */
+  public toGetContinuousDeploymentPolicy() {
+    return this.to('GetContinuousDeploymentPolicy');
+  }
+
+  /**
+   * Grants permission to get the continuous-deployment policy configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetContinuousDeploymentPolicyConfig.html
+   */
+  public toGetContinuousDeploymentPolicyConfig() {
+    return this.to('GetContinuousDeploymentPolicyConfig');
   }
 
   /**
@@ -713,6 +772,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListConflictingAliases() {
     return this.to('ListConflictingAliases');
+  }
+
+  /**
+   * Grants permission to list all continuous-deployment policies in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListContinuousDeploymentPolicies.html
+   */
+  public toListContinuousDeploymentPolicies() {
+    return this.to('ListContinuousDeploymentPolicies');
   }
 
   /**
@@ -1042,6 +1112,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a continuous-deployment policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateContinuousDeploymentPolicy.html
+   */
+  public toUpdateContinuousDeploymentPolicy() {
+    return this.to('UpdateContinuousDeploymentPolicy');
+  }
+
+  /**
    * Grants permission to update the configuration for a web distribution
    *
    * Access Level: Write
@@ -1050,6 +1131,21 @@ export class Cloudfront extends PolicyStatement {
    */
   public toUpdateDistribution() {
     return this.to('UpdateDistribution');
+  }
+
+  /**
+   * Grants permission to copy the staging distribution's configuration to its corresponding primary distribution
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudfront:GetDistribution
+   * - cloudfront:UpdateDistribution
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionWithStagingConfig.html
+   */
+  public toUpdateDistributionWithStagingConfig() {
+    return this.to('UpdateDistributionWithStagingConfig');
   }
 
   /**
@@ -1176,8 +1272,10 @@ export class Cloudfront extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAlias',
+      'CopyDistribution',
       'CreateCachePolicy',
       'CreateCloudFrontOriginAccessIdentity',
+      'CreateContinuousDeploymentPolicy',
       'CreateDistribution',
       'CreateFieldLevelEncryptionConfig',
       'CreateFieldLevelEncryptionProfile',
@@ -1195,6 +1293,7 @@ export class Cloudfront extends PolicyStatement {
       'CreateStreamingDistributionWithTags',
       'DeleteCachePolicy',
       'DeleteCloudFrontOriginAccessIdentity',
+      'DeleteContinuousDeploymentPolicy',
       'DeleteDistribution',
       'DeleteFieldLevelEncryptionConfig',
       'DeleteFieldLevelEncryptionProfile',
@@ -1211,7 +1310,9 @@ export class Cloudfront extends PolicyStatement {
       'TestFunction',
       'UpdateCachePolicy',
       'UpdateCloudFrontOriginAccessIdentity',
+      'UpdateContinuousDeploymentPolicy',
       'UpdateDistribution',
+      'UpdateDistributionWithStagingConfig',
       'UpdateFieldLevelEncryptionConfig',
       'UpdateFieldLevelEncryptionProfile',
       'UpdateFunction',
@@ -1230,6 +1331,8 @@ export class Cloudfront extends PolicyStatement {
       'GetCachePolicyConfig',
       'GetCloudFrontOriginAccessIdentity',
       'GetCloudFrontOriginAccessIdentityConfig',
+      'GetContinuousDeploymentPolicy',
+      'GetContinuousDeploymentPolicyConfig',
       'GetDistribution',
       'GetDistributionConfig',
       'GetFieldLevelEncryption',
@@ -1259,6 +1362,7 @@ export class Cloudfront extends PolicyStatement {
       'ListCachePolicies',
       'ListCloudFrontOriginAccessIdentities',
       'ListConflictingAliases',
+      'ListContinuousDeploymentPolicies',
       'ListDistributions',
       'ListDistributionsByCachePolicyId',
       'ListDistributionsByKeyGroup',
@@ -1435,5 +1539,18 @@ export class Cloudfront extends PolicyStatement {
    */
   public onOriginAccessControl(id: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:origin-access-control/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type continuous-deployment-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onContinuousDeploymentPolicy(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:continuous-deployment-policy/${ id }`);
   }
 }

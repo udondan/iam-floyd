@@ -5,6 +5,7 @@ codeartifact:CreateDomain;Write
 codeartifact:CreateRepository;Write
 codeartifact:DeleteDomain;Write
 codeartifact:DeleteDomainPermissionsPolicy;Permissions management
+codeartifact:DeletePackage;Write
 codeartifact:DeletePackageVersions;Write
 codeartifact:DeleteRepository;Write
 codeartifact:DeleteRepositoryPermissionsPolicy;Permissions management
