@@ -48,7 +48,8 @@
 				"lex:ListSlots",
 				"lex:ListSlotTypes",
 				"lex:ListTagsForResource",
-				"lex:SearchAssociatedTranscripts"
+				"lex:SearchAssociatedTranscripts",
+				"lex:ListCustomVocabularyItems"
 			],
 			"Resource": "*"
 		}
