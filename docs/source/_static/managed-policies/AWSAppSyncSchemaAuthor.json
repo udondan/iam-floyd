@@ -32,7 +32,8 @@
 				"appsync:DeleteFunction",
 				"appsync:ListFunctions",
 				"appsync:ListResolversByFunction",
-				"appsync:EvaluateMappingTemplate"
+				"appsync:EvaluateMappingTemplate",
+				"appsync:EvaluateCode"
 			],
 			"Resource": "*"
 		}
