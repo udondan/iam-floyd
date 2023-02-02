@@ -23,7 +23,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DescribeEntitiesDetectionV2Job.html
    */
   public toDescribeEntitiesDetectionV2Job() {
     return this.to('DescribeEntitiesDetectionV2Job');
@@ -34,7 +34,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DescribeICD10CMInferenceJob.html
    */
   public toDescribeICD10CMInferenceJob() {
     return this.to('DescribeICD10CMInferenceJob');
@@ -45,7 +45,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribePHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DescribePHIDetectionJob.html
    */
   public toDescribePHIDetectionJob() {
     return this.to('DescribePHIDetectionJob');
@@ -56,7 +56,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DescribeRxNormInferenceJob.html
    */
   public toDescribeRxNormInferenceJob() {
     return this.to('DescribeRxNormInferenceJob');
@@ -67,7 +67,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DescribeSNOMEDCTInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DescribeSNOMEDCTInferenceJob.html
    */
   public toDescribeSNOMEDCTInferenceJob() {
     return this.to('DescribeSNOMEDCTInferenceJob');
@@ -78,7 +78,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DetectEntitiesV2.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DetectEntitiesV2.html
    */
   public toDetectEntitiesV2() {
     return this.to('DetectEntitiesV2');
@@ -89,7 +89,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_DetectPHI.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_DetectPHI.html
    */
   public toDetectPHI() {
     return this.to('DetectPHI');
@@ -100,7 +100,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferICD10CM.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_InferICD10CM.html
    */
   public toInferICD10CM() {
     return this.to('InferICD10CM');
@@ -111,7 +111,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferRxNorm.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_InferRxNorm.html
    */
   public toInferRxNorm() {
     return this.to('InferRxNorm');
@@ -122,7 +122,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_InferSNOMEDCT.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_InferSNOMEDCT.html
    */
   public toInferSNOMEDCT() {
     return this.to('InferSNOMEDCT');
@@ -133,7 +133,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListEntitiesDetectionV2Jobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_ListEntitiesDetectionV2Jobs.html
    */
   public toListEntitiesDetectionV2Jobs() {
     return this.to('ListEntitiesDetectionV2Jobs');
@@ -144,7 +144,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListICD10CMInferenceJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_ListICD10CMInferenceJobs.html
    */
   public toListICD10CMInferenceJobs() {
     return this.to('ListICD10CMInferenceJobs');
@@ -155,7 +155,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListPHIDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_ListPHIDetectionJobs.html
    */
   public toListPHIDetectionJobs() {
     return this.to('ListPHIDetectionJobs');
@@ -166,7 +166,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListRxNormInferenceJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_ListRxNormInferenceJobs.html
    */
   public toListRxNormInferenceJobs() {
     return this.to('ListRxNormInferenceJobs');
@@ -177,7 +177,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_ListSNOMEDCTInferenceJobs.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_ListSNOMEDCTInferenceJobs.html
    */
   public toListSNOMEDCTInferenceJobs() {
     return this.to('ListSNOMEDCTInferenceJobs');
@@ -188,7 +188,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StartEntitiesDetectionV2Job.html
    */
   public toStartEntitiesDetectionV2Job() {
     return this.to('StartEntitiesDetectionV2Job');
@@ -199,7 +199,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StartICD10CMInferenceJob.html
    */
   public toStartICD10CMInferenceJob() {
     return this.to('StartICD10CMInferenceJob');
@@ -210,7 +210,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartPHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StartPHIDetectionJob.html
    */
   public toStartPHIDetectionJob() {
     return this.to('StartPHIDetectionJob');
@@ -221,7 +221,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StartRxNormInferenceJob.html
    */
   public toStartRxNormInferenceJob() {
     return this.to('StartRxNormInferenceJob');
@@ -232,7 +232,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StartSNOMEDCTInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StartSNOMEDCTInferenceJob.html
    */
   public toStartSNOMEDCTInferenceJob() {
     return this.to('StartSNOMEDCTInferenceJob');
@@ -243,7 +243,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopEntitiesDetectionV2Job.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StopEntitiesDetectionV2Job.html
    */
   public toStopEntitiesDetectionV2Job() {
     return this.to('StopEntitiesDetectionV2Job');
@@ -254,7 +254,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopICD10CMInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StopICD10CMInferenceJob.html
    */
   public toStopICD10CMInferenceJob() {
     return this.to('StopICD10CMInferenceJob');
@@ -265,7 +265,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopPHIDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StopPHIDetectionJob.html
    */
   public toStopPHIDetectionJob() {
     return this.to('StopPHIDetectionJob');
@@ -276,7 +276,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopRxNormInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StopRxNormInferenceJob.html
    */
   public toStopRxNormInferenceJob() {
     return this.to('StopRxNormInferenceJob');
@@ -287,7 +287,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend-medical/latest/dev/API_medical_StopSNOMEDCTInferenceJob.html
+   * https://docs.aws.amazon.com/comprehend-medical/latest/api/API_StopSNOMEDCTInferenceJob.html
    */
   public toStopSNOMEDCTInferenceJob() {
     return this.to('StopSNOMEDCTInferenceJob');

@@ -5,6 +5,7 @@ grafana:DeleteWorkspace;Write
 grafana:DeleteWorkspaceApiKey;Write
 grafana:DescribeWorkspace;Read
 grafana:DescribeWorkspaceAuthentication;Read
+grafana:DescribeWorkspaceConfiguration;Read
 grafana:DisassociateLicense;Write
 grafana:ListPermissions;List
 grafana:ListTagsForResource;Read
@@ -14,3 +15,4 @@ grafana:UntagResource;Tagging
 grafana:UpdatePermissions;Permissions management
 grafana:UpdateWorkspace;Write
 grafana:UpdateWorkspaceAuthentication;Write
+grafana:UpdateWorkspaceConfiguration;Write

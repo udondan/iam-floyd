@@ -115,6 +115,17 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the current configuration string for the given workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspaceConfiguration.html
+   */
+  public toDescribeWorkspaceConfiguration() {
+    return this.to('DescribeWorkspaceConfiguration');
+  }
+
+  /**
    * Grants permission to remove a license from a workspace
    *
    * Access Level: Write
@@ -226,6 +237,17 @@ export class Grafana extends PolicyStatement {
     return this.to('UpdateWorkspaceAuthentication');
   }
 
+  /**
+   * Grants permission to update the configuration string for the given workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceConfiguration.html
+   */
+  public toUpdateWorkspaceConfiguration() {
+    return this.to('UpdateWorkspaceConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateLicense',
@@ -235,11 +257,13 @@ export class Grafana extends PolicyStatement {
       'DeleteWorkspaceApiKey',
       'DisassociateLicense',
       'UpdateWorkspace',
-      'UpdateWorkspaceAuthentication'
+      'UpdateWorkspaceAuthentication',
+      'UpdateWorkspaceConfiguration'
     ],
     Read: [
       'DescribeWorkspace',
       'DescribeWorkspaceAuthentication',
+      'DescribeWorkspaceConfiguration',
       'ListTagsForResource',
       'ListWorkspaces'
     ],
