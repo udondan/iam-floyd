@@ -99,6 +99,7 @@
 				"sqlworkbench:AssociateConnectionWithTab",
 				"sqlworkbench:AssociateQueryWithTab",
 				"sqlworkbench:AssociateConnectionWithChart",
+				"sqlworkbench:AssociateNotebookWithTab",
 				"sqlworkbench:UpdateFileFolder",
 				"sqlworkbench:ListTagsForResource",
 				"sqlworkbench:GetNotebook",
