@@ -11,6 +11,7 @@
 				"autoscaling:PutLifecycleHook",
 				"autoscaling:RecordLifecycleActionHeartbeat",
 				"autoscaling:CreateAutoScalingGroup",
+				"autoscaling:CreateOrUpdateTags",
 				"autoscaling:UpdateAutoScalingGroup",
 				"autoscaling:EnableMetricsCollection",
 				"autoscaling:DescribePolicies",
