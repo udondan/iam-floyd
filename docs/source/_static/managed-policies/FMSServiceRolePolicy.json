@@ -99,8 +99,6 @@
 			"Action": [
 				"config:DeleteConfigRule",
 				"config:DescribeComplianceByConfigRule",
-				"config:DescribeConfigRuleEvaluationStatus",
-				"config:DescribeConfigRules",
 				"config:GetComplianceDetailsByConfigRule",
 				"config:PutConfigRule",
 				"config:StartConfigRulesEvaluation"
@@ -139,6 +137,8 @@
 			"Action": [
 				"organizations:DescribeAccount",
 				"organizations:DescribeOrganization",
+				"config:DescribeConfigRuleEvaluationStatus",
+				"config:DescribeConfigRules",
 				"organizations:ListAccounts",
 				"organizations:DescribeOrganizationalUnit",
 				"organizations:ListChildren",
