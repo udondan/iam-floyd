@@ -146,7 +146,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator
+   * Grants permission to return the AWS Organizations account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator
    *
    * Access Level: Read
    *

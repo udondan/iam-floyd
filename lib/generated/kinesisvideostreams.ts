@@ -115,6 +115,28 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the resource mapped to the Kinesis video stream
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeMappedResourceConfiguration.html
+   */
+  public toDescribeMappedResourceConfiguration() {
+    return this.to('DescribeMappedResourceConfiguration');
+  }
+
+  /**
+   * Grants permission to describe the media storage configuration of a signaling channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeMediaStorageConfiguration.html
+   */
+  public toDescribeMediaStorageConfiguration() {
+    return this.to('DescribeMediaStorageConfiguration');
+  }
+
+  /**
    * Grants permission to describe the notification configuration of your Kinesis video stream
    *
    * Access Level: Read
@@ -244,6 +266,17 @@ export class Kinesisvideo extends PolicyStatement {
    */
   public toGetSignalingChannelEndpoint() {
     return this.to('GetSignalingChannelEndpoint');
+  }
+
+  /**
+   * Grants permission to join a storage session for a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuityRoutingServiceLambda_JoinStorageSession.html
+   */
+  public toJoinStorageSession() {
+    return this.to('JoinStorageSession');
   }
 
   /**
@@ -415,6 +448,17 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update an mapping between a signaling channel and stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateMediaStorageConfiguration.html
+   */
+  public toUpdateMediaStorageConfiguration() {
+    return this.to('UpdateMediaStorageConfiguration');
+  }
+
+  /**
    * Grants permission to update the notification configuration of your Kinesis video stream
    *
    * Access Level: Write
@@ -455,11 +499,13 @@ export class Kinesisvideo extends PolicyStatement {
       'CreateStream',
       'DeleteSignalingChannel',
       'DeleteStream',
+      'JoinStorageSession',
       'PutMedia',
       'SendAlexaOfferToMaster',
       'StartEdgeConfigurationUpdate',
       'UpdateDataRetention',
       'UpdateImageGenerationConfiguration',
+      'UpdateMediaStorageConfiguration',
       'UpdateNotificationConfiguration',
       'UpdateSignalingChannel',
       'UpdateStream'
@@ -467,6 +513,7 @@ export class Kinesisvideo extends PolicyStatement {
     Read: [
       'DescribeEdgeConfiguration',
       'DescribeImageGenerationConfiguration',
+      'DescribeMediaStorageConfiguration',
       'DescribeNotificationConfiguration',
       'GetClip',
       'GetDASHStreamingSessionURL',
@@ -481,6 +528,7 @@ export class Kinesisvideo extends PolicyStatement {
       'ListTagsForStream'
     ],
     List: [
+      'DescribeMappedResourceConfiguration',
       'DescribeSignalingChannel',
       'DescribeStream',
       'ListFragments',
