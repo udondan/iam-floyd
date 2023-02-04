@@ -6,6 +6,8 @@ kinesisvideo:DeleteSignalingChannel;Write
 kinesisvideo:DeleteStream;Write
 kinesisvideo:DescribeEdgeConfiguration;Read
 kinesisvideo:DescribeImageGenerationConfiguration;Read
+kinesisvideo:DescribeMappedResourceConfiguration;List
+kinesisvideo:DescribeMediaStorageConfiguration;Read
 kinesisvideo:DescribeNotificationConfiguration;Read
 kinesisvideo:DescribeSignalingChannel;List
 kinesisvideo:DescribeStream;List
@@ -18,6 +20,7 @@ kinesisvideo:GetImages;Read
 kinesisvideo:GetMedia;Read
 kinesisvideo:GetMediaForFragmentList;Read
 kinesisvideo:GetSignalingChannelEndpoint;Read
+kinesisvideo:JoinStorageSession;Write
 kinesisvideo:ListFragments;List
 kinesisvideo:ListSignalingChannels;List
 kinesisvideo:ListStreams;List
@@ -32,6 +35,7 @@ kinesisvideo:UntagResource;Tagging
 kinesisvideo:UntagStream;Tagging
 kinesisvideo:UpdateDataRetention;Write
 kinesisvideo:UpdateImageGenerationConfiguration;Write
+kinesisvideo:UpdateMediaStorageConfiguration;Write
 kinesisvideo:UpdateNotificationConfiguration;Write
 kinesisvideo:UpdateSignalingChannel;Write
 kinesisvideo:UpdateStream;Write

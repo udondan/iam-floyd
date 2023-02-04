@@ -201,6 +201,7 @@ export { Cloudhsm } from './cloudhsm';
 export { Servicediscovery } from './cloudmap';
 export { Cloudshell } from './cloudshell';
 export { Cloudtrail } from './cloudtrail';
+export { CloudtrailData } from './cloudtraildata';
 export { Rum } from './cloudwatchrum';
 export { Codeartifact } from './codeartifact';
 export { Codebuild } from './codebuild';
