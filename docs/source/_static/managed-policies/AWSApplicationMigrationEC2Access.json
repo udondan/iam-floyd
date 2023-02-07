@@ -31,6 +31,22 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"ec2:DescribeSnapshots",
+				"ec2:DescribeImages",
+				"ec2:DescribeVolumes"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"mgn.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ec2:CreateLaunchTemplateVersion",
 				"ec2:ModifyLaunchTemplate",
 				"ec2:DeleteLaunchTemplateVersions"
