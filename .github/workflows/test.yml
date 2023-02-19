@@ -45,8 +45,10 @@ jobs:
 
       - name: DEBUG
         run: |
+          printenv
           echo "${GITHUB_REF}"
           echo "${GITHUB_REF##*/}"
+
       - name: Push changes
         run: git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
 
