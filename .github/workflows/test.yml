@@ -53,20 +53,19 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Get the version
-        id: get_version
-        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+      - name: Update package version
+        run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+
+      - name: Install dependencies
+        run: make install
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.14.0
-        with:
-          VERSION: ${{ steps.get_version.outputs.VERSION }}
-          BUILD_SOURCE: true
+        run: npm run build
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.14.0
-        with:
-          BUILD_PACKAGES: true
+        run: |
+          rm -rf dist/*
+          npm run package
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3
@@ -99,23 +98,24 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Get the version
-        id: get_version
-        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+      - name: Update package version
+        run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
 
       - name: Build CDK variant
-        run: make install cdk
+        run: |
+          make install
+          make cdk
+          cat package.json
 
       - name: Build source
-        uses: udondan/jsii-publish@v0.14.0
-        with:
-          VERSION: ${{ steps.get_version.outputs.VERSION }}
-          BUILD_SOURCE: true
+        run: |
+          npm i
+          npm run build
 
       - name: Build packages
-        uses: udondan/jsii-publish@v0.14.0
-        with:
-          BUILD_PACKAGES: true
+        run: |
+          rm -rf dist/*
+          npm run package
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3

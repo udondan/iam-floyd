@@ -63,6 +63,10 @@ function getPolicyDocument(arn: string, version: string): Promise<string> {
 function storePolicyDocument(name: string, document: string) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/${name}.json`;
   document = decodeURIComponent(document);
+
+  // formatting the document, so we do not permanently get re-formatting changes from the source
+  document = JSON.stringify(JSON.parse(document), null, 2);
+
   try {
     fs.writeFileSync(path, document);
   } catch (err: any) {
