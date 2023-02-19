@@ -43,7 +43,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
 
-      - name DEBUG
+      - name: DEBUG
         run: |
           echo "${GITHUB_REF}"
           echo "${GITHUB_REF##*/}"
