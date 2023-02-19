@@ -1,119 +1,119 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": "elasticfilesystem:CreateAccessPoint",
-			"Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
-			"Condition": {
-				"StringLike": {
-					"aws:ResourceTag/ManagedByAmazonSageMakerResource": "*",
-					"aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"elasticfilesystem:DeleteAccessPoint",
-				"elasticfilesystem:DescribeAccessPoints"
-			],
-			"Resource": "arn:aws:elasticfilesystem:*:*:access-point/*",
-			"Condition": {
-				"StringLike": {
-					"aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "elasticfilesystem:CreateFileSystem",
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"elasticfilesystem:CreateMountTarget",
-				"elasticfilesystem:DeleteFileSystem",
-				"elasticfilesystem:DeleteMountTarget"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"elasticfilesystem:DescribeFileSystems",
-				"elasticfilesystem:DescribeMountTargets"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateTags",
-			"Resource": [
-				"arn:aws:ec2:*:*:network-interface/*",
-				"arn:aws:ec2:*:*:security-group/*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateNetworkInterface",
-				"ec2:CreateSecurityGroup",
-				"ec2:DeleteNetworkInterface",
-				"ec2:DescribeDhcpOptions",
-				"ec2:DescribeNetworkInterfaces",
-				"ec2:DescribeSecurityGroups",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeVpcs",
-				"ec2:ModifyNetworkInterfaceAttribute"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:AuthorizeSecurityGroupEgress",
-				"ec2:AuthorizeSecurityGroupIngress",
-				"ec2:CreateNetworkInterfacePermission",
-				"ec2:DeleteNetworkInterfacePermission",
-				"ec2:DeleteSecurityGroup",
-				"ec2:RevokeSecurityGroupEgress",
-				"ec2:RevokeSecurityGroupIngress"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"ec2:ResourceTag/ManagedByAmazonSageMakerResource": "*"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"sso:CreateManagedApplicationInstance",
-				"sso:DeleteManagedApplicationInstance",
-				"sso:GetManagedApplicationInstance"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"sagemaker:CreateUserProfile",
-				"sagemaker:DescribeUserProfile"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:CreateAccessPoint",
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*",
+          "aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DeleteAccessPoint",
+        "elasticfilesystem:DescribeAccessPoints"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:access-point/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:CreateFileSystem",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:CreateMountTarget",
+        "elasticfilesystem:DeleteFileSystem",
+        "elasticfilesystem:DeleteMountTarget"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeMountTargets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DeleteSecurityGroup",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sso:CreateManagedApplicationInstance",
+        "sso:DeleteManagedApplicationInstance",
+        "sso:GetManagedApplicationInstance"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateUserProfile",
+        "sagemaker:DescribeUserProfile"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

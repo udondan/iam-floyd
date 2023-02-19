@@ -38,7 +38,8 @@
       "Resource": [
         "arn:aws:s3:::appstream2-36fb080bb8-*",
         "arn:aws:s3:::appstream-app-settings-*",
-        "arn:aws:s3:::appstream-logs-*"]
+        "arn:aws:s3:::appstream-logs-*"
+      ]
     }
   ]
 }

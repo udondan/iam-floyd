@@ -1,16 +1,16 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "organizations:ListAccounts",
-            "Resource": "*"
-        },
-        {
-            "Sid": "ListAWSServiceAccessForOrganization0",
-            "Effect": "Allow",
-            "Action": "organizations:ListAWSServiceAccessForOrganization",
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "organizations:ListAccounts",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListAWSServiceAccessForOrganization0",
+      "Effect": "Allow",
+      "Action": "organizations:ListAWSServiceAccessForOrganization",
+      "Resource": "*"
+    }
+  ]
 }

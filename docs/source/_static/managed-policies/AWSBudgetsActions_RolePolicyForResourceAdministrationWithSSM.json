@@ -1,36 +1,36 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstanceStatus",
-				"ec2:StartInstances",
-				"ec2:StopInstances",
-				"rds:DescribeDBInstances",
-				"rds:StartDBInstance",
-				"rds:StopDBInstance"
-			],
-			"Resource": "*",
-			"Condition": {
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"ssm.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ssm:StartAutomationExecution"
-			],
-			"Resource": [
-				"arn:aws:ssm:*:*:automation-definition/AWS-StartEC2Instance:*",
-				"arn:aws:ssm:*:*:automation-definition/AWS-StopEC2Instance:*",
-				"arn:aws:ssm:*:*:automation-definition/AWS-StartRdsInstance:*",
-				"arn:aws:ssm:*:*:automation-definition/AWS-StopRdsInstance:*"
-			]
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceStatus",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "rds:DescribeDBInstances",
+        "rds:StartDBInstance",
+        "rds:StopDBInstance"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ssm.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:automation-definition/AWS-StartEC2Instance:*",
+        "arn:aws:ssm:*:*:automation-definition/AWS-StopEC2Instance:*",
+        "arn:aws:ssm:*:*:automation-definition/AWS-StartRdsInstance:*",
+        "arn:aws:ssm:*:*:automation-definition/AWS-StopRdsInstance:*"
+      ]
+    }
+  ]
 }

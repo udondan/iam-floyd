@@ -54,18 +54,18 @@
       "Resource": "*"
     },
     {
-      "Effect":"Allow",
-      "Action":[
+      "Effect": "Allow",
+      "Action": [
         "applicationinsights:Describe*",
         "applicationinsights:List*",
         "cloudformation:ListStackResources",
         "cloudformation:DescribeStacks"
       ],
-      "Resource":"*"
+      "Resource": "*"
     },
     {
-      "Effect":"Allow",
-      "Action":[
+      "Effect": "Allow",
+      "Action": [
         "applicationinsights:CreateApplication",
         "applicationinsights:CreateComponent",
         "applicationinsights:UpdateApplication",
@@ -76,31 +76,31 @@
       "Resource": "arn:aws:applicationinsights:*:*:application/resource-group/sms-app-*"
     },
     {
-      "Effect":"Allow",
-      "Action":[
+      "Effect": "Allow",
+      "Action": [
         "resource-groups:CreateGroup",
         "resource-groups:GetGroup",
         "resource-groups:UpdateGroup",
         "resource-groups:DeleteGroup"
       ],
-      "Resource":"arn:aws:resource-groups:*:*:group/sms-app-*",
-      "Condition":{
-        "StringLike":{
-          "aws:ResourceTag/aws:cloudformation:stack-id":"arn:aws:cloudformation:*:*:stack/sms-app-*/*"
+      "Resource": "arn:aws:resource-groups:*:*:group/sms-app-*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/sms-app-*/*"
         }
       }
     },
     {
-      "Effect":"Allow",
-      "Action":[
+      "Effect": "Allow",
+      "Action": [
         "iam:CreateServiceLinkedRole"
       ],
-      "Resource":[
+      "Resource": [
         "arn:aws:iam::*:role/aws-service-role/application-insights.amazonaws.com/AWSServiceRoleForApplicationInsights"
       ],
-      "Condition":{
-        "StringEquals":{
-          "iam:AWSServiceName":"application-insights.amazonaws.com"
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "application-insights.amazonaws.com"
         }
       }
     }

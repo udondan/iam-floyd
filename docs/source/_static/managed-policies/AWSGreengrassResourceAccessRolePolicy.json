@@ -10,11 +10,11 @@
       ],
       "Effect": "Allow",
       "Resource": [
-                   "arn:aws:iot:*:*:thing/GG_*",
-                   "arn:aws:iot:*:*:thing/*-gcm",
-                   "arn:aws:iot:*:*:thing/*-gda",
-                   "arn:aws:iot:*:*:thing/*-gci"
-                  ]
+        "arn:aws:iot:*:*:thing/GG_*",
+        "arn:aws:iot:*:*:thing/*-gcm",
+        "arn:aws:iot:*:*:thing/*-gda",
+        "arn:aws:iot:*:*:thing/*-gci"
+      ]
     },
     {
       "Sid": "AllowGreengrassToDescribeThings",
@@ -49,7 +49,7 @@
       "Effect": "Allow",
       "Resource": "*"
     },
-        {
+    {
       "Sid": "AllowGreengrassToGetGreengrassSecrets",
       "Action": [
         "secretsmanager:GetSecretValue"

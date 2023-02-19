@@ -10,26 +10,28 @@
       "Effect": "Allow",
       "Resource": "*"
     },
-{
-        "Sid": "CodeStarNotificationsPowerUserAccess",
-        "Effect": "Allow",
-        "Action": [
-            "codestar-notifications:DescribeNotificationRule"
-        ],
-        "Resource": "*",
-        "Condition" : {
-            "StringLike" : {"codestar-notifications:NotificationsForResource" : "arn:aws:codedeploy:*"} 
-        }
-    },    
     {
-        "Sid": "CodeStarNotificationsListAccess",
-        "Effect": "Allow",
-        "Action": [
-            "codestar-notifications:ListNotificationRules",
-            "codestar-notifications:ListEventTypes",
-            "codestar-notifications:ListTargets"
-        ],
-        "Resource": "*"
+      "Sid": "CodeStarNotificationsPowerUserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:DescribeNotificationRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListEventTypes",
+        "codestar-notifications:ListTargets"
+      ],
+      "Resource": "*"
     }
   ]
 }

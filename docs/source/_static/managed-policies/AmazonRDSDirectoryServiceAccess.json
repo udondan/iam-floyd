@@ -3,11 +3,11 @@
   "Statement": [
     {
       "Action": [
-            "ds:DescribeDirectories", 
-            "ds:AuthorizeApplication", 
-            "ds:UnauthorizeApplication",
-            "ds:GetAuthorizedApplicationDetails"
-        ],
+        "ds:DescribeDirectories",
+        "ds:AuthorizeApplication",
+        "ds:UnauthorizeApplication",
+        "ds:GetAuthorizedApplicationDetails"
+      ],
       "Effect": "Allow",
       "Resource": "*"
     }

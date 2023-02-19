@@ -19,9 +19,9 @@
         "application-autoscaling:PutScheduledAction",
         "application-autoscaling:DeleteScheduledAction"
       ],
-      "Effect":"Allow",
+      "Effect": "Allow",
       "Resource": "*"
-    }, 
+    },
     {
       "Action": [
         "cloudwatch:DeleteAlarms",
@@ -54,19 +54,19 @@
       "Resource": "arn:aws:iam::*:role/service-role/ApplicationAutoScalingForAmazonAppStreamAccess",
       "Condition": {
         "StringLike": {
-           "iam:PassedToService": "application-autoscaling.amazonaws.com"
+          "iam:PassedToService": "application-autoscaling.amazonaws.com"
         }
       }
     },
-    { 
-      "Action": "iam:CreateServiceLinkedRole", 
-      "Effect": "Allow", 
-      "Resource": "arn:aws:iam::*:role/aws-service-role/appstream.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_AppStreamFleet", 
-      "Condition": { 
-        "StringLike": { 
-          "iam:AWSServiceName": "appstream.application-autoscaling.amazonaws.com" 
+    {
+      "Action": "iam:CreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/appstream.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_AppStreamFleet",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "appstream.application-autoscaling.amazonaws.com"
         }
       }
-    }   
+    }
   ]
 }

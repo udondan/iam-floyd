@@ -1,18 +1,18 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowECS",
-            "Effect": "Allow",
-            "Action": [
-                "ecs:CreateCluster",
-                "ecs:DeleteCluster",
-                "ecs:RegisterTaskDefinition",
-                "ecs:DeRegisterTaskDefinition"
-            ],
-            "Resource": [
-                "*"
-            ]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowECS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCluster",
+        "ecs:DeleteCluster",
+        "ecs:RegisterTaskDefinition",
+        "ecs:DeRegisterTaskDefinition"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
 }

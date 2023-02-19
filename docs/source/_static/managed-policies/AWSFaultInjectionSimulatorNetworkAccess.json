@@ -1,70 +1,70 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateTags",
-			"Resource": "arn:aws:ec2:*:*:network-acl/*",
-			"Condition": {
-				"StringEquals": {
-					"ec2:CreateAction": "CreateNetworkAcl",
-					"aws:RequestTag/managedByFIS": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateNetworkAcl",
-			"Resource": "arn:aws:ec2:*:*:network-acl/*",
-			"Condition": {
-				"StringEquals": {
-					"aws:RequestTag/managedByFIS": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateNetworkAclEntry",
-				"ec2:DeleteNetworkAcl"
-			],
-			"Resource": [
-				"arn:aws:ec2:*:*:network-acl/*",
-				"arn:aws:ec2:*:*:vpc/*"
-			],
-			"Condition": {
-				"StringEquals": {
-					"ec2:ResourceTag/managedByFIS": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateNetworkAcl",
-			"Resource": "arn:aws:ec2:*:*:vpc/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeVpcs",
-				"ec2:DescribeManagedPrefixLists",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeNetworkAcls"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:ReplaceNetworkAclAssociation",
-			"Resource": [
-				"arn:aws:ec2:*:*:subnet/*",
-				"arn:aws:ec2:*:*:network-acl/*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:GetManagedPrefixListEntries",
-			"Resource": "arn:aws:ec2:*:*:prefix-list/*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:network-acl/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkAcl",
+          "aws:RequestTag/managedByFIS": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkAcl",
+      "Resource": "arn:aws:ec2:*:*:network-acl/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/managedByFIS": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkAclEntry",
+        "ec2:DeleteNetworkAcl"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-acl/*",
+        "arn:aws:ec2:*:*:vpc/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/managedByFIS": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkAcl",
+      "Resource": "arn:aws:ec2:*:*:vpc/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeManagedPrefixLists",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeNetworkAcls"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:ReplaceNetworkAclAssociation",
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:network-acl/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:GetManagedPrefixListEntries",
+      "Resource": "arn:aws:ec2:*:*:prefix-list/*"
+    }
+  ]
 }

@@ -1,59 +1,59 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "AllowUseOfAWSWAF",
-			"Effect": "Allow",
-			"Action": [
-				"waf:*",
-				"waf-regional:*",
-				"wafv2:*",
-				"elasticloadbalancing:SetWebACL",
-				"apigateway:SetWebACL",
-				"appsync:SetWebACL",
-				"logs:DescribeResourcePolicies",
-				"logs:DescribeLogGroups",
-				"cognito-idp:AssociateWebACL",
-				"cognito-idp:DisassociateWebACL",
-				"cognito-idp:ListResourcesForWebACL",
-				"cognito-idp:GetWebACLForResource"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "AllowLogDeliverySubscription",
-			"Effect": "Allow",
-			"Action": [
-				"logs:CreateLogDelivery",
-				"logs:DeleteLogDelivery"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "GrantLogDeliveryPermissionForS3Bucket",
-			"Effect": "Allow",
-			"Action": [
-				"s3:PutBucketPolicy",
-				"s3:GetBucketPolicy"
-			],
-			"Resource": [
-				"arn:aws:s3:::aws-waf-logs-*"
-			]
-		},
-		{
-			"Sid": "GrantLogDeliveryPermissionForCloudWatchLogGroup",
-			"Effect": "Allow",
-			"Action": [
-				"logs:PutResourcePolicy"
-			],
-			"Resource": "*",
-			"Condition": {
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"wafv2.amazonaws.com"
-					]
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowUseOfAWSWAF",
+      "Effect": "Allow",
+      "Action": [
+        "waf:*",
+        "waf-regional:*",
+        "wafv2:*",
+        "elasticloadbalancing:SetWebACL",
+        "apigateway:SetWebACL",
+        "appsync:SetWebACL",
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups",
+        "cognito-idp:AssociateWebACL",
+        "cognito-idp:DisassociateWebACL",
+        "cognito-idp:ListResourcesForWebACL",
+        "cognito-idp:GetWebACLForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowLogDeliverySubscription",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GrantLogDeliveryPermissionForS3Bucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-waf-logs-*"
+      ]
+    },
+    {
+      "Sid": "GrantLogDeliveryPermissionForCloudWatchLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutResourcePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "wafv2.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
 }

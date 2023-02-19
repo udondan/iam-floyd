@@ -1,20 +1,20 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "DeepRacerAdminAccessStatement",
-			"Effect": "Allow",
-			"Action": [
-				"deepracer:*"
-			],
-			"Resource": [
-				"*"
-			],
-			"Condition": {
-				"Null": {
-					"deepracer:UserToken": "true"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DeepRacerAdminAccessStatement",
+      "Effect": "Allow",
+      "Action": [
+        "deepracer:*"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Null": {
+          "deepracer:UserToken": "true"
+        }
+      }
+    }
+  ]
 }

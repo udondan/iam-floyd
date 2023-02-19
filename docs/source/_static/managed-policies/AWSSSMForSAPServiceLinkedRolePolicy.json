@@ -1,94 +1,94 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ssm:GetCommandInvocation"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"events:DeleteRule",
-				"events:PutTargets",
-				"events:DescribeRule",
-				"events:PutRule",
-				"events:RemoveTargets"
-			],
-			"Resource": [
-				"arn:*:events:*:*:rule/SSMSAPManagedRule*",
-				"arn:*:events:*:*:event-bus/default"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ssm:DescribeDocument",
-				"ssm:SendCommand"
-			],
-			"Resource": [
-				"arn:*:ssm:*:*:document/AWSSystemsManagerSAP-*",
-				"arn:*:ssm:*:*:document/AWSSSMSAP*",
-				"arn:*:ssm:*:*:document/AWSSAP*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ssm:SendCommand",
-			"Resource": [
-				"arn:*:ec2:*:*:instance/*"
-			],
-			"Condition": {
-				"StringEqualsIgnoreCase": {
-					"ssm:resourceTag/SSMForSAPManaged": [
-						"True"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "servicecatalog:GetApplication",
-			"Resource": "arn:*:servicecatalog:*:*:*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"servicecatalog:TagResource",
-				"servicecatalog:CreateApplication"
-			],
-			"Resource": "arn:*:servicecatalog:*:*:*",
-			"Condition": {
-				"StringEquals": {
-					"aws:RequestTag/SSMForSAPCreated": "True"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "arn:*:iam::*:role/aws-service-role/servicecatalog-appregistry.amazonaws.com/AWSServiceRoleForAWSServiceCatalogAppRegistry",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": "servicecatalog-appregistry.amazonaws.com"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "cloudwatch:PutMetricData",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"cloudwatch:namespace": [
-						"AWS/Usage",
-						"AWS/SSMForSAP"
-					]
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutTargets",
+        "events:DescribeRule",
+        "events:PutRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": [
+        "arn:*:events:*:*:rule/SSMSAPManagedRule*",
+        "arn:*:events:*:*:event-bus/default"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeDocument",
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:*:ssm:*:*:document/AWSSystemsManagerSAP-*",
+        "arn:*:ssm:*:*:document/AWSSSMSAP*",
+        "arn:*:ssm:*:*:document/AWSSAP*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:*:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "ssm:resourceTag/SSMForSAPManaged": [
+            "True"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "servicecatalog:GetApplication",
+      "Resource": "arn:*:servicecatalog:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:TagResource",
+        "servicecatalog:CreateApplication"
+      ],
+      "Resource": "arn:*:servicecatalog:*:*:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SSMForSAPCreated": "True"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:*:iam::*:role/aws-service-role/servicecatalog-appregistry.amazonaws.com/AWSServiceRoleForAWSServiceCatalogAppRegistry",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "servicecatalog-appregistry.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/Usage",
+            "AWS/SSMForSAP"
+          ]
+        }
+      }
+    }
+  ]
 }

@@ -7,7 +7,7 @@
         "ds:Describe*",
         "ds:Get*",
         "ds:List*",
-        "ds:Verify*", 
+        "ds:Verify*",
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",

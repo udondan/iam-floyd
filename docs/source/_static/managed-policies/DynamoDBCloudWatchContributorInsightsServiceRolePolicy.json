@@ -10,11 +10,11 @@
       "Resource": "arn:aws:cloudwatch:*:*:insight-rule/DynamoDBContributorInsights*"
     },
     {
-        "Action": [
-            "cloudwatch:DescribeInsightRules"
-        ],
-        "Effect": "Allow",
-        "Resource": "*"
+      "Action": [
+        "cloudwatch:DescribeInsightRules"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
     }
   ]
 }

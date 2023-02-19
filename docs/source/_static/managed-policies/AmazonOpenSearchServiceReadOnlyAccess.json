@@ -1,14 +1,14 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"es:Describe*",
-				"es:List*",
-				"es:Get*"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "es:Describe*",
+        "es:List*",
+        "es:Get*"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

@@ -1,21 +1,21 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:SendClientMetricsForDrs",
-				"drs:SendClientLogsForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:GetChannelCommandsForDrs",
-				"drs:SendChannelCommandResultForDrs"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendClientMetricsForDrs",
+        "drs:SendClientLogsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetChannelCommandsForDrs",
+        "drs:SendChannelCommandResultForDrs"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

@@ -1,16 +1,16 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ssm:DescribeAutomationExecutions",
-                "ssm:GetAutomationExecution",
-                "ssm:SendAutomationSignal"
-            ],
-            "Resource": [
-                "*"
-            ]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeAutomationExecutions",
+        "ssm:GetAutomationExecution",
+        "ssm:SendAutomationSignal"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
 }

@@ -1,17 +1,17 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ecr:GetAuthorizationToken",
-				"ecr:BatchCheckLayerAvailability",
-				"ecr:InitiateLayerUpload",
-				"ecr:UploadLayerPart",
-				"ecr:CompleteLayerUpload",
-				"ecr:PutImage"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:InitiateLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:PutImage"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

@@ -1,52 +1,52 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "ComputeOptimizerFullAccess",
-			"Effect": "Allow",
-			"Action": [
-				"compute-optimizer:*"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "AwsOrgsAccess",
-			"Effect": "Allow",
-			"Action": [
-				"organizations:DescribeOrganization",
-				"organizations:ListAccounts",
-				"organizations:ListAWSServiceAccessForOrganization",
-				"organizations:ListDelegatedAdministrators"
-			],
-			"Resource": [
-				"*"
-			]
-		},
-		{
-			"Sid": "CloudWatchAccess",
-			"Effect": "Allow",
-			"Action": [
-				"cloudwatch:GetMetricData"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "AutoScalingAccess",
-			"Effect": "Allow",
-			"Action": [
-				"autoscaling:DescribeAutoScalingInstances",
-				"autoscaling:DescribeAutoScalingGroups"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "Ec2Access",
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ec2:DescribeVolumes"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ComputeOptimizerFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "compute-optimizer:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AwsOrgsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AutoScalingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAutoScalingInstances",
+        "autoscaling:DescribeAutoScalingGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2Access",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

@@ -7,7 +7,7 @@
         "networkmanager:Describe*",
         "networkmanager:Get*",
         "networkmanager:List*"
-      ], 
+      ],
       "Resource": "*"
     }
   ]

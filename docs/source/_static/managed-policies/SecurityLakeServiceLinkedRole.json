@@ -1,66 +1,66 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "OrganizationsPolicies",
-			"Effect": "Allow",
-			"Action": [
-				"organizations:ListAccounts",
-				"organizations:DescribeOrganization"
-			],
-			"Resource": [
-				"*"
-			]
-		},
-		{
-			"Sid": "DescribeOrgAccounts",
-			"Effect": "Allow",
-			"Action": [
-				"organizations:DescribeAccount"
-			],
-			"Resource": [
-				"arn:aws:organizations::*:account/o-*/*"
-			]
-		},
-		{
-			"Sid": "AllowManagementOfServiceLinkedChannel",
-			"Effect": "Allow",
-			"Action": [
-				"cloudtrail:CreateServiceLinkedChannel",
-				"cloudtrail:DeleteServiceLinkedChannel",
-				"cloudtrail:GetServiceLinkedChannel",
-				"cloudtrail:UpdateServiceLinkedChannel"
-			],
-			"Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/security-lake/*"
-		},
-		{
-			"Sid": "AllowListServiceLinkedChannel",
-			"Effect": "Allow",
-			"Action": [
-				"cloudtrail:ListServiceLinkedChannels"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "DescribeAnyVpc",
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeVpcs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "ListDelegatedAdmins",
-			"Effect": "Allow",
-			"Action": [
-				"organizations:ListDelegatedAdministrators"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"organizations:ServicePrincipal": "securitylake.amazonaws.com"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OrganizationsPolicies",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DescribeOrgAccounts",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:account/o-*/*"
+      ]
+    },
+    {
+      "Sid": "AllowManagementOfServiceLinkedChannel",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:DeleteServiceLinkedChannel",
+        "cloudtrail:GetServiceLinkedChannel",
+        "cloudtrail:UpdateServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/security-lake/*"
+    },
+    {
+      "Sid": "AllowListServiceLinkedChannel",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:ListServiceLinkedChannels"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeAnyVpc",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListDelegatedAdmins",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": "securitylake.amazonaws.com"
+        }
+      }
+    }
+  ]
 }

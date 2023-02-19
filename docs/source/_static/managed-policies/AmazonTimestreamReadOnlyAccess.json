@@ -1,23 +1,23 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"timestream:CancelQuery",
-				"timestream:DescribeDatabase",
-				"timestream:DescribeEndpoints",
-				"timestream:DescribeTable",
-				"timestream:ListDatabases",
-				"timestream:ListMeasures",
-				"timestream:ListTables",
-				"timestream:ListTagsForResource",
-				"timestream:Select",
-				"timestream:SelectValues",
-				"timestream:DescribeScheduledQuery",
-				"timestream:ListScheduledQueries"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "timestream:CancelQuery",
+        "timestream:DescribeDatabase",
+        "timestream:DescribeEndpoints",
+        "timestream:DescribeTable",
+        "timestream:ListDatabases",
+        "timestream:ListMeasures",
+        "timestream:ListTables",
+        "timestream:ListTagsForResource",
+        "timestream:Select",
+        "timestream:SelectValues",
+        "timestream:DescribeScheduledQuery",
+        "timestream:ListScheduledQueries"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

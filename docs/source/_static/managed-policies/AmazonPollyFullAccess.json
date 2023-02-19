@@ -3,8 +3,12 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": ["polly:*"],
-      "Resource": [ "*" ]
+      "Action": [
+        "polly:*"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }
