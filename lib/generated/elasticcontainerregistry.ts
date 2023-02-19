@@ -107,6 +107,9 @@ export class Ecr extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ecr:TagResource
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {

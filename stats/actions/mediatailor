@@ -1,3 +1,4 @@
+mediatailor:ConfigureLogsForChannel;Write
 mediatailor:ConfigureLogsForPlaybackConfiguration;Write
 mediatailor:CreateChannel;Write
 mediatailor:CreateLiveSource;Write
@@ -38,5 +39,6 @@ mediatailor:TagResource;Tagging
 mediatailor:UntagResource;Tagging
 mediatailor:UpdateChannel;Write
 mediatailor:UpdateLiveSource;Write
+mediatailor:UpdateProgram;Write
 mediatailor:UpdateSourceLocation;Write
 mediatailor:UpdateVodSource;Write

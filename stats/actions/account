@@ -6,6 +6,7 @@ account:GetAccountInformation;Read
 account:GetAlternateContact;Read
 account:GetChallengeQuestions;Read
 account:GetContactInformation;Read
+account:GetRegionOptStatus;Read
 account:ListRegions;List
 account:PutAlternateContact;Write
 account:PutChallengeQuestions;Write

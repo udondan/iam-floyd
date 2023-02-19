@@ -1,13 +1,19 @@
+managedblockchain:CreateAccessor;Write
 managedblockchain:CreateMember;Write
 managedblockchain:CreateNetwork;Write
 managedblockchain:CreateNode;Write
 managedblockchain:CreateProposal;Write
+managedblockchain:DeleteAccessor;Write
 managedblockchain:DeleteMember;Write
 managedblockchain:DeleteNode;Write
+managedblockchain:GET;Permissions management
+managedblockchain:GetAccessor;Read
 managedblockchain:GetMember;Read
 managedblockchain:GetNetwork;Read
 managedblockchain:GetNode;Read
 managedblockchain:GetProposal;Read
+managedblockchain:Invoke;Permissions management
+managedblockchain:ListAccessors;List
 managedblockchain:ListInvitations;List
 managedblockchain:ListMembers;List
 managedblockchain:ListNetworks;List
@@ -15,6 +21,7 @@ managedblockchain:ListNodes;List
 managedblockchain:ListProposalVotes;Read
 managedblockchain:ListProposals;List
 managedblockchain:ListTagsForResource;Read
+managedblockchain:POST;Permissions management
 managedblockchain:RejectInvitation;Write
 managedblockchain:TagResource;Tagging
 managedblockchain:UntagResource;Tagging

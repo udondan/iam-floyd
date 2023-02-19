@@ -18,6 +18,7 @@ ec2:AssociateDhcpOptions;Write
 ec2:AssociateEnclaveCertificateIamRole;Write
 ec2:AssociateIamInstanceProfile;Write
 ec2:AssociateInstanceEventWindow;Write
+ec2:AssociateIpamResourceDiscovery;Write
 ec2:AssociateRouteTable;Write
 ec2:AssociateSubnetCidrBlock;Write
 ec2:AssociateTransitGatewayMulticastDomain;Write
@@ -71,6 +72,7 @@ ec2:CreateInstanceExportTask;Write
 ec2:CreateInternetGateway;Write
 ec2:CreateIpam;Write
 ec2:CreateIpamPool;Write
+ec2:CreateIpamResourceDiscovery;Write
 ec2:CreateIpamScope;Write
 ec2:CreateKeyPair;Write
 ec2:CreateLaunchTemplate;Write
@@ -147,6 +149,7 @@ ec2:DeleteInstanceEventWindow;Write
 ec2:DeleteInternetGateway;Write
 ec2:DeleteIpam;Write
 ec2:DeleteIpamPool;Write
+ec2:DeleteIpamResourceDiscovery;Write
 ec2:DeleteIpamScope;Write
 ec2:DeleteKeyPair;Write
 ec2:DeleteLaunchTemplate;Write
@@ -267,6 +270,8 @@ ec2:DescribeInstanceTypes;List
 ec2:DescribeInstances;List
 ec2:DescribeInternetGateways;List
 ec2:DescribeIpamPools;List
+ec2:DescribeIpamResourceDiscoveries;List
+ec2:DescribeIpamResourceDiscoveryAssociations;List
 ec2:DescribeIpamScopes;List
 ec2:DescribeIpams;List
 ec2:DescribeIpv6Pools;List
@@ -379,6 +384,7 @@ ec2:DisassociateClientVpnTargetNetwork;Write
 ec2:DisassociateEnclaveCertificateIamRole;Write
 ec2:DisassociateIamInstanceProfile;Write
 ec2:DisassociateInstanceEventWindow;Write
+ec2:DisassociateIpamResourceDiscovery;Write
 ec2:DisassociateRouteTable;Write
 ec2:DisassociateSubnetCidrBlock;Write
 ec2:DisassociateTransitGatewayMulticastDomain;Write
@@ -420,6 +426,8 @@ ec2:GetHostReservationPurchasePreview;Read
 ec2:GetInstanceTypesFromInstanceRequirements;List
 ec2:GetInstanceUefiData;Read
 ec2:GetIpamAddressHistory;Read
+ec2:GetIpamDiscoveredAccounts;Read
+ec2:GetIpamDiscoveredResourceCidrs;Read
 ec2:GetIpamPoolAllocations;List
 ec2:GetIpamPoolCidrs;Read
 ec2:GetIpamResourceCidrs;Read
@@ -477,6 +485,7 @@ ec2:ModifyInstancePlacement;Write
 ec2:ModifyIpam;Write
 ec2:ModifyIpamPool;Write
 ec2:ModifyIpamResourceCidr;Write
+ec2:ModifyIpamResourceDiscovery;Write
 ec2:ModifyIpamScope;Write
 ec2:ModifyLaunchTemplate;Write
 ec2:ModifyLocalGatewayRoute;Write
@@ -519,6 +528,7 @@ ec2:ModifyVpnTunnelOptions;Write
 ec2:MonitorInstances;Write
 ec2:MoveAddressToVpc;Write
 ec2:MoveByoipCidrToIpam;Write
+ec2:PauseVolumeIO;Write
 ec2:ProvisionByoipCidr;Write
 ec2:ProvisionIpamPoolCidr;Write
 ec2:ProvisionPublicIpv4PoolCidr;Write

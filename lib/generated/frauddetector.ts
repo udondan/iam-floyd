@@ -112,6 +112,21 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateList.html
+   */
+  public toCreateList() {
+    return this.to('CreateList');
+  }
+
+  /**
    * Grants permission to create a model using the specified model type
    *
    * Access Level: Write
@@ -279,6 +294,20 @@ export class Frauddetector extends PolicyStatement {
    */
   public toDeleteLabel() {
     return this.to('DeleteLabel');
+  }
+
+  /**
+   * Grants permission to delete a list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteList.html
+   */
+  public toDeleteList() {
+    return this.to('DeleteList');
   }
 
   /**
@@ -499,6 +528,34 @@ export class Frauddetector extends PolicyStatement {
    */
   public toGetLabels() {
     return this.to('GetLabels');
+  }
+
+  /**
+   * Grants permission to get elements of a list
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListElements.html
+   */
+  public toGetListElements() {
+    return this.to('GetListElements');
+  }
+
+  /**
+   * Grants permission to get metadata about lists
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListsMetadata.html
+   */
+  public toGetListsMetadata() {
+    return this.to('GetListsMetadata');
   }
 
   /**
@@ -773,6 +830,20 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateList.html
+   */
+  public toUpdateList() {
+    return this.to('UpdateList');
+  }
+
+  /**
    * Grants permission to update a model. You can update the description attribute using this action
    *
    * Access Level: Write
@@ -854,6 +925,7 @@ export class Frauddetector extends PolicyStatement {
       'CreateBatchImportJob',
       'CreateBatchPredictionJob',
       'CreateDetectorVersion',
+      'CreateList',
       'CreateModel',
       'CreateModelVersion',
       'CreateRule',
@@ -868,6 +940,7 @@ export class Frauddetector extends PolicyStatement {
       'DeleteEventsByEventType',
       'DeleteExternalModel',
       'DeleteLabel',
+      'DeleteList',
       'DeleteModel',
       'DeleteModelVersion',
       'DeleteOutcome',
@@ -885,6 +958,7 @@ export class Frauddetector extends PolicyStatement {
       'UpdateDetectorVersionMetadata',
       'UpdateDetectorVersionStatus',
       'UpdateEventLabel',
+      'UpdateList',
       'UpdateModel',
       'UpdateModelVersion',
       'UpdateModelVersionStatus',
@@ -901,6 +975,7 @@ export class Frauddetector extends PolicyStatement {
       'GetEventTypes',
       'GetExternalModels',
       'GetLabels',
+      'GetListsMetadata',
       'GetModels',
       'GetOutcomes',
       'GetRules',
@@ -916,6 +991,7 @@ export class Frauddetector extends PolicyStatement {
       'GetEventPrediction',
       'GetEventPredictionMetadata',
       'GetKMSEncryptionKey',
+      'GetListElements',
       'GetModelVersion',
       'ListTagsForResource'
     ],
@@ -1144,5 +1220,22 @@ export class Frauddetector extends PolicyStatement {
    */
   public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:batch-import/${ resourcePath }`);
+  }
+
+  /**
+   * Adds a resource of type list to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onList(resourcePath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:list/${ resourcePath }`);
   }
 }

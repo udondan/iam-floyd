@@ -19,6 +19,21 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Amazon Managed Blockchain accessor
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateAccessor.html
+   */
+  public toCreateAccessor() {
+    return this.to('CreateAccessor');
+  }
+
+  /**
    * Grants permission to create a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
@@ -88,6 +103,17 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Amazon Managed Blockchain accessor owned by the current AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteAccessor.html
+   */
+  public toDeleteAccessor() {
+    return this.to('DeleteAccessor');
+  }
+
+  /**
    * Grants permission to delete a member and all associated resources from an Amazon Managed Blockchain network
    *
    * Access Level: Write
@@ -107,6 +133,28 @@ export class Managedblockchain extends PolicyStatement {
    */
   public toDeleteNode() {
     return this.to('DeleteNode');
+  }
+
+  /**
+   * Grants permission to send HTTP GET requests to an Ethereum node
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toGET() {
+    return this.to('GET');
+  }
+
+  /**
+   * Grants permission to return detailed information about an Amazon Managed Blockchain accessor owned by the current AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetAccessor.html
+   */
+  public toGetAccessor() {
+    return this.to('GetAccessor');
   }
 
   /**
@@ -151,6 +199,28 @@ export class Managedblockchain extends PolicyStatement {
    */
   public toGetProposal() {
     return this.to('GetProposal');
+  }
+
+  /**
+   * Grants permission to create WebSocket connections to an Ethereum node
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toInvoke() {
+    return this.to('Invoke');
+  }
+
+  /**
+   * Grants permission to list the Amazon Managed Blockchain accessors owned by the current AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListAccessors.html
+   */
+  public toListAccessors() {
+    return this.to('ListAccessors');
   }
 
   /**
@@ -228,6 +298,17 @@ export class Managedblockchain extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to send HTTP POST requests to an Ethereum node
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toPOST() {
+    return this.to('POST');
   }
 
   /**
@@ -311,10 +392,12 @@ export class Managedblockchain extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateAccessor',
       'CreateMember',
       'CreateNetwork',
       'CreateNode',
       'CreateProposal',
+      'DeleteAccessor',
       'DeleteMember',
       'DeleteNode',
       'RejectInvitation',
@@ -322,7 +405,13 @@ export class Managedblockchain extends PolicyStatement {
       'UpdateNode',
       'VoteOnProposal'
     ],
+    'Permissions management': [
+      'GET',
+      'Invoke',
+      'POST'
+    ],
     Read: [
+      'GetAccessor',
       'GetMember',
       'GetNetwork',
       'GetNode',
@@ -331,6 +420,7 @@ export class Managedblockchain extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAccessors',
       'ListInvitations',
       'ListMembers',
       'ListNetworks',
@@ -424,5 +514,22 @@ export class Managedblockchain extends PolicyStatement {
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
+  }
+
+  /**
+   * Adds a resource of type accessor to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Accessor.html
+   *
+   * @param accessorId - Identifier for the accessorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:accessors/${ accessorId }`);
   }
 }

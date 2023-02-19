@@ -1,11 +1,14 @@
 groundstation:CancelContact;Write
 groundstation:CreateConfig;Write
 groundstation:CreateDataflowEndpointGroup;Write
+groundstation:CreateEphemeris;Write
 groundstation:CreateMissionProfile;Write
 groundstation:DeleteConfig;Write
 groundstation:DeleteDataflowEndpointGroup;Write
+groundstation:DeleteEphemeris;Write
 groundstation:DeleteMissionProfile;Write
 groundstation:DescribeContact;Read
+groundstation:DescribeEphemeris;Read
 groundstation:GetConfig;Read
 groundstation:GetDataflowEndpointGroup;Read
 groundstation:GetMinuteUsage;Read
@@ -14,6 +17,7 @@ groundstation:GetSatellite;Read
 groundstation:ListConfigs;List
 groundstation:ListContacts;List
 groundstation:ListDataflowEndpointGroups;List
+groundstation:ListEphemerides;List
 groundstation:ListGroundStations;List
 groundstation:ListMissionProfiles;List
 groundstation:ListSatellites;List
@@ -22,4 +26,5 @@ groundstation:ReserveContact;Write
 groundstation:TagResource;Tagging
 groundstation:UntagResource;Tagging
 groundstation:UpdateConfig;Write
+groundstation:UpdateEphemeris;Write
 groundstation:UpdateMissionProfile;Write

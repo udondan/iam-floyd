@@ -23,7 +23,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/associateroletogroup-put.html
    */
   public toAssociateRoleToGroup() {
     return this.to('AssociateRoleToGroup');
@@ -34,7 +34,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/associateserviceroletoaccount-put.html
    */
   public toAssociateServiceRoleToAccount() {
     return this.to('AssociateServiceRoleToAccount');
@@ -49,7 +49,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createconnectordefinition-post.html
    */
   public toCreateConnectorDefinition() {
     return this.to('CreateConnectorDefinition');
@@ -60,7 +60,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createconnectordefinitionversion-post.html
    */
   public toCreateConnectorDefinitionVersion() {
     return this.to('CreateConnectorDefinitionVersion');
@@ -75,7 +75,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createcoredefinition-post.html
    */
   public toCreateCoreDefinition() {
     return this.to('CreateCoreDefinition');
@@ -86,7 +86,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createcoredefinitionversion-post.html
    */
   public toCreateCoreDefinitionVersion() {
     return this.to('CreateCoreDefinitionVersion');
@@ -97,7 +97,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createdeployment-post.html
    */
   public toCreateDeployment() {
     return this.to('CreateDeployment');
@@ -112,7 +112,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createdevicedefinition-post.html
    */
   public toCreateDeviceDefinition() {
     return this.to('CreateDeviceDefinition');
@@ -123,7 +123,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createdevicedefinitionversion-post.html
    */
   public toCreateDeviceDefinitionVersion() {
     return this.to('CreateDeviceDefinitionVersion');
@@ -138,7 +138,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createfunctiondefinition-post.html
    */
   public toCreateFunctionDefinition() {
     return this.to('CreateFunctionDefinition');
@@ -149,7 +149,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createfunctiondefinitionversion-post.html
    */
   public toCreateFunctionDefinitionVersion() {
     return this.to('CreateFunctionDefinitionVersion');
@@ -164,7 +164,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/creategroup-post.html
    */
   public toCreateGroup() {
     return this.to('CreateGroup');
@@ -175,7 +175,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/creategroupcertificateauthority-post.html
    */
   public toCreateGroupCertificateAuthority() {
     return this.to('CreateGroupCertificateAuthority');
@@ -186,7 +186,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/creategroupversion-post.html
    */
   public toCreateGroupVersion() {
     return this.to('CreateGroupVersion');
@@ -201,7 +201,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createloggerdefinition-post.html
    */
   public toCreateLoggerDefinition() {
     return this.to('CreateLoggerDefinition');
@@ -212,7 +212,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createloggerdefinitionversion-post.html
    */
   public toCreateLoggerDefinitionVersion() {
     return this.to('CreateLoggerDefinitionVersion');
@@ -227,7 +227,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createresourcedefinition-post.html
    */
   public toCreateResourceDefinition() {
     return this.to('CreateResourceDefinition');
@@ -238,7 +238,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createresourcedefinitionversion-post.html
    */
   public toCreateResourceDefinitionVersion() {
     return this.to('CreateResourceDefinitionVersion');
@@ -249,7 +249,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createsoftwareupdatejob-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createsoftwareupdatejob-post.html
    */
   public toCreateSoftwareUpdateJob() {
     return this.to('CreateSoftwareUpdateJob');
@@ -264,7 +264,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createsubscriptiondefinition-post.html
    */
   public toCreateSubscriptionDefinition() {
     return this.to('CreateSubscriptionDefinition');
@@ -275,7 +275,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/createsubscriptiondefinitionversion-post.html
    */
   public toCreateSubscriptionDefinitionVersion() {
     return this.to('CreateSubscriptionDefinitionVersion');
@@ -286,7 +286,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteconnectordefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deleteconnectordefinition-delete.html
    */
   public toDeleteConnectorDefinition() {
     return this.to('DeleteConnectorDefinition');
@@ -297,7 +297,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deletecoredefinition-delete.html
    */
   public toDeleteCoreDefinition() {
     return this.to('DeleteCoreDefinition');
@@ -308,7 +308,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deletedevicedefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deletedevicedefinition-delete.html
    */
   public toDeleteDeviceDefinition() {
     return this.to('DeleteDeviceDefinition');
@@ -319,7 +319,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deletefunctiondefinition-delete.html
    */
   public toDeleteFunctionDefinition() {
     return this.to('DeleteFunctionDefinition');
@@ -330,7 +330,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deletegroup-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deletegroup-delete.html
    */
   public toDeleteGroup() {
     return this.to('DeleteGroup');
@@ -341,7 +341,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deleteloggerdefinition-delete.html
    */
   public toDeleteLoggerDefinition() {
     return this.to('DeleteLoggerDefinition');
@@ -352,7 +352,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteresourcedefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deleteresourcedefinition-delete.html
    */
   public toDeleteResourceDefinition() {
     return this.to('DeleteResourceDefinition');
@@ -363,7 +363,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/deletesubscriptiondefinition-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/deletesubscriptiondefinition-delete.html
    */
   public toDeleteSubscriptionDefinition() {
     return this.to('DeleteSubscriptionDefinition');
@@ -374,7 +374,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociaterolefromgroup-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/disassociaterolefromgroup-delete.html
    */
   public toDisassociateRoleFromGroup() {
     return this.to('DisassociateRoleFromGroup');
@@ -385,7 +385,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/disassociateservicerolefromaccount-delete.html
    */
   public toDisassociateServiceRoleFromAccount() {
     return this.to('DisassociateServiceRoleFromAccount');
@@ -407,7 +407,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getassociatedrole-get.html
    */
   public toGetAssociatedRole() {
     return this.to('GetAssociatedRole');
@@ -418,7 +418,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getbulkdeploymentstatus-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getbulkdeploymentstatus-get.html
    */
   public toGetBulkDeploymentStatus() {
     return this.to('GetBulkDeploymentStatus');
@@ -429,7 +429,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectivityinfo-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getconnectivityinfo-get.html
    */
   public toGetConnectivityInfo() {
     return this.to('GetConnectivityInfo');
@@ -440,7 +440,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getconnectordefinition-get.html
    */
   public toGetConnectorDefinition() {
     return this.to('GetConnectorDefinition');
@@ -451,7 +451,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getconnectordefinitionversion-get.html
    */
   public toGetConnectorDefinitionVersion() {
     return this.to('GetConnectorDefinitionVersion');
@@ -462,7 +462,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getcoredefinition-get.html
    */
   public toGetCoreDefinition() {
     return this.to('GetCoreDefinition');
@@ -473,7 +473,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getcoredefinitionversion-get.html
    */
   public toGetCoreDefinitionVersion() {
     return this.to('GetCoreDefinitionVersion');
@@ -484,7 +484,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getdeploymentstatus-get.html
    */
   public toGetDeploymentStatus() {
     return this.to('GetDeploymentStatus');
@@ -495,7 +495,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getdevicedefinition-get.html
    */
   public toGetDeviceDefinition() {
     return this.to('GetDeviceDefinition');
@@ -506,7 +506,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getdevicedefinitionversion-get.html
    */
   public toGetDeviceDefinitionVersion() {
     return this.to('GetDeviceDefinitionVersion');
@@ -517,7 +517,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getfunctiondefinition-get.html
    */
   public toGetFunctionDefinition() {
     return this.to('GetFunctionDefinition');
@@ -528,7 +528,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getfunctiondefinitionversion-get.html
    */
   public toGetFunctionDefinitionVersion() {
     return this.to('GetFunctionDefinitionVersion');
@@ -539,7 +539,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getgroup-get.html
    */
   public toGetGroup() {
     return this.to('GetGroup');
@@ -550,7 +550,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getgroupcertificateauthority-get.html
    */
   public toGetGroupCertificateAuthority() {
     return this.to('GetGroupCertificateAuthority');
@@ -561,7 +561,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateconfiguration-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getgroupcertificateconfiguration-get.html
    */
   public toGetGroupCertificateConfiguration() {
     return this.to('GetGroupCertificateConfiguration');
@@ -572,7 +572,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getgroupversion-get.html
    */
   public toGetGroupVersion() {
     return this.to('GetGroupVersion');
@@ -583,7 +583,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getloggerdefinition-get.html
    */
   public toGetLoggerDefinition() {
     return this.to('GetLoggerDefinition');
@@ -594,7 +594,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getloggerdefinitionversion-get.html
    */
   public toGetLoggerDefinitionVersion() {
     return this.to('GetLoggerDefinitionVersion');
@@ -605,7 +605,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getresourcedefinition-get.html
    */
   public toGetResourceDefinition() {
     return this.to('GetResourceDefinition');
@@ -616,7 +616,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getresourcedefinitionversion-get.html
    */
   public toGetResourceDefinitionVersion() {
     return this.to('GetResourceDefinitionVersion');
@@ -627,7 +627,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getserviceroleforaccount-get.html
    */
   public toGetServiceRoleForAccount() {
     return this.to('GetServiceRoleForAccount');
@@ -638,7 +638,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getsubscriptiondefinition-get.html
    */
   public toGetSubscriptionDefinition() {
     return this.to('GetSubscriptionDefinition');
@@ -649,7 +649,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getsubscriptiondefinitionversion-get.html
    */
   public toGetSubscriptionDefinitionVersion() {
     return this.to('GetSubscriptionDefinitionVersion');
@@ -660,7 +660,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/getthingruntimeconfiguration-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/getthingruntimeconfiguration-get.html
    */
   public toGetThingRuntimeConfiguration() {
     return this.to('GetThingRuntimeConfiguration');
@@ -671,7 +671,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listbulkdeploymentdetailedreports-get.html
    */
   public toListBulkDeploymentDetailedReports() {
     return this.to('ListBulkDeploymentDetailedReports');
@@ -682,7 +682,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeployments-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listbulkdeployments-get.html
    */
   public toListBulkDeployments() {
     return this.to('ListBulkDeployments');
@@ -693,7 +693,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listconnectordefinitionversions-get.html
    */
   public toListConnectorDefinitionVersions() {
     return this.to('ListConnectorDefinitionVersions');
@@ -704,7 +704,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listconnectordefinitions-get.html
    */
   public toListConnectorDefinitions() {
     return this.to('ListConnectorDefinitions');
@@ -715,7 +715,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listcoredefinitionversions-get.html
    */
   public toListCoreDefinitionVersions() {
     return this.to('ListCoreDefinitionVersions');
@@ -726,7 +726,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listcoredefinitions-get.html
    */
   public toListCoreDefinitions() {
     return this.to('ListCoreDefinitions');
@@ -737,7 +737,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listdeployments-get.html
    */
   public toListDeployments() {
     return this.to('ListDeployments');
@@ -748,7 +748,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listdevicedefinitionversions-get.html
    */
   public toListDeviceDefinitionVersions() {
     return this.to('ListDeviceDefinitionVersions');
@@ -759,7 +759,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listdevicedefinitions-get.html
    */
   public toListDeviceDefinitions() {
     return this.to('ListDeviceDefinitions');
@@ -770,7 +770,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listfunctiondefinitionversions-get.html
    */
   public toListFunctionDefinitionVersions() {
     return this.to('ListFunctionDefinitionVersions');
@@ -781,7 +781,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listfunctiondefinitions-get.html
    */
   public toListFunctionDefinitions() {
     return this.to('ListFunctionDefinitions');
@@ -792,7 +792,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listgroupcertificateauthorities-get.html
    */
   public toListGroupCertificateAuthorities() {
     return this.to('ListGroupCertificateAuthorities');
@@ -803,7 +803,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listgroupversions-get.html
    */
   public toListGroupVersions() {
     return this.to('ListGroupVersions');
@@ -814,7 +814,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listgroups-get.html
    */
   public toListGroups() {
     return this.to('ListGroups');
@@ -825,7 +825,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listloggerdefinitionversions-get.html
    */
   public toListLoggerDefinitionVersions() {
     return this.to('ListLoggerDefinitionVersions');
@@ -836,7 +836,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listloggerdefinitions-get.html
    */
   public toListLoggerDefinitions() {
     return this.to('ListLoggerDefinitions');
@@ -847,7 +847,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listresourcedefinitionversions-get.html
    */
   public toListResourceDefinitionVersions() {
     return this.to('ListResourceDefinitionVersions');
@@ -858,7 +858,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listresourcedefinitions-get.html
    */
   public toListResourceDefinitions() {
     return this.to('ListResourceDefinitions');
@@ -869,7 +869,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitionversions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listsubscriptiondefinitionversions-get.html
    */
   public toListSubscriptionDefinitionVersions() {
     return this.to('ListSubscriptionDefinitionVersions');
@@ -880,7 +880,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitions-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listsubscriptiondefinitions-get.html
    */
   public toListSubscriptionDefinitions() {
     return this.to('ListSubscriptionDefinitions');
@@ -895,7 +895,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/listtagsforresource-get.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -906,7 +906,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/resetdeployments-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/resetdeployments-post.html
    */
   public toResetDeployments() {
     return this.to('ResetDeployments');
@@ -921,7 +921,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/startbulkdeployment-post.html
    */
   public toStartBulkDeployment() {
     return this.to('StartBulkDeployment');
@@ -932,7 +932,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/stopbulkdeployment-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/stopbulkdeployment-put.html
    */
   public toStopBulkDeployment() {
     return this.to('StopBulkDeployment');
@@ -947,7 +947,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/tagresource-post.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -961,7 +961,7 @@ export class Greengrass extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/untagresource-delete.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -972,7 +972,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updateconnectivityinfo-put.html
    */
   public toUpdateConnectivityInfo() {
     return this.to('UpdateConnectivityInfo');
@@ -983,7 +983,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectordefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updateconnectordefinition-put.html
    */
   public toUpdateConnectorDefinition() {
     return this.to('UpdateConnectorDefinition');
@@ -994,7 +994,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatecoredefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updatecoredefinition-put.html
    */
   public toUpdateCoreDefinition() {
     return this.to('UpdateCoreDefinition');
@@ -1005,7 +1005,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatedevicedefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updatedevicedefinition-put.html
    */
   public toUpdateDeviceDefinition() {
     return this.to('UpdateDeviceDefinition');
@@ -1016,7 +1016,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updatefunctiondefinition-put.html
    */
   public toUpdateFunctionDefinition() {
     return this.to('UpdateFunctionDefinition');
@@ -1027,7 +1027,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updategroup-put.html
    */
   public toUpdateGroup() {
     return this.to('UpdateGroup');
@@ -1038,7 +1038,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updategroupcertificateconfiguration-put.html
    */
   public toUpdateGroupCertificateConfiguration() {
     return this.to('UpdateGroupCertificateConfiguration');
@@ -1049,7 +1049,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updateloggerdefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updateloggerdefinition-put.html
    */
   public toUpdateLoggerDefinition() {
     return this.to('UpdateLoggerDefinition');
@@ -1060,7 +1060,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updateresourcedefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updateresourcedefinition-put.html
    */
   public toUpdateResourceDefinition() {
     return this.to('UpdateResourceDefinition');
@@ -1071,7 +1071,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updatesubscriptiondefinition-put.html
    */
   public toUpdateSubscriptionDefinition() {
     return this.to('UpdateSubscriptionDefinition');
@@ -1082,7 +1082,7 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatethingruntimeconfiguration-put.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/updatethingruntimeconfiguration-put.html
    */
   public toUpdateThingRuntimeConfiguration() {
     return this.to('UpdateThingRuntimeConfiguration');
@@ -1197,7 +1197,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type connectivityInfo to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectivityinfo.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-connectivityinfo.html
    *
    * @param thingName - Identifier for the thingName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1226,7 +1226,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type deployment to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-createdeploymentrequest.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-createdeploymentrequest.html
    *
    * @param groupId - Identifier for the groupId.
    * @param deploymentId - Identifier for the deploymentId.
@@ -1258,7 +1258,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type group to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupinformation.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-groupinformation.html
    *
    * @param groupId - Identifier for the groupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1275,7 +1275,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type groupVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-groupversion.html
    *
    * @param groupId - Identifier for the groupId.
    * @param versionId - Identifier for the versionId.
@@ -1290,7 +1290,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type coreDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-core.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-core.html
    *
    * @param coreDefinitionId - Identifier for the coreDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1307,7 +1307,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type coreDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-coredefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-coredefinitionversion.html
    *
    * @param coreDefinitionId - Identifier for the coreDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1322,7 +1322,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type deviceDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-device.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-device.html
    *
    * @param deviceDefinitionId - Identifier for the deviceDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1339,7 +1339,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type deviceDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-devicedefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-devicedefinitionversion.html
    *
    * @param deviceDefinitionId - Identifier for the deviceDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1354,7 +1354,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type functionDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-function.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-function.html
    *
    * @param functionDefinitionId - Identifier for the functionDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1371,7 +1371,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type functionDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-functiondefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-functiondefinitionversion.html
    *
    * @param functionDefinitionId - Identifier for the functionDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1386,7 +1386,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type subscriptionDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscription.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-subscription.html
    *
    * @param subscriptionDefinitionId - Identifier for the subscriptionDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1403,7 +1403,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type subscriptionDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscriptiondefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-subscriptiondefinitionversion.html
    *
    * @param subscriptionDefinitionId - Identifier for the subscriptionDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1418,7 +1418,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type loggerDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-logger.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-logger.html
    *
    * @param loggerDefinitionId - Identifier for the loggerDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1435,7 +1435,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type loggerDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-loggerdefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-loggerdefinitionversion.html
    *
    * @param loggerDefinitionId - Identifier for the loggerDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1450,7 +1450,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type resourceDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resource.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-resource.html
    *
    * @param resourceDefinitionId - Identifier for the resourceDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1467,7 +1467,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type resourceDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resourcedefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-resourcedefinitionversion.html
    *
    * @param resourceDefinitionId - Identifier for the resourceDefinitionId.
    * @param versionId - Identifier for the versionId.
@@ -1482,7 +1482,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type connectorDefinition to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connector.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-connector.html
    *
    * @param connectorDefinitionId - Identifier for the connectorDefinitionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1499,7 +1499,7 @@ export class Greengrass extends PolicyStatement {
   /**
    * Adds a resource of type connectorDefinitionVersion to the statement
    *
-   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectordefinitionversion.html
+   * https://docs.aws.amazon.com/greengrass/v1/apireference/definitions-connectordefinitionversion.html
    *
    * @param connectorDefinitionId - Identifier for the connectorDefinitionId.
    * @param versionId - Identifier for the versionId.

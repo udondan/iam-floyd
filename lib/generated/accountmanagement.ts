@@ -51,7 +51,7 @@ export class Account extends PolicyStatement {
    * Possible conditions:
    * - .ifTargetRegion()
    *
-   * https://docs.aws.amazon.com/general/latest/gr/rande-manage.html
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_DisableRegion.html
    */
   public toDisableRegion() {
     return this.to('DisableRegion');
@@ -65,7 +65,7 @@ export class Account extends PolicyStatement {
    * Possible conditions:
    * - .ifTargetRegion()
    *
-   * https://docs.aws.amazon.com/general/latest/gr/rande-manage.html
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_EnableRegion.html
    */
   public toEnableRegion() {
     return this.to('EnableRegion');
@@ -119,11 +119,25 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the opt-in status of a Region
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifTargetRegion()
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetRegionOptStatus.html
+   */
+  public toGetRegionOptStatus() {
+    return this.to('GetRegionOptStatus');
+  }
+
+  /**
    * Grants permission to list the available Regions
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/general/latest/gr/rande-manage.html
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_ListRegions.html
    */
   public toListRegions() {
     return this.to('ListRegions');
@@ -179,7 +193,8 @@ export class Account extends PolicyStatement {
       'GetAccountInformation',
       'GetAlternateContact',
       'GetChallengeQuestions',
-      'GetContactInformation'
+      'GetContactInformation',
+      'GetRegionOptStatus'
     ],
     List: [
       'ListRegions'
@@ -262,6 +277,7 @@ export class Account extends PolicyStatement {
    * Applies to actions:
    * - .toDisableRegion()
    * - .toEnableRegion()
+   * - .toGetRegionOptStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

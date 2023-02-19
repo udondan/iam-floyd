@@ -30,6 +30,40 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a batch of vehicles
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iot:CreateThing
+   * - iot:DescribeThing
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_BatchCreateVehicle.html
+   */
+  public toBatchCreateVehicle() {
+    return this.to('BatchCreateVehicle');
+  }
+
+  /**
+   * Grants permission to update a batch of vehicles
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUpdateToModelManifestArn()
+   * - .ifUpdateToDecoderManifestArn()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_BatchUpdateVehicle.html
+   */
+  public toBatchUpdateVehicle() {
+    return this.to('BatchUpdateVehicle');
+  }
+
+  /**
    * Grants permission to create a campaign
    *
    * Access Level: Write
@@ -595,6 +629,8 @@ export class Iotfleetwise extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateVehicleFleet',
+      'BatchCreateVehicle',
+      'BatchUpdateVehicle',
       'CreateCampaign',
       'CreateDecoderManifest',
       'CreateFleet',
@@ -759,6 +795,7 @@ export class Iotfleetwise extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
    *
    * Applies to actions:
+   * - .toBatchUpdateVehicle()
    * - .toUpdateVehicle()
    *
    * @param value The value(s) to check
@@ -774,6 +811,7 @@ export class Iotfleetwise extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
    *
    * Applies to actions:
+   * - .toBatchUpdateVehicle()
    * - .toUpdateVehicle()
    *
    * @param value The value(s) to check

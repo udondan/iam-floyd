@@ -52,6 +52,7 @@ autoscaling:PutScheduledUpdateGroupAction;Write
 autoscaling:PutWarmPool;Write
 autoscaling:RecordLifecycleActionHeartbeat;Write
 autoscaling:ResumeProcesses;Write
+autoscaling:RollbackInstanceRefresh;Write
 autoscaling:SetDesiredCapacity;Write
 autoscaling:SetInstanceHealth;Write
 autoscaling:SetInstanceProtection;Write

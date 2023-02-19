@@ -1,1 +1,8 @@
 iq-permission:ApproveAccessGrant;Write
+iq-permission:ApprovePermissionRequest;Write
+iq-permission:CreatePermissionRequest;Write
+iq-permission:GetPermissionRequest;Read
+iq-permission:ListPermissionRequests;Read
+iq-permission:RejectPermissionRequest;Write
+iq-permission:RevokePermissionRequest;Write
+iq-permission:WithdrawPermissionRequest;Write

@@ -19,6 +19,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure logs on the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/configurelogs-channel.html
+   */
+  public toConfigureLogsForChannel() {
+    return this.to('ConfigureLogsForChannel');
+  }
+
+  /**
    * Grants permission to configure logs for a playback configuration
    *
    * Access Level: Write
@@ -490,6 +501,17 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the program with the specified program name on the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
+   */
+  public toUpdateProgram() {
+    return this.to('UpdateProgram');
+  }
+
+  /**
    * Grants permission to update the source location with the specified source location name
    *
    * Access Level: Write
@@ -513,6 +535,7 @@ export class Mediatailor extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ConfigureLogsForChannel',
       'ConfigureLogsForPlaybackConfiguration',
       'CreateChannel',
       'CreateLiveSource',
@@ -532,6 +555,7 @@ export class Mediatailor extends PolicyStatement {
       'StopChannel',
       'UpdateChannel',
       'UpdateLiveSource',
+      'UpdateProgram',
       'UpdateSourceLocation',
       'UpdateVodSource'
     ],
@@ -602,7 +626,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param channelName - Identifier for the channelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -610,8 +634,8 @@ export class Mediatailor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
+  public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
   }
 
   /**
@@ -619,13 +643,14 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param channelName - Identifier for the channelName.
+   * @param programName - Identifier for the programName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onProgram(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ resourceId }`);
+  public onProgram(channelName: string, programName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ channelName }/${ programName }`);
   }
 
   /**
@@ -633,7 +658,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param sourceLocationName - Identifier for the sourceLocationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -641,8 +666,8 @@ export class Mediatailor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSourceLocation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:sourceLocation/${ resourceId }`);
+  public onSourceLocation(sourceLocationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:sourceLocation/${ sourceLocationName }`);
   }
 
   /**
@@ -650,7 +675,8 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param sourceLocationName - Identifier for the sourceLocationName.
+   * @param vodSourceName - Identifier for the vodSourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -658,8 +684,8 @@ export class Mediatailor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onVodSource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ resourceId }`);
+  public onVodSource(sourceLocationName: string, vodSourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ sourceLocationName }/${ vodSourceName }`);
   }
 
   /**
@@ -667,7 +693,8 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param sourceLocationName - Identifier for the sourceLocationName.
+   * @param liveSourceName - Identifier for the liveSourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -675,7 +702,7 @@ export class Mediatailor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onLiveSource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:liveSource/${ resourceId }`);
+  public onLiveSource(sourceLocationName: string, liveSourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:liveSource/${ sourceLocationName }/${ liveSourceName }`);
   }
 }

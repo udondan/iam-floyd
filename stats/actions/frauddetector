@@ -5,6 +5,7 @@ frauddetector:CancelBatchPredictionJob;Write
 frauddetector:CreateBatchImportJob;Write
 frauddetector:CreateBatchPredictionJob;Write
 frauddetector:CreateDetectorVersion;Write
+frauddetector:CreateList;Write
 frauddetector:CreateModel;Write
 frauddetector:CreateModelVersion;Write
 frauddetector:CreateRule;Write
@@ -19,6 +20,7 @@ frauddetector:DeleteEventType;Write
 frauddetector:DeleteEventsByEventType;Write
 frauddetector:DeleteExternalModel;Write
 frauddetector:DeleteLabel;Write
+frauddetector:DeleteList;Write
 frauddetector:DeleteModel;Write
 frauddetector:DeleteModelVersion;Write
 frauddetector:DeleteOutcome;Write
@@ -39,6 +41,8 @@ frauddetector:GetEventTypes;List
 frauddetector:GetExternalModels;List
 frauddetector:GetKMSEncryptionKey;Read
 frauddetector:GetLabels;List
+frauddetector:GetListElements;Read
+frauddetector:GetListsMetadata;List
 frauddetector:GetModelVersion;Read
 frauddetector:GetModels;List
 frauddetector:GetOutcomes;List
@@ -60,6 +64,7 @@ frauddetector:UpdateDetectorVersion;Write
 frauddetector:UpdateDetectorVersionMetadata;Write
 frauddetector:UpdateDetectorVersionStatus;Write
 frauddetector:UpdateEventLabel;Write
+frauddetector:UpdateList;Write
 frauddetector:UpdateModel;Write
 frauddetector:UpdateModelVersion;Write
 frauddetector:UpdateModelVersionStatus;Write

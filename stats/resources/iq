@@ -1,1 +1,13 @@
-
+iq:attachment
+iq:buyer
+iq:call
+iq:company
+iq:conversation
+iq:expert
+iq:listing
+iq:paymentRequest
+iq:paymentSchedule
+iq:proposal
+iq:request
+iq:seller
+iq:token

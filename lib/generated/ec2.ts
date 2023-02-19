@@ -317,6 +317,25 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an IPAM resource discovery with an Amazon VPC IPAM
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIpamResourceDiscovery.html
+   */
+  public toAssociateIpamResourceDiscovery() {
+    return this.to('AssociateIpamResourceDiscovery');
+  }
+
+  /**
    * Grants permission to associate a subnet or gateway with a route table
    *
    * Access Level: Write
@@ -1159,6 +1178,26 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an IPAM resource discovery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamResourceDiscovery.html
+   */
+  public toCreateIpamResourceDiscovery() {
+    return this.to('CreateIpamResourceDiscovery');
+  }
+
+  /**
    * Grants permission to create an Amazon VPC IP Address Manager (IPAM) scope, which is the highest-level container within IPAM
    *
    * Access Level: Write
@@ -1255,6 +1294,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTable.html
    */
   public toCreateLocalGatewayRouteTable() {
     return this.to('CreateLocalGatewayRouteTable');
@@ -2267,6 +2308,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCoipCidr.html
    */
   public toDeleteCoipCidr() {
     return this.to('DeleteCoipCidr');
@@ -2279,6 +2322,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCoipPool.html
    */
   public toDeleteCoipPool() {
     return this.to('DeleteCoipPool');
@@ -2439,6 +2484,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an IPAM resource discovery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamResourceDiscovery.html
+   */
+  public toDeleteIpamResourceDiscovery() {
+    return this.to('DeleteIpamResourceDiscovery');
+  }
+
+  /**
    * Grants permission to delete the scope for an Amazon VPC IP Address Manager (IPAM)
    *
    * Access Level: Write
@@ -2515,6 +2574,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRouteTable.html
    */
   public toDeleteLocalGatewayRouteTable() {
     return this.to('DeleteLocalGatewayRouteTable');
@@ -4118,6 +4179,34 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe IPAM resource discoveries
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamResourceDiscoveries.html
+   */
+  public toDescribeIpamResourceDiscoveries() {
+    return this.to('DescribeIpamResourceDiscoveries');
+  }
+
+  /**
+   * Grants permission to describe resource discovery associations with an Amazon VPC IPAM
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamResourceDiscoveryAssociations.html
+   */
+  public toDescribeIpamResourceDiscoveryAssociations() {
+    return this.to('DescribeIpamResourceDiscoveryAssociations');
+  }
+
+  /**
    * Grants permission to describe Amazon VPC IP Address Manager (IPAM) scopes
    *
    * Access Level: List
@@ -5689,6 +5778,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a resource discovery from an Amazon VPC IPAM
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamResourceDiscovery.html
+   */
+  public toDisassociateIpamResourceDiscovery() {
+    return this.to('DisassociateIpamResourceDiscovery');
+  }
+
+  /**
    * Grants permission to disassociate a subnet from a route table
    *
    * Access Level: Write
@@ -6274,6 +6377,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetIpamAddressHistory() {
     return this.to('GetIpamAddressHistory');
+  }
+
+  /**
+   * Grants permission to retrieve IPAM discovered accounts
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamDiscoveredAccounts.html
+   */
+  public toGetIpamDiscoveredAccounts() {
+    return this.to('GetIpamDiscoveredAccounts');
+  }
+
+  /**
+   * Grants permission to retrieve the resource CIDRs that are monitored as part of a resource discovery
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamDiscoveredResourceCidrs.html
+   */
+  public toGetIpamDiscoveredResourceCidrs() {
+    return this.to('GetIpamDiscoveredResourceCidrs');
   }
 
   /**
@@ -7090,6 +7221,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a resource discovery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceDiscovery.html
+   */
+  public toModifyIpamResourceDiscovery() {
+    return this.to('ModifyIpamResourceDiscovery');
+  }
+
+  /**
    * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) scope
    *
    * Access Level: Write
@@ -7675,6 +7820,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toMoveByoipCidrToIpam() {
     return this.to('MoveByoipCidrToIpam');
+  }
+
+  /**
+   * Grants permission to temporarily pause I/O operations for a target Amazon EBS volume
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#ebs-actions-reference
+   */
+  public toPauseVolumeIO() {
+    return this.to('PauseVolumeIO');
   }
 
   /**
@@ -8621,6 +8780,7 @@ export class Ec2 extends PolicyStatement {
       'AssociateEnclaveCertificateIamRole',
       'AssociateIamInstanceProfile',
       'AssociateInstanceEventWindow',
+      'AssociateIpamResourceDiscovery',
       'AssociateRouteTable',
       'AssociateSubnetCidrBlock',
       'AssociateTransitGatewayMulticastDomain',
@@ -8674,6 +8834,7 @@ export class Ec2 extends PolicyStatement {
       'CreateInternetGateway',
       'CreateIpam',
       'CreateIpamPool',
+      'CreateIpamResourceDiscovery',
       'CreateIpamScope',
       'CreateKeyPair',
       'CreateLaunchTemplate',
@@ -8748,6 +8909,7 @@ export class Ec2 extends PolicyStatement {
       'DeleteInternetGateway',
       'DeleteIpam',
       'DeleteIpamPool',
+      'DeleteIpamResourceDiscovery',
       'DeleteIpamScope',
       'DeleteKeyPair',
       'DeleteLaunchTemplate',
@@ -8835,6 +8997,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateEnclaveCertificateIamRole',
       'DisassociateIamInstanceProfile',
       'DisassociateInstanceEventWindow',
+      'DisassociateIpamResourceDiscovery',
       'DisassociateRouteTable',
       'DisassociateSubnetCidrBlock',
       'DisassociateTransitGatewayMulticastDomain',
@@ -8888,6 +9051,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyIpam',
       'ModifyIpamPool',
       'ModifyIpamResourceCidr',
+      'ModifyIpamResourceDiscovery',
       'ModifyIpamScope',
       'ModifyLaunchTemplate',
       'ModifyLocalGatewayRoute',
@@ -8928,6 +9092,7 @@ export class Ec2 extends PolicyStatement {
       'MonitorInstances',
       'MoveAddressToVpc',
       'MoveByoipCidrToIpam',
+      'PauseVolumeIO',
       'ProvisionByoipCidr',
       'ProvisionIpamPoolCidr',
       'ProvisionPublicIpv4PoolCidr',
@@ -9055,6 +9220,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeInstances',
       'DescribeInternetGateways',
       'DescribeIpamPools',
+      'DescribeIpamResourceDiscoveries',
+      'DescribeIpamResourceDiscoveryAssociations',
       'DescribeIpamScopes',
       'DescribeIpams',
       'DescribeIpv6Pools',
@@ -9181,6 +9348,8 @@ export class Ec2 extends PolicyStatement {
       'GetHostReservationPurchasePreview',
       'GetInstanceUefiData',
       'GetIpamAddressHistory',
+      'GetIpamDiscoveredAccounts',
+      'GetIpamDiscoveredResourceCidrs',
       'GetIpamPoolCidrs',
       'GetIpamResourceCidrs',
       'GetLaunchTemplateData',
@@ -9778,6 +9947,46 @@ export class Ec2 extends PolicyStatement {
    */
   public onIpamPool(ipamPoolId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-pool/${ ipamPoolId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-resource-discovery-association to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipamResourceDiscoveryAssociationId - Identifier for the ipamResourceDiscoveryAssociationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamResourceDiscoveryAssociation(ipamResourceDiscoveryAssociationId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-resource-discovery-association/${ ipamResourceDiscoveryAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-resource-discovery to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipamResourceDiscoveryId - Identifier for the ipamResourceDiscoveryId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamResourceDiscovery(ipamResourceDiscoveryId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-resource-discovery/${ ipamResourceDiscoveryId }`);
   }
 
   /**
@@ -11268,7 +11477,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - network-interface
@@ -11323,7 +11531,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcEndpoint()
-   * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -11424,7 +11631,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcEndpoint()
-   * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -11518,7 +11724,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - network-interface
@@ -11650,6 +11855,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
    * - .toRegisterTransitGatewayMulticastGroupSources()
@@ -11663,7 +11869,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
@@ -11998,6 +12203,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12063,6 +12269,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySnapshotTier()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
@@ -12153,7 +12360,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
-   * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
    * - .toEnableFastLaunch()
@@ -12169,7 +12375,6 @@ export class Ec2 extends PolicyStatement {
    * - .toResetImageAttribute()
    * - .toRestoreImageFromRecycleBin()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - image
@@ -12195,7 +12400,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
-   * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
    * - .toEnableFastLaunch()
@@ -12210,7 +12414,6 @@ export class Ec2 extends PolicyStatement {
    * - .toResetImageAttribute()
    * - .toRestoreImageFromRecycleBin()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - image
@@ -12294,6 +12497,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toRunInstances()
@@ -12348,6 +12552,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12403,6 +12608,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12454,6 +12660,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toRunInstances()
@@ -12508,6 +12715,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12568,6 +12776,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12690,7 +12899,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - key-pair
@@ -12715,7 +12923,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - key-pair
@@ -12833,6 +13040,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12886,6 +13094,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -12939,6 +13148,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -13012,7 +13222,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotInstances()
    * - .toResetNetworkInterfaceAttribute()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    *
@@ -13097,7 +13306,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeSnapshotAttribute()
-   * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImageDeprecation()
@@ -13124,7 +13332,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - fpga-image
@@ -13157,6 +13364,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -13198,7 +13406,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - snapshot
@@ -13247,10 +13454,10 @@ export class Ec2 extends PolicyStatement {
    * - vpn-connection
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase1DHGroup(value: number | number[], operator?: Operator | string) {
-    return this.if(`Phase1DHGroup`, value, operator || 'NumericEquals');
+  public ifPhase1DHGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`Phase1DHGroup`, value, operator || 'StringLike');
   }
 
   /**
@@ -13331,10 +13538,10 @@ export class Ec2 extends PolicyStatement {
    * - vpn-connection
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase2DHGroup(value: number | number[], operator?: Operator | string) {
-    return this.if(`Phase2DHGroup`, value, operator || 'NumericEquals');
+  public ifPhase2DHGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`Phase2DHGroup`, value, operator || 'StringLike');
   }
 
   /**
@@ -13469,7 +13676,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - placement-group
@@ -13498,7 +13704,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - placement-group
@@ -13595,7 +13800,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
-   * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
    * - .toEnableFastLaunch()
@@ -13612,7 +13816,6 @@ export class Ec2 extends PolicyStatement {
    * - .toResetImageAttribute()
    * - .toRestoreImageFromRecycleBin()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - fpga-image
@@ -13697,6 +13900,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateEnclaveCertificateIamRole()
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateInstanceEventWindow()
+   * - .toAssociateIpamResourceDiscovery()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -13750,6 +13954,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInternetGateway()
    * - .toCreateIpam()
    * - .toCreateIpamPool()
+   * - .toCreateIpamResourceDiscovery()
    * - .toCreateIpamScope()
    * - .toCreateKeyPair()
    * - .toCreateLaunchTemplate()
@@ -13826,6 +14031,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamPool()
+   * - .toDeleteIpamResourceDiscovery()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -13946,6 +14152,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstances()
    * - .toDescribeInternetGateways()
    * - .toDescribeIpamPools()
+   * - .toDescribeIpamResourceDiscoveries()
+   * - .toDescribeIpamResourceDiscoveryAssociations()
    * - .toDescribeIpamScopes()
    * - .toDescribeIpams()
    * - .toDescribeIpv6Pools()
@@ -14058,6 +14266,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateEnclaveCertificateIamRole()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateInstanceEventWindow()
+   * - .toDisassociateIpamResourceDiscovery()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -14099,6 +14308,8 @@ export class Ec2 extends PolicyStatement {
    * - .toGetInstanceTypesFromInstanceRequirements()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
+   * - .toGetIpamDiscoveredAccounts()
+   * - .toGetIpamDiscoveredResourceCidrs()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
    * - .toGetIpamResourceCidrs()
@@ -14156,6 +14367,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpam()
    * - .toModifyIpamPool()
    * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -14198,6 +14410,7 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toMoveAddressToVpc()
    * - .toMoveByoipCidrToIpam()
+   * - .toPauseVolumeIO()
    * - .toProvisionByoipCidr()
    * - .toProvisionIpamPoolCidr()
    * - .toProvisionPublicIpv4PoolCidr()
@@ -14287,6 +14500,8 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-pool
+   * - ipam-resource-discovery-association
+   * - ipam-resource-discovery
    * - ipam-scope
    * - coip-pool
    * - ipv4pool-ec2
@@ -14514,6 +14729,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateInstanceEventWindow()
+   * - .toAssociateIpamResourceDiscovery()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -14606,6 +14822,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamPool()
+   * - .toDeleteIpamResourceDiscovery()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -14682,7 +14899,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeSnapshotAttribute()
    * - .toDescribeSpotFleetInstances()
    * - .toDescribeSpotFleetRequestHistory()
-   * - .toDescribeStoreImageTasks()
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVpcAttribute()
    * - .toDetachClassicLinkVpc()
@@ -14703,6 +14919,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateInstanceEventWindow()
+   * - .toDisassociateIpamResourceDiscovery()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -14729,6 +14946,8 @@ export class Ec2 extends PolicyStatement {
    * - .toGetGroupsForCapacityReservation()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
+   * - .toGetIpamDiscoveredAccounts()
+   * - .toGetIpamDiscoveredResourceCidrs()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
    * - .toGetIpamResourceCidrs()
@@ -14768,6 +14987,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpam()
    * - .toModifyIpamPool()
    * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -14809,6 +15029,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpnTunnelOptions()
    * - .toMonitorInstances()
    * - .toMoveByoipCidrToIpam()
+   * - .toPauseVolumeIO()
    * - .toProvisionIpamPoolCidr()
    * - .toProvisionPublicIpv4PoolCidr()
    * - .toPurchaseHostReservation()
@@ -14847,7 +15068,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toSearchLocalGatewayRoutes()
    * - .toSearchTransitGatewayMulticastGroups()
    * - .toSearchTransitGatewayRoutes()
@@ -14890,6 +15110,8 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-pool
+   * - ipam-resource-discovery-association
+   * - ipam-resource-discovery
    * - ipam-scope
    * - coip-pool
    * - ipv4pool-ec2
@@ -14991,7 +15213,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
-   * - .toDescribeStoreImageTasks()
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
@@ -15019,6 +15240,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toRequestSpotFleet()
@@ -15027,7 +15249,6 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRestoreImageFromRecycleBin()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
@@ -15159,7 +15380,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    *
@@ -15237,7 +15457,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - snapshot
@@ -15276,7 +15495,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - snapshot
@@ -15366,7 +15584,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotInstances()
    * - .toResetNetworkInterfaceAttribute()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    *
@@ -15415,7 +15632,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - subnet
@@ -15491,6 +15707,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcAttribute()
    * - .toModifyVpcTenancy()
    * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toResetInstanceAttribute()
@@ -15535,6 +15752,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -15568,6 +15786,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -15613,6 +15832,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySnapshotTier()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
@@ -15620,7 +15840,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    *
    * Applies to resource types:
    * - snapshot
@@ -15654,6 +15873,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -15687,6 +15907,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toPauseVolumeIO()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -15766,7 +15987,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
    * - .toRunInstances()
-   * - .toRunScheduledInstances()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()

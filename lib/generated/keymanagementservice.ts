@@ -969,7 +969,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-bypass-policy-lockout-safety-check
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -984,7 +984,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-caller-account
    *
    * Applies to actions:
    * - .toCancelKeyDeletion()
@@ -1044,7 +1044,7 @@ export class Kms extends PolicyStatement {
   /**
    * The kms:CustomerMasterKeySpec condition key is deprecated. Instead, use the kms:KeySpec condition key
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-spec-replaced
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-spec-replaced
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1056,7 +1056,7 @@ export class Kms extends PolicyStatement {
   /**
    * The kms:CustomerMasterKeyUsage condition key is deprecated. Instead, use the kms:KeyUsage condition key
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-usage-replaced
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-usage-replaced
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1068,7 +1068,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the KeyPairSpec parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-data-key-pair-spec
    *
    * Applies to actions:
    * - .toGenerateDataKeyPair()
@@ -1084,7 +1084,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to encryption operations based on the value of the encryption algorithm in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-algorithm
    *
    * Applies to actions:
    * - .toDecrypt()
@@ -1106,7 +1106,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to a symmetric AWS KMS key based on the encryption context in a cryptographic operation. This condition evaluates the key and value in each key-value encryption context pair
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1129,7 +1129,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to a symmetric AWS KMS key based on the encryption context in a cryptographic operation. This condition key evaluates only the key in each key-value encryption context pair
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context-keys
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1152,7 +1152,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-expiration-model
    *
    * Applies to actions:
    * - .toImportKeyMaterial()
@@ -1167,7 +1167,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateGrant operation based on the grant constraint in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-constraint-type
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1182,7 +1182,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateGrant operation when the request comes from a specified AWS service
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-is-for-aws-resource
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1198,7 +1198,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateGrant operation based on the operations in the grant
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-operations
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1213,7 +1213,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateGrant operation based on the grantee principal in the grant
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grantee-principal
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1228,7 +1228,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to an API operation based on the Origin property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-origin
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -1246,7 +1246,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to an API operation based on the KeySpec property of the AWS KMS key that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-spec
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-spec
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -1264,7 +1264,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to an API operation based on the KeyUsage property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-usage
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-usage
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -1282,7 +1282,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the GenerateMac and VerifyMac operations based on the MacAlgorithm parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-mac-algorithm
    *
    * Applies to actions:
    * - .toGenerateMac()
@@ -1298,7 +1298,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the Sign and Verify operations based on the value of the MessageType parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-message-type
    *
    * Applies to actions:
    * - .toSign()
@@ -1314,7 +1314,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to an API operation based on the MultiRegion property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-multi-region
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -1331,7 +1331,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to an API operation based on the MultiRegionKeyType property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region-key-type
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-multi-region-key-type
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -1349,7 +1349,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the UpdatePrimaryRegion operation based on the value of the PrimaryRegion parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-primary-region
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-primary-region
    *
    * Applies to actions:
    * - .toUpdatePrimaryRegion()
@@ -1364,7 +1364,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the ReEncrypt operation when it uses the same AWS KMS key that was used for the Encrypt operation
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-reencrypt-on-same-key
    *
    * Applies to actions:
    * - .toReEncryptFrom()
@@ -1377,9 +1377,9 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to the Decrypt, GenerateDataKey, and GenerateRandom operations based on the image hash in the attestation document in the request
+   * Filters access to the Decrypt, GenerateDataKey, and GenerateRandom operations based on the platform configuration registers (PCRs) in the attestation document in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-recipient-attestation
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-nitro-enclaves.html#conditions-kms-recipient-pcrs
    *
    * Applies to actions:
    * - .toDecrypt()
@@ -1396,7 +1396,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the ReplicateKey operation based on the value of the ReplicaRegion parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-replica-region
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-replica-region
    *
    * Applies to actions:
    * - .toReplicateKey()
@@ -1411,7 +1411,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to cryptographic operations, DescribeKey, and GetPublicKey based on the alias in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-request-alias
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-request-alias
    *
    * Applies to actions:
    * - .toDecrypt()
@@ -1439,7 +1439,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to specified AWS KMS operations based on aliases associated with the AWS KMS key
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-resource-aliases
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-resource-aliases
    *
    * Applies to resource types:
    * - key
@@ -1454,7 +1454,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the CreateGrant operation based on the retiring principal in the grant
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-retiring-principal
    *
    * Applies to actions:
    * - .toCreateGrant()
@@ -1469,7 +1469,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the Sign and Verify operations based on the signing algorithm in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-signing-algorithm
    *
    * Applies to actions:
    * - .toSign()
@@ -1485,7 +1485,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-valid-to
    *
    * Applies to actions:
    * - .toImportKeyMaterial()
@@ -1510,7 +1510,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access when a request made on the principal's behalf comes from a specified AWS service
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-via-service
    *
    * Applies to actions:
    * - .toCancelKeyDeletion()
@@ -1564,7 +1564,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-wrapping-algorithm
    *
    * Applies to actions:
    * - .toGetParametersForImport()
@@ -1579,7 +1579,7 @@ export class Kms extends PolicyStatement {
   /**
    * Filters access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-wrapping-key-spec
    *
    * Applies to actions:
    * - .toGetParametersForImport()
