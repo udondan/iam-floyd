@@ -39,17 +39,27 @@ jobs:
           pip install autopep8
           make python-examples-adjust-indention
 
+      - name: Check for changes
+        id: changes
+        run: |
+          set -x +e
+          git stash -- package-lock.json
+          git diff
+          echo "CHANGED=$(git ls-files -m | wc -l | xargs)" >> $GITHUB_OUTPUT
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
+        if: steps.changes.outputs.CHANGED >= 0
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.OVERRIDE_TOKEN }}
           branch: ${{ github.head_ref }}
+        if: steps.changes.outputs.CHANGED >= 0
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
