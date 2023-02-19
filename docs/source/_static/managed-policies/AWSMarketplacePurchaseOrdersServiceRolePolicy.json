@@ -1,16 +1,16 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "AllowPurchaseOrderActions",
-			"Effect": "Allow",
-			"Action": [
-				"purchase-orders:ViewPurchaseOrders",
-				"purchase-orders:ModifyPurchaseOrders"
-			],
-			"Resource": [
-				"*"
-			]
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPurchaseOrderActions",
+      "Effect": "Allow",
+      "Action": [
+        "purchase-orders:ViewPurchaseOrders",
+        "purchase-orders:ModifyPurchaseOrders"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
 }

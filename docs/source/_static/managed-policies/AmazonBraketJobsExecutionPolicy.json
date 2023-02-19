@@ -1,105 +1,105 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"s3:GetObject",
-				"s3:PutObject",
-				"s3:ListBucket",
-				"s3:CreateBucket",
-				"s3:PutBucketPublicAccessBlock",
-				"s3:PutBucketPolicy"
-			],
-			"Resource": "arn:aws:s3:::amazon-braket-*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ecr:GetDownloadUrlForLayer",
-				"ecr:BatchGetImage",
-				"ecr:BatchCheckLayerAvailability"
-			],
-			"Resource": "arn:aws:ecr:*:*:repository/amazon-braket*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ecr:GetAuthorizationToken"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"braket:CancelJob",
-				"braket:CancelQuantumTask",
-				"braket:CreateJob",
-				"braket:CreateQuantumTask",
-				"braket:GetDevice",
-				"braket:GetJob",
-				"braket:GetQuantumTask",
-				"braket:SearchDevices",
-				"braket:SearchJobs",
-				"braket:SearchQuantumTasks",
-				"braket:ListTagsForResource",
-				"braket:TagResource",
-				"braket:UntagResource"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"iam:PassRole"
-			],
-			"Resource": "arn:aws:iam::*:role/service-role/AmazonBraketJobsExecutionRole*",
-			"Condition": {
-				"StringLike": {
-					"iam:PassedToService": [
-						"braket.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"iam:ListRoles"
-			],
-			"Resource": "arn:aws:iam::*:role/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"logs:GetQueryResults"
-			],
-			"Resource": [
-				"arn:aws:logs:*:*:log-group:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"logs:PutLogEvents",
-				"logs:CreateLogStream",
-				"logs:CreateLogGroup",
-				"logs:GetLogEvents",
-				"logs:DescribeLogStreams",
-				"logs:StartQuery",
-				"logs:StopQuery"
-			],
-			"Resource": "arn:aws:logs:*:*:log-group:/aws/braket*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "cloudwatch:PutMetricData",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"cloudwatch:namespace": "/aws/braket"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:CreateBucket",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::amazon-braket-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:BatchCheckLayerAvailability"
+      ],
+      "Resource": "arn:aws:ecr:*:*:repository/amazon-braket*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "braket:CancelJob",
+        "braket:CancelQuantumTask",
+        "braket:CreateJob",
+        "braket:CreateQuantumTask",
+        "braket:GetDevice",
+        "braket:GetJob",
+        "braket:GetQuantumTask",
+        "braket:SearchDevices",
+        "braket:SearchJobs",
+        "braket:SearchQuantumTasks",
+        "braket:ListTagsForResource",
+        "braket:TagResource",
+        "braket:UntagResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/AmazonBraketJobsExecutionRole*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": [
+            "braket.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "arn:aws:iam::*:role/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetQueryResults"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutLogEvents",
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:GetLogEvents",
+        "logs:DescribeLogStreams",
+        "logs:StartQuery",
+        "logs:StopQuery"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/braket*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "/aws/braket"
+        }
+      }
+    }
+  ]
 }

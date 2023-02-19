@@ -50,32 +50,32 @@
       "Resource": "*"
     },
     {
-        "Effect": "Allow",
-        "Action": "iam:CreateServiceLinkedRole",
-        "Resource": "*",
-        "Condition": {
-            "StringEquals": {
-                "iam:AWSServiceName": "events.workmail.amazonaws.com"
-            }
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "events.workmail.amazonaws.com"
         }
+      }
     },
     {
-        "Effect": "Allow",
-        "Action": [
-            "iam:DeleteServiceLinkedRole",
-            "iam:GetServiceLinkedRoleDeletionStatus"
-        ],
-        "Resource": "arn:aws:iam::*:role/aws-service-role/events.workmail.amazonaws.com/AWSServiceRoleForAmazonWorkMailEvents*"
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteServiceLinkedRole",
+        "iam:GetServiceLinkedRoleDeletionStatus"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/events.workmail.amazonaws.com/AWSServiceRoleForAmazonWorkMailEvents*"
     },
     {
-        "Effect": "Allow",
-        "Action": "iam:PassRole",
-        "Resource": "arn:aws:iam::*:role/*workmail*",
-        "Condition": {
-            "StringLike": {
-                "iam:PassedToService": "events.workmail.amazonaws.com"
-            }
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*workmail*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "events.workmail.amazonaws.com"
         }
+      }
     }
   ]
 }

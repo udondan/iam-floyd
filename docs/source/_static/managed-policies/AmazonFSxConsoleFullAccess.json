@@ -1,67 +1,67 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"cloudwatch:DescribeAlarms",
-				"cloudwatch:GetMetricData",
-				"ds:DescribeDirectories",
-				"ec2:DescribeNetworkInterfaceAttribute",
-				"ec2:DescribeRouteTables",
-				"ec2:DescribeSecurityGroups",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeVpcs",
-				"firehose:ListDeliveryStreams",
-				"fsx:*",
-				"kms:ListAliases",
-				"logs:DescribeLogGroups",
-				"s3:ListBucket"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": [
-						"fsx.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": [
-						"s3.data-source.lustre.fsx.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateTags"
-			],
-			"Resource": [
-				"arn:aws:ec2:*:*:route-table/*"
-			],
-			"Condition": {
-				"StringEquals": {
-					"aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
-				},
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"fsx.amazonaws.com"
-					]
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData",
+        "ds:DescribeDirectories",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "firehose:ListDeliveryStreams",
+        "fsx:*",
+        "kms:ListAliases",
+        "logs:DescribeLogGroups",
+        "s3:ListBucket"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "fsx.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "s3.data-source.lustre.fsx.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:route-table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "fsx.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 {
-   "Version": "2012-10-17",
-   "Statement": [{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
       "Effect": "Allow",
       "Action": [
         "organizations:DescribeAccount",
@@ -19,11 +20,11 @@
       "Sid": "AllowDeletionOfServiceLinkedRoleForResourceAccessManager",
       "Effect": "Allow",
       "Action": [
-         "iam:DeleteRole"
+        "iam:DeleteRole"
       ],
       "Resource": [
-         "arn:aws:iam::*:role/aws-service-role/ram.amazonaws.com/*"
+        "arn:aws:iam::*:role/aws-service-role/ram.amazonaws.com/*"
       ]
     }
-   ]
+  ]
 }

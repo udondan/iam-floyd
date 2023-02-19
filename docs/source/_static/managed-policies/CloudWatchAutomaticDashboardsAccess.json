@@ -43,8 +43,8 @@
     },
     {
       "Action": [
-         "apigateway:GET"
-       ],
+        "apigateway:GET"
+      ],
       "Effect": "Allow",
       "Resource": [
         "arn:aws:apigateway:*::/restapis*"

@@ -1,74 +1,74 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "DataAPIPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"redshift-data:BatchExecuteStatement",
-				"redshift-data:ExecuteStatement",
-				"redshift-data:CancelStatement",
-				"redshift-data:ListStatements",
-				"redshift-data:GetStatementResult",
-				"redshift-data:DescribeStatement",
-				"redshift-data:ListDatabases",
-				"redshift-data:ListSchemas",
-				"redshift-data:ListTables",
-				"redshift-data:DescribeTable"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "SecretsManagerPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"secretsmanager:GetSecretValue"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"secretsmanager:ResourceTag/RedshiftDataFullAccess": "*"
-				}
-			}
-		},
-		{
-			"Sid": "GetCredentialsForAPIUser",
-			"Effect": "Allow",
-			"Action": "redshift:GetClusterCredentials",
-			"Resource": [
-				"arn:aws:redshift:*:*:dbname:*/*",
-				"arn:aws:redshift:*:*:dbuser:*/redshift_data_api_user"
-			]
-		},
-		{
-			"Sid": "GetCredentialsForServerless",
-			"Effect": "Allow",
-			"Action": "redshift-serverless:GetCredentials",
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"aws:ResourceTag/RedshiftDataFullAccess": "*"
-				}
-			}
-		},
-		{
-			"Sid": "DenyCreateAPIUser",
-			"Effect": "Deny",
-			"Action": "redshift:CreateClusterUser",
-			"Resource": [
-				"arn:aws:redshift:*:*:dbuser:*/redshift_data_api_user"
-			]
-		},
-		{
-			"Sid": "ServiceLinkedRole",
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "arn:aws:iam::*:role/aws-service-role/redshift-data.amazonaws.com/AWSServiceRoleForRedshift",
-			"Condition": {
-				"StringLike": {
-					"iam:AWSServiceName": "redshift-data.amazonaws.com"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataAPIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:BatchExecuteStatement",
+        "redshift-data:ExecuteStatement",
+        "redshift-data:CancelStatement",
+        "redshift-data:ListStatements",
+        "redshift-data:GetStatementResult",
+        "redshift-data:DescribeStatement",
+        "redshift-data:ListDatabases",
+        "redshift-data:ListSchemas",
+        "redshift-data:ListTables",
+        "redshift-data:DescribeTable"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecretsManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "secretsmanager:ResourceTag/RedshiftDataFullAccess": "*"
+        }
+      }
+    },
+    {
+      "Sid": "GetCredentialsForAPIUser",
+      "Effect": "Allow",
+      "Action": "redshift:GetClusterCredentials",
+      "Resource": [
+        "arn:aws:redshift:*:*:dbname:*/*",
+        "arn:aws:redshift:*:*:dbuser:*/redshift_data_api_user"
+      ]
+    },
+    {
+      "Sid": "GetCredentialsForServerless",
+      "Effect": "Allow",
+      "Action": "redshift-serverless:GetCredentials",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/RedshiftDataFullAccess": "*"
+        }
+      }
+    },
+    {
+      "Sid": "DenyCreateAPIUser",
+      "Effect": "Deny",
+      "Action": "redshift:CreateClusterUser",
+      "Resource": [
+        "arn:aws:redshift:*:*:dbuser:*/redshift_data_api_user"
+      ]
+    },
+    {
+      "Sid": "ServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/redshift-data.amazonaws.com/AWSServiceRoleForRedshift",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "redshift-data.amazonaws.com"
+        }
+      }
+    }
+  ]
 }

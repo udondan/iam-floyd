@@ -1,44 +1,44 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"detective:BatchGetGraphMemberDatasources",
-				"detective:BatchGetMembershipDatasources",
-				"detective:DescribeOrganizationConfiguration",
-				"detective:GetFreeTrialEligibility",
-				"detective:GetGraphIngestState",
-				"detective:GetMembers",
-				"detective:GetPricingInformation",
-				"detective:GetUsageInformation",
-				"detective:ListDatasourcePackages",
-				"detective:ListGraphs",
-				"detective:ListHighDegreeEntities",
-				"detective:ListInvitations",
-				"detective:ListMembers",
-				"detective:ListOrganizationAdminAccount",
-				"detective:ListTagsForResource",
-				"detective:SearchGraph"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"organizations:DescribeOrganization",
-				"organizations:ListAccounts"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"guardduty:ArchiveFindings",
-				"guardduty:GetFindings",
-				"guardduty:ListDetectors"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "detective:BatchGetGraphMemberDatasources",
+        "detective:BatchGetMembershipDatasources",
+        "detective:DescribeOrganizationConfiguration",
+        "detective:GetFreeTrialEligibility",
+        "detective:GetGraphIngestState",
+        "detective:GetMembers",
+        "detective:GetPricingInformation",
+        "detective:GetUsageInformation",
+        "detective:ListDatasourcePackages",
+        "detective:ListGraphs",
+        "detective:ListHighDegreeEntities",
+        "detective:ListInvitations",
+        "detective:ListMembers",
+        "detective:ListOrganizationAdminAccount",
+        "detective:ListTagsForResource",
+        "detective:SearchGraph"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:ArchiveFindings",
+        "guardduty:GetFindings",
+        "guardduty:ListDetectors"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

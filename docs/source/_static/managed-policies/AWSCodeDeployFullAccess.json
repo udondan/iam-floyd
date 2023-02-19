@@ -7,56 +7,58 @@
       "Resource": "*"
     },
     {
-        "Sid": "CodeStarNotificationsReadWriteAccess",
-        "Effect": "Allow",
-        "Action": [
-            "codestar-notifications:CreateNotificationRule",
-            "codestar-notifications:DescribeNotificationRule",
-            "codestar-notifications:UpdateNotificationRule",
-            "codestar-notifications:DeleteNotificationRule",
-            "codestar-notifications:Subscribe",
-            "codestar-notifications:Unsubscribe"
-        ],
-        "Resource": "*",
-        "Condition" : {
-            "StringLike" : {"codestar-notifications:NotificationsForResource" : "arn:aws:codedeploy:*"} 
+      "Sid": "CodeStarNotificationsReadWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:CreateNotificationRule",
+        "codestar-notifications:DescribeNotificationRule",
+        "codestar-notifications:UpdateNotificationRule",
+        "codestar-notifications:DeleteNotificationRule",
+        "codestar-notifications:Subscribe",
+        "codestar-notifications:Unsubscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*"
         }
-    },    
-    {
-        "Sid": "CodeStarNotificationsListAccess",
-        "Effect": "Allow",
-        "Action": [
-            "codestar-notifications:ListNotificationRules",
-            "codestar-notifications:ListTargets",
-            "codestar-notifications:ListTagsforResource",
-            "codestar-notifications:ListEventTypes"
-        ],
-        "Resource": "*"
+      }
     },
     {
-        "Sid": "CodeStarNotificationsSNSTopicCreateAccess",
-        "Effect": "Allow",
-        "Action": [
-            "sns:CreateTopic",
-            "sns:SetTopicAttributes"
-        ],
-        "Resource": "arn:aws:sns:*:*:codestar-notifications*"
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListTargets",
+        "codestar-notifications:ListTagsforResource",
+        "codestar-notifications:ListEventTypes"
+      ],
+      "Resource": "*"
     },
     {
-       "Sid":"CodeStarNotificationsChatbotAccess",
-       "Effect":"Allow",
-       "Action":[
-          "chatbot:DescribeSlackChannelConfigurations"
-       ],
-       "Resource":"*"
+      "Sid": "CodeStarNotificationsSNSTopicCreateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:SetTopicAttributes"
+      ],
+      "Resource": "arn:aws:sns:*:*:codestar-notifications*"
     },
     {
-        "Sid": "SNSTopicListAccess",
-        "Effect": "Allow",
-        "Action": [
-            "sns:ListTopics"
-        ],
-        "Resource": "*"
+      "Sid": "CodeStarNotificationsChatbotAccess",
+      "Effect": "Allow",
+      "Action": [
+        "chatbot:DescribeSlackChannelConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSTopicListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
     }
   ]
 }

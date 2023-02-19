@@ -11,7 +11,9 @@
         "polly:ListSpeechSynthesisTasks",
         "polly:SynthesizeSpeech"
       ],
-      "Resource": [ "*" ]
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }

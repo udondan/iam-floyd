@@ -7,9 +7,9 @@
       "Resource": "*"
     },
     {
-        "Effect": "Allow",
-        "Action": "cloudwatch:PutMetricAlarm",
-        "Resource": "*"
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricAlarm",
+      "Resource": "*"
     },
     {
       "Effect": "Allow",
@@ -38,14 +38,14 @@
       "Resource": "*"
     },
     {
-        "Effect": "Allow",
-        "Action": "iam:CreateServiceLinkedRole",
-        "Resource": "*",
-        "Condition": {
-            "StringEquals": {
-                "iam:AWSServiceName": "autoscaling.amazonaws.com"
-            }
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "autoscaling.amazonaws.com"
         }
+      }
     }
   ]
 }

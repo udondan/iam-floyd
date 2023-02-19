@@ -1,40 +1,40 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"mgn:DescribeJobLogItems",
-				"mgn:DescribeJobs",
-				"mgn:DescribeSourceServers",
-				"mgn:DescribeReplicationConfigurationTemplates",
-				"mgn:GetLaunchConfiguration",
-				"mgn:DescribeVcenterClients",
-				"mgn:GetReplicationConfiguration",
-				"mgn:DescribeLaunchConfigurationTemplates",
-				"mgn:ListSourceServerActions",
-				"mgn:ListTemplateActions",
-				"mgn:ListApplications",
-				"mgn:ListWaves"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ec2:DescribeLaunchTemplateVersions",
-				"ec2:DescribeSecurityGroups",
-				"ec2:DescribeSubnets"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"servicequotas:GetServiceQuota"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgn:DescribeJobLogItems",
+        "mgn:DescribeJobs",
+        "mgn:DescribeSourceServers",
+        "mgn:DescribeReplicationConfigurationTemplates",
+        "mgn:GetLaunchConfiguration",
+        "mgn:DescribeVcenterClients",
+        "mgn:GetReplicationConfiguration",
+        "mgn:DescribeLaunchConfigurationTemplates",
+        "mgn:ListSourceServerActions",
+        "mgn:ListTemplateActions",
+        "mgn:ListApplications",
+        "mgn:ListWaves"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeLaunchTemplateVersions",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

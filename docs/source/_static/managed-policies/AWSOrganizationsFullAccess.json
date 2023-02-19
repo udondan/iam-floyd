@@ -1,34 +1,34 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": "organizations:*",
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"account:PutAlternateContact",
-				"account:DeleteAlternateContact",
-				"account:GetAlternateContact",
-				"account:GetContactInformation",
-				"account:PutContactInformation",
-				"account:ListRegions",
-				"account:EnableRegion",
-				"account:DisableRegion"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": "organizations.amazonaws.com"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "organizations:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "account:PutAlternateContact",
+        "account:DeleteAlternateContact",
+        "account:GetAlternateContact",
+        "account:GetContactInformation",
+        "account:PutContactInformation",
+        "account:ListRegions",
+        "account:EnableRegion",
+        "account:DisableRegion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "organizations.amazonaws.com"
+        }
+      }
+    }
+  ]
 }

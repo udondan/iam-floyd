@@ -12,7 +12,7 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "events:ManagedBy": "event-processor.health.amazonaws.com"
+          "events:ManagedBy": "events.managedservices.amazonaws.com"
         }
       }
     },

@@ -1,32 +1,32 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"kms:DescribeKey",
-				"kms:ListAliases",
-				"kms:ListKeys",
-				"workspaces:CreateTags",
-				"workspaces:CreateWorkspaceImage",
-				"workspaces:CreateWorkspaces",
-				"workspaces:CreateStandbyWorkspaces",
-				"workspaces:DeleteTags",
-				"workspaces:DescribeTags",
-				"workspaces:DescribeWorkspaceBundles",
-				"workspaces:DescribeWorkspaceDirectories",
-				"workspaces:DescribeWorkspaces",
-				"workspaces:DescribeWorkspacesConnectionStatus",
-				"workspaces:ModifyCertificateBasedAuthProperties",
-				"workspaces:ModifySamlProperties",
-				"workspaces:ModifyWorkspaceProperties",
-				"workspaces:RebootWorkspaces",
-				"workspaces:RebuildWorkspaces",
-				"workspaces:StartWorkspaces",
-				"workspaces:StopWorkspaces",
-				"workspaces:TerminateWorkspaces"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys",
+        "workspaces:CreateTags",
+        "workspaces:CreateWorkspaceImage",
+        "workspaces:CreateWorkspaces",
+        "workspaces:CreateStandbyWorkspaces",
+        "workspaces:DeleteTags",
+        "workspaces:DescribeTags",
+        "workspaces:DescribeWorkspaceBundles",
+        "workspaces:DescribeWorkspaceDirectories",
+        "workspaces:DescribeWorkspaces",
+        "workspaces:DescribeWorkspacesConnectionStatus",
+        "workspaces:ModifyCertificateBasedAuthProperties",
+        "workspaces:ModifySamlProperties",
+        "workspaces:ModifyWorkspaceProperties",
+        "workspaces:RebootWorkspaces",
+        "workspaces:RebuildWorkspaces",
+        "workspaces:StartWorkspaces",
+        "workspaces:StopWorkspaces",
+        "workspaces:TerminateWorkspaces"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

@@ -18,9 +18,10 @@
       ]
     },
     {
-            "Sid": "AllowElasticBeanstalkStacksUpdateExecuteSuccessfully",
-            "Effect": "Allow",
-            "Action": "elasticloadbalancing:DescribeLoadBalancers",
-            "Resource": "*"
-      }]
+      "Sid": "AllowElasticBeanstalkStacksUpdateExecuteSuccessfully",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:DescribeLoadBalancers",
+      "Resource": "*"
+    }
+  ]
 }

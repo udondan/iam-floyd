@@ -1,79 +1,79 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "DSReadPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ds:DescribeDirectories",
-				"ds:GetAuthorizedApplicationDetails"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "SSMReadPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ssm:GetInventory",
-				"ssm:GetCommandInvocation",
-				"ssm:ListCommandInvocations",
-				"ssm:DescribeInstanceInformation"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "EC2ReadPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ec2:DescribeVpcPeeringConnections"
-			],
-			"Resource": "*"
-		},
-		{
-			"Sid": "EC2WritePermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ec2:TerminateInstances",
-				"ec2:CreateTags"
-			],
-			"Condition": {
-				"StringEquals": {
-					"ec2:productCode": [
-						"bz0vcy31ooqlzk5tsash4r1ik",
-						"d44g89hc0gp9jdzm99rznthpw",
-						"77yzkpa7kvee1y1tt7wnsdwoc"
-					]
-				}
-			},
-			"Resource": [
-				"arn:aws:ec2:*:*:instance/*"
-			]
-		},
-		{
-			"Sid": "SSMDocumentExecutionPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ssm:SendCommand"
-			],
-			"Resource": [
-				"arn:aws:ssm:*::document/AWS-RunPowerShellScript"
-			]
-		},
-		{
-			"Sid": "SSMInstanceExecutionPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"ssm:SendCommand"
-			],
-			"Resource": [
-				"arn:aws:ec2:*:*:instance/*"
-			],
-			"Condition": {
-				"StringEquals": {
-					"aws:ResourceTag/AWSLicenseManager": "UserSubscriptions"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DSReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ds:DescribeDirectories",
+        "ds:GetAuthorizedApplicationDetails"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetInventory",
+        "ssm:GetCommandInvocation",
+        "ssm:ListCommandInvocations",
+        "ssm:DescribeInstanceInformation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2ReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcPeeringConnections"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2WritePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:TerminateInstances",
+        "ec2:CreateTags"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:productCode": [
+            "bz0vcy31ooqlzk5tsash4r1ik",
+            "d44g89hc0gp9jdzm99rznthpw",
+            "77yzkpa7kvee1y1tt7wnsdwoc"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Sid": "SSMDocumentExecutionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*::document/AWS-RunPowerShellScript"
+      ]
+    },
+    {
+      "Sid": "SSMInstanceExecutionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AWSLicenseManager": "UserSubscriptions"
+        }
+      }
+    }
+  ]
 }

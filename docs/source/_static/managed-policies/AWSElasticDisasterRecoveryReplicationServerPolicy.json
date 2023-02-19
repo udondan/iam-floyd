@@ -1,81 +1,81 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:SendClientMetricsForDrs",
-				"drs:SendClientLogsForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:GetChannelCommandsForDrs",
-				"drs:SendChannelCommandResultForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:GetAgentSnapshotCreditsForDrs",
-				"drs:DescribeReplicationServerAssociationsForDrs",
-				"drs:DescribeSnapshotRequestsForDrs",
-				"drs:BatchDeleteSnapshotRequestForDrs",
-				"drs:NotifyAgentAuthenticationForDrs",
-				"drs:BatchCreateVolumeSnapshotGroupForDrs",
-				"drs:UpdateAgentReplicationProcessStateForDrs",
-				"drs:NotifyAgentReplicationProgressForDrs",
-				"drs:NotifyAgentConnectedForDrs",
-				"drs:NotifyAgentDisconnectedForDrs",
-				"drs:NotifyVolumeEventForDrs",
-				"drs:SendVolumeStatsForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ec2:DescribeSnapshots"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateSnapshot"
-			],
-			"Resource": "arn:aws:ec2:*:*:volume/*",
-			"Condition": {
-				"Null": {
-					"aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateSnapshot"
-			],
-			"Resource": "arn:aws:ec2:*:*:snapshot/*",
-			"Condition": {
-				"Null": {
-					"aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateTags",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"ec2:CreateAction": "CreateSnapshot"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendClientMetricsForDrs",
+        "drs:SendClientLogsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetChannelCommandsForDrs",
+        "drs:SendChannelCommandResultForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetAgentSnapshotCreditsForDrs",
+        "drs:DescribeReplicationServerAssociationsForDrs",
+        "drs:DescribeSnapshotRequestsForDrs",
+        "drs:BatchDeleteSnapshotRequestForDrs",
+        "drs:NotifyAgentAuthenticationForDrs",
+        "drs:BatchCreateVolumeSnapshotGroupForDrs",
+        "drs:UpdateAgentReplicationProcessStateForDrs",
+        "drs:NotifyAgentReplicationProgressForDrs",
+        "drs:NotifyAgentConnectedForDrs",
+        "drs:NotifyAgentDisconnectedForDrs",
+        "drs:NotifyVolumeEventForDrs",
+        "drs:SendVolumeStatsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateSnapshot"
+        }
+      }
+    }
+  ]
 }

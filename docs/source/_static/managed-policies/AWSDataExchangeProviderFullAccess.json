@@ -1,152 +1,152 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"dataexchange:CreateDataSet",
-				"dataexchange:CreateRevision",
-				"dataexchange:CreateAsset",
-				"dataexchange:Get*",
-				"dataexchange:Update*",
-				"dataexchange:List*",
-				"dataexchange:Delete*",
-				"dataexchange:TagResource",
-				"dataexchange:UntagResource",
-				"dataexchange:PublishDataSet",
-				"dataexchange:SendApiAsset",
-				"dataexchange:RevokeRevision",
-				"tag:GetTagKeys",
-				"tag:GetTagValues"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"dataexchange:CreateJob",
-				"dataexchange:StartJob",
-				"dataexchange:CancelJob"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"dataexchange:JobType": [
-						"IMPORT_ASSETS_FROM_S3",
-						"IMPORT_ASSET_FROM_SIGNED_URL",
-						"EXPORT_ASSETS_TO_S3",
-						"EXPORT_ASSET_TO_SIGNED_URL",
-						"IMPORT_ASSET_FROM_API_GATEWAY_API",
-						"IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "s3:GetObject",
-			"Resource": "arn:aws:s3:::*aws-data-exchange*",
-			"Condition": {
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"dataexchange.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "s3:GetObject",
-			"Resource": "*",
-			"Condition": {
-				"StringEqualsIgnoreCase": {
-					"s3:ExistingObjectTag/AWSDataExchange": "true"
-				},
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"dataexchange.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"s3:PutObject",
-				"s3:PutObjectAcl"
-			],
-			"Resource": "arn:aws:s3:::*aws-data-exchange*",
-			"Condition": {
-				"ForAnyValue:StringEquals": {
-					"aws:CalledVia": [
-						"dataexchange.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"s3:GetBucketLocation",
-				"s3:ListBucket",
-				"s3:ListAllMyBuckets"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"aws-marketplace:DescribeEntity",
-				"aws-marketplace:ListEntities",
-				"aws-marketplace:DescribeChangeSet",
-				"aws-marketplace:ListChangeSets",
-				"aws-marketplace:StartChangeSet",
-				"aws-marketplace:CancelChangeSet",
-				"aws-marketplace:GetAgreementApprovalRequest",
-				"aws-marketplace:ListAgreementApprovalRequests",
-				"aws-marketplace:AcceptAgreementApprovalRequest",
-				"aws-marketplace:RejectAgreementApprovalRequest",
-				"aws-marketplace:UpdateAgreementApprovalRequest",
-				"aws-marketplace:SearchAgreements",
-				"aws-marketplace:GetAgreementTerms"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"kms:DescribeKey",
-				"kms:ListAliases",
-				"kms:ListKeys"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:AuthorizeDataShare"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEqualsIgnoreCase": {
-					"redshift:ConsumerIdentifier": "ADX"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:DescribeDataSharesForProducer",
-				"redshift:DescribeDataShares"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"apigateway:GET"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateDataSet",
+        "dataexchange:CreateRevision",
+        "dataexchange:CreateAsset",
+        "dataexchange:Get*",
+        "dataexchange:Update*",
+        "dataexchange:List*",
+        "dataexchange:Delete*",
+        "dataexchange:TagResource",
+        "dataexchange:UntagResource",
+        "dataexchange:PublishDataSet",
+        "dataexchange:SendApiAsset",
+        "dataexchange:RevokeRevision",
+        "tag:GetTagKeys",
+        "tag:GetTagValues"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateJob",
+        "dataexchange:StartJob",
+        "dataexchange:CancelJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "dataexchange:JobType": [
+            "IMPORT_ASSETS_FROM_S3",
+            "IMPORT_ASSET_FROM_SIGNED_URL",
+            "EXPORT_ASSETS_TO_S3",
+            "EXPORT_ASSET_TO_SIGNED_URL",
+            "IMPORT_ASSET_FROM_API_GATEWAY_API",
+            "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::*aws-data-exchange*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "dataexchange.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "s3:ExistingObjectTag/AWSDataExchange": "true"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "dataexchange.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl"
+      ],
+      "Resource": "arn:aws:s3:::*aws-data-exchange*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "dataexchange.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity",
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListChangeSets",
+        "aws-marketplace:StartChangeSet",
+        "aws-marketplace:CancelChangeSet",
+        "aws-marketplace:GetAgreementApprovalRequest",
+        "aws-marketplace:ListAgreementApprovalRequests",
+        "aws-marketplace:AcceptAgreementApprovalRequest",
+        "aws-marketplace:RejectAgreementApprovalRequest",
+        "aws-marketplace:UpdateAgreementApprovalRequest",
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:GetAgreementTerms"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:AuthorizeDataShare"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "redshift:ConsumerIdentifier": "ADX"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:DescribeDataSharesForProducer",
+        "redshift:DescribeDataShares"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

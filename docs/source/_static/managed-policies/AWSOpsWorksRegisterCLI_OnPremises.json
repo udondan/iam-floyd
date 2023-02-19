@@ -54,11 +54,10 @@
         "arn:aws:iam::*:user/AWS/OpsWorks/OpsWorks-*"
       ],
       "Condition": {
-        "ArnEquals": 
-          {
-            "iam:PolicyARN": "arn:aws:iam::aws:policy/AWSOpsWorksInstanceRegistration"
-          }
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/AWSOpsWorksInstanceRegistration"
         }
+      }
     }
   ]
 }

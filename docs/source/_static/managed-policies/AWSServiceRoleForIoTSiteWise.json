@@ -1,33 +1,33 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "greengrass:GetAssociatedRole",
-                "greengrass:GetCoreDefinition",
-                "greengrass:GetCoreDefinitionVersion",
-                "greengrass:GetGroup",
-                "greengrass:GetGroupVersion"
-            ],
-            "Resource": "*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "logs:CreateLogGroup",
-                "logs:DescribeLogGroups"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "logs:CreateLogStream",
-                "logs:DescribeLogStreams",
-                "logs:PutLogEvents"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*:log-stream:*",
-            "Effect": "Allow"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "greengrass:GetAssociatedRole",
+        "greengrass:GetCoreDefinition",
+        "greengrass:GetCoreDefinitionVersion",
+        "greengrass:GetGroup",
+        "greengrass:GetGroupVersion"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*:log-stream:*",
+      "Effect": "Allow"
+    }
+  ]
 }

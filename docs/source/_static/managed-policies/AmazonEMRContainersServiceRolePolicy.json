@@ -1,42 +1,42 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"eks:DescribeCluster",
-				"ec2:DescribeRouteTables",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeSecurityGroups",
-				"elasticloadbalancing:DescribeInstanceHealth",
-				"elasticloadbalancing:DescribeLoadBalancers"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"acm:ImportCertificate",
-				"acm:AddTagsToCertificate"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"aws:RequestTag/emr-container:endpoint:managed-certificate": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"acm:DeleteCertificate"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"aws:ResourceTag/emr-container:endpoint:managed-certificate": "true"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeCluster",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "elasticloadbalancing:DescribeInstanceHealth",
+        "elasticloadbalancing:DescribeLoadBalancers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:ImportCertificate",
+        "acm:AddTagsToCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/emr-container:endpoint:managed-certificate": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:DeleteCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/emr-container:endpoint:managed-certificate": "true"
+        }
+      }
+    }
+  ]
 }

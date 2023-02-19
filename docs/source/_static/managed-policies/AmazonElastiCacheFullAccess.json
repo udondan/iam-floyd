@@ -12,7 +12,7 @@
       "Resource": "arn:aws:iam::*:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
       "Condition": {
         "StringLike": {
-            "iam:AWSServiceName": "elasticache.amazonaws.com"
+          "iam:AWSServiceName": "elasticache.amazonaws.com"
         }
       }
     }

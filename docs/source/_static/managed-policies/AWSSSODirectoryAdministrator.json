@@ -1,16 +1,16 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "AWSSSODirectoryAdministrator",
-			"Effect": "Allow",
-			"Action": [
-				"sso-directory:*",
-				"identitystore:*",
-				"identitystore-auth:*",
-				"sso:ListDirectoryAssociations"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSSODirectoryAdministrator",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:*",
+        "identitystore:*",
+        "identitystore-auth:*",
+        "sso:ListDirectoryAssociations"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

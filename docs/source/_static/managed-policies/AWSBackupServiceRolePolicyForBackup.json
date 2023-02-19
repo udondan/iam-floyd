@@ -1,396 +1,396 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Action": [
-				"dynamodb:DescribeTable",
-				"dynamodb:CreateBackup"
-			],
-			"Resource": "arn:aws:dynamodb:*:*:table/*",
-			"Effect": "Allow"
-		},
-		{
-			"Action": [
-				"dynamodb:DescribeBackup",
-				"dynamodb:DeleteBackup"
-			],
-			"Resource": "arn:aws:dynamodb:*:*:table/*/backup/*",
-			"Effect": "Allow"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"rds:AddTagsToResource",
-				"rds:ListTagsForResource",
-				"rds:DescribeDBSnapshots",
-				"rds:CreateDBSnapshot",
-				"rds:CopyDBSnapshot",
-				"rds:DescribeDBInstances",
-				"rds:CreateDBClusterSnapshot",
-				"rds:DescribeDBClusters",
-				"rds:DescribeDBClusterSnapshots",
-				"rds:CopyDBClusterSnapshot"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"rds:ModifyDBInstance"
-			],
-			"Resource": [
-				"arn:aws:rds:*:*:db:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"rds:DeleteDBSnapshot",
-				"rds:ModifyDBSnapshotAttribute"
-			],
-			"Resource": [
-				"arn:aws:rds:*:*:snapshot:awsbackup:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"rds:DeleteDBClusterSnapshot",
-				"rds:ModifyDBClusterSnapshotAttribute"
-			],
-			"Resource": [
-				"arn:aws:rds:*:*:cluster-snapshot:awsbackup:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"storagegateway:CreateSnapshot",
-				"storagegateway:ListTagsForResource"
-			],
-			"Resource": "arn:aws:storagegateway:*:*:gateway/*/volume/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CopySnapshot"
-			],
-			"Resource": "arn:aws:ec2:*::snapshot/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CopyImage"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateTags",
-				"ec2:DeleteSnapshot"
-			],
-			"Resource": "arn:aws:ec2:*::snapshot/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateImage",
-				"ec2:DeregisterImage"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateTags"
-			],
-			"Resource": "arn:aws:ec2:*:*:image/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeSnapshots",
-				"ec2:DescribeTags",
-				"ec2:DescribeImages",
-				"ec2:DescribeInstances",
-				"ec2:DescribeInstanceAttribute",
-				"ec2:DescribeInstanceCreditSpecifications",
-				"ec2:DescribeNetworkInterfaces",
-				"ec2:DescribeElasticGpus",
-				"ec2:DescribeSpotInstanceRequests"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:ModifySnapshotAttribute",
-				"ec2:ModifyImageAttribute"
-			],
-			"Resource": "*",
-			"Condition": {
-				"Null": {
-					"aws:ResourceTag/aws:backup:source-resource": "false"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"backup:DescribeBackupVault",
-				"backup:CopyIntoBackupVault"
-			],
-			"Resource": "arn:aws:backup:*:*:backup-vault:*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"backup:CopyFromBackupVault"
-			],
-			"Resource": "*"
-		},
-		{
-			"Action": [
-				"elasticfilesystem:Backup",
-				"elasticfilesystem:DescribeTags"
-			],
-			"Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
-			"Effect": "Allow"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateSnapshot",
-				"ec2:DeleteSnapshot",
-				"ec2:DescribeVolumes",
-				"ec2:DescribeSnapshots"
-			],
-			"Resource": [
-				"arn:aws:ec2:*::snapshot/*",
-				"arn:aws:ec2:*:*:volume/*"
-			]
-		},
-		{
-			"Action": [
-				"kms:Decrypt",
-				"kms:GenerateDataKey"
-			],
-			"Effect": "Allow",
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"kms:ViaService": [
-						"dynamodb.*.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Action": "kms:DescribeKey",
-			"Effect": "Allow",
-			"Resource": "*"
-		},
-		{
-			"Action": "kms:CreateGrant",
-			"Effect": "Allow",
-			"Resource": "*",
-			"Condition": {
-				"Bool": {
-					"kms:GrantIsForAWSResource": "true"
-				}
-			}
-		},
-		{
-			"Action": [
-				"kms:GenerateDataKeyWithoutPlaintext"
-			],
-			"Effect": "Allow",
-			"Resource": "arn:aws:kms:*:*:key/*",
-			"Condition": {
-				"StringLike": {
-					"kms:ViaService": [
-						"ec2.*.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Action": [
-				"tag:GetResources"
-			],
-			"Resource": "*",
-			"Effect": "Allow"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ssm:CancelCommand",
-				"ssm:GetCommandInvocation"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ssm:SendCommand",
-			"Resource": [
-				"arn:aws:ssm:*:*:document/AWSEC2-CreateVssSnapshot",
-				"arn:aws:ec2:*:*:instance/*"
-			]
-		},
-		{
-			"Action": "fsx:DescribeBackups",
-			"Effect": "Allow",
-			"Resource": "arn:aws:fsx:*:*:backup/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "fsx:CreateBackup",
-			"Resource": [
-				"arn:aws:fsx:*:*:file-system/*",
-				"arn:aws:fsx:*:*:backup/*",
-				"arn:aws:fsx:*:*:volume/*"
-			]
-		},
-		{
-			"Action": "fsx:DescribeFileSystems",
-			"Effect": "Allow",
-			"Resource": "arn:aws:fsx:*:*:file-system/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "fsx:DescribeVolumes",
-			"Resource": "arn:aws:fsx:*:*:volume/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "fsx:ListTagsForResource",
-			"Resource": [
-				"arn:aws:fsx:*:*:file-system/*",
-				"arn:aws:fsx:*:*:volume/*"
-			]
-		},
-		{
-			"Action": "fsx:DeleteBackup",
-			"Effect": "Allow",
-			"Resource": "arn:aws:fsx:*:*:backup/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"fsx:ListTagsForResource",
-				"fsx:ManageBackupPrincipalAssociations",
-				"fsx:CopyBackup",
-				"fsx:TagResource"
-			],
-			"Resource": "arn:aws:fsx:*:*:backup/*"
-		},
-		{
-			"Sid": "DynamodbBackupPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"dynamodb:StartAwsBackupJob",
-				"dynamodb:ListTagsOfResource"
-			],
-			"Resource": "arn:aws:dynamodb:*:*:table/*"
-		},
-		{
-			"Sid": "BackupGatewayBackupPermissions",
-			"Effect": "Allow",
-			"Action": [
-				"backup-gateway:Backup",
-				"backup-gateway:ListTagsForResource"
-			],
-			"Resource": "arn:aws:backup-gateway:*:*:vm/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"cloudformation:GetTemplate",
-				"cloudformation:DescribeStacks",
-				"cloudformation:ListStackResources"
-			],
-			"Resource": "arn:aws:cloudformation:*:*:stack/*/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:CreateClusterSnapshot",
-				"redshift:DescribeClusterSnapshots",
-				"redshift:DescribeTags"
-			],
-			"Resource": [
-				"arn:aws:redshift:*:*:snapshot:*/*",
-				"arn:aws:redshift:*:*:cluster:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:DeleteClusterSnapshot"
-			],
-			"Resource": [
-				"arn:aws:redshift:*:*:snapshot:*/*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:DescribeClusters"
-			],
-			"Resource": [
-				"arn:aws:redshift:*:*:cluster:*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"redshift:CreateTags"
-			],
-			"Resource": [
-				"arn:aws:redshift:*:*:snapshot:*/*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"timestream:StartAwsBackupJob",
-				"timestream:GetAwsBackupStatus",
-				"timestream:ListTables",
-				"timestream:ListDatabases",
-				"timestream:ListTagsForResource",
-				"timestream:DescribeTable",
-				"timestream:DescribeDatabase"
-			],
-			"Resource": [
-				"arn:aws:timestream:*:*:database/*/table/*",
-				"arn:aws:timestream:*:*:database/*"
-			]
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"timestream:DescribeEndpoints"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ssm-sap:GetOperation",
-				"ssm-sap:ListDatabases"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ssm-sap:BackupDatabase",
-				"ssm-sap:UpdateHanaBackupSettings",
-				"ssm-sap:GetDatabase",
-				"ssm-sap:ListTagsForResource"
-			],
-			"Resource": "arn:aws:ssm-sap:*:*:*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "dynamodb:DescribeTable",
+        "dynamodb:CreateBackup"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "dynamodb:DescribeBackup",
+        "dynamodb:DeleteBackup"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/*/backup/*",
+      "Effect": "Allow"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:AddTagsToResource",
+        "rds:ListTagsForResource",
+        "rds:DescribeDBSnapshots",
+        "rds:CreateDBSnapshot",
+        "rds:CopyDBSnapshot",
+        "rds:DescribeDBInstances",
+        "rds:CreateDBClusterSnapshot",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBClusterSnapshots",
+        "rds:CopyDBClusterSnapshot"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:ModifyDBInstance"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:DeleteDBSnapshot",
+        "rds:ModifyDBSnapshotAttribute"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:snapshot:awsbackup:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:DeleteDBClusterSnapshot",
+        "rds:ModifyDBClusterSnapshotAttribute"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:cluster-snapshot:awsbackup:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "storagegateway:CreateSnapshot",
+        "storagegateway:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:storagegateway:*:*:gateway/*/volume/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopySnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*::snapshot/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopyImage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*::snapshot/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateImage",
+        "ec2:DeregisterImage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:image/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeTags",
+        "ec2:DescribeImages",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeElasticGpus",
+        "ec2:DescribeSpotInstanceRequests"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifySnapshotAttribute",
+        "ec2:ModifyImageAttribute"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/aws:backup:source-resource": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeBackupVault",
+        "backup:CopyIntoBackupVault"
+      ],
+      "Resource": "arn:aws:backup:*:*:backup-vault:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:CopyFromBackupVault"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "elasticfilesystem:Backup",
+        "elasticfilesystem:DescribeTags"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
+      "Effect": "Allow"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot",
+        "ec2:DeleteSnapshot",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/*",
+        "arn:aws:ec2:*:*:volume/*"
+      ]
+    },
+    {
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "dynamodb.*.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Action": "kms:DescribeKey",
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": "kms:CreateGrant",
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        }
+      }
+    },
+    {
+      "Action": [
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "ec2.*.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CancelCommand",
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWSEC2-CreateVssSnapshot",
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Action": "fsx:DescribeBackups",
+      "Effect": "Allow",
+      "Resource": "arn:aws:fsx:*:*:backup/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "fsx:CreateBackup",
+      "Resource": [
+        "arn:aws:fsx:*:*:file-system/*",
+        "arn:aws:fsx:*:*:backup/*",
+        "arn:aws:fsx:*:*:volume/*"
+      ]
+    },
+    {
+      "Action": "fsx:DescribeFileSystems",
+      "Effect": "Allow",
+      "Resource": "arn:aws:fsx:*:*:file-system/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "fsx:DescribeVolumes",
+      "Resource": "arn:aws:fsx:*:*:volume/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "fsx:ListTagsForResource",
+      "Resource": [
+        "arn:aws:fsx:*:*:file-system/*",
+        "arn:aws:fsx:*:*:volume/*"
+      ]
+    },
+    {
+      "Action": "fsx:DeleteBackup",
+      "Effect": "Allow",
+      "Resource": "arn:aws:fsx:*:*:backup/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:ListTagsForResource",
+        "fsx:ManageBackupPrincipalAssociations",
+        "fsx:CopyBackup",
+        "fsx:TagResource"
+      ],
+      "Resource": "arn:aws:fsx:*:*:backup/*"
+    },
+    {
+      "Sid": "DynamodbBackupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:StartAwsBackupJob",
+        "dynamodb:ListTagsOfResource"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/*"
+    },
+    {
+      "Sid": "BackupGatewayBackupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup-gateway:Backup",
+        "backup-gateway:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:backup-gateway:*:*:vm/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:GetTemplate",
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStackResources"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:CreateClusterSnapshot",
+        "redshift:DescribeClusterSnapshots",
+        "redshift:DescribeTags"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:snapshot:*/*",
+        "arn:aws:redshift:*:*:cluster:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:DeleteClusterSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:snapshot:*/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:DescribeClusters"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:cluster:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "redshift:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:snapshot:*/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "timestream:StartAwsBackupJob",
+        "timestream:GetAwsBackupStatus",
+        "timestream:ListTables",
+        "timestream:ListDatabases",
+        "timestream:ListTagsForResource",
+        "timestream:DescribeTable",
+        "timestream:DescribeDatabase"
+      ],
+      "Resource": [
+        "arn:aws:timestream:*:*:database/*/table/*",
+        "arn:aws:timestream:*:*:database/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "timestream:DescribeEndpoints"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm-sap:GetOperation",
+        "ssm-sap:ListDatabases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm-sap:BackupDatabase",
+        "ssm-sap:UpdateHanaBackupSettings",
+        "ssm-sap:GetDatabase",
+        "ssm-sap:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:ssm-sap:*:*:*"
+    }
+  ]
 }

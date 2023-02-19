@@ -1,45 +1,45 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:SendClientMetricsForDrs",
-				"drs:SendClientLogsForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:GetChannelCommandsForDrs",
-				"drs:SendChannelCommandResultForDrs"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:DescribeReplicationServerAssociationsForDrs",
-				"drs:DescribeRecoveryInstances"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"drs:GetFailbackCommandForDrs",
-				"drs:UpdateFailbackClientLastSeenForDrs",
-				"drs:NotifyAgentAuthenticationForDrs",
-				"drs:UpdateAgentReplicationProcessStateForDrs",
-				"drs:NotifyAgentReplicationProgressForDrs",
-				"drs:NotifyAgentConnectedForDrs",
-				"drs:NotifyAgentDisconnectedForDrs",
-				"drs:NotifyConsistencyAttainedForDrs",
-				"drs:GetFailbackLaunchRequestedForDrs",
-				"drs:IssueAgentCertificateForDrs"
-			],
-			"Resource": "arn:aws:drs:*:*:recovery-instance/${aws:SourceIdentity}"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendClientMetricsForDrs",
+        "drs:SendClientLogsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetChannelCommandsForDrs",
+        "drs:SendChannelCommandResultForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:DescribeReplicationServerAssociationsForDrs",
+        "drs:DescribeRecoveryInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetFailbackCommandForDrs",
+        "drs:UpdateFailbackClientLastSeenForDrs",
+        "drs:NotifyAgentAuthenticationForDrs",
+        "drs:UpdateAgentReplicationProcessStateForDrs",
+        "drs:NotifyAgentReplicationProgressForDrs",
+        "drs:NotifyAgentConnectedForDrs",
+        "drs:NotifyAgentDisconnectedForDrs",
+        "drs:NotifyConsistencyAttainedForDrs",
+        "drs:GetFailbackLaunchRequestedForDrs",
+        "drs:IssueAgentCertificateForDrs"
+      ],
+      "Resource": "arn:aws:drs:*:*:recovery-instance/${aws:SourceIdentity}"
+    }
+  ]
 }

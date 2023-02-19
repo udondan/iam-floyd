@@ -6,10 +6,10 @@
       "Action": [
         "managedblockchain:Get*",
         "managedblockchain:List*"
-       ],
-       "Resource": [
-         "*"
-       ]
-     }
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
   ]
 }

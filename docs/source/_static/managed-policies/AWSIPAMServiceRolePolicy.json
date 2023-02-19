@@ -1,33 +1,33 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeAddresses",
-				"ec2:DescribeByoipCidrs",
-				"ec2:DescribeIpv6Pools",
-				"ec2:DescribePublicIpv4Pools",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeVpcs",
-				"ec2:GetIpamDiscoveredResourceCidrs",
-				"ec2:GetIpamDiscoveredAccounts",
-				"organizations:DescribeAccount",
-				"organizations:DescribeOrganization",
-				"organizations:ListAccounts",
-				"organizations:ListDelegatedAdministrators"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "cloudwatch:PutMetricData",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"cloudwatch:namespace": "AWS/IPAM"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAddresses",
+        "ec2:DescribeByoipCidrs",
+        "ec2:DescribeIpv6Pools",
+        "ec2:DescribePublicIpv4Pools",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:GetIpamDiscoveredResourceCidrs",
+        "ec2:GetIpamDiscoveredAccounts",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/IPAM"
+        }
+      }
+    }
+  ]
 }

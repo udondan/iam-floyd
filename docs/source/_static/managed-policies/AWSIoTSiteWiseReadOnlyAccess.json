@@ -1,15 +1,15 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"iotsitewise:Describe*",
-				"iotsitewise:List*",
-				"iotsitewise:Get*",
-				"iotsitewise:BatchGet*"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iotsitewise:Describe*",
+        "iotsitewise:List*",
+        "iotsitewise:Get*",
+        "iotsitewise:BatchGet*"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

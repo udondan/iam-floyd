@@ -3,9 +3,10 @@
   "Statement": [
     {
       "Action": [
-      "es:*"
-    ],
-    "Effect": "Allow",
-    "Resource": "*"
-  }]
+        "es:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
 }

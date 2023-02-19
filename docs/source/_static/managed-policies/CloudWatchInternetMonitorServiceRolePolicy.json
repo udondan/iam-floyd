@@ -1,38 +1,38 @@
 {
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeVpcs",
-				"workspaces:DescribeWorkspaceDirectories",
-				"cloudfront:GetDistribution"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "logs:CreateLogGroup",
-			"Resource": "arn:aws:logs:*:*:log-group:/aws/internet-monitor/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"logs:CreateLogStream",
-				"logs:DescribeLogStreams",
-				"logs:PutLogEvents"
-			],
-			"Resource": "arn:aws:logs:*:*:log-group:/aws/internet-monitor/*:log-stream:*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "cloudwatch:PutMetricData",
-			"Condition": {
-				"StringEquals": {
-					"cloudwatch:namespace": "AWS/InternetMonitor"
-				}
-			},
-			"Resource": "*"
-		}
-	],
-	"Version": "2012-10-17"
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "workspaces:DescribeWorkspaceDirectories",
+        "cloudfront:GetDistribution"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/internet-monitor/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/internet-monitor/*:log-stream:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/InternetMonitor"
+        }
+      },
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
 }

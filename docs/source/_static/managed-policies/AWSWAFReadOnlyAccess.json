@@ -1,21 +1,21 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Action": [
-				"waf:Get*",
-				"waf:List*",
-				"waf-regional:Get*",
-				"waf-regional:List*",
-				"wafv2:Get*",
-				"wafv2:List*",
-				"wafv2:Describe*",
-				"wafv2:CheckCapacity",
-				"cognito-idp:ListResourcesForWebACL",
-				"cognito-idp:GetWebACLForResource"
-			],
-			"Effect": "Allow",
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "waf:Get*",
+        "waf:List*",
+        "waf-regional:Get*",
+        "waf-regional:List*",
+        "wafv2:Get*",
+        "wafv2:List*",
+        "wafv2:Describe*",
+        "wafv2:CheckCapacity",
+        "cognito-idp:ListResourcesForWebACL",
+        "cognito-idp:GetWebACLForResource"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
 }

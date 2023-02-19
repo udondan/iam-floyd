@@ -1,40 +1,57 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Action": [
-				"ec2:DescribeSubnets",
-				"ec2:DescribeVpcs",
-				"ec2:CreateVpcEndpoint",
-				"ec2:DescribeVpcEndpoints"
-			],
-			"Effect": "Allow",
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateTags"
-			],
-			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
-			"Condition": {
-				"StringEquals": {
-					"ec2:CreateAction": "CreateVpcEndpoint",
-					"aws:RequestTag/AWSNetworkFirewallManaged": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DeleteVpcEndpoints"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"aws:ResourceTag/AWSNetworkFirewallManaged": "true"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:CreateVpcEndpoint",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "resource-groups:ListGroupResources",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "tag:GetResources",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "resource-groups.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint",
+          "aws:RequestTag/AWSNetworkFirewallManaged": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVpcEndpoints"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AWSNetworkFirewallManaged": "true"
+        }
+      }
+    }
+  ]
 }

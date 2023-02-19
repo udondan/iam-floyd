@@ -1,32 +1,32 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": "elasticloadbalancing:Describe*",
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInstances",
-				"ec2:DescribeClassicLinkInstances",
-				"ec2:DescribeSecurityGroups"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "arc-zonal-shift:GetManagedResource",
-			"Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"arc-zonal-shift:ListManagedResources",
-				"arc-zonal-shift:ListZonalShifts"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:Describe*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeClassicLinkInstances",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "arc-zonal-shift:GetManagedResource",
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "arc-zonal-shift:ListManagedResources",
+        "arc-zonal-shift:ListZonalShifts"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

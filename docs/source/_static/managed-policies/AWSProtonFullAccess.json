@@ -1,61 +1,61 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"proton:*",
-				"codestar-connections:ListConnections",
-				"kms:ListAliases",
-				"kms:DescribeKey"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"kms:CreateGrant"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringLike": {
-					"kms:ViaService": "proton.*.amazonaws.com"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"iam:PassRole"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"iam:PassedToService": "proton.amazonaws.com"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "arn:aws:iam::*:role/aws-service-role/sync.proton.amazonaws.com/AWSServiceRoleForProtonSync",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": "sync.proton.amazonaws.com"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"codestar-connections:PassConnection"
-			],
-			"Resource": "arn:aws:codestar-connections:*:*:connection/*",
-			"Condition": {
-				"StringEquals": {
-					"codestar-connections:PassedToService": "proton.amazonaws.com"
-				}
-			}
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "proton:*",
+        "codestar-connections:ListConnections",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "proton.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/sync.proton.amazonaws.com/AWSServiceRoleForProtonSync",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "sync.proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:PassConnection"
+      ],
+      "Resource": "arn:aws:codestar-connections:*:*:connection/*",
+      "Condition": {
+        "StringEquals": {
+          "codestar-connections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    }
+  ]
 }

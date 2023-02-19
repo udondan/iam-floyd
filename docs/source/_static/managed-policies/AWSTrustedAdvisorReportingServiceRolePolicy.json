@@ -1,20 +1,20 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "organizations:DescribeOrganization",
-                "organizations:ListAWSServiceAccessForOrganization",
-                "organizations:ListAccounts",
-                "organizations:ListAccountsForParent",
-                "organizations:ListOrganizationalUnitsForParent",
-                "organizations:ListChildren",
-                "organizations:ListParents",
-                "organizations:DescribeOrganizationalUnit",
-                "organizations:DescribeAccount"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
 }
