@@ -57,7 +57,7 @@ jobs:
         run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
 
       - name: Install dependencies
-        run: npm i
+        run: make install
 
       - name: Build source
         run: npm run build
@@ -100,9 +100,6 @@ jobs:
 
       - name: Update package version
         run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-
-      - name: Install dependencies
-        run: npm i
 
       - name: Build CDK variant
         run: make install cdk
