@@ -11,7 +11,8 @@ const principalPattern = {
     _0_Account: /^arn:[a-z]+:iam:[^:]*:(\d+):root$/, // account
     _1_User: /^arn:[a-z]+:iam:[^:]*:(\d+):user\/([^/]+)$/, // account user
     _2_Role: /^arn:[a-z]+:iam:[^:]*:(\d+):role\/([^/]+)$/, // account role
-    _3_AssumedRoleSession: /^arn:[a-z]+:sts:[^:]*:(\d+):assumed-role\/([^/]+)\/([^/]+)$/, // account role sessionName
+    _3_AssumedRoleSession:
+      /^arn:[a-z]+:sts:[^:]*:(\d+):assumed-role\/([^/]+)\/([^/]+)$/, // account role sessionName
     _4_Public: /^\*$/,
     _5_: /^(.*)$/,
   },
@@ -102,7 +103,9 @@ function convertInputPolicy() {
 }
 
 function setError(value) {
-  $('#policyConverterError').html(value);
+  const text = document.createTextNode(value);
+  $('#policyConverterError').innerHTML = '';
+  $('#policyConverterError').appendChild(text);
 }
 
 function convert(convertTarget, data) {
