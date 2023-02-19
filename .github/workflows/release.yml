@@ -367,6 +367,12 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
       - name: Download package
         uses: actions/download-artifact@v3
         with:
@@ -385,6 +391,12 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
       - name: Download package
         uses: actions/download-artifact@v3
         with:
@@ -404,6 +416,12 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
       - name: Download package
         uses: actions/download-artifact@v3
         with:
@@ -422,6 +440,12 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
       - name: Download package
         uses: actions/download-artifact@v3
         with:
