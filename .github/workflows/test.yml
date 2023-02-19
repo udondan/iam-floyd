@@ -43,8 +43,12 @@ jobs:
           git config --local user.name "GitHub Action"
           git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
 
+      - name DEBUG
+        run: |
+          echo "${GITHUB_REF}"
+          echo "${GITHUB_REF##*/}"
       - name: Push changes
-        run: git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git"
+        run: git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
