@@ -136,7 +136,9 @@ jobs:
         run: make install cdk
 
       - name: Build source
-        run: npm run build
+        run: |
+          npm i
+          npm run build
 
       - name: Build packages
         run: |

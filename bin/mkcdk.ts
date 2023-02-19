@@ -116,7 +116,7 @@ function preparePackageJson() {
   jsonData.description += ' for AWS CDK';
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
 
-  (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '2.62.2';
+  (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '^2.0.0';
   (jsonData.devDependencies as Packages)['constructs'] = '^10.0.0';
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0',
