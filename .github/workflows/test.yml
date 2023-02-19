@@ -102,7 +102,10 @@ jobs:
         run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
 
       - name: Build CDK variant
-        run: make install cdk
+        run: |
+          make install
+          make cdk
+          cat package.json
 
       - name: Build source
         run: npm run build
