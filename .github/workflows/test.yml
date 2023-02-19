@@ -1,7 +1,9 @@
 ---
 name: Test
 
-concurrency: test
+concurrency:
+  group: test-${{ github.head_ref }}
+  cancel-in-progress: true
 
 on:
   pull_request:
