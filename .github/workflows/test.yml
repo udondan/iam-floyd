@@ -11,13 +11,40 @@ on:
 
 jobs:
   finalize:
-    name: Prepare
+    name: Finalize
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
       - name: Checkout code
         uses: actions/checkout@v3
         with:
+          persist-credentials: false
           fetch-depth: 0
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Update version references
+        run: make update-version-refs
+
+      - name: Re-format Python documentation examples
+        run: |
+          pip install autopep8
+          make python-examples-adjust-indention
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
+
+      - name: Push changes
+        run: git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
