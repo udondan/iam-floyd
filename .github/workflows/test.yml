@@ -44,7 +44,10 @@ jobs:
           git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
 
       - name: Push changes
-        run: git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_HEAD_REF}"
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
