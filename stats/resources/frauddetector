@@ -6,6 +6,7 @@ frauddetector:entity-type
 frauddetector:event-type
 frauddetector:external-model
 frauddetector:label
+frauddetector:list
 frauddetector:model
 frauddetector:model-version
 frauddetector:outcome

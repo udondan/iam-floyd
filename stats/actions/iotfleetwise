@@ -1,4 +1,6 @@
 iotfleetwise:AssociateVehicleFleet;Write
+iotfleetwise:BatchCreateVehicle;Write
+iotfleetwise:BatchUpdateVehicle;Write
 iotfleetwise:CreateCampaign;Write
 iotfleetwise:CreateDecoderManifest;Write
 iotfleetwise:CreateFleet;Write

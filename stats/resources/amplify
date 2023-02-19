@@ -2,3 +2,4 @@ amplify:apps
 amplify:branches
 amplify:domains
 amplify:jobs
+amplify:webhooks

@@ -60,6 +60,21 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an ephemeris item
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html
+   */
+  public toCreateEphemeris() {
+    return this.to('CreateEphemeris');
+  }
+
+  /**
    * Grants permission to create a mission profile
    *
    * Access Level: Write
@@ -97,6 +112,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an ephemeris item
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteEphemeris.html
+   */
+  public toDeleteEphemeris() {
+    return this.to('DeleteEphemeris');
+  }
+
+  /**
    * Grants permission to delete a mission profile
    *
    * Access Level: Write
@@ -116,6 +142,17 @@ export class Groundstation extends PolicyStatement {
    */
   public toDescribeContact() {
     return this.to('DescribeContact');
+  }
+
+  /**
+   * Grants permission to describe an ephemeris item
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeEphemeris.html
+   */
+  public toDescribeEphemeris() {
+    return this.to('DescribeEphemeris');
   }
 
   /**
@@ -204,6 +241,17 @@ export class Groundstation extends PolicyStatement {
    */
   public toListDataflowEndpointGroups() {
     return this.to('ListDataflowEndpointGroups');
+  }
+
+  /**
+   * Grants permission to list ephemerides
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListEphemerides.html
+   */
+  public toListEphemerides() {
+    return this.to('ListEphemerides');
   }
 
   /**
@@ -306,6 +354,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an ephemeris item
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateEphemeris.html
+   */
+  public toUpdateEphemeris() {
+    return this.to('UpdateEphemeris');
+  }
+
+  /**
    * Grants permission to update a mission profile
    *
    * Access Level: Write
@@ -321,16 +380,20 @@ export class Groundstation extends PolicyStatement {
       'CancelContact',
       'CreateConfig',
       'CreateDataflowEndpointGroup',
+      'CreateEphemeris',
       'CreateMissionProfile',
       'DeleteConfig',
       'DeleteDataflowEndpointGroup',
+      'DeleteEphemeris',
       'DeleteMissionProfile',
       'ReserveContact',
       'UpdateConfig',
+      'UpdateEphemeris',
       'UpdateMissionProfile'
     ],
     Read: [
       'DescribeContact',
+      'DescribeEphemeris',
       'GetConfig',
       'GetDataflowEndpointGroup',
       'GetMinuteUsage',
@@ -342,6 +405,7 @@ export class Groundstation extends PolicyStatement {
       'ListConfigs',
       'ListContacts',
       'ListDataflowEndpointGroups',
+      'ListEphemerides',
       'ListGroundStations',
       'ListMissionProfiles',
       'ListSatellites'
@@ -406,6 +470,24 @@ export class Groundstation extends PolicyStatement {
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type EphemerisItem to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_EphemerisItem.html
+   *
+   * @param ephemerisId - Identifier for the ephemerisId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifEphemerisId()
+   */
+  public onEphemerisItem(ephemerisId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:ephemeris/${ ephemerisId }`);
   }
 
   /**
@@ -518,6 +600,21 @@ export class Groundstation extends PolicyStatement {
    */
   public ifDataflowEndpointGroupId(value: string | string[], operator?: Operator | string) {
     return this.if(`DataflowEndpointGroupId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an ephemeris
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html#groundstation-CreateEphemeris-response-ephemerisId
+   *
+   * Applies to resource types:
+   * - EphemerisItem
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEphemerisId(value: string | string[], operator?: Operator | string) {
+    return this.if(`EphemerisId`, value, operator || 'StringLike');
   }
 
   /**

@@ -19,7 +19,7 @@ export class IqPermission extends PolicyStatement {
   }
 
   /**
-   * Grants permission to approve an access grant
+   * Grants permission to approve a permission request
    *
    * Access Level: Write
    *
@@ -29,9 +29,108 @@ export class IqPermission extends PolicyStatement {
     return this.to('ApproveAccessGrant');
   }
 
+  /**
+   * Grants permission to approve a permission request
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toApprovePermissionRequest() {
+    return this.to('ApprovePermissionRequest');
+  }
+
+  /**
+   * Grants permission to create a permission request
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toCreatePermissionRequest() {
+    return this.to('CreatePermissionRequest');
+  }
+
+  /**
+   * Grants permission to get a permission request
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toGetPermissionRequest() {
+    return this.to('GetPermissionRequest');
+  }
+
+  /**
+   * Grants permission to list permission requests
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toListPermissionRequests() {
+    return this.to('ListPermissionRequests');
+  }
+
+  /**
+   * Grants permission to reject a permission request
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toRejectPermissionRequest() {
+    return this.to('RejectPermissionRequest');
+  }
+
+  /**
+   * Grants permission to revoke a permission request which was previously approved
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toRevokePermissionRequest() {
+    return this.to('RevokePermissionRequest');
+  }
+
+  /**
+   * Grants permission to withdraw a permission request that has not been approved or declined
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toWithdrawPermissionRequest() {
+    return this.to('WithdrawPermissionRequest');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'ApproveAccessGrant'
+      'ApproveAccessGrant',
+      'ApprovePermissionRequest',
+      'CreatePermissionRequest',
+      'RejectPermissionRequest',
+      'RevokePermissionRequest',
+      'WithdrawPermissionRequest'
+    ],
+    Read: [
+      'GetPermissionRequest',
+      'ListPermissionRequests'
     ]
   };
+
+  /**
+   * Adds a resource of type permission to the statement
+   *
+   * https://aws.amazon.com/iq/
+   *
+   * @param permissionRequestId - Identifier for the permissionRequestId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPermission(permissionRequestId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || IqPermission.defaultPartition }:iq-permission:${ region || '*' }::permission/${ permissionRequestId }`);
+  }
 }

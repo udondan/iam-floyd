@@ -1674,8 +1674,8 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRules.html
    */
-  public toListRule() {
-    return this.to('ListRule');
+  public toListRules() {
+    return this.to('ListRules');
   }
 
   /**
@@ -2559,6 +2559,8 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRule.html
    */
   public toUpdateRule() {
     return this.to('UpdateRule');
@@ -2898,7 +2900,7 @@ export class Connect extends PolicyStatement {
       'ListQuickConnects',
       'ListRoutingProfileQueues',
       'ListRoutingProfiles',
-      'ListRule',
+      'ListRules',
       'ListSecurityKeys',
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
@@ -3469,7 +3471,7 @@ export class Connect extends PolicyStatement {
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileQueues()
    * - .toListRoutingProfiles()
-   * - .toListRule()
+   * - .toListRules()
    * - .toListSecurityKeys()
    * - .toListSecurityProfilePermissions()
    * - .toListSecurityProfiles()

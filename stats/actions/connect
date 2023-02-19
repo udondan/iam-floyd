@@ -105,7 +105,7 @@ connect:ListQuickConnects;List
 connect:ListRealtimeContactAnalysisSegments;Read
 connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
-connect:ListRule;List
+connect:ListRules;List
 connect:ListSecurityKeys;List
 connect:ListSecurityProfilePermissions;List
 connect:ListSecurityProfiles;List

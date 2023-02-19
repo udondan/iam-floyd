@@ -661,6 +661,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rollback an instance refresh operation in progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_RollbackInstanceRefresh.html
+   */
+  public toRollbackInstanceRefresh() {
+    return this.to('RollbackInstanceRefresh');
+  }
+
+  /**
    * Grants permission to set the size of the specified Auto Scaling group
    *
    * Access Level: Write
@@ -781,6 +792,7 @@ export class Autoscaling extends PolicyStatement {
       'PutWarmPool',
       'RecordLifecycleActionHeartbeat',
       'ResumeProcesses',
+      'RollbackInstanceRefresh',
       'SetDesiredCapacity',
       'SetInstanceHealth',
       'SetInstanceProtection',
@@ -1064,6 +1076,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toPutWarmPool()
    * - .toRecordLifecycleActionHeartbeat()
    * - .toResumeProcesses()
+   * - .toRollbackInstanceRefresh()
    * - .toSetDesiredCapacity()
    * - .toSetInstanceHealth()
    * - .toSetInstanceProtection()

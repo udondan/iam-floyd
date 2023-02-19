@@ -2,6 +2,7 @@ groundstation:ConfigId
 groundstation:ConfigType
 groundstation:ContactId
 groundstation:DataflowEndpointGroupId
+groundstation:EphemerisId
 groundstation:GroundStationId
 groundstation:MissionProfileId
 groundstation:RequestTag/${TagKey}

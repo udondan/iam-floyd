@@ -44,6 +44,7 @@ export class Grafana extends PolicyStatement {
    * Dependent actions:
    * - ec2:DescribeSecurityGroups
    * - ec2:DescribeSubnets
+   * - ec2:GetManagedPrefixListEntries
    * - iam:CreateServiceLinkedRole
    * - organizations:DescribeOrganization
    * - sso:CreateManagedApplicationInstance
@@ -218,6 +219,7 @@ export class Grafana extends PolicyStatement {
    * Dependent actions:
    * - ec2:DescribeSecurityGroups
    * - ec2:DescribeSubnets
+   * - ec2:GetManagedPrefixListEntries
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
