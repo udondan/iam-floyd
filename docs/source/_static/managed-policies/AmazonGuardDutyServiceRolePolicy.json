@@ -22,6 +22,16 @@
         "s3:GetBucketPolicyStatus"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
     }
   ]
 }
