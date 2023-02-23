@@ -34,6 +34,9 @@ export class Iotroborunner extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateSite.html
    */
   public toCreateSite() {

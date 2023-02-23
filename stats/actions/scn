@@ -1,0 +1,10 @@
+scn:AssignAdminPermissionsToUser;Write
+scn:CreateInstance;Write
+scn:CreateSSOApplication;Write
+scn:DeleteInstance;Write
+scn:DeleteSSOApplication;Write
+scn:DescribeInstance;Read
+scn:ListAdminUsers;List
+scn:ListInstances;List
+scn:RemoveAdminPermissionsForUser;Write
+scn:UpdateInstance;Write

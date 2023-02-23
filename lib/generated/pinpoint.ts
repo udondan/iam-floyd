@@ -801,6 +801,39 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey activity for a single journey run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-activities-journey-activity-id-execution-metrics.html#GetJourneyRunExecutionActivityMetrics
+   */
+  public toGetJourneyRunExecutionActivityMetrics() {
+    return this.to('GetJourneyRunExecutionActivityMetrics');
+  }
+
+  /**
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey for a single journey run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-execution-metrics.html#GetJourneyRunExecutionMetrics
+   */
+  public toGetJourneyRunExecutionMetrics() {
+    return this.to('GetJourneyRunExecutionMetrics');
+  }
+
+  /**
+   * Grants permission to retrieve information about all journey runs for a journey
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs.html
+   */
+  public toGetJourneyRuns() {
+    return this.to('GetJourneyRuns');
+  }
+
+  /**
    * Grants permission to retrieve information about a specific or the active version of an push notification template
    *
    * Access Level: Read
@@ -1520,6 +1553,8 @@ export class Mobiletargeting extends PolicyStatement {
       'GetJourneyDateRangeKpi',
       'GetJourneyExecutionActivityMetrics',
       'GetJourneyExecutionMetrics',
+      'GetJourneyRunExecutionActivityMetrics',
+      'GetJourneyRunExecutionMetrics',
       'GetPushTemplate',
       'GetRecommenderConfiguration',
       'GetReports',
@@ -1541,6 +1576,7 @@ export class Mobiletargeting extends PolicyStatement {
       'GetChannels',
       'GetExportJobs',
       'GetImportJobs',
+      'GetJourneyRuns',
       'GetRecommenderConfigurations',
       'GetSegmentExportJobs',
       'GetSegmentImportJobs',

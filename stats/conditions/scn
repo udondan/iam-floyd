@@ -1,0 +1,3 @@
+scn:RequestTag/${TagKey}
+scn:ResourceTag/${TagKey}
+scn:TagKeys
