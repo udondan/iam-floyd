@@ -210,6 +210,7 @@
         "autoscaling:DeleteAutoScalingGroup",
         "autoscaling:DeleteLaunchConfiguration",
         "autoscaling:UpdateAutoScalingGroup",
+        "autoscaling:CreateOrUpdateTags",
         "logs:CreateLogStream",
         "logs:DeleteLogGroup",
         "logs:DeleteLogStream",
@@ -576,6 +577,19 @@
         "ssm:DeleteAssociation"
       ],
       "Resource": "arn:aws:ssm:*:*:document/AWS-ConfigureAWSPackage",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:UntagResource",
+        "elasticfilesystem:TagResource"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": "launchwizard.amazonaws.com"

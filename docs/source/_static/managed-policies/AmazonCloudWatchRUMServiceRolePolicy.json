@@ -15,8 +15,11 @@
       "Action": "cloudwatch:PutMetricData",
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
-          "cloudwatch:namespace": "AWS/RUM"
+        "StringLike": {
+          "cloudwatch:namespace": [
+            "RUM/CustomMetrics/*",
+            "AWS/RUM"
+          ]
         }
       }
     }
