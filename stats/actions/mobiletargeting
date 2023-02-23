@@ -65,6 +65,9 @@ mobiletargeting:GetJourney;Read
 mobiletargeting:GetJourneyDateRangeKpi;Read
 mobiletargeting:GetJourneyExecutionActivityMetrics;Read
 mobiletargeting:GetJourneyExecutionMetrics;Read
+mobiletargeting:GetJourneyRunExecutionActivityMetrics;Read
+mobiletargeting:GetJourneyRunExecutionMetrics;Read
+mobiletargeting:GetJourneyRuns;List
 mobiletargeting:GetPushTemplate;Read
 mobiletargeting:GetRecommenderConfiguration;Read
 mobiletargeting:GetRecommenderConfigurations;List

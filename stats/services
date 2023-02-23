@@ -131,6 +131,7 @@ events
 evidently
 execute-api
 finspace
+finspace-api
 firehose
 fis
 fms
@@ -281,6 +282,7 @@ sagemaker-groundtruth-synthetic
 savingsplans
 scheduler
 schemas
+scn
 sdb
 secretsmanager
 securityhub
@@ -324,6 +326,7 @@ tax
 textract
 timestream
 tiros
+tnb
 transcribe
 transfer
 translate
