@@ -305,6 +305,20 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the protection status of tasks in an Amazon ECS service
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html
+   */
+  public toGetTaskProtection() {
+    return this.to('GetTaskProtection');
+  }
+
+  /**
    * Grants permission to list the account settings for an Amazon ECS resource for a specified principal
    *
    * Access Level: Read
@@ -739,6 +753,20 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the protection status of a task
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html
+   */
+  public toUpdateTaskProtection() {
+    return this.to('UpdateTaskProtection');
+  }
+
+  /**
    * Grants permission to update the specified task set
    *
    * Access Level: Write
@@ -790,6 +818,7 @@ export class Ecs extends PolicyStatement {
       'UpdateContainerInstancesState',
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
+      'UpdateTaskProtection',
       'UpdateTaskSet'
     ],
     Read: [
@@ -800,6 +829,7 @@ export class Ecs extends PolicyStatement {
       'DescribeTaskDefinition',
       'DescribeTaskSets',
       'DescribeTasks',
+      'GetTaskProtection',
       'ListAccountSettings',
       'ListTagsForResource'
     ],
@@ -1009,6 +1039,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
    * - .toExecuteCommand()
+   * - .toGetTaskProtection()
    * - .toListServices()
    * - .toListTasks()
    * - .toPoll()
@@ -1021,6 +1052,7 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateContainerInstancesState()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
+   * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
    *
    * @param value The value(s) to check
