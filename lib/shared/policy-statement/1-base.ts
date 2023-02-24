@@ -30,7 +30,7 @@ export class PolicyStatementBase {
    * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]). In
    * CDK applications, this is a reference to the current partition, otherwise, 'aws'.
    */
-  protected readonly defaultPartition: 'aws' | 'aws-cn' | 'aws-us-gov' = 'aws';
+  protected defaultPartition: string = 'aws';
 
   public sid = '';
 
@@ -44,9 +44,7 @@ export class PolicyStatementBase {
       this.sid = options;
     } else if (typeof options === 'object') {
       this.sid = options.sid || '';
-      if (options.defaultPartition) {
-        this.defaultPartition = options.defaultPartition;
-      }
+      this.defaultPartition = options.defaultPartition || 'aws';
     }
   }
 

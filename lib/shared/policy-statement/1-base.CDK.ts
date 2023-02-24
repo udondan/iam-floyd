@@ -20,7 +20,7 @@ export class PolicyStatementBase extends iam.PolicyStatement {
    * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]). In
    * CDK applications, this is a reference to the current partition, otherwise, 'aws'.
    */
-  protected readonly defaultPartition = Aws.PARTITION;
+  protected defaultPartition = Aws.PARTITION;
 
   /**
    * Holds the prefix of the service actions, e.g. `ec2`
