@@ -572,6 +572,14 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "servicequota1",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": "*"
     }
   ]
 }
