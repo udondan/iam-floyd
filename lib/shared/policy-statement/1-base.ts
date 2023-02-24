@@ -12,14 +12,14 @@ export type PolicyStatementProps = string | {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html
    * @default - No Sid
    */
-  sid?: string;
+  readonly sid?: string;
 
   /**
    * The default partition for resource ARNs
    *
    * @default - aws
    */
-  defaultPartition?: 'aws' | 'aws-cn' | 'aws-us-gov';
+  readonly defaultPartition?: 'aws' | 'aws-cn' | 'aws-us-gov';
 };
 
 /**
