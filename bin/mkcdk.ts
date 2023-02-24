@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import fs = require('fs');
-import path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 import { Project } from 'ts-morph';
 
 import { formatCode } from '../lib/generator/format';

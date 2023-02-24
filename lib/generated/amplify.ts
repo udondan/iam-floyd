@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Amplify extends PolicyStatement {
   public servicePrefix = 'amplify';
@@ -12,10 +12,10 @@ export class Amplify extends PolicyStatement {
   /**
    * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -506,7 +506,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -524,7 +524,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }`);
   }
 
   /**
@@ -540,7 +540,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
   }
 
   /**
@@ -558,7 +558,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/domains/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/domains/${ domainName }`);
   }
 
   /**
@@ -575,6 +575,6 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebhooks(webhookId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplify.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:webhooks/${ webhookId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || '*' }:${ account || '*' }:webhooks/${ webhookId }`);
   }
 }

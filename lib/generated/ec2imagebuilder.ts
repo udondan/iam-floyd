@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Imagebuilder extends PolicyStatement {
   public servicePrefix = 'imagebuilder';
@@ -12,10 +12,10 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -783,7 +783,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
   }
 
   /**
@@ -801,7 +801,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }`);
   }
 
   /**
@@ -818,7 +818,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:distribution-configuration/${ distributionConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:distribution-configuration/${ distributionConfigurationName }`);
   }
 
   /**
@@ -837,7 +837,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
   }
 
   /**
@@ -855,7 +855,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }`);
   }
 
   /**
@@ -873,7 +873,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
   }
 
   /**
@@ -891,7 +891,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContainerRecipe(containerRecipeName: string, containerRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
   }
 
   /**
@@ -908,7 +908,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-pipeline/${ imagePipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-pipeline/${ imagePipelineName }`);
   }
 
   /**
@@ -925,7 +925,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:infrastructure-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:infrastructure-configuration/${ resourceId }`);
   }
 
   /**
@@ -939,7 +939,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 
   /**

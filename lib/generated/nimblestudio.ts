@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [nimble](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnimblestudio.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Nimble extends PolicyStatement {
   public servicePrefix = 'nimble';
@@ -12,10 +12,10 @@ export class Nimble extends PolicyStatement {
   /**
    * Statement provider for service [nimble](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnimblestudio.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -805,7 +805,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
   }
 
   /**
@@ -825,7 +825,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStreamingImage(streamingImageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-image/${ streamingImageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-image/${ streamingImageId }`);
   }
 
   /**
@@ -845,7 +845,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudioComponent(studioComponentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio-component/${ studioComponentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio-component/${ studioComponentId }`);
   }
 
   /**
@@ -865,7 +865,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onLaunchProfile(launchProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:launch-profile/${ launchProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:launch-profile/${ launchProfileId }`);
   }
 
   /**
@@ -886,7 +886,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSession(streamingSessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session/${ streamingSessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session/${ streamingSessionId }`);
   }
 
   /**
@@ -906,7 +906,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSessionBackup(streamingSessionBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session-backup/${ streamingSessionBackupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session-backup/${ streamingSessionBackupId }`);
   }
 
   /**
@@ -920,7 +920,7 @@ export class Nimble extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
   }
 
   /**
@@ -937,7 +937,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onEulaAcceptance(eulaAcceptanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula-acceptance/${ eulaAcceptanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula-acceptance/${ eulaAcceptanceId }`);
   }
 
   /**

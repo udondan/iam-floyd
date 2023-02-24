@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlex.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Lex extends PolicyStatement {
   public servicePrefix = 'lex';
@@ -12,10 +12,10 @@ export class Lex extends PolicyStatement {
   /**
    * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlex.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -623,7 +623,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }`);
   }
 
   /**
@@ -641,7 +641,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botVersion }`);
   }
 
   /**
@@ -659,7 +659,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botAlias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -678,7 +678,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
   }
 
   /**
@@ -693,7 +693,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntentVersion(intentName: string, intentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:intent:${ intentName }:${ intentVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:intent:${ intentName }:${ intentVersion }`);
   }
 
   /**
@@ -708,7 +708,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSlottypeVersion(slotName: string, slotVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lex.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:slottype:${ slotName }:${ slotVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:slottype:${ slotName }:${ slotVersion }`);
   }
 
   /**

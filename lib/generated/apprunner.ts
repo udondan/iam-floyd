@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapprunner.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Apprunner extends PolicyStatement {
   public servicePrefix = 'apprunner';
@@ -12,10 +12,10 @@ export class Apprunner extends PolicyStatement {
   /**
    * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapprunner.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -522,7 +522,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -538,7 +538,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
   }
 
   /**
@@ -555,7 +555,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoscalingconfiguration(autoscalingConfigurationName: string, autoscalingConfigurationVersion: string, autoscalingConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
   }
 
   /**
@@ -572,7 +572,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onObservabilityconfiguration(observabilityConfigurationName: string, observabilityConfigurationVersion: string, observabilityConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
   }
 
   /**
@@ -589,7 +589,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcconnector(vpcConnectorName: string, vpcConnectorVersion: string, vpcConnectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
   }
 
   /**
@@ -605,7 +605,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcingressconnection(vpcIngressConnectionName: string, vpcIngressConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagement.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iam extends PolicyStatement {
   public servicePrefix = 'iam';
@@ -12,10 +12,10 @@ export class Iam extends PolicyStatement {
   /**
    * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagement.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -2238,7 +2238,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessReport(entityPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:access-report/${ entityPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:access-report/${ entityPath }`);
   }
 
   /**
@@ -2252,7 +2252,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssumedRole(roleName: string, roleSessionName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:assumed-role/${ roleName }/${ roleSessionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:assumed-role/${ roleName }/${ roleSessionName }`);
   }
 
   /**
@@ -2265,7 +2265,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFederatedUser(userName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:federated-user/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:federated-user/${ userName }`);
   }
 
   /**
@@ -2278,7 +2278,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:group/${ groupNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:group/${ groupNameWithPath }`);
   }
 
   /**
@@ -2294,7 +2294,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:instance-profile/${ instanceProfileNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:instance-profile/${ instanceProfileNameWithPath }`);
   }
 
   /**
@@ -2310,7 +2310,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2326,7 +2326,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:oidc-provider/${ oidcProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:oidc-provider/${ oidcProviderName }`);
   }
 
   /**
@@ -2342,7 +2342,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:policy/${ policyNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:policy/${ policyNameWithPath }`);
   }
 
   /**
@@ -2359,7 +2359,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -2375,7 +2375,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:saml-provider/${ samlProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:saml-provider/${ samlProviderName }`);
   }
 
   /**
@@ -2391,7 +2391,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:server-certificate/${ certificateNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:server-certificate/${ certificateNameWithPath }`);
   }
 
   /**
@@ -2404,7 +2404,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:sms-mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:sms-mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2421,7 +2421,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

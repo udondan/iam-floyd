@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [transfer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Transfer extends PolicyStatement {
   public servicePrefix = 'transfer';
@@ -12,10 +12,10 @@ export class Transfer extends PolicyStatement {
   /**
    * Statement provider for service [transfer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -809,7 +809,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
   }
 
   /**
@@ -826,7 +826,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
   }
 
   /**
@@ -843,7 +843,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
   }
 
   /**
@@ -860,7 +860,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
   }
 
   /**
@@ -877,7 +877,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:connector/${ connectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:connector/${ connectorId }`);
   }
 
   /**
@@ -894,7 +894,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
   }
 
   /**
@@ -911,7 +911,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:agreement/${ agreementId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:agreement/${ agreementId }`);
   }
 
   /**
@@ -929,6 +929,6 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHostKey(serverId: string, hostKeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:host-key/${ serverId }/${ hostKeyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:host-key/${ serverId }/${ hostKeyId }`);
   }
 }

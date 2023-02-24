@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworklink.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Worklink extends PolicyStatement {
   public servicePrefix = 'worklink';
@@ -12,10 +12,10 @@ export class Worklink extends PolicyStatement {
   /**
    * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworklink.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -469,6 +469,6 @@ export class Worklink extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Worklink.defaultPartition }:worklink::${ account || '*' }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:worklink::${ account || '*' }:fleet/${ fleetName }`);
   }
 }

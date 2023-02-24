@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class AwsMarketplaceCatalog extends PolicyStatement {
   public servicePrefix = 'aws-marketplace';
@@ -12,10 +12,10 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   /**
    * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -214,7 +214,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - .ifCatalogChangeType()
    */
   public onEntity(catalog: string, entityType: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/${ entityType }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/${ entityType }/${ resourceId }`);
   }
 
   /**
@@ -233,7 +233,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - .ifCatalogChangeType()
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [rolesanywhere](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementrolesanywhere.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Rolesanywhere extends PolicyStatement {
   public servicePrefix = 'rolesanywhere';
@@ -12,10 +12,10 @@ export class Rolesanywhere extends PolicyStatement {
   /**
    * Statement provider for service [rolesanywhere](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementrolesanywhere.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -384,7 +384,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrustAnchor(trustAnchorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:trust-anchor/${ trustAnchorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:trust-anchor/${ trustAnchorId }`);
   }
 
   /**
@@ -401,7 +401,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
   }
 
   /**
@@ -418,7 +418,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubject(subjectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:subject/${ subjectId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:subject/${ subjectId }`);
   }
 
   /**
@@ -435,6 +435,6 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCrl(crlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:crl/${ crlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:crl/${ crlId }`);
   }
 }

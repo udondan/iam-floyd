@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Guardduty extends PolicyStatement {
   public servicePrefix = 'guardduty';
@@ -12,10 +12,10 @@ export class Guardduty extends PolicyStatement {
   /**
    * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -866,7 +866,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }`);
   }
 
   /**
@@ -884,7 +884,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/filter/${ filterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/filter/${ filterName }`);
   }
 
   /**
@@ -902,7 +902,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/ipset/${ iPSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/ipset/${ iPSetId }`);
   }
 
   /**
@@ -920,7 +920,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
   }
 
   /**
@@ -935,6 +935,6 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
   }
 }

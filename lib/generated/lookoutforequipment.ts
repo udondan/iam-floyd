@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [lookoutequipment](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforequipment.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Lookoutequipment extends PolicyStatement {
   public servicePrefix = 'lookoutequipment';
@@ -12,10 +12,10 @@ export class Lookoutequipment extends PolicyStatement {
   /**
    * Statement provider for service [lookoutequipment](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforequipment.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -463,7 +463,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(datasetName: string, datasetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }/${ datasetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }/${ datasetId }`);
   }
 
   /**
@@ -481,7 +481,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }`);
   }
 
   /**
@@ -499,7 +499,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInferenceScheduler(inferenceSchedulerName: string, inferenceSchedulerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
   }
 
   /**
@@ -517,6 +517,6 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLabelGroup(labelGroupName: string, labelGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:label-group/${ labelGroupName }/${ labelGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:label-group/${ labelGroupName }/${ labelGroupId }`);
   }
 }

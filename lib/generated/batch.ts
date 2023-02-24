@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Batch extends PolicyStatement {
   public servicePrefix = 'batch';
@@ -12,10 +12,10 @@ export class Batch extends PolicyStatement {
   /**
    * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -373,7 +373,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:compute-environment/${ computeEnvironmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:compute-environment/${ computeEnvironmentName }`);
   }
 
   /**
@@ -390,7 +390,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-queue/${ jobQueueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-queue/${ jobQueueName }`);
   }
 
   /**
@@ -408,7 +408,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobDefinition(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }:${ revision }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }:${ revision }`);
   }
 
   /**
@@ -425,7 +425,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -442,7 +442,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchedulingPolicy(schedulingPolicyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:scheduling-policy/${ schedulingPolicyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:scheduling-policy/${ schedulingPolicyName }`);
   }
 
   /**

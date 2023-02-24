@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ssm-contacts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanagercontacts.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SsmContacts extends PolicyStatement {
   public servicePrefix = 'ssm-contacts';
@@ -12,10 +12,10 @@ export class SsmContacts extends PolicyStatement {
   /**
    * Statement provider for service [ssm-contacts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanagercontacts.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -398,7 +398,7 @@ export class SsmContacts extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
   }
 
   /**
@@ -413,7 +413,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactchannel(contactAlias: string, contactChannelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
   }
 
   /**
@@ -428,7 +428,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEngagement(contactAlias: string, engagementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
   }
 
   /**
@@ -443,6 +443,6 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPage(contactAlias: string, pageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
   }
 }

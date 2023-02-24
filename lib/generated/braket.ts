@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [braket](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Braket extends PolicyStatement {
   public servicePrefix = 'braket';
@@ -12,10 +12,10 @@ export class Braket extends PolicyStatement {
   /**
    * Statement provider for service [braket](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -212,7 +212,7 @@ export class Braket extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuantumTask(randomId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Braket.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:quantum-task/${ randomId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:quantum-task/${ randomId }`);
   }
 
   /**
@@ -229,6 +229,6 @@ export class Braket extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Braket.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
   }
 }

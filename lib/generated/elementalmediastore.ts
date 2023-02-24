@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediastore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediastore.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mediastore extends PolicyStatement {
   public servicePrefix = 'mediastore';
@@ -12,10 +12,10 @@ export class Mediastore extends PolicyStatement {
   /**
    * Statement provider for service [mediastore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediastore.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -372,7 +372,7 @@ export class Mediastore extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContainer(containerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediastore.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }`);
   }
 
   /**
@@ -387,7 +387,7 @@ export class Mediastore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObject(containerName: string, objectPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediastore.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ objectPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ objectPath }`);
   }
 
   /**
@@ -402,6 +402,6 @@ export class Mediastore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFolder(containerName: string, folderPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediastore.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ folderPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ folderPath }`);
   }
 }

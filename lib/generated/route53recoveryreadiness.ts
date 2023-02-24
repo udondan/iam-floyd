@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [route53-recovery-readiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoveryreadiness.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Route53RecoveryReadiness extends PolicyStatement {
   public servicePrefix = 'route53-recovery-readiness';
@@ -12,10 +12,10 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   /**
    * Statement provider for service [route53-recovery-readiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoveryreadiness.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -460,7 +460,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReadinesscheck(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:readiness-check/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || '*' }:readiness-check/${ resourceId }`);
   }
 
   /**
@@ -476,7 +476,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceset(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:resource-set/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || '*' }:resource-set/${ resourceId }`);
   }
 
   /**
@@ -492,7 +492,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCell(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:cell/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || '*' }:cell/${ resourceId }`);
   }
 
   /**
@@ -508,6 +508,6 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoverygroup(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:recovery-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || '*' }:recovery-group/${ resourceId }`);
   }
 }

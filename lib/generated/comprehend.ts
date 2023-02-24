@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Comprehend extends PolicyStatement {
   public servicePrefix = 'comprehend';
@@ -12,10 +12,10 @@ export class Comprehend extends PolicyStatement {
   /**
    * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1016,7 +1016,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:targeted-sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:targeted-sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1033,7 +1033,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier/${ documentClassifierName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier/${ documentClassifierName }`);
   }
 
   /**
@@ -1050,7 +1050,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
   }
 
   /**
@@ -1067,7 +1067,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer/${ entityRecognizerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer/${ entityRecognizerName }`);
   }
 
   /**
@@ -1084,7 +1084,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
   }
 
   /**
@@ -1101,7 +1101,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:dominant-language-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:dominant-language-detection-job/${ jobId }`);
   }
 
   /**
@@ -1118,7 +1118,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1135,7 +1135,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:pii-entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:pii-entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1152,7 +1152,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:events-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:events-detection-job/${ jobId }`);
   }
 
   /**
@@ -1169,7 +1169,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:key-phrases-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:key-phrases-detection-job/${ jobId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1203,7 +1203,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:topics-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:topics-detection-job/${ jobId }`);
   }
 
   /**
@@ -1220,7 +1220,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classification-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:document-classification-job/${ jobId }`);
   }
 
   /**

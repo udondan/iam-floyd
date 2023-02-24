@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Artifact extends PolicyStatement {
   public servicePrefix = 'artifact';
@@ -12,10 +12,10 @@ export class Artifact extends PolicyStatement {
   /**
    * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -132,7 +132,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReportPackage(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:::report-package/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::report-package/${ resourceName }`);
   }
 
   /**
@@ -145,7 +145,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact::${ account || '*' }:customer-agreement/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact::${ account || '*' }:customer-agreement/${ resourceName }`);
   }
 
   /**
@@ -157,7 +157,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAgreement(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:::agreement/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::agreement/${ resourceName }`);
   }
 
   /**
@@ -170,6 +170,6 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(resourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:${ region || '*' }::report/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:${ region || '*' }::report/${ resourceName }`);
   }
 }

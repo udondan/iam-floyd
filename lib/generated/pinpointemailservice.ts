@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointemailservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SesPinpoint extends PolicyStatement {
   public servicePrefix = 'ses';
@@ -12,10 +12,10 @@ export class SesPinpoint extends PolicyStatement {
   /**
    * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointemailservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -708,7 +708,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -725,7 +725,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -742,7 +742,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -759,7 +759,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**

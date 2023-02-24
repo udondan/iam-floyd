@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [iq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiq.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iq extends PolicyStatement {
   public servicePrefix = 'iq';
@@ -12,10 +12,10 @@ export class Iq extends PolicyStatement {
   /**
    * Statement provider for service [iq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiq.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -683,7 +683,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConversation(conversationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::conversation/${ conversationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::conversation/${ conversationId }`);
   }
 
   /**
@@ -696,7 +696,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuyer(buyerId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::buyer/${ buyerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::buyer/${ buyerId }`);
   }
 
   /**
@@ -709,7 +709,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExpert(expertId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::expert/${ expertId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::expert/${ expertId }`);
   }
 
   /**
@@ -722,7 +722,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCall(callId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::call/${ callId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::call/${ callId }`);
   }
 
   /**
@@ -735,7 +735,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onToken(tokenId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::token/${ tokenId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::token/${ tokenId }`);
   }
 
   /**
@@ -749,7 +749,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProposal(conversationId: string, proposalId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::proposal/${ conversationId }/${ proposalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::proposal/${ conversationId }/${ proposalId }`);
   }
 
   /**
@@ -764,7 +764,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPaymentRequest(conversationId: string, proposalId: string, paymentRequestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::paymentRequest/${ conversationId }/${ proposalId }/${ paymentRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::paymentRequest/${ conversationId }/${ proposalId }/${ paymentRequestId }`);
   }
 
   /**
@@ -779,7 +779,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPaymentSchedule(conversationId: string, proposalId: string, versionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::paymentSchedule/${ conversationId }/${ proposalId }/${ versionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::paymentSchedule/${ conversationId }/${ proposalId }/${ versionId }`);
   }
 
   /**
@@ -792,7 +792,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSeller(sellerAwsAccountId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::seller/${ sellerAwsAccountId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::seller/${ sellerAwsAccountId }`);
   }
 
   /**
@@ -805,7 +805,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCompany(companyId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::company/${ companyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::company/${ companyId }`);
   }
 
   /**
@@ -818,7 +818,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRequest(requestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::request/${ requestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::request/${ requestId }`);
   }
 
   /**
@@ -831,7 +831,7 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onListing(listingId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::listing/${ listingId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::listing/${ listingId }`);
   }
 
   /**
@@ -844,6 +844,6 @@ export class Iq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAttachment(attachmentId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::attachment/${ attachmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || '*' }::attachment/${ attachmentId }`);
   }
 }

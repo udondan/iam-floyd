@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2instanceconnect.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ec2InstanceConnect extends PolicyStatement {
   public servicePrefix = 'ec2-instance-connect';
@@ -12,10 +12,10 @@ export class Ec2InstanceConnect extends PolicyStatement {
   /**
    * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2instanceconnect.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -65,7 +65,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2InstanceConnect.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**

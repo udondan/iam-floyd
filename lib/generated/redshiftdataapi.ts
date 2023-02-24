@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [redshift-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftdataapi.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class RedshiftData extends PolicyStatement {
   public servicePrefix = 'redshift-data';
@@ -12,10 +12,10 @@ export class RedshiftData extends PolicyStatement {
   /**
    * Statement provider for service [redshift-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftdataapi.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -173,7 +173,7 @@ export class RedshiftData extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
   }
 
   /**
@@ -190,7 +190,7 @@ export class RedshiftData extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Codebuild extends PolicyStatement {
   public servicePrefix = 'codebuild';
@@ -12,10 +12,10 @@ export class Codebuild extends PolicyStatement {
   /**
    * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -696,7 +696,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -710,7 +710,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuildBatch(buildBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build-batch/${ buildBatchId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:build-batch/${ buildBatchId }`);
   }
 
   /**
@@ -727,7 +727,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -744,7 +744,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report-group/${ reportGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report-group/${ reportGroupName }`);
   }
 
   /**
@@ -759,6 +759,6 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
   }
 }

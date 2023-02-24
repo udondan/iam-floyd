@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedblockchain.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Managedblockchain extends PolicyStatement {
   public servicePrefix = 'managedblockchain';
@@ -12,10 +12,10 @@ export class Managedblockchain extends PolicyStatement {
   /**
    * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedblockchain.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -103,7 +103,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an Amazon Managed Blockchain accessor owned by the current AWS account
+   * Grants permission to delete an Amazon Managed Blockchain accessor
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about an Amazon Managed Blockchain accessor owned by the current AWS account
+   * Grants permission to return detailed information about an Amazon Managed Blockchain accessor
    *
    * Access Level: Read
    *
@@ -446,7 +446,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }::networks/${ networkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }::networks/${ networkId }`);
   }
 
   /**
@@ -463,7 +463,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:members/${ memberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:members/${ memberId }`);
   }
 
   /**
@@ -480,7 +480,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:nodes/${ nodeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:nodes/${ nodeId }`);
   }
 
   /**
@@ -496,7 +496,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }::proposals/${ proposalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }::proposals/${ proposalId }`);
   }
 
   /**
@@ -513,7 +513,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
   }
 
   /**
@@ -530,6 +530,6 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:accessors/${ accessorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:accessors/${ accessorId }`);
   }
 }

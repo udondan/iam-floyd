@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [health](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthapisandnotifications.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Health extends PolicyStatement {
   public servicePrefix = 'health';
@@ -12,10 +12,10 @@ export class Health extends PolicyStatement {
   /**
    * Statement provider for service [health](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthapisandnotifications.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -226,7 +226,7 @@ export class Health extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvent(service: string, eventTypeCode: string, eventTypePlusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Health.defaultPartition }:health:${ region || '*' }:${ account || '*' }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:health:${ region || '*' }:${ account || '*' }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
   }
 
   /**

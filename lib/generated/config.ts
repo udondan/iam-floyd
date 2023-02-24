@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Config extends PolicyStatement {
   public servicePrefix = 'config';
@@ -12,10 +12,10 @@ export class Config extends PolicyStatement {
   /**
    * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1205,7 +1205,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-aggregator/${ aggregatorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-aggregator/${ aggregatorId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-rule/${ configRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:config-rule/${ configRuleId }`);
   }
 
   /**
@@ -1257,7 +1257,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
   }
 
   /**
@@ -1274,7 +1274,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
   }
 
   /**
@@ -1291,7 +1291,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:remediation-configuration/${ remediationConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:remediation-configuration/${ remediationConfigurationId }`);
   }
 
   /**
@@ -1323,6 +1323,6 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Config.defaultPartition }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [bugbust](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbugbust.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Bugbust extends PolicyStatement {
   public servicePrefix = 'bugbust';
@@ -12,10 +12,10 @@ export class Bugbust extends PolicyStatement {
   /**
    * Statement provider for service [bugbust](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbugbust.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -323,6 +323,6 @@ export class Bugbust extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bugbust.defaultPartition }:bugbust:${ region || '*' }:${ account || '*' }:events/${ eventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bugbust:${ region || '*' }:${ account || '*' }:events/${ eventId }`);
   }
 }

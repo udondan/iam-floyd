@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticinference.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ElasticInference extends PolicyStatement {
   public servicePrefix = 'elastic-inference';
@@ -12,10 +12,10 @@ export class ElasticInference extends PolicyStatement {
   /**
    * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticinference.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -108,6 +108,6 @@ export class ElasticInference extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticInference.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 }

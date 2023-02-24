@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mq extends PolicyStatement {
   public servicePrefix = 'mq';
@@ -12,10 +12,10 @@ export class Mq extends PolicyStatement {
   /**
    * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -344,7 +344,7 @@ export class Mq extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mq.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:broker:${ brokerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:broker:${ brokerId }`);
   }
 
   /**
@@ -361,6 +361,6 @@ export class Mq extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mq.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:configuration:${ configurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:configuration:${ configurationId }`);
   }
 }

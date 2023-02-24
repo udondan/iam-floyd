@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [rds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Rds extends PolicyStatement {
   public servicePrefix = 'rds';
@@ -12,10 +12,10 @@ export class Rds extends PolicyStatement {
   /**
    * Statement provider for service [rds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -2176,7 +2176,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**
@@ -2193,7 +2193,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
   }
 
   /**
@@ -2211,7 +2211,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
   }
 
   /**
@@ -2229,7 +2229,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
   }
 
   /**
@@ -2255,7 +2255,7 @@ export class Rds extends PolicyStatement {
    * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
   }
 
   /**
@@ -2273,7 +2273,7 @@ export class Rds extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
   }
 
   /**
@@ -2286,7 +2286,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
   }
 
   /**
@@ -2304,7 +2304,7 @@ export class Rds extends PolicyStatement {
    * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
   }
 
   /**
@@ -2322,7 +2322,7 @@ export class Rds extends PolicyStatement {
    * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
   }
 
   /**
@@ -2339,7 +2339,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
   }
 
   /**
@@ -2356,7 +2356,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
   }
 
   /**
@@ -2374,7 +2374,7 @@ export class Rds extends PolicyStatement {
    * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
   }
 
   /**
@@ -2392,7 +2392,7 @@ export class Rds extends PolicyStatement {
    * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
   }
 
   /**
@@ -2410,7 +2410,7 @@ export class Rds extends PolicyStatement {
    * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -2428,7 +2428,7 @@ export class Rds extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
   }
 
   /**
@@ -2442,7 +2442,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
   }
 
   /**
@@ -2459,7 +2459,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
   }
 
   /**
@@ -2478,7 +2478,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
   }
 
   /**
@@ -2495,7 +2495,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(blueGreenDeploymentIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:deployment:${ blueGreenDeploymentIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:deployment:${ blueGreenDeploymentIdentifier }`);
   }
 
   /**

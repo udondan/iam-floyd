@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [deepracer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Deepracer extends PolicyStatement {
   public servicePrefix = 'deepracer';
@@ -12,10 +12,10 @@ export class Deepracer extends PolicyStatement {
   /**
    * Statement provider for service [deepracer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -824,7 +824,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCar(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:car/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:car/${ resourceId }`);
   }
 
   /**
@@ -841,7 +841,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -857,7 +857,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboard(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }::leaderboard/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }::leaderboard/${ resourceId }`);
   }
 
   /**
@@ -874,7 +874,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:leaderboard_evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:leaderboard_evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -891,7 +891,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:model/reinforcement_learning/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:model/reinforcement_learning/${ resourceId }`);
   }
 
   /**
@@ -904,7 +904,7 @@ export class Deepracer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrack(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }::track/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }::track/${ resourceId }`);
   }
 
   /**
@@ -921,7 +921,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:training_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:training_job/${ resourceId }`);
   }
 
   /**

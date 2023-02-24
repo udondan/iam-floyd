@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [vendor-insights](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class VendorInsights extends PolicyStatement {
   public servicePrefix = 'vendor-insights';
@@ -12,10 +12,10 @@ export class VendorInsights extends PolicyStatement {
   /**
    * Statement provider for service [vendor-insights](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -389,7 +389,7 @@ export class VendorInsights extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onDataSource(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::data-source:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vendor-insights:::data-source:${ resourceId }`);
   }
 
   /**
@@ -406,6 +406,6 @@ export class VendorInsights extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSecurityProfile(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);
   }
 }

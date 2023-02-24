@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [gamesparks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamesparks.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Gamesparks extends PolicyStatement {
   public servicePrefix = 'gamesparks';
@@ -12,10 +12,10 @@ export class Gamesparks extends PolicyStatement {
   /**
    * Statement provider for service [gamesparks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamesparks.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -546,7 +546,7 @@ export class Gamesparks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGame(gameId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamesparks.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }`);
   }
 
   /**
@@ -564,6 +564,6 @@ export class Gamesparks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(gameId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamesparks.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }/stage/${ stageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamesparks:${ region || '*' }:${ account || '*' }:game/${ gameId }/stage/${ stageName }`);
   }
 }

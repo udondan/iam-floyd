@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ivschat](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservicechat.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ivschat extends PolicyStatement {
   public servicePrefix = 'ivschat';
@@ -12,10 +12,10 @@ export class Ivschat extends PolicyStatement {
   /**
    * Statement provider for service [ivschat](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservicechat.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -269,7 +269,7 @@ export class Ivschat extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat::${ account || '*' }:room/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivschat::${ account || '*' }:room/${ resourceId }`);
   }
 
   /**
@@ -285,6 +285,6 @@ export class Ivschat extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLoggingConfiguration(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat::${ account || '*' }:logging-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivschat::${ account || '*' }:logging-configuration/${ resourceId }`);
   }
 }

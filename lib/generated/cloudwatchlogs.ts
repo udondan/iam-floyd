@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Logs extends PolicyStatement {
   public servicePrefix = 'logs';
@@ -12,10 +12,10 @@ export class Logs extends PolicyStatement {
   /**
    * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -733,7 +733,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
   }
 
   /**
@@ -748,7 +748,7 @@ export class Logs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
   }
 
   /**
@@ -765,6 +765,6 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
   }
 }

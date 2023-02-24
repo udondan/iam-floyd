@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscomputeoptimizer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ComputeOptimizer extends PolicyStatement {
   public servicePrefix = 'compute-optimizer';
@@ -12,10 +12,10 @@ export class ComputeOptimizer extends PolicyStatement {
   /**
    * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscomputeoptimizer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**

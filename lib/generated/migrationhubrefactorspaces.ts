@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [refactor-spaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhubrefactorspaces.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class RefactorSpaces extends PolicyStatement {
   public servicePrefix = 'refactor-spaces';
@@ -12,10 +12,10 @@ export class RefactorSpaces extends PolicyStatement {
   /**
    * Statement provider for service [refactor-spaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhubrefactorspaces.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -427,7 +427,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
   }
 
   /**
@@ -447,7 +447,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifCreatedByAccountIds()
    */
   public onApplication(environmentId: string, applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifServiceCreatedByAccount()
    */
   public onService(environmentId: string, applicationId: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
   }
 
   /**
@@ -493,7 +493,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifSourcePath()
    */
   public onRoute(environmentId: string, applicationId: string, routeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
   }
 
   /**

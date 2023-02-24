@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mediaconnect extends PolicyStatement {
   public servicePrefix = 'mediaconnect';
@@ -12,10 +12,10 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -401,7 +401,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitlement(flowId: string, entitlementName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:entitlement:${ flowId }:${ entitlementName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:entitlement:${ flowId }:${ entitlementName }`);
   }
 
   /**
@@ -416,7 +416,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFlow(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:flow:${ flowId }:${ flowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:flow:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -431,7 +431,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOutput(outputId: string, outputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:output:${ outputId }:${ outputName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:output:${ outputId }:${ outputName }`);
   }
 
   /**
@@ -446,6 +446,6 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:source:${ sourceId }:${ sourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:source:${ sourceId }:${ sourceName }`);
   }
 }

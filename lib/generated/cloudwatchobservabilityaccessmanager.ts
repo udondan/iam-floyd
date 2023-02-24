@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [oam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityaccessmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Oam extends PolicyStatement {
   public servicePrefix = 'oam';
@@ -12,10 +12,10 @@ export class Oam extends PolicyStatement {
   /**
    * Statement provider for service [oam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityaccessmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -268,7 +268,7 @@ export class Oam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLink(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Oam.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:link/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:link/${ resourceId }`);
   }
 
   /**
@@ -285,7 +285,7 @@ export class Oam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSink(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Oam.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:sink/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:sink/${ resourceId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticmapreduce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Elasticmapreduce extends PolicyStatement {
   public servicePrefix = 'elasticmapreduce';
@@ -12,10 +12,10 @@ export class Elasticmapreduce extends PolicyStatement {
   /**
    * Statement provider for service [elasticmapreduce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1014,7 +1014,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
   }
 
   /**
@@ -1032,7 +1032,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
   }
 
   /**
@@ -1050,7 +1050,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
   }
 
   /**
@@ -1068,7 +1068,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
   }
 
   /**

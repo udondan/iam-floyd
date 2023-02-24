@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingconductor.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Billingconductor extends PolicyStatement {
   public servicePrefix = 'billingconductor';
@@ -12,10 +12,10 @@ export class Billingconductor extends PolicyStatement {
   /**
    * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingconductor.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -442,7 +442,7 @@ export class Billingconductor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBillinggroup(billingGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:billinggroup/${ billingGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:billingconductor::${ account || '*' }:billinggroup/${ billingGroupId }`);
   }
 
   /**
@@ -458,7 +458,7 @@ export class Billingconductor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPricingplan(pricingPlanId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingplan/${ pricingPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:billingconductor::${ account || '*' }:pricingplan/${ pricingPlanId }`);
   }
 
   /**
@@ -474,7 +474,7 @@ export class Billingconductor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPricingrule(pricingRuleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:pricingrule/${ pricingRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:billingconductor::${ account || '*' }:pricingrule/${ pricingRuleId }`);
   }
 
   /**
@@ -490,6 +490,6 @@ export class Billingconductor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomlineitem(customLineItemId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ customLineItemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ customLineItemId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ses](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonses.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ses extends PolicyStatement {
   public servicePrefix = 'ses';
@@ -12,10 +12,10 @@ export class Ses extends PolicyStatement {
   /**
    * Statement provider for service [ses](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonses.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1126,7 +1126,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ses.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1140,7 +1140,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ses.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1154,7 +1154,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ses.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**
@@ -1168,7 +1168,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ses.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
   }
 
   /**

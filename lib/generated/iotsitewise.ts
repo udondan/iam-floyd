@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotsitewise extends PolicyStatement {
   public servicePrefix = 'iotsitewise';
@@ -12,10 +12,10 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -974,7 +974,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset/${ assetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset/${ assetId }`);
   }
 
   /**
@@ -991,7 +991,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
   }
 
   /**
@@ -1005,7 +1005,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:time-series/${ timeSeriesId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:time-series/${ timeSeriesId }`);
   }
 
   /**
@@ -1022,7 +1022,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1039,7 +1039,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
   }
 
   /**
@@ -1056,7 +1056,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -1073,7 +1073,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }`);
   }
 
   /**
@@ -1090,7 +1090,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
   }
 
   /**

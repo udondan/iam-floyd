@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotjobsdata](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotjobsdata extends PolicyStatement {
   public servicePrefix = 'iotjobsdata';
@@ -12,10 +12,10 @@ export class Iotjobsdata extends PolicyStatement {
   /**
    * Statement provider for service [iotjobsdata](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -90,7 +90,7 @@ export class Iotjobsdata extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotjobsdata.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
   }
 
   /**

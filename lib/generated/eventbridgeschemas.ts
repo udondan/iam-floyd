@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [schemas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgeschemas.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Schemas extends PolicyStatement {
   public servicePrefix = 'schemas';
@@ -12,10 +12,10 @@ export class Schemas extends PolicyStatement {
   /**
    * Statement provider for service [schemas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgeschemas.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -434,7 +434,7 @@ export class Schemas extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:discoverer/${ discovererId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:discoverer/${ discovererId }`);
   }
 
   /**
@@ -451,7 +451,7 @@ export class Schemas extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
   }
 
   /**
@@ -469,6 +469,6 @@ export class Schemas extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:schema/${ registryName }/${ schemaName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:schema/${ registryName }/${ schemaName }`);
   }
 }

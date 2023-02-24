@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Fsx extends PolicyStatement {
   public servicePrefix = 'fsx';
@@ -12,10 +12,10 @@ export class Fsx extends PolicyStatement {
   /**
    * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -706,7 +706,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -723,7 +723,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileCache(fileCacheId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-cache/${ fileCacheId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:file-cache/${ fileCacheId }`);
   }
 
   /**
@@ -740,7 +740,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:backup/${ backupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:backup/${ backupId }`);
   }
 
   /**
@@ -758,7 +758,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStorageVirtualMachine(fileSystemId: string, storageVirtualMachineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
   }
 
   /**
@@ -775,7 +775,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -793,7 +793,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssociation(fileSystemIdOrFileCacheId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
   }
 
   /**
@@ -811,7 +811,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
   }
 
   /**
@@ -829,7 +829,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fsx.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:snapshot/${ volumeId }/${ snapshotId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || '*' }:${ account || '*' }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**

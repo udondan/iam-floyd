@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Dynamodb extends PolicyStatement {
   public servicePrefix = 'dynamodb';
@@ -12,10 +12,10 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -909,7 +909,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/index/${ indexName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/index/${ indexName }`);
   }
 
   /**
@@ -924,7 +924,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/stream/${ streamLabel }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/stream/${ streamLabel }`);
   }
 
   /**
@@ -938,7 +938,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }`);
   }
 
   /**
@@ -953,7 +953,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackup(tableName: string, backupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/backup/${ backupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/backup/${ backupName }`);
   }
 
   /**
@@ -968,7 +968,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExport(tableName: string, exportName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/export/${ exportName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/export/${ exportName }`);
   }
 
   /**
@@ -981,7 +981,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalTable(globalTableName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb::${ account || '*' }:global-table/${ globalTableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb::${ account || '*' }:global-table/${ globalTableName }`);
   }
 
   /**
@@ -996,7 +996,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImport(tableName: string, importName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dynamodb.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/import/${ importName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/import/${ importName }`);
   }
 
   /**

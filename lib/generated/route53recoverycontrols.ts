@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [route53-recovery-control-config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Route53RecoveryControlConfig extends PolicyStatement {
   public servicePrefix = 'route53-recovery-control-config';
@@ -12,10 +12,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   /**
    * Statement provider for service [route53-recovery-control-config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -350,7 +350,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
   }
 
   /**
@@ -366,7 +366,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onControlpanel(controlPanelId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
   }
 
   /**
@@ -380,7 +380,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
   }
 
   /**
@@ -397,6 +397,6 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSafetyrule(controlPanelId: string, safetyRuleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
   }
 }

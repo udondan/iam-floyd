@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranscribe.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Transcribe extends PolicyStatement {
   public servicePrefix = 'transcribe';
@@ -12,10 +12,10 @@ export class Transcribe extends PolicyStatement {
   /**
    * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranscribe.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -655,7 +655,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:transcription-job/${ jobName }`);
   }
 
   /**
@@ -672,7 +672,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -689,7 +689,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVocabularyfilter(vocabularyFilterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary-filter/${ vocabularyFilterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary-filter/${ vocabularyFilterName }`);
   }
 
   /**
@@ -706,7 +706,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLanguagemodel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:language-model/${ modelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:language-model/${ modelName }`);
   }
 
   /**
@@ -723,7 +723,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMedicaltranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-transcription-job/${ jobName }`);
   }
 
   /**
@@ -740,7 +740,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMedicalvocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -754,7 +754,7 @@ export class Transcribe extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-job/${ jobName }`);
   }
 
   /**
@@ -768,7 +768,7 @@ export class Transcribe extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-category/${ categoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-category/${ categoryName }`);
   }
 
   /**

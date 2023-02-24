@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [wisdom](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectwisdom.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Wisdom extends PolicyStatement {
   public servicePrefix = 'wisdom';
@@ -12,10 +12,10 @@ export class Wisdom extends PolicyStatement {
   /**
    * Statement provider for service [wisdom](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectwisdom.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -442,7 +442,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistant(assistantId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
   }
 
   /**
@@ -460,7 +460,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistantAssociation(assistantId: string, assistantAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
   }
 
   /**
@@ -478,7 +478,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContent(knowledgeBaseId: string, contentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
   }
 
   /**
@@ -495,7 +495,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -513,6 +513,6 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(assistantId: string, sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
   }
 }

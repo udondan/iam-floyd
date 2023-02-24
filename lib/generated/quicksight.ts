@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Quicksight extends PolicyStatement {
   public servicePrefix = 'quicksight';
@@ -12,10 +12,10 @@ export class Quicksight extends PolicyStatement {
   /**
    * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1981,7 +1981,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:account/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:account/${ resourceId }`);
   }
 
   /**
@@ -1995,7 +1995,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
   }
 
   /**
@@ -2009,7 +2009,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:group/${ resourceId }`);
   }
 
   /**
@@ -2026,7 +2026,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:analysis/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:analysis/${ resourceId }`);
   }
 
   /**
@@ -2043,7 +2043,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ resourceId }`);
   }
 
   /**
@@ -2060,7 +2060,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:template/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:template/${ resourceId }`);
   }
 
   /**
@@ -2077,7 +2077,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:datasource/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:datasource/${ resourceId }`);
   }
 
   /**
@@ -2094,7 +2094,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -2112,7 +2112,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/ingestion/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/ingestion/${ resourceId }`);
   }
 
   /**
@@ -2129,7 +2129,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:theme/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:theme/${ resourceId }`);
   }
 
   /**
@@ -2142,7 +2142,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssignment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight::${ account || '*' }:assignment/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight::${ account || '*' }:assignment/${ resourceId }`);
   }
 
   /**
@@ -2159,7 +2159,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:customization/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:customization/${ resourceId }`);
   }
 
   /**
@@ -2173,7 +2173,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:namespace/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:namespace/${ resourceId }`);
   }
 
   /**
@@ -2190,7 +2190,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:folder/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:folder/${ resourceId }`);
   }
 
   /**
@@ -2204,7 +2204,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
   }
 
   /**
@@ -2218,7 +2218,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:topic/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:topic/${ resourceId }`);
   }
 
   /**

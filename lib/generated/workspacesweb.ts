@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [workspaces-web](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspacesweb.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class WorkspacesWeb extends PolicyStatement {
   public servicePrefix = 'workspaces-web';
@@ -12,10 +12,10 @@ export class WorkspacesWeb extends PolicyStatement {
   /**
    * Statement provider for service [workspaces-web](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspacesweb.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -725,7 +725,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBrowserSettings(browserSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:browserSettings/${ browserSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:browserSettings/${ browserSettingsId }`);
   }
 
   /**
@@ -742,7 +742,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkSettings(networkSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:networkSettings/${ networkSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:networkSettings/${ networkSettingsId }`);
   }
 
   /**
@@ -759,7 +759,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
   }
 
   /**
@@ -776,7 +776,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrustStore(trustStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:trustStore/${ trustStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:trustStore/${ trustStoreId }`);
   }
 
   /**
@@ -793,7 +793,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUserSettings(userSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userSettings/${ userSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userSettings/${ userSettingsId }`);
   }
 
   /**
@@ -810,6 +810,6 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUserAccessLoggingSettings(userAccessLoggingSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class CognitoIdentity extends PolicyStatement {
   public servicePrefix = 'cognito-identity';
@@ -12,10 +12,10 @@ export class CognitoIdentity extends PolicyStatement {
   /**
    * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -330,6 +330,6 @@ export class CognitoIdentity extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CognitoIdentity.defaultPartition }:cognito-identity:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cognito-identity:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
   }
 }

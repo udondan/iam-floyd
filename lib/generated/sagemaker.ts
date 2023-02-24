@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Sagemaker extends PolicyStatement {
   public servicePrefix = 'sagemaker';
@@ -12,10 +12,10 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -4502,7 +4502,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
   }
 
   /**
@@ -4520,7 +4520,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }`);
   }
 
   /**
@@ -4538,7 +4538,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-packaging-job/${ edgePackagingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-packaging-job/${ edgePackagingJobName }`);
   }
 
   /**
@@ -4556,7 +4556,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-deployment/${ edgeDeploymentPlanName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-deployment/${ edgeDeploymentPlanName }`);
   }
 
   /**
@@ -4570,7 +4570,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-loop/${ humanLoopName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-loop/${ humanLoopName }`);
   }
 
   /**
@@ -4588,7 +4588,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:flow-definition/${ flowDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:flow-definition/${ flowDefinitionName }`);
   }
 
   /**
@@ -4606,7 +4606,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-task-ui/${ humanTaskUiName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-task-ui/${ humanTaskUiName }`);
   }
 
   /**
@@ -4620,7 +4620,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHub(hubName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub/${ hubName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub/${ hubName }`);
   }
 
   /**
@@ -4636,7 +4636,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
   }
 
   /**
@@ -4654,7 +4654,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
   }
 
   /**
@@ -4672,7 +4672,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-experiment/${ inferenceExperimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-experiment/${ inferenceExperimentName }`);
   }
 
   /**
@@ -4690,7 +4690,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:labeling-job/${ labelingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:labeling-job/${ labelingJobName }`);
   }
 
   /**
@@ -4708,7 +4708,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workteam/${ workteamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workteam/${ workteamName }`);
   }
 
   /**
@@ -4726,7 +4726,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workforce/${ workforceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workforce/${ workforceName }`);
   }
 
   /**
@@ -4744,7 +4744,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
   }
 
   /**
@@ -4763,7 +4763,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:user-profile/${ domainId }/${ userProfileName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:user-profile/${ domainId }/${ userProfileName }`);
   }
 
   /**
@@ -4782,7 +4782,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:space/${ domainId }/${ spaceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:space/${ domainId }/${ spaceName }`);
   }
 
   /**
@@ -4803,7 +4803,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
   }
 
   /**
@@ -4821,7 +4821,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
   }
 
   /**
@@ -4839,7 +4839,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
@@ -4857,7 +4857,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance/${ notebookInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance/${ notebookInstanceName }`);
   }
 
   /**
@@ -4871,7 +4871,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
   }
 
   /**
@@ -4889,7 +4889,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:code-repository/${ codeRepositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:code-repository/${ codeRepositoryName }`);
   }
 
   /**
@@ -4907,7 +4907,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
   }
 
   /**
@@ -4922,7 +4922,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image-version/${ imageName }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image-version/${ imageName }/${ version }`);
   }
 
   /**
@@ -4940,7 +4940,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:algorithm/${ algorithmName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:algorithm/${ algorithmName }`);
   }
 
   /**
@@ -4958,7 +4958,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:training-job/${ trainingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:training-job/${ trainingJobName }`);
   }
 
   /**
@@ -4976,7 +4976,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:processing-job/${ processingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:processing-job/${ processingJobName }`);
   }
 
   /**
@@ -4994,7 +4994,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
   }
 
   /**
@@ -5012,7 +5012,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -5030,7 +5030,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package/${ modelPackageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package/${ modelPackageName }`);
   }
 
   /**
@@ -5048,7 +5048,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package-group/${ modelPackageGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package-group/${ modelPackageGroupName }`);
   }
 
   /**
@@ -5066,7 +5066,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
   }
 
   /**
@@ -5084,7 +5084,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint-config/${ endpointConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint-config/${ endpointConfigName }`);
   }
 
   /**
@@ -5102,7 +5102,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
   }
 
   /**
@@ -5120,7 +5120,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:transform-job/${ transformJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:transform-job/${ transformJobName }`);
   }
 
   /**
@@ -5138,7 +5138,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:compilation-job/${ compilationJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:compilation-job/${ compilationJobName }`);
   }
 
   /**
@@ -5156,7 +5156,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:automl-job/${ autoMLJobJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:automl-job/${ autoMLJobJobName }`);
   }
 
   /**
@@ -5174,7 +5174,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }`);
   }
 
   /**
@@ -5189,7 +5189,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
   }
 
   /**
@@ -5207,7 +5207,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataQualityJobDefinition(dataQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
   }
 
   /**
@@ -5225,7 +5225,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
   }
 
   /**
@@ -5243,7 +5243,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
   }
 
   /**
@@ -5261,7 +5261,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
   }
 
   /**
@@ -5279,7 +5279,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment/${ experimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment/${ experimentName }`);
   }
 
   /**
@@ -5297,7 +5297,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial/${ trialName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial/${ trialName }`);
   }
 
   /**
@@ -5315,7 +5315,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial-component/${ trialComponentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial-component/${ trialComponentName }`);
   }
 
   /**
@@ -5333,7 +5333,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFeatureGroup(featureGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:feature-group/${ featureGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:feature-group/${ featureGroupName }`);
   }
 
   /**
@@ -5351,7 +5351,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -5366,7 +5366,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }/execution/${ randomString }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }/execution/${ randomString }`);
   }
 
   /**
@@ -5384,7 +5384,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:artifact/${ hashOfArtifactSource }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:artifact/${ hashOfArtifactSource }`);
   }
 
   /**
@@ -5402,7 +5402,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContext(contextName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:context/${ contextName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:context/${ contextName }`);
   }
 
   /**
@@ -5420,7 +5420,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAction(actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:action/${ actionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:action/${ actionName }`);
   }
 
   /**
@@ -5438,7 +5438,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLineageGroup(lineageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:lineage-group/${ lineageGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:lineage-group/${ lineageGroupName }`);
   }
 
   /**
@@ -5456,7 +5456,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCard(modelCardName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }`);
   }
 
   /**
@@ -5475,7 +5475,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCardExportJob(modelCardName: string, exportJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
   }
 
   /**
@@ -5489,7 +5489,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModel(sharedModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model/${ sharedModelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model/${ sharedModelId }`);
   }
 
   /**
@@ -5503,7 +5503,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModelEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model-event/${ eventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model-event/${ eventId }`);
   }
 
   /**

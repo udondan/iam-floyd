@@ -1,7 +1,7 @@
 //import * as cdk from 'aws-cdk-lib';
 //import iam = require('aws-cdk-lib/aws-iam');
-import AWS = require('aws-sdk');
-import crypto = require('crypto');
+import * as AWS from 'aws-sdk';
+import * as crypto from 'crypto';
 
 //import { Construct } from 'constructs';
 const ciam = new AWS.IAM();

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftwareactivationservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ElementalActivations extends PolicyStatement {
   public servicePrefix = 'elemental-activations';
@@ -12,10 +12,10 @@ export class ElementalActivations extends PolicyStatement {
   /**
    * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftwareactivationservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -168,6 +168,6 @@ export class ElementalActivations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActivation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElementalActivations.defaultPartition }:elemental-activations:${ region || '*' }:${ account || '*' }:activation/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elemental-activations:${ region || '*' }:${ account || '*' }:activation/${ resourceId }`);
   }
 }

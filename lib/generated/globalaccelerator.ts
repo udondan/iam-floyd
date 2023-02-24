@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglobalaccelerator.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Globalaccelerator extends PolicyStatement {
   public servicePrefix = 'globalaccelerator';
@@ -12,10 +12,10 @@ export class Globalaccelerator extends PolicyStatement {
   /**
    * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglobalaccelerator.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -645,7 +645,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
   }
 
   /**
@@ -662,7 +662,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
   }
 
   /**
@@ -680,6 +680,6 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
   }
 }

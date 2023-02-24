@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhoneycode.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Honeycode extends PolicyStatement {
   public servicePrefix = 'honeycode';
@@ -12,10 +12,10 @@ export class Honeycode extends PolicyStatement {
   /**
    * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhoneycode.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -400,7 +400,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkbook(workbookId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:workbook:workbook/${ workbookId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:workbook:workbook/${ workbookId }`);
   }
 
   /**
@@ -415,7 +415,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(workbookId: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:table:workbook/${ workbookId }/table/${ tableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:table:workbook/${ workbookId }/table/${ tableId }`);
   }
 
   /**
@@ -431,7 +431,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onScreen(workbookId: string, appId: string, screenId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }`);
   }
 
   /**
@@ -448,6 +448,6 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onScreenAutomation(workbookId: string, appId: string, screenId: string, automationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Honeycode.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:honeycode:${ region || '*' }:${ account || '*' }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
   }
 }

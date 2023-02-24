@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Shield extends PolicyStatement {
   public servicePrefix = 'shield';
@@ -12,10 +12,10 @@ export class Shield extends PolicyStatement {
   /**
    * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -530,7 +530,7 @@ export class Shield extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAttack(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:attack/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:shield::${ account || '*' }:attack/${ id }`);
   }
 
   /**
@@ -546,7 +546,7 @@ export class Shield extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtection(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:protection/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:shield::${ account || '*' }:protection/${ id }`);
   }
 
   /**
@@ -562,6 +562,6 @@ export class Shield extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtectionGroup(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Shield.defaultPartition }:shield::${ account || '*' }:protection-group/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:shield::${ account || '*' }:protection-group/${ id }`);
   }
 }

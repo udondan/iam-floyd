@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Storagegateway extends PolicyStatement {
   public servicePrefix = 'storagegateway';
@@ -12,10 +12,10 @@ export class Storagegateway extends PolicyStatement {
   /**
    * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1205,7 +1205,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/device/${ vtldevice }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/device/${ vtldevice }`);
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFsAssociation(fsaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:fs-association/${ fsaId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:fs-association/${ fsaId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1256,7 +1256,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:share/${ shareId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:share/${ shareId }`);
   }
 
   /**
@@ -1273,7 +1273,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tape/${ tapeBarcode }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tape/${ tapeBarcode }`);
   }
 
   /**
@@ -1290,7 +1290,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTapepool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tapepool/${ poolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tapepool/${ poolId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
   }
 
   /**
@@ -1323,6 +1323,6 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/volume/${ volumeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/volume/${ volumeId }`);
   }
 }

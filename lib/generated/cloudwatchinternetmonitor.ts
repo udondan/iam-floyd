@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [internetmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchinternetmonitor.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Internetmonitor extends PolicyStatement {
   public servicePrefix = 'internetmonitor';
@@ -12,10 +12,10 @@ export class Internetmonitor extends PolicyStatement {
   /**
    * Statement provider for service [internetmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchinternetmonitor.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -150,7 +150,7 @@ export class Internetmonitor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHealthEvents(monitorName: string, eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Internetmonitor.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:Monitor/${ monitorName }/HealthEvents/${ eventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:Monitor/${ monitorName }/HealthEvents/${ eventId }`);
   }
 
   /**
@@ -165,6 +165,6 @@ export class Internetmonitor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMonitor(monitorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Internetmonitor.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:Monitors/${ monitorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:Monitors/${ monitorName }`);
   }
 }

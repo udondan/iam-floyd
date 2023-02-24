@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class AccessAnalyzer extends PolicyStatement {
   public servicePrefix = 'access-analyzer';
@@ -12,10 +12,10 @@ export class AccessAnalyzer extends PolicyStatement {
   /**
    * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -401,7 +401,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AccessAnalyzer.defaultPartition }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }`);
   }
 
   /**
@@ -416,6 +416,6 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AccessAnalyzer.defaultPartition }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
   }
 }

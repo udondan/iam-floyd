@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediatailor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediatailor.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mediatailor extends PolicyStatement {
   public servicePrefix = 'mediatailor';
@@ -12,10 +12,10 @@ export class Mediatailor extends PolicyStatement {
   /**
    * Statement provider for service [mediatailor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediatailor.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -604,7 +604,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:playbackConfiguration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:playbackConfiguration/${ resourceId }`);
   }
 
   /**
@@ -618,7 +618,7 @@ export class Mediatailor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPrefetchSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:prefetchSchedule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:prefetchSchedule/${ resourceId }`);
   }
 
   /**
@@ -635,7 +635,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
   }
 
   /**
@@ -650,7 +650,7 @@ export class Mediatailor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProgram(channelName: string, programName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ channelName }/${ programName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ channelName }/${ programName }`);
   }
 
   /**
@@ -667,7 +667,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceLocation(sourceLocationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:sourceLocation/${ sourceLocationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:sourceLocation/${ sourceLocationName }`);
   }
 
   /**
@@ -685,7 +685,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVodSource(sourceLocationName: string, vodSourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ sourceLocationName }/${ vodSourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ sourceLocationName }/${ vodSourceName }`);
   }
 
   /**
@@ -703,6 +703,6 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLiveSource(sourceLocationName: string, liveSourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediatailor.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:liveSource/${ sourceLocationName }/${ liveSourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || '*' }:${ account || '*' }:liveSource/${ sourceLocationName }/${ liveSourceName }`);
   }
 }

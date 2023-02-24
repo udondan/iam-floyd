@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [profile](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Profile extends PolicyStatement {
   public servicePrefix = 'profile';
@@ -12,10 +12,10 @@ export class Profile extends PolicyStatement {
   /**
    * Statement provider for service [profile](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -523,7 +523,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }`);
   }
 
   /**
@@ -541,7 +541,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onObjectTypes(domainName: string, objectTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/object-types/${ objectTypeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/object-types/${ objectTypeName }`);
   }
 
   /**
@@ -559,6 +559,6 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrations(domainName: string, uri: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/integrations/${ uri }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/integrations/${ uri }`);
   }
 }

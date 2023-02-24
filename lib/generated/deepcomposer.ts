@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [deepcomposer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepcomposer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Deepcomposer extends PolicyStatement {
   public servicePrefix = 'deepcomposer';
@@ -12,10 +12,10 @@ export class Deepcomposer extends PolicyStatement {
   /**
    * Statement provider for service [deepcomposer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepcomposer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -286,7 +286,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:model/${ modelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:model/${ modelId }`);
   }
 
   /**
@@ -303,7 +303,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:composition/${ compositionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:composition/${ compositionId }`);
   }
 
   /**
@@ -317,6 +317,6 @@ export class Deepcomposer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepcomposer.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:audio/${ audioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || '*' }:${ account || '*' }:audio/${ audioId }`);
   }
 }

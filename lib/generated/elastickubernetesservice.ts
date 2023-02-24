@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Eks extends PolicyStatement {
   public servicePrefix = 'eks';
@@ -12,10 +12,10 @@ export class Eks extends PolicyStatement {
   /**
    * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -508,7 +508,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -527,7 +527,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
   }
 
   /**
@@ -546,7 +546,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
   }
 
   /**
@@ -565,7 +565,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
   }
 
   /**
@@ -585,7 +585,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
   }
 
   /**

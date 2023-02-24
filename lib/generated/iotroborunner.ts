@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotroborunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotroborunner.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotroborunner extends PolicyStatement {
   public servicePrefix = 'iotroborunner';
@@ -12,10 +12,10 @@ export class Iotroborunner extends PolicyStatement {
   /**
    * Statement provider for service [iotroborunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotroborunner.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -33,6 +33,9 @@ export class Iotroborunner extends PolicyStatement {
    * Grants permission to create a site
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/iotroborunner/latest/api/API_CreateSite.html
    */
@@ -280,7 +283,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifDestinationResourceId()
    */
   public onDestinationResource(siteId: string, destinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/destination/${ destinationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/destination/${ destinationId }`);
   }
 
   /**
@@ -297,7 +300,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifSiteResourceId()
    */
   public onSiteResource(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
   }
 
   /**
@@ -315,7 +318,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifWorkerFleetResourceId()
    */
   public onWorkerFleetResource(siteId: string, workerFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
   }
 
   /**
@@ -334,7 +337,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifWorkerResourceId()
    */
   public onWorkerResource(siteId: string, workerFleetId: string, workerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
   }
 
   /**

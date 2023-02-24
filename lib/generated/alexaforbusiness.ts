@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [a4b](https://docs.aws.amazon.com/service-authorization/latest/reference/list_alexaforbusiness.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class A4b extends PolicyStatement {
   public servicePrefix = 'a4b';
@@ -12,10 +12,10 @@ export class A4b extends PolicyStatement {
   /**
    * Statement provider for service [a4b](https://docs.aws.amazon.com/service-authorization/latest/reference/list_alexaforbusiness.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1240,7 +1240,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
   }
 
   /**
@@ -1257,7 +1257,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
   }
 
   /**
@@ -1274,7 +1274,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:device/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:device/${ resourceId }`);
   }
 
   /**
@@ -1288,7 +1288,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:skill-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:skill-group/${ resourceId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
   }
 
   /**
@@ -1319,7 +1319,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:address-book/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:address-book/${ resourceId }`);
   }
 
   /**
@@ -1333,7 +1333,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:conference-provider/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:conference-provider/${ resourceId }`);
   }
 
   /**
@@ -1347,7 +1347,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:contact/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:contact/${ resourceId }`);
   }
 
   /**
@@ -1361,7 +1361,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
   }
 
   /**
@@ -1375,7 +1375,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:network-profile/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:network-profile/${ resourceId }`);
   }
 
   /**
@@ -1389,7 +1389,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGateway(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway/${ resourceId }`);
   }
 
   /**
@@ -1403,7 +1403,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewaygroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || A4b.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || '*' }:${ account || '*' }:gateway-group/${ resourceId }`);
   }
 
   /**

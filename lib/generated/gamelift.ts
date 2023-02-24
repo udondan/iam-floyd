@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Gamelift extends PolicyStatement {
   public servicePrefix = 'gamelift';
@@ -12,10 +12,10 @@ export class Gamelift extends PolicyStatement {
   /**
    * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1333,7 +1333,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlias(aliasId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }::alias/${ aliasId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }::alias/${ aliasId }`);
   }
 
   /**
@@ -1350,7 +1350,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBuild(buildId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:build/${ buildId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -1367,7 +1367,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
   }
 
   /**
@@ -1384,7 +1384,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
   }
 
   /**
@@ -1401,7 +1401,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameSessionQueue(gameSessionQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gamesessionqueue/${ gameSessionQueueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gamesessionqueue/${ gameSessionQueueName }`);
   }
 
   /**
@@ -1417,7 +1417,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }::location/${ locationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }::location/${ locationId }`);
   }
 
   /**
@@ -1434,7 +1434,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingConfiguration(matchmakingConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
   }
 
   /**
@@ -1451,7 +1451,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingRuleSet(matchmakingRuleSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingruleset/${ matchmakingRuleSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingruleset/${ matchmakingRuleSetName }`);
   }
 
   /**
@@ -1468,6 +1468,6 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
   }
 }

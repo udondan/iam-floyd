@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonchime.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Chime extends PolicyStatement {
   public servicePrefix = 'chime';
@@ -12,10 +12,10 @@ export class Chime extends PolicyStatement {
   /**
    * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonchime.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -3376,7 +3376,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMeeting(meetingId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime::${ accountId || '*' }:meeting/${ meetingId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime::${ accountId || '*' }:meeting/${ meetingId }`);
   }
 
   /**
@@ -3393,7 +3393,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppInstance(appInstanceId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }`);
   }
 
   /**
@@ -3411,7 +3411,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
   }
 
   /**
@@ -3429,7 +3429,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(appInstanceId: string, channelId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel/${ channelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel/${ channelId }`);
   }
 
   /**
@@ -3447,7 +3447,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannelFlow(appInstanceId: string, channelFlowId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
   }
 
   /**
@@ -3464,6 +3464,6 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMediaPipeline(mediaPipelineId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-pipeline/${ mediaPipelineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-pipeline/${ mediaPipelineId }`);
   }
 }

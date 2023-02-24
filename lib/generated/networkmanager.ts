@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
@@ -12,10 +12,10 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1152,7 +1152,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:global-network/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:global-network/${ resourceId }`);
   }
 
   /**
@@ -1169,7 +1169,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:site/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:site/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:link/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:link/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1203,7 +1203,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:device/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:device/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1220,7 +1220,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:connection/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:connection/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1236,7 +1236,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCoreNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:core-network/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:core-network/${ resourceId }`);
   }
 
   /**
@@ -1252,7 +1252,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:attachment/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:attachment/${ resourceId }`);
   }
 
   /**
@@ -1268,7 +1268,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnectPeer(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:connect-peer/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:connect-peer/${ resourceId }`);
   }
 
   /**
@@ -1284,7 +1284,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPeering(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:peering/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || '*' }:peering/${ resourceId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Codecommit extends PolicyStatement {
   public servicePrefix = 'codecommit';
@@ -12,10 +12,10 @@ export class Codecommit extends PolicyStatement {
   /**
    * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1153,7 +1153,7 @@ export class Codecommit extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecommit.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [kafkaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforkafkaconnect.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Kafkaconnect extends PolicyStatement {
   public servicePrefix = 'kafkaconnect';
@@ -12,10 +12,10 @@ export class Kafkaconnect extends PolicyStatement {
   /**
    * Statement provider for service [kafkaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforkafkaconnect.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -207,7 +207,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
   }
 
   /**
@@ -222,7 +222,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
   }
 
   /**
@@ -237,6 +237,6 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
   }
 }

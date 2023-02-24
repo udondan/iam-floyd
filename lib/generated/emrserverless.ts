@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [emr-serverless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class EmrServerless extends PolicyStatement {
   public servicePrefix = 'emr-serverless';
@@ -12,10 +12,10 @@ export class EmrServerless extends PolicyStatement {
   /**
    * Statement provider for service [emr-serverless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -241,7 +241,7 @@ export class EmrServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrServerless.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
   }
 
   /**
@@ -259,6 +259,6 @@ export class EmrServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobRun(applicationId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrServerless.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
   }
 }

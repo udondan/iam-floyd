@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Identitystore extends PolicyStatement {
   public servicePrefix = 'identitystore';
@@ -12,10 +12,10 @@ export class Identitystore extends PolicyStatement {
   /**
    * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -265,7 +265,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentitystore(identityStoreId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore::${ account || '*' }:identitystore/${ identityStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore::${ account || '*' }:identitystore/${ identityStoreId }`);
   }
 
   /**
@@ -277,7 +277,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userId: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::user/${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::user/${ userId }`);
   }
 
   /**
@@ -289,7 +289,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupId: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::group/${ groupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::group/${ groupId }`);
   }
 
   /**
@@ -301,7 +301,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroupMembership(membershipId: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::membership/${ membershipId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::membership/${ membershipId }`);
   }
 
   /**
@@ -313,7 +313,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllUsers(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::user/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::user/${ resourceName }`);
   }
 
   /**
@@ -325,7 +325,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllGroups(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::group/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::group/${ resourceName }`);
   }
 
   /**
@@ -337,6 +337,6 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllGroupMemberships(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::membership/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::membership/${ resourceName }`);
   }
 }

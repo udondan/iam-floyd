@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotanalytics.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotanalytics extends PolicyStatement {
   public servicePrefix = 'iotanalytics';
@@ -12,10 +12,10 @@ export class Iotanalytics extends PolicyStatement {
   /**
    * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotanalytics.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -477,7 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
   }
 
   /**
@@ -496,7 +496,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
   }
 
   /**
@@ -515,7 +515,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
   }
 
   /**
@@ -534,7 +534,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
   }
 
   /**

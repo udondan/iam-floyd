@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [kms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Kms extends PolicyStatement {
   public servicePrefix = 'kms';
@@ -12,10 +12,10 @@ export class Kms extends PolicyStatement {
   /**
    * Statement provider for service [kms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -940,7 +940,7 @@ export class Kms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlias(alias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kms.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:alias/${ alias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:alias/${ alias }`);
   }
 
   /**
@@ -963,7 +963,7 @@ export class Kms extends PolicyStatement {
    * - .ifResourceAliases()
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kms.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 
   /**

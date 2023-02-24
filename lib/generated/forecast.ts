@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonforecast.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Forecast extends PolicyStatement {
   public servicePrefix = 'forecast';
@@ -12,10 +12,10 @@ export class Forecast extends PolicyStatement {
   /**
    * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonforecast.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -956,7 +956,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -973,7 +973,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
   }
 
   /**
@@ -990,7 +990,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
   }
 
   /**
@@ -1002,7 +1002,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlgorithm(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:::algorithm/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:::algorithm/${ resourceId }`);
   }
 
   /**
@@ -1019,7 +1019,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor/${ resourceId }`);
   }
 
   /**
@@ -1036,7 +1036,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPredictorBacktestExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor-backtest-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:predictor-backtest-export-job/${ resourceId }`);
   }
 
   /**
@@ -1053,7 +1053,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast/${ resourceId }`);
   }
 
   /**
@@ -1070,7 +1070,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-export-job/${ resourceId }`);
   }
 
   /**
@@ -1087,7 +1087,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExplainability(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability/${ resourceId }`);
   }
 
   /**
@@ -1104,7 +1104,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
   }
 
   /**
@@ -1121,7 +1121,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMonitor(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:monitor/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:monitor/${ resourceId }`);
   }
 
   /**
@@ -1138,7 +1138,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWhatIfAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-analysis/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-analysis/${ resourceId }`);
   }
 
   /**
@@ -1155,7 +1155,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWhatIfForecast(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast/${ resourceId }`);
   }
 
   /**
@@ -1172,7 +1172,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWhatIfForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast-export/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:what-if-forecast-export/${ resourceId }`);
   }
 
   /**
@@ -1189,6 +1189,6 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-endpoint/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-endpoint/${ resourceId }`);
   }
 }

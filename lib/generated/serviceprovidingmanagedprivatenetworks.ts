@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [private-networks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsserviceprovidingmanagedprivatenetworks.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class PrivateNetworks extends PolicyStatement {
   public servicePrefix = 'private-networks';
@@ -12,10 +12,10 @@ export class PrivateNetworks extends PolicyStatement {
   /**
    * Statement provider for service [private-networks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsserviceprovidingmanagedprivatenetworks.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -380,7 +380,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network/${ networkName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network/${ networkName }`);
   }
 
   /**
@@ -398,7 +398,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkSite(networkName: string, networkSiteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-site/${ networkName }/${ networkSiteName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-site/${ networkName }/${ networkSiteName }`);
   }
 
   /**
@@ -416,7 +416,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkResource(networkName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-resource/${ networkName }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-resource/${ networkName }/${ resourceId }`);
   }
 
   /**
@@ -434,7 +434,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrder(networkName: string, orderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:order/${ networkName }/${ orderId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:order/${ networkName }/${ orderId }`);
   }
 
   /**
@@ -452,6 +452,6 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceIdentifier(networkName: string, deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:device-identifier/${ networkName }/${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:device-identifier/${ networkName }/${ deviceId }`);
   }
 }

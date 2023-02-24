@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Cleanrooms extends PolicyStatement {
   public servicePrefix = 'cleanrooms';
@@ -12,10 +12,10 @@ export class Cleanrooms extends PolicyStatement {
   /**
    * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -493,7 +493,7 @@ export class Cleanrooms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCollaboration(collaborationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:collaboration/${ collaborationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:collaboration/${ collaborationId }`);
   }
 
   /**
@@ -507,7 +507,7 @@ export class Cleanrooms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguredTable(configuredTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:configuredtable/${ configuredTableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:configuredtable/${ configuredTableId }`);
   }
 
   /**
@@ -522,7 +522,7 @@ export class Cleanrooms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguredTableAssociation(membershipId: string, configuredTableAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
   }
 
   /**
@@ -536,6 +536,6 @@ export class Cleanrooms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }`);
   }
 }

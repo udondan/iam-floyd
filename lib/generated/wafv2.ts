@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Wafv2 extends PolicyStatement {
   public servicePrefix = 'wafv2';
@@ -12,10 +12,10 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -707,7 +707,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -726,7 +726,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
   }
 
   /**
@@ -742,7 +742,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
   }
 
   /**
@@ -761,7 +761,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -780,7 +780,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
   }
 
   /**
@@ -795,7 +795,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -810,7 +810,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -824,7 +824,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -838,6 +838,6 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
   }
 }

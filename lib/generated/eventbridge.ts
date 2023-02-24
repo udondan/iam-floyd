@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridge.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Events extends PolicyStatement {
   public servicePrefix = 'events';
@@ -12,10 +12,10 @@ export class Events extends PolicyStatement {
   /**
    * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridge.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -790,7 +790,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }::event-source/${ eventSourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }::event-source/${ eventSourceName }`);
   }
 
   /**
@@ -807,7 +807,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:event-bus/${ eventBusName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:event-bus/${ eventBusName }`);
   }
 
   /**
@@ -824,7 +824,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleOnDefaultEventBus(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
   }
 
   /**
@@ -842,7 +842,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleOnCustomEventBus(eventBusName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ eventBusName }/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ eventBusName }/${ ruleName }`);
   }
 
   /**
@@ -856,7 +856,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArchive(archiveName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:archive/${ archiveName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:archive/${ archiveName }`);
   }
 
   /**
@@ -870,7 +870,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplay(replayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:replay/${ replayName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:replay/${ replayName }`);
   }
 
   /**
@@ -884,7 +884,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
   }
 
   /**
@@ -898,7 +898,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:api-destination/${ apiDestinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:api-destination/${ apiDestinationName }`);
   }
 
   /**
@@ -912,7 +912,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
   }
 
   /**

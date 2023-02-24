@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Robomaker extends PolicyStatement {
   public servicePrefix = 'robomaker';
@@ -12,10 +12,10 @@ export class Robomaker extends PolicyStatement {
   /**
    * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -816,7 +816,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -834,7 +834,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -851,7 +851,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job/${ simulationJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job/${ simulationJobId }`);
   }
 
   /**
@@ -868,7 +868,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job-batch/${ simulationJobBatchId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job-batch/${ simulationJobBatchId }`);
   }
 
   /**
@@ -885,7 +885,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-job/${ deploymentJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-job/${ deploymentJobId }`);
   }
 
   /**
@@ -903,7 +903,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot/${ robotName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot/${ robotName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -921,7 +921,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -938,7 +938,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldGenerationJob(worldGenerationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-generation-job/${ worldGenerationJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-generation-job/${ worldGenerationJobId }`);
   }
 
   /**
@@ -955,7 +955,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-export-job/${ worldExportJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-export-job/${ worldExportJobId }`);
   }
 
   /**
@@ -972,7 +972,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-template/${ worldTemplateJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-template/${ worldTemplateJobId }`);
   }
 
   /**
@@ -989,6 +989,6 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world/${ worldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world/${ worldId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [cognito-idp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class CognitoIdp extends PolicyStatement {
   public servicePrefix = 'cognito-idp';
@@ -12,10 +12,10 @@ export class CognitoIdp extends PolicyStatement {
   /**
    * Statement provider for service [cognito-idp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1311,7 +1311,7 @@ export class CognitoIdp extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
   }
 
   /**
@@ -1327,6 +1327,6 @@ export class CognitoIdp extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 }

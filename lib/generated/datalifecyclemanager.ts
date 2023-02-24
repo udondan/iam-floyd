@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [dlm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondatalifecyclemanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Dlm extends PolicyStatement {
   public servicePrefix = 'dlm';
@@ -12,10 +12,10 @@ export class Dlm extends PolicyStatement {
   /**
    * Statement provider for service [dlm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondatalifecyclemanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -151,6 +151,6 @@ export class Dlm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dlm.defaultPartition }:dlm:${ region || '*' }:${ account || '*' }:policy/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dlm:${ region || '*' }:${ account || '*' }:policy/${ resourceName }`);
   }
 }

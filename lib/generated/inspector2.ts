@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Inspector2 extends PolicyStatement {
   public servicePrefix = 'inspector2';
@@ -12,10 +12,10 @@ export class Inspector2 extends PolicyStatement {
   /**
    * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -444,7 +444,7 @@ export class Inspector2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFilter(ownerId: string, filterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Inspector2.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:owner/${ ownerId }/filter/${ filterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:owner/${ ownerId }/filter/${ filterId }`);
   }
 
   /**
@@ -458,6 +458,6 @@ export class Inspector2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFinding(findingId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Inspector2.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:finding/${ findingId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:inspector2:${ region || '*' }:${ account || '*' }:finding/${ findingId }`);
   }
 }

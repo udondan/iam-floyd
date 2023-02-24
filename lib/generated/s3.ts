@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class S3 extends PolicyStatement {
   public servicePrefix = 's3';
@@ -12,10 +12,10 @@ export class S3 extends PolicyStatement {
   /**
    * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -2908,7 +2908,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2920,7 +2920,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:::${ bucketName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:::${ bucketName }`);
   }
 
   /**
@@ -2933,7 +2933,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObject(bucketName: string, objectName: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:::${ bucketName }/${ objectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:::${ bucketName }/${ objectName }`);
   }
 
   /**
@@ -2947,7 +2947,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -2964,7 +2964,7 @@ export class S3 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStoragelensconfiguration(configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:storage-lens/${ configId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:storage-lens/${ configId }`);
   }
 
   /**
@@ -2978,7 +2978,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2991,7 +2991,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3::${ account || '*' }:accesspoint/${ accessPointAlias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3::${ account || '*' }:accesspoint/${ accessPointAlias }`);
   }
 
   /**
@@ -3005,7 +3005,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3.defaultPartition }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
   }
 
   /**

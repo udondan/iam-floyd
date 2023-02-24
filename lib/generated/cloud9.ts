@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [cloud9](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Cloud9 extends PolicyStatement {
   public servicePrefix = 'cloud9';
@@ -12,10 +12,10 @@ export class Cloud9 extends PolicyStatement {
   /**
    * Statement provider for service [cloud9](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -437,7 +437,7 @@ export class Cloud9 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloud9.defaultPartition }:cloud9:${ region || '*' }:${ account || '*' }:environment:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloud9:${ region || '*' }:${ account || '*' }:environment:${ resourceId }`);
   }
 
   /**

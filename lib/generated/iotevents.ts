@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotevents extends PolicyStatement {
   public servicePrefix = 'iotevents';
@@ -12,10 +12,10 @@ export class Iotevents extends PolicyStatement {
   /**
    * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -530,7 +530,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
   }
 
   /**
@@ -547,7 +547,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlarmModel(alarmModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
   }
 
   /**
@@ -564,7 +564,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
   }
 
   /**

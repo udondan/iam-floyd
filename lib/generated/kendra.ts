@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Kendra extends PolicyStatement {
   public servicePrefix = 'kendra';
@@ -12,10 +12,10 @@ export class Kendra extends PolicyStatement {
   /**
    * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -730,7 +730,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
   }
 
   /**
@@ -748,7 +748,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -766,7 +766,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
   }
 
   /**
@@ -781,7 +781,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**
@@ -799,7 +799,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -817,6 +817,6 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
   }
 }

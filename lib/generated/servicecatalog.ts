@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicecatalog.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Servicecatalog extends PolicyStatement {
   public servicePrefix = 'servicecatalog';
@@ -12,10 +12,10 @@ export class Servicecatalog extends PolicyStatement {
   /**
    * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicecatalog.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1519,7 +1519,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
   }
 
   /**
@@ -1536,7 +1536,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
   }
 
   /**
@@ -1553,7 +1553,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
   }
 
   /**
@@ -1570,7 +1570,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
   }
 
   /**

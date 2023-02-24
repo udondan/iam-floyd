@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplifyuibuilder.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Amplifyuibuilder extends PolicyStatement {
   public servicePrefix = 'amplifyuibuilder';
@@ -12,10 +12,10 @@ export class Amplifyuibuilder extends PolicyStatement {
   /**
    * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplifyuibuilder.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -355,7 +355,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
   }
 
   /**
@@ -377,7 +377,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFormResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
   }
 
   /**
@@ -399,7 +399,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
   }
 
   /**

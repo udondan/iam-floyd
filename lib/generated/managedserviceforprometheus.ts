@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [aps](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedserviceforprometheus.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Aps extends PolicyStatement {
   public servicePrefix = 'aps';
@@ -12,10 +12,10 @@ export class Aps extends PolicyStatement {
   /**
    * Statement provider for service [aps](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedserviceforprometheus.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -602,7 +602,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -622,6 +622,6 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onRulegroupsnamespace(workspaceId: string, namespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
   }
 }

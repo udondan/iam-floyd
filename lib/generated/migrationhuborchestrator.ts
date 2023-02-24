@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [migrationhub-orchestrator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhuborchestrator.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class MigrationhubOrchestrator extends PolicyStatement {
   public servicePrefix = 'migrationhub-orchestrator';
@@ -12,10 +12,10 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   /**
    * Statement provider for service [migrationhub-orchestrator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhuborchestrator.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -427,6 +427,6 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MigrationhubOrchestrator.defaultPartition }:migrationhub-orchestrator:${ region || '*' }:${ account || '*' }:workflow/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:migrationhub-orchestrator:${ region || '*' }:${ account || '*' }:workflow/${ resourceId }`);
   }
 }

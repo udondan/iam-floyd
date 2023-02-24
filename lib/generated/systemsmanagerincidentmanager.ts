@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ssm-incidents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SsmIncidents extends PolicyStatement {
   public servicePrefix = 'ssm-incidents';
@@ -12,10 +12,10 @@ export class SsmIncidents extends PolicyStatement {
   /**
    * Statement provider for service [ssm-incidents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -423,7 +423,7 @@ export class SsmIncidents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResponsePlan(responsePlan: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
   }
 
   /**
@@ -440,7 +440,7 @@ export class SsmIncidents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIncidentRecord(responsePlan: string, incidentRecord: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
   }
 
   /**
@@ -456,6 +456,6 @@ export class SsmIncidents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationSet(replicationSet: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Glue extends PolicyStatement {
   public servicePrefix = 'glue';
@@ -12,10 +12,10 @@ export class Glue extends PolicyStatement {
   /**
    * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -2633,7 +2633,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCatalog(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:catalog`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:catalog`);
   }
 
   /**
@@ -2647,7 +2647,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
   }
 
   /**
@@ -2662,7 +2662,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:table/${ databaseName }/${ tableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:table/${ databaseName }/${ tableName }`);
   }
 
   /**
@@ -2678,7 +2678,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
   }
 
   /**
@@ -2695,7 +2695,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
   }
 
   /**
@@ -2710,7 +2710,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
   }
 
   /**
@@ -2727,7 +2727,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:devEndpoint/${ devEndpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:devEndpoint/${ devEndpointName }`);
   }
 
   /**
@@ -2744,7 +2744,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
   }
 
   /**
@@ -2761,7 +2761,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:trigger/${ triggerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:trigger/${ triggerName }`);
   }
 
   /**
@@ -2778,7 +2778,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:crawler/${ crawlerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:crawler/${ crawlerName }`);
   }
 
   /**
@@ -2795,7 +2795,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
   }
 
   /**
@@ -2812,7 +2812,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
   }
 
   /**
@@ -2829,7 +2829,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:mlTransform/${ transformId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:mlTransform/${ transformId }`);
   }
 
   /**
@@ -2846,7 +2846,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
   }
 
   /**
@@ -2863,7 +2863,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
   }
 
   /**
@@ -2880,7 +2880,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
   }
 
   /**
@@ -2897,7 +2897,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataQualityRuleset(rulesetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:dataQualityRuleset/${ rulesetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:dataQualityRuleset/${ rulesetName }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [appmesh-preview](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappmeshpreview.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class AppmeshPreview extends PolicyStatement {
   public servicePrefix = 'appmesh-preview';
@@ -12,10 +12,10 @@ export class AppmeshPreview extends PolicyStatement {
   /**
    * Statement provider for service [appmesh-preview](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappmeshpreview.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -470,7 +470,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }`);
   }
 
   /**
@@ -485,7 +485,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
   }
 
   /**
@@ -500,7 +500,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
   }
 
   /**
@@ -515,7 +515,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
   }
 
   /**
@@ -531,7 +531,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
   }
 
   /**
@@ -546,7 +546,7 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
   }
 
   /**
@@ -562,6 +562,6 @@ export class AppmeshPreview extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AppmeshPreview.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appmesh-preview:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
   }
 }

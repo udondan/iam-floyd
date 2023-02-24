@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Datasync extends PolicyStatement {
   public servicePrefix = 'datasync';
@@ -12,10 +12,10 @@ export class Datasync extends PolicyStatement {
   /**
    * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -643,7 +643,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:agent/${ agentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:agent/${ agentId }`);
   }
 
   /**
@@ -660,7 +660,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:location/${ locationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:location/${ locationId }`);
   }
 
   /**
@@ -677,7 +677,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -695,6 +695,6 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);
   }
 }

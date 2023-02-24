@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [sagemaker-geospatial](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakergeospatialcapabilities.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SagemakerGeospatial extends PolicyStatement {
   public servicePrefix = 'sagemaker-geospatial';
@@ -12,10 +12,10 @@ export class SagemakerGeospatial extends PolicyStatement {
   /**
    * Statement provider for service [sagemaker-geospatial](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakergeospatialcapabilities.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -317,7 +317,7 @@ export class SagemakerGeospatial extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEarthObservationJob(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:earth-observation-job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:earth-observation-job/${ jobID }`);
   }
 
   /**
@@ -334,7 +334,7 @@ export class SagemakerGeospatial extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRasterDataCollection(collectionID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:raster-data-collection/${ collectionID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:raster-data-collection/${ collectionID }`);
   }
 
   /**
@@ -351,6 +351,6 @@ export class SagemakerGeospatial extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVectorEnrichmentJob(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:vector-enrichment-job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:vector-enrichment-job/${ jobID }`);
   }
 }

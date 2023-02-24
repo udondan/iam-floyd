@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Timestream extends PolicyStatement {
   public servicePrefix = 'timestream';
@@ -12,10 +12,10 @@ export class Timestream extends PolicyStatement {
   /**
    * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -511,7 +511,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
   }
 
   /**
@@ -529,7 +529,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }/table/${ tableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }/table/${ tableName }`);
   }
 
   /**
@@ -546,6 +546,6 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:scheduled-query/${ scheduledQueryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:scheduled-query/${ scheduledQueryName }`);
   }
 }

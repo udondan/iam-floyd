@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ivs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ivs extends PolicyStatement {
   public servicePrefix = 'ivs';
@@ -12,10 +12,10 @@ export class Ivs extends PolicyStatement {
   /**
    * Statement provider for service [ivs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -406,7 +406,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
   }
 
   /**
@@ -423,7 +423,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamKey(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stream-key/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stream-key/${ resourceId }`);
   }
 
   /**
@@ -440,7 +440,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackKeyPair(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:playback-key/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:playback-key/${ resourceId }`);
   }
 
   /**
@@ -457,6 +457,6 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:recording-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:recording-configuration/${ resourceId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [rds-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsdataapi.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class RdsData extends PolicyStatement {
   public servicePrefix = 'rds-data';
@@ -12,10 +12,10 @@ export class RdsData extends PolicyStatement {
   /**
    * Statement provider for service [rds-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsdataapi.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -140,6 +140,6 @@ export class RdsData extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RdsData.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
   }
 }

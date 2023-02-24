@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [iot1click](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot1-click.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iot1click extends PolicyStatement {
   public servicePrefix = 'iot1click';
@@ -12,10 +12,10 @@ export class Iot1click extends PolicyStatement {
   /**
    * Statement provider for service [iot1click](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot1-click.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -370,7 +370,7 @@ export class Iot1click extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot1click.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:devices/${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:devices/${ deviceId }`);
   }
 
   /**
@@ -387,6 +387,6 @@ export class Iot1click extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot1click.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:projects/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:projects/${ projectName }`);
   }
 }

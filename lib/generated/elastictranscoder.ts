@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [elastictranscoder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastictranscoder.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Elastictranscoder extends PolicyStatement {
   public servicePrefix = 'elastictranscoder';
@@ -12,10 +12,10 @@ export class Elastictranscoder extends PolicyStatement {
   /**
    * Statement provider for service [elastictranscoder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastictranscoder.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -242,7 +242,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -256,7 +256,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
   }
 
   /**
@@ -270,6 +270,6 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:preset/${ presetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:preset/${ presetId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [redshift-serverless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftserverless.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class RedshiftServerless extends PolicyStatement {
   public servicePrefix = 'redshift-serverless';
@@ -12,10 +12,10 @@ export class RedshiftServerless extends PolicyStatement {
   /**
    * Statement provider for service [redshift-serverless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftserverless.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -542,7 +542,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -556,7 +556,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotId }`);
   }
 
   /**
@@ -573,7 +573,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
   }
 
   /**
@@ -587,7 +587,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:recovery-point/${ recoveryPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:recovery-point/${ recoveryPointId }`);
   }
 
   /**
@@ -601,7 +601,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpointAccess(endpointAccessId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:managedvpcendpoint/${ endpointAccessId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:managedvpcendpoint/${ endpointAccessId }`);
   }
 
   /**

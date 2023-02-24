@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [network-firewall](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class NetworkFirewall extends PolicyStatement {
   public servicePrefix = 'network-firewall';
@@ -12,10 +12,10 @@ export class NetworkFirewall extends PolicyStatement {
   /**
    * Statement provider for service [network-firewall](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -437,7 +437,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewall(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall/${ name }`);
   }
 
   /**
@@ -454,7 +454,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallPolicy(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall-policy/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall-policy/${ name }`);
   }
 
   /**
@@ -471,7 +471,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatefulRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateful-rulegroup/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateful-rulegroup/${ name }`);
   }
 
   /**
@@ -488,6 +488,6 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatelessRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateless-rulegroup/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateless-rulegroup/${ name }`);
   }
 }

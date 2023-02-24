@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [evidently](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchevidently.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Evidently extends PolicyStatement {
   public servicePrefix = 'evidently';
@@ -12,10 +12,10 @@ export class Evidently extends PolicyStatement {
   /**
    * Statement provider for service [evidently](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchevidently.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -533,7 +533,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -551,7 +551,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFeature(projectName: string, featureName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/feature/${ featureName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/feature/${ featureName }`);
   }
 
   /**
@@ -569,7 +569,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperiment(projectName: string, experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/experiment/${ experimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/experiment/${ experimentName }`);
   }
 
   /**
@@ -587,7 +587,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLaunch(projectName: string, launchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/launch/${ launchName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/launch/${ launchName }`);
   }
 
   /**
@@ -604,6 +604,6 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSegment(segmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:segment/${ segmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:segment/${ segmentName }`);
   }
 }

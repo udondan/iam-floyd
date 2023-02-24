@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssqlworkbench.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Sqlworkbench extends PolicyStatement {
   public servicePrefix = 'sqlworkbench';
@@ -12,10 +12,10 @@ export class Sqlworkbench extends PolicyStatement {
   /**
    * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssqlworkbench.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -895,7 +895,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:connection/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:connection/${ resourceId }`);
   }
 
   /**
@@ -912,7 +912,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuery(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:query/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:query/${ resourceId }`);
   }
 
   /**
@@ -929,7 +929,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:chart/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:chart/${ resourceId }`);
   }
 
   /**
@@ -946,6 +946,6 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:notebook/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:notebook/${ resourceId }`);
   }
 }

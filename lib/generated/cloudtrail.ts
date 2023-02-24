@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Cloudtrail extends PolicyStatement {
   public servicePrefix = 'cloudtrail';
@@ -12,10 +12,10 @@ export class Cloudtrail extends PolicyStatement {
   /**
    * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -684,7 +684,7 @@ export class Cloudtrail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
   }
 
   /**
@@ -701,7 +701,7 @@ export class Cloudtrail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
   }
 
   /**
@@ -718,6 +718,6 @@ export class Cloudtrail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:channel/${ channelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:channel/${ channelId }`);
   }
 }

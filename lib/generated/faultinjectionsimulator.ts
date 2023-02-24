@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [fis](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfaultinjectionsimulator.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Fis extends PolicyStatement {
   public servicePrefix = 'fis';
@@ -12,10 +12,10 @@ export class Fis extends PolicyStatement {
   /**
    * Statement provider for service [fis](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfaultinjectionsimulator.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -321,7 +321,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
   }
 
   /**
@@ -338,7 +338,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperiment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
   }
 
   /**
@@ -355,7 +355,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
   }
 
   /**

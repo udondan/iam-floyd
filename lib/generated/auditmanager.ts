@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Auditmanager extends PolicyStatement {
   public servicePrefix = 'auditmanager';
@@ -12,10 +12,10 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -803,7 +803,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessment(assessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }`);
   }
 
   /**
@@ -817,7 +817,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessmentFramework/${ assessmentFrameworkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessmentFramework/${ assessmentFrameworkId }`);
   }
 
   /**
@@ -832,7 +832,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
   }
 
   /**
@@ -849,6 +849,6 @@ export class Auditmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onControl(controlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
   }
 }

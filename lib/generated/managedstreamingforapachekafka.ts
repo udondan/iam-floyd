@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [kafka](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Kafka extends PolicyStatement {
   public servicePrefix = 'kafka';
@@ -12,10 +12,10 @@ export class Kafka extends PolicyStatement {
   /**
    * Statement provider for service [kafka](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -535,7 +535,7 @@ export class Kafka extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uuid }`);
   }
 
   /**
@@ -550,7 +550,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguration(configurationName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }/${ uuid }`);
   }
 
   /**
@@ -566,7 +566,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
   }
 
   /**
@@ -582,7 +582,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
   }
 
   /**
@@ -598,6 +598,6 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
   }
 }

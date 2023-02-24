@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpoint.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mobiletargeting extends PolicyStatement {
   public servicePrefix = 'mobiletargeting';
@@ -12,10 +12,10 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpoint.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -801,6 +801,39 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey activity for a single journey run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-activities-journey-activity-id-execution-metrics.html#GetJourneyRunExecutionActivityMetrics
+   */
+  public toGetJourneyRunExecutionActivityMetrics() {
+    return this.to('GetJourneyRunExecutionActivityMetrics');
+  }
+
+  /**
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey for a single journey run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-execution-metrics.html#GetJourneyRunExecutionMetrics
+   */
+  public toGetJourneyRunExecutionMetrics() {
+    return this.to('GetJourneyRunExecutionMetrics');
+  }
+
+  /**
+   * Grants permission to retrieve information about all journey runs for a journey
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs.html
+   */
+  public toGetJourneyRuns() {
+    return this.to('GetJourneyRuns');
+  }
+
+  /**
    * Grants permission to retrieve information about a specific or the active version of an push notification template
    *
    * Access Level: Read
@@ -1520,6 +1553,8 @@ export class Mobiletargeting extends PolicyStatement {
       'GetJourneyDateRangeKpi',
       'GetJourneyExecutionActivityMetrics',
       'GetJourneyExecutionMetrics',
+      'GetJourneyRunExecutionActivityMetrics',
+      'GetJourneyRunExecutionMetrics',
       'GetPushTemplate',
       'GetRecommenderConfiguration',
       'GetReports',
@@ -1541,6 +1576,7 @@ export class Mobiletargeting extends PolicyStatement {
       'GetChannels',
       'GetExportJobs',
       'GetImportJobs',
+      'GetJourneyRuns',
       'GetRecommenderConfigurations',
       'GetSegmentExportJobs',
       'GetSegmentImportJobs',
@@ -1570,7 +1606,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -1588,7 +1624,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaigns(appId: string, campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/campaigns/${ campaignId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/campaigns/${ campaignId }`);
   }
 
   /**
@@ -1606,7 +1642,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJourneys(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/journeys/${ journeyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/journeys/${ journeyId }`);
   }
 
   /**
@@ -1624,7 +1660,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSegments(appId: string, segmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/segments/${ segmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/segments/${ segmentId }`);
   }
 
   /**
@@ -1642,7 +1678,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplates(templateName: string, channelType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:templates/${ templateName }/${ channelType }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:templates/${ templateName }/${ channelType }`);
   }
 
   /**
@@ -1656,7 +1692,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommenders(recommenderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:recommenders/${ recommenderId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:recommenders/${ recommenderId }`);
   }
 
   /**
@@ -1669,6 +1705,6 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mobiletargeting.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:phone/number/validate`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || '*' }:${ account || '*' }:phone/number/validate`);
   }
 }

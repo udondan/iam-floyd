@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Route53resolver extends PolicyStatement {
   public servicePrefix = 'route53resolver';
@@ -12,10 +12,10 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -865,7 +865,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverDnssecConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-dnssec-config/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-dnssec-config/${ resourceId }`);
   }
 
   /**
@@ -882,7 +882,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverQueryLogConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-query-log-config/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-query-log-config/${ resourceId }`);
   }
 
   /**
@@ -899,7 +899,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverRule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-rule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-rule/${ resourceId }`);
   }
 
   /**
@@ -916,7 +916,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-endpoint/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-endpoint/${ resourceId }`);
   }
 
   /**
@@ -933,7 +933,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group/${ resourceId }`);
   }
 
   /**
@@ -950,7 +950,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group-association/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group-association/${ resourceId }`);
   }
 
   /**
@@ -967,7 +967,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-domain-list/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-domain-list/${ resourceId }`);
   }
 
   /**
@@ -984,7 +984,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
   }
 
   /**
@@ -998,6 +998,6 @@ export class Route53resolver extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ssm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ssm extends PolicyStatement {
   public servicePrefix = 'ssm';
@@ -12,10 +12,10 @@ export class Ssm extends PolicyStatement {
   /**
    * Statement provider for service [ssm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1871,7 +1871,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssociation(associationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:association/${ associationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:association/${ associationId }`);
   }
 
   /**
@@ -1889,7 +1889,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-execution/${ automationExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-execution/${ automationExecutionId }`);
   }
 
   /**
@@ -1904,7 +1904,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutomationDefinition(automationDefinitionName: string, versionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-definition/${ automationDefinitionName }:${ versionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-definition/${ automationDefinitionName }:${ versionId }`);
   }
 
   /**
@@ -1916,7 +1916,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:s3:::${ bucketName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:::${ bucketName }`);
   }
 
   /**
@@ -1934,7 +1934,7 @@ export class Ssm extends PolicyStatement {
    * - .ifDocumentCategories()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
   }
 
   /**
@@ -1952,7 +1952,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**
@@ -1970,7 +1970,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:maintenancewindow/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:maintenancewindow/${ resourceId }`);
   }
 
   /**
@@ -1988,7 +1988,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onManagedInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance/${ instanceId }`);
   }
 
   /**
@@ -2002,7 +2002,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedInstanceInventory(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance-inventory/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance-inventory/${ instanceId }`);
   }
 
   /**
@@ -2019,7 +2019,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsitem/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsitem/${ resourceId }`);
   }
 
   /**
@@ -2037,7 +2037,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsmetadata/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsmetadata/${ resourceId }`);
   }
 
   /**
@@ -2055,7 +2055,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onParameter(parameterNameWithoutLeadingSlash: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:parameter/${ parameterNameWithoutLeadingSlash }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:parameter/${ parameterNameWithoutLeadingSlash }`);
   }
 
   /**
@@ -2073,7 +2073,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:patchbaseline/${ patchBaselineIdResourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:patchbaseline/${ patchBaselineIdResourceId }`);
   }
 
   /**
@@ -2087,7 +2087,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
   }
 
   /**
@@ -2101,7 +2101,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcedatasync(syncName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:resource-data-sync/${ syncName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:resource-data-sync/${ syncName }`);
   }
 
   /**
@@ -2115,7 +2115,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServicesetting(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:servicesetting/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:servicesetting/${ resourceId }`);
   }
 
   /**
@@ -2129,7 +2129,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtarget/${ windowTargetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtarget/${ windowTargetId }`);
   }
 
   /**
@@ -2143,7 +2143,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtask/${ windowTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtask/${ windowTaskId }`);
   }
 
   /**
@@ -2160,7 +2160,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**

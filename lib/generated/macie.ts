@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [macie2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmacie.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Macie2 extends PolicyStatement {
   public servicePrefix = 'macie2';
@@ -12,10 +12,10 @@ export class Macie2 extends PolicyStatement {
   /**
    * Statement provider for service [macie2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmacie.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1026,7 +1026,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAllowList(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:allow-list/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:allow-list/${ resourceId }`);
   }
 
   /**
@@ -1043,7 +1043,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
   }
 
   /**
@@ -1060,7 +1060,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
   }
 
   /**
@@ -1077,7 +1077,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
   }
 
   /**
@@ -1094,6 +1094,6 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
   }
 }

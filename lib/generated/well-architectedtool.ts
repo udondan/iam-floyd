@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswell-architectedtool.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Wellarchitected extends PolicyStatement {
   public servicePrefix = 'wellarchitected';
@@ -12,10 +12,10 @@ export class Wellarchitected extends PolicyStatement {
   /**
    * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswell-architectedtool.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -571,7 +571,7 @@ export class Wellarchitected extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
   }
 
   /**
@@ -588,6 +588,6 @@ export class Wellarchitected extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
   }
 }

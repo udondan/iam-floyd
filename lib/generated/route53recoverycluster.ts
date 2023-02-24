@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [route53-recovery-cluster](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycluster.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Route53RecoveryCluster extends PolicyStatement {
   public servicePrefix = 'route53-recovery-cluster';
@@ -12,10 +12,10 @@ export class Route53RecoveryCluster extends PolicyStatement {
   /**
    * Statement provider for service [route53-recovery-cluster](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycluster.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -90,7 +90,7 @@ export class Route53RecoveryCluster extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryCluster.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
   }
 
   /**

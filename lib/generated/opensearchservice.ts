@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [es](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Es extends PolicyStatement {
   public servicePrefix = 'es';
@@ -12,10 +12,10 @@ export class Es extends PolicyStatement {
   /**
    * Statement provider for service [es](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1066,7 +1066,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Es.defaultPartition }:es:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:es:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 
   /**
@@ -1081,7 +1081,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEsRole(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Es.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 
   /**
@@ -1096,6 +1096,6 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpensearchserviceRole(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Es.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 }

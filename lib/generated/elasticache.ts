@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticache](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticache.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Elasticache extends PolicyStatement {
   public servicePrefix = 'elasticache';
@@ -12,10 +12,10 @@ export class Elasticache extends PolicyStatement {
   /**
    * Statement provider for service [elasticache](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticache.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1142,7 +1142,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifCacheParameterGroupName()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
   }
 
   /**
@@ -1161,7 +1161,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
   }
 
   /**
@@ -1180,7 +1180,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
   }
 
   /**
@@ -1213,7 +1213,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifSnapshotRetentionLimit()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
   }
 
   /**
@@ -1258,7 +1258,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
   }
 
   /**
@@ -1278,7 +1278,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -1307,7 +1307,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
   }
 
   /**
@@ -1327,7 +1327,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifUserAuthenticationMode()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
   }
 
   /**
@@ -1346,7 +1346,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
   }
 
   /**

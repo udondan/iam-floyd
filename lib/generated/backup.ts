@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [backup](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackup.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Backup extends PolicyStatement {
   public servicePrefix = 'backup';
@@ -12,10 +12,10 @@ export class Backup extends PolicyStatement {
   /**
    * Statement provider for service [backup](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackup.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -998,7 +998,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-vault:${ backupVaultName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-vault:${ backupVaultName }`);
   }
 
   /**
@@ -1015,7 +1015,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-plan:${ backupPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-plan:${ backupPlanId }`);
   }
 
   /**
@@ -1032,7 +1032,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:recovery-point:${ recoveryPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:recovery-point:${ recoveryPointId }`);
   }
 
   /**
@@ -1050,7 +1050,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFramework(frameworkName: string, frameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:framework:${ frameworkName }-${ frameworkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:framework:${ frameworkName }-${ frameworkId }`);
   }
 
   /**
@@ -1068,7 +1068,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:report-plan:${ reportPlanName }-${ reportPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:report-plan:${ reportPlanName }-${ reportPlanId }`);
   }
 
   /**
@@ -1085,7 +1085,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLegalHold(legalHoldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:legal-hold:${ legalHoldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:legal-hold:${ legalHoldId }`);
   }
 
   /**

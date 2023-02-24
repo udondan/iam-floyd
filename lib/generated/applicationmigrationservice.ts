@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [mgn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationmigrationservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mgn extends PolicyStatement {
   public servicePrefix = 'mgn';
@@ -12,10 +12,10 @@ export class Mgn extends PolicyStatement {
   /**
    * Statement provider for service [mgn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationmigrationservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1243,7 +1243,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
   }
 
   /**
@@ -1260,7 +1260,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -1277,7 +1277,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
   }
 
   /**
@@ -1294,7 +1294,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVcenterClientResource(vcenterClientID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:vcenter-client/${ vcenterClientID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:vcenter-client/${ vcenterClientID }`);
   }
 
   /**
@@ -1311,7 +1311,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
   }
 
   /**
@@ -1328,7 +1328,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplicationResource(applicationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:application/${ applicationID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:application/${ applicationID }`);
   }
 
   /**
@@ -1345,7 +1345,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWaveResource(waveID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:wave/${ waveID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:wave/${ waveID }`);
   }
 
   /**

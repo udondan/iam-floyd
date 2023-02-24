@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class States extends PolicyStatement {
   public servicePrefix = 'states';
@@ -12,10 +12,10 @@ export class States extends PolicyStatement {
   /**
    * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -374,7 +374,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:activity:${ activityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || '*' }:${ account || '*' }:activity:${ activityName }`);
   }
 
   /**
@@ -389,7 +389,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }:${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }:${ executionId }`);
   }
 
   /**
@@ -405,7 +405,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExpress(stateMachineName: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || '*' }:${ account || '*' }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
   }
 
   /**
@@ -422,7 +422,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }`);
   }
 
   /**
@@ -438,6 +438,6 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || '*' }:${ account || '*' }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
   }
 }

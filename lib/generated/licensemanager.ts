@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [license-manager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslicensemanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class LicenseManager extends PolicyStatement {
   public servicePrefix = 'license-manager';
@@ -12,10 +12,10 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Statement provider for service [license-manager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslicensemanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -657,7 +657,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -670,7 +670,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:license:${ licenseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || '*' }:license:${ licenseId }`);
   }
 
   /**
@@ -683,7 +683,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:grant:${ grantId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || '*' }:grant:${ grantId }`);
   }
 
   /**
@@ -700,7 +700,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
   }
 
   /**

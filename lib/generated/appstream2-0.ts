@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [appstream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Appstream extends PolicyStatement {
   public servicePrefix = 'appstream';
@@ -12,10 +12,10 @@ export class Appstream extends PolicyStatement {
   /**
    * Statement provider for service [appstream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -945,7 +945,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }`);
   }
 
   /**
@@ -962,7 +962,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
   }
 
   /**
@@ -979,7 +979,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image-builder/${ imageBuilderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image-builder/${ imageBuilderName }`);
   }
 
   /**
@@ -996,7 +996,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
   }
 
   /**
@@ -1013,7 +1013,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppBlock(appBlockName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
   }
 
   /**
@@ -1030,7 +1030,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 
   /**

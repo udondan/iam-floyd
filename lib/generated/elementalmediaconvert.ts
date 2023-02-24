@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconvert.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mediaconvert extends PolicyStatement {
   public servicePrefix = 'mediaconvert';
@@ -12,10 +12,10 @@ export class Mediaconvert extends PolicyStatement {
   /**
    * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconvert.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -402,7 +402,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
   }
 
   /**
@@ -419,7 +419,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
   }
 
   /**
@@ -436,7 +436,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
   }
 
   /**
@@ -453,7 +453,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
   }
 
   /**
@@ -467,6 +467,6 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Qldb extends PolicyStatement {
   public servicePrefix = 'qldb';
@@ -12,10 +12,10 @@ export class Qldb extends PolicyStatement {
   /**
    * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -489,7 +489,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }`);
   }
 
   /**
@@ -507,7 +507,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:stream/${ ledgerName }/${ streamId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:stream/${ ledgerName }/${ streamId }`);
   }
 
   /**
@@ -525,7 +525,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(ledgerName: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/table/${ tableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/table/${ tableId }`);
   }
 
   /**
@@ -542,7 +542,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Qldb.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/information_schema/user_tables`);
+    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/information_schema/user_tables`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mgh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhub.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mgh extends PolicyStatement {
   public servicePrefix = 'mgh';
@@ -12,10 +12,10 @@ export class Mgh extends PolicyStatement {
   /**
    * Statement provider for service [mgh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhub.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -278,7 +278,7 @@ export class Mgh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProgressUpdateStream(stream: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgh.defaultPartition }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }`);
   }
 
   /**
@@ -293,6 +293,6 @@ export class Mgh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMigrationTask(stream: string, task: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgh.defaultPartition }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }/migrationTask/${ task }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }/migrationTask/${ task }`);
   }
 }

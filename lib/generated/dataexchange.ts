@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Dataexchange extends PolicyStatement {
   public servicePrefix = 'dataexchange';
@@ -12,10 +12,10 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -430,7 +430,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifJobType()
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
   }
 
   /**
@@ -447,7 +447,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSets(dataSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }`);
   }
 
   /**
@@ -465,7 +465,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRevisions(dataSetId: string, revisionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -481,7 +481,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -495,7 +495,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:event-actions/${ eventActionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:event-actions/${ eventActionId }`);
   }
 
   /**

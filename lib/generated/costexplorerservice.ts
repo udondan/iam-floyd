@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostexplorerservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ce extends PolicyStatement {
   public servicePrefix = 'ce';
@@ -12,10 +12,10 @@ export class Ce extends PolicyStatement {
   /**
    * Statement provider for service [ce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostexplorerservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -660,7 +660,7 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalysubscription(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
   }
 
   /**
@@ -676,7 +676,7 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalymonitor(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
   }
 
   /**
@@ -692,6 +692,6 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCostcategory(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:costcategory/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || '*' }:costcategory/${ identifier }`);
   }
 }

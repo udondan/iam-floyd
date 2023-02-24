@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iottwinmaker extends PolicyStatement {
   public servicePrefix = 'iottwinmaker';
@@ -12,10 +12,10 @@ export class Iottwinmaker extends PolicyStatement {
   /**
    * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -496,7 +496,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -514,7 +514,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntity(workspaceId: string, entityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/entity/${ entityId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/entity/${ entityId }`);
   }
 
   /**
@@ -532,7 +532,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentType(workspaceId: string, componentTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
   }
 
   /**
@@ -550,7 +550,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScene(workspaceId: string, sceneId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/scene/${ sceneId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/scene/${ sceneId }`);
   }
 
   /**
@@ -568,6 +568,6 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSyncJob(workspaceId: string, syncJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
   }
 }

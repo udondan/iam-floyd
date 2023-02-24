@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [resource-explorer-2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceexplorer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ResourceExplorer2 extends PolicyStatement {
   public servicePrefix = 'resource-explorer-2';
@@ -12,10 +12,10 @@ export class ResourceExplorer2 extends PolicyStatement {
   /**
    * Statement provider for service [resource-explorer-2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceexplorer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -291,7 +291,7 @@ export class ResourceExplorer2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onView(viewName: string, viewUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ResourceExplorer2.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:view/${ viewName }/${ viewUuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:view/${ viewName }/${ viewUuid }`);
   }
 
   /**
@@ -308,6 +308,6 @@ export class ResourceExplorer2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIndex(indexUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ResourceExplorer2.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:index/${ indexUuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:index/${ indexUuid }`);
   }
 }

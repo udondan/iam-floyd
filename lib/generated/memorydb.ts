@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Memorydb extends PolicyStatement {
   public servicePrefix = 'memorydb';
@@ -12,10 +12,10 @@ export class Memorydb extends PolicyStatement {
   /**
    * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -687,7 +687,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
   }
 
   /**
@@ -704,7 +704,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
   }
 
   /**
@@ -721,7 +721,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -738,7 +738,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
   }
 
   /**
@@ -755,7 +755,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
   }
 
   /**
@@ -772,7 +772,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
   }
 
   /**
@@ -789,6 +789,6 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:reservednode/${ reservationID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:reservednode/${ reservationID }`);
   }
 }

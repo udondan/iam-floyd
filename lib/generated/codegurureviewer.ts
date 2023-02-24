@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodegurureviewer.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class CodeguruReviewer extends PolicyStatement {
   public servicePrefix = 'codeguru-reviewer';
@@ -12,10 +12,10 @@ export class CodeguruReviewer extends PolicyStatement {
   /**
    * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodegurureviewer.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -304,7 +304,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }`);
   }
 
   /**
@@ -318,6 +318,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodeguruReviewer.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
   }
 }

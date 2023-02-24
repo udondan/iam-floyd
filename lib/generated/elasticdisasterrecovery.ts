@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [drs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticdisasterrecovery.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Drs extends PolicyStatement {
   public servicePrefix = 'drs';
@@ -12,10 +12,10 @@ export class Drs extends PolicyStatement {
   /**
    * Statement provider for service [drs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticdisasterrecovery.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1078,7 +1078,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
   }
 
   /**
@@ -1096,7 +1096,7 @@ export class Drs extends PolicyStatement {
    * - .ifEC2InstanceARN()
    */
   public onRecoveryInstanceResource(recoveryInstanceID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:recovery-instance/${ recoveryInstanceID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:recovery-instance/${ recoveryInstanceID }`);
   }
 
   /**
@@ -1113,7 +1113,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -1130,7 +1130,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
   }
 
   /**

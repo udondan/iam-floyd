@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsopsworksconfigurationmanagement.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class OpsworksCm extends PolicyStatement {
   public servicePrefix = 'opsworks-cm';
@@ -12,10 +12,10 @@ export class OpsworksCm extends PolicyStatement {
   /**
    * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsopsworksconfigurationmanagement.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -266,7 +266,7 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServer(serverName: string, uniqueId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || OpsworksCm.defaultPartition }:opsworks-cm::${ account || '*' }:server/${ serverName }/${ uniqueId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:opsworks-cm::${ account || '*' }:server/${ serverName }/${ uniqueId }`);
   }
 
   /**
@@ -277,6 +277,6 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackup(serverName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || OpsworksCm.defaultPartition }:opsworks-cm::${ account || '*' }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
+    return this.on(`arn:${ partition || this.defaultPartition }:opsworks-cm::${ account || '*' }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
   }
 }

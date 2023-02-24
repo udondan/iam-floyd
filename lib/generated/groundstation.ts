@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Groundstation extends PolicyStatement {
   public servicePrefix = 'groundstation';
@@ -12,10 +12,10 @@ export class Groundstation extends PolicyStatement {
   /**
    * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -433,7 +433,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
   }
 
   /**
@@ -451,7 +451,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
   }
 
   /**
@@ -487,7 +487,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifEphemerisId()
    */
   public onEphemerisItem(ephemerisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:ephemeris/${ ephemerisId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:ephemeris/${ ephemerisId }`);
   }
 
   /**
@@ -504,7 +504,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
   }
 
   /**
@@ -522,7 +522,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
   }
 
   /**
@@ -539,7 +539,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
   }
 
   /**

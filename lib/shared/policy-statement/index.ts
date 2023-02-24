@@ -5,4 +5,4 @@ export { PolicyStatementWithEffect, Effect } from './5-effect';
 export { PolicyStatementWithResources } from './4-resources';
 export { PolicyStatementWithActions } from './3-actions';
 export { PolicyStatementWithCondition, Conditions } from './2-conditions';
-export { PolicyStatementBase } from './1-base';
+export { PolicyStatementBase, PolicyStatementProps } from './1-base';

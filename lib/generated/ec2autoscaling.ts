@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [autoscaling](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2autoscaling.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Autoscaling extends PolicyStatement {
   public servicePrefix = 'autoscaling';
@@ -12,10 +12,10 @@ export class Autoscaling extends PolicyStatement {
   /**
    * Statement provider for service [autoscaling](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2autoscaling.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -55,6 +55,20 @@ export class Autoscaling extends PolicyStatement {
    */
   public toAttachLoadBalancers() {
     return this.to('AttachLoadBalancers');
+  }
+
+  /**
+   * Grants permission to attach one or more traffic sources to an Auto Scaling group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTrafficSourceIdentifiers()
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachTrafficSources.html
+   */
+  public toAttachTrafficSources() {
+    return this.to('AttachTrafficSources');
   }
 
   /**
@@ -114,6 +128,7 @@ export class Autoscaling extends PolicyStatement {
    * - .ifMaxSize()
    * - .ifMinSize()
    * - .ifTargetGroupARNs()
+   * - .ifTrafficSourceIdentifiers()
    * - .ifVPCZoneIdentifiers()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
@@ -464,6 +479,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the target groups for the specified Auto Scaling group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTrafficSources.html
+   */
+  public toDescribeTrafficSources() {
+    return this.to('DescribeTrafficSources');
+  }
+
+  /**
    * Grants permission to describe the warm pool associated with the Auto Scaling group
    *
    * Access Level: List
@@ -511,6 +537,20 @@ export class Autoscaling extends PolicyStatement {
    */
   public toDetachLoadBalancers() {
     return this.to('DetachLoadBalancers');
+  }
+
+  /**
+   * Grants permission to detach one or more traffic sources from an Auto Scaling group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTrafficSourceIdentifiers()
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachTrafficSources.html
+   */
+  public toDetachTrafficSources() {
+    return this.to('DetachTrafficSources');
   }
 
   /**
@@ -764,6 +804,7 @@ export class Autoscaling extends PolicyStatement {
       'AttachInstances',
       'AttachLoadBalancerTargetGroups',
       'AttachLoadBalancers',
+      'AttachTrafficSources',
       'BatchDeleteScheduledAction',
       'BatchPutScheduledUpdateGroupAction',
       'CancelInstanceRefresh',
@@ -780,6 +821,7 @@ export class Autoscaling extends PolicyStatement {
       'DetachInstances',
       'DetachLoadBalancerTargetGroups',
       'DetachLoadBalancers',
+      'DetachTrafficSources',
       'DisableMetricsCollection',
       'EnableMetricsCollection',
       'EnterStandby',
@@ -824,6 +866,7 @@ export class Autoscaling extends PolicyStatement {
       'DescribeScalingProcessTypes',
       'DescribeScheduledActions',
       'DescribeTerminationPolicyTypes',
+      'DescribeTrafficSources',
       'DescribeWarmPool',
       'GetPredictiveScalingForecast'
     ],
@@ -848,7 +891,7 @@ export class Autoscaling extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
   }
 
   /**
@@ -863,7 +906,7 @@ export class Autoscaling extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLaunchConfiguration(id: string, launchConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
   }
 
   /**
@@ -1048,6 +1091,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toAttachInstances()
    * - .toAttachLoadBalancerTargetGroups()
    * - .toAttachLoadBalancers()
+   * - .toAttachTrafficSources()
    * - .toBatchDeleteScheduledAction()
    * - .toBatchPutScheduledUpdateGroupAction()
    * - .toCancelInstanceRefresh()
@@ -1064,6 +1108,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toDetachInstances()
    * - .toDetachLoadBalancerTargetGroups()
    * - .toDetachLoadBalancers()
+   * - .toDetachTrafficSources()
    * - .toDisableMetricsCollection()
    * - .toEnableMetricsCollection()
    * - .toEnterStandby()
@@ -1126,6 +1171,23 @@ export class Autoscaling extends PolicyStatement {
    */
   public ifTargetGroupARNs(value: string | string[], operator?: Operator | string) {
     return this.if(`TargetGroupARNs`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access based on the identifiers of the traffic sources
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toAttachTrafficSources()
+   * - .toCreateAutoScalingGroup()
+   * - .toDetachTrafficSources()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTrafficSourceIdentifiers(value: string | string[], operator?: Operator | string) {
+    return this.if(`TrafficSourceIdentifiers`, value, operator || 'StringLike');
   }
 
   /**

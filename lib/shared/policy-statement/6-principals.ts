@@ -57,7 +57,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     return super.freeze();
   }
 
-  protected cdkApplyPrincipals() {}
+  protected cdkApplyPrincipals() { }
 
   /**
    * Switches the statement to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
@@ -108,7 +108,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     accounts.forEach((account) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`
+        `arn:${this.defaultPartition}:iam::${account}:root`
       )
     );
     return this;
@@ -178,7 +178,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   public forSaml(account: string, ...providerNames: string[]) {
     providerNames.forEach((providerName) =>
       this.forFederated(
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`
+        `arn:${this.defaultPartition}:iam::${account}:saml-provider/${providerName}`
       )
     );
     return this;
@@ -194,7 +194,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     users.forEach((user) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:user/${user}`
+        `arn:${this.defaultPartition}:iam::${account}:user/${user}`
       )
     );
     return this;
@@ -210,7 +210,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     roles.forEach((role) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:role/${role}`
+        `arn:${this.defaultPartition}:iam::${account}:role/${role}`
       )
     );
     return this;
@@ -231,7 +231,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     sessionNames.forEach((sessionName) => {
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`
+        `arn:${this.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`
       );
     });
     return this;

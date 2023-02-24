@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediapackage](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackage.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Mediapackage extends PolicyStatement {
   public servicePrefix = 'mediapackage';
@@ -12,10 +12,10 @@ export class Mediapackage extends PolicyStatement {
   /**
    * Statement provider for service [mediapackage](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackage.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -291,7 +291,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:channels/${ channelIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:channels/${ channelIdentifier }`);
   }
 
   /**
@@ -308,7 +308,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:origin_endpoints/${ originEndpointIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:origin_endpoints/${ originEndpointIdentifier }`);
   }
 
   /**
@@ -325,6 +325,6 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHarvestJobs(harvestJobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:harvest_jobs/${ harvestJobIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:harvest_jobs/${ harvestJobIdentifier }`);
   }
 }

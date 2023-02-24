@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ssm-sap](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerforsap.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SsmSap extends PolicyStatement {
   public servicePrefix = 'ssm-sap';
@@ -12,10 +12,10 @@ export class SsmSap extends PolicyStatement {
   /**
    * Statement provider for service [ssm-sap](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerforsap.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -295,7 +295,7 @@ export class SsmSap extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationType: string, applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmSap.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }`);
   }
 
   /**
@@ -314,6 +314,6 @@ export class SsmSap extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatabase(applicationType: string, applicationId: string, databaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmSap.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }/DB/${ databaseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }/DB/${ databaseId }`);
   }
 }

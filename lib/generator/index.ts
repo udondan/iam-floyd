@@ -1,9 +1,9 @@
 import 'colors';
 
-import cheerio = require('cheerio');
-import fs = require('fs');
-import glob = require('glob');
-import request = require('request');
+import * as cheerio from 'cheerio';
+import * as fs from 'fs';
+import * as glob from 'glob';
+import * as request from 'request';
 import { Project, QuoteKind, Scope } from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
@@ -13,10 +13,6 @@ import { arnFixer, conditionFixer, conditionKeyFixer, fixes, serviceFixer } from
 import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
-
-// tmp solution. the cheerio/types is currently not working
-type CheerioStatic = any;
-type CheerioElement = any;
 
 const project = new Project();
 project.manipulationSettings.set({
@@ -290,7 +286,7 @@ export function createModule(module: Module): Promise<void> {
     module.name = module.fixes.name;
   } else if (
     module.filename.endsWith('v2') &&
-    module.name.substr(-2).toLowerCase() != 'v2'
+    module.name.slice(-2).toLowerCase() != 'v2'
   ) {
     module.name += '-v2';
   }
@@ -301,10 +297,10 @@ export function createModule(module: Module): Promise<void> {
     `./lib/generated/${module.filename}.ts`
   );
 
-  const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
+  const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param options - Options for the statement`;
 
   sourceFile.addImportDeclaration({
-    namedImports: ['AccessLevelList'],
+    namedImports: ['AccessLevelList',],
     moduleSpecifier: '../shared/access-level',
   });
 
@@ -326,11 +322,11 @@ export function createModule(module: Module): Promise<void> {
 
   const constructor = classDeclaration.addConstructor({});
   constructor.addParameter({
-    name: 'sid',
-    type: 'string',
+    name: 'options',
+    type: 'PolicyStatementProps',
     hasQuestionToken: true,
   });
-  constructor.setBodyText('super(sid);');
+  constructor.setBodyText('super(options);');
   constructor.addJsDoc({
     description: description,
   });
@@ -414,7 +410,7 @@ export function createModule(module: Module): Promise<void> {
       const paramName = lowerFirst(camelCase(param));
       let orDefault = '';
       if (param == 'Partition') {
-        orDefault = ` || ${classDeclaration.getName()}.defaultPartition`;
+        orDefault = ' || this.defaultPartition';
         paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`;
       } else if (param == 'Region') {
         orDefault = " || '*'";
@@ -567,9 +563,8 @@ export function createModule(module: Module): Promise<void> {
         type: types.join(' | '),
       });
 
-      desc += `\n@param operator Works with [${type} operators](${
-        conditionTypeDefaults[type].url
-      }). **Default:** \`${conditionTypeDefaults[type].default.toString()}\``;
+      desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url
+        }). **Default:** \`${conditionTypeDefaults[type].default.toString()}\``;
       method.addParameter({
         name: 'operator',
         type: 'Operator | string',
@@ -619,7 +614,7 @@ export function createModule(module: Module): Promise<void> {
     method.setBodyText(methodBody.join('\n'));
   }
 
-  const sharedClasses = ['PolicyStatement'];
+  const sharedClasses = ['PolicyStatement', 'PolicyStatementProps'];
   if (hasConditions) {
     sharedClasses.push('Operator');
   }
@@ -766,7 +761,7 @@ function getLastModified(url: string): Promise<Date> {
   });
 }
 
-function getTable($: CheerioStatic, title: string) {
+function getTable($: cheerio.Root, title: string) {
   const table = $('.table-container table')
     .toArray()
     .filter((element) => {
@@ -775,12 +770,12 @@ function getTable($: CheerioStatic, title: string) {
   return $(table[0]);
 }
 
-function addActions($: CheerioStatic, module: Module): Module {
+function addActions($: cheerio.Root, module: Module): Module {
   const actions: Actions = {};
   const tableActions = getTable($, 'Actions');
 
   var action: string;
-  tableActions.find('tr').each((_: number, element: CheerioElement) => {
+  tableActions.find('tr').each((_: number, element) => {
     const tds = $(element).find('td');
     const tdLength = tds.length;
     var first = tds.first();
@@ -790,7 +785,7 @@ function addActions($: CheerioStatic, module: Module): Module {
 
       action = first.text().replace('[permission only]', '').trim();
       actions[action] = {
-        url: validateUrl(first.find('a[href]').attr('href')?.trim()),
+        url: validateUrl(first.find('a[href]').attr('href')?.trim()!),
         description: cleanDescription(first.next().text().trim()),
         accessLevel: first.next().next().text().trim(),
       };
@@ -869,14 +864,14 @@ function addActions($: CheerioStatic, module: Module): Module {
   return module;
 }
 
-function addResourceTypes($: CheerioStatic, module: Module): Module {
+function addResourceTypes($: cheerio.Root, module: Module): Module {
   const service = module.name;
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource types');
-  tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
+  tableResourceTypes.find('tr').each((_: number, element) => {
     const tds = $(element).find('td');
     const name = tds.first().text().trim();
-    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
+    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim()!);
     const arn = tds.first().next().text().trim();
     if (!name.length && !arn.length) {
       return;
@@ -915,13 +910,13 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
   return module;
 }
 
-function addConditions($: CheerioStatic, module: Module): Module {
+function addConditions($: cheerio.Root, module: Module): Module {
   const conditions: Conditions = {};
   const table = getTable($, 'Condition keys');
-  table.find('tr').each((_: number, element: CheerioElement) => {
+  table.find('tr').each((_: number, element) => {
     const tds = $(element).find('td');
     const key = tds.first().text().trim();
-    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
+    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim()!);
     const description = cleanDescription(tds.first().next().text());
     const type = tds.first().next().next().text().trim();
 

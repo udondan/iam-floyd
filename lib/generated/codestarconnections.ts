@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class CodestarConnections extends PolicyStatement {
   public servicePrefix = 'codestar-connections';
@@ -12,10 +12,10 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -355,7 +355,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
   }
 
   /**
@@ -369,7 +369,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHost(hostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:host/${ hostId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:host/${ hostId }`);
   }
 
   /**

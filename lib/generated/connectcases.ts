@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Cases extends PolicyStatement {
   public servicePrefix = 'cases';
@@ -12,10 +12,10 @@ export class Cases extends PolicyStatement {
   /**
    * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -399,7 +399,7 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCase(domainId: string, caseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }`);
   }
 
   /**
@@ -416,7 +416,7 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
   }
 
   /**
@@ -434,7 +434,7 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onField(domainId: string, fieldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/field/${ fieldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/field/${ fieldId }`);
   }
 
   /**
@@ -452,7 +452,7 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLayout(domainId: string, layoutId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/layout/${ layoutId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/layout/${ layoutId }`);
   }
 
   /**
@@ -471,7 +471,7 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRelatedItem(domainId: string, caseId: string, relatedItemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
   }
 
   /**
@@ -489,6 +489,6 @@ export class Cases extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplate(domainId: string, templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/template/${ templateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/template/${ templateId }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Geo extends PolicyStatement {
   public servicePrefix = 'geo';
@@ -12,10 +12,10 @@ export class Geo extends PolicyStatement {
   /**
    * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -735,7 +735,7 @@ export class Geo extends PolicyStatement {
    * - .ifGeofenceIds()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
   }
 
   /**
@@ -752,7 +752,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
   }
 
   /**
@@ -769,7 +769,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
   }
 
   /**
@@ -786,7 +786,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
   }
 
   /**
@@ -804,7 +804,7 @@ export class Geo extends PolicyStatement {
    * - .ifDeviceIds()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
   }
 
   /**

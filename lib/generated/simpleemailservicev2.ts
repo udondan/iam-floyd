@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ses-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SesV2 extends PolicyStatement {
   public servicePrefix = 'ses';
@@ -12,10 +12,10 @@ export class SesV2 extends PolicyStatement {
   /**
    * Statement provider for service [ses-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1389,7 +1389,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1406,7 +1406,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactList(contactListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:contact-list/${ contactListName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:contact-list/${ contactListName }`);
   }
 
   /**
@@ -1420,7 +1420,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1437,7 +1437,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -1454,7 +1454,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -1471,7 +1471,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**
@@ -1485,7 +1485,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportJob(importJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:import-job/${ importJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:import-job/${ importJobId }`);
   }
 
   /**
@@ -1499,7 +1499,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
   }
 
   /**

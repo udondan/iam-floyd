@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [pi](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Pi extends PolicyStatement {
   public servicePrefix = 'pi';
@@ -12,10 +12,10 @@ export class Pi extends PolicyStatement {
   /**
    * Statement provider for service [pi](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -107,6 +107,6 @@ export class Pi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Pi.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:metrics/${ serviceType }/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:metrics/${ serviceType }/${ identifier }`);
   }
 }

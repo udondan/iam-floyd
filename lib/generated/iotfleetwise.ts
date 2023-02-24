@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotfleetwise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Iotfleetwise extends PolicyStatement {
   public servicePrefix = 'iotfleetwise';
@@ -12,10 +12,10 @@ export class Iotfleetwise extends PolicyStatement {
   /**
    * Statement provider for service [iotfleetwise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -701,7 +701,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:campaign/${ campaignName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:campaign/${ campaignName }`);
   }
 
   /**
@@ -718,7 +718,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDecodermanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:decoder-manifest/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:decoder-manifest/${ name }`);
   }
 
   /**
@@ -735,7 +735,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
   }
 
   /**
@@ -752,7 +752,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelmanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:model-manifest/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:model-manifest/${ name }`);
   }
 
   /**
@@ -769,7 +769,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSignalcatalog(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:signal-catalog/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:signal-catalog/${ name }`);
   }
 
   /**
@@ -786,7 +786,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVehicle(vehicleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleetwise.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:vehicle/${ vehicleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || '*' }:${ account || '*' }:vehicle/${ vehicleId }`);
   }
 
   /**

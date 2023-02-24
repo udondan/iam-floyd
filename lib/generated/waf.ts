@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswaf.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Waf extends PolicyStatement {
   public servicePrefix = 'waf';
@@ -12,10 +12,10 @@ export class Waf extends PolicyStatement {
   /**
    * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswaf.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -994,7 +994,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBytematchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:bytematchset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:bytematchset/${ id }`);
   }
 
   /**
@@ -1007,7 +1007,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIpset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:ipset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:ipset/${ id }`);
   }
 
   /**
@@ -1023,7 +1023,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRatebasedrule(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:ratebasedrule/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:ratebasedrule/${ id }`);
   }
 
   /**
@@ -1039,7 +1039,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:rule/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:rule/${ id }`);
   }
 
   /**
@@ -1052,7 +1052,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSizeconstraintset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:sizeconstraintset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:sizeconstraintset/${ id }`);
   }
 
   /**
@@ -1065,7 +1065,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSqlinjectionmatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:sqlinjectionset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:sqlinjectionset/${ id }`);
   }
 
   /**
@@ -1081,7 +1081,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebacl(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:webacl/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:webacl/${ id }`);
   }
 
   /**
@@ -1094,7 +1094,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onXssmatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:xssmatchset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:xssmatchset/${ id }`);
   }
 
   /**
@@ -1107,7 +1107,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegexmatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:regexmatch/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:regexmatch/${ id }`);
   }
 
   /**
@@ -1120,7 +1120,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegexpatternset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:regexpatternset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:regexpatternset/${ id }`);
   }
 
   /**
@@ -1133,7 +1133,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGeomatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:geomatchset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:geomatchset/${ id }`);
   }
 
   /**
@@ -1149,6 +1149,6 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRulegroup(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Waf.defaultPartition }:waf::${ account || '*' }:rulegroup/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:waf::${ account || '*' }:rulegroup/${ id }`);
   }
 }

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [fms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfirewallmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Fms extends PolicyStatement {
   public servicePrefix = 'fms';
@@ -12,10 +12,10 @@ export class Fms extends PolicyStatement {
   /**
    * Statement provider for service [fms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfirewallmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -528,7 +528,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:policy/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:policy/${ id }`);
   }
 
   /**
@@ -545,7 +545,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplicationsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:applications-list/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:applications-list/${ id }`);
   }
 
   /**
@@ -562,7 +562,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtocolsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:protocols-list/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:protocols-list/${ id }`);
   }
 
   /**
@@ -579,6 +579,6 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceSet(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:resource-set/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:resource-set/${ id }`);
   }
 }

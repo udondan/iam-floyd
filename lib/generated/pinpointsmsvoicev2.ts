@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [sms-voice-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointsmsvoicev2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SmsVoiceV2 extends PolicyStatement {
   public servicePrefix = 'sms-voice';
@@ -12,10 +12,10 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Statement provider for service [sms-voice-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointsmsvoicev2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -600,7 +600,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -617,7 +617,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOptOutList(optOutListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:opt-out-list/${ optOutListName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:opt-out-list/${ optOutListName }`);
   }
 
   /**
@@ -634,7 +634,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -651,7 +651,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:pool/${ poolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:pool/${ poolId }`);
   }
 
   /**
@@ -669,6 +669,6 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSenderId(senderId: string, isoCountryCode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:sender-id/${ senderId }/${ isoCountryCode }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:sender-id/${ senderId }/${ isoCountryCode }`);
   }
 }

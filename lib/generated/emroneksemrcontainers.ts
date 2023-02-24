@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [emr-containers](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class EmrContainers extends PolicyStatement {
   public servicePrefix = 'emr-containers';
@@ -12,10 +12,10 @@ export class EmrContainers extends PolicyStatement {
   /**
    * Statement provider for service [emr-containers](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -297,7 +297,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualCluster(virtualClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }`);
   }
 
   /**
@@ -315,7 +315,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobRun(virtualClusterId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
   }
 
   /**
@@ -332,7 +332,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/jobtemplates/${ jobTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/jobtemplates/${ jobTemplateId }`);
   }
 
   /**
@@ -350,7 +350,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedEndpoint(virtualClusterId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
   }
 
   /**

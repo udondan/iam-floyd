@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Route53 extends PolicyStatement {
   public servicePrefix = 'route53';
@@ -12,10 +12,10 @@ export class Route53 extends PolicyStatement {
   /**
    * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -893,7 +893,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCidrcollection(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::cidrcollection/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::cidrcollection/${ id }`);
   }
 
   /**
@@ -905,7 +905,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChange(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::change/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::change/${ id }`);
   }
 
   /**
@@ -917,7 +917,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDelegationset(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::delegationset/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::delegationset/${ id }`);
   }
 
   /**
@@ -929,7 +929,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHealthcheck(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::healthcheck/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::healthcheck/${ id }`);
   }
 
   /**
@@ -941,7 +941,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHostedzone(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::hostedzone/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::hostedzone/${ id }`);
   }
 
   /**
@@ -953,7 +953,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrafficpolicy(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::trafficpolicy/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::trafficpolicy/${ id }`);
   }
 
   /**
@@ -965,7 +965,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrafficpolicyinstance(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::trafficpolicyinstance/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::trafficpolicyinstance/${ id }`);
   }
 
   /**
@@ -977,7 +977,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQueryloggingconfig(id: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:route53:::queryloggingconfig/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53:::queryloggingconfig/${ id }`);
   }
 
   /**
@@ -991,7 +991,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
   }
 
   /**

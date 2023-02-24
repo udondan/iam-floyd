@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [execute-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ExecuteApi extends PolicyStatement {
   public servicePrefix = 'execute-api';
@@ -12,10 +12,10 @@ export class ExecuteApi extends PolicyStatement {
   /**
    * Statement provider for service [execute-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -71,6 +71,6 @@ export class ExecuteApi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExecuteApiGeneral(apiId: string, stage: string, method: string, apiSpecificResourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ExecuteApi.defaultPartition }:execute-api:${ region || '*' }:${ account || '*' }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:execute-api:${ region || '*' }:${ account || '*' }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
   }
 }

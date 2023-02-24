@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [snow-device-management](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssnowdevicemanagement.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class SnowDeviceManagement extends PolicyStatement {
   public servicePrefix = 'snow-device-management';
@@ -12,10 +12,10 @@ export class SnowDeviceManagement extends PolicyStatement {
   /**
    * Statement provider for service [snow-device-management](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssnowdevicemanagement.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -215,7 +215,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SnowDeviceManagement.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:managed-device/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:managed-device/${ resourceId }`);
   }
 
   /**
@@ -232,6 +232,6 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SnowDeviceManagement.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:task/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:task/${ resourceId }`);
   }
 }

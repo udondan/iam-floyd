@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticfilesystem](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticfilesystem.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Elasticfilesystem extends PolicyStatement {
   public servicePrefix = 'elasticfilesystem';
@@ -12,10 +12,10 @@ export class Elasticfilesystem extends PolicyStatement {
   /**
    * Statement provider for service [elasticfilesystem](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticfilesystem.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -502,7 +502,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticfilesystem.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -519,7 +519,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticfilesystem.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:access-point/${ accessPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:access-point/${ accessPointId }`);
   }
 
   /**

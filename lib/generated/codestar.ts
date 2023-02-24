@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestar.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Codestar extends PolicyStatement {
   public servicePrefix = 'codestar';
@@ -12,10 +12,10 @@ export class Codestar extends PolicyStatement {
   /**
    * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestar.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -312,7 +312,7 @@ export class Codestar extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codestar.defaultPartition }:codestar:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -329,7 +329,7 @@ export class Codestar extends PolicyStatement {
    * - .ifIamResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codestar.defaultPartition }:iam:${ region || '*' }:${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam:${ region || '*' }:${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

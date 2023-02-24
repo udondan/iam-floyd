@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [vpc-lattice-svcs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class VpcLatticeSvcs extends PolicyStatement {
   public servicePrefix = 'vpc-lattice-svcs';
@@ -12,10 +12,10 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Statement provider for service [vpc-lattice-svcs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -56,7 +56,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onService(serviceId: string, requestPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLatticeSvcs.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/${ requestPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/${ requestPath }`);
   }
 
   /**

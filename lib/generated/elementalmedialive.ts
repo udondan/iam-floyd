@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [medialive](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmedialive.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Medialive extends PolicyStatement {
   public servicePrefix = 'medialive';
@@ -12,10 +12,10 @@ export class Medialive extends PolicyStatement {
   /**
    * Statement provider for service [medialive](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmedialive.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -786,7 +786,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:channel:${ channelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:channel:${ channelId }`);
   }
 
   /**
@@ -803,7 +803,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInput(inputId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:input:${ inputId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:input:${ inputId }`);
   }
 
   /**
@@ -817,7 +817,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onInputDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputDevice:${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputDevice:${ deviceId }`);
   }
 
   /**
@@ -834,7 +834,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInputSecurityGroup(inputSecurityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputSecurityGroup:${ inputSecurityGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:inputSecurityGroup:${ inputSecurityGroupId }`);
   }
 
   /**
@@ -851,7 +851,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMultiplex(multiplexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:multiplex:${ multiplexId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:multiplex:${ multiplexId }`);
   }
 
   /**
@@ -868,7 +868,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReservation(reservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:reservation:${ reservationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:reservation:${ reservationId }`);
   }
 
   /**
@@ -882,6 +882,6 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOffering(offeringId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:offering:${ offeringId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:offering:${ offeringId }`);
   }
 }

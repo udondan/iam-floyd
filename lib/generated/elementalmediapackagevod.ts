@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackagevod.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class MediapackageVod extends PolicyStatement {
   public servicePrefix = 'mediapackage-vod';
@@ -12,10 +12,10 @@ export class MediapackageVod extends PolicyStatement {
   /**
    * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackagevod.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -269,7 +269,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:assets/${ assetIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:assets/${ assetIdentifier }`);
   }
 
   /**
@@ -286,7 +286,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-configurations/${ packagingConfigurationIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-configurations/${ packagingConfigurationIdentifier }`);
   }
 
   /**
@@ -303,6 +303,6 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-groups/${ packagingGroupIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-groups/${ packagingGroupIdentifier }`);
   }
 }

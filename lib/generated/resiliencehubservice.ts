@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [resiliencehub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehubservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Resiliencehub extends PolicyStatement {
   public servicePrefix = 'resiliencehub';
@@ -12,10 +12,10 @@ export class Resiliencehub extends PolicyStatement {
   /**
    * Statement provider for service [resiliencehub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehubservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -50,6 +50,28 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toCreateApp() {
     return this.to('CreateApp');
+  }
+
+  /**
+   * Grants permission to create application app component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAppVersionAppComponent.html
+   */
+  public toCreateAppVersionAppComponent() {
+    return this.to('CreateAppVersionAppComponent');
+  }
+
+  /**
+   * Grants permission to create application resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAppVersionResource.html
+   */
+  public toCreateAppVersionResource() {
+    return this.to('CreateAppVersionResource');
   }
 
   /**
@@ -110,6 +132,39 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove application input source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppInputSource.html
+   */
+  public toDeleteAppInputSource() {
+    return this.to('DeleteAppInputSource');
+  }
+
+  /**
+   * Grants permission to delete application app component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppVersionAppComponent.html
+   */
+  public toDeleteAppVersionAppComponent() {
+    return this.to('DeleteAppVersionAppComponent');
+  }
+
+  /**
+   * Grants permission to delete application resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppVersionResource.html
+   */
+  public toDeleteAppVersionResource() {
+    return this.to('DeleteAppVersionResource');
+  }
+
+  /**
    * Grants permission to batch delete recommendation template
    *
    * Access Level: Write
@@ -151,6 +206,39 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toDescribeAppAssessment() {
     return this.to('DescribeAppAssessment');
+  }
+
+  /**
+   * Grants permission to describe application version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersion.html
+   */
+  public toDescribeAppVersion() {
+    return this.to('DescribeAppVersion');
+  }
+
+  /**
+   * Grants permission to describe application version app component
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionAppComponent.html
+   */
+  public toDescribeAppVersionAppComponent() {
+    return this.to('DescribeAppVersionAppComponent');
+  }
+
+  /**
+   * Grants permission to describe application version resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionResource.html
+   */
+  public toDescribeAppVersionResource() {
+    return this.to('DescribeAppVersionResource');
   }
 
   /**
@@ -258,6 +346,28 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListAppComponentRecommendations() {
     return this.to('ListAppComponentRecommendations');
+  }
+
+  /**
+   * Grants permission to list application input sources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppInputSources.html
+   */
+  public toListAppInputSources() {
+    return this.to('ListAppInputSources');
+  }
+
+  /**
+   * Grants permission to list application version app components
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppVersionAppComponents.html
+   */
+  public toListAppVersionAppComponents() {
+    return this.to('ListAppVersionAppComponents');
   }
 
   /**
@@ -506,6 +616,39 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update application version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersion.html
+   */
+  public toUpdateAppVersion() {
+    return this.to('UpdateAppVersion');
+  }
+
+  /**
+   * Grants permission to update application app component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionAppComponent.html
+   */
+  public toUpdateAppVersionAppComponent() {
+    return this.to('UpdateAppVersionAppComponent');
+  }
+
+  /**
+   * Grants permission to update application resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionResource.html
+   */
+  public toUpdateAppVersionResource() {
+    return this.to('UpdateAppVersionResource');
+  }
+
+  /**
    * Grants permission to update resiliency policy
    *
    * Access Level: Write
@@ -520,10 +663,15 @@ export class Resiliencehub extends PolicyStatement {
     Write: [
       'AddDraftAppVersionResourceMappings',
       'CreateApp',
+      'CreateAppVersionAppComponent',
+      'CreateAppVersionResource',
       'CreateRecommendationTemplate',
       'CreateResiliencyPolicy',
       'DeleteApp',
       'DeleteAppAssessment',
+      'DeleteAppInputSource',
+      'DeleteAppVersionAppComponent',
+      'DeleteAppVersionResource',
       'DeleteRecommendationTemplate',
       'DeleteResiliencyPolicy',
       'ImportResourcesToDraftAppVersion',
@@ -533,11 +681,17 @@ export class Resiliencehub extends PolicyStatement {
       'ResolveAppVersionResources',
       'StartAppAssessment',
       'UpdateApp',
+      'UpdateAppVersion',
+      'UpdateAppVersionAppComponent',
+      'UpdateAppVersionResource',
       'UpdateResiliencyPolicy'
     ],
     Read: [
       'DescribeApp',
       'DescribeAppAssessment',
+      'DescribeAppVersion',
+      'DescribeAppVersionAppComponent',
+      'DescribeAppVersionResource',
       'DescribeAppVersionResourcesResolutionStatus',
       'DescribeAppVersionTemplate',
       'DescribeDraftAppVersionResourcesImportStatus',
@@ -549,6 +703,8 @@ export class Resiliencehub extends PolicyStatement {
       'ListAppAssessments',
       'ListAppComponentCompliances',
       'ListAppComponentRecommendations',
+      'ListAppInputSources',
+      'ListAppVersionAppComponents',
       'ListAppVersionResourceMappings',
       'ListAppVersionResources',
       'ListAppVersions',
@@ -580,7 +736,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResiliencyPolicy(resiliencyPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:resiliency-policy/${ resiliencyPolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:resiliency-policy/${ resiliencyPolicyId }`);
   }
 
   /**
@@ -597,7 +753,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app/${ appId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app/${ appId }`);
   }
 
   /**
@@ -614,7 +770,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppAssessment(appAssessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app-assessment/${ appAssessmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app-assessment/${ appAssessmentId }`);
   }
 
   /**
@@ -631,6 +787,6 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecommendationTemplate(recommendationTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:recommendation-template/${ recommendationTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:recommendation-template/${ recommendationTemplateId }`);
   }
 }

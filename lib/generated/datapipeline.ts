@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Datapipeline extends PolicyStatement {
   public servicePrefix = 'datapipeline';
@@ -12,10 +12,10 @@ export class Datapipeline extends PolicyStatement {
   /**
    * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -367,7 +367,7 @@ export class Datapipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datapipeline.defaultPartition }:datapipeline:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datapipeline:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
   }
 
   /**

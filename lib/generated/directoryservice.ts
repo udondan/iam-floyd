@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [ds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ds extends PolicyStatement {
   public servicePrefix = 'ds';
@@ -12,10 +12,10 @@ export class Ds extends PolicyStatement {
   /**
    * Statement provider for service [ds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -984,6 +984,6 @@ export class Ds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ds.defaultPartition }:ds:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ds:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
   }
 }

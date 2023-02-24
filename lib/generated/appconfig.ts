@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappconfig.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Appconfig extends PolicyStatement {
   public servicePrefix = 'appconfig';
@@ -12,10 +12,10 @@ export class Appconfig extends PolicyStatement {
   /**
    * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappconfig.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -670,7 +670,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
   }
 
   /**
@@ -688,7 +688,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }`);
   }
 
   /**
@@ -706,7 +706,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
   }
 
   /**
@@ -723,7 +723,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:deploymentstrategy/${ deploymentStrategyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:deploymentstrategy/${ deploymentStrategyId }`);
   }
 
   /**
@@ -742,7 +742,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/deployment/${ deploymentNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/deployment/${ deploymentNumber }`);
   }
 
   /**
@@ -758,7 +758,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
   }
 
   /**
@@ -777,7 +777,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
   }
 
   /**
@@ -795,7 +795,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExtension(extensionId: string, extensionVersionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extension/${ extensionId }/${ extensionVersionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extension/${ extensionId }/${ extensionVersionNumber }`);
   }
 
   /**
@@ -812,6 +812,6 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExtensionassociation(extensionAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extensionassociation/${ extensionAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extensionassociation/${ extensionAssociationId }`);
   }
 }

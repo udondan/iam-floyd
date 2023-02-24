@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Appsync extends PolicyStatement {
   public servicePrefix = 'appsync';
@@ -12,10 +12,10 @@ export class Appsync extends PolicyStatement {
   /**
    * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -707,7 +707,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
   }
 
   /**
@@ -721,7 +721,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:domainnames/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:domainnames/${ domainName }`);
   }
 
   /**
@@ -738,7 +738,7 @@ export class Appsync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -754,7 +754,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
   }
 
   /**
@@ -769,7 +769,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }`);
   }
 
   /**
@@ -784,6 +784,6 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/functions/${ functionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/functions/${ functionId }`);
   }
 }

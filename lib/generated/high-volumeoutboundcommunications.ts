@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [connect-campaigns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_high-volumeoutboundcommunications.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ConnectCampaigns extends PolicyStatement {
   public servicePrefix = 'connect-campaigns';
@@ -12,10 +12,10 @@ export class ConnectCampaigns extends PolicyStatement {
   /**
    * Statement provider for service [connect-campaigns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_high-volumeoutboundcommunications.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -334,6 +334,6 @@ export class ConnectCampaigns extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ConnectCampaigns.defaultPartition }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
   }
 }

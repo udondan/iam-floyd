@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Codedeploy extends PolicyStatement {
   public servicePrefix = 'codedeploy';
@@ -12,10 +12,10 @@ export class Codedeploy extends PolicyStatement {
   /**
    * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -629,7 +629,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codedeploy.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:application:${ applicationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:application:${ applicationName }`);
   }
 
   /**
@@ -643,7 +643,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDeploymentconfig(deploymentConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codedeploy.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentconfig:${ deploymentConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentconfig:${ deploymentConfigurationName }`);
   }
 
   /**
@@ -658,7 +658,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDeploymentgroup(applicationName: string, deploymentGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codedeploy.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
   }
 
   /**
@@ -672,6 +672,6 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onInstance(instanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codedeploy.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:instance:${ instanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || '*' }:${ account || '*' }:instance:${ instanceName }`);
   }
 }

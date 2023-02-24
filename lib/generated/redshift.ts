@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Redshift extends PolicyStatement {
   public servicePrefix = 'redshift';
@@ -12,10 +12,10 @@ export class Redshift extends PolicyStatement {
   /**
    * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1764,7 +1764,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
   }
 
   /**
@@ -1782,7 +1782,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatashare(producerClusterNamespace: string, dataShareName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
   }
 
   /**
@@ -1800,7 +1800,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbgroup:${ clusterName }/${ dbGroup }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbgroup:${ clusterName }/${ dbGroup }`);
   }
 
   /**
@@ -1818,7 +1818,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbname:${ clusterName }/${ dbName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbname:${ clusterName }/${ dbName }`);
   }
 
   /**
@@ -1836,7 +1836,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbuser:${ clusterName }/${ dbUser }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:dbuser:${ clusterName }/${ dbUser }`);
   }
 
   /**
@@ -1853,7 +1853,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:eventsubscription:${ eventSubscriptionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:eventsubscription:${ eventSubscriptionName }`);
   }
 
   /**
@@ -1870,7 +1870,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmclientcertificate:${ hSMClientCertificateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmclientcertificate:${ hSMClientCertificateId }`);
   }
 
   /**
@@ -1887,7 +1887,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmconfiguration:${ hSMConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:hsmconfiguration:${ hSMConfigurationId }`);
   }
 
   /**
@@ -1904,7 +1904,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(producerClusterNamespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:namespace:${ producerClusterNamespace }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:namespace:${ producerClusterNamespace }`);
   }
 
   /**
@@ -1921,7 +1921,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:parametergroup:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:parametergroup:${ parameterGroupName }`);
   }
 
   /**
@@ -1940,7 +1940,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
   }
 
   /**
@@ -1958,7 +1958,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
   }
 
   /**
@@ -1977,7 +1977,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
   }
 
   /**
@@ -1995,7 +1995,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshot:${ clusterName }/${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshot:${ clusterName }/${ snapshotName }`);
   }
 
   /**
@@ -2012,7 +2012,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotcopygrant:${ snapshotCopyGrantName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotcopygrant:${ snapshotCopyGrantName }`);
   }
 
   /**
@@ -2029,7 +2029,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotschedule:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:snapshotschedule:${ parameterGroupName }`);
   }
 
   /**
@@ -2046,7 +2046,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:subnetgroup:${ subnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:subnetgroup:${ subnetGroupName }`);
   }
 
   /**
@@ -2063,7 +2063,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Redshift.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
   }
 
   /**

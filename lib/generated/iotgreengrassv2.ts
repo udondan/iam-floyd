@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [greengrass-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotgreengrassv2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class GreengrassV2 extends PolicyStatement {
   public servicePrefix = 'greengrass';
@@ -12,10 +12,10 @@ export class GreengrassV2 extends PolicyStatement {
   /**
    * Statement provider for service [greengrass-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotgreengrassv2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -466,7 +466,7 @@ export class GreengrassV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
+    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
   }
 
   /**
@@ -483,7 +483,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }`);
   }
 
   /**
@@ -501,7 +501,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }:versions:${ componentVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:components:${ componentName }:versions:${ componentVersion }`);
   }
 
   /**
@@ -518,7 +518,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCoreDevice(coreDeviceThingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:coreDevices:${ coreDeviceThingName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:coreDevices:${ coreDeviceThingName }`);
   }
 
   /**
@@ -535,6 +535,6 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(deploymentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || GreengrassV2.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:deployments:${ deploymentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || '*' }:${ account || '*' }:deployments:${ deploymentId }`);
   }
 }

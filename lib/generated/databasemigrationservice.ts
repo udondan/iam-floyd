@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [dms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Dms extends PolicyStatement {
   public servicePrefix = 'dms';
@@ -12,10 +12,10 @@ export class Dms extends PolicyStatement {
   /**
    * Statement provider for service [dms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -1274,7 +1274,7 @@ export class Dms extends PolicyStatement {
    * - .ifCertTag()
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
   }
 
   /**
@@ -1292,7 +1292,7 @@ export class Dms extends PolicyStatement {
    * - .ifDpTag()
    */
   public onDataProvider(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-provider:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-provider:${ resourceName }`);
   }
 
   /**
@@ -1310,7 +1310,7 @@ export class Dms extends PolicyStatement {
    * - .ifEndpointTag()
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
   }
 
   /**
@@ -1328,7 +1328,7 @@ export class Dms extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
   }
 
   /**
@@ -1346,7 +1346,7 @@ export class Dms extends PolicyStatement {
    * - .ifIpTag()
    */
   public onInstanceProfile(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:instance-profile:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:instance-profile:${ resourceName }`);
   }
 
   /**
@@ -1364,7 +1364,7 @@ export class Dms extends PolicyStatement {
    * - .ifMpTag()
    */
   public onMigrationProject(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:migration-project:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:migration-project:${ resourceName }`);
   }
 
   /**
@@ -1382,7 +1382,7 @@ export class Dms extends PolicyStatement {
    * - .ifRepTag()
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
   }
 
   /**
@@ -1400,7 +1400,7 @@ export class Dms extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
   }
 
   /**
@@ -1418,7 +1418,7 @@ export class Dms extends PolicyStatement {
    * - .ifTaskTag()
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
   }
 
   /**
@@ -1432,7 +1432,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
   }
 
   /**
@@ -1446,7 +1446,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
   }
 
   /**

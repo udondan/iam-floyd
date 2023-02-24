@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [backup-gateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupgateway.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class BackupGateway extends PolicyStatement {
   public servicePrefix = 'backup-gateway';
@@ -12,10 +12,10 @@ export class BackupGateway extends PolicyStatement {
   /**
    * Statement provider for service [backup-gateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupgateway.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -398,7 +398,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -414,7 +414,7 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHypervisor(hypervisorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:hypervisor/${ hypervisorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || '*' }:hypervisor/${ hypervisorId }`);
   }
 
   /**
@@ -430,6 +430,6 @@ export class BackupGateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualmachine(virtualmachineId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:vm/${ virtualmachineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || '*' }:vm/${ virtualmachineId }`);
   }
 }

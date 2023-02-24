@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ram](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanager.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ram extends PolicyStatement {
   public servicePrefix = 'ram';
@@ -12,10 +12,10 @@ export class Ram extends PolicyStatement {
   /**
    * Statement provider for service [ram](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanager.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -416,7 +416,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceShareName()
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share/${ resourcePath }`);
   }
 
   /**
@@ -433,7 +433,7 @@ export class Ram extends PolicyStatement {
    * - .ifShareOwnerAccountId()
    */
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share-invitation/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share-invitation/${ resourcePath }`);
   }
 
   /**
@@ -450,7 +450,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram::${ account || '*' }:permission/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram::${ account || '*' }:permission/${ resourcePath }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [vpc-lattice](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class VpcLattice extends PolicyStatement {
   public servicePrefix = 'vpc-lattice';
@@ -12,10 +12,10 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Statement provider for service [vpc-lattice](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -833,7 +833,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onServiceNetwork(serviceNetworkId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetwork/${ serviceNetworkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetwork/${ serviceNetworkId }`);
   }
 
   /**
@@ -852,7 +852,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onService(serviceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }`);
   }
 
   /**
@@ -873,7 +873,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
   }
 
   /**
@@ -893,7 +893,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    */
   public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
   }
 
   /**
@@ -912,7 +912,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onTargetGroup(targetGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:targetgroup/${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:targetgroup/${ targetGroupId }`);
   }
 
   /**
@@ -933,7 +933,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onListener(serviceId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -954,7 +954,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
   }
 
   /**
@@ -972,7 +972,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:accesslogsubscription/${ accessLogSubscriptionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice::${ account || '*' }:accesslogsubscription/${ accessLogSubscriptionId }`);
   }
 
   /**

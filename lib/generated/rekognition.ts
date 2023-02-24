@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Rekognition extends PolicyStatement {
   public servicePrefix = 'rekognition';
@@ -12,10 +12,10 @@ export class Rekognition extends PolicyStatement {
   /**
    * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -822,7 +822,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
   }
 
   /**
@@ -839,7 +839,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:streamprocessor/${ streamprocessorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:streamprocessor/${ streamprocessorId }`);
   }
 
   /**
@@ -854,7 +854,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }`);
   }
 
   /**
@@ -873,7 +873,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
   }
 
   /**
@@ -889,6 +889,6 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
   }
 }

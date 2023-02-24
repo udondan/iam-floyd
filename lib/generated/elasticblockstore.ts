@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ebs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticblockstore.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ebs extends PolicyStatement {
   public servicePrefix = 'ebs';
@@ -12,10 +12,10 @@ export class Ebs extends PolicyStatement {
   /**
    * Statement provider for service [ebs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticblockstore.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -138,7 +138,7 @@ export class Ebs extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ebs.defaultPartition }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [arc-zonal-shift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53applicationrecoverycontroller-zonalshift.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ArcZonalShift extends PolicyStatement {
   public servicePrefix = 'arc-zonal-shift';
@@ -12,10 +12,10 @@ export class ArcZonalShift extends PolicyStatement {
   /**
    * Statement provider for service [arc-zonal-shift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53applicationrecoverycontroller-zonalshift.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -131,7 +131,7 @@ export class ArcZonalShift extends PolicyStatement {
    * - .ifElasticloadbalancingResourceTag()
    */
   public onALB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ArcZonalShift.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -150,7 +150,7 @@ export class ArcZonalShift extends PolicyStatement {
    * - .ifElasticloadbalancingResourceTag()
    */
   public onNLB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ArcZonalShift.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**

@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodepipeline.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Codepipeline extends PolicyStatement {
   public servicePrefix = 'codepipeline';
@@ -12,10 +12,10 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodepipeline.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -532,7 +532,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }/${ actionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }/${ actionName }`);
   }
 
   /**
@@ -552,7 +552,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
   }
 
   /**
@@ -569,7 +569,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }`);
   }
 
   /**
@@ -587,7 +587,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }`);
   }
 
   /**
@@ -604,6 +604,6 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:webhook:${ webhookName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:webhook:${ webhookName }`);
   }
 }

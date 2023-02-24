@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class ElasticloadbalancingV2 extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing';
@@ -12,10 +12,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   /**
    * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -488,7 +488,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -509,7 +509,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -529,7 +529,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -550,7 +550,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -569,7 +569,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -588,7 +588,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -607,7 +607,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
   }
 
   /**

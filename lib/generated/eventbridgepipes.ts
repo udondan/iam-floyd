@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [pipes](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgepipes.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Pipes extends PolicyStatement {
   public servicePrefix = 'pipes';
@@ -12,10 +12,10 @@ export class Pipes extends PolicyStatement {
   /**
    * Statement provider for service [pipes](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgepipes.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -201,6 +201,6 @@ export class Pipes extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPipe(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Pipes.defaultPartition }:pipes:${ region || '*' }:${ account || '*' }:pipe/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pipes:${ region || '*' }:${ account || '*' }:pipe/${ name }`);
   }
 }

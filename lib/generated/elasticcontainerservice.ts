@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [ecs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Ecs extends PolicyStatement {
   public servicePrefix = 'ecs';
@@ -12,10 +12,10 @@ export class Ecs extends PolicyStatement {
   /**
    * Statement provider for service [ecs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -302,6 +302,20 @@ export class Ecs extends PolicyStatement {
    */
   public toExecuteCommand() {
     return this.to('ExecuteCommand');
+  }
+
+  /**
+   * Grants permission to retrieve the protection status of tasks in an Amazon ECS service
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html
+   */
+  public toGetTaskProtection() {
+    return this.to('GetTaskProtection');
   }
 
   /**
@@ -739,6 +753,20 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the protection status of a task
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html
+   */
+  public toUpdateTaskProtection() {
+    return this.to('UpdateTaskProtection');
+  }
+
+  /**
    * Grants permission to update the specified task set
    *
    * Access Level: Write
@@ -790,6 +818,7 @@ export class Ecs extends PolicyStatement {
       'UpdateContainerInstancesState',
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
+      'UpdateTaskProtection',
       'UpdateTaskSet'
     ],
     Read: [
@@ -800,6 +829,7 @@ export class Ecs extends PolicyStatement {
       'DescribeTaskDefinition',
       'DescribeTaskSets',
       'DescribeTasks',
+      'GetTaskProtection',
       'ListAccountSettings',
       'ListTagsForResource'
     ],
@@ -834,7 +864,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -853,7 +883,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContainerInstance(clusterName: string, containerInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ clusterName }/${ containerInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ clusterName }/${ containerInstanceId }`);
   }
 
   /**
@@ -872,7 +902,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:service/${ clusterName }/${ serviceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:service/${ clusterName }/${ serviceName }`);
   }
 
   /**
@@ -891,7 +921,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTask(clusterName: string, taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ clusterName }/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ clusterName }/${ taskId }`);
   }
 
   /**
@@ -910,7 +940,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
   }
 
   /**
@@ -928,7 +958,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:capacity-provider/${ capacityProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:capacity-provider/${ capacityProviderName }`);
   }
 
   /**
@@ -948,7 +978,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
   }
 
   /**
@@ -1009,6 +1039,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
    * - .toExecuteCommand()
+   * - .toGetTaskProtection()
    * - .toListServices()
    * - .toListTasks()
    * - .toPoll()
@@ -1021,6 +1052,7 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateContainerInstancesState()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
+   * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
    *
    * @param value The value(s) to check

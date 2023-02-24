@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticbeanstalk.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Elasticbeanstalk extends PolicyStatement {
   public servicePrefix = 'elasticbeanstalk';
@@ -12,10 +12,10 @@ export class Elasticbeanstalk extends PolicyStatement {
   /**
    * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticbeanstalk.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -701,7 +701,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 
   /**
@@ -720,7 +720,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:applicationversion/${ applicationName }/${ versionLabel }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:applicationversion/${ applicationName }/${ versionLabel }`);
   }
 
   /**
@@ -739,7 +739,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:configurationtemplate/${ applicationName }/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:configurationtemplate/${ applicationName }/${ templateName }`);
   }
 
   /**
@@ -758,7 +758,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:environment/${ applicationName }/${ environmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:environment/${ applicationName }/${ environmentName }`);
   }
 
   /**
@@ -771,7 +771,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }::solutionstack/${ solutionStackName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }::solutionstack/${ solutionStackName }`);
   }
 
   /**
@@ -784,7 +784,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }::platform/${ platformNameWithVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || '*' }::platform/${ platformNameWithVersion }`);
   }
 
   /**

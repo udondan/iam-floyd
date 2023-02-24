@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [kinesisvideo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisvideostreams.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Kinesisvideo extends PolicyStatement {
   public servicePrefix = 'kinesisvideo';
@@ -12,10 +12,10 @@ export class Kinesisvideo extends PolicyStatement {
   /**
    * Statement provider for service [kinesisvideo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisvideostreams.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -558,7 +558,7 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
   }
 
   /**
@@ -576,6 +576,6 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
   }
 }

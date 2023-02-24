@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { PolicyStatement, PolicyStatementProps, Operator } from '../shared';
 
 /**
  * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Organizations extends PolicyStatement {
   public servicePrefix = 'organizations';
@@ -12,10 +12,10 @@ export class Organizations extends PolicyStatement {
   /**
    * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -789,7 +789,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccount(organizationId: string, accountId?: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:account/o-${ organizationId }/${ accountId || '*' }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:account/o-${ organizationId }/${ accountId || '*' }`);
   }
 
   /**
@@ -804,7 +804,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHandshake(organizationId: string, handshakeType: string, handshakeId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
   }
 
   /**
@@ -817,7 +817,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOrganization(organizationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:organization/o-${ organizationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:organization/o-${ organizationId }`);
   }
 
   /**
@@ -834,7 +834,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationalunit(organizationId: string, organizationalUnitId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
   }
 
   /**
@@ -852,7 +852,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(organizationId: string, policyType: string, policyId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -869,7 +869,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourcepolicy(organizationId: string, resourcePolicyId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:resourcepolicy/o-${ organizationId }/rp-${ resourcePolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:resourcepolicy/o-${ organizationId }/rp-${ resourcePolicyId }`);
   }
 
   /**
@@ -882,7 +882,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAwspolicy(policyType: string, policyId: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -899,7 +899,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoot(organizationId: string, rootId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Organizations.defaultPartition }:organizations::${ account || '*' }:root/o-${ organizationId }/r-${ rootId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || '*' }:root/o-${ organizationId }/r-${ rootId }`);
   }
 
   /**

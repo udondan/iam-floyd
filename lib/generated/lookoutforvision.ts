@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [lookoutvision](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforvision.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Lookoutvision extends PolicyStatement {
   public servicePrefix = 'lookoutvision';
@@ -12,10 +12,10 @@ export class Lookoutvision extends PolicyStatement {
   /**
    * Statement provider for service [lookoutvision](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforvision.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -355,7 +355,7 @@ export class Lookoutvision extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(projectName: string, modelVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutvision.defaultPartition }:lookoutvision:${ region || '*' }:${ account || '*' }:model/${ projectName }/${ modelVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutvision:${ region || '*' }:${ account || '*' }:model/${ projectName }/${ modelVersion }`);
   }
 
   /**
@@ -369,6 +369,6 @@ export class Lookoutvision extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutvision.defaultPartition }:lookoutvision:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutvision:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 }

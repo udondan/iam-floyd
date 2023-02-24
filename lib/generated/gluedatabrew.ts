@@ -1,10 +1,10 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, PolicyStatementProps } from '../shared';
 
 /**
  * Statement provider for service [databrew](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgluedatabrew.html).
  *
- * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ * @param options - Options for the statement
  */
 export class Databrew extends PolicyStatement {
   public servicePrefix = 'databrew';
@@ -12,10 +12,10 @@ export class Databrew extends PolicyStatement {
   /**
    * Statement provider for service [databrew](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgluedatabrew.html).
    *
-   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   * @param options - Options for the statement
    */
-  constructor(sid?: string) {
-    super(sid);
+  constructor(options?: PolicyStatementProps) {
+    super(options);
   }
 
   /**
@@ -604,7 +604,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
   }
 
   /**
@@ -621,7 +621,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -638,7 +638,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:ruleset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:ruleset/${ resourceId }`);
   }
 
   /**
@@ -655,7 +655,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
   }
 
   /**
@@ -672,7 +672,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:job/${ resourceId }`);
   }
 
   /**
@@ -689,6 +689,6 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
   }
 }

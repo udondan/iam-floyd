@@ -1,22 +1,22 @@
-import IAM = require('aws-sdk/clients/iam');
-import fs = require('fs');
+import * as IAM from 'aws-sdk/clients/iam';
+import * as fs from 'fs';
 
 const iam = new IAM();
 
 export function indexManagedPolicies(): Promise<void> {
   console.log('starting');
   return new Promise(async (resolve, reject) => {
-    const policyNames = [];
+    const policyNames: string[] = [];
     const policies = await getPolicies();
     console.log(`Fetched metadata of ${policies.length} managed policies`);
     for (let policyMetadata of policies) {
-      policyNames.push(policyMetadata.PolicyName);
+      policyNames.push(policyMetadata.PolicyName!);
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
-        policyMetadata.Arn,
-        policyMetadata.DefaultVersionId
+        policyMetadata.Arn!,
+        policyMetadata.DefaultVersionId!
       );
-      storePolicyDocument(policyMetadata.PolicyName, document);
+      storePolicyDocument(policyMetadata.PolicyName!, document);
     }
     storePolicyIndex(policyNames);
     resolve();
@@ -35,7 +35,7 @@ function getPolicies(marker?: string): Promise<IAM.policyListType> {
     iam.listPolicies(params, async function (err, data) {
       if (err) return reject(err);
 
-      results.push(...data.Policies);
+      results.push(...data.Policies!);
       if (data.IsTruncated) {
         await getPolicies(data.Marker).then((policies) => {
           results.push(...policies);
@@ -55,7 +55,7 @@ function getPolicyDocument(arn: string, version: string): Promise<string> {
 
     iam.getPolicyVersion(params, function (err, data) {
       if (err) return reject(err);
-      resolve(data.PolicyVersion.Document);
+      resolve(data.PolicyVersion?.Document!);
     });
   });
 }
