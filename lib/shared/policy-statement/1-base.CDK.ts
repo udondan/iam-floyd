@@ -9,7 +9,7 @@ export type PolicyStatementProps = iam.PolicyStatementProps & {
    *
    * @default - aws
    */
-  readonly defaultPartition?: 'aws' | 'aws-cn' | 'aws-us-gov';
+  readonly defaultPartition?: string;
 };
 
 /**

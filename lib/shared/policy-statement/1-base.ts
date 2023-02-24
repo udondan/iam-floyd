@@ -5,7 +5,7 @@
  *
  * If a string is passed, it will be used as the Sid.
  */
-export type PolicyStatementProps = string | {
+export type PolicyStatementProps = {
   /**
    * A unique identifier for the statement
    *
@@ -19,7 +19,7 @@ export type PolicyStatementProps = string | {
    *
    * @default - aws
    */
-  readonly defaultPartition?: 'aws' | 'aws-cn' | 'aws-us-gov';
+  readonly defaultPartition?: string;
 };
 
 /**
