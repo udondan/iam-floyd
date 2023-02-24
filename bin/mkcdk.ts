@@ -17,7 +17,6 @@ async function run() {
   const doFileSwap = !args.length || args.includes('--swap');
   const doPackageJson = !args.length || args.includes('--package-json');
   const doFixIndex = !args.length || args.includes('--fix-index');
-  const doFixModule = !args.length || args.includes('--fix-module');
 
   if (doFileSwap) swapFiles();
   if (doPackageJson) preparePackageJson();
@@ -25,23 +24,6 @@ async function run() {
   const project = new Project();
 
   if (doFixIndex) fixIndex(project);
-
-  if (doFixModule) {
-    const files = fs.readdirSync(`${lib}/generated`);
-    files.forEach(async (file) => {
-      if (file == '.cache') return;
-      if (file == 'index.ts') return;
-      if (!file.endsWith('.ts')) return;
-      if (file.endsWith('.d.ts')) return;
-
-      file = `${lib}/generated/${file}`;
-      console.log(`Processing ${file}`);
-
-      fixModule(project, file);
-    });
-
-    fixModule(project, `${lib}/shared/all.ts`);
-  }
 
   await project.save();
   console.log('done');
@@ -74,34 +56,6 @@ function fixIndex(project: Project) {
       });
     });
 
-    formatCode(sourceFile);
-  } catch (error: any) {
-    throw error;
-  }
-}
-
-function fixModule(project: Project, file: string) {
-  try {
-    const sourceFile = project.addSourceFileAtPath(file);
-    const classDeclaration = sourceFile!.getClasses()[0];
-    sourceFile.addImportDeclaration({
-      namedImports: ['aws_iam as iam'],
-      moduleSpecifier: 'aws-cdk-lib',
-    });
-    const oldConstructor = classDeclaration.getConstructors()[0];
-    const desc = oldConstructor.getJsDocs()[0].getDescription();
-
-    oldConstructor.remove();
-    const constructor = classDeclaration.addConstructor({});
-    constructor.addParameter({
-      name: 'props',
-      type: 'iam.PolicyStatementProps',
-      hasQuestionToken: true,
-    });
-    constructor.setBodyText('super(props);');
-    constructor.addJsDoc({
-      description: desc,
-    });
     formatCode(sourceFile);
   } catch (error: any) {
     throw error;
