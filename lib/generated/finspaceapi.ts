@@ -1,6 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, PolicyStatementProps } from '../shared';
-import { aws_iam as iam } from "aws-cdk-lib";
 
 /**
  * Statement provider for service [finspace-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfinspaceapi.html).
@@ -9,6 +8,15 @@ import { aws_iam as iam } from "aws-cdk-lib";
  */
 export class FinspaceApi extends PolicyStatement {
   public servicePrefix = 'finspace-api';
+
+  /**
+   * Statement provider for service [finspace-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfinspaceapi.html).
+   *
+   * @param options - Options for the statement
+   */
+  constructor(options?: PolicyStatementProps) {
+    super(options);
+  }
 
   /**
    * Grants permission to retrieve FinSpace programmatic access credentials
@@ -38,13 +46,5 @@ export class FinspaceApi extends PolicyStatement {
    */
   public onCredential(account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || this.defaultPartition }:finspace-api:${ region || '*' }:${ account || '*' }:/credentials/programmatic`);
-  }
-
-  /**
-   * Statement provider for service [finspace-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfinspaceapi.html).
-   *
-   */
-  constructor(props?: iam.PolicyStatementProps) {
-    super(props);
   }
 }

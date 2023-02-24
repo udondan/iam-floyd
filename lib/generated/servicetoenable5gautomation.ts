@@ -1,6 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, PolicyStatementProps } from '../shared';
-import { aws_iam as iam } from "aws-cdk-lib";
 
 /**
  * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetoenable5gautomation.html).
@@ -9,6 +8,15 @@ import { aws_iam as iam } from "aws-cdk-lib";
  */
 export class Tnb extends PolicyStatement {
   public servicePrefix = 'tnb';
+
+  /**
+   * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetoenable5gautomation.html).
+   *
+   * @param options - Options for the statement
+   */
+  constructor(options?: PolicyStatementProps) {
+    super(options);
+  }
 
   /**
    * Grants permission to cancel a network operation
@@ -558,13 +566,5 @@ export class Tnb extends PolicyStatement {
    */
   public onNetworkOperation(networkOperationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:network-operation/${ networkOperationId }`);
-  }
-
-  /**
-   * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetoenable5gautomation.html).
-   *
-   */
-  constructor(props?: iam.PolicyStatementProps) {
-    super(props);
   }
 }
