@@ -7,6 +7,7 @@ ecs:DeleteAttributes;Write
 ecs:DeleteCapacityProvider;Write
 ecs:DeleteCluster;Write
 ecs:DeleteService;Write
+ecs:DeleteTaskDefinitions;Write
 ecs:DeleteTaskSet;Write
 ecs:DeregisterContainerInstance;Write
 ecs:DeregisterTaskDefinition;Write

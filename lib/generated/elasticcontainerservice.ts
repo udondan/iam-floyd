@@ -151,6 +151,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified task definitions by family and revision
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html
+   */
+  public toDeleteTaskDefinitions() {
+    return this.to('DeleteTaskDefinitions');
+  }
+
+  /**
    * Grants permission to delete the specified task set
    *
    * Access Level: Write
@@ -792,6 +803,7 @@ export class Ecs extends PolicyStatement {
       'DeleteCapacityProvider',
       'DeleteCluster',
       'DeleteService',
+      'DeleteTaskDefinitions',
       'DeleteTaskSet',
       'DeregisterContainerInstance',
       'DeregisterTaskDefinition',
