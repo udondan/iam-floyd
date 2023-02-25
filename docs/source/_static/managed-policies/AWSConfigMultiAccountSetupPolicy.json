@@ -30,10 +30,16 @@
       "Effect": "Allow",
       "Action": [
         "config:PutConformancePack",
-        "config:DeleteConformancePack",
-        "config:DescribeConformancePackStatus"
+        "config:DeleteConformancePack"
       ],
       "Resource": "arn:aws:config:*:*:conformance-pack/aws-service-conformance-pack/config-multiaccountsetup.amazonaws.com/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConformancePackStatus"
+      ],
+      "Resource": "*"
     },
     {
       "Effect": "Allow",
