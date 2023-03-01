@@ -8,16 +8,19 @@ geo:BatchUpdateDevicePosition;Write
 geo:CalculateRoute;Read
 geo:CalculateRouteMatrix;Read
 geo:CreateGeofenceCollection;Write
+geo:CreateKey;Write
 geo:CreateMap;Write
 geo:CreatePlaceIndex;Write
 geo:CreateRouteCalculator;Write
 geo:CreateTracker;Write
 geo:DeleteGeofenceCollection;Write
+geo:DeleteKey;Write
 geo:DeleteMap;Write
 geo:DeletePlaceIndex;Write
 geo:DeleteRouteCalculator;Write
 geo:DeleteTracker;Write
 geo:DescribeGeofenceCollection;Read
+geo:DescribeKey;Read
 geo:DescribeMap;Read
 geo:DescribePlaceIndex;Read
 geo:DescribeRouteCalculator;Read
@@ -34,6 +37,7 @@ geo:GetPlace;Read
 geo:ListDevicePositions;Read
 geo:ListGeofenceCollections;List
 geo:ListGeofences;Read
+geo:ListKeys;List
 geo:ListMaps;List
 geo:ListPlaceIndexes;List
 geo:ListRouteCalculators;List
@@ -47,6 +51,7 @@ geo:SearchPlaceIndexForText;Read
 geo:TagResource;Tagging
 geo:UntagResource;Tagging
 geo:UpdateGeofenceCollection;Write
+geo:UpdateKey;Write
 geo:UpdateMap;Write
 geo:UpdatePlaceIndex;Write
 geo:UpdateRouteCalculator;Write

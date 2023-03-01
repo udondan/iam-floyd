@@ -107,6 +107,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteDomain.html
+   */
+  public toDeleteDomain() {
+    return this.to('DeleteDomain');
+  }
+
+  /**
    * Grants permission to retrieve information about a case in the case domain
    *
    * Access Level: Read
@@ -364,6 +375,7 @@ export class Cases extends PolicyStatement {
       'CreateLayout',
       'CreateRelatedItem',
       'CreateTemplate',
+      'DeleteDomain',
       'PutCaseEventConfiguration',
       'UpdateCase',
       'UpdateField',

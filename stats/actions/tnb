@@ -20,6 +20,7 @@ tnb:ListSolFunctionPackages;List
 tnb:ListSolNetworkInstances;List
 tnb:ListSolNetworkOperations;List
 tnb:ListSolNetworkPackages;List
+tnb:ListTagsForResource;List
 tnb:PutSolFunctionPackageContent;Write
 tnb:PutSolNetworkPackageContent;Write
 tnb:TagResource;Tagging
