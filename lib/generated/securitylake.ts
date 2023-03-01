@@ -24,6 +24,10 @@ export class Securitylake extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - glue:CreateDatabase
+   * - glue:CreateTable
+   * - glue:GetDatabase
+   * - glue:GetTable
    * - iam:CreateServiceLinkedRole
    * - kms:CreateGrant
    * - kms:DescribeKey

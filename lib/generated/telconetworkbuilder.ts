@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetoenable5gautomation.html).
+ * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstelconetworkbuilder.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Tnb extends PolicyStatement {
   public servicePrefix = 'tnb';
 
   /**
-   * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetoenable5gautomation.html).
+   * Statement provider for service [tnb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstelconetworkbuilder.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -318,6 +318,17 @@ export class Tnb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a list of tags for a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to upload function package content
    *
    * Access Level: Write
@@ -475,7 +486,8 @@ export class Tnb extends PolicyStatement {
       'ListSolFunctionPackages',
       'ListSolNetworkInstances',
       'ListSolNetworkOperations',
-      'ListSolNetworkPackages'
+      'ListSolNetworkPackages',
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
