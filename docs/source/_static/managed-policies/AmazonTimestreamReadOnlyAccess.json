@@ -15,7 +15,9 @@
         "timestream:Select",
         "timestream:SelectValues",
         "timestream:DescribeScheduledQuery",
-        "timestream:ListScheduledQueries"
+        "timestream:ListScheduledQueries",
+        "timestream:DescribeBatchLoadTask",
+        "timestream:ListBatchLoadTasks"
       ],
       "Resource": "*"
     }
