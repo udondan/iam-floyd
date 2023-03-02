@@ -22,6 +22,7 @@ export { Codecatalyst } from './codecatalyst';
 export { Codeguru } from './codeguru';
 export { CodeguruProfiler } from './codeguruprofiler';
 export { CodeguruReviewer } from './codegurureviewer';
+export { CodeguruSecurity } from './codegurusecurity';
 export { Codewhisperer } from './codewhisperer';
 export { CognitoIdentity } from './cognitoidentity';
 export { CognitoSync } from './cognitosync';

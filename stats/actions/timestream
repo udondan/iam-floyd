@@ -1,10 +1,12 @@
 timestream:CancelQuery;Write
+timestream:CreateBatchLoadTask;Write
 timestream:CreateDatabase;Write
 timestream:CreateScheduledQuery;Write
 timestream:CreateTable;Write
 timestream:DeleteDatabase;Write
 timestream:DeleteScheduledQuery;Write
 timestream:DeleteTable;Write
+timestream:DescribeBatchLoadTask;Read
 timestream:DescribeDatabase;Read
 timestream:DescribeEndpoints;List
 timestream:DescribeScheduledQuery;Read
@@ -12,12 +14,14 @@ timestream:DescribeTable;Read
 timestream:ExecuteScheduledQuery;Write
 timestream:GetAwsBackupStatus;Read
 timestream:GetAwsRestoreStatus;Read
+timestream:ListBatchLoadTasks;List
 timestream:ListDatabases;List
 timestream:ListMeasures;List
 timestream:ListScheduledQueries;List
 timestream:ListTables;List
 timestream:ListTagsForResource;Read
 timestream:PrepareQuery;Read
+timestream:ResumeBatchLoadTask;Write
 timestream:Select;Read
 timestream:SelectValues;Read
 timestream:StartAwsBackupJob;Write
