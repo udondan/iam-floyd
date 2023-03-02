@@ -33,6 +33,21 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a batch load task in your account
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   * - timestream:WriteRecords
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateBatchLoadTask.html
+   */
+  public toCreateBatchLoadTask() {
+    return this.to('CreateBatchLoadTask');
+  }
+
+  /**
    * Grants permission to create a database in your account
    *
    * Access Level: Write
@@ -127,6 +142,20 @@ export class Timestream extends PolicyStatement {
    */
   public toDeleteTable() {
     return this.to('DeleteTable');
+  }
+
+  /**
+   * Grants permission to describe a batch load task in your account
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeBatchLoadTask.html
+   */
+  public toDescribeBatchLoadTask() {
+    return this.to('DescribeBatchLoadTask');
   }
 
   /**
@@ -225,6 +254,20 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list batch load tasks in your account
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListBatchLoadTasks.html
+   */
+  public toListBatchLoadTasks() {
+    return this.to('ListBatchLoadTasks');
+  }
+
+  /**
    * Grants permission to list databases in your account
    *
    * Access Level: List
@@ -307,6 +350,21 @@ export class Timestream extends PolicyStatement {
    */
   public toPrepareQuery() {
     return this.to('PrepareQuery');
+  }
+
+  /**
+   * Grants permission to resume a batch load task in your account
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   * - timestream:WriteRecords
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ResumeBatchLoadTask.html
+   */
+  public toResumeBatchLoadTask() {
+    return this.to('ResumeBatchLoadTask');
   }
 
   /**
@@ -459,6 +517,7 @@ export class Timestream extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelQuery',
+      'CreateBatchLoadTask',
       'CreateDatabase',
       'CreateScheduledQuery',
       'CreateTable',
@@ -466,6 +525,7 @@ export class Timestream extends PolicyStatement {
       'DeleteScheduledQuery',
       'DeleteTable',
       'ExecuteScheduledQuery',
+      'ResumeBatchLoadTask',
       'StartAwsBackupJob',
       'StartAwsRestoreJob',
       'UpdateDatabase',
@@ -474,6 +534,7 @@ export class Timestream extends PolicyStatement {
       'WriteRecords'
     ],
     Read: [
+      'DescribeBatchLoadTask',
       'DescribeDatabase',
       'DescribeScheduledQuery',
       'DescribeTable',
@@ -486,6 +547,7 @@ export class Timestream extends PolicyStatement {
     ],
     List: [
       'DescribeEndpoints',
+      'ListBatchLoadTasks',
       'ListDatabases',
       'ListMeasures',
       'ListScheduledQueries',
