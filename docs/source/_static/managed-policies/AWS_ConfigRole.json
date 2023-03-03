@@ -53,6 +53,7 @@
         "athena:ListDataCatalogs",
         "athena:ListTagsForResource",
         "athena:ListWorkGroups",
+        "auditmanager:GetAccountStatus",
         "auditmanager:GetAssessment",
         "auditmanager:ListAssessments",
         "autoscaling-plans:DescribeScalingPlanResources",
