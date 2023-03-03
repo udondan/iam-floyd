@@ -23,7 +23,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectDominantLanguage.html
    */
   public toBatchDetectDominantLanguage() {
     return this.to('BatchDetectDominantLanguage');
@@ -34,7 +34,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html
    */
   public toBatchDetectEntities() {
     return this.to('BatchDetectEntities');
@@ -45,7 +45,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectKeyPhrases.html
    */
   public toBatchDetectKeyPhrases() {
     return this.to('BatchDetectKeyPhrases');
@@ -56,7 +56,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSentiment.html
    */
   public toBatchDetectSentiment() {
     return this.to('BatchDetectSentiment');
@@ -67,7 +67,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSyntax.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSyntax.html
    */
   public toBatchDetectSyntax() {
     return this.to('BatchDetectSyntax');
@@ -78,7 +78,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectTargetedSentiment.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectTargetedSentiment.html
    */
   public toBatchDetectTargetedSentiment() {
     return this.to('BatchDetectTargetedSentiment');
@@ -89,7 +89,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ClassifyDocument.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html
    */
   public toClassifyDocument() {
     return this.to('ClassifyDocument');
@@ -100,10 +100,25 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ContainsPiiEntities.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ContainsPiiEntities.html
    */
   public toContainsPiiEntities() {
     return this.to('ContainsPiiEntities');
+  }
+
+  /**
+   * Grants permission to create a new dataset within a flywheel
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDataset.html
+   */
+  public toCreateDataset() {
+    return this.to('CreateDataset');
   }
 
   /**
@@ -120,7 +135,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateDocumentClassifier.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html
    */
   public toCreateDocumentClassifier() {
     return this.to('CreateDocumentClassifier');
@@ -135,7 +150,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEndpoint.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
     return this.to('CreateEndpoint');
@@ -154,10 +169,30 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html
    */
   public toCreateEntityRecognizer() {
     return this.to('CreateEntityRecognizer');
+  }
+
+  /**
+   * Grants permission to create a new flywheel that you can use to train model versions
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
+   * - .ifDataLakeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateFlywheel.html
+   */
+  public toCreateFlywheel() {
+    return this.to('CreateFlywheel');
   }
 
   /**
@@ -165,7 +200,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteDocumentClassifier.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DeleteDocumentClassifier.html
    */
   public toDeleteDocumentClassifier() {
     return this.to('DeleteDocumentClassifier');
@@ -176,7 +211,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteEndpoint.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DeleteEndpoint.html
    */
   public toDeleteEndpoint() {
     return this.to('DeleteEndpoint');
@@ -187,10 +222,21 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteEntityRecognizer.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DeleteEntityRecognizer.html
    */
   public toDeleteEntityRecognizer() {
     return this.to('DeleteEntityRecognizer');
+  }
+
+  /**
+   * Grants permission to Delete a flywheel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DeleteFlywheel.html
+   */
+  public toDeleteFlywheel() {
+    return this.to('DeleteFlywheel');
   }
 
   /**
@@ -198,10 +244,21 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteResourcePolicy.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get the properties associated with a dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDataset.html
+   */
+  public toDescribeDataset() {
+    return this.to('DescribeDataset');
   }
 
   /**
@@ -209,7 +266,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassificationJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDocumentClassificationJob.html
    */
   public toDescribeDocumentClassificationJob() {
     return this.to('DescribeDocumentClassificationJob');
@@ -220,7 +277,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassifier.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDocumentClassifier.html
    */
   public toDescribeDocumentClassifier() {
     return this.to('DescribeDocumentClassifier');
@@ -231,7 +288,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDominantLanguageDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDominantLanguageDetectionJob.html
    */
   public toDescribeDominantLanguageDetectionJob() {
     return this.to('DescribeDominantLanguageDetectionJob');
@@ -242,7 +299,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEndpoint.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEndpoint.html
    */
   public toDescribeEndpoint() {
     return this.to('DescribeEndpoint');
@@ -253,7 +310,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEntitiesDetectionJob.html
    */
   public toDescribeEntitiesDetectionJob() {
     return this.to('DescribeEntitiesDetectionJob');
@@ -264,7 +321,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntityRecognizer.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEntityRecognizer.html
    */
   public toDescribeEntityRecognizer() {
     return this.to('DescribeEntityRecognizer');
@@ -275,10 +332,35 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEventsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEventsDetectionJob.html
    */
   public toDescribeEventsDetectionJob() {
     return this.to('DescribeEventsDetectionJob');
+  }
+
+  /**
+   * Grants permission to get the properties associated with a flywheel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeFlywheel.html
+   */
+  public toDescribeFlywheel() {
+    return this.to('DescribeFlywheel');
+  }
+
+  /**
+   * Grants permission to get the properties associated with a flywheel iteration for a flywheel
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifFlywheelIterationId()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeFlywheelIteration.html
+   */
+  public toDescribeFlywheelIteration() {
+    return this.to('DescribeFlywheelIteration');
   }
 
   /**
@@ -286,7 +368,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeKeyPhrasesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeKeyPhrasesDetectionJob.html
    */
   public toDescribeKeyPhrasesDetectionJob() {
     return this.to('DescribeKeyPhrasesDetectionJob');
@@ -297,7 +379,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribePiiEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribePiiEntitiesDetectionJob.html
    */
   public toDescribePiiEntitiesDetectionJob() {
     return this.to('DescribePiiEntitiesDetectionJob');
@@ -308,7 +390,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeResourcePolicy.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeResourcePolicy.html
    */
   public toDescribeResourcePolicy() {
     return this.to('DescribeResourcePolicy');
@@ -319,7 +401,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeSentimentDetectionJob.html
    */
   public toDescribeSentimentDetectionJob() {
     return this.to('DescribeSentimentDetectionJob');
@@ -330,7 +412,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTargetedSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeTargetedSentimentDetectionJob.html
    */
   public toDescribeTargetedSentimentDetectionJob() {
     return this.to('DescribeTargetedSentimentDetectionJob');
@@ -341,7 +423,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeTopicsDetectionJob.html
    */
   public toDescribeTopicsDetectionJob() {
     return this.to('DescribeTopicsDetectionJob');
@@ -352,7 +434,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectDominantLanguage.html
    */
   public toDetectDominantLanguage() {
     return this.to('DetectDominantLanguage');
@@ -363,7 +445,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html
    */
   public toDetectEntities() {
     return this.to('DetectEntities');
@@ -374,7 +456,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectKeyPhrases.html
    */
   public toDetectKeyPhrases() {
     return this.to('DetectKeyPhrases');
@@ -385,7 +467,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectPiiEntities.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectPiiEntities.html
    */
   public toDetectPiiEntities() {
     return this.to('DetectPiiEntities');
@@ -396,7 +478,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectSentiment.html
    */
   public toDetectSentiment() {
     return this.to('DetectSentiment');
@@ -407,7 +489,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSyntax.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectSyntax.html
    */
   public toDetectSyntax() {
     return this.to('DetectSyntax');
@@ -418,7 +500,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectTargetedSentiment.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectTargetedSentiment.html
    */
   public toDetectTargetedSentiment() {
     return this.to('DetectTargetedSentiment');
@@ -434,10 +516,21 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifModelKmsKey()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ImportModel.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ImportModel.html
    */
   public toImportModel() {
     return this.to('ImportModel');
+  }
+
+  /**
+   * Grants permission to get a list of the Datasets associated with a flywheel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDatasets.html
+   */
+  public toListDatasets() {
+    return this.to('ListDatasets');
   }
 
   /**
@@ -445,7 +538,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassificationJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDocumentClassificationJobs.html
    */
   public toListDocumentClassificationJobs() {
     return this.to('ListDocumentClassificationJobs');
@@ -456,7 +549,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifierSummaries.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDocumentClassifierSummaries.html
    */
   public toListDocumentClassifierSummaries() {
     return this.to('ListDocumentClassifierSummaries');
@@ -467,7 +560,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifiers.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDocumentClassifiers.html
    */
   public toListDocumentClassifiers() {
     return this.to('ListDocumentClassifiers');
@@ -478,7 +571,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDominantLanguageDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDominantLanguageDetectionJobs.html
    */
   public toListDominantLanguageDetectionJobs() {
     return this.to('ListDominantLanguageDetectionJobs');
@@ -489,7 +582,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEndpoints.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEndpoints.html
    */
   public toListEndpoints() {
     return this.to('ListEndpoints');
@@ -500,7 +593,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntitiesDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEntitiesDetectionJobs.html
    */
   public toListEntitiesDetectionJobs() {
     return this.to('ListEntitiesDetectionJobs');
@@ -511,7 +604,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizerSummaries.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEntityRecognizerSummaries.html
    */
   public toListEntityRecognizerSummaries() {
     return this.to('ListEntityRecognizerSummaries');
@@ -522,7 +615,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizers.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEntityRecognizers.html
    */
   public toListEntityRecognizers() {
     return this.to('ListEntityRecognizers');
@@ -533,10 +626,32 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEventsDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEventsDetectionJobs.html
    */
   public toListEventsDetectionJobs() {
     return this.to('ListEventsDetectionJobs');
+  }
+
+  /**
+   * Grants permission to get a list of iterations associated for a flywheel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListFlywheelIterationHistory.html
+   */
+  public toListFlywheelIterationHistory() {
+    return this.to('ListFlywheelIterationHistory');
+  }
+
+  /**
+   * Grants permission to get a list of the flywheels that you have created
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListFlywheels.html
+   */
+  public toListFlywheels() {
+    return this.to('ListFlywheels');
   }
 
   /**
@@ -544,7 +659,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListKeyPhrasesDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListKeyPhrasesDetectionJobs.html
    */
   public toListKeyPhrasesDetectionJobs() {
     return this.to('ListKeyPhrasesDetectionJobs');
@@ -555,7 +670,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListPiiEntitiesDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListPiiEntitiesDetectionJobs.html
    */
   public toListPiiEntitiesDetectionJobs() {
     return this.to('ListPiiEntitiesDetectionJobs');
@@ -566,7 +681,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListSentimentDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListSentimentDetectionJobs.html
    */
   public toListSentimentDetectionJobs() {
     return this.to('ListSentimentDetectionJobs');
@@ -577,7 +692,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -588,7 +703,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTargetedSentimentDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListTargetedSentimentDetectionJobs.html
    */
   public toListTargetedSentimentDetectionJobs() {
     return this.to('ListTargetedSentimentDetectionJobs');
@@ -599,7 +714,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListTopicsDetectionJobs.html
    */
   public toListTopicsDetectionJobs() {
     return this.to('ListTopicsDetectionJobs');
@@ -610,7 +725,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_PutResourcePolicy.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_PutResourcePolicy.html
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
@@ -629,7 +744,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html
    */
   public toStartDocumentClassificationJob() {
     return this.to('StartDocumentClassificationJob');
@@ -648,7 +763,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html
    */
   public toStartDominantLanguageDetectionJob() {
     return this.to('StartDominantLanguageDetectionJob');
@@ -667,7 +782,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html
    */
   public toStartEntitiesDetectionJob() {
     return this.to('StartEntitiesDetectionJob');
@@ -683,10 +798,21 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifOutputKmsKey()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEventsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html
    */
   public toStartEventsDetectionJob() {
     return this.to('StartEventsDetectionJob');
+  }
+
+  /**
+   * Grants permission to start a flywheel iteration for a flywheel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartFlywheelIteration.html
+   */
+  public toStartFlywheelIteration() {
+    return this.to('StartFlywheelIteration');
   }
 
   /**
@@ -702,7 +828,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html
    */
   public toStartKeyPhrasesDetectionJob() {
     return this.to('StartKeyPhrasesDetectionJob');
@@ -718,7 +844,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifOutputKmsKey()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartPiiEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html
    */
   public toStartPiiEntitiesDetectionJob() {
     return this.to('StartPiiEntitiesDetectionJob');
@@ -737,7 +863,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html
    */
   public toStartSentimentDetectionJob() {
     return this.to('StartSentimentDetectionJob');
@@ -756,7 +882,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTargetedSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html
    */
   public toStartTargetedSentimentDetectionJob() {
     return this.to('StartTargetedSentimentDetectionJob');
@@ -775,7 +901,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html
    */
   public toStartTopicsDetectionJob() {
     return this.to('StartTopicsDetectionJob');
@@ -786,7 +912,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopDominantLanguageDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopDominantLanguageDetectionJob.html
    */
   public toStopDominantLanguageDetectionJob() {
     return this.to('StopDominantLanguageDetectionJob');
@@ -797,7 +923,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopEntitiesDetectionJob.html
    */
   public toStopEntitiesDetectionJob() {
     return this.to('StopEntitiesDetectionJob');
@@ -808,7 +934,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopEventsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopEventsDetectionJob.html
    */
   public toStopEventsDetectionJob() {
     return this.to('StopEventsDetectionJob');
@@ -819,7 +945,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopKeyPhrasesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopKeyPhrasesDetectionJob.html
    */
   public toStopKeyPhrasesDetectionJob() {
     return this.to('StopKeyPhrasesDetectionJob');
@@ -830,7 +956,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopPiiEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopPiiEntitiesDetectionJob.html
    */
   public toStopPiiEntitiesDetectionJob() {
     return this.to('StopPiiEntitiesDetectionJob');
@@ -841,7 +967,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopSentimentDetectionJob.html
    */
   public toStopSentimentDetectionJob() {
     return this.to('StopSentimentDetectionJob');
@@ -852,7 +978,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTargetedSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopTargetedSentimentDetectionJob.html
    */
   public toStopTargetedSentimentDetectionJob() {
     return this.to('StopTargetedSentimentDetectionJob');
@@ -863,7 +989,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingDocumentClassifier.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopTrainingDocumentClassifier.html
    */
   public toStopTrainingDocumentClassifier() {
     return this.to('StopTrainingDocumentClassifier');
@@ -874,7 +1000,7 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingEntityRecognizer.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopTrainingEntityRecognizer.html
    */
   public toStopTrainingEntityRecognizer() {
     return this.to('StopTrainingEntityRecognizer');
@@ -889,7 +1015,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_TagResource.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -903,7 +1029,7 @@ export class Comprehend extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_UntagResource.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -914,10 +1040,27 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_UpdateEndpoint.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UpdateEndpoint.html
    */
   public toUpdateEndpoint() {
     return this.to('UpdateEndpoint');
+  }
+
+  /**
+   * Grants permission to Update a flywheel's configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UpdateFlywheel.html
+   */
+  public toUpdateFlywheel() {
+    return this.to('UpdateFlywheel');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -930,6 +1073,7 @@ export class Comprehend extends PolicyStatement {
       'BatchDetectTargetedSentiment',
       'ClassifyDocument',
       'ContainsPiiEntities',
+      'DescribeDataset',
       'DescribeDocumentClassificationJob',
       'DescribeDocumentClassifier',
       'DescribeDominantLanguageDetectionJob',
@@ -937,6 +1081,8 @@ export class Comprehend extends PolicyStatement {
       'DescribeEntitiesDetectionJob',
       'DescribeEntityRecognizer',
       'DescribeEventsDetectionJob',
+      'DescribeFlywheel',
+      'DescribeFlywheelIteration',
       'DescribeKeyPhrasesDetectionJob',
       'DescribePiiEntitiesDetectionJob',
       'DescribeResourcePolicy',
@@ -950,6 +1096,7 @@ export class Comprehend extends PolicyStatement {
       'DetectSentiment',
       'DetectSyntax',
       'DetectTargetedSentiment',
+      'ListDatasets',
       'ListDocumentClassificationJobs',
       'ListDocumentClassifierSummaries',
       'ListDocumentClassifiers',
@@ -959,6 +1106,8 @@ export class Comprehend extends PolicyStatement {
       'ListEntityRecognizerSummaries',
       'ListEntityRecognizers',
       'ListEventsDetectionJobs',
+      'ListFlywheelIterationHistory',
+      'ListFlywheels',
       'ListKeyPhrasesDetectionJobs',
       'ListPiiEntitiesDetectionJobs',
       'ListSentimentDetectionJobs',
@@ -967,12 +1116,15 @@ export class Comprehend extends PolicyStatement {
       'ListTopicsDetectionJobs'
     ],
     Write: [
+      'CreateDataset',
       'CreateDocumentClassifier',
       'CreateEndpoint',
       'CreateEntityRecognizer',
+      'CreateFlywheel',
       'DeleteDocumentClassifier',
       'DeleteEndpoint',
       'DeleteEntityRecognizer',
+      'DeleteFlywheel',
       'DeleteResourcePolicy',
       'ImportModel',
       'PutResourcePolicy',
@@ -980,6 +1132,7 @@ export class Comprehend extends PolicyStatement {
       'StartDominantLanguageDetectionJob',
       'StartEntitiesDetectionJob',
       'StartEventsDetectionJob',
+      'StartFlywheelIteration',
       'StartKeyPhrasesDetectionJob',
       'StartPiiEntitiesDetectionJob',
       'StartSentimentDetectionJob',
@@ -994,7 +1147,8 @@ export class Comprehend extends PolicyStatement {
       'StopTargetedSentimentDetectionJob',
       'StopTrainingDocumentClassifier',
       'StopTrainingEntityRecognizer',
-      'UpdateEndpoint'
+      'UpdateEndpoint',
+      'UpdateFlywheel'
     ],
     Tagging: [
       'TagResource',
@@ -1005,7 +1159,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type targeted-sentiment-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTargetedSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1039,7 +1193,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type document-classifier-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/custom-realtime-analysis.html
+   * https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html
    *
    * @param documentClassifierEndpointName - Identifier for the documentClassifierEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1073,7 +1227,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type entity-recognizer-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/custom-realtime-analysis.html
+   * https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html
    *
    * @param entityRecognizerEndpointName - Identifier for the entityRecognizerEndpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1090,7 +1244,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type dominant-language-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1107,7 +1261,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type entities-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1124,7 +1278,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type pii-entities-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartPiiEntitiesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1141,7 +1295,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type events-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEventsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1158,7 +1312,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type key-phrases-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1175,7 +1329,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type sentiment-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1192,7 +1346,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type topics-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1209,7 +1363,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Adds a resource of type document-classification-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1224,6 +1378,71 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type flywheel to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateFlywheel.html
+   *
+   * @param flywheelName - Identifier for the flywheelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFlywheel(flywheelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:flywheel/${ flywheelName }`);
+  }
+
+  /**
+   * Adds a resource of type flywheel-dataset to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDataset.html
+   *
+   * @param flywheelName - Identifier for the flywheelName.
+   * @param datasetName - Identifier for the datasetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFlywheelDataset(flywheelName: string, datasetName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:flywheel/${ flywheelName }/dataset/${ datasetName }`);
+  }
+
+  /**
+   * Filters access by the DataLake Kms Key associated with the flywheel resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFlywheel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDataLakeKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataLakeKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by particular Iteration Id for a flywheel
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toDescribeFlywheelIteration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFlywheelIterationId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FlywheelIterationId`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the model KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
@@ -1231,7 +1450,9 @@ export class Comprehend extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDocumentClassifier()
    * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
    * - .toImportModel()
+   * - .toUpdateFlywheel()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1272,6 +1493,7 @@ export class Comprehend extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDocumentClassifier()
    * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
    * - .toStartDocumentClassificationJob()
    * - .toStartDominantLanguageDetectionJob()
    * - .toStartEntitiesDetectionJob()
@@ -1279,6 +1501,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartSentimentDetectionJob()
    * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
+   * - .toUpdateFlywheel()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1295,6 +1518,7 @@ export class Comprehend extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDocumentClassifier()
    * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
    * - .toStartDocumentClassificationJob()
    * - .toStartDominantLanguageDetectionJob()
    * - .toStartEntitiesDetectionJob()
@@ -1302,6 +1526,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartSentimentDetectionJob()
    * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
+   * - .toUpdateFlywheel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1318,6 +1543,7 @@ export class Comprehend extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDocumentClassifier()
    * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
    * - .toStartDocumentClassificationJob()
    * - .toStartDominantLanguageDetectionJob()
    * - .toStartEntitiesDetectionJob()
@@ -1325,6 +1551,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartSentimentDetectionJob()
    * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
+   * - .toUpdateFlywheel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

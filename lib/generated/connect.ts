@@ -2051,6 +2051,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html

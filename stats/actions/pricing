@@ -1,3 +1,5 @@
 pricing:DescribeServices;Read
 pricing:GetAttributeValues;Read
+pricing:GetPriceListFileUrl;Read
 pricing:GetProducts;Read
+pricing:ListPriceLists;Read
