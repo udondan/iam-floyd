@@ -171,6 +171,7 @@ sagemaker:DescribeWorkteam;Read
 sagemaker:DisableSagemakerServicecatalogPortfolio;Write
 sagemaker:DisassociateTrialComponent;Write
 sagemaker:EnableSagemakerServicecatalogPortfolio;Write
+sagemaker:GetDeployments;Read
 sagemaker:GetDeviceFleetReport;Read
 sagemaker:GetDeviceRegistration;Read
 sagemaker:GetLineageGroupPolicy;Read

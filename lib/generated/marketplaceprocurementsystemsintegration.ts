@@ -19,7 +19,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
   }
 
   /**
-   * Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.
+   * Grants permission to describe the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
   }
 
   /**
-   * Creates or updates the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.
+   * Grants permission to create or update the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization
    *
    * Access Level: Write
    *

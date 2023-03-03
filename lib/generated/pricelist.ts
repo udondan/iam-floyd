@@ -41,6 +41,17 @@ export class Pricing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the price list file URL for the given parameters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html
+   */
+  public toGetPriceListFileUrl() {
+    return this.to('GetPriceListFileUrl');
+  }
+
+  /**
    * Grants permission to retrieve all matching products with given search criteria
    *
    * Access Level: Read
@@ -51,11 +62,24 @@ export class Pricing extends PolicyStatement {
     return this.to('GetProducts');
   }
 
+  /**
+   * Grants permission to list all (paginated) eligible price lists for the given parameters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html
+   */
+  public toListPriceLists() {
+    return this.to('ListPriceLists');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'DescribeServices',
       'GetAttributeValues',
-      'GetProducts'
+      'GetPriceListFileUrl',
+      'GetProducts',
+      'ListPriceLists'
     ]
   };
 }

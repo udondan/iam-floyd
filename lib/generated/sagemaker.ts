@@ -2426,6 +2426,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get deployment plan for device
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_edge_GetDeployments.html
+   */
+  public toGetDeployments() {
+    return this.to('GetDeployments');
+  }
+
+  /**
    * Grants permission to access a summary of the devices in a device fleet
    *
    * Access Level: Read
@@ -4395,6 +4406,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeUserProfile',
       'DescribeWorkforce',
       'DescribeWorkteam',
+      'GetDeployments',
       'GetDeviceFleetReport',
       'GetDeviceRegistration',
       'GetLineageGroupPolicy',
