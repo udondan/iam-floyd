@@ -30,6 +30,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete AWS Control Tower landing zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/decommission-landing-zone.html
+   */
+  public toDeleteLandingZone() {
+    return this.to('DeleteLandingZone');
+  }
+
+  /**
    * Grants permission to deregister an account created through the account factory from AWS Control Tower
    *
    * Access Level: Write
@@ -78,7 +89,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toDescribeGuardrail() {
     return this.to('DescribeGuardrail');
@@ -89,10 +100,21 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toDescribeGuardrailForTarget() {
     return this.to('DescribeGuardrailForTarget');
+  }
+
+  /**
+   * Grants permission to describe the current Landing Zone configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/step-two.html
+   */
+  public toDescribeLandingZoneConfiguration() {
+    return this.to('DescribeLandingZoneConfiguration');
   }
 
   /**
@@ -115,6 +137,17 @@ export class Controltower extends PolicyStatement {
    */
   public toDescribeManagedOrganizationalUnit() {
     return this.to('DescribeManagedOrganizationalUnit');
+  }
+
+  /**
+   * Grants permission to describe a Register Organizational Unit Operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/about-extending-governance.html
+   */
+  public toDescribeRegisterOrganizationalUnitOperation() {
+    return this.to('DescribeRegisterOrganizationalUnitOperation');
   }
 
   /**
@@ -144,7 +177,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html#enable-guardrails
+   * https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls-on-ou.html
    */
   public toDisableGuardrail() {
     return this.to('DisableGuardrail');
@@ -166,10 +199,21 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html#enable-guardrails
+   * https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls-on-ou.html
    */
   public toEnableGuardrail() {
     return this.to('EnableGuardrail');
+  }
+
+  /**
+   * Grants permission to describe an account email and validate that it exists
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/accounts.html
+   */
+  public toGetAccountInfo() {
+    return this.to('GetAccountInfo');
   }
 
   /**
@@ -199,7 +243,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toGetGuardrailComplianceStatus() {
     return this.to('GetGuardrailComplianceStatus');
@@ -214,6 +258,17 @@ export class Controltower extends PolicyStatement {
    */
   public toGetHomeRegion() {
     return this.to('GetHomeRegion');
+  }
+
+  /**
+   * Grants permission to get the current landing zone drift status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/drift.html
+   */
+  public toGetLandingZoneDriftStatus() {
+    return this.to('GetLandingZoneDriftStatus');
   }
 
   /**
@@ -239,6 +294,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list occurrences of drift in AWS Control Tower
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/drift.html
+   */
+  public toListDriftDetails() {
+    return this.to('ListDriftDetails');
+  }
+
+  /**
    * Grants permission to list all enabled controls in a specified organizational unit
    *
    * Access Level: List
@@ -254,10 +320,32 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toListEnabledGuardrails() {
     return this.to('ListEnabledGuardrails');
+  }
+
+  /**
+   * Grants permission to list Precheck details for an Organizational Unit
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/about-extending-governance.html
+   */
+  public toListExtendGovernancePrecheckDetails() {
+    return this.to('ListExtendGovernancePrecheckDetails');
+  }
+
+  /**
+   * Grants permission to list the compliance of external AWS Config rules
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/review-compliance.html
+   */
+  public toListExternalConfigRuleCompliance() {
+    return this.to('ListExternalConfigRuleCompliance');
   }
 
   /**
@@ -265,7 +353,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toListGuardrailViolations() {
     return this.to('ListGuardrailViolations');
@@ -276,7 +364,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toListGuardrails() {
     return this.to('ListGuardrails');
@@ -287,7 +375,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/guardrails.html
+   * https://docs.aws.amazon.com/controltower/latest/userguide/controls.html
    */
   public toListGuardrailsForTarget() {
     return this.to('ListGuardrailsForTarget');
@@ -360,6 +448,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform validations in an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-prereqs.html
+   */
+  public toPerformPreLaunchChecks() {
+    return this.to('PerformPreLaunchChecks');
+  }
+
+  /**
    * Grants permission to set up or update AWS Control Tower landing zone
    *
    * Access Level: Write
@@ -384,6 +483,7 @@ export class Controltower extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateManagedAccount',
+      'DeleteLandingZone',
       'DeregisterManagedAccount',
       'DeregisterOrganizationalUnit',
       'DisableControl',
@@ -399,19 +499,27 @@ export class Controltower extends PolicyStatement {
       'DescribeCoreService',
       'DescribeGuardrail',
       'DescribeGuardrailForTarget',
+      'DescribeLandingZoneConfiguration',
       'DescribeManagedAccount',
       'DescribeManagedOrganizationalUnit',
+      'DescribeRegisterOrganizationalUnitOperation',
       'DescribeSingleSignOn',
+      'GetAccountInfo',
       'GetAvailableUpdates',
       'GetControlOperation',
       'GetGuardrailComplianceStatus',
       'GetHomeRegion',
-      'GetLandingZoneStatus'
+      'GetLandingZoneDriftStatus',
+      'GetLandingZoneStatus',
+      'ListDriftDetails',
+      'ListExternalConfigRuleCompliance',
+      'PerformPreLaunchChecks'
     ],
     List: [
       'ListDirectoryGroups',
       'ListEnabledControls',
       'ListEnabledGuardrails',
+      'ListExtendGovernancePrecheckDetails',
       'ListGuardrailViolations',
       'ListGuardrails',
       'ListGuardrailsForTarget',
