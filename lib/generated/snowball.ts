@@ -19,7 +19,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Cancels a cluster job.
+   * Grants permission to cancel a cluster job
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Cancels the specified job.
+   * Grants permission to cancel the specified job
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Creates an address for a Snowball to be shipped to.
+   * Grants permission to create an address for a Snowball to be shipped to
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Creates an empty cluster.
+   * Grants permission to create an empty cluster
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Creates a job to import or export data between Amazon S3 and your on-premises data center.
+   * Grants permission to creates a job to import or export data between Amazon S3 and your on-premises data center
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Creates a shipping label that will be used to return the Snow device to AWS.
+   * Grants permission to create a shipping label that will be used to return the Snow device to AWS
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Takes an AddressId and returns specific details about that address in the form of an Address object.
+   * Grants permission to get specific details about that address in the form of an Address object
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns a specified number of ADDRESS objects.
+   * Grants permission to describe a specified number of ADDRESS objects
    *
    * Access Level: List
    *
@@ -118,7 +118,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns information about a specific cluster including shipping information, cluster status, and other important metadata.
+   * Grants permission to describe information about a specific cluster including shipping information, cluster status, and other important metadata
    *
    * Access Level: Read
    *
@@ -129,7 +129,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns information about a specific job including shipping information, job status, and other important metadata.
+   * Grants permission to describe information about a specific job including shipping information, job status, and other important metadata
    *
    * Access Level: Read
    *
@@ -140,7 +140,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Information on the shipping label of a Snow device that is being returned to AWS.
+   * Grants permission to describe information on the shipping label of a Snow device that is being returned to AWS
    *
    * Access Level: Read
    *
@@ -151,7 +151,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value.
+   * Grants permission to get a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value
    *
    * Access Level: Read
    *
@@ -162,7 +162,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns the UnlockCode code value for the specified job.
+   * Grants permission to get the UnlockCode code value for the specified job
    *
    * Access Level: Read
    *
@@ -173,7 +173,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use.
+   * Grants permission to get information about the Snowball service limit for your account, and also the number of Snowballs your account has in use
    *
    * Access Level: Read
    *
@@ -184,7 +184,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns an Amazon S3 presigned URL for an update file associated with a specified JobId.
+   * Grants permission to return an Amazon S3 presigned URL for an update file associated with a specified JobId
    *
    * Access Level: Read
    *
@@ -195,7 +195,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns an array of JobListEntry objects of the specified length.
+   * Grants permission to list JobListEntry objects of the specified length
    *
    * Access Level: List
    *
@@ -206,7 +206,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns an array of ClusterListEntry objects of the specified length.
+   * Grants permission to list ClusterListEntry objects of the specified length
    *
    * Access Level: List
    *
@@ -217,7 +217,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS account that would be supported for use on a Snow device.
+   * Grants permission to return a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS account that would be supported for use on a Snow device
    *
    * Access Level: List
    *
@@ -228,7 +228,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Returns an array of JobListEntry objects of the specified length.
+   * Grants permission to list JobListEntry objects of the specified length
    *
    * Access Level: List
    *
@@ -250,7 +250,18 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster.
+   * Grants permission to list all supported versions for Snow on-device services
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListServiceVersions.html
+   */
+  public toListServiceVersions() {
+    return this.to('ListServiceVersions');
+  }
+
+  /**
+   * Grants permission to update while a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster
    *
    * Access Level: Write
    *
@@ -261,7 +272,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * While a job's JobState value is New, you can update some of the information associated with a job.
+   * Grants permission to update while a job's JobState value is New, you can update some of the information associated with a job
    *
    * Access Level: Write
    *
@@ -272,7 +283,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * Updates the state when a the shipment states changes to a different state.
+   * Grants permission to update the state when a the shipment states changes to a different state
    *
    * Access Level: Write
    *
@@ -323,7 +334,8 @@ export class Snowball extends PolicyStatement {
       'ListClusterJobs',
       'ListClusters',
       'ListCompatibleImages',
-      'ListJobs'
+      'ListJobs',
+      'ListServiceVersions'
     ]
   };
 }
