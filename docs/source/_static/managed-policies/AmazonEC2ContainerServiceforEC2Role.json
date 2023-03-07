@@ -21,6 +21,19 @@
         "logs:PutLogEvents"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ecs:TagResource",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "CreateCluster",
+            "RegisterContainerInstance"
+          ]
+        }
+      }
     }
   ]
 }

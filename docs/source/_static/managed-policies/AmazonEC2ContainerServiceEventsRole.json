@@ -21,6 +21,18 @@
           "iam:PassedToService": "ecs-tasks.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ecs:TagResource",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "RunTask"
+          ]
+        }
+      }
     }
   ]
 }
