@@ -63,11 +63,28 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the association between a list of security controls and standards in batches
+   * Grants permission to get details about specific security controls identified by ID or ARN
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetSecurityControls.html
+   */
+  public toBatchGetSecurityControls() {
+    return this.to('BatchGetSecurityControls');
+  }
+
+  /**
+   * Grants permission to get the enablement status of a batch of security controls in standards
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetStandardsControlAssociations.html
    */
   public toBatchGetStandardsControlAssociations() {
     return this.to('BatchGetStandardsControlAssociations');
@@ -102,11 +119,14 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the association between a list of security controls and standards in batches
+   * Grants permission to update the enablement status of a batch of security controls in standards
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   * Dependent actions:
+   * - securityhub:UpdateStandardsControl
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html
    */
   public toBatchUpdateStandardsControlAssociations() {
     return this.to('BatchUpdateStandardsControlAssociations');
@@ -645,14 +665,28 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of security control definitions, which contain cross-Region control details for security controls
+   * Grants permission to retrieve a list of security control definitions, which contain details for security controls in the current region
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListSecurityControlDefinitions.html
    */
   public toListSecurityControlDefinitions() {
     return this.to('ListSecurityControlDefinitions');
+  }
+
+  /**
+   * Grants permission to list the enablement status of a security control in standards
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListStandardsControlAssociations.html
+   */
+  public toListStandardsControlAssociations() {
+    return this.to('ListStandardsControlAssociations');
   }
 
   /**
@@ -825,6 +859,7 @@ export class Securityhub extends PolicyStatement {
       'UpdateStandardsControl'
     ],
     Read: [
+      'BatchGetSecurityControls',
       'BatchGetStandardsControlAssociations',
       'DescribeActionTargets',
       'DescribeHub',
@@ -858,7 +893,8 @@ export class Securityhub extends PolicyStatement {
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccounts',
-      'ListSecurityControlDefinitions'
+      'ListSecurityControlDefinitions',
+      'ListStandardsControlAssociations'
     ],
     Tagging: [
       'TagResource',
