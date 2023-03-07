@@ -128,7 +128,6 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The service(s) to check for
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringEquals`
    */
-
   public ifAwsCalledVia(
     value: string | string[],
     operator?: Operator | string
@@ -206,6 +205,50 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * This key identifies the VPC to which Amazon EC2 IAM role credentials were delivered to. You can use this key in a policy with the [aws:SourceVPC](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpc) global key to check if a call is made from a VPC (`aws:SourceVPC`) that matches the VPC where a credential was delivered to (`aws:Ec2InstanceSourceVpc`).
+   *
+   * **Availability:** This key is included in the request context whenever the requester is signing requests with an Amazon EC2 role credential. It can be used in IAM policies, service control policies, VPC endpoint policies, and resource policies.
+   *
+   * This key can be used with VPC identifier values, but is most useful when used as a variable combined with the `aws:SourceVpc` context key. The `aws:SourceVpc` context key is included in the request context only if the requester uses a VPC endpoint to make the request. Using `aws:Ec2InstanceSourceVpc` with `aws:SourceVpc` allows you to use `aws:Ec2InstanceSourceVpc` more broadly since it compares values that typically change together.
+   *
+   * **Note:** This condition key is not available in EC2-Classic.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-ec2instancesourcevpc
+   *
+   * @param value The VPS ID
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsEc2InstanceSourceVpc(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:Ec2InstanceSourceVpc', value, operator);
+  }
+
+  /**
+   * This key identifies the private IPv4 address of the primary elastic network interface to which Amazon EC2 IAM role credentials were delivered. You must use this condition key with its companion key `aws:Ec2InstanceSourceVpc` to ensure that you have a globally unique combination of VPC ID and source private IP. Use this key with `aws:Ec2InstanceSourceVpc` to ensure that a request was made from the same private IP address that the credentials were delivered to.
+   *
+   * **Availability:** This key is included in the request context whenever the requester is signing requests with an Amazon EC2 role credential. It can be used in IAM policies, service control policies, VPC endpoint policies, and resource policies.
+   *
+   * **Note:** This condition key is not available in EC2-Classic.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpcsourceip
+   *
+   * @param value The private IPv4 address
+   * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
+   */
+  public ifAwsEc2InstanceSourcePrivateIPv4(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      'aws:Ec2InstanceSourcePrivateIPv4',
+      value,
+      operator || new Operator().ipAddress()
+    );
+  }
+
+  /**
    * Compare the date and time of the request in epoch or Unix time with the value that you specify. This key also accepts the number of seconds since January 1, 1970.
    *
    * **Availability:** This key is always included in the request context.
@@ -237,6 +280,23 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * Use this key to compare the principal's issuing identity provider (IdP) with the IdP that you specify in the policy. This means that an IAM role was assumed using the `AssumeRoleWithWebIdentity` or `AssumeRoleWithSAML` AWS STS operations. When the resulting role session's temporary credentials are used to make a request, the request context identifies the IdP that authenticated the original federated identity.
+   *
+   * **Availability:** This key is present when the principal is a role session principal and that session was issued using a third-party identity provider.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-federatedprovider
+   *
+   * @param value The principal's issuing identity provider (IdP)
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsFederatedProvider(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:FederatedProvider', value, operator);
+  }
+
+  /**
    * Compare the number of seconds since the requesting principal was authorized using MFA with the number that you specify. For more information about MFA, see [Using Multi-Factor Authentication (MFA) in AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html).
    *
    * **Availability:** This key is included in the request context only if the principal was authenticated using MFA. If MFA was not used, this key is not present.
@@ -246,7 +306,6 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Number of seconds
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericLessThan`
    */
-
   public ifAwsMultiFactorAuthAge(
     value: number | number[],
     operator?: Operator | string
@@ -524,6 +583,108 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string
   ) {
     return this.if(`aws:RequestTag/${key}`, value, operator);
+  }
+
+  /**
+   * Use this key to compare the requested resource owner's [AWS account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) with the resource account in the policy. You can then allow or deny access to that resource based on the account that owns the resource.
+   *
+   * This key is equal to the AWS account ID for the account with the resources evaluated in the request.
+   *
+   * For most resources in your account, the ARN contains the owner account ID for that resource. For certain resources, such as Amazon S3 buckets, the resource ARN does not include the account ID. The following two examples show the difference between a resource with an account ID in the ARN, and an Amazon S3 ARN without an account ID:
+   *
+   * - `arn:aws:iam::123456789012:role/AWSExampleRole` - IAM role created and owned within the account 123456789012.
+   * - `arn:aws:s3:::DOC-EXAMPLE-BUCKET2` - Amazon S3 bucket created and owned within the account 111122223333, not displayed in the ARN.
+   *
+   * **Availability:** This key is always included in the request context for most service actions. The following actions don't support this key:
+   *
+   *   - Amazon Elastic Block Store - All actions
+   *   - Amazon EC2
+   *     - `ec2:CopyFpgaImage`
+   *     - `ec2:CopyImage`
+   *     - `ec2:CopySnapshot`
+   *     - `ec2:CreateTransitGatewayPeeringAttachment`
+   *     - `ec2:CreateVolume`
+   *     - `ec2:CreateVpcPeeringConnection`
+   *   - Amazon EventBridge - All actions
+   *   - Amazon WorkSpaces
+   *     - `workspaces:CopyWorkspaceImage`
+   *     - `workspaces:DescribeWorkspaceImages`
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceaccount
+   *
+   * @param value The account ID
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceAccount(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:ResourceAccount', value, operator);
+  }
+
+  /**
+   * Use this key to compare the identifier of the organization in AWS Organizations to which the requested resource belongs with the identifier specified in the policy.
+   *
+   * This global key returns the resource organization ID for a given request. It allows you to create rules that apply to all resources in an organization that are specified in the Resource element of an [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html). You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element. When you add and remove accounts, policies that include the aws:ResourceOrgID key automatically include the correct accounts and you don't have to manually update it.
+   *
+   * **Note:** Some AWS services require access to AWS owned resources that are hosted in another AWS account. Using `aws:ResourceOrgID` in your identity-based policies might impact your identity's ability to access these resources.
+   *
+   * **Availability:** This key is included in the request context only if the account that owns the resource is a member of an organization. This global condition key does not support the following actions:
+   *
+   * - Amazon Elastic Block Store - All actions
+   * - Amazon EC2
+   *   - `ec2:CopyFpgaImage`
+   *   - `ec2:CopyImage`
+   *   - `ec2:CopySnapshot`
+   *   - `ec2:CreateTransitGatewayPeeringAttachment`
+   *   - `ec2:CreateVolume`
+   *   - `ec2:CreateVpcPeeringConnection`
+   * - Amazon EventBridge - All actions
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceorgid
+   *
+   * @param value ID of an organization
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceOrgID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:ResourceOrgID', value, operator);
+  }
+
+  /**
+   * Use this key to compare the AWS Organizations path for the accessed resource to the path in the policy. In a policy, this condition key ensures that the resource belongs to an account member within the specified organization root or organizational units (OUs) in AWS Organizations. An AWS Organizations path is a text representation of the structure of an Organizations entity. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data-orgs.html#access_policies_access-advisor-viewing-orgs-entity-path).
+   *
+   * `aws:ResourceOrgPaths` is a multivalued condition key. Multivalued keys can have multiple values in the request context. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String) for this key. For more information about multivalued condition keys, see [Using multiple keys and values](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_multi-value-conditions.html#reference_policies_multi-key-or-value-conditions).
+   *
+   * **Note:** Some AWS services require access to AWS owned resources that are hosted in another AWS account. Using aws:ResourceOrgPaths in your identity-based policies might impact your identity's ability to access these resources.
+   *
+   * **Availability:** This key is included in the request context only if the account that owns the resource is a member of an organization. This global condition key does not support the following actions:
+   *
+   * - Amazon Elastic Block Store - All actions
+   * - Amazon EC2
+   *   - `ec2:CopyFpgaImage`
+   *   - `ec2:CopyImage`
+   *   - `ec2:CopySnapshot`
+   *   - `ec2:CreateTransitGatewayPeeringAttachment`
+   *   - `ec2:CreateVolume`
+   *   - `ec2:CreateVpcPeeringConnection`
+   * - Amazon EventBridge - All actions
+   * - Amazon WorkSpaces
+   *   - `workspaces:CopyWorkspaceImage`
+   *   - `workspaces:DescribeWorkspaceImages`
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceorgpaths
+   *
+   * @param value The path of an organization
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceOrgPaths(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:ResourceOrgPaths', value, operator);
   }
 
   /**
