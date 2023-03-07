@@ -230,6 +230,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to assign one or more secondary private IP addresses to a private NAT gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignPrivateNatGatewayAddress.html
+   */
+  public toAssignPrivateNatGatewayAddress() {
+    return this.to('AssignPrivateNatGatewayAddress');
+  }
+
+  /**
    * Grants permission to associate an Elastic IP address (EIP) with an instance or a network interface
    *
    * Access Level: Write
@@ -333,6 +347,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toAssociateIpamResourceDiscovery() {
     return this.to('AssociateIpamResourceDiscovery');
+  }
+
+  /**
+   * Grants permission to associate an Elastic IP address and private IP address with a public Nat gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateNatGatewayAddress.html
+   */
+  public toAssociateNatGatewayAddress() {
+    return this.to('AssociateNatGatewayAddress');
   }
 
   /**
@@ -5792,6 +5820,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a secondary Elastic IP address from a public NAT gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateNatGatewayAddress.html
+   */
+  public toDisassociateNatGatewayAddress() {
+    return this.to('DisassociateNatGatewayAddress');
+  }
+
+  /**
    * Grants permission to disassociate a subnet from a route table
    *
    * Access Level: Write
@@ -8703,6 +8745,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to unassign secondary private IPv4 addresses from a private NAT gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateNatGatewayAddress.html
+   */
+  public toUnassignPrivateNatGatewayAddress() {
+    return this.to('UnassignPrivateNatGatewayAddress');
+  }
+
+  /**
    * Grants permission to disable detailed monitoring for a running instance
    *
    * Access Level: Write
@@ -8774,6 +8830,7 @@ export class Ec2 extends PolicyStatement {
       'ApplySecurityGroupsToClientVpnTargetNetwork',
       'AssignIpv6Addresses',
       'AssignPrivateIpAddresses',
+      'AssignPrivateNatGatewayAddress',
       'AssociateAddress',
       'AssociateClientVpnTargetNetwork',
       'AssociateDhcpOptions',
@@ -8781,6 +8838,7 @@ export class Ec2 extends PolicyStatement {
       'AssociateIamInstanceProfile',
       'AssociateInstanceEventWindow',
       'AssociateIpamResourceDiscovery',
+      'AssociateNatGatewayAddress',
       'AssociateRouteTable',
       'AssociateSubnetCidrBlock',
       'AssociateTransitGatewayMulticastDomain',
@@ -8998,6 +9056,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateIamInstanceProfile',
       'DisassociateInstanceEventWindow',
       'DisassociateIpamResourceDiscovery',
+      'DisassociateNatGatewayAddress',
       'DisassociateRouteTable',
       'DisassociateSubnetCidrBlock',
       'DisassociateTransitGatewayMulticastDomain',
@@ -9149,6 +9208,7 @@ export class Ec2 extends PolicyStatement {
       'TerminateInstances',
       'UnassignIpv6Addresses',
       'UnassignPrivateIpAddresses',
+      'UnassignPrivateNatGatewayAddress',
       'UnmonitorInstances',
       'UpdateSecurityGroupRuleDescriptionsEgress',
       'UpdateSecurityGroupRuleDescriptionsIngress',
@@ -11442,11 +11502,13 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
+   * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
@@ -11473,6 +11535,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
@@ -11720,6 +11783,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVerifiedAccessEndpoint()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
@@ -11744,6 +11808,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
    * - .toCreateVerifiedAccessEndpoint()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
@@ -11824,6 +11889,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastSnapshotRestores()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateNatGatewayAddress()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -12123,11 +12189,13 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
+   * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
@@ -13214,6 +13282,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
@@ -13426,6 +13495,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateTags()
    * - .toCreateVerifiedAccessEndpoint()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyLocalGatewayRoute()
    * - .toRequestSpotInstances()
    *
@@ -13835,11 +13905,13 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptAddressTransfer()
    * - .toAssociateAddress()
+   * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
    * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toEnableAddressTransfer()
    * - .toModifyAddressAttribute()
    * - .toReleaseAddress()
@@ -13894,6 +13966,7 @@ export class Ec2 extends PolicyStatement {
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
+   * - .toAssignPrivateNatGatewayAddress()
    * - .toAssociateAddress()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
@@ -13901,6 +13974,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateInstanceEventWindow()
    * - .toAssociateIpamResourceDiscovery()
+   * - .toAssociateNatGatewayAddress()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -14267,6 +14341,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateIpamResourceDiscovery()
+   * - .toDisassociateNatGatewayAddress()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -14471,6 +14546,7 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
+   * - .toUnassignPrivateNatGatewayAddress()
    * - .toUnmonitorInstances()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
@@ -14724,12 +14800,14 @@ export class Ec2 extends PolicyStatement {
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
+   * - .toAssignPrivateNatGatewayAddress()
    * - .toAssociateAddress()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateInstanceEventWindow()
    * - .toAssociateIpamResourceDiscovery()
+   * - .toAssociateNatGatewayAddress()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -14920,6 +14998,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateIpamResourceDiscovery()
+   * - .toDisassociateNatGatewayAddress()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -15082,6 +15161,7 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
+   * - .toUnassignPrivateNatGatewayAddress()
    * - .toUnmonitorInstances()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
@@ -15576,6 +15656,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
@@ -15962,6 +16043,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisableVgwRoutePropagation()
    * - .toDisassociateAddress()
+   * - .toDisassociateNatGatewayAddress()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
