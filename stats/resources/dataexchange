@@ -1,5 +1,8 @@
 dataexchange:assets
 dataexchange:data-sets
+dataexchange:entitled-assets
+dataexchange:entitled-data-sets
+dataexchange:entitled-revisions
 dataexchange:event-actions
 dataexchange:jobs
 dataexchange:revisions

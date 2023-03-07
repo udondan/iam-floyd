@@ -1,0 +1,8 @@
+codeguru-security:BatchGetFindings;Read
+codeguru-security:CreateScan;Write
+codeguru-security:CreateUploadUrl;Write
+codeguru-security:DeleteScansByCategory;Write
+codeguru-security:GetScan;Read
+codeguru-security:ListFindings;List
+codeguru-security:ListScans;List
+codeguru-security:UpdateAccountConfiguration;Write

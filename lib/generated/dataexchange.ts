@@ -23,7 +23,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#CancelJob
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CancelJob.html
    */
   public toCancelJob() {
     return this.to('CancelJob');
@@ -34,7 +34,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#CreateAsset
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
    */
   public toCreateAsset() {
     return this.to('CreateAsset');
@@ -47,10 +47,9 @@ export class Dataexchange extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets.html#CreateDataSet
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataSet.html
    */
   public toCreateDataSet() {
     return this.to('CreateDataSet');
@@ -61,7 +60,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html
    */
   public toCreateEventAction() {
     return this.to('CreateEventAction');
@@ -72,7 +71,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#CreateJob
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html
    */
   public toCreateJob() {
     return this.to('CreateJob');
@@ -85,10 +84,9 @@ export class Dataexchange extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#CreateRevision
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateRevision.html
    */
   public toCreateRevision() {
     return this.to('CreateRevision');
@@ -99,7 +97,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#DeleteAsset
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteAsset.html
    */
   public toDeleteAsset() {
     return this.to('DeleteAsset');
@@ -110,7 +108,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#DeleteDataSet
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteDataSet.html
    */
   public toDeleteDataSet() {
     return this.to('DeleteDataSet');
@@ -121,7 +119,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteEventAction.html
    */
   public toDeleteEventAction() {
     return this.to('DeleteEventAction');
@@ -132,7 +130,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteRevision.html
    */
   public toDeleteRevision() {
     return this.to('DeleteRevision');
@@ -143,7 +141,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#GetAsset
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetAsset.html
    */
   public toGetAsset() {
     return this.to('GetAsset');
@@ -154,7 +152,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#GetDataSet
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetDataSet.html
    */
   public toGetDataSet() {
     return this.to('GetDataSet');
@@ -165,7 +163,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetEventAction.html
    */
   public toGetEventAction() {
     return this.to('GetEventAction');
@@ -176,7 +174,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#GetJob
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetJob.html
    */
   public toGetJob() {
     return this.to('GetJob');
@@ -187,7 +185,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#GetRevision
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetRevision.html
    */
   public toGetRevision() {
     return this.to('GetRevision');
@@ -196,9 +194,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to list the revisions of a data set
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataSetRevisions.html
    */
   public toListDataSetRevisions() {
     return this.to('ListDataSetRevisions');
@@ -207,9 +205,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to list data sets for the account
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets.html#ListDataSets
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataSets.html
    */
   public toListDataSets() {
     return this.to('ListDataSets');
@@ -218,9 +216,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to list event actions for the account
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListEventActions.html
    */
   public toListEventActions() {
     return this.to('ListEventActions');
@@ -229,9 +227,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to list jobs for the account
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#ListJobs
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListJobs.html
    */
   public toListJobs() {
     return this.to('ListJobs');
@@ -240,9 +238,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to get list the assets of a revision
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListRevisionAssets.html
    */
   public toListRevisionAssets() {
     return this.to('ListRevisionAssets');
@@ -251,9 +249,9 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to list the tags that you associated with the specified resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#ListTagsForResource
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -264,7 +262,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
    */
   public toPublishDataSet() {
     return this.to('PublishDataSet');
@@ -275,7 +273,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_RevokeRevision.html
    */
   public toRevokeRevision() {
     return this.to('RevokeRevision');
@@ -286,7 +284,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendApiAsset.html
    */
   public toSendApiAsset() {
     return this.to('SendApiAsset');
@@ -297,7 +295,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#StartJob
+   * Dependent actions:
+   * - dataexchange:CreateAsset
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html
    */
   public toStartJob() {
     return this.to('StartJob');
@@ -312,7 +313,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#TagResource
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -326,7 +327,7 @@ export class Dataexchange extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#UntagResource
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -337,7 +338,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#UpdateAsset
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateAsset.html
    */
   public toUpdateAsset() {
     return this.to('UpdateAsset');
@@ -348,7 +349,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#UpdateDataSet
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateDataSet.html
    */
   public toUpdateDataSet() {
     return this.to('UpdateDataSet');
@@ -359,7 +360,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permission-ref.html
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateEventAction.html
    */
   public toUpdateEventAction() {
     return this.to('UpdateEventAction');
@@ -370,7 +371,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#UpdateRevision
+   * Dependent actions:
+   * - dataexchange:PublishDataSet
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateRevision.html
    */
   public toUpdateRevision() {
     return this.to('UpdateRevision');
@@ -402,7 +406,9 @@ export class Dataexchange extends PolicyStatement {
       'GetDataSet',
       'GetEventAction',
       'GetJob',
-      'GetRevision',
+      'GetRevision'
+    ],
+    List: [
       'ListDataSetRevisions',
       'ListDataSets',
       'ListEventActions',
@@ -451,6 +457,19 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type entitled-data-sets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEntitledDataSets(dataSetId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }`);
+  }
+
+  /**
    * Adds a resource of type revisions to the statement
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions
@@ -469,6 +488,20 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type entitled-revisions to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEntitledRevisions(dataSetId: string, revisionId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
+  }
+
+  /**
    * Adds a resource of type assets to the statement
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
@@ -482,6 +515,21 @@ export class Dataexchange extends PolicyStatement {
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+  }
+
+  /**
+   * Adds a resource of type entitled-assets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param assetId - Identifier for the assetId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEntitledAssets(dataSetId: string, revisionId: string, assetId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**

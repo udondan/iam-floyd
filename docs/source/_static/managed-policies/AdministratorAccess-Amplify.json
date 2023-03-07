@@ -16,6 +16,7 @@
         "cloudformation:ExecuteChangeSet",
         "cloudformation:GetTemplate",
         "cloudformation:UpdateStack",
+        "cloudformation:ListStacks",
         "cloudformation:ListStackResources",
         "cloudformation:DeleteStackSet",
         "cloudformation:DescribeStackSet",
@@ -38,6 +39,7 @@
         "iam:DeleteRolePolicy",
         "iam:DetachRolePolicy",
         "iam:PutRolePolicy",
+        "iam:UntagRole",
         "iam:UpdateRole",
         "iam:GetRole",
         "iam:GetPolicy",
@@ -75,6 +77,7 @@
         "appsync:ListResolversByFunction",
         "appsync:ListTypes",
         "appsync:StartSchemaCreation",
+        "appsync:UntagResource",
         "appsync:UpdateApiKey",
         "appsync:UpdateDataSource",
         "appsync:UpdateFunction",
@@ -147,6 +150,7 @@
         "dynamodb:PutItem",
         "dynamodb:TagResource",
         "dynamodb:ListTagsOfResource",
+        "dynamodb:UntagResource",
         "dynamodb:UpdateContinuousBackups",
         "dynamodb:UpdateItem",
         "dynamodb:UpdateTable",
@@ -189,7 +193,9 @@
         "es:CreateElasticsearchDomain",
         "es:DeleteElasticsearchDomain",
         "es:DescribeElasticsearchDomain",
-        "s3:PutEncryptionConfiguration"
+        "es:UpdateElasticsearchDomainConfig",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketPublicAccessBlock"
       ],
       "Resource": "*",
       "Condition": {
@@ -272,6 +278,7 @@
         "iam:DeleteRole",
         "iam:DetachRolePolicy",
         "cloudformation:ListStacks",
+        "cloudformation:DescribeStacks",
         "sns:CreateSMSSandboxPhoneNumber",
         "sns:GetSMSSandboxAccountStatus",
         "sns:VerifySMSSandboxPhoneNumber",
@@ -286,7 +293,10 @@
         "lex:GetBuiltinIntents",
         "lex:GetBuiltinSlotTypes",
         "cloudformation:GetTemplateSummary",
-        "codecommit:GitPull"
+        "codecommit:GitPull",
+        "cloudfront:GetCloudFrontOriginAccessIdentity",
+        "cloudfront:GetCloudFrontOriginAccessIdentityConfig",
+        "polly:DescribeVoices"
       ],
       "Resource": "*"
     },

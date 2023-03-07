@@ -103,7 +103,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an Amazon Managed Blockchain accessor owned by the current AWS account
+   * Grants permission to delete an Amazon Managed Blockchain accessor
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about an Amazon Managed Blockchain accessor owned by the current AWS account
+   * Grants permission to return detailed information about an Amazon Managed Blockchain accessor
    *
    * Access Level: Read
    *

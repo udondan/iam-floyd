@@ -1,3 +1,5 @@
+comprehend:DataLakeKmsKey
+comprehend:FlywheelIterationId
 comprehend:ModelKmsKey
 comprehend:OutputKmsKey
 comprehend:RequestTag/${TagKey}

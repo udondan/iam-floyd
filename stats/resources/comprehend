@@ -6,6 +6,8 @@ comprehend:entities-detection-job
 comprehend:entity-recognizer
 comprehend:entity-recognizer-endpoint
 comprehend:events-detection-job
+comprehend:flywheel
+comprehend:flywheel-dataset
 comprehend:key-phrases-detection-job
 comprehend:pii-entities-detection-job
 comprehend:sentiment-detection-job

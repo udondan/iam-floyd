@@ -6,6 +6,7 @@ cases:CreateField;Write
 cases:CreateLayout;Write
 cases:CreateRelatedItem;Write
 cases:CreateTemplate;Write
+cases:DeleteDomain;Write
 cases:GetCase;Read
 cases:GetCaseEventConfiguration;Read
 cases:GetDomain;Read

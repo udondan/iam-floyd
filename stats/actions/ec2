@@ -12,6 +12,7 @@ ec2:AllocateIpamPoolCidr;Write
 ec2:ApplySecurityGroupsToClientVpnTargetNetwork;Write
 ec2:AssignIpv6Addresses;Write
 ec2:AssignPrivateIpAddresses;Write
+ec2:AssignPrivateNatGatewayAddress;Write
 ec2:AssociateAddress;Write
 ec2:AssociateClientVpnTargetNetwork;Write
 ec2:AssociateDhcpOptions;Write
@@ -19,6 +20,7 @@ ec2:AssociateEnclaveCertificateIamRole;Write
 ec2:AssociateIamInstanceProfile;Write
 ec2:AssociateInstanceEventWindow;Write
 ec2:AssociateIpamResourceDiscovery;Write
+ec2:AssociateNatGatewayAddress;Write
 ec2:AssociateRouteTable;Write
 ec2:AssociateSubnetCidrBlock;Write
 ec2:AssociateTransitGatewayMulticastDomain;Write
@@ -385,6 +387,7 @@ ec2:DisassociateEnclaveCertificateIamRole;Write
 ec2:DisassociateIamInstanceProfile;Write
 ec2:DisassociateInstanceEventWindow;Write
 ec2:DisassociateIpamResourceDiscovery;Write
+ec2:DisassociateNatGatewayAddress;Write
 ec2:DisassociateRouteTable;Write
 ec2:DisassociateSubnetCidrBlock;Write
 ec2:DisassociateTransitGatewayMulticastDomain;Write
@@ -589,6 +592,7 @@ ec2:TerminateClientVpnConnections;Write
 ec2:TerminateInstances;Write
 ec2:UnassignIpv6Addresses;Write
 ec2:UnassignPrivateIpAddresses;Write
+ec2:UnassignPrivateNatGatewayAddress;Write
 ec2:UnmonitorInstances;Write
 ec2:UpdateSecurityGroupRuleDescriptionsEgress;Write
 ec2:UpdateSecurityGroupRuleDescriptionsIngress;Write

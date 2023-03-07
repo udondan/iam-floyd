@@ -151,6 +151,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified task definitions by family and revision
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html
+   */
+  public toDeleteTaskDefinitions() {
+    return this.to('DeleteTaskDefinitions');
+  }
+
+  /**
    * Grants permission to delete the specified task set
    *
    * Access Level: Write
@@ -302,6 +313,20 @@ export class Ecs extends PolicyStatement {
    */
   public toExecuteCommand() {
     return this.to('ExecuteCommand');
+  }
+
+  /**
+   * Grants permission to retrieve the protection status of tasks in an Amazon ECS service
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html
+   */
+  public toGetTaskProtection() {
+    return this.to('GetTaskProtection');
   }
 
   /**
@@ -739,6 +764,20 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the protection status of a task
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html
+   */
+  public toUpdateTaskProtection() {
+    return this.to('UpdateTaskProtection');
+  }
+
+  /**
    * Grants permission to update the specified task set
    *
    * Access Level: Write
@@ -764,6 +803,7 @@ export class Ecs extends PolicyStatement {
       'DeleteCapacityProvider',
       'DeleteCluster',
       'DeleteService',
+      'DeleteTaskDefinitions',
       'DeleteTaskSet',
       'DeregisterContainerInstance',
       'DeregisterTaskDefinition',
@@ -790,6 +830,7 @@ export class Ecs extends PolicyStatement {
       'UpdateContainerInstancesState',
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
+      'UpdateTaskProtection',
       'UpdateTaskSet'
     ],
     Read: [
@@ -800,6 +841,7 @@ export class Ecs extends PolicyStatement {
       'DescribeTaskDefinition',
       'DescribeTaskSets',
       'DescribeTasks',
+      'GetTaskProtection',
       'ListAccountSettings',
       'ListTagsForResource'
     ],
@@ -1009,6 +1051,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
    * - .toExecuteCommand()
+   * - .toGetTaskProtection()
    * - .toListServices()
    * - .toListTasks()
    * - .toPoll()
@@ -1021,6 +1064,7 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateContainerInstancesState()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
+   * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
    *
    * @param value The value(s) to check

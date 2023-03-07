@@ -48,7 +48,7 @@ export class DocdbElastic extends PolicyStatement {
    * - secretsmanager:ListSecretVersionIds
    * - secretsmanager:ListSecrets
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingcreate_cluster.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateCluster.html
    */
   public toCreateCluster() {
     return this.to('CreateCluster');
@@ -85,7 +85,7 @@ export class DocdbElastic extends PolicyStatement {
    * - secretsmanager:ListSecretVersionIds
    * - secretsmanager:ListSecrets
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingcreate_cluster_snapshot.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateClusterSnapshot.html
    */
   public toCreateClusterSnapshot() {
     return this.to('CreateClusterSnapshot');
@@ -109,7 +109,7 @@ export class DocdbElastic extends PolicyStatement {
    * - ec2:DescribeVpcs
    * - ec2:ModifyVpcEndpoint
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingdelete_cluster.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_DeleteCluster.html
    */
   public toDeleteCluster() {
     return this.to('DeleteCluster');
@@ -133,7 +133,7 @@ export class DocdbElastic extends PolicyStatement {
    * - ec2:DescribeVpcs
    * - ec2:ModifyVpcEndpoint
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingdelete_cluster_snapshot.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_DeleteClusterSnapshot.html
    */
   public toDeleteClusterSnapshot() {
     return this.to('DeleteClusterSnapshot');
@@ -147,7 +147,7 @@ export class DocdbElastic extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingget_cluster.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetCluster.html
    */
   public toGetCluster() {
     return this.to('GetCluster');
@@ -161,7 +161,7 @@ export class DocdbElastic extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingget_cluster_snapshot.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetClusterSnapshot.html
    */
   public toGetClusterSnapshot() {
     return this.to('GetClusterSnapshot');
@@ -172,7 +172,7 @@ export class DocdbElastic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usinglist_cluster_snapshots.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListClusterSnapshots.html
    */
   public toListClusterSnapshots() {
     return this.to('ListClusterSnapshots');
@@ -183,7 +183,7 @@ export class DocdbElastic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usinglist_clusters.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListClusters.html
    */
   public toListClusters() {
     return this.to('ListClusters');
@@ -197,7 +197,7 @@ export class DocdbElastic extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingAPI_ListTagsForResource.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -234,7 +234,7 @@ export class DocdbElastic extends PolicyStatement {
    * - secretsmanager:ListSecretVersionIds
    * - secretsmanager:ListSecrets
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingrestore_cluster_from_snapshot.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_RestoreClusterFromSnapshot.html
    */
   public toRestoreClusterFromSnapshot() {
     return this.to('RestoreClusterFromSnapshot');
@@ -250,7 +250,7 @@ export class DocdbElastic extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingAPI_TagResource.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -264,7 +264,7 @@ export class DocdbElastic extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingAPI_UntagResource.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -298,7 +298,7 @@ export class DocdbElastic extends PolicyStatement {
    * - secretsmanager:ListSecretVersionIds
    * - secretsmanager:ListSecrets
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingupdate_cluster.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_UpdateCluster.html
    */
   public toUpdateCluster() {
     return this.to('UpdateCluster');
@@ -331,7 +331,7 @@ export class DocdbElastic extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingdocdb-elastic.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -348,7 +348,7 @@ export class DocdbElastic extends PolicyStatement {
   /**
    * Adds a resource of type cluster-snapshot to the statement
    *
-   * https://docs.aws.amazon.com/documentdb/latest/developerguide/docdb-elastic-usingdocdb-elastic.html
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html#elastic-manage-snapshots
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

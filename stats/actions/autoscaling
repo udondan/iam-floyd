@@ -1,6 +1,7 @@
 autoscaling:AttachInstances;Write
 autoscaling:AttachLoadBalancerTargetGroups;Write
 autoscaling:AttachLoadBalancers;Write
+autoscaling:AttachTrafficSources;Write
 autoscaling:BatchDeleteScheduledAction;Write
 autoscaling:BatchPutScheduledUpdateGroupAction;Write
 autoscaling:CancelInstanceRefresh;Write
@@ -35,10 +36,12 @@ autoscaling:DescribeScalingProcessTypes;List
 autoscaling:DescribeScheduledActions;List
 autoscaling:DescribeTags;Read
 autoscaling:DescribeTerminationPolicyTypes;List
+autoscaling:DescribeTrafficSources;List
 autoscaling:DescribeWarmPool;List
 autoscaling:DetachInstances;Write
 autoscaling:DetachLoadBalancerTargetGroups;Write
 autoscaling:DetachLoadBalancers;Write
+autoscaling:DetachTrafficSources;Write
 autoscaling:DisableMetricsCollection;Write
 autoscaling:EnableMetricsCollection;Write
 autoscaling:EnterStandby;Write

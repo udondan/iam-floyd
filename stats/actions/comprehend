@@ -6,13 +6,17 @@ comprehend:BatchDetectSyntax;Read
 comprehend:BatchDetectTargetedSentiment;Read
 comprehend:ClassifyDocument;Read
 comprehend:ContainsPiiEntities;Read
+comprehend:CreateDataset;Write
 comprehend:CreateDocumentClassifier;Write
 comprehend:CreateEndpoint;Write
 comprehend:CreateEntityRecognizer;Write
+comprehend:CreateFlywheel;Write
 comprehend:DeleteDocumentClassifier;Write
 comprehend:DeleteEndpoint;Write
 comprehend:DeleteEntityRecognizer;Write
+comprehend:DeleteFlywheel;Write
 comprehend:DeleteResourcePolicy;Write
+comprehend:DescribeDataset;Read
 comprehend:DescribeDocumentClassificationJob;Read
 comprehend:DescribeDocumentClassifier;Read
 comprehend:DescribeDominantLanguageDetectionJob;Read
@@ -20,6 +24,8 @@ comprehend:DescribeEndpoint;Read
 comprehend:DescribeEntitiesDetectionJob;Read
 comprehend:DescribeEntityRecognizer;Read
 comprehend:DescribeEventsDetectionJob;Read
+comprehend:DescribeFlywheel;Read
+comprehend:DescribeFlywheelIteration;Read
 comprehend:DescribeKeyPhrasesDetectionJob;Read
 comprehend:DescribePiiEntitiesDetectionJob;Read
 comprehend:DescribeResourcePolicy;Read
@@ -34,6 +40,7 @@ comprehend:DetectSentiment;Read
 comprehend:DetectSyntax;Read
 comprehend:DetectTargetedSentiment;Read
 comprehend:ImportModel;Write
+comprehend:ListDatasets;Read
 comprehend:ListDocumentClassificationJobs;Read
 comprehend:ListDocumentClassifierSummaries;Read
 comprehend:ListDocumentClassifiers;Read
@@ -43,6 +50,8 @@ comprehend:ListEntitiesDetectionJobs;Read
 comprehend:ListEntityRecognizerSummaries;Read
 comprehend:ListEntityRecognizers;Read
 comprehend:ListEventsDetectionJobs;Read
+comprehend:ListFlywheelIterationHistory;Read
+comprehend:ListFlywheels;Read
 comprehend:ListKeyPhrasesDetectionJobs;Read
 comprehend:ListPiiEntitiesDetectionJobs;Read
 comprehend:ListSentimentDetectionJobs;Read
@@ -54,6 +63,7 @@ comprehend:StartDocumentClassificationJob;Write
 comprehend:StartDominantLanguageDetectionJob;Write
 comprehend:StartEntitiesDetectionJob;Write
 comprehend:StartEventsDetectionJob;Write
+comprehend:StartFlywheelIteration;Write
 comprehend:StartKeyPhrasesDetectionJob;Write
 comprehend:StartPiiEntitiesDetectionJob;Write
 comprehend:StartSentimentDetectionJob;Write
@@ -71,3 +81,4 @@ comprehend:StopTrainingEntityRecognizer;Write
 comprehend:TagResource;Tagging
 comprehend:UntagResource;Tagging
 comprehend:UpdateEndpoint;Write
+comprehend:UpdateFlywheel;Write

@@ -38,6 +38,13 @@
       }
     },
     {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeLaunchTemplates"
+      ],
+      "Resource": "*"
+    },
+    {
       "Action": [
         "mgh:GetHomeRegion"
       ],

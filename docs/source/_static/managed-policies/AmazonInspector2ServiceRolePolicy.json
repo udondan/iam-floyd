@@ -138,6 +138,44 @@
       "Resource": [
         "arn:*:events:*:*:rule/DO-NOT-DELETE-AmazonInspector*ManagedRule"
       ]
+    },
+    {
+      "Sid": "LambdaCodeVulnerabilityScanning",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:CreateScan",
+        "codeguru-security:GetScan",
+        "codeguru-security:ListFindings",
+        "codeguru-security:BatchGetFindings",
+        "codeguru-security:DeleteScansByCategory"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CodeGuruCodeVulnerabilityScanning",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListPolicies",
+        "iam:ListPolicyVersions",
+        "lambda:ListVersionsByFunction"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "codeguru-security.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

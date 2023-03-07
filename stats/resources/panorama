@@ -1,7 +1,3 @@
-panorama:app
-panorama:appVersion
 panorama:applicationInstance
-panorama:dataSource
 panorama:device
-panorama:model
 panorama:package

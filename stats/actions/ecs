@@ -7,6 +7,7 @@ ecs:DeleteAttributes;Write
 ecs:DeleteCapacityProvider;Write
 ecs:DeleteCluster;Write
 ecs:DeleteService;Write
+ecs:DeleteTaskDefinitions;Write
 ecs:DeleteTaskSet;Write
 ecs:DeregisterContainerInstance;Write
 ecs:DeregisterTaskDefinition;Write
@@ -19,6 +20,7 @@ ecs:DescribeTaskSets;Read
 ecs:DescribeTasks;Read
 ecs:DiscoverPollEndpoint;Write
 ecs:ExecuteCommand;Write
+ecs:GetTaskProtection;Read
 ecs:ListAccountSettings;Read
 ecs:ListAttributes;List
 ecs:ListClusters;List
@@ -52,4 +54,5 @@ ecs:UpdateContainerAgent;Write
 ecs:UpdateContainerInstancesState;Write
 ecs:UpdateService;Write
 ecs:UpdateServicePrimaryTaskSet;Write
+ecs:UpdateTaskProtection;Write
 ecs:UpdateTaskSet;Write
