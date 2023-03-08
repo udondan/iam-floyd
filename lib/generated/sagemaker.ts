@@ -2579,6 +2579,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Aliases that belong to a SageMaker Image or Sagemaker ImageVersion
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAliases.html
+   */
+  public toListAliases() {
+    return this.to('ListAliases');
+  }
+
+  /**
    * Grants permission to list the AppImageConfigs in your account
    *
    * Access Level: List
@@ -3916,6 +3927,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the properties of a SageMaker ImageVersion
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateImageVersion.html
+   */
+  public toUpdateImageVersion() {
+    return this.to('UpdateImageVersion');
+  }
+
+  /**
    * Grants permission to update an inference experiment
    *
    * Access Level: Write
@@ -4320,6 +4342,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateFeatureMetadata',
       'UpdateHub',
       'UpdateImage',
+      'UpdateImageVersion',
       'UpdateInferenceExperiment',
       'UpdateModelCard',
       'UpdateModelPackage',
@@ -4422,6 +4445,7 @@ export class Sagemaker extends PolicyStatement {
     List: [
       'ListActions',
       'ListAlgorithms',
+      'ListAliases',
       'ListAppImageConfigs',
       'ListApps',
       'ListArtifacts',

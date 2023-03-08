@@ -57,6 +57,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the analysis of up to 20 source databases to recommend target engines for each source database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html
+   */
+  public toBatchStartRecommendations() {
+    return this.to('BatchStartRecommendations');
+  }
+
+  /**
    * Grants permission to cancel a single metadata model assessment run
    *
    * Access Level: Write
@@ -570,6 +581,28 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a paginated list of descriptions of limitations for recommendations of target AWS engines
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorLsaAnalysis.html
+   */
+  public toDescribeRecommendationLimitations() {
+    return this.to('DescribeRecommendationLimitations');
+  }
+
+  /**
+   * Grants permission to return a paginated list of descriptions of target engine recommendations for your source databases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRecommendations.html
+   */
+  public toDescribeRecommendations() {
+    return this.to('DescribeRecommendations');
+  }
+
+  /**
    * Grants permission to returns the status of the RefreshSchemas operation
    *
    * Access Level: Read
@@ -1032,6 +1065,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the analysis of your source database to provide recommendations of target engines
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html
+   */
+  public toStartRecommendations() {
+    return this.to('StartRecommendations');
+  }
+
+  /**
    * Grants permission to start the replication task
    *
    * Access Level: Write
@@ -1160,6 +1204,7 @@ export class Dms extends PolicyStatement {
     Write: [
       'ApplyPendingMaintenanceAction',
       'AssociateExtensionPack',
+      'BatchStartRecommendations',
       'CancelMetadataModelAssessment',
       'CancelMetadataModelConversion',
       'CancelMetadataModelExport',
@@ -1206,6 +1251,7 @@ export class Dms extends PolicyStatement {
       'StartMetadataModelExportAsScripts',
       'StartMetadataModelExportToTarget',
       'StartMetadataModelImport',
+      'StartRecommendations',
       'StartReplicationTask',
       'StartReplicationTaskAssessment',
       'StartReplicationTaskAssessmentRun',
@@ -1235,6 +1281,8 @@ export class Dms extends PolicyStatement {
       'DescribeFleetAdvisorSchemas',
       'DescribeOrderableReplicationInstances',
       'DescribePendingMaintenanceActions',
+      'DescribeRecommendationLimitations',
+      'DescribeRecommendations',
       'DescribeRefreshSchemasStatus',
       'DescribeReplicationInstanceTaskLogs',
       'DescribeReplicationInstances',
