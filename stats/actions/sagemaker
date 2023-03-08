@@ -184,6 +184,7 @@ sagemaker:InvokeEndpoint;Read
 sagemaker:InvokeEndpointAsync;Read
 sagemaker:ListActions;List
 sagemaker:ListAlgorithms;List
+sagemaker:ListAliases;List
 sagemaker:ListAppImageConfigs;List
 sagemaker:ListApps;List
 sagemaker:ListArtifacts;List
@@ -304,6 +305,7 @@ sagemaker:UpdateFeatureGroup;Write
 sagemaker:UpdateFeatureMetadata;Write
 sagemaker:UpdateHub;Write
 sagemaker:UpdateImage;Write
+sagemaker:UpdateImageVersion;Write
 sagemaker:UpdateInferenceExperiment;Write
 sagemaker:UpdateModelCard;Write
 sagemaker:UpdateModelPackage;Write

@@ -1,6 +1,7 @@
 dms:AddTagsToResource;Tagging
 dms:ApplyPendingMaintenanceAction;Write
 dms:AssociateExtensionPack;Write
+dms:BatchStartRecommendations;Write
 dms:CancelMetadataModelAssessment;Write
 dms:CancelMetadataModelConversion;Write
 dms:CancelMetadataModelExport;Write
@@ -44,6 +45,8 @@ dms:DescribeFleetAdvisorSchemaObjectSummary;Read
 dms:DescribeFleetAdvisorSchemas;Read
 dms:DescribeOrderableReplicationInstances;Read
 dms:DescribePendingMaintenanceActions;Read
+dms:DescribeRecommendationLimitations;Read
+dms:DescribeRecommendations;Read
 dms:DescribeRefreshSchemasStatus;Read
 dms:DescribeReplicationInstanceTaskLogs;Read
 dms:DescribeReplicationInstances;Read
@@ -85,6 +88,7 @@ dms:StartMetadataModelConversion;Write
 dms:StartMetadataModelExportAsScripts;Write
 dms:StartMetadataModelExportToTarget;Write
 dms:StartMetadataModelImport;Write
+dms:StartRecommendations;Write
 dms:StartReplicationTask;Write
 dms:StartReplicationTaskAssessment;Write
 dms:StartReplicationTaskAssessmentRun;Write

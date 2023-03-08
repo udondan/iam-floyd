@@ -44,6 +44,8 @@ export class Cur extends PolicyStatement {
    * Grants permission to get Bills CSV report
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
    */
   public toGetClassicReport() {
     return this.to('GetClassicReport');
@@ -53,6 +55,8 @@ export class Cur extends PolicyStatement {
    * Grants permission to get the classic report enablement status for Usage Reports
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
    */
   public toGetClassicReportPreferences() {
     return this.to('GetClassicReportPreferences');
@@ -62,6 +66,8 @@ export class Cur extends PolicyStatement {
    * Grants permission to get list of AWS services, usage type and operation for the Usage Report workflow. Allows or denies download of usage reports too
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
    */
   public toGetUsageReport() {
     return this.to('GetUsageReport');
@@ -82,6 +88,8 @@ export class Cur extends PolicyStatement {
    * Grants permission to enable classic reports
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
    */
   public toPutClassicReportPreferences() {
     return this.to('PutClassicReportPreferences');
@@ -102,6 +110,8 @@ export class Cur extends PolicyStatement {
    * Grants permission to validates if the s3 bucket exists with appropriate permissions for CUR delivery
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
    */
   public toValidateReportDestination() {
     return this.to('ValidateReportDestination');
