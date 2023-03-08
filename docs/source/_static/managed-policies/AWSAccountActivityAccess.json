@@ -4,6 +4,21 @@
     {
       "Effect": "Allow",
       "Action": [
+        "account:GetAccountInformation",
+        "account:GetAlternateContact",
+        "account:GetChallengeQuestions",
+        "account:GetContactInformation",
+        "account:GetRegionOptStatus",
+        "account:ListRegions",
+        "billing:GetIAMAccessPreference",
+        "billing:GetSellerOfRecord",
+        "payments:ListPaymentPreferences"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "aws-portal:ViewBilling"
       ],
       "Resource": "*"

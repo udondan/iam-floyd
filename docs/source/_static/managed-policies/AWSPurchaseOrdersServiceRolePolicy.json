@@ -4,8 +4,21 @@
     {
       "Effect": "Allow",
       "Action": [
+        "account:GetAccountInformation",
+        "account:GetContactInformation",
         "aws-portal:*Billing",
-        "purchase-orders:*PurchaseOrders"
+        "payments:GetPaymentInstrument",
+        "payments:ListPaymentPreferences",
+        "purchase-orders:AddPurchaseOrder",
+        "purchase-orders:DeletePurchaseOrder",
+        "purchase-orders:GetPurchaseOrder",
+        "purchase-orders:ListPurchaseOrderInvoices",
+        "purchase-orders:ListPurchaseOrders",
+        "purchase-orders:ModifyPurchaseOrders",
+        "purchase-orders:UpdatePurchaseOrderStatus",
+        "purchase-orders:UpdatePurchaseOrder",
+        "purchase-orders:ViewPurchaseOrders",
+        "tax:ListTaxRegistrations"
       ],
       "Resource": "*"
     }
