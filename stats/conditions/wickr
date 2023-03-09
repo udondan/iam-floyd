@@ -1,1 +1,3 @@
-
+wickr:RequestTag/${TagKey}
+wickr:ResourceTag/${TagKey}
+wickr:TagKeys

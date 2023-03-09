@@ -10,6 +10,7 @@ s3-outposts:max-keys
 s3-outposts:prefix
 s3-outposts:signatureAge
 s3-outposts:signatureversion
+s3-outposts:versionid
 s3-outposts:x-amz-acl
 s3-outposts:x-amz-content-sha256
 s3-outposts:x-amz-copy-source

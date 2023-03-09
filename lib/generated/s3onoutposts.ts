@@ -213,6 +213,49 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a specific version of an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
+   */
+  public toDeleteObjectVersion() {
+    return this.to('DeleteObjectVersion');
+  }
+
+  /**
+   * Grants permission to remove the entire tag set for a specific version of the object
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
+   */
+  public toDeleteObjectVersionTagging() {
+    return this.to('DeleteObjectVersionTagging');
+  }
+
+  /**
    * Grants permission to return configuration information about the specified access point
    *
    * Access Level: Read
@@ -304,6 +347,23 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the versioning state of an Amazon S3 bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
+   */
+  public toGetBucketVersioning() {
+    return this.to('GetBucketVersioning');
+  }
+
+  /**
    * Grants permission to return the lifecycle configuration information set on an Amazon S3 bucket
    *
    * Access Level: Read
@@ -360,6 +420,50 @@ export class S3Outposts extends PolicyStatement {
    */
   public toGetObjectTagging() {
     return this.to('GetObjectTagging');
+  }
+
+  /**
+   * Grants permission to retrieve a specific version of an object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
+   */
+  public toGetObjectVersion() {
+    return this.to('GetObjectVersion');
+  }
+
+  /**
+   * Grants permission to return the tag set for a specific version of the object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
+   */
+  public toGetObjectVersionTagging() {
+    return this.to('GetObjectVersionTagging');
   }
 
   /**
@@ -423,6 +527,29 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifDelimiter()
+   * - .ifMaxKeys()
+   * - .ifPrefix()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
+   */
+  public toListBucketVersions() {
+    return this.to('ListBucketVersions');
+  }
+
+  /**
    * Grants permission to list endpoints
    *
    * Access Level: List
@@ -451,6 +578,17 @@ export class S3Outposts extends PolicyStatement {
    */
   public toListMultipartUploadParts() {
     return this.to('ListMultipartUploadParts');
+  }
+
+  /**
+   * Grants permission to list outposts with S3 capacity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListOutpostsWithS3.html
+   */
+  public toListOutpostsWithS3() {
+    return this.to('ListOutpostsWithS3');
   }
 
   /**
@@ -533,6 +671,23 @@ export class S3Outposts extends PolicyStatement {
    */
   public toPutBucketTagging() {
     return this.to('PutBucketTagging');
+  }
+
+  /**
+   * Grants permission to set the versioning state of an existing Amazon S3 bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html
+   */
+  public toPutBucketVersioning() {
+    return this.to('PutBucketVersioning');
   }
 
   /**
@@ -625,6 +780,30 @@ export class S3Outposts extends PolicyStatement {
     return this.to('PutObjectTagging');
   }
 
+  /**
+   * Grants permission to set the supplied tag-set for a specific version of an object
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifRequestObjectTag()
+   * - .ifRequestObjectTagKeys()
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
+   */
+  public toPutObjectVersionTagging() {
+    return this.to('PutObjectVersionTagging');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
@@ -635,6 +814,8 @@ export class S3Outposts extends PolicyStatement {
       'DeleteBucket',
       'DeleteEndpoint',
       'DeleteObject',
+      'DeleteObjectVersion',
+      'PutBucketVersioning',
       'PutLifecycleConfiguration',
       'PutObject'
     ],
@@ -647,8 +828,10 @@ export class S3Outposts extends PolicyStatement {
     ],
     Tagging: [
       'DeleteObjectTagging',
+      'DeleteObjectVersionTagging',
       'PutBucketTagging',
-      'PutObjectTagging'
+      'PutObjectTagging',
+      'PutObjectVersionTagging'
     ],
     Read: [
       'GetAccessPoint',
@@ -656,16 +839,21 @@ export class S3Outposts extends PolicyStatement {
       'GetBucket',
       'GetBucketPolicy',
       'GetBucketTagging',
+      'GetBucketVersioning',
       'GetLifecycleConfiguration',
       'GetObject',
-      'GetObjectTagging'
+      'GetObjectTagging',
+      'GetObjectVersion',
+      'GetObjectVersionTagging'
     ],
     List: [
       'ListAccessPoints',
       'ListBucket',
       'ListBucketMultipartUploads',
+      'ListBucketVersions',
       'ListEndpoints',
       'ListMultipartUploadParts',
+      'ListOutpostsWithS3',
       'ListRegionalBuckets',
       'ListSharedEndpoints'
     ]
@@ -674,7 +862,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Adds a resource of type accesspoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
    *
    * @param outpostId - Identifier for the outpostId.
    * @param accessPointName - Identifier for the accessPointName.
@@ -689,7 +877,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Adds a resource of type bucket to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html
    *
    * @param outpostId - Identifier for the outpostId.
    * @param bucketName - Identifier for the bucketName.
@@ -704,7 +892,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Adds a resource of type endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/outposts-endpoints.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-endpoints.html
    *
    * @param outpostId - Identifier for the outpostId.
    * @param endpointId - Identifier for the endpointId.
@@ -719,7 +907,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Adds a resource of type object to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html
    *
    * @param outpostId - Identifier for the outpostId.
    * @param bucketName - Identifier for the bucketName.
@@ -735,7 +923,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by the network origin (Internet or VPC)
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -744,17 +932,23 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -766,7 +960,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by the AWS Account ID that owns the access point
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -775,17 +969,23 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -804,17 +1004,23 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -826,14 +1032,18 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by requiring that an existing object tag has a specific tag key and value
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param key The tag key to check
    * @param value The value(s) to check
@@ -846,11 +1056,12 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by restricting the tag keys and values allowed on objects
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toPutObject()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param key The tag key to check
    * @param value The value(s) to check
@@ -863,11 +1074,12 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by restricting the tag keys allowed on objects
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toPutObject()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -891,26 +1103,34 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetBucket()
    * - .toGetBucketPolicy()
    * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
    * - .toGetLifecycleConfiguration()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toListRegionalBuckets()
    * - .toPutAccessPointPolicy()
    * - .toPutBucketPolicy()
    * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
    * - .toPutLifecycleConfiguration()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -922,10 +1142,11 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by requiring the delimiter parameter
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/walkthrough1.html
    *
    * Applies to actions:
    * - .toListBucket()
+   * - .toListBucketVersions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -937,10 +1158,11 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by limiting the maximum number of keys returned in a ListBucket request
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-numeric-condition-operators
    *
    * Applies to actions:
    * - .toListBucket()
+   * - .toListBucketVersions()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -952,10 +1174,11 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by key name prefix
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
    *
    * Applies to actions:
    * - .toListBucket()
+   * - .toListBucketVersions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -979,26 +1202,34 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetBucket()
    * - .toGetBucketPolicy()
    * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
    * - .toGetLifecycleConfiguration()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toListRegionalBuckets()
    * - .toPutAccessPointPolicy()
    * - .toPutBucketPolicy()
    * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
    * - .toPutLifecycleConfiguration()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -1022,26 +1253,34 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetBucket()
    * - .toGetBucketPolicy()
    * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
    * - .toGetLifecycleConfiguration()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toListRegionalBuckets()
    * - .toPutAccessPointPolicy()
    * - .toPutBucketPolicy()
    * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
    * - .toPutLifecycleConfiguration()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1051,9 +1290,28 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Filters access by a specific object version
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
+   *
+   * Applies to actions:
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
+   * - .toPutObjectVersionTagging()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVersionid(value: string | string[], operator?: Operator | string) {
+    return this.if(`versionid`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by requiring the x-amz-acl header with a specific canned ACL in a request
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions
    *
    * Applies to actions:
    * - .toPutObject()
@@ -1081,26 +1339,34 @@ export class S3Outposts extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetBucket()
    * - .toGetBucketPolicy()
    * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
    * - .toGetLifecycleConfiguration()
    * - .toGetObject()
    * - .toGetObjectTagging()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionTagging()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toListRegionalBuckets()
    * - .toPutAccessPointPolicy()
    * - .toPutBucketPolicy()
    * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
    * - .toPutLifecycleConfiguration()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1112,7 +1378,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by restricting the copy source to a specific bucket, prefix, or object
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
    *
    * Applies to actions:
    * - .toPutObject()
@@ -1142,7 +1408,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by requiring server-side encryption
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html
    *
    * Applies to actions:
    * - .toPutObject()
@@ -1157,7 +1423,7 @@ export class S3Outposts extends PolicyStatement {
   /**
    * Filters access by storage class
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-howtoset
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-howtoset
    *
    * Applies to actions:
    * - .toPutObject()

@@ -1,2 +1,7 @@
 wickr:CreateAdminSession;Write
+wickr:CreateNetwork;Write
 wickr:ListNetworks;Write
+wickr:ListTagsForResource;Read
+wickr:TagResource;Tagging
+wickr:UntagResource;Tagging
+wickr:UpdateNetworkDetails;Write
