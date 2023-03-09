@@ -3,6 +3,7 @@ trustedadvisor:DescribeAccount;Read
 trustedadvisor:DescribeAccountAccess;Read
 trustedadvisor:DescribeCheckItems;Read
 trustedadvisor:DescribeCheckRefreshStatuses;Read
+trustedadvisor:DescribeCheckStatusHistoryChanges;Read
 trustedadvisor:DescribeCheckSummaries;Read
 trustedadvisor:DescribeChecks;Read
 trustedadvisor:DescribeNotificationConfigurations;Read

@@ -74,6 +74,17 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the results and changed statuses for checks in the last 30 days
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeCheckStatusHistoryChanges() {
+    return this.to('DescribeCheckStatusHistoryChanges');
+  }
+
+  /**
    * Grants permission to view AWS Trusted Advisor check summaries
    *
    * Access Level: Read
@@ -355,6 +366,7 @@ export class Trustedadvisor extends PolicyStatement {
       'DescribeAccountAccess',
       'DescribeCheckItems',
       'DescribeCheckRefreshStatuses',
+      'DescribeCheckStatusHistoryChanges',
       'DescribeCheckSummaries',
       'DescribeChecks',
       'DescribeNotificationConfigurations',

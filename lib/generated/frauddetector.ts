@@ -388,6 +388,17 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the data validation report of a specific batch import job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/ug/prepare-storage-event-data.html#smart-data-validation
+   */
+  public toGetBatchImportJobValidationReport() {
+    return this.to('GetBatchImportJobValidationReport');
+  }
+
+  /**
    * Grants permission to get all batch import jobs or a specific job if you specify a job ID
    *
    * Access Level: List
@@ -985,6 +996,7 @@ export class Frauddetector extends PolicyStatement {
     Read: [
       'DescribeDetector',
       'DescribeModelVersions',
+      'GetBatchImportJobValidationReport',
       'GetDeleteEventsByEventTypeStatus',
       'GetDetectorVersion',
       'GetEvent',
