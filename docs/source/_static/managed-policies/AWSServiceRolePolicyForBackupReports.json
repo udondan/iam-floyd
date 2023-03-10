@@ -20,6 +20,8 @@
         "config:SelectResourceConfig",
         "config:DescribeConfigurationAggregators",
         "config:SelectAggregateResourceConfig",
+        "config:DescribeConfigRuleEvaluationStatus",
+        "config:DescribeConfigRules",
         "s3:GetBucketLocation"
       ],
       "Resource": "*"
@@ -28,8 +30,6 @@
       "Effect": "Allow",
       "Action": [
         "config:GetComplianceDetailsByConfigRule",
-        "config:DescribeConfigRuleEvaluationStatus",
-        "config:DescribeConfigRules",
         "config:PutConfigRule",
         "config:DeleteConfigRule"
       ],

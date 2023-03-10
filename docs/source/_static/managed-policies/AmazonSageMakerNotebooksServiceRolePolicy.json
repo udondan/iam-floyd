@@ -15,8 +15,7 @@
     {
       "Effect": "Allow",
       "Action": [
-        "elasticfilesystem:DeleteAccessPoint",
-        "elasticfilesystem:DescribeAccessPoints"
+        "elasticfilesystem:DeleteAccessPoint"
       ],
       "Resource": "arn:aws:elasticfilesystem:*:*:access-point/*",
       "Condition": {
@@ -52,10 +51,24 @@
     {
       "Effect": "Allow",
       "Action": [
+        "elasticfilesystem:DescribeAccessPoints",
         "elasticfilesystem:DescribeFileSystems",
         "elasticfilesystem:DescribeMountTargets"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:TagResource",
+      "Resource": [
+        "arn:aws:elasticfilesystem:*:*:access-point/*",
+        "arn:aws:elasticfilesystem:*:*:file-system/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
     },
     {
       "Effect": "Allow",
