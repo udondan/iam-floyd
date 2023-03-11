@@ -184,6 +184,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Lake Formation data cell filter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-GetDataCellsFilter
+   */
+  public toGetDataCellsFilter() {
+    return this.to('GetDataCellsFilter');
+  }
+
+  /**
    * Grants permission to retrieve data lake settings such as the list of data lake administrators and database and table default permissions
    *
    * Access Level: Read
@@ -461,6 +472,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a Lake Formation data cell filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-UpdateDataCellsFilter
+   */
+  public toUpdateDataCellsFilter() {
+    return this.to('UpdateDataCellsFilter');
+  }
+
+  /**
    * Grants permission to update a Lake Formation tag
    *
    * Access Level: Write
@@ -530,6 +552,7 @@ export class Lakeformation extends PolicyStatement {
       'RegisterResource',
       'StartQueryPlanning',
       'StartTransaction',
+      'UpdateDataCellsFilter',
       'UpdateLFTag',
       'UpdateResource',
       'UpdateTableObjects',
@@ -538,6 +561,7 @@ export class Lakeformation extends PolicyStatement {
     Read: [
       'DescribeResource',
       'DescribeTransaction',
+      'GetDataCellsFilter',
       'GetDataLakeSettings',
       'GetEffectivePermissionsForPath',
       'GetLFTag',

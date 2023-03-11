@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [devops-guru](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondevopsguru.html).
@@ -192,6 +192,9 @@ export class DevopsGuru extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifServiceNames()
+   *
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListAnomaliesForInsight.html
    */
   public toListAnomaliesForInsight() {
@@ -306,6 +309,9 @@ export class DevopsGuru extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifServiceNames()
+   *
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_SearchInsights.html
    */
   public toSearchInsights() {
@@ -419,5 +425,21 @@ export class DevopsGuru extends PolicyStatement {
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || DevopsGuru.defaultPartition }:sns:${ region || '*' }:${ account || '*' }:${ topicName }`);
+  }
+
+  /**
+   * Filters access by API to restrict access to given AWS service names
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/userguide/API_ServiceCollection.html
+   *
+   * Applies to actions:
+   * - .toListAnomaliesForInsight()
+   * - .toSearchInsights()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceNames(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceNames`, value, operator || 'StringLike');
   }
 }
