@@ -13,6 +13,7 @@ lakeformation:DescribeResource;Read
 lakeformation:DescribeTransaction;Read
 lakeformation:ExtendTransaction;Write
 lakeformation:GetDataAccess;Write
+lakeformation:GetDataCellsFilter;Read
 lakeformation:GetDataLakeSettings;Read
 lakeformation:GetEffectivePermissionsForPath;Read
 lakeformation:GetLFTag;Read
@@ -37,6 +38,7 @@ lakeformation:SearchDatabasesByLFTags;Read
 lakeformation:SearchTablesByLFTags;Read
 lakeformation:StartQueryPlanning;Write
 lakeformation:StartTransaction;Write
+lakeformation:UpdateDataCellsFilter;Write
 lakeformation:UpdateLFTag;Write
 lakeformation:UpdateResource;Write
 lakeformation:UpdateTableObjects;Write
