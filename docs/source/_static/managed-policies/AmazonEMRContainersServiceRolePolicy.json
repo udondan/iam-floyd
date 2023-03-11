@@ -5,11 +5,15 @@
       "Effect": "Allow",
       "Action": [
         "eks:DescribeCluster",
+        "eks:ListNodeGroups",
+        "eks:DescribeNodeGroup",
         "ec2:DescribeRouteTables",
         "ec2:DescribeSubnets",
         "ec2:DescribeSecurityGroups",
         "elasticloadbalancing:DescribeInstanceHealth",
-        "elasticloadbalancing:DescribeLoadBalancers"
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth"
       ],
       "Resource": "*"
     },
