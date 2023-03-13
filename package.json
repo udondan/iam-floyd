@@ -65,7 +65,7 @@
     "@types/cheerio": "^0.22.23",
     "@types/glob": "^8.0.0",
     "@types/lodash": "^4.14.165",
-    "@types/node": "18.11.9",
+    "@types/node": "18.15.1",
     "@types/request": "^2.48.5",
     "@types/request-promise-native": "^1.0.17",
     "aws-sdk": "^2.814.0",
