@@ -132,6 +132,17 @@ export class NeptuneDb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the graph summary from the database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getgraphsummary
+   */
+  public toGetGraphSummary() {
+    return this.to('GetGraphSummary');
+  }
+
+  /**
    * Grants permission to check the status of a loader job
    *
    * Access Level: Read
@@ -407,6 +418,7 @@ export class NeptuneDb extends PolicyStatement {
     ],
     Read: [
       'GetEngineStatus',
+      'GetGraphSummary',
       'GetLoaderJobStatus',
       'GetMLDataProcessingJobStatus',
       'GetMLEndpointStatus',

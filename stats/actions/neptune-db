@@ -8,6 +8,7 @@ neptune-db:DeleteDataViaQuery;Write
 neptune-db:DeleteMLEndpoint;Write
 neptune-db:DeleteStatistics;Write
 neptune-db:GetEngineStatus;Read
+neptune-db:GetGraphSummary;Read
 neptune-db:GetLoaderJobStatus;Read
 neptune-db:GetMLDataProcessingJobStatus;Read
 neptune-db:GetMLEndpointStatus;Read

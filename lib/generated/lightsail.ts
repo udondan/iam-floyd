@@ -141,6 +141,10 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - lightsail:CreateDomainEntry
+   * - lightsail:GetDomains
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCertificate.html
    */
   public toCreateCertificate() {
@@ -275,6 +279,16 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - route53:DeleteHostedZone
+   * - route53:GetHostedZone
+   * - route53:ListHostedZonesByName
+   * - route53domains:GetDomainDetail
+   * - route53domains:GetOperationDetail
+   * - route53domains:ListDomains
+   * - route53domains:ListOperations
+   * - route53domains:UpdateDomainNameservers
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html
    */
   public toCreateDomain() {
@@ -290,6 +304,17 @@ export class Lightsail extends PolicyStatement {
    */
   public toCreateDomainEntry() {
     return this.to('CreateDomainEntry');
+  }
+
+  /**
+   * Grants permission to create URLs that are used to access an instance's graphical user interface (GUI) session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateGUISessionAccessDetails.html
+   */
+  public toCreateGUISessionAccessDetails() {
+    return this.to('CreateGUISessionAccessDetails');
   }
 
   /**
@@ -361,6 +386,10 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - lightsail:CreateDomainEntry
+   * - lightsail:GetDomains
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html
    */
   public toCreateLoadBalancer() {
@@ -371,6 +400,10 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create a load balancer TLS certificate
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - lightsail:CreateDomainEntry
+   * - lightsail:GetDomains
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html
    */
@@ -953,6 +986,17 @@ export class Lightsail extends PolicyStatement {
    */
   public toGetContainerServices() {
     return this.to('GetContainerServices');
+  }
+
+  /**
+   * Grants permission to get the information about the cost estimate for a specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCostEstimate.html
+   */
+  public toGetCostEstimate() {
+    return this.to('GetCostEstimate');
   }
 
   /**
@@ -1594,6 +1638,17 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a graphical user interface (GUI) session used to access an instance's operating system or application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartGUISession.html
+   */
+  public toStartGUISession() {
+    return this.to('StartGUISession');
+  }
+
+  /**
    * Grants permission to start an instance that is in a stopped state
    *
    * Access Level: Write
@@ -1613,6 +1668,17 @@ export class Lightsail extends PolicyStatement {
    */
   public toStartRelationalDatabase() {
     return this.to('StartRelationalDatabase');
+  }
+
+  /**
+   * Grants permission to terminate a graphical user interface (GUI) session used to access an instance's operating system or application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopGUISession.html
+   */
+  public toStopGUISession() {
+    return this.to('StopGUISession');
   }
 
   /**
@@ -1823,6 +1889,7 @@ export class Lightsail extends PolicyStatement {
       'CreateDistribution',
       'CreateDomain',
       'CreateDomainEntry',
+      'CreateGUISessionAccessDetails',
       'CreateInstanceSnapshot',
       'CreateInstances',
       'CreateInstancesFromSnapshot',
@@ -1876,8 +1943,10 @@ export class Lightsail extends PolicyStatement {
       'SendContactMethodVerification',
       'SetIpAddressType',
       'SetResourceAccessForBucket',
+      'StartGUISession',
       'StartInstance',
       'StartRelationalDatabase',
+      'StopGUISession',
       'StopInstance',
       'StopRelationalDatabase',
       'TestAlarm',
@@ -1913,6 +1982,7 @@ export class Lightsail extends PolicyStatement {
       'GetContainerServiceMetricData',
       'GetContainerServicePowers',
       'GetContainerServices',
+      'GetCostEstimate',
       'GetDisk',
       'GetDiskSnapshot',
       'GetDiskSnapshots',
