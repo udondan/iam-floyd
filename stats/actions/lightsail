@@ -20,6 +20,7 @@ lightsail:CreateDiskSnapshot;Write
 lightsail:CreateDistribution;Write
 lightsail:CreateDomain;Write
 lightsail:CreateDomainEntry;Write
+lightsail:CreateGUISessionAccessDetails;Write
 lightsail:CreateInstanceSnapshot;Write
 lightsail:CreateInstances;Write
 lightsail:CreateInstancesFromSnapshot;Write
@@ -77,6 +78,7 @@ lightsail:GetContainerServiceDeployments;Read
 lightsail:GetContainerServiceMetricData;Read
 lightsail:GetContainerServicePowers;Read
 lightsail:GetContainerServices;Read
+lightsail:GetCostEstimate;Read
 lightsail:GetDisk;Read
 lightsail:GetDiskSnapshot;Read
 lightsail:GetDiskSnapshots;Read
@@ -135,8 +137,10 @@ lightsail:ResetDistributionCache;Write
 lightsail:SendContactMethodVerification;Write
 lightsail:SetIpAddressType;Write
 lightsail:SetResourceAccessForBucket;Write
+lightsail:StartGUISession;Write
 lightsail:StartInstance;Write
 lightsail:StartRelationalDatabase;Write
+lightsail:StopGUISession;Write
 lightsail:StopInstance;Write
 lightsail:StopRelationalDatabase;Write
 lightsail:TagResource;Tagging
