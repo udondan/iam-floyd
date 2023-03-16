@@ -16,6 +16,7 @@
         "cloudwatch:GetMetricStatistics",
         "cloudwatch:PutMetricAlarm",
         "cloudwatch:DeleteAlarms",
+        "cloudwatch:ListMetrics",
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeCoipPools",
