@@ -59,7 +59,11 @@
         "s3:ObjectOwnerOverrideToBucketOwner",
         "s3:PutAccountPublicAccessBlock",
         "s3:PutBucketPolicy",
-        "s3:ListAllMyBuckets"
+        "s3:ListAllMyBuckets",
+        "ec2:PurchaseReservedInstancesOffering",
+        "ec2:AcceptReservedInstancesExchangeQuote",
+        "ec2:CreateReservedInstancesListing",
+        "savingsplans:CreateSavingsPlan"
       ],
       "Resource": [
         "*"

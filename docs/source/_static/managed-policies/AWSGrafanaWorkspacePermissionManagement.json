@@ -25,7 +25,9 @@
         "sso:AssociateProfile",
         "sso:DisassociateProfile",
         "sso:GetProfile",
-        "sso:ListProfileAssociations"
+        "sso:ListProfileAssociations",
+        "sso-directory:DescribeUser",
+        "sso-directory:DescribeGroup"
       ],
       "Resource": "*"
     }
