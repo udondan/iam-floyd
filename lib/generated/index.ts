@@ -305,7 +305,6 @@ export { Mgh } from './migrationhub';
 export { MigrationhubOrchestrator } from './migrationhuborchestrator';
 export { RefactorSpaces } from './migrationhubrefactorspaces';
 export { MigrationhubStrategy } from './migrationhubstrategyrecommendations';
-export { Mobilehub } from './mobilehub';
 export { NetworkFirewall } from './networkfirewall';
 export { Networkmanager } from './networkmanager';
 export { Opsworks } from './opsworks';

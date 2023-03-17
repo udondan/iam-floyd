@@ -1,5 +1,6 @@
 inspector2:AssociateMember;Write
 inspector2:BatchGetAccountStatus;Read
+inspector2:BatchGetCodeSnippet;Read
 inspector2:BatchGetFreeTrialInfo;Read
 inspector2:CancelFindingsReport;Write
 inspector2:CreateFilter;Write

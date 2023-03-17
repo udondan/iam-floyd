@@ -30,6 +30,15 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the service with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toAssociateWebAcl() {
+    return this.to('AssociateWebAcl');
+  }
+
+  /**
    * Grants permission to create an AWS App Runner automatic scaling configuration resource
    *
    * Access Level: Write
@@ -270,6 +279,15 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the AWS WAF web ACL that is associated with an AWS App Runner service
+   *
+   * Access Level: Read
+   */
+  public toDescribeWebAclForService() {
+    return this.to('DescribeWebAclForService');
+  }
+
+  /**
    * Grants permission to disassociate a custom domain name from an AWS App Runner service
    *
    * Access Level: Write
@@ -278,6 +296,24 @@ export class Apprunner extends PolicyStatement {
    */
   public toDisassociateCustomDomain() {
     return this.to('DisassociateCustomDomain');
+  }
+
+  /**
+   * Grants permission to disassociate the service with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toDisassociateWebAcl() {
+    return this.to('DisassociateWebAcl');
+  }
+
+  /**
+   * Grants permission to list the services that are associated with an AWS WAF web ACL
+   *
+   * Access Level: List
+   */
+  public toListAssociatedServicesForWebAcl() {
+    return this.to('ListAssociatedServicesForWebAcl');
   }
 
   /**
@@ -465,6 +501,7 @@ export class Apprunner extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateCustomDomain',
+      'AssociateWebAcl',
       'CreateAutoScalingConfiguration',
       'CreateConnection',
       'CreateObservabilityConfiguration',
@@ -478,6 +515,7 @@ export class Apprunner extends PolicyStatement {
       'DeleteVpcConnector',
       'DeleteVpcIngressConnection',
       'DisassociateCustomDomain',
+      'DisassociateWebAcl',
       'PauseService',
       'ResumeService',
       'StartDeployment',
@@ -492,9 +530,11 @@ export class Apprunner extends PolicyStatement {
       'DescribeService',
       'DescribeVpcConnector',
       'DescribeVpcIngressConnection',
+      'DescribeWebAclForService',
       'ListTagsForResource'
     ],
     List: [
+      'ListAssociatedServicesForWebAcl',
       'ListAutoScalingConfigurations',
       'ListConnections',
       'ListObservabilityConfigurations',
@@ -606,6 +646,20 @@ export class Apprunner extends PolicyStatement {
    */
   public onVpcingressconnection(vpcIngressConnectionName: string, vpcIngressConnectionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
+  }
+
+  /**
+   * Adds a resource of type webacl to the statement
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Apprunner.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
