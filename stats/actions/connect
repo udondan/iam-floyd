@@ -80,6 +80,7 @@ connect:GetCurrentUserData;Read
 connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
+connect:GetMetricDataV2;Read
 connect:GetTaskTemplate;Read
 connect:GetTrafficDistribution;List
 connect:ListAgentStatuses;List

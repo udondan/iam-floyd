@@ -1332,6 +1332,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve metric data in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html
+   */
+  public toGetMetricDataV2() {
+    return this.to('GetMetricDataV2');
+  }
+
+  /**
    * Grants permission to get details about specified task template in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2869,6 +2880,7 @@ export class Connect extends PolicyStatement {
       'GetCurrentUserData',
       'GetFederationToken',
       'GetMetricData',
+      'GetMetricDataV2',
       'GetTaskTemplate',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',

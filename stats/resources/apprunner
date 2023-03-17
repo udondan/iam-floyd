@@ -4,3 +4,4 @@ apprunner:observabilityconfiguration
 apprunner:service
 apprunner:vpcconnector
 apprunner:vpcingressconnection
+apprunner:webacl

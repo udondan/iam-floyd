@@ -41,6 +41,17 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve code snippet information about one or more code vulnerability findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetCodeSnippet.html
+   */
+  public toBatchGetCodeSnippet() {
+    return this.to('BatchGetCodeSnippet');
+  }
+
+  /**
    * Grants permission to retrieve free trial period eligibility about Amazon Inspector accounts for an account
    *
    * Access Level: Read
@@ -404,6 +415,7 @@ export class Inspector2 extends PolicyStatement {
     ],
     Read: [
       'BatchGetAccountStatus',
+      'BatchGetCodeSnippet',
       'BatchGetFreeTrialInfo',
       'DescribeOrganizationConfiguration',
       'GetConfiguration',
