@@ -1,4 +1,6 @@
 mgn:ApplicationResource
+mgn:ExportResource
+mgn:ImportResource
 mgn:JobResource
 mgn:LaunchConfigurationTemplateResource
 mgn:ReplicationConfigurationTemplateResource

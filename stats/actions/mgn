@@ -42,6 +42,10 @@ mgn:GetVcenterClientCommandsForMgn;Read
 mgn:InitializeService;Write
 mgn:IssueClientCertificateForMgn;Write
 mgn:ListApplications;List
+mgn:ListExportErrors;List
+mgn:ListExports;List
+mgn:ListImportErrors;List
+mgn:ListImports;List
 mgn:ListSourceServerActions;List
 mgn:ListTagsForResource;Read
 mgn:ListTemplateActions;List
@@ -67,6 +71,8 @@ mgn:SendVcenterClientCommandResultForMgn;Write
 mgn:SendVcenterClientLogsForMgn;Write
 mgn:SendVcenterClientMetricsForMgn;Write
 mgn:StartCutover;Write
+mgn:StartExport;Write
+mgn:StartImport;Write
 mgn:StartReplication;Write
 mgn:StartTest;Write
 mgn:TagResource;Tagging
