@@ -86,22 +86,6 @@
         "ssm:SendCommand"
       ],
       "Resource": [
-        "arn:aws:ssm:*:*:document/AWSDisasterRecovery-InstallDRAgentOnInstance",
-        "arn:aws:ssm:*:*:document/AWSMigration-ConvertCentOsToRockyLinuxDistribution",
-        "arn:aws:ssm:*:*:document/AWSMigration-ReplaceSuseSubscriptionWithAwsSubscription"
-      ],
-      "Condition": {
-        "Bool": {
-          "aws:ViaAWSService": "true"
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ssm:SendCommand"
-      ],
-      "Resource": [
         "arn:aws:ec2:*:*:instance/*"
       ],
       "Condition": {
@@ -136,12 +120,12 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ssm:DescribeDocument"
+        "ssm:DescribeDocument",
+        "ssm:SendCommand"
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/AWSDisasterRecovery-InstallDRAgentOnInstance",
-        "arn:aws:ssm:*:*:document/AWSMigration-ConvertCentOsToRockyLinuxDistribution",
-        "arn:aws:ssm:*:*:document/AWSMigration-ReplaceSuseSubscriptionWithAwsSubscription"
+        "arn:aws:ssm:*:*:document/AWSMigration-*"
       ],
       "Condition": {
         "Bool": {
@@ -178,6 +162,47 @@
         "servicequotas:GetServiceQuota"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetAutomationExecution"
+      ],
+      "Resource": "arn:aws:ssm:*:*:automation-execution/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetDocument"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWSDisasterRecovery-InstallDRAgentOnInstance",
+        "arn:aws:ssm:*:*:document/AWSMigration-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/ManagedByAWSApplicationMigrationService-*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": "arn:aws:ssm:*:*:automation-definition/AWSMigration-*:$DEFAULT",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "mgn.amazonaws.com"
+        }
+      }
     }
   ]
 }
