@@ -529,6 +529,50 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the errors of an export task
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListExportErrors.html
+   */
+  public toListExportErrors() {
+    return this.to('ListExportErrors');
+  }
+
+  /**
+   * Grants permission to list export tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListExports.html
+   */
+  public toListExports() {
+    return this.to('ListExports');
+  }
+
+  /**
+   * Grants permission to list the errors of an import task
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImportErrors.html
+   */
+  public toListImportErrors() {
+    return this.to('ListImportErrors');
+  }
+
+  /**
+   * Grants permission to list the import tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImports.html
+   */
+  public toListImports() {
+    return this.to('ListImports');
+  }
+
+  /**
    * Grants permission to list source server action documents
    *
    * Access Level: List
@@ -847,6 +891,48 @@ export class Mgn extends PolicyStatement {
    */
   public toStartCutover() {
     return this.to('StartCutover');
+  }
+
+  /**
+   * Grants permission to start an export task
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeLaunchTemplateVersions
+   * - mgn:DescribeSourceServers
+   * - mgn:GetLaunchConfiguration
+   * - mgn:ListApplications
+   * - mgn:ListWaves
+   * - s3:PutObject
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartExport.html
+   */
+  public toStartExport() {
+    return this.to('StartExport');
+  }
+
+  /**
+   * Grants permission to create an import task
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateLaunchTemplateVersion
+   * - ec2:DescribeLaunchTemplateVersions
+   * - ec2:ModifyLaunchTemplate
+   * - mgn:DescribeSourceServers
+   * - mgn:GetLaunchConfiguration
+   * - mgn:ListApplications
+   * - mgn:ListWaves
+   * - mgn:TagResource
+   * - mgn:UpdateLaunchConfiguration
+   * - s3:PutObject
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartImport.html
+   */
+  public toStartImport() {
+    return this.to('StartImport');
   }
 
   /**
@@ -1177,6 +1263,8 @@ export class Mgn extends PolicyStatement {
       'SendVcenterClientLogsForMgn',
       'SendVcenterClientMetricsForMgn',
       'StartCutover',
+      'StartExport',
+      'StartImport',
       'StartReplication',
       'StartTest',
       'TerminateTargetInstances',
@@ -1219,6 +1307,10 @@ export class Mgn extends PolicyStatement {
       'DescribeSourceServers',
       'DescribeVcenterClients',
       'ListApplications',
+      'ListExportErrors',
+      'ListExports',
+      'ListImportErrors',
+      'ListImports',
       'ListSourceServerActions',
       'ListTemplateActions',
       'ListWaves'
@@ -1346,6 +1438,40 @@ export class Mgn extends PolicyStatement {
    */
   public onWaveResource(waveID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:wave/${ waveID }`);
+  }
+
+  /**
+   * Adds a resource of type ImportResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/imports.html
+   *
+   * @param importID - Identifier for the importID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onImportResource(importID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:import/${ importID }`);
+  }
+
+  /**
+   * Adds a resource of type ExportResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/exports.html
+   *
+   * @param exportID - Identifier for the exportID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExportResource(exportID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:export/${ exportID }`);
   }
 
   /**
