@@ -280,6 +280,21 @@ export class PrivateNetworks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an update on the specified network resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html
+   */
+  public toStartNetworkResourceUpdate() {
+    return this.to('StartNetworkResourceUpdate');
+  }
+
+  /**
    * Grants permission to adds tags to the specified resource
    *
    * Access Level: Tagging
@@ -341,6 +356,7 @@ export class PrivateNetworks extends PolicyStatement {
       'DeactivateDeviceIdentifier',
       'DeleteNetwork',
       'DeleteNetworkSite',
+      'StartNetworkResourceUpdate',
       'UpdateNetworkSite',
       'UpdateNetworkSitePlan'
     ],

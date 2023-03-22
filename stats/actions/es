@@ -63,6 +63,7 @@ es:ListElasticsearchInstanceTypes;List
 es:ListElasticsearchVersions;List
 es:ListInstanceTypeDetails;List
 es:ListPackagesForDomain;List
+es:ListScheduledActions;List
 es:ListTags;Read
 es:ListVersions;List
 es:ListVpcEndpointAccess;List
@@ -79,6 +80,7 @@ es:StartServiceSoftwareUpdate;Write
 es:UpdateDomainConfig;Write
 es:UpdateElasticsearchDomainConfig;Write
 es:UpdatePackage;Write
+es:UpdateScheduledAction;Write
 es:UpdateVpcEndpoint;Write
 es:UpgradeDomain;Write
 es:UpgradeElasticsearchDomain;Write
