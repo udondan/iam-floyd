@@ -395,6 +395,8 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifExecutionRoleArn()
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-steps-runtime-roles.html
    */
   public toGetClusterSessionCredentials() {
     return this.to('GetClusterSessionCredentials');
@@ -783,6 +785,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set whether all AWS Identity and Access Management (IAM) users in the AWS account can view a cluster. This API is deprecated and your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see AWS Identity and Access Management for Amazon EMR (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_SetVisibleToAllUsers.html
+   */
+  public toSetVisibleToAllUsers() {
+    return this.to('SetVisibleToAllUsers');
+  }
+
+  /**
    * Grants permission to start an EMR notebook
    *
    * Access Level: Write
@@ -944,6 +957,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'RemoveManagedScalingPolicy',
       'RunJobFlow',
       'SetTerminationProtection',
+      'SetVisibleToAllUsers',
       'StartEditor',
       'StartNotebookExecution',
       'StopEditor',

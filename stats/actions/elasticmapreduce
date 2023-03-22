@@ -65,6 +65,7 @@ elasticmapreduce:RemoveManagedScalingPolicy;Write
 elasticmapreduce:RemoveTags;Tagging
 elasticmapreduce:RunJobFlow;Write
 elasticmapreduce:SetTerminationProtection;Write
+elasticmapreduce:SetVisibleToAllUsers;Write
 elasticmapreduce:StartEditor;Write
 elasticmapreduce:StartNotebookExecution;Write
 elasticmapreduce:StopEditor;Write

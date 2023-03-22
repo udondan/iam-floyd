@@ -387,6 +387,9 @@ export class States extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }:${ executionId }`);

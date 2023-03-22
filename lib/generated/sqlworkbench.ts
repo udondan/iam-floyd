@@ -425,6 +425,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the columns and data types inferred from a file
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetSchemaInference() {
+    return this.to('GetSchemaInference');
+  }
+
+  /**
    * Grants permission to get user info
    *
    * Access Level: Read
@@ -858,6 +869,7 @@ export class Sqlworkbench extends PolicyStatement {
       'GetNotebookVersion',
       'GetQueryExecutionHistory',
       'GetSavedQuery',
+      'GetSchemaInference',
       'GetUserInfo',
       'GetUserWorkspaceSettings',
       'ListSampleDatabases',
