@@ -25,7 +25,10 @@ cleanrooms:ListMembers;List
 cleanrooms:ListMemberships;List
 cleanrooms:ListProtectedQueries;List
 cleanrooms:ListSchemas;List
+cleanrooms:ListTagsForResource;List
 cleanrooms:StartProtectedQuery;Write
+cleanrooms:TagResource;Tagging
+cleanrooms:UntagResource;Tagging
 cleanrooms:UpdateCollaboration;Write
 cleanrooms:UpdateConfiguredTable;Write
 cleanrooms:UpdateConfiguredTableAnalysisRule;Write

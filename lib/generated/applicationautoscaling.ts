@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [application-autoscaling](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationautoscaling.html).
@@ -23,6 +23,10 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
+   *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html
    */
   public toDeleteScalingPolicy() {
@@ -34,6 +38,10 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
+   *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html
    */
   public toDeleteScheduledAction() {
@@ -44,6 +52,10 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * Grants permission to deregister a scalable target
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html
    */
@@ -96,9 +108,24 @@ export class ApplicationAutoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a scalable target
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to create and update a scaling policy for a scalable target
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html
    */
@@ -111,6 +138,10 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
+   *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html
    */
   public toPutScheduledAction() {
@@ -122,10 +153,48 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifServiceNamespace()
+   * - .ifScalableDimension()
+   *
+   * Dependent actions:
+   * - application-autoscaling:TagResource
+   *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html
    */
   public toRegisterScalableTarget() {
     return this.to('RegisterScalableTarget');
+  }
+
+  /**
+   * Grants permission to tag a scalable target
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a scalable target
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -142,6 +211,68 @@ export class ApplicationAutoscaling extends PolicyStatement {
       'DescribeScalingActivities',
       'DescribeScalingPolicies',
       'DescribeScheduledActions'
+    ],
+    Tagging: [
+      'ListTagsForResource',
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type ScalableTarget to the statement
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScalableTarget(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || ApplicationAutoscaling.defaultPartition }:application-autoscaling:${ region || '*' }:${ account || '*' }:scalable-target/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the scalable dimension that is passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDeleteScalingPolicy()
+   * - .toDeleteScheduledAction()
+   * - .toDeregisterScalableTarget()
+   * - .toPutScalingPolicy()
+   * - .toPutScheduledAction()
+   * - .toRegisterScalableTarget()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScalableDimension(value: string | string[], operator?: Operator | string) {
+    return this.if(`scalable-dimension`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the service namespace that is passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDeleteScalingPolicy()
+   * - .toDeleteScheduledAction()
+   * - .toDeregisterScalableTarget()
+   * - .toPutScalingPolicy()
+   * - .toPutScheduledAction()
+   * - .toRegisterScalableTarget()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceNamespace(value: string | string[], operator?: Operator | string) {
+    return this.if(`service-namespace`, value, operator || 'StringLike');
+  }
 }
