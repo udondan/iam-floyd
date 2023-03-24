@@ -17,6 +17,22 @@
         "ecs:DescribeTasks"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "RegisterContainerInstance",
+            "StartTask"
+          ]
+        }
+      }
     }
   ]
 }

@@ -265,6 +265,22 @@
         "arn:aws:cloudwatch:*:*:alarm:awseb-*",
         "arn:aws:cloudwatch:*:*:alarm:eb-*"
       ]
+    },
+    {
+      "Sid": "AllowECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "CreateCluster",
+            "RegisterTaskDefinition"
+          ]
+        }
+      }
     }
   ]
 }

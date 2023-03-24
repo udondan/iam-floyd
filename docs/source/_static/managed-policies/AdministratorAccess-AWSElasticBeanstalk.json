@@ -329,6 +329,21 @@
         "arn:aws:sqs:*:*:awseb-e-*",
         "arn:aws:sqs:*:*:eb-*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "CreateCluster",
+            "RegisterTaskDefinition"
+          ]
+        }
+      }
     }
   ]
 }
