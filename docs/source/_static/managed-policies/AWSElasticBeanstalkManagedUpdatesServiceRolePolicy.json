@@ -205,6 +205,21 @@
           "ec2:LaunchTemplate": "arn:aws:ec2:*:*:launch-template/*"
         }
       }
+    },
+    {
+      "Sid": "AllowECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "RegisterTaskDefinition"
+          ]
+        }
+      }
     }
   ]
 }

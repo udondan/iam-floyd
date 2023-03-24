@@ -58,6 +58,15 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "chime:CreateMediaInsightsPipeline"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }
