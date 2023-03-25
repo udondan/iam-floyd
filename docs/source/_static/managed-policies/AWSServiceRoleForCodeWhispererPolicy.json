@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:ListMembersInGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sso:ListProfileAssociations",
+        "sso:ListProfiles"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:CreateUploadUrl"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:CreateScan",
+        "codeguru-security:GetScan",
+        "codeguru-security:ListFindings"
+      ],
+      "Resource": [
+        "arn:aws:codeguru-security:*:*:scans/CodeWhisperer-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/CodeWhisperer"
+          ]
+        }
+      }
+    }
+  ]
+}
