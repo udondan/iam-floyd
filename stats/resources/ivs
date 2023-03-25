@@ -1,4 +1,5 @@
 ivs:Channel
 ivs:Playback-Key-Pair
 ivs:Recording-Configuration
+ivs:Stage
 ivs:Stream-Key

@@ -1,15 +1,20 @@
 ivs:BatchGetChannel;Read
 ivs:BatchGetStreamKey;Read
 ivs:CreateChannel;Write
+ivs:CreateParticipantToken;Write
 ivs:CreateRecordingConfiguration;Write
+ivs:CreateStage;Write
 ivs:CreateStreamKey;Write
 ivs:DeleteChannel;Write
 ivs:DeletePlaybackKeyPair;Write
 ivs:DeleteRecordingConfiguration;Write
+ivs:DeleteStage;Write
 ivs:DeleteStreamKey;Write
+ivs:DisconnectParticipant;Write
 ivs:GetChannel;Read
 ivs:GetPlaybackKeyPair;Read
 ivs:GetRecordingConfiguration;Read
+ivs:GetStage;Read
 ivs:GetStream;Read
 ivs:GetStreamKey;Read
 ivs:GetStreamSession;Read
@@ -17,6 +22,7 @@ ivs:ImportPlaybackKeyPair;Write
 ivs:ListChannels;List
 ivs:ListPlaybackKeyPairs;List
 ivs:ListRecordingConfigurations;List
+ivs:ListStages;List
 ivs:ListStreamKeys;List
 ivs:ListStreamSessions;List
 ivs:ListStreams;List
@@ -26,3 +32,4 @@ ivs:StopStream;Write
 ivs:TagResource;Tagging
 ivs:UntagResource;Tagging
 ivs:UpdateChannel;Write
+ivs:UpdateStage;Write
