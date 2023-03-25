@@ -56,6 +56,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a participant token
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateParticipantToken.html
+   */
+  public toCreateParticipantToken() {
+    return this.to('CreateParticipantToken');
+  }
+
+  /**
    * Grants permission to create a a new recording configuration
    *
    * Access Level: Write
@@ -68,6 +83,21 @@ export class Ivs extends PolicyStatement {
    */
   public toCreateRecordingConfiguration() {
     return this.to('CreateRecordingConfiguration');
+  }
+
+  /**
+   * Grants permission to create a stage
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateStage.html
+   */
+  public toCreateStage() {
+    return this.to('CreateStage');
   }
 
   /**
@@ -119,6 +149,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the stage for a specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteStage.html
+   */
+  public toDeleteStage() {
+    return this.to('DeleteStage');
+  }
+
+  /**
    * Grants permission to delete the stream key for a specified ARN
    *
    * Access Level: Write
@@ -127,6 +168,17 @@ export class Ivs extends PolicyStatement {
    */
   public toDeleteStreamKey() {
     return this.to('DeleteStreamKey');
+  }
+
+  /**
+   * Grants permission to disconnect a participant from for the specified stage ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DisconnectParticipant.html
+   */
+  public toDisconnectParticipant() {
+    return this.to('DisconnectParticipant');
   }
 
   /**
@@ -160,6 +212,17 @@ export class Ivs extends PolicyStatement {
    */
   public toGetRecordingConfiguration() {
     return this.to('GetRecordingConfiguration');
+  }
+
+  /**
+   * Grants permission to get stage information for a specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStage.html
+   */
+  public toGetStage() {
+    return this.to('GetStage');
   }
 
   /**
@@ -241,6 +304,17 @@ export class Ivs extends PolicyStatement {
    */
   public toListRecordingConfigurations() {
     return this.to('ListRecordingConfigurations');
+  }
+
+  /**
+   * Grants permission to get summary information about stages
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStages.html
+   */
+  public toListStages() {
+    return this.to('ListStages');
   }
 
   /**
@@ -353,6 +427,17 @@ export class Ivs extends PolicyStatement {
     return this.to('UpdateChannel');
   }
 
+  /**
+   * Grants permission to update a stage's configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_UpdateStage.html
+   */
+  public toUpdateStage() {
+    return this.to('UpdateStage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetChannel',
@@ -360,6 +445,7 @@ export class Ivs extends PolicyStatement {
       'GetChannel',
       'GetPlaybackKeyPair',
       'GetRecordingConfiguration',
+      'GetStage',
       'GetStream',
       'GetStreamKey',
       'GetStreamSession',
@@ -367,21 +453,27 @@ export class Ivs extends PolicyStatement {
     ],
     Write: [
       'CreateChannel',
+      'CreateParticipantToken',
       'CreateRecordingConfiguration',
+      'CreateStage',
       'CreateStreamKey',
       'DeleteChannel',
       'DeletePlaybackKeyPair',
       'DeleteRecordingConfiguration',
+      'DeleteStage',
       'DeleteStreamKey',
+      'DisconnectParticipant',
       'ImportPlaybackKeyPair',
       'PutMetadata',
       'StopStream',
-      'UpdateChannel'
+      'UpdateChannel',
+      'UpdateStage'
     ],
     List: [
       'ListChannels',
       'ListPlaybackKeyPairs',
       'ListRecordingConfigurations',
+      'ListStages',
       'ListStreamKeys',
       'ListStreamSessions',
       'ListStreams'
@@ -458,5 +550,22 @@ export class Ivs extends PolicyStatement {
    */
   public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:recording-configuration/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Stage to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Stage.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStage(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stage/${ resourceId }`);
   }
 }

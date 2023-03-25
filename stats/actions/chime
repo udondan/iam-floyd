@@ -24,6 +24,7 @@ chime:CreateAccount;Write
 chime:CreateApiKey;Write
 chime:CreateAppInstance;Write
 chime:CreateAppInstanceAdmin;Write
+chime:CreateAppInstanceBot;Write
 chime:CreateAppInstanceUser;Write
 chime:CreateAttendee;Write
 chime:CreateBot;Write
@@ -35,6 +36,8 @@ chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
 chime:CreateMediaCapturePipeline;Write
 chime:CreateMediaConcatenationPipeline;Write
+chime:CreateMediaInsightsPipeline;Write
+chime:CreateMediaInsightsPipelineConfiguration;Write
 chime:CreateMediaLiveConnectorPipeline;Write
 chime:CreateMeeting;Write
 chime:CreateMeetingDialOut;Write
@@ -49,11 +52,14 @@ chime:CreateSipRule;Write
 chime:CreateUser;Write
 chime:CreateVoiceConnector;Write
 chime:CreateVoiceConnectorGroup;Write
+chime:CreateVoiceProfile;Write
+chime:CreateVoiceProfileDomain;Write
 chime:DeleteAccount;Write
 chime:DeleteAccountOpenIdConfig;Write
 chime:DeleteApiKey;Write
 chime:DeleteAppInstance;Write
 chime:DeleteAppInstanceAdmin;Write
+chime:DeleteAppInstanceBot;Write
 chime:DeleteAppInstanceStreamingConfigurations;Write
 chime:DeleteAppInstanceUser;Write
 chime:DeleteAttendee;Write
@@ -69,8 +75,10 @@ chime:DeleteDomain;Write
 chime:DeleteEventsConfiguration;Write
 chime:DeleteGroups;Write
 chime:DeleteMediaCapturePipeline;Write
+chime:DeleteMediaInsightsPipelineConfiguration;Write
 chime:DeleteMediaPipeline;Write
 chime:DeleteMeeting;Write
+chime:DeleteMessagingStreamingConfigurations;Write
 chime:DeletePhoneNumber;Write
 chime:DeleteProxySession;Write
 chime:DeleteRoom;Write
@@ -85,9 +93,12 @@ chime:DeleteVoiceConnectorProxy;Write
 chime:DeleteVoiceConnectorStreamingConfiguration;Write
 chime:DeleteVoiceConnectorTermination;Write
 chime:DeleteVoiceConnectorTerminationCredentials;Write
+chime:DeleteVoiceProfile;Write
+chime:DeleteVoiceProfileDomain;Write
 chime:DeregisterAppInstanceUserEndpoint;Write
 chime:DescribeAppInstance;Read
 chime:DescribeAppInstanceAdmin;Read
+chime:DescribeAppInstanceBot;Read
 chime:DescribeAppInstanceUser;Read
 chime:DescribeAppInstanceUserEndpoint;Read
 chime:DescribeChannel;Read
@@ -119,10 +130,12 @@ chime:GetDomain;Read
 chime:GetEventsConfiguration;Read
 chime:GetGlobalSettings;Read
 chime:GetMediaCapturePipeline;Read
+chime:GetMediaInsightsPipelineConfiguration;Read
 chime:GetMediaPipeline;Read
 chime:GetMeeting;Read
 chime:GetMeetingDetail;Read
 chime:GetMessagingSessionEndpoint;Read
+chime:GetMessagingStreamingConfigurations;Read
 chime:GetPhoneNumber;Read
 chime:GetPhoneNumberOrder;Read
 chime:GetPhoneNumberSettings;Read
@@ -133,6 +146,7 @@ chime:GetSipMediaApplication;Read
 chime:GetSipMediaApplicationAlexaSkillConfiguration;Read
 chime:GetSipMediaApplicationLoggingConfiguration;Read
 chime:GetSipRule;Read
+chime:GetSpeakerSearchTask;Read
 chime:GetTelephonyLimits;Read
 chime:GetUser;Read
 chime:GetUserActivityReportData;Read
@@ -147,6 +161,9 @@ chime:GetVoiceConnectorProxy;Read
 chime:GetVoiceConnectorStreamingConfiguration;Read
 chime:GetVoiceConnectorTermination;Read
 chime:GetVoiceConnectorTerminationHealth;Read
+chime:GetVoiceProfile;Read
+chime:GetVoiceProfileDomain;Read
+chime:GetVoiceToneAnalysisTask;Read
 chime:InviteDelegate;Write
 chime:InviteUsers;Write
 chime:InviteUsersFromProvider;Write
@@ -154,6 +171,7 @@ chime:ListAccountUsageReportData;List
 chime:ListAccounts;List
 chime:ListApiKeys;List
 chime:ListAppInstanceAdmins;List
+chime:ListAppInstanceBots;List
 chime:ListAppInstanceUserEndpoints;List
 chime:ListAppInstanceUsers;List
 chime:ListAppInstances;List
@@ -177,6 +195,7 @@ chime:ListDirectories;List
 chime:ListDomains;List
 chime:ListGroups;List
 chime:ListMediaCapturePipelines;List
+chime:ListMediaInsightsPipelineConfigurations;List
 chime:ListMediaPipelines;List
 chime:ListMeetingEvents;List
 chime:ListMeetingTags;List
@@ -196,11 +215,16 @@ chime:ListUsers;List
 chime:ListVoiceConnectorGroups;List
 chime:ListVoiceConnectorTerminationCredentials;List
 chime:ListVoiceConnectors;List
+chime:ListVoiceProfileDomains;List
+chime:ListVoiceProfiles;List
 chime:LogoutUser;Write
 chime:PutAppInstanceRetentionSettings;Write
 chime:PutAppInstanceStreamingConfigurations;Write
+chime:PutAppInstanceUserExpirationSettings;Write
+chime:PutChannelExpirationSettings;Write
 chime:PutChannelMembershipPreferences;Write
 chime:PutEventsConfiguration;Write
+chime:PutMessagingStreamingConfigurations;Write
 chime:PutRetentionSettings;Write
 chime:PutSipMediaApplicationAlexaSkillConfiguration;Write
 chime:PutSipMediaApplicationLoggingConfiguration;Write
@@ -227,7 +251,11 @@ chime:SearchChannels;List
 chime:SendChannelMessage;Write
 chime:StartDataExport;Write
 chime:StartMeetingTranscription;Write
+chime:StartSpeakerSearchTask;Write
+chime:StartVoiceToneAnalysisTask;Write
 chime:StopMeetingTranscription;Write
+chime:StopSpeakerSearchTask;Write
+chime:StopVoiceToneAnalysisTask;Write
 chime:SubmitSupportRequest;Write
 chime:SuspendUsers;Write
 chime:TagAttendee;Tagging
@@ -242,6 +270,7 @@ chime:UpdateAccountOpenIdConfig;Write
 chime:UpdateAccountResource;Write
 chime:UpdateAccountSettings;Write
 chime:UpdateAppInstance;Write
+chime:UpdateAppInstanceBot;Write
 chime:UpdateAppInstanceUser;Write
 chime:UpdateAppInstanceUserEndpoint;Write
 chime:UpdateAttendeeCapabilities;Write
@@ -252,6 +281,8 @@ chime:UpdateChannelFlow;Write
 chime:UpdateChannelMessage;Write
 chime:UpdateChannelReadMarker;Write
 chime:UpdateGlobalSettings;Write
+chime:UpdateMediaInsightsPipelineConfiguration;Write
+chime:UpdateMediaInsightsPipelineStatus;Write
 chime:UpdatePhoneNumber;Write
 chime:UpdatePhoneNumberSettings;Write
 chime:UpdateProxySession;Write
@@ -266,5 +297,7 @@ chime:UpdateUserLicenses;Write
 chime:UpdateUserSettings;Write
 chime:UpdateVoiceConnector;Write
 chime:UpdateVoiceConnectorGroup;Write
+chime:UpdateVoiceProfile;Write
+chime:UpdateVoiceProfileDomain;Write
 chime:ValidateAccountResource;Read
 chime:ValidateE911Address;Write

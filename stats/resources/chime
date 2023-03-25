@@ -1,6 +1,10 @@
 chime:app-instance
+chime:app-instance-bot
 chime:app-instance-user
 chime:channel
 chime:channel-flow
+chime:media-insights-pipeline-configuration
 chime:media-pipeline
 chime:meeting
+chime:voice-profile
+chime:voice-profile-domain
