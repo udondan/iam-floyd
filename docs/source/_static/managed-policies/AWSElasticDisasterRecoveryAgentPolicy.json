@@ -17,6 +17,13 @@
         "drs:IssueAgentCertificateForDrs"
       ],
       "Resource": "arn:aws:drs:*:*:source-server/${aws:SourceIdentity}"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetAgentInstallationAssetsForDrs"
+      ],
+      "Resource": "*"
     }
   ]
 }

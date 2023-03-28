@@ -19,6 +19,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:DescribeStack*",
+        "cloudformation:ListStacks*",
         "cloudformation:GetTemplateSummary"
       ],
       "Resource": [
