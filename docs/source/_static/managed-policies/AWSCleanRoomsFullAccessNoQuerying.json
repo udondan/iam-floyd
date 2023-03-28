@@ -36,7 +36,10 @@
         "cleanrooms:UpdateConfiguredTable",
         "cleanrooms:UpdateConfiguredTableAnalysisRule",
         "cleanrooms:UpdateConfiguredTableAssociation",
-        "cleanrooms:UpdateMembership"
+        "cleanrooms:UpdateMembership",
+        "cleanrooms:ListTagsForResource",
+        "cleanrooms:UntagResource",
+        "cleanrooms:TagResource"
       ],
       "Resource": "*"
     },

@@ -80,6 +80,7 @@ glue:GetCrawlerMetrics;Read
 glue:GetCrawlers;Read
 glue:GetCustomEntityType;Read
 glue:GetDataCatalogEncryptionSettings;Read
+glue:GetDataPreviewStatement;Permissions management
 glue:GetDataQualityResult;Read
 glue:GetDataQualityRuleRecommendationRun;Read
 glue:GetDataQualityRuleset;Read
@@ -160,6 +161,7 @@ glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
 glue:ResetJobBookmark;Write
 glue:ResumeWorkflowRun;Write
+glue:RunDataPreviewStatement;Permissions management
 glue:RunStatement;Write
 glue:SearchTables;Read
 glue:StartBlueprintRun;Write

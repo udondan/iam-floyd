@@ -59,7 +59,8 @@
         "sqlworkbench:ListTaggedResources",
         "sqlworkbench:ListQueryExecutionHistory",
         "sqlworkbench:GetQueryExecutionHistory",
-        "sqlworkbench:ListNotebooks"
+        "sqlworkbench:ListNotebooks",
+        "sqlworkbench:GetSchemaInference"
       ],
       "Resource": "*"
     },

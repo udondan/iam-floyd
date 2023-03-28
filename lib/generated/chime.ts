@@ -140,7 +140,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add multiple users to a channel
+   * Grants permission to add multiple users and bots to a channel
    *
    * Access Level: Write
    *
@@ -301,7 +301,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to promote an AppInstanceUser to an AppInstanceAdmin
+   * Grants permission to promote a user or bot to an AppInstanceAdmin
    *
    * Access Level: Write
    *
@@ -309,6 +309,21 @@ export class Chime extends PolicyStatement {
    */
   public toCreateAppInstanceAdmin() {
     return this.to('CreateAppInstanceAdmin');
+  }
+
+  /**
+   * Grants permission to create a bot under an Amazon Chime AppInstance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceBot.html
+   */
+  public toCreateAppInstanceBot() {
+    return this.to('CreateAppInstanceBot');
   }
 
   /**
@@ -379,7 +394,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to ban a user from a channel
+   * Grants permission to ban a user or bot from a channel
    *
    * Access Level: Write
    *
@@ -405,7 +420,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a user to a channel
+   * Grants permission to add a user or bot to a channel
    *
    * Access Level: Write
    *
@@ -460,6 +475,46 @@ export class Chime extends PolicyStatement {
    */
   public toCreateMediaConcatenationPipeline() {
     return this.to('CreateMediaConcatenationPipeline');
+  }
+
+  /**
+   * Grants permission to create a media insights pipeline
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - chime:TagResource
+   * - kinesisvideo:DescribeStream
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipeline.html
+   */
+  public toCreateMediaInsightsPipeline() {
+    return this.to('CreateMediaInsightsPipeline');
+  }
+
+  /**
+   * Grants permission to create a media insights pipeline configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - chime:TagResource
+   * - iam:PassRole
+   * - kinesis:DescribeStream
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipelineConfiguration.html
+   */
+  public toCreateMediaInsightsPipelineConfiguration() {
+    return this.to('CreateMediaInsightsPipelineConfiguration');
   }
 
   /**
@@ -629,6 +684,37 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a voice profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html
+   */
+  public toCreateVoiceProfile() {
+    return this.to('CreateVoiceProfile');
+  }
+
+  /**
+   * Grants permission to create a voice profile domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - chime:TagResource
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
+   */
+  public toCreateVoiceProfileDomain() {
+    return this.to('CreateVoiceProfileDomain');
+  }
+
+  /**
    * Grants permission to delete the specified Amazon Chime account
    *
    * Access Level: Write
@@ -673,7 +759,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to demote an AppInstanceAdmin to an AppInstanceUser
+   * Grants permission to demote an AppInstanceAdmin to a user or bot
    *
    * Access Level: Write
    *
@@ -681,6 +767,17 @@ export class Chime extends PolicyStatement {
    */
   public toDeleteAppInstanceAdmin() {
     return this.to('DeleteAppInstanceAdmin');
+  }
+
+  /**
+   * Grants permission to delete an AppInstanceBot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceBot.html
+   */
+  public toDeleteAppInstanceBot() {
+    return this.to('DeleteAppInstanceBot');
   }
 
   /**
@@ -742,7 +839,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a user from a channel's ban list
+   * Grants permission to remove a user or bot from a channel's ban list
    *
    * Access Level: Write
    *
@@ -852,6 +949,20 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a media insights pipeline configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - chime:ListVoiceConnectors
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaInsightsPipelineConfiguration.html
+   */
+  public toDeleteMediaInsightsPipelineConfiguration() {
+    return this.to('DeleteMediaInsightsPipelineConfiguration');
+  }
+
+  /**
    * Grants permission to delete a media pipeline
    *
    * Access Level: Write
@@ -871,6 +982,17 @@ export class Chime extends PolicyStatement {
    */
   public toDeleteMeeting() {
     return this.to('DeleteMeeting');
+  }
+
+  /**
+   * Grants permission to delete the data streaming configurations of an AppInstance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteMessagingStreamingConfigurations.html
+   */
+  public toDeleteMessagingStreamingConfigurations() {
+    return this.to('DeleteMessagingStreamingConfigurations');
   }
 
   /**
@@ -1034,6 +1156,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a voice profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceProfile.html
+   */
+  public toDeleteVoiceProfile() {
+    return this.to('DeleteVoiceProfile');
+  }
+
+  /**
+   * Grants permission to delete a voice profile domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceProfileDomain.html
+   */
+  public toDeleteVoiceProfileDomain() {
+    return this.to('DeleteVoiceProfileDomain');
+  }
+
+  /**
    * Grants permission to deregister an endpoint for an app instance user
    *
    * Access Level: Write
@@ -1064,6 +1208,17 @@ export class Chime extends PolicyStatement {
    */
   public toDescribeAppInstanceAdmin() {
     return this.to('DescribeAppInstanceAdmin');
+  }
+
+  /**
+   * Grants permission to get the full details of an AppInstanceBot
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceBot.html
+   */
+  public toDescribeAppInstanceBot() {
+    return this.to('DescribeAppInstanceBot');
   }
 
   /**
@@ -1133,7 +1288,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the details of a channel based on the membership of the specified AppInstanceUser
+   * Grants permission to get the details of a channel based on the membership of the specified user or bot
    *
    * Access Level: Read
    *
@@ -1144,7 +1299,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the full details of a channel moderated by the specified AppInstanceUser
+   * Grants permission to get the full details of a channel moderated by the specified user or bot
    *
    * Access Level: Read
    *
@@ -1415,6 +1570,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a media insights pipeline configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaInsightsPipelineConfiguration.html
+   */
+  public toGetMediaInsightsPipelineConfiguration() {
+    return this.to('GetMediaInsightsPipelineConfiguration');
+  }
+
+  /**
    * Grants permission to get an existing media pipeline
    *
    * Access Level: Read
@@ -1456,6 +1622,17 @@ export class Chime extends PolicyStatement {
    */
   public toGetMessagingSessionEndpoint() {
     return this.to('GetMessagingSessionEndpoint');
+  }
+
+  /**
+   * Grants permission to get the data streaming configurations of an AppInstance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingStreamingConfigurations.html
+   */
+  public toGetMessagingStreamingConfigurations() {
+    return this.to('GetMessagingStreamingConfigurations');
   }
 
   /**
@@ -1566,6 +1743,17 @@ export class Chime extends PolicyStatement {
    */
   public toGetSipRule() {
     return this.to('GetSipRule');
+  }
+
+  /**
+   * Grants permission to get a speaker search task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSpeakerSearchTask.html
+   */
+  public toGetSpeakerSearchTask() {
+    return this.to('GetSpeakerSearchTask');
   }
 
   /**
@@ -1723,6 +1911,39 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a voice profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceProfile.html
+   */
+  public toGetVoiceProfile() {
+    return this.to('GetVoiceProfile');
+  }
+
+  /**
+   * Grants permission to get a voice profile domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceProfileDomain.html
+   */
+  public toGetVoiceProfileDomain() {
+    return this.to('GetVoiceProfileDomain');
+  }
+
+  /**
+   * Grants permission to get a voice tone analysis task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceToneAnalysisTask.html
+   */
+  public toGetVoiceToneAnalysisTask() {
+    return this.to('GetVoiceToneAnalysisTask');
+  }
+
+  /**
    * Grants permission to send an invitation to accept a request for AWS account delegation for an Amazon Chime account
    *
    * Access Level: Write
@@ -1797,6 +2018,17 @@ export class Chime extends PolicyStatement {
    */
   public toListAppInstanceAdmins() {
     return this.to('ListAppInstanceAdmins');
+  }
+
+  /**
+   * Grants permission to list all AppInstanceBots created under a single app instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceBots.html
+   */
+  public toListAppInstanceBots() {
+    return this.to('ListAppInstanceBots');
   }
 
   /**
@@ -1901,7 +2133,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the users banned from a particular channel
+   * Grants permission to list all the users and bots banned from a particular channel
    *
    * Access Level: List
    *
@@ -1934,7 +2166,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all channels that a particular AppInstanceUser is a part of
+   * Grants permission to list all channels that a particular user or bot is a part of
    *
    * Access Level: List
    *
@@ -1989,7 +2221,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all channels moderated by an app instance user
+   * Grants permission to list all channels moderated by a user or bot
    *
    * Access Level: List
    *
@@ -2052,6 +2284,17 @@ export class Chime extends PolicyStatement {
    */
   public toListMediaCapturePipelines() {
     return this.to('ListMediaCapturePipelines');
+  }
+
+  /**
+   * Grants permission to list all media insights pipeline configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaInsightsPipelineConfigurations.html
+   */
+  public toListMediaInsightsPipelineConfigurations() {
+    return this.to('ListMediaInsightsPipelineConfigurations');
   }
 
   /**
@@ -2262,6 +2505,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list voice profile domains
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceProfileDomains.html
+   */
+  public toListVoiceProfileDomains() {
+    return this.to('ListVoiceProfileDomains');
+  }
+
+  /**
+   * Grants permission to list voice profiles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceProfiles.html
+   */
+  public toListVoiceProfiles() {
+    return this.to('ListVoiceProfiles');
+  }
+
+  /**
    * Grants permission to log out the specified user from all of the devices they are currently logged into
    *
    * Access Level: Write
@@ -2295,6 +2560,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put expiration settings for an AppInstanceUser
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceUserExpirationSettings.html
+   */
+  public toPutAppInstanceUserExpirationSettings() {
+    return this.to('PutAppInstanceUserExpirationSettings');
+  }
+
+  /**
+   * Grants permission to put expiration settings for a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutChannelExpirationSettings.html
+   */
+  public toPutChannelExpirationSettings() {
+    return this.to('PutChannelExpirationSettings');
+  }
+
+  /**
    * Grants permission to put the preferences for a channel membership
    *
    * Access Level: Write
@@ -2314,6 +2601,17 @@ export class Chime extends PolicyStatement {
    */
   public toPutEventsConfiguration() {
     return this.to('PutEventsConfiguration');
+  }
+
+  /**
+   * Grants permission to put the data streaming configurations of an AppInstance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html
+   */
+  public toPutMessagingStreamingConfigurations() {
+    return this.to('PutMessagingStreamingConfigurations');
   }
 
   /**
@@ -2405,6 +2703,9 @@ export class Chime extends PolicyStatement {
    * Grants permission to add streaming configuration for the specified Amazon Chime Voice Connector
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - chime:GetMediaInsightsPipelineConfiguration
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorStreamingConfiguration.html
    */
@@ -2614,6 +2915,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a speaker search task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StartSpeakerSearchTask.html
+   */
+  public toStartSpeakerSearchTask() {
+    return this.to('StartSpeakerSearchTask');
+  }
+
+  /**
+   * Grants permission to start a voice tone analysis task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StartVoiceToneAnalysisTask.html
+   */
+  public toStartVoiceToneAnalysisTask() {
+    return this.to('StartVoiceToneAnalysisTask');
+  }
+
+  /**
    * Grants permission to stop transcription for a meeting
    *
    * Access Level: Write
@@ -2622,6 +2945,28 @@ export class Chime extends PolicyStatement {
    */
   public toStopMeetingTranscription() {
     return this.to('StopMeetingTranscription');
+  }
+
+  /**
+   * Grants permission to stop a speaker search task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StopSpeakerSearchTask.html
+   */
+  public toStopSpeakerSearchTask() {
+    return this.to('StopSpeakerSearchTask');
+  }
+
+  /**
+   * Grants permission to stop a voice tone analysis task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StopVoiceToneAnalysisTask.html
+   */
+  public toStopVoiceToneAnalysisTask() {
+    return this.to('StopVoiceToneAnalysisTask');
   }
 
   /**
@@ -2792,6 +3137,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the details for an AppInstanceBot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceBot.html
+   */
+  public toUpdateAppInstanceBot() {
+    return this.to('UpdateAppInstanceBot');
+  }
+
+  /**
    * Grants permission to update the details for an AppInstanceUser
    *
    * Access Level: Write
@@ -2904,6 +3260,34 @@ export class Chime extends PolicyStatement {
    */
   public toUpdateGlobalSettings() {
     return this.to('UpdateGlobalSettings');
+  }
+
+  /**
+   * Grants permission to update the status of a media insights pipeline configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - chime:ListVoiceConnectors
+   * - iam:PassRole
+   * - kinesis:DescribeStream
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaInsightsPipelineConfiguration.html
+   */
+  public toUpdateMediaInsightsPipelineConfiguration() {
+    return this.to('UpdateMediaInsightsPipelineConfiguration');
+  }
+
+  /**
+   * Grants permission to update the status of a media insights pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaInsightsPipelineStatus.html
+   */
+  public toUpdateMediaInsightsPipelineStatus() {
+    return this.to('UpdateMediaInsightsPipelineStatus');
   }
 
   /**
@@ -3061,6 +3445,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a voice profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceProfile.html
+   */
+  public toUpdateVoiceProfile() {
+    return this.to('UpdateVoiceProfile');
+  }
+
+  /**
+   * Grants permission to update a voice profile domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceProfileDomain.html
+   */
+  public toUpdateVoiceProfileDomain() {
+    return this.to('UpdateVoiceProfileDomain');
+  }
+
+  /**
    * Grants permission to validate the account resource in your Amazon Chime account
    *
    * Access Level: Read
@@ -3110,6 +3516,7 @@ export class Chime extends PolicyStatement {
       'CreateApiKey',
       'CreateAppInstance',
       'CreateAppInstanceAdmin',
+      'CreateAppInstanceBot',
       'CreateAppInstanceUser',
       'CreateAttendee',
       'CreateBot',
@@ -3121,6 +3528,8 @@ export class Chime extends PolicyStatement {
       'CreateChannelModerator',
       'CreateMediaCapturePipeline',
       'CreateMediaConcatenationPipeline',
+      'CreateMediaInsightsPipeline',
+      'CreateMediaInsightsPipelineConfiguration',
       'CreateMediaLiveConnectorPipeline',
       'CreateMeeting',
       'CreateMeetingDialOut',
@@ -3135,11 +3544,14 @@ export class Chime extends PolicyStatement {
       'CreateUser',
       'CreateVoiceConnector',
       'CreateVoiceConnectorGroup',
+      'CreateVoiceProfile',
+      'CreateVoiceProfileDomain',
       'DeleteAccount',
       'DeleteAccountOpenIdConfig',
       'DeleteApiKey',
       'DeleteAppInstance',
       'DeleteAppInstanceAdmin',
+      'DeleteAppInstanceBot',
       'DeleteAppInstanceStreamingConfigurations',
       'DeleteAppInstanceUser',
       'DeleteAttendee',
@@ -3155,8 +3567,10 @@ export class Chime extends PolicyStatement {
       'DeleteEventsConfiguration',
       'DeleteGroups',
       'DeleteMediaCapturePipeline',
+      'DeleteMediaInsightsPipelineConfiguration',
       'DeleteMediaPipeline',
       'DeleteMeeting',
+      'DeleteMessagingStreamingConfigurations',
       'DeletePhoneNumber',
       'DeleteProxySession',
       'DeleteRoom',
@@ -3171,6 +3585,8 @@ export class Chime extends PolicyStatement {
       'DeleteVoiceConnectorStreamingConfiguration',
       'DeleteVoiceConnectorTermination',
       'DeleteVoiceConnectorTerminationCredentials',
+      'DeleteVoiceProfile',
+      'DeleteVoiceProfileDomain',
       'DeregisterAppInstanceUserEndpoint',
       'DisassociateChannelFlow',
       'DisassociatePhoneNumberFromUser',
@@ -3184,8 +3600,11 @@ export class Chime extends PolicyStatement {
       'LogoutUser',
       'PutAppInstanceRetentionSettings',
       'PutAppInstanceStreamingConfigurations',
+      'PutAppInstanceUserExpirationSettings',
+      'PutChannelExpirationSettings',
       'PutChannelMembershipPreferences',
       'PutEventsConfiguration',
+      'PutMessagingStreamingConfigurations',
       'PutRetentionSettings',
       'PutSipMediaApplicationAlexaSkillConfiguration',
       'PutSipMediaApplicationLoggingConfiguration',
@@ -3209,7 +3628,11 @@ export class Chime extends PolicyStatement {
       'SendChannelMessage',
       'StartDataExport',
       'StartMeetingTranscription',
+      'StartSpeakerSearchTask',
+      'StartVoiceToneAnalysisTask',
       'StopMeetingTranscription',
+      'StopSpeakerSearchTask',
+      'StopVoiceToneAnalysisTask',
       'SubmitSupportRequest',
       'SuspendUsers',
       'UnauthorizeDirectory',
@@ -3218,6 +3641,7 @@ export class Chime extends PolicyStatement {
       'UpdateAccountResource',
       'UpdateAccountSettings',
       'UpdateAppInstance',
+      'UpdateAppInstanceBot',
       'UpdateAppInstanceUser',
       'UpdateAppInstanceUserEndpoint',
       'UpdateAttendeeCapabilities',
@@ -3228,6 +3652,8 @@ export class Chime extends PolicyStatement {
       'UpdateChannelMessage',
       'UpdateChannelReadMarker',
       'UpdateGlobalSettings',
+      'UpdateMediaInsightsPipelineConfiguration',
+      'UpdateMediaInsightsPipelineStatus',
       'UpdatePhoneNumber',
       'UpdatePhoneNumberSettings',
       'UpdateProxySession',
@@ -3242,11 +3668,14 @@ export class Chime extends PolicyStatement {
       'UpdateUserSettings',
       'UpdateVoiceConnector',
       'UpdateVoiceConnectorGroup',
+      'UpdateVoiceProfile',
+      'UpdateVoiceProfileDomain',
       'ValidateE911Address'
     ],
     Read: [
       'DescribeAppInstance',
       'DescribeAppInstanceAdmin',
+      'DescribeAppInstanceBot',
       'DescribeAppInstanceUser',
       'DescribeAppInstanceUserEndpoint',
       'DescribeChannel',
@@ -3272,10 +3701,12 @@ export class Chime extends PolicyStatement {
       'GetEventsConfiguration',
       'GetGlobalSettings',
       'GetMediaCapturePipeline',
+      'GetMediaInsightsPipelineConfiguration',
       'GetMediaPipeline',
       'GetMeeting',
       'GetMeetingDetail',
       'GetMessagingSessionEndpoint',
+      'GetMessagingStreamingConfigurations',
       'GetPhoneNumber',
       'GetPhoneNumberOrder',
       'GetPhoneNumberSettings',
@@ -3286,6 +3717,7 @@ export class Chime extends PolicyStatement {
       'GetSipMediaApplicationAlexaSkillConfiguration',
       'GetSipMediaApplicationLoggingConfiguration',
       'GetSipRule',
+      'GetSpeakerSearchTask',
       'GetTelephonyLimits',
       'GetUser',
       'GetUserActivityReportData',
@@ -3300,6 +3732,9 @@ export class Chime extends PolicyStatement {
       'GetVoiceConnectorStreamingConfiguration',
       'GetVoiceConnectorTermination',
       'GetVoiceConnectorTerminationHealth',
+      'GetVoiceProfile',
+      'GetVoiceProfileDomain',
+      'GetVoiceToneAnalysisTask',
       'ListChannelMessages',
       'ListTagsForResource',
       'RetrieveDataExports',
@@ -3311,6 +3746,7 @@ export class Chime extends PolicyStatement {
       'ListAccounts',
       'ListApiKeys',
       'ListAppInstanceAdmins',
+      'ListAppInstanceBots',
       'ListAppInstanceUserEndpoints',
       'ListAppInstanceUsers',
       'ListAppInstances',
@@ -3333,6 +3769,7 @@ export class Chime extends PolicyStatement {
       'ListDomains',
       'ListGroups',
       'ListMediaCapturePipelines',
+      'ListMediaInsightsPipelineConfigurations',
       'ListMediaPipelines',
       'ListMeetingEvents',
       'ListMeetingTags',
@@ -3351,6 +3788,8 @@ export class Chime extends PolicyStatement {
       'ListVoiceConnectorGroups',
       'ListVoiceConnectorTerminationCredentials',
       'ListVoiceConnectors',
+      'ListVoiceProfileDomains',
+      'ListVoiceProfiles',
       'SearchChannels'
     ],
     Tagging: [
@@ -3415,6 +3854,24 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type app-instance-bot to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceBot.html
+   *
+   * @param appInstanceId - Identifier for the appInstanceId.
+   * @param appInstanceBotId - Identifier for the appInstanceBotId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAppInstanceBot(appInstanceId: string, appInstanceBotId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/bot/${ appInstanceBotId }`);
+  }
+
+  /**
    * Adds a resource of type channel to the statement
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_Channel.html
@@ -3465,5 +3922,53 @@ export class Chime extends PolicyStatement {
    */
   public onMediaPipeline(mediaPipelineId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-pipeline/${ mediaPipelineId }`);
+  }
+
+  /**
+   * Adds a resource of type media-insights-pipeline-configuration to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaInsightsPipelineConfiguration.html
+   *
+   * @param configurationName - Identifier for the configurationName.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMediaInsightsPipelineConfiguration(configurationName: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-insights-pipeline-configuration/${ configurationName }`);
+  }
+
+  /**
+   * Adds a resource of type voice-profile-domain to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
+   *
+   * @param voiceProfileDomainId - Identifier for the voiceProfileDomainId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVoiceProfileDomain(voiceProfileDomainId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:voice-profile-domain/${ voiceProfileDomainId }`);
+  }
+
+  /**
+   * Adds a resource of type voice-profile to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html
+   *
+   * @param voiceProfileId - Identifier for the voiceProfileId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onVoiceProfile(voiceProfileId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:voice-profile/${ voiceProfileId }`);
   }
 }

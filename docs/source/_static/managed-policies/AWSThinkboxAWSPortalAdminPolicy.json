@@ -308,7 +308,8 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:EstimateTemplateCost",
-        "cloudformation:DescribeStacks"
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks"
       ],
       "Resource": "*"
     },

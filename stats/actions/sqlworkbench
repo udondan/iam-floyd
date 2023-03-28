@@ -32,6 +32,7 @@ sqlworkbench:GetNotebook;Read
 sqlworkbench:GetNotebookVersion;Read
 sqlworkbench:GetQueryExecutionHistory;Read
 sqlworkbench:GetSavedQuery;Read
+sqlworkbench:GetSchemaInference;Read
 sqlworkbench:GetUserInfo;Read
 sqlworkbench:GetUserWorkspaceSettings;Read
 sqlworkbench:ImportNotebook;Write

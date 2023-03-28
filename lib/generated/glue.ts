@@ -972,6 +972,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Data Preview Statement
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toGetDataPreviewStatement() {
+    return this.to('GetDataPreviewStatement');
+  }
+
+  /**
    * Grants permission to retrieve a Data Quality result
    *
    * Access Level: Read
@@ -1537,10 +1548,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListBlueprints
    */
   public toListBlueprints() {
@@ -1551,10 +1558,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all crawlers
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawlers
    */
@@ -1577,10 +1580,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all Custom Entity Types
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-ListGetCustomEntityTypes
    */
@@ -1641,10 +1640,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-ListDevEndpoints
    */
   public toListDevEndpoints() {
@@ -1655,10 +1650,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all current jobs
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-ListJobs
    */
@@ -1740,10 +1731,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all triggers
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-ListTriggers
    */
@@ -1881,6 +1868,17 @@ export class Glue extends PolicyStatement {
    */
   public toResumeWorkflowRun() {
     return this.to('ResumeWorkflowRun');
+  }
+
+  /**
+   * Grants permission to run Data Preview Statement
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
+   */
+  public toRunDataPreviewStatement() {
+    return this.to('RunDataPreviewStatement');
   }
 
   /**
@@ -2586,10 +2584,12 @@ export class Glue extends PolicyStatement {
     'Permissions management': [
       'DeleteResourcePolicy',
       'DeregisterDataPreview',
+      'GetDataPreviewStatement',
       'GetNotebookInstanceStatus',
       'GlueNotebookAuthorize',
       'GlueNotebookRefreshCredentials',
       'PutResourcePolicy',
+      'RunDataPreviewStatement',
       'StartNotebook',
       'TerminateNotebook',
       'UseGlueStudio'

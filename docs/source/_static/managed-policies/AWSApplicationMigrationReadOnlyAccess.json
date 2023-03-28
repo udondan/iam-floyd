@@ -15,7 +15,11 @@
         "mgn:ListSourceServerActions",
         "mgn:ListTemplateActions",
         "mgn:ListApplications",
-        "mgn:ListWaves"
+        "mgn:ListWaves",
+        "mgn:ListExports",
+        "mgn:ListImports",
+        "mgn:ListImportErrors",
+        "mgn:ListExportErrors"
       ],
       "Resource": "*"
     },

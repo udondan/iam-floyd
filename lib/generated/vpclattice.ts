@@ -31,7 +31,7 @@ export class VpcLattice extends PolicyStatement {
    * - logs:CreateLogDelivery
    * - logs:GetLogDelivery
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateAccessLogSubscription() {
     return this.to('CreateAccessLogSubscription');
@@ -48,7 +48,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateListener() {
     return this.to('CreateListener');
@@ -64,7 +64,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateRule() {
     return this.to('CreateRule');
@@ -83,7 +83,7 @@ export class VpcLattice extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateService() {
     return this.to('CreateService');
@@ -102,7 +102,7 @@ export class VpcLattice extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateServiceNetwork() {
     return this.to('CreateServiceNetwork');
@@ -119,7 +119,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateServiceNetworkServiceAssociation() {
     return this.to('CreateServiceNetworkServiceAssociation');
@@ -140,7 +140,7 @@ export class VpcLattice extends PolicyStatement {
    * Dependent actions:
    * - ec2:DescribeVpcs
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateServiceNetworkVpcAssociation() {
     return this.to('CreateServiceNetworkVpcAssociation');
@@ -159,7 +159,7 @@ export class VpcLattice extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toCreateTargetGroup() {
     return this.to('CreateTargetGroup');
@@ -177,7 +177,7 @@ export class VpcLattice extends PolicyStatement {
    * - logs:DeleteLogDelivery
    * - logs:GetLogDelivery
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteAccessLogSubscription() {
     return this.to('DeleteAccessLogSubscription');
@@ -188,7 +188,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteAuthPolicy() {
     return this.to('DeleteAuthPolicy');
@@ -202,7 +202,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteListener() {
     return this.to('DeleteListener');
@@ -213,7 +213,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
@@ -227,7 +227,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteRule() {
     return this.to('DeleteRule');
@@ -241,7 +241,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteService() {
     return this.to('DeleteService');
@@ -255,7 +255,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteServiceNetwork() {
     return this.to('DeleteServiceNetwork');
@@ -271,7 +271,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceArn()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteServiceNetworkServiceAssociation() {
     return this.to('DeleteServiceNetworkServiceAssociation');
@@ -287,7 +287,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteServiceNetworkVpcAssociation() {
     return this.to('DeleteServiceNetworkVpcAssociation');
@@ -301,7 +301,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeleteTargetGroup() {
     return this.to('DeleteTargetGroup');
@@ -312,7 +312,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toDeregisterTargets() {
     return this.to('DeregisterTargets');
@@ -329,7 +329,7 @@ export class VpcLattice extends PolicyStatement {
    * Dependent actions:
    * - logs:GetLogDelivery
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetAccessLogSubscription() {
     return this.to('GetAccessLogSubscription');
@@ -340,7 +340,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetAuthPolicy() {
     return this.to('GetAuthPolicy');
@@ -354,7 +354,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetListener() {
     return this.to('GetListener');
@@ -365,7 +365,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
@@ -379,7 +379,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetRule() {
     return this.to('GetRule');
@@ -393,7 +393,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetService() {
     return this.to('GetService');
@@ -407,7 +407,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetServiceNetwork() {
     return this.to('GetServiceNetwork');
@@ -423,7 +423,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceArn()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetServiceNetworkServiceAssociation() {
     return this.to('GetServiceNetworkServiceAssociation');
@@ -439,7 +439,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetServiceNetworkVpcAssociation() {
     return this.to('GetServiceNetworkVpcAssociation');
@@ -453,7 +453,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toGetTargetGroup() {
     return this.to('GetTargetGroup');
@@ -464,7 +464,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListAccessLogSubscriptions() {
     return this.to('ListAccessLogSubscriptions');
@@ -475,7 +475,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListListeners() {
     return this.to('ListListeners');
@@ -486,7 +486,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListRules() {
     return this.to('ListRules');
@@ -501,7 +501,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    * - .ifServiceArn()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListServiceNetworkServiceAssociations() {
     return this.to('ListServiceNetworkServiceAssociations');
@@ -516,7 +516,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    * - .ifServiceNetworkArn()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListServiceNetworkVpcAssociations() {
     return this.to('ListServiceNetworkVpcAssociations');
@@ -527,7 +527,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListServiceNetworks() {
     return this.to('ListServiceNetworks');
@@ -538,7 +538,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListServices() {
     return this.to('ListServices');
@@ -549,7 +549,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -560,7 +560,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListTargetGroups() {
     return this.to('ListTargetGroups');
@@ -571,7 +571,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toListTargets() {
     return this.to('ListTargets');
@@ -582,7 +582,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toPutAuthPolicy() {
     return this.to('PutAuthPolicy');
@@ -593,7 +593,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
@@ -604,7 +604,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toRegisterTargets() {
     return this.to('RegisterTargets');
@@ -620,7 +620,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -634,7 +634,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -652,7 +652,7 @@ export class VpcLattice extends PolicyStatement {
    * - logs:GetLogDelivery
    * - logs:UpdateLogDelivery
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateAccessLogSubscription() {
     return this.to('UpdateAccessLogSubscription');
@@ -667,7 +667,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateListener() {
     return this.to('UpdateListener');
@@ -682,7 +682,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateRule() {
     return this.to('UpdateRule');
@@ -697,7 +697,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateService() {
     return this.to('UpdateService');
@@ -712,7 +712,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateServiceNetwork() {
     return this.to('UpdateServiceNetwork');
@@ -733,7 +733,7 @@ export class VpcLattice extends PolicyStatement {
    * - ec2:DescribeSecurityGroups
    * - ec2:DescribeVpcs
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateServiceNetworkVpcAssociation() {
     return this.to('UpdateServiceNetworkVpcAssociation');
@@ -747,7 +747,7 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    */
   public toUpdateTargetGroup() {
     return this.to('UpdateTargetGroup');
@@ -820,10 +820,11 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Adds a resource of type ServiceNetwork to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceNetworkId - Identifier for the serviceNetworkId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -832,17 +833,18 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAuthType()
    */
-  public onServiceNetwork(serviceNetworkId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetwork/${ serviceNetworkId }`);
+  public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetwork/${ serviceNetworkId }`);
   }
 
   /**
    * Adds a resource of type Service to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceId - Identifier for the serviceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -851,17 +853,18 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAuthType()
    */
-  public onService(serviceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }`);
+  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
   }
 
   /**
    * Adds a resource of type ServiceNetworkVpcAssociation to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceNetworkVpcAssociationId - Identifier for the serviceNetworkVpcAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -872,17 +875,18 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    * - .ifVpcId()
    */
-  public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
+  public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
   }
 
   /**
    * Adds a resource of type ServiceNetworkServiceAssociation to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceNetworkServiceAssociationId - Identifier for the serviceNetworkServiceAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -892,17 +896,18 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceArn()
    * - .ifServiceNetworkArn()
    */
-  public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
+  public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
   }
 
   /**
    * Adds a resource of type TargetGroup to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param targetGroupId - Identifier for the targetGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -911,18 +916,19 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifVpcId()
    */
-  public onTargetGroup(targetGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:targetgroup/${ targetGroupId }`);
+  public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupId }`);
   }
 
   /**
    * Adds a resource of type Listener to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceId - Identifier for the serviceId.
    * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -932,19 +938,20 @@ export class VpcLattice extends PolicyStatement {
    * - .ifProtocol()
    * - .ifTargetGroupArns()
    */
-  public onListener(serviceId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }`);
+  public onListener(serviceId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/listener/${ listenerId }`);
   }
 
   /**
    * Adds a resource of type Rule to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param serviceId - Identifier for the serviceId.
    * @param listenerId - Identifier for the listenerId.
    * @param ruleId - Identifier for the ruleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -953,17 +960,18 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifTargetGroupArns()
    */
-  public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
+  public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
   }
 
   /**
    * Adds a resource of type AccessLogSubscription to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * @param accessLogSubscriptionId - Identifier for the accessLogSubscriptionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -971,14 +979,14 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    */
-  public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice::${ account || '*' }:accesslogsubscription/${ accessLogSubscriptionId }`);
+  public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:accesslogsubscription/${ accessLogSubscriptionId }`);
   }
 
   /**
    * Filters access by the auth type specified in the request
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateService()
@@ -1000,7 +1008,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the protocol specified in the request
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateListener()
@@ -1018,7 +1026,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the IDs of security groups
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateServiceNetworkVpcAssociation()
@@ -1037,7 +1045,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the ARN of a service
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateServiceNetworkServiceAssociation()
@@ -1058,7 +1066,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the ARN of a service network
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateServiceNetworkServiceAssociation()
@@ -1085,7 +1093,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the ARNs of target groups
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateListener()
@@ -1107,7 +1115,7 @@ export class VpcLattice extends PolicyStatement {
   /**
    * Filters access by the ID of a virtual private cloud (VPC)
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice
    *
    * Applies to actions:
    * - .toCreateServiceNetworkVpcAssociation()

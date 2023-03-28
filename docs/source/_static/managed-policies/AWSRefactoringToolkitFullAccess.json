@@ -302,6 +302,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks",
         "clouddirectory:ListDirectories",
         "codebuild:BatchGetProjects",
         "codebuild:BatchGetBuilds",

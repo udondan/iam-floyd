@@ -746,6 +746,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of configuration changes that are scheduled for a OpenSearch Service domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html
+   */
+  public toListScheduledActions() {
+    return this.to('ListScheduledActions');
+  }
+
+  /**
    * Grants permission to display all resource tags for an OpenSearch Service domain
    *
    * Access Level: Read
@@ -925,6 +936,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reschedule a planned OpenSearch Service domain configuration change for a later time
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateScheduledAction.html
+   */
+  public toUpdateScheduledAction() {
+    return this.to('UpdateScheduledAction');
+  }
+
+  /**
    * Grants permission to modify an Amazon OpenSearch Service-managed interface VPC endpoint
    *
    * Access Level: Write
@@ -997,6 +1019,7 @@ export class Es extends PolicyStatement {
       'UpdateDomainConfig',
       'UpdateElasticsearchDomainConfig',
       'UpdatePackage',
+      'UpdateScheduledAction',
       'UpdateVpcEndpoint',
       'UpgradeDomain',
       'UpgradeElasticsearchDomain'
@@ -1045,6 +1068,7 @@ export class Es extends PolicyStatement {
       'ListElasticsearchVersions',
       'ListInstanceTypeDetails',
       'ListPackagesForDomain',
+      'ListScheduledActions',
       'ListVersions',
       'ListVpcEndpointAccess',
       'ListVpcEndpoints',

@@ -19,7 +19,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the specified pronunciation lexicon stored in an AWS Region
+   * Grants permission to delete the specified pronunciation lexicon stored in an AWS Region
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe the list of voices that are available for use when requesting speech synthesis
+   * Grants permission to describe the list of voices that are available for use when requesting speech synthesis
    *
    * Access Level: List
    *
@@ -41,7 +41,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the content of the specified pronunciation lexicon stored in an AWS Region
+   * Grants permission to retrieve the content of the specified pronunciation lexicon stored in an AWS Region
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about specific speech synthesis task
+   * Grants permission to get information about specific speech synthesis task
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permisions to list the pronunciation lexicons stored in an AWS Region
+   * Grants permission to list the pronunciation lexicons stored in an AWS Region
    *
    * Access Level: List
    *
@@ -74,7 +74,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list requested speech synthesis tasks
+   * Grants permission to list requested speech synthesis tasks
    *
    * Access Level: List
    *
@@ -85,7 +85,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to store a pronunciation lexicon in an AWS Region
+   * Grants permission to store a pronunciation lexicon in an AWS Region
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to synthesize long inputs to the provided S3 location
+   * Grants permission to synthesize long inputs to the provided S3 location
    *
    * Access Level: Write
    *
@@ -110,7 +110,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to synthesize speech
+   * Grants permission to synthesize speech
    *
    * Access Level: Read
    *

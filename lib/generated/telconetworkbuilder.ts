@@ -239,7 +239,8 @@ export class Tnb extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/tnb/latest/APIReference/API_InstantiateSolNetworkInstance.html
    */
@@ -371,7 +372,8 @@ export class Tnb extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/tnb/latest/APIReference/API_TerminateSolNetworkInstance.html
    */
@@ -410,7 +412,8 @@ export class Tnb extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkInstance.html
    */
