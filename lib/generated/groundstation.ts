@@ -156,6 +156,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the configuration of an agent
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentConfiguration.html
+   */
+  public toGetAgentConfiguration() {
+    return this.to('GetAgentConfiguration');
+  }
+
+  /**
    * Grants permission to return a configuration
    *
    * Access Level: Read
@@ -299,6 +310,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_RegisterAgent.html
+   */
+  public toRegisterAgent() {
+    return this.to('RegisterAgent');
+  }
+
+  /**
    * Grants permission to reserve a contact
    *
    * Access Level: Write
@@ -340,6 +362,17 @@ export class Groundstation extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the status of an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateAgentStatus.html
+   */
+  public toUpdateAgentStatus() {
+    return this.to('UpdateAgentStatus');
   }
 
   /**
@@ -386,7 +419,9 @@ export class Groundstation extends PolicyStatement {
       'DeleteDataflowEndpointGroup',
       'DeleteEphemeris',
       'DeleteMissionProfile',
+      'RegisterAgent',
       'ReserveContact',
+      'UpdateAgentStatus',
       'UpdateConfig',
       'UpdateEphemeris',
       'UpdateMissionProfile'
@@ -394,6 +429,7 @@ export class Groundstation extends PolicyStatement {
     Read: [
       'DescribeContact',
       'DescribeEphemeris',
+      'GetAgentConfiguration',
       'GetConfig',
       'GetDataflowEndpointGroup',
       'GetMinuteUsage',
@@ -540,6 +576,38 @@ export class Groundstation extends PolicyStatement {
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
+  }
+
+  /**
+   * Adds a resource of type Agent to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AgentDetails.html
+   *
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAgentId()
+   */
+  public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:agent/${ agentId }`);
+  }
+
+  /**
+   * Filters access by the ID of an agent
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_RegisterAgent.html#groundstation-RegisterAgent-response-agentId
+   *
+   * Applies to resource types:
+   * - Agent
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAgentId(value: string | string[], operator?: Operator | string) {
+    return this.if(`AgentId`, value, operator || 'StringLike');
   }
 
   /**

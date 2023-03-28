@@ -9,6 +9,7 @@ groundstation:DeleteEphemeris;Write
 groundstation:DeleteMissionProfile;Write
 groundstation:DescribeContact;Read
 groundstation:DescribeEphemeris;Read
+groundstation:GetAgentConfiguration;Read
 groundstation:GetConfig;Read
 groundstation:GetDataflowEndpointGroup;Read
 groundstation:GetMinuteUsage;Read
@@ -22,9 +23,11 @@ groundstation:ListGroundStations;List
 groundstation:ListMissionProfiles;List
 groundstation:ListSatellites;List
 groundstation:ListTagsForResource;Read
+groundstation:RegisterAgent;Write
 groundstation:ReserveContact;Write
 groundstation:TagResource;Tagging
 groundstation:UntagResource;Tagging
+groundstation:UpdateAgentStatus;Write
 groundstation:UpdateConfig;Write
 groundstation:UpdateEphemeris;Write
 groundstation:UpdateMissionProfile;Write

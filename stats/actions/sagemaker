@@ -11,6 +11,7 @@ sagemaker:CreateApp;Write
 sagemaker:CreateAppImageConfig;Write
 sagemaker:CreateArtifact;Write
 sagemaker:CreateAutoMLJob;Write
+sagemaker:CreateAutoMLJobV2;Write
 sagemaker:CreateCodeRepository;Write
 sagemaker:CreateCompilationJob;Write
 sagemaker:CreateContext;Write
@@ -115,6 +116,7 @@ sagemaker:DescribeApp;Read
 sagemaker:DescribeAppImageConfig;Read
 sagemaker:DescribeArtifact;Read
 sagemaker:DescribeAutoMLJob;Read
+sagemaker:DescribeAutoMLJobV2;Read
 sagemaker:DescribeCodeRepository;Read
 sagemaker:DescribeCompilationJob;Read
 sagemaker:DescribeContext;Read

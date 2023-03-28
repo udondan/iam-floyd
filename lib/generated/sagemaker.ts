@@ -217,6 +217,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a V2 AutoML job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInterContainerTrafficEncryption()
+   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html
+   */
+  public toCreateAutoMLJobV2() {
+    return this.to('CreateAutoMLJobV2');
+  }
+
+  /**
    * Grants permission to create a CodeRepository
    *
    * Access Level: Write
@@ -1807,6 +1831,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeAutoMLJob() {
     return this.to('DescribeAutoMLJob');
+  }
+
+  /**
+   * Grants permission to describe an AutoML job that was created via the CreateAutoMLJobV2 API
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html
+   */
+  public toDescribeAutoMLJobV2() {
+    return this.to('DescribeAutoMLJobV2');
   }
 
   /**
@@ -4196,6 +4231,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateAppImageConfig',
       'CreateArtifact',
       'CreateAutoMLJob',
+      'CreateAutoMLJobV2',
       'CreateCodeRepository',
       'CreateCompilationJob',
       'CreateContext',
@@ -4376,6 +4412,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeAppImageConfig',
       'DescribeArtifact',
       'DescribeAutoMLJob',
+      'DescribeAutoMLJobV2',
       'DescribeCodeRepository',
       'DescribeCompilationJob',
       'DescribeContext',
@@ -5886,6 +5923,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModelBiasJobDefinition()
@@ -6019,6 +6057,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateLabelingJob()
@@ -6182,6 +6221,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
@@ -6211,6 +6251,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateHyperParameterTuningJob()
@@ -6241,6 +6282,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateHyperParameterTuningJob()
