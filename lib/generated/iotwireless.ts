@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotcoreforlorawan.html).
+ * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotwireless extends PolicyStatement {
   public servicePrefix = 'iotwireless';
 
   /**
-   * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotcoreforlorawan.html).
+   * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -351,6 +351,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the wireless device import task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDeviceImportTask.html
+   */
+  public toDeleteWirelessDeviceImportTask() {
+    return this.to('DeleteWirelessDeviceImportTask');
+  }
+
+  /**
    * Grants permission to delete a WirelessGateway
    *
    * Access Level: Write
@@ -665,6 +676,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the wireless device import task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceImportTask.html
+   */
+  public toGetWirelessDeviceImportTask() {
+    return this.to('GetWirelessDeviceImportTask');
+  }
+
+  /**
    * Grants permission to get statistics info for a given WirelessDevice
    *
    * Access Level: Read
@@ -761,6 +783,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toListDeviceProfiles() {
     return this.to('ListDeviceProfiles');
+  }
+
+  /**
+   * Grants permission to list information of devices by wireless device import task based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDevicesForWirelessDeviceImportTask.html
+   */
+  public toListDevicesForWirelessDeviceImportTask() {
+    return this.to('ListDevicesForWirelessDeviceImportTask');
   }
 
   /**
@@ -871,6 +904,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list wireless device import tasks information of based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDeviceImportTasks.html
+   */
+  public toListWirelessDeviceImportTasks() {
+    return this.to('ListWirelessDeviceImportTasks');
   }
 
   /**
@@ -1025,6 +1069,28 @@ export class Iotwireless extends PolicyStatement {
    */
   public toStartNetworkAnalyzerStream() {
     return this.to('StartNetworkAnalyzerStream');
+  }
+
+  /**
+   * Grants permission to start the single wireless device import task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartSingleWirelessDeviceImportTask.html
+   */
+  public toStartSingleWirelessDeviceImportTask() {
+    return this.to('StartSingleWirelessDeviceImportTask');
+  }
+
+  /**
+   * Grants permission to start the wireless device import task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
+   */
+  public toStartWirelessDeviceImportTask() {
+    return this.to('StartWirelessDeviceImportTask');
   }
 
   /**
@@ -1189,6 +1255,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a wireless device import task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDeviceImportTask.html
+   */
+  public toUpdateWirelessDeviceImportTask() {
+    return this.to('UpdateWirelessDeviceImportTask');
+  }
+
+  /**
    * Grants permission to update a WirelessGateway resource
    *
    * Access Level: Write
@@ -1227,6 +1304,7 @@ export class Iotwireless extends PolicyStatement {
       'DeleteQueuedMessages',
       'DeleteServiceProfile',
       'DeleteWirelessDevice',
+      'DeleteWirelessDeviceImportTask',
       'DeleteWirelessGateway',
       'DeleteWirelessGatewayTask',
       'DeleteWirelessGatewayTaskDefinition',
@@ -1248,6 +1326,8 @@ export class Iotwireless extends PolicyStatement {
       'StartFuotaTask',
       'StartMulticastGroupSession',
       'StartNetworkAnalyzerStream',
+      'StartSingleWirelessDeviceImportTask',
+      'StartWirelessDeviceImportTask',
       'TestWirelessDevice',
       'UpdateDestination',
       'UpdateEventConfigurationByResourceTypes',
@@ -1260,6 +1340,7 @@ export class Iotwireless extends PolicyStatement {
       'UpdateResourceEventConfiguration',
       'UpdateResourcePosition',
       'UpdateWirelessDevice',
+      'UpdateWirelessDeviceImportTask',
       'UpdateWirelessGateway'
     ],
     Read: [
@@ -1281,6 +1362,7 @@ export class Iotwireless extends PolicyStatement {
       'GetServiceEndpoint',
       'GetServiceProfile',
       'GetWirelessDevice',
+      'GetWirelessDeviceImportTask',
       'GetWirelessDeviceStatistics',
       'GetWirelessGateway',
       'GetWirelessGatewayCertificate',
@@ -1290,6 +1372,7 @@ export class Iotwireless extends PolicyStatement {
       'GetWirelessGatewayTaskDefinition',
       'ListDestinations',
       'ListDeviceProfiles',
+      'ListDevicesForWirelessDeviceImportTask',
       'ListEventConfigurations',
       'ListFuotaTasks',
       'ListMulticastGroups',
@@ -1300,6 +1383,7 @@ export class Iotwireless extends PolicyStatement {
       'ListQueuedMessages',
       'ListServiceProfiles',
       'ListTagsForResource',
+      'ListWirelessDeviceImportTasks',
       'ListWirelessDevices',
       'ListWirelessGatewayTaskDefinitions',
       'ListWirelessGateways'
@@ -1506,5 +1590,22 @@ export class Iotwireless extends PolicyStatement {
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
+  }
+
+  /**
+   * Adds a resource of type WirelessDeviceImportTask to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
+   *
+   * @param wirelessDeviceImportTaskId - Identifier for the wirelessDeviceImportTaskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWirelessDeviceImportTask(wirelessDeviceImportTaskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDeviceImportTask/${ wirelessDeviceImportTaskId }`);
   }
 }

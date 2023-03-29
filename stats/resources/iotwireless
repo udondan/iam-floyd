@@ -6,6 +6,7 @@ iotwireless:NetworkAnalyzerConfiguration
 iotwireless:ServiceProfile
 iotwireless:SidewalkAccount
 iotwireless:WirelessDevice
+iotwireless:WirelessDeviceImportTask
 iotwireless:WirelessGateway
 iotwireless:WirelessGatewayTaskDefinition
 iotwireless:cert

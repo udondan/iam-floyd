@@ -228,6 +228,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetConsoleActionSetEnforced() {
+    return this.to('GetConsoleActionSetEnforced');
+  }
+
+  /**
    * Grants permission to retrieve the cost and usage metrics for your account
    *
    * Access Level: Read
@@ -532,6 +543,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdateConsoleActionSetEnforced() {
+    return this.to('UpdateConsoleActionSetEnforced');
+  }
+
+  /**
    * Grants permission to update existing Cost Allocation Tags status
    *
    * Access Level: Write
@@ -605,6 +627,7 @@ export class Ce extends PolicyStatement {
       'StartSavingsPlansPurchaseRecommendationGeneration',
       'UpdateAnomalyMonitor',
       'UpdateAnomalySubscription',
+      'UpdateConsoleActionSetEnforced',
       'UpdateCostAllocationTagsStatus',
       'UpdateCostCategoryDefinition',
       'UpdateNotificationSubscription',
@@ -618,6 +641,7 @@ export class Ce extends PolicyStatement {
       'GetAnomalies',
       'GetAnomalyMonitors',
       'GetAnomalySubscriptions',
+      'GetConsoleActionSetEnforced',
       'GetCostAndUsage',
       'GetCostAndUsageWithResources',
       'GetCostCategories',

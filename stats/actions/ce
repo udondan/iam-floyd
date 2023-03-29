@@ -14,6 +14,7 @@ ce:DescribeReport;Read
 ce:GetAnomalies;Read
 ce:GetAnomalyMonitors;Read
 ce:GetAnomalySubscriptions;Read
+ce:GetConsoleActionSetEnforced;Read
 ce:GetCostAndUsage;Read
 ce:GetCostAndUsageWithResources;Read
 ce:GetCostCategories;Read
@@ -40,6 +41,7 @@ ce:TagResource;Tagging
 ce:UntagResource;Tagging
 ce:UpdateAnomalyMonitor;Write
 ce:UpdateAnomalySubscription;Write
+ce:UpdateConsoleActionSetEnforced;Write
 ce:UpdateCostAllocationTagsStatus;Write
 ce:UpdateCostCategoryDefinition;Write
 ce:UpdateNotificationSubscription;Write

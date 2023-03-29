@@ -1,0 +1,5 @@
+datazone:GetProject;Read
+datazone:GetProjectConfiguration;Read
+datazone:GetProjectCredentials;Read
+datazone:ListProjects;List
+datazone:ListUserProjects;List

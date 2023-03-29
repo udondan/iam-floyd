@@ -24,6 +24,7 @@ iotwireless:DeleteNetworkAnalyzerConfiguration;Write
 iotwireless:DeleteQueuedMessages;Write
 iotwireless:DeleteServiceProfile;Write
 iotwireless:DeleteWirelessDevice;Write
+iotwireless:DeleteWirelessDeviceImportTask;Write
 iotwireless:DeleteWirelessGateway;Write
 iotwireless:DeleteWirelessGatewayTask;Write
 iotwireless:DeleteWirelessGatewayTaskDefinition;Write
@@ -52,6 +53,7 @@ iotwireless:GetResourcePosition;Read
 iotwireless:GetServiceEndpoint;Read
 iotwireless:GetServiceProfile;Read
 iotwireless:GetWirelessDevice;Read
+iotwireless:GetWirelessDeviceImportTask;Read
 iotwireless:GetWirelessDeviceStatistics;Read
 iotwireless:GetWirelessGateway;Read
 iotwireless:GetWirelessGatewayCertificate;Read
@@ -61,6 +63,7 @@ iotwireless:GetWirelessGatewayTask;Read
 iotwireless:GetWirelessGatewayTaskDefinition;Read
 iotwireless:ListDestinations;Read
 iotwireless:ListDeviceProfiles;Read
+iotwireless:ListDevicesForWirelessDeviceImportTask;Read
 iotwireless:ListEventConfigurations;Read
 iotwireless:ListFuotaTasks;Read
 iotwireless:ListMulticastGroups;Read
@@ -71,6 +74,7 @@ iotwireless:ListPositionConfigurations;Read
 iotwireless:ListQueuedMessages;Read
 iotwireless:ListServiceProfiles;Read
 iotwireless:ListTagsForResource;Read
+iotwireless:ListWirelessDeviceImportTasks;Read
 iotwireless:ListWirelessDevices;Read
 iotwireless:ListWirelessGatewayTaskDefinitions;Read
 iotwireless:ListWirelessGateways;Read
@@ -85,6 +89,8 @@ iotwireless:StartBulkDisassociateWirelessDeviceFromMulticastGroup;Write
 iotwireless:StartFuotaTask;Write
 iotwireless:StartMulticastGroupSession;Write
 iotwireless:StartNetworkAnalyzerStream;Write
+iotwireless:StartSingleWirelessDeviceImportTask;Write
+iotwireless:StartWirelessDeviceImportTask;Write
 iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
 iotwireless:UntagResource;Tagging
@@ -99,4 +105,5 @@ iotwireless:UpdatePosition;Write
 iotwireless:UpdateResourceEventConfiguration;Write
 iotwireless:UpdateResourcePosition;Write
 iotwireless:UpdateWirelessDevice;Write
+iotwireless:UpdateWirelessDeviceImportTask;Write
 iotwireless:UpdateWirelessGateway;Write
