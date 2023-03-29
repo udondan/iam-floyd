@@ -19,6 +19,17 @@ export class Voiceid extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a fraudster with a watchlist
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_AssociateFraudster.html
+   */
+  public toAssociateFraudster() {
+    return this.to('AssociateFraudster');
+  }
+
+  /**
    * Grants permission to create a domain
    *
    * Access Level: Write
@@ -31,6 +42,17 @@ export class Voiceid extends PolicyStatement {
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
+  }
+
+  /**
+   * Grants permission to create a watchlist
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_CreateWatchlist.html
+   */
+  public toCreateWatchlist() {
+    return this.to('CreateWatchlist');
   }
 
   /**
@@ -64,6 +86,17 @@ export class Voiceid extends PolicyStatement {
    */
   public toDeleteSpeaker() {
     return this.to('DeleteSpeaker');
+  }
+
+  /**
+   * Grants permission to delete a watchlist
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DeleteWatchlist.html
+   */
+  public toDeleteWatchlist() {
+    return this.to('DeleteWatchlist');
   }
 
   /**
@@ -133,6 +166,28 @@ export class Voiceid extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a watchlist
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeWatchlist.html
+   */
+  public toDescribeWatchlist() {
+    return this.to('DescribeWatchlist');
+  }
+
+  /**
+   * Grants permission to disassociate a fraudster from a watchlist
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DisassociateFraudster.html
+   */
+  public toDisassociateFraudster() {
+    return this.to('DisassociateFraudster');
+  }
+
+  /**
    * Grants permission to evaluate a session
    *
    * Access Level: Write
@@ -166,6 +221,17 @@ export class Voiceid extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list fraudsters for a domain or watchlist
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListFraudsters.html
+   */
+  public toListFraudsters() {
+    return this.to('ListFraudsters');
+  }
+
+  /**
    * Grants permission to list speaker enrollment jobs for a domain
    *
    * Access Level: List
@@ -196,6 +262,17 @@ export class Voiceid extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list watchlists for a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListWatchlists.html
+   */
+  public toListWatchlists() {
+    return this.to('ListWatchlists');
   }
 
   /**
@@ -282,18 +359,34 @@ export class Voiceid extends PolicyStatement {
     return this.to('UpdateDomain');
   }
 
+  /**
+   * Grants permission to update a watchlist
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/voiceid/latest/APIReference/API_UpdateWatchlist.html
+   */
+  public toUpdateWatchlist() {
+    return this.to('UpdateWatchlist');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateFraudster',
       'CreateDomain',
+      'CreateWatchlist',
       'DeleteDomain',
       'DeleteFraudster',
       'DeleteSpeaker',
+      'DeleteWatchlist',
+      'DisassociateFraudster',
       'EvaluateSession',
       'OptOutSpeaker',
       'RegisterComplianceConsent',
       'StartFraudsterRegistrationJob',
       'StartSpeakerEnrollmentJob',
-      'UpdateDomain'
+      'UpdateDomain',
+      'UpdateWatchlist'
     ],
     Read: [
       'DescribeComplianceConsent',
@@ -302,13 +395,16 @@ export class Voiceid extends PolicyStatement {
       'DescribeFraudsterRegistrationJob',
       'DescribeSpeaker',
       'DescribeSpeakerEnrollmentJob',
+      'DescribeWatchlist',
       'ListTagsForResource'
     ],
     List: [
       'ListDomains',
       'ListFraudsterRegistrationJobs',
+      'ListFraudsters',
       'ListSpeakerEnrollmentJobs',
-      'ListSpeakers'
+      'ListSpeakers',
+      'ListWatchlists'
     ],
     Tagging: [
       'TagResource',

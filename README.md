@@ -15,10 +15,10 @@
 <!-- stats -->
 Support for:
 
-- 352 Services
-- 14088 Actions
-- 1492 Resource Types
-- 1491 Condition keys
+- 354 Services
+- 14139 Actions
+- 1495 Resource Types
+- 1494 Condition keys
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**

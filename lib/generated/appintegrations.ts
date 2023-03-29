@@ -28,10 +28,12 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
-   * - appflow:CreateFlow
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorProfiles
    * - iam:AttachRolePolicy
    * - iam:CreateServiceLinkedRole
    * - iam:PutRolePolicy
+   * - kms:CreateGrant
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
    */
@@ -43,6 +45,14 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to create a DataIntegrationAssociation
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - appflow:CreateFlow
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorEntity
+   * - appflow:DescribeConnectorProfiles
+   * - appflow:TagResource
+   * - appflow:UseConnectorProfile
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationAssociation.html
    */
@@ -103,6 +113,15 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to delete a DataIntegrationAssociation
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - appflow:CreateFlow
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorEntity
+   * - appflow:DescribeConnectorProfiles
+   * - appflow:StopFlow
+   * - appflow:TagResource
+   * - appflow:UseConnectorProfile
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegrationAssociation.html
    */
@@ -173,7 +192,7 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationAssociations
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationAssociations.html
    */
   public toListDataIntegrationAssociations() {
     return this.to('ListDataIntegrationAssociations');
@@ -318,7 +337,7 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Adds a resource of type event-integration to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_EventIntegration.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegration.html
    *
    * @param eventIntegrationName - Identifier for the eventIntegrationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -335,7 +354,7 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Adds a resource of type event-integration-association to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_EventIntegrationAssociation.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegrationAssociation.html
    *
    * @param eventIntegrationName - Identifier for the eventIntegrationName.
    * @param resourceId - Identifier for the resourceId.
@@ -353,7 +372,7 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Adds a resource of type data-integration to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_DataIntegration.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DataIntegrationSummary.html
    *
    * @param dataIntegrationId - Identifier for the dataIntegrationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -370,7 +389,7 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Adds a resource of type data-integration-association to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_DataIntegrationAssociation.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DataIntegrationAssociationSummary.html
    *
    * @param dataIntegrationId - Identifier for the dataIntegrationId.
    * @param resourceId - Identifier for the resourceId.
