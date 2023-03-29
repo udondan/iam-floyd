@@ -106,7 +106,8 @@
         "kms:Encrypt",
         "kms:GenerateDataKey",
         "kms:ReEncryptTo",
-        "kms:ReEncryptFrom"
+        "kms:ReEncryptFrom",
+        "kms:GenerateDataKeyWithoutPlaintext"
       ],
       "Resource": "*",
       "Condition": {
