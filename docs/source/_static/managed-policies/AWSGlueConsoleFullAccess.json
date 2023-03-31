@@ -30,6 +30,7 @@
         "s3:ListBucket",
         "s3:GetBucketAcl",
         "s3:GetBucketLocation",
+        "cloudformation:ListStacks",
         "cloudformation:DescribeStacks",
         "cloudformation:GetTemplateSummary",
         "dynamodb:ListTables",

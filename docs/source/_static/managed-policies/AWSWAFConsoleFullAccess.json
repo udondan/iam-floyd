@@ -28,7 +28,11 @@
         "cognito-idp:AssociateWebACL",
         "cognito-idp:DisassociateWebACL",
         "cognito-idp:ListResourcesForWebACL",
-        "cognito-idp:GetWebACLForResource"
+        "cognito-idp:GetWebACLForResource",
+        "apprunner:AssociateWebAcl",
+        "apprunner:DisassociateWebAcl",
+        "apprunner:DescribeWebAclForService",
+        "apprunner:ListServices"
       ],
       "Resource": "*"
     },
