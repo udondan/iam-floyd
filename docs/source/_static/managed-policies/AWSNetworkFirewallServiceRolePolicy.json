@@ -15,6 +15,11 @@
     },
     {
       "Effect": "Allow",
+      "Action": "acm:DescribeCertificate",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
       "Action": "resource-groups:ListGroupResources",
       "Resource": "*"
     },

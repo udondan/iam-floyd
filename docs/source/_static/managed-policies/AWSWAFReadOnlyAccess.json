@@ -12,7 +12,9 @@
         "wafv2:Describe*",
         "wafv2:CheckCapacity",
         "cognito-idp:ListResourcesForWebACL",
-        "cognito-idp:GetWebACLForResource"
+        "cognito-idp:GetWebACLForResource",
+        "apprunner:DescribeWebAclForService",
+        "apprunner:ListServices"
       ],
       "Effect": "Allow",
       "Resource": "*"
