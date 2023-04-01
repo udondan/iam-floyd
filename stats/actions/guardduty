@@ -25,6 +25,7 @@ guardduty:DisassociateFromMasterAccount;Write
 guardduty:DisassociateMembers;Write
 guardduty:EnableOrganizationAdminAccount;Write
 guardduty:GetAdministratorAccount;Read
+guardduty:GetCoverageStatistics;Read
 guardduty:GetDetector;Read
 guardduty:GetFilter;Read
 guardduty:GetFindings;Read
@@ -39,6 +40,7 @@ guardduty:GetRemainingFreeTrialDays;Read
 guardduty:GetThreatIntelSet;Read
 guardduty:GetUsageStatistics;Read
 guardduty:InviteMembers;Write
+guardduty:ListCoverage;List
 guardduty:ListDetectors;List
 guardduty:ListFilters;List
 guardduty:ListFindings;List
@@ -49,6 +51,7 @@ guardduty:ListOrganizationAdminAccounts;List
 guardduty:ListPublishingDestinations;List
 guardduty:ListTagsForResource;Read
 guardduty:ListThreatIntelSets;List
+guardduty:SendSecurityTelemetry;Write
 guardduty:StartMonitoringMembers;Write
 guardduty:StopMonitoringMembers;Write
 guardduty:TagResource;Tagging

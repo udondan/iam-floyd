@@ -6,5 +6,8 @@ scn:DeleteSSOApplication;Write
 scn:DescribeInstance;Read
 scn:ListAdminUsers;List
 scn:ListInstances;List
+scn:ListTagsForResource;List
 scn:RemoveAdminPermissionsForUser;Write
+scn:TagResource;Tagging
+scn:UntagResource;Tagging
 scn:UpdateInstance;Write

@@ -166,6 +166,17 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get consolidated report metrics or to generate the consolidated report PDF in this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetConsolidatedReport.html
+   */
+  public toGetConsolidatedReport() {
+    return this.to('GetConsolidatedReport');
+  }
+
+  /**
    * Grants permission to get an existing lens
    *
    * Access Level: Read
@@ -529,6 +540,7 @@ export class Wellarchitected extends PolicyStatement {
     Read: [
       'ExportLens',
       'GetAnswer',
+      'GetConsolidatedReport',
       'GetLens',
       'GetLensReview',
       'GetLensReviewReport',

@@ -3,20 +3,30 @@ ssm-contacts:ActivateContactChannel;Write
 ssm-contacts:AssociateContact;Permissions management
 ssm-contacts:CreateContact;Write
 ssm-contacts:CreateContactChannel;Write
+ssm-contacts:CreateRotation;Write
+ssm-contacts:CreateRotationOverride;Write
 ssm-contacts:DeactivateContactChannel;Write
 ssm-contacts:DeleteContact;Write
 ssm-contacts:DeleteContactChannel;Write
+ssm-contacts:DeleteRotation;Write
+ssm-contacts:DeleteRotationOverride;Write
 ssm-contacts:DescribeEngagement;Read
 ssm-contacts:DescribePage;Read
 ssm-contacts:GetContact;Read
 ssm-contacts:GetContactChannel;Read
 ssm-contacts:GetContactPolicy;Read
+ssm-contacts:GetRotation;Read
+ssm-contacts:GetRotationOverride;Read
 ssm-contacts:ListContactChannels;List
 ssm-contacts:ListContacts;List
 ssm-contacts:ListEngagements;List
 ssm-contacts:ListPageReceipts;List
 ssm-contacts:ListPagesByContact;List
 ssm-contacts:ListPagesByEngagement;List
+ssm-contacts:ListPreviewRotationShifts;List
+ssm-contacts:ListRotationOverrides;List
+ssm-contacts:ListRotationShifts;List
+ssm-contacts:ListRotations;List
 ssm-contacts:ListTagsForResource;Read
 ssm-contacts:PutContactPolicy;Write
 ssm-contacts:SendActivationCode;Write
@@ -26,3 +36,4 @@ ssm-contacts:TagResource;Tagging
 ssm-contacts:UntagResource;Tagging
 ssm-contacts:UpdateContact;Write
 ssm-contacts:UpdateContactChannel;Write
+ssm-contacts:UpdateRotation;Write

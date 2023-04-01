@@ -1,4 +1,5 @@
 wafv2:apigateway
+wafv2:apprunner
 wafv2:appsync
 wafv2:ipset
 wafv2:loadbalancer/app/

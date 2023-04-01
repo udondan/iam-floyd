@@ -89,6 +89,24 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Network Firewall tls inspection configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateTLSInspectionConfiguration.html
+   */
+  public toCreateTLSInspectionConfiguration() {
+    return this.to('CreateTLSInspectionConfiguration');
+  }
+
+  /**
    * Grants permission to delete a firewall
    *
    * Access Level: Write
@@ -130,6 +148,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDeleteRuleGroup() {
     return this.to('DeleteRuleGroup');
+  }
+
+  /**
+   * Grants permission to delete a tls inspection configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteTLSInspectionConfiguration.html
+   */
+  public toDeleteTLSInspectionConfiguration() {
+    return this.to('DeleteTLSInspectionConfiguration');
   }
 
   /**
@@ -199,6 +228,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the data objects that define a tls inspection configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeTLSInspectionConfiguration.html
+   */
+  public toDescribeTLSInspectionConfiguration() {
+    return this.to('DescribeTLSInspectionConfiguration');
+  }
+
+  /**
    * Grants permission to disassociate VPC subnets from a firewall
    *
    * Access Level: Write
@@ -240,6 +280,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toListRuleGroups() {
     return this.to('ListRuleGroups');
+  }
+
+  /**
+   * Grants permission to retrieve the metadata for tls inspection configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListTLSInspectionConfigurations.html
+   */
+  public toListTLSInspectionConfigurations() {
+    return this.to('ListTLSInspectionConfigurations');
   }
 
   /**
@@ -381,6 +432,17 @@ export class NetworkFirewall extends PolicyStatement {
     return this.to('UpdateSubnetChangeProtection');
   }
 
+  /**
+   * Grants permission to modify a tls inspection configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateTLSInspectionConfiguration.html
+   */
+  public toUpdateTLSInspectionConfiguration() {
+    return this.to('UpdateTLSInspectionConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateFirewallPolicy',
@@ -388,10 +450,12 @@ export class NetworkFirewall extends PolicyStatement {
       'CreateFirewall',
       'CreateFirewallPolicy',
       'CreateRuleGroup',
+      'CreateTLSInspectionConfiguration',
       'DeleteFirewall',
       'DeleteFirewallPolicy',
       'DeleteResourcePolicy',
       'DeleteRuleGroup',
+      'DeleteTLSInspectionConfiguration',
       'DisassociateSubnets',
       'PutResourcePolicy',
       'UpdateFirewallDeleteProtection',
@@ -401,7 +465,8 @@ export class NetworkFirewall extends PolicyStatement {
       'UpdateFirewallPolicyChangeProtection',
       'UpdateLoggingConfiguration',
       'UpdateRuleGroup',
-      'UpdateSubnetChangeProtection'
+      'UpdateSubnetChangeProtection',
+      'UpdateTLSInspectionConfiguration'
     ],
     Read: [
       'DescribeFirewall',
@@ -409,12 +474,14 @@ export class NetworkFirewall extends PolicyStatement {
       'DescribeLoggingConfiguration',
       'DescribeResourcePolicy',
       'DescribeRuleGroup',
-      'DescribeRuleGroupMetadata'
+      'DescribeRuleGroupMetadata',
+      'DescribeTLSInspectionConfiguration'
     ],
     List: [
       'ListFirewallPolicies',
       'ListFirewalls',
       'ListRuleGroups',
+      'ListTLSInspectionConfigurations',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -489,5 +556,22 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public onStatelessRuleGroup(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateless-rulegroup/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type TLSInspectionConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_TLSInspectionConfigurationResponse.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTLSInspectionConfiguration(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:tls-configuration/${ name }`);
   }
 }

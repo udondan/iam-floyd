@@ -32,7 +32,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * - .ifRequestHeader()
    * - .ifRequestQueryString()
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/sigv4-authenticated-requests.html
    */
   public toInvoke() {
     return this.to('Invoke');
@@ -47,7 +47,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Adds a resource of type Service to the statement
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html
    *
    * @param serviceId - Identifier for the serviceId.
    * @param requestPath - Identifier for the requestPath.
@@ -62,7 +62,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the destination port the request is made to
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -77,7 +77,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by a header name-value pair in the request headers
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -93,7 +93,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the method of the request
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -105,7 +105,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the query string key-value pairs in the request URL
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -121,7 +121,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the ARN of the service receiving the request
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -136,7 +136,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the ARN of the service network receiving the request
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -151,7 +151,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the VPC the request is made from
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()
@@ -166,7 +166,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
   /**
    * Filters access by the owning account of the VPC the request is made from
    *
-   * https://aws.amazon.com/vpc/lattice
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
    * - .toInvoke()

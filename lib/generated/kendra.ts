@@ -52,6 +52,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a featured results set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFeaturedResults.html
+   */
+  public toBatchDeleteFeaturedResultsSet() {
+    return this.to('BatchDeleteFeaturedResultsSet');
+  }
+
+  /**
    * Grants permission to do batch get document status
    *
    * Access Level: Read
@@ -82,6 +93,17 @@ export class Kendra extends PolicyStatement {
    */
   public toClearQuerySuggestions() {
     return this.to('ClearQuerySuggestions');
+  }
+
+  /**
+   * Grants permission to create an access control configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html
+   */
+  public toCreateAccessControlConfiguration() {
+    return this.to('CreateAccessControlConfiguration');
   }
 
   /**
@@ -123,6 +145,21 @@ export class Kendra extends PolicyStatement {
    */
   public toCreateFaq() {
     return this.to('CreateFaq');
+  }
+
+  /**
+   * Grants permission to create a featured results set
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFeaturedResults.html
+   */
+  public toCreateFeaturedResultsSet() {
+    return this.to('CreateFeaturedResultsSet');
   }
 
   /**
@@ -168,6 +205,17 @@ export class Kendra extends PolicyStatement {
    */
   public toCreateThesaurus() {
     return this.to('CreateThesaurus');
+  }
+
+  /**
+   * Grants permission to delete an access control configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteAccessControlConfiguration.html
+   */
+  public toDeleteAccessControlConfiguration() {
+    return this.to('DeleteAccessControlConfiguration');
   }
 
   /**
@@ -248,6 +296,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an access control configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeAccessControlConfiguration.html
+   */
+  public toDescribeAccessControlConfiguration() {
+    return this.to('DescribeAccessControlConfiguration');
+  }
+
+  /**
    * Grants permission to describe a data source
    *
    * Access Level: Read
@@ -278,6 +337,17 @@ export class Kendra extends PolicyStatement {
    */
   public toDescribeFaq() {
     return this.to('DescribeFaq');
+  }
+
+  /**
+   * Grants permission to describe a featured results set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeThesaurus.html
+   */
+  public toDescribeFeaturedResultsSet() {
+    return this.to('DescribeFeaturedResultsSet');
   }
 
   /**
@@ -380,6 +450,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the access control configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListAccessControlConfigurations.html
+   */
+  public toListAccessControlConfigurations() {
+    return this.to('ListAccessControlConfigurations');
+  }
+
+  /**
    * Grants permission to get Data Source sync job history
    *
    * Access Level: List
@@ -443,6 +524,17 @@ export class Kendra extends PolicyStatement {
    */
   public toListFaqs() {
     return this.to('ListFaqs');
+  }
+
+  /**
+   * Grants permission to list the featured results sets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListFeaturedResults.html
+   */
+  public toListFeaturedResultsSets() {
+    return this.to('ListFeaturedResultsSets');
   }
 
   /**
@@ -585,6 +677,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an access control configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateAccessControlConfiguration.html
+   */
+  public toUpdateAccessControlConfiguration() {
+    return this.to('UpdateAccessControlConfiguration');
+  }
+
+  /**
    * Grants permission to update a data source
    *
    * Access Level: Write
@@ -604,6 +707,17 @@ export class Kendra extends PolicyStatement {
    */
   public toUpdateExperience() {
     return this.to('UpdateExperience');
+  }
+
+  /**
+   * Grants permission to update a featured results set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResults.html
+   */
+  public toUpdateFeaturedResultsSet() {
+    return this.to('UpdateFeaturedResultsSet');
   }
 
   /**
@@ -655,14 +769,18 @@ export class Kendra extends PolicyStatement {
       'AssociateEntitiesToExperience',
       'AssociatePersonasToEntities',
       'BatchDeleteDocument',
+      'BatchDeleteFeaturedResultsSet',
       'BatchPutDocument',
       'ClearQuerySuggestions',
+      'CreateAccessControlConfiguration',
       'CreateDataSource',
       'CreateExperience',
       'CreateFaq',
+      'CreateFeaturedResultsSet',
       'CreateIndex',
       'CreateQuerySuggestionsBlockList',
       'CreateThesaurus',
+      'DeleteAccessControlConfiguration',
       'DeleteDataSource',
       'DeleteExperience',
       'DeleteFaq',
@@ -676,8 +794,10 @@ export class Kendra extends PolicyStatement {
       'StartDataSourceSyncJob',
       'StopDataSourceSyncJob',
       'SubmitFeedback',
+      'UpdateAccessControlConfiguration',
       'UpdateDataSource',
       'UpdateExperience',
+      'UpdateFeaturedResultsSet',
       'UpdateIndex',
       'UpdateQuerySuggestionsBlockList',
       'UpdateQuerySuggestionsConfig',
@@ -685,9 +805,11 @@ export class Kendra extends PolicyStatement {
     ],
     Read: [
       'BatchGetDocumentStatus',
+      'DescribeAccessControlConfiguration',
       'DescribeDataSource',
       'DescribeExperience',
       'DescribeFaq',
+      'DescribeFeaturedResultsSet',
       'DescribeIndex',
       'DescribePrincipalMapping',
       'DescribeQuerySuggestionsBlockList',
@@ -699,12 +821,14 @@ export class Kendra extends PolicyStatement {
       'Query'
     ],
     List: [
+      'ListAccessControlConfigurations',
       'ListDataSourceSyncJobs',
       'ListDataSources',
       'ListEntityPersonas',
       'ListExperienceEntities',
       'ListExperiences',
       'ListFaqs',
+      'ListFeaturedResultsSets',
       'ListGroupsOlderThanOrderingId',
       'ListIndices',
       'ListQuerySuggestionsBlockLists',
@@ -818,5 +942,38 @@ export class Kendra extends PolicyStatement {
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
+  }
+
+  /**
+   * Adds a resource of type featured-results-set to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/featured-results.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param featuredResultsSetId - Identifier for the featuredResultsSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFeaturedResultsSet(indexId: string, featuredResultsSetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
+  }
+
+  /**
+   * Adds a resource of type access-control-configuration to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param accessControlConfigurationId - Identifier for the accessControlConfigurationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
   }
 }
