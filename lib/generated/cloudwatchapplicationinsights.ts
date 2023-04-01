@@ -173,6 +173,17 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share Application Insights resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to list all applications
    *
    * Access Level: List
@@ -330,6 +341,7 @@ export class Applicationinsights extends PolicyStatement {
       'DeleteApplication',
       'DeleteComponent',
       'DeleteLogPattern',
+      'Link',
       'UpdateApplication',
       'UpdateComponent',
       'UpdateComponentConfiguration',

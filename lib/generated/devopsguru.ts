@@ -430,7 +430,7 @@ export class DevopsGuru extends PolicyStatement {
   /**
    * Filters access by API to restrict access to given AWS service names
    *
-   * https://docs.aws.amazon.com/devops-guru/latest/userguide/API_ServiceCollection.html
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ServiceCollection.html
    *
    * Applies to actions:
    * - .toListAnomaliesForInsight()

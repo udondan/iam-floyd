@@ -340,6 +340,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Amazon GuardDuty coverage statistics for the specified GuardDuty account in a Region
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetCoverageStatistics.html
+   */
+  public toGetCoverageStatistics() {
+    return this.to('GetCoverageStatistics');
+  }
+
+  /**
    * Grants permission to retrieve GuardDuty detectors
    *
    * Access Level: Read
@@ -494,6 +505,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the resource details for a given account in a Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListCoverage.html
+   */
+  public toListCoverage() {
+    return this.to('ListCoverage');
+  }
+
+  /**
    * Grants permission to retrieve a list of GuardDuty detectors
    *
    * Access Level: List
@@ -601,6 +623,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toListThreatIntelSets() {
     return this.to('ListThreatIntelSets');
+  }
+
+  /**
+   * Grants permission to send security telemetry for a specific GuardDuty account in a Region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SendSecurityTelemetry.html
+   */
+  public toSendSecurityTelemetry() {
+    return this.to('SendSecurityTelemetry');
   }
 
   /**
@@ -802,6 +835,7 @@ export class Guardduty extends PolicyStatement {
       'DisassociateMembers',
       'EnableOrganizationAdminAccount',
       'InviteMembers',
+      'SendSecurityTelemetry',
       'StartMonitoringMembers',
       'StopMonitoringMembers',
       'UnarchiveFindings',
@@ -820,6 +854,7 @@ export class Guardduty extends PolicyStatement {
       'DescribeOrganizationConfiguration',
       'DescribePublishingDestination',
       'GetAdministratorAccount',
+      'GetCoverageStatistics',
       'GetDetector',
       'GetFilter',
       'GetFindings',
@@ -836,6 +871,7 @@ export class Guardduty extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListCoverage',
       'ListDetectors',
       'ListFilters',
       'ListFindings',

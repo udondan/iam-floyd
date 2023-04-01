@@ -11,6 +11,7 @@ wellarchitected:DeleteWorkloadShare;Write
 wellarchitected:DisassociateLenses;Write
 wellarchitected:ExportLens;Read
 wellarchitected:GetAnswer;Read
+wellarchitected:GetConsolidatedReport;Read
 wellarchitected:GetLens;Read
 wellarchitected:GetLensReview;Read
 wellarchitected:GetLensReviewReport;Read

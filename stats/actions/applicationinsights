@@ -12,6 +12,7 @@ applicationinsights:DescribeLogPattern;Read
 applicationinsights:DescribeObservation;Read
 applicationinsights:DescribeProblem;Read
 applicationinsights:DescribeProblemObservations;Read
+applicationinsights:Link;Write
 applicationinsights:ListApplications;List
 applicationinsights:ListComponents;List
 applicationinsights:ListConfigurationHistory;List

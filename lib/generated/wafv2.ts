@@ -840,4 +840,19 @@ export class Wafv2 extends PolicyStatement {
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Wafv2.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
   }
+
+  /**
+   * Adds a resource of type apprunner to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+  }
 }

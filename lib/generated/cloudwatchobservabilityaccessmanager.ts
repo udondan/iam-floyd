@@ -31,7 +31,7 @@ export class Oam extends PolicyStatement {
    * Dependent actions:
    * - oam:TagResource
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_CreateLink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateLink.html
    */
   public toCreateLink() {
     return this.to('CreateLink');
@@ -49,7 +49,7 @@ export class Oam extends PolicyStatement {
    * Dependent actions:
    * - oam:TagResource
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_CreateSink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html
    */
   public toCreateSink() {
     return this.to('CreateSink');
@@ -63,7 +63,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_DeleteLink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_DeleteLink.html
    */
   public toDeleteLink() {
     return this.to('DeleteLink');
@@ -77,7 +77,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_DeleteSink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_DeleteSink.html
    */
   public toDeleteSink() {
     return this.to('DeleteSink');
@@ -91,7 +91,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_GetLink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetLink.html
    */
   public toGetLink() {
     return this.to('GetLink');
@@ -105,7 +105,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_GetSink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetSink.html
    */
   public toGetSink() {
     return this.to('GetSink');
@@ -119,7 +119,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_GetSinkPolicy.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetSinkPolicy.html
    */
   public toGetSinkPolicy() {
     return this.to('GetSinkPolicy');
@@ -133,7 +133,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_ListAttachedLinks.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListAttachedLinks.html
    */
   public toListAttachedLinks() {
     return this.to('ListAttachedLinks');
@@ -144,7 +144,7 @@ export class Oam extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_ListLinks.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListLinks.html
    */
   public toListLinks() {
     return this.to('ListLinks');
@@ -155,7 +155,7 @@ export class Oam extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_ListSinks.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html
    */
   public toListSinks() {
     return this.to('ListSinks');
@@ -166,7 +166,7 @@ export class Oam extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -180,7 +180,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_PutSinkPolicy.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html
    */
   public toPutSinkPolicy() {
     return this.to('PutSinkPolicy');
@@ -195,7 +195,7 @@ export class Oam extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -209,7 +209,7 @@ export class Oam extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -224,7 +224,7 @@ export class Oam extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTypes()
    *
-   * https://docs.aws.amazon.com/oam/latest/APIReference/API_UpdateLink.html
+   * https://docs.aws.amazon.com/OAM/latest/APIReference/API_UpdateLink.html
    */
   public toUpdateLink() {
     return this.to('UpdateLink');
@@ -291,7 +291,7 @@ export class Oam extends PolicyStatement {
   /**
    * Filters access by the presence of resource types in the request
    *
-   * https://docs.aws.amazon.com/oam/latest/apireference/api_createlink.html#api_createlink_requestsyntax
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchobservabilityaccessmanager.html
    *
    * Applies to actions:
    * - .toCreateLink()

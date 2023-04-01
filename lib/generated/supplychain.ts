@@ -107,6 +107,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for an AWS Supply Chain instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to remove AWS Supply Chain administrator permission from federated user
    *
    * Access Level: Write
@@ -115,6 +126,36 @@ export class Scn extends PolicyStatement {
    */
   public toRemoveAdminPermissionsForUser() {
     return this.to('RemoveAdminPermissionsForUser');
+  }
+
+  /**
+   * Grants permission to tag an AWS Supply Chain instance
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tag from an AWS Supply Chain instance
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -143,7 +184,12 @@ export class Scn extends PolicyStatement {
     ],
     List: [
       'ListAdminUsers',
-      'ListInstances'
+      'ListInstances',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
