@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:UpdateService",
+        "ecs:DeleteService",
+        "ecs:CreateService",
+        "ecs:DescribeServices",
+        "ecs:PutAttributes",
+        "ecs:DeleteAttributes",
+        "ecs:RunTask",
+        "ecs:ListTasks",
+        "ecs:StartTask",
+        "ecs:StopTask",
+        "ecs:DescribeTasks",
+        "ecs:DescribeContainerInstances",
+        "ecs:UpdateContainerInstancesState"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "ecs:cluster": "arn:aws:ecs:*:*:cluster/MediaConnectGateway"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCluster",
+        "ecs:RegisterTaskDefinition"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:UpdateCluster",
+        "ecs:UpdateClusterSettings",
+        "ecs:ListAttributes",
+        "ecs:DescribeClusters",
+        "ecs:DeregisterContainerInstance",
+        "ecs:ListContainerInstances"
+      ],
+      "Resource": "arn:aws:ecs:*:*:cluster/MediaConnectGateway"
+    }
+  ]
+}
