@@ -392,6 +392,28 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about a workflow execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowExecution.html
+   */
+  public toGetWorkflowExecution() {
+    return this.to('GetWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to view details about a workflow step execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowStepExecution.html
+   */
+  public toGetWorkflowStepExecution() {
+    return this.to('GetWorkflowStepExecution');
+  }
+
+  /**
    * Grants permission to import a new component
    *
    * Access Level: Write
@@ -488,7 +510,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns a list of packages installed on the specified image
+   * Grants permission to return a list of packages installed on the specified image
    *
    * Access Level: List
    *
@@ -502,7 +524,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns a list of images created by the specified pipeline
+   * Grants permission to return a list of images created by the specified pipeline
    *
    * Access Level: List
    *
@@ -535,6 +557,31 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list aggregations on the image scan findings in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageScanFindingAggregations.html
+   */
+  public toListImageScanFindingAggregations() {
+    return this.to('ListImageScanFindingAggregations');
+  }
+
+  /**
+   * Grants permission to list the image scan findings for the images in your account
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - inspector2:ListFindings
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageScanFindings.html
+   */
+  public toListImageScanFindings() {
+    return this.to('ListImageScanFindings');
+  }
+
+  /**
    * Grants permission to list the image versions owned by or shared with your account
    *
    * Access Level: List
@@ -557,7 +604,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tag for an Image Builder resource
+   * Grants permission to list tags for an Image Builder resource
    *
    * Access Level: Read
    *
@@ -568,6 +615,28 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list workflow executions for the specified image
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowExecutions.html
+   */
+  public toListWorkflowExecutions() {
+    return this.to('ListWorkflowExecutions');
+  }
+
+  /**
+   * Grants permission to list workflow step executions for the specified workflow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowStepExecutions.html
+   */
+  public toListWorkflowStepExecutions() {
+    return this.to('ListWorkflowStepExecutions');
   }
 
   /**
@@ -740,6 +809,8 @@ export class Imagebuilder extends PolicyStatement {
       'GetImageRecipe',
       'GetImageRecipePolicy',
       'GetInfrastructureConfiguration',
+      'GetWorkflowExecution',
+      'GetWorkflowStepExecution',
       'ListTagsForResource'
     ],
     List: [
@@ -752,8 +823,12 @@ export class Imagebuilder extends PolicyStatement {
       'ListImagePipelineImages',
       'ListImagePipelines',
       'ListImageRecipes',
+      'ListImageScanFindingAggregations',
+      'ListImageScanFindings',
       'ListImages',
-      'ListInfrastructureConfigurations'
+      'ListInfrastructureConfigurations',
+      'ListWorkflowExecutions',
+      'ListWorkflowStepExecutions'
     ],
     'Permissions management': [
       'PutComponentPolicy',
@@ -789,7 +864,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * Adds a resource of type componentVersion to the statement
    *
-   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ComponentVersion
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ComponentVersion.html
    *
    * @param componentName - Identifier for the componentName.
    * @param componentVersion - Identifier for the componentVersion.
@@ -940,6 +1015,34 @@ export class Imagebuilder extends PolicyStatement {
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+  }
+
+  /**
+   * Adds a resource of type workflowExecution to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowExecution.html
+   *
+   * @param workflowExecutionId - Identifier for the workflowExecutionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWorkflowExecution(workflowExecutionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow-execution/${ workflowExecutionId }`);
+  }
+
+  /**
+   * Adds a resource of type workflowStepExecution to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowStepExecution.html
+   *
+   * @param workflowStepExecutionId - Identifier for the workflowStepExecutionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWorkflowStepExecution(workflowStepExecutionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow-step-execution/${ workflowStepExecutionId }`);
   }
 
   /**
