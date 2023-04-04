@@ -24,6 +24,8 @@ imagebuilder:GetImagePolicy;Read
 imagebuilder:GetImageRecipe;Read
 imagebuilder:GetImageRecipePolicy;Read
 imagebuilder:GetInfrastructureConfiguration;Read
+imagebuilder:GetWorkflowExecution;Read
+imagebuilder:GetWorkflowStepExecution;Read
 imagebuilder:ImportComponent;Write
 imagebuilder:ImportVmImage;Write
 imagebuilder:ListComponentBuildVersions;List
@@ -35,9 +37,13 @@ imagebuilder:ListImagePackages;List
 imagebuilder:ListImagePipelineImages;List
 imagebuilder:ListImagePipelines;List
 imagebuilder:ListImageRecipes;List
+imagebuilder:ListImageScanFindingAggregations;List
+imagebuilder:ListImageScanFindings;List
 imagebuilder:ListImages;List
 imagebuilder:ListInfrastructureConfigurations;List
 imagebuilder:ListTagsForResource;Read
+imagebuilder:ListWorkflowExecutions;List
+imagebuilder:ListWorkflowStepExecutions;List
 imagebuilder:PutComponentPolicy;Permissions management
 imagebuilder:PutContainerRecipePolicy;Permissions management
 imagebuilder:PutImagePolicy;Permissions management

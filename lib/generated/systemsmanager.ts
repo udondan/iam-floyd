@@ -313,6 +313,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Systems Manager resource policy
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager
    *
    * Access Level: Write
@@ -759,6 +770,8 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view details of a specific calendar
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar-prereqs.html
    */
   public toGetCalendar() {
     return this.to('GetCalendar');
@@ -918,6 +931,8 @@ export class Ssm extends PolicyStatement {
    * Grants permission to Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toGetManifest() {
     return this.to('GetManifest');
@@ -1023,6 +1038,17 @@ export class Ssm extends PolicyStatement {
    */
   public toGetPatchBaselineForPatchGroup() {
     return this.to('GetPatchBaselineForPatchGroup');
+  }
+
+  /**
+   * Grants permission to retrieve lists of Systems Manager resource policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetResourcePolicies.html
+   */
+  public toGetResourcePolicies() {
+    return this.to('GetResourcePolicies');
   }
 
   /**
@@ -1252,6 +1278,8 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create/edit a specific calendar
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar-prereqs.html
    */
   public toPutCalendar() {
     return this.to('PutCalendar');
@@ -1272,6 +1300,8 @@ export class Ssm extends PolicyStatement {
    * Grants permission to SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toPutConfigurePackageResult() {
     return this.to('PutConfigurePackageResult');
@@ -1302,6 +1332,17 @@ export class Ssm extends PolicyStatement {
    */
   public toPutParameter() {
     return this.to('PutParameter');
+  }
+
+  /**
+   * Grants permission to create or update a Systems Manager resource policy
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -1526,9 +1567,6 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSourceInstanceARN()
-   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
    */
   public toUpdateAssociationStatus() {
@@ -1569,24 +1607,9 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifSourceInstanceARN()
-   */
-  public toUpdateInstanceAssociationStatus() {
-    return this.to('UpdateInstanceAssociationStatus');
-  }
-
-  /**
    * Grants permission to SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifSourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -1758,7 +1781,6 @@ export class Ssm extends PolicyStatement {
       'UpdateDocument',
       'UpdateDocumentDefaultVersion',
       'UpdateDocumentMetadata',
-      'UpdateInstanceAssociationStatus',
       'UpdateInstanceInformation',
       'UpdateMaintenanceWindow',
       'UpdateMaintenanceWindowTarget',
@@ -1769,6 +1791,11 @@ export class Ssm extends PolicyStatement {
       'UpdatePatchBaseline',
       'UpdateResourceDataSync',
       'UpdateServiceSetting'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'ModifyDocumentPermission',
+      'PutResourcePolicy'
     ],
     Read: [
       'DescribeActivations',
@@ -1834,6 +1861,7 @@ export class Ssm extends PolicyStatement {
       'DescribePatchGroups',
       'DescribePatchProperties',
       'DescribeSessions',
+      'GetResourcePolicies',
       'ListAssociationVersions',
       'ListAssociations',
       'ListCommandInvocations',
@@ -1851,9 +1879,6 @@ export class Ssm extends PolicyStatement {
       'ListResourceComplianceSummaries',
       'ListResourceDataSync',
       'ListTagsForResource'
-    ],
-    'Permissions management': [
-      'ModifyDocumentPermission'
     ]
   };
 
@@ -2077,6 +2102,19 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type resourcearn to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onResourcearn(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsitemgroup/default`);
+  }
+
+  /**
    * Adds a resource of type session to the statement
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html
@@ -2171,11 +2209,10 @@ export class Ssm extends PolicyStatement {
    * Applies to actions:
    * - .toStartChangeRequestExecution()
    *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAutoApprove(value: string | string[], operator?: Operator | string) {
-    return this.if(`AutoApprove`, value, operator || 'StringLike');
+  public ifAutoApprove(value?: boolean) {
+    return this.if(`AutoApprove`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -2197,7 +2234,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by allowing Systems Manager parameters to be overwritten
+   * Controls whether Systems Manager parameters can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2212,7 +2249,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by allowing traversing hierarchical structure of the Systems Manager parameters
+   * Filters access to Systems Manager parameters created in a hierarchical structure
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2241,23 +2278,6 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
-   *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
-   *
-   * Applies to actions:
-   * - .toUpdateAssociationStatus()
-   * - .toUpdateInstanceAssociationStatus()
-   * - .toUpdateInstanceInformation()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceInstanceARN`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
@@ -2276,7 +2296,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by allowing access based on a tag key-value pair assigned to the Systems Manager resource
+   * Filters access by based on a tag key-value pair assigned to the Systems Manager resource
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *

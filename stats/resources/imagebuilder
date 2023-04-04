@@ -8,3 +8,5 @@ imagebuilder:imageRecipe
 imagebuilder:imageVersion
 imagebuilder:infrastructureConfiguration
 imagebuilder:kmsKey
+imagebuilder:workflowExecution
+imagebuilder:workflowStepExecution

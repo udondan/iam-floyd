@@ -21,6 +21,7 @@ ssm:DeleteParameter;Write
 ssm:DeleteParameters;Write
 ssm:DeletePatchBaseline;Write
 ssm:DeleteResourceDataSync;Write
+ssm:DeleteResourcePolicy;Permissions management
 ssm:DeregisterManagedInstance;Write
 ssm:DeregisterPatchBaselineForPatchGroup;Write
 ssm:DeregisterTargetFromMaintenanceWindow;Write
@@ -85,6 +86,7 @@ ssm:GetParameters;Read
 ssm:GetParametersByPath;Read
 ssm:GetPatchBaseline;Read
 ssm:GetPatchBaselineForPatchGroup;Read
+ssm:GetResourcePolicies;List
 ssm:GetServiceSetting;Read
 ssm:LabelParameterVersion;Write
 ssm:ListAssociationVersions;List
@@ -110,6 +112,7 @@ ssm:PutComplianceItems;Write
 ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write
 ssm:PutParameter;Write
+ssm:PutResourcePolicy;Permissions management
 ssm:RegisterDefaultPatchBaseline;Write
 ssm:RegisterManagedInstance;Write
 ssm:RegisterPatchBaselineForPatchGroup;Write
@@ -132,7 +135,6 @@ ssm:UpdateAssociationStatus;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
 ssm:UpdateDocumentMetadata;Write
-ssm:UpdateInstanceAssociationStatus;Write
 ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write
 ssm:UpdateMaintenanceWindowTarget;Write
