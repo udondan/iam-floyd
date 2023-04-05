@@ -1098,6 +1098,39 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to notify the result of the provisioning engine execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_NotifyProvisionProductEngineWorkflowResult.html
+   */
+  public toNotifyProvisionProductEngineWorkflowResult() {
+    return this.to('NotifyProvisionProductEngineWorkflowResult');
+  }
+
+  /**
+   * Grants permission to notify the result of the terminate engine execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_NotifyTerminateProvisionedProductEngineWorkflowResult.html
+   */
+  public toNotifyTerminateProvisionedProductEngineWorkflowResult() {
+    return this.to('NotifyTerminateProvisionedProductEngineWorkflowResult');
+  }
+
+  /**
+   * Grants permission to notify the result of the update engine execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_NotifyUpdateProvisionedProductEngineWorkflowResult.html
+   */
+  public toNotifyUpdateProvisionedProductEngineWorkflowResult() {
+    return this.to('NotifyUpdateProvisionedProductEngineWorkflowResult');
+  }
+
+  /**
    * Grants permission to provision a product with a specified provisioning artifact and launch parameters
    *
    * Access Level: Write
@@ -1424,6 +1457,9 @@ export class Servicecatalog extends PolicyStatement {
       'ExecuteProvisionedProductPlan',
       'ExecuteProvisionedProductServiceAction',
       'ImportAsProvisionedProduct',
+      'NotifyProvisionProductEngineWorkflowResult',
+      'NotifyTerminateProvisionedProductEngineWorkflowResult',
+      'NotifyUpdateProvisionedProductEngineWorkflowResult',
       'ProvisionProduct',
       'PutConfiguration',
       'RejectPortfolioShare',

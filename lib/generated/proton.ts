@@ -226,6 +226,33 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a service instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifServiceTemplate()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceInstance.html
+   */
+  public toCreateServiceInstance() {
+    return this.to('CreateServiceInstance');
+  }
+
+  /**
+   * Grants permission to create a service sync config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceSyncConfig.html
+   */
+  public toCreateServiceSyncConfig() {
+    return this.to('CreateServiceSyncConfig');
+  }
+
+  /**
    * Grants permission to create a service template
    *
    * Access Level: Write
@@ -410,6 +437,17 @@ export class Proton extends PolicyStatement {
    */
   public toDeleteService() {
     return this.to('DeleteService');
+  }
+
+  /**
+   * Grants permission to delete a service sync config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteServiceSyncConfig.html
+   */
+  public toDeleteServiceSyncConfig() {
+    return this.to('DeleteServiceSyncConfig');
   }
 
   /**
@@ -630,6 +668,39 @@ export class Proton extends PolicyStatement {
    */
   public toGetServiceInstance() {
     return this.to('GetServiceInstance');
+  }
+
+  /**
+   * Grants permission to describe the sync status of a service instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceInstanceSyncStatus.html
+   */
+  public toGetServiceInstanceSyncStatus() {
+    return this.to('GetServiceInstanceSyncStatus');
+  }
+
+  /**
+   * Grants permission to describe service sync blockers on a service or service instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceSyncBlockerSummary.html
+   */
+  public toGetServiceSyncBlockerSummary() {
+    return this.to('GetServiceSyncBlockerSummary');
+  }
+
+  /**
+   * Grants permission to describe a service sync config
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceSyncConfig.html
+   */
+  public toGetServiceSyncConfig() {
+    return this.to('GetServiceSyncConfig');
   }
 
   /**
@@ -1167,6 +1238,28 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a service sync blocker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceSyncBlocker.html
+   */
+  public toUpdateServiceSyncBlocker() {
+    return this.to('UpdateServiceSyncBlocker');
+  }
+
+  /**
+   * Grants permission to update a service sync config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceSyncConfig.html
+   */
+  public toUpdateServiceSyncConfig() {
+    return this.to('UpdateServiceSyncConfig');
+  }
+
+  /**
    * Grants permission to update a service template
    *
    * Access Level: Write
@@ -1237,6 +1330,8 @@ export class Proton extends PolicyStatement {
       'CreateEnvironmentTemplateVersion',
       'CreateRepository',
       'CreateService',
+      'CreateServiceInstance',
+      'CreateServiceSyncConfig',
       'CreateServiceTemplate',
       'CreateServiceTemplateMajorVersion',
       'CreateServiceTemplateMinorVersion',
@@ -1252,6 +1347,7 @@ export class Proton extends PolicyStatement {
       'DeleteEnvironmentTemplateVersion',
       'DeleteRepository',
       'DeleteService',
+      'DeleteServiceSyncConfig',
       'DeleteServiceTemplate',
       'DeleteServiceTemplateMajorVersion',
       'DeleteServiceTemplateMinorVersion',
@@ -1271,6 +1367,8 @@ export class Proton extends PolicyStatement {
       'UpdateService',
       'UpdateServiceInstance',
       'UpdateServicePipeline',
+      'UpdateServiceSyncBlocker',
+      'UpdateServiceSyncConfig',
       'UpdateServiceTemplate',
       'UpdateServiceTemplateMajorVersion',
       'UpdateServiceTemplateMinorVersion',
@@ -1293,6 +1391,9 @@ export class Proton extends PolicyStatement {
       'GetResourcesSummary',
       'GetService',
       'GetServiceInstance',
+      'GetServiceInstanceSyncStatus',
+      'GetServiceSyncBlockerSummary',
+      'GetServiceSyncConfig',
       'GetServiceTemplate',
       'GetServiceTemplateMajorVersion',
       'GetServiceTemplateMinorVersion',
@@ -1609,6 +1710,7 @@ export class Proton extends PolicyStatement {
    * - .toCancelServiceInstanceDeployment()
    * - .toCancelServicePipelineDeployment()
    * - .toCreateService()
+   * - .toCreateServiceInstance()
    * - .toDeleteService()
    * - .toUpdateService()
    * - .toUpdateServiceInstance()

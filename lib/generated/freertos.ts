@@ -19,7 +19,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Creates a software configuration
+   * Grants permission to create a software configuration
    *
    * Access Level: Write
    *
@@ -34,7 +34,22 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Deletes the software configuration
+   * Grants permission to create a subscription for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toCreateSubscription() {
+    return this.to('CreateSubscription');
+  }
+
+  /**
+   * Grants permission to delete the software configuration
    *
    * Access Level: Write
    *
@@ -45,7 +60,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Describes the hardware platform
+   * Grants permission to describe the hardware platform
    *
    * Access Level: Read
    *
@@ -56,7 +71,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Describes the software configuration
+   * Grants permission to describe the software configuration
    *
    * Access Level: Read
    *
@@ -67,7 +82,29 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Get the URL for Amazon FreeRTOS software download
+   * Grants permission to describes the subscription for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toDescribeSubscription() {
+    return this.to('DescribeSubscription');
+  }
+
+  /**
+   * Grants permission to get URL for sotware patch-release, patch-diff and release notes under FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toGetEmpPatchUrl() {
+    return this.to('GetEmpPatchUrl');
+  }
+
+  /**
+   * Grants permission to get the URL for Amazon FreeRTOS software download
    *
    * Access Level: Read
    *
@@ -78,7 +115,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Get the URL for Amazon FreeRTOS software download based on the configuration
+   * Grants permission to get the URL for Amazon FreeRTOS software download based on the configuration
    *
    * Access Level: Read
    *
@@ -89,7 +126,18 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists versions of AmazonFreeRTOS
+   * Grants permission to fetch the subscription billing amount for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toGetSubscriptionBillingAmount() {
+    return this.to('GetSubscriptionBillingAmount');
+  }
+
+  /**
+   * Grants permission to lists versions of AmazonFreeRTOS
    *
    * Access Level: List
    *
@@ -100,7 +148,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the hardware platforms
+   * Grants permission to list the hardware platforms
    *
    * Access Level: List
    *
@@ -111,7 +159,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the hardware vendors
+   * Grants permission to list the hardware vendors
    *
    * Access Level: List
    *
@@ -122,7 +170,7 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Lists the software configurations
+   * Grants permission to lists the software configurations
    *
    * Access Level: List
    *
@@ -133,7 +181,51 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * Updates the software configuration
+   * Grants permission to list software patches of subscription for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toListSoftwarePatches() {
+    return this.to('ListSoftwarePatches');
+  }
+
+  /**
+   * Grants permission to list the subscription emails for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toListSubscriptionEmails() {
+    return this.to('ListSubscriptionEmails');
+  }
+
+  /**
+   * Grants permission to list the subscriptions for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toListSubscriptions() {
+    return this.to('ListSubscriptions');
+  }
+
+  /**
+   * Grants permission to update list of subscription email address for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toUpdateEmailRecipients() {
+    return this.to('UpdateEmailRecipients');
+  }
+
+  /**
+   * Grants permission to update the software configuration
    *
    * Access Level: Write
    *
@@ -143,23 +235,43 @@ export class Freertos extends PolicyStatement {
     return this.to('UpdateSoftwareConfiguration');
   }
 
+  /**
+   * Grants permission to verify the email for FreeRTOS extended maintenance plan (EMP)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   */
+  public toVerifyEmail() {
+    return this.to('VerifyEmail');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateSoftwareConfiguration',
+      'CreateSubscription',
       'DeleteSoftwareConfiguration',
-      'UpdateSoftwareConfiguration'
+      'UpdateEmailRecipients',
+      'UpdateSoftwareConfiguration',
+      'VerifyEmail'
     ],
     Read: [
       'DescribeHardwarePlatform',
       'DescribeSoftwareConfiguration',
+      'DescribeSubscription',
+      'GetEmpPatchUrl',
       'GetSoftwareURL',
-      'GetSoftwareURLForConfiguration'
+      'GetSoftwareURLForConfiguration',
+      'GetSubscriptionBillingAmount'
     ],
     List: [
       'ListFreeRTOSVersions',
       'ListHardwarePlatforms',
       'ListHardwareVendors',
-      'ListSoftwareConfigurations'
+      'ListSoftwareConfigurations',
+      'ListSoftwarePatches',
+      'ListSubscriptionEmails',
+      'ListSubscriptions'
     ]
   };
 
@@ -178,5 +290,22 @@ export class Freertos extends PolicyStatement {
    */
   public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Freertos.defaultPartition }:freertos:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }`);
+  }
+
+  /**
+   * Adds a resource of type subscription to the statement
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html
+   *
+   * @param subscriptionID - Identifier for the subscriptionID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSubscription(subscriptionID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Freertos.defaultPartition }:freertos:${ region || '*' }:${ account || '*' }:subscription/${ subscriptionID }`);
   }
 }
