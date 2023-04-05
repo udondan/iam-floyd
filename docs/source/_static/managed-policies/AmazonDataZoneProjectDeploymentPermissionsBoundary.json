@@ -57,6 +57,9 @@
         "kms:DescribeKey",
         "kms:EnableKeyRotation",
         "kms:DisableKeyRotation",
+        "kms:GenerateDataKey",
+        "kms:Encrypt",
+        "kms:Decrypt",
         "ec2:AuthorizeSecurityGroupEgress",
         "ec2:AuthorizeSecurityGroupIngress"
       ],
