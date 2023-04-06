@@ -127,6 +127,48 @@
     },
     {
       "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSecurityGroup"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Redshift": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:ModifySecurityGroupRules",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Redshift": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSecurityGroup"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
         "arn:aws:ec2:*:*:subnet/*",
