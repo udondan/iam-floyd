@@ -1607,6 +1607,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toUpdateInstanceAssociationStatus() {
+    return this.to('UpdateInstanceAssociationStatus');
+  }
+
+  /**
    * Grants permission to SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
    *
    * Access Level: Write
@@ -1781,6 +1792,7 @@ export class Ssm extends PolicyStatement {
       'UpdateDocument',
       'UpdateDocumentDefaultVersion',
       'UpdateDocumentMetadata',
+      'UpdateInstanceAssociationStatus',
       'UpdateInstanceInformation',
       'UpdateMaintenanceWindow',
       'UpdateMaintenanceWindowTarget',

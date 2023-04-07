@@ -135,6 +135,7 @@ ssm:UpdateAssociationStatus;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
 ssm:UpdateDocumentMetadata;Write
+ssm:UpdateInstanceAssociationStatus;Write
 ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write
 ssm:UpdateMaintenanceWindowTarget;Write

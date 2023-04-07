@@ -591,6 +591,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search metadata and the content of resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_SearchResources.html
+   */
+  public toSearchResources() {
+    return this.to('SearchResources');
+  }
+
+  /**
    * Grants permission to update the specified attributes of the specified document
    *
    * Access Level: Write
@@ -707,7 +718,8 @@ export class Workdocs extends PolicyStatement {
       'DescribeNotificationSubscriptions',
       'DescribeResourcePermissions',
       'DescribeRootFolders',
-      'DescribeUsers'
+      'DescribeUsers',
+      'SearchResources'
     ]
   };
 }
