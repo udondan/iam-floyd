@@ -50,6 +50,7 @@ workdocs:RegisterDirectory;Write
 workdocs:RemoveAllResourcePermissions;Write
 workdocs:RemoveResourcePermission;Write
 workdocs:RestoreDocumentVersions;Write
+workdocs:SearchResources;List
 workdocs:UpdateDocument;Write
 workdocs:UpdateDocumentVersion;Write
 workdocs:UpdateFolder;Write

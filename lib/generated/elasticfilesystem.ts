@@ -204,7 +204,6 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
@@ -421,7 +420,6 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html
    */

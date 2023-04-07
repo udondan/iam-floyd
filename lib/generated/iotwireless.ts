@@ -395,6 +395,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister wireless device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeregisterWirelessDevice.html
+   */
+  public toDeregisterWirelessDevice() {
+    return this.to('DeregisterWirelessDevice');
+  }
+
+  /**
    * Grants permission to disassociate an AWS account from a partner account
    *
    * Access Level: Write
@@ -1308,6 +1319,7 @@ export class Iotwireless extends PolicyStatement {
       'DeleteWirelessGateway',
       'DeleteWirelessGatewayTask',
       'DeleteWirelessGatewayTaskDefinition',
+      'DeregisterWirelessDevice',
       'DisassociateAwsAccountFromPartnerAccount',
       'DisassociateMulticastGroupFromFuotaTask',
       'DisassociateWirelessDeviceFromFuotaTask',
