@@ -152,7 +152,6 @@ export { SesV2 } from './simpleemailservicev2';
 export { Swf } from './simpleworkflowservice';
 export { Sns } from './sns';
 export { Sqs } from './sqs';
-export { Sumerian } from './sumerian';
 export { Textract } from './textract';
 export { Timestream } from './timestream';
 export { Transcribe } from './transcribe';
