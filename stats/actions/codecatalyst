@@ -7,5 +7,8 @@ codecatalyst:GetConnection;Read
 codecatalyst:GetPendingConnection;Read
 codecatalyst:ListConnections;List
 codecatalyst:ListIamRolesForConnection;List
+codecatalyst:ListTagsForResource;Read
 codecatalyst:PutBillingAuthorization;Write
 codecatalyst:RejectConnection;Write
+codecatalyst:TagResource;Tagging
+codecatalyst:UntagResource;Tagging

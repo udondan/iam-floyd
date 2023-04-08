@@ -19,11 +19,15 @@ export class Codecatalyst extends PolicyStatement {
   }
 
   /**
-   * Grants permission to accept a request to connect this account to a CodeCatalyst space
+   * Grants permission to accept a request to connect this account to an Amazon CodeCatalyst space
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toAcceptConnection() {
     return this.to('AcceptConnection');
@@ -34,10 +38,13 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toAssociateIamRoleToConnection() {
     return this.to('AssociateIamRoleToConnection');
@@ -48,7 +55,10 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toDeleteConnection() {
     return this.to('DeleteConnection');
@@ -59,7 +69,10 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toDisassociateIamRoleFromConnection() {
     return this.to('DisassociateIamRoleFromConnection');
@@ -70,7 +83,10 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toGetBillingAuthorization() {
     return this.to('GetBillingAuthorization');
@@ -81,29 +97,32 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toGetConnection() {
     return this.to('GetConnection');
   }
 
   /**
-   * Grants permission to get a pending request to connect this account to a CodeCatalyst space
+   * Grants permission to get a pending request to connect this account to an Amazon CodeCatalyst space
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toGetPendingConnection() {
     return this.to('GetPendingConnection');
   }
 
   /**
-   * Grants permission to list connections which are not pending
+   * Grants permission to list connections that are not pending
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toListConnections() {
     return this.to('ListConnections');
@@ -114,32 +133,84 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toListIamRolesForConnection() {
     return this.to('ListIamRolesForConnection');
   }
 
   /**
-   * Grants permission to creates or update the billing authorization for a connection
+   * Grants permission to list tags for an Amazon CodeCatalyst resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create or update the billing authorization for a connection
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toPutBillingAuthorization() {
     return this.to('PutBillingAuthorization');
   }
 
   /**
-   * Grants permission to reject a request to connect this account to a CodeCatalyst space
+   * Grants permission to reject a request to connect this account to an Amazon CodeCatalyst space
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
    */
   public toRejectConnection() {
     return this.to('RejectConnection');
+  }
+
+  /**
+   * Grants permission to tag an Amazon CodeCatalyst resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag an Amazon CodeCatalyst resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -154,11 +225,16 @@ export class Codecatalyst extends PolicyStatement {
     Read: [
       'GetBillingAuthorization',
       'GetConnection',
-      'GetPendingConnection'
+      'GetPendingConnection',
+      'ListTagsForResource'
     ],
     List: [
       'ListConnections',
       'ListIamRolesForConnection'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -171,6 +247,9 @@ export class Codecatalyst extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConnections(connectionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Codecatalyst.defaultPartition }:codecatalyst:${ region || '*' }:${ account || '*' }:/connections/${ connectionId }`);
