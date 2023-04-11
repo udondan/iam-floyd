@@ -274,6 +274,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a refresh schedule for a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateRefreshSchedule.html
+   */
+  public toCreateRefreshSchedule() {
+    return this.to('CreateRefreshSchedule');
+  }
+
+  /**
    * Grants permission to create a template
    *
    * Access Level: Write
@@ -426,6 +437,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete dataset refresh properties for a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSetRefreshProperties.html
+   */
+  public toDeleteDataSetRefreshProperties() {
+    return this.to('DeleteDataSetRefreshProperties');
+  }
+
+  /**
    * Grants permission to delete a data source
    *
    * Access Level: Write
@@ -518,6 +540,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteNamespace() {
     return this.to('DeleteNamespace');
+  }
+
+  /**
+   * Grants permission to delete a refresh schedule for a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteRefreshSchedule.html
+   */
+  public toDeleteRefreshSchedule() {
+    return this.to('DeleteRefreshSchedule');
   }
 
   /**
@@ -716,6 +749,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe refresh properties for a dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSetRefreshProperties.html
+   */
+  public toDescribeDataSetRefreshProperties() {
+    return this.to('DescribeDataSetRefreshProperties');
+  }
+
+  /**
    * Grants permission to describe a data source
    *
    * Access Level: Read
@@ -857,6 +901,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeNamespace() {
     return this.to('DescribeNamespace');
+  }
+
+  /**
+   * Grants permission to describe a refresh schedule for a dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRefreshSchedule.html
+   */
+  public toDescribeRefreshSchedule() {
+    return this.to('DescribeRefreshSchedule');
   }
 
   /**
@@ -1188,6 +1243,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all refresh schedules on a dataset
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListRefreshSchedules.html
+   */
+  public toListRefreshSchedules() {
+    return this.to('ListRefreshSchedules');
+  }
+
+  /**
    * Grants permission to list tags of a QuickSight resource
    *
    * Access Level: Read
@@ -1314,6 +1380,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toPassDataSource() {
     return this.to('PassDataSource');
+  }
+
+  /**
+   * Grants permission to put dataset refresh properties for a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_PutDataSetRefreshProperties.html
+   */
+  public toPutDataSetRefreshProperties() {
+    return this.to('PutDataSetRefreshProperties');
   }
 
   /**
@@ -1721,6 +1798,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a refresh schedule for a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateRefreshSchedule.html
+   */
+  public toUpdateRefreshSchedule() {
+    return this.to('UpdateRefreshSchedule');
+  }
+
+  /**
    * Grants permission to update resource-level permissions in QuickSight
    *
    * Access Level: Write
@@ -1828,6 +1916,7 @@ export class Quicksight extends PolicyStatement {
       'CreateIngestion',
       'CreateNamespace',
       'CreateReader',
+      'CreateRefreshSchedule',
       'CreateTemplate',
       'CreateTemplateAlias',
       'CreateTheme',
@@ -1839,6 +1928,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteAnalysis',
       'DeleteDashboard',
       'DeleteDataSet',
+      'DeleteDataSetRefreshProperties',
       'DeleteDataSource',
       'DeleteEmailCustomizationTemplate',
       'DeleteFolder',
@@ -1847,6 +1937,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteGroupMembership',
       'DeleteIAMPolicyAssignment',
       'DeleteNamespace',
+      'DeleteRefreshSchedule',
       'DeleteTemplate',
       'DeleteTemplateAlias',
       'DeleteTheme',
@@ -1858,6 +1949,7 @@ export class Quicksight extends PolicyStatement {
       'GenerateEmbedUrlForAnonymousUser',
       'GenerateEmbedUrlForRegisteredUser',
       'ListCustomPermissions',
+      'PutDataSetRefreshProperties',
       'RegisterUser',
       'RestoreAnalysis',
       'ScopeDownPolicy',
@@ -1877,6 +1969,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateIAMPolicyAssignment',
       'UpdateIpRestriction',
       'UpdatePublicSharingSettings',
+      'UpdateRefreshSchedule',
       'UpdateResourcePermissions',
       'UpdateTemplate',
       'UpdateTemplateAlias',
@@ -1907,6 +2000,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeDashboard',
       'DescribeDashboardPermissions',
       'DescribeDataSet',
+      'DescribeDataSetRefreshProperties',
       'DescribeDataSource',
       'DescribeEmailCustomizationTemplate',
       'DescribeFolder',
@@ -1918,6 +2012,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeIngestion',
       'DescribeIpRestriction',
       'DescribeNamespace',
+      'DescribeRefreshSchedule',
       'DescribeTemplate',
       'DescribeTemplateAlias',
       'DescribeTemplatePermissions',
@@ -1949,6 +2044,7 @@ export class Quicksight extends PolicyStatement {
       'ListIAMPolicyAssignmentsForUser',
       'ListIngestions',
       'ListNamespaces',
+      'ListRefreshSchedules',
       'ListTemplateAliases',
       'ListTemplateVersions',
       'ListTemplates',
@@ -2113,6 +2209,21 @@ export class Quicksight extends PolicyStatement {
    */
   public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/ingestion/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type refreshschedule to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRefreshschedule(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
   }
 
   /**
