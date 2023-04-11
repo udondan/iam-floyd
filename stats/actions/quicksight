@@ -17,6 +17,7 @@ quicksight:CreateIAMPolicyAssignment;Write
 quicksight:CreateIngestion;Write
 quicksight:CreateNamespace;Write
 quicksight:CreateReader;Write
+quicksight:CreateRefreshSchedule;Write
 quicksight:CreateTemplate;Write
 quicksight:CreateTemplateAlias;Write
 quicksight:CreateTheme;Write
@@ -29,6 +30,7 @@ quicksight:DeleteAnalysis;Write
 quicksight:DeleteCustomPermissions;Permissions management
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
+quicksight:DeleteDataSetRefreshProperties;Write
 quicksight:DeleteDataSource;Write
 quicksight:DeleteEmailCustomizationTemplate;Write
 quicksight:DeleteFolder;Write
@@ -37,6 +39,7 @@ quicksight:DeleteGroup;Write
 quicksight:DeleteGroupMembership;Write
 quicksight:DeleteIAMPolicyAssignment;Write
 quicksight:DeleteNamespace;Write
+quicksight:DeleteRefreshSchedule;Write
 quicksight:DeleteTemplate;Write
 quicksight:DeleteTemplateAlias;Write
 quicksight:DeleteTheme;Write
@@ -54,6 +57,7 @@ quicksight:DescribeDashboard;Read
 quicksight:DescribeDashboardPermissions;Read
 quicksight:DescribeDataSet;Read
 quicksight:DescribeDataSetPermissions;Permissions management
+quicksight:DescribeDataSetRefreshProperties;Read
 quicksight:DescribeDataSource;Read
 quicksight:DescribeDataSourcePermissions;Permissions management
 quicksight:DescribeEmailCustomizationTemplate;Read
@@ -66,6 +70,7 @@ quicksight:DescribeIAMPolicyAssignment;Read
 quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
 quicksight:DescribeNamespace;Read
+quicksight:DescribeRefreshSchedule;Read
 quicksight:DescribeTemplate;Read
 quicksight:DescribeTemplateAlias;Read
 quicksight:DescribeTemplatePermissions;Read
@@ -94,6 +99,7 @@ quicksight:ListIAMPolicyAssignments;List
 quicksight:ListIAMPolicyAssignmentsForUser;List
 quicksight:ListIngestions;List
 quicksight:ListNamespaces;List
+quicksight:ListRefreshSchedules;List
 quicksight:ListTagsForResource;Read
 quicksight:ListTemplateAliases;List
 quicksight:ListTemplateVersions;List
@@ -105,6 +111,7 @@ quicksight:ListUserGroups;List
 quicksight:ListUsers;List
 quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
+quicksight:PutDataSetRefreshProperties;Write
 quicksight:RegisterUser;Write
 quicksight:RestoreAnalysis;Write
 quicksight:ScopeDownPolicy;Write
@@ -139,6 +146,7 @@ quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateIpRestriction;Write
 quicksight:UpdatePublicSharingSettings;Write
+quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write

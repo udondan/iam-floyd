@@ -10,6 +10,7 @@ quicksight:folder
 quicksight:group
 quicksight:ingestion
 quicksight:namespace
+quicksight:refreshschedule
 quicksight:template
 quicksight:theme
 quicksight:topic
