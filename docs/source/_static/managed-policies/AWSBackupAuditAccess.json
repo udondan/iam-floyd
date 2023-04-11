@@ -26,14 +26,14 @@
       "Effect": "Allow",
       "Action": [
         "config:DescribeConfigurationRecorders",
-        "config:DescribeConfigurationRecorderStatus"
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DescribeComplianceByConfigRule"
       ],
       "Resource": "*"
     },
     {
       "Effect": "Allow",
       "Action": [
-        "config:DescribeComplianceByConfigRule",
         "config:GetComplianceDetailsByConfigRule"
       ],
       "Resource": "arn:aws:config:*:*:config-rule/*"
