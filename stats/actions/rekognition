@@ -2,6 +2,7 @@ rekognition:CompareFaces;Read
 rekognition:CopyProjectVersion;Write
 rekognition:CreateCollection;Write
 rekognition:CreateDataset;Write
+rekognition:CreateFaceLivenessSession;Write
 rekognition:CreateProject;Write
 rekognition:CreateProjectVersion;Write
 rekognition:CreateStreamProcessor;Write
@@ -28,6 +29,7 @@ rekognition:GetCelebrityInfo;Read
 rekognition:GetCelebrityRecognition;Read
 rekognition:GetContentModeration;Read
 rekognition:GetFaceDetection;Read
+rekognition:GetFaceLivenessSessionResults;Read
 rekognition:GetFaceSearch;Read
 rekognition:GetLabelDetection;Read
 rekognition:GetPersonTracking;Read
@@ -48,6 +50,7 @@ rekognition:SearchFacesByImage;Read
 rekognition:StartCelebrityRecognition;Write
 rekognition:StartContentModeration;Write
 rekognition:StartFaceDetection;Write
+rekognition:StartFaceLivenessSession;Write
 rekognition:StartFaceSearch;Write
 rekognition:StartLabelDetection;Write
 rekognition:StartPersonTracking;Write

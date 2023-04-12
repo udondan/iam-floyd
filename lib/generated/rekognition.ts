@@ -71,6 +71,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a face liveness session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateFaceLivenessSession.html
+   */
+  public toCreateFaceLivenessSession() {
+    return this.to('CreateFaceLivenessSession');
+  }
+
+  /**
    * Grants permission to create an Amazon Rekognition Custom Labels project
    *
    * Access Level: Write
@@ -365,6 +376,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get results of a face liveness session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceLivenessSessionResults.html
+   */
+  public toGetFaceLivenessSessionResults() {
+    return this.to('GetFaceLivenessSessionResults');
+  }
+
+  /**
    * Grants permission to read the matching collection faces found in a stored video by an asynchronous face search job
    *
    * Access Level: Read
@@ -585,6 +607,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start streaming video for a face liveness session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_rekognitionstreaming_StartFaceLivenessSession.html
+   */
+  public toStartFaceLivenessSession() {
+    return this.to('StartFaceLivenessSession');
+  }
+
+  /**
    * Grants permission to start an asynchronous search for faces in a collection that match the faces of persons detected in a stored video
    *
    * Access Level: Write
@@ -752,6 +785,7 @@ export class Rekognition extends PolicyStatement {
       'GetCelebrityRecognition',
       'GetContentModeration',
       'GetFaceDetection',
+      'GetFaceLivenessSessionResults',
       'GetFaceSearch',
       'GetLabelDetection',
       'GetPersonTracking',
@@ -771,6 +805,7 @@ export class Rekognition extends PolicyStatement {
       'CopyProjectVersion',
       'CreateCollection',
       'CreateDataset',
+      'CreateFaceLivenessSession',
       'CreateProject',
       'CreateProjectVersion',
       'CreateStreamProcessor',
@@ -787,6 +822,7 @@ export class Rekognition extends PolicyStatement {
       'StartCelebrityRecognition',
       'StartContentModeration',
       'StartFaceDetection',
+      'StartFaceLivenessSession',
       'StartFaceSearch',
       'StartLabelDetection',
       'StartPersonTracking',
