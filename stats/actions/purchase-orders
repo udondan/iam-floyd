@@ -1,9 +1,11 @@
 purchase-orders:AddPurchaseOrder;Write
 purchase-orders:DeletePurchaseOrder;Write
+purchase-orders:GetConsoleActionSetEnforced;Read
 purchase-orders:GetPurchaseOrder;Read
 purchase-orders:ListPurchaseOrderInvoices;List
 purchase-orders:ListPurchaseOrders;List
 purchase-orders:ModifyPurchaseOrders;Write
+purchase-orders:UpdateConsoleActionSetEnforced;Write
 purchase-orders:UpdatePurchaseOrder;Write
 purchase-orders:UpdatePurchaseOrderStatus;Write
 purchase-orders:ViewPurchaseOrders;Read

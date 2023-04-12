@@ -445,6 +445,23 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to replicate both unencrypted objects and objects encrypted with SSE-KMS
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
+   */
+  public toGetObjectVersionForReplication() {
+    return this.to('GetObjectVersionForReplication');
+  }
+
+  /**
    * Grants permission to return the tag set for a specific version of the object
    *
    * Access Level: Read
@@ -464,6 +481,23 @@ export class S3Outposts extends PolicyStatement {
    */
   public toGetObjectVersionTagging() {
     return this.to('GetObjectVersionTagging');
+  }
+
+  /**
+   * Grants permission to get the replication configuration information set on an Amazon S3 bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html
+   */
+  public toGetReplicationConfiguration() {
+    return this.to('GetReplicationConfiguration');
   }
 
   /**
@@ -804,6 +838,78 @@ export class S3Outposts extends PolicyStatement {
     return this.to('PutObjectVersionTagging');
   }
 
+  /**
+   * Grants permission to create a new replication configuration or replace an existing one
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html
+   */
+  public toPutReplicationConfiguration() {
+    return this.to('PutReplicationConfiguration');
+  }
+
+  /**
+   * Grants permission to replicate delete markers to the destination bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
+   */
+  public toReplicateDelete() {
+    return this.to('ReplicateDelete');
+  }
+
+  /**
+   * Grants permission to replicate objects and object tags to the destination bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
+   */
+  public toReplicateObject() {
+    return this.to('ReplicateObject');
+  }
+
+  /**
+   * Grants permission to replicate object tags to the destination bucket
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
+   */
+  public toReplicateTags() {
+    return this.to('ReplicateTags');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
@@ -817,7 +923,10 @@ export class S3Outposts extends PolicyStatement {
       'DeleteObjectVersion',
       'PutBucketVersioning',
       'PutLifecycleConfiguration',
-      'PutObject'
+      'PutObject',
+      'PutReplicationConfiguration',
+      'ReplicateDelete',
+      'ReplicateObject'
     ],
     'Permissions management': [
       'DeleteAccessPointPolicy',
@@ -831,7 +940,8 @@ export class S3Outposts extends PolicyStatement {
       'DeleteObjectVersionTagging',
       'PutBucketTagging',
       'PutObjectTagging',
-      'PutObjectVersionTagging'
+      'PutObjectVersionTagging',
+      'ReplicateTags'
     ],
     Read: [
       'GetAccessPoint',
@@ -844,7 +954,9 @@ export class S3Outposts extends PolicyStatement {
       'GetObject',
       'GetObjectTagging',
       'GetObjectVersion',
-      'GetObjectVersionTagging'
+      'GetObjectVersionForReplication',
+      'GetObjectVersionTagging',
+      'GetReplicationConfiguration'
     ],
     List: [
       'ListAccessPoints',
@@ -1115,7 +1227,9 @@ export class S3Outposts extends PolicyStatement {
    * - .toGetObject()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
+   * - .toGetReplicationConfiguration()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -1131,6 +1245,10 @@ export class S3Outposts extends PolicyStatement {
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1214,7 +1332,9 @@ export class S3Outposts extends PolicyStatement {
    * - .toGetObject()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
+   * - .toGetReplicationConfiguration()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -1230,6 +1350,10 @@ export class S3Outposts extends PolicyStatement {
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -1265,7 +1389,9 @@ export class S3Outposts extends PolicyStatement {
    * - .toGetObject()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
+   * - .toGetReplicationConfiguration()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -1281,6 +1407,10 @@ export class S3Outposts extends PolicyStatement {
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1351,7 +1481,9 @@ export class S3Outposts extends PolicyStatement {
    * - .toGetObject()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
+   * - .toGetReplicationConfiguration()
    * - .toListAccessPoints()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -1367,6 +1499,10 @@ export class S3Outposts extends PolicyStatement {
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1412,6 +1548,7 @@ export class S3Outposts extends PolicyStatement {
    *
    * Applies to actions:
    * - .toPutObject()
+   * - .toReplicateObject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

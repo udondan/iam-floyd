@@ -19,7 +19,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to add a new purchase order
+   * Grants permission to add a new purchase order
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to delete a purchase order
+   * Grants permission to delete a purchase order
    *
    * Access Level: Write
    *
@@ -41,7 +41,18 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to get a purchase order
+   * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetConsoleActionSetEnforced() {
+    return this.to('GetConsoleActionSetEnforced');
+  }
+
+  /**
+   * Grants permission to get a purchase order
    *
    * Access Level: Read
    *
@@ -52,7 +63,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to list purchase order invoices
+   * Grants permission to list purchase order invoices
    *
    * Access Level: List
    *
@@ -63,7 +74,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to get all available purchase orders
+   * Grants permission to get all available purchase orders
    *
    * Access Level: List
    *
@@ -85,7 +96,18 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to update an existing purchase order
+   * Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUpdateConsoleActionSetEnforced() {
+    return this.to('UpdateConsoleActionSetEnforced');
+  }
+
+  /**
+   * Grants permission to update an existing purchase order
    *
    * Access Level: Write
    *
@@ -96,7 +118,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to set purchase order status
+   * Grants permission to set purchase order status
    *
    * Access Level: Write
    *
@@ -122,10 +144,12 @@ export class PurchaseOrders extends PolicyStatement {
       'AddPurchaseOrder',
       'DeletePurchaseOrder',
       'ModifyPurchaseOrders',
+      'UpdateConsoleActionSetEnforced',
       'UpdatePurchaseOrder',
       'UpdatePurchaseOrderStatus'
     ],
     Read: [
+      'GetConsoleActionSetEnforced',
       'GetPurchaseOrder',
       'ViewPurchaseOrders'
     ],

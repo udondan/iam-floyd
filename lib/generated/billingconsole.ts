@@ -19,6 +19,17 @@ export class AwsPortal extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetConsoleActionSetEnforced() {
+    return this.to('GetConsoleActionSetEnforced');
+  }
+
+  /**
    * Allow or deny IAM users permission to modify Account Settings
    *
    * Access Level: Write
@@ -49,6 +60,17 @@ export class AwsPortal extends PolicyStatement {
    */
   public toModifyPaymentMethods() {
     return this.to('ModifyPaymentMethods');
+  }
+
+  /**
+   * Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUpdateConsoleActionSetEnforced() {
+    return this.to('UpdateConsoleActionSetEnforced');
   }
 
   /**
@@ -96,16 +118,18 @@ export class AwsPortal extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Write: [
-      'ModifyAccount',
-      'ModifyBilling',
-      'ModifyPaymentMethods'
-    ],
     Read: [
+      'GetConsoleActionSetEnforced',
       'ViewAccount',
       'ViewBilling',
       'ViewPaymentMethods',
       'ViewUsage'
+    ],
+    Write: [
+      'ModifyAccount',
+      'ModifyBilling',
+      'ModifyPaymentMethods',
+      'UpdateConsoleActionSetEnforced'
     ]
   };
 }

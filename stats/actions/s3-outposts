@@ -21,7 +21,9 @@ s3-outposts:GetLifecycleConfiguration;Read
 s3-outposts:GetObject;Read
 s3-outposts:GetObjectTagging;Read
 s3-outposts:GetObjectVersion;Read
+s3-outposts:GetObjectVersionForReplication;Read
 s3-outposts:GetObjectVersionTagging;Read
+s3-outposts:GetReplicationConfiguration;Read
 s3-outposts:ListAccessPoints;List
 s3-outposts:ListBucket;List
 s3-outposts:ListBucketMultipartUploads;List
@@ -40,3 +42,7 @@ s3-outposts:PutObject;Write
 s3-outposts:PutObjectAcl;Permissions management
 s3-outposts:PutObjectTagging;Tagging
 s3-outposts:PutObjectVersionTagging;Tagging
+s3-outposts:PutReplicationConfiguration;Write
+s3-outposts:ReplicateDelete;Write
+s3-outposts:ReplicateObject;Write
+s3-outposts:ReplicateTags;Tagging
