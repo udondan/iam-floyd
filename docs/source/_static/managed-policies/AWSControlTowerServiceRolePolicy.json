@@ -175,6 +175,15 @@
           "iam:AWSServiceName": "cloudtrail.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "account:EnableRegion",
+        "account:ListRegions",
+        "account:GetRegionOptStatus"
+      ],
+      "Resource": "*"
     }
   ]
 }
