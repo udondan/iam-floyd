@@ -1,0 +1,123 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeAction",
+        "sagemaker:DescribeInferenceRecommendationsJob",
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
+        "sagemaker:DescribePipeline",
+        "sagemaker:DescribePipelineExecution",
+        "sagemaker:ListAssociations",
+        "sagemaker:ListArtifacts",
+        "sagemaker:ListModelMetadata",
+        "sagemaker:ListModelPackages",
+        "sagemaker:Search",
+        "sagemaker:GetSearchSuggestions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags",
+        "sagemaker:CreateModel",
+        "sagemaker:CreateModelPackage",
+        "sagemaker:CreateModelPackageGroup",
+        "sagemaker:CreateEndpoint",
+        "sagemaker:CreateEndpointConfig",
+        "sagemaker:CreateInferenceRecommendationsJob",
+        "sagemaker:DeleteModelPackage",
+        "sagemaker:DeleteModelPackageGroup",
+        "sagemaker:DeleteTags",
+        "sagemaker:UpdateModelPackage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*SageMaker*",
+        "arn:aws:s3:::*Sagemaker*",
+        "arn:aws:s3:::*sagemaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchGetImage",
+        "ecr:DescribeImages"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "sagemaker.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:GetGroupQuery"
+      ],
+      "Resource": "arn:aws:resource-groups:*:*:group/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:ListGroupResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:CreateGroup",
+        "resource-groups:Tag"
+      ],
+      "Resource": "arn:aws:resource-groups:*:*:group/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "sagemaker:collection"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "resource-groups:DeleteGroup",
+      "Resource": "arn:aws:resource-groups:*:*:group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/sagemaker:collection": "true"
+        }
+      }
+    }
+  ]
+}
