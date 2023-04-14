@@ -97,6 +97,16 @@
           "iam:PassedToService": "servicecatalog.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/orgsdatasync.servicecatalog.amazonaws.com/AWSServiceRoleForServiceCatalogOrgsDataSync",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "orgsdatasync.servicecatalog.amazonaws.com"
+        }
+      }
     }
   ]
 }
