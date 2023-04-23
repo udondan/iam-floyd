@@ -36,7 +36,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
@@ -81,7 +81,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
@@ -128,7 +128,7 @@ jobs:
     needs: build-standalone
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
@@ -172,7 +172,7 @@ jobs:
     needs: build-standalone
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
@@ -209,7 +209,7 @@ jobs:
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
@@ -255,7 +255,7 @@ jobs:
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim
+      image: jsii/superchain:1-buster-slim-node18
       options: --group-add sudo
     steps:
       - name: Fetch latest SHA
