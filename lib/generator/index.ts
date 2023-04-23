@@ -4,7 +4,7 @@ import cheerio = require('cheerio');
 import fs = require('fs');
 import glob = require('glob');
 import request = require('request');
-import { Project, QuoteKind, Scope } from 'ts-morph';
+import { OptionalKind, ParameterDeclarationStructure, Project, QuoteKind, Scope } from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
@@ -399,13 +399,26 @@ export function createModule(module: Module): Promise<void> {
     stats.resources.push(`${module.servicePrefix}:${name}`);
 
     const params = getArnPlaceholders(resourceType.arn);
+    let optionalMethodParameters: OptionalKind<ParameterDeclarationStructure>[] =
+      [];
     params.forEach((param) => {
-      method.addParameter({
-        name: lowerFirst(camelCase(param)),
-        type: 'string',
-        hasQuestionToken: /^(Partition|Region|Account(Id)?)$/.test(param),
-      });
+      if (/^(Partition|Region|Account(Id)?)$/.test(param)) {
+        optionalMethodParameters.push({
+          name: lowerFirst(camelCase(param)),
+          type: 'string',
+          hasQuestionToken: true,
+        });
+      } else {
+        method.addParameter({
+          name: lowerFirst(camelCase(param)),
+          type: 'string',
+          hasQuestionToken: false,
+        });
+      }
     });
+    if (optionalMethodParameters.length) {
+      method.addParameters(optionalMethodParameters);
+    }
 
     let arn = resourceType.arn;
     const methodBody: string[] = [];
