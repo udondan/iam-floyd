@@ -72,7 +72,7 @@
     "cheerio": "^1.0.0-rc.3",
     "colors": "1.4.0",
     "glob": "^8.0.1",
-    "jsii": "^1.75.0",
+    "jsii": "^5.0.10",
     "jsii-pacmak": "^1.75.0",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
