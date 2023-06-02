@@ -79,7 +79,7 @@
     "ts-morph": "^17.0.1",
     "ts-node": "^10.0.0",
     "aws-lambda": "^1.0.7",
-    "typescript": "~5.0.2",
+    "typescript": "~5.1.3",
     "publib": "^0.2.598"
   },
   "dependencies": {
