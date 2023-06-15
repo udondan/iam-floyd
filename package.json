@@ -76,7 +76,7 @@
     "jsii-pacmak": "^1.75.0",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-    "ts-morph": "^17.0.1",
+    "ts-morph": "^19.0.0",
     "ts-node": "^10.0.0",
     "aws-lambda": "^1.0.7",
     "typescript": "~5.0.2",
