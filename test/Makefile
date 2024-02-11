@@ -1,5 +1,9 @@
 SHELL := /bin/bash
 
+clean:
+	@rm -rf node_modules package-lock.json
+	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
+
 install:
 	@npm install
 
