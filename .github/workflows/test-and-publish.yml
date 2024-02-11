@@ -162,7 +162,7 @@ jobs:
 
   release:
     name: Release
-    if: &ifMainBranch |
+    if: |
       github.ref == 'main' && (
         github.event_name == 'push' ||
         github.event_name == 'workflow_dispatch'
@@ -212,7 +212,11 @@ jobs:
 
   publish-iam-floyd:
     name: Publish iam-floyd
-    if: *ifMainBranch
+    if: |
+      github.ref == 'main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -250,7 +254,11 @@ jobs:
 
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
-    if: *ifMainBranch
+    if: |
+      github.ref == 'main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
     needs: release
     runs-on: ubuntu-latest
     steps:
