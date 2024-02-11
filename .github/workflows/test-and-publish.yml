@@ -213,7 +213,7 @@ jobs:
     if: |
       github.event_name == 'pull_request' &&
       github.head_ref == 'main'
-    needs: test-iam-floyd
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -249,11 +249,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-cdk-iam-floyd:
-    name: Test cdk-iam-floyd
+    name: Publish cdk-iam-floyd
     if: |
       github.event_name == 'pull_request' &&
       github.head_ref == 'main'
-    needs: test-cdk-iam-floyd
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -295,7 +295,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   success:
-    name: success
+    name: Test succeeded
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     needs:
