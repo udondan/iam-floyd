@@ -65,53 +65,6 @@ jobs:
           name: ${{ github.run_id }}
           path: /tmp/sha
 
-  build-standalone:
-    name: "STANDALONE: Build package"
-    needs: finalize
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
-
-      - name: Update package version
-        run: npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-
-      - name: Install dependencies
-        run: make install
-
-      - name: Build source
-        run: npm run build
-
-      - name: Build packages
-        run: |
-          rm -rf dist/*
-          make package
-
-      - name: Store packages as artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: packages
-          path: dist/js/iam-floyd*.tgz
-
   build-cdk:
     name: "CDK: Build package"
     needs: finalize
@@ -166,7 +119,7 @@ jobs:
 
   test-standalone-node:
     name: "STANDALONE: Test Node.js package"
-    needs: build-standalone
+    needs: finalize
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -191,18 +144,10 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Download package
-        uses: actions/download-artifact@v3
-        with:
-          name: packages
-          path: dist
-
-      - name: Install package
+      - name: Update package version
         run: |
-          sed -i "s/iam-floyd/iam-dummy/g" package*
-          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
-          npm i ./dist/iam-floyd*.tgz
-          npm list
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
 
       - name: Test npm package
         run: make test-typescript

@@ -11,3 +11,4 @@ docs/build
 examples/*/*.*.result
 package-lock.json
 tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo

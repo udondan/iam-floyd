@@ -43,27 +43,27 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@types/cheerio": "^0.22.23",
+    "@types/cheerio": "^0.22.35",
     "@types/glob": "^8.1.0",
-    "@types/lodash": "^4.14.194",
-    "@types/node": "18.16.0",
-    "@types/request": "^2.48.5",
-    "@types/request-promise-native": "^1.0.17",
-    "aws-sdk": "^2.814.0",
-    "cheerio": "^1.0.0-rc.3",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "20.11.17",
+    "@types/request": "^2.48.12",
+    "@types/request-promise-native": "^1.0.21",
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1555.0",
+    "cheerio": "^1.0.0-rc.12",
     "colors": "1.4.0",
-    "glob": "^10.2.2",
+    "glob": "^10.3.10",
+    "publib": "^0.2.792",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-    "ts-morph": "^17.0.1",
-    "ts-node": "^10.0.0",
-    "aws-lambda": "^1.0.7",
-    "typescript": "~5.0.4",
-    "publib": "^0.2.598"
+    "ts-morph": "^21.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@udondan/common-substrings": "^3.0.2",
-    "regex-parser": "^2.2.11"
+    "regex-parser": "^2.3.0"
   },
   "bundleDependencies": [
     "@udondan/common-substrings",

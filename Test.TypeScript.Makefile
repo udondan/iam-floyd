@@ -6,10 +6,8 @@ install-cdk:
 	npm i aws-cdk-lib constructs@^10.0.0
 
 test:
-	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@npx tsc @/tmp/ts.result
-	@rm /tmp/ts.result
+	@npx tsc -p ./tsconfig.test.json
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\

@@ -24,8 +24,7 @@
     "strictPropertyInitialization": true,
     "stripInternal": false,
     "target": "ES2020",
-    "composite": false,
-    "outDir": "dist"
+    "composite": false
   },
   "include": ["**/*.ts"],
   "exclude": [
