@@ -39,6 +39,13 @@ jobs:
       - name: Update version references
         run: make update-version-refs
 
+      - name: Ensure CHANGELOG exists for version
+        run: |
+          if [ ! -f CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md ]; then
+            echo "CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md does not exist"
+            exit 1
+          fi
+
       - name: Check for changes
         id: changes
         run: |
