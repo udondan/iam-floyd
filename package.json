@@ -3,7 +3,7 @@
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
     "generate": "tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
     "index-managed-policies": "tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
-    "build": "jsii --silence-warnings reserved-word",
+    "build": "tsc",
     "test": "npx ts-node test/main.ts"
   },
   "name": "iam-floyd",
