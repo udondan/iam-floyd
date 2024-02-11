@@ -175,7 +175,7 @@ jobs:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v4
         with:
-          name: sha
+          name: ${{ github.run_id }}
           path: /tmp/sha
 
       - name: Store latest SHA as output
