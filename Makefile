@@ -87,10 +87,8 @@ test-typescript-cdk:
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
 
 regenerate-code-example-results:
-	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@npx tsc @/tmp/ts.result
-	@rm /tmp/ts.result
+	@npx tsc -p ./tsconfig.test-iam-floyd.json
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Caching result of $$(basename $$f)" ;\
