@@ -1,11 +1,9 @@
 {
   "scripts": {
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "generate": "npx tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
-    "index-managed-policies": "npx tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
-    "build": "npx tsc",
-    "package": "mkdir -p dist/js && npm pack --pack-destination dist/js",
-    "test": "npx ts-node test/main.ts"
+    "generate": "npx ts-node bin/generate.ts",
+    "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
+    "build": "npx tsc"
   },
   "name": "iam-floyd",
   "description": "AWS IAM policy statement generator with fluent interface",
@@ -47,7 +45,6 @@
     "@types/node": "20.11.17",
     "@types/request": "^2.48.12",
     "@types/request-promise-native": "^1.0.21",
-    "aws-lambda": "^1.0.7",
     "cheerio": "^1.0.0-rc.12",
     "colors": "1.4.0",
     "glob": "^10.3.10",

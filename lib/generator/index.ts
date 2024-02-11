@@ -4,24 +4,12 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as request from 'request';
-import {
-  OptionalKind,
-  ParameterDeclarationStructure,
-  Project,
-  QuoteKind,
-  Scope,
-} from 'ts-morph';
+import { OptionalKind, ParameterDeclarationStructure, Project, QuoteKind, Scope } from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
-import {
-  arnFixer,
-  conditionFixer,
-  conditionKeyFixer,
-  fixes,
-  serviceFixer,
-} from './fixes';
+import { arnFixer, conditionFixer, conditionKeyFixer, fixes, serviceFixer } from './fixes';
 import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
@@ -79,6 +67,11 @@ const conditionTypeDefaults: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
     default: new Operator().dateEquals(),
     type: ['Date', 'string'],
+  },
+  ipaddress: {
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress',
+    default: new Operator().ipAddress(),
+    type: ['string'],
   },
 };
 
@@ -245,7 +238,7 @@ function writeStatsFile(file: string, data: string[]) {
 
 function writeStats(module: string, stats: Stats) {
   process.stdout.write('Stats '.grey);
-  Object.keys(stats).forEach(function (key) {
+  (Object.keys(stats) as Array<keyof Stats>).forEach(function (key) {
     const filePath = `./stats/${key}/${module}`;
     writeStatsFile(filePath, stats[key]);
   });
@@ -629,7 +622,7 @@ export function createModule(module: Module): Promise<void> {
         `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
       );
     } else {
-      throw new Error(`Unexpected condition type: ${type}`);
+      throw new Error(`Unexpected condition type: ${type} for ${name}`);
     }
 
     method.addJsDoc({
@@ -789,7 +782,7 @@ function getLastModified(url: string): Promise<Date> {
 function getTable($: CheerioStatic, title: string) {
   const table = $('.table-container table')
     .toArray()
-    .filter((element) => {
+    .filter((element: string) => {
       return $(element).find('th').first().text() == title;
     });
   return $(table[0]);
@@ -834,7 +827,7 @@ function addActions($: CheerioStatic, module: Module): Module {
 
     const conditions: string[] = [];
     if (conditionKeys.length) {
-      conditionKeys.each((_, conditionKey) => {
+      conditionKeys.each((_: unknown, conditionKey: string) => {
         const condition = conditionKeyFixer(
           module.servicePrefix!,
           cleanDescription($(conditionKey).text())
@@ -858,7 +851,7 @@ function addActions($: CheerioStatic, module: Module): Module {
 
     if (dependentActions.length) {
       actions[action].dependentActions = [];
-      dependentActions.each((_, dependentAction) => {
+      dependentActions.each((_: unknown, dependentAction: string) => {
         actions[action].dependentActions?.push(
           cleanDescription($(dependentAction).text())
         );
@@ -890,7 +883,6 @@ function addActions($: CheerioStatic, module: Module): Module {
 }
 
 function addResourceTypes($: CheerioStatic, module: Module): Module {
-  const service = module.name;
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource types');
   tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
@@ -908,14 +900,14 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       .next()
       .find('p')
       .toArray()
-      .map((element) => {
+      .map((element: string) => {
         return conditionKeyFixer(
           module.servicePrefix!,
           $(element).text().trim()
         );
       });
 
-    conditionKeys.forEach((condition) => {
+    conditionKeys.forEach((condition: string) => {
       if (!('relatedResourceTypes' in module.conditions![condition])) {
         module.conditions![condition].relatedResourceTypes = [];
       }
