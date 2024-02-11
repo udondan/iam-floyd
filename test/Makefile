@@ -9,9 +9,9 @@ install:
 
 test-cdk: install
 	@npm run build
-	@cdk diff
-	@cdk deploy --require-approval never
-	@cdk destroy --force
+	@npx cdk diff
+	@npx cdk deploy --require-approval never
+	@npx cdk destroy --force
 	@cat cdk.out/IAM-Floyd-Test.template.json
 
 test:
