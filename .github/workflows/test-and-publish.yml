@@ -1,5 +1,5 @@
 ---
-name: Test
+name: Test / Publish / Release
 
 concurrency:
   group: test-${{ github.head_ref }}
@@ -162,9 +162,11 @@ jobs:
 
   release:
     name: Release
-    if: |
-      github.event_name == 'push' &&
-      github.head_ref == 'main'
+    if: &ifMainBranch |
+      github.ref == 'main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
     needs:
       - test-iam-floyd
       - test-cdk-iam-floyd
@@ -210,9 +212,7 @@ jobs:
 
   publish-iam-floyd:
     name: Publish iam-floyd
-    if: |
-      github.event_name == 'push' &&
-      github.head_ref == 'main'
+    if: *ifMainBranch
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -250,9 +250,7 @@ jobs:
 
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
-    if: |
-      github.event_name == 'push' &&
-      github.head_ref == 'main'
+    if: *ifMainBranch
     needs: release
     runs-on: ubuntu-latest
     steps:
