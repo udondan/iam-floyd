@@ -164,7 +164,7 @@ jobs:
         run: |
           sed -i "s/iam-floyd/iam-dummy/g" package*
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
-          npm i dist/js/iam-floyd*.tgz
+          npm i dist/iam-floyd*.tgz
           sudo npm i -g typescript
 
       - name: Test npm package
@@ -210,7 +210,7 @@ jobs:
         run: |
           sed -i "s/iam-floyd/iam-dummy/g" package*
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk-iam-floyd';/g" examples/*/*.ts
-          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
+          npm i dist/cdk-iam-floyd@*.jsii.tgz
           sudo npm i -g typescript
 
       - name: Test npm package
