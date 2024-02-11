@@ -1,6 +1,9 @@
 SHELL := /bin/bash
 
-test-cdk:
+install:
+	@npm install
+
+test-cdk: install
 	@npm run build
 	@cdk diff
 	@cdk deploy --require-approval never
