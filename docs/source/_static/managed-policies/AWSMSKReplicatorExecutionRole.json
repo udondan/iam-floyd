@@ -1,0 +1,54 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ClusterPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeCluster",
+        "kafka-cluster:AlterCluster",
+        "kafka-cluster:DescribeTopic",
+        "kafka-cluster:CreateTopic",
+        "kafka-cluster:AlterTopic",
+        "kafka-cluster:WriteData",
+        "kafka-cluster:ReadData",
+        "kafka-cluster:AlterGroup",
+        "kafka-cluster:DescribeGroup",
+        "kafka-cluster:DescribeTopicDynamicConfiguration",
+        "kafka-cluster:AlterTopicDynamicConfiguration"
+      ],
+      "Resource": [
+        "arn:aws:kafka:*:*:cluster/*"
+      ]
+    },
+    {
+      "Sid": "TopicPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kafka-cluster:DescribeTopic",
+        "kafka-cluster:CreateTopic",
+        "kafka-cluster:AlterTopic",
+        "kafka-cluster:WriteData",
+        "kafka-cluster:ReadData",
+        "kafka-cluster:DescribeTopicDynamicConfiguration",
+        "kafka-cluster:AlterTopicDynamicConfiguration",
+        "kafka-cluster:AlterCluster"
+      ],
+      "Resource": [
+        "arn:aws:kafka:*:*:topic/*/*"
+      ]
+    },
+    {
+      "Sid": "GroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kafka-cluster:AlterGroup",
+        "kafka-cluster:DescribeGroup"
+      ],
+      "Resource": [
+        "arn:aws:kafka:*:*:group/*/*"
+      ]
+    }
+  ]
+}

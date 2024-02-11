@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:DeleteRule",
+        "events:ListTargetsByRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/AWSUserNotificationsManagedRule-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Notifications"
+        }
+      },
+      "Resource": "*"
+    }
+  ]
+}

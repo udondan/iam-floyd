@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonVPCReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
@@ -41,7 +42,8 @@
         "ec2:DescribeVpcPeeringConnections",
         "ec2:DescribeVpcs",
         "ec2:DescribeVpnConnections",
-        "ec2:DescribeVpnGateways"
+        "ec2:DescribeVpnGateways",
+        "ec2:GetSecurityGroupsForVpc"
       ],
       "Resource": "*"
     }

@@ -2,10 +2,11 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DenyAll",
+      "Effect": "Deny",
       "Action": [
         "*"
       ],
-      "Effect": "Deny",
       "Resource": "*"
     }
   ]

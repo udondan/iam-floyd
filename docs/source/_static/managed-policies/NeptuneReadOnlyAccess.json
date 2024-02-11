@@ -2,6 +2,8 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowReadOnlyPermissionsForRDS",
+      "Effect": "Allow",
       "Action": [
         "rds:DescribeAccountAttributes",
         "rds:DescribeCertificates",
@@ -25,18 +27,20 @@
         "rds:DownloadDBLogFilePortion",
         "rds:ListTagsForResource"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Sid": "AllowReadOnlyPermissionsForCloudwatch",
+      "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricStatistics",
         "cloudwatch:ListMetrics"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Sid": "AllowReadOnlyPermissionsForEC2",
+      "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAvailabilityZones",
@@ -46,31 +50,33 @@
         "ec2:DescribeVpcAttribute",
         "ec2:DescribeVpcs"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Sid": "AllowReadOnlyPermissionsForKMS",
+      "Effect": "Allow",
       "Action": [
         "kms:ListKeys",
         "kms:ListRetirableGrants",
         "kms:ListAliases",
         "kms:ListKeyPolicies"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Sid": "AllowReadOnlyPermissionsForLogs",
+      "Effect": "Allow",
       "Action": [
         "logs:DescribeLogStreams",
         "logs:GetLogEvents"
       ],
-      "Effect": "Allow",
       "Resource": [
         "arn:aws:logs:*:*:log-group:/aws/rds/*:log-stream:*",
         "arn:aws:logs:*:*:log-group:/aws/neptune/*:log-stream:*"
       ]
     },
     {
+      "Sid": "AllowReadOnlyPermissionsForNeptuneDB",
       "Effect": "Allow",
       "Action": [
         "neptune-db:Read*",

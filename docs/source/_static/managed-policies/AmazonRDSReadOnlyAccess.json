@@ -21,6 +21,7 @@
       "Action": [
         "cloudwatch:GetMetricStatistics",
         "cloudwatch:ListMetrics",
+        "cloudwatch:GetMetricData",
         "logs:DescribeLogStreams",
         "logs:GetLogEvents",
         "devops-guru:GetResourceCollection"

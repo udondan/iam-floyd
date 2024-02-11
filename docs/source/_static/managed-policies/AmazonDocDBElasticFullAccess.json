@@ -1,0 +1,123 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "docdb-elastic:CreateCluster",
+        "docdb-elastic:UpdateCluster",
+        "docdb-elastic:GetCluster",
+        "docdb-elastic:DeleteCluster",
+        "docdb-elastic:ListClusters",
+        "docdb-elastic:CreateClusterSnapshot",
+        "docdb-elastic:GetClusterSnapshot",
+        "docdb-elastic:DeleteClusterSnapshot",
+        "docdb-elastic:ListClusterSnapshots",
+        "docdb-elastic:RestoreClusterFromSnapshot",
+        "docdb-elastic:TagResource",
+        "docdb-elastic:UntagResource",
+        "docdb-elastic:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DeleteVpcEndpoints",
+        "ec2:ModifyVpcEndpoint",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeAvailabilityZones",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": "docdb-elastic.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "docdb-elastic.*.amazonaws.com"
+          ],
+          "aws:ResourceTag/DocDBElasticFullAccess": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/DocDBElasticFullAccess": "*",
+          "kms:ViaService": [
+            "docdb-elastic.*.amazonaws.com"
+          ]
+        },
+        "Bool": {
+          "kms:GrantIsForAWSResource": true
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:ListSecretVersionIds",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:GetResourcePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "secretsmanager:ResourceTag/DocDBElasticFullAccess": "*"
+        },
+        "StringEquals": {
+          "aws:CalledViaFirst": "docdb-elastic.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:ListMetrics",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/docdb-elastic.amazonaws.com/AWSServiceRoleForDocDB-Elastic",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "docdb-elastic.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

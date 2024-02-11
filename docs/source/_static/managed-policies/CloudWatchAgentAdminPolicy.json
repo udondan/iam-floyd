@@ -2,19 +2,27 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CWACloudWatchPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData",
         "ec2:DescribeTags",
         "logs:PutLogEvents",
+        "logs:PutRetentionPolicy",
         "logs:DescribeLogStreams",
         "logs:DescribeLogGroups",
         "logs:CreateLogStream",
-        "logs:CreateLogGroup"
+        "logs:CreateLogGroup",
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets",
+        "xray:GetSamplingStatisticSummaries"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "CWASSMPermissions",
       "Effect": "Allow",
       "Action": [
         "ssm:GetParameter",

@@ -2,8 +2,11 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "IAMAccessAnalyzerReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
+        "access-analyzer:CheckAccessNotGranted",
+        "access-analyzer:CheckNoNewAccess",
         "access-analyzer:Get*",
         "access-analyzer:List*",
         "access-analyzer:ValidatePolicy"

@@ -2,44 +2,70 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonRDSDescribeDBInstances",
       "Effect": "Allow",
       "Action": "rds:DescribeDBInstances",
       "Resource": "*"
     },
     {
+      "Sid": "AmazonRDSDescribeDBClusters",
       "Effect": "Allow",
       "Action": "rds:DescribeDBClusters",
       "Resource": "*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsDescribeDimensionKeys",
       "Effect": "Allow",
       "Action": "pi:DescribeDimensionKeys",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsGetDimensionKeyDetails",
       "Effect": "Allow",
       "Action": "pi:GetDimensionKeyDetails",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsGetResourceMetadata",
       "Effect": "Allow",
       "Action": "pi:GetResourceMetadata",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsGetResourceMetrics",
       "Effect": "Allow",
       "Action": "pi:GetResourceMetrics",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsListAvailableResourceDimensions",
       "Effect": "Allow",
       "Action": "pi:ListAvailableResourceDimensions",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsListAvailableResourceMetrics",
       "Effect": "Allow",
       "Action": "pi:ListAvailableResourceMetrics",
       "Resource": "arn:aws:pi:*:*:metrics/rds/*"
+    },
+    {
+      "Sid": "AmazonRDSPerformanceInsightsGetPerformanceAnalysisReport",
+      "Effect": "Allow",
+      "Action": "pi:GetPerformanceAnalysisReport",
+      "Resource": "arn:aws:pi:*:*:perf-reports/rds/*/*"
+    },
+    {
+      "Sid": "AmazonRDSPerformanceInsightsListPerformanceAnalysisReports",
+      "Effect": "Allow",
+      "Action": "pi:ListPerformanceAnalysisReports",
+      "Resource": "arn:aws:pi:*:*:perf-reports/rds/*/*"
+    },
+    {
+      "Sid": "AmazonRDSPerformanceInsightsListTagsForResource",
+      "Effect": "Allow",
+      "Action": "pi:ListTagsForResource",
+      "Resource": "arn:aws:pi:*:*:*/rds/*"
     }
   ]
 }

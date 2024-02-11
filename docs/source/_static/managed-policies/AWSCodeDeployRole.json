@@ -34,6 +34,8 @@
         "sns:Publish",
         "cloudwatch:DescribeAlarms",
         "cloudwatch:PutMetricAlarm",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeLoadBalancers",
         "elasticloadbalancing:DescribeInstanceHealth",
         "elasticloadbalancing:RegisterInstancesWithLoadBalancer",

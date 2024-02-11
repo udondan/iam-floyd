@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSOrganizationsReadOnly",
       "Effect": "Allow",
       "Action": [
         "organizations:Describe*",
@@ -10,6 +11,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSOrganizationsReadOnlyAccount",
       "Effect": "Allow",
       "Action": [
         "account:GetAlternateContact",

@@ -1,0 +1,131 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CDKPreDeploy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:GetTemplate",
+        "cloudformation:ListStackResources",
+        "cloudformation:GetTemplateSummary"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/amplify-*",
+        "arn:aws:cloudformation:*:*:stack/CDKToolkit/*"
+      ]
+    },
+    {
+      "Sid": "AmplifyMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:ListApps",
+        "cloudformation:ListStacks",
+        "ssm:DescribeParameters",
+        "appsync:GetIntrospectionSchema",
+        "amplify:GetBackendEnvironment"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AmplifyHotSwappableResources",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetSchemaCreationStatus",
+        "appsync:StartSchemaCreation",
+        "appsync:UpdateResolver",
+        "appsync:ListFunctions",
+        "appsync:UpdateFunction",
+        "appsync:UpdateApiKey"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AmplifyHotSwappableSchemaResource",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction",
+        "lambda:UpdateFunctionCode"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:amplify-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifySchema",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*amplify*",
+        "arn:aws:s3:::cdk-*-assets-*-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CDKDeploy",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/cdk-*-deploy-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-file-publishing-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-image-publishing-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-lookup-role-*-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifySSM",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParametersByPath",
+        "ssm:GetParameters",
+        "ssm:GetParameter"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/amplify/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifyModifySSMParam",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:PutParameter",
+        "ssm:DeleteParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/amplify/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

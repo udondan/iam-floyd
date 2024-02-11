@@ -274,6 +274,24 @@
     {
       "Effect": "Allow",
       "Action": [
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": [
+        "arn:aws:s3::*:logs-for-aws-portal-cache*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketOwnershipControls"
+      ],
+      "Resource": [
+        "arn:aws:s3::*:logs-for-stack*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "s3:ListAllMyBuckets"
       ],
       "Resource": "*"

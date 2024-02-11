@@ -81,7 +81,8 @@
         "ec2:ModifyImageAttribute",
         "ec2:DescribeImportImageTasks",
         "ec2:DescribeExportImageTasks",
-        "ec2:DescribeSnapshots"
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeHosts"
       ],
       "Resource": "*"
     },
@@ -170,7 +171,8 @@
         "ssm:ListInventoryEntries",
         "ssm:SendAutomationSignal",
         "ssm:DescribeInstanceAssociationsStatus",
-        "ssm:DescribeAssociationExecutions"
+        "ssm:DescribeAssociationExecutions",
+        "ssm:GetCommandInvocation"
       ],
       "Resource": "*"
     },

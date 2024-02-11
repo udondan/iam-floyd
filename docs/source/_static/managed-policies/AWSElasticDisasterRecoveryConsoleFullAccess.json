@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ConsoleFullAccess1",
       "Effect": "Allow",
       "Action": [
         "drs:*"
@@ -9,6 +10,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess2",
       "Effect": "Allow",
       "Action": [
         "kms:ListAliases",
@@ -17,6 +19,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess3",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
@@ -34,26 +37,33 @@
         "ec2:DescribeSubnets",
         "ec2:DescribeVolumes",
         "ec2:GetEbsEncryptionByDefault",
-        "ec2:GetEbsDefaultKmsKeyId"
+        "ec2:GetEbsDefaultKmsKeyId",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeCapacityReservations",
+        "ec2:DescribeHosts"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess4",
       "Effect": "Allow",
       "Action": "license-manager:ListLicenseConfigurations",
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess5",
       "Effect": "Allow",
       "Action": "resource-groups:ListGroups",
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess6",
       "Effect": "Allow",
       "Action": "elasticloadbalancing:DescribeLoadBalancers",
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess7",
       "Effect": "Allow",
       "Action": [
         "iam:ListInstanceProfiles",
@@ -62,6 +72,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "ConsoleFullAccess8",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -75,6 +86,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess9",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteSnapshot"
@@ -90,11 +102,14 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess10",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateLaunchTemplateVersion",
         "ec2:ModifyLaunchTemplate",
-        "ec2:DeleteLaunchTemplateVersions"
+        "ec2:DeleteLaunchTemplateVersions",
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
       ],
       "Resource": "arn:aws:ec2:*:*:launch-template/*",
       "Condition": {
@@ -104,6 +119,20 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess11",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateLaunchTemplate"
+      ],
+      "Resource": "arn:aws:ec2:*:*:launch-template/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess12",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteVolume"
@@ -119,6 +148,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess13",
       "Effect": "Allow",
       "Action": [
         "ec2:StartInstances",
@@ -139,6 +169,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess14",
       "Effect": "Allow",
       "Action": [
         "ec2:RevokeSecurityGroupEgress",
@@ -156,6 +187,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess15",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVolume"
@@ -171,11 +203,13 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess16",
       "Effect": "Allow",
       "Action": "ec2:CreateSecurityGroup",
       "Resource": "arn:aws:ec2:*:*:vpc/*"
     },
     {
+      "Sid": "ConsoleFullAccess17",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSecurityGroup"
@@ -191,6 +225,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess18",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSnapshot"
@@ -206,6 +241,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess19",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSnapshot"
@@ -221,6 +257,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess20",
       "Effect": "Allow",
       "Action": [
         "ec2:DetachVolume",
@@ -237,6 +274,29 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess21",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DetachVolume",
+        "ec2:AttachVolume",
+        "ec2:StartInstances",
+        "ec2:GetConsoleOutput",
+        "ec2:GetConsoleScreenshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AWSDRS": "AllowLaunchingIntoThisInstance"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "drs.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess22",
       "Effect": "Allow",
       "Action": [
         "ec2:AttachVolume"
@@ -252,6 +312,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess23",
       "Effect": "Allow",
       "Action": [
         "ec2:DetachVolume"
@@ -264,6 +325,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess24",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -279,6 +341,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess25",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -298,6 +361,7 @@
       }
     },
     {
+      "Sid": "ConsoleFullAccess26",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -319,6 +383,37 @@
           "aws:ViaAWSService": "true"
         }
       }
+    },
+    {
+      "Sid": "ConsoleFullAccess27",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:launch-template/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateLaunchTemplate"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess28",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConsoleFullAccess29",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
     }
   ]
 }

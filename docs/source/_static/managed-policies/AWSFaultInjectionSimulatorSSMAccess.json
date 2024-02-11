@@ -29,6 +29,22 @@
       "Resource": [
         "arn:aws:ssm:*:*:automation-execution/*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListCommands",
+        "ssm:CancelCommand"
+      ],
+      "Resource": "*"
     }
   ]
 }

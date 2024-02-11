@@ -1,0 +1,143 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerServiceCatalogProductsLambdaRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "lambda.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerServiceCatalogProductsApiGatewayRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "apigateway.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:DeleteFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:ListTags",
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:sagemaker-*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:sagemaker-*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "sagemaker:project-name",
+            "sagemaker:partner"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:PublishLayerVersion",
+        "lambda:GetLayerVersion",
+        "lambda:DeleteLayerVersion",
+        "lambda:GetFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:layer:sagemaker-*",
+        "arn:aws:lambda:*:*:function:sagemaker-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET",
+        "apigateway:DELETE",
+        "apigateway:PATCH",
+        "apigateway:POST",
+        "apigateway:PUT"
+      ],
+      "Resource": [
+        "arn:aws:apigateway:*::/restapis/*",
+        "arn:aws:apigateway:*::/restapis"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:POST",
+        "apigateway:PUT"
+      ],
+      "Resource": [
+        "arn:aws:apigateway:*::/restapis",
+        "arn:aws:apigateway:*::/tags/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "sagemaker:project-name",
+            "sagemaker:partner"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::sagemaker-*/lambda-auth-code/layer.zip"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

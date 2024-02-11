@@ -17,7 +17,8 @@
         "organizations:ListAWSServiceAccessForOrganization",
         "organizations:DescribeOrganizationalUnit",
         "organizations:DescribeAccount",
-        "organizations:DescribeOrganization"
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
       ],
       "Resource": "*"
     }

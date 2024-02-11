@@ -1,0 +1,296 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonDataZonePermissionsToCreateEnvironmentRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:DetachRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:PutRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/datazone*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::aws:policy/AmazonDataZoneEnvironmentRolePermissionsBoundary",
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "glue.amazonaws.com",
+            "lakeformation.amazonaws.com"
+          ],
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZonePermissionsToManageCreatedEnvironmentRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteRole",
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/datazone*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneCFStackCreationForEnvironments",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/DataZone*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": "AmazonDataZoneEnvironment"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneEnvironment": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneCFStackManagementForEnvironments",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/DataZone*"
+      ]
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentParameterValidation",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetDataLakeSettings",
+        "lakeformation:PutDataLakeSettings",
+        "lakeformation:RevokePermissions",
+        "lakeformation:ListPermissions",
+        "glue:CreateDatabase",
+        "glue:GetDatabase",
+        "athena:GetWorkGroup",
+        "logs:DescribeLogGroups",
+        "redshift-serverless:GetNamespace",
+        "redshift-serverless:GetWorkgroup",
+        "redshift:DescribeClusters",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentLakeFormationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:RegisterResource",
+        "lakeformation:DeregisterResource",
+        "lakeformation:GrantPermissions",
+        "lakeformation:ListResources"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentGlueDeletePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:DeleteDatabase"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentAthenaDeletePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "athena:DeleteWorkGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentAthenaResourceCreation",
+      "Effect": "Allow",
+      "Action": [
+        "athena:CreateWorkGroup",
+        "athena:TagResource",
+        "iam:TagRole",
+        "iam:TagPolicy",
+        "logs:TagLogGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": "AmazonDataZoneEnvironment"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneEnvironment": "false"
+        },
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentLogGroupCreation",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:datazone-*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": "AmazonDataZoneEnvironment"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneEnvironment": "false"
+        },
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentLogGroupManagement",
+      "Action": [
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:datazone-*",
+      "Effect": "Allow",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentIAMPolicyManagement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeletePolicy",
+        "iam:CreatePolicy",
+        "iam:GetPolicy",
+        "iam:ListPolicyVersions"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:policy/datazone*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentS3ValidationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "AmazonDataZoneEnvironmentKMSDecryptPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneEnvironment": "false"
+        }
+      }
+    },
+    {
+      "Sid": "PermissionsToTagAmazonDataZoneEnvironmentGlueResources",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": "AmazonDataZoneEnvironment"
+        },
+        "Null": {
+          "aws:RequestTag/AmazonDataZoneEnvironment": "false"
+        }
+      }
+    },
+    {
+      "Sid": "PermissionsToGetAmazonDataZoneEnvironmentBlueprintTemplates",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringEquals": {
+          "aws:CalledViaFirst": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

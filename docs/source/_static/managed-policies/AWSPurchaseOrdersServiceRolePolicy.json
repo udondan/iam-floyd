@@ -16,9 +16,12 @@
         "purchase-orders:GetPurchaseOrder",
         "purchase-orders:ListPurchaseOrderInvoices",
         "purchase-orders:ListPurchaseOrders",
+        "purchase-orders:ListTagsForResource",
         "purchase-orders:ModifyPurchaseOrders",
-        "purchase-orders:UpdatePurchaseOrderStatus",
+        "purchase-orders:TagResource",
+        "purchase-orders:UntagResource",
         "purchase-orders:UpdatePurchaseOrder",
+        "purchase-orders:UpdatePurchaseOrderStatus",
         "purchase-orders:ViewPurchaseOrders",
         "tax:ListTaxRegistrations"
       ],

@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonVPCFullAccess",
       "Effect": "Allow",
       "Action": [
         "ec2:AcceptVpcPeeringConnection",
@@ -128,6 +129,7 @@
         "ec2:EnableVgwRoutePropagation",
         "ec2:EnableVpcClassicLink",
         "ec2:EnableVpcClassicLinkDnsSupport",
+        "ec2:GetSecurityGroupsForVpc",
         "ec2:ModifyNetworkInterfaceAttribute",
         "ec2:ModifySecurityGroupRules",
         "ec2:ModifySubnetAttribute",

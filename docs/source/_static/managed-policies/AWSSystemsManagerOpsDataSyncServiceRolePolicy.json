@@ -56,14 +56,95 @@
       "Condition": {
         "StringEquals": {
           "securityhub:ASFFSyntaxPath/Workflow.Status": "SUPPRESSED"
-        },
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
         "Null": {
-          "securityhub:ASFFSyntaxPath/Confidence": false,
-          "securityhub:ASFFSyntaxPath/Criticality": false,
-          "securityhub:ASFFSyntaxPath/Note": false,
-          "securityhub:ASFFSyntaxPath/RelatedFindings": false,
-          "securityhub:ASFFSyntaxPath/Types": false,
-          "securityhub:ASFFSyntaxPath/UserDefinedFields": false,
+          "securityhub:ASFFSyntaxPath/Confidence": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/Criticality": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/Note.Text": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/Note.UpdatedBy": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/RelatedFindings": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/Types": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/UserDefinedFields.key": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "securityhub:ASFFSyntaxPath/UserDefinedFields.value": false
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": "securityhub:BatchUpdateFindings",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
           "securityhub:ASFFSyntaxPath/VerificationState": false
         }
       }

@@ -11,7 +11,8 @@
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws-marketplace:ProductId": [
-            "34850061-abaf-402d-92df-94325c9e947f"
+            "34850061-abaf-402d-92df-94325c9e947f",
+            "bfdca560-2c78-4e64-8193-794c159e6d30"
           ]
         }
       }

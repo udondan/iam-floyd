@@ -2,13 +2,14 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "sqs:GetQueueAttributes",
         "sqs:GetQueueUrl",
         "sqs:ListDeadLetterSourceQueues",
-        "sqs:ListQueues"
+        "sqs:ListQueues",
+        "sqs:ListMessageMoveTasks"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]

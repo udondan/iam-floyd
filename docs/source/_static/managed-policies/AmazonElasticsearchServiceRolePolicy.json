@@ -84,6 +84,22 @@
       "Resource": "*"
     },
     {
+      "Sid": "Stmt1480452973149",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Sid": "Stmt1480452973150",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:UnAssignIpv6Addresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
       "Sid": "Stmt1480452973202",
       "Effect": "Allow",
       "Action": [

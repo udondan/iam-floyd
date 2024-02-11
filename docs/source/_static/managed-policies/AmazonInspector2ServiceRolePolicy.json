@@ -45,6 +45,7 @@
         "elasticloadbalancing:DescribeRules",
         "elasticloadbalancing:DescribeTags",
         "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetHealth",
         "network-firewall:DescribeFirewall",
         "network-firewall:DescribeFirewallPolicy",
@@ -106,11 +107,11 @@
         "ssm:UpdateAssociation"
       ],
       "Resource": [
-        "arn:*:ec2:*:*:instance/*",
-        "arn:*:ssm:*:*:document/AmazonInspector2-*",
-        "arn:*:ssm:*:*:document/AWS-GatherSoftwareInventory",
-        "arn:*:ssm:*:*:managed-instance/*",
-        "arn:*:ssm:*:*:association/*"
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/AmazonInspector2-*",
+        "arn:aws:ssm:*:*:document/AWS-GatherSoftwareInventory",
+        "arn:aws:ssm:*:*:managed-instance/*",
+        "arn:aws:ssm:*:*:association/*"
       ]
     },
     {
@@ -121,7 +122,7 @@
         "ssm:DeleteResourceDataSync"
       ],
       "Resource": [
-        "arn:*:ssm:*:*:resource-data-sync/InspectorResourceDataSync-do-not-delete"
+        "arn:aws:ssm:*:*:resource-data-sync/InspectorResourceDataSync-do-not-delete"
       ]
     },
     {
@@ -136,7 +137,7 @@
         "events:RemoveTargets"
       ],
       "Resource": [
-        "arn:*:events:*:*:rule/DO-NOT-DELETE-AmazonInspector*ManagedRule"
+        "arn:aws:events:*:*:rule/DO-NOT-DELETE-AmazonInspector*ManagedRule"
       ]
     },
     {
@@ -144,6 +145,8 @@
       "Effect": "Allow",
       "Action": [
         "codeguru-security:CreateScan",
+        "codeguru-security:GetAccountConfiguration",
+        "codeguru-security:GetFindings",
         "codeguru-security:GetScan",
         "codeguru-security:ListFindings",
         "codeguru-security:BatchGetFindings",
@@ -164,6 +167,7 @@
         "iam:ListAttachedRolePolicies",
         "iam:ListPolicies",
         "iam:ListPolicyVersions",
+        "iam:ListRolePolicies",
         "lambda:ListVersionsByFunction"
       ],
       "Resource": [
@@ -174,6 +178,95 @@
           "aws:CalledVia": [
             "codeguru-security.amazonaws.com"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "Ec2DeepInspection",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:PutParameter",
+        "ssm:GetParameters",
+        "ssm:DeleteParameter"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/inspector-aws/service/inspector-linux-application-paths"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManagementOfServiceLinkedChannel",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:DeleteServiceLinkedChannel"
+      ],
+      "Resource": [
+        "arn:aws:cloudtrail:*:*:channel/aws-service-channel/inspector2/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowListServiceLinkedChannels",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:ListServiceLinkedChannels"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowToRunInvokeCisSpecificDocuments",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AmazonInspector2-InvokeInspectorSsmPluginCIS"
+      ]
+    },
+    {
+      "Sid": "AllowToRunCisCommandsToSpecificResources",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowToPutCloudwatchMetricData",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Inspector2"
         }
       }
     }

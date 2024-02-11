@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRDSPerformanceInsightsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "pi:DescribeDimensionKeys",
+        "pi:GetDimensionKeyDetails",
+        "pi:GetResourceMetadata",
+        "pi:GetResourceMetrics",
+        "pi:ListAvailableResourceDimensions",
+        "pi:ListAvailableResourceMetrics"
+      ],
+      "Resource": "arn:aws:pi:*:*:metrics/rds/*"
+    },
+    {
+      "Sid": "AmazonRDSPerformanceInsightsAnalisysReportFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "pi:CreatePerformanceAnalysisReport",
+        "pi:GetPerformanceAnalysisReport",
+        "pi:ListPerformanceAnalysisReports",
+        "pi:DeletePerformanceAnalysisReport"
+      ],
+      "Resource": "arn:aws:pi:*:*:perf-reports/rds/*/*"
+    },
+    {
+      "Sid": "AmazonRDSPerformanceInsightsTaggingFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "pi:TagResource",
+        "pi:UntagResource",
+        "pi:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:pi:*:*:*/rds/*"
+    },
+    {
+      "Sid": "AmazonRDSDescribeInstanceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonCloudWatchReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics",
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

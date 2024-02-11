@@ -8,6 +8,7 @@
         "cloudformation:CreateChangeSet",
         "cloudformation:DeleteChangeSet",
         "cloudformation:DeleteStack",
+        "cloudformation:UpdateStack",
         "cloudformation:DescribeStacks",
         "cloudformation:DescribeStackEvents",
         "cloudformation:ListStackResources"
@@ -21,6 +22,7 @@
       "Action": [
         "codebuild:CreateProject",
         "codebuild:DeleteProject",
+        "codebuild:UpdateProject",
         "codebuild:StartBuild",
         "codebuild:StopBuild",
         "codebuild:RetryBuild",
@@ -38,6 +40,13 @@
           "iam:PassedToService": "codebuild.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": "*"
     }
   ]
 }

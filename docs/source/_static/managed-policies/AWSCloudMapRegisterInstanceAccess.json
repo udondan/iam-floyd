@@ -16,6 +16,7 @@
         "servicediscovery:RegisterInstance",
         "servicediscovery:DeregisterInstance",
         "servicediscovery:DiscoverInstances",
+        "servicediscovery:DiscoverInstancesRevision",
         "ec2:DescribeInstances"
       ],
       "Resource": [

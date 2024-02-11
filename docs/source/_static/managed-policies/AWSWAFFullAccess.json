@@ -20,7 +20,12 @@
         "apprunner:AssociateWebAcl",
         "apprunner:DisassociateWebAcl",
         "apprunner:DescribeWebAclForService",
-        "apprunner:ListServices"
+        "apprunner:ListServices",
+        "apprunner:ListAssociatedServicesForWebAcl",
+        "ec2:AssociateVerifiedAccessInstanceWebAcl",
+        "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+        "ec2:GetVerifiedAccessInstanceWebAcl"
       ],
       "Resource": "*"
     },

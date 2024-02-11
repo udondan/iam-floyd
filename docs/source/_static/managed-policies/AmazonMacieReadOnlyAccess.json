@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "macie2:Describe*",
+        "macie2:Get*",
+        "macie2:List*",
+        "macie2:BatchGetCustomDataIdentifiers",
+        "macie2:SearchResources"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

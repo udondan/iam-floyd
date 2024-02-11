@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DRSAgentPolicy1",
       "Effect": "Allow",
       "Action": [
         "drs:SendAgentMetricsForDrs",
@@ -19,6 +20,7 @@
       "Resource": "arn:aws:drs:*:*:source-server/${aws:SourceIdentity}"
     },
     {
+      "Sid": "DRSAgentPolicy2",
       "Effect": "Allow",
       "Action": [
         "drs:GetAgentInstallationAssetsForDrs"

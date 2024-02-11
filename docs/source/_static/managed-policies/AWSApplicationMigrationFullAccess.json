@@ -203,6 +203,16 @@
           "aws:CalledVia": "mgn.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:ListCommands",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "ssm.amazonaws.com"
+        }
+      }
     }
   ]
 }

@@ -62,7 +62,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "chime:CreateMediaInsightsPipeline"
+        "chime:CreateMediaInsightsPipeline",
+        "chime:GetMediaInsightsPipelineConfiguration"
       ],
       "Resource": [
         "*"

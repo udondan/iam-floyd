@@ -27,7 +27,9 @@
       "Effect": "Allow",
       "Action": [
         "sso-directory:DescribeUsers",
-        "sso-directory:SearchUsers"
+        "sso-directory:SearchUsers",
+        "identitystore:DescribeUser",
+        "identitystore:ListUsers"
       ],
       "Resource": [
         "*"

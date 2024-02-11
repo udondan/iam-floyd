@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonLexFullAccessStatement1",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricStatistics",
@@ -25,6 +26,7 @@
       ]
     },
     {
+      "Sid": "AmazonLexFullAccessStatement2",
       "Effect": "Allow",
       "Action": [
         "lambda:AddPermission",
@@ -38,6 +40,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement3",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole"
@@ -46,10 +49,12 @@
         "arn:aws:iam::*:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots",
         "arn:aws:iam::*:role/aws-service-role/channels.lex.amazonaws.com/AWSServiceRoleForLexChannels",
         "arn:aws:iam::*:role/aws-service-role/lexv2.amazonaws.com/AWSServiceRoleForLexV2Bots*",
-        "arn:aws:iam::*:role/aws-service-role/channels.lexv2.amazonaws.com/AWSServiceRoleForLexV2Channels*"
+        "arn:aws:iam::*:role/aws-service-role/channels.lexv2.amazonaws.com/AWSServiceRoleForLexV2Channels*",
+        "arn:aws:iam::*:role/aws-service-role/replication.lexv2.amazonaws.com/AWSServiceRoleForLexV2Replication*"
       ]
     },
     {
+      "Sid": "AmazonLexFullAccessStatement4",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -64,6 +69,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement5",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -78,6 +84,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement6",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -92,6 +99,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement7",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -106,6 +114,22 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement8",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/replication.lexv2.amazonaws.com/AWSServiceRoleForLexV2Replication*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "lexv2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonLexFullAccessStatement9",
       "Effect": "Allow",
       "Action": [
         "iam:DeleteServiceLinkedRole",
@@ -115,10 +139,12 @@
         "arn:aws:iam::*:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots",
         "arn:aws:iam::*:role/aws-service-role/channels.lex.amazonaws.com/AWSServiceRoleForLexChannels",
         "arn:aws:iam::*:role/aws-service-role/lexv2.amazonaws.com/AWSServiceRoleForLexV2Bots*",
-        "arn:aws:iam::*:role/aws-service-role/channels.lexv2.amazonaws.com/AWSServiceRoleForLexV2Channels*"
+        "arn:aws:iam::*:role/aws-service-role/channels.lexv2.amazonaws.com/AWSServiceRoleForLexV2Channels*",
+        "arn:aws:iam::*:role/aws-service-role/replication.lexv2.amazonaws.com/AWSServiceRoleForLexV2Replication*"
       ]
     },
     {
+      "Sid": "AmazonLexFullAccessStatement10",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -135,6 +161,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement11",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -151,6 +178,7 @@
       }
     },
     {
+      "Sid": "AmazonLexFullAccessStatement12",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -162,6 +190,23 @@
         "StringEquals": {
           "iam:PassedToService": [
             "channels.lexv2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonLexFullAccessStatement13",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/replication.lexv2.amazonaws.com/AWSServiceRoleForLexV2Replication*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "lexv2.amazonaws.com"
           ]
         }
       }

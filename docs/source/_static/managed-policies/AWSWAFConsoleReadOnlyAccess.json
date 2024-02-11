@@ -24,7 +24,11 @@
         "cognito-idp:ListResourcesForWebACL",
         "cognito-idp:GetWebACLForResource",
         "apprunner:DescribeWebAclForService",
-        "apprunner:ListServices"
+        "apprunner:ListServices",
+        "apprunner:ListAssociatedServicesForWebAcl",
+        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+        "ec2:GetVerifiedAccessInstanceWebAcl",
+        "ec2:DescribeVerifiedAccessInstances"
       ],
       "Effect": "Allow",
       "Resource": "*"

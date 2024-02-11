@@ -7,6 +7,14 @@
         "connect-campaigns:ListCampaigns"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "connect:BatchPutContact",
+        "connect:StopContact"
+      ],
+      "Resource": "arn:aws:connect:*:*:instance/*"
     }
   ]
 }

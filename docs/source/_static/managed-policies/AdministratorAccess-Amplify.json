@@ -322,6 +322,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "AmplifyEcrSDKCalls",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:DescribeRepositories"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AmplifyStorageSDKCalls",
       "Effect": "Allow",
       "Action": [

@@ -98,7 +98,6 @@
       "Effect": "Allow",
       "Action": [
         "config:DeleteConfigRule",
-        "config:DescribeComplianceByConfigRule",
         "config:GetComplianceDetailsByConfigRule",
         "config:PutConfigRule",
         "config:StartConfigRulesEvaluation"
@@ -108,6 +107,7 @@
     {
       "Effect": "Allow",
       "Action": [
+        "config:DescribeComplianceByConfigRule",
         "config:DescribeConfigurationRecorders",
         "config:DescribeConfigurationRecorderStatus",
         "config:PutConfigurationRecorder",
