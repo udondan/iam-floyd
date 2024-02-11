@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "declarationMap": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "incremental": true,
+    "lib": ["es2020"],
+    "module": "CommonJS",
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "stripInternal": false,
+    "target": "ES2020",
+    "composite": false,
+    "outDir": "dist"
+  },
+  "include": ["**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "bin/*",
+    "lib/generator/*",
+    "test/*",
+    "**/*CDK*",
+    "examples/*",
+    "twitter/*",
+    "helper/*",
+    "dist"
+  ]
+}

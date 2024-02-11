@@ -4,8 +4,6 @@
     "generate": "tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
     "index-managed-policies": "tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
     "build": "jsii --silence-warnings reserved-word",
-    "build:watch": "jsii -w",
-    "package": "jsii-pacmak",
     "test": "npx ts-node test/main.ts"
   },
   "name": "iam-floyd",
@@ -43,24 +41,6 @@
   "stability": "experimental",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "jsii": {
-    "outdir": "dist",
-    "excludeTypescript": [
-      "bin/*",
-      "lib/generator/*",
-      "test/*",
-      "**/*CDK*",
-      "examples/*",
-      "twitter/*",
-      "helper/*"
-    ],
-    "targets": {
-      "python": {
-        "distName": "iam-floyd",
-        "module": "iam_floyd"
-      }
-    }
-  },
   "devDependencies": {
     "@types/cheerio": "^0.22.23",
     "@types/glob": "^8.1.0",
@@ -72,8 +52,6 @@
     "cheerio": "^1.0.0-rc.3",
     "colors": "1.4.0",
     "glob": "^10.2.2",
-    "jsii": "^1.75.0",
-    "jsii-pacmak": "^1.75.0",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "ts-morph": "^17.0.1",

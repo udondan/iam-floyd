@@ -492,11 +492,6 @@ export function createModule(module: Module): Promise<void> {
 
     stats.conditions.push(`${module.servicePrefix}:${parts[1]}`);
 
-    // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
-    if (parts[0] == 'aws' && name[0] != 'FederatedProvider') {
-      continue;
-    }
-
     // boolean conditions don't take operators
     if (condition.type != 'boolean') {
       hasConditions = true;
