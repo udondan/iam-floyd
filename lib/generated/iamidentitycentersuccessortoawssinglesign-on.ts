@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-on.html).
@@ -77,6 +77,35 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    return this.to('CreateApplication');
+  }
+
+  /**
+   * Grants permission to create an application assignment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html
+   */
+  public toCreateApplicationAssignment() {
+    return this.to('CreateApplicationAssignment');
+  }
+
+  /**
    * Grants permission to add an application instance to AWS IAM Identity Center
    *
    * Access Level: Write
@@ -96,6 +125,25 @@ export class Sso extends PolicyStatement {
    */
   public toCreateApplicationInstanceCertificate() {
     return this.to('CreateApplicationInstanceCertificate');
+  }
+
+  /**
+   * Grants permission to create an identity center instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstance.html
+   */
+  public toCreateInstance() {
+    return this.to('CreateInstance');
   }
 
   /**
@@ -170,6 +218,21 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a trusted token issuer for an instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateTrustedTokenIssuer.html
+   */
+  public toCreateTrustedTokenIssuer() {
+    return this.to('CreateTrustedTokenIssuer');
+  }
+
+  /**
    * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set
    *
    * Access Level: Write
@@ -178,6 +241,76 @@ export class Sso extends PolicyStatement {
    */
   public toDeleteAccountAssignment() {
     return this.to('DeleteAccountAssignment');
+  }
+
+  /**
+   * Grants permission to delete an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    return this.to('DeleteApplication');
+  }
+
+  /**
+   * Grants permission to delete an access scope to an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAccessScope.html
+   */
+  public toDeleteApplicationAccessScope() {
+    return this.to('DeleteApplicationAccessScope');
+  }
+
+  /**
+   * Grants permission to delete an application assignment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAssignment.html
+   */
+  public toDeleteApplicationAssignment() {
+    return this.to('DeleteApplicationAssignment');
+  }
+
+  /**
+   * Grants permission to delete an authentication method to an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAuthenticationMethod.html
+   */
+  public toDeleteApplicationAuthenticationMethod() {
+    return this.to('DeleteApplicationAuthenticationMethod');
+  }
+
+  /**
+   * Grants permission to delete a grant from an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationGrant.html
+   */
+  public toDeleteApplicationGrant() {
+    return this.to('DeleteApplicationGrant');
   }
 
   /**
@@ -214,6 +347,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an identity center instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstance.html
+   */
+  public toDeleteInstance() {
+    return this.to('DeleteInstance');
+  }
+
+  /**
    * Grants permission to disable ABAC and remove the attributes list for the instance
    *
    * Access Level: Write
@@ -239,6 +383,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete a permission set
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionSet.html
    */
   public toDeletePermissionSet() {
     return this.to('DeletePermissionSet');
@@ -278,6 +424,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a trusted token issuer for an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteTrustedTokenIssuer.html
+   */
+  public toDeleteTrustedTokenIssuer() {
+    return this.to('DeleteTrustedTokenIssuer');
+  }
+
+  /**
    * Grants permission to describe the status of the assignment creation request
    *
    * Access Level: Read
@@ -300,6 +457,45 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to obtain information about an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplication.html
+   */
+  public toDescribeApplication() {
+    return this.to('DescribeApplication');
+  }
+
+  /**
+   * Grants permission to retrieve an application assignment
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplicationAssignment.html
+   */
+  public toDescribeApplicationAssignment() {
+    return this.to('DescribeApplicationAssignment');
+  }
+
+  /**
+   * Grants permission to describe an application provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplicationProvider.html
+   */
+  public toDescribeApplicationProvider() {
+    return this.to('DescribeApplicationProvider');
+  }
+
+  /**
    * Grants permission to obtain information about the directories for this account
    *
    * Access Level: Read
@@ -308,6 +504,17 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeDirectories() {
     return this.to('DescribeDirectories');
+  }
+
+  /**
+   * Grants permission to obtain information about an identity center instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeInstance.html
+   */
+  public toDescribeInstance() {
+    return this.to('DescribeInstance');
   }
 
   /**
@@ -366,6 +573,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a trusted token issuer for an instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeTrustedTokenIssuer.html
+   */
+  public toDescribeTrustedTokenIssuer() {
+    return this.to('DescribeTrustedTokenIssuer');
+  }
+
+  /**
    * Grants permission to obtain information about the trust relationships for this account
    *
    * Access Level: Read
@@ -421,6 +639,62 @@ export class Sso extends PolicyStatement {
    */
   public toDisassociateProfile() {
     return this.to('DisassociateProfile');
+  }
+
+  /**
+   * Grants permission to get an access scope to an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAccessScope.html
+   */
+  public toGetApplicationAccessScope() {
+    return this.to('GetApplicationAccessScope');
+  }
+
+  /**
+   * Grants permission to read assignment configurations for an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAssignmentConfiguration.html
+   */
+  public toGetApplicationAssignmentConfiguration() {
+    return this.to('GetApplicationAssignmentConfiguration');
+  }
+
+  /**
+   * Grants permission to get an authentication method to an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAuthenticationMethod.html
+   */
+  public toGetApplicationAuthenticationMethod() {
+    return this.to('GetApplicationAuthenticationMethod');
+  }
+
+  /**
+   * Grants permission to obtain details about a grant belonging to an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationGrant.html
+   */
+  public toGetApplicationGrant() {
+    return this.to('GetApplicationGrant');
   }
 
   /**
@@ -614,6 +888,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list accounts assigned to user or group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentsForPrincipal.html
+   */
+  public toListAccountAssignmentsForPrincipal() {
+    return this.to('ListAccountAssignmentsForPrincipal');
+  }
+
+  /**
    * Grants permission to list all the AWS accounts where the specified permission set is provisioned
    *
    * Access Level: List
@@ -622,6 +907,76 @@ export class Sso extends PolicyStatement {
    */
   public toListAccountsForProvisionedPermissionSet() {
     return this.to('ListAccountsForProvisionedPermissionSet');
+  }
+
+  /**
+   * Grants permission to list access scopes to an application
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAccessScopes.html
+   */
+  public toListApplicationAccessScopes() {
+    return this.to('ListApplicationAccessScopes');
+  }
+
+  /**
+   * Grants permission to list application assignments
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignments.html
+   */
+  public toListApplicationAssignments() {
+    return this.to('ListApplicationAssignments');
+  }
+
+  /**
+   * Grants permission to list applications assigned to user or group
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignmentsForPrincipal.html
+   */
+  public toListApplicationAssignmentsForPrincipal() {
+    return this.to('ListApplicationAssignmentsForPrincipal');
+  }
+
+  /**
+   * Grants permission to list authentication methods to an application
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAuthenticationMethods.html
+   */
+  public toListApplicationAuthenticationMethods() {
+    return this.to('ListApplicationAuthenticationMethods');
+  }
+
+  /**
+   * Grants permission to list grants from an application
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationGrants.html
+   */
+  public toListApplicationGrants() {
+    return this.to('ListApplicationGrants');
   }
 
   /**
@@ -650,6 +1005,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list application providers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationProviders.html
+   */
+  public toListApplicationProviders() {
+    return this.to('ListApplicationProviders');
+  }
+
+  /**
    * Grants permission to retrieve all supported application templates
    *
    * Access Level: List
@@ -664,11 +1030,11 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all supported applications
+   * Grants permission to retrieve all applications associated with the instance of IAM Identity Center
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -733,6 +1099,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve all permission sets
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSets.html
    */
   public toListPermissionSets() {
     return this.to('ListPermissionSets');
@@ -786,6 +1154,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list trusted token issuers for an instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTrustedTokenIssuers.html
+   */
+  public toListTrustedTokenIssuers() {
+    return this.to('ListTrustedTokenIssuers');
+  }
+
+  /**
    * Grants permission to provision a specified permission set to the specified target
    *
    * Access Level: Write
@@ -797,12 +1176,59 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create/update an access scope to an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAccessScope.html
+   */
+  public toPutApplicationAccessScope() {
+    return this.to('PutApplicationAccessScope');
+  }
+
+  /**
    * Grants permission to add assignment configurations to an application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAssignmentConfiguration.html
    */
   public toPutApplicationAssignmentConfiguration() {
     return this.to('PutApplicationAssignmentConfiguration');
+  }
+
+  /**
+   * Grants permission to create/update an authentication method to an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAuthenticationMethod.html
+   */
+  public toPutApplicationAuthenticationMethod() {
+    return this.to('PutApplicationAuthenticationMethod');
+  }
+
+  /**
+   * Grants permission to create/update a grant to an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationGrant.html
+   */
+  public toPutApplicationGrant() {
+    return this.to('PutApplicationGrant');
   }
 
   /**
@@ -913,13 +1339,26 @@ export class Sso extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateApplication.html
+   */
+  public toUpdateApplication() {
+    return this.to('UpdateApplication');
   }
 
   /**
@@ -1011,6 +1450,17 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an identity center instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstance.html
+   */
+  public toUpdateInstance() {
+    return this.to('UpdateInstance');
+  }
+
+  /**
    * Grants permission to update the attributes to use with the instance for ABAC
    *
    * Access Level: Write
@@ -1036,6 +1486,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the permission set
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdatePermissionSet.html
    */
   public toUpdatePermissionSet() {
     return this.to('UpdatePermissionSet');
@@ -1074,34 +1526,60 @@ export class Sso extends PolicyStatement {
     return this.to('UpdateTrust');
   }
 
+  /**
+   * Grants permission to update a trusted token issuer for an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateTrustedTokenIssuer.html
+   */
+  public toUpdateTrustedTokenIssuer() {
+    return this.to('UpdateTrustedTokenIssuer');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDirectory',
       'AssociateProfile',
       'CreateAccountAssignment',
+      'CreateApplication',
+      'CreateApplicationAssignment',
       'CreateApplicationInstance',
       'CreateApplicationInstanceCertificate',
+      'CreateInstance',
       'CreateInstanceAccessControlAttributeConfiguration',
       'CreateManagedApplicationInstance',
       'CreatePermissionSet',
       'CreateProfile',
       'CreateTrust',
+      'CreateTrustedTokenIssuer',
       'DeleteAccountAssignment',
+      'DeleteApplication',
+      'DeleteApplicationAccessScope',
+      'DeleteApplicationAssignment',
+      'DeleteApplicationAuthenticationMethod',
+      'DeleteApplicationGrant',
       'DeleteApplicationInstance',
       'DeleteApplicationInstanceCertificate',
       'DeleteInlinePolicyFromPermissionSet',
+      'DeleteInstance',
       'DeleteInstanceAccessControlAttributeConfiguration',
       'DeleteManagedApplicationInstance',
       'DeletePermissionSet',
       'DeleteProfile',
+      'DeleteTrustedTokenIssuer',
       'DisassociateDirectory',
       'DisassociateProfile',
       'ImportApplicationInstanceServiceProviderMetadata',
       'ProvisionPermissionSet',
+      'PutApplicationAccessScope',
       'PutApplicationAssignmentConfiguration',
+      'PutApplicationAuthenticationMethod',
+      'PutApplicationGrant',
       'PutInlinePolicyToPermissionSet',
       'PutMfaDeviceManagementForDirectory',
       'StartSSO',
+      'UpdateApplication',
       'UpdateApplicationInstanceActiveCertificate',
       'UpdateApplicationInstanceDisplayData',
       'UpdateApplicationInstanceResponseConfiguration',
@@ -1110,11 +1588,13 @@ export class Sso extends PolicyStatement {
       'UpdateApplicationInstanceServiceProviderConfiguration',
       'UpdateApplicationInstanceStatus',
       'UpdateDirectoryAssociation',
+      'UpdateInstance',
       'UpdateInstanceAccessControlAttributeConfiguration',
       'UpdateManagedApplicationInstanceStatus',
       'UpdateProfile',
       'UpdateSSOConfiguration',
-      'UpdateTrust'
+      'UpdateTrust',
+      'UpdateTrustedTokenIssuer'
     ],
     'Permissions management': [
       'AttachCustomerManagedPolicyReferenceToPermissionSet',
@@ -1130,13 +1610,22 @@ export class Sso extends PolicyStatement {
     Read: [
       'DescribeAccountAssignmentCreationStatus',
       'DescribeAccountAssignmentDeletionStatus',
+      'DescribeApplication',
+      'DescribeApplicationAssignment',
+      'DescribeApplicationProvider',
       'DescribeDirectories',
+      'DescribeInstance',
       'DescribeInstanceAccessControlAttributeConfiguration',
       'DescribePermissionSet',
       'DescribePermissionSetProvisioningStatus',
       'DescribePermissionsPolicies',
       'DescribeRegisteredRegions',
+      'DescribeTrustedTokenIssuer',
       'DescribeTrusts',
+      'GetApplicationAccessScope',
+      'GetApplicationAssignmentConfiguration',
+      'GetApplicationAuthenticationMethod',
+      'GetApplicationGrant',
       'GetApplicationInstance',
       'GetApplicationTemplate',
       'GetInlinePolicyForPermissionSet',
@@ -1161,8 +1650,15 @@ export class Sso extends PolicyStatement {
       'ListAccountAssignmentCreationStatus',
       'ListAccountAssignmentDeletionStatus',
       'ListAccountAssignments',
+      'ListAccountAssignmentsForPrincipal',
       'ListAccountsForProvisionedPermissionSet',
+      'ListApplicationAccessScopes',
+      'ListApplicationAssignments',
+      'ListApplicationAssignmentsForPrincipal',
+      'ListApplicationAuthenticationMethods',
+      'ListApplicationGrants',
       'ListApplicationInstances',
+      'ListApplicationProviders',
       'ListApplicationTemplates',
       'ListApplications',
       'ListCustomerManagedPolicyReferencesInPermissionSet',
@@ -1171,7 +1667,8 @@ export class Sso extends PolicyStatement {
       'ListPermissionSetProvisioningStatus',
       'ListPermissionSets',
       'ListPermissionSetsProvisionedToAccount',
-      'ListProfiles'
+      'ListProfiles',
+      'ListTrustedTokenIssuers'
     ],
     Tagging: [
       'TagResource',
@@ -1210,12 +1707,160 @@ export class Sso extends PolicyStatement {
   /**
    * Adds a resource of type Instance to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onInstance(instanceId: string, partition?: string) {
     return this.on(`arn:${ partition || Sso.defaultPartition }:sso:::instance/${ instanceId }`);
+  }
+
+  /**
+   * Adds a resource of type Application to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_Application.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param applicationId - Identifier for the applicationId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifApplicationAccount()
+   */
+  public onApplication(instanceId: string, applicationId: string, accountId?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso::${ accountId || '*' }:application/${ instanceId }/${ applicationId }`);
+  }
+
+  /**
+   * Adds a resource of type TrustedTokenIssuer to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_TrustedTokenIssuerMetadata.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param trustedTokenIssuerId - Identifier for the trustedTokenIssuerId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrustedTokenIssuer(instanceId: string, trustedTokenIssuerId: string, accountId?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso::${ accountId || '*' }:trustedTokenIssuer/${ instanceId }/${ trustedTokenIssuerId }`);
+  }
+
+  /**
+   * Adds a resource of type ApplicationProvider to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ApplicationProvider.html
+   *
+   * @param applicationProviderId - Identifier for the applicationProviderId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApplicationProvider(applicationProviderId: string, partition?: string) {
+    return this.on(`arn:${ partition || Sso.defaultPartition }:sso::aws:applicationProvider/${ applicationProviderId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateInstance()
+   * - .toCreatePermissionSet()
+   * - .toCreateTrustedTokenIssuer()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html
+   *
+   * Applies to resource types:
+   * - PermissionSet
+   * - Instance
+   * - Application
+   * - TrustedTokenIssuer
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateInstance()
+   * - .toCreatePermissionSet()
+   * - .toCreateTrustedTokenIssuer()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the account which creates the application
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html
+   *
+   * Applies to actions:
+   * - .toCreateApplicationAssignment()
+   * - .toDeleteApplication()
+   * - .toDeleteApplicationAccessScope()
+   * - .toDeleteApplicationAssignment()
+   * - .toDeleteApplicationAuthenticationMethod()
+   * - .toDeleteApplicationGrant()
+   * - .toDescribeApplication()
+   * - .toDescribeApplicationAssignment()
+   * - .toGetApplicationAccessScope()
+   * - .toGetApplicationAssignmentConfiguration()
+   * - .toGetApplicationAuthenticationMethod()
+   * - .toGetApplicationGrant()
+   * - .toListApplicationAccessScopes()
+   * - .toListApplicationAssignments()
+   * - .toListApplicationAssignmentsForPrincipal()
+   * - .toListApplicationAuthenticationMethods()
+   * - .toListApplicationGrants()
+   * - .toPutApplicationAccessScope()
+   * - .toPutApplicationAssignmentConfiguration()
+   * - .toPutApplicationAuthenticationMethod()
+   * - .toPutApplicationGrant()
+   * - .toUpdateApplication()
+   *
+   * Applies to resource types:
+   * - Application
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifApplicationAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`ApplicationAccount`, value, operator || 'StringLike');
   }
 }

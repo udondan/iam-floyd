@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html).
@@ -990,5 +990,83 @@ export class Robomaker extends PolicyStatement {
    */
   public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world/${ worldId }`);
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/tagging-resources-iam-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateDeploymentJob()
+   * - .toCreateFleet()
+   * - .toCreateRobot()
+   * - .toCreateRobotApplication()
+   * - .toCreateSimulationApplication()
+   * - .toCreateSimulationJob()
+   * - .toCreateWorldExportJob()
+   * - .toCreateWorldGenerationJob()
+   * - .toCreateWorldTemplate()
+   * - .toStartSimulationJobBatch()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/tagging-resources-iam-policies.html
+   *
+   * Applies to resource types:
+   * - robotApplication
+   * - simulationApplication
+   * - simulationJob
+   * - simulationJobBatch
+   * - deploymentJob
+   * - robot
+   * - deploymentFleet
+   * - worldGenerationJob
+   * - worldExportJob
+   * - worldTemplate
+   * - world
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/tagging-resources-iam-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateDeploymentJob()
+   * - .toCreateFleet()
+   * - .toCreateRobot()
+   * - .toCreateRobotApplication()
+   * - .toCreateSimulationApplication()
+   * - .toCreateSimulationJob()
+   * - .toCreateWorldExportJob()
+   * - .toCreateWorldGenerationJob()
+   * - .toCreateWorldTemplate()
+   * - .toStartSimulationJobBatch()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

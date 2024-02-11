@@ -6,12 +6,14 @@ rds:DatabaseName
 rds:EndpointType
 rds:ManageMasterUserPassword
 rds:MultiAz
+rds:MultiTenant
 rds:Piops
 rds:RequestTag/${TagKey}
 rds:ResourceTag/${TagKey}
 rds:StorageEncrypted
 rds:StorageSize
 rds:TagKeys
+rds:TenantDatabaseName
 rds:Vpc
 rds:cluster-pg-tag/${TagKey}
 rds:cluster-snapshot-tag/${TagKey}

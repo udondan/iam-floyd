@@ -346,6 +346,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteDeployment.html
+   */
+  public toDeleteDeployment() {
+    return this.to('DeleteDeployment');
+  }
+
+  /**
    * Grants permission to delete an environment
    *
    * Access Level: Write
@@ -536,6 +547,17 @@ export class Proton extends PolicyStatement {
    */
   public toGetComponent() {
     return this.to('GetComponent');
+  }
+
+  /**
+   * Grants permission to describe a deployment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetDeployment.html
+   */
+  public toGetDeployment() {
+    return this.to('GetDeployment');
   }
 
   /**
@@ -800,6 +822,17 @@ export class Proton extends PolicyStatement {
    */
   public toListComponents() {
     return this.to('ListComponents');
+  }
+
+  /**
+   * Grants permission to list deployments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListDeployments.html
+   */
+  public toListDeployments() {
+    return this.to('ListDeployments');
   }
 
   /**
@@ -1339,6 +1372,7 @@ export class Proton extends PolicyStatement {
       'CreateTemplateSyncConfig',
       'DeleteAccountRoles',
       'DeleteComponent',
+      'DeleteDeployment',
       'DeleteEnvironment',
       'DeleteEnvironmentAccountConnection',
       'DeleteEnvironmentTemplate',
@@ -1379,6 +1413,7 @@ export class Proton extends PolicyStatement {
       'GetAccountRoles',
       'GetAccountSettings',
       'GetComponent',
+      'GetDeployment',
       'GetEnvironment',
       'GetEnvironmentAccountConnection',
       'GetEnvironmentTemplate',
@@ -1406,6 +1441,7 @@ export class Proton extends PolicyStatement {
       'ListComponentOutputs',
       'ListComponentProvisionedResources',
       'ListComponents',
+      'ListDeployments',
       'ListEnvironmentAccountConnections',
       'ListEnvironmentOutputs',
       'ListEnvironmentProvisionedResources',
@@ -1681,6 +1717,113 @@ export class Proton extends PolicyStatement {
    */
   public onComponent(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:component/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type deployment to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-deployments.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeployment(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:deployment/${ id }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateEnvironment()
+   * - .toCreateEnvironmentAccountConnection()
+   * - .toCreateEnvironmentTemplate()
+   * - .toCreateEnvironmentTemplateMajorVersion()
+   * - .toCreateEnvironmentTemplateMinorVersion()
+   * - .toCreateEnvironmentTemplateVersion()
+   * - .toCreateRepository()
+   * - .toCreateService()
+   * - .toCreateServiceInstance()
+   * - .toCreateServiceTemplate()
+   * - .toCreateServiceTemplateMajorVersion()
+   * - .toCreateServiceTemplateMinorVersion()
+   * - .toCreateServiceTemplateVersion()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - environment-template
+   * - environment-template-version
+   * - environment-template-major-version
+   * - environment-template-minor-version
+   * - service-template
+   * - service-template-version
+   * - service-template-major-version
+   * - service-template-minor-version
+   * - environment
+   * - service
+   * - service-instance
+   * - environment-account-connection
+   * - repository
+   * - component
+   * - deployment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateEnvironment()
+   * - .toCreateEnvironmentAccountConnection()
+   * - .toCreateEnvironmentTemplate()
+   * - .toCreateEnvironmentTemplateMajorVersion()
+   * - .toCreateEnvironmentTemplateMinorVersion()
+   * - .toCreateEnvironmentTemplateVersion()
+   * - .toCreateRepository()
+   * - .toCreateService()
+   * - .toCreateServiceInstance()
+   * - .toCreateServiceTemplate()
+   * - .toCreateServiceTemplateMajorVersion()
+   * - .toCreateServiceTemplateMinorVersion()
+   * - .toCreateServiceTemplateVersion()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

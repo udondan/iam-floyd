@@ -2,6 +2,7 @@ kinesisvideo:ConnectAsMaster;Write
 kinesisvideo:ConnectAsViewer;Write
 kinesisvideo:CreateSignalingChannel;Write
 kinesisvideo:CreateStream;Write
+kinesisvideo:DeleteEdgeConfiguration;Write
 kinesisvideo:DeleteSignalingChannel;Write
 kinesisvideo:DeleteStream;Write
 kinesisvideo:DescribeEdgeConfiguration;Read
@@ -21,6 +22,7 @@ kinesisvideo:GetMedia;Read
 kinesisvideo:GetMediaForFragmentList;Read
 kinesisvideo:GetSignalingChannelEndpoint;Read
 kinesisvideo:JoinStorageSession;Write
+kinesisvideo:ListEdgeAgentConfigurations;List
 kinesisvideo:ListFragments;List
 kinesisvideo:ListSignalingChannels;List
 kinesisvideo:ListStreams;List

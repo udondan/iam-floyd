@@ -16,6 +16,7 @@ ssm:DeleteAssociation;Write
 ssm:DeleteDocument;Write
 ssm:DeleteInventory;Write
 ssm:DeleteMaintenanceWindow;Write
+ssm:DeleteOpsItem;Write
 ssm:DeleteOpsMetadata;Write
 ssm:DeleteParameter;Write
 ssm:DeleteParameters;Write

@@ -1,8 +1,11 @@
 quicksight:account
 quicksight:analysis
+quicksight:assetBundleExportJob
+quicksight:assetBundleImportJob
 quicksight:assignment
 quicksight:customization
 quicksight:dashboard
+quicksight:dashboardSnapshotJob
 quicksight:dataset
 quicksight:datasource
 quicksight:emailCustomizationTemplate
@@ -15,3 +18,4 @@ quicksight:template
 quicksight:theme
 quicksight:topic
 quicksight:user
+quicksight:vpcconnection

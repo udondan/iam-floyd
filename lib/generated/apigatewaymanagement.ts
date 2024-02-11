@@ -23,7 +23,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/ADD_CERTIFICATE_TO_DOMAIN.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toAddCertificateToDomain() {
     return this.to('AddCertificateToDomain');
@@ -38,7 +38,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toDELETE() {
     return this.to('DELETE');
@@ -49,7 +49,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toGET() {
     return this.to('GET');
@@ -64,7 +64,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toPATCH() {
     return this.to('PATCH');
@@ -79,7 +79,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toPOST() {
     return this.to('POST');
@@ -94,7 +94,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toPUT() {
     return this.to('PUT');
@@ -105,18 +105,18 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/REMOVE_CERTIFICATE_FROM_DOMAIN.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toRemoveCertificateFromDomain() {
     return this.to('RemoveCertificateFromDomain');
   }
 
   /**
-   * Grants permission set a WAF access control list (ACL). This is an additional authorization control for managing the Stage resource due to the sensitive nature of WebAcl's
+   * Grants permission to set a WAF access control list (ACL). This is an additional authorization control for managing the Stage resource due to the sensitive nature of WebAcl's
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toSetWebACL() {
     return this.to('SetWebACL');
@@ -127,7 +127,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/UPDATE_REST_API_POLICY.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
    */
   public toUpdateRestApiPolicy() {
     return this.to('UpdateRestApiPolicy');
@@ -166,7 +166,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type ApiKey to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_ApiKey.html
    *
    * @param apiKeyId - Identifier for the apiKeyId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -182,7 +182,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type ApiKeys to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_ApiKey.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -197,7 +197,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Authorizer to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Authorizer.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param authorizerId - Identifier for the authorizerId.
@@ -218,7 +218,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Authorizers to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Authorizer.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -236,7 +236,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type BasePathMapping to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_BasePathMapping.html
    *
    * @param domainName - Identifier for the domainName.
    * @param basePath - Identifier for the basePath.
@@ -253,7 +253,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type BasePathMappings to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_BasePathMapping.html
    *
    * @param domainName - Identifier for the domainName.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -269,7 +269,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type ClientCertificate to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_ClientCertificate.html
    *
    * @param clientCertificateId - Identifier for the clientCertificateId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -285,7 +285,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type ClientCertificates to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_ClientCertificate.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -300,7 +300,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Deployment to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Deployment.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param deploymentId - Identifier for the deploymentId.
@@ -317,7 +317,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Deployments to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Deployment.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -333,7 +333,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DocumentationPart to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationPart.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param documentationPartId - Identifier for the documentationPartId.
@@ -350,7 +350,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DocumentationParts to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationPart.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -366,7 +366,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DocumentationVersion to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationVersion.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param documentationVersionId - Identifier for the documentationVersionId.
@@ -380,7 +380,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DocumentationVersions to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationVersion.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -393,7 +393,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DomainName to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DomainName.html
    *
    * @param domainName - Identifier for the domainName.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -417,7 +417,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type DomainNames to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DomainName.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -436,7 +436,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type GatewayResponse to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_GatewayResponse.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param responseType - Identifier for the responseType.
@@ -453,7 +453,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type GatewayResponses to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_GatewayResponse.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -469,7 +469,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Integration to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Integration.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
@@ -487,7 +487,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type IntegrationResponse to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_IntegrationResponse.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
@@ -503,7 +503,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Method to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Method.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
@@ -525,7 +525,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type MethodResponse to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_MethodResponse.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
@@ -541,7 +541,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Model to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Model.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param modelName - Identifier for the modelName.
@@ -558,7 +558,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Models to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Model.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -574,7 +574,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type RequestValidator to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_RequestValidator.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param requestValidatorId - Identifier for the requestValidatorId.
@@ -588,7 +588,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type RequestValidators to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_RequestValidator.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -601,7 +601,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Resource to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Resource.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param resourceId - Identifier for the resourceId.
@@ -618,7 +618,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Resources to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Resource.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -634,7 +634,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type RestApi to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_RestApi.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -664,7 +664,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type RestApis to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_RestApi.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -701,7 +701,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Stage to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Stage.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param stageName - Identifier for the stageName.
@@ -722,7 +722,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type Stages to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Stage.html
    *
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -753,7 +753,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type UsagePlan to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_UsagePlan.html
    *
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -769,7 +769,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type UsagePlans to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_UsagePlan.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -784,7 +784,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type UsagePlanKey to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_UsagePlanKey.html
    *
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param id - Identifier for the id.
@@ -798,7 +798,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type UsagePlanKeys to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_UsagePlanKey.html
    *
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -811,7 +811,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type VpcLink to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_VpcLink.html
    *
    * @param vpcLinkId - Identifier for the vpcLinkId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -827,7 +827,7 @@ export class Apigateway extends PolicyStatement {
   /**
    * Adds a resource of type VpcLinks to the statement
    *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_VpcLink.html
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -837,6 +837,19 @@ export class Apigateway extends PolicyStatement {
    */
   public onVpcLinks(region?: string, partition?: string) {
     return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/vpclinks`);
+  }
+
+  /**
+   * Adds a resource of type Tags to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * @param urlEncodedResourceARN - Identifier for the urlEncodedResourceARN.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTags(urlEncodedResourceARN: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Apigateway.defaultPartition }:apigateway:${ region || '*' }::/tags/${ urlEncodedResourceARN }`);
   }
 
   /**
@@ -872,7 +885,7 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
-   * Filters access based on whether an API key is required or not. Available during the CreateMethod and PutMethod operations. Also available as a collection during import and reimport
+   * Filters access by whether an API key is required or not. Available during the CreateMethod and PutMethod operations. Also available as a collection during import and reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
@@ -1083,7 +1096,7 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
-   * Filters access based on whether an API key is required or not for the existing Method resource. Available during the PutMethod and DeleteMethod operations. Also available as a collection during reimport
+   * Filters access by whether an API key is required or not for the existing Method resource. Available during the PutMethod and DeleteMethod operations. Also available as a collection during reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
@@ -1233,5 +1246,86 @@ export class Apigateway extends PolicyStatement {
    */
   public ifResourceSecurityPolicy(value: string | string[], operator?: Operator | string) {
     return this.if(`Resource/SecurityPolicy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags attached to the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to resource types:
+   * - ApiKey
+   * - ApiKeys
+   * - Authorizer
+   * - Authorizers
+   * - BasePathMapping
+   * - BasePathMappings
+   * - ClientCertificate
+   * - ClientCertificates
+   * - Deployment
+   * - DocumentationPart
+   * - DocumentationParts
+   * - DomainName
+   * - DomainNames
+   * - GatewayResponse
+   * - GatewayResponses
+   * - Integration
+   * - Method
+   * - Model
+   * - Models
+   * - Resource
+   * - Resources
+   * - RestApi
+   * - RestApis
+   * - Stage
+   * - Stages
+   * - UsagePlan
+   * - UsagePlans
+   * - VpcLink
+   * - VpcLinks
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

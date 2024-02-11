@@ -1288,6 +1288,92 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateConnectAttachment()
+   * - .toCreateConnectPeer()
+   * - .toCreateConnection()
+   * - .toCreateCoreNetwork()
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toCreateSiteToSiteVpnAttachment()
+   * - .toCreateTransitGatewayPeering()
+   * - .toCreateTransitGatewayRouteTableAttachment()
+   * - .toCreateVpcAttachment()
+   * - .toTagResource()
+   * - .toUpdateVpcAttachment()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - global-network
+   * - site
+   * - link
+   * - device
+   * - connection
+   * - core-network
+   * - attachment
+   * - connect-peer
+   * - peering
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateConnectAttachment()
+   * - .toCreateConnectPeer()
+   * - .toCreateConnection()
+   * - .toCreateCoreNetwork()
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toCreateSiteToSiteVpnAttachment()
+   * - .toCreateTransitGatewayPeering()
+   * - .toCreateTransitGatewayRouteTableAttachment()
+   * - .toCreateVpcAttachment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateVpcAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by which customer gateways can be associated or disassociated
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
@@ -1297,10 +1383,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toDisassociateCustomerGateway()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCgwArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`cgwArn`, value, operator || 'StringLike');
+    return this.if(`cgwArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1313,10 +1399,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toUpdateVpcAttachment()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSubnetArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`subnetArns`, value, operator || 'StringLike');
+    return this.if(`subnetArns`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1330,10 +1416,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toRegisterTransitGateway()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwArn`, value, operator || 'StringLike');
+    return this.if(`tgwArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1346,10 +1432,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toDisassociateTransitGatewayConnectPeer()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwConnectPeerArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwConnectPeerArn`, value, operator || 'StringLike');
+    return this.if(`tgwConnectPeerArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1361,10 +1447,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateTransitGatewayRouteTableAttachment()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwRtbArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwRtbArn`, value, operator || 'StringLike');
+    return this.if(`tgwRtbArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1376,10 +1462,10 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateVpcAttachment()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpcArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpcArn`, value, operator || 'StringLike');
+    return this.if(`vpcArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1391,9 +1477,9 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateSiteToSiteVpnAttachment()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpnConnectionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpnConnectionArn`, value, operator || 'StringLike');
+    return this.if(`vpnConnectionArn`, value, operator || 'ArnLike');
   }
 }

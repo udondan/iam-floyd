@@ -1,3 +1,4 @@
 globalaccelerator:accelerator
+globalaccelerator:attachment
 globalaccelerator:endpointgroup
 globalaccelerator:listener

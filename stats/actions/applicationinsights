@@ -1,3 +1,4 @@
+applicationinsights:AddWorkload;Write
 applicationinsights:CreateApplication;Write
 applicationinsights:CreateComponent;Write
 applicationinsights:CreateLogPattern;Write
@@ -12,6 +13,7 @@ applicationinsights:DescribeLogPattern;Read
 applicationinsights:DescribeObservation;Read
 applicationinsights:DescribeProblem;Read
 applicationinsights:DescribeProblemObservations;Read
+applicationinsights:DescribeWorkload;Read
 applicationinsights:Link;Write
 applicationinsights:ListApplications;List
 applicationinsights:ListComponents;List
@@ -20,9 +22,13 @@ applicationinsights:ListLogPatternSets;List
 applicationinsights:ListLogPatterns;List
 applicationinsights:ListProblems;List
 applicationinsights:ListTagsForResource;Read
+applicationinsights:ListWorkloads;List
+applicationinsights:RemoveWorkload;Write
 applicationinsights:TagResource;Tagging
 applicationinsights:UntagResource;Tagging
 applicationinsights:UpdateApplication;Write
 applicationinsights:UpdateComponent;Write
 applicationinsights:UpdateComponentConfiguration;Write
 applicationinsights:UpdateLogPattern;Write
+applicationinsights:UpdateProblem;Write
+applicationinsights:UpdateWorkload;Write

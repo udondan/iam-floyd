@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cognito-idp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html).
@@ -316,7 +316,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Returns a unique generated shared secret key code for the user account
+   * Grants permission to return a unique generated shared secret key code for the user
    *
    * Access Level: Write
    *
@@ -336,7 +336,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Changes the password for a specified user in a user pool
+   * Grants permission to change the password for a specified user in a user pool
    *
    * Access Level: Write
    *
@@ -347,7 +347,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Confirms tracking of the device. This API call is the call that begins device tracking
+   * Grants permission to confirm tracking of the device. This API call is the call that begins device tracking
    *
    * Access Level: Write
    *
@@ -358,7 +358,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Allows a user to enter a confirmation code to reset a forgotten password
+   * Grants permission to allow a user to enter a confirmation code to reset a forgotten password
    *
    * Access Level: Write
    *
@@ -369,7 +369,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Confirms registration of a user and handles the existing alias from a previous user
+   * Grants permission to confirm registration of a user and handles the existing alias from a previous user
    *
    * Access Level: Write
    *
@@ -495,7 +495,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Allows a user to delete one's self
+   * Grants permission to allow a user to delete one's self
    *
    * Access Level: Write
    *
@@ -506,7 +506,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Deletes the attributes for a user
+   * Grants permission to delete the attributes for a user
    *
    * Access Level: Write
    *
@@ -636,7 +636,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Forgets the specified device
+   * Grants permission to forget the specified device
    *
    * Access Level: Write
    *
@@ -647,7 +647,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password
+   * Grants permission to send a message to the end user with a confirmation code that is required to change the user's password
    *
    * Access Level: Write
    *
@@ -669,7 +669,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the device
+   * Grants permission to get the device
    *
    * Access Level: Read
    *
@@ -702,6 +702,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the detailed activity logging configuration for a user pool
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html
+   */
+  public toGetLogDeliveryConfiguration() {
+    return this.to('GetLogDeliveryConfiguration');
+  }
+
+  /**
    * Grants permission to look up signing certificates for user pools
    *
    * Access Level: Read
@@ -724,7 +735,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the user attributes and metadata for a user
+   * Grants permission to get the user attributes and metadata for a user
    *
    * Access Level: Read
    *
@@ -735,7 +746,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Gets the user attribute verification code for the specified attribute name
+   * Grants permission to get the user attribute verification code for the specified attribute name
    *
    * Access Level: Read
    *
@@ -766,7 +777,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Signs out users from all devices
+   * Grants permission to sign out users from all devices
    *
    * Access Level: Write
    *
@@ -777,7 +788,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Initiates the authentication flow
+   * Grants permission to initiate the authentication flow
    *
    * Access Level: Write
    *
@@ -788,7 +799,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the devices
+   * Grants permission to list the devices
    *
    * Access Level: List
    *
@@ -907,7 +918,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Resends the confirmation (for confirmation of registration) to a specific user in the user pool
+   * Grants permission to resend the confirmation (for confirmation of registration) to a specific user in the user pool
    *
    * Access Level: Write
    *
@@ -918,7 +929,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Responds to the authentication challenge
+   * Grants permission to respond to the authentication challenge
    *
    * Access Level: Write
    *
@@ -929,7 +940,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Revokes all of the access tokens generated by the specified refresh token
+   * Grants permission to revoke all of the access tokens generated by the specified refresh token
    *
    * Access Level: Write
    *
@@ -937,6 +948,17 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toRevokeToken() {
     return this.to('RevokeToken');
+  }
+
+  /**
+   * Grants permission to set up or modify the detailed activity logging configuration of a user pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html
+   */
+  public toSetLogDeliveryConfiguration() {
+    return this.to('SetLogDeliveryConfiguration');
   }
 
   /**
@@ -962,7 +984,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets MFA preference for the user in the userpool
+   * Grants permission to set MFA preference for the user in the userpool
    *
    * Access Level: Write
    *
@@ -984,7 +1006,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Sets the user settings like multi-factor authentication (MFA)
+   * Grants permission to set the user settings like multi-factor authentication (MFA)
    *
    * Access Level: Write
    *
@@ -995,7 +1017,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Registers the user in the specified user pool and creates a user name, password, and user attributes
+   * Grants permission to register the user in the specified user pool and creates a user name, password, and user attributes
    *
    * Access Level: Write
    *
@@ -1057,7 +1079,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the feedback for the user authentication event
+   * Grants permission to update the feedback for the user authentication event
    *
    * Access Level: Write
    *
@@ -1068,7 +1090,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Updates the device status
+   * Grants permission to update the device status
    *
    * Access Level: Write
    *
@@ -1112,7 +1134,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Allows a user to update a specific attribute (one at a time)
+   * Grants permission to allow a user to update a specific attribute (one at a time)
    *
    * Access Level: Write
    *
@@ -1160,7 +1182,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Registers a user's entered TOTP code and mark the user's software token MFA status as verified if successful
+   * Grants permission to register a user's entered TOTP code and mark the user's software token MFA status as verified if successful
    *
    * Access Level: Write
    *
@@ -1171,7 +1193,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Verifies a user attribute using a one time verification code
+   * Grants permission to verify a user attribute using a one time verification code
    *
    * Access Level: Write
    *
@@ -1234,6 +1256,7 @@ export class CognitoIdp extends PolicyStatement {
       'ResendConfirmationCode',
       'RespondToAuthChallenge',
       'RevokeToken',
+      'SetLogDeliveryConfiguration',
       'SetRiskConfiguration',
       'SetUICustomization',
       'SetUserMFAPreference',
@@ -1269,6 +1292,7 @@ export class CognitoIdp extends PolicyStatement {
       'GetDevice',
       'GetGroup',
       'GetIdentityProviderByIdentifier',
+      'GetLogDeliveryConfiguration',
       'GetSigningCertificate',
       'GetUICustomization',
       'GetUser',
@@ -1328,5 +1352,60 @@ export class CognitoIdp extends PolicyStatement {
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateUserPool()
+   * - .toTagResource()
+   * - .toUpdateUserPool()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateUserPool()
+   *
+   * Applies to resource types:
+   * - userpool
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a key that is present in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateUserPool()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateUserPool()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

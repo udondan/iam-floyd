@@ -4,11 +4,14 @@ support:CreateCase;Write
 support:DescribeAttachment;Read
 support:DescribeCaseAttributes;Read
 support:DescribeCases;Read
+support:DescribeCommunication;Read
 support:DescribeCommunications;Read
+support:DescribeCreateCaseOptions;Read
 support:DescribeIssueTypes;Read
 support:DescribeServices;Read
 support:DescribeSeverityLevels;Read
 support:DescribeSupportLevel;Read
+support:DescribeSupportedLanguages;Read
 support:DescribeTrustedAdvisorCheckRefreshStatuses;Read
 support:DescribeTrustedAdvisorCheckResult;Read
 support:DescribeTrustedAdvisorCheckSummaries;Read

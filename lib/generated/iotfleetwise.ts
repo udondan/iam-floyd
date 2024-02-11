@@ -71,6 +71,7 @@ export class Iotfleetwise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDestinationArn()
    *
    * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html
    */
@@ -254,6 +255,17 @@ export class Iotfleetwise extends PolicyStatement {
    */
   public toGetDecoderManifest() {
     return this.to('GetDecoderManifest');
+  }
+
+  /**
+   * Grants permission to get KMS-based encryption status for the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetEncryptionConfiguration.html
+   */
+  public toGetEncryptionConfiguration() {
+    return this.to('GetEncryptionConfiguration');
   }
 
   /**
@@ -503,6 +515,17 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable KMS-based encryption for the AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_PutEncryptionConfiguration.html
+   */
+  public toPutEncryptionConfiguration() {
+    return this.to('PutEncryptionConfiguration');
+  }
+
+  /**
    * Grants permission to put the logging options for the AWS account
    *
    * Access Level: Write
@@ -646,6 +669,7 @@ export class Iotfleetwise extends PolicyStatement {
       'DisassociateVehicleFleet',
       'ImportDecoderManifest',
       'ImportSignalCatalog',
+      'PutEncryptionConfiguration',
       'PutLoggingOptions',
       'RegisterAccount',
       'UpdateCampaign',
@@ -658,6 +682,7 @@ export class Iotfleetwise extends PolicyStatement {
     Read: [
       'GetCampaign',
       'GetDecoderManifest',
+      'GetEncryptionConfiguration',
       'GetFleet',
       'GetLoggingOptions',
       'GetModelManifest',
@@ -790,6 +815,90 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toBatchCreateVehicle()
+   * - .toCreateCampaign()
+   * - .toCreateDecoderManifest()
+   * - .toCreateFleet()
+   * - .toCreateModelManifest()
+   * - .toCreateSignalCatalog()
+   * - .toCreateVehicle()
+   * - .toImportSignalCatalog()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - campaign
+   * - decodermanifest
+   * - fleet
+   * - modelmanifest
+   * - signalcatalog
+   * - vehicle
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toBatchCreateVehicle()
+   * - .toCreateCampaign()
+   * - .toCreateDecoderManifest()
+   * - .toCreateFleet()
+   * - .toCreateModelManifest()
+   * - .toCreateSignalCatalog()
+   * - .toCreateVehicle()
+   * - .toImportSignalCatalog()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by campaign destination ARN, eg. an S3 bucket ARN or a Timestream ARN
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
+   *
+   * Applies to actions:
+   * - .toCreateCampaign()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDestinationArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DestinationArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by a list of IoT FleetWise Decoder Manifest ARNs
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
@@ -799,10 +908,10 @@ export class Iotfleetwise extends PolicyStatement {
    * - .toUpdateVehicle()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUpdateToDecoderManifestArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`UpdateToDecoderManifestArn`, value, operator || 'StringLike');
+    return this.if(`UpdateToDecoderManifestArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -815,9 +924,9 @@ export class Iotfleetwise extends PolicyStatement {
    * - .toUpdateVehicle()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUpdateToModelManifestArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`UpdateToModelManifestArn`, value, operator || 'StringLike');
+    return this.if(`UpdateToModelManifestArn`, value, operator || 'ArnLike');
   }
 }

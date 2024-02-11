@@ -4,6 +4,7 @@ elasticache:BatchApplyUpdateAction;Write
 elasticache:BatchStopUpdateAction;Write
 elasticache:CompleteMigration;Write
 elasticache:Connect;Write
+elasticache:CopyServerlessCacheSnapshot;Write
 elasticache:CopySnapshot;Write
 elasticache:CreateCacheCluster;Write
 elasticache:CreateCacheParameterGroup;Write
@@ -11,6 +12,8 @@ elasticache:CreateCacheSecurityGroup;Write
 elasticache:CreateCacheSubnetGroup;Write
 elasticache:CreateGlobalReplicationGroup;Write
 elasticache:CreateReplicationGroup;Write
+elasticache:CreateServerlessCache;Write
+elasticache:CreateServerlessCacheSnapshot;Write
 elasticache:CreateSnapshot;Write
 elasticache:CreateUser;Write
 elasticache:CreateUserGroup;Write
@@ -22,6 +25,8 @@ elasticache:DeleteCacheSecurityGroup;Write
 elasticache:DeleteCacheSubnetGroup;Write
 elasticache:DeleteGlobalReplicationGroup;Write
 elasticache:DeleteReplicationGroup;Write
+elasticache:DeleteServerlessCache;Write
+elasticache:DeleteServerlessCacheSnapshot;Write
 elasticache:DeleteSnapshot;Write
 elasticache:DeleteUser;Write
 elasticache:DeleteUserGroup;Write
@@ -37,15 +42,19 @@ elasticache:DescribeGlobalReplicationGroups;List
 elasticache:DescribeReplicationGroups;List
 elasticache:DescribeReservedCacheNodes;List
 elasticache:DescribeReservedCacheNodesOfferings;List
+elasticache:DescribeServerlessCacheSnapshots;List
+elasticache:DescribeServerlessCaches;List
 elasticache:DescribeServiceUpdates;List
 elasticache:DescribeSnapshots;List
 elasticache:DescribeUpdateActions;List
 elasticache:DescribeUserGroups;List
 elasticache:DescribeUsers;List
 elasticache:DisassociateGlobalReplicationGroup;Write
+elasticache:ExportServerlessCacheSnapshot;Write
 elasticache:FailoverGlobalReplicationGroup;Write
 elasticache:IncreaseNodeGroupsInGlobalReplicationGroup;Write
 elasticache:IncreaseReplicaCount;Write
+elasticache:InterruptClusterAzPower;Write
 elasticache:ListAllowedNodeTypeModifications;List
 elasticache:ListTagsForResource;Read
 elasticache:ModifyCacheCluster;Write
@@ -54,6 +63,7 @@ elasticache:ModifyCacheSubnetGroup;Write
 elasticache:ModifyGlobalReplicationGroup;Write
 elasticache:ModifyReplicationGroup;Write
 elasticache:ModifyReplicationGroupShardConfiguration;Write
+elasticache:ModifyServerlessCache;Write
 elasticache:ModifyUser;Write
 elasticache:ModifyUserGroup;Write
 elasticache:PurchaseReservedCacheNodesOffering;Write
@@ -64,3 +74,4 @@ elasticache:ResetCacheParameterGroup;Write
 elasticache:RevokeCacheSecurityGroupIngress;Write
 elasticache:StartMigration;Write
 elasticache:TestFailover;Write
+elasticache:TestMigration;Write

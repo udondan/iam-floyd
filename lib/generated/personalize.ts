@@ -52,6 +52,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data insights job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   */
+  public toCreateDataInsightsJob() {
+    return this.to('CreateDataInsightsJob');
+  }
+
+  /**
    * Grants permission to create a dataset
    *
    * Access Level: Write
@@ -316,6 +327,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a data insights job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   */
+  public toDescribeDataInsightsJob() {
+    return this.to('DescribeDataInsightsJob');
+  }
+
+  /**
    * Grants permission to describe a dataset
    *
    * Access Level: Read
@@ -459,6 +481,28 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of recommended actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetActionRecommendations.html
+   */
+  public toGetActionRecommendations() {
+    return this.to('GetActionRecommendations');
+  }
+
+  /**
+   * Grants permission to get data insights from a data insights job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   */
+  public toGetDataInsights() {
+    return this.to('GetDataInsights');
+  }
+
+  /**
    * Grants permission to get a re-ranked list of recommendations
    *
    * Access Level: Read
@@ -522,6 +566,17 @@ export class Personalize extends PolicyStatement {
    */
   public toListCampaigns() {
     return this.to('ListCampaigns');
+  }
+
+  /**
+   * Grants permission to list data insights jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   */
+  public toListDataInsightsJobs() {
+    return this.to('ListDataInsightsJobs');
   }
 
   /**
@@ -679,6 +734,28 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put real time action interaction data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutActionInteractions.html
+   */
+  public toPutActionInteractions() {
+    return this.to('PutActionInteractions');
+  }
+
+  /**
+   * Grants permission to ingest Actions data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutActions.html
+   */
+  public toPutActions() {
+    return this.to('PutActions');
+  }
+
+  /**
    * Grants permission to put real time event data
    *
    * Access Level: Write
@@ -778,6 +855,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateDataset.html
+   */
+  public toUpdateDataset() {
+    return this.to('UpdateDataset');
+  }
+
+  /**
    * Grants permission to update a metric attribution
    *
    * Access Level: Write
@@ -804,6 +892,7 @@ export class Personalize extends PolicyStatement {
       'CreateBatchInferenceJob',
       'CreateBatchSegmentJob',
       'CreateCampaign',
+      'CreateDataInsightsJob',
       'CreateDataset',
       'CreateDatasetExportJob',
       'CreateDatasetGroup',
@@ -824,6 +913,8 @@ export class Personalize extends PolicyStatement {
       'DeleteRecommender',
       'DeleteSchema',
       'DeleteSolution',
+      'PutActionInteractions',
+      'PutActions',
       'PutEvents',
       'PutItems',
       'PutUsers',
@@ -831,6 +922,7 @@ export class Personalize extends PolicyStatement {
       'StopRecommender',
       'StopSolutionVersionCreation',
       'UpdateCampaign',
+      'UpdateDataset',
       'UpdateMetricAttribution',
       'UpdateRecommender'
     ],
@@ -839,6 +931,7 @@ export class Personalize extends PolicyStatement {
       'DescribeBatchInferenceJob',
       'DescribeBatchSegmentJob',
       'DescribeCampaign',
+      'DescribeDataInsightsJob',
       'DescribeDataset',
       'DescribeDatasetExportJob',
       'DescribeDatasetGroup',
@@ -852,6 +945,8 @@ export class Personalize extends PolicyStatement {
       'DescribeSchema',
       'DescribeSolution',
       'DescribeSolutionVersion',
+      'GetActionRecommendations',
+      'GetDataInsights',
       'GetPersonalizedRanking',
       'GetRecommendations',
       'GetSolutionMetrics'
@@ -860,6 +955,7 @@ export class Personalize extends PolicyStatement {
       'ListBatchInferenceJobs',
       'ListBatchSegmentJobs',
       'ListCampaigns',
+      'ListDataInsightsJobs',
       'ListDatasetExportJobs',
       'ListDatasetGroups',
       'ListDatasetImportJobs',
@@ -949,6 +1045,20 @@ export class Personalize extends PolicyStatement {
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dataInsightsJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataInsightsJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:data-insights-job/${ resourceId }`);
   }
 
   /**

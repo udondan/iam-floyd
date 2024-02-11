@@ -19,7 +19,7 @@ export class SsmGuiconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to terminate a GUI Connect session
+   * Grants permission to terminate a GUI Connect connection
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class SsmGuiconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the metadata for a GUI Connect session
+   * Grants permission to get the metadata for a GUI Connect connection
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class SsmGuiconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a GUI Connect session
+   * Grants permission to start a GUI Connect connection
    *
    * Access Level: Write
    *

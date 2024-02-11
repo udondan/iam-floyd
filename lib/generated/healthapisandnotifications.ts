@@ -73,6 +73,20 @@ export class Health extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the number of entities that are affected by each of the specified events in an organization
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - organizations:ListAccounts
+   *
+   * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregatesForOrganization.html
+   */
+  public toDescribeEntityAggregatesForOrganization() {
+    return this.to('DescribeEntityAggregatesForOrganization');
+  }
+
+  /**
    * Grants permission to retrieve the number of events of each event type (issue, scheduled change, and account notification)
    *
    * Access Level: Read
@@ -199,6 +213,7 @@ export class Health extends PolicyStatement {
       'DescribeAffectedEntities',
       'DescribeAffectedEntitiesForOrganization',
       'DescribeEntityAggregates',
+      'DescribeEntityAggregatesForOrganization',
       'DescribeEventAggregates',
       'DescribeEventDetails',
       'DescribeEventDetailsForOrganization',

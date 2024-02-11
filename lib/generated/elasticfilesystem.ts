@@ -406,6 +406,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html
    */
@@ -438,6 +439,17 @@ export class Elasticfilesystem extends PolicyStatement {
     return this.to('UpdateFileSystem');
   }
 
+  /**
+   * Grants permission to update the file system protection of an existing file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystemProtection.html
+   */
+  public toUpdateFileSystemProtection() {
+    return this.to('UpdateFileSystemProtection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'Backup',
@@ -456,7 +468,8 @@ export class Elasticfilesystem extends PolicyStatement {
       'PutBackupPolicy',
       'PutLifecycleConfiguration',
       'Restore',
-      'UpdateFileSystem'
+      'UpdateFileSystem',
+      'UpdateFileSystemProtection'
     ],
     Read: [
       'ClientMount',
@@ -521,6 +534,62 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toCreateFileSystem()
+   * - .toCreateTags()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - file-system
+   * - access-point
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toCreateFileSystem()
+   * - .toCreateTags()
+   * - .toDeleteTags()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of the access point used to mount the file system
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html
@@ -531,10 +600,10 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .toClientWrite()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAccessPointArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`AccessPointArn`, value, operator || 'StringLike');
+    return this.if(`AccessPointArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -551,6 +620,21 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public ifAccessedViaMountTarget(value?: boolean) {
     return this.if(`AccessedViaMountTarget`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
   }
 
   /**

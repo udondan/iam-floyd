@@ -19,7 +19,95 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the File Upload page inside the AWS Marketplace Management Portal.
+   * Grants permission to view additional seller notification recipients
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toGetAdditionalSellerNotificationRecipients() {
+    return this.to('GetAdditionalSellerNotificationRecipients');
+  }
+
+  /**
+   * Grants permission to view bank account verification status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toGetBankAccountVerificationDetails() {
+    return this.to('GetBankAccountVerificationDetails');
+  }
+
+  /**
+   * Grants permission to view secondary user account verification status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toGetSecondaryUserVerificationDetails() {
+    return this.to('GetSecondaryUserVerificationDetails');
+  }
+
+  /**
+   * Grants permission to view account verification status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toGetSellerVerificationDetails() {
+    return this.to('GetSellerVerificationDetails');
+  }
+
+  /**
+   * Grants permission to update additional seller notification recipients
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toPutAdditionalSellerNotificationRecipients() {
+    return this.to('PutAdditionalSellerNotificationRecipients');
+  }
+
+  /**
+   * Grants permission to update bank account verification status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toPutBankAccountVerificationDetails() {
+    return this.to('PutBankAccountVerificationDetails');
+  }
+
+  /**
+   * Grants permission to update secondary user account verification status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toPutSecondaryUserVerificationDetails() {
+    return this.to('PutSecondaryUserVerificationDetails');
+  }
+
+  /**
+   * Grants permission to update account verification status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
+   */
+  public toPutSellerVerificationDetails() {
+    return this.to('PutSellerVerificationDetails');
+  }
+
+  /**
+   * Allows access to the File Upload page inside the AWS Marketplace Management Portal
    *
    * Access Level: Write
    *
@@ -30,7 +118,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Marketing page inside the AWS Marketplace Management Portal.
+   * Allows access to the Marketing page inside the AWS Marketplace Management Portal
    *
    * Access Level: List
    *
@@ -41,7 +129,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Reports page inside the AWS Marketplace Management Portal.
+   * Allows access to the Reports page inside the AWS Marketplace Management Portal
    *
    * Access Level: List
    *
@@ -52,7 +140,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Settings page inside the AWS Marketplace Management Portal.
+   * Allows access to the Settings page inside the AWS Marketplace Management Portal
    *
    * Access Level: List
    *
@@ -63,7 +151,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal.
+   * Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal
    *
    * Access Level: List
    *
@@ -74,7 +162,17 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'GetAdditionalSellerNotificationRecipients',
+      'GetBankAccountVerificationDetails',
+      'GetSecondaryUserVerificationDetails',
+      'GetSellerVerificationDetails'
+    ],
     Write: [
+      'PutAdditionalSellerNotificationRecipients',
+      'PutBankAccountVerificationDetails',
+      'PutSecondaryUserVerificationDetails',
+      'PutSellerVerificationDetails',
       'uploadFiles'
     ],
     List: [

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [elemental-appliances-software](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftware.html).
@@ -259,5 +259,55 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    */
   public onQuote(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || ElementalAppliancesSoftware.defaultPartition }:elemental-appliances-software:${ region || '*' }:${ account || '*' }:quote/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by request tag
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   *
+   * Applies to actions:
+   * - .toCreateQuote()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by resource tag
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   *
+   * Applies to resource types:
+   * - quote
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   *
+   * Applies to actions:
+   * - .toCreateQuote()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

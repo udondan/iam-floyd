@@ -25,6 +25,7 @@ auditmanager:GetControl;Read
 auditmanager:GetDelegations;List
 auditmanager:GetEvidence;Read
 auditmanager:GetEvidenceByEvidenceFolder;Read
+auditmanager:GetEvidenceFileUploadUrl;Read
 auditmanager:GetEvidenceFolder;Read
 auditmanager:GetEvidenceFoldersByAssessment;Read
 auditmanager:GetEvidenceFoldersByAssessmentControl;Read

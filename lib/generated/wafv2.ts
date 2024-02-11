@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html).
@@ -23,6 +23,14 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - apigateway:SetWebACL
+   * - apprunner:AssociateWebAcl
+   * - appsync:SetWebACL
+   * - cognito-idp:AssociateWebACL
+   * - ec2:AssociateVerifiedAccessInstanceWebAcl
+   * - elasticloadbalancing:SetWebAcl
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
   public toAssociateWebACL() {
@@ -38,6 +46,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toCheckCapacity() {
     return this.to('CheckCapacity');
+  }
+
+  /**
+   * Grants permission to create an API key for use in the integration of the CAPTCHA API in your JavaScript client applications
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateAPIKey.html
+   */
+  public toCreateAPIKey() {
+    return this.to('CreateAPIKey');
   }
 
   /**
@@ -178,6 +197,28 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve product information for a managed rule group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeAllManagedProducts.html
+   */
+  public toDescribeAllManagedProducts() {
+    return this.to('DescribeAllManagedProducts');
+  }
+
+  /**
+   * Grants permission to retrieve product information for a managed rule group by a given vendor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedProductsByVendor.html
+   */
+  public toDescribeManagedProductsByVendor() {
+    return this.to('DescribeManagedProductsByVendor');
+  }
+
+  /**
    * Grants permission to retrieve high-level information for a managed rule group
    *
    * Access Level: Read
@@ -204,6 +245,14 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - apigateway:SetWebACL
+   * - apprunner:DisassociateWebAcl
+   * - appsync:SetWebACL
+   * - cognito-idp:DisassociateWebACL
+   * - ec2:DisassociateVerifiedAccessInstanceWebAcl
+   * - elasticloadbalancing:SetWebAcl
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
   public toDisassociateWebACL() {
@@ -219,6 +268,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toGenerateMobileSdkReleaseUrl() {
     return this.to('GenerateMobileSdkReleaseUrl');
+  }
+
+  /**
+   * Grants permission to return your API key in decrypted form. Use this to check the token domains that you have defined for the key
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetDecryptedAPIKey.html
+   */
+  public toGetDecryptedAPIKey() {
+    return this.to('GetDecryptedAPIKey');
   }
 
   /**
@@ -354,10 +414,27 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - apprunner:DescribeWebAclForService
+   * - cognito-idp:GetWebACLForResource
+   * - ec2:GetVerifiedAccessInstanceWebAcl
+   * - wafv2:GetWebACL
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
    */
   public toGetWebACLForResource() {
     return this.to('GetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to retrieve a list of the API keys that you've defined for the specified scope
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAPIKeys.html
+   */
+  public toListAPIKeys() {
+    return this.to('ListAPIKeys');
   }
 
   /**
@@ -441,6 +518,11 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to retrieve an array of the Amazon Resource Names (ARNs) for the resources that are associated with a web ACL
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - apprunner:ListAssociatedServicesForWebAcl
+   * - cognito-idp:ListResourcesForWebACL
+   * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */
@@ -631,6 +713,7 @@ export class Wafv2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWebACL',
+      'CreateAPIKey',
       'CreateIPSet',
       'CreateRegexPatternSet',
       'CreateRuleGroup',
@@ -654,8 +737,11 @@ export class Wafv2 extends PolicyStatement {
     ],
     Read: [
       'CheckCapacity',
+      'DescribeAllManagedProducts',
+      'DescribeManagedProductsByVendor',
       'DescribeManagedRuleGroup',
       'GenerateMobileSdkReleaseUrl',
+      'GetDecryptedAPIKey',
       'GetIPSet',
       'GetLoggingConfiguration',
       'GetManagedRuleSet',
@@ -674,6 +760,7 @@ export class Wafv2 extends PolicyStatement {
       'PutPermissionPolicy'
     ],
     List: [
+      'ListAPIKeys',
       'ListAvailableManagedRuleGroupVersions',
       'ListAvailableManagedRuleGroups',
       'ListIPSets',
@@ -854,5 +941,92 @@ export class Wafv2 extends PolicyStatement {
    */
   public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Wafv2.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+  }
+
+  /**
+   * Adds a resource of type verified-access-instance to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param verifiedAccessInstanceId - Identifier for the verifiedAccessInstanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Wafv2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-instance/${ verifiedAccessInstanceId }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetIPSet()
+   * - .toGetLoggingConfiguration()
+   * - .toGetRateBasedStatementManagedKeys()
+   * - .toGetRegexPatternSet()
+   * - .toGetRuleGroup()
+   * - .toGetWebACL()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUpdateIPSet()
+   * - .toUpdateRegexPatternSet()
+   * - .toUpdateRuleGroup()
+   * - .toUpdateWebACL()
+   *
+   * Applies to resource types:
+   * - webacl
+   * - ipset
+   * - rulegroup
+   * - regexpatternset
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [pi](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html).
@@ -16,6 +16,32 @@ export class Pi extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to call CreatePerformanceAnalysisReport API to create a Performance Analysis Report for a specified DB instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_CreatePerformanceAnalysisReport.html
+   */
+  public toCreatePerformanceAnalysisReport() {
+    return this.to('CreatePerformanceAnalysisReport');
+  }
+
+  /**
+   * Grants permission to call DeletePerformanceAnalysisReport API to delete a Performance Analysis Report for a specified DB instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_DeletePerformanceAnalysisReport.html
+   */
+  public toDeletePerformanceAnalysisReport() {
+    return this.to('DeletePerformanceAnalysisReport');
   }
 
   /**
@@ -38,6 +64,17 @@ export class Pi extends PolicyStatement {
    */
   public toGetDimensionKeyDetails() {
     return this.to('GetDimensionKeyDetails');
+  }
+
+  /**
+   * Grants permission to call GetPerformanceAnalysisReport API to retrieve a Performance Analysis Report for a specified DB instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetPerformanceAnalysisReport.html
+   */
+  public toGetPerformanceAnalysisReport() {
+    return this.to('GetPerformanceAnalysisReport');
   }
 
   /**
@@ -84,14 +121,78 @@ export class Pi extends PolicyStatement {
     return this.to('ListAvailableResourceMetrics');
   }
 
+  /**
+   * Grants permission to call ListPerformanceAnalysisReports API to list Performance Analysis Reports for a specified DB instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListPerformanceAnalysisReports.html
+   */
+  public toListPerformanceAnalysisReports() {
+    return this.to('ListPerformanceAnalysisReports');
+  }
+
+  /**
+   * Grants permission to call ListTagsForResource API to list tags for a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to call TagResource API to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to call UntagResource API to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'CreatePerformanceAnalysisReport',
+      'DeletePerformanceAnalysisReport'
+    ],
     Read: [
       'DescribeDimensionKeys',
       'GetDimensionKeyDetails',
+      'GetPerformanceAnalysisReport',
       'GetResourceMetadata',
       'GetResourceMetrics',
       'ListAvailableResourceDimensions',
       'ListAvailableResourceMetrics'
+    ],
+    List: [
+      'ListPerformanceAnalysisReports',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -108,5 +209,68 @@ export class Pi extends PolicyStatement {
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Pi.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:metrics/${ serviceType }/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type perf-reports-resource to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.access-control.html
+   *
+   * @param serviceType - Identifier for the serviceType.
+   * @param identifier - Identifier for the identifier.
+   * @param reportId - Identifier for the reportId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPerfReportsResource(serviceType: string, identifier: string, reportId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Pi.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:perf-reports/${ serviceType }/${ identifier }/${ reportId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * Applies to actions:
+   * - .toCreatePerformanceAnalysisReport()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * Applies to resource types:
+   * - perf-reports-resource
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * Applies to actions:
+   * - .toCreatePerformanceAnalysisReport()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

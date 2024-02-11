@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [kinesisvideo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisvideostreams.html).
@@ -68,6 +68,17 @@ export class Kinesisvideo extends PolicyStatement {
    */
   public toCreateStream() {
     return this.to('CreateStream');
+  }
+
+  /**
+   * Grants permission to delete the edge configuration of your Kinesis Video Stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteEdgeConfiguration.html
+   */
+  public toDeleteEdgeConfiguration() {
+    return this.to('DeleteEdgeConfiguration');
   }
 
   /**
@@ -277,6 +288,17 @@ export class Kinesisvideo extends PolicyStatement {
    */
   public toJoinStorageSession() {
     return this.to('JoinStorageSession');
+  }
+
+  /**
+   * Grants permission to list an edge agent configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListEdgeAgentConfigurations.html
+   */
+  public toListEdgeAgentConfigurations() {
+    return this.to('ListEdgeAgentConfigurations');
   }
 
   /**
@@ -497,6 +519,7 @@ export class Kinesisvideo extends PolicyStatement {
       'ConnectAsViewer',
       'CreateSignalingChannel',
       'CreateStream',
+      'DeleteEdgeConfiguration',
       'DeleteSignalingChannel',
       'DeleteStream',
       'JoinStorageSession',
@@ -531,6 +554,7 @@ export class Kinesisvideo extends PolicyStatement {
       'DescribeMappedResourceConfiguration',
       'DescribeSignalingChannel',
       'DescribeStream',
+      'ListEdgeAgentConfigurations',
       'ListFragments',
       'ListSignalingChannels',
       'ListStreams'
@@ -577,5 +601,61 @@ export class Kinesisvideo extends PolicyStatement {
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
+  }
+
+  /**
+   * Filters requests based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateSignalingChannel()
+   * - .toCreateStream()
+   * - .toTagResource()
+   * - .toTagStream()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value assoicated with the stream
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - stream
+   * - channel
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters requests based on the presence of mandatory tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateSignalingChannel()
+   * - .toCreateStream()
+   * - .toTagResource()
+   * - .toTagStream()
+   * - .toUntagResource()
+   * - .toUntagStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

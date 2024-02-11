@@ -1,6 +1,7 @@
 transcribe:callanalyticscategory
 transcribe:callanalyticsjob
 transcribe:languagemodel
+transcribe:medicalscribejob
 transcribe:medicaltranscriptionjob
 transcribe:medicalvocabulary
 transcribe:transcriptionjob

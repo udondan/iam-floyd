@@ -3,6 +3,11 @@
         "s3:DescribeJob",
         "s3:DescribeMultiRegionAccessPointOperation",
         "s3:GetAccelerateConfiguration",
+        "s3:GetAccessGrant",
+        "s3:GetAccessGrantsInstance",
+        "s3:GetAccessGrantsInstanceForPrefix",
+        "s3:GetAccessGrantsInstanceResourcePolicy",
+        "s3:GetAccessGrantsLocation",
         "s3:GetAccessPoint",
         "s3:GetAccessPointConfigurationForObjectLambda",
         "s3:GetAccessPointForObjectLambda",
@@ -26,6 +31,7 @@
         "s3:GetBucketTagging",
         "s3:GetBucketVersioning",
         "s3:GetBucketWebsite",
+        "s3:GetDataAccess",
         "s3:GetEncryptionConfiguration",
         "s3:GetIntelligentTieringConfiguration",
         "s3:GetInventoryConfiguration",
@@ -52,7 +58,8 @@
         "s3:GetReplicationConfiguration",
         "s3:GetStorageLensConfiguration",
         "s3:GetStorageLensConfigurationTagging",
-        "s3:GetStorageLensDashboard"
+        "s3:GetStorageLensDashboard",
+        "s3:GetStorageLensGroup"
     ],
     "Resource": "*",
     "Effect": "Allow"

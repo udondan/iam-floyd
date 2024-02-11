@@ -41,6 +41,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow deletion of an FSx for ONTAP SnapLock Enterprise volume that contains WORM (write once, read many) files with active retention periods
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#bypass-enterprise
+   */
+  public toBypassSnaplockEnterpriseRetention() {
+    return this.to('BypassSnaplockEnterpriseRetention');
+  }
+
+  /**
    * Grants permission to cancel a data repository task
    *
    * Access Level: Write
@@ -67,6 +78,17 @@ export class Fsx extends PolicyStatement {
    */
   public toCopyBackup() {
     return this.to('CopyBackup');
+  }
+
+  /**
+   * Grants permission to update an existing volume by using a snapshot from another Amazon FSx for OpenZFS file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html
+   */
+  public toCopySnapshotAndUpdateVolume() {
+    return this.to('CopySnapshotAndUpdateVolume');
   }
 
   /**
@@ -136,6 +158,7 @@ export class Fsx extends PolicyStatement {
    * - ec2:DescribeSecurityGroups
    * - ec2:DescribeSubnets
    * - ec2:DescribeVpcs
+   * - ec2:GetSecurityGroupsForVpc
    * - fsx:CreateDataRepositoryAssociation
    * - fsx:TagResource
    * - logs:CreateLogGroup
@@ -159,6 +182,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - ec2:GetSecurityGroupsForVpc
    * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
@@ -177,6 +201,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - ec2:GetSecurityGroupsForVpc
    * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
@@ -320,6 +345,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a snapshot on a volume
    *
    * Access Level: Write
@@ -439,6 +475,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the descriptions of whether FSx route table updates from participant accounts are allowed in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSharedVpcConfiguration.html
+   */
+  public toDescribeSharedVpcConfiguration() {
+    return this.to('DescribeSharedVpcConfiguration');
+  }
+
+  /**
    * Grants permission to return the descriptions of all snapshots owned by your AWS account in the AWS Region of the endpoint you're calling
    *
    * Access Level: Read
@@ -494,6 +541,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to list tags for an Amazon FSx resource
    *
    * Access Level: Read
@@ -516,6 +574,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to release file system NFS V3 locks
    *
    * Access Level: Write
@@ -535,6 +604,17 @@ export class Fsx extends PolicyStatement {
    */
   public toRestoreVolumeFromSnapshot() {
     return this.to('RestoreVolumeFromSnapshot');
+  }
+
+  /**
+   * Grants permission to start misconfigured state recovery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_StartMisconfiguredStateRecovery.html
+   */
+  public toStartMisconfiguredStateRecovery() {
+    return this.to('StartMisconfiguredStateRecovery');
   }
 
   /**
@@ -600,6 +680,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable FSx route table updates from participant accounts in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSharedVpcConfiguration.html
+   */
+  public toUpdateSharedVpcConfiguration() {
+    return this.to('UpdateSharedVpcConfiguration');
+  }
+
+  /**
    * Grants permission to update snapshot configuration
    *
    * Access Level: Write
@@ -642,6 +733,7 @@ export class Fsx extends PolicyStatement {
       'AssociateFileSystemAliases',
       'CancelDataRepositoryTask',
       'CopyBackup',
+      'CopySnapshotAndUpdateVolume',
       'CreateBackup',
       'CreateDataRepositoryAssociation',
       'CreateDataRepositoryTask',
@@ -663,12 +755,21 @@ export class Fsx extends PolicyStatement {
       'DisassociateFileSystemAliases',
       'ReleaseFileSystemNfsV3Locks',
       'RestoreVolumeFromSnapshot',
+      'StartMisconfiguredStateRecovery',
       'UpdateDataRepositoryAssociation',
       'UpdateFileCache',
       'UpdateFileSystem',
+      'UpdateSharedVpcConfiguration',
       'UpdateSnapshot',
       'UpdateStorageVirtualMachine',
       'UpdateVolume'
+    ],
+    'Permissions management': [
+      'BypassSnaplockEnterpriseRetention',
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'ManageBackupPrincipalAssociations',
+      'PutResourcePolicy'
     ],
     Read: [
       'DescribeAssociatedFileGateways',
@@ -678,13 +779,11 @@ export class Fsx extends PolicyStatement {
       'DescribeFileCaches',
       'DescribeFileSystemAliases',
       'DescribeFileSystems',
+      'DescribeSharedVpcConfiguration',
       'DescribeSnapshots',
       'DescribeStorageVirtualMachines',
       'DescribeVolumes',
       'ListTagsForResource'
-    ],
-    'Permissions management': [
-      'ManageBackupPrincipalAssociations'
     ],
     Tagging: [
       'TagResource',
@@ -817,7 +916,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/OpenFsGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-control-overview.html#access-control-resources
    *
    * @param volumeId - Identifier for the volumeId.
    * @param snapshotId - Identifier for the snapshotId.
@@ -833,9 +932,92 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCopyBackup()
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryAssociation()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileCache()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toCreateSnapshot()
+   * - .toCreateStorageVirtualMachine()
+   * - .toCreateVolume()
+   * - .toCreateVolumeFromBackup()
+   * - .toDeleteFileCache()
+   * - .toDeleteFileSystem()
+   * - .toDeleteVolume()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - file-system
+   * - file-cache
+   * - backup
+   * - storage-virtual-machine
+   * - task
+   * - association
+   * - volume
+   * - snapshot
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCopyBackup()
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryAssociation()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileCache()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toCreateSnapshot()
+   * - .toCreateStorageVirtualMachine()
+   * - .toCreateVolume()
+   * - .toCreateVolumeFromBackup()
+   * - .toDeleteFileCache()
+   * - .toDeleteFileSystem()
+   * - .toDeleteVolume()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by whether the backup is a destination backup for a CopyBackup operation
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CopyBackup.html
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -846,7 +1028,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Filters access by whether the backup is a source backup for a CopyBackup operation
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CopyBackup.html
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -857,37 +1039,35 @@ export class Fsx extends PolicyStatement {
   /**
    * Filters access by NFS data repositories which support authentication
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateFileCache.html
+   * https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/encryption-in-transit.html
    *
    * Applies to actions:
    * - .toCreateFileCache()
    *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param value `true` or `false`. **Default:** `true`
    */
-  public ifNfsDataRepositoryAuthenticationEnabled(value: string | string[], operator?: Operator | string) {
-    return this.if(`NfsDataRepositoryAuthenticationEnabled`, value, operator || 'StringLike');
+  public ifNfsDataRepositoryAuthenticationEnabled(value?: boolean) {
+    return this.if(`NfsDataRepositoryAuthenticationEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
    * Filters access by NFS data repositories which support encryption-in-transit
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateFileCache.html
+   * https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/encryption-in-transit.html
    *
    * Applies to actions:
    * - .toCreateFileCache()
    *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param value `true` or `false`. **Default:** `true`
    */
-  public ifNfsDataRepositoryEncryptionInTransitEnabled(value: string | string[], operator?: Operator | string) {
-    return this.if(`NfsDataRepositoryEncryptionInTransitEnabled`, value, operator || 'StringLike');
+  public ifNfsDataRepositoryEncryptionInTransitEnabled(value?: boolean) {
+    return this.if(`NfsDataRepositoryEncryptionInTransitEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
    * Filters access by the containing parent volume for mutating volume operations
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateVolume.html
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/creating-volumes.html
    *
    * Applies to actions:
    * - .toCreateVolume()
@@ -904,7 +1084,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Filters access by the containing storage virtual machine for a volume for mutating volume operations
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateVolume.html
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-volumes.html
    *
    * Applies to actions:
    * - .toCreateVolume()

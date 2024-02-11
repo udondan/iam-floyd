@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
+ * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticloadbalancingv2.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing';
 
   /**
-   * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
+   * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticloadbalancingv2.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,6 +22,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Grants permission to add the specified certificates to the specified secure listener
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html
    */
@@ -37,11 +41,29 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
     return this.to('AddTags');
+  }
+
+  /**
+   * Grants permission to add revocations to a trust store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTrustStoreRevocations.html
+   */
+  public toAddTrustStoreRevocations() {
+    return this.to('AddTrustStoreRevocations');
   }
 
   /**
@@ -52,6 +74,13 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityPolicy()
+   * - .ifListenerProtocol()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html
    */
@@ -67,6 +96,14 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityGroup()
+   * - .ifSubnet()
+   * - .ifScheme()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateLoadBalancer.html
    */
@@ -82,6 +119,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateRule.html
    */
@@ -97,6 +139,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTargetGroup.html
    */
@@ -105,9 +152,33 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a trust store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTrustStore.html
+   */
+  public toCreateTrustStore() {
+    return this.to('CreateTrustStore');
+  }
+
+  /**
    * Grants permission to delete the specified listener
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteListener.html
    */
@@ -120,6 +191,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteLoadBalancer.html
    */
   public toDeleteLoadBalancer() {
@@ -130,6 +205,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Grants permission to delete the specified rule
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteRule.html
    */
@@ -142,6 +221,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTargetGroup.html
    */
   public toDeleteTargetGroup() {
@@ -149,9 +232,28 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified trust store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTrustStore.html
+   */
+  public toDeleteTrustStore() {
+    return this.to('DeleteTrustStore');
+  }
+
+  /**
    * Grants permission to deregister the specified targets from the specified target group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeregisterTargets.html
    */
@@ -281,9 +383,78 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the associations with a trust store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTrustStoreAssociations.html
+   */
+  public toDescribeTrustStoreAssociations() {
+    return this.to('DescribeTrustStoreAssociations');
+  }
+
+  /**
+   * Grants permission to describe the specified trust stores revocations or all of your revocations related to a trust store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTrustStoreRevocations.html
+   */
+  public toDescribeTrustStoreRevocations() {
+    return this.to('DescribeTrustStoreRevocations');
+  }
+
+  /**
+   * Grants permission to describe the specified trust stores or all of your trust stores
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTrustStores.html
+   */
+  public toDescribeTrustStores() {
+    return this.to('DescribeTrustStores');
+  }
+
+  /**
+   * Grants permission to retrieve a trust store CA certificates bundle
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_GetTrustStoreCaCertificatesBundle.html
+   */
+  public toGetTrustStoreCaCertificatesBundle() {
+    return this.to('GetTrustStoreCaCertificatesBundle');
+  }
+
+  /**
+   * Grants permission to retrieve a trust store revocation content
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_GetTrustStoreRevocationContent.html
+   */
+  public toGetTrustStoreRevocationContent() {
+    return this.to('GetTrustStoreRevocationContent');
+  }
+
+  /**
    * Grants permission to modify the specified properties of the specified listener
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityPolicy()
+   * - .ifListenerProtocol()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyListener.html
    */
@@ -296,6 +467,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyLoadBalancerAttributes.html
    */
   public toModifyLoadBalancerAttributes() {
@@ -306,6 +481,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Grants permission to modify the specified rule
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyRule.html
    */
@@ -318,6 +497,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroup.html
    */
   public toModifyTargetGroup() {
@@ -329,6 +512,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroupAttributes.html
    */
   public toModifyTargetGroupAttributes() {
@@ -336,9 +523,28 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the specified trust store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTrustStore.html
+   */
+  public toModifyTrustStore() {
+    return this.to('ModifyTrustStore');
+  }
+
+  /**
    * Grants permission to register the specified targets with the specified target group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RegisterTargets.html
    */
@@ -350,6 +556,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Grants permission to remove the specified certificates of the specified secure listener
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveListenerCertificates.html
    */
@@ -365,6 +575,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTags.html
    */
@@ -373,9 +585,28 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove revocations from a trust store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTrustStoreRevocations.html
+   */
+  public toRemoveTrustStoreRevocations() {
+    return this.to('RemoveTrustStoreRevocations');
+  }
+
+  /**
    * Grants permission to set the type of IP addresses used by the subnets of the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetIpAddressType.html
    */
@@ -399,6 +630,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityGroup()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSecurityGroups.html
    */
   public toSetSecurityGroups() {
@@ -409,6 +645,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Grants permission to enable the Availability Zone for the specified subnets for the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSubnet()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSubnets.html
    */
@@ -430,22 +671,27 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddListenerCertificates',
+      'AddTrustStoreRevocations',
       'CreateListener',
       'CreateLoadBalancer',
       'CreateRule',
       'CreateTargetGroup',
+      'CreateTrustStore',
       'DeleteListener',
       'DeleteLoadBalancer',
       'DeleteRule',
       'DeleteTargetGroup',
+      'DeleteTrustStore',
       'DeregisterTargets',
       'ModifyListener',
       'ModifyLoadBalancerAttributes',
       'ModifyRule',
       'ModifyTargetGroup',
       'ModifyTargetGroupAttributes',
+      'ModifyTrustStore',
       'RegisterTargets',
       'RemoveListenerCertificates',
+      'RemoveTrustStoreRevocations',
       'SetIpAddressType',
       'SetRulePriorities',
       'SetSecurityGroups',
@@ -467,7 +713,12 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DescribeTags',
       'DescribeTargetGroupAttributes',
       'DescribeTargetGroups',
-      'DescribeTargetHealth'
+      'DescribeTargetHealth',
+      'DescribeTrustStoreAssociations',
+      'DescribeTrustStoreRevocations',
+      'DescribeTrustStores',
+      'GetTrustStoreCaCertificatesBundle',
+      'GetTrustStoreRevocationContent'
     ]
   };
 
@@ -611,9 +862,81 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * A tag key and value pair
+   * Adds a resource of type truststore to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/trust-store.html
+   *
+   * @param trustStoreName - Identifier for the trustStoreName.
+   * @param trustStoreId - Identifier for the trustStoreId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onTruststore(trustStoreName: string, trustStoreId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:truststore/${ trustStoreName }/${ trustStoreId }`);
+  }
+
+  /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateListener()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRule()
+   * - .toCreateTargetGroup()
+   * - .toCreateTrustStore()
+   * - .toRemoveTags()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddListenerCertificates()
+   * - .toAddTags()
+   * - .toAddTrustStoreRevocations()
+   * - .toCreateListener()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRule()
+   * - .toCreateTargetGroup()
+   * - .toCreateTrustStore()
+   * - .toDeleteListener()
+   * - .toDeleteLoadBalancer()
+   * - .toDeleteRule()
+   * - .toDeleteTargetGroup()
+   * - .toDeleteTrustStore()
+   * - .toDeregisterTargets()
+   * - .toGetTrustStoreCaCertificatesBundle()
+   * - .toGetTrustStoreRevocationContent()
+   * - .toModifyListener()
+   * - .toModifyLoadBalancerAttributes()
+   * - .toModifyRule()
+   * - .toModifyTargetGroup()
+   * - .toModifyTargetGroupAttributes()
+   * - .toModifyTrustStore()
+   * - .toRegisterTargets()
+   * - .toRemoveListenerCertificates()
+   * - .toRemoveTags()
+   * - .toRemoveTrustStoreRevocations()
+   * - .toSetIpAddressType()
+   * - .toSetSecurityGroups()
+   * - .toSetSubnets()
    *
    * Applies to resource types:
    * - listener/app
@@ -623,6 +946,113 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - loadbalancer/app/
    * - loadbalancer/net/
    * - targetgroup
+   * - truststore
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateListener()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRule()
+   * - .toCreateTargetGroup()
+   * - .toCreateTrustStore()
+   * - .toRemoveTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/tagging-resources-during-creation.html
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the listener protocol that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#listenerprotocol-condition
+   *
+   * Applies to actions:
+   * - .toCreateListener()
+   * - .toModifyListener()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifListenerProtocol(value: string | string[], operator?: Operator | string) {
+    return this.if(`ListenerProtocol`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the preface string for a tag key and value pair that are attached to a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddListenerCertificates()
+   * - .toAddTags()
+   * - .toAddTrustStoreRevocations()
+   * - .toCreateListener()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRule()
+   * - .toCreateTargetGroup()
+   * - .toCreateTrustStore()
+   * - .toDeleteListener()
+   * - .toDeleteLoadBalancer()
+   * - .toDeleteRule()
+   * - .toDeleteTargetGroup()
+   * - .toDeleteTrustStore()
+   * - .toDeregisterTargets()
+   * - .toGetTrustStoreCaCertificatesBundle()
+   * - .toGetTrustStoreRevocationContent()
+   * - .toModifyListener()
+   * - .toModifyLoadBalancerAttributes()
+   * - .toModifyRule()
+   * - .toModifyTargetGroup()
+   * - .toModifyTargetGroupAttributes()
+   * - .toModifyTrustStore()
+   * - .toRegisterTargets()
+   * - .toRemoveListenerCertificates()
+   * - .toRemoveTags()
+   * - .toRemoveTrustStoreRevocations()
+   * - .toSetIpAddressType()
+   * - .toSetSecurityGroups()
+   * - .toSetSubnets()
+   *
+   * Applies to resource types:
+   * - listener/app
+   * - listener-rule/app
+   * - listener/net
+   * - listener-rule/net
+   * - loadbalancer/app/
+   * - loadbalancer/net/
+   * - targetgroup
+   * - truststore
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -630,5 +1060,68 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the load balancer scheme that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#scheme-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScheme(value: string | string[], operator?: Operator | string) {
+    return this.if(`Scheme`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the security-group IDs that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitygroup-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancer()
+   * - .toSetSecurityGroups()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityGroup`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the SSL Security Policies that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitypolicy-condition
+   *
+   * Applies to actions:
+   * - .toCreateListener()
+   * - .toModifyListener()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityPolicy(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityPolicy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the subnet IDs that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#subnet-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancer()
+   * - .toSetSubnets()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnet(value: string | string[], operator?: Operator | string) {
+    return this.if(`Subnet`, value, operator || 'StringLike');
   }
 }

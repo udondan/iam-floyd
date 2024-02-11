@@ -1205,4 +1205,98 @@ export class Autoscaling extends PolicyStatement {
   public ifVPCZoneIdentifiers(value: string | string[], operator?: Operator | string) {
     return this.if(`VPCZoneIdentifiers`, value, operator || 'StringLike');
   }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteTags()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toAttachInstances()
+   * - .toAttachLoadBalancerTargetGroups()
+   * - .toAttachLoadBalancers()
+   * - .toAttachTrafficSources()
+   * - .toBatchDeleteScheduledAction()
+   * - .toBatchPutScheduledUpdateGroupAction()
+   * - .toCancelInstanceRefresh()
+   * - .toCompleteLifecycleAction()
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteAutoScalingGroup()
+   * - .toDeleteLifecycleHook()
+   * - .toDeleteNotificationConfiguration()
+   * - .toDeletePolicy()
+   * - .toDeleteScheduledAction()
+   * - .toDeleteTags()
+   * - .toDeleteWarmPool()
+   * - .toDetachInstances()
+   * - .toDetachLoadBalancerTargetGroups()
+   * - .toDetachLoadBalancers()
+   * - .toDetachTrafficSources()
+   * - .toDisableMetricsCollection()
+   * - .toEnableMetricsCollection()
+   * - .toEnterStandby()
+   * - .toExecutePolicy()
+   * - .toExitStandby()
+   * - .toPutLifecycleHook()
+   * - .toPutNotificationConfiguration()
+   * - .toPutScalingPolicy()
+   * - .toPutScheduledUpdateGroupAction()
+   * - .toPutWarmPool()
+   * - .toRecordLifecycleActionHeartbeat()
+   * - .toResumeProcesses()
+   * - .toRollbackInstanceRefresh()
+   * - .toSetDesiredCapacity()
+   * - .toSetInstanceHealth()
+   * - .toSetInstanceProtection()
+   * - .toStartInstanceRefresh()
+   * - .toSuspendProcesses()
+   * - .toTerminateInstanceInAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * Applies to resource types:
+   * - autoScalingGroup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

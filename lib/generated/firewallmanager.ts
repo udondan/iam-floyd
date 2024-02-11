@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [fms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfirewallmanager.html).
@@ -157,6 +157,17 @@ export class Fms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about the specified account's administrative scope
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminScope.html
+   */
+  public toGetAdminScope() {
+    return this.to('GetAdminScope');
+  }
+
+  /**
    * Grants permission to return information about the specified AWS Firewall Manager applications list
    *
    * Access Level: Read
@@ -253,6 +264,28 @@ export class Fms extends PolicyStatement {
    */
   public toGetViolationDetails() {
     return this.to('GetViolationDetails');
+  }
+
+  /**
+   * Grants permission to return a AdminAccounts object that lists the Firewall Manager administrators within the organization that are onboarded to Firewall Manager by AssociateAdminAccount
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAdminAccountsForOrganization.html
+   */
+  public toListAdminAccountsForOrganization() {
+    return this.to('ListAdminAccountsForOrganization');
+  }
+
+  /**
+   * Grants permission to list the accounts that are managing the specified AWS Organizations member account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAdminsManagingAccount.html
+   */
+  public toListAdminsManagingAccount() {
+    return this.to('ListAdminsManagingAccount');
   }
 
   /**
@@ -363,6 +396,17 @@ export class Fms extends PolicyStatement {
    */
   public toListThirdPartyFirewallFirewallPolicies() {
     return this.to('ListThirdPartyFirewallFirewallPolicies');
+  }
+
+  /**
+   * Grants permission to create or update an Firewall Manager administrator account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAdminAccount.html
+   */
+  public toPutAdminAccount() {
+    return this.to('PutAdminAccount');
   }
 
   /**
@@ -478,6 +522,7 @@ export class Fms extends PolicyStatement {
       'DeleteResourceSet',
       'DisassociateAdminAccount',
       'DisassociateThirdPartyFirewall',
+      'PutAdminAccount',
       'PutAppsList',
       'PutNotificationChannel',
       'PutPolicy',
@@ -486,6 +531,7 @@ export class Fms extends PolicyStatement {
     ],
     Read: [
       'GetAdminAccount',
+      'GetAdminScope',
       'GetAppsList',
       'GetComplianceDetail',
       'GetNotificationChannel',
@@ -498,6 +544,8 @@ export class Fms extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAdminAccountsForOrganization',
+      'ListAdminsManagingAccount',
       'ListAppsLists',
       'ListComplianceStatus',
       'ListDiscoveredResources',
@@ -580,5 +628,68 @@ export class Fms extends PolicyStatement {
    */
   public onResourceSet(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:resource-set/${ id }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toPutResourceSet()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeletePolicy()
+   * - .toDeleteResourceSet()
+   *
+   * Applies to resource types:
+   * - policy
+   * - applications-list
+   * - protocols-list
+   * - resource-set
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toPutResourceSet()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

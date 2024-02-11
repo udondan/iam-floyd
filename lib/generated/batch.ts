@@ -399,6 +399,20 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html
    *
    * @param jobDefinitionName - Identifier for the jobDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJobDefinition(jobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }`);
+  }
+
+  /**
+   * Adds a resource of type job-definition-revision to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html
+   *
+   * @param jobDefinitionName - Identifier for the jobDefinitionName.
    * @param revision - Identifier for the revision.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -407,7 +421,7 @@ export class Batch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onJobDefinition(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
+  public onJobDefinitionRevision(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }:${ revision }`);
   }
 
@@ -443,6 +457,68 @@ export class Batch extends PolicyStatement {
    */
   public onSchedulingPolicy(schedulingPolicyName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:scheduling-policy/${ schedulingPolicyName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComputeEnvironment()
+   * - .toCreateJobQueue()
+   * - .toCreateSchedulingPolicy()
+   * - .toRegisterJobDefinition()
+   * - .toSubmitJob()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - compute-environment
+   * - job-queue
+   * - job-definition-revision
+   * - job
+   * - scheduling-policy
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComputeEnvironment()
+   * - .toCreateJobQueue()
+   * - .toCreateSchedulingPolicy()
+   * - .toRegisterJobDefinition()
+   * - .toSubmitJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

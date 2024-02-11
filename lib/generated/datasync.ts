@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
@@ -16,6 +16,22 @@ export class Datasync extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to create a storage system
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html
+   */
+  public toAddStorageSystem() {
+    return this.to('AddStorageSystem');
   }
 
   /**
@@ -45,6 +61,21 @@ export class Datasync extends PolicyStatement {
    */
   public toCreateAgent() {
     return this.to('CreateAgent');
+  }
+
+  /**
+   * Grants permission to create an endpoint for a Microsoft Azure Blob Storage container
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationAzureBlob.html
+   */
+  public toCreateLocationAzureBlob() {
+    return this.to('CreateLocationAzureBlob');
   }
 
   /**
@@ -257,6 +288,28 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe metadata about a discovery job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeDiscoveryJob.html
+   */
+  public toDescribeDiscoveryJob() {
+    return this.to('DescribeDiscoveryJob');
+  }
+
+  /**
+   * Grants permission to view metadata, such as the path information about an Azure Blob Storage sync location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationAzureBlob.html
+   */
+  public toDescribeLocationAzureBlob() {
+    return this.to('DescribeLocationAzureBlob');
+  }
+
+  /**
    * Grants permission to view metadata, such as the path information about an Amazon EFS sync location
    *
    * Access Level: Read
@@ -367,6 +420,39 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view metadata about a storage system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystem.html
+   */
+  public toDescribeStorageSystem() {
+    return this.to('DescribeStorageSystem');
+  }
+
+  /**
+   * Grants permission to describe resource metrics collected by a discovery job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResourceMetrics.html
+   */
+  public toDescribeStorageSystemResourceMetrics() {
+    return this.to('DescribeStorageSystemResourceMetrics');
+  }
+
+  /**
+   * Grants permission to describe resources identified by a discovery job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html
+   */
+  public toDescribeStorageSystemResources() {
+    return this.to('DescribeStorageSystemResources');
+  }
+
+  /**
    * Grants permission to view metadata about a sync task
    *
    * Access Level: Read
@@ -392,6 +478,17 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate recommendations for a resource identified by a discovery job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html
+   */
+  public toGenerateRecommendations() {
+    return this.to('GenerateRecommendations');
+  }
+
+  /**
    * Grants permission to list agents owned by an AWS account in a region specified in the request
    *
    * Access Level: List
@@ -403,6 +500,17 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list discovery jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListDiscoveryJobs.html
+   */
+  public toListDiscoveryJobs() {
+    return this.to('ListDiscoveryJobs');
+  }
+
+  /**
    * Grants permission to list source and destination sync locations
    *
    * Access Level: List
@@ -411,6 +519,17 @@ export class Datasync extends PolicyStatement {
    */
   public toListLocations() {
     return this.to('ListLocations');
+  }
+
+  /**
+   * Grants permission to list storage systems
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListStorageSystems.html
+   */
+  public toListStorageSystems() {
+    return this.to('ListStorageSystems');
   }
 
   /**
@@ -450,6 +569,28 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a storage system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_RemoveStorageSystem.html
+   */
+  public toRemoveStorageSystem() {
+    return this.to('RemoveStorageSystem');
+  }
+
+  /**
+   * Grants permission to start a discovery job for a storage system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartDiscoveryJob.html
+   */
+  public toStartDiscoveryJob() {
+    return this.to('StartDiscoveryJob');
+  }
+
+  /**
    * Grants permission to start a specific invocation of a sync task
    *
    * Access Level: Write
@@ -463,6 +604,17 @@ export class Datasync extends PolicyStatement {
    */
   public toStartTaskExecution() {
     return this.to('StartTaskExecution');
+  }
+
+  /**
+   * Grants permission to stop a discovery job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_StopDiscoveryJob.html
+   */
+  public toStopDiscoveryJob() {
+    return this.to('StopDiscoveryJob');
   }
 
   /**
@@ -503,6 +655,28 @@ export class Datasync extends PolicyStatement {
    */
   public toUpdateAgent() {
     return this.to('UpdateAgent');
+  }
+
+  /**
+   * Grants permission to update a discovery job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateDiscoveryJob.html
+   */
+  public toUpdateDiscoveryJob() {
+    return this.to('UpdateDiscoveryJob');
+  }
+
+  /**
+   * Grants permission to update an Azure Blob Storage sync location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationAzureBlob.html
+   */
+  public toUpdateLocationAzureBlob() {
+    return this.to('UpdateLocationAzureBlob');
   }
 
   /**
@@ -550,6 +724,17 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a storage system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateStorageSystem.html
+   */
+  public toUpdateStorageSystem() {
+    return this.to('UpdateStorageSystem');
+  }
+
+  /**
    * Grants permission to update metadata associated with a sync task
    *
    * Access Level: Write
@@ -576,8 +761,10 @@ export class Datasync extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddStorageSystem',
       'CancelTaskExecution',
       'CreateAgent',
+      'CreateLocationAzureBlob',
       'CreateLocationEfs',
       'CreateLocationFsxLustre',
       'CreateLocationFsxOntap',
@@ -592,17 +779,26 @@ export class Datasync extends PolicyStatement {
       'DeleteAgent',
       'DeleteLocation',
       'DeleteTask',
+      'GenerateRecommendations',
+      'RemoveStorageSystem',
+      'StartDiscoveryJob',
       'StartTaskExecution',
+      'StopDiscoveryJob',
       'UpdateAgent',
+      'UpdateDiscoveryJob',
+      'UpdateLocationAzureBlob',
       'UpdateLocationHdfs',
       'UpdateLocationNfs',
       'UpdateLocationObjectStorage',
       'UpdateLocationSmb',
+      'UpdateStorageSystem',
       'UpdateTask',
       'UpdateTaskExecution'
     ],
     Read: [
       'DescribeAgent',
+      'DescribeDiscoveryJob',
+      'DescribeLocationAzureBlob',
       'DescribeLocationEfs',
       'DescribeLocationFsxLustre',
       'DescribeLocationFsxOntap',
@@ -613,13 +809,18 @@ export class Datasync extends PolicyStatement {
       'DescribeLocationObjectStorage',
       'DescribeLocationS3',
       'DescribeLocationSmb',
+      'DescribeStorageSystem',
       'DescribeTask',
       'DescribeTaskExecution',
       'ListTagsForResource'
     ],
     List: [
+      'DescribeStorageSystemResourceMetrics',
+      'DescribeStorageSystemResources',
       'ListAgents',
+      'ListDiscoveryJobs',
       'ListLocations',
+      'ListStorageSystems',
       'ListTaskExecutions',
       'ListTasks'
     ],
@@ -696,5 +897,131 @@ export class Datasync extends PolicyStatement {
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);
+  }
+
+  /**
+   * Adds a resource of type storagesystem to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html
+   *
+   * @param storageSystemId - Identifier for the storageSystemId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStoragesystem(storageSystemId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:system/${ storageSystemId }`);
+  }
+
+  /**
+   * Adds a resource of type discoveryjob to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-create.html
+   *
+   * @param storageSystemId - Identifier for the storageSystemId.
+   * @param discoveryJobId - Identifier for the discoveryJobId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDiscoveryjob(storageSystemId: string, discoveryJobId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:system/${ storageSystemId }/job/${ discoveryJobId }`);
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddStorageSystem()
+   * - .toCreateAgent()
+   * - .toCreateLocationAzureBlob()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxLustre()
+   * - .toCreateLocationFsxOntap()
+   * - .toCreateLocationFsxOpenZfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationHdfs()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationObjectStorage()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toStartTaskExecution()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddStorageSystem()
+   * - .toCancelTaskExecution()
+   * - .toDescribeTaskExecution()
+   * - .toListTaskExecutions()
+   * - .toStartTaskExecution()
+   * - .toUpdateTaskExecution()
+   *
+   * Applies to resource types:
+   * - agent
+   * - location
+   * - task
+   * - taskexecution
+   * - storagesystem
+   * - discoveryjob
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddStorageSystem()
+   * - .toCreateAgent()
+   * - .toCreateLocationAzureBlob()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxLustre()
+   * - .toCreateLocationFsxOntap()
+   * - .toCreateLocationFsxOpenZfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationHdfs()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationObjectStorage()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toStartTaskExecution()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

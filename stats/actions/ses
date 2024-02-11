@@ -1,4 +1,5 @@
 ses:BatchGetMetricData;Read
+ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
 ses:CreateConfigurationSet;Write
 ses:CreateConfigurationSetEventDestination;Write
@@ -11,6 +12,7 @@ ses:CreateDeliverabilityTestReport;Write
 ses:CreateEmailIdentity;Write
 ses:CreateEmailIdentityPolicy;Permissions management
 ses:CreateEmailTemplate;Write
+ses:CreateExportJob;Write
 ses:CreateImportJob;Write
 ses:CreateReceiptFilter;Write
 ses:CreateReceiptRule;Write
@@ -56,12 +58,14 @@ ses:GetDomainStatisticsReport;Read
 ses:GetEmailIdentity;Read
 ses:GetEmailIdentityPolicies;Read
 ses:GetEmailTemplate;Read
+ses:GetExportJob;Read
 ses:GetIdentityDkimAttributes;Read
 ses:GetIdentityMailFromDomainAttributes;Read
 ses:GetIdentityNotificationAttributes;Read
 ses:GetIdentityPolicies;Read
 ses:GetIdentityVerificationAttributes;Read
 ses:GetImportJob;Read
+ses:GetMessageInsights;Read
 ses:GetSendQuota;Read
 ses:GetSendStatistics;Read
 ses:GetSuppressedDestination;Read
@@ -75,6 +79,7 @@ ses:ListDeliverabilityTestReports;List
 ses:ListDomainDeliverabilityCampaigns;Read
 ses:ListEmailIdentities;List
 ses:ListEmailTemplates;List
+ses:ListExportJobs;List
 ses:ListIdentities;List
 ses:ListIdentityPolicies;List
 ses:ListImportJobs;List
@@ -97,6 +102,7 @@ ses:PutConfigurationSetSuppressionOptions;Write
 ses:PutConfigurationSetTrackingOptions;Write
 ses:PutConfigurationSetVdmOptions;Write
 ses:PutDedicatedIpInPool;Write
+ses:PutDedicatedIpPoolScalingAttributes;Write
 ses:PutDedicatedIpWarmupAttributes;Write
 ses:PutDeliverabilityDashboardOption;Write
 ses:PutEmailIdentityConfigurationSetAttributes;Write

@@ -19,6 +19,17 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve and decrypt a list of secrets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_BatchGetSecretValue.html
+   */
+  public toBatchGetSecretValue() {
+    return this.to('BatchGetSecretValue');
+  }
+
+  /**
    * Grants permission to cancel an in-progress secret rotation
    *
    * Access Level: Write
@@ -421,6 +432,10 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    List: [
+      'BatchGetSecretValue',
+      'ListSecrets'
+    ],
     Write: [
       'CancelRotateSecret',
       'CreateSecret',
@@ -445,9 +460,6 @@ export class Secretsmanager extends PolicyStatement {
       'GetResourcePolicy',
       'GetSecretValue',
       'ListSecretVersionIds'
-    ],
-    List: [
-      'ListSecrets'
     ],
     Tagging: [
       'TagResource',
@@ -474,6 +486,84 @@ export class Secretsmanager extends PolicyStatement {
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Secretsmanager.defaultPartition }:secretsmanager:${ region || '*' }:${ account || '*' }:secret:${ secretId }`);
+  }
+
+  /**
+   * Filters access by a key that is present in the request the user makes to the Secrets Manager service
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCancelRotateSecret()
+   * - .toCreateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names present in the request the user makes to the Secrets Manager service
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

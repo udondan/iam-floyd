@@ -2,6 +2,7 @@ amplifybackend:api
 amplifybackend:auth
 amplifybackend:backend
 amplifybackend:config
+amplifybackend:created-backend
 amplifybackend:environment
 amplifybackend:job
 amplifybackend:storage

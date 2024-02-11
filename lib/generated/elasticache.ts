@@ -102,7 +102,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Allows an IAM user or role to connect as a specified ElastiCache user to a node in a replication group
+   * Grants permission to connect as a specified ElastiCache user to an ElastiCache Replication Group or ElastiCache serverless cache
    *
    * Access Level: Write
    *
@@ -113,6 +113,24 @@ export class Elasticache extends PolicyStatement {
    */
   public toConnect() {
     return this.to('Connect');
+  }
+
+  /**
+   * Grants permission to make a copy of an existing serverless cache snapshot
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - elasticache:AddTagsToResource
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopyServerlessCacheSnapshot.html
+   */
+  public toCopyServerlessCacheSnapshot() {
+    return this.to('CopyServerlessCacheSnapshot');
   }
 
   /**
@@ -254,6 +272,51 @@ export class Elasticache extends PolicyStatement {
    */
   public toCreateReplicationGroup() {
     return this.to('CreateReplicationGroup');
+  }
+
+  /**
+   * Grants permission to create a serverless cache
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   * - ec2:CreateVpcEndpoint
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeTags
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcs
+   * - elasticache:AddTagsToResource
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateServerlessCache.html
+   */
+  public toCreateServerlessCache() {
+    return this.to('CreateServerlessCache');
+  }
+
+  /**
+   * Grants permission to create a copy of a serverless cache at a specific moment in time
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - elasticache:AddTagsToResource
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateServerlessCacheSnapshot.html
+   */
+  public toCreateServerlessCacheSnapshot() {
+    return this.to('CreateServerlessCacheSnapshot');
   }
 
   /**
@@ -444,6 +507,31 @@ export class Elasticache extends PolicyStatement {
    */
   public toDeleteReplicationGroup() {
     return this.to('DeleteReplicationGroup');
+  }
+
+  /**
+   * Grants permission to delete a serverless cache
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeTags
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteServerlessCache.html
+   */
+  public toDeleteServerlessCache() {
+    return this.to('DeleteServerlessCache');
+  }
+
+  /**
+   * Grants permission to delete a serverless cache snapshot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteServerlessCacheSnapshot.html
+   */
+  public toDeleteServerlessCacheSnapshot() {
+    return this.to('DeleteServerlessCacheSnapshot');
   }
 
   /**
@@ -642,6 +730,28 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list information about serverless cache snapshots
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServerlessCacheSnapshots.html
+   */
+  public toDescribeServerlessCacheSnapshots() {
+    return this.to('DescribeServerlessCacheSnapshots');
+  }
+
+  /**
+   * Grants permission to list serverless caches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServerlessCaches.html
+   */
+  public toDescribeServerlessCaches() {
+    return this.to('DescribeServerlessCaches');
+  }
+
+  /**
    * Grants permission to list details of the service updates
    *
    * Access Level: List
@@ -720,6 +830,22 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export a copy of a serverless cache at a specific moment in time to s3 bucket
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:DeleteObject
+   * - s3:ListAllMyBuckets
+   * - s3:PutObject
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ExportServerlessCacheSnapshot.html
+   */
+  public toExportServerlessCacheSnapshot() {
+    return this.to('ExportServerlessCacheSnapshot');
+  }
+
+  /**
    * Grants permission to failover the primary region to a selected secondary region of a global replication group
    *
    * Access Level: Write
@@ -764,6 +890,20 @@ export class Elasticache extends PolicyStatement {
    */
   public toIncreaseReplicaCount() {
     return this.to('IncreaseReplicaCount');
+  }
+
+  /**
+   * Grants permission to test an AZ power interruption for an ElastiCache resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#elasticache-actions-reference
+   */
+  public toInterruptClusterAzPower() {
+    return this.to('InterruptClusterAzPower');
   }
 
   /**
@@ -894,6 +1034,21 @@ export class Elasticache extends PolicyStatement {
    */
   public toModifyReplicationGroupShardConfiguration() {
     return this.to('ModifyReplicationGroupShardConfiguration');
+  }
+
+  /**
+   * Grants permission to modify parameters for a serverless cache
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeTags
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyServerlessCache.html
+   */
+  public toModifyServerlessCache() {
+    return this.to('ModifyServerlessCache');
   }
 
   /**
@@ -1048,6 +1203,20 @@ export class Elasticache extends PolicyStatement {
     return this.to('TestFailover');
   }
 
+  /**
+   * Grants permission to test a migration of data from hosted Redis on Amazon EC2 to ElastiCache for Redis
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestMigration.html
+   */
+  public toTestMigration() {
+    return this.to('TestMigration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1059,6 +1228,7 @@ export class Elasticache extends PolicyStatement {
       'BatchStopUpdateAction',
       'CompleteMigration',
       'Connect',
+      'CopyServerlessCacheSnapshot',
       'CopySnapshot',
       'CreateCacheCluster',
       'CreateCacheParameterGroup',
@@ -1066,6 +1236,8 @@ export class Elasticache extends PolicyStatement {
       'CreateCacheSubnetGroup',
       'CreateGlobalReplicationGroup',
       'CreateReplicationGroup',
+      'CreateServerlessCache',
+      'CreateServerlessCacheSnapshot',
       'CreateSnapshot',
       'CreateUser',
       'CreateUserGroup',
@@ -1077,19 +1249,24 @@ export class Elasticache extends PolicyStatement {
       'DeleteCacheSubnetGroup',
       'DeleteGlobalReplicationGroup',
       'DeleteReplicationGroup',
+      'DeleteServerlessCache',
+      'DeleteServerlessCacheSnapshot',
       'DeleteSnapshot',
       'DeleteUser',
       'DeleteUserGroup',
       'DisassociateGlobalReplicationGroup',
+      'ExportServerlessCacheSnapshot',
       'FailoverGlobalReplicationGroup',
       'IncreaseNodeGroupsInGlobalReplicationGroup',
       'IncreaseReplicaCount',
+      'InterruptClusterAzPower',
       'ModifyCacheCluster',
       'ModifyCacheParameterGroup',
       'ModifyCacheSubnetGroup',
       'ModifyGlobalReplicationGroup',
       'ModifyReplicationGroup',
       'ModifyReplicationGroupShardConfiguration',
+      'ModifyServerlessCache',
       'ModifyUser',
       'ModifyUserGroup',
       'PurchaseReservedCacheNodesOffering',
@@ -1098,7 +1275,8 @@ export class Elasticache extends PolicyStatement {
       'ResetCacheParameterGroup',
       'RevokeCacheSecurityGroupIngress',
       'StartMigration',
-      'TestFailover'
+      'TestFailover',
+      'TestMigration'
     ],
     List: [
       'DescribeCacheClusters',
@@ -1113,6 +1291,8 @@ export class Elasticache extends PolicyStatement {
       'DescribeReplicationGroups',
       'DescribeReservedCacheNodes',
       'DescribeReservedCacheNodesOfferings',
+      'DescribeServerlessCacheSnapshots',
+      'DescribeServerlessCaches',
       'DescribeServiceUpdates',
       'DescribeSnapshots',
       'DescribeUpdateActions',
@@ -1350,6 +1530,228 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type serverlesscache to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html
+   *
+   * @param serverlessCacheName - Identifier for the serverlessCacheName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifDataStorageUnit()
+   * - .ifEngineType()
+   * - .ifEngineVersion()
+   * - .ifKmsKeyId()
+   * - .ifMaximumDataStorage()
+   * - .ifMaximumECPUPerSecond()
+   * - .ifSnapshotRetentionLimit()
+   */
+  public onServerlesscache(serverlessCacheName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:serverlesscache:${ serverlessCacheName }`);
+  }
+
+  /**
+   * Adds a resource of type serverlesscachesnapshot to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html
+   *
+   * @param serverlessCacheSnapshotName - Identifier for the serverlessCacheSnapshotName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifKmsKeyId()
+   */
+  public onServerlesscachesnapshot(serverlessCacheSnapshotName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:serverlesscachesnapshot:${ serverlessCacheSnapshotName }`);
+  }
+
+  /**
+   * Filters actions based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCopyServerlessCacheSnapshot()
+   * - .toCopySnapshot()
+   * - .toCreateCacheCluster()
+   * - .toCreateCacheParameterGroup()
+   * - .toCreateCacheSecurityGroup()
+   * - .toCreateCacheSubnetGroup()
+   * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
+   * - .toCreateServerlessCacheSnapshot()
+   * - .toCreateSnapshot()
+   * - .toCreateUser()
+   * - .toCreateUserGroup()
+   * - .toPurchaseReservedCacheNodesOffering()
+   *
+   * Applies to resource types:
+   * - parametergroup
+   * - securitygroup
+   * - subnetgroup
+   * - replicationgroup
+   * - cluster
+   * - reserved-instance
+   * - snapshot
+   * - user
+   * - usergroup
+   * - serverlesscache
+   * - serverlesscachesnapshot
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toAuthorizeCacheSecurityGroupIngress()
+   * - .toBatchApplyUpdateAction()
+   * - .toBatchStopUpdateAction()
+   * - .toCompleteMigration()
+   * - .toConnect()
+   * - .toCopyServerlessCacheSnapshot()
+   * - .toCopySnapshot()
+   * - .toCreateCacheCluster()
+   * - .toCreateCacheParameterGroup()
+   * - .toCreateCacheSecurityGroup()
+   * - .toCreateCacheSubnetGroup()
+   * - .toCreateGlobalReplicationGroup()
+   * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
+   * - .toCreateServerlessCacheSnapshot()
+   * - .toCreateSnapshot()
+   * - .toCreateUser()
+   * - .toCreateUserGroup()
+   * - .toDecreaseReplicaCount()
+   * - .toDeleteCacheCluster()
+   * - .toDeleteCacheParameterGroup()
+   * - .toDeleteCacheSecurityGroup()
+   * - .toDeleteCacheSubnetGroup()
+   * - .toDeleteReplicationGroup()
+   * - .toDeleteServerlessCache()
+   * - .toDeleteServerlessCacheSnapshot()
+   * - .toDeleteSnapshot()
+   * - .toDeleteUser()
+   * - .toDeleteUserGroup()
+   * - .toDescribeCacheClusters()
+   * - .toDescribeCacheParameterGroups()
+   * - .toDescribeCacheParameters()
+   * - .toDescribeCacheSecurityGroups()
+   * - .toDescribeCacheSubnetGroups()
+   * - .toDescribeReplicationGroups()
+   * - .toDescribeReservedCacheNodes()
+   * - .toDescribeServerlessCacheSnapshots()
+   * - .toDescribeServerlessCaches()
+   * - .toDescribeSnapshots()
+   * - .toDescribeUpdateActions()
+   * - .toDescribeUserGroups()
+   * - .toDescribeUsers()
+   * - .toExportServerlessCacheSnapshot()
+   * - .toIncreaseReplicaCount()
+   * - .toInterruptClusterAzPower()
+   * - .toListAllowedNodeTypeModifications()
+   * - .toListTagsForResource()
+   * - .toModifyCacheCluster()
+   * - .toModifyCacheParameterGroup()
+   * - .toModifyCacheSubnetGroup()
+   * - .toModifyReplicationGroup()
+   * - .toModifyReplicationGroupShardConfiguration()
+   * - .toModifyServerlessCache()
+   * - .toModifyUser()
+   * - .toModifyUserGroup()
+   * - .toPurchaseReservedCacheNodesOffering()
+   * - .toRebootCacheCluster()
+   * - .toRemoveTagsFromResource()
+   * - .toResetCacheParameterGroup()
+   * - .toRevokeCacheSecurityGroupIngress()
+   * - .toStartMigration()
+   * - .toTestFailover()
+   * - .toTestMigration()
+   *
+   * Applies to resource types:
+   * - parametergroup
+   * - securitygroup
+   * - subnetgroup
+   * - replicationgroup
+   * - cluster
+   * - reserved-instance
+   * - snapshot
+   * - user
+   * - usergroup
+   * - serverlesscache
+   * - serverlesscachesnapshot
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCopyServerlessCacheSnapshot()
+   * - .toCopySnapshot()
+   * - .toCreateCacheCluster()
+   * - .toCreateCacheParameterGroup()
+   * - .toCreateCacheSecurityGroup()
+   * - .toCreateCacheSubnetGroup()
+   * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
+   * - .toCreateServerlessCacheSnapshot()
+   * - .toCreateSnapshot()
+   * - .toCreateUser()
+   * - .toCreateUserGroup()
+   * - .toPurchaseReservedCacheNodesOffering()
+   * - .toRemoveTagsFromResource()
+   *
+   * Applies to resource types:
+   * - parametergroup
+   * - securitygroup
+   * - subnetgroup
+   * - replicationgroup
+   * - cluster
+   * - reserved-instance
+   * - snapshot
+   * - user
+   * - usergroup
+   * - serverlesscache
+   * - serverlesscachesnapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the AtRestEncryptionEnabled parameter present in the request or default false value if parameter is not present
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
@@ -1468,6 +1870,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateReplicationGroup()
+   * - .toModifyReplicationGroup()
    *
    * Applies to resource types:
    * - replicationgroup
@@ -1480,6 +1883,25 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Filters access by the CacheUsageLimits.DataStorage.Unit parameter in the CreateServerlessCache and ModifyServerlessCache request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   * - .toModifyServerlessCache()
+   *
+   * Applies to resource types:
+   * - serverlesscache
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataStorageUnit(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataStorageUnit`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the engine type present in creation requests. For replication group creations, default engine 'redis' is used as key if parameter is not present
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
@@ -1487,11 +1909,13 @@ export class Elasticache extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCacheCluster()
    * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
    *
    * Applies to resource types:
    * - replicationgroup
    * - cluster
    * - globalreplicationgroup
+   * - serverlesscache
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1508,14 +1932,17 @@ export class Elasticache extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCacheCluster()
    * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
    * - .toModifyCacheCluster()
    * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
+   * - .toModifyServerlessCache()
    *
    * Applies to resource types:
    * - replicationgroup
    * - cluster
    * - globalreplicationgroup
+   * - serverlesscache
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1530,20 +1957,63 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
    *
    * Applies to actions:
+   * - .toCopyServerlessCacheSnapshot()
    * - .toCopySnapshot()
    * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
+   * - .toCreateServerlessCacheSnapshot()
    * - .toCreateSnapshot()
    *
    * Applies to resource types:
    * - replicationgroup
    * - snapshot
    * - globalreplicationgroup
+   * - serverlesscache
+   * - serverlesscachesnapshot
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKmsKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`KmsKeyId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the CacheUsageLimits.DataStorage.Maximum parameter in the CreateServerlessCache and ModifyServerlessCache request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   * - .toModifyServerlessCache()
+   *
+   * Applies to resource types:
+   * - serverlesscache
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaximumDataStorage(value: number | number[], operator?: Operator | string) {
+    return this.if(`MaximumDataStorage`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the CacheUsageLimits.ECPUPerSecond.Maximum parameter in the CreateServerlessCache and ModifyServerlessCache request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   * - .toModifyServerlessCache()
+   *
+   * Applies to resource types:
+   * - serverlesscache
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaximumECPUPerSecond(value: number | number[], operator?: Operator | string) {
+    return this.if(`MaximumECPUPerSecond`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1619,13 +2089,16 @@ export class Elasticache extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCacheCluster()
    * - .toCreateReplicationGroup()
+   * - .toCreateServerlessCache()
    * - .toModifyCacheCluster()
    * - .toModifyReplicationGroup()
+   * - .toModifyServerlessCache()
    *
    * Applies to resource types:
    * - replicationgroup
    * - cluster
    * - globalreplicationgroup
+   * - serverlesscache
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`

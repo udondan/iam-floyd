@@ -1,0 +1,3 @@
+osis:RequestTag/${TagKey}
+osis:ResourceTag/${TagKey}
+osis:TagKeys

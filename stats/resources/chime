@@ -5,6 +5,9 @@ chime:channel
 chime:channel-flow
 chime:media-insights-pipeline-configuration
 chime:media-pipeline
+chime:media-pipeline-kinesis-video-stream-pool
 chime:meeting
+chime:sip-media-application
+chime:voice-connector
 chime:voice-profile
 chime:voice-profile-domain

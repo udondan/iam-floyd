@@ -1,0 +1,6 @@
+q:GetConversation;Read
+q:GetTroubleshootingResults;Read
+q:SendMessage;Write
+q:StartConversation;Write
+q:StartTroubleshootingAnalysis;Write
+q:StartTroubleshootingResolutionExplanation;Write

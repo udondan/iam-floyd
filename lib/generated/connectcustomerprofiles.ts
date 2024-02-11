@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [profile](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html).
@@ -30,6 +30,21 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a calculated attribute definition in the domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateCalculatedAttributeDefinition.html
+   */
+  public toCreateCalculatedAttributeDefinition() {
+    return this.to('CreateCalculatedAttributeDefinition');
+  }
+
+  /**
    * Grants permission to create a Domain
    *
    * Access Level: Write
@@ -38,10 +53,32 @@ export class Profile extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
+  }
+
+  /**
+   * Grants permission to put an event stream in a domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PutRolePolicy
+   * - kinesis:DescribeStreamSummary
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateEventStream.html
+   */
+  public toCreateEventStream() {
+    return this.to('CreateEventStream');
   }
 
   /**
@@ -71,6 +108,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a calculated attribute definition in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteCalculatedAttributeDefinition.html
+   */
+  public toDeleteCalculatedAttributeDefinition() {
+    return this.to('DeleteCalculatedAttributeDefinition');
+  }
+
+  /**
    * Grants permission to delete a Domain
    *
    * Access Level: Write
@@ -79,6 +127,20 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
+  }
+
+  /**
+   * Grants permission to delete an event stream in a domain
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteEventStream.html
+   */
+  public toDeleteEventStream() {
+    return this.to('DeleteEventStream');
   }
 
   /**
@@ -148,6 +210,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to auto detect object type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DetectProfileObjectType.html
+   */
+  public toDetectProfileObjectType() {
+    return this.to('DetectProfileObjectType');
+  }
+
+  /**
    * Grants permission to get a preview of auto merging in a domain
    *
    * Access Level: Read
@@ -159,6 +232,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a calculated attribute definition in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeDefinition.html
+   */
+  public toGetCalculatedAttributeDefinition() {
+    return this.to('GetCalculatedAttributeDefinition');
+  }
+
+  /**
+   * Grants permission to retrieve a calculated attribute for a specific profile in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html
+   */
+  public toGetCalculatedAttributeForProfile() {
+    return this.to('GetCalculatedAttributeForProfile');
+  }
+
+  /**
    * Grants permission to get a specific domain in an account
    *
    * Access Level: Read
@@ -167,6 +262,20 @@ export class Profile extends PolicyStatement {
    */
   public toGetDomain() {
     return this.to('GetDomain');
+  }
+
+  /**
+   * Grants permission to get a specific event stream in a domain
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kinesis:DescribeStreamSummary
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetEventStream.html
+   */
+  public toGetEventStream() {
+    return this.to('GetEventStream');
   }
 
   /**
@@ -225,6 +334,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get all the similar profiles in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSimilarProfiles.html
+   */
+  public toGetSimilarProfiles() {
+    return this.to('GetSimilarProfiles');
+  }
+
+  /**
    * Grants permission to get workflow details in a domain
    *
    * Access Level: Read
@@ -258,6 +378,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the calculated attribute definitions in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListCalculatedAttributeDefinitions.html
+   */
+  public toListCalculatedAttributeDefinitions() {
+    return this.to('ListCalculatedAttributeDefinitions');
+  }
+
+  /**
+   * Grants permission to list all calculated attributes for a specific profile in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListCalculatedAttributesForProfile.html
+   */
+  public toListCalculatedAttributesForProfile() {
+    return this.to('ListCalculatedAttributesForProfile');
+  }
+
+  /**
    * Grants permission to list all the domains in an account
    *
    * Access Level: List
@@ -266,6 +408,17 @@ export class Profile extends PolicyStatement {
    */
   public toListDomains() {
     return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list all the event streams in a specific domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListEventStreams.html
+   */
+  public toListEventStreams() {
+    return this.to('ListEventStreams');
   }
 
   /**
@@ -321,6 +474,17 @@ export class Profile extends PolicyStatement {
    */
   public toListProfileObjects() {
     return this.to('ListProfileObjects');
+  }
+
+  /**
+   * Grants permission to list all the rule-based matching result in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRuleBasedMatches.html
+   */
+  public toListRuleBasedMatches() {
+    return this.to('ListRuleBasedMatches');
   }
 
   /**
@@ -429,7 +593,6 @@ export class Profile extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html
@@ -439,9 +602,23 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a calculated attribute definition in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateCalculatedAttributeDefinition.html
+   */
+  public toUpdateCalculatedAttributeDefinition() {
+    return this.to('UpdateCalculatedAttributeDefinition');
+  }
+
+  /**
    * Grants permission to update a Domain
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html
    */
@@ -463,10 +640,14 @@ export class Profile extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddProfileKey',
+      'CreateCalculatedAttributeDefinition',
       'CreateDomain',
+      'CreateEventStream',
       'CreateIntegrationWorkflow',
       'CreateProfile',
+      'DeleteCalculatedAttributeDefinition',
       'DeleteDomain',
+      'DeleteEventStream',
       'DeleteIntegration',
       'DeleteProfile',
       'DeleteProfileKey',
@@ -477,12 +658,17 @@ export class Profile extends PolicyStatement {
       'PutIntegration',
       'PutProfileObject',
       'PutProfileObjectType',
+      'UpdateCalculatedAttributeDefinition',
       'UpdateDomain',
       'UpdateProfile'
     ],
     Read: [
+      'DetectProfileObjectType',
       'GetAutoMergingPreview',
+      'GetCalculatedAttributeDefinition',
+      'GetCalculatedAttributeForProfile',
       'GetDomain',
+      'GetEventStream',
       'GetIdentityResolutionJob',
       'GetIntegration',
       'GetProfileObjectType',
@@ -494,13 +680,18 @@ export class Profile extends PolicyStatement {
     ],
     List: [
       'GetMatches',
+      'GetSimilarProfiles',
       'ListAccountIntegrations',
+      'ListCalculatedAttributeDefinitions',
+      'ListCalculatedAttributesForProfile',
       'ListDomains',
+      'ListEventStreams',
       'ListIdentityResolutionJobs',
       'ListIntegrations',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
       'ListProfileObjects',
+      'ListRuleBasedMatches',
       'ListWorkflows'
     ],
     Tagging: [
@@ -560,5 +751,105 @@ export class Profile extends PolicyStatement {
    */
   public onIntegrations(domainName: string, uri: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/integrations/${ uri }`);
+  }
+
+  /**
+   * Adds a resource of type event-streams to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param eventStreamName - Identifier for the eventStreamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventStreams(domainName: string, eventStreamName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/event-streams/${ eventStreamName }`);
+  }
+
+  /**
+   * Adds a resource of type calculated-attributes to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param calculatedAttributeName - Identifier for the calculatedAttributeName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCalculatedAttributes(domainName: string, calculatedAttributeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/calculated-attributes/${ calculatedAttributeName }`);
+  }
+
+  /**
+   * Filters access by a key that is present in the request the user makes to the customer profile service
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateCalculatedAttributeDefinition()
+   * - .toCreateDomain()
+   * - .toCreateEventStream()
+   * - .toCreateIntegrationWorkflow()
+   * - .toPutIntegration()
+   * - .toPutProfileObjectType()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to resource types:
+   * - domains
+   * - object-types
+   * - integrations
+   * - event-streams
+   * - calculated-attributes
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names present in the request the user makes to the customer profile service
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateCalculatedAttributeDefinition()
+   * - .toCreateDomain()
+   * - .toCreateEventStream()
+   * - .toCreateIntegrationWorkflow()
+   * - .toPutIntegration()
+   * - .toPutProfileObjectType()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

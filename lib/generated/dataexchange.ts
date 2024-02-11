@@ -291,12 +291,29 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a notification to subscribers of a data set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendDataSetNotification.html
+   */
+  public toSendDataSetNotification() {
+    return this.to('SendDataSetNotification');
+  }
+
+  /**
    * Grants permission to start a job
    *
    * Access Level: Write
    *
    * Dependent actions:
    * - dataexchange:CreateAsset
+   * - dataexchange:DeleteDataSet
+   * - dataexchange:GetAsset
+   * - dataexchange:GetDataSet
+   * - dataexchange:GetRevision
+   * - dataexchange:PublishDataSet
+   * - redshift:AuthorizeDataShare
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html
    */
@@ -395,6 +412,7 @@ export class Dataexchange extends PolicyStatement {
       'PublishDataSet',
       'RevokeRevision',
       'SendApiAsset',
+      'SendDataSetNotification',
       'StartJob',
       'UpdateAsset',
       'UpdateDataSet',
@@ -544,6 +562,59 @@ export class Dataexchange extends PolicyStatement {
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:event-actions/${ eventActionId }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for each of the mandatory tags in the create request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataSet()
+   * - .toCreateRevision()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - data-sets
+   * - revisions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the create request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataSet()
+   * - .toCreateRevision()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

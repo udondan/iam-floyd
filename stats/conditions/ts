@@ -1,0 +1,3 @@
+ts:RequestTag/${TagKey}
+ts:ResourceTag/${TagKey}
+ts:TagKeys

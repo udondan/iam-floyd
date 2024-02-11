@@ -265,7 +265,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Amazon Aurora DB cluster
+   * Grants permission to create a new DB cluster
    *
    * Access Level: Write
    *
@@ -366,6 +366,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    * - .ifManageMasterUserPassword()
+   * - .ifMultiTenant()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -374,6 +375,7 @@ export class Rds extends PolicyStatement {
    * - kms:DescribeKey
    * - kms:GenerateDataKey
    * - rds:AddTagsToResource
+   * - rds:CreateTenantDatabase
    * - secretsmanager:CreateSecret
    * - secretsmanager:TagResource
    *
@@ -475,6 +477,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new Aurora Limitless Database DB shard group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBShardGroup.html
+   */
+  public toCreateDBShardGroup() {
+    return this.to('CreateDBShardGroup');
+  }
+
+  /**
    * Grants permission to create a DBSnapshot
    *
    * Access Level: Write
@@ -544,6 +557,27 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Aurora zero-ETL integration with Redshift
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   * - rds:AddTagsToResource
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateIntegration.html
+   */
+  public toCreateIntegration() {
+    return this.to('CreateIntegration');
+  }
+
+  /**
    * Grants permission to create a new option group
    *
    * Access Level: Write
@@ -563,6 +597,25 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new tenant database
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTenantDatabaseName()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateTenantDatabase.html
+   */
+  public toCreateTenantDatabase() {
+    return this.to('CreateTenantDatabase');
+  }
+
+  /**
    * Grants permission to access a resource in the remote Region when executing cross-Region operations, such as cross-Region snapshot copy or cross-Region read replica creation
    *
    * Access Level: Write
@@ -579,10 +632,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:DeleteDBCluster
@@ -618,6 +668,17 @@ export class Rds extends PolicyStatement {
    */
   public toDeleteDBCluster() {
     return this.to('DeleteDBCluster');
+  }
+
+  /**
+   * Grants permission to delete cluster automated backups based on the source cluster's DbClusterResourceId value or the restorable cluster's resource ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterAutomatedBackup.html
+   */
+  public toDeleteDBClusterAutomatedBackup() {
+    return this.to('DeleteDBClusterAutomatedBackup');
   }
 
   /**
@@ -658,6 +719,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - rds:DeleteTenantDatabase
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html
    */
   public toDeleteDBInstance() {
@@ -665,7 +729,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID
+   * Grants permission to delete automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID
    *
    * Access Level: Write
    *
@@ -720,6 +784,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Aurora Limitless Database DB shard group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBShardGroup.html
+   */
+  public toDeleteDBShardGroup() {
+    return this.to('DeleteDBShardGroup');
+  }
+
+  /**
    * Grants permission to delete a DBSnapshot
    *
    * Access Level: Write
@@ -764,6 +839,20 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Aurora zero-ETL integration with Redshift
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteIntegration.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
    * Grants permission to delete an existing option group
    *
    * Access Level: Write
@@ -772,6 +861,17 @@ export class Rds extends PolicyStatement {
    */
   public toDeleteOptionGroup() {
     return this.to('DeleteOptionGroup');
+  }
+
+  /**
+   * Grants permission to delete a tenant database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteTenantDatabase.html
+   */
+  public toDeleteTenantDatabase() {
+    return this.to('DeleteTenantDatabase');
   }
 
   /**
@@ -816,6 +916,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeCertificates() {
     return this.to('DescribeCertificates');
+  }
+
+  /**
+   * Grants permission to return a list of cluster automated backups for both current and deleted clusters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterAutomatedBackups.html
+   */
+  public toDescribeDBClusterAutomatedBackups() {
+    return this.to('DescribeDBClusterAutomatedBackups');
   }
 
   /**
@@ -1006,6 +1117,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list recommendation details
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBRecommendations.html
+   */
+  public toDescribeDBRecommendations() {
+    return this.to('DescribeDBRecommendations');
+  }
+
+  /**
    * Grants permission to return a list of DBSecurityGroup descriptions
    *
    * Access Level: List
@@ -1014,6 +1136,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeDBSecurityGroups() {
     return this.to('DescribeDBSecurityGroups');
+  }
+
+  /**
+   * Grants permission to return information about all Aurora Limitless Database DB shard groups for this account. You can filter by shard group(s)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBShardGroups.html
+   */
+  public toDescribeDBShardGroups() {
+    return this.to('DescribeDBShardGroups');
   }
 
   /**
@@ -1047,6 +1180,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeDBSubnetGroups() {
     return this.to('DescribeDBSubnetGroups');
+  }
+
+  /**
+   * Grants permission to return information about tenant databases in DB snapshots. You can filter by Region or snapshot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotTenantDatabases.html
+   */
+  public toDescribeDbSnapshotTenantDatabases() {
+    return this.to('DescribeDbSnapshotTenantDatabases');
   }
 
   /**
@@ -1124,6 +1268,20 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeGlobalClusters() {
     return this.to('DescribeGlobalClusters');
+  }
+
+  /**
+   * Grants permission to describe an Aurora zero-ETL integration with Redshift
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeIntegrations.html
+   */
+  public toDescribeIntegrations() {
+    return this.to('DescribeIntegrations');
   }
 
   /**
@@ -1226,6 +1384,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about provisioned tenant databases. You can filter by Region or snapshot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeTenantDatabases.html
+   */
+  public toDescribeTenantDatabases() {
+    return this.to('DescribeTenantDatabases');
+  }
+
+  /**
    * Grants permission to list available modifications you can make to your DB instance
    *
    * Access Level: List
@@ -1234,6 +1403,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeValidDBInstanceModifications() {
     return this.to('DescribeValidDBInstanceModifications');
+  }
+
+  /**
+   * Grants permission to disable http endpoint for a DB cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DisableHttpEndpoint.html
+   */
+  public toDisableHttpEndpoint() {
+    return this.to('DisableHttpEndpoint');
   }
 
   /**
@@ -1256,6 +1436,17 @@ export class Rds extends PolicyStatement {
    */
   public toDownloadDBLogFilePortion() {
     return this.to('DownloadDBLogFilePortion');
+  }
+
+  /**
+   * Grants permission to enable http endpoint for a DB cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_EnableHttpEndpoint.html
+   */
+  public toEnableHttpEndpoint() {
+    return this.to('EnableHttpEndpoint');
   }
 
   /**
@@ -1314,7 +1505,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster
+   * Grants permission to modify current cluster capacity for an Amazon Aurora Serverless DB cluster
    *
    * Access Level: Write
    *
@@ -1403,6 +1594,7 @@ export class Rds extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifManageMasterUserPassword()
+   * - .ifMultiTenant()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1410,6 +1602,8 @@ export class Rds extends PolicyStatement {
    * - kms:Decrypt
    * - kms:DescribeKey
    * - kms:GenerateDataKey
+   * - rds:AddTagsToResource
+   * - rds:CreateTenantDatabase
    * - secretsmanager:CreateSecret
    * - secretsmanager:RotateSecret
    * - secretsmanager:TagResource
@@ -1465,6 +1659,28 @@ export class Rds extends PolicyStatement {
    */
   public toModifyDBProxyTargetGroup() {
     return this.to('ModifyDBProxyTargetGroup');
+  }
+
+  /**
+   * Grants permission to modify recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBRecommendation.html
+   */
+  public toModifyDBRecommendation() {
+    return this.to('ModifyDBRecommendation');
+  }
+
+  /**
+   * Grants permission to modify properties of an Aurora Limitless Database DB shard group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBShardGroup.html
+   */
+  public toModifyDBShardGroup() {
+    return this.to('ModifyDBShardGroup');
   }
 
   /**
@@ -1548,6 +1764,20 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a tenant database
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTenantDatabaseName()
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyTenantDatabase.html
+   */
+  public toModifyTenantDatabase() {
+    return this.to('ModifyTenantDatabase');
+  }
+
+  /**
    * Grants permission to promote a Read Replica DB instance to a standalone DB instance
    *
    * Access Level: Write
@@ -1607,6 +1837,17 @@ export class Rds extends PolicyStatement {
    */
   public toRebootDBInstance() {
     return this.to('RebootDBInstance');
+  }
+
+  /**
+   * Grants permission to reboot an Aurora Limitless Database DB shard group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBShardGroup.html
+   */
+  public toRebootDBShardGroup() {
+    return this.to('RebootDBShardGroup');
   }
 
   /**
@@ -1800,6 +2041,7 @@ export class Rds extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    * - rds:AddTagsToResource
+   * - rds:CreateTenantDatabase
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
    */
@@ -1848,6 +2090,7 @@ export class Rds extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    * - rds:AddTagsToResource
+   * - rds:CreateTenantDatabase
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
    */
@@ -1974,10 +2217,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:ModifyDBCluster
@@ -1989,6 +2229,17 @@ export class Rds extends PolicyStatement {
    */
   public toSwitchoverBlueGreenDeployment() {
     return this.to('SwitchoverBlueGreenDeployment');
+  }
+
+  /**
+   * Grants permission to switchover a global cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverGlobalCluster.html
+   */
+  public toSwitchoverGlobalCluster() {
+    return this.to('SwitchoverGlobalCluster');
   }
 
   /**
@@ -2027,15 +2278,19 @@ export class Rds extends PolicyStatement {
       'CreateDBProxy',
       'CreateDBProxyEndpoint',
       'CreateDBSecurityGroup',
+      'CreateDBShardGroup',
       'CreateDBSnapshot',
       'CreateDBSubnetGroup',
       'CreateEventSubscription',
       'CreateGlobalCluster',
+      'CreateIntegration',
       'CreateOptionGroup',
+      'CreateTenantDatabase',
       'CrossRegionCommunication',
       'DeleteBlueGreenDeployment',
       'DeleteCustomDBEngineVersion',
       'DeleteDBCluster',
+      'DeleteDBClusterAutomatedBackup',
       'DeleteDBClusterEndpoint',
       'DeleteDBClusterParameterGroup',
       'DeleteDBClusterSnapshot',
@@ -2045,12 +2300,17 @@ export class Rds extends PolicyStatement {
       'DeleteDBProxy',
       'DeleteDBProxyEndpoint',
       'DeleteDBSecurityGroup',
+      'DeleteDBShardGroup',
       'DeleteDBSnapshot',
       'DeleteDBSubnetGroup',
       'DeleteEventSubscription',
       'DeleteGlobalCluster',
+      'DeleteIntegration',
       'DeleteOptionGroup',
+      'DeleteTenantDatabase',
       'DeregisterDBProxyTargets',
+      'DisableHttpEndpoint',
+      'EnableHttpEndpoint',
       'FailoverDBCluster',
       'FailoverGlobalCluster',
       'ModifyActivityStream',
@@ -2066,6 +2326,8 @@ export class Rds extends PolicyStatement {
       'ModifyDBProxy',
       'ModifyDBProxyEndpoint',
       'ModifyDBProxyTargetGroup',
+      'ModifyDBRecommendation',
+      'ModifyDBShardGroup',
       'ModifyDBSnapshot',
       'ModifyDBSnapshotAttribute',
       'ModifyDBSubnetGroup',
@@ -2073,11 +2335,13 @@ export class Rds extends PolicyStatement {
       'ModifyGlobalCluster',
       'ModifyOptionGroup',
       'ModifyRecommendation',
+      'ModifyTenantDatabase',
       'PromoteReadReplica',
       'PromoteReadReplicaDBCluster',
       'PurchaseReservedDBInstancesOffering',
       'RebootDBCluster',
       'RebootDBInstance',
+      'RebootDBShardGroup',
       'RegisterDBProxyTargets',
       'RemoveFromGlobalCluster',
       'RemoveRoleFromDBCluster',
@@ -2102,6 +2366,7 @@ export class Rds extends PolicyStatement {
       'StopDBInstance',
       'StopDBInstanceAutomatedBackupsReplication',
       'SwitchoverBlueGreenDeployment',
+      'SwitchoverGlobalCluster',
       'SwitchoverReadReplica'
     ],
     Tagging: [
@@ -2115,6 +2380,7 @@ export class Rds extends PolicyStatement {
       'DescribeAccountAttributes',
       'DescribeBlueGreenDeployments',
       'DescribeCertificates',
+      'DescribeDBClusterAutomatedBackups',
       'DescribeDBClusterBacktracks',
       'DescribeDBClusterEndpoints',
       'DescribeDBClusterParameterGroups',
@@ -2132,10 +2398,13 @@ export class Rds extends PolicyStatement {
       'DescribeDBProxyEndpoints',
       'DescribeDBProxyTargetGroups',
       'DescribeDBProxyTargets',
+      'DescribeDBRecommendations',
       'DescribeDBSecurityGroups',
+      'DescribeDBShardGroups',
       'DescribeDBSnapshotAttributes',
       'DescribeDBSnapshots',
       'DescribeDBSubnetGroups',
+      'DescribeDbSnapshotTenantDatabases',
       'DescribeEngineDefaultClusterParameters',
       'DescribeEngineDefaultParameters',
       'DescribeEventCategories',
@@ -2143,6 +2412,7 @@ export class Rds extends PolicyStatement {
       'DescribeEvents',
       'DescribeExportTasks',
       'DescribeGlobalClusters',
+      'DescribeIntegrations',
       'DescribeOptionGroupOptions',
       'DescribeOptionGroups',
       'DescribeOrderableDBInstanceOptions',
@@ -2150,6 +2420,7 @@ export class Rds extends PolicyStatement {
       'DescribeReservedDBInstances',
       'DescribeReservedDBInstancesOfferings',
       'DescribeSourceRegions',
+      'DescribeTenantDatabases',
       'DescribeValidDBInstanceModifications'
     ],
     Read: [
@@ -2177,6 +2448,48 @@ export class Rds extends PolicyStatement {
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+  }
+
+  /**
+   * Adds a resource of type shardgrp to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Overview.DBShardGroup.html
+   *
+   * @param dbShardGroupResourceId - Identifier for the dbShardGroupResourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onShardgrp(dbShardGroupResourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:shard-group:${ dbShardGroupResourceId }`);
+  }
+
+  /**
+   * Adds a resource of type cluster-auto-backup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html
+   *
+   * @param dbClusterAutomatedBackupId - Identifier for the dbClusterAutomatedBackupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onClusterAutoBackup(dbClusterAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
+  }
+
+  /**
+   * Adds a resource of type auto-backup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
+   *
+   * @param dbInstanceAutomatedBackupId - Identifier for the dbInstanceAutomatedBackupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutoBackup(dbInstanceAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:auto-backup:${ dbInstanceAutomatedBackupId }`);
   }
 
   /**
@@ -2499,6 +2812,193 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html
+   *
+   * @param integrationIdentifier - Identifier for the integrationIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegration(integrationIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:integration:${ integrationIdentifier }`);
+  }
+
+  /**
+   * Adds a resource of type snapshot-tenant-database to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.single-tenant.snapshots.html#br-cdb.db-snapshots
+   *
+   * @param snapshotName - Identifier for the snapshotName.
+   * @param tenantResourceId - Identifier for the tenantResourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSnapshotTenantDatabase(snapshotName: string, tenantResourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot-tenant-database:${ snapshotName }:${ tenantResourceId }`);
+  }
+
+  /**
+   * Adds a resource of type tenant-database to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.CDBs.html#multi-tenant-configuration
+   *
+   * @param tenantResourceId - Identifier for the tenantResourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTenantDatabase(tenantResourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:tenant-database:${ tenantResourceId }`);
+  }
+
+  /**
+   * Filters access by the set of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCopyDBClusterParameterGroup()
+   * - .toCopyDBClusterSnapshot()
+   * - .toCopyDBParameterGroup()
+   * - .toCopyDBSnapshot()
+   * - .toCopyOptionGroup()
+   * - .toCreateBlueGreenDeployment()
+   * - .toCreateCustomDBEngineVersion()
+   * - .toCreateDBCluster()
+   * - .toCreateDBClusterEndpoint()
+   * - .toCreateDBClusterParameterGroup()
+   * - .toCreateDBClusterSnapshot()
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBParameterGroup()
+   * - .toCreateDBProxy()
+   * - .toCreateDBProxyEndpoint()
+   * - .toCreateDBSecurityGroup()
+   * - .toCreateDBSnapshot()
+   * - .toCreateDBSubnetGroup()
+   * - .toCreateEventSubscription()
+   * - .toCreateIntegration()
+   * - .toCreateOptionGroup()
+   * - .toCreateTenantDatabase()
+   * - .toPurchaseReservedDBInstancesOffering()
+   * - .toRemoveTagsFromResource()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the set of tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateBlueGreenDeployment()
+   * - .toDeleteBlueGreenDeployment()
+   * - .toDeleteIntegration()
+   * - .toDescribeIntegrations()
+   * - .toSwitchoverBlueGreenDeployment()
+   *
+   * Applies to resource types:
+   * - cluster
+   * - cluster-endpoint
+   * - cluster-pg
+   * - cluster-snapshot
+   * - db
+   * - es
+   * - og
+   * - pg
+   * - proxy
+   * - proxy-endpoint
+   * - ri
+   * - secgrp
+   * - snapshot
+   * - subgrp
+   * - target-group
+   * - cev
+   * - deployment
+   * - integration
+   * - snapshot-tenant-database
+   * - tenant-database
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the set of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCopyDBClusterParameterGroup()
+   * - .toCopyDBClusterSnapshot()
+   * - .toCopyDBParameterGroup()
+   * - .toCopyDBSnapshot()
+   * - .toCopyOptionGroup()
+   * - .toCreateBlueGreenDeployment()
+   * - .toCreateCustomDBEngineVersion()
+   * - .toCreateDBCluster()
+   * - .toCreateDBClusterEndpoint()
+   * - .toCreateDBClusterParameterGroup()
+   * - .toCreateDBClusterSnapshot()
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBParameterGroup()
+   * - .toCreateDBProxy()
+   * - .toCreateDBProxyEndpoint()
+   * - .toCreateDBSecurityGroup()
+   * - .toCreateDBSnapshot()
+   * - .toCreateDBSubnetGroup()
+   * - .toCreateEventSubscription()
+   * - .toCreateIntegration()
+   * - .toCreateOptionGroup()
+   * - .toCreateTenantDatabase()
+   * - .toPurchaseReservedDBInstancesOffering()
+   * - .toRemoveTagsFromResource()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the type of backup target. One of: REGION, OUTPOSTS
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
@@ -2644,6 +3144,22 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Filters access by the value that specifies whether the DB instance is in the multi-tenant configuration
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBInstance()
+   * - .toModifyDBInstance()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMultiTenant(value: string | string[], operator?: Operator | string) {
+    return this.if(`MultiTenant`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
@@ -2704,6 +3220,22 @@ export class Rds extends PolicyStatement {
    */
   public ifStorageSize(value: number | number[], operator?: Operator | string) {
     return this.if(`StorageSize`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the tenant database name in CreateTenantDatabase and by the new tenant database name in ModifyTenantDatabase
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateTenantDatabase()
+   * - .toModifyTenantDatabase()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTenantDatabaseName(value: string | string[], operator?: Operator | string) {
+    return this.if(`TenantDatabaseName`, value, operator || 'StringLike');
   }
 
   /**
@@ -2865,8 +3397,8 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
+   * - .toCreateIntegration()
    * - .toCreateOptionGroup()
-   * - .toDeleteBlueGreenDeployment()
    * - .toRemoveTagsFromResource()
    * - .toRestoreDBClusterFromS3()
    * - .toRestoreDBClusterFromSnapshot()
@@ -2874,7 +3406,6 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
    * - .toRestoreDBInstanceToPointInTime()
-   * - .toSwitchoverBlueGreenDeployment()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

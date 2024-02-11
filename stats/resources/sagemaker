@@ -4,6 +4,7 @@ sagemaker:app
 sagemaker:app-image-config
 sagemaker:artifact
 sagemaker:automl-job
+sagemaker:cluster
 sagemaker:code-repository
 sagemaker:compilation-job
 sagemaker:context
@@ -27,6 +28,7 @@ sagemaker:human-task-ui
 sagemaker:hyper-parameter-tuning-job
 sagemaker:image
 sagemaker:image-version
+sagemaker:inference-component
 sagemaker:inference-experiment
 sagemaker:inference-recommendations-job
 sagemaker:labeling-job
@@ -47,6 +49,7 @@ sagemaker:pipeline
 sagemaker:pipeline-execution
 sagemaker:processing-job
 sagemaker:project
+sagemaker:sagemaker-catalog
 sagemaker:shared-model
 sagemaker:shared-model-event
 sagemaker:space

@@ -12,6 +12,7 @@ billingconductor:DeletePricingPlan;Write
 billingconductor:DeletePricingRule;Write
 billingconductor:DisassociateAccounts;Write
 billingconductor:DisassociatePricingRules;Write
+billingconductor:GetBillingGroupCostReport;Read
 billingconductor:ListAccountAssociations;List
 billingconductor:ListBillingGroupCostReports;Read
 billingconductor:ListBillingGroups;Read

@@ -110,7 +110,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
   /**
    * Grants permission to list tags for a scalable target
    *
-   * Access Level: Tagging
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_ListTagsForResource.html
    */
@@ -210,10 +210,10 @@ export class ApplicationAutoscaling extends PolicyStatement {
       'DescribeScalableTargets',
       'DescribeScalingActivities',
       'DescribeScalingPolicies',
-      'DescribeScheduledActions'
+      'DescribeScheduledActions',
+      'ListTagsForResource'
     ],
     Tagging: [
-      'ListTagsForResource',
       'TagResource',
       'UntagResource'
     ]
@@ -274,5 +274,55 @@ export class ApplicationAutoscaling extends PolicyStatement {
    */
   public ifServiceNamespace(value: string | string[], operator?: Operator | string) {
     return this.if(`service-namespace`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toRegisterScalableTarget()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to resource types:
+   * - ScalableTarget
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toRegisterScalableTarget()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,9 @@
 ivs:Channel
+ivs:Composition
+ivs:Encoder-Configuration
 ivs:Playback-Key-Pair
+ivs:Playback-Restriction-Policy
 ivs:Recording-Configuration
 ivs:Stage
+ivs:Storage-Configuration
 ivs:Stream-Key

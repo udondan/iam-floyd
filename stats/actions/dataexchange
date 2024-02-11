@@ -22,6 +22,7 @@ dataexchange:ListTagsForResource;List
 dataexchange:PublishDataSet;Write
 dataexchange:RevokeRevision;Write
 dataexchange:SendApiAsset;Write
+dataexchange:SendDataSetNotification;Write
 dataexchange:StartJob;Write
 dataexchange:TagResource;Tagging
 dataexchange:UntagResource;Tagging

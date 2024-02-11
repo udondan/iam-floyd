@@ -19,6 +19,43 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch get service level indicator report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toBatchGetServiceLevelIndicatorReport() {
+    return this.to('BatchGetServiceLevelIndicatorReport');
+  }
+
+  /**
+   * Grants permission to batch retrieve a service level objective budget report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toBatchGetServiceLevelObjectiveBudgetReport() {
+    return this.to('BatchGetServiceLevelObjectiveBudgetReport');
+  }
+
+  /**
+   * Grants permission to create a service level objective
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toCreateServiceLevelObjective() {
+    return this.to('CreateServiceLevelObjective');
+  }
+
+  /**
    * Grants permission to delete a collection of alarms
    *
    * Access Level: Write
@@ -71,6 +108,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toDeleteMetricStream() {
     return this.to('DeleteMetricStream');
+  }
+
+  /**
+   * Grants permission to delete a service level objective
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toDeleteServiceLevelObjective() {
+    return this.to('DeleteServiceLevelObjective');
   }
 
   /**
@@ -173,6 +221,28 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable a CloudWatch topology discovery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toEnableTopologyDiscovery() {
+    return this.to('EnableTopologyDiscovery');
+  }
+
+  /**
+   * Grants permission to generate a Metrics Insights or Logs Insights query string from a natural language prompt
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-query-assist.html
+   */
+  public toGenerateQuery() {
+    return this.to('GenerateQuery');
+  }
+
+  /**
    * Grants permission to display the details of the CloudWatch dashboard you specify
    *
    * Access Level: Read
@@ -239,6 +309,61 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toGetService() {
+    return this.to('GetService');
+  }
+
+  /**
+   * Grants permission to retrieve service data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetServiceData() {
+    return this.to('GetServiceData');
+  }
+
+  /**
+   * Grants permission to retrieve information about service level objective
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toGetServiceLevelObjective() {
+    return this.to('GetServiceLevelObjective');
+  }
+
+  /**
+   * Grants permission to retrieve a CloudWatch topology discovery status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetTopologyDiscoveryStatus() {
+    return this.to('GetTopologyDiscoveryStatus');
+  }
+
+  /**
+   * Grants permission to retrieve a CloudWatch topology map
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toGetTopologyMap() {
+    return this.to('GetTopologyMap');
+  }
+
+  /**
    * Grants permission to share CloudWatch resources with a monitoring account
    *
    * Access Level: Write
@@ -296,6 +421,28 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toListMetrics() {
     return this.to('ListMetrics');
+  }
+
+  /**
+   * Grants permission to list service level objectives
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toListServiceLevelObjectives() {
+    return this.to('ListServiceLevelObjectives');
+  }
+
+  /**
+   * Grants permission to list services
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toListServices() {
+    return this.to('ListServices');
   }
 
   /**
@@ -486,17 +633,53 @@ export class Cloudwatch extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update a service level objective
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Monitoring-Sections.html#ApplicationSignals-PreviewSDK
+   */
+  public toUpdateServiceLevelObjective() {
+    return this.to('UpdateServiceLevelObjective');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'BatchGetServiceLevelIndicatorReport',
+      'BatchGetServiceLevelObjectiveBudgetReport',
+      'DescribeAlarmHistory',
+      'DescribeAlarms',
+      'DescribeAlarmsForMetric',
+      'DescribeAnomalyDetectors',
+      'DescribeInsightRules',
+      'GenerateQuery',
+      'GetDashboard',
+      'GetInsightRuleReport',
+      'GetMetricData',
+      'GetMetricStatistics',
+      'GetMetricStream',
+      'GetMetricWidgetImage',
+      'GetService',
+      'GetServiceData',
+      'GetServiceLevelObjective',
+      'GetTopologyDiscoveryStatus',
+      'GetTopologyMap',
+      'ListManagedInsightRules'
+    ],
     Write: [
+      'CreateServiceLevelObjective',
       'DeleteAlarms',
       'DeleteAnomalyDetector',
       'DeleteDashboards',
       'DeleteInsightRules',
       'DeleteMetricStream',
+      'DeleteServiceLevelObjective',
       'DisableAlarmActions',
       'DisableInsightRules',
       'EnableAlarmActions',
       'EnableInsightRules',
+      'EnableTopologyDiscovery',
       'Link',
       'PutAnomalyDetector',
       'PutCompositeAlarm',
@@ -508,26 +691,15 @@ export class Cloudwatch extends PolicyStatement {
       'PutMetricStream',
       'SetAlarmState',
       'StartMetricStreams',
-      'StopMetricStreams'
-    ],
-    Read: [
-      'DescribeAlarmHistory',
-      'DescribeAlarms',
-      'DescribeAlarmsForMetric',
-      'DescribeAnomalyDetectors',
-      'DescribeInsightRules',
-      'GetDashboard',
-      'GetInsightRuleReport',
-      'GetMetricData',
-      'GetMetricStatistics',
-      'GetMetricStream',
-      'GetMetricWidgetImage',
-      'ListManagedInsightRules'
+      'StopMetricStreams',
+      'UpdateServiceLevelObjective'
     ],
     List: [
       'ListDashboards',
       'ListMetricStreams',
       'ListMetrics',
+      'ListServiceLevelObjectives',
+      'ListServices',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -601,6 +773,107 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type slo to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param sloName - Identifier for the sloName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:slo/${ sloName }`);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param uniqueAttributesHex - Identifier for the uniqueAttributesHex.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onService(serviceName: string, uniqueAttributesHex: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:service/${ serviceName }-${ uniqueAttributesHex }`);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateServiceLevelObjective()
+   * - .toListManagedInsightRules()
+   * - .toPutCompositeAlarm()
+   * - .toPutInsightRule()
+   * - .toPutManagedInsightRules()
+   * - .toPutMetricAlarm()
+   * - .toPutMetricStream()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - alarm
+   * - insight-rule
+   * - metric-stream
+   * - slo
+   * - service
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateServiceLevelObjective()
+   * - .toListManagedInsightRules()
+   * - .toPutCompositeAlarm()
+   * - .toPutInsightRule()
+   * - .toPutManagedInsightRules()
+   * - .toPutMetricAlarm()
+   * - .toPutMetricStream()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters actions based on defined alarm actions
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-alarm-actions.html
@@ -656,9 +929,9 @@ export class Cloudwatch extends PolicyStatement {
    * - .toPutManagedInsightRules()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRequestManagedResourceARNs(value: string | string[], operator?: Operator | string) {
-    return this.if(`requestManagedResourceARNs`, value, operator || 'StringLike');
+    return this.if(`requestManagedResourceARNs`, value, operator || 'ArnLike');
   }
 }

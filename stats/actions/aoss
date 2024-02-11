@@ -1,12 +1,18 @@
+aoss:APIAccessAll;Write
 aoss:BatchGetCollection;Read
+aoss:BatchGetEffectiveLifecyclePolicy;Read
+aoss:BatchGetLifecyclePolicy;Read
 aoss:BatchGetVpcEndpoint;Read
 aoss:CreateAccessPolicy;Write
 aoss:CreateCollection;Write
+aoss:CreateLifecyclePolicy;Write
 aoss:CreateSecurityConfig;Write
 aoss:CreateSecurityPolicy;Write
 aoss:CreateVpcEndpoint;Write
+aoss:DashboardsAccessAll;Write
 aoss:DeleteAccessPolicy;Write
 aoss:DeleteCollection;Write
+aoss:DeleteLifecyclePolicy;Write
 aoss:DeleteSecurityConfig;Write
 aoss:DeleteSecurityPolicy;Write
 aoss:DeleteVpcEndpoint;Write
@@ -17,6 +23,7 @@ aoss:GetSecurityConfig;Read
 aoss:GetSecurityPolicy;Read
 aoss:ListAccessPolicies;List
 aoss:ListCollections;List
+aoss:ListLifecyclePolicies;List
 aoss:ListSecurityConfigs;List
 aoss:ListSecurityPolicies;List
 aoss:ListTagsForResource;List
@@ -26,6 +33,7 @@ aoss:UntagResource;Write
 aoss:UpdateAccessPolicy;Write
 aoss:UpdateAccountSettings;Write
 aoss:UpdateCollection;Write
+aoss:UpdateLifecyclePolicy;Write
 aoss:UpdateSecurityConfig;Write
 aoss:UpdateSecurityPolicy;Write
 aoss:UpdateVpcEndpoint;Write

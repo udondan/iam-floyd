@@ -8,6 +8,7 @@ redshift:hsmclientcertificate
 redshift:hsmconfiguration
 redshift:namespace
 redshift:parametergroup
+redshift:redshiftidcapplication
 redshift:securitygroup
 redshift:securitygroupingress-cidr
 redshift:securitygroupingress-ec2securitygroup

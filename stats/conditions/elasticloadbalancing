@@ -1,4 +1,10 @@
+elasticloadbalancing:CreateAction
+elasticloadbalancing:ListenerProtocol
 elasticloadbalancing:RequestTag/${TagKey}
 elasticloadbalancing:ResourceTag/
 elasticloadbalancing:ResourceTag/${TagKey}
+elasticloadbalancing:Scheme
+elasticloadbalancing:SecurityGroup
+elasticloadbalancing:SecurityPolicy
+elasticloadbalancing:Subnet
 elasticloadbalancing:TagKeys

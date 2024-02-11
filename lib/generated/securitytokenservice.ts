@@ -31,6 +31,18 @@ export class Sts extends PolicyStatement {
    * - .ifRoleSessionName()
    * - .ifIamResourceTag()
    * - .ifSourceIdentity()
+   * - .ifCognitoAmr()
+   * - .ifCognitoAud()
+   * - .ifCognitoSub()
+   * - .ifAmazonAppId()
+   * - .ifAmazonUserId()
+   * - .ifFacebookAppId()
+   * - .ifFacebookId()
+   * - .ifGoogleAud()
+   * - .ifGoogleSub()
+   * - .ifSamlNamequalifier()
+   * - .ifSamlSub()
+   * - .ifSamlSubType()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
@@ -171,6 +183,7 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAWSServiceName()
+   * - .ifDurationSeconds()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
@@ -187,6 +200,21 @@ export class Sts extends PolicyStatement {
    */
   public toGetSessionToken() {
     return this.to('GetSessionToken');
+  }
+
+  /**
+   * Grants permission to set context keys on a STS session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestContext()
+   * - .ifRequestContextProviders()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts
+   */
+  public toSetContext() {
+    return this.to('SetContext');
   }
 
   /**
@@ -226,6 +254,7 @@ export class Sts extends PolicyStatement {
       'AssumeRoleWithSAML',
       'AssumeRoleWithWebIdentity',
       'DecodeAuthorizationMessage',
+      'SetContext',
       'SetSourceIdentity'
     ],
     Read: [
@@ -251,6 +280,7 @@ export class Sts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifIamResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Sts.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
@@ -275,6 +305,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -305,6 +336,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -315,11 +347,67 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toGetFederationToken()
+   * - .toTagSession()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - role
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toGetFederationToken()
+   * - .toTagSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the login information for Amazon Cognito
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -335,6 +423,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -350,6 +439,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -365,6 +455,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -380,6 +471,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -396,6 +488,9 @@ export class Sts extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssumeRole()
+   *
+   * Applies to resource types:
+   * - role
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -772,6 +867,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
@@ -817,6 +913,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
@@ -832,6 +929,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
@@ -902,6 +1000,21 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Filters access by the duration in seconds when getting a bearer token
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_durationseconds
+   *
+   * Applies to actions:
+   * - .toGetServiceBearerToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDurationSeconds(value: string | string[], operator?: Operator | string) {
+    return this.if(`DurationSeconds`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the unique identifier required when you assume a role in another account
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid
@@ -914,6 +1027,37 @@ export class Sts extends PolicyStatement {
    */
   public ifExternalId(value: string | string[], operator?: Operator | string) {
     return this.if(`ExternalId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the session context key-value pairs embedded in the signed context assertion retrieved from a trusted context provider
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts
+   *
+   * Applies to actions:
+   * - .toSetContext()
+   *
+   * @param contextKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestContext(contextKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestContext/${ contextKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the context provider ARNs
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts
+   *
+   * Applies to actions:
+   * - .toSetContext()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifRequestContextProviders(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestContextProviders`, value, operator || 'ArnLike');
   }
 
   /**
@@ -975,6 +1119,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
@@ -990,6 +1135,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
+   * - .toAssumeRole()
    * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check

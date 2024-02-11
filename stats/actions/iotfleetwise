@@ -16,6 +16,7 @@ iotfleetwise:DeleteVehicle;Write
 iotfleetwise:DisassociateVehicleFleet;Write
 iotfleetwise:GetCampaign;Read
 iotfleetwise:GetDecoderManifest;Read
+iotfleetwise:GetEncryptionConfiguration;Read
 iotfleetwise:GetFleet;Read
 iotfleetwise:GetLoggingOptions;Read
 iotfleetwise:GetModelManifest;Read
@@ -38,6 +39,7 @@ iotfleetwise:ListSignalCatalogs;Read
 iotfleetwise:ListTagsForResource;Read
 iotfleetwise:ListVehicles;Read
 iotfleetwise:ListVehiclesInFleet;Read
+iotfleetwise:PutEncryptionConfiguration;Write
 iotfleetwise:PutLoggingOptions;Write
 iotfleetwise:RegisterAccount;Write
 iotfleetwise:TagResource;Tagging

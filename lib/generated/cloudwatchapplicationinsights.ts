@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationinsights.html).
@@ -16,6 +16,17 @@ export class Applicationinsights extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to add a workload
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_AddWorkload.html
+   */
+  public toAddWorkload() {
+    return this.to('AddWorkload');
   }
 
   /**
@@ -173,6 +184,17 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a workload
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeWorkload.html
+   */
+  public toDescribeWorkload() {
+    return this.to('DescribeWorkload');
+  }
+
+  /**
    * Grants permission to share Application Insights resources with a monitoring account
    *
    * Access Level: Write
@@ -261,6 +283,28 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list workloads
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListWorkloads.html
+   */
+  public toListWorkloads() {
+    return this.to('ListWorkloads');
+  }
+
+  /**
+   * Grants permission to remove a workload
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_RemoveWorkload.html
+   */
+  public toRemoveWorkload() {
+    return this.to('RemoveWorkload');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -333,8 +377,31 @@ export class Applicationinsights extends PolicyStatement {
     return this.to('UpdateLogPattern');
   }
 
+  /**
+   * Grants permission to update a problem
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateProblem.html
+   */
+  public toUpdateProblem() {
+    return this.to('UpdateProblem');
+  }
+
+  /**
+   * Grants permission to update a workload
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateWorkload.html
+   */
+  public toUpdateWorkload() {
+    return this.to('UpdateWorkload');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddWorkload',
       'CreateApplication',
       'CreateComponent',
       'CreateLogPattern',
@@ -342,10 +409,13 @@ export class Applicationinsights extends PolicyStatement {
       'DeleteComponent',
       'DeleteLogPattern',
       'Link',
+      'RemoveWorkload',
       'UpdateApplication',
       'UpdateComponent',
       'UpdateComponentConfiguration',
-      'UpdateLogPattern'
+      'UpdateLogPattern',
+      'UpdateProblem',
+      'UpdateWorkload'
     ],
     Read: [
       'DescribeApplication',
@@ -356,6 +426,7 @@ export class Applicationinsights extends PolicyStatement {
       'DescribeObservation',
       'DescribeProblem',
       'DescribeProblemObservations',
+      'DescribeWorkload',
       'ListTagsForResource'
     ],
     List: [
@@ -364,11 +435,57 @@ export class Applicationinsights extends PolicyStatement {
       'ListConfigurationHistory',
       'ListLogPatternSets',
       'ListLogPatterns',
-      'ListProblems'
+      'ListProblems',
+      'ListWorkloads'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
+
+  /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

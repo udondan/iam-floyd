@@ -5,10 +5,15 @@ lakeformation:CancelTransaction;Write
 lakeformation:CommitTransaction;Write
 lakeformation:CreateDataCellsFilter;Write
 lakeformation:CreateLFTag;Write
+lakeformation:CreateLakeFormationIdentityCenterConfiguration;Write
+lakeformation:CreateLakeFormationOptIn;Write
 lakeformation:DeleteDataCellsFilter;Write
 lakeformation:DeleteLFTag;Write
+lakeformation:DeleteLakeFormationIdentityCenterConfiguration;Write
+lakeformation:DeleteLakeFormationOptIn;Write
 lakeformation:DeleteObjectsOnCancel;Write
 lakeformation:DeregisterResource;Write
+lakeformation:DescribeLakeFormationIdentityCenterConfiguration;Read
 lakeformation:DescribeResource;Read
 lakeformation:DescribeTransaction;Read
 lakeformation:ExtendTransaction;Write
@@ -26,6 +31,7 @@ lakeformation:GetWorkUnits;Read
 lakeformation:GrantPermissions;Permissions management
 lakeformation:ListDataCellsFilter;List
 lakeformation:ListLFTags;Read
+lakeformation:ListLakeFormationOptIns;List
 lakeformation:ListPermissions;List
 lakeformation:ListResources;List
 lakeformation:ListTableStorageOptimizers;List
@@ -40,6 +46,7 @@ lakeformation:StartQueryPlanning;Write
 lakeformation:StartTransaction;Write
 lakeformation:UpdateDataCellsFilter;Write
 lakeformation:UpdateLFTag;Write
+lakeformation:UpdateLakeFormationIdentityCenterConfiguration;Write
 lakeformation:UpdateResource;Write
 lakeformation:UpdateTableObjects;Write
 lakeformation:UpdateTableStorageOptimizer;Write

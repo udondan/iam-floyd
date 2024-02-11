@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [airflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedworkflowsforapacheairflow.html).
@@ -23,7 +23,7 @@ export class Airflow extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html
    */
   public toCreateCliToken() {
     return this.to('CreateCliToken');
@@ -39,7 +39,7 @@ export class Airflow extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
     return this.to('CreateEnvironment');
@@ -50,7 +50,7 @@ export class Airflow extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html
    */
   public toCreateWebLoginToken() {
     return this.to('CreateWebLoginToken');
@@ -64,7 +64,7 @@ export class Airflow extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
@@ -78,7 +78,7 @@ export class Airflow extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_GetEnvironment.html
    */
   public toGetEnvironment() {
     return this.to('GetEnvironment');
@@ -89,7 +89,7 @@ export class Airflow extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_ListEnvironments.html
    */
   public toListEnvironments() {
     return this.to('ListEnvironments');
@@ -103,7 +103,7 @@ export class Airflow extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -114,7 +114,7 @@ export class Airflow extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html
    */
   public toPublishMetrics() {
     return this.to('PublishMetrics');
@@ -130,7 +130,7 @@ export class Airflow extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -145,7 +145,7 @@ export class Airflow extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -159,7 +159,7 @@ export class Airflow extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
     return this.to('UpdateEnvironment');
@@ -190,7 +190,7 @@ export class Airflow extends PolicyStatement {
   /**
    * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html#mwaa-resources
+   * https://docs.aws.amazon.com/mwaa/latest/userguide/using-mwaa.html
    *
    * @param environmentName - Identifier for the environmentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -204,7 +204,7 @@ export class Airflow extends PolicyStatement {
   /**
    * Adds a resource of type rbac-role to the statement
    *
-   * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html#mwaa-resources
+   * https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html
    *
    * @param environmentName - Identifier for the environmentName.
    * @param roleName - Identifier for the roleName.
@@ -214,5 +214,61 @@ export class Airflow extends PolicyStatement {
    */
   public onRbacRole(environmentName: string, roleName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Airflow.defaultPartition }:airflow:${ region || '*' }:${ account || '*' }:role/${ environmentName }/${ roleName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   * - .toDeleteEnvironment()
+   * - .toGetEnvironment()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateEnvironment()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

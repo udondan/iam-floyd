@@ -25,6 +25,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifDataAccessPointArn()
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
@@ -38,6 +39,26 @@ export class S3 extends PolicyStatement {
    */
   public toAbortMultipartUpload() {
     return this.to('AbortMultipartUpload');
+  }
+
+  /**
+   * Grants permission to associate Access Grants identity center
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html
+   */
+  public toAssociateAccessGrantsIdentityCenter() {
+    return this.to('AssociateAccessGrantsIdentityCenter');
   }
 
   /**
@@ -79,6 +100,72 @@ export class S3 extends PolicyStatement {
    */
   public toBypassGovernanceRetention() {
     return this.to('BypassGovernanceRetention');
+  }
+
+  /**
+   * Grants permission to create Access Grant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrant.html
+   */
+  public toCreateAccessGrant() {
+    return this.to('CreateAccessGrant');
+  }
+
+  /**
+   * Grants permission to Create Access Grants Instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html
+   */
+  public toCreateAccessGrantsInstance() {
+    return this.to('CreateAccessGrantsInstance');
+  }
+
+  /**
+   * Grants permission to create Access Grants location
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html
+   */
+  public toCreateAccessGrantsLocation() {
+    return this.to('CreateAccessGrantsLocation');
   }
 
   /**
@@ -199,6 +286,107 @@ export class S3 extends PolicyStatement {
    */
   public toCreateMultiRegionAccessPoint() {
     return this.to('CreateMultiRegionAccessPoint');
+  }
+
+  /**
+   * Grants permission to create an Amazon S3 Storage Lens group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateStorageLensGroup.html
+   */
+  public toCreateStorageLensGroup() {
+    return this.to('CreateStorageLensGroup');
+  }
+
+  /**
+   * Grants permission to delete Access Grant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html
+   */
+  public toDeleteAccessGrant() {
+    return this.to('DeleteAccessGrant');
+  }
+
+  /**
+   * Grants permission to Delete Access Grants Instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsInstance.html
+   */
+  public toDeleteAccessGrantsInstance() {
+    return this.to('DeleteAccessGrantsInstance');
+  }
+
+  /**
+   * Grants permission to read Access grants instance resource policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsInstanceResourcePolicy.html
+   */
+  public toDeleteAccessGrantsInstanceResourcePolicy() {
+    return this.to('DeleteAccessGrantsInstanceResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete Access Grants location
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html
+   */
+  public toDeleteAccessGrantsLocation() {
+    return this.to('DeleteAccessGrantsLocation');
   }
 
   /**
@@ -394,6 +582,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -439,6 +628,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -519,6 +709,25 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing S3 Storage Lens group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensGroup.html
+   */
+  public toDeleteStorageLensGroup() {
+    return this.to('DeleteStorageLensGroup');
+  }
+
+  /**
    * Grants permission to retrieve the configuration parameters and status for a batch operations job
    *
    * Access Level: Read
@@ -556,6 +765,26 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate Access Grants identity center
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html
+   */
+  public toDissociateAccessGrantsIdentityCenter() {
+    return this.to('DissociateAccessGrantsIdentityCenter');
+  }
+
+  /**
    * Grants permission to uses the accelerate subresource to return the Transfer Acceleration state of a bucket, which is either Enabled or Suspended
    *
    * Access Level: Read
@@ -572,6 +801,106 @@ export class S3 extends PolicyStatement {
    */
   public toGetAccelerateConfiguration() {
     return this.to('GetAccelerateConfiguration');
+  }
+
+  /**
+   * Grants permission to read Access Grant
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrant.html
+   */
+  public toGetAccessGrant() {
+    return this.to('GetAccessGrant');
+  }
+
+  /**
+   * Grants permission to Read Access Grants Instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstance.html
+   */
+  public toGetAccessGrantsInstance() {
+    return this.to('GetAccessGrantsInstance');
+  }
+
+  /**
+   * Grants permission to Read Access Grants Instance by prefix
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstanceForPrefix.html
+   */
+  public toGetAccessGrantsInstanceForPrefix() {
+    return this.to('GetAccessGrantsInstanceForPrefix');
+  }
+
+  /**
+   * Grants permission to read Access grants instance resource policy
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstanceResourcePolicy.html
+   */
+  public toGetAccessGrantsInstanceResourcePolicy() {
+    return this.to('GetAccessGrantsInstanceResourcePolicy');
+  }
+
+  /**
+   * Grants permission to read Access Grants location
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsLocation.html
+   */
+  public toGetAccessGrantsLocation() {
+    return this.to('GetAccessGrantsLocation');
   }
 
   /**
@@ -1033,6 +1362,26 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Access
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetDataAccess.html
+   */
+  public toGetDataAccess() {
+    return this.to('GetDataAccess');
+  }
+
+  /**
    * Grants permission to return the default encryption configuration an Amazon S3 bucket
    *
    * Access Level: Read
@@ -1236,6 +1585,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1259,6 +1609,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1391,6 +1742,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1415,6 +1767,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1597,6 +1950,25 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an Amazon S3 Storage Lens group
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensGroup.html
+   */
+  public toGetStorageLensGroup() {
+    return this.to('GetStorageLensGroup');
+  }
+
+  /**
    * Grants permission to initiate the replication process by setting replication status of an object to pending
    *
    * Access Level: Write
@@ -1608,6 +1980,65 @@ export class S3 extends PolicyStatement {
    */
   public toInitiateReplication() {
     return this.to('InitiateReplication');
+  }
+
+  /**
+   * Grants permission to list Access Grant
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessGrants.html
+   */
+  public toListAccessGrants() {
+    return this.to('ListAccessGrants');
+  }
+
+  /**
+   * Grants permission to List Access Grants Instances
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessGrantsInstances.html
+   */
+  public toListAccessGrantsInstances() {
+    return this.to('ListAccessGrantsInstances');
+  }
+
+  /**
+   * Grants permission to list Access Grants locations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessGrantsLocations.html
+   */
+  public toListAccessGrantsLocations() {
+    return this.to('ListAccessGrantsLocations');
   }
 
   /**
@@ -1673,6 +2104,7 @@ export class S3 extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1698,6 +2130,7 @@ export class S3 extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1720,6 +2153,7 @@ export class S3 extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1782,6 +2216,7 @@ export class S3 extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -1815,6 +2250,44 @@ export class S3 extends PolicyStatement {
    */
   public toListStorageLensConfigurations() {
     return this.to('ListStorageLensConfigurations');
+  }
+
+  /**
+   * Grants permission to list S3 Storage Lens groups
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListStorageLensGroups.html
+   */
+  public toListStorageLensGroups() {
+    return this.to('ListStorageLensGroups');
+  }
+
+  /**
+   * Grants permission to list the tags attached to the specified resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -1853,6 +2326,26 @@ export class S3 extends PolicyStatement {
    */
   public toPutAccelerateConfiguration() {
     return this.to('PutAccelerateConfiguration');
+  }
+
+  /**
+   * Grants permission to put Access grants instance resource policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessGrantsInstanceResourcePolicy.html
+   */
+  public toPutAccessGrantsInstanceResourcePolicy() {
+    return this.to('PutAccessGrantsInstanceResourcePolicy');
   }
 
   /**
@@ -2348,6 +2841,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -2389,6 +2883,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Permissions management
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -2492,6 +2987,7 @@ export class S3 extends PolicyStatement {
    * Access Level: Permissions management
    *
    * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
@@ -2711,6 +3207,67 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add tags to the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update Access Grants location
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateAccessGrantsLocation.html
+   */
+  public toUpdateAccessGrantsLocation() {
+    return this.to('UpdateAccessGrantsLocation');
+  }
+
+  /**
    * Grants permission to update the priority of an existing job
    *
    * Access Level: Write
@@ -2754,14 +3311,42 @@ export class S3 extends PolicyStatement {
     return this.to('UpdateJobStatus');
   }
 
+  /**
+   * Grants permission to update an existing S3 Storage Lens group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateStorageLensGroup.html
+   */
+  public toUpdateStorageLensGroup() {
+    return this.to('UpdateStorageLensGroup');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
+      'AssociateAccessGrantsIdentityCenter',
+      'CreateAccessGrant',
+      'CreateAccessGrantsInstance',
+      'CreateAccessGrantsLocation',
       'CreateAccessPoint',
       'CreateAccessPointForObjectLambda',
       'CreateBucket',
       'CreateJob',
       'CreateMultiRegionAccessPoint',
+      'CreateStorageLensGroup',
+      'DeleteAccessGrant',
+      'DeleteAccessGrantsInstance',
+      'DeleteAccessGrantsInstanceResourcePolicy',
+      'DeleteAccessGrantsLocation',
       'DeleteAccessPoint',
       'DeleteAccessPointForObjectLambda',
       'DeleteBucket',
@@ -2770,8 +3355,11 @@ export class S3 extends PolicyStatement {
       'DeleteObject',
       'DeleteObjectVersion',
       'DeleteStorageLensConfiguration',
+      'DeleteStorageLensGroup',
+      'DissociateAccessGrantsIdentityCenter',
       'InitiateReplication',
       'PutAccelerateConfiguration',
+      'PutAccessGrantsInstanceResourcePolicy',
       'PutAccessPointConfigurationForObjectLambda',
       'PutAnalyticsConfiguration',
       'PutBucketCORS',
@@ -2796,8 +3384,10 @@ export class S3 extends PolicyStatement {
       'ReplicateObject',
       'RestoreObject',
       'SubmitMultiRegionAccessPointRoutes',
+      'UpdateAccessGrantsLocation',
       'UpdateJobPriority',
-      'UpdateJobStatus'
+      'UpdateJobStatus',
+      'UpdateStorageLensGroup'
     ],
     'Permissions management': [
       'BypassGovernanceRetention',
@@ -2826,12 +3416,19 @@ export class S3 extends PolicyStatement {
       'PutObjectTagging',
       'PutObjectVersionTagging',
       'PutStorageLensConfigurationTagging',
-      'ReplicateTags'
+      'ReplicateTags',
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'DescribeJob',
       'DescribeMultiRegionAccessPointOperation',
       'GetAccelerateConfiguration',
+      'GetAccessGrant',
+      'GetAccessGrantsInstance',
+      'GetAccessGrantsInstanceForPrefix',
+      'GetAccessGrantsInstanceResourcePolicy',
+      'GetAccessGrantsLocation',
       'GetAccessPoint',
       'GetAccessPointConfigurationForObjectLambda',
       'GetAccessPointForObjectLambda',
@@ -2855,6 +3452,7 @@ export class S3 extends PolicyStatement {
       'GetBucketTagging',
       'GetBucketVersioning',
       'GetBucketWebsite',
+      'GetDataAccess',
       'GetEncryptionConfiguration',
       'GetIntelligentTieringConfiguration',
       'GetInventoryConfiguration',
@@ -2881,9 +3479,13 @@ export class S3 extends PolicyStatement {
       'GetReplicationConfiguration',
       'GetStorageLensConfiguration',
       'GetStorageLensConfigurationTagging',
-      'GetStorageLensDashboard'
+      'GetStorageLensDashboard',
+      'GetStorageLensGroup'
     ],
     List: [
+      'ListAccessGrants',
+      'ListAccessGrantsInstances',
+      'ListAccessGrantsLocations',
       'ListAccessPoints',
       'ListAccessPointsForObjectLambda',
       'ListAllMyBuckets',
@@ -2893,7 +3495,9 @@ export class S3 extends PolicyStatement {
       'ListJobs',
       'ListMultiRegionAccessPoints',
       'ListMultipartUploadParts',
-      'ListStorageLensConfigurations'
+      'ListStorageLensConfigurations',
+      'ListStorageLensGroups',
+      'ListTagsForResource'
     ]
   };
 
@@ -2968,6 +3572,23 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type storagelensgroup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_group.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStoragelensgroup(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:storage-lens-group/${ name }`);
+  }
+
+  /**
    * Adds a resource of type objectlambdaaccesspoint to the statement
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html
@@ -3006,6 +3627,165 @@ export class S3 extends PolicyStatement {
    */
   public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || S3.defaultPartition }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
+  }
+
+  /**
+   * Adds a resource of type accessgrantsinstance to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-instance.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAccessgrantsinstance(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:access-grants/default`);
+  }
+
+  /**
+   * Adds a resource of type accessgrantslocation to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html
+   *
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccessgrantslocation(token: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:access-grants/default/location/${ token }`);
+  }
+
+  /**
+   * Adds a resource of type accessgrant to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-grant.html
+   *
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccessgrant(token: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || S3.defaultPartition }:s3:${ region || '*' }:${ account || '*' }:access-grants/default/grant/${ token }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
+   * - .toCreateJob()
+   * - .toCreateStorageLensGroup()
+   * - .toPutJobTagging()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateAccessGrantsIdentityCenter()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
+   * - .toDissociateAccessGrantsIdentityCenter()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
+   * - .toGetDataAccess()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsLocations()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
+   * - .toUpdateAccessGrantsLocation()
+   *
+   * Applies to resource types:
+   * - storagelensconfiguration
+   * - storagelensgroup
+   * - accessgrantsinstance
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
+   * - .toCreateJob()
+   * - .toCreateStorageLensGroup()
+   * - .toPutJobTagging()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by access grants instance ARN
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/access-grants-instance.html
+   *
+   * Applies to actions:
+   * - .toAbortMultipartUpload()
+   * - .toDeleteObject()
+   * - .toDeleteObjectVersion()
+   * - .toGetObject()
+   * - .toGetObjectAcl()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
+   * - .toListMultipartUploadParts()
+   * - .toPutObject()
+   * - .toPutObjectAcl()
+   * - .toPutObjectVersionAcl()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifAccessGrantsInstanceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`AccessGrantsInstanceArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -3361,12 +4141,21 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3382,9 +4171,16 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
    * - .toDescribeMultiRegionAccessPointOperation()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3408,6 +4204,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -3435,7 +4232,11 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
    * - .toInitiateReplication()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -3446,8 +4247,11 @@ export class S3 extends PolicyStatement {
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -3487,8 +4291,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3502,12 +4310,21 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3523,9 +4340,16 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
    * - .toDescribeMultiRegionAccessPointOperation()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3549,6 +4373,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -3576,6 +4401,10 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -3586,8 +4415,11 @@ export class S3 extends PolicyStatement {
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -3627,8 +4459,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3644,12 +4480,21 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3665,9 +4510,16 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
    * - .toDescribeMultiRegionAccessPointOperation()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3691,6 +4543,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -3718,6 +4571,10 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -3728,8 +4585,11 @@ export class S3 extends PolicyStatement {
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -3769,8 +4629,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3928,12 +4792,21 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3949,9 +4822,16 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
    * - .toDescribeMultiRegionAccessPointOperation()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3975,6 +4855,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -4002,6 +4883,10 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -4012,8 +4897,11 @@ export class S3 extends PolicyStatement {
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -4053,8 +4941,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4070,12 +4962,21 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -4091,9 +4992,16 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
    * - .toDescribeMultiRegionAccessPointOperation()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -4117,6 +5025,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -4144,6 +5053,10 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -4154,8 +5067,11 @@ export class S3 extends PolicyStatement {
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -4195,8 +5111,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4256,11 +5176,20 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
+   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toBypassGovernanceRetention()
+   * - .toCreateAccessGrant()
+   * - .toCreateAccessGrantsInstance()
+   * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateStorageLensGroup()
+   * - .toDeleteAccessGrant()
+   * - .toDeleteAccessGrantsInstance()
+   * - .toDeleteAccessGrantsInstanceResourcePolicy()
+   * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -4275,8 +5204,15 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDeleteStorageLensGroup()
    * - .toDescribeJob()
+   * - .toDissociateAccessGrantsIdentityCenter()
    * - .toGetAccelerateConfiguration()
+   * - .toGetAccessGrant()
+   * - .toGetAccessGrantsInstance()
+   * - .toGetAccessGrantsInstanceForPrefix()
+   * - .toGetAccessGrantsInstanceResourcePolicy()
+   * - .toGetAccessGrantsLocation()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -4299,6 +5235,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketTagging()
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
+   * - .toGetDataAccess()
    * - .toGetEncryptionConfiguration()
    * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
@@ -4322,6 +5259,10 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toGetStorageLensGroup()
+   * - .toListAccessGrants()
+   * - .toListAccessGrantsInstances()
+   * - .toListAccessGrantsLocations()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -4331,8 +5272,11 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
+   * - .toListStorageLensGroups()
+   * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
@@ -4369,8 +5313,12 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    * - .toReplicateTags()
    * - .toRestoreObject()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessGrantsLocation()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4554,10 +5502,10 @@ export class S3 extends PolicyStatement {
    * - .toReplicateObject()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
+    return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'ArnLike');
   }
 
   /**

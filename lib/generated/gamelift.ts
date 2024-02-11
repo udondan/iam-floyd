@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html).
@@ -49,6 +49,9 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - gamelift:TagResource
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html
    */
   public toCreateAlias() {
@@ -63,6 +66,11 @@ export class Gamelift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - gamelift:TagResource
+   * - iam:PassRole
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html
    */
@@ -79,6 +87,11 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - gamelift:TagResource
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html
    */
   public toCreateFleet() {
@@ -89,6 +102,9 @@ export class Gamelift extends PolicyStatement {
    * Grants permission to specify additional locations for a fleet
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleetLocations.html
    */
@@ -104,6 +120,18 @@ export class Gamelift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - autoscaling:CreateAutoScalingGroup
+   * - autoscaling:DescribeAutoScalingGroups
+   * - autoscaling:PutLifecycleHook
+   * - autoscaling:PutScalingPolicy
+   * - ec2:DescribeAvailabilityZones
+   * - ec2:DescribeSubnets
+   * - events:PutRule
+   * - events:PutTargets
+   * - gamelift:TagResource
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameServerGroup.html
    */
@@ -131,6 +159,9 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - gamelift:TagResource
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html
    */
   public toCreateGameSessionQueue() {
@@ -145,6 +176,9 @@ export class Gamelift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - gamelift:TagResource
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html
    */
@@ -161,6 +195,9 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - gamelift:TagResource
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html
    */
   public toCreateMatchmakingConfiguration() {
@@ -175,6 +212,9 @@ export class Gamelift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - gamelift:TagResource
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html
    */
@@ -213,6 +253,11 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - gamelift:TagResource
+   * - iam:PassRole
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html
    */
   public toCreateScript() {
@@ -223,6 +268,17 @@ export class Gamelift extends PolicyStatement {
    * Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AcceptVpcPeeringConnection
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateRoute
+   * - ec2:DeleteRoute
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSecurityGroups
+   * - ec2:RevokeSecurityGroupEgress
+   * - ec2:RevokeSecurityGroupIngress
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html
    */
@@ -289,6 +345,14 @@ export class Gamelift extends PolicyStatement {
    * Grants permission to permanently delete a game server group and terminate FleetIQ activity for the corresponding Auto Scaling group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - autoscaling:DeleteAutoScalingGroup
+   * - autoscaling:DescribeAutoScalingGroups
+   * - autoscaling:ExitStandby
+   * - autoscaling:ResumeProcesses
+   * - autoscaling:SetInstanceProtection
+   * - autoscaling:UpdateAutoScalingGroup
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameServerGroup.html
    */
@@ -1133,6 +1197,9 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServerGroup.html
    */
   public toUpdateGameServerGroup() {
@@ -1187,6 +1254,10 @@ export class Gamelift extends PolicyStatement {
    * Grants permission to update the metadata and content of an existing Realtime Servers script
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html
    */
@@ -1342,15 +1413,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-builds.html
    *
    * @param buildId - Identifier for the buildId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBuild(buildId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:build/${ buildId }`);
+  public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -1407,17 +1478,18 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type location to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/locations-console.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html#fleet-anywhere-location
    *
    * @param locationId - Identifier for the locationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onLocation(locationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }::location/${ locationId }`);
+  public onLocation(locationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:location/${ locationId }`);
   }
 
   /**
@@ -1460,14 +1532,88 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-scripts.html
    *
    * @param scriptId - Identifier for the scriptId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
+  public onScript(scriptId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:script/${ scriptId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAlias()
+   * - .toCreateBuild()
+   * - .toCreateFleet()
+   * - .toCreateGameServerGroup()
+   * - .toCreateGameSessionQueue()
+   * - .toCreateLocation()
+   * - .toCreateMatchmakingConfiguration()
+   * - .toCreateMatchmakingRuleSet()
+   * - .toCreateScript()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - alias
+   * - build
+   * - fleet
+   * - gameServerGroup
+   * - gameSessionQueue
+   * - location
+   * - matchmakingConfiguration
+   * - matchmakingRuleSet
+   * - script
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAlias()
+   * - .toCreateBuild()
+   * - .toCreateFleet()
+   * - .toCreateGameServerGroup()
+   * - .toCreateGameSessionQueue()
+   * - .toCreateLocation()
+   * - .toCreateMatchmakingConfiguration()
+   * - .toCreateMatchmakingRuleSet()
+   * - .toCreateScript()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

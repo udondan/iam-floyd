@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [frauddetector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html).
@@ -784,7 +784,6 @@ export class Frauddetector extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UntagResource.html
    */
@@ -1249,5 +1248,110 @@ export class Frauddetector extends PolicyStatement {
    */
   public onList(resourcePath: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Frauddetector.defaultPartition }:frauddetector:${ region || '*' }:${ account || '*' }:list/${ resourcePath }`);
+  }
+
+  /**
+   * Filters actions based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toBatchCreateVariable()
+   * - .toCreateBatchImportJob()
+   * - .toCreateBatchPredictionJob()
+   * - .toCreateDetectorVersion()
+   * - .toCreateList()
+   * - .toCreateModel()
+   * - .toCreateModelVersion()
+   * - .toCreateRule()
+   * - .toCreateVariable()
+   * - .toPutDetector()
+   * - .toPutEntityType()
+   * - .toPutEventType()
+   * - .toPutExternalModel()
+   * - .toPutLabel()
+   * - .toPutOutcome()
+   * - .toSendEvent()
+   * - .toTagResource()
+   * - .toUpdateEventLabel()
+   * - .toUpdateModelVersion()
+   * - .toUpdateRuleVersion()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteList()
+   * - .toGetListElements()
+   * - .toGetListsMetadata()
+   * - .toUpdateList()
+   *
+   * Applies to resource types:
+   * - batch-prediction
+   * - detector
+   * - detector-version
+   * - entity-type
+   * - external-model
+   * - event-type
+   * - label
+   * - model
+   * - model-version
+   * - outcome
+   * - rule
+   * - variable
+   * - batch-import
+   * - list
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toBatchCreateVariable()
+   * - .toCreateBatchImportJob()
+   * - .toCreateBatchPredictionJob()
+   * - .toCreateDetectorVersion()
+   * - .toCreateList()
+   * - .toCreateModel()
+   * - .toCreateModelVersion()
+   * - .toCreateRule()
+   * - .toCreateVariable()
+   * - .toPutDetector()
+   * - .toPutEntityType()
+   * - .toPutEventType()
+   * - .toPutExternalModel()
+   * - .toPutLabel()
+   * - .toPutOutcome()
+   * - .toSendEvent()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateEventLabel()
+   * - .toUpdateModelVersion()
+   * - .toUpdateRuleVersion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

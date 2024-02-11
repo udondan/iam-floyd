@@ -1,0 +1,3 @@
+thinclient:RequestTag/${TagKey}
+thinclient:ResourceTag/${TagKey}
+thinclient:TagKeys

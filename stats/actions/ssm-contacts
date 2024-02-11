@@ -21,6 +21,7 @@ ssm-contacts:ListContactChannels;List
 ssm-contacts:ListContacts;List
 ssm-contacts:ListEngagements;List
 ssm-contacts:ListPageReceipts;List
+ssm-contacts:ListPageResolutions;List
 ssm-contacts:ListPagesByContact;List
 ssm-contacts:ListPagesByEngagement;List
 ssm-contacts:ListPreviewRotationShifts;List

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
@@ -615,6 +615,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve relevant content from an index
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_Retrieve.html
+   */
+  public toRetrieve() {
+    return this.to('Retrieve');
+  }
+
+  /**
    * Grants permission to start Data Source sync job
    *
    * Access Level: Write
@@ -818,7 +829,8 @@ export class Kendra extends PolicyStatement {
       'GetQuerySuggestions',
       'GetSnapshots',
       'ListTagsForResource',
-      'Query'
+      'Query',
+      'Retrieve'
     ],
     List: [
       'ListAccessControlConfigurations',
@@ -975,5 +987,70 @@ export class Kendra extends PolicyStatement {
    */
   public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateFaq()
+   * - .toCreateFeaturedResultsSet()
+   * - .toCreateIndex()
+   * - .toCreateQuerySuggestionsBlockList()
+   * - .toCreateThesaurus()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - index
+   * - data-source
+   * - faq
+   * - thesaurus
+   * - query-suggestions-block-list
+   * - featured-results-set
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateFaq()
+   * - .toCreateFeaturedResultsSet()
+   * - .toCreateIndex()
+   * - .toCreateQuerySuggestionsBlockList()
+   * - .toCreateThesaurus()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

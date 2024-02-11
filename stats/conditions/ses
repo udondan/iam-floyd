@@ -1,4 +1,5 @@
 ses:ApiVersion
+ses:ExportSourceType
 ses:FeedbackAddress
 ses:FromAddress
 ses:FromDisplayName

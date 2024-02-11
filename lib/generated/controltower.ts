@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [controltower](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscontroltower.html).
@@ -19,6 +19,24 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a landing zone
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - controltower:TagResource
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html
+   */
+  public toCreateLandingZone() {
+    return this.to('CreateLandingZone');
+  }
+
+  /**
    * Grants permission to create an account managed by AWS Control Tower
    *
    * Access Level: Write
@@ -34,7 +52,7 @@ export class Controltower extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/controltower/latest/userguide/decommission-landing-zone.html
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_DeleteLandingZone.html
    */
   public toDeleteLandingZone() {
     return this.to('DeleteLandingZone');
@@ -151,7 +169,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current AWS Control Tower SSO configuration
+   * Grants permission to describe the current AWS Control Tower &SSO; configuration
    *
    * Access Level: Read
    *
@@ -187,6 +205,13 @@ export class Controltower extends PolicyStatement {
    * Grants permission to activate a control for an organizational unit
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - controltower:TagResource
    *
    * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html
    */
@@ -239,6 +264,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an enabled control from an organizational unit
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledControl.html
+   */
+  public toGetEnabledControl() {
+    return this.to('GetEnabledControl');
+  }
+
+  /**
    * Grants permission to get the current compliance status of a guardrail
    *
    * Access Level: Read
@@ -261,6 +297,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the current status of the landing zone setup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZone.html
+   */
+  public toGetLandingZone() {
+    return this.to('GetLandingZone');
+  }
+
+  /**
    * Grants permission to get the current landing zone drift status
    *
    * Access Level: Read
@@ -269,6 +316,17 @@ export class Controltower extends PolicyStatement {
    */
   public toGetLandingZoneDriftStatus() {
     return this.to('GetLandingZoneDriftStatus');
+  }
+
+  /**
+   * Grants permission to get the current status of a particular landing zone operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZoneOperation.html
+   */
+  public toGetLandingZoneOperation() {
+    return this.to('GetLandingZoneOperation');
   }
 
   /**
@@ -283,7 +341,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the current directory groups available through SSO
+   * Grants permission to list the current directory groups available through &SSO;
    *
    * Access Level: List
    *
@@ -382,6 +440,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all landing zones
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZones.html
+   */
+  public toListLandingZones() {
+    return this.to('ListLandingZones');
+  }
+
+  /**
    * Grants permission to list accounts managed through AWS Control Tower
    *
    * Access Level: List
@@ -437,6 +506,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to set up an organizational unit to be managed by AWS Control Tower
    *
    * Access Level: Write
@@ -459,6 +539,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset a landing zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetLandingZone.html
+   */
+  public toResetLandingZone() {
+    return this.to('ResetLandingZone');
+  }
+
+  /**
    * Grants permission to set up or update AWS Control Tower landing zone
    *
    * Access Level: Write
@@ -467,6 +558,35 @@ export class Controltower extends PolicyStatement {
    */
   public toSetupLandingZone() {
     return this.to('SetupLandingZone');
+  }
+
+  /**
+   * Grants permission to add tags to a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -480,8 +600,31 @@ export class Controltower extends PolicyStatement {
     return this.to('UpdateAccountFactoryConfig');
   }
 
+  /**
+   * Grants permission to update an enabled control for an organizational unit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html
+   */
+  public toUpdateEnabledControl() {
+    return this.to('UpdateEnabledControl');
+  }
+
+  /**
+   * Grants permission to update a landing zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateLandingZone.html
+   */
+  public toUpdateLandingZone() {
+    return this.to('UpdateLandingZone');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateLandingZone',
       'CreateManagedAccount',
       'DeleteLandingZone',
       'DeregisterManagedAccount',
@@ -491,8 +634,11 @@ export class Controltower extends PolicyStatement {
       'EnableControl',
       'EnableGuardrail',
       'ManageOrganizationalUnit',
+      'ResetLandingZone',
       'SetupLandingZone',
-      'UpdateAccountFactoryConfig'
+      'UpdateAccountFactoryConfig',
+      'UpdateEnabledControl',
+      'UpdateLandingZone'
     ],
     Read: [
       'DescribeAccountFactoryConfig',
@@ -507,12 +653,16 @@ export class Controltower extends PolicyStatement {
       'GetAccountInfo',
       'GetAvailableUpdates',
       'GetControlOperation',
+      'GetEnabledControl',
       'GetGuardrailComplianceStatus',
       'GetHomeRegion',
+      'GetLandingZone',
       'GetLandingZoneDriftStatus',
+      'GetLandingZoneOperation',
       'GetLandingZoneStatus',
       'ListDriftDetails',
       'ListExternalConfigRuleCompliance',
+      'ListTagsForResource',
       'PerformPreLaunchChecks'
     ],
     List: [
@@ -523,11 +673,103 @@ export class Controltower extends PolicyStatement {
       'ListGuardrailViolations',
       'ListGuardrails',
       'ListGuardrailsForTarget',
+      'ListLandingZones',
       'ListManagedAccounts',
       'ListManagedAccountsForGuardrail',
       'ListManagedAccountsForParent',
       'ListManagedOrganizationalUnits',
       'ListManagedOrganizationalUnitsForGuardrail'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type EnabledControl to the statement
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html
+   *
+   * @param enabledControlId - Identifier for the enabledControlId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnabledControl(enabledControlId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Controltower.defaultPartition }:controltower:${ region || '*' }:${ account || '*' }:enabledcontrol/${ enabledControlId }`);
+  }
+
+  /**
+   * Adds a resource of type LandingZone to the statement
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html
+   *
+   * @param landingZoneId - Identifier for the landingZoneId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLandingZone(landingZoneId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Controltower.defaultPartition }:controltower:${ region || '*' }:${ account || '*' }:landingzone/${ landingZoneId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateLandingZone()
+   * - .toEnableControl()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - EnabledControl
+   * - LandingZone
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateLandingZone()
+   * - .toEnableControl()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

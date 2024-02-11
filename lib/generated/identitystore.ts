@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html).
@@ -338,5 +338,17 @@ export class Identitystore extends PolicyStatement {
    */
   public onAllGroupMemberships(resourceName: string, partition?: string) {
     return this.on(`arn:${ partition || Identitystore.defaultPartition }:identitystore:::membership/${ resourceName }`);
+  }
+
+  /**
+   * Filters access by IAM Identity Center User ID
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserId`, value, operator || 'StringLike');
   }
 }

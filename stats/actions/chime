@@ -39,6 +39,8 @@ chime:CreateMediaConcatenationPipeline;Write
 chime:CreateMediaInsightsPipeline;Write
 chime:CreateMediaInsightsPipelineConfiguration;Write
 chime:CreateMediaLiveConnectorPipeline;Write
+chime:CreateMediaPipelineKinesisVideoStreamPool;Write
+chime:CreateMediaStreamPipeline;Write
 chime:CreateMeeting;Write
 chime:CreateMeetingDialOut;Write
 chime:CreateMeetingWithAttendees;Write
@@ -77,6 +79,7 @@ chime:DeleteGroups;Write
 chime:DeleteMediaCapturePipeline;Write
 chime:DeleteMediaInsightsPipelineConfiguration;Write
 chime:DeleteMediaPipeline;Write
+chime:DeleteMediaPipelineKinesisVideoStreamPool;Write
 chime:DeleteMeeting;Write
 chime:DeleteMessagingStreamingConfigurations;Write
 chime:DeletePhoneNumber;Write
@@ -132,6 +135,7 @@ chime:GetGlobalSettings;Read
 chime:GetMediaCapturePipeline;Read
 chime:GetMediaInsightsPipelineConfiguration;Read
 chime:GetMediaPipeline;Read
+chime:GetMediaPipelineKinesisVideoStreamPool;Read
 chime:GetMeeting;Read
 chime:GetMeetingDetail;Read
 chime:GetMessagingSessionEndpoint;Read
@@ -196,6 +200,7 @@ chime:ListDomains;List
 chime:ListGroups;List
 chime:ListMediaCapturePipelines;List
 chime:ListMediaInsightsPipelineConfigurations;List
+chime:ListMediaPipelineKinesisVideoStreamPools;List
 chime:ListMediaPipelines;List
 chime:ListMeetingEvents;List
 chime:ListMeetingTags;List
@@ -283,6 +288,7 @@ chime:UpdateChannelReadMarker;Write
 chime:UpdateGlobalSettings;Write
 chime:UpdateMediaInsightsPipelineConfiguration;Write
 chime:UpdateMediaInsightsPipelineStatus;Write
+chime:UpdateMediaPipelineKinesisVideoStreamPool;Write
 chime:UpdatePhoneNumber;Write
 chime:UpdatePhoneNumberSettings;Write
 chime:UpdateProxySession;Write
@@ -300,4 +306,4 @@ chime:UpdateVoiceConnectorGroup;Write
 chime:UpdateVoiceProfile;Write
 chime:UpdateVoiceProfileDomain;Write
 chime:ValidateAccountResource;Read
-chime:ValidateE911Address;Write
+chime:ValidateE911Address;Read

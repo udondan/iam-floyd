@@ -38,6 +38,7 @@ workmail:DeregisterFromWorkMail;Write
 workmail:DeregisterMailDomain;Write
 workmail:DescribeDirectories;List
 workmail:DescribeEmailMonitoringConfiguration;Read
+workmail:DescribeEntity;Read
 workmail:DescribeGroup;List
 workmail:DescribeInboundDmarcSettings;Read
 workmail:DescribeInboundMailFlowRule;Read
@@ -79,6 +80,7 @@ workmail:ListAliases;List
 workmail:ListAvailabilityConfigurations;Read
 workmail:ListGroupMembers;List
 workmail:ListGroups;List
+workmail:ListGroupsForEntity;List
 workmail:ListImpersonationRoles;List
 workmail:ListInboundMailFlowRules;List
 workmail:ListMailDomains;List
@@ -120,6 +122,7 @@ workmail:TestOutboundMailFlowRules;Write
 workmail:UntagResource;Tagging
 workmail:UpdateAvailabilityConfiguration;Write
 workmail:UpdateDefaultMailDomain;Write
+workmail:UpdateGroup;Write
 workmail:UpdateImpersonationRole;Write
 workmail:UpdateInboundMailFlowRule;Write
 workmail:UpdateMailboxQuota;Write
@@ -128,4 +131,5 @@ workmail:UpdateOutboundMailFlowRule;Write
 workmail:UpdatePrimaryEmailAddress;Write
 workmail:UpdateResource;Write
 workmail:UpdateSmtpGateway;Write
+workmail:UpdateUser;Write
 workmail:WipeMobileDevice;Write

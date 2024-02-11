@@ -1,4 +1,5 @@
 resiliencehub:AddDraftAppVersionResourceMappings;Write
+resiliencehub:BatchUpdateRecommendationStatus;Write
 resiliencehub:CreateApp;Write
 resiliencehub:CreateAppVersionAppComponent;Write
 resiliencehub:CreateAppVersionResource;Write
@@ -22,6 +23,7 @@ resiliencehub:DescribeDraftAppVersionResourcesImportStatus;Read
 resiliencehub:DescribeResiliencyPolicy;Read
 resiliencehub:ImportResourcesToDraftAppVersion;Write
 resiliencehub:ListAlarmRecommendations;List
+resiliencehub:ListAppAssessmentComplianceDrifts;List
 resiliencehub:ListAppAssessments;List
 resiliencehub:ListAppComponentCompliances;List
 resiliencehub:ListAppComponentRecommendations;List

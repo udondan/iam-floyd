@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html).
@@ -35,6 +35,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a metadata transfer job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CancelMetadataTransferJob.html
+   */
+  public toCancelMetadataTransferJob() {
+    return this.to('CancelMetadataTransferJob');
+  }
+
+  /**
    * Grants permission to create a componentType
    *
    * Access Level: Write
@@ -62,6 +73,17 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public toCreateEntity() {
     return this.to('CreateEntity');
+  }
+
+  /**
+   * Grants permission to create a metadata transfer job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html
+   */
+  public toCreateMetadataTransferJob() {
+    return this.to('CreateMetadataTransferJob');
   }
 
   /**
@@ -198,6 +220,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a metadata transfer job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetMetadataTransferJob.html
+   */
+  public toGetMetadataTransferJob() {
+    return this.to('GetMetadataTransferJob');
+  }
+
+  /**
    * Grants permission to get pricing plan
    *
    * Access Level: Read
@@ -285,6 +318,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list components attached to an entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListComponents.html
+   */
+  public toListComponents() {
+    return this.to('ListComponents');
+  }
+
+  /**
    * Grants permission to list all entities in a workspace
    *
    * Access Level: List
@@ -293,6 +337,28 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public toListEntities() {
     return this.to('ListEntities');
+  }
+
+  /**
+   * Grants permission to list all metadata transfer jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListMetadataTransferJobs.html
+   */
+  public toListMetadataTransferJobs() {
+    return this.to('ListMetadataTransferJobs');
+  }
+
+  /**
+   * Grants permission to list properties of an entity component
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListProperties.html
+   */
+  public toListProperties() {
+    return this.to('ListProperties');
   }
 
   /**
@@ -440,8 +506,10 @@ export class Iottwinmaker extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchPutPropertyValues',
+      'CancelMetadataTransferJob',
       'CreateComponentType',
       'CreateEntity',
+      'CreateMetadataTransferJob',
       'CreateScene',
       'CreateSyncJob',
       'CreateWorkspace',
@@ -460,6 +528,7 @@ export class Iottwinmaker extends PolicyStatement {
       'ExecuteQuery',
       'GetComponentType',
       'GetEntity',
+      'GetMetadataTransferJob',
       'GetPricingPlan',
       'GetPropertyValue',
       'GetPropertyValueHistory',
@@ -469,7 +538,10 @@ export class Iottwinmaker extends PolicyStatement {
     ],
     List: [
       'ListComponentTypes',
+      'ListComponents',
       'ListEntities',
+      'ListMetadataTransferJobs',
+      'ListProperties',
       'ListScenes',
       'ListSyncJobs',
       'ListSyncResources',
@@ -569,5 +641,120 @@ export class Iottwinmaker extends PolicyStatement {
    */
   public onSyncJob(workspaceId: string, syncJobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
+  }
+
+  /**
+   * Adds a resource of type metadataTransferJob to the statement
+   *
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html
+   *
+   * @param metadataTransferJobId - Identifier for the metadataTransferJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMetadataTransferJob(metadataTransferJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:metadata-transfer-job/${ metadataTransferJobId }`);
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComponentType()
+   * - .toCreateEntity()
+   * - .toCreateScene()
+   * - .toCreateSyncJob()
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   *
+   * Applies to resource types:
+   * - workspace
+   * - entity
+   * - componentType
+   * - scene
+   * - syncJob
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComponentType()
+   * - .toCreateEntity()
+   * - .toCreateScene()
+   * - .toCreateSyncJob()
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by destination type of metadata transfer job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDestinationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`destinationType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by workspace linked to services
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLinkedServices(value: string | string[], operator?: Operator | string) {
+    return this.if(`linkedServices`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by source type of metadata transfer job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`sourceType`, value, operator || 'StringLike');
   }
 }

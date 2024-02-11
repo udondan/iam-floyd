@@ -69,6 +69,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSsmSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -83,6 +84,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSsmSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -104,6 +106,22 @@ export class Ec2messages extends PolicyStatement {
   };
 
   /**
+   * Filters access by the ARN of the instance from which the request originated
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toGetMessages()
+   * - .toSendReply()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEc2SourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
@@ -113,9 +131,9 @@ export class Ec2messages extends PolicyStatement {
    * - .toSendReply()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSsmSourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`ssm:SourceInstanceARN`, value, operator || 'StringLike');
+    return this.if(`ssm:SourceInstanceARN`, value, operator || 'ArnLike');
   }
 }

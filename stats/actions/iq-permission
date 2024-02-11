@@ -1,5 +1,6 @@
 iq-permission:ApproveAccessGrant;Write
 iq-permission:ApprovePermissionRequest;Write
+iq-permission:AssumePermissionRole;Write
 iq-permission:CreatePermissionRequest;Write
 iq-permission:GetPermissionRequest;Read
 iq-permission:ListPermissionRequests;Read

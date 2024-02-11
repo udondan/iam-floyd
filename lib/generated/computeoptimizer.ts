@@ -125,6 +125,21 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export license recommendations to S3 for the provided account(s)
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetLicenseRecommendations
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportLicenseRecommendations.html
+   */
+  public toExportLicenseRecommendations() {
+    return this.to('ExportLicenseRecommendations');
+  }
+
+  /**
    * Grants permission to get recommendations for the provided AutoScaling groups
    *
    * Access Level: List
@@ -263,6 +278,20 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get license recommendations for the specified account(s)
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetLicenseRecommendations.html
+   */
+  public toGetLicenseRecommendations() {
+    return this.to('GetLicenseRecommendations');
+  }
+
+  /**
    * Grants permission to get recommendation preferences
    *
    * Access Level: Read
@@ -325,6 +354,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'ExportEC2InstanceRecommendations',
       'ExportECSServiceRecommendations',
       'ExportLambdaFunctionRecommendations',
+      'ExportLicenseRecommendations',
       'PutRecommendationPreferences',
       'UpdateEnrollmentStatus'
     ],
@@ -339,6 +369,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'GetEnrollmentStatus',
       'GetEnrollmentStatusesForOrganization',
       'GetLambdaFunctionRecommendations',
+      'GetLicenseRecommendations',
       'GetRecommendationSummaries'
     ],
     Read: [

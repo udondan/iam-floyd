@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [athena](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonathena.html).
@@ -49,6 +49,43 @@ export class Athena extends PolicyStatement {
    */
   public toBatchGetQueryExecution() {
     return this.to('BatchGetQueryExecution');
+  }
+
+  /**
+   * Grants permission to cancel a capacity reservation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_CancelCapacityReservation.html
+   */
+  public toCancelCapacityReservation() {
+    return this.to('CancelCapacityReservation');
+  }
+
+  /**
+   * Grants permission to cancel query execution. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use StopQueryExecution otherwise
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html
+   */
+  public toCancelQueryExecution() {
+    return this.to('CancelQueryExecution');
+  }
+
+  /**
+   * Grants permission to create a capacity reservation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateCapacityReservation.html
+   */
+  public toCreateCapacityReservation() {
+    return this.to('CreateCapacityReservation');
   }
 
   /**
@@ -123,6 +160,17 @@ export class Athena extends PolicyStatement {
    */
   public toCreateWorkGroup() {
     return this.to('CreateWorkGroup');
+  }
+
+  /**
+   * Grants permission to delete a capacity reservation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteCapacityReservation.html
+   */
+  public toDeleteCapacityReservation() {
+    return this.to('DeleteCapacityReservation');
   }
 
   /**
@@ -225,6 +273,39 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get capacity assignment information for a capacity reservation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCapacityAssignmentConfiguration.html
+   */
+  public toGetCapacityAssignmentConfiguration() {
+    return this.to('GetCapacityAssignmentConfiguration');
+  }
+
+  /**
+   * Grants permission to get a capacity reservation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCapacityReservation.html
+   */
+  public toGetCapacityReservation() {
+    return this.to('GetCapacityReservation');
+  }
+
+  /**
+   * Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetCatalogs() {
+    return this.to('GetCatalogs');
+  }
+
+  /**
    * Grants permission to get a datacatalog
    *
    * Access Level: Read
@@ -247,6 +328,28 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable access to the specified database and table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetExecutionEngine() {
+    return this.to('GetExecutionEngine');
+  }
+
+  /**
+   * Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetExecutionEngines() {
+    return this.to('GetExecutionEngines');
+  }
+
+  /**
    * Grants permission to get information about the specified named query
    *
    * Access Level: Read
@@ -255,6 +358,28 @@ export class Athena extends PolicyStatement {
    */
   public toGetNamedQuery() {
     return this.to('GetNamedQuery');
+  }
+
+  /**
+   * Grants permission to enable access to the specified database and table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetNamespace() {
+    return this.to('GetNamespace');
+  }
+
+  /**
+   * Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetNamespaces() {
+    return this.to('GetNamespaces');
   }
 
   /**
@@ -288,6 +413,17 @@ export class Athena extends PolicyStatement {
    */
   public toGetQueryExecution() {
     return this.to('GetQueryExecution');
+  }
+
+  /**
+   * Grants permission to get query executions. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use ListQueryExecutions otherwise
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html
+   */
+  public toGetQueryExecutions() {
+    return this.to('GetQueryExecutions');
   }
 
   /**
@@ -346,6 +482,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable access to the specified table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetTable() {
+    return this.to('GetTable');
+  }
+
+  /**
    * Grants permission to get a metadata about a table for a given datacatalog
    *
    * Access Level: Read
@@ -354,6 +501,17 @@ export class Athena extends PolicyStatement {
    */
   public toGetTableMetadata() {
     return this.to('GetTableMetadata');
+  }
+
+  /**
+   * Grants permission to enable access to tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   */
+  public toGetTables() {
+    return this.to('GetTables');
   }
 
   /**
@@ -398,6 +556,17 @@ export class Athena extends PolicyStatement {
    */
   public toListCalculationExecutions() {
     return this.to('ListCalculationExecutions');
+  }
+
+  /**
+   * Grants permission to return a list of capacity reservations for the specified AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListCapacityReservations.html
+   */
+  public toListCapacityReservations() {
+    return this.to('ListCapacityReservations');
   }
 
   /**
@@ -544,6 +713,28 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to assign capacity from a capacity reservation to queries
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_PutCapacityAssignmentConfiguration.html
+   */
+  public toPutCapacityAssignmentConfiguration() {
+    return this.to('PutCapacityAssignmentConfiguration');
+  }
+
+  /**
+   * Grants permission to run a query. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use StartQueryExecution otherwise
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html
+   */
+  public toRunQuery() {
+    return this.to('RunQuery');
+  }
+
+  /**
    * Grants permission to start a calculation execution
    *
    * Access Level: Write
@@ -639,6 +830,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a capacity reservation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateCapacityReservation.html
+   */
+  public toUpdateCapacityReservation() {
+    return this.to('UpdateCapacityReservation');
+  }
+
+  /**
    * Grants permission to update a datacatalog
    *
    * Access Level: Write
@@ -712,18 +914,28 @@ export class Athena extends PolicyStatement {
       'GetCalculationExecution',
       'GetCalculationExecutionCode',
       'GetCalculationExecutionStatus',
+      'GetCapacityAssignmentConfiguration',
+      'GetCapacityReservation',
+      'GetCatalogs',
       'GetDataCatalog',
       'GetDatabase',
+      'GetExecutionEngine',
+      'GetExecutionEngines',
       'GetNamedQuery',
+      'GetNamespace',
+      'GetNamespaces',
       'GetNotebookMetadata',
       'GetPreparedStatement',
       'GetQueryExecution',
+      'GetQueryExecutions',
       'GetQueryResults',
       'GetQueryResultsStream',
       'GetQueryRuntimeStatistics',
       'GetSession',
       'GetSessionStatus',
+      'GetTable',
       'GetTableMetadata',
+      'GetTables',
       'GetWorkGroup',
       'ListEngineVersions',
       'ListQueryExecutions',
@@ -731,12 +943,16 @@ export class Athena extends PolicyStatement {
       'ListTagsForResource'
     ],
     Write: [
+      'CancelCapacityReservation',
+      'CancelQueryExecution',
+      'CreateCapacityReservation',
       'CreateDataCatalog',
       'CreateNamedQuery',
       'CreateNotebook',
       'CreatePreparedStatement',
       'CreatePresignedNotebookUrl',
       'CreateWorkGroup',
+      'DeleteCapacityReservation',
       'DeleteDataCatalog',
       'DeleteNamedQuery',
       'DeleteNotebook',
@@ -744,12 +960,15 @@ export class Athena extends PolicyStatement {
       'DeleteWorkGroup',
       'ExportNotebook',
       'ImportNotebook',
+      'PutCapacityAssignmentConfiguration',
+      'RunQuery',
       'StartCalculationExecution',
       'StartQueryExecution',
       'StartSession',
       'StopCalculationExecution',
       'StopQueryExecution',
       'TerminateSession',
+      'UpdateCapacityReservation',
       'UpdateDataCatalog',
       'UpdateNamedQuery',
       'UpdateNotebook',
@@ -760,6 +979,7 @@ export class Athena extends PolicyStatement {
     List: [
       'ListApplicationDPUSizes',
       'ListCalculationExecutions',
+      'ListCapacityReservations',
       'ListDataCatalogs',
       'ListDatabases',
       'ListExecutors',
@@ -808,5 +1028,78 @@ export class Athena extends PolicyStatement {
    */
   public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:workgroup/${ workGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type capacity-reservation to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/example-policies-capacity-reservations.html
+   *
+   * @param capacityReservationName - Identifier for the capacityReservationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCapacityReservation(capacityReservationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:capacity-reservation/${ capacityReservationName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateCapacityReservation()
+   * - .toCreateDataCatalog()
+   * - .toCreateWorkGroup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - datacatalog
+   * - workgroup
+   * - capacity-reservation
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateCapacityReservation()
+   * - .toCreateDataCatalog()
+   * - .toCreateWorkGroup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

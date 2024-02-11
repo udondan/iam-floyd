@@ -1,2 +1,5 @@
 ec2-instance-connect:ResourceTag/${TagKey}
+ec2-instance-connect:maxTunnelDuration
 ec2-instance-connect:osuser
+ec2-instance-connect:privateIpAddress
+ec2-instance-connect:remotePort

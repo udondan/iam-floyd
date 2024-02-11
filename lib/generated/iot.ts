@@ -272,6 +272,21 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a certificate provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateProvider.html
+   */
+  public toCreateCertificateProvider() {
+    return this.to('CreateCertificateProvider');
+  }
+
+  /**
    * Grants permission to create a custom metric for device side metric reporting and monitoring
    *
    * Access Level: Write
@@ -341,7 +356,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateFleetMetric.html
    */
   public toCreateFleetMetric() {
     return this.to('CreateFleetMetric');
@@ -416,6 +431,42 @@ export class Iot extends PolicyStatement {
    */
   public toCreateOTAUpdate() {
     return this.to('CreateOTAUpdate');
+  }
+
+  /**
+   * Grants permission to create a software package that you can deploy to your devices
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iot:GetIndexingConfiguration
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackage.html
+   */
+  public toCreatePackage() {
+    return this.to('CreatePackage');
+  }
+
+  /**
+   * Grants permission to create a version under the specified package
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iot:GetIndexingConfiguration
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html
+   */
+  public toCreatePackageVersion() {
+    return this.to('CreatePackageVersion');
   }
 
   /**
@@ -681,6 +732,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a certificate provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificateProvider.html
+   */
+  public toDeleteCertificateProvider() {
+    return this.to('DeleteCertificateProvider');
+  }
+
+  /**
    * Grants permission to deletes the specified custom metric from your AWS account
    *
    * Access Level: Write
@@ -729,7 +791,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteFleetMetric.html
    */
   public toDeleteFleetMetric() {
     return this.to('DeleteFleetMetric');
@@ -788,6 +850,28 @@ export class Iot extends PolicyStatement {
    */
   public toDeleteOTAUpdate() {
     return this.to('DeleteOTAUpdate');
+  }
+
+  /**
+   * Grants permission to delete a package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePackage.html
+   */
+  public toDeletePackage() {
+    return this.to('DeletePackage');
+  }
+
+  /**
+   * Grants permission to delete a version of the specified package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePackageVersion.html
+   */
+  public toDeletePackageVersion() {
+    return this.to('DeletePackageVersion');
   }
 
   /**
@@ -1077,6 +1161,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a certificate provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificateProvider.html
+   */
+  public toDescribeCertificateProvider() {
+    return this.to('DescribeCertificateProvider');
+  }
+
+  /**
    * Grants permission to describe a custom metric that is defined in your AWS account
    *
    * Access Level: Read
@@ -1158,7 +1253,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeFleetMetric.html
    */
   public toDescribeFleetMetric() {
     return this.to('DescribeFleetMetric');
@@ -1433,7 +1528,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetBucketsAggregation.html
    */
   public toGetBucketsAggregation() {
     return this.to('GetBucketsAggregation');
@@ -1503,6 +1598,39 @@ export class Iot extends PolicyStatement {
    */
   public toGetOTAUpdate() {
     return this.to('GetOTAUpdate');
+  }
+
+  /**
+   * Grants permission to get the information about the package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackage.html
+   */
+  public toGetPackage() {
+    return this.to('GetPackage');
+  }
+
+  /**
+   * Grants permission to get the package configuration of the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackageConfiguration.html
+   */
+  public toGetPackageConfiguration() {
+    return this.to('GetPackageConfiguration');
+  }
+
+  /**
+   * Grants permission to get the version of the package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackageVersion.html
+   */
+  public toGetPackageVersion() {
+    return this.to('GetPackageVersion');
   }
 
   /**
@@ -1726,6 +1854,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list certificate providers in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificateProviders.html
+   */
+  public toListCertificateProviders() {
+    return this.to('ListCertificateProviders');
+  }
+
+  /**
    * Grants permission to list your certificates
    *
    * Access Level: List
@@ -1807,7 +1946,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListFleetMetrics.html
    */
   public toListFleetMetrics() {
     return this.to('ListFleetMetrics');
@@ -1880,7 +2019,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Adds support to list metric datapoints collected for IoT devices
+   * Grants permissions to list the metric values for a thing based on the metricName, and dimension if specified
    *
    * Access Level: List
    *
@@ -1932,6 +2071,28 @@ export class Iot extends PolicyStatement {
    */
   public toListOutgoingCertificates() {
     return this.to('ListOutgoingCertificates');
+  }
+
+  /**
+   * Grants permission to list versions for a package in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPackageVersions.html
+   */
+  public toListPackageVersions() {
+    return this.to('ListPackageVersions');
+  }
+
+  /**
+   * Grants permission to list packages in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPackages.html
+   */
+  public toListPackages() {
+    return this.to('ListPackages');
   }
 
   /**
@@ -2711,6 +2872,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a certificate provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCertificateProvider.html
+   */
+  public toUpdateCertificateProvider() {
+    return this.to('UpdateCertificateProvider');
+  }
+
+  /**
    * Grants permission to update the specified custom metric
    *
    * Access Level: Write
@@ -2770,7 +2942,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateFleetMetric.html
    */
   public toUpdateFleetMetric() {
     return this.to('UpdateFleetMetric');
@@ -2807,6 +2979,48 @@ export class Iot extends PolicyStatement {
    */
   public toUpdateMitigationAction() {
     return this.to('UpdateMitigationAction');
+  }
+
+  /**
+   * Grants permission to update a package
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iot:GetIndexingConfiguration
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackage.html
+   */
+  public toUpdatePackage() {
+    return this.to('UpdatePackage');
+  }
+
+  /**
+   * Grants permission to update the package configuration of the account
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageConfiguration.html
+   */
+  public toUpdatePackageConfiguration() {
+    return this.to('UpdatePackageConfiguration');
+  }
+
+  /**
+   * Grants permission to update the version of the specified package
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iot:GetIndexingConfiguration
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html
+   */
+  public toUpdatePackageVersion() {
+    return this.to('UpdatePackageVersion');
   }
 
   /**
@@ -2958,6 +3172,7 @@ export class Iot extends PolicyStatement {
       'CreateAuthorizer',
       'CreateBillingGroup',
       'CreateCertificateFromCsr',
+      'CreateCertificateProvider',
       'CreateCustomMetric',
       'CreateDimension',
       'CreateDomainConfiguration',
@@ -2968,6 +3183,8 @@ export class Iot extends PolicyStatement {
       'CreateKeysAndCertificate',
       'CreateMitigationAction',
       'CreateOTAUpdate',
+      'CreatePackage',
+      'CreatePackageVersion',
       'CreatePolicy',
       'CreatePolicyVersion',
       'CreateProvisioningClaim',
@@ -2988,6 +3205,7 @@ export class Iot extends PolicyStatement {
       'DeleteBillingGroup',
       'DeleteCACertificate',
       'DeleteCertificate',
+      'DeleteCertificateProvider',
       'DeleteCustomMetric',
       'DeleteDimension',
       'DeleteDomainConfiguration',
@@ -2998,6 +3216,8 @@ export class Iot extends PolicyStatement {
       'DeleteJobTemplate',
       'DeleteMitigationAction',
       'DeleteOTAUpdate',
+      'DeletePackage',
+      'DeletePackageVersion',
       'DeletePolicy',
       'DeletePolicyVersion',
       'DeleteProvisioningTemplate',
@@ -3049,6 +3269,7 @@ export class Iot extends PolicyStatement {
       'UpdateBillingGroup',
       'UpdateCACertificate',
       'UpdateCertificate',
+      'UpdateCertificateProvider',
       'UpdateCustomMetric',
       'UpdateDimension',
       'UpdateDomainConfiguration',
@@ -3058,6 +3279,9 @@ export class Iot extends PolicyStatement {
       'UpdateIndexingConfiguration',
       'UpdateJob',
       'UpdateMitigationAction',
+      'UpdatePackage',
+      'UpdatePackageConfiguration',
+      'UpdatePackageVersion',
       'UpdateProvisioningTemplate',
       'UpdateRoleAlias',
       'UpdateScheduledAudit',
@@ -3087,6 +3311,7 @@ export class Iot extends PolicyStatement {
       'DescribeBillingGroup',
       'DescribeCACertificate',
       'DescribeCertificate',
+      'DescribeCertificateProvider',
       'DescribeCustomMetric',
       'DescribeDefaultAuthorizer',
       'DescribeDetectMitigationActionsTask',
@@ -3119,6 +3344,9 @@ export class Iot extends PolicyStatement {
       'GetJobDocument',
       'GetLoggingOptions',
       'GetOTAUpdate',
+      'GetPackage',
+      'GetPackageConfiguration',
+      'GetPackageVersion',
       'GetPercentiles',
       'GetPolicy',
       'GetPolicyVersion',
@@ -3147,6 +3375,7 @@ export class Iot extends PolicyStatement {
       'ListAuthorizers',
       'ListBillingGroups',
       'ListCACertificates',
+      'ListCertificateProviders',
       'ListCertificates',
       'ListCertificatesByCA',
       'ListCustomMetrics',
@@ -3166,6 +3395,8 @@ export class Iot extends PolicyStatement {
       'ListNamedShadowsForThing',
       'ListOTAUpdates',
       'ListOutgoingCertificates',
+      'ListPackageVersions',
+      'ListPackages',
       'ListPolicies',
       'ListPolicyPrincipals',
       'ListPolicyVersions',
@@ -3268,7 +3499,7 @@ export class Iot extends PolicyStatement {
   /**
    * Adds a resource of type jobtemplate to the statement
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-job-templates.html
+   * https://docs.aws.amazon.com/iot/latest/developerguide/job-templates.html
    *
    * @param jobTemplateId - Identifier for the jobTemplateId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3678,6 +3909,180 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type package to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
+   *
+   * @param packageName - Identifier for the packageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackage(packageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:package/${ packageName }`);
+  }
+
+  /**
+   * Adds a resource of type packageversion to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
+   *
+   * @param packageName - Identifier for the packageName.
+   * @param versionName - Identifier for the versionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackageversion(packageName: string, versionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:package/${ packageName }/version/${ versionName }`);
+  }
+
+  /**
+   * Adds a resource of type certificateprovider to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html
+   *
+   * @param certificateProviderName - Identifier for the certificateProviderName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCertificateprovider(certificateProviderName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:certificateprovider/${ certificateProviderName }`);
+  }
+
+  /**
+   * Filters access by a tag key that is present in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateAuthorizer()
+   * - .toCreateBillingGroup()
+   * - .toCreateCertificateProvider()
+   * - .toCreateCustomMetric()
+   * - .toCreateDimension()
+   * - .toCreateDomainConfiguration()
+   * - .toCreateDynamicThingGroup()
+   * - .toCreateFleetMetric()
+   * - .toCreateJob()
+   * - .toCreateJobTemplate()
+   * - .toCreateMitigationAction()
+   * - .toCreateOTAUpdate()
+   * - .toCreatePackage()
+   * - .toCreatePackageVersion()
+   * - .toCreatePolicy()
+   * - .toCreateProvisioningTemplate()
+   * - .toCreateRoleAlias()
+   * - .toCreateScheduledAudit()
+   * - .toCreateSecurityProfile()
+   * - .toCreateStream()
+   * - .toCreateThingGroup()
+   * - .toCreateThingType()
+   * - .toCreateTopicRule()
+   * - .toOpenTunnel()
+   * - .toRegisterCACertificate()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key component of a tag associated to the IoT resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to resource types:
+   * - fleetmetric
+   * - job
+   * - jobtemplate
+   * - tunnel
+   * - thinggroup
+   * - billinggroup
+   * - dynamicthinggroup
+   * - thingtype
+   * - rolealias
+   * - authorizer
+   * - policy
+   * - cacert
+   * - stream
+   * - otaupdate
+   * - scheduledaudit
+   * - mitigationaction
+   * - securityprofile
+   * - custommetric
+   * - dimension
+   * - rule
+   * - provisioningtemplate
+   * - domainconfiguration
+   * - package
+   * - packageversion
+   * - certificateprovider
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys associated to the IoT resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateAuthorizer()
+   * - .toCreateBillingGroup()
+   * - .toCreateCertificateProvider()
+   * - .toCreateCustomMetric()
+   * - .toCreateDimension()
+   * - .toCreateDomainConfiguration()
+   * - .toCreateDynamicThingGroup()
+   * - .toCreateFleetMetric()
+   * - .toCreateJob()
+   * - .toCreateJobTemplate()
+   * - .toCreateMitigationAction()
+   * - .toCreateOTAUpdate()
+   * - .toCreatePackage()
+   * - .toCreatePackageVersion()
+   * - .toCreatePolicy()
+   * - .toCreateProvisioningTemplate()
+   * - .toCreateRoleAlias()
+   * - .toCreateScheduledAudit()
+   * - .toCreateSecurityProfile()
+   * - .toCreateStream()
+   * - .toCreateThingGroup()
+   * - .toCreateThingType()
+   * - .toCreateTopicRule()
+   * - .toOpenTunnel()
+   * - .toRegisterCACertificate()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the mode of the client for IoT Tunnel
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
@@ -3731,10 +4136,10 @@ export class Iot extends PolicyStatement {
    * - .toRotateTunnelAccessToken()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifThingGroupArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThingGroupArn`, value, operator || 'StringLike');
+    return this.if(`ThingGroupArn`, value, operator || 'ArnLike');
   }
 
   /**

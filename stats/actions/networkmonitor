@@ -1,0 +1,12 @@
+networkmonitor:CreateMonitor;Write
+networkmonitor:CreateProbe;Write
+networkmonitor:DeleteMonitor;Write
+networkmonitor:DeleteProbe;Write
+networkmonitor:GetMonitor;Read
+networkmonitor:GetProbe;Read
+networkmonitor:ListMonitors;List
+networkmonitor:ListTagsForResource;Read
+networkmonitor:TagResource;Tagging
+networkmonitor:UntagResource;Tagging
+networkmonitor:UpdateMonitor;Write
+networkmonitor:UpdateProbe;Write

@@ -53,6 +53,7 @@ codecommit:GitPush;Write
 codecommit:ListApprovalRuleTemplates;List
 codecommit:ListAssociatedApprovalRuleTemplatesForRepository;List
 codecommit:ListBranches;List
+codecommit:ListFileCommitHistory;List
 codecommit:ListPullRequests;List
 codecommit:ListRepositories;List
 codecommit:ListRepositoriesForApprovalRuleTemplate;List
@@ -84,5 +85,6 @@ codecommit:UpdatePullRequestDescription;Write
 codecommit:UpdatePullRequestStatus;Write
 codecommit:UpdatePullRequestTitle;Write
 codecommit:UpdateRepositoryDescription;Write
+codecommit:UpdateRepositoryEncryptionKey;Write
 codecommit:UpdateRepositoryName;Write
 codecommit:UploadArchive;Write

@@ -1,3 +1,4 @@
+supportplans:CreateSupportPlanSchedule;Write
 supportplans:GetSupportPlan;Read
 supportplans:GetSupportPlanUpdateStatus;Read
 supportplans:StartSupportPlanUpdate;Write

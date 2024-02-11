@@ -34,7 +34,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster
+   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster or external key manager outside of AWS
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage
+   * Controls permission to create a custom key store that is backed by an AWS CloudHSM cluster or an external key manager outside of AWS
    *
    * Access Level: Write
    *
@@ -256,7 +256,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster
+   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster or external key manager outside of AWS
    *
    * Access Level: Write
    *
@@ -699,6 +699,7 @@ export class Kms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCallerAccount()
+   * - .ifScheduleKeyDeletionPendingWindowInDays()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
@@ -932,7 +933,7 @@ export class Kms extends PolicyStatement {
   /**
    * Adds a resource of type alias to the statement
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html
+   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#alias-concept
    *
    * @param alias - Identifier for the alias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -964,6 +965,59 @@ export class Kms extends PolicyStatement {
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Kms.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+  }
+
+  /**
+   * Filters access to the specified AWS KMS operations based on both the key and value of the tag in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the specified AWS KMS operations based on tags assigned to the AWS KMS key
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/tag-authorization.html
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the specified AWS KMS operations based on tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1464,6 +1518,21 @@ export class Kms extends PolicyStatement {
    */
   public ifRetiringPrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`RetiringPrincipal`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the ScheduleKeyDeletion operation based on the value of the PendingWindowInDays parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days
+   *
+   * Applies to actions:
+   * - .toScheduleKeyDeletion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifScheduleKeyDeletionPendingWindowInDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`ScheduleKeyDeletionPendingWindowInDays`, value, operator || 'NumericEquals');
   }
 
   /**

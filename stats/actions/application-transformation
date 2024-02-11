@@ -1,0 +1,14 @@
+application-transformation:GetContainerization;Read
+application-transformation:GetDeployment;Read
+application-transformation:GetGroupingAssessment;Read
+application-transformation:GetPortingCompatibilityAssessment;Read
+application-transformation:GetPortingRecommendationAssessment;Read
+application-transformation:GetRuntimeAssessment;Read
+application-transformation:PutLogData;Write
+application-transformation:PutMetricData;Write
+application-transformation:StartContainerization;Write
+application-transformation:StartDeployment;Write
+application-transformation:StartGroupingAssessment;Write
+application-transformation:StartPortingCompatibilityAssessment;Write
+application-transformation:StartPortingRecommendationAssessment;Write
+application-transformation:StartRuntimeAssessment;Write

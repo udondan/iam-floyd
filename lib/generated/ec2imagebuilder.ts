@@ -30,13 +30,20 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new component
+   * Grants permission to cancel a lifecycle execution
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelLifecycleExecution.html
+   */
+  public toCancelLifecycleExecution() {
+    return this.to('CancelLifecycleExecution');
+  }
+
+  /**
+   * Grants permission to create a new component
+   *
+   * Access Level: Write
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -55,10 +62,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to create a new Container Recipe
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - ecr:DescribeImages
@@ -82,10 +85,6 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - imagebuilder:TagResource
@@ -101,16 +100,14 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
    * - imagebuilder:GetContainerRecipe
    * - imagebuilder:GetDistributionConfiguration
    * - imagebuilder:GetImageRecipe
    * - imagebuilder:GetInfrastructureConfiguration
+   * - imagebuilder:GetWorkflow
    * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html
@@ -124,14 +121,14 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
    * - imagebuilder:GetContainerRecipe
+   * - imagebuilder:GetDistributionConfiguration
    * - imagebuilder:GetImageRecipe
+   * - imagebuilder:GetInfrastructureConfiguration
+   * - imagebuilder:GetWorkflow
    * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
@@ -144,10 +141,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to create a new Image Recipe
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - ec2:DescribeImages
@@ -167,14 +160,6 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifCreatedResourceTagKeys()
-   * - .ifCreatedResourceTag()
-   * - .ifEc2MetadataHttpTokens()
-   * - .ifStatusTopicArn()
-   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - iam:PassRole
@@ -185,6 +170,40 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toCreateInfrastructureConfiguration() {
     return this.to('CreateInfrastructureConfiguration');
+  }
+
+  /**
+   * Grants permission to create a new lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - imagebuilder:TagResource
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateLifecyclePolicy.html
+   */
+  public toCreateLifecyclePolicy() {
+    return this.to('CreateLifecyclePolicy');
+  }
+
+  /**
+   * Grants permission to create a new workflow
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - imagebuilder:TagResource
+   * - kms:Encrypt
+   * - kms:GenerateDataKey
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateWorkflow.html
+   */
+  public toCreateWorkflow() {
+    return this.to('CreateWorkflow');
   }
 
   /**
@@ -265,6 +284,28 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteLifecyclePolicy.html
+   */
+  public toDeleteLifecyclePolicy() {
+    return this.to('DeleteLifecyclePolicy');
+  }
+
+  /**
+   * Grants permission to delete a workflow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteWorkflow.html
+   */
+  public toDeleteWorkflow() {
+    return this.to('DeleteWorkflow');
+  }
+
+  /**
    * Grants permission to view details about a component
    *
    * Access Level: Read
@@ -326,9 +367,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to view details about an image
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html
    */
@@ -392,6 +430,42 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about a lifecycle execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecycleExecution.html
+   */
+  public toGetLifecycleExecution() {
+    return this.to('GetLifecycleExecution');
+  }
+
+  /**
+   * Grants permission to view details about a lifecycle policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecyclePolicy.html
+   */
+  public toGetLifecyclePolicy() {
+    return this.to('GetLifecyclePolicy');
+  }
+
+  /**
+   * Grants permission to view details about a workflow
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflow.html
+   */
+  public toGetWorkflow() {
+    return this.to('GetWorkflow');
+  }
+
+  /**
    * Grants permission to view details about a workflow execution
    *
    * Access Level: Read
@@ -418,10 +492,6 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - imagebuilder:TagResource
@@ -439,10 +509,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to import an image
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - ec2:DescribeImportImageTasks
@@ -513,9 +579,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to return a list of packages installed on the specified image
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePackages.html
    */
@@ -604,17 +667,69 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resources for the specified lifecycle execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecycleExecutionResources.html
+   */
+  public toListLifecycleExecutionResources() {
+    return this.to('ListLifecycleExecutionResources');
+  }
+
+  /**
+   * Grants permission to list lifecycle executions for the specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecycleExecutions.html
+   */
+  public toListLifecycleExecutions() {
+    return this.to('ListLifecycleExecutions');
+  }
+
+  /**
+   * Grants permission to list the lifecycle policies in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecyclePolicies.html
+   */
+  public toListLifecyclePolicies() {
+    return this.to('ListLifecyclePolicies');
+  }
+
+  /**
    * Grants permission to list tags for an Image Builder resource
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list waiting workflow steps for the caller account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWaitingWorkflowSteps.html
+   */
+  public toListWaitingWorkflowSteps() {
+    return this.to('ListWaitingWorkflowSteps');
+  }
+
+  /**
+   * Grants permission to list the workflow build versions in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowBuildVersions.html
+   */
+  public toListWorkflowBuildVersions() {
+    return this.to('ListWorkflowBuildVersions');
   }
 
   /**
@@ -637,6 +752,17 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toListWorkflowStepExecutions() {
     return this.to('ListWorkflowStepExecutions');
+  }
+
+  /**
+   * Grants permission to list the workflow versions owned by or shared with your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflows.html
+   */
+  public toListWorkflows() {
+    return this.to('ListWorkflows');
   }
 
   /**
@@ -684,6 +810,17 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send an action to a workflow step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_SendWorkflowStepAction.html
+   */
+  public toSendWorkflowStepAction() {
+    return this.to('SendWorkflowStepAction');
+  }
+
+  /**
    * Grants permission to create a new image from a pipeline
    *
    * Access Level: Write
@@ -699,14 +836,20 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a state update for the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartResourceStateUpdate.html
+   */
+  public toStartResourceStateUpdate() {
+    return this.to('StartResourceStateUpdate');
+  }
+
+  /**
    * Grants permission to tag an Image Builder resource
    *
    * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html
    */
@@ -718,10 +861,6 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to untag an Image Builder resource
    *
    * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html
    */
@@ -745,6 +884,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - imagebuilder:GetContainerRecipe
+   * - imagebuilder:GetDistributionConfiguration
+   * - imagebuilder:GetImageRecipe
+   * - imagebuilder:GetInfrastructureConfiguration
+   * - imagebuilder:GetWorkflow
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html
    */
   public toUpdateImagePipeline() {
@@ -756,13 +904,6 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCreatedResourceTagKeys()
-   * - .ifCreatedResourceTag()
-   * - .ifEc2MetadataHttpTokens()
-   * - .ifStatusTopicArn()
-   *
    * Dependent actions:
    * - iam:PassRole
    * - sns:Publish
@@ -773,9 +914,24 @@ export class Imagebuilder extends PolicyStatement {
     return this.to('UpdateInfrastructureConfiguration');
   }
 
+  /**
+   * Grants permission to update an existing lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateLifecyclePolicy.html
+   */
+  public toUpdateLifecyclePolicy() {
+    return this.to('UpdateLifecyclePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelImageCreation',
+      'CancelLifecycleExecution',
       'CreateComponent',
       'CreateContainerRecipe',
       'CreateDistributionConfiguration',
@@ -783,6 +939,8 @@ export class Imagebuilder extends PolicyStatement {
       'CreateImagePipeline',
       'CreateImageRecipe',
       'CreateInfrastructureConfiguration',
+      'CreateLifecyclePolicy',
+      'CreateWorkflow',
       'DeleteComponent',
       'DeleteContainerRecipe',
       'DeleteDistributionConfiguration',
@@ -790,12 +948,17 @@ export class Imagebuilder extends PolicyStatement {
       'DeleteImagePipeline',
       'DeleteImageRecipe',
       'DeleteInfrastructureConfiguration',
+      'DeleteLifecyclePolicy',
+      'DeleteWorkflow',
       'ImportComponent',
       'ImportVmImage',
+      'SendWorkflowStepAction',
       'StartImagePipelineExecution',
+      'StartResourceStateUpdate',
       'UpdateDistributionConfiguration',
       'UpdateImagePipeline',
-      'UpdateInfrastructureConfiguration'
+      'UpdateInfrastructureConfiguration',
+      'UpdateLifecyclePolicy'
     ],
     Read: [
       'GetComponent',
@@ -809,6 +972,9 @@ export class Imagebuilder extends PolicyStatement {
       'GetImageRecipe',
       'GetImageRecipePolicy',
       'GetInfrastructureConfiguration',
+      'GetLifecycleExecution',
+      'GetLifecyclePolicy',
+      'GetWorkflow',
       'GetWorkflowExecution',
       'GetWorkflowStepExecution',
       'ListTagsForResource'
@@ -827,8 +993,14 @@ export class Imagebuilder extends PolicyStatement {
       'ListImageScanFindings',
       'ListImages',
       'ListInfrastructureConfigurations',
+      'ListLifecycleExecutionResources',
+      'ListLifecycleExecutions',
+      'ListLifecyclePolicies',
+      'ListWaitingWorkflowSteps',
+      'ListWorkflowBuildVersions',
       'ListWorkflowExecutions',
-      'ListWorkflowStepExecutions'
+      'ListWorkflowStepExecutions',
+      'ListWorkflows'
     ],
     'Permissions management': [
       'PutComponentPolicy',
@@ -1018,9 +1190,79 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type lifecycleExecution to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecycleExecution.html
+   *
+   * @param lifecycleExecutionId - Identifier for the lifecycleExecutionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onLifecycleExecution(lifecycleExecutionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:lifecycle-execution/${ lifecycleExecutionId }`);
+  }
+
+  /**
+   * Adds a resource of type lifecyclePolicy to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecyclePolicy.html
+   *
+   * @param lifecyclePolicyName - Identifier for the lifecyclePolicyName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLifecyclePolicy(lifecyclePolicyName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:lifecycle-policy/${ lifecyclePolicyName }`);
+  }
+
+  /**
+   * Adds a resource of type workflow to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Workflow.html
+   *
+   * @param workflowType - Identifier for the workflowType.
+   * @param workflowName - Identifier for the workflowName.
+   * @param workflowVersion - Identifier for the workflowVersion.
+   * @param workflowBuildVersion - Identifier for the workflowBuildVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkflow(workflowType: string, workflowName: string, workflowVersion: string, workflowBuildVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }/${ workflowBuildVersion }`);
+  }
+
+  /**
+   * Adds a resource of type workflowVersion to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowVersion.html
+   *
+   * @param workflowType - Identifier for the workflowType.
+   * @param workflowName - Identifier for the workflowName.
+   * @param workflowVersion - Identifier for the workflowVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkflowVersion(workflowType: string, workflowName: string, workflowVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }`);
+  }
+
+  /**
    * Adds a resource of type workflowExecution to the statement
    *
-   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowExecution.html
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowExecutionMetadata.html
    *
    * @param workflowExecutionId - Identifier for the workflowExecutionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1034,7 +1276,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * Adds a resource of type workflowStepExecution to the statement
    *
-   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowStepExecution.html
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowStepMetadata.html
    *
    * @param workflowStepExecutionId - Identifier for the workflowStepExecutionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1043,6 +1285,95 @@ export class Imagebuilder extends PolicyStatement {
    */
   public onWorkflowStepExecution(workflowStepExecutionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow-step-execution/${ workflowStepExecutionId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateContainerRecipe()
+   * - .toCreateDistributionConfiguration()
+   * - .toCreateImage()
+   * - .toCreateImagePipeline()
+   * - .toCreateImageRecipe()
+   * - .toCreateInfrastructureConfiguration()
+   * - .toCreateLifecyclePolicy()
+   * - .toCreateWorkflow()
+   * - .toImportComponent()
+   * - .toImportVmImage()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetImage()
+   * - .toListImagePackages()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateInfrastructureConfiguration()
+   *
+   * Applies to resource types:
+   * - component
+   * - componentVersion
+   * - distributionConfiguration
+   * - image
+   * - imageVersion
+   * - imageRecipe
+   * - containerRecipe
+   * - imagePipeline
+   * - infrastructureConfiguration
+   * - lifecyclePolicy
+   * - workflow
+   * - workflowVersion
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateContainerRecipe()
+   * - .toCreateDistributionConfiguration()
+   * - .toCreateImage()
+   * - .toCreateImagePipeline()
+   * - .toCreateImageRecipe()
+   * - .toCreateInfrastructureConfiguration()
+   * - .toCreateLifecyclePolicy()
+   * - .toCreateWorkflow()
+   * - .toImportComponent()
+   * - .toImportVmImage()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1095,6 +1426,22 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Filters access by the Lifecycle Policy Resource Type specified in the request
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-ec2metadatahttptokens
+   *
+   * Applies to actions:
+   * - .toCreateLifecyclePolicy()
+   * - .toUpdateLifecyclePolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLifecyclePolicyResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`LifecyclePolicyResourceType`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the SNS Topic Arn in the request to which terminal state notifications will be published
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-statustopicarn
@@ -1104,9 +1451,9 @@ export class Imagebuilder extends PolicyStatement {
    * - .toUpdateInfrastructureConfiguration()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifStatusTopicArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`StatusTopicArn`, value, operator || 'StringLike');
+    return this.if(`StatusTopicArn`, value, operator || 'ArnLike');
   }
 }

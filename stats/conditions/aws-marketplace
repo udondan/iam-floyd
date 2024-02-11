@@ -1,5 +1,6 @@
 aws-marketplace:AgreementType
 aws-marketplace:ChangeType
+aws-marketplace:Intent
 aws-marketplace:PartyType
 aws-marketplace:ProductId
 aws-marketplace:RequestTag/${TagKey}

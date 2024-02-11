@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspurchaseordersconsole.html).
@@ -23,6 +23,10 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toAddPurchaseOrder() {
@@ -33,6 +37,9 @@ export class PurchaseOrders extends PolicyStatement {
    * Grants permission to delete a purchase order
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
@@ -56,6 +63,9 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toGetPurchaseOrder() {
@@ -67,6 +77,9 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toListPurchaseOrderInvoices() {
@@ -74,7 +87,7 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get all available purchase orders
+   * Grants permission to list all purchase orders for an account
    *
    * Access Level: List
    *
@@ -85,14 +98,64 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a purchase order
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to modify purchase orders and details
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyPurchaseOrders() {
     return this.to('ModifyPurchaseOrders');
+  }
+
+  /**
+   * Grants permission to tag purchase orders with given key value pairs
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a purchase order
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -111,6 +174,9 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toUpdatePurchaseOrder() {
@@ -122,6 +188,9 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toUpdatePurchaseOrderStatus() {
@@ -132,6 +201,9 @@ export class PurchaseOrders extends PolicyStatement {
    * Grants permission to view purchase orders and details
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
@@ -151,11 +223,96 @@ export class PurchaseOrders extends PolicyStatement {
     Read: [
       'GetConsoleActionSetEnforced',
       'GetPurchaseOrder',
+      'ListTagsForResource',
       'ViewPurchaseOrders'
     ],
     List: [
       'ListPurchaseOrderInvoices',
       'ListPurchaseOrders'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type purchase-order to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPurchaseOrder(resourceName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || PurchaseOrders.defaultPartition }:purchase-orders::${ account || '*' }:purchase-order/${ resourceName }`);
+  }
+
+  /**
+   * Filters access by a tag's key and value in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddPurchaseOrder()
+   * - .toModifyPurchaseOrders()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the set of tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeletePurchaseOrder()
+   * - .toGetPurchaseOrder()
+   * - .toListPurchaseOrderInvoices()
+   * - .toListTagsForResource()
+   * - .toModifyPurchaseOrders()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdatePurchaseOrder()
+   * - .toUpdatePurchaseOrderStatus()
+   * - .toViewPurchaseOrders()
+   *
+   * Applies to resource types:
+   * - purchase-order
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddPurchaseOrder()
+   * - .toModifyPurchaseOrders()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

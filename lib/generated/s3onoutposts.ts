@@ -1135,10 +1135,10 @@ export class S3Outposts extends PolicyStatement {
    * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDataAccessPointArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataAccessPointArn`, value, operator || 'StringLike');
+    return this.if(`DataAccessPointArn`, value, operator || 'ArnLike');
   }
 
   /**

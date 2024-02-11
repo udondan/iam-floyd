@@ -305,6 +305,28 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a specific recommendation within an AWS Organization's organization. This API supports only prioritized recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toGetOrganizationRecommendation() {
+    return this.to('GetOrganizationRecommendation');
+  }
+
+  /**
+   * Grants permission to get a specific Recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toGetRecommendation() {
+    return this.to('GetRecommendation');
+  }
+
+  /**
    * Grants permission to include recommendations for AWS Trusted Advisor checks
    *
    * Access Level: Write
@@ -324,6 +346,17 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toListAccountsForParent() {
     return this.to('ListAccountsForParent');
+  }
+
+  /**
+   * Grants permission to list a filterable set of Checks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListChecks() {
+    return this.to('ListChecks');
   }
 
   /**
@@ -360,6 +393,39 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the accounts that own the resources for an AWS Organization aggregate recommendation. This API only supports prioritized recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListOrganizationRecommendationAccounts() {
+    return this.to('ListOrganizationRecommendationAccounts');
+  }
+
+  /**
+   * Grants permission to list Resources of a Recommendation within an AWS Organization. This API only supports prioritized recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListOrganizationRecommendationResources() {
+    return this.to('ListOrganizationRecommendationResources');
+  }
+
+  /**
+   * Grants permission to list a filterable set of Recommendations within an AWS Organization. This API only supports prioritized recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListOrganizationRecommendations() {
+    return this.to('ListOrganizationRecommendations');
+  }
+
+  /**
    * Grants permission to view, in the Trusted Advisor console, all of the organizational units (OUs) in a parent organizational unit or root
    *
    * Access Level: Read
@@ -368,6 +434,28 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toListOrganizationalUnitsForParent() {
     return this.to('ListOrganizationalUnitsForParent');
+  }
+
+  /**
+   * Grants permission to list Resources of a Recommendation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListRecommendationResources() {
+    return this.to('ListRecommendationResources');
+  }
+
+  /**
+   * Grants permission to list a filterable set of Recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toListRecommendations() {
+    return this.to('ListRecommendations');
   }
 
   /**
@@ -415,6 +503,17 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the details of an engagement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toUpdateEngagement() {
+    return this.to('UpdateEngagement');
+  }
+
+  /**
    * Grants permission to update the status of an engagement
    *
    * Access Level: Write
@@ -448,6 +547,28 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the lifecyle of a Recommendation within an AWS Organization. This API only supports prioritized recommendations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toUpdateOrganizationRecommendationLifecycle() {
+    return this.to('UpdateOrganizationRecommendationLifecycle');
+  }
+
+  /**
+   * Grants permission to update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toUpdateRecommendationLifecycle() {
+    return this.to('UpdateRecommendationLifecycle');
+  }
+
+  /**
    * Grants permission to update the risk status in AWS Trusted Advisor Priority
    *
    * Access Level: Write
@@ -470,9 +591,12 @@ export class Trustedadvisor extends PolicyStatement {
       'RefreshCheck',
       'SetAccountAccess',
       'SetOrganizationAccess',
+      'UpdateEngagement',
       'UpdateEngagementStatus',
       'UpdateNotificationConfigurations',
       'UpdateNotificationPreferences',
+      'UpdateOrganizationRecommendationLifecycle',
+      'UpdateRecommendationLifecycle',
       'UpdateRiskStatus'
     ],
     Read: [
@@ -496,12 +620,22 @@ export class Trustedadvisor extends PolicyStatement {
       'GetEngagement',
       'GetEngagementAttachment',
       'GetEngagementType',
+      'GetOrganizationRecommendation',
+      'GetRecommendation',
       'ListAccountsForParent',
       'ListEngagementCommunications',
       'ListEngagementTypes',
       'ListEngagements',
       'ListOrganizationalUnitsForParent',
       'ListRoots'
+    ],
+    List: [
+      'ListChecks',
+      'ListOrganizationRecommendationAccounts',
+      'ListOrganizationRecommendationResources',
+      'ListOrganizationRecommendations',
+      'ListRecommendationResources',
+      'ListRecommendations'
     ]
   };
 

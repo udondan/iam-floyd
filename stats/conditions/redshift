@@ -1,8 +1,10 @@
+redshift:AllowWrites
 redshift:ConsumerArn
 redshift:ConsumerIdentifier
 redshift:DbName
 redshift:DbUser
 redshift:DurationSeconds
+redshift:InboundIntegrationArn
 redshift:RequestTag/${TagKey}
 redshift:ResourceTag/${TagKey}
 redshift:TagKeys

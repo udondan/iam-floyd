@@ -1,0 +1,12 @@
+bcm-data-exports:CreateExport;Write
+bcm-data-exports:DeleteExport;Write
+bcm-data-exports:GetExecution;Read
+bcm-data-exports:GetExport;Read
+bcm-data-exports:GetTable;Read
+bcm-data-exports:ListExecutions;List
+bcm-data-exports:ListExports;List
+bcm-data-exports:ListTables;List
+bcm-data-exports:ListTagsForResource;Read
+bcm-data-exports:TagResource;Tagging
+bcm-data-exports:UntagResource;Tagging
+bcm-data-exports:UpdateExport;Write

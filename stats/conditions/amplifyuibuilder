@@ -1,3 +1,6 @@
+amplifyuibuilder:CodegenJobResourceAppId
+amplifyuibuilder:CodegenJobResourceEnvironmentName
+amplifyuibuilder:CodegenJobResourceId
 amplifyuibuilder:ComponentResourceAppId
 amplifyuibuilder:ComponentResourceEnvironmentName
 amplifyuibuilder:ComponentResourceId

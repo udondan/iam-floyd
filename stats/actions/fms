@@ -10,6 +10,7 @@ fms:DeleteResourceSet;Write
 fms:DisassociateAdminAccount;Write
 fms:DisassociateThirdPartyFirewall;Write
 fms:GetAdminAccount;Read
+fms:GetAdminScope;Read
 fms:GetAppsList;Read
 fms:GetComplianceDetail;Read
 fms:GetNotificationChannel;Read
@@ -19,6 +20,8 @@ fms:GetProtocolsList;Read
 fms:GetResourceSet;Read
 fms:GetThirdPartyFirewallAssociationStatus;Read
 fms:GetViolationDetails;Read
+fms:ListAdminAccountsForOrganization;List
+fms:ListAdminsManagingAccount;List
 fms:ListAppsLists;List
 fms:ListComplianceStatus;List
 fms:ListDiscoveredResources;List
@@ -29,6 +32,7 @@ fms:ListResourceSetResources;List
 fms:ListResourceSets;List
 fms:ListTagsForResource;Read
 fms:ListThirdPartyFirewallFirewallPolicies;List
+fms:PutAdminAccount;Write
 fms:PutAppsList;Write
 fms:PutNotificationChannel;Write
 fms:PutPolicy;Write

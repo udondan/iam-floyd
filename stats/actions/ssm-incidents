@@ -1,3 +1,4 @@
+ssm-incidents:BatchGetIncidentFindings;Read
 ssm-incidents:CreateReplicationSet;Write
 ssm-incidents:CreateResponsePlan;Write
 ssm-incidents:CreateTimelineEvent;Write
@@ -11,6 +12,7 @@ ssm-incidents:GetReplicationSet;Read
 ssm-incidents:GetResourcePolicies;Read
 ssm-incidents:GetResponsePlan;Read
 ssm-incidents:GetTimelineEvent;Read
+ssm-incidents:ListIncidentFindings;List
 ssm-incidents:ListIncidentRecords;List
 ssm-incidents:ListRelatedItems;List
 ssm-incidents:ListReplicationSets;List

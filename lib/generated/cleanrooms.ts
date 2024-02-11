@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html).
@@ -19,6 +19,20 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details of analysisTemplates associated to the collaboration
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetCollaborationAnalysisTemplate.html
+   */
+  public toBatchGetCollaborationAnalysisTemplate() {
+    return this.to('BatchGetCollaborationAnalysisTemplate');
+  }
+
+  /**
    * Grants permission to view details for schemas
    *
    * Access Level: Read
@@ -33,6 +47,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new analysis template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateAnalysisTemplate.html
+   */
+  public toCreateAnalysisTemplate() {
+    return this.to('CreateAnalysisTemplate');
+  }
+
+  /**
    * Grants permission to create a new collaboration, a shared data collaboration environment
    *
    * Access Level: Write
@@ -41,6 +66,22 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toCreateCollaboration() {
     return this.to('CreateCollaboration');
+  }
+
+  /**
+   * Grants permission to link a Cleanrooms ML configured audience model with a collaboration by creating a new association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms-ml:GetConfiguredAudienceModel
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredAudienceModelAssociation.html
+   */
+  public toCreateConfiguredAudienceModelAssociation() {
+    return this.to('CreateConfiguredAudienceModelAssociation');
   }
 
   /**
@@ -95,6 +136,7 @@ export class Cleanrooms extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - iam:PassRole
    * - logs:CreateLogDelivery
    * - logs:CreateLogGroup
    * - logs:DeleteLogDelivery
@@ -104,6 +146,7 @@ export class Cleanrooms extends PolicyStatement {
    * - logs:ListLogDeliveries
    * - logs:PutResourcePolicy
    * - logs:UpdateLogDelivery
+   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateMembership.html
    */
@@ -112,14 +155,57 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new privacy budget template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreatePrivacyBudgetTemplate.html
+   */
+  public toCreatePrivacyBudgetTemplate() {
+    return this.to('CreatePrivacyBudgetTemplate');
+  }
+
+  /**
+   * Grants permission to delete an existing analysis template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteAnalysisTemplate.html
+   */
+  public toDeleteAnalysisTemplate() {
+    return this.to('DeleteAnalysisTemplate');
+  }
+
+  /**
    * Grants permission to delete an existing collaboration
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteCollaboration.html
    */
   public toDeleteCollaboration() {
     return this.to('DeleteCollaboration');
+  }
+
+  /**
+   * Grants permission to delete an existing configured audience model association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredAudienceModelAssociation.html
+   */
+  public toDeleteConfiguredAudienceModelAssociation() {
+    return this.to('DeleteConfiguredAudienceModelAssociation');
   }
 
   /**
@@ -160,6 +246,11 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteMember.html
    */
   public toDeleteMember() {
@@ -178,6 +269,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing privacy budget template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeletePrivacyBudgetTemplate.html
+   */
+  public toDeletePrivacyBudgetTemplate() {
+    return this.to('DeletePrivacyBudgetTemplate');
+  }
+
+  /**
+   * Grants permission to view details for an analysis template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetAnalysisTemplate.html
+   */
+  public toGetAnalysisTemplate() {
+    return this.to('GetAnalysisTemplate');
+  }
+
+  /**
    * Grants permission to view details for a collaboration
    *
    * Access Level: Read
@@ -186,6 +299,50 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toGetCollaboration() {
     return this.to('GetCollaboration');
+  }
+
+  /**
+   * Grants permission to view details for an analysis template within a collaboration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationAnalysisTemplate.html
+   */
+  public toGetCollaborationAnalysisTemplate() {
+    return this.to('GetCollaborationAnalysisTemplate');
+  }
+
+  /**
+   * Grants permission to view details for a configured audience model association within a collaboration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationConfiguredAudienceModelAssociation.html
+   */
+  public toGetCollaborationConfiguredAudienceModelAssociation() {
+    return this.to('GetCollaborationConfiguredAudienceModelAssociation');
+  }
+
+  /**
+   * Grants permission to view details for a privacy budget template within a collaboration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationPrivacyBudgetTemplate.html
+   */
+  public toGetCollaborationPrivacyBudgetTemplate() {
+    return this.to('GetCollaborationPrivacyBudgetTemplate');
+  }
+
+  /**
+   * Grants permission to view details for a configured audience model association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredAudienceModelAssociation.html
+   */
+  public toGetConfiguredAudienceModelAssociation() {
+    return this.to('GetConfiguredAudienceModelAssociation');
   }
 
   /**
@@ -233,6 +390,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details for a privacy budget template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetPrivacyBudgetTemplate.html
+   */
+  public toGetPrivacyBudgetTemplate() {
+    return this.to('GetPrivacyBudgetTemplate');
+  }
+
+  /**
    * Grants permission to view a protected query
    *
    * Access Level: Read
@@ -259,10 +427,68 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetSchemaAnalysisRule.html
    */
   public toGetSchemaAnalysisRule() {
     return this.to('GetSchemaAnalysisRule');
+  }
+
+  /**
+   * Grants permission to list available analysis templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListAnalysisTemplates.html
+   */
+  public toListAnalysisTemplates() {
+    return this.to('ListAnalysisTemplates');
+  }
+
+  /**
+   * Grants permission to list available analysis templates within a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationAnalysisTemplates.html
+   */
+  public toListCollaborationAnalysisTemplates() {
+    return this.to('ListCollaborationAnalysisTemplates');
+  }
+
+  /**
+   * Grants permission to list available configured audience model association within a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationConfiguredAudienceModelAssociations.html
+   */
+  public toListCollaborationConfiguredAudienceModelAssociations() {
+    return this.to('ListCollaborationConfiguredAudienceModelAssociations');
+  }
+
+  /**
+   * Grants permission to list available privacy budget templates within a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationPrivacyBudgetTemplates.html
+   */
+  public toListCollaborationPrivacyBudgetTemplates() {
+    return this.to('ListCollaborationPrivacyBudgetTemplates');
+  }
+
+  /**
+   * Grants permission to list privacy budgets within a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationPrivacyBudgets.html
+   */
+  public toListCollaborationPrivacyBudgets() {
+    return this.to('ListCollaborationPrivacyBudgets');
   }
 
   /**
@@ -274,6 +500,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toListCollaborations() {
     return this.to('ListCollaborations');
+  }
+
+  /**
+   * Grants permission to list available configured audience model associations for a membership
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListConfiguredAudienceModelAssociations.html
+   */
+  public toListConfiguredAudienceModelAssociations() {
+    return this.to('ListConfiguredAudienceModelAssociations');
   }
 
   /**
@@ -321,6 +558,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list available privacy budget templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListPrivacyBudgetTemplates.html
+   */
+  public toListPrivacyBudgetTemplates() {
+    return this.to('ListPrivacyBudgetTemplates');
+  }
+
+  /**
+   * Grants permission to list available privacy budgets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListPrivacyBudgets.html
+   */
+  public toListPrivacyBudgets() {
+    return this.to('ListPrivacyBudgets');
+  }
+
+  /**
    * Grants permission to list protected queries
    *
    * Access Level: List
@@ -354,11 +613,23 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to preview privacy budget template settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PreviewPrivacyImpact.html
+   */
+  public toPreviewPrivacyImpact() {
+    return this.to('PreviewPrivacyImpact');
+  }
+
+  /**
    * Grants permission to start protected queries
    *
    * Access Level: Write
    *
    * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
    * - cleanrooms:GetSchema
    * - s3:GetBucketLocation
    * - s3:ListBucket
@@ -400,6 +671,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update details of the analysis template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateAnalysisTemplate.html
+   */
+  public toUpdateAnalysisTemplate() {
+    return this.to('UpdateAnalysisTemplate');
+  }
+
+  /**
    * Grants permission to update details of the collaboration
    *
    * Access Level: Write
@@ -408,6 +690,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toUpdateCollaboration() {
     return this.to('UpdateCollaboration');
+  }
+
+  /**
+   * Grants permission to update a configured audience model association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredAudienceModelAssociation.html
+   */
+  public toUpdateConfiguredAudienceModelAssociation() {
+    return this.to('UpdateConfiguredAudienceModelAssociation');
   }
 
   /**
@@ -452,6 +745,7 @@ export class Cleanrooms extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - iam:PassRole
    * - logs:CreateLogDelivery
    * - logs:CreateLogGroup
    * - logs:DeleteLogDelivery
@@ -461,11 +755,23 @@ export class Cleanrooms extends PolicyStatement {
    * - logs:ListLogDeliveries
    * - logs:PutResourcePolicy
    * - logs:UpdateLogDelivery
+   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateMembership.html
    */
   public toUpdateMembership() {
     return this.to('UpdateMembership');
+  }
+
+  /**
+   * Grants permission to update details of the privacy budget template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdatePrivacyBudgetTemplate.html
+   */
+  public toUpdatePrivacyBudgetTemplate() {
+    return this.to('UpdatePrivacyBudgetTemplate');
   }
 
   /**
@@ -481,42 +787,67 @@ export class Cleanrooms extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Read: [
+      'BatchGetCollaborationAnalysisTemplate',
       'BatchGetSchema',
+      'GetAnalysisTemplate',
       'GetCollaboration',
+      'GetCollaborationAnalysisTemplate',
+      'GetCollaborationConfiguredAudienceModelAssociation',
+      'GetCollaborationPrivacyBudgetTemplate',
+      'GetConfiguredAudienceModelAssociation',
       'GetConfiguredTable',
       'GetConfiguredTableAnalysisRule',
       'GetConfiguredTableAssociation',
       'GetMembership',
+      'GetPrivacyBudgetTemplate',
       'GetProtectedQuery',
       'GetSchema',
-      'GetSchemaAnalysisRule'
+      'GetSchemaAnalysisRule',
+      'PreviewPrivacyImpact'
     ],
     Write: [
+      'CreateAnalysisTemplate',
       'CreateCollaboration',
+      'CreateConfiguredAudienceModelAssociation',
       'CreateConfiguredTable',
       'CreateConfiguredTableAnalysisRule',
       'CreateConfiguredTableAssociation',
       'CreateMembership',
+      'CreatePrivacyBudgetTemplate',
+      'DeleteAnalysisTemplate',
       'DeleteCollaboration',
+      'DeleteConfiguredAudienceModelAssociation',
       'DeleteConfiguredTable',
       'DeleteConfiguredTableAnalysisRule',
       'DeleteConfiguredTableAssociation',
       'DeleteMember',
       'DeleteMembership',
+      'DeletePrivacyBudgetTemplate',
       'StartProtectedQuery',
+      'UpdateAnalysisTemplate',
       'UpdateCollaboration',
+      'UpdateConfiguredAudienceModelAssociation',
       'UpdateConfiguredTable',
       'UpdateConfiguredTableAnalysisRule',
       'UpdateConfiguredTableAssociation',
       'UpdateMembership',
+      'UpdatePrivacyBudgetTemplate',
       'UpdateProtectedQuery'
     ],
     List: [
+      'ListAnalysisTemplates',
+      'ListCollaborationAnalysisTemplates',
+      'ListCollaborationConfiguredAudienceModelAssociations',
+      'ListCollaborationPrivacyBudgetTemplates',
+      'ListCollaborationPrivacyBudgets',
       'ListCollaborations',
+      'ListConfiguredAudienceModelAssociations',
       'ListConfiguredTableAssociations',
       'ListConfiguredTables',
       'ListMembers',
       'ListMemberships',
+      'ListPrivacyBudgetTemplates',
+      'ListPrivacyBudgets',
       'ListProtectedQueries',
       'ListSchemas',
       'ListTagsForResource'
@@ -528,7 +859,25 @@ export class Cleanrooms extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type Collaboration to the statement
+   * Adds a resource of type analysistemplate to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param analysisTemplateId - Identifier for the analysisTemplateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnalysistemplate(membershipId: string, analysisTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/analysistemplate/${ analysisTemplateId }`);
+  }
+
+  /**
+   * Adds a resource of type collaboration to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
@@ -545,7 +894,25 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type ConfiguredTable to the statement
+   * Adds a resource of type configuredaudiencemodelassociation to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param configuredAudienceModelAssociationId - Identifier for the configuredAudienceModelAssociationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfiguredaudiencemodelassociation(membershipId: string, configuredAudienceModelAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredaudiencemodelassociation/${ configuredAudienceModelAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type configuredtable to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
@@ -557,12 +924,12 @@ export class Cleanrooms extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConfiguredTable(configuredTableId: string, account?: string, region?: string, partition?: string) {
+  public onConfiguredtable(configuredTableId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:configuredtable/${ configuredTableId }`);
   }
 
   /**
-   * Adds a resource of type ConfiguredTableAssociation to the statement
+   * Adds a resource of type configuredtableassociation to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
@@ -575,12 +942,12 @@ export class Cleanrooms extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConfiguredTableAssociation(membershipId: string, configuredTableAssociationId: string, account?: string, region?: string, partition?: string) {
+  public onConfiguredtableassociation(membershipId: string, configuredTableAssociationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
   }
 
   /**
-   * Adds a resource of type Membership to the statement
+   * Adds a resource of type membership to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
@@ -594,5 +961,100 @@ export class Cleanrooms extends PolicyStatement {
    */
   public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }`);
+  }
+
+  /**
+   * Adds a resource of type privacybudgettemplate to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param privacyBudgetTemplateId - Identifier for the privacyBudgetTemplateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrivacybudgettemplate(membershipId: string, privacyBudgetTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/privacybudgettemplate/${ privacyBudgetTemplateId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAnalysisTemplate()
+   * - .toCreateCollaboration()
+   * - .toCreateConfiguredAudienceModelAssociation()
+   * - .toCreateConfiguredTable()
+   * - .toCreateConfiguredTableAssociation()
+   * - .toCreateMembership()
+   * - .toCreatePrivacyBudgetTemplate()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateAnalysisTemplate()
+   * - .toCreateCollaboration()
+   * - .toCreateConfiguredAudienceModelAssociation()
+   * - .toCreateConfiguredTable()
+   * - .toCreateConfiguredTableAssociation()
+   * - .toCreateMembership()
+   * - .toCreatePrivacyBudgetTemplate()
+   *
+   * Applies to resource types:
+   * - analysistemplate
+   * - collaboration
+   * - configuredaudiencemodelassociation
+   * - configuredtable
+   * - configuredtableassociation
+   * - membership
+   * - privacybudgettemplate
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAnalysisTemplate()
+   * - .toCreateCollaboration()
+   * - .toCreateConfiguredAudienceModelAssociation()
+   * - .toCreateConfiguredTable()
+   * - .toCreateConfiguredTableAssociation()
+   * - .toCreateMembership()
+   * - .toCreatePrivacyBudgetTemplate()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

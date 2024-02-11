@@ -1,0 +1,3 @@
+notifications:EventRule
+notifications:NotificationConfiguration
+notifications:NotificationEvent

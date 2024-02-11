@@ -1,3 +1,4 @@
+appflow:CancelFlowExecutions;Write
 appflow:CreateConnectorProfile;Write
 appflow:CreateFlow;Write
 appflow:DeleteConnectorProfile;Write
@@ -17,6 +18,7 @@ appflow:ListConnectors;List
 appflow:ListFlows;List
 appflow:ListTagsForResource;Read
 appflow:RegisterConnector;Write
+appflow:ResetConnectorMetadataCache;Write
 appflow:RunFlow;Write
 appflow:StartFlow;Write
 appflow:StopFlow;Write

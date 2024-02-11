@@ -1,0 +1,2 @@
+consoleapp:GetDeviceIdentity;Read
+consoleapp:ListDeviceIdentities;List

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [vendor-insights](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html).
@@ -300,6 +300,20 @@ export class VendorInsights extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing data source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html
+   */
+  public toUpdateDataSource() {
+    return this.to('UpdateDataSource');
+  }
+
+  /**
    * Grants permission to update the security profile
    *
    * Access Level: Write
@@ -350,6 +364,7 @@ export class VendorInsights extends PolicyStatement {
       'DeactivateSecurityProfile',
       'DeleteDataSource',
       'DisassociateDataSource',
+      'UpdateDataSource',
       'UpdateSecurityProfile',
       'UpdateSecurityProfileSnapshotCreationConfiguration',
       'UpdateSecurityProfileSnapshotReleaseConfiguration'
@@ -407,5 +422,86 @@ export class VendorInsights extends PolicyStatement {
    */
   public onSecurityProfile(resourceId: string, partition?: string) {
     return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);
+  }
+
+  /**
+   * Filters access by tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateSecurityProfile()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - DataSource
+   * - SecurityProfile
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toActivateSecurityProfile()
+   * - .toAssociateDataSource()
+   * - .toCreateDataSource()
+   * - .toCreateSecurityProfile()
+   * - .toDeactivateSecurityProfile()
+   * - .toDeleteDataSource()
+   * - .toDisassociateDataSource()
+   * - .toGetDataSource()
+   * - .toGetSecurityProfile()
+   * - .toGetSecurityProfileSnapshot()
+   * - .toListSecurityProfileSnapshots()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDataSource()
+   * - .toUpdateSecurityProfile()
+   * - .toUpdateSecurityProfileSnapshotCreationConfiguration()
+   * - .toUpdateSecurityProfileSnapshotReleaseConfiguration()
+   *
+   * Applies to resource types:
+   * - DataSource
+   * - SecurityProfile
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateSecurityProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - DataSource
+   * - SecurityProfile
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

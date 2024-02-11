@@ -25,6 +25,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifNotificationsForResource()
    *
@@ -191,7 +192,7 @@ export class CodestarNotifications extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
@@ -256,6 +257,82 @@ export class CodestarNotifications extends PolicyStatement {
    */
   public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || CodestarNotifications.defaultPartition }:codestar-notifications:${ region || '*' }:${ account || '*' }:notificationrule/${ notificationRuleId }`);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUpdateNotificationRule()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDescribeNotificationRule()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
+   *
+   * Applies to resource types:
+   * - notificationrule
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

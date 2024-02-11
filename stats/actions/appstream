@@ -1,3 +1,4 @@
+appstream:AssociateAppBlockBuilderAppBlock;Write
 appstream:AssociateApplicationFleet;Write
 appstream:AssociateApplicationToEntitlement;Write
 appstream:AssociateFleet;Write
@@ -5,6 +6,8 @@ appstream:BatchAssociateUserStack;Write
 appstream:BatchDisassociateUserStack;Write
 appstream:CopyImage;Write
 appstream:CreateAppBlock;Write
+appstream:CreateAppBlockBuilder;Write
+appstream:CreateAppBlockBuilderStreamingURL;Write
 appstream:CreateApplication;Write
 appstream:CreateDirectoryConfig;Write
 appstream:CreateEntitlement;Write
@@ -17,6 +20,7 @@ appstream:CreateUpdatedImage;Write
 appstream:CreateUsageReportSubscription;Write
 appstream:CreateUser;Write
 appstream:DeleteAppBlock;Write
+appstream:DeleteAppBlockBuilder;Write
 appstream:DeleteApplication;Write
 appstream:DeleteDirectoryConfig;Write
 appstream:DeleteEntitlement;Write
@@ -27,6 +31,8 @@ appstream:DeleteImagePermissions;Write
 appstream:DeleteStack;Write
 appstream:DeleteUsageReportSubscription;Write
 appstream:DeleteUser;Write
+appstream:DescribeAppBlockBuilderAppBlockAssociations;Read
+appstream:DescribeAppBlockBuilders;Read
 appstream:DescribeAppBlocks;Read
 appstream:DescribeApplicationFleetAssociations;Read
 appstream:DescribeApplications;Read
@@ -42,6 +48,7 @@ appstream:DescribeUsageReportSubscriptions;Read
 appstream:DescribeUserStackAssociations;Read
 appstream:DescribeUsers;Read
 appstream:DisableUser;Write
+appstream:DisassociateAppBlockBuilderAppBlock;Write
 appstream:DisassociateApplicationFleet;Write
 appstream:DisassociateApplicationFromEntitlement;Write
 appstream:DisassociateFleet;Write
@@ -51,13 +58,16 @@ appstream:ListAssociatedFleets;Read
 appstream:ListAssociatedStacks;Read
 appstream:ListEntitledApplications;List
 appstream:ListTagsForResource;Read
+appstream:StartAppBlockBuilder;Write
 appstream:StartFleet;Write
 appstream:StartImageBuilder;Write
+appstream:StopAppBlockBuilder;Write
 appstream:StopFleet;Write
 appstream:StopImageBuilder;Write
 appstream:Stream;Write
 appstream:TagResource;Tagging
 appstream:UntagResource;Tagging
+appstream:UpdateAppBlockBuilder;Write
 appstream:UpdateApplication;Write
 appstream:UpdateDirectoryConfig;Write
 appstream:UpdateEntitlement;Write

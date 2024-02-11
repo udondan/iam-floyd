@@ -111,6 +111,21 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateConnector.html
+   */
+  public toCreateConnector() {
+    return this.to('CreateConnector');
+  }
+
+  /**
    * Grants permission to create launch configuration template
    *
    * Access Level: Write
@@ -179,6 +194,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
+  }
+
+  /**
+   * Grants permission to delete connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteConnector.html
+   */
+  public toDeleteConnector() {
+    return this.to('DeleteConnector');
   }
 
   /**
@@ -529,6 +555,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list connectors
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
+  }
+
+  /**
    * Grants permission to list the errors of an export task
    *
    * Access Level: List
@@ -570,6 +607,17 @@ export class Mgn extends PolicyStatement {
    */
   public toListImports() {
     return this.to('ListImports');
+  }
+
+  /**
+   * Grants permission to list managed accounts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListManagedAccounts.html
+   */
+  public toListManagedAccounts() {
+    return this.to('ListManagedAccounts');
   }
 
   /**
@@ -683,6 +731,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pause replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_PauseReplication.html
+   */
+  public toPauseReplication() {
+    return this.to('PauseReplication');
+  }
+
+  /**
    * Grants permission to put source server action document
    *
    * Access Level: Write
@@ -739,6 +798,17 @@ export class Mgn extends PolicyStatement {
    */
   public toRemoveTemplateAction() {
     return this.to('RemoveTemplateAction');
+  }
+
+  /**
+   * Grants permission to resume replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ResumeReplication.html
+   */
+  public toResumeReplication() {
+    return this.to('ResumeReplication');
   }
 
   /**
@@ -1000,6 +1070,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StopReplication.html
+   */
+  public toStopReplication() {
+    return this.to('StopReplication');
+  }
+
+  /**
    * Grants permission to assign a resource tag
    *
    * Access Level: Tagging
@@ -1139,6 +1220,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateConnector.html
+   */
+  public toUpdateConnector() {
+    return this.to('UpdateConnector');
+  }
+
+  /**
    * Grants permission to update launch configuration
    *
    * Access Level: Write
@@ -1180,6 +1272,17 @@ export class Mgn extends PolicyStatement {
    */
   public toUpdateReplicationConfigurationTemplate() {
     return this.to('UpdateReplicationConfigurationTemplate');
+  }
+
+  /**
+   * Grants permission to update source server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateSourceServer.html
+   */
+  public toUpdateSourceServer() {
+    return this.to('UpdateSourceServer');
   }
 
   /**
@@ -1225,11 +1328,13 @@ export class Mgn extends PolicyStatement {
       'BatchDeleteSnapshotRequestForMgn',
       'ChangeServerLifeCycleState',
       'CreateApplication',
+      'CreateConnector',
       'CreateLaunchConfigurationTemplate',
       'CreateReplicationConfigurationTemplate',
       'CreateVcenterClientForMgn',
       'CreateWave',
       'DeleteApplication',
+      'DeleteConnector',
       'DeleteJob',
       'DeleteLaunchConfigurationTemplate',
       'DeleteReplicationConfigurationTemplate',
@@ -1248,11 +1353,13 @@ export class Mgn extends PolicyStatement {
       'NotifyAgentDisconnectedForMgn',
       'NotifyAgentReplicationProgressForMgn',
       'NotifyVcenterClientStartedForMgn',
+      'PauseReplication',
       'PutSourceServerAction',
       'PutTemplateAction',
       'RegisterAgentForMgn',
       'RemoveSourceServerAction',
       'RemoveTemplateAction',
+      'ResumeReplication',
       'RetryDataReplication',
       'SendAgentLogsForMgn',
       'SendAgentMetricsForMgn',
@@ -1267,6 +1374,7 @@ export class Mgn extends PolicyStatement {
       'StartImport',
       'StartReplication',
       'StartTest',
+      'StopReplication',
       'TerminateTargetInstances',
       'UnarchiveApplication',
       'UnarchiveWave',
@@ -1276,10 +1384,12 @@ export class Mgn extends PolicyStatement {
       'UpdateAgentReplicationProcessStateForMgn',
       'UpdateAgentSourcePropertiesForMgn',
       'UpdateApplication',
+      'UpdateConnector',
       'UpdateLaunchConfiguration',
       'UpdateLaunchConfigurationTemplate',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate',
+      'UpdateSourceServer',
       'UpdateSourceServerReplicationType',
       'UpdateWave'
     ],
@@ -1297,6 +1407,7 @@ export class Mgn extends PolicyStatement {
       'GetLaunchConfiguration',
       'GetReplicationConfiguration',
       'GetVcenterClientCommandsForMgn',
+      'ListConnectors',
       'ListTagsForResource',
       'VerifyClientRoleForMgn'
     ],
@@ -1311,6 +1422,7 @@ export class Mgn extends PolicyStatement {
       'ListExports',
       'ListImportErrors',
       'ListImports',
+      'ListManagedAccounts',
       'ListSourceServerActions',
       'ListTemplateActions',
       'ListWaves'
@@ -1472,6 +1584,100 @@ export class Mgn extends PolicyStatement {
    */
   public onExportResource(exportID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:export/${ exportID }`);
+  }
+
+  /**
+   * Adds a resource of type ConnectorResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/connectors.html
+   *
+   * @param connectorID - Identifier for the connectorID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectorResource(connectorID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:connector/${ connectorID }`);
+  }
+
+  /**
+   * Filters access by presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConnector()
+   * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateReplicationConfigurationTemplate()
+   * - .toCreateVcenterClientForMgn()
+   * - .toCreateWave()
+   * - .toRegisterAgentForMgn()
+   * - .toStartCutover()
+   * - .toStartTest()
+   * - .toTagResource()
+   * - .toTerminateTargetInstances()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - JobResource
+   * - ReplicationConfigurationTemplateResource
+   * - LaunchConfigurationTemplateResource
+   * - VcenterClientResource
+   * - SourceServerResource
+   * - ApplicationResource
+   * - WaveResource
+   * - ImportResource
+   * - ExportResource
+   * - ConnectorResource
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConnector()
+   * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateReplicationConfigurationTemplate()
+   * - .toCreateVcenterClientForMgn()
+   * - .toCreateWave()
+   * - .toRegisterAgentForMgn()
+   * - .toStartCutover()
+   * - .toStartTest()
+   * - .toTagResource()
+   * - .toTerminateTargetInstances()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

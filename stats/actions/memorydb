@@ -1,4 +1,5 @@
 memorydb:BatchUpdateCluster;Write
+memorydb:Connect;Write
 memorydb:CopySnapshot;Write
 memorydb:CreateAcl;Write
 memorydb:CreateCluster;Write

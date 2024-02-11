@@ -2,7 +2,14 @@ codeguru-security:BatchGetFindings;Read
 codeguru-security:CreateScan;Write
 codeguru-security:CreateUploadUrl;Write
 codeguru-security:DeleteScansByCategory;Write
+codeguru-security:GetAccountConfiguration;Read
+codeguru-security:GetFindings;List
+codeguru-security:GetMetricsSummary;Read
 codeguru-security:GetScan;Read
 codeguru-security:ListFindings;List
+codeguru-security:ListFindingsMetrics;List
 codeguru-security:ListScans;List
+codeguru-security:ListTagsForResource;Read
+codeguru-security:TagResource;Tagging
+codeguru-security:UntagResource;Tagging
 codeguru-security:UpdateAccountConfiguration;Write

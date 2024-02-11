@@ -1,7 +1,9 @@
 glue:blueprint
 glue:catalog
+glue:completion
 glue:connection
 glue:crawler
+glue:customEntityType
 glue:dataQualityRuleset
 glue:database
 glue:devendpoint

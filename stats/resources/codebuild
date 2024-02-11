@@ -1,5 +1,6 @@
 codebuild:build
 codebuild:build-batch
+codebuild:fleet
 codebuild:project
 codebuild:report
 codebuild:report-group

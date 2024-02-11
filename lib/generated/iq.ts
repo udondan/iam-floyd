@@ -206,6 +206,39 @@ export class Iq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable individual public profile page
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toDisableIndividualPublicProfile() {
+    return this.to('DisableIndividualPublicProfile');
+  }
+
+  /**
+   * Grants permission to download existing attachment
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toDownloadAttachment() {
+    return this.to('DownloadAttachment');
+  }
+
+  /**
+   * Grants permission to enable individual public profile page
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toEnableIndividualPublicProfile() {
+    return this.to('EnableIndividualPublicProfile');
+  }
+
+  /**
    * Grants permission to end a voice/video call
    *
    * Access Level: Write
@@ -269,6 +302,17 @@ export class Iq extends PolicyStatement {
    */
   public toGetChatToken() {
     return this.to('GetChatToken');
+  }
+
+  /**
+   * Grants permission to read chat messages in a company conversation
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toGetCompanyChatMessages() {
+    return this.to('GetCompanyChatMessages');
   }
 
   /**
@@ -349,6 +393,17 @@ export class Iq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a created request
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toGetRequest() {
+    return this.to('GetRequest');
+  }
+
+  /**
    * Grants permission to read a review for an expert
    *
    * Access Level: Read
@@ -382,6 +437,28 @@ export class Iq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to link an AWS certification to individual profile
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toLinkAwsCertification() {
+    return this.to('LinkAwsCertification');
+  }
+
+  /**
+   * Grants permission to list existing attachments
+   *
+   * Access Level: List
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toListAttachments() {
+    return this.to('ListAttachments');
+  }
+
+  /**
    * Grants permission to list existing conversations
    *
    * Access Level: Read
@@ -390,6 +467,17 @@ export class Iq extends PolicyStatement {
    */
   public toListConversations() {
     return this.to('ListConversations');
+  }
+
+  /**
+   * Grants permission to list access logs of expert activity
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toListExpertAccessLogs() {
+    return this.to('ListExpertAccessLogs');
   }
 
   /**
@@ -514,6 +602,17 @@ export class Iq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to unlink an AWS certification from individual profile
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toUnlinkAwsCertification() {
+    return this.to('UnlinkAwsCertification');
+  }
+
+  /**
    * Grants permission to update a company profile
    *
    * Access Level: Write
@@ -631,15 +730,19 @@ export class Iq extends PolicyStatement {
       'CreateUpfrontProposal',
       'DeclineCall',
       'DeleteAttachment',
+      'DisableIndividualPublicProfile',
+      'EnableIndividualPublicProfile',
       'EndCall',
       'HideRequest',
       'InitiateCall',
+      'LinkAwsCertification',
       'MarkChatMessageRead',
       'RejectPaymentRequest',
       'RejectProposal',
       'SendCompanyChatMessage',
       'SendIndividualChatMessage',
       'UnarchiveConversation',
+      'UnlinkAwsCertification',
       'UpdateCompanyProfile',
       'UpdateConversationMembers',
       'UpdateExpert',
@@ -651,11 +754,13 @@ export class Iq extends PolicyStatement {
       'WriteReview'
     ],
     Read: [
+      'DownloadAttachment',
       'GetBuyer',
       'GetCall',
       'GetChatInfo',
       'GetChatMessages',
       'GetChatToken',
+      'GetCompanyChatMessages',
       'GetCompanyProfile',
       'GetConversation',
       'GetExpert',
@@ -663,13 +768,18 @@ export class Iq extends PolicyStatement {
       'GetMarketplaceSeller',
       'GetPaymentRequest',
       'GetProposal',
+      'GetRequest',
       'GetReview',
       'ListConversations',
+      'ListExpertAccessLogs',
       'ListListings',
       'ListPaymentRequests',
       'ListProposals',
       'ListRequests',
       'ListReviews'
+    ],
+    List: [
+      'ListAttachments'
     ]
   };
 
@@ -845,5 +955,18 @@ export class Iq extends PolicyStatement {
    */
   public onAttachment(attachmentId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::attachment/${ attachmentId }`);
+  }
+
+  /**
+   * Adds a resource of type permission to the statement
+   *
+   * https://aws.amazon.com/iq/
+   *
+   * @param permissionRequestId - Identifier for the permissionRequestId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPermission(permissionRequestId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iq.defaultPartition }:iq-permission:${ region || '*' }::permission/${ permissionRequestId }`);
   }
 }

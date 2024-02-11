@@ -19,6 +19,8 @@ rolesanywhere:ListProfiles;List
 rolesanywhere:ListSubjects;List
 rolesanywhere:ListTagsForResource;List
 rolesanywhere:ListTrustAnchors;List
+rolesanywhere:PutNotificationSettings;Write
+rolesanywhere:ResetNotificationSettings;Write
 rolesanywhere:TagResource;Tagging
 rolesanywhere:UntagResource;Tagging
 rolesanywhere:UpdateCrl;Write

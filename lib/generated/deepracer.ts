@@ -455,6 +455,21 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the user's leaderboard evaluation jobs for a leaderboard
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
+   */
+  public toListLeaderboardEvaluations() {
+    return this.to('ListLeaderboardEvaluations');
+  }
+
+  /**
    * Grants permission to list all the DeepRacer model submissions of a user on a leaderboard
    *
    * Access Level: Read
@@ -725,8 +740,6 @@ export class Deepracer extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifUserToken()
    * - .ifMultiUser()
    *
@@ -794,6 +807,7 @@ export class Deepracer extends PolicyStatement {
       'GetTrack',
       'GetTrainingJob',
       'ListEvaluations',
+      'ListLeaderboardEvaluations',
       'ListLeaderboardSubmissions',
       'ListLeaderboards',
       'ListModels',
@@ -925,6 +939,75 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
+   * Filters actions by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCloneReinforcementLearningModel()
+   * - .toCreateCar()
+   * - .toCreateLeaderboard()
+   * - .toCreateLeaderboardSubmission()
+   * - .toCreateReinforcementLearningModel()
+   * - .toStartEvaluation()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - car
+   * - evaluation_job
+   * - leaderboard
+   * - leaderboard_evaluation_job
+   * - reinforcement_learning_model
+   * - training_job
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCloneReinforcementLearningModel()
+   * - .toCreateCar()
+   * - .toCreateLeaderboard()
+   * - .toCreateLeaderboardSubmission()
+   * - .toCreateReinforcementLearningModel()
+   * - .toStartEvaluation()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by multiuser flag
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/reference_policies_iam-condition-keys.html#condition-keys-multiuser
@@ -954,6 +1037,7 @@ export class Deepracer extends PolicyStatement {
    * - .toGetTrainingJob()
    * - .toImportModel()
    * - .toListEvaluations()
+   * - .toListLeaderboardEvaluations()
    * - .toListLeaderboardSubmissions()
    * - .toListLeaderboards()
    * - .toListModels()
@@ -1008,6 +1092,7 @@ export class Deepracer extends PolicyStatement {
    * - .toGetTrainingJob()
    * - .toImportModel()
    * - .toListEvaluations()
+   * - .toListLeaderboardEvaluations()
    * - .toListLeaderboardSubmissions()
    * - .toListLeaderboards()
    * - .toListModels()

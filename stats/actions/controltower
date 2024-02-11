@@ -1,3 +1,4 @@
+controltower:CreateLandingZone;Write
 controltower:CreateManagedAccount;Write
 controltower:DeleteLandingZone;Write
 controltower:DeregisterManagedAccount;Write
@@ -18,9 +19,12 @@ controltower:EnableGuardrail;Write
 controltower:GetAccountInfo;Read
 controltower:GetAvailableUpdates;Read
 controltower:GetControlOperation;Read
+controltower:GetEnabledControl;Read
 controltower:GetGuardrailComplianceStatus;Read
 controltower:GetHomeRegion;Read
+controltower:GetLandingZone;Read
 controltower:GetLandingZoneDriftStatus;Read
+controltower:GetLandingZoneOperation;Read
 controltower:GetLandingZoneStatus;Read
 controltower:ListDirectoryGroups;List
 controltower:ListDriftDetails;Read
@@ -31,12 +35,19 @@ controltower:ListExternalConfigRuleCompliance;Read
 controltower:ListGuardrailViolations;List
 controltower:ListGuardrails;List
 controltower:ListGuardrailsForTarget;List
+controltower:ListLandingZones;List
 controltower:ListManagedAccounts;List
 controltower:ListManagedAccountsForGuardrail;List
 controltower:ListManagedAccountsForParent;List
 controltower:ListManagedOrganizationalUnits;List
 controltower:ListManagedOrganizationalUnitsForGuardrail;List
+controltower:ListTagsForResource;Read
 controltower:ManageOrganizationalUnit;Write
 controltower:PerformPreLaunchChecks;Read
+controltower:ResetLandingZone;Write
 controltower:SetupLandingZone;Write
+controltower:TagResource;Tagging
+controltower:UntagResource;Tagging
 controltower:UpdateAccountFactoryConfig;Write
+controltower:UpdateEnabledControl;Write
+controltower:UpdateLandingZone;Write

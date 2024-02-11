@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedblockchain.html).
@@ -213,6 +213,50 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke the Bitcoin Mainnet RPCs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ambbtc-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-bitcoin-networks
+   */
+  public toInvokeRpcBitcoinMainnet() {
+    return this.to('InvokeRpcBitcoinMainnet');
+  }
+
+  /**
+   * Grants permission to invoke the Bitcoin Testnet RPCs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ambbtc-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-bitcoin-networks
+   */
+  public toInvokeRpcBitcoinTestnet() {
+    return this.to('InvokeRpcBitcoinTestnet');
+  }
+
+  /**
+   * Grants permission to invoke the Polygon Mainnet RPCs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ambp-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-polygon-networks
+   */
+  public toInvokeRpcPolygonMainnet() {
+    return this.to('InvokeRpcPolygonMainnet');
+  }
+
+  /**
+   * Grants permission to invoke the Polygon Mumbai Testnet RPCs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ambp-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-polygon-networks
+   */
+  public toInvokeRpcPolygonMumbaiTestnet() {
+    return this.to('InvokeRpcPolygonMumbaiTestnet');
+  }
+
+  /**
    * Grants permission to list the Amazon Managed Blockchain accessors owned by the current AWS account
    *
    * Access Level: List
@@ -416,6 +460,10 @@ export class Managedblockchain extends PolicyStatement {
       'GetNetwork',
       'GetNode',
       'GetProposal',
+      'InvokeRpcBitcoinMainnet',
+      'InvokeRpcBitcoinTestnet',
+      'InvokeRpcPolygonMainnet',
+      'InvokeRpcPolygonMumbaiTestnet',
       'ListProposalVotes',
       'ListTagsForResource'
     ],
@@ -531,5 +579,68 @@ export class Managedblockchain extends PolicyStatement {
    */
   public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Managedblockchain.defaultPartition }:managedblockchain:${ region || '*' }:${ account || '*' }:accessors/${ accessorId }`);
+  }
+
+  /**
+   * Filters actions based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAccessor()
+   * - .toCreateMember()
+   * - .toCreateNetwork()
+   * - .toCreateNode()
+   * - .toCreateProposal()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags associated with an Amazon Managed Blockchain resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - network
+   * - member
+   * - node
+   * - proposal
+   * - invitation
+   * - accessor
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAccessor()
+   * - .toCreateMember()
+   * - .toCreateNetwork()
+   * - .toCreateNode()
+   * - .toCreateProposal()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

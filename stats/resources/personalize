@@ -2,6 +2,7 @@ personalize:algorithm
 personalize:batchInferenceJob
 personalize:batchSegmentJob
 personalize:campaign
+personalize:dataInsightsJob
 personalize:dataset
 personalize:datasetExportJob
 personalize:datasetGroup

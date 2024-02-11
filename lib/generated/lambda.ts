@@ -445,6 +445,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEventSourceToken()
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html
    */
   public toInvokeFunction() {
@@ -459,6 +462,7 @@ export class Lambda extends PolicyStatement {
    * Possible conditions:
    * - .ifFunctionUrlAuthType()
    * - .ifFunctionArn()
+   * - .ifEventSourceToken()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html
    */
@@ -1029,6 +1033,58 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateFunction()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - function
+   * - function alias
+   * - function version
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateFunction()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of an AWS Lambda code signing config
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
@@ -1038,10 +1094,26 @@ export class Lambda extends PolicyStatement {
    * - .toPutFunctionCodeSigningConfig()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCodeSigningConfigArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`CodeSigningConfigArn`, value, operator || 'StringLike');
+    return this.if(`CodeSigningConfigArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ID from a non-AWS event source configured for the AWS Lambda function
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * Applies to actions:
+   * - .toInvokeFunction()
+   * - .toInvokeFunctionUrl()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEventSourceToken(value: string | string[], operator?: Operator | string) {
+    return this.if(`EventSourceToken`, value, operator || 'StringLike');
   }
 
   /**

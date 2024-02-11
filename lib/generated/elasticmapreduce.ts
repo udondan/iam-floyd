@@ -601,6 +601,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Amazon EC2 instance types that an Amazon EMR release supports
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSupportedInstanceTypes.html
+   */
+  public toListSupportedInstanceTypes() {
+    return this.to('ListSupportedInstanceTypes');
+  }
+
+  /**
    * Grants permission to list identities that are granted access to a workspace
    *
    * Access Level: List
@@ -767,10 +778,24 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRequestTag()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html
    */
   public toRunJobFlow() {
     return this.to('RunJobFlow');
+  }
+
+  /**
+   * Grants permission to add and remove auto terminate after step execution for a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_SetKeepJobFlowAliveWhenNoSteps.html
+   */
+  public toSetKeepJobFlowAliveWhenNoSteps() {
+    return this.to('SetKeepJobFlowAliveWhenNoSteps');
   }
 
   /**
@@ -956,6 +981,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'RemoveAutoTerminationPolicy',
       'RemoveManagedScalingPolicy',
       'RunJobFlow',
+      'SetKeepJobFlowAliveWhenNoSteps',
       'SetTerminationProtection',
       'SetVisibleToAllUsers',
       'StartEditor',
@@ -1008,6 +1034,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'ListSecurityConfigurations',
       'ListStudioSessionMappings',
       'ListStudios',
+      'ListSupportedInstanceTypes',
       'ListWorkspaceAccessIdentities',
       'ViewEventsFromAllClustersInConsole'
     ]
@@ -1086,6 +1113,65 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Filters access by whether the tag and value pair is provided with the action
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateEditor()
+   * - .toCreateStudio()
+   * - .toRunJobFlow()
+   * - .toStartNotebookExecution()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag and value pair associated with an Amazon EMR resource
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to resource types:
+   * - cluster
+   * - editor
+   * - notebook-execution
+   * - studio
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the tag keys are provided with the action regardless of tag value
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateEditor()
+   * - .toCreateStudio()
+   * - .toRemoveTags()
+   * - .toRunJobFlow()
+   * - .toStartNotebookExecution()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by whether the execution role ARN is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-security
@@ -1095,10 +1181,10 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toGetClusterSessionCredentials()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExecutionRoleArn`, value, operator || 'StringLike');
+    return this.if(`ExecutionRoleArn`, value, operator || 'ArnLike');
   }
 
   /**

@@ -10,6 +10,7 @@ migrationhub-strategy:GetPortfolioSummary;Read
 migrationhub-strategy:GetRecommendationReportDetails;Read
 migrationhub-strategy:GetServerDetails;Read
 migrationhub-strategy:GetServerStrategies;Read
+migrationhub-strategy:ListAnalyzableServers;List
 migrationhub-strategy:ListAntiPatterns;List
 migrationhub-strategy:ListApplicationComponents;List
 migrationhub-strategy:ListCollectors;List

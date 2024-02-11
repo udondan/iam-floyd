@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [transfer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html).
@@ -598,6 +598,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to test a connector's connection to remote server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_TestConnection.html
+   */
+  public toTestConnection() {
+    return this.to('TestConnection');
+  }
+
+  /**
    * Grants permission to test a server's custom identity provider
    *
    * Access Level: Read
@@ -751,6 +762,7 @@ export class Transfer extends PolicyStatement {
       'StartFileTransfer',
       'StartServer',
       'StopServer',
+      'TestConnection',
       'UpdateAccess',
       'UpdateAgreement',
       'UpdateCertificate',
@@ -930,5 +942,76 @@ export class Transfer extends PolicyStatement {
    */
   public onHostKey(serverId: string, hostKeyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:host-key/${ serverId }/${ hostKeyId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAgreement()
+   * - .toCreateConnector()
+   * - .toCreateProfile()
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toCreateWorkflow()
+   * - .toImportCertificate()
+   * - .toImportHostKey()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - user
+   * - server
+   * - workflow
+   * - certificate
+   * - connector
+   * - profile
+   * - agreement
+   * - host-key
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAgreement()
+   * - .toCreateConnector()
+   * - .toCreateProfile()
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toCreateWorkflow()
+   * - .toImportCertificate()
+   * - .toImportHostKey()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

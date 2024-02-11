@@ -656,6 +656,17 @@ export class Workdocs extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to update the administrative settings for a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration.html
+   */
+  public toUpdateUserAdministrativeSettings() {
+    return this.to('UpdateUserAdministrativeSettings');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortDocumentVersionUpload',
@@ -692,7 +703,8 @@ export class Workdocs extends PolicyStatement {
       'UpdateDocumentVersion',
       'UpdateFolder',
       'UpdateInstanceAlias',
-      'UpdateUser'
+      'UpdateUser',
+      'UpdateUserAdministrativeSettings'
     ],
     Read: [
       'CheckAlias',

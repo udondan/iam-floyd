@@ -1,3 +1,5 @@
+securityhub:automation-rule
+securityhub:configuration-policy
 securityhub:finding-aggregator
 securityhub:hub
 securityhub:product

@@ -33,6 +33,8 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to associate the service with an AWS WAF web ACL
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
    */
   public toAssociateWebAcl() {
     return this.to('AssociateWebAcl');
@@ -282,6 +284,8 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to get the AWS WAF web ACL that is associated with an AWS App Runner service
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
    */
   public toDescribeWebAclForService() {
     return this.to('DescribeWebAclForService');
@@ -302,6 +306,8 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to disassociate the service with an AWS WAF web ACL
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
    */
   public toDisassociateWebAcl() {
     return this.to('DisassociateWebAcl');
@@ -311,6 +317,8 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to list the services that are associated with an AWS WAF web ACL
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
    */
   public toListAssociatedServicesForWebAcl() {
     return this.to('ListAssociatedServicesForWebAcl');
@@ -369,6 +377,17 @@ export class Apprunner extends PolicyStatement {
    */
   public toListServices() {
     return this.to('ListServices');
+  }
+
+  /**
+   * Grants permission to retrieve a list of associated AppRunner services of an AWS App Runner automatic scaling configuration in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_ListServicesForAutoScalingConfiguration.html
+   */
+  public toListServicesForAutoScalingConfiguration() {
+    return this.to('ListServicesForAutoScalingConfiguration');
   }
 
   /**
@@ -467,6 +486,17 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AWS App Runner automatic scaling configuration to be the default in your AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateDefaultAutoScalingConfiguration.html
+   */
+  public toUpdateDefaultAutoScalingConfiguration() {
+    return this.to('UpdateDefaultAutoScalingConfiguration');
+  }
+
+  /**
    * Grants permission to update an AWS App Runner service resource
    *
    * Access Level: Write
@@ -519,6 +549,7 @@ export class Apprunner extends PolicyStatement {
       'PauseService',
       'ResumeService',
       'StartDeployment',
+      'UpdateDefaultAutoScalingConfiguration',
       'UpdateService',
       'UpdateVpcIngressConnection'
     ],
@@ -540,6 +571,7 @@ export class Apprunner extends PolicyStatement {
       'ListObservabilityConfigurations',
       'ListOperations',
       'ListServices',
+      'ListServicesForAutoScalingConfiguration',
       'ListVpcConnectors',
       'ListVpcIngressConnections'
     ],
@@ -757,5 +789,64 @@ export class Apprunner extends PolicyStatement {
    */
   public ifVpcId(value: string | string[], operator?: Operator | string) {
     return this.if(`VpcId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag key-value pairs in the request
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingConfiguration()
+   * - .toCreateConnection()
+   * - .toCreateObservabilityConfiguration()
+   * - .toCreateService()
+   * - .toCreateVpcConnector()
+   * - .toCreateVpcIngressConnection()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on tag key-value pairs attached to the resource
+   *
+   * Applies to resource types:
+   * - service
+   * - connection
+   * - autoscalingconfiguration
+   * - observabilityconfiguration
+   * - vpcconnector
+   * - vpcingressconnection
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag keys in the request
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingConfiguration()
+   * - .toCreateConnection()
+   * - .toCreateObservabilityConfiguration()
+   * - .toCreateService()
+   * - .toCreateVpcConnector()
+   * - .toCreateVpcIngressConnection()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

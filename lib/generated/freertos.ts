@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [freertos](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfreertos.html).
@@ -307,5 +307,55 @@ export class Freertos extends PolicyStatement {
    */
   public onSubscription(subscriptionID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Freertos.defaultPartition }:freertos:${ region || '*' }:${ account || '*' }:subscription/${ subscriptionID }`);
+  }
+
+  /**
+   * A tag key that is present in the request that the user makes to Amazon FreeRTOS
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   *
+   * Applies to actions:
+   * - .toCreateSoftwareConfiguration()
+   * - .toCreateSubscription()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The tag key component of a tag attached to an Amazon FreeRTOS resource
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   *
+   * Applies to resource types:
+   * - configuration
+   * - subscription
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The list of all the tag key names associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   *
+   * Applies to actions:
+   * - .toCreateSoftwareConfiguration()
+   * - .toCreateSubscription()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

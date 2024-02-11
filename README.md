@@ -14,13 +14,12 @@
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
 <!-- stats -->
-
 Support for:
 
-- 353 Services
-- 14236 Actions
-- 1504 Resource Types
-- 1493 Condition keys
+- 386 Services
+- 16253 Actions
+- 1750 Resource Types
+- 1689 Condition keys
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**

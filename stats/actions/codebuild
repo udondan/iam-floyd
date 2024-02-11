@@ -1,16 +1,19 @@
 codebuild:BatchDeleteBuilds;Write
 codebuild:BatchGetBuildBatches;Read
 codebuild:BatchGetBuilds;Read
+codebuild:BatchGetFleets;Read
 codebuild:BatchGetProjects;Read
 codebuild:BatchGetReportGroups;Read
 codebuild:BatchGetReports;Read
 codebuild:BatchPutCodeCoverages;Write
 codebuild:BatchPutTestCases;Write
+codebuild:CreateFleet;Write
 codebuild:CreateProject;Write
 codebuild:CreateReport;Write
 codebuild:CreateReportGroup;Write
 codebuild:CreateWebhook;Write
 codebuild:DeleteBuildBatch;Write
+codebuild:DeleteFleet;Write
 codebuild:DeleteOAuthToken;Write
 codebuild:DeleteProject;Write
 codebuild:DeleteReport;Write
@@ -30,6 +33,7 @@ codebuild:ListBuilds;List
 codebuild:ListBuildsForProject;List
 codebuild:ListConnectedOAuthAccounts;List
 codebuild:ListCuratedEnvironmentImages;List
+codebuild:ListFleets;List
 codebuild:ListProjects;List
 codebuild:ListReportGroups;List
 codebuild:ListReports;List
@@ -46,6 +50,7 @@ codebuild:StartBuild;Write
 codebuild:StartBuildBatch;Write
 codebuild:StopBuild;Write
 codebuild:StopBuildBatch;Write
+codebuild:UpdateFleet;Write
 codebuild:UpdateProject;Write
 codebuild:UpdateProjectVisibility;Write
 codebuild:UpdateReport;Write

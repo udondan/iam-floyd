@@ -1,3 +1,6 @@
 iottwinmaker:RequestTag/${TagKey}
 iottwinmaker:ResourceTag/${TagKey}
 iottwinmaker:TagKeys
+iottwinmaker:destinationType
+iottwinmaker:linkedServices
+iottwinmaker:sourceType

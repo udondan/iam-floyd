@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html).
@@ -45,6 +45,10 @@ export class Outposts extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
    */
   public toCreateOutpost() {
@@ -66,6 +70,10 @@ export class Outposts extends PolicyStatement {
    * Grants permission to create a site
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateSite.html
    */
@@ -265,6 +273,10 @@ export class Outposts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -275,6 +287,9 @@ export class Outposts extends PolicyStatement {
    * Grants permission to untag a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_UntagResource.html
    */
@@ -374,9 +389,12 @@ export class Outposts extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:outpost:${ outpostId }`);
+    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }`);
   }
 
   /**
@@ -388,8 +406,64 @@ export class Outposts extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSite(siteId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   *
+   * Applies to actions:
+   * - .toCreateOutpost()
+   * - .toCreateSite()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   *
+   * Applies to resource types:
+   * - outpost
+   * - site
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   *
+   * Applies to actions:
+   * - .toCreateOutpost()
+   * - .toCreateSite()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

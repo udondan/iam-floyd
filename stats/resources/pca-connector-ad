@@ -1,0 +1,5 @@
+pca-connector-ad:Connector
+pca-connector-ad:DirectoryRegistration
+pca-connector-ad:ServicePrincipalName
+pca-connector-ad:Template
+pca-connector-ad:TemplateGroupAccessControlEntry

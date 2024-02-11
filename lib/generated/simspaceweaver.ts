@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [simspaceweaver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssimspaceweaver.html).
@@ -16,6 +16,17 @@ export class Simspaceweaver extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to create a snapshot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_CreateSnapshot.html
+   */
+  public toCreateSnapshot() {
+    return this.to('CreateSnapshot');
   }
 
   /**
@@ -196,6 +207,7 @@ export class Simspaceweaver extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateSnapshot',
       'DeleteApp',
       'DeleteSimulation',
       'StartApp',
@@ -235,5 +247,55 @@ export class Simspaceweaver extends PolicyStatement {
    */
   public onSimulation(simulationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Simspaceweaver.defaultPartition }:simspaceweaver:${ region || '*' }:${ account || '*' }:simulation/${ simulationName }`);
+  }
+
+  /**
+   * Filters access by tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toStartSimulation()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Simulation
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toStartSimulation()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

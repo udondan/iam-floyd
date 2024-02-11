@@ -1,1 +1,3 @@
-
+cur:RequestTag/${TagKey}
+cur:ResourceTag/${TagKey}
+cur:TagKeys

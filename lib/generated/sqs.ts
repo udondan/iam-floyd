@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsqs.html).
@@ -27,6 +27,17 @@ export class Sqs extends PolicyStatement {
    */
   public toAddPermission() {
     return this.to('AddPermission');
+  }
+
+  /**
+   * Grants permission to cancel an in progress message move task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CancelMessageMoveTask.html
+   */
+  public toCancelMessageMoveTask() {
+    return this.to('CancelMessageMoveTask');
   }
 
   /**
@@ -111,6 +122,17 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list message move tasks
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListMessageMoveTasks.html
+   */
+  public toListMessageMoveTasks() {
+    return this.to('ListMessageMoveTasks');
+  }
+
+  /**
    * Grants permission to list tags added to an SQS queue
    *
    * Access Level: Read
@@ -188,6 +210,17 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a message move task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_StartMessageMoveTask.html
+   */
+  public toStartMessageMoveTask() {
+    return this.to('StartMessageMoveTask');
+  }
+
+  /**
    * Grants permission to add tags to the specified SQS queue
    *
    * Access Level: Tagging
@@ -223,18 +256,21 @@ export class Sqs extends PolicyStatement {
       'RemovePermission'
     ],
     Write: [
+      'CancelMessageMoveTask',
       'ChangeMessageVisibility',
       'CreateQueue',
       'DeleteMessage',
       'DeleteQueue',
       'PurgeQueue',
       'SendMessage',
-      'SetQueueAttributes'
+      'SetQueueAttributes',
+      'StartMessageMoveTask'
     ],
     Read: [
       'GetQueueAttributes',
       'GetQueueUrl',
       'ListDeadLetterSourceQueues',
+      'ListMessageMoveTasks',
       'ListQueueTags',
       'ListQueues',
       'ReceiveMessage'
@@ -260,5 +296,56 @@ export class Sqs extends PolicyStatement {
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sqs.defaultPartition }:sqs:${ region || '*' }:${ account || '*' }:${ queueName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateQueue()
+   * - .toTagQueue()
+   * - .toUntagQueue()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - queue
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateQueue()
+   * - .toTagQueue()
+   * - .toUntagQueue()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

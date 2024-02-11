@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
@@ -16,6 +16,17 @@ export class Rekognition extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to associate multiple individual faces with a single user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_AssociateFaces.html
+   */
+  public toAssociateFaces() {
+    return this.to('AssociateFaces');
   }
 
   /**
@@ -123,6 +134,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new user in a collection using a unique user ID you provide
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateUser.html
+   */
+  public toCreateUser() {
+    return this.to('CreateUser');
+  }
+
+  /**
    * Grants permission to delete the specified collection
    *
    * Access Level: Write
@@ -197,6 +219,17 @@ export class Rekognition extends PolicyStatement {
    */
   public toDeleteStreamProcessor() {
     return this.to('DeleteStreamProcessor');
+  }
+
+  /**
+   * Grants permission to delete a user from a collection based on the provided user ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteUser.html
+   */
+  public toDeleteUser() {
+    return this.to('DeleteUser');
   }
 
   /**
@@ -321,6 +354,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the association between a user ID and a face ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DisassociateFaces.html
+   */
+  public toDisassociateFaces() {
+    return this.to('DisassociateFaces');
+  }
+
+  /**
    * Grants permission to distribute the entries in a training dataset across the training dataset and the test dataset for a project
    *
    * Access Level: Write
@@ -406,6 +450,17 @@ export class Rekognition extends PolicyStatement {
    */
   public toGetLabelDetection() {
     return this.to('GetLabelDetection');
+  }
+
+  /**
+   * Grants permission to read the reference to job results in S3 and additional information about a media analysis job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html
+   */
+  public toGetMediaAnalysisJob() {
+    return this.to('GetMediaAnalysisJob');
   }
 
   /**
@@ -497,6 +552,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read the list of media analysis jobs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJobs.html
+   */
+  public toListMediaAnalysisJobs() {
+    return this.to('ListMediaAnalysisJobs');
+  }
+
+  /**
    * Grants permission to list the resource policies attached to a project
    *
    * Access Level: Read
@@ -527,6 +593,17 @@ export class Rekognition extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list UserIds and the UserStatus
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListUsers.html
+   */
+  public toListUsers() {
+    return this.to('ListUsers');
   }
 
   /**
@@ -571,6 +648,28 @@ export class Rekognition extends PolicyStatement {
    */
   public toSearchFacesByImage() {
     return this.to('SearchFacesByImage');
+  }
+
+  /**
+   * Grants permission to search the specificed collection for user match result with given either face ID or user ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html
+   */
+  public toSearchUsers() {
+    return this.to('SearchUsers');
+  }
+
+  /**
+   * Grants permission to search the specificed collection for user match result by using the largest face in the input image
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html
+   */
+  public toSearchUsersByImage() {
+    return this.to('SearchUsersByImage');
   }
 
   /**
@@ -637,6 +736,17 @@ export class Rekognition extends PolicyStatement {
    */
   public toStartLabelDetection() {
     return this.to('StartLabelDetection');
+  }
+
+  /**
+   * Grants permission to start a media analysis job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartMediaAnalysisJob.html
+   */
+  public toStartMediaAnalysisJob() {
+    return this.to('StartMediaAnalysisJob');
   }
 
   /**
@@ -768,6 +878,45 @@ export class Rekognition extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AssociateFaces',
+      'CopyProjectVersion',
+      'CreateCollection',
+      'CreateDataset',
+      'CreateFaceLivenessSession',
+      'CreateProject',
+      'CreateProjectVersion',
+      'CreateStreamProcessor',
+      'CreateUser',
+      'DeleteCollection',
+      'DeleteDataset',
+      'DeleteFaces',
+      'DeleteProject',
+      'DeleteProjectPolicy',
+      'DeleteProjectVersion',
+      'DeleteStreamProcessor',
+      'DeleteUser',
+      'DisassociateFaces',
+      'DistributeDatasetEntries',
+      'IndexFaces',
+      'PutProjectPolicy',
+      'StartCelebrityRecognition',
+      'StartContentModeration',
+      'StartFaceDetection',
+      'StartFaceLivenessSession',
+      'StartFaceSearch',
+      'StartLabelDetection',
+      'StartMediaAnalysisJob',
+      'StartPersonTracking',
+      'StartProjectVersion',
+      'StartSegmentDetection',
+      'StartStreamProcessor',
+      'StartTextDetection',
+      'StopProjectVersion',
+      'StopStreamProcessor',
+      'UpdateDatasetEntries',
+      'UpdateStreamProcessor'
+    ],
     Read: [
       'CompareFaces',
       'DescribeCollection',
@@ -788,6 +937,7 @@ export class Rekognition extends PolicyStatement {
       'GetFaceLivenessSessionResults',
       'GetFaceSearch',
       'GetLabelDetection',
+      'GetMediaAnalysisJob',
       'GetPersonTracking',
       'GetSegmentDetection',
       'GetTextDetection',
@@ -795,45 +945,15 @@ export class Rekognition extends PolicyStatement {
       'ListDatasetEntries',
       'ListDatasetLabels',
       'ListFaces',
+      'ListMediaAnalysisJobs',
       'ListProjectPolicies',
       'ListTagsForResource',
+      'ListUsers',
       'RecognizeCelebrities',
       'SearchFaces',
-      'SearchFacesByImage'
-    ],
-    Write: [
-      'CopyProjectVersion',
-      'CreateCollection',
-      'CreateDataset',
-      'CreateFaceLivenessSession',
-      'CreateProject',
-      'CreateProjectVersion',
-      'CreateStreamProcessor',
-      'DeleteCollection',
-      'DeleteDataset',
-      'DeleteFaces',
-      'DeleteProject',
-      'DeleteProjectPolicy',
-      'DeleteProjectVersion',
-      'DeleteStreamProcessor',
-      'DistributeDatasetEntries',
-      'IndexFaces',
-      'PutProjectPolicy',
-      'StartCelebrityRecognition',
-      'StartContentModeration',
-      'StartFaceDetection',
-      'StartFaceLivenessSession',
-      'StartFaceSearch',
-      'StartLabelDetection',
-      'StartPersonTracking',
-      'StartProjectVersion',
-      'StartSegmentDetection',
-      'StartStreamProcessor',
-      'StartTextDetection',
-      'StopProjectVersion',
-      'StopStreamProcessor',
-      'UpdateDatasetEntries',
-      'UpdateStreamProcessor'
+      'SearchFacesByImage',
+      'SearchUsers',
+      'SearchUsersByImage'
     ],
     List: [
       'ListStreamProcessors'
@@ -926,5 +1046,63 @@ export class Rekognition extends PolicyStatement {
    */
   public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
+  }
+
+  /**
+   * Filters access by tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCopyProjectVersion()
+   * - .toCreateCollection()
+   * - .toCreateProjectVersion()
+   * - .toCreateStreamProcessor()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - collection
+   * - streamprocessor
+   * - projectversion
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCopyProjectVersion()
+   * - .toCreateCollection()
+   * - .toCreateProjectVersion()
+   * - .toCreateStreamProcessor()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

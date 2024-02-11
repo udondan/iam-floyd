@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglobalaccelerator.html).
@@ -33,6 +33,9 @@ export class Globalaccelerator extends PolicyStatement {
    * Grants permission to add an endpoint to a standard accelerator endpoint group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - globalaccelerator:UpdateEndpointGroup
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddEndpoints.html
    */
@@ -75,6 +78,21 @@ export class Globalaccelerator extends PolicyStatement {
    */
   public toCreateAccelerator() {
     return this.to('CreateAccelerator');
+  }
+
+  /**
+   * Grants permission to create a CrossAccountAttachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCrossAccountAttachment.html
+   */
+  public toCreateCrossAccountAttachment() {
+    return this.to('CreateCrossAccountAttachment');
   }
 
   /**
@@ -145,6 +163,17 @@ export class Globalaccelerator extends PolicyStatement {
    */
   public toDeleteAccelerator() {
     return this.to('DeleteAccelerator');
+  }
+
+  /**
+   * Grants permission to delete a CrossAccountAttachment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCrossAccountAttachment.html
+   */
+  public toDeleteCrossAccountAttachment() {
+    return this.to('DeleteCrossAccountAttachment');
   }
 
   /**
@@ -247,6 +276,17 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to describe a CrossAccountAttachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCrossAccountAttachment.html
+   */
+  public toDescribeCrossAccountAttachment() {
+    return this.to('DescribeCrossAccountAttachment');
+  }
+
+  /**
    * Grants permission to describe a custom routing accelerator
    *
    * Access Level: Read
@@ -332,6 +372,39 @@ export class Globalaccelerator extends PolicyStatement {
    */
   public toListByoipCidrs() {
     return this.to('ListByoipCidrs');
+  }
+
+  /**
+   * Grants permission to list all CrossAccountAttachments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountAttachments.html
+   */
+  public toListCrossAccountAttachments() {
+    return this.to('ListCrossAccountAttachments');
+  }
+
+  /**
+   * Grants permission to list accounts with CrossAccountAttachments listing caller as a principal
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountResourceAccounts.html
+   */
+  public toListCrossAccountResourceAccounts() {
+    return this.to('ListCrossAccountResourceAccounts');
+  }
+
+  /**
+   * Grants permission to list all CrossAccountAttachment resources usable by caller
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountResources.html
+   */
+  public toListCrossAccountResources() {
+    return this.to('ListCrossAccountResources');
   }
 
   /**
@@ -449,6 +522,9 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - globalaccelerator:UpdateEndpointGroup
+   *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveEndpoints.html
    */
   public toRemoveEndpoints() {
@@ -504,6 +580,17 @@ export class Globalaccelerator extends PolicyStatement {
    */
   public toUpdateAcceleratorAttributes() {
     return this.to('UpdateAcceleratorAttributes');
+  }
+
+  /**
+   * Grants permission to update a CrossAccountAttachment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCrossAccountAttachment.html
+   */
+  public toUpdateCrossAccountAttachment() {
+    return this.to('UpdateCrossAccountAttachment');
   }
 
   /**
@@ -579,12 +666,14 @@ export class Globalaccelerator extends PolicyStatement {
       'AdvertiseByoipCidr',
       'AllowCustomRoutingTraffic',
       'CreateAccelerator',
+      'CreateCrossAccountAttachment',
       'CreateCustomRoutingAccelerator',
       'CreateCustomRoutingEndpointGroup',
       'CreateCustomRoutingListener',
       'CreateEndpointGroup',
       'CreateListener',
       'DeleteAccelerator',
+      'DeleteCrossAccountAttachment',
       'DeleteCustomRoutingAccelerator',
       'DeleteCustomRoutingEndpointGroup',
       'DeleteCustomRoutingListener',
@@ -597,6 +686,7 @@ export class Globalaccelerator extends PolicyStatement {
       'RemoveEndpoints',
       'UpdateAccelerator',
       'UpdateAcceleratorAttributes',
+      'UpdateCrossAccountAttachment',
       'UpdateCustomRoutingAccelerator',
       'UpdateCustomRoutingAcceleratorAttributes',
       'UpdateCustomRoutingListener',
@@ -607,6 +697,7 @@ export class Globalaccelerator extends PolicyStatement {
     Read: [
       'DescribeAccelerator',
       'DescribeAcceleratorAttributes',
+      'DescribeCrossAccountAttachment',
       'DescribeCustomRoutingAccelerator',
       'DescribeCustomRoutingAcceleratorAttributes',
       'DescribeCustomRoutingEndpointGroup',
@@ -618,6 +709,9 @@ export class Globalaccelerator extends PolicyStatement {
     List: [
       'ListAccelerators',
       'ListByoipCidrs',
+      'ListCrossAccountAttachments',
+      'ListCrossAccountResourceAccounts',
+      'ListCrossAccountResources',
       'ListCustomRoutingAccelerators',
       'ListCustomRoutingEndpointGroups',
       'ListCustomRoutingListeners',
@@ -637,15 +731,15 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html
    *
-   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
+  public onAccelerator(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }`);
   }
 
   /**
@@ -653,7 +747,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html
    *
-   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param resourceId - Identifier for the resourceId.
    * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -661,8 +755,8 @@ export class Globalaccelerator extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
+  public onListener(resourceId: string, listenerId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -670,7 +764,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html
    *
-   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param resourceId - Identifier for the resourceId.
    * @param listenerId - Identifier for the listenerId.
    * @param endpointGroupId - Identifier for the endpointGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -679,7 +773,80 @@ export class Globalaccelerator extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+  public onEndpointgroup(resourceId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type attachment to the statement
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CrossAccountAttachment.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAttachment(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:attachment/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAccelerator()
+   * - .toCreateCrossAccountAttachment()
+   * - .toCreateCustomRoutingAccelerator()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - accelerator
+   * - listener
+   * - endpointgroup
+   * - attachment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAccelerator()
+   * - .toCreateCrossAccountAttachment()
+   * - .toCreateCustomRoutingAccelerator()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

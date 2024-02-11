@@ -1,4 +1,5 @@
 proton:component
+proton:deployment
 proton:environment
 proton:environment-account-connection
 proton:environment-template

@@ -4,6 +4,7 @@ cloudfront:distribution
 cloudfront:field-level-encryption-config
 cloudfront:field-level-encryption-profile
 cloudfront:function
+cloudfront:key-value-store
 cloudfront:origin-access-control
 cloudfront:origin-access-identity
 cloudfront:origin-request-policy

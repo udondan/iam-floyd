@@ -1,0 +1,3 @@
+partnercentral-account-management:AssociatePartnerAccount;Write
+partnercentral-account-management:AssociatePartnerUser;Write
+partnercentral-account-management:DisassociatePartnerUser;Write

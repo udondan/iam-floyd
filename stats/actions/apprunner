@@ -28,6 +28,7 @@ apprunner:ListConnections;List
 apprunner:ListObservabilityConfigurations;List
 apprunner:ListOperations;List
 apprunner:ListServices;List
+apprunner:ListServicesForAutoScalingConfiguration;List
 apprunner:ListTagsForResource;Read
 apprunner:ListVpcConnectors;List
 apprunner:ListVpcIngressConnections;List
@@ -36,5 +37,6 @@ apprunner:ResumeService;Write
 apprunner:StartDeployment;Write
 apprunner:TagResource;Tagging
 apprunner:UntagResource;Tagging
+apprunner:UpdateDefaultAutoScalingConfiguration;Write
 apprunner:UpdateService;Write
 apprunner:UpdateVpcIngressConnection;Write

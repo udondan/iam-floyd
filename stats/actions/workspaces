@@ -1,5 +1,6 @@
 workspaces:AssociateConnectionAlias;Write
 workspaces:AssociateIpGroups;Write
+workspaces:AssociateWorkspaceApplication;Write
 workspaces:AuthorizeIpRules;Write
 workspaces:CopyWorkspaceImage;Write
 workspaces:CreateConnectClientAddIn;Write
@@ -18,16 +19,22 @@ workspaces:DeleteIpGroup;Write
 workspaces:DeleteTags;Tagging
 workspaces:DeleteWorkspaceBundle;Write
 workspaces:DeleteWorkspaceImage;Write
+workspaces:DeployWorkspaceApplications;Write
 workspaces:DeregisterWorkspaceDirectory;Write
 workspaces:DescribeAccount;Read
 workspaces:DescribeAccountModifications;Read
+workspaces:DescribeApplicationAssociations;List
+workspaces:DescribeApplications;List
+workspaces:DescribeBundleAssociations;List
 workspaces:DescribeClientBranding;Read
 workspaces:DescribeClientProperties;List
 workspaces:DescribeConnectClientAddIns;List
 workspaces:DescribeConnectionAliasPermissions;Read
 workspaces:DescribeConnectionAliases;Read
+workspaces:DescribeImageAssociations;List
 workspaces:DescribeIpGroups;Read
 workspaces:DescribeTags;Read
+workspaces:DescribeWorkspaceAssociations;List
 workspaces:DescribeWorkspaceBundles;List
 workspaces:DescribeWorkspaceDirectories;Read
 workspaces:DescribeWorkspaceImagePermissions;Read
@@ -37,6 +44,7 @@ workspaces:DescribeWorkspaces;List
 workspaces:DescribeWorkspacesConnectionStatus;Read
 workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
+workspaces:DisassociateWorkspaceApplication;Write
 workspaces:ImportClientBranding;Write
 workspaces:ImportWorkspaceImage;Write
 workspaces:ListAvailableManagementCidrRanges;List

@@ -2,4 +2,7 @@ sms-voice:ConfigurationSet
 sms-voice:OptOutList
 sms-voice:PhoneNumber
 sms-voice:Pool
+sms-voice:Registration
+sms-voice:RegistrationAttachment
 sms-voice:SenderId
+sms-voice:VerifiedDestinationNumber

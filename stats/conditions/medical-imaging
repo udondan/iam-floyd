@@ -1,0 +1,3 @@
+medical-imaging:RequestTag/${TagKey}
+medical-imaging:ResourceTag/${TagKey}
+medical-imaging:TagKeys

@@ -1,1 +1,3 @@
-
+codeguru-security:RequestTag/${TagKey}
+codeguru-security:ResourceTag/${TagKey}
+codeguru-security:TagKeys

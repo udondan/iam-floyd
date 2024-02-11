@@ -49,6 +49,7 @@ apigateway:Routes
 apigateway:Sdk
 apigateway:Stage
 apigateway:Stages
+apigateway:Tags
 apigateway:Template
 apigateway:UsagePlan
 apigateway:UsagePlanKey

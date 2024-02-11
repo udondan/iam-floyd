@@ -19,6 +19,28 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add outputs to an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs.html
+   */
+  public toAddBridgeOutputs() {
+    return this.to('AddBridgeOutputs');
+  }
+
+  /**
+   * Grants permission to add sources to an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources.html
+   */
+  public toAddBridgeSources() {
+    return this.to('AddBridgeSources');
+  }
+
+  /**
    * Grants permission to add media streams to any flow
    *
    * Access Level: Write
@@ -63,6 +85,17 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create bridges
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html
+   */
+  public toCreateBridge() {
+    return this.to('CreateBridge');
+  }
+
+  /**
    * Grants permission to create flows
    *
    * Access Level: Write
@@ -71,6 +104,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toCreateFlow() {
     return this.to('CreateFlow');
+  }
+
+  /**
+   * Grants permission to create gateways
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html
+   */
+  public toCreateGateway() {
+    return this.to('CreateGateway');
+  }
+
+  /**
+   * Grants permission to delete bridges
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   */
+  public toDeleteBridge() {
+    return this.to('DeleteBridge');
   }
 
   /**
@@ -85,6 +140,39 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete gateways
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html
+   */
+  public toDeleteGateway() {
+    return this.to('DeleteGateway');
+  }
+
+  /**
+   * Grants permission to deregister gateway instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   */
+  public toDeregisterGatewayInstance() {
+    return this.to('DeregisterGatewayInstance');
+  }
+
+  /**
+   * Grants permission to display the details of a bridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   */
+  public toDescribeBridge() {
+    return this.to('DescribeBridge');
+  }
+
+  /**
    * Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements
    *
    * Access Level: Read
@@ -93,6 +181,39 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toDescribeFlow() {
     return this.to('DescribeFlow');
+  }
+
+  /**
+   * Grants permission to view information about the flow's source transport stream and programs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-metadata.html
+   */
+  public toDescribeFlowSourceMetadata() {
+    return this.to('DescribeFlowSourceMetadata');
+  }
+
+  /**
+   * Grants permission to display the details of a gateway including the gateway ARN, name, and CIDR blocks, as well as details about the networks
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html
+   */
+  public toDescribeGateway() {
+    return this.to('DescribeGateway');
+  }
+
+  /**
+   * Grants permission to display the details of a gateway instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   */
+  public toDescribeGatewayInstance() {
+    return this.to('DescribeGatewayInstance');
   }
 
   /**
@@ -118,6 +239,17 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to discover gateway poll endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   */
+  public toDiscoverGatewayPollEndpoint() {
+    return this.to('DiscoverGatewayPollEndpoint');
+  }
+
+  /**
    * Grants permission to grant entitlements on any flow
    *
    * Access Level: Write
@@ -126,6 +258,17 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toGrantFlowEntitlements() {
     return this.to('GrantFlowEntitlements');
+  }
+
+  /**
+   * Grants permission to display a list of bridges that are associated with this account and an optionally specified Arn
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html
+   */
+  public toListBridges() {
+    return this.to('ListBridges');
   }
 
   /**
@@ -148,6 +291,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toListFlows() {
     return this.to('ListFlows');
+  }
+
+  /**
+   * Grants permission to display a list of instances that are associated with this gateway
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances.html
+   */
+  public toListGatewayInstances() {
+    return this.to('ListGatewayInstances');
+  }
+
+  /**
+   * Grants permission to display a list of gateways that are associated with this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html
+   */
+  public toListGateways() {
+    return this.to('ListGateways');
   }
 
   /**
@@ -184,6 +349,17 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to poll gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   */
+  public toPollGateway() {
+    return this.to('PollGateway');
+  }
+
+  /**
    * Grants permission to purchase an offering
    *
    * Access Level: Write
@@ -192,6 +368,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toPurchaseOffering() {
     return this.to('PurchaseOffering');
+  }
+
+  /**
+   * Grants permission to remove an output of an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html
+   */
+  public toRemoveBridgeOutput() {
+    return this.to('RemoveBridgeOutput');
+  }
+
+  /**
+   * Grants permission to remove a source of an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html
+   */
+  public toRemoveBridgeSource() {
+    return this.to('RemoveBridgeSource');
   }
 
   /**
@@ -272,6 +470,17 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit gateway state change
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   */
+  public toSubmitGatewayStateChange() {
+    return this.to('SubmitGatewayStateChange');
+  }
+
+  /**
    * Grants permission to associate tags with resources
    *
    * Access Level: Tagging
@@ -291,6 +500,50 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update bridges
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   */
+  public toUpdateBridge() {
+    return this.to('UpdateBridge');
+  }
+
+  /**
+   * Grants permission to update an output of an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html
+   */
+  public toUpdateBridgeOutput() {
+    return this.to('UpdateBridgeOutput');
+  }
+
+  /**
+   * Grants permission to update a source of an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html
+   */
+  public toUpdateBridgeSource() {
+    return this.to('UpdateBridgeSource');
+  }
+
+  /**
+   * Grants permission to update the state of an existing bridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-state.html
+   */
+  public toUpdateBridgeState() {
+    return this.to('UpdateBridgeState');
   }
 
   /**
@@ -348,16 +601,38 @@ export class Mediaconnect extends PolicyStatement {
     return this.to('UpdateFlowSource');
   }
 
+  /**
+   * Grants permission to update the configuration of an existing Gateway Instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   */
+  public toUpdateGatewayInstance() {
+    return this.to('UpdateGatewayInstance');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddBridgeOutputs',
+      'AddBridgeSources',
       'AddFlowMediaStreams',
       'AddFlowOutputs',
       'AddFlowSources',
       'AddFlowVpcInterfaces',
+      'CreateBridge',
       'CreateFlow',
+      'CreateGateway',
+      'DeleteBridge',
       'DeleteFlow',
+      'DeleteGateway',
+      'DeregisterGatewayInstance',
+      'DiscoverGatewayPollEndpoint',
       'GrantFlowEntitlements',
+      'PollGateway',
       'PurchaseOffering',
+      'RemoveBridgeOutput',
+      'RemoveBridgeSource',
       'RemoveFlowMediaStream',
       'RemoveFlowOutput',
       'RemoveFlowSource',
@@ -365,21 +640,34 @@ export class Mediaconnect extends PolicyStatement {
       'RevokeFlowEntitlement',
       'StartFlow',
       'StopFlow',
+      'SubmitGatewayStateChange',
+      'UpdateBridge',
+      'UpdateBridgeOutput',
+      'UpdateBridgeSource',
+      'UpdateBridgeState',
       'UpdateFlow',
       'UpdateFlowEntitlement',
       'UpdateFlowMediaStream',
       'UpdateFlowOutput',
-      'UpdateFlowSource'
+      'UpdateFlowSource',
+      'UpdateGatewayInstance'
     ],
     Read: [
+      'DescribeBridge',
       'DescribeFlow',
+      'DescribeFlowSourceMetadata',
+      'DescribeGateway',
+      'DescribeGatewayInstance',
       'DescribeOffering',
       'DescribeReservation',
       'ListTagsForResource'
     ],
     List: [
+      'ListBridges',
       'ListEntitlements',
       'ListFlows',
+      'ListGatewayInstances',
+      'ListGateways',
       'ListOfferings',
       'ListReservations'
     ],
@@ -447,5 +735,51 @@ export class Mediaconnect extends PolicyStatement {
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:source:${ sourceId }:${ sourceName }`);
+  }
+
+  /**
+   * Adds a resource of type Gateway to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param gatewayName - Identifier for the gatewayName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGateway(gatewayId: string, gatewayName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:gateway:${ gatewayId }:${ gatewayName }`);
+  }
+
+  /**
+   * Adds a resource of type Bridge to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-bridges.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param flowName - Identifier for the flowName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBridge(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:bridge:${ flowId }:${ flowName }`);
+  }
+
+  /**
+   * Adds a resource of type GatewayInstance to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-instances.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param gatewayName - Identifier for the gatewayName.
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGatewayInstance(gatewayId: string, gatewayName: string, instanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
   }
 }

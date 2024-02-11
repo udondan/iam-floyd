@@ -8,5 +8,9 @@ imagebuilder:imageRecipe
 imagebuilder:imageVersion
 imagebuilder:infrastructureConfiguration
 imagebuilder:kmsKey
+imagebuilder:lifecycleExecution
+imagebuilder:lifecyclePolicy
+imagebuilder:workflow
 imagebuilder:workflowExecution
 imagebuilder:workflowStepExecution
+imagebuilder:workflowVersion

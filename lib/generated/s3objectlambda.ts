@@ -312,7 +312,7 @@ export class S3ObjectLambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket.
+   * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket
    *
    * Access Level: Permissions management
    *

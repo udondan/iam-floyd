@@ -41,6 +41,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the resource policy of an existing entity
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to return the details of an existing change set
    *
    * Access Level: Read
@@ -71,6 +82,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public toDescribeTask() {
     return this.to('DescribeTask');
+  }
+
+  /**
+   * Grants permission to get the resource policy of an existing entity
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -118,12 +140,24 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a resource policy to an existing entity
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to request a new change set (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCatalogChangeType()
+   * - .ifIntent()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -180,10 +214,15 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'StartChangeSet',
       'UpdateTask'
     ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
+    ],
     Read: [
       'DescribeChangeSet',
       'DescribeEntity',
       'DescribeTask',
+      'GetResourcePolicy',
       'ListTagsForResource'
     ],
     List: [
@@ -234,6 +273,72 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the Intent parameter in the StartChangeSet request
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
+   *
+   * Applies to actions:
+   * - .toStartChangeSet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIntent(value: string | string[], operator?: Operator | string) {
+    return this.if(`Intent`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toStartChangeSet()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Entity
+   * - ChangeSet
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toStartChangeSet()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

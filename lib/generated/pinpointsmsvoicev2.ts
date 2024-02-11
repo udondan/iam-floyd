@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [sms-voice-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointsmsvoicev2.html).
@@ -98,6 +98,82 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a registration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:TagResource
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistration.html
+   */
+  public toCreateRegistration() {
+    return this.to('CreateRegistration');
+  }
+
+  /**
+   * Grants permission to associate a registration with a phone number or another registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationAssociation.html
+   */
+  public toCreateRegistrationAssociation() {
+    return this.to('CreateRegistrationAssociation');
+  }
+
+  /**
+   * Grants permission to create a registration attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:TagResource
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationAttachment.html
+   */
+  public toCreateRegistrationAttachment() {
+    return this.to('CreateRegistrationAttachment');
+  }
+
+  /**
+   * Grants permission to create a registration version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationVersion.html
+   */
+  public toCreateRegistrationVersion() {
+    return this.to('CreateRegistrationVersion');
+  }
+
+  /**
+   * Grants permission to create a verified destination number
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:TagResource
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateVerifiedDestinationNumber.html
+   */
+  public toCreateVerifiedDestinationNumber() {
+    return this.to('CreateVerifiedDestinationNumber');
+  }
+
+  /**
    * Grants permission to delete a configuration set
    *
    * Access Level: Write
@@ -186,6 +262,39 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistration.html
+   */
+  public toDeleteRegistration() {
+    return this.to('DeleteRegistration');
+  }
+
+  /**
+   * Grants permission to delete a registration attachment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationAttachment.html
+   */
+  public toDeleteRegistrationAttachment() {
+    return this.to('DeleteRegistrationAttachment');
+  }
+
+  /**
+   * Grants permission to delete an optional registration field value
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationFieldValue.html
+   */
+  public toDeleteRegistrationFieldValue() {
+    return this.to('DeleteRegistrationFieldValue');
+  }
+
+  /**
    * Grants permission to delete an override for your account's text messaging monthly spend limit
    *
    * Access Level: Write
@@ -194,6 +303,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toDeleteTextMessageSpendLimitOverride() {
     return this.to('DeleteTextMessageSpendLimitOverride');
+  }
+
+  /**
+   * Grants permission to delete a verified destination number
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVerifiedDestinationNumber.html
+   */
+  public toDeleteVerifiedDestinationNumber() {
+    return this.to('DeleteVerifiedDestinationNumber');
   }
 
   /**
@@ -296,6 +416,83 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the registration attachments in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePools.html
+   */
+  public toDescribeRegistrationAttachments() {
+    return this.to('DescribeRegistrationAttachments');
+  }
+
+  /**
+   * Grants permission to describe the field definitions for a given registration type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationFieldDefinitions.html
+   */
+  public toDescribeRegistrationFieldDefinitions() {
+    return this.to('DescribeRegistrationFieldDefinitions');
+  }
+
+  /**
+   * Grants permission to describe the field values for a given registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationFieldValues.html
+   */
+  public toDescribeRegistrationFieldValues() {
+    return this.to('DescribeRegistrationFieldValues');
+  }
+
+  /**
+   * Grants permission to describe the section definitions for a given registration type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationSectionDefinitions.html
+   */
+  public toDescribeRegistrationSectionDefinitions() {
+    return this.to('DescribeRegistrationSectionDefinitions');
+  }
+
+  /**
+   * Grants permission to describe the registration types supported by the service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationTypeDefinitions.html
+   */
+  public toDescribeRegistrationTypeDefinitions() {
+    return this.to('DescribeRegistrationTypeDefinitions');
+  }
+
+  /**
+   * Grants permission to describe the versions for a given registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationVersions.html
+   */
+  public toDescribeRegistrationVersions() {
+    return this.to('DescribeRegistrationVersions');
+  }
+
+  /**
+   * Grants permission to describe the registrations in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrations.html
+   */
+  public toDescribeRegistrations() {
+    return this.to('DescribeRegistrations');
+  }
+
+  /**
    * Grants permission to describe the sender IDs in your account
    *
    * Access Level: Read
@@ -318,6 +515,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the verified destination numbers in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeVerifiedDestinationNumbers.html
+   */
+  public toDescribeVerifiedDestinationNumbers() {
+    return this.to('DescribeVerifiedDestinationNumbers');
+  }
+
+  /**
    * Grants permission to disassociate an origination phone number or sender ID from a pool
    *
    * Access Level: Write
@@ -329,6 +537,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to discard the latest version of a given registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DiscardRegistrationVersion.html
+   */
+  public toDiscardRegistrationVersion() {
+    return this.to('DiscardRegistrationVersion');
+  }
+
+  /**
    * Grants permission to list all origination phone numbers and sender IDs associated to a pool
    *
    * Access Level: Read
@@ -337,6 +556,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toListPoolOriginationIdentities() {
     return this.to('ListPoolOriginationIdentities');
+  }
+
+  /**
+   * Grants permission to list all resources associated to a registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListRegistrationAssociations.html
+   */
+  public toListRegistrationAssociations() {
+    return this.to('ListRegistrationAssociations');
   }
 
   /**
@@ -373,6 +603,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a registration field value
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutRegistrationFieldValue.html
+   */
+  public toPutRegistrationFieldValue() {
+    return this.to('PutRegistrationFieldValue');
+  }
+
+  /**
    * Grants permission to release an origination phone number
    *
    * Access Level: Write
@@ -381,6 +622,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toReleasePhoneNumber() {
     return this.to('ReleasePhoneNumber');
+  }
+
+  /**
+   * Grants permission to release a sender ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleaseSenderId.html
+   */
+  public toReleaseSenderId() {
+    return this.to('ReleaseSenderId');
   }
 
   /**
@@ -400,6 +652,39 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toRequestPhoneNumber() {
     return this.to('RequestPhoneNumber');
+  }
+
+  /**
+   * Grants permission to request an unregistered sender ID
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:TagResource
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestSenderId.html
+   */
+  public toRequestSenderId() {
+    return this.to('RequestSenderId');
+  }
+
+  /**
+   * Grants permission to send a text or voice message containing a verification code to a destination phone number
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sms-voice:SendTextMessage
+   * - sms-voice:SendVoiceMessage
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendDestinationNumberVerificationCode.html
+   */
+  public toSendDestinationNumberVerificationCode() {
+    return this.to('SendDestinationNumberVerificationCode');
   }
 
   /**
@@ -469,6 +754,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit the latest version of a given registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SubmitRegistrationVersion.html
+   */
+  public toSubmitRegistrationVersion() {
+    return this.to('SubmitRegistrationVersion');
+  }
+
+  /**
    * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
@@ -489,7 +785,6 @@ export class SmsVoiceV2 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UntagResource.html
@@ -517,6 +812,9 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePhoneNumber.html
    */
   public toUpdatePhoneNumber() {
@@ -528,10 +826,35 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html
    */
   public toUpdatePool() {
     return this.to('UpdatePool');
+  }
+
+  /**
+   * Grants permission to update a sender ID's configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateSenderId.html
+   */
+  public toUpdateSenderId() {
+    return this.to('UpdateSenderId');
+  }
+
+  /**
+   * Grants permission to verify a destination phone number
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_VerifyDestinationNumber.html
+   */
+  public toVerifyDestinationNumber() {
+    return this.to('VerifyDestinationNumber');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -541,6 +864,11 @@ export class SmsVoiceV2 extends PolicyStatement {
       'CreateEventDestination',
       'CreateOptOutList',
       'CreatePool',
+      'CreateRegistration',
+      'CreateRegistrationAssociation',
+      'CreateRegistrationAttachment',
+      'CreateRegistrationVersion',
+      'CreateVerifiedDestinationNumber',
       'DeleteConfigurationSet',
       'DeleteDefaultMessageType',
       'DeleteDefaultSenderId',
@@ -549,22 +877,34 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DeleteOptOutList',
       'DeleteOptedOutNumber',
       'DeletePool',
+      'DeleteRegistration',
+      'DeleteRegistrationAttachment',
+      'DeleteRegistrationFieldValue',
       'DeleteTextMessageSpendLimitOverride',
+      'DeleteVerifiedDestinationNumber',
       'DeleteVoiceMessageSpendLimitOverride',
       'DisassociateOriginationIdentity',
+      'DiscardRegistrationVersion',
       'PutKeyword',
       'PutOptedOutNumber',
+      'PutRegistrationFieldValue',
       'ReleasePhoneNumber',
+      'ReleaseSenderId',
       'RequestPhoneNumber',
+      'RequestSenderId',
+      'SendDestinationNumberVerificationCode',
       'SendTextMessage',
       'SendVoiceMessage',
       'SetDefaultMessageType',
       'SetDefaultSenderId',
       'SetTextMessageSpendLimitOverride',
       'SetVoiceMessageSpendLimitOverride',
+      'SubmitRegistrationVersion',
       'UpdateEventDestination',
       'UpdatePhoneNumber',
-      'UpdatePool'
+      'UpdatePool',
+      'UpdateSenderId',
+      'VerifyDestinationNumber'
     ],
     Read: [
       'DescribeAccountAttributes',
@@ -575,9 +915,18 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DescribeOptedOutNumbers',
       'DescribePhoneNumbers',
       'DescribePools',
+      'DescribeRegistrationAttachments',
+      'DescribeRegistrationFieldDefinitions',
+      'DescribeRegistrationFieldValues',
+      'DescribeRegistrationSectionDefinitions',
+      'DescribeRegistrationTypeDefinitions',
+      'DescribeRegistrationVersions',
+      'DescribeRegistrations',
       'DescribeSenderIds',
       'DescribeSpendLimits',
+      'DescribeVerifiedDestinationNumbers',
       'ListPoolOriginationIdentities',
+      'ListRegistrationAssociations',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -670,5 +1019,127 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public onSenderId(senderId: string, isoCountryCode: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:sender-id/${ senderId }/${ isoCountryCode }`);
+  }
+
+  /**
+   * Adds a resource of type Registration to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrations.html
+   *
+   * @param registrationId - Identifier for the registrationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRegistration(registrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:registration/${ registrationId }`);
+  }
+
+  /**
+   * Adds a resource of type RegistrationAttachment to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationAttachments.html
+   *
+   * @param registrationAttachmentId - Identifier for the registrationAttachmentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRegistrationAttachment(registrationAttachmentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:registration-attachment/${ registrationAttachmentId }`);
+  }
+
+  /**
+   * Adds a resource of type VerifiedDestinationNumber to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeVerifiedDestinationNumbers.html
+   *
+   * @param verifiedDestinationNumberId - Identifier for the verifiedDestinationNumberId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVerifiedDestinationNumber(verifiedDestinationNumberId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:verified-destination-number/${ verifiedDestinationNumberId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateOptOutList()
+   * - .toCreatePool()
+   * - .toCreateRegistration()
+   * - .toCreateRegistrationAttachment()
+   * - .toCreateVerifiedDestinationNumber()
+   * - .toRequestPhoneNumber()
+   * - .toRequestSenderId()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - ConfigurationSet
+   * - OptOutList
+   * - PhoneNumber
+   * - Pool
+   * - SenderId
+   * - Registration
+   * - RegistrationAttachment
+   * - VerifiedDestinationNumber
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateOptOutList()
+   * - .toCreatePool()
+   * - .toCreateRegistration()
+   * - .toCreateRegistrationAttachment()
+   * - .toCreateVerifiedDestinationNumber()
+   * - .toRequestPhoneNumber()
+   * - .toRequestSenderId()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

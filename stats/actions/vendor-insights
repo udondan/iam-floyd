@@ -18,6 +18,7 @@ vendor-insights:ListSecurityProfiles;List
 vendor-insights:ListTagsForResource;Read
 vendor-insights:TagResource;Tagging
 vendor-insights:UntagResource;Tagging
+vendor-insights:UpdateDataSource;Write
 vendor-insights:UpdateSecurityProfile;Write
 vendor-insights:UpdateSecurityProfileSnapshotCreationConfiguration;Write
 vendor-insights:UpdateSecurityProfileSnapshotReleaseConfiguration;Write

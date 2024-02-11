@@ -6,6 +6,7 @@ servicediscovery:DeleteNamespace;Write
 servicediscovery:DeleteService;Write
 servicediscovery:DeregisterInstance;Write
 servicediscovery:DiscoverInstances;Read
+servicediscovery:DiscoverInstancesRevision;Read
 servicediscovery:GetInstance;Read
 servicediscovery:GetInstancesHealthStatus;Read
 servicediscovery:GetNamespace;Read

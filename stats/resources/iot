@@ -2,6 +2,7 @@ iot:authorizer
 iot:billinggroup
 iot:cacert
 iot:cert
+iot:certificateprovider
 iot:client
 iot:custommetric
 iot:destination
@@ -14,6 +15,8 @@ iot:job
 iot:jobtemplate
 iot:mitigationaction
 iot:otaupdate
+iot:package
+iot:packageversion
 iot:policy
 iot:provisioningtemplate
 iot:rolealias

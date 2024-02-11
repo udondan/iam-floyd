@@ -1,4 +1,4 @@
-license-manager-linux-subscriptions:GetServiceSettings;Write
-license-manager-linux-subscriptions:ListLinuxSubscriptionInstances;Write
-license-manager-linux-subscriptions:ListLinuxSubscriptions;Write
+license-manager-linux-subscriptions:GetServiceSettings;Read
+license-manager-linux-subscriptions:ListLinuxSubscriptionInstances;Read
+license-manager-linux-subscriptions:ListLinuxSubscriptions;Read
 license-manager-linux-subscriptions:UpdateServiceSettings;Write

@@ -41,6 +41,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete one or more automation rules in Security Hub
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   */
+  public toBatchDeleteAutomationRules() {
+    return this.to('BatchDeleteAutomationRules');
+  }
+
+  /**
    * Grants permission to disable standards in Security Hub
    *
    * Access Level: Write
@@ -60,6 +71,39 @@ export class Securityhub extends PolicyStatement {
    */
   public toBatchEnableStandards() {
     return this.to('BatchEnableStandards');
+  }
+
+  /**
+   * Grants permission to retrieve a list of details for automation rules from Security Hub based on rule Amazon Resource Names (ARNs)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   */
+  public toBatchGetAutomationRules() {
+    return this.to('BatchGetAutomationRules');
+  }
+
+  /**
+   * Grants permission to retrieve information about configuration policies associated with a specific list of member accounts and organizational units of the calling account's organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetConfigurationPolicyAssociations.html
+   */
+  public toBatchGetConfigurationPolicyAssociations() {
+    return this.to('BatchGetConfigurationPolicyAssociations');
+  }
+
+  /**
+   * Grants permission to get the enablement and compliance status of controls, the findings count for controls, and the overall security score for controls on the Security Hub console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/iam-permissions-controls-standards.html
+   */
+  public toBatchGetControlEvaluations() {
+    return this.to('BatchGetControlEvaluations');
   }
 
   /**
@@ -105,6 +149,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update one or more automation rules from Security Hub based on rule Amazon Resource Names (ARNs) and input parameters
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   */
+  public toBatchUpdateAutomationRules() {
+    return this.to('BatchUpdateAutomationRules');
+  }
+
+  /**
    * Grants permission to update customer-controlled fields for a selected set of Security Hub findings
    *
    * Access Level: Write
@@ -141,6 +196,36 @@ export class Securityhub extends PolicyStatement {
    */
   public toCreateActionTarget() {
     return this.to('CreateActionTarget');
+  }
+
+  /**
+   * Grants permission to create an automation rule based on input parameters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   */
+  public toCreateAutomationRule() {
+    return this.to('CreateAutomationRule');
+  }
+
+  /**
+   * Grants permission to create a configuration policy to manage organization member settings in Security Hub
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConfigurationPolicy.html
+   */
+  public toCreateConfigurationPolicy() {
+    return this.to('CreateConfigurationPolicy');
   }
 
   /**
@@ -196,6 +281,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toDeleteActionTarget() {
     return this.to('DeleteActionTarget');
+  }
+
+  /**
+   * Grants permission to delete an existing configuration policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConfigurationPolicy.html
+   */
+  public toDeleteConfigurationPolicy() {
+    return this.to('DeleteConfigurationPolicy');
   }
 
   /**
@@ -442,6 +538,28 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a complete overview of one configuration policy created by the calling account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConfigurationPolicy.html
+   */
+  public toGetConfigurationPolicy() {
+    return this.to('GetConfigurationPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve information about a configuration policy associated with a member account or organizational unit of the calling account's organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConfigurationPolicyAssociation.html
+   */
+  public toGetConfigurationPolicyAssociation() {
+    return this.to('GetConfigurationPolicyAssociation');
+  }
+
+  /**
    * Grants permission to retrieve a security score and counts of finding and control statuses for a security standard
    *
    * Access Level: Read
@@ -472,6 +590,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetFindingAggregator() {
     return this.to('GetFindingAggregator');
+  }
+
+  /**
+   * Grants permission to retrieve a list of finding history from Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingHistory.html
+   */
+  public toGetFindingHistory() {
+    return this.to('GetFindingHistory');
   }
 
   /**
@@ -574,6 +703,20 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the definition details of a specific security control identified by ID
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSecurityControlDefinition.html
+   */
+  public toGetSecurityControlDefinition() {
+    return this.to('GetSecurityControlDefinition');
+  }
+
+  /**
    * Grants permission to retrieve information about Security Hub usage by accounts
    *
    * Access Level: Read
@@ -593,6 +736,39 @@ export class Securityhub extends PolicyStatement {
    */
   public toInviteMembers() {
     return this.to('InviteMembers');
+  }
+
+  /**
+   * Grants permission to retrieve a list of automation rules and their metadata for the calling account from Security Hub
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   */
+  public toListAutomationRules() {
+    return this.to('ListAutomationRules');
+  }
+
+  /**
+   * Grants permission to list the summaries of all configuration policies created by the calling account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConfigurationPolicies.html
+   */
+  public toListConfigurationPolicies() {
+    return this.to('ListConfigurationPolicies');
+  }
+
+  /**
+   * Grants permission to retrieve information about all configuration policies associationed with all member accounts and organizational units of the calling account's organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConfigurationPolicyAssociations.html
+   */
+  public toListConfigurationPolicyAssociations() {
+    return this.to('ListConfigurationPolicyAssociations');
   }
 
   /**
@@ -723,6 +899,28 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a configuration policy with a member account or organizational unit in the calling account's organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyAssociation.html
+   */
+  public toStartConfigurationPolicyAssociation() {
+    return this.to('StartConfigurationPolicyAssociation');
+  }
+
+  /**
+   * Grants permission to remove a configuration policy association from a member account or organizational unit in the calling account's organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyDisassociation.html
+   */
+  public toStartConfigurationPolicyDisassociation() {
+    return this.to('StartConfigurationPolicyDisassociation');
+  }
+
+  /**
    * Grants permission to add tags to a Security Hub resource
    *
    * Access Level: Tagging
@@ -753,6 +951,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toUpdateActionTarget() {
     return this.to('UpdateActionTarget');
+  }
+
+  /**
+   * Grants permission to update an existing configuration policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConfigurationPolicy.html
+   */
+  public toUpdateConfigurationPolicy() {
+    return this.to('UpdateConfigurationPolicy');
   }
 
   /**
@@ -800,6 +1009,20 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update properties of a specific security control identified by ID or ARN
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - securityhub:UpdateStandardsControl
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityControl.html
+   */
+  public toUpdateSecurityControl() {
+    return this.to('UpdateSecurityControl');
+  }
+
+  /**
    * Grants permission to update Security Hub configuration
    *
    * Access Level: Write
@@ -825,17 +1048,22 @@ export class Securityhub extends PolicyStatement {
     Write: [
       'AcceptAdministratorInvitation',
       'AcceptInvitation',
+      'BatchDeleteAutomationRules',
       'BatchDisableStandards',
       'BatchEnableStandards',
       'BatchImportFindings',
+      'BatchUpdateAutomationRules',
       'BatchUpdateFindings',
       'BatchUpdateStandardsControlAssociations',
       'CreateActionTarget',
+      'CreateAutomationRule',
+      'CreateConfigurationPolicy',
       'CreateFindingAggregator',
       'CreateInsight',
       'CreateMembers',
       'DeclineInvitations',
       'DeleteActionTarget',
+      'DeleteConfigurationPolicy',
       'DeleteFindingAggregator',
       'DeleteInsight',
       'DeleteInvitations',
@@ -850,15 +1078,22 @@ export class Securityhub extends PolicyStatement {
       'EnableOrganizationAdminAccount',
       'EnableSecurityHub',
       'InviteMembers',
+      'StartConfigurationPolicyAssociation',
+      'StartConfigurationPolicyDisassociation',
       'UpdateActionTarget',
+      'UpdateConfigurationPolicy',
       'UpdateFindingAggregator',
       'UpdateFindings',
       'UpdateInsight',
       'UpdateOrganizationConfiguration',
+      'UpdateSecurityControl',
       'UpdateSecurityHubConfiguration',
       'UpdateStandardsControl'
     ],
     Read: [
+      'BatchGetAutomationRules',
+      'BatchGetConfigurationPolicyAssociations',
+      'BatchGetControlEvaluations',
       'BatchGetSecurityControls',
       'BatchGetStandardsControlAssociations',
       'DescribeActionTargets',
@@ -869,8 +1104,11 @@ export class Securityhub extends PolicyStatement {
       'DescribeStandardsControls',
       'GetAdhocInsightResults',
       'GetAdministratorAccount',
+      'GetConfigurationPolicy',
+      'GetConfigurationPolicyAssociation',
       'GetControlFindingSummary',
       'GetFindingAggregator',
+      'GetFindingHistory',
       'GetFindings',
       'GetFreeTrialEndDate',
       'GetFreeTrialUsage',
@@ -879,6 +1117,7 @@ export class Securityhub extends PolicyStatement {
       'GetInvitationsCount',
       'GetMasterAccount',
       'GetMembers',
+      'GetSecurityControlDefinition',
       'GetUsage',
       'ListControlEvaluationSummaries',
       'ListTagsForResource',
@@ -888,6 +1127,9 @@ export class Securityhub extends PolicyStatement {
     List: [
       'GetEnabledStandards',
       'GetInsights',
+      'ListAutomationRules',
+      'ListConfigurationPolicies',
+      'ListConfigurationPolicyAssociations',
       'ListEnabledProductsForImport',
       'ListFindingAggregators',
       'ListInvitations',
@@ -945,6 +1187,85 @@ export class Securityhub extends PolicyStatement {
    */
   public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:finding-aggregator/${ findingAggregatorId }`);
+  }
+
+  /**
+   * Adds a resource of type automation-rule to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
+   *
+   * @param automationRuleId - Identifier for the automationRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomationRule(automationRuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:automation-rule/${ automationRuleId }`);
+  }
+
+  /**
+   * Adds a resource of type configuration-policy to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html
+   *
+   * @param configurationPolicyId - Identifier for the configurationPolicyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConfigurationPolicy(configurationPolicyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:configuration-policy/${ configurationPolicyId }`);
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAutomationRule()
+   * - .toCreateConfigurationPolicy()
+   * - .toEnableSecurityHub()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - hub
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAutomationRule()
+   * - .toCreateConfigurationPolicy()
+   * - .toEnableSecurityHub()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

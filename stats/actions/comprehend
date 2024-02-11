@@ -39,6 +39,7 @@ comprehend:DetectPiiEntities;Read
 comprehend:DetectSentiment;Read
 comprehend:DetectSyntax;Read
 comprehend:DetectTargetedSentiment;Read
+comprehend:DetectToxicContent;Read
 comprehend:ImportModel;Write
 comprehend:ListDatasets;Read
 comprehend:ListDocumentClassificationJobs;Read

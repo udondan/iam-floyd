@@ -1,4 +1,18 @@
+codewhisperer:AllowVendedLogDeliveryForResource;Permissions management
+codewhisperer:AssociateCustomizationPermission;Write
+codewhisperer:CreateCustomization;Write
 codewhisperer:CreateProfile;Write
+codewhisperer:DeleteCustomization;Write
+codewhisperer:DeleteProfile;Write
+codewhisperer:DisassociateCustomizationPermission;Write
 codewhisperer:GenerateRecommendations;Read
+codewhisperer:GetCustomization;Read
+codewhisperer:ListCustomizationPermissions;List
+codewhisperer:ListCustomizationVersions;List
+codewhisperer:ListCustomizations;List
 codewhisperer:ListProfiles;List
+codewhisperer:ListTagsForResource;List
+codewhisperer:TagResource;Tagging
+codewhisperer:UntagResource;Tagging
+codewhisperer:UpdateCustomization;Write
 codewhisperer:UpdateProfile;Write

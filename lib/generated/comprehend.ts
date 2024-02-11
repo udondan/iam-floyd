@@ -146,10 +146,6 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
@@ -179,15 +175,6 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to create a new flywheel that you can use to train model versions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVolumeKmsKey()
-   * - .ifModelKmsKey()
-   * - .ifDataLakeKmsKey()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateFlywheel.html
    */
@@ -507,6 +494,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detect toxic content within the given list of text segments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectToxicContent.html
+   */
+  public toDetectToxicContent() {
+    return this.to('DetectToxicContent');
+  }
+
+  /**
    * Grants permission to import a trained Comprehend model
    *
    * Access Level: Write
@@ -736,14 +734,6 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVolumeKmsKey()
-   * - .ifOutputKmsKey()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html
    */
   public toStartDocumentClassificationJob() {
@@ -773,14 +763,6 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous entity detection job for a collection of documents
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVolumeKmsKey()
-   * - .ifOutputKmsKey()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html
    */
@@ -1051,12 +1033,6 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifVolumeKmsKey()
-   * - .ifModelKmsKey()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UpdateFlywheel.html
    */
   public toUpdateFlywheel() {
@@ -1096,6 +1072,7 @@ export class Comprehend extends PolicyStatement {
       'DetectSentiment',
       'DetectSyntax',
       'DetectTargetedSentiment',
+      'DetectToxicContent',
       'ListDatasets',
       'ListDocumentClassificationJobs',
       'ListDocumentClassifierSummaries',
@@ -1410,6 +1387,98 @@ export class Comprehend extends PolicyStatement {
    */
   public onFlywheelDataset(flywheelName: string, datasetName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Comprehend.defaultPartition }:comprehend:${ region || '*' }:${ account || '*' }:flywheel/${ flywheelName }/dataset/${ datasetName }`);
+  }
+
+  /**
+   * Filters access by requiring tag values present in a resource creation request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEndpoint()
+   * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
+   * - .toImportModel()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartEventsDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartPiiEntitiesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring tag value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - targeted-sentiment-detection-job
+   * - document-classifier
+   * - document-classifier-endpoint
+   * - entity-recognizer
+   * - entity-recognizer-endpoint
+   * - dominant-language-detection-job
+   * - entities-detection-job
+   * - pii-entities-detection-job
+   * - events-detection-job
+   * - key-phrases-detection-job
+   * - sentiment-detection-job
+   * - topics-detection-job
+   * - document-classification-job
+   * - flywheel
+   * - flywheel-dataset
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEndpoint()
+   * - .toCreateEntityRecognizer()
+   * - .toCreateFlywheel()
+   * - .toImportModel()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartEventsDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartPiiEntitiesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

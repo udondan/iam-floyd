@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedgrafana.html).
@@ -160,6 +160,17 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all available supported Grafana versions. Optionally, include a workspace to list the versions to which it can be upgraded
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html
+   */
+  public toListVersions() {
+    return this.to('ListVersions');
+  }
+
+  /**
    * Grants permission to list workspaces
    *
    * Access Level: Read
@@ -270,7 +281,8 @@ export class Grafana extends PolicyStatement {
       'ListWorkspaces'
     ],
     List: [
-      'ListPermissions'
+      'ListPermissions',
+      'ListVersions'
     ],
     Tagging: [
       'TagResource',
@@ -296,5 +308,56 @@ export class Grafana extends PolicyStatement {
    */
   public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Grafana.defaultPartition }:grafana:${ region || '*' }:${ account || '*' }:/workspaces/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to resource types:
+   * - workspace
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,7 @@
+resource-groups:AssociateResource;Write
 resource-groups:CreateGroup;Write
 resource-groups:DeleteGroup;Write
+resource-groups:DisassociateResource;Write
 resource-groups:GetAccountSettings;Read
 resource-groups:GetGroup;Read
 resource-groups:GetGroupConfiguration;Read

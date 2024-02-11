@@ -1,9 +1,13 @@
 iam:AWSServiceName
 iam:AssociatedResourceArn
+iam:FIDO-FIPS-140-2-certification
+iam:FIDO-FIPS-140-3-certification
+iam:FIDO-certification
 iam:OrganizationsPolicyId
 iam:PassedToService
 iam:PermissionsBoundary
 iam:PolicyARN
+iam:RegisterSecurityKey
 iam:RequestTag/${TagKey}
 iam:ResourceTag/${TagKey}
 iam:TagKeys

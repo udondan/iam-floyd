@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssqlworkbench.html).
@@ -359,6 +359,28 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get database structure metadata for auto-completion
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetAutocompletionMetadata() {
+    return this.to('GetAutocompletionMetadata');
+  }
+
+  /**
+   * Grants permission to get database structure information for auto-completion
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetAutocompletionResource() {
+    return this.to('GetAutocompletionResource');
+  }
+
+  /**
    * Grants permission to get charts on your account
    *
    * Access Level: Read
@@ -400,6 +422,17 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toGetNotebookVersion() {
     return this.to('GetNotebookVersion');
+  }
+
+  /**
+   * Grants permission to get text to SQL recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetQSqlRecommendations() {
+    return this.to('GetQSqlRecommendations');
   }
 
   /**
@@ -663,7 +696,6 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -702,6 +734,17 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toUpdateAccountGeneralSettings() {
     return this.to('UpdateAccountGeneralSettings');
+  }
+
+  /**
+   * Grants permission to update account-wide text to SQL settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toUpdateAccountQSqlSettings() {
+    return this.to('UpdateAccountQSqlSettings');
   }
 
   /**
@@ -849,6 +892,7 @@ export class Sqlworkbench extends PolicyStatement {
       'UpdateAccountConnectionSettings',
       'UpdateAccountExportSettings',
       'UpdateAccountGeneralSettings',
+      'UpdateAccountQSqlSettings',
       'UpdateChart',
       'UpdateConnection',
       'UpdateFileFolder',
@@ -863,10 +907,13 @@ export class Sqlworkbench extends PolicyStatement {
       'ExportNotebook',
       'GetAccountInfo',
       'GetAccountSettings',
+      'GetAutocompletionMetadata',
+      'GetAutocompletionResource',
       'GetChart',
       'GetConnection',
       'GetNotebook',
       'GetNotebookVersion',
+      'GetQSqlRecommendations',
       'GetQueryExecutionHistory',
       'GetSavedQuery',
       'GetSchemaInference',
@@ -959,5 +1006,88 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:notebook/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateChart()
+   * - .toCreateConnection()
+   * - .toCreateNotebook()
+   * - .toCreateNotebookCell()
+   * - .toCreateNotebookFromVersion()
+   * - .toCreateNotebookVersion()
+   * - .toCreateSavedQuery()
+   * - .toDuplicateNotebook()
+   * - .toImportNotebook()
+   * - .toRestoreNotebookVersion()
+   * - .toTagResource()
+   * - .toUpdateChart()
+   * - .toUpdateConnection()
+   * - .toUpdateNotebook()
+   * - .toUpdateNotebookCellContent()
+   * - .toUpdateNotebookCellLayout()
+   * - .toUpdateSavedQuery()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - connection
+   * - query
+   * - chart
+   * - notebook
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateChart()
+   * - .toCreateConnection()
+   * - .toCreateNotebook()
+   * - .toCreateNotebookCell()
+   * - .toCreateNotebookFromVersion()
+   * - .toCreateNotebookVersion()
+   * - .toCreateSavedQuery()
+   * - .toDuplicateNotebook()
+   * - .toImportNotebook()
+   * - .toRestoreNotebookVersion()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateChart()
+   * - .toUpdateConnection()
+   * - .toUpdateNotebook()
+   * - .toUpdateNotebookCellContent()
+   * - .toUpdateNotebookCellLayout()
+   * - .toUpdateSavedQuery()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

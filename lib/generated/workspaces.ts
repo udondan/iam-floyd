@@ -41,9 +41,26 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a workspace application with a WorkSpace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateWorkspaceApplication.html
+   */
+  public toAssociateWorkspaceApplication() {
+    return this.to('AssociateWorkspaceApplication');
+  }
+
+  /**
    * Grants permission to add rules to IP access control groups
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - workspaces:UpdateRulesOfIpGroup
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html
    */
@@ -285,6 +302,20 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deploy all pending workspace applications on a WorkSpace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DeployWorkspaceApplications.html
+   */
+  public toDeployWorkspaceApplications() {
+    return this.to('DeployWorkspaceApplications');
+  }
+
+  /**
    * Grants permission to deregister directories from use with Amazon WorkSpaces
    *
    * Access Level: Write
@@ -315,6 +346,45 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeAccountModifications() {
     return this.to('DescribeAccountModifications');
+  }
+
+  /**
+   * Grants permission to retrieve information about resources associated with a WorkSpace application
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeApplicationAssociations.html
+   */
+  public toDescribeApplicationAssociations() {
+    return this.to('DescribeApplicationAssociations');
+  }
+
+  /**
+   * Grants permission to obtain information about WorkSpace applications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeApplications.html
+   */
+  public toDescribeApplications() {
+    return this.to('DescribeApplications');
+  }
+
+  /**
+   * Grants permission to retrieve information about resources associated with a WorkSpace bundle
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeBundleAssociations.html
+   */
+  public toDescribeBundleAssociations() {
+    return this.to('DescribeBundleAssociations');
   }
 
   /**
@@ -373,6 +443,20 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about resources associated with a WorkSpace image
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeImageAssociations.html
+   */
+  public toDescribeImageAssociations() {
+    return this.to('DescribeImageAssociations');
+  }
+
+  /**
    * Grants permission to retrieve information about IP access control groups
    *
    * Access Level: Read
@@ -392,6 +476,20 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeTags() {
     return this.to('DescribeTags');
+  }
+
+  /**
+   * Grants permission to retrieve information about resources associated with a WorkSpace
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceAssociations.html
+   */
+  public toDescribeWorkspaceAssociations() {
+    return this.to('DescribeWorkspaceAssociations');
   }
 
   /**
@@ -491,6 +589,20 @@ export class Workspaces extends PolicyStatement {
    */
   public toDisassociateIpGroups() {
     return this.to('DisassociateIpGroups');
+  }
+
+  /**
+   * Grants permission to disassociate a workspace application from a WorkSpace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateWorkspaceApplication.html
+   */
+  public toDisassociateWorkspaceApplication() {
+    return this.to('DisassociateWorkspaceApplication');
   }
 
   /**
@@ -693,6 +805,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - workspaces:UpdateRulesOfIpGroup
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html
    */
   public toRevokeIpRules() {
@@ -773,6 +888,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - workspaces:AuthorizeIpRules
+   * - workspaces:RevokeIpRules
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html
    */
   public toUpdateRulesOfIpGroup() {
@@ -805,6 +924,7 @@ export class Workspaces extends PolicyStatement {
     Write: [
       'AssociateConnectionAlias',
       'AssociateIpGroups',
+      'AssociateWorkspaceApplication',
       'AuthorizeIpRules',
       'CopyWorkspaceImage',
       'CreateConnectClientAddIn',
@@ -821,9 +941,11 @@ export class Workspaces extends PolicyStatement {
       'DeleteIpGroup',
       'DeleteWorkspaceBundle',
       'DeleteWorkspaceImage',
+      'DeployWorkspaceApplications',
       'DeregisterWorkspaceDirectory',
       'DisassociateConnectionAlias',
       'DisassociateIpGroups',
+      'DisassociateWorkspaceApplication',
       'ImportClientBranding',
       'ImportWorkspaceImage',
       'MigrateWorkspace',
@@ -865,8 +987,13 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspacesConnectionStatus'
     ],
     List: [
+      'DescribeApplicationAssociations',
+      'DescribeApplications',
+      'DescribeBundleAssociations',
       'DescribeClientProperties',
       'DescribeConnectClientAddIns',
+      'DescribeImageAssociations',
+      'DescribeWorkspaceAssociations',
       'DescribeWorkspaceBundles',
       'DescribeWorkspaceImages',
       'DescribeWorkspaceSnapshots',
@@ -980,6 +1107,105 @@ export class Workspaces extends PolicyStatement {
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
+  }
+
+  /**
+   * Adds a resource of type workspaceapplication to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/application-bundle-management.html
+   *
+   * @param workSpaceApplicationId - Identifier for the workSpaceApplicationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkspaceapplication(workSpaceApplicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceapplication/${ workSpaceApplicationId }`);
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCopyWorkspaceImage()
+   * - .toCreateConnectionAlias()
+   * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
+   * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toDeleteTags()
+   * - .toRegisterWorkspaceDirectory()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateWorkspaceApplication()
+   * - .toDeployWorkspaceApplications()
+   * - .toDescribeApplicationAssociations()
+   * - .toDescribeBundleAssociations()
+   * - .toDescribeImageAssociations()
+   * - .toDescribeWorkspaceAssociations()
+   * - .toDisassociateWorkspaceApplication()
+   *
+   * Applies to resource types:
+   * - directoryid
+   * - workspacebundle
+   * - workspaceid
+   * - workspaceimage
+   * - workspaceipgroup
+   * - connectionalias
+   * - workspaceapplication
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCopyWorkspaceImage()
+   * - .toCreateConnectionAlias()
+   * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
+   * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toDeleteTags()
+   * - .toRegisterWorkspaceDirectory()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

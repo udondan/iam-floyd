@@ -2,6 +2,8 @@ backup:ChangeableForDays
 backup:CopyTargetOrgPaths
 backup:CopyTargets
 backup:FrameworkArns
+backup:MaxRetentionDays
+backup:MinRetentionDays
 backup:RequestTag/${TagKey}
 backup:ResourceTag/${TagKey}
 backup:TagKeys

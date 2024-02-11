@@ -1,3 +1,11 @@
+aws-marketplace-management:GetAdditionalSellerNotificationRecipients;Read
+aws-marketplace-management:GetBankAccountVerificationDetails;Read
+aws-marketplace-management:GetSecondaryUserVerificationDetails;Read
+aws-marketplace-management:GetSellerVerificationDetails;Read
+aws-marketplace-management:PutAdditionalSellerNotificationRecipients;Write
+aws-marketplace-management:PutBankAccountVerificationDetails;Write
+aws-marketplace-management:PutSecondaryUserVerificationDetails;Write
+aws-marketplace-management:PutSellerVerificationDetails;Write
 aws-marketplace-management:uploadFiles;Write
 aws-marketplace-management:viewMarketing;List
 aws-marketplace-management:viewReports;List

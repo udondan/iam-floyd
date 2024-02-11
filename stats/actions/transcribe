@@ -6,6 +6,7 @@ transcribe:CreateVocabularyFilter;Write
 transcribe:DeleteCallAnalyticsCategory;Write
 transcribe:DeleteCallAnalyticsJob;Write
 transcribe:DeleteLanguageModel;Write
+transcribe:DeleteMedicalScribeJob;Write
 transcribe:DeleteMedicalTranscriptionJob;Write
 transcribe:DeleteMedicalVocabulary;Write
 transcribe:DeleteTranscriptionJob;Write
@@ -14,6 +15,7 @@ transcribe:DeleteVocabularyFilter;Write
 transcribe:DescribeLanguageModel;Read
 transcribe:GetCallAnalyticsCategory;Read
 transcribe:GetCallAnalyticsJob;Read
+transcribe:GetMedicalScribeJob;Read
 transcribe:GetMedicalTranscriptionJob;Read
 transcribe:GetMedicalVocabulary;Read
 transcribe:GetTranscriptionJob;Read
@@ -22,6 +24,7 @@ transcribe:GetVocabularyFilter;Read
 transcribe:ListCallAnalyticsCategories;List
 transcribe:ListCallAnalyticsJobs;List
 transcribe:ListLanguageModels;List
+transcribe:ListMedicalScribeJobs;List
 transcribe:ListMedicalTranscriptionJobs;List
 transcribe:ListMedicalVocabularies;List
 transcribe:ListTagsForResource;Read
@@ -31,6 +34,7 @@ transcribe:ListVocabularyFilters;List
 transcribe:StartCallAnalyticsJob;Write
 transcribe:StartCallAnalyticsStreamTranscription;Write
 transcribe:StartCallAnalyticsStreamTranscriptionWebSocket;Write
+transcribe:StartMedicalScribeJob;Write
 transcribe:StartMedicalStreamTranscription;Write
 transcribe:StartMedicalStreamTranscriptionWebSocket;Write
 transcribe:StartMedicalTranscriptionJob;Write

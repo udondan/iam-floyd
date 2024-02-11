@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [rolesanywhere](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementrolesanywhere.html).
@@ -268,6 +268,28 @@ export class Rolesanywhere extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach notification settings to a trust anchor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_PutNotificationSettings.html
+   */
+  public toPutNotificationSettings() {
+    return this.to('PutNotificationSettings');
+  }
+
+  /**
+   * Grants permission to reset custom notification settings to IAM Roles Anywhere defined default state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_ResetNotificationSettings.html
+   */
+  public toResetNotificationSettings() {
+    return this.to('ResetNotificationSettings');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -347,6 +369,8 @@ export class Rolesanywhere extends PolicyStatement {
       'EnableProfile',
       'EnableTrustAnchor',
       'ImportCrl',
+      'PutNotificationSettings',
+      'ResetNotificationSettings',
       'UpdateCrl',
       'UpdateProfile',
       'UpdateTrustAnchor'
@@ -436,5 +460,63 @@ export class Rolesanywhere extends PolicyStatement {
    */
   public onCrl(crlId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Rolesanywhere.defaultPartition }:rolesanywhere:${ region || '*' }:${ account || '*' }:crl/${ crlId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateProfile()
+   * - .toCreateTrustAnchor()
+   * - .toImportCrl()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - trust-anchor
+   * - profile
+   * - subject
+   * - crl
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateProfile()
+   * - .toCreateTrustAnchor()
+   * - .toImportCrl()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

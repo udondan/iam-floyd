@@ -1,6 +1,7 @@
 kinesis:AddTagsToStream;Tagging
 kinesis:CreateStream;Write
 kinesis:DecreaseStreamRetentionPeriod;Write
+kinesis:DeleteResourcePolicy;Write
 kinesis:DeleteStream;Write
 kinesis:DeregisterStreamConsumer;Write
 kinesis:DescribeLimits;Read
@@ -10,6 +11,7 @@ kinesis:DescribeStreamSummary;Read
 kinesis:DisableEnhancedMonitoring;Write
 kinesis:EnableEnhancedMonitoring;Write
 kinesis:GetRecords;Read
+kinesis:GetResourcePolicy;Read
 kinesis:GetShardIterator;Read
 kinesis:IncreaseStreamRetentionPeriod;Write
 kinesis:ListShards;List
@@ -19,6 +21,7 @@ kinesis:ListTagsForStream;Read
 kinesis:MergeShards;Write
 kinesis:PutRecord;Write
 kinesis:PutRecords;Write
+kinesis:PutResourcePolicy;Write
 kinesis:RegisterStreamConsumer;Write
 kinesis:RemoveTagsFromStream;Tagging
 kinesis:SplitShard;Write

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [aps](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedserviceforprometheus.html).
@@ -76,6 +76,29 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a scraper
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - aps:TagResource
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - eks:DescribeCluster
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateScraper
+   */
+  public toCreateScraper() {
+    return this.to('CreateScraper');
+  }
+
+  /**
    * Grants permission to create a workspace
    *
    * Access Level: Write
@@ -147,6 +170,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a scraper
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteScraper
+   */
+  public toDeleteScraper() {
+    return this.to('DeleteScraper');
+  }
+
+  /**
    * Grants permission to delete a workspace
    *
    * Access Level: Write
@@ -203,6 +240,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a scraper
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeScraper
+   */
+  public toDescribeScraper() {
+    return this.to('DescribeScraper');
+  }
+
+  /**
    * Grants permission to describe a workspace
    *
    * Access Level: Read
@@ -242,6 +293,17 @@ export class Aps extends PolicyStatement {
    */
   public toGetAlertManagerStatus() {
     return this.to('GetAlertManagerStatus');
+  }
+
+  /**
+   * Grants permission to get default scraper configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetDefaultScraperConfiguration
+   */
+  public toGetDefaultScraperConfiguration() {
+    return this.to('GetDefaultScraperConfiguration');
   }
 
   /**
@@ -385,6 +447,17 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list scrapers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListScrapers
+   */
+  public toListScrapers() {
+    return this.to('ListScrapers');
+  }
+
+  /**
    * Grants permission to list tags on an AMP resource
    *
    * Access Level: Read
@@ -502,7 +575,6 @@ export class Aps extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UntagResource
    */
@@ -544,11 +616,13 @@ export class Aps extends PolicyStatement {
       'CreateAlertManagerDefinition',
       'CreateLoggingConfiguration',
       'CreateRuleGroupsNamespace',
+      'CreateScraper',
       'CreateWorkspace',
       'DeleteAlertManagerDefinition',
       'DeleteAlertManagerSilence',
       'DeleteLoggingConfiguration',
       'DeleteRuleGroupsNamespace',
+      'DeleteScraper',
       'DeleteWorkspace',
       'PutAlertManagerDefinition',
       'PutAlertManagerSilences',
@@ -561,9 +635,11 @@ export class Aps extends PolicyStatement {
       'DescribeAlertManagerDefinition',
       'DescribeLoggingConfiguration',
       'DescribeRuleGroupsNamespace',
+      'DescribeScraper',
       'DescribeWorkspace',
       'GetAlertManagerSilence',
       'GetAlertManagerStatus',
+      'GetDefaultScraperConfiguration',
       'GetLabels',
       'GetMetricMetadata',
       'GetSeries',
@@ -578,6 +654,7 @@ export class Aps extends PolicyStatement {
     ],
     List: [
       'ListRuleGroupsNamespaces',
+      'ListScrapers',
       'ListWorkspaces'
     ],
     Tagging: [
@@ -623,5 +700,146 @@ export class Aps extends PolicyStatement {
    */
   public onRulegroupsnamespace(workspaceId: string, namespace: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
+  }
+
+  /**
+   * Adds a resource of type scraper to the statement
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html
+   *
+   * @param scraperId - Identifier for the scraperId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onScraper(scraperId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Aps.defaultPartition }:aps:${ region || '*' }:${ account || '*' }:scraper/${ scraperId }`);
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/clusters.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Aps.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateRuleGroupsNamespace()
+   * - .toCreateScraper()
+   * - .toCreateWorkspace()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - workspace
+   * - rulegroupsnamespace
+   * - scraper
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateAlertManagerAlerts()
+   * - .toCreateAlertManagerDefinition()
+   * - .toCreateLoggingConfiguration()
+   * - .toCreateScraper()
+   * - .toDeleteAlertManagerDefinition()
+   * - .toDeleteAlertManagerSilence()
+   * - .toDeleteLoggingConfiguration()
+   * - .toDeleteRuleGroupsNamespace()
+   * - .toDeleteScraper()
+   * - .toDeleteWorkspace()
+   * - .toDescribeAlertManagerDefinition()
+   * - .toDescribeLoggingConfiguration()
+   * - .toDescribeRuleGroupsNamespace()
+   * - .toDescribeScraper()
+   * - .toDescribeWorkspace()
+   * - .toGetAlertManagerSilence()
+   * - .toGetAlertManagerStatus()
+   * - .toGetLabels()
+   * - .toGetMetricMetadata()
+   * - .toGetSeries()
+   * - .toListAlertManagerAlertGroups()
+   * - .toListAlertManagerAlerts()
+   * - .toListAlertManagerReceivers()
+   * - .toListAlertManagerSilences()
+   * - .toListAlerts()
+   * - .toListRuleGroupsNamespaces()
+   * - .toListRules()
+   * - .toPutAlertManagerDefinition()
+   * - .toPutAlertManagerSilences()
+   * - .toPutRuleGroupsNamespace()
+   * - .toQueryMetrics()
+   * - .toRemoteWrite()
+   * - .toUpdateLoggingConfiguration()
+   * - .toUpdateWorkspaceAlias()
+   *
+   * Applies to resource types:
+   * - workspace
+   * - rulegroupsnamespace
+   * - scraper
+   * - cluster
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateRuleGroupsNamespace()
+   * - .toCreateScraper()
+   * - .toCreateWorkspace()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - workspace
+   * - rulegroupsnamespace
+   * - scraper
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

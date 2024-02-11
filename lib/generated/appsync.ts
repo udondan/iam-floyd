@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html).
@@ -27,6 +27,28 @@ export class Appsync extends PolicyStatement {
    */
   public toAssociateApi() {
     return this.to('AssociateApi');
+  }
+
+  /**
+   * Grants permission to associate a merged API to a source API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateMergedGraphqlApi.html
+   */
+  public toAssociateMergedGraphqlApi() {
+    return this.to('AssociateMergedGraphqlApi');
+  }
+
+  /**
+   * Grants permission to associate a source API to a merged API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateSourceGraphqlApi.html
+   */
+  public toAssociateSourceGraphqlApi() {
+    return this.to('AssociateSourceGraphqlApi');
   }
 
   /**
@@ -92,6 +114,7 @@ export class Appsync extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifVisibility()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -205,6 +228,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a type
    *
    * Access Level: Write
@@ -224,6 +258,28 @@ export class Appsync extends PolicyStatement {
    */
   public toDisassociateApi() {
     return this.to('DisassociateApi');
+  }
+
+  /**
+   * Grants permission to remove an associated source API from a merged API identified by the source API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateMergedGraphqlApi.html
+   */
+  public toDisassociateMergedGraphqlApi() {
+    return this.to('DisassociateMergedGraphqlApi');
+  }
+
+  /**
+   * Grants permission to remove an associated source API from a merged API identified by the merged API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateSourceGraphqlApi.html
+   */
+  public toDisassociateSourceGraphqlApi() {
+    return this.to('DisassociateSourceGraphqlApi');
   }
 
   /**
@@ -293,6 +349,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a data source introspection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSourceIntrospection.html
+   */
+  public toGetDataSourceIntrospection() {
+    return this.to('GetDataSourceIntrospection');
+  }
+
+  /**
    * Grants permission to read information about a custom domain name in AppSync
    *
    * Access Level: Read
@@ -329,6 +396,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the environment variables for a GraphQL API
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApiEnvironmentVariables.html
+   */
+  public toGetGraphqlApiEnvironmentVariables() {
+    return this.to('GetGraphqlApiEnvironmentVariables');
+  }
+
+  /**
    * Grants permission to retrieve the introspection schema for a GraphQL API
    *
    * Access Level: Read
@@ -351,6 +429,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to retrieve the current status of a schema creation operation
    *
    * Access Level: Read
@@ -359,6 +448,17 @@ export class Appsync extends PolicyStatement {
    */
   public toGetSchemaCreationStatus() {
     return this.to('GetSchemaCreationStatus');
+  }
+
+  /**
+   * Grants permission to read information about a merged API associated source API
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSourceApiAssociation.html
+   */
+  public toGetSourceApiAssociation() {
+    return this.to('GetSourceApiAssociation');
   }
 
   /**
@@ -461,6 +561,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list source APIs associated to a given merged API
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListSourceApiAssociations.html
+   */
+  public toListSourceApiAssociations() {
+    return this.to('ListSourceApiAssociations');
+  }
+
+  /**
    * Grants permission to list the tags for a resource
    *
    * Access Level: Read
@@ -486,6 +597,39 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the types for a given merged API and source API association
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypesByAssociation.html
+   */
+  public toListTypesByAssociation() {
+    return this.to('ListTypesByAssociation');
+  }
+
+  /**
+   * Grants permission to update the environment variables for a GraphQL API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_PutGraphqlApiEnvironmentVariables.html
+   */
+  public toPutGraphqlApiEnvironmentVariables() {
+    return this.to('PutGraphqlApiEnvironmentVariables');
+  }
+
+  /**
+   * Grants permission to set a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to set a web ACL
    *
    * Access Level: Write
@@ -497,6 +641,28 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a GraphQL query to a source API of a merged API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
+   */
+  public toSourceGraphQL() {
+    return this.to('SourceGraphQL');
+  }
+
+  /**
+   * Grants permission to introspect a data source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartDataSourceIntrospection.html
+   */
+  public toStartDataSourceIntrospection() {
+    return this.to('StartDataSourceIntrospection');
+  }
+
+  /**
    * Grants permission to add a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed
    *
    * Access Level: Write
@@ -505,6 +671,17 @@ export class Appsync extends PolicyStatement {
    */
   public toStartSchemaCreation() {
     return this.to('StartSchemaCreation');
+  }
+
+  /**
+   * Grants permission to initiate a schema merge for a given merged API and associated source API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaMerge.html
+   */
+  public toStartSchemaMerge() {
+    return this.to('StartSchemaMerge');
   }
 
   /**
@@ -621,6 +798,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a merged API source API association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateSourceApiAssociation.html
+   */
+  public toUpdateSourceApiAssociation() {
+    return this.to('UpdateSourceApiAssociation');
+  }
+
+  /**
    * Grants permission to update a type
    *
    * Access Level: Write
@@ -634,6 +822,8 @@ export class Appsync extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApi',
+      'AssociateMergedGraphqlApi',
+      'AssociateSourceGraphqlApi',
       'CreateApiCache',
       'CreateApiKey',
       'CreateDataSource',
@@ -649,12 +839,20 @@ export class Appsync extends PolicyStatement {
       'DeleteFunction',
       'DeleteGraphqlApi',
       'DeleteResolver',
+      'DeleteResourcePolicy',
       'DeleteType',
       'DisassociateApi',
+      'DisassociateMergedGraphqlApi',
+      'DisassociateSourceGraphqlApi',
       'FlushApiCache',
       'GraphQL',
+      'PutGraphqlApiEnvironmentVariables',
+      'PutResourcePolicy',
       'SetWebACL',
+      'SourceGraphQL',
+      'StartDataSourceIntrospection',
       'StartSchemaCreation',
+      'StartSchemaMerge',
       'UpdateApiCache',
       'UpdateApiKey',
       'UpdateDataSource',
@@ -662,6 +860,7 @@ export class Appsync extends PolicyStatement {
       'UpdateFunction',
       'UpdateGraphqlApi',
       'UpdateResolver',
+      'UpdateSourceApiAssociation',
       'UpdateType'
     ],
     Read: [
@@ -670,12 +869,16 @@ export class Appsync extends PolicyStatement {
       'GetApiAssociation',
       'GetApiCache',
       'GetDataSource',
+      'GetDataSourceIntrospection',
       'GetDomainName',
       'GetFunction',
       'GetGraphqlApi',
+      'GetGraphqlApiEnvironmentVariables',
       'GetIntrospectionSchema',
       'GetResolver',
+      'GetResourcePolicy',
       'GetSchemaCreationStatus',
+      'GetSourceApiAssociation',
       'GetType',
       'ListTagsForResource'
     ],
@@ -687,7 +890,9 @@ export class Appsync extends PolicyStatement {
       'ListGraphqlApis',
       'ListResolvers',
       'ListResolversByFunction',
-      'ListTypes'
+      'ListSourceApiAssociations',
+      'ListTypes',
+      'ListTypesByAssociation'
     ],
     Tagging: [
       'TagResource',
@@ -785,5 +990,105 @@ export class Appsync extends PolicyStatement {
    */
   public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/functions/${ functionId }`);
+  }
+
+  /**
+   * Adds a resource of type sourceApiAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
+   *
+   * @param mergedGraphQLAPIId - Identifier for the mergedGraphQLAPIId.
+   * @param associationid - Identifier for the associationid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSourceApiAssociation(mergedGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ mergedGraphQLAPIId }/sourceApiAssociations/${ associationid }`);
+  }
+
+  /**
+   * Adds a resource of type mergedApiAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
+   *
+   * @param sourceGraphQLAPIId - Identifier for the sourceGraphQLAPIId.
+   * @param associationid - Identifier for the associationid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMergedApiAssociation(sourceGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Appsync.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ sourceGraphQLAPIId }/mergedApiAssociations/${ associationid }`);
+  }
+
+  /**
+   * Filters access by the visibility of an API
+   *
+   * Applies to actions:
+   * - .toCreateGraphqlApi()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVisibility(value: string | string[], operator?: Operator | string) {
+    return this.if(`Visibility`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateGraphqlApi()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteGraphqlApi()
+   * - .toGetGraphqlApi()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUpdateGraphqlApi()
+   *
+   * Applies to resource types:
+   * - graphqlapi
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateGraphqlApi()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

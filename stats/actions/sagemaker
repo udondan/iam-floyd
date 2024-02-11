@@ -12,6 +12,7 @@ sagemaker:CreateAppImageConfig;Write
 sagemaker:CreateArtifact;Write
 sagemaker:CreateAutoMLJob;Write
 sagemaker:CreateAutoMLJobV2;Write
+sagemaker:CreateCluster;Write
 sagemaker:CreateCodeRepository;Write
 sagemaker:CreateCompilationJob;Write
 sagemaker:CreateContext;Write
@@ -31,6 +32,7 @@ sagemaker:CreateHumanTaskUi;Write
 sagemaker:CreateHyperParameterTuningJob;Write
 sagemaker:CreateImage;Write
 sagemaker:CreateImageVersion;Write
+sagemaker:CreateInferenceComponent;Write
 sagemaker:CreateInferenceExperiment;Write
 sagemaker:CreateInferenceRecommendationsJob;Write
 sagemaker:CreateLabelingJob;Write
@@ -67,7 +69,9 @@ sagemaker:DeleteApp;Write
 sagemaker:DeleteAppImageConfig;Write
 sagemaker:DeleteArtifact;Write
 sagemaker:DeleteAssociation;Write
+sagemaker:DeleteCluster;Write
 sagemaker:DeleteCodeRepository;Write
+sagemaker:DeleteCompilationJob;Write
 sagemaker:DeleteContext;Write
 sagemaker:DeleteDataQualityJobDefinition;Write
 sagemaker:DeleteDeviceFleet;Write
@@ -83,8 +87,10 @@ sagemaker:DeleteHub;Write
 sagemaker:DeleteHubContent;Write
 sagemaker:DeleteHumanLoop;Write
 sagemaker:DeleteHumanTaskUi;Write
+sagemaker:DeleteHyperParameterTuningJob;Write
 sagemaker:DeleteImage;Write
 sagemaker:DeleteImageVersion;Write
+sagemaker:DeleteInferenceComponent;Write
 sagemaker:DeleteInferenceExperiment;Write
 sagemaker:DeleteLineageGroupPolicy;Write
 sagemaker:DeleteModel;Write
@@ -117,6 +123,8 @@ sagemaker:DescribeAppImageConfig;Read
 sagemaker:DescribeArtifact;Read
 sagemaker:DescribeAutoMLJob;Read
 sagemaker:DescribeAutoMLJobV2;Read
+sagemaker:DescribeCluster;Read
+sagemaker:DescribeClusterNode;Read
 sagemaker:DescribeCodeRepository;Read
 sagemaker:DescribeCompilationJob;Read
 sagemaker:DescribeContext;Read
@@ -139,6 +147,7 @@ sagemaker:DescribeHumanTaskUi;Read
 sagemaker:DescribeHyperParameterTuningJob;Read
 sagemaker:DescribeImage;Read
 sagemaker:DescribeImageVersion;Read
+sagemaker:DescribeInferenceComponent;Read
 sagemaker:DescribeInferenceExperiment;Read
 sagemaker:DescribeInferenceRecommendationsJob;Read
 sagemaker:DescribeLabelingJob;Read
@@ -180,10 +189,12 @@ sagemaker:GetLineageGroupPolicy;Read
 sagemaker:GetModelPackageGroupPolicy;Read
 sagemaker:GetRecord;Read
 sagemaker:GetSagemakerServicecatalogPortfolioStatus;Read
+sagemaker:GetScalingConfigurationRecommendation;Read
 sagemaker:GetSearchSuggestions;Read
 sagemaker:ImportHubContent;Write
 sagemaker:InvokeEndpoint;Read
 sagemaker:InvokeEndpointAsync;Read
+sagemaker:InvokeEndpointWithResponseStream;Read
 sagemaker:ListActions;List
 sagemaker:ListAlgorithms;List
 sagemaker:ListAliases;List
@@ -193,6 +204,8 @@ sagemaker:ListArtifacts;List
 sagemaker:ListAssociations;List
 sagemaker:ListAutoMLJobs;List
 sagemaker:ListCandidatesForAutoMLJob;List
+sagemaker:ListClusterNodes;List
+sagemaker:ListClusters;List
 sagemaker:ListCodeRepositories;List
 sagemaker:ListCompilationJobs;List
 sagemaker:ListContexts;List
@@ -215,6 +228,7 @@ sagemaker:ListHumanTaskUis;List
 sagemaker:ListHyperParameterTuningJobs;List
 sagemaker:ListImageVersions;List
 sagemaker:ListImages;List
+sagemaker:ListInferenceComponents;List
 sagemaker:ListInferenceExperiments;List
 sagemaker:ListInferenceRecommendationsJobSteps;List
 sagemaker:ListInferenceRecommendationsJobs;List
@@ -243,6 +257,7 @@ sagemaker:ListPipelineParametersForExecution;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListResourceCatalogs;List
 sagemaker:ListSharedModelEvents;List
 sagemaker:ListSharedModelVersions;List
 sagemaker:ListSharedModels;List
@@ -295,6 +310,7 @@ sagemaker:StopTransformJob;Write
 sagemaker:UpdateAction;Write
 sagemaker:UpdateAppImageConfig;Write
 sagemaker:UpdateArtifact;Write
+sagemaker:UpdateCluster;Write
 sagemaker:UpdateCodeRepository;Write
 sagemaker:UpdateContext;Write
 sagemaker:UpdateDeviceFleet;Write
@@ -308,6 +324,8 @@ sagemaker:UpdateFeatureMetadata;Write
 sagemaker:UpdateHub;Write
 sagemaker:UpdateImage;Write
 sagemaker:UpdateImageVersion;Write
+sagemaker:UpdateInferenceComponent;Write
+sagemaker:UpdateInferenceComponentRuntimeConfig;Write
 sagemaker:UpdateInferenceExperiment;Write
 sagemaker:UpdateModelCard;Write
 sagemaker:UpdateModelPackage;Write

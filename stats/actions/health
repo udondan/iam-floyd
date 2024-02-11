@@ -2,6 +2,7 @@ health:DescribeAffectedAccountsForOrganization;Read
 health:DescribeAffectedEntities;Read
 health:DescribeAffectedEntitiesForOrganization;Read
 health:DescribeEntityAggregates;Read
+health:DescribeEntityAggregatesForOrganization;Read
 health:DescribeEventAggregates;Read
 health:DescribeEventDetails;Read
 health:DescribeEventDetailsForOrganization;Read

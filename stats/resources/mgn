@@ -1,4 +1,5 @@
 mgn:ApplicationResource
+mgn:ConnectorResource
 mgn:ExportResource
 mgn:ImportResource
 mgn:JobResource

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconvert.html).
@@ -48,6 +48,9 @@ export class Mediaconvert extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifHttpInputsAllowed()
+   * - .ifHttpsInputsAllowed()
+   * - .ifS3InputsAllowed()
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
@@ -468,5 +471,106 @@ export class Mediaconvert extends PolicyStatement {
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toCreateJobTemplate()
+   * - .toCreatePreset()
+   * - .toCreateQueue()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
+   *
+   * Applies to resource types:
+   * - Job
+   * - Queue
+   * - Preset
+   * - JobTemplate
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toCreateJobTemplate()
+   * - .toCreatePreset()
+   * - .toCreateQueue()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by an HTTP input policy present in the account
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifHttpInputsAllowed(value?: boolean) {
+    return this.if(`HttpInputsAllowed`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by an HTTPS input policy present in the account
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifHttpsInputsAllowed(value?: boolean) {
+    return this.if(`HttpsInputsAllowed`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by an S3 input policy present in the account
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifS3InputsAllowed(value?: boolean) {
+    return this.if(`S3InputsAllowed`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

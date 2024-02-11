@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [medialive](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmedialive.html).
@@ -288,6 +288,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the account configuration of the customer
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
+   */
+  public toDescribeAccountConfiguration() {
+    return this.to('DescribeAccountConfiguration');
+  }
+
+  /**
    * Grants permission to get details about a channel
    *
    * Access Level: Read
@@ -395,6 +406,17 @@ export class Medialive extends PolicyStatement {
    */
   public toDescribeSchedule() {
     return this.to('DescribeSchedule');
+  }
+
+  /**
+   * Grants permission to view the thumbnails for a channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
+   */
+  public toDescribeThumbnails() {
+    return this.to('DescribeThumbnails');
   }
 
   /**
@@ -556,6 +578,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an input device attached to a MediaConnect flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toStartInputDevice() {
+    return this.to('StartInputDevice');
+  }
+
+  /**
    * Grants permission to start a maintenance window for an input device
    *
    * Access Level: Write
@@ -589,6 +622,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an input device attached to a MediaConnect flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toStopInputDevice() {
+    return this.to('StopInputDevice');
+  }
+
+  /**
    * Grants permission to stop a multiplex
    *
    * Access Level: Write
@@ -608,6 +652,17 @@ export class Medialive extends PolicyStatement {
    */
   public toTransferInputDevice() {
     return this.to('TransferInputDevice');
+  }
+
+  /**
+   * Grants permission to update a customer's account configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
+   */
+  public toUpdateAccountConfiguration() {
+    return this.to('UpdateAccountConfiguration');
   }
 
   /**
@@ -728,11 +783,14 @@ export class Medialive extends PolicyStatement {
       'RebootInputDevice',
       'RejectInputDeviceTransfer',
       'StartChannel',
+      'StartInputDevice',
       'StartInputDeviceMaintenanceWindow',
       'StartMultiplex',
       'StopChannel',
+      'StopInputDevice',
       'StopMultiplex',
       'TransferInputDevice',
+      'UpdateAccountConfiguration',
       'UpdateChannel',
       'UpdateChannelClass',
       'UpdateInput',
@@ -747,6 +805,7 @@ export class Medialive extends PolicyStatement {
       'DeleteTags'
     ],
     Read: [
+      'DescribeAccountConfiguration',
       'DescribeChannel',
       'DescribeInput',
       'DescribeInputDevice',
@@ -756,7 +815,8 @@ export class Medialive extends PolicyStatement {
       'DescribeMultiplexProgram',
       'DescribeOffering',
       'DescribeReservation',
-      'DescribeSchedule'
+      'DescribeSchedule',
+      'DescribeThumbnails'
     ],
     List: [
       'ListChannels',
@@ -883,5 +943,71 @@ export class Medialive extends PolicyStatement {
    */
   public onOffering(offeringId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Medialive.defaultPartition }:medialive:${ region || '*' }:${ account || '*' }:offering:${ offeringId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
+   *
+   * Applies to actions:
+   * - .toCreateChannel()
+   * - .toCreateInput()
+   * - .toCreateInputSecurityGroup()
+   * - .toCreateMultiplex()
+   * - .toCreatePartnerInput()
+   * - .toCreateTags()
+   * - .toPurchaseOffering()
+   * - .toUpdateInputSecurityGroup()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
+   *
+   * Applies to resource types:
+   * - channel
+   * - input
+   * - input-security-group
+   * - multiplex
+   * - reservation
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
+   *
+   * Applies to actions:
+   * - .toCreateChannel()
+   * - .toCreateInput()
+   * - .toCreateInputSecurityGroup()
+   * - .toCreateMultiplex()
+   * - .toCreatePartnerInput()
+   * - .toCreateTags()
+   * - .toDeleteTags()
+   * - .toPurchaseOffering()
+   * - .toUpdateInputSecurityGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

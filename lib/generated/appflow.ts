@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [appflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappflow.html).
@@ -16,6 +16,17 @@ export class Appflow extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to cancel in-progress executions of an Amazon AppFlow flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CancelFlowExecutions.html
+   */
+  public toCancelFlowExecutions() {
+    return this.to('CancelFlowExecutions');
   }
 
   /**
@@ -240,6 +251,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to resets metadata of connector entities that Amazon AppFlow stored in its cache
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ResetConnectorMetadataCache.html
+   */
+  public toResetConnectorMetadataCache() {
+    return this.to('ResetConnectorMetadataCache');
+  }
+
+  /**
    * Grants permission to run a flow configured in Amazon AppFlow (Console Only)
    *
    * Access Level: Write
@@ -273,7 +295,7 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a flow
+   * Grants permission to tag a flow or a connector
    *
    * Access Level: Tagging
    *
@@ -303,7 +325,7 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a flow
+   * Grants permission to untag a flow or a connector
    *
    * Access Level: Tagging
    *
@@ -360,11 +382,13 @@ export class Appflow extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelFlowExecutions',
       'CreateConnectorProfile',
       'CreateFlow',
       'DeleteConnectorProfile',
       'DeleteFlow',
       'RegisterConnector',
+      'ResetConnectorMetadataCache',
       'RunFlow',
       'StartFlow',
       'StopFlow',
@@ -432,7 +456,7 @@ export class Appflow extends PolicyStatement {
   /**
    * Adds a resource of type connector to the statement
    *
-   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorDefinition.html
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorDetail.html
    *
    * @param connectorLabel - Identifier for the connectorLabel.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -444,5 +468,62 @@ export class Appflow extends PolicyStatement {
    */
   public onConnector(connectorLabel: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Appflow.defaultPartition }:appflow:${ region || '*' }:${ account || '*' }:connector/${ connectorLabel }`);
+  }
+
+  /**
+   * Filters access by allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateFlow()
+   * - .toDeleteFlow()
+   * - .toRegisterConnector()
+   * - .toTagResource()
+   * - .toUnRegisterConnector()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - flow
+   * - connector
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateFlow()
+   * - .toDeleteFlow()
+   * - .toRegisterConnector()
+   * - .toTagResource()
+   * - .toUnRegisterConnector()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

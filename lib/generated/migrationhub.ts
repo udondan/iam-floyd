@@ -19,7 +19,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Associate a given AWS artifact to a MigrationTask
+   * Grants permission to associate a given AWS artifact to a MigrationTask
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Associate a given ADS resource to a MigrationTask
+   * Grants permission to associate a given ADS resource to a MigrationTask
    *
    * Access Level: Write
    *
@@ -41,18 +41,18 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Create a Migration Hub Home Region Control
+   * Grants permission to create a Migration Hub Home Region Control
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateHomeRegionControl.html
+   * https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_CreateHomeRegionControl.html
    */
   public toCreateHomeRegionControl() {
     return this.to('CreateHomeRegionControl');
   }
 
   /**
-   * Create a ProgressUpdateStream
+   * Grants permission to create a ProgressUpdateStream
    *
    * Access Level: Write
    *
@@ -63,7 +63,18 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Delete a ProgressUpdateStream
+   * Grants permission to delete a Migration Hub Home Region Control
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_DeleteHomeRegionControl.html
+   */
+  public toDeleteHomeRegionControl() {
+    return this.to('DeleteHomeRegionControl');
+  }
+
+  /**
+   * Grants permission to delete a ProgressUpdateStream
    *
    * Access Level: Write
    *
@@ -74,7 +85,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Get an Application Discovery Service Application's state
+   * Grants permission to get an Application Discovery Service Application's state
    *
    * Access Level: Read
    *
@@ -85,18 +96,18 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List Home Region Controls
+   * Grants permission to list Home Region Controls
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeHomeRegionControls.html
+   * https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_DescribeHomeRegionControls.html
    */
   public toDescribeHomeRegionControls() {
     return this.to('DescribeHomeRegionControls');
   }
 
   /**
-   * Describe a MigrationTask
+   * Grants permission to describe a MigrationTask
    *
    * Access Level: Read
    *
@@ -107,7 +118,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Disassociate a given AWS artifact from a MigrationTask
+   * Grants permission to disassociate a given AWS artifact from a MigrationTask
    *
    * Access Level: Write
    *
@@ -118,7 +129,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Disassociate a given ADS resource from a MigrationTask
+   * Grants permission to disassociate a given ADS resource from a MigrationTask
    *
    * Access Level: Write
    *
@@ -129,18 +140,18 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Get the Migration Hub Home Region
+   * Grants permission to get the Migration Hub Home Region
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_GetHomeRegion.html
+   * https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_GetHomeRegion.html
    */
   public toGetHomeRegion() {
     return this.to('GetHomeRegion');
   }
 
   /**
-   * Import a MigrationTask
+   * Grants permission to import a MigrationTask
    *
    * Access Level: Write
    *
@@ -151,7 +162,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List Application statuses
+   * Grants permission to list Application statuses
    *
    * Access Level: List
    *
@@ -162,7 +173,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List associated created artifacts for a MigrationTask
+   * Grants permission to list associated created artifacts for a MigrationTask
    *
    * Access Level: List
    *
@@ -173,7 +184,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List associated ADS resources from MigrationTask
+   * Grants permission to list associated ADS resources from MigrationTask
    *
    * Access Level: List
    *
@@ -184,7 +195,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List MigrationTasks
+   * Grants permission to list MigrationTasks
    *
    * Access Level: List
    *
@@ -195,7 +206,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * List ProgressUpdateStreams
+   * Grants permission to to list ProgressUpdateStreams
    *
    * Access Level: List
    *
@@ -206,7 +217,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Update an Application Discovery Service Application's state
+   * Grants permission to update an Application Discovery Service Application's state
    *
    * Access Level: Write
    *
@@ -217,7 +228,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Notify latest MigrationTask state
+   * Grants permission to notify latest MigrationTask state
    *
    * Access Level: Write
    *
@@ -228,7 +239,7 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
-   * Put ResourceAttributes
+   * Grants permission to put ResourceAttributes
    *
    * Access Level: Write
    *
@@ -244,6 +255,7 @@ export class Mgh extends PolicyStatement {
       'AssociateDiscoveredResource',
       'CreateHomeRegionControl',
       'CreateProgressUpdateStream',
+      'DeleteHomeRegionControl',
       'DeleteProgressUpdateStream',
       'DisassociateCreatedArtifact',
       'DisassociateDiscoveredResource',

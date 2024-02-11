@@ -1,5 +1,9 @@
+eks:access-entry
+eks:access-policy
 eks:addon
 eks:cluster
+eks:eks-anywhere-subscription
 eks:fargateprofile
 eks:identityproviderconfig
 eks:nodegroup
+eks:podidentityassociation

@@ -115,6 +115,17 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to exchange a code for a token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExchangeCodeForToken.html
+   */
+  public toExchangeCodeForToken() {
+    return this.to('ExchangeCodeForToken');
+  }
+
+  /**
    * Grants permission to export components
    *
    * Access Level: Read
@@ -145,6 +156,20 @@ export class Amplifyuibuilder extends PolicyStatement {
    */
   public toExportThemes() {
     return this.to('ExportThemes');
+  }
+
+  /**
+   * Grants permission to get an existing codegen job
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetCodegenJob.html
+   */
+  public toGetCodegenJob() {
+    return this.to('GetCodegenJob');
   }
 
   /**
@@ -201,6 +226,20 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list codegen jobs
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListCodegenJobs.html
+   */
+  public toListCodegenJobs() {
+    return this.to('ListCodegenJobs');
+  }
+
+  /**
    * Grants permission to list components
    *
    * Access Level: List
@@ -254,6 +293,17 @@ export class Amplifyuibuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to refresh an access token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_RefreshToken.html
+   */
+  public toRefreshToken() {
+    return this.to('RefreshToken');
+  }
+
+  /**
    * Grants permission to reset an existing metadata
    *
    * Access Level: Write
@@ -262,6 +312,24 @@ export class Amplifyuibuilder extends PolicyStatement {
    */
   public toResetMetadataFlag() {
     return this.to('ResetMetadataFlag');
+  }
+
+  /**
+   * Grants permission to start a codegen job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - amplify:GetApp
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_StartCodegenJob.html
+   */
+  public toStartCodegenJob() {
+    return this.to('StartCodegenJob');
   }
 
   /**
@@ -314,8 +382,11 @@ export class Amplifyuibuilder extends PolicyStatement {
       'DeleteComponent',
       'DeleteForm',
       'DeleteTheme',
+      'ExchangeCodeForToken',
       'PutMetadataFlag',
+      'RefreshToken',
       'ResetMetadataFlag',
+      'StartCodegenJob',
       'UpdateComponent',
       'UpdateForm',
       'UpdateTheme'
@@ -324,17 +395,41 @@ export class Amplifyuibuilder extends PolicyStatement {
       'ExportComponents',
       'ExportForms',
       'ExportThemes',
+      'GetCodegenJob',
       'GetComponent',
       'GetForm',
       'GetMetadata',
       'GetTheme'
     ],
     List: [
+      'ListCodegenJobs',
       'ListComponents',
       'ListForms',
       'ListThemes'
     ]
   };
+
+  /**
+   * Adds a resource of type CodegenJobResource to the statement
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CodegenJob.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param environmentName - Identifier for the environmentName.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifCodegenJobResourceAppId()
+   * - .ifCodegenJobResourceEnvironmentName()
+   * - .ifCodegenJobResourceId()
+   * - .ifAwsResourceTag()
+   */
+  public onCodegenJobResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/codegen-jobs/${ id }`);
+  }
 
   /**
    * Adds a resource of type ComponentResource to the statement
@@ -400,6 +495,51 @@ export class Amplifyuibuilder extends PolicyStatement {
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
+  }
+
+  /**
+   * Filters access by the app ID
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
+   *
+   * Applies to resource types:
+   * - CodegenJobResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCodegenJobResourceAppId(value: string | string[], operator?: Operator | string) {
+    return this.if(`CodegenJobResourceAppId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the backend environment name
+   *
+   * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
+   *
+   * Applies to resource types:
+   * - CodegenJobResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCodegenJobResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
+    return this.if(`CodegenJobResourceEnvironmentName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the codegen job ID
+   *
+   * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CodegenJob.html
+   *
+   * Applies to resource types:
+   * - CodegenJobResource
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCodegenJobResourceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`CodegenJobResourceId`, value, operator || 'StringLike');
   }
 
   /**
@@ -535,5 +675,61 @@ export class Amplifyuibuilder extends PolicyStatement {
    */
   public ifThemeResourceId(value: string | string[], operator?: Operator | string) {
     return this.if(`ThemeResourceId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateForm()
+   * - .toCreateTheme()
+   * - .toStartCodegenJob()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - CodegenJobResource
+   * - ComponentResource
+   * - FormResource
+   * - ThemeResource
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateForm()
+   * - .toCreateTheme()
+   * - .toStartCodegenJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

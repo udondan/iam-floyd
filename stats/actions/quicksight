@@ -18,10 +18,13 @@ quicksight:CreateIngestion;Write
 quicksight:CreateNamespace;Write
 quicksight:CreateReader;Write
 quicksight:CreateRefreshSchedule;Write
+quicksight:CreateRoleMembership;Write
 quicksight:CreateTemplate;Write
 quicksight:CreateTemplateAlias;Write
 quicksight:CreateTheme;Write
 quicksight:CreateThemeAlias;Write
+quicksight:CreateTopic;Write
+quicksight:CreateTopicRefreshSchedule;Write
 quicksight:CreateUser;Write
 quicksight:CreateVPCConnection;Write
 quicksight:DeleteAccountCustomization;Write
@@ -38,12 +41,17 @@ quicksight:DeleteFolderMembership;Write
 quicksight:DeleteGroup;Write
 quicksight:DeleteGroupMembership;Write
 quicksight:DeleteIAMPolicyAssignment;Write
+quicksight:DeleteIdentityPropagationConfig;Write
 quicksight:DeleteNamespace;Write
 quicksight:DeleteRefreshSchedule;Write
+quicksight:DeleteRoleCustomPermission;Write
+quicksight:DeleteRoleMembership;Write
 quicksight:DeleteTemplate;Write
 quicksight:DeleteTemplateAlias;Write
 quicksight:DeleteTheme;Write
 quicksight:DeleteThemeAlias;Write
+quicksight:DeleteTopic;Write
+quicksight:DeleteTopicRefreshSchedule;Write
 quicksight:DeleteUser;Write
 quicksight:DeleteUserByPrincipalId;Write
 quicksight:DeleteVPCConnection;Write
@@ -52,9 +60,13 @@ quicksight:DescribeAccountSettings;Read
 quicksight:DescribeAccountSubscription;Read
 quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
+quicksight:DescribeAssetBundleExportJob;Read
+quicksight:DescribeAssetBundleImportJob;Read
 quicksight:DescribeCustomPermissions;Write
 quicksight:DescribeDashboard;Read
 quicksight:DescribeDashboardPermissions;Read
+quicksight:DescribeDashboardSnapshotJob;Read
+quicksight:DescribeDashboardSnapshotJobResult;Read
 quicksight:DescribeDataSet;Read
 quicksight:DescribeDataSetPermissions;Permissions management
 quicksight:DescribeDataSetRefreshProperties;Read
@@ -71,13 +83,19 @@ quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
 quicksight:DescribeNamespace;Read
 quicksight:DescribeRefreshSchedule;Read
+quicksight:DescribeRoleCustomPermission;Read
 quicksight:DescribeTemplate;Read
 quicksight:DescribeTemplateAlias;Read
 quicksight:DescribeTemplatePermissions;Read
 quicksight:DescribeTheme;Read
 quicksight:DescribeThemeAlias;Read
 quicksight:DescribeThemePermissions;Read
+quicksight:DescribeTopic;Read
+quicksight:DescribeTopicPermissions;Permissions management
+quicksight:DescribeTopicRefresh;Read
+quicksight:DescribeTopicRefreshSchedule;Read
 quicksight:DescribeUser;Read
+quicksight:DescribeVPCConnection;Read
 quicksight:GenerateEmbedUrlForAnonymousUser;Write
 quicksight:GenerateEmbedUrlForRegisteredUser;Write
 quicksight:GetAnonymousUserEmbedUrl;Read
@@ -86,7 +104,10 @@ quicksight:GetDashboardEmbedUrl;Read
 quicksight:GetGroupMapping;Read
 quicksight:GetSessionEmbedUrl;Read
 quicksight:ListAnalyses;List
+quicksight:ListAssetBundleExportJobs;List
+quicksight:ListAssetBundleImportJobs;List
 quicksight:ListCustomPermissions;Write
+quicksight:ListCustomerManagedKeys;List
 quicksight:ListDashboardVersions;List
 quicksight:ListDashboards;List
 quicksight:ListDataSets;List
@@ -97,9 +118,12 @@ quicksight:ListGroupMemberships;List
 quicksight:ListGroups;List
 quicksight:ListIAMPolicyAssignments;List
 quicksight:ListIAMPolicyAssignmentsForUser;List
+quicksight:ListIdentityPropagationConfigs;List
 quicksight:ListIngestions;List
+quicksight:ListKMSKeysForUser;List
 quicksight:ListNamespaces;List
 quicksight:ListRefreshSchedules;List
+quicksight:ListRoleMemberships;List
 quicksight:ListTagsForResource;Read
 quicksight:ListTemplateAliases;List
 quicksight:ListTemplateVersions;List
@@ -107,12 +131,17 @@ quicksight:ListTemplates;List
 quicksight:ListThemeAliases;List
 quicksight:ListThemeVersions;List
 quicksight:ListThemes;List
+quicksight:ListTopicRefreshSchedules;List
+quicksight:ListTopics;List
 quicksight:ListUserGroups;List
 quicksight:ListUsers;List
+quicksight:ListVPCConnections;List
 quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
 quicksight:PutDataSetRefreshProperties;Write
+quicksight:RegisterCustomerManagedKey;Write
 quicksight:RegisterUser;Write
+quicksight:RemoveCustomerManagedKey;Write
 quicksight:RestoreAnalysis;Write
 quicksight:ScopeDownPolicy;Write
 quicksight:SearchAnalyses;List
@@ -122,7 +151,11 @@ quicksight:SearchDataSources;List
 quicksight:SearchDirectoryGroups;List
 quicksight:SearchFolders;Read
 quicksight:SearchGroups;List
+quicksight:SearchUsers;List
 quicksight:SetGroupMapping;Write
+quicksight:StartAssetBundleExportJob;Write
+quicksight:StartAssetBundleImportJob;Write
+quicksight:StartDashboardSnapshotJob;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging
 quicksight:Unsubscribe;Write
@@ -133,6 +166,7 @@ quicksight:UpdateAnalysis;Write
 quicksight:UpdateAnalysisPermissions;Permissions management
 quicksight:UpdateCustomPermissions;Permissions management
 quicksight:UpdateDashboard;Write
+quicksight:UpdateDashboardLinks;Write
 quicksight:UpdateDashboardPermissions;Permissions management
 quicksight:UpdateDashboardPublishedVersion;Write
 quicksight:UpdateDataSet;Write
@@ -144,14 +178,20 @@ quicksight:UpdateFolder;Write
 quicksight:UpdateFolderPermissions;Permissions management
 quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
+quicksight:UpdateIdentityPropagationConfig;Write
 quicksight:UpdateIpRestriction;Write
 quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
+quicksight:UpdateRoleCustomPermission;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
 quicksight:UpdateTemplatePermissions;Permissions management
 quicksight:UpdateTheme;Write
 quicksight:UpdateThemeAlias;Write
 quicksight:UpdateThemePermissions;Permissions management
+quicksight:UpdateTopic;Write
+quicksight:UpdateTopicPermissions;Permissions management
+quicksight:UpdateTopicRefreshSchedule;Write
 quicksight:UpdateUser;Write
+quicksight:UpdateVPCConnection;Write

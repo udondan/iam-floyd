@@ -250,6 +250,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Address objects where pickup is available, of the specified length
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListPickupLocations.html
+   */
+  public toListPickupLocations() {
+    return this.to('ListPickupLocations');
+  }
+
+  /**
    * Grants permission to list all supported versions for Snow on-device services
    *
    * Access Level: List
@@ -335,6 +346,7 @@ export class Snowball extends PolicyStatement {
       'ListClusters',
       'ListCompatibleImages',
       'ListJobs',
+      'ListPickupLocations',
       'ListServiceVersions'
     ]
   };

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html).
@@ -206,6 +206,28 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable federation of event data store data by using the AWS Glue Data Catalog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DisableFederation.html
+   */
+  public toDisableFederation() {
+    return this.to('DisableFederation');
+  }
+
+  /**
+   * Grants permission to enable federation of event data store data by using the AWS Glue Data Catalog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_EnableFederation.html
+   */
+  public toEnableFederation() {
+    return this.to('EnableFederation');
+  }
+
+  /**
    * Grants permission to return information about a specific channel
    *
    * Access Level: Read
@@ -225,6 +247,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toGetEventDataStore() {
     return this.to('GetEventDataStore');
+  }
+
+  /**
+   * Grants permission to get data from an event data store by using the AWS Glue Data Catalog
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/query-federation.html#query-federation-permissions
+   */
+  public toGetEventDataStoreData() {
+    return this.to('GetEventDataStoreData');
   }
 
   /**
@@ -250,7 +283,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list CloudTrail Insights selectors that are configured for a trail
+   * Grants permission to list CloudTrail Insights selectors that are configured for a trail or event data store
    *
    * Access Level: Read
    *
@@ -415,7 +448,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to look up API activity events captured by CloudTrail that create, update, or delete resources in your account
+   * Grants permission to look up and retrieve metric data for API activity events captured by CloudTrail that create, update, or delete resources in your account
    *
    * Access Level: Read
    *
@@ -437,7 +470,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create and update CloudTrail Insights selectors for a trail
+   * Grants permission to create and update CloudTrail Insights selectors for a trail or event data store
    *
    * Access Level: Write
    *
@@ -501,6 +534,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start ingestion on an event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartEventDataStoreIngestion.html
+   */
+  public toStartEventDataStoreIngestion() {
+    return this.to('StartEventDataStoreIngestion');
+  }
+
+  /**
    * Grants permission to start an import of logged trail events from a source S3 bucket to a destination event data store
    *
    * Access Level: Write
@@ -535,6 +579,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toStartQuery() {
     return this.to('StartQuery');
+  }
+
+  /**
+   * Grants permission to stop ingestion on an event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopEventDataStoreIngestion.html
+   */
+  public toStopEventDataStoreIngestion() {
+    return this.to('StopEventDataStoreIngestion');
   }
 
   /**
@@ -630,14 +685,18 @@ export class Cloudtrail extends PolicyStatement {
       'DeleteServiceLinkedChannel',
       'DeleteTrail',
       'DeregisterOrganizationDelegatedAdmin',
+      'DisableFederation',
+      'EnableFederation',
       'PutEventSelectors',
       'PutInsightSelectors',
       'PutResourcePolicy',
       'RegisterOrganizationDelegatedAdmin',
       'RestoreEventDataStore',
+      'StartEventDataStoreIngestion',
       'StartImport',
       'StartLogging',
       'StartQuery',
+      'StopEventDataStoreIngestion',
       'StopImport',
       'StopLogging',
       'UpdateChannel',
@@ -650,6 +709,7 @@ export class Cloudtrail extends PolicyStatement {
       'DescribeTrails',
       'GetChannel',
       'GetEventDataStore',
+      'GetEventDataStoreData',
       'GetEventSelectors',
       'GetImport',
       'GetInsightSelectors',
@@ -719,5 +779,60 @@ export class Cloudtrail extends PolicyStatement {
    */
   public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudtrail.defaultPartition }:cloudtrail:${ region || '*' }:${ account || '*' }:channel/${ channelId }`);
+  }
+
+  /**
+   * Filters access by a tag's key and value in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateChannel()
+   * - .toCreateEventDataStore()
+   * - .toCreateTrail()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - eventdatastore
+   * - channel
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateChannel()
+   * - .toCreateEventDataStore()
+   * - .toCreateTrail()
+   * - .toRemoveTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

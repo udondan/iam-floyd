@@ -1,3 +1,4 @@
+rekognition:AssociateFaces;Write
 rekognition:CompareFaces;Read
 rekognition:CopyProjectVersion;Write
 rekognition:CreateCollection;Write
@@ -6,6 +7,7 @@ rekognition:CreateFaceLivenessSession;Write
 rekognition:CreateProject;Write
 rekognition:CreateProjectVersion;Write
 rekognition:CreateStreamProcessor;Write
+rekognition:CreateUser;Write
 rekognition:DeleteCollection;Write
 rekognition:DeleteDataset;Write
 rekognition:DeleteFaces;Write
@@ -13,6 +15,7 @@ rekognition:DeleteProject;Write
 rekognition:DeleteProjectPolicy;Write
 rekognition:DeleteProjectVersion;Write
 rekognition:DeleteStreamProcessor;Write
+rekognition:DeleteUser;Write
 rekognition:DescribeCollection;Read
 rekognition:DescribeDataset;Read
 rekognition:DescribeProjectVersions;Read
@@ -24,6 +27,7 @@ rekognition:DetectLabels;Read
 rekognition:DetectModerationLabels;Read
 rekognition:DetectProtectiveEquipment;Read
 rekognition:DetectText;Read
+rekognition:DisassociateFaces;Write
 rekognition:DistributeDatasetEntries;Write
 rekognition:GetCelebrityInfo;Read
 rekognition:GetCelebrityRecognition;Read
@@ -32,6 +36,7 @@ rekognition:GetFaceDetection;Read
 rekognition:GetFaceLivenessSessionResults;Read
 rekognition:GetFaceSearch;Read
 rekognition:GetLabelDetection;Read
+rekognition:GetMediaAnalysisJob;Read
 rekognition:GetPersonTracking;Read
 rekognition:GetSegmentDetection;Read
 rekognition:GetTextDetection;Read
@@ -40,19 +45,24 @@ rekognition:ListCollections;Read
 rekognition:ListDatasetEntries;Read
 rekognition:ListDatasetLabels;Read
 rekognition:ListFaces;Read
+rekognition:ListMediaAnalysisJobs;Read
 rekognition:ListProjectPolicies;Read
 rekognition:ListStreamProcessors;List
 rekognition:ListTagsForResource;Read
+rekognition:ListUsers;Read
 rekognition:PutProjectPolicy;Write
 rekognition:RecognizeCelebrities;Read
 rekognition:SearchFaces;Read
 rekognition:SearchFacesByImage;Read
+rekognition:SearchUsers;Read
+rekognition:SearchUsersByImage;Read
 rekognition:StartCelebrityRecognition;Write
 rekognition:StartContentModeration;Write
 rekognition:StartFaceDetection;Write
 rekognition:StartFaceLivenessSession;Write
 rekognition:StartFaceSearch;Write
 rekognition:StartLabelDetection;Write
+rekognition:StartMediaAnalysisJob;Write
 rekognition:StartPersonTracking;Write
 rekognition:StartProjectVersion;Write
 rekognition:StartSegmentDetection;Write

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranslate.html).
@@ -196,6 +196,17 @@ export class Translate extends PolicyStatement {
   }
 
   /**
+   * Grants permission to translate a document from a source language to a target language
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/translate/latest/APIReference/API_TranslateDocument.html
+   */
+  public toTranslateDocument() {
+    return this.to('TranslateDocument');
+  }
+
+  /**
    * Grants permission to translate text from a source language to a target language
    *
    * Access Level: Read
@@ -246,6 +257,7 @@ export class Translate extends PolicyStatement {
       'GetParallelData',
       'GetTerminology',
       'ListTagsForResource',
+      'TranslateDocument',
       'TranslateText'
     ],
     List: [
@@ -292,5 +304,58 @@ export class Translate extends PolicyStatement {
    */
   public onParallelData(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Translate.defaultPartition }:translate:${ region || '*' }:${ account || '*' }:parallel-data/${ resourceName }`);
+  }
+
+  /**
+   * Filters access by requiring tag values present in a resource creation request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateParallelData()
+   * - .toImportTerminology()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring tag value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - terminology
+   * - parallel-data
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateParallelData()
+   * - .toImportTerminology()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }
