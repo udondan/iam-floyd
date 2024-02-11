@@ -2,9 +2,6 @@ SHELL := /bin/bash
 
 .PHONY: test test-cdk
 
-install-cdk:
-	npm i aws-cdk-lib constructs@^10.0.0
-
 test:
 	@echo "Compiling TypeScript to JS"
 	@npx tsc -p ./tsconfig.test.json
@@ -15,7 +12,7 @@ test:
 		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
 
-test-cdk: install-cdk
+test-cdk:
 	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
 	@npx tsc @/tmp/ts.result
