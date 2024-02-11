@@ -20,7 +20,7 @@ jobs:
         id: wait-for-ci
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: success
+          checkName: Test succeeded
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           timeoutSeconds: 1200
           intervalSeconds: 30
@@ -46,7 +46,7 @@ jobs:
         id: wait-for-ci
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: success
+          checkName: Test succeeded
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           timeoutSeconds: 1200
           intervalSeconds: 30
