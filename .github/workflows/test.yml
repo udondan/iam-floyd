@@ -199,6 +199,7 @@ jobs:
 
       - name: Install package
         run: |
+          set -x
           sed -i "s/iam-floyd/iam-dummy/g" package*
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
           npm i dist/iam-floyd*.tgz
