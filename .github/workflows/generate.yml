@@ -96,7 +96,7 @@ jobs:
       - name: Add all changes
         run: |
           set -x
-          rm -rf package-lock.json node_modules tsconfig.json &&
+          rm -rf package-lock.json node_modules  &&
           git add *
         if: steps.changes.outputs.CHANGED >= 3
 
