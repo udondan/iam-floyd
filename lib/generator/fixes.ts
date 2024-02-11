@@ -38,6 +38,9 @@ export const fixes: Fixes = {
   marketplacecatalog: {
     name: 'aws-marketplace-catalog',
   },
+  marketplacedeploymentservice: {
+    name: 'aws-marketplace-deployment-service',
+  },
   marketplacediscovery: {
     name: 'aws-marketplace-discovery',
   },
