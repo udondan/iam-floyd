@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 test:
 	@echo "Compiling TypeScript to JS"
-	@npx tsc -p ./tsconfig.test.json
+	@npx tsc -p ./tsconfig.test-iam-floyd.json
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\
@@ -13,10 +13,8 @@ test:
 	done
 
 test-cdk:
-	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@npx tsc @/tmp/ts.result
-	@rm /tmp/ts.result
+	@npx tsc -p ./tsconfig.test-cdk-iam-floyd.json
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
 		node "$$f" > "$${f%.js}.ts.result" || exit ;\
