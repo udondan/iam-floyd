@@ -8,7 +8,7 @@ install-cdk:
 test:
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
+	@npx tsc @/tmp/ts.result
 	@rm /tmp/ts.result
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
@@ -20,7 +20,7 @@ test:
 test-cdk: install-cdk
 	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
+	@npx tsc @/tmp/ts.result
 	@rm /tmp/ts.result
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\

@@ -5,7 +5,7 @@
     "twitter": "bin/twitter.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "npx tsc"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.109",

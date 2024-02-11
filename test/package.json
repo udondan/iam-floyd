@@ -5,7 +5,7 @@
     "test": "cdk.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "cdk": "cdk"
   },
   "devDependencies": {

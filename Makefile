@@ -88,7 +88,7 @@ test-typescript-cdk: install
 regenerate-code-example-results:
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
+	@npx tsc @/tmp/ts.result
 	@rm /tmp/ts.result
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \

@@ -1,9 +1,9 @@
 {
   "scripts": {
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "generate": "tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
-    "index-managed-policies": "tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
-    "build": "tsc",
+    "generate": "npx tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
+    "index-managed-policies": "npx tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
+    "build": "npx tsc",
     "package": "mkdir -p dist/js && npm pack --pack-destination dist/js",
     "test": "npx ts-node test/main.ts"
   },
