@@ -67,11 +67,6 @@ jobs:
       - name: Build source
         run: npm run build
 
-      - name: Build packages
-        run: |
-          rm -rf dist/*
-          npm run package
-
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -115,11 +110,6 @@ jobs:
         run: |
           npm i
           npm run build
-
-      - name: Build packages
-        run: |
-          rm -rf dist/*
-          npm run package
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3

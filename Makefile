@@ -25,10 +25,6 @@ index-managed-policies:
 	@npm run index-managed-policies
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
-package: build
-	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
-	@npm run package
-
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
 	@npx ts-node bin/mkcdk.ts
