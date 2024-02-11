@@ -60,7 +60,7 @@ jobs:
         run: git rev-parse HEAD > /tmp/sha
 
       - name: Store SHA as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha

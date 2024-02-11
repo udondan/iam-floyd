@@ -26,7 +26,7 @@ jobs:
         run: git rev-parse HEAD > /tmp/sha
 
       - name: Store SHA as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sha
           path: /tmp/sha
@@ -73,7 +73,7 @@ jobs:
           make package
 
       - name: Store packages as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: packages
           path: dist/js/iam-floyd*.tgz
@@ -122,7 +122,7 @@ jobs:
           make package
 
       - name: Store packages as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cdk-packages
           path: dist/js/cdk-iam-floyd*.tgz
