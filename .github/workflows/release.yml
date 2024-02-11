@@ -166,6 +166,7 @@ jobs:
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
           npm i ./dist/iam-floyd*.tgz
           sudo npm i -g typescript
+          npm list
 
       - name: Test npm package
         run: make test-typescript
@@ -212,6 +213,7 @@ jobs:
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk-iam-floyd';/g" examples/*/*.ts
           npm i ./dist/cdk-iam-floyd@*.jsii.tgz
           sudo npm i -g typescript
+          npm list
 
       - name: Test npm package
         run: |
