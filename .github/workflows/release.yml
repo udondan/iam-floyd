@@ -67,11 +67,16 @@ jobs:
       - name: Build source
         run: npm run build
 
+      - name: Build packages
+        run: |
+          rm -rf dist/*
+          make package
+
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3
         with:
           name: packages
-          path: dist/**/*
+          path: dist/js/iam-floyd*.tgz
 
   build-cdk:
     name: "CDK: Build package"
@@ -114,13 +119,13 @@ jobs:
       - name: Build packages
         run: |
           rm -rf dist/*
-          npm run package
+          make package
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3
         with:
           name: cdk-packages
-          path: dist/**/*
+          path: dist/js/cdk-iam-floyd*.tgz
 
   test-standalone-node:
     name: "STANDALONE: Test Node.js package"

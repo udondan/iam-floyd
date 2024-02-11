@@ -22,6 +22,7 @@ docs/*
 examples/*
 helper/*
 README.md
+**/README.md
 Makefile
 *.Makefile
 cdk
