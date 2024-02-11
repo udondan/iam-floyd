@@ -1,11 +1,19 @@
 //import * as cdk from 'aws-cdk-lib';
 //import iam = require('aws-cdk-lib/aws-iam');
-import AWS = require('aws-sdk');
-import crypto = require('crypto');
+import {
+  CreatePolicyCommand,
+  CreateRoleCommand,
+  DeletePolicyCommand,
+  DeleteRoleCommand,
+  IAMClient,
+} from '@aws-sdk/client-iam';
+import { CreateBucketCommand, DeleteBucketCommand, PutBucketPolicyCommand, S3Client } from '@aws-sdk/client-s3';
+import { randomBytes } from 'crypto';
+
+const iamClient = new IAMClient({});
+const s3Client = new S3Client({});
 
 //import { Construct } from 'constructs';
-const ciam = new AWS.IAM();
-const cs3 = new AWS.S3();
 
 export function out(statements: any[]) {
   statements.forEach((statement) => {
@@ -41,26 +49,27 @@ function deployPolicy(statements: any[]): Promise<void> {
 
     const document = makePolicyDocument(statements);
 
-    const params: AWS.IAM.CreatePolicyRequest = {
-      PolicyName: policyName,
-      PolicyDocument: document,
-      Description: 'Testing policy creation',
-    };
-    ciam.createPolicy(params, (err, data) => {
-      if (err) return reject(err);
+    try {
+      const data = await iamClient.send(
+        new CreatePolicyCommand({
+          PolicyName: policyName,
+          PolicyDocument: document,
+          Description: 'Testing policy creation',
+        })
+      );
 
       log(`Deleting test policy ${policyName}`);
 
-      ciam.deletePolicy(
-        {
-          PolicyArn: data.Policy!.Arn!,
-        },
-        (err, _) => {
-          if (err) return reject(err);
-          resolve();
-        }
+      await iamClient.send(
+        new DeletePolicyCommand({
+          PolicyArn: data.Policy?.Arn,
+        })
       );
-    });
+      resolve();
+    } catch (err) {
+      log(err);
+      reject(err);
+    }
   });
 }
 
@@ -72,25 +81,27 @@ function deployAssume(statements: any[]): Promise<void> {
 
     const document = makePolicyDocument(statements);
 
-    const params: AWS.IAM.CreateRoleRequest = {
-      RoleName: roleName,
-      AssumeRolePolicyDocument: document,
-      Description: 'Testing policy creation',
-    };
-    ciam.createRole(params, (err, data) => {
-      if (err) return reject(err);
+    try {
+      const data = await iamClient.send(
+        new CreateRoleCommand({
+          RoleName: roleName,
+          AssumeRolePolicyDocument: document,
+          Description: 'Testing policy creation',
+        })
+      );
 
       log(`Deleting test role ${roleName}`);
-      ciam.deleteRole(
-        {
-          RoleName: data.Role!.RoleName!,
-        },
-        (err, _) => {
-          if (err) return reject(err);
-          resolve();
-        }
+
+      await iamClient.send(
+        new DeleteRoleCommand({
+          RoleName: data.Role?.RoleName,
+        })
       );
-    });
+      resolve();
+    } catch (err) {
+      log(err);
+      reject(err);
+    }
   });
 }
 
@@ -103,32 +114,26 @@ function deployAccess(statements: any[]): Promise<void> {
 
     const document = makePolicyDocument(statements);
 
-    cs3.createBucket(
-      {
-        Bucket: bucketName,
-      },
-      (err, _) => {
-        if (err) return reject(err);
+    try {
+      await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));
 
-        log('Attaching bucket policy...');
+      log('Attaching bucket policy...');
 
-        cs3.putBucketPolicy(
-          {
-            Bucket: bucketName,
-            Policy: document,
-          },
-          (err, _) => {
-            if (err) return reject(err);
-            log(`Deleting test bucket ${bucketName}`);
+      await s3Client.send(
+        new PutBucketPolicyCommand({
+          Bucket: bucketName,
+          Policy: document,
+        })
+      );
 
-            cs3.deleteBucket({ Bucket: bucketName }, (err, _) => {
-              if (err) return reject(err);
-              resolve();
-            });
-          }
-        );
-      }
-    );
+      log(`Deleting test bucket ${bucketName}`);
+
+      await s3Client.send(new DeleteBucketCommand({ Bucket: bucketName }));
+      resolve();
+    } catch (err) {
+      log(err);
+      reject(err);
+    }
   });
 }
 //
@@ -163,7 +168,7 @@ function makePolicyDocument(statements: any[]) {
 }
 
 function newRandomName() {
-  return crypto.randomBytes(10).toString('hex');
+  return randomBytes(10).toString('hex');
 }
 
 function log(msg: any) {

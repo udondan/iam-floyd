@@ -43,6 +43,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
+    "@aws-sdk/client-iam": "^3.511.0",
+    "@aws-sdk/client-s3": "^3.511.0",
     "@types/cheerio": "^0.22.35",
     "@types/glob": "^8.1.0",
     "@types/lodash": "^4.14.202",
@@ -50,7 +52,6 @@
     "@types/request": "^2.48.12",
     "@types/request-promise-native": "^1.0.21",
     "aws-lambda": "^1.0.7",
-    "aws-sdk": "^2.1555.0",
     "cheerio": "^1.0.0-rc.12",
     "colors": "1.4.0",
     "glob": "^10.3.10",
@@ -64,12 +65,5 @@
   "dependencies": {
     "@udondan/common-substrings": "^3.0.2",
     "regex-parser": "^2.3.0"
-  },
-  "bundleDependencies": [
-    "@udondan/common-substrings",
-    "regex-parser"
-  ],
-  "overrides": {
-    "colors": "1.4.0"
   }
 }
