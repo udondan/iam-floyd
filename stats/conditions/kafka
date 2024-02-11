@@ -1,3 +1,4 @@
 kafka:RequestTag/${TagKey}
 kafka:ResourceTag/${TagKey}
 kafka:TagKeys
+kafka:publicAccessEnabled

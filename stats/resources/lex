@@ -4,3 +4,4 @@ lex:bot version
 lex:channel
 lex:intent version
 lex:slottype version
+lex:test set

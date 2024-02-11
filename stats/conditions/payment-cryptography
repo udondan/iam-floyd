@@ -1,0 +1,11 @@
+payment-cryptography:CertificateAuthorityPublicKeyIdentifier
+payment-cryptography:ImportKeyMaterial
+payment-cryptography:KeyAlgorithm
+payment-cryptography:KeyClass
+payment-cryptography:KeyUsage
+payment-cryptography:RequestAlias
+payment-cryptography:RequestTag/${TagKey}
+payment-cryptography:ResourceAliases
+payment-cryptography:ResourceTag/${TagKey}
+payment-cryptography:TagKeys
+payment-cryptography:WrappingKeyIdentifier

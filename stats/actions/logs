@@ -1,11 +1,19 @@
 logs:AssociateKmsKey;Write
 logs:CancelExportTask;Write
+logs:CreateDelivery;Write
 logs:CreateExportTask;Write
+logs:CreateLogAnomalyDetector;Write
 logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
 logs:CreateLogStream;Write
+logs:DeleteAccountPolicy;Write
 logs:DeleteDataProtectionPolicy;Write
+logs:DeleteDelivery;Write
+logs:DeleteDeliveryDestination;Write
+logs:DeleteDeliveryDestinationPolicy;Write
+logs:DeleteDeliverySource;Write
 logs:DeleteDestination;Write
+logs:DeleteLogAnomalyDetector;Write
 logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
@@ -14,6 +22,10 @@ logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
 logs:DeleteSubscriptionFilter;Write
+logs:DescribeAccountPolicies;List
+logs:DescribeDeliveries;List
+logs:DescribeDeliveryDestinations;List
+logs:DescribeDeliverySources;List
 logs:DescribeDestinations;List
 logs:DescribeExportTasks;List
 logs:DescribeLogGroups;List
@@ -26,16 +38,27 @@ logs:DescribeSubscriptionFilters;List
 logs:DisassociateKmsKey;Write
 logs:FilterLogEvents;Read
 logs:GetDataProtectionPolicy;Read
+logs:GetDelivery;Read
+logs:GetDeliveryDestination;Read
+logs:GetDeliveryDestinationPolicy;Read
+logs:GetDeliverySource;Read
+logs:GetLogAnomalyDetector;Read
 logs:GetLogDelivery;Read
 logs:GetLogEvents;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
 logs:Link;Write
+logs:ListAnomalies;List
+logs:ListLogAnomalyDetectors;List
 logs:ListLogDeliveries;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
+logs:PutAccountPolicy;Write
 logs:PutDataProtectionPolicy;Write
+logs:PutDeliveryDestination;Write
+logs:PutDeliveryDestinationPolicy;Write
+logs:PutDeliverySource;Write
 logs:PutDestination;Write
 logs:PutDestinationPolicy;Write
 logs:PutLogEvents;Write
@@ -44,7 +67,9 @@ logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write
+logs:StartLiveTail;Read
 logs:StartQuery;Read
+logs:StopLiveTail;Read
 logs:StopQuery;Read
 logs:TagLogGroup;Tagging
 logs:TagResource;Tagging
@@ -52,4 +77,6 @@ logs:TestMetricFilter;Read
 logs:Unmask;Read
 logs:UntagLogGroup;Tagging
 logs:UntagResource;Tagging
+logs:UpdateAnomaly;Write
+logs:UpdateLogAnomalyDetector;Write
 logs:UpdateLogDelivery;Write

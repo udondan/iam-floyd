@@ -13,6 +13,10 @@ managedblockchain:GetNetwork;Read
 managedblockchain:GetNode;Read
 managedblockchain:GetProposal;Read
 managedblockchain:Invoke;Permissions management
+managedblockchain:InvokeRpcBitcoinMainnet;Read
+managedblockchain:InvokeRpcBitcoinTestnet;Read
+managedblockchain:InvokeRpcPolygonMainnet;Read
+managedblockchain:InvokeRpcPolygonMumbaiTestnet;Read
 managedblockchain:ListAccessors;List
 managedblockchain:ListInvitations;List
 managedblockchain:ListMembers;List

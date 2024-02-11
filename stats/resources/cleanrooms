@@ -1,4 +1,7 @@
-cleanrooms:Collaboration
-cleanrooms:ConfiguredTable
-cleanrooms:ConfiguredTableAssociation
-cleanrooms:Membership
+cleanrooms:analysistemplate
+cleanrooms:collaboration
+cleanrooms:configuredaudiencemodelassociation
+cleanrooms:configuredtable
+cleanrooms:configuredtableassociation
+cleanrooms:membership
+cleanrooms:privacybudgettemplate

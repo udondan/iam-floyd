@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [securitylake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html).
@@ -19,7 +19,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable any source type in any region for accounts that are either part of a trusted organization or standalone accounts
+   * Grants permission to enable any source type in any region for accounts that are either part of a trusted organization or standalone account
    *
    * Access Level: Write
    *
@@ -39,7 +39,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a custom source name
+   * Grants permission to add a custom source
    *
    * Access Level: Write
    *
@@ -67,9 +67,13 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Security Data Lake
+   * Grants permission to create a new security data lake
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - events:PutRule
@@ -86,6 +90,7 @@ export class Securitylake extends PolicyStatement {
    * - lambda:CreateEventSourceMapping
    * - lambda:CreateFunction
    * - organizations:DescribeOrganization
+   * - organizations:ListAccounts
    * - organizations:ListDelegatedServicesForAccount
    * - s3:CreateBucket
    * - s3:ListBucket
@@ -96,57 +101,42 @@ export class Securitylake extends PolicyStatement {
    * - sqs:GetQueueAttributes
    * - sqs:SetQueueAttributes
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDatalake.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html
    */
-  public toCreateDatalake() {
-    return this.to('CreateDatalake');
+  public toCreateDataLake() {
+    return this.to('CreateDataLake');
   }
 
   /**
-   * Grants permission to add to the configuration for automatically enabling Amazon Security Lake access for new organization accounts
+   * Grants permission to get instant notifications about exceptions. Subscribes to the SNS topics for exception notifications
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDatalakeAutoEnable.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLakeExceptionSubscription.html
    */
-  public toCreateDatalakeAutoEnable() {
-    return this.to('CreateDatalakeAutoEnable');
+  public toCreateDataLakeExceptionSubscription() {
+    return this.to('CreateDataLakeExceptionSubscription');
   }
 
   /**
-   * Grants permission to designate the Amazon Security Lake administrator account for the organization
+   * Grants permission to automatically enable Amazon Security Lake for new member accounts in your organization
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - organizations:DescribeOrganization
-   * - organizations:EnableAWSServiceAccess
-   * - organizations:ListDelegatedAdministrators
-   * - organizations:ListDelegatedServicesForAccount
-   * - organizations:RegisterDelegatedAdministrator
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDatalakeDelegatedAdmin.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLakeOrganizationConfiguration.html
    */
-  public toCreateDatalakeDelegatedAdmin() {
-    return this.to('CreateDatalakeDelegatedAdmin');
+  public toCreateDataLakeOrganizationConfiguration() {
+    return this.to('CreateDataLakeOrganizationConfiguration');
   }
 
   /**
-   * Grants permission to get instant notifications about exceptions by subscribing to the SNS topics for exception notifications
+   * Grants permission to create a subscriber
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDatalakeExceptionsSubscription.html
-   */
-  public toCreateDatalakeExceptionsSubscription() {
-    return this.to('CreateDatalakeExceptionsSubscription');
-  }
-
-  /**
-   * Grants permission to create a subscription permission for accounts that are already enabled
-   *
-   * Access Level: Write
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:CreateRole
@@ -169,7 +159,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a webhook invocation to notify a client when there is new data in the Data Lake
+   * Grants permission to create a webhook invocation to notify a client when there is new data in the data lake
    *
    * Access Level: Write
    *
@@ -192,14 +182,14 @@ export class Securitylake extends PolicyStatement {
    * - sqs:GetQueueUrl
    * - sqs:SetQueueAttributes
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateSubscriptionNotificationConfiguration.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateSubscriberNotification.html
    */
-  public toCreateSubscriptionNotificationConfiguration() {
-    return this.to('CreateSubscriptionNotificationConfiguration');
+  public toCreateSubscriberNotification() {
+    return this.to('CreateSubscriberNotification');
   }
 
   /**
-   * Grants permission to disable any source type in any region for accounts that are either part of a trusted organization or standalone accounts
+   * Grants permission to disable any source type in any region for accounts that are part of a trusted organization or standalone accounts
    *
    * Access Level: Write
    *
@@ -210,7 +200,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a custom source name
+   * Grants permission to remove a custom source
    *
    * Access Level: Write
    *
@@ -224,7 +214,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete all Security Data Lakes
+   * Grants permission to delete security data lake
    *
    * Access Level: Write
    *
@@ -233,52 +223,36 @@ export class Securitylake extends PolicyStatement {
    * - organizations:ListDelegatedAdministrators
    * - organizations:ListDelegatedServicesForAccount
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDatalake.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDataLake.html
    */
-  public toDeleteDatalake() {
-    return this.to('DeleteDatalake');
+  public toDeleteDataLake() {
+    return this.to('DeleteDataLake');
   }
 
   /**
-   * Grants permission to remove from the existing configuration the automatic enabling of Amazon Security Lake access for new organization accounts
+   * Grants permission to unsubscribe from SNS topics for exception notifications. Removes exception notifications for the SNS topic
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDatalakeAutoEnable.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDataLakeExceptionSubscription.html
    */
-  public toDeleteDatalakeAutoEnable() {
-    return this.to('DeleteDatalakeAutoEnable');
+  public toDeleteDataLakeExceptionSubscription() {
+    return this.to('DeleteDataLakeExceptionSubscription');
   }
 
   /**
-   * Grants permission to remove the Delegated Administrator account and disable Amazon Security Lake as a service for this organization
+   * Grants permission to remove the automatic enablement of Amazon Security Lake access for new organization accounts
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - organizations:DeregisterDelegatedAdministrator
-   * - organizations:DescribeOrganization
-   * - organizations:ListDelegatedServicesForAccount
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDatalakeDelegatedAdmin.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDataLakeOrganizationConfiguration.html
    */
-  public toDeleteDatalakeDelegatedAdmin() {
-    return this.to('DeleteDatalakeDelegatedAdmin');
+  public toDeleteDataLakeOrganizationConfiguration() {
+    return this.to('DeleteDataLakeOrganizationConfiguration');
   }
 
   /**
-   * Grants permission to unsubscribe from SNS topics for exception notifications. Also, removes the SNS exception notifications topic
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDatalakeExceptionsSubscription.html
-   */
-  public toDeleteDatalakeExceptionsSubscription() {
-    return this.to('DeleteDatalakeExceptionsSubscription');
-  }
-
-  /**
-   * Grants permission to delete the specified subscription permissions for accounts that are already enabled
+   * Grants permission to delete the specified subscriber
    *
    * Access Level: Write
    *
@@ -306,7 +280,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a webhook invocation to notify a client when there is new data in the Data Lake
+   * Grants permission to remove a webhook invocation to notify a client when there is new data in the data lake
    *
    * Access Level: Write
    *
@@ -326,72 +300,66 @@ export class Securitylake extends PolicyStatement {
    * - sqs:DeleteQueue
    * - sqs:GetQueueUrl
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteSubscriptionNotificationConfiguration.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteSubscriberNotification.html
    */
-  public toDeleteSubscriptionNotificationConfiguration() {
-    return this.to('DeleteSubscriptionNotificationConfiguration');
+  public toDeleteSubscriberNotification() {
+    return this.to('DeleteSubscriberNotification');
   }
 
   /**
-   * Grants permission to get information on the Security Data Lake
+   * Grants permission to remove the Delegated Administrator account and disable Amazon Security Lake as a service for this organization
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DeregisterDelegatedAdministrator
+   * - organizations:DescribeOrganization
+   * - organizations:ListDelegatedServicesForAccount
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeregisterDataLakeDelegatedAdministrator.html
+   */
+  public toDeregisterDataLakeDelegatedAdministrator() {
+    return this.to('DeregisterDataLakeDelegatedAdministrator');
+  }
+
+  /**
+   * Grants permission to query the protocol and endpoint that were provided when subscribing to SNS topics for exception notifications
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDatalake.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDataLakeExceptionSubscription.html
    */
-  public toGetDatalake() {
-    return this.to('GetDatalake');
+  public toGetDataLakeExceptionSubscription() {
+    return this.to('GetDataLakeExceptionSubscription');
   }
 
   /**
-   * Grants permission to get an organization’s configuration setting for the automatic enabling of Amazon Security Lake access for new organization accounts
+   * Grants permission to get an organization’s configuration setting for automatically enabling Amazon Security Lake access for new organization accounts
    *
    * Access Level: Read
    *
    * Dependent actions:
    * - organizations:DescribeOrganization
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDatalakeAutoEnable.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDataLakeOrganizationConfiguration.html
    */
-  public toGetDatalakeAutoEnable() {
-    return this.to('GetDatalakeAutoEnable');
+  public toGetDataLakeOrganizationConfiguration() {
+    return this.to('GetDataLakeOrganizationConfiguration');
   }
 
   /**
-   * Grants permission to allow user to query what was set as the expiration period for the exception message
+   * Grants permission to get a static snapshot of the security data lake in the current region. The snapshot includes enabled accounts and log sources
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDatalakeExceptionsExpiry.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDataLakeSources.html
    */
-  public toGetDatalakeExceptionsExpiry() {
-    return this.to('GetDatalakeExceptionsExpiry');
+  public toGetDataLakeSources() {
+    return this.to('GetDataLakeSources');
   }
 
   /**
-   * Grants permission to query the protocol and endpoint that were supplied when subscribing to the SNS topics for exception notifications
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDatalakeExceptionsSubscription.html
-   */
-  public toGetDatalakeExceptionsSubscription() {
-    return this.to('GetDatalakeExceptionsSubscription');
-  }
-
-  /**
-   * Grants permission to get a static snapshot of the Security Data Lake in the current region, including enabled accounts and log sources
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDatalakeStatus.html
-   */
-  public toGetDatalakeStatus() {
-    return this.to('GetDatalakeStatus');
-  }
-
-  /**
-   * Grants permission to get subscription information for a subscription permission for accounts that are already enabled
+   * Grants permission to get information about subscriber that is already created
    *
    * Access Level: Read
    *
@@ -402,29 +370,29 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information for a webhook invocation to notify a client when there is new data in the Data Lake
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetSubscriptionNotificationConfiguration.html
-   */
-  public toGetSubscriptionNotificationConfiguration() {
-    return this.to('GetSubscriptionNotificationConfiguration');
-  }
-
-  /**
-   * Grants permission to get the list of all non-retry-able failures
+   * Grants permission to get the list of all non-retryable failures
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_ListDatalakeExceptions.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_ListDataLakeExceptions.html
    */
-  public toListDatalakeExceptions() {
-    return this.to('ListDatalakeExceptions');
+  public toListDataLakeExceptions() {
+    return this.to('ListDataLakeExceptions');
   }
 
   /**
-   * Grants permission to show the estate view of enabled accounts with the enabled sources in the enabled regions
+   * Grants permission to list information about the security data lakes
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_ListDataLakes.html
+   */
+  public toListDataLakes() {
+    return this.to('ListDataLakes');
+  }
+
+  /**
+   * Grants permission to view the enabled accounts. You can view the enabled sources in the enabled regions
    *
    * Access Level: List
    *
@@ -435,7 +403,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all subscription permissions for accounts that are already enabled
+   * Grants permission to list all subscribers
    *
    * Access Level: List
    *
@@ -446,7 +414,66 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a Security Data Lake
+   * Grants permission to list all tags for the resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to designate an account as the Amazon Security Lake administrator account for the organization
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListDelegatedAdministrators
+   * - organizations:ListDelegatedServicesForAccount
+   * - organizations:RegisterDelegatedAdministrator
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_RegisterDataLakeDelegatedAdministrator.html
+   */
+  public toRegisterDataLakeDelegatedAdministrator() {
+    return this.to('RegisterDataLakeDelegatedAdministrator');
+  }
+
+  /**
+   * Grants permission to add tags to the resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from the resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a security data lake
    *
    * Access Level: Write
    *
@@ -474,21 +501,10 @@ export class Securitylake extends PolicyStatement {
    * - sqs:GetQueueAttributes
    * - sqs:SetQueueAttributes
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDatalake.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html
    */
-  public toUpdateDatalake() {
-    return this.to('UpdateDatalake');
-  }
-
-  /**
-   * Grants permission to control the time-to-live (TTL) for the exception message to remain in service cache
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDatalakeExceptionsExpiry.html
-   */
-  public toUpdateDatalakeExceptionsExpiry() {
-    return this.to('UpdateDatalakeExceptionsExpiry');
+  public toUpdateDataLake() {
+    return this.to('UpdateDataLake');
   }
 
   /**
@@ -496,14 +512,14 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDatalakeExceptionsSubscription.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLakeExceptionSubscription.html
    */
-  public toUpdateDatalakeExceptionsSubscription() {
-    return this.to('UpdateDatalakeExceptionsSubscription');
+  public toUpdateDataLakeExceptionSubscription() {
+    return this.to('UpdateDataLakeExceptionSubscription');
   }
 
   /**
-   * Grants permission to update subscription information for a subscription permission for accounts that are already enabled
+   * Grants permission to update subscriber
    *
    * Access Level: Write
    *
@@ -526,7 +542,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a webhook invocation to notify a client when there is new data in the Data Lake
+   * Grants permission to update a webhook invocation to notify a client when there is new data in the data lake
    *
    * Access Level: Write
    *
@@ -557,49 +573,143 @@ export class Securitylake extends PolicyStatement {
    * - sqs:GetQueueUrl
    * - sqs:SetQueueAttributes
    *
-   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriptionNotificationConfiguration.html
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriberNotification.html
    */
-  public toUpdateSubscriptionNotificationConfiguration() {
-    return this.to('UpdateSubscriptionNotificationConfiguration');
+  public toUpdateSubscriberNotification() {
+    return this.to('UpdateSubscriberNotification');
   }
 
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAwsLogSource',
       'CreateCustomLogSource',
-      'CreateDatalake',
-      'CreateDatalakeAutoEnable',
-      'CreateDatalakeDelegatedAdmin',
-      'CreateDatalakeExceptionsSubscription',
+      'CreateDataLake',
+      'CreateDataLakeExceptionSubscription',
+      'CreateDataLakeOrganizationConfiguration',
       'CreateSubscriber',
-      'CreateSubscriptionNotificationConfiguration',
+      'CreateSubscriberNotification',
       'DeleteAwsLogSource',
       'DeleteCustomLogSource',
-      'DeleteDatalake',
-      'DeleteDatalakeAutoEnable',
-      'DeleteDatalakeDelegatedAdmin',
-      'DeleteDatalakeExceptionsSubscription',
+      'DeleteDataLake',
+      'DeleteDataLakeExceptionSubscription',
+      'DeleteDataLakeOrganizationConfiguration',
       'DeleteSubscriber',
-      'DeleteSubscriptionNotificationConfiguration',
-      'UpdateDatalake',
-      'UpdateDatalakeExceptionsExpiry',
-      'UpdateDatalakeExceptionsSubscription',
+      'DeleteSubscriberNotification',
+      'DeregisterDataLakeDelegatedAdministrator',
+      'RegisterDataLakeDelegatedAdministrator',
+      'UpdateDataLake',
+      'UpdateDataLakeExceptionSubscription',
       'UpdateSubscriber',
-      'UpdateSubscriptionNotificationConfiguration'
+      'UpdateSubscriberNotification'
     ],
     Read: [
-      'GetDatalake',
-      'GetDatalakeAutoEnable',
-      'GetDatalakeExceptionsExpiry',
-      'GetDatalakeExceptionsSubscription',
-      'GetDatalakeStatus',
-      'GetSubscriber',
-      'GetSubscriptionNotificationConfiguration'
+      'GetDataLakeExceptionSubscription',
+      'GetDataLakeOrganizationConfiguration',
+      'GetDataLakeSources',
+      'GetSubscriber'
     ],
     List: [
-      'ListDatalakeExceptions',
+      'ListDataLakeExceptions',
+      'ListDataLakes',
       'ListLogSources',
-      'ListSubscribers'
+      'ListSubscribers',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type data-lake to the statement
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DataLakeResource.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   */
+  public onDataLake(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Securitylake.defaultPartition }:securitylake:${ region || '*' }:${ account || '*' }:data-lake/default`);
+  }
+
+  /**
+   * Adds a resource of type subscriber to the statement
+   *
+   * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_SubscriberResource.html
+   *
+   * @param subscriberId - Identifier for the subscriberId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   */
+  public onSubscriber(subscriberId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Securitylake.defaultPartition }:securitylake:${ region || '*' }:${ account || '*' }:subscriber/${ subscriberId }`);
+  }
+
+  /**
+   * Filters access by tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDataLake()
+   * - .toCreateSubscriber()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - data-lake
+   * - subscriber
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - data-lake
+   * - subscriber
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDataLake()
+   * - .toCreateSubscriber()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

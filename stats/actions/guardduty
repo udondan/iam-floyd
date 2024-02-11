@@ -36,6 +36,7 @@ guardduty:GetMalwareScanSettings;Read
 guardduty:GetMasterAccount;Read
 guardduty:GetMemberDetectors;Read
 guardduty:GetMembers;Read
+guardduty:GetOrganizationStatistics;Read
 guardduty:GetRemainingFreeTrialDays;Read
 guardduty:GetThreatIntelSet;Read
 guardduty:GetUsageStatistics;Read
@@ -52,6 +53,7 @@ guardduty:ListPublishingDestinations;List
 guardduty:ListTagsForResource;Read
 guardduty:ListThreatIntelSets;List
 guardduty:SendSecurityTelemetry;Write
+guardduty:StartMalwareScan;Write
 guardduty:StartMonitoringMembers;Write
 guardduty:StopMonitoringMembers;Write
 guardduty:TagResource;Tagging

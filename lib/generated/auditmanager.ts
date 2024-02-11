@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
@@ -337,6 +337,17 @@ export class Auditmanager extends PolicyStatement {
    */
   public toGetEvidenceByEvidenceFolder() {
     return this.to('GetEvidenceByEvidenceFolder');
+  }
+
+  /**
+   * Grants permission to get a presigned Amazon S3 URL that can be used to upload a file as manual evidence
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html
+   */
+  public toGetEvidenceFileUploadUrl() {
+    return this.to('GetEvidenceFileUploadUrl');
   }
 
   /**
@@ -761,6 +772,7 @@ export class Auditmanager extends PolicyStatement {
       'GetControl',
       'GetEvidence',
       'GetEvidenceByEvidenceFolder',
+      'GetEvidenceFileUploadUrl',
       'GetEvidenceFolder',
       'GetEvidenceFoldersByAssessment',
       'GetEvidenceFoldersByAssessmentControl',
@@ -832,7 +844,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
+    return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/controlSet/${ controlSetId }`);
   }
 
   /**
@@ -850,5 +862,65 @@ export class Auditmanager extends PolicyStatement {
    */
   public onControl(controlId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Auditmanager.defaultPartition }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAssessment()
+   * - .toCreateAssessmentFramework()
+   * - .toCreateControl()
+   * - .toDeleteAssessment()
+   * - .toDeleteAssessmentFramework()
+   * - .toDeleteControl()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - control
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAssessment()
+   * - .toCreateAssessmentFramework()
+   * - .toCreateControl()
+   * - .toDeleteAssessment()
+   * - .toDeleteAssessmentFramework()
+   * - .toDeleteControl()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

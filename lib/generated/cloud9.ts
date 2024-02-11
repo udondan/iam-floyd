@@ -216,6 +216,17 @@ export class Cloud9 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the migration experience for a cloud9 user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetMigrationExperiences() {
+    return this.to('GetMigrationExperiences');
+  }
+
+  /**
    * Grants permission to get the user's public SSH key, which is used by AWS Cloud9 to connect to SSH development environments
    *
    * Access Level: Read
@@ -294,7 +305,6 @@ export class Cloud9 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
@@ -411,6 +421,7 @@ export class Cloud9 extends PolicyStatement {
       'GetEnvironmentConfig',
       'GetEnvironmentSettings',
       'GetMembershipSettings',
+      'GetMigrationExperiences',
       'GetUserPublicKey',
       'GetUserSettings',
       'ListEnvironments',
@@ -438,6 +449,58 @@ export class Cloud9 extends PolicyStatement {
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloud9.defaultPartition }:cloud9:${ region || '*' }:${ account || '*' }:environment:${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentSSH()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - environment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentSSH()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

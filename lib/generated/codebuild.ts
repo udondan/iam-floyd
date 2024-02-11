@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
@@ -49,6 +49,17 @@ export class Codebuild extends PolicyStatement {
    */
   public toBatchGetBuilds() {
     return this.to('BatchGetBuilds');
+  }
+
+  /**
+   * Grants permission to return an array of the Fleet objects specified by the input parameter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetFleets.html
+   */
+  public toBatchGetFleets() {
+    return this.to('BatchGetFleets');
   }
 
   /**
@@ -104,6 +115,21 @@ export class Codebuild extends PolicyStatement {
    */
   public toBatchPutTestCases() {
     return this.to('BatchPutTestCases');
+  }
+
+  /**
+   * Grants permission to create a compute fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateFleet.html
+   */
+  public toCreateFleet() {
+    return this.to('CreateFleet');
   }
 
   /**
@@ -167,6 +193,17 @@ export class Codebuild extends PolicyStatement {
    */
   public toDeleteBuildBatch() {
     return this.to('DeleteBuildBatch');
+  }
+
+  /**
+   * Grants permission to delete a compute fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteFleet.html
+   */
+  public toDeleteFleet() {
+    return this.to('DeleteFleet');
   }
 
   /**
@@ -379,6 +416,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of compute fleet ARNs, with each compute fleet ARN representing a single fleet
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListFleets.html
+   */
+  public toListFleets() {
+    return this.to('ListFleets');
+  }
+
+  /**
    * Grants permission to get a list of build project names, with each build project name representing a single build project
    *
    * Access Level: List
@@ -555,6 +603,21 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to change the settings of an existing compute fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateFleet.html
+   */
+  public toUpdateFleet() {
+    return this.to('UpdateFleet');
+  }
+
+  /**
    * Grants permission to change the settings of an existing build project
    *
    * Access Level: Write
@@ -626,11 +689,13 @@ export class Codebuild extends PolicyStatement {
       'BatchDeleteBuilds',
       'BatchPutCodeCoverages',
       'BatchPutTestCases',
+      'CreateFleet',
       'CreateProject',
       'CreateReport',
       'CreateReportGroup',
       'CreateWebhook',
       'DeleteBuildBatch',
+      'DeleteFleet',
       'DeleteOAuthToken',
       'DeleteProject',
       'DeleteReport',
@@ -646,6 +711,7 @@ export class Codebuild extends PolicyStatement {
       'StartBuildBatch',
       'StopBuild',
       'StopBuildBatch',
+      'UpdateFleet',
       'UpdateProject',
       'UpdateProjectVisibility',
       'UpdateReport',
@@ -655,6 +721,7 @@ export class Codebuild extends PolicyStatement {
     Read: [
       'BatchGetBuildBatches',
       'BatchGetBuilds',
+      'BatchGetFleets',
       'BatchGetProjects',
       'BatchGetReportGroups',
       'BatchGetReports',
@@ -674,6 +741,7 @@ export class Codebuild extends PolicyStatement {
       'ListBuildsForProject',
       'ListConnectedOAuthAccounts',
       'ListCuratedEnvironmentImages',
+      'ListFleets',
       'ListProjects',
       'ListReportGroups',
       'ListReports',
@@ -760,5 +828,80 @@ export class Codebuild extends PolicyStatement {
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
+  }
+
+  /**
+   * Adds a resource of type fleet to the statement
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param fleetName - Identifier for the fleetName.
+   * @param fleetId - Identifier for the fleetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFleet(fleetName: string, fleetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Codebuild.defaultPartition }:codebuild:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }:${ fleetId }`);
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toCreateReportGroup()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   * - .toUpdateProjectVisibility()
+   * - .toUpdateReportGroup()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - project
+   * - report-group
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toCreateReportGroup()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   * - .toUpdateProjectVisibility()
+   * - .toUpdateReportGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

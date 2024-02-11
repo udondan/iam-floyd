@@ -1,3 +1,8 @@
+acm:CertificateAuthority
+acm:CertificateTransparencyLogging
+acm:DomainNames
+acm:KeyAlgorithm
 acm:RequestTag/${TagKey}
 acm:ResourceTag/${TagKey}
 acm:TagKeys
+acm:ValidationMethod

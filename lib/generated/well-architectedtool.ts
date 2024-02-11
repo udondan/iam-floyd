@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswell-architectedtool.html).
@@ -30,7 +30,18 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
-   * Grants permission to an owner of a lens to share with other AWS accounts and IAM Users
+   * Grants permission to associate a profile to the specified workload
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateProfiles.html
+   */
+  public toAssociateProfiles() {
+    return this.to('AssociateProfiles');
+  }
+
+  /**
+   * Grants permission to an owner of a lens to share with other AWS accounts and IAM users
    *
    * Access Level: Write
    *
@@ -60,6 +71,58 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toCreateMilestone() {
     return this.to('CreateMilestone');
+  }
+
+  /**
+   * Grants permission to create a new profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateProfile.html
+   */
+  public toCreateProfile() {
+    return this.to('CreateProfile');
+  }
+
+  /**
+   * Grants permission to an owner of a profile to share with other AWS accounts and IAM users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateProfileShare.html
+   */
+  public toCreateProfileShare() {
+    return this.to('CreateProfileShare');
+  }
+
+  /**
+   * Grants permission to create a new review template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateReviewTemplate.html
+   */
+  public toCreateReviewTemplate() {
+    return this.to('CreateReviewTemplate');
+  }
+
+  /**
+   * Grants permission to an owner of a review template to share with other AWS accounts and IAM users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateTemplateShare.html
+   */
+  public toCreateTemplateShare() {
+    return this.to('CreateTemplateShare');
   }
 
   /**
@@ -111,6 +174,50 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfile.html
+   */
+  public toDeleteProfile() {
+    return this.to('DeleteProfile');
+  }
+
+  /**
+   * Grants permission to delete an existing profile share
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfileShare.html
+   */
+  public toDeleteProfileShare() {
+    return this.to('DeleteProfileShare');
+  }
+
+  /**
+   * Grants permission to delete an existing review template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteReviewTemplate.html
+   */
+  public toDeleteReviewTemplate() {
+    return this.to('DeleteReviewTemplate');
+  }
+
+  /**
+   * Grants permission to delete an existing review template share
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteTemplateShare.html
+   */
+  public toDeleteTemplateShare() {
+    return this.to('DeleteTemplateShare');
+  }
+
+  /**
    * Grants permission to delete an existing workload
    *
    * Access Level: Write
@@ -141,6 +248,17 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toDisassociateLenses() {
     return this.to('DisassociateLenses');
+  }
+
+  /**
+   * Grants permission to disassociate a profile from the specified workload
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateProfiles.html
+   */
+  public toDisassociateProfiles() {
+    return this.to('DisassociateProfiles');
   }
 
   /**
@@ -232,6 +350,67 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toGetMilestone() {
     return this.to('GetMilestone');
+  }
+
+  /**
+   * Grants permission to retrieve the specified profile
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetProfile.html
+   */
+  public toGetProfile() {
+    return this.to('GetProfile');
+  }
+
+  /**
+   * Grants permission to retrieve the specified profile template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetProfileTemplate.html
+   */
+  public toGetProfileTemplate() {
+    return this.to('GetProfileTemplate');
+  }
+
+  /**
+   * Grants permission to retrieve the specified review template
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplate.html
+   */
+  public toGetReviewTemplate() {
+    return this.to('GetReviewTemplate');
+  }
+
+  /**
+   * Grants permission to retrieve the specified answer from the specified review template lens review
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateAnswer.html
+   */
+  public toGetReviewTemplateAnswer() {
+    return this.to('GetReviewTemplateAnswer');
+  }
+
+  /**
+   * Grants permission to retrieve the specified lens review of the specified review template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateLensReview.html
+   */
+  public toGetReviewTemplateLensReview() {
+    return this.to('GetReviewTemplateLensReview');
   }
 
   /**
@@ -363,6 +542,61 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list profile notifications related to specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfileNotifications.html
+   */
+  public toListProfileNotifications() {
+    return this.to('ListProfileNotifications');
+  }
+
+  /**
+   * Grants permission to list all shares created for a profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfileShares.html
+   */
+  public toListProfileShares() {
+    return this.to('ListProfileShares');
+  }
+
+  /**
+   * Grants permission to list the profiles available to this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfiles.html
+   */
+  public toListProfiles() {
+    return this.to('ListProfiles');
+  }
+
+  /**
+   * Grants permission to list the answers from the specified review template lens review
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListReviewTemplateAnswers.html
+   */
+  public toListReviewTemplateAnswers() {
+    return this.to('ListReviewTemplateAnswers');
+  }
+
+  /**
+   * Grants permission to list the review templates available to this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListReviewTemplates.html
+   */
+  public toListReviewTemplates() {
+    return this.to('ListReviewTemplates');
+  }
+
+  /**
    * Grants permission to list the workload share invitations of the specified account or user
    *
    * Access Level: List
@@ -385,6 +619,17 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list all shares created for a review template
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListTemplateShares.html
+   */
+  public toListTemplateShares() {
+    return this.to('ListTemplateShares');
   }
 
   /**
@@ -472,6 +717,50 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update properties of the specified profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateProfile.html
+   */
+  public toUpdateProfile() {
+    return this.to('UpdateProfile');
+  }
+
+  /**
+   * Grants permission to update properties of the specified review template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplate.html
+   */
+  public toUpdateReviewTemplate() {
+    return this.to('UpdateReviewTemplate');
+  }
+
+  /**
+   * Grants permission to update properties of the specified review template answer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateAnswer.html
+   */
+  public toUpdateReviewTemplateAnswer() {
+    return this.to('UpdateReviewTemplateAnswer');
+  }
+
+  /**
+   * Grants permission to update properties of the specified review template lens review
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateLensReview.html
+   */
+  public toUpdateReviewTemplateLensReview() {
+    return this.to('UpdateReviewTemplateLensReview');
+  }
+
+  /**
    * Grants permission to update status of the specified workload share invitation
    *
    * Access Level: Write
@@ -494,7 +783,7 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update properties of the specified workload
+   * Grants permission to update properties of the specified workload share
    *
    * Access Level: Write
    *
@@ -515,27 +804,65 @@ export class Wellarchitected extends PolicyStatement {
     return this.to('UpgradeLensReview');
   }
 
+  /**
+   * Grants permission to upgrade the specified workload to use the latest version of the associated profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeProfileVersion.html
+   */
+  public toUpgradeProfileVersion() {
+    return this.to('UpgradeProfileVersion');
+  }
+
+  /**
+   * Grants permission to upgrade the specified lens review of the specified review template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeReviewTemplateLensReview.html
+   */
+  public toUpgradeReviewTemplateLensReview() {
+    return this.to('UpgradeReviewTemplateLensReview');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateLenses',
+      'AssociateProfiles',
       'CreateLensShare',
       'CreateLensVersion',
       'CreateMilestone',
+      'CreateProfile',
+      'CreateProfileShare',
+      'CreateReviewTemplate',
+      'CreateTemplateShare',
       'CreateWorkload',
       'CreateWorkloadShare',
       'DeleteLens',
       'DeleteLensShare',
+      'DeleteProfile',
+      'DeleteProfileShare',
+      'DeleteReviewTemplate',
+      'DeleteTemplateShare',
       'DeleteWorkload',
       'DeleteWorkloadShare',
       'DisassociateLenses',
+      'DisassociateProfiles',
       'ImportLens',
       'UpdateAnswer',
       'UpdateGlobalSettings',
       'UpdateLensReview',
+      'UpdateProfile',
+      'UpdateReviewTemplate',
+      'UpdateReviewTemplateAnswer',
+      'UpdateReviewTemplateLensReview',
       'UpdateShareInvitation',
       'UpdateWorkload',
       'UpdateWorkloadShare',
-      'UpgradeLensReview'
+      'UpgradeLensReview',
+      'UpgradeProfileVersion',
+      'UpgradeReviewTemplateLensReview'
     ],
     Read: [
       'ExportLens',
@@ -546,6 +873,11 @@ export class Wellarchitected extends PolicyStatement {
       'GetLensReviewReport',
       'GetLensVersionDifference',
       'GetMilestone',
+      'GetProfile',
+      'GetProfileTemplate',
+      'GetReviewTemplate',
+      'GetReviewTemplateAnswer',
+      'GetReviewTemplateLensReview',
       'GetWorkload',
       'ListTagsForResource'
     ],
@@ -559,7 +891,13 @@ export class Wellarchitected extends PolicyStatement {
       'ListLenses',
       'ListMilestones',
       'ListNotifications',
+      'ListProfileNotifications',
+      'ListProfileShares',
+      'ListProfiles',
+      'ListReviewTemplateAnswers',
+      'ListReviewTemplates',
       'ListShareInvitations',
+      'ListTemplateShares',
       'ListWorkloadShares',
       'ListWorkloads'
     ],
@@ -601,5 +939,105 @@ export class Wellarchitected extends PolicyStatement {
    */
   public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Profile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type review-template to the statement
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ReviewTemplate.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReviewTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:review-template/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateProfile()
+   * - .toCreateReviewTemplate()
+   * - .toCreateWorkload()
+   * - .toImportLens()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetLens()
+   * - .toGetProfile()
+   * - .toGetReviewTemplate()
+   * - .toGetWorkload()
+   * - .toListTagsForResource()
+   *
+   * Applies to resource types:
+   * - workload
+   * - lens
+   * - profile
+   * - review-template
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateProfile()
+   * - .toCreateReviewTemplate()
+   * - .toCreateWorkload()
+   * - .toImportLens()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

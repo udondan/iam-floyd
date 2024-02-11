@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html).
@@ -52,11 +52,22 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the account settings for Artifact
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetAccountSettings.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
    * Grants permission to download a report
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetReport.html
    */
   public toGetReport() {
     return this.to('GetReport');
@@ -67,7 +78,7 @@ export class Artifact extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetReportMetadata.html
    */
   public toGetReportMetadata() {
     return this.to('GetReportMetadata');
@@ -78,7 +89,7 @@ export class Artifact extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetTermForReport.html
    */
   public toGetTermForReport() {
     return this.to('GetTermForReport');
@@ -89,10 +100,21 @@ export class Artifact extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListReports.html
    */
   public toListReports() {
     return this.to('ListReports');
+  }
+
+  /**
+   * Grants permission to put account settings for Artifact
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_PutAccountSettings.html
+   */
+  public toPutAccountSettings() {
+    return this.to('PutAccountSettings');
   }
 
   /**
@@ -109,11 +131,13 @@ export class Artifact extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreement',
+      'PutAccountSettings',
       'TerminateAgreement'
     ],
     Read: [
       'DownloadAgreement',
       'Get',
+      'GetAccountSettings',
       'GetReport',
       'GetReportMetadata',
       'GetTermForReport'
@@ -171,5 +195,29 @@ export class Artifact extends PolicyStatement {
    */
   public onReport(resourceName: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:${ region || '*' }::report/${ resourceName }`);
+  }
+
+  /**
+   * Filters access by which category reports are associated with
+   *
+   * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReportCategory(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReportCategory`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by which series reports are associated with
+   *
+   * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReportSeries(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReportSeries`, value, operator || 'StringLike');
   }
 }

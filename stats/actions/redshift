@@ -18,10 +18,12 @@ redshift:CreateClusterSecurityGroup;Write
 redshift:CreateClusterSnapshot;Write
 redshift:CreateClusterSubnetGroup;Write
 redshift:CreateClusterUser;Permissions management
+redshift:CreateCustomDomainAssociation;Write
 redshift:CreateEndpointAccess;Write
 redshift:CreateEventSubscription;Write
 redshift:CreateHsmClientCertificate;Write
 redshift:CreateHsmConfiguration;Write
+redshift:CreateRedshiftIdcApplication;Write
 redshift:CreateSavedQuery;Write
 redshift:CreateScheduledAction;Write
 redshift:CreateSnapshotCopyGrant;Permissions management
@@ -35,11 +37,14 @@ redshift:DeleteClusterParameterGroup;Write
 redshift:DeleteClusterSecurityGroup;Write
 redshift:DeleteClusterSnapshot;Write
 redshift:DeleteClusterSubnetGroup;Write
+redshift:DeleteCustomDomainAssociation;Write
 redshift:DeleteEndpointAccess;Write
 redshift:DeleteEventSubscription;Write
 redshift:DeleteHsmClientCertificate;Write
 redshift:DeleteHsmConfiguration;Write
 redshift:DeletePartner;Write
+redshift:DeleteRedshiftIdcApplication;Write
+redshift:DeleteResourcePolicy;Permissions management
 redshift:DeleteSavedQueries;Write
 redshift:DeleteScheduledAction;Write
 redshift:DeleteSnapshotCopyGrant;Write
@@ -57,22 +62,25 @@ redshift:DescribeClusterSubnetGroups;Read
 redshift:DescribeClusterTracks;List
 redshift:DescribeClusterVersions;Read
 redshift:DescribeClusters;List
+redshift:DescribeCustomDomainAssociations;List
 redshift:DescribeDataShares;Read
 redshift:DescribeDataSharesForConsumer;Read
 redshift:DescribeDataSharesForProducer;Read
 redshift:DescribeDefaultClusterParameters;Read
 redshift:DescribeEndpointAccess;Read
-redshift:DescribeEndpointAuthorization;Permissions management
+redshift:DescribeEndpointAuthorization;List
 redshift:DescribeEventCategories;Read
 redshift:DescribeEventSubscriptions;Read
 redshift:DescribeEvents;List
 redshift:DescribeHsmClientCertificates;Read
 redshift:DescribeHsmConfigurations;Read
+redshift:DescribeInboundIntegrations;List
 redshift:DescribeLoggingStatus;Read
 redshift:DescribeNodeConfigurationOptions;List
 redshift:DescribeOrderableClusterOptions;Read
 redshift:DescribePartners;Read
 redshift:DescribeQuery;Read
+redshift:DescribeRedshiftIdcApplications;List
 redshift:DescribeReservedNodeExchangeStatus;Read
 redshift:DescribeReservedNodeOfferings;Read
 redshift:DescribeReservedNodes;Read
@@ -92,13 +100,16 @@ redshift:DisassociateDataShareConsumer;Write
 redshift:EnableLogging;Write
 redshift:EnableSnapshotCopy;Write
 redshift:ExecuteQuery;Write
+redshift:FailoverPrimaryCompute;Write
 redshift:FetchResults;Read
 redshift:GetClusterCredentials;Write
 redshift:GetClusterCredentialsWithIAM;Write
 redshift:GetReservedNodeExchangeConfigurationOptions;Read
 redshift:GetReservedNodeExchangeOfferings;Read
+redshift:GetResourcePolicy;Read
 redshift:JoinGroup;Permissions management
 redshift:ListDatabases;List
+redshift:ListRecommendations;List
 redshift:ListSavedQueries;List
 redshift:ListSchemas;List
 redshift:ListTables;List
@@ -112,8 +123,10 @@ redshift:ModifyClusterParameterGroup;Write
 redshift:ModifyClusterSnapshot;Write
 redshift:ModifyClusterSnapshotSchedule;Write
 redshift:ModifyClusterSubnetGroup;Write
+redshift:ModifyCustomDomainAssociation;Write
 redshift:ModifyEndpointAccess;Write
 redshift:ModifyEventSubscription;Write
+redshift:ModifyRedshiftIdcApplication;Write
 redshift:ModifySavedQuery;Write
 redshift:ModifyScheduledAction;Write
 redshift:ModifySnapshotCopyRetentionPeriod;Write
@@ -121,6 +134,7 @@ redshift:ModifySnapshotSchedule;Write
 redshift:ModifyUsageLimit;Write
 redshift:PauseCluster;Write
 redshift:PurchaseReservedNodeOffering;Write
+redshift:PutResourcePolicy;Permissions management
 redshift:RebootCluster;Write
 redshift:RejectDataShare;Permissions management
 redshift:ResetClusterParameterGroup;Write

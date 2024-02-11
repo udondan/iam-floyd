@@ -1,4 +1,7 @@
+mediaconnect:Bridge
 mediaconnect:Entitlement
 mediaconnect:Flow
+mediaconnect:Gateway
+mediaconnect:GatewayInstance
 mediaconnect:Output
 mediaconnect:Source

@@ -7,6 +7,7 @@ iq:expert
 iq:listing
 iq:paymentRequest
 iq:paymentSchedule
+iq:permission
 iq:proposal
 iq:request
 iq:seller

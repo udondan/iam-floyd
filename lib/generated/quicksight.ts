@@ -64,6 +64,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEdition()
+   * - .ifDirectoryType()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccountSubscription.html
    */
   public toCreateAccountSubscription() {
@@ -152,6 +156,9 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html
    */
@@ -285,6 +292,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a group member to a role
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateRoleMembership.html
+   */
+  public toCreateRoleMembership() {
+    return this.to('CreateRoleMembership');
+  }
+
+  /**
    * Grants permission to create a template
    *
    * Access Level: Write
@@ -345,6 +363,35 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a topic
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - quicksight:PassDataSet
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTopic.html
+   */
+  public toCreateTopic() {
+    return this.to('CreateTopic');
+  }
+
+  /**
+   * Grants permission to create a refresh schedule for a topic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTopicRefreshSchedule.html
+   */
+  public toCreateTopicRefreshSchedule() {
+    return this.to('CreateTopicRefreshSchedule');
+  }
+
+  /**
    * Grants permission to provision Amazon QuickSight authors and readers
    *
    * Access Level: Write
@@ -356,11 +403,18 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a VPC connection
+   * Grants permission to create a vpc connection
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/vpc-creating-a-connection-in-quicksight.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateVPCConnection.html
    */
   public toCreateVPCConnection() {
     return this.to('CreateVPCConnection');
@@ -529,6 +583,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove AWS services for trusted identity propagation in QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteIdentityPropagationConfig.html
+   */
+  public toDeleteIdentityPropagationConfig() {
+    return this.to('DeleteIdentityPropagationConfig');
+  }
+
+  /**
    * Grants permission to delete a QuickSight namespace
    *
    * Access Level: Write
@@ -551,6 +616,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteRefreshSchedule() {
     return this.to('DeleteRefreshSchedule');
+  }
+
+  /**
+   * Grants permission to remove the custom permission associated with a role
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteRoleCustomPermission.html
+   */
+  public toDeleteRoleCustomPermission() {
+    return this.to('DeleteRoleCustomPermission');
+  }
+
+  /**
+   * Grants permission to remove a group member from a role
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteRoleMembership.html
+   */
+  public toDeleteRoleMembership() {
+    return this.to('DeleteRoleMembership');
   }
 
   /**
@@ -598,6 +685,32 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a topic
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTopic.html
+   */
+  public toDeleteTopic() {
+    return this.to('DeleteTopic');
+  }
+
+  /**
+   * Grants permission to delete a refresh schedule for a topic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTopicRefreshSchedule.html
+   */
+  public toDeleteTopicRefreshSchedule() {
+    return this.to('DeleteTopicRefreshSchedule');
+  }
+
+  /**
    * Grants permission to delete a QuickSight user, given the user name
    *
    * Access Level: Write
@@ -620,11 +733,15 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a VPC connection
+   * Grants permission to delete a vpc connection
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/vpc-creating-a-connection-in-quicksight.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteVPCConnection.html
    */
   public toDeleteVPCConnection() {
     return this.to('DeleteVPCConnection');
@@ -686,6 +803,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an asset bundle export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAssetBundleExportJob.html
+   */
+  public toDescribeAssetBundleExportJob() {
+    return this.to('DescribeAssetBundleExportJob');
+  }
+
+  /**
+   * Grants permission to describe an asset bundle import job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAssetBundleImportJob.html
+   */
+  public toDescribeAssetBundleImportJob() {
+    return this.to('DescribeAssetBundleImportJob');
+  }
+
+  /**
    * Grants permission to describe a custom permissions resource in a QuickSight account
    *
    * Access Level: Write
@@ -716,6 +855,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDashboardPermissions() {
     return this.to('DescribeDashboardPermissions');
+  }
+
+  /**
+   * Grants permission to describe a dashboard snapshot job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJob.html
+   */
+  public toDescribeDashboardSnapshotJob() {
+    return this.to('DescribeDashboardSnapshotJob');
+  }
+
+  /**
+   * Grants permission to describe result of a dashboard snapshot job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html
+   */
+  public toDescribeDashboardSnapshotJobResult() {
+    return this.to('DescribeDashboardSnapshotJobResult');
   }
 
   /**
@@ -915,6 +1076,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the custom permission associated with a role
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRoleCustomPermission.html
+   */
+  public toDescribeRoleCustomPermission() {
+    return this.to('DescribeRoleCustomPermission');
+  }
+
+  /**
    * Grants permission to describe a template
    *
    * Access Level: Read
@@ -981,6 +1153,62 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a topic
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopic.html
+   */
+  public toDescribeTopic() {
+    return this.to('DescribeTopic');
+  }
+
+  /**
+   * Grants permission to describe the resource policy of a topic
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopicPermissions.html
+   */
+  public toDescribeTopicPermissions() {
+    return this.to('DescribeTopicPermissions');
+  }
+
+  /**
+   * Grants permission to describe the refresh status of a topic
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopicRefresh.html
+   */
+  public toDescribeTopicRefresh() {
+    return this.to('DescribeTopicRefresh');
+  }
+
+  /**
+   * Grants permission to describe a refresh schedule for a topic
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopicRefreshSchedule.html
+   */
+  public toDescribeTopicRefreshSchedule() {
+    return this.to('DescribeTopicRefreshSchedule');
+  }
+
+  /**
    * Grants permission to describe a QuickSight user given the user name
    *
    * Access Level: Read
@@ -989,6 +1217,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeUser() {
     return this.to('DescribeUser');
+  }
+
+  /**
+   * Grants permission to describe a vpc connection
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeVPCConnection.html
+   */
+  public toDescribeVPCConnection() {
+    return this.to('DescribeVPCConnection');
   }
 
   /**
@@ -1088,6 +1331,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all asset bundle export jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssetBundleExportJobs.html
+   */
+  public toListAssetBundleExportJobs() {
+    return this.to('ListAssetBundleExportJobs');
+  }
+
+  /**
+   * Grants permission to list all asset bundle import jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssetBundleImportJobs.html
+   */
+  public toListAssetBundleImportJobs() {
+    return this.to('ListAssetBundleImportJobs');
+  }
+
+  /**
    * Grants permission to list custom permissions resources in QuickSight account
    *
    * Access Level: Write
@@ -1096,6 +1361,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListCustomPermissions() {
     return this.to('ListCustomPermissions');
+  }
+
+  /**
+   * Grants permission to list all registered customer managed keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toListCustomerManagedKeys() {
+    return this.to('ListCustomerManagedKeys');
   }
 
   /**
@@ -1217,6 +1493,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list AWS services enabled for trusted identity propagation in QuickSight
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIdentityPropagationConfigs.html
+   */
+  public toListIdentityPropagationConfigs() {
+    return this.to('ListIdentityPropagationConfigs');
+  }
+
+  /**
    * Grants permission to list all SPICE ingestions on a dataset
    *
    * Access Level: List
@@ -1229,6 +1516,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListIngestions() {
     return this.to('ListIngestions');
+  }
+
+  /**
+   * Grants permission to list a user's KMS keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toListKMSKeysForUser() {
+    return this.to('ListKMSKeysForUser');
   }
 
   /**
@@ -1251,6 +1549,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListRefreshSchedules() {
     return this.to('ListRefreshSchedules');
+  }
+
+  /**
+   * Grants permission to list the members of a role
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListRoleMemberships.html
+   */
+  public toListRoleMemberships() {
+    return this.to('ListRoleMemberships');
   }
 
   /**
@@ -1331,6 +1640,32 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all refresh schedules on a topic
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTopicRefreshSchedules.html
+   */
+  public toListTopicRefreshSchedules() {
+    return this.to('ListTopicRefreshSchedules');
+  }
+
+  /**
+   * Grants permission to list all topics
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTopics.html
+   */
+  public toListTopics() {
+    return this.to('ListTopics');
+  }
+
+  /**
    * Grants permission to list groups that a given user is a member of
    *
    * Access Level: List
@@ -1350,6 +1685,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toListUsers() {
     return this.to('ListUsers');
+  }
+
+  /**
+   * Grants permission to list all vpc connections
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListVPCConnections.html
+   */
+  public toListVPCConnections() {
+    return this.to('ListVPCConnections');
   }
 
   /**
@@ -1394,6 +1744,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register a customer managed key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toRegisterCustomerManagedKey() {
+    return this.to('RegisterCustomerManagedKey');
+  }
+
+  /**
    * Grants permission to create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request
    *
    * Access Level: Write
@@ -1402,6 +1763,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toRegisterUser() {
     return this.to('RegisterUser');
+  }
+
+  /**
+   * Grants permission to remove a customer managed key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toRemoveCustomerManagedKey() {
+    return this.to('RemoveCustomerManagedKey');
   }
 
   /**
@@ -1504,6 +1876,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search the QuickSight users belonging to this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toSearchUsers() {
+    return this.to('SearchUsers');
+  }
+
+  /**
    * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
    *
    * Access Level: Write
@@ -1512,6 +1895,39 @@ export class Quicksight extends PolicyStatement {
    */
   public toSetGroupMapping() {
     return this.to('SetGroupMapping');
+  }
+
+  /**
+   * Grants permission to start an asset bundle export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleExportJob.html
+   */
+  public toStartAssetBundleExportJob() {
+    return this.to('StartAssetBundleExportJob');
+  }
+
+  /**
+   * Grants permission to start an asset bundle import job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleImportJob.html
+   */
+  public toStartAssetBundleImportJob() {
+    return this.to('StartAssetBundleImportJob');
+  }
+
+  /**
+   * Grants permission to start a dashboard snapshot job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJob.html
+   */
+  public toStartDashboardSnapshotJob() {
+    return this.to('StartDashboardSnapshotJob');
   }
 
   /**
@@ -1636,6 +2052,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a QuickSight Dashboard’s links
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardLinks.html
+   */
+  public toUpdateDashboardLinks() {
+    return this.to('UpdateDashboardLinks');
+  }
+
+  /**
    * Grants permission to update permissions for a QuickSight Dashboard
    *
    * Access Level: Permissions management
@@ -1698,6 +2125,9 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSource.html
    */
@@ -1776,6 +2206,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add and update AWS services for trusted identity propagation in QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateIdentityPropagationConfig.html
+   */
+  public toUpdateIdentityPropagationConfig() {
+    return this.to('UpdateIdentityPropagationConfig');
+  }
+
+  /**
    * Grants permission to update the IP restrictions for QuickSight account
    *
    * Access Level: Write
@@ -1817,6 +2258,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateResourcePermissions() {
     return this.to('UpdateResourcePermissions');
+  }
+
+  /**
+   * Grants permission to update the custom permission associated with a role
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateRoleCustomPermission.html
+   */
+  public toUpdateRoleCustomPermission() {
+    return this.to('UpdateRoleCustomPermission');
   }
 
   /**
@@ -1886,6 +2338,50 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a topic
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - quicksight:PassDataSet
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTopic.html
+   */
+  public toUpdateTopic() {
+    return this.to('UpdateTopic');
+  }
+
+  /**
+   * Grants permission to update the resource policy of a topic
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTopicPermissions.html
+   */
+  public toUpdateTopicPermissions() {
+    return this.to('UpdateTopicPermissions');
+  }
+
+  /**
+   * Grants permission to update a refresh schedule for a topic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTopicRefreshSchedule.html
+   */
+  public toUpdateTopicRefreshSchedule() {
+    return this.to('UpdateTopicRefreshSchedule');
+  }
+
+  /**
    * Grants permission to update an Amazon QuickSight user
    *
    * Access Level: Write
@@ -1894,6 +2390,24 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
+  }
+
+  /**
+   * Grants permission to update a vpc connection
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateVPCConnection.html
+   */
+  public toUpdateVPCConnection() {
+    return this.to('UpdateVPCConnection');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1917,10 +2431,13 @@ export class Quicksight extends PolicyStatement {
       'CreateNamespace',
       'CreateReader',
       'CreateRefreshSchedule',
+      'CreateRoleMembership',
       'CreateTemplate',
       'CreateTemplateAlias',
       'CreateTheme',
       'CreateThemeAlias',
+      'CreateTopic',
+      'CreateTopicRefreshSchedule',
       'CreateUser',
       'CreateVPCConnection',
       'DeleteAccountCustomization',
@@ -1936,12 +2453,17 @@ export class Quicksight extends PolicyStatement {
       'DeleteGroup',
       'DeleteGroupMembership',
       'DeleteIAMPolicyAssignment',
+      'DeleteIdentityPropagationConfig',
       'DeleteNamespace',
       'DeleteRefreshSchedule',
+      'DeleteRoleCustomPermission',
+      'DeleteRoleMembership',
       'DeleteTemplate',
       'DeleteTemplateAlias',
       'DeleteTheme',
       'DeleteThemeAlias',
+      'DeleteTopic',
+      'DeleteTopicRefreshSchedule',
       'DeleteUser',
       'DeleteUserByPrincipalId',
       'DeleteVPCConnection',
@@ -1950,16 +2472,22 @@ export class Quicksight extends PolicyStatement {
       'GenerateEmbedUrlForRegisteredUser',
       'ListCustomPermissions',
       'PutDataSetRefreshProperties',
+      'RegisterCustomerManagedKey',
       'RegisterUser',
+      'RemoveCustomerManagedKey',
       'RestoreAnalysis',
       'ScopeDownPolicy',
       'SetGroupMapping',
+      'StartAssetBundleExportJob',
+      'StartAssetBundleImportJob',
+      'StartDashboardSnapshotJob',
       'Subscribe',
       'Unsubscribe',
       'UpdateAccountCustomization',
       'UpdateAccountSettings',
       'UpdateAnalysis',
       'UpdateDashboard',
+      'UpdateDashboardLinks',
       'UpdateDashboardPublishedVersion',
       'UpdateDataSet',
       'UpdateDataSource',
@@ -1967,21 +2495,27 @@ export class Quicksight extends PolicyStatement {
       'UpdateFolder',
       'UpdateGroup',
       'UpdateIAMPolicyAssignment',
+      'UpdateIdentityPropagationConfig',
       'UpdateIpRestriction',
       'UpdatePublicSharingSettings',
       'UpdateRefreshSchedule',
       'UpdateResourcePermissions',
+      'UpdateRoleCustomPermission',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',
       'UpdateThemeAlias',
-      'UpdateUser'
+      'UpdateTopic',
+      'UpdateTopicRefreshSchedule',
+      'UpdateUser',
+      'UpdateVPCConnection'
     ],
     'Permissions management': [
       'CreateCustomPermissions',
       'DeleteCustomPermissions',
       'DescribeDataSetPermissions',
       'DescribeDataSourcePermissions',
+      'DescribeTopicPermissions',
       'UpdateAnalysisPermissions',
       'UpdateCustomPermissions',
       'UpdateDashboardPermissions',
@@ -1989,7 +2523,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateDataSourcePermissions',
       'UpdateFolderPermissions',
       'UpdateTemplatePermissions',
-      'UpdateThemePermissions'
+      'UpdateThemePermissions',
+      'UpdateTopicPermissions'
     ],
     Read: [
       'DescribeAccountCustomization',
@@ -1997,8 +2532,12 @@ export class Quicksight extends PolicyStatement {
       'DescribeAccountSubscription',
       'DescribeAnalysis',
       'DescribeAnalysisPermissions',
+      'DescribeAssetBundleExportJob',
+      'DescribeAssetBundleImportJob',
       'DescribeDashboard',
       'DescribeDashboardPermissions',
+      'DescribeDashboardSnapshotJob',
+      'DescribeDashboardSnapshotJobResult',
       'DescribeDataSet',
       'DescribeDataSetRefreshProperties',
       'DescribeDataSource',
@@ -2013,13 +2552,18 @@ export class Quicksight extends PolicyStatement {
       'DescribeIpRestriction',
       'DescribeNamespace',
       'DescribeRefreshSchedule',
+      'DescribeRoleCustomPermission',
       'DescribeTemplate',
       'DescribeTemplateAlias',
       'DescribeTemplatePermissions',
       'DescribeTheme',
       'DescribeThemeAlias',
       'DescribeThemePermissions',
+      'DescribeTopic',
+      'DescribeTopicRefresh',
+      'DescribeTopicRefreshSchedule',
       'DescribeUser',
+      'DescribeVPCConnection',
       'GetAnonymousUserEmbedUrl',
       'GetAuthCode',
       'GetDashboardEmbedUrl',
@@ -2033,6 +2577,9 @@ export class Quicksight extends PolicyStatement {
     ],
     List: [
       'ListAnalyses',
+      'ListAssetBundleExportJobs',
+      'ListAssetBundleImportJobs',
+      'ListCustomerManagedKeys',
       'ListDashboardVersions',
       'ListDashboards',
       'ListDataSets',
@@ -2042,23 +2589,30 @@ export class Quicksight extends PolicyStatement {
       'ListGroups',
       'ListIAMPolicyAssignments',
       'ListIAMPolicyAssignmentsForUser',
+      'ListIdentityPropagationConfigs',
       'ListIngestions',
+      'ListKMSKeysForUser',
       'ListNamespaces',
       'ListRefreshSchedules',
+      'ListRoleMemberships',
       'ListTemplateAliases',
       'ListTemplateVersions',
       'ListTemplates',
       'ListThemeAliases',
       'ListThemeVersions',
       'ListThemes',
+      'ListTopicRefreshSchedules',
+      'ListTopics',
       'ListUserGroups',
       'ListUsers',
+      'ListVPCConnections',
       'SearchAnalyses',
       'SearchDashboards',
       'SearchDataSets',
       'SearchDataSources',
       'SearchDirectoryGroups',
-      'SearchGroups'
+      'SearchGroups',
+      'SearchUsers'
     ],
     Tagging: [
       'TagResource',
@@ -2157,6 +2711,51 @@ export class Quicksight extends PolicyStatement {
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:template/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type vpcconnection to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_VPCConnection.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:vpcConnection/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type assetBundleExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleExportJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssetBundleExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:asset-bundle-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type assetBundleImportJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleImportJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssetBundleImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:asset-bundle-import-job/${ resourceId }`);
   }
 
   /**
@@ -2321,15 +2920,183 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type topic to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Topic.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TopicDetails.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:topic/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dashboardSnapshotJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DashboardSnapshotJob.html
+   *
+   * @param dashboardId - Identifier for the dashboardId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboardSnapshotJob(dashboardId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCancelIngestion()
+   * - .toCreateAccountCustomization()
+   * - .toCreateAnalysis()
+   * - .toCreateCustomPermissions()
+   * - .toCreateDashboard()
+   * - .toCreateDataSet()
+   * - .toCreateDataSource()
+   * - .toCreateFolder()
+   * - .toCreateGroupMembership()
+   * - .toCreateIngestion()
+   * - .toCreateTemplate()
+   * - .toCreateTemplateAlias()
+   * - .toCreateTheme()
+   * - .toCreateThemeAlias()
+   * - .toCreateTopic()
+   * - .toCreateVPCConnection()
+   * - .toDeleteDataSet()
+   * - .toDeleteDataSource()
+   * - .toDeleteTopic()
+   * - .toDeleteVPCConnection()
+   * - .toDescribeDataSet()
+   * - .toDescribeDataSetPermissions()
+   * - .toDescribeDataSource()
+   * - .toDescribeDataSourcePermissions()
+   * - .toDescribeIngestion()
+   * - .toDescribeTopic()
+   * - .toDescribeTopicPermissions()
+   * - .toDescribeTopicRefresh()
+   * - .toDescribeVPCConnection()
+   * - .toGenerateEmbedUrlForAnonymousUser()
+   * - .toListDataSets()
+   * - .toListDataSources()
+   * - .toListIngestions()
+   * - .toListTopics()
+   * - .toListVPCConnections()
+   * - .toPassDataSet()
+   * - .toPassDataSource()
+   * - .toTagResource()
+   * - .toUpdateDataSet()
+   * - .toUpdateDataSetPermissions()
+   * - .toUpdateDataSource()
+   * - .toUpdateDataSourcePermissions()
+   * - .toUpdateTopic()
+   * - .toUpdateTopicPermissions()
+   * - .toUpdateVPCConnection()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - analysis
+   * - dashboard
+   * - template
+   * - vpcconnection
+   * - datasource
+   * - dataset
+   * - ingestion
+   * - theme
+   * - customization
+   * - folder
+   * - topic
+   * - dashboardSnapshotJob
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCancelIngestion()
+   * - .toCreateAccountCustomization()
+   * - .toCreateAnalysis()
+   * - .toCreateCustomPermissions()
+   * - .toCreateDashboard()
+   * - .toCreateDataSet()
+   * - .toCreateDataSource()
+   * - .toCreateFolder()
+   * - .toCreateGroupMembership()
+   * - .toCreateIngestion()
+   * - .toCreateTemplate()
+   * - .toCreateTemplateAlias()
+   * - .toCreateTheme()
+   * - .toCreateThemeAlias()
+   * - .toCreateTopic()
+   * - .toCreateVPCConnection()
+   * - .toDeleteDataSet()
+   * - .toDeleteDataSource()
+   * - .toDeleteTopic()
+   * - .toDeleteVPCConnection()
+   * - .toDescribeDataSet()
+   * - .toDescribeDataSetPermissions()
+   * - .toDescribeDataSource()
+   * - .toDescribeDataSourcePermissions()
+   * - .toDescribeIngestion()
+   * - .toDescribeTopic()
+   * - .toDescribeTopicPermissions()
+   * - .toDescribeTopicRefresh()
+   * - .toDescribeVPCConnection()
+   * - .toGenerateEmbedUrlForAnonymousUser()
+   * - .toListDataSets()
+   * - .toListDataSources()
+   * - .toListIngestions()
+   * - .toListTopics()
+   * - .toListVPCConnections()
+   * - .toPassDataSet()
+   * - .toPassDataSource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDataSet()
+   * - .toUpdateDataSetPermissions()
+   * - .toUpdateDataSource()
+   * - .toUpdateDataSourcePermissions()
+   * - .toUpdateTopic()
+   * - .toUpdateTopicPermissions()
+   * - .toUpdateVPCConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -2354,6 +3121,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
    *
    * Applies to actions:
+   * - .toCreateAccountSubscription()
    * - .toSubscribe()
    *
    * @param value The value(s) to check
@@ -2369,6 +3137,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
    *
    * Applies to actions:
+   * - .toCreateAccountSubscription()
    * - .toSubscribe()
    *
    * @param value The value(s) to check
@@ -2387,10 +3156,10 @@ export class Quicksight extends PolicyStatement {
    * - .toRegisterUser()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifIamArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`IamArn`, value, operator || 'StringLike');
+    return this.if(`IamArn`, value, operator || 'ArnLike');
   }
 
   /**

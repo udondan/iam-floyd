@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationdiscoveryservice.html).
@@ -27,6 +27,17 @@ export class Discovery extends PolicyStatement {
    */
   public toAssociateConfigurationItemsToApplication() {
     return this.to('AssociateConfigurationItemsToApplication');
+  }
+
+  /**
+   * Grants permission to BatchDeleteAgents API. BatchDeleteAgents deletes one or more agents/data collectors associated with your account, each identified by its agent ID. Deleting a data collector does not delete the previous data collected
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_BatchDeleteAgents.html
+   */
+  public toBatchDeleteAgents() {
+    return this.to('BatchDeleteAgents');
   }
 
   /**
@@ -78,6 +89,9 @@ export class Discovery extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
@@ -85,7 +99,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Grants permission to DescribeAgents API. DescribeAgents lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an ID
+   * Grants permission to DescribeAgents API. DescribeAgents lists agents or the Connector by ID or lists all agents/Connectors associated with your user if you did not specify an ID
    *
    * Access Level: Read
    *
@@ -93,6 +107,17 @@ export class Discovery extends PolicyStatement {
    */
   public toDescribeAgents() {
     return this.to('DescribeAgents');
+  }
+
+  /**
+   * Grants permission to DescribeBatchDeleteConfigurationTask API. DescribeBatchDeleteConfigurationTask returns attributes about a batched deletion task to delete a set of configuration items. The supplied task ID should be the task ID receieved from the output of StartBatchDeleteConfigurationTask
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeBatchDeleteConfigurationTask.html
+   */
+  public toDescribeBatchDeleteConfigurationTask() {
+    return this.to('DescribeBatchDeleteConfigurationTask');
   }
 
   /**
@@ -107,7 +132,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Grants permission to DescribeContinuousExports API. DescribeContinuousExports lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call DescribeContinuousExports as is without passing any parameters
+   * Grants permission to DescribeContinuousExports API. DescribeContinuousExports lists exports as specified by ID. All continuous exports associated with your user can be listed if you call DescribeContinuousExports as is without passing any parameters
    *
    * Access Level: Read
    *
@@ -140,7 +165,7 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
-   * Grants permission to DescribeImportTasks API. DescribeImportTasks returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more
+   * Grants permission to DescribeImportTasks API. DescribeImportTasks returns an array of import tasks for your user, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more
    *
    * Access Level: List
    *
@@ -228,6 +253,17 @@ export class Discovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to StartBatchDeleteConfigurationTask API. StartBatchDeleteConfigurationTask starts an asynchronous batch deletion of your configuration items. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output is a unique task ID you can use to check back on the deletions progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartBatchDeleteConfigurationTask.html
+   */
+  public toStartBatchDeleteConfigurationTask() {
+    return this.to('StartBatchDeleteConfigurationTask');
+  }
+
+  /**
    * Grants permission to StartContinuousExport API. StartContinuousExport start the continuous flow of agent's discovered data into Amazon Athena
    *
    * Access Level: Write
@@ -275,7 +311,9 @@ export class Discovery extends PolicyStatement {
    * - discovery:AssociateConfigurationItemsToApplication
    * - discovery:CreateApplication
    * - discovery:CreateTags
+   * - discovery:GetDiscoverySummary
    * - discovery:ListConfigurations
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartImportTask.html
    */
@@ -319,11 +357,13 @@ export class Discovery extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateConfigurationItemsToApplication',
+      'BatchDeleteAgents',
       'BatchDeleteImportData',
       'CreateApplication',
       'DeleteApplications',
       'DisassociateConfigurationItemsFromApplication',
       'ExportConfigurations',
+      'StartBatchDeleteConfigurationTask',
       'StartContinuousExport',
       'StartDataCollectionByAgentIds',
       'StartExportTask',
@@ -338,6 +378,7 @@ export class Discovery extends PolicyStatement {
     ],
     Read: [
       'DescribeAgents',
+      'DescribeBatchDeleteConfigurationTask',
       'DescribeConfigurations',
       'DescribeContinuousExports',
       'DescribeExportConfigurations',
@@ -352,4 +393,19 @@ export class Discovery extends PolicyStatement {
       'ListServerNeighbors'
     ]
   };
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toDeleteTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
 }

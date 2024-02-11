@@ -1,9 +1,11 @@
 scn:AssignAdminPermissionsToUser;Write
+scn:CreateBillOfMaterialsImportJob;Write
 scn:CreateInstance;Write
 scn:CreateSSOApplication;Write
 scn:DeleteInstance;Write
 scn:DeleteSSOApplication;Write
 scn:DescribeInstance;Read
+scn:GetBillOfMaterialsImportJob;Read
 scn:ListAdminUsers;List
 scn:ListInstances;List
 scn:ListTagsForResource;List

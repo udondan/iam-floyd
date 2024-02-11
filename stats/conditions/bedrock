@@ -1,0 +1,4 @@
+bedrock:RequestTag/${TagKey}
+bedrock:ResourceTag/${TagKey}
+bedrock:TagKeys
+bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn

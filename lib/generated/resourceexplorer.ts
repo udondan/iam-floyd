@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [resource-explorer-2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceexplorer.html).
@@ -107,6 +107,17 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Resource Explorer to access account level data within your AWS Organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetAccountLevelServiceConfiguration.html
+   */
+  public toGetAccountLevelServiceConfiguration() {
+    return this.to('GetAccountLevelServiceConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve the Amazon resource name (ARN) of the view that is the default for the AWS Region in which you call this operation
    *
    * Access Level: Read
@@ -148,6 +159,17 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toListIndexes() {
     return this.to('ListIndexes');
+  }
+
+  /**
+   * Grants permission to list the organization member account's indexes in all AWS Regions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListIndexesForMembers.html
+   */
+  public toListIndexesForMembers() {
+    return this.to('ListIndexesForMembers');
   }
 
   /**
@@ -215,7 +237,6 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_UntagResource.html
@@ -259,6 +280,7 @@ export class ResourceExplorer2 extends PolicyStatement {
     ],
     Read: [
       'BatchGetView',
+      'GetAccountLevelServiceConfiguration',
       'GetDefaultView',
       'GetIndex',
       'GetView',
@@ -267,6 +289,7 @@ export class ResourceExplorer2 extends PolicyStatement {
     ],
     List: [
       'ListIndexes',
+      'ListIndexesForMembers',
       'ListSupportedResourceTypes',
       'ListViews'
     ],
@@ -309,5 +332,58 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public onIndex(indexUuid: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || ResourceExplorer2.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:index/${ indexUuid }`);
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateView()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keyss attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - view
+   * - index
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateView()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

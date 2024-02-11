@@ -1,0 +1,7 @@
+s3express:CreateBucket;Write
+s3express:CreateSession;Read
+s3express:DeleteBucket;Write
+s3express:DeleteBucketPolicy;Permissions management
+s3express:GetBucketPolicy;Read
+s3express:ListAllMyDirectoryBuckets;List
+s3express:PutBucketPolicy;Permissions management

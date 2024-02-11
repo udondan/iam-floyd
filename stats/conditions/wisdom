@@ -1,3 +1,4 @@
 wisdom:RequestTag/${TagKey}
 wisdom:ResourceTag/${TagKey}
+wisdom:SearchFilter/RoutingProfileArn
 wisdom:TagKeys

@@ -1,11 +1,17 @@
 dms:Certificate
+dms:DataMigration
 dms:DataProvider
 dms:Endpoint
 dms:EventSubscription
 dms:InstanceProfile
 dms:MigrationProject
+dms:ReplicationConfig
 dms:ReplicationInstance
 dms:ReplicationSubnetGroup
 dms:ReplicationTask
 dms:ReplicationTaskAssessmentRun
 dms:ReplicationTaskIndividualAssessment
+dms:Test
+dms:TestEnvironment
+dms:TestPlan
+dms:TestRun

@@ -30,6 +30,22 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Amazon EKS access policy to an Amazon EKS access entry
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyArn()
+   * - .ifNamespaces()
+   * - .ifAccessScope()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateAccessPolicy.html
+   */
+  public toAssociateAccessPolicy() {
+    return this.to('AssociateAccessPolicy');
+  }
+
+  /**
    * Grants permission to associate encryption configuration to a cluster
    *
    * Access Level: Write
@@ -58,6 +74,25 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Amazon EKS access entry
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifPrincipalArn()
+   * - .ifKubernetesGroups()
+   * - .ifUsername()
+   * - .ifAccessEntryType()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAccessEntry.html
+   */
+  public toCreateAccessEntry() {
+    return this.to('CreateAccessEntry');
+  }
+
+  /**
    * Grants permission to create an Amazon EKS add-on
    *
    * Access Level: Write
@@ -80,11 +115,27 @@ export class Eks extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBootstrapClusterCreatorAdminPermissions()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
     return this.to('CreateCluster');
+  }
+
+  /**
+   * Grants permission to create an EKS Anywhere subscription
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateEksAnywhereSubscription.html
+   */
+  public toCreateEksAnywhereSubscription() {
+    return this.to('CreateEksAnywhereSubscription');
   }
 
   /**
@@ -118,6 +169,32 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an EKS Pod Identity association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreatePodIdentityAssociation.html
+   */
+  public toCreatePodIdentityAssociation() {
+    return this.to('CreatePodIdentityAssociation');
+  }
+
+  /**
+   * Grants permission to delete an Amazon EKS access entry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteAccessEntry.html
+   */
+  public toDeleteAccessEntry() {
+    return this.to('DeleteAccessEntry');
+  }
+
+  /**
    * Grants permission to delete an Amazon EKS add-on
    *
    * Access Level: Write
@@ -137,6 +214,17 @@ export class Eks extends PolicyStatement {
    */
   public toDeleteCluster() {
     return this.to('DeleteCluster');
+  }
+
+  /**
+   * Grants permission to describe an EKS Anywhere subscription
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteEksAnywhereSubscription.html
+   */
+  public toDeleteEksAnywhereSubscription() {
+    return this.to('DeleteEksAnywhereSubscription');
   }
 
   /**
@@ -162,6 +250,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an EKS Pod Identity association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeletePodIdentityAssociation.html
+   */
+  public toDeletePodIdentityAssociation() {
+    return this.to('DeletePodIdentityAssociation');
+  }
+
+  /**
    * Grants permission to deregister an External cluster
    *
    * Access Level: Write
@@ -170,6 +269,17 @@ export class Eks extends PolicyStatement {
    */
   public toDeregisterCluster() {
     return this.to('DeregisterCluster');
+  }
+
+  /**
+   * Grants permission to describe an Amazon EKS access entry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAccessEntry.html
+   */
+  public toDescribeAccessEntry() {
+    return this.to('DescribeAccessEntry');
   }
 
   /**
@@ -217,6 +327,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an EKS Anywhere subscription
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeEksAnywhereSubscription.html
+   */
+  public toDescribeEksAnywhereSubscription() {
+    return this.to('DescribeEksAnywhereSubscription');
+  }
+
+  /**
    * Grants permission to retrieve descriptive information about an AWS Fargate profile associated with a cluster
    *
    * Access Level: Read
@@ -239,6 +360,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve descriptive information of a detected insight for a specified cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeInsight.html
+   */
+  public toDescribeInsight() {
+    return this.to('DescribeInsight');
+  }
+
+  /**
    * Grants permission to retrieve descriptive information about an Amazon EKS nodegroup
    *
    * Access Level: Read
@@ -247,6 +379,17 @@ export class Eks extends PolicyStatement {
    */
   public toDescribeNodegroup() {
     return this.to('DescribeNodegroup');
+  }
+
+  /**
+   * Grants permission to describe an EKS Pod Identity association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribePodIdentityAssociation.html
+   */
+  public toDescribePodIdentityAssociation() {
+    return this.to('DescribePodIdentityAssociation');
   }
 
   /**
@@ -261,6 +404,22 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate an Amazon EKS access policy from an Amazon EKS acces entry
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyArn()
+   * - .ifNamespaces()
+   * - .ifAccessScope()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DisassociateAccessPolicy.html
+   */
+  public toDisassociateAccessPolicy() {
+    return this.to('DisassociateAccessPolicy');
+  }
+
+  /**
    * Grants permission to delete an asssociated Idp config
    *
    * Access Level: Write
@@ -269,6 +428,28 @@ export class Eks extends PolicyStatement {
    */
   public toDisassociateIdentityProviderConfig() {
     return this.to('DisassociateIdentityProviderConfig');
+  }
+
+  /**
+   * Grants permission to list all Amazon EKS access entries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAccessEntries.html
+   */
+  public toListAccessEntries() {
+    return this.to('ListAccessEntries');
+  }
+
+  /**
+   * Grants permission to list Amazon EKS access policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAccessPolicies.html
+   */
+  public toListAccessPolicies() {
+    return this.to('ListAccessPolicies');
   }
 
   /**
@@ -283,6 +464,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list associated access policy on and Amazon EKS access entry
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAssociatedAccessPolicies.html
+   */
+  public toListAssociatedAccessPolicies() {
+    return this.to('ListAssociatedAccessPolicies');
+  }
+
+  /**
    * Grants permission to list the Amazon EKS clusters in your AWS account (in the specified or default region)
    *
    * Access Level: List
@@ -291,6 +483,17 @@ export class Eks extends PolicyStatement {
    */
   public toListClusters() {
     return this.to('ListClusters');
+  }
+
+  /**
+   * Grants permission to list EKS Anywhere subscriptions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListEksAnywhereSubscriptions.html
+   */
+  public toListEksAnywhereSubscriptions() {
+    return this.to('ListEksAnywhereSubscriptions');
   }
 
   /**
@@ -316,6 +519,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all detected insights for a specified cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html
+   */
+  public toListInsights() {
+    return this.to('ListInsights');
+  }
+
+  /**
    * Grants permission to list the Amazon EKS nodegroups in your AWS account (in the specified or default region) attached to given cluster
    *
    * Access Level: List
@@ -324,6 +538,17 @@ export class Eks extends PolicyStatement {
    */
   public toListNodegroups() {
     return this.to('ListNodegroups');
+  }
+
+  /**
+   * Grants permission to list EKS Pod Identity associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListPodIdentityAssociations.html
+   */
+  public toListPodIdentityAssociations() {
+    return this.to('ListPodIdentityAssociations');
   }
 
   /**
@@ -393,6 +618,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an Amazon EKS access entry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAccessEntry.html
+   */
+  public toUpdateAccessEntry() {
+    return this.to('UpdateAccessEntry');
+  }
+
+  /**
    * Grants permission to update Amazon EKS add-on configurations, such as the VPC-CNI version
    *
    * Access Level: Write
@@ -426,6 +662,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an EKS Anywhere subscription
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateEksAnywhereSubscription.html
+   */
+  public toUpdateEksAnywhereSubscription() {
+    return this.to('UpdateEksAnywhereSubscription');
+  }
+
+  /**
    * Grants permission to update Amazon EKS nodegroup configurations (eg: min/max/desired capacity or labels)
    *
    * Access Level: Write
@@ -447,45 +694,77 @@ export class Eks extends PolicyStatement {
     return this.to('UpdateNodegroupVersion');
   }
 
+  /**
+   * Grants permission to update an EKS Pod Identity association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdatePodIdentityAssociation.html
+   */
+  public toUpdatePodIdentityAssociation() {
+    return this.to('UpdatePodIdentityAssociation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'AccessKubernetesApi',
+      'DescribeAccessEntry',
       'DescribeAddon',
       'DescribeAddonConfiguration',
       'DescribeAddonVersions',
       'DescribeCluster',
+      'DescribeEksAnywhereSubscription',
       'DescribeFargateProfile',
       'DescribeIdentityProviderConfig',
+      'DescribeInsight',
       'DescribeNodegroup',
+      'DescribePodIdentityAssociation',
       'DescribeUpdate',
       'ListTagsForResource'
     ],
     Write: [
+      'AssociateAccessPolicy',
       'AssociateEncryptionConfig',
       'AssociateIdentityProviderConfig',
+      'CreateAccessEntry',
       'CreateAddon',
       'CreateCluster',
+      'CreateEksAnywhereSubscription',
       'CreateFargateProfile',
       'CreateNodegroup',
+      'CreatePodIdentityAssociation',
+      'DeleteAccessEntry',
       'DeleteAddon',
       'DeleteCluster',
+      'DeleteEksAnywhereSubscription',
       'DeleteFargateProfile',
       'DeleteNodegroup',
+      'DeletePodIdentityAssociation',
       'DeregisterCluster',
+      'DisassociateAccessPolicy',
       'DisassociateIdentityProviderConfig',
       'RegisterCluster',
+      'UpdateAccessEntry',
       'UpdateAddon',
       'UpdateClusterConfig',
       'UpdateClusterVersion',
+      'UpdateEksAnywhereSubscription',
       'UpdateNodegroupConfig',
-      'UpdateNodegroupVersion'
+      'UpdateNodegroupVersion',
+      'UpdatePodIdentityAssociation'
     ],
     List: [
+      'ListAccessEntries',
+      'ListAccessPolicies',
       'ListAddons',
+      'ListAssociatedAccessPolicies',
       'ListClusters',
+      'ListEksAnywhereSubscriptions',
       'ListFargateProfiles',
       'ListIdentityProviderConfigs',
+      'ListInsights',
       'ListNodegroups',
+      'ListPodIdentityAssociations',
       'ListUpdates'
     ],
     Tagging: [
@@ -589,6 +868,200 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type eks-anywhere-subscription to the statement
+   *
+   * https://anywhere.eks.amazonaws.com/docs/clustermgmt/support/cluster-license/
+   *
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEksAnywhereSubscription(uUID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:eks-anywhere-subscription/${ uUID }`);
+  }
+
+  /**
+   * Adds a resource of type podidentityassociation to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPodidentityassociation(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:podidentityassociation/${ clusterName }/${ uUID }`);
+  }
+
+  /**
+   * Adds a resource of type access-entry to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param iamIdentityType - Identifier for the iamIdentityType.
+   * @param iamIdentityAccountID - Identifier for the iamIdentityAccountID.
+   * @param iamIdentityName - Identifier for the iamIdentityName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAccessEntryType()
+   * - .ifClusterName()
+   * - .ifKubernetesGroups()
+   * - .ifPrincipalArn()
+   * - .ifUsername()
+   */
+  public onAccessEntry(clusterName: string, iamIdentityType: string, iamIdentityAccountID: string, iamIdentityName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:access-entry/${ clusterName }/${ iamIdentityType }/${ iamIdentityAccountID }/${ iamIdentityName }/${ uUID }`);
+  }
+
+  /**
+   * Adds a resource of type access-policy to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html
+   *
+   * @param accessPolicyName - Identifier for the accessPolicyName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccessPolicy(accessPolicyName: string, partition?: string) {
+    return this.on(`arn:${ partition || Eks.defaultPartition }:eks::aws:cluster-access-policy/${ accessPolicyName }`);
+  }
+
+  /**
+   * Filters access by a key that is present in the request the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toAssociateIdentityProviderConfig()
+   * - .toCreateAccessEntry()
+   * - .toCreateAddon()
+   * - .toCreateCluster()
+   * - .toCreateEksAnywhereSubscription()
+   * - .toCreateFargateProfile()
+   * - .toCreateNodegroup()
+   * - .toCreatePodIdentityAssociation()
+   * - .toRegisterCluster()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to resource types:
+   * - cluster
+   * - nodegroup
+   * - addon
+   * - fargateprofile
+   * - identityproviderconfig
+   * - eks-anywhere-subscription
+   * - podidentityassociation
+   * - access-entry
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names present in the request the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toAssociateIdentityProviderConfig()
+   * - .toCreateAccessEntry()
+   * - .toCreateAddon()
+   * - .toCreateCluster()
+   * - .toCreateEksAnywhereSubscription()
+   * - .toCreateFargateProfile()
+   * - .toCreateNodegroup()
+   * - .toCreatePodIdentityAssociation()
+   * - .toRegisterCluster()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the access entry type present in the access entry requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessEntry()
+   *
+   * Applies to resource types:
+   * - access-entry
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccessEntryType(value: string | string[], operator?: Operator | string) {
+    return this.if(`accessEntryType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the accessScope present in the associate / disassociate access policy requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateAccessPolicy()
+   * - .toDisassociateAccessPolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccessScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`accessScope`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the bootstrapClusterCreatorAdminPermissions present in the create cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBootstrapClusterCreatorAdminPermissions(value?: boolean) {
+    return this.if(`bootstrapClusterCreatorAdminPermissions`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the clientId present in the associateIdentityProviderConfig request the user makes to the EKS service
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -604,6 +1077,21 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Filters access by the clusterName present in the access entry requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to resource types:
+   * - access-entry
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifClusterName(value: string | string[], operator?: Operator | string) {
+    return this.if(`clusterName`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the issuerUrl present in the associateIdentityProviderConfig request the user makes to the EKS service
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -616,5 +1104,91 @@ export class Eks extends PolicyStatement {
    */
   public ifIssuerUrl(value: string | string[], operator?: Operator | string) {
     return this.if(`issuerUrl`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the kubernetesGroups present in the access entry requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessEntry()
+   *
+   * Applies to resource types:
+   * - access-entry
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKubernetesGroups(value: string | string[], operator?: Operator | string) {
+    return this.if(`kubernetesGroups`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the namespaces present in the associate / disassociate access policy requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateAccessPolicy()
+   * - .toDisassociateAccessPolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNamespaces(value: string | string[], operator?: Operator | string) {
+    return this.if(`namespaces`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the policyArn present in the access entry requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateAccessPolicy()
+   * - .toDisassociateAccessPolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifPolicyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`policyArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the principalArn present in the access entry requests requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessEntry()
+   *
+   * Applies to resource types:
+   * - access-entry
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifPrincipalArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`principalArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the Kubernetes username present in the access entry requests the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessEntry()
+   *
+   * Applies to resource types:
+   * - access-entry
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUsername(value: string | string[], operator?: Operator | string) {
+    return this.if(`username`, value, operator || 'StringLike');
   }
 }

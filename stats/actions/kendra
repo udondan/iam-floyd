@@ -50,6 +50,7 @@ kendra:ListTagsForResource;Read
 kendra:ListThesauri;List
 kendra:PutPrincipalMapping;Write
 kendra:Query;Read
+kendra:Retrieve;Read
 kendra:StartDataSourceSyncJob;Write
 kendra:StopDataSourceSyncJob;Write
 kendra:SubmitFeedback;Write

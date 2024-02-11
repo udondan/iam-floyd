@@ -1,3 +1,5 @@
+app-integrations:application
+app-integrations:application-association
 app-integrations:data-integration
 app-integrations:data-integration-association
 app-integrations:event-integration

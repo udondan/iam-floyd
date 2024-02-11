@@ -184,7 +184,7 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource.html
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEventBus.html
    */
   public toDeleteEventBus() {
     return this.to('DeleteEventBus');
@@ -611,6 +611,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve credentials from a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html
+   */
+  public toRetrieveConnectionCredentials() {
+    return this.to('RetrieveConnectionCredentials');
+  }
+
+  /**
    * Grants permission to start a replay of an archive
    *
    * Access Level: Write
@@ -737,6 +748,7 @@ export class Events extends PolicyStatement {
       'PutRule',
       'PutTargets',
       'RemoveTargets',
+      'RetrieveConnectionCredentials',
       'StartReplay',
       'UpdateApiDestination',
       'UpdateArchive',
@@ -916,6 +928,60 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Filters access by the allowed set of values for each of the tags to event bus and rule actions
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateEventBus()
+   * - .toPutRule()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource to event bus and rule actions
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - event-bus
+   * - rule-on-default-event-bus
+   * - rule-on-custom-event-bus
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags in the request to event bus and rule actions
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateEventBus()
+   * - .toPutRule()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of the event buses that can be associated with an endpoint to CreateEndpoint and UpdateEndpoint actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-event-buses
@@ -952,7 +1018,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of a target that can be put to a rule to PutTargets actions
+   * Filters access by the ARN of a target that can be put to a rule to PutTargets actions. TargetARN doesn't include DeadLetterConfigArn
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
    *

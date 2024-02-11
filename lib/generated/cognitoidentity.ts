@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html).
@@ -100,6 +100,28 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get analytics data about the total current identity count for all identity pool identity provider (IdPs)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolAnalytics.html
+   */
+  public toGetIdentityPoolAnalytics() {
+    return this.to('GetIdentityPoolAnalytics');
+  }
+
+  /**
+   * Grants permission to get analytics data about the number of new identities and total identities for all identity pool identity providers (IdPs)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolDailyAnalytics.html
+   */
+  public toGetIdentityPoolDailyAnalytics() {
+    return this.to('GetIdentityPoolDailyAnalytics');
+  }
+
+  /**
    * Grants permission to get the roles for an identity pool
    *
    * Access Level: Read
@@ -108,6 +130,17 @@ export class CognitoIdentity extends PolicyStatement {
    */
   public toGetIdentityPoolRoles() {
     return this.to('GetIdentityPoolRoles');
+  }
+
+  /**
+   * Grants permission to get analytics data about the number of new identities and total identities for one identity pool identity provider (IdPs)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityProviderDailyAnalytics.html
+   */
+  public toGetIdentityProviderDailyAnalytics() {
+    return this.to('GetIdentityProviderDailyAnalytics');
   }
 
   /**
@@ -299,7 +332,10 @@ export class CognitoIdentity extends PolicyStatement {
       'DescribeIdentity',
       'DescribeIdentityPool',
       'GetCredentialsForIdentity',
+      'GetIdentityPoolAnalytics',
+      'GetIdentityPoolDailyAnalytics',
       'GetIdentityPoolRoles',
+      'GetIdentityProviderDailyAnalytics',
       'GetOpenIdToken',
       'GetOpenIdTokenForDeveloperIdentity',
       'GetPrincipalTagAttributeMap',
@@ -331,5 +367,55 @@ export class CognitoIdentity extends PolicyStatement {
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || CognitoIdentity.defaultPartition }:cognito-identity:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIdentityPool()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - identitypool
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a key that is present in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIdentityPool()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

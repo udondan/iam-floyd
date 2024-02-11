@@ -1,4 +1,6 @@
 datasync:agent
+datasync:discoveryjob
 datasync:location
+datasync:storagesystem
 datasync:task
 datasync:taskexecution

@@ -20,6 +20,7 @@ medialive:DeleteMultiplexProgram;Write
 medialive:DeleteReservation;Write
 medialive:DeleteSchedule;Write
 medialive:DeleteTags;Tagging
+medialive:DescribeAccountConfiguration;Read
 medialive:DescribeChannel;Read
 medialive:DescribeInput;Read
 medialive:DescribeInputDevice;Read
@@ -30,6 +31,7 @@ medialive:DescribeMultiplexProgram;Read
 medialive:DescribeOffering;Read
 medialive:DescribeReservation;Read
 medialive:DescribeSchedule;Read
+medialive:DescribeThumbnails;Read
 medialive:ListChannels;List
 medialive:ListInputDeviceTransfers;List
 medialive:ListInputDevices;List
@@ -44,11 +46,14 @@ medialive:PurchaseOffering;Write
 medialive:RebootInputDevice;Write
 medialive:RejectInputDeviceTransfer;Write
 medialive:StartChannel;Write
+medialive:StartInputDevice;Write
 medialive:StartInputDeviceMaintenanceWindow;Write
 medialive:StartMultiplex;Write
 medialive:StopChannel;Write
+medialive:StopInputDevice;Write
 medialive:StopMultiplex;Write
 medialive:TransferInputDevice;Write
+medialive:UpdateAccountConfiguration;Write
 medialive:UpdateChannel;Write
 medialive:UpdateChannelClass;Write
 medialive:UpdateInput;Write

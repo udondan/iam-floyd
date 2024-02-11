@@ -1,5 +1,8 @@
 sts:AWSServiceName
+sts:DurationSeconds
 sts:ExternalId
+sts:RequestContext/${ContextKey}
+sts:RequestContextProviders
 sts:RequestTag/${TagKey}
 sts:ResourceTag/${TagKey}
 sts:RoleSessionName

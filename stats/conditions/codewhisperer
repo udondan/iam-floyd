@@ -1,1 +1,3 @@
-
+codewhisperer:RequestTag/${TagKey}
+codewhisperer:ResourceTag/${TagKey}
+codewhisperer:TagKeys

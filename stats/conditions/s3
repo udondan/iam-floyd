@@ -1,3 +1,4 @@
+s3:AccessGrantsInstanceArn
 s3:AccessPointNetworkOrigin
 s3:DataAccessPointAccount
 s3:DataAccessPointArn

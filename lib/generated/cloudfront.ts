@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cloudfront](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html).
@@ -35,6 +35,7 @@ export class Cloudfront extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - cloudfront:CopyDistribution
    * - cloudfront:CreateDistribution
    * - cloudfront:GetDistribution
    *
@@ -141,6 +142,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreateKeyGroup() {
     return this.to('CreateKeyGroup');
+  }
+
+  /**
+   * Grants permission to create a CloudFront KeyValueStore
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyValueStore.html
+   */
+  public toCreateKeyValueStore() {
+    return this.to('CreateKeyValueStore');
   }
 
   /**
@@ -335,6 +347,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a CloudFront KeyValueStore
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteKeyValueStore.html
+   */
+  public toDeleteKeyValueStore() {
+    return this.to('DeleteKeyValueStore');
+  }
+
+  /**
    * Grants permission to disable additional CloudWatch metrics for the specified CloudFront distribution
    *
    * Access Level: Write
@@ -420,6 +443,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDescribeFunction() {
     return this.to('DescribeFunction');
+  }
+
+  /**
+   * Grants permission to get a CloudFront KeyValueStore summary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeKeyValueStore.html
+   */
+  public toDescribeKeyValueStore() {
+    return this.to('DescribeKeyValueStore');
   }
 
   /**
@@ -929,6 +963,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of CloudFront KeyValueStores
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListKeyValueStores.html
+   */
+  public toListKeyValueStores() {
+    return this.to('ListKeyValueStores');
+  }
+
+  /**
    * Grants permission to list all origin access controls in the account
    *
    * Access Level: List
@@ -1134,21 +1179,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy the staging distribution's configuration to its corresponding primary distribution
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - cloudfront:GetDistribution
-   * - cloudfront:UpdateDistribution
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionWithStagingConfig.html
-   */
-  public toUpdateDistributionWithStagingConfig() {
-    return this.to('UpdateDistributionWithStagingConfig');
-  }
-
-  /**
    * Grants permission to update a field-level encryption configuration
    *
    * Access Level: Write
@@ -1190,6 +1220,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toUpdateKeyGroup() {
     return this.to('UpdateKeyGroup');
+  }
+
+  /**
+   * Grants permission to update a CloudFront KeyValueStore
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateKeyValueStore.html
+   */
+  public toUpdateKeyValueStore() {
+    return this.to('UpdateKeyValueStore');
   }
 
   /**
@@ -1282,6 +1323,7 @@ export class Cloudfront extends PolicyStatement {
       'CreateFunction',
       'CreateInvalidation',
       'CreateKeyGroup',
+      'CreateKeyValueStore',
       'CreateMonitoringSubscription',
       'CreateOriginAccessControl',
       'CreateOriginRequestPolicy',
@@ -1299,6 +1341,7 @@ export class Cloudfront extends PolicyStatement {
       'DeleteFieldLevelEncryptionProfile',
       'DeleteFunction',
       'DeleteKeyGroup',
+      'DeleteKeyValueStore',
       'DeleteMonitoringSubscription',
       'DeleteOriginAccessControl',
       'DeleteOriginRequestPolicy',
@@ -1312,11 +1355,11 @@ export class Cloudfront extends PolicyStatement {
       'UpdateCloudFrontOriginAccessIdentity',
       'UpdateContinuousDeploymentPolicy',
       'UpdateDistribution',
-      'UpdateDistributionWithStagingConfig',
       'UpdateFieldLevelEncryptionConfig',
       'UpdateFieldLevelEncryptionProfile',
       'UpdateFunction',
       'UpdateKeyGroup',
+      'UpdateKeyValueStore',
       'UpdateOriginAccessControl',
       'UpdateOriginRequestPolicy',
       'UpdatePublicKey',
@@ -1327,6 +1370,7 @@ export class Cloudfront extends PolicyStatement {
     ],
     Read: [
       'DescribeFunction',
+      'DescribeKeyValueStore',
       'GetCachePolicy',
       'GetCachePolicyConfig',
       'GetCloudFrontOriginAccessIdentity',
@@ -1376,6 +1420,7 @@ export class Cloudfront extends PolicyStatement {
       'ListFunctions',
       'ListInvalidations',
       'ListKeyGroups',
+      'ListKeyValueStores',
       'ListOriginAccessControls',
       'ListOriginRequestPolicies',
       'ListPublicKeys',
@@ -1516,6 +1561,19 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type key-value-store to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onKeyValueStore(name: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:key-value-store/${ name }`);
+  }
+
+  /**
    * Adds a resource of type response-headers-policy to the statement
    *
    * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
@@ -1552,5 +1610,56 @@ export class Cloudfront extends PolicyStatement {
    */
   public onContinuousDeploymentPolicy(id: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudfront.defaultPartition }:cloudfront::${ account || '*' }:continuous-deployment-policy/${ id }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateStreamingDistributionWithTags()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - distribution
+   * - streaming-distribution
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateStreamingDistributionWithTags()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

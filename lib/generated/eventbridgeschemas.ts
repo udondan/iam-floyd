@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [schemas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgeschemas.html).
@@ -423,7 +423,7 @@ export class Schemas extends PolicyStatement {
   /**
    * Adds a resource of type discoverer to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html
    *
    * @param discovererId - Identifier for the discovererId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -440,7 +440,7 @@ export class Schemas extends PolicyStatement {
   /**
    * Adds a resource of type registry to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html
    *
    * @param registryName - Identifier for the registryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -457,7 +457,7 @@ export class Schemas extends PolicyStatement {
   /**
    * Adds a resource of type schema to the statement
    *
-   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html
    *
    * @param registryName - Identifier for the registryName.
    * @param schemaName - Identifier for the schemaName.
@@ -470,5 +470,61 @@ export class Schemas extends PolicyStatement {
    */
   public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:schema/${ registryName }/${ schemaName }`);
+  }
+
+  /**
+   * Filters access by allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDiscoverer()
+   * - .toCreateRegistry()
+   * - .toCreateSchema()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - discoverer
+   * - registry
+   * - schema
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDiscoverer()
+   * - .toCreateRegistry()
+   * - .toCreateSchema()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

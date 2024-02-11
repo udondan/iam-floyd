@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ssm-sap](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerforsap.html).
@@ -199,6 +199,17 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an on-demand discovery of a registered SSM for SAP application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toStartApplicationRefresh() {
+    return this.to('StartApplicationRefresh');
+  }
+
+  /**
    * Grants permission to tag a specified resource ARN
    *
    * Access Level: Tagging
@@ -257,6 +268,7 @@ export class SsmSap extends PolicyStatement {
       'PutResourcePermission',
       'RegisterApplication',
       'RestoreDatabase',
+      'StartApplicationRefresh',
       'UpdateApplicationSettings',
       'UpdateHANABackupSettings'
     ],
@@ -299,6 +311,25 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type component to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   *
+   * @param applicationType - Identifier for the applicationType.
+   * @param applicationId - Identifier for the applicationId.
+   * @param componentId - Identifier for the componentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComponent(applicationType: string, applicationId: string, componentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || SsmSap.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }/COMPONENT/${ componentId }`);
+  }
+
+  /**
    * Adds a resource of type database to the statement
    *
    * https://docs.aws.amazon.com/systems-manager/index.html
@@ -315,5 +346,57 @@ export class SsmSap extends PolicyStatement {
    */
   public onDatabase(applicationType: string, applicationId: string, databaseId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmSap.defaultPartition }:ssm-sap:${ region || '*' }:${ account || '*' }:${ applicationType }/${ applicationId }/DB/${ databaseId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   *
+   * Applies to actions:
+   * - .toRegisterApplication()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   *
+   * Applies to resource types:
+   * - application
+   * - component
+   * - database
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   *
+   * Applies to actions:
+   * - .toRegisterApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

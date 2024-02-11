@@ -5,7 +5,7 @@ application-autoscaling:DescribeScalableTargets;Read
 application-autoscaling:DescribeScalingActivities;Read
 application-autoscaling:DescribeScalingPolicies;Read
 application-autoscaling:DescribeScheduledActions;Read
-application-autoscaling:ListTagsForResource;Tagging
+application-autoscaling:ListTagsForResource;Read
 application-autoscaling:PutScalingPolicy;Write
 application-autoscaling:PutScheduledAction;Write
 application-autoscaling:RegisterScalableTarget;Write

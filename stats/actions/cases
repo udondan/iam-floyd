@@ -8,6 +8,7 @@ cases:CreateRelatedItem;Write
 cases:CreateTemplate;Write
 cases:DeleteDomain;Write
 cases:GetCase;Read
+cases:GetCaseAuditEvents;Read
 cases:GetCaseEventConfiguration;Read
 cases:GetDomain;Read
 cases:GetLayout;Read

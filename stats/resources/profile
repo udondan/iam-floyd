@@ -1,3 +1,5 @@
+profile:calculated-attributes
 profile:domains
+profile:event-streams
 profile:integrations
 profile:object-types

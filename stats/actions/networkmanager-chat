@@ -1,0 +1,7 @@
+networkmanager-chat:CancelMessageResponse;Write
+networkmanager-chat:CreateConversation;Write
+networkmanager-chat:DeleteConversation;Write
+networkmanager-chat:ListConversationMessages;List
+networkmanager-chat:ListConversations;List
+networkmanager-chat:NotifyConversationIsActive;Write
+networkmanager-chat:SendConversationMessage;Write

@@ -65,6 +65,7 @@ iam:GetGroup;Read
 iam:GetGroupPolicy;Read
 iam:GetInstanceProfile;Read
 iam:GetLoginProfile;List
+iam:GetMFADevice;Read
 iam:GetOpenIDConnectProvider;Read
 iam:GetOrganizationsAccessReport;Read
 iam:GetPolicy;Read

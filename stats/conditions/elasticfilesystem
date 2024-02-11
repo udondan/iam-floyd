@@ -1,5 +1,6 @@
 elasticfilesystem:AccessPointArn
 elasticfilesystem:AccessedViaMountTarget
+elasticfilesystem:CreateAction
 elasticfilesystem:Encrypted
 elasticfilesystem:RequestTag/${TagKey}
 elasticfilesystem:ResourceTag/${TagKey}

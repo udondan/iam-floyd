@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [workmail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkmail.html).
@@ -459,6 +459,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read details of an entity
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeEntity.html
+   */
+  public toDescribeEntity() {
+    return this.to('DescribeEntity');
+  }
+
+  /**
    * Grants permission to read the details for a group
    *
    * Access Level: List
@@ -907,6 +918,17 @@ export class Workmail extends PolicyStatement {
    */
   public toListGroups() {
     return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list the groups to which an entity belongs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroupsForEntity.html
+   */
+  public toListGroupsForEntity() {
+    return this.to('ListGroupsForEntity');
   }
 
   /**
@@ -1373,6 +1395,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update details of a group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateGroup.html
+   */
+  public toUpdateGroup() {
+    return this.to('UpdateGroup');
+  }
+
+  /**
    * Grants permission to update an existing impersonation role for the given Amazon WorkMail organization
    *
    * Access Level: Write
@@ -1461,6 +1494,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update details of a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateUser.html
+   */
+  public toUpdateUser() {
+    return this.to('UpdateUser');
+  }
+
+  /**
    * Grants permission to remotely wipe the mobile device associated with a user's account
    *
    * Access Level: Write
@@ -1540,6 +1584,7 @@ export class Workmail extends PolicyStatement {
       'TestOutboundMailFlowRules',
       'UpdateAvailabilityConfiguration',
       'UpdateDefaultMailDomain',
+      'UpdateGroup',
       'UpdateImpersonationRole',
       'UpdateInboundMailFlowRule',
       'UpdateMailboxQuota',
@@ -1548,6 +1593,7 @@ export class Workmail extends PolicyStatement {
       'UpdatePrimaryEmailAddress',
       'UpdateResource',
       'UpdateSmtpGateway',
+      'UpdateUser',
       'WipeMobileDevice'
     ],
     List: [
@@ -1564,6 +1610,7 @@ export class Workmail extends PolicyStatement {
       'ListAliases',
       'ListGroupMembers',
       'ListGroups',
+      'ListGroupsForEntity',
       'ListImpersonationRoles',
       'ListInboundMailFlowRules',
       'ListMailDomains',
@@ -1579,6 +1626,7 @@ export class Workmail extends PolicyStatement {
     ],
     Read: [
       'DescribeEmailMonitoringConfiguration',
+      'DescribeEntity',
       'DescribeInboundDmarcSettings',
       'DescribeInboundMailFlowRule',
       'DescribeMailboxExportJob',
@@ -1628,5 +1676,56 @@ export class Workmail extends PolicyStatement {
    */
   public onOrganization(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Workmail.defaultPartition }:workmail:${ region || '*' }:${ account || '*' }:organization/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tag key-value pairs that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - organization
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

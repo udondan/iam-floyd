@@ -6,3 +6,4 @@ elasticloadbalancing:loadbalancer
 elasticloadbalancing:loadbalancer/app/
 elasticloadbalancing:loadbalancer/net/
 elasticloadbalancing:targetgroup
+elasticloadbalancing:truststore

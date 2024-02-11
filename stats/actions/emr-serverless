@@ -1,3 +1,4 @@
+emr-serverless:AccessInteractiveEndpoints;Write
 emr-serverless:CancelJobRun;Write
 emr-serverless:CreateApplication;Write
 emr-serverless:DeleteApplication;Write

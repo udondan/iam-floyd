@@ -1,0 +1,11 @@
+repostspace:CreateSpace;Write
+repostspace:DeleteSpace;Write
+repostspace:DeregisterAdmin;Write
+repostspace:GetSpace;Read
+repostspace:ListSpaces;Read
+repostspace:ListTagsForResource;Read
+repostspace:RegisterAdmin;Write
+repostspace:SendInvites;Write
+repostspace:TagResource;Tagging
+repostspace:UntagResource;Tagging
+repostspace:UpdateSpace;Write

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ssm-incidents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanager.html).
@@ -16,6 +16,17 @@ export class SsmIncidents extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to retrieve details about specified findings for an incident record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_BatchGetIncidentFindings.html
+   */
+  public toBatchGetIncidentFindings() {
+    return this.to('BatchGetIncidentFindings');
   }
 
   /**
@@ -178,6 +189,17 @@ export class SsmIncidents extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list findings for an incident record
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListIncidentFindings.html
+   */
+  public toListIncidentFindings() {
+    return this.to('ListIncidentFindings');
+  }
+
+  /**
    * Grants permission to list the contents of all incident records
    *
    * Access Level: List
@@ -189,7 +211,7 @@ export class SsmIncidents extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list related items of an incident records
+   * Grants permission to list related items of an incident record
    *
    * Access Level: List
    *
@@ -369,6 +391,15 @@ export class SsmIncidents extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'BatchGetIncidentFindings',
+      'GetIncidentRecord',
+      'GetReplicationSet',
+      'GetResourcePolicies',
+      'GetResponsePlan',
+      'GetTimelineEvent',
+      'ListTagsForResource'
+    ],
     Write: [
       'CreateReplicationSet',
       'CreateResponsePlan',
@@ -389,15 +420,8 @@ export class SsmIncidents extends PolicyStatement {
       'DeleteResourcePolicy',
       'PutResourcePolicy'
     ],
-    Read: [
-      'GetIncidentRecord',
-      'GetReplicationSet',
-      'GetResourcePolicies',
-      'GetResponsePlan',
-      'GetTimelineEvent',
-      'ListTagsForResource'
-    ],
     List: [
+      'ListIncidentFindings',
       'ListIncidentRecords',
       'ListRelatedItems',
       'ListReplicationSets',
@@ -457,5 +481,61 @@ export class SsmIncidents extends PolicyStatement {
    */
   public onReplicationSet(replicationSet: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || SsmIncidents.defaultPartition }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateReplicationSet()
+   * - .toCreateResponsePlan()
+   * - .toTagResource()
+   * - .toUpdateResponsePlan()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - response-plan
+   * - incident-record
+   * - replication-set
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateReplicationSet()
+   * - .toCreateResponsePlan()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateResponsePlan()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

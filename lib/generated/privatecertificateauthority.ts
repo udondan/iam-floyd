@@ -324,7 +324,7 @@ export class AcmPca extends PolicyStatement {
   /**
    * Adds a resource of type certificate-authority to the statement
    *
-   * https://docs.aws.amazon.com/privateca/latest/userguide/authen-overview.html#acm-pca-resources-operations
+   * https://docs.aws.amazon.com/privateca/latest/userguide/api-permissions.html
    *
    * @param certificateAuthorityId - Identifier for the certificateAuthorityId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -339,7 +339,7 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
-   * Filters issue certificate requests based on the presence of TemplateArn in the request
+   * Filters access by the arn of the certificate template used in Issue Certificate request
    *
    * https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-varieties
    *
@@ -347,9 +347,59 @@ export class AcmPca extends PolicyStatement {
    * - .toIssueCertificate()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTemplateArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`TemplateArn`, value, operator || 'StringLike');
+    return this.if(`TemplateArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateCertificateAuthority()
+   * - .toTagCertificateAuthority()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - certificate-authority
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateCertificateAuthority()
+   * - .toTagCertificateAuthority()
+   * - .toUntagCertificateAuthority()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

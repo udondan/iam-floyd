@@ -21,6 +21,7 @@ ec2:image
 ec2:import-image-task
 ec2:import-snapshot-task
 ec2:instance
+ec2:instance-connect-endpoint
 ec2:instance-event-window
 ec2:internet-gateway
 ec2:ipam

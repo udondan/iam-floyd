@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [es](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html).
@@ -41,6 +41,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add the data source for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AddDataSource.html
+   */
+  public toAddDataSource() {
+    return this.to('AddDataSource');
+  }
+
+  /**
    * Grants permission to attach resource tags to an OpenSearch Service domain
    *
    * Access Level: Tagging
@@ -75,6 +86,17 @@ export class Es extends PolicyStatement {
    */
   public toAuthorizeVpcEndpointAccess() {
     return this.to('AuthorizeVpcEndpointAccess');
+  }
+
+  /**
+   * Grants permission to cancel a change on an OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CancelDomainConfigChange.html
+   */
+  public toCancelDomainConfigChange() {
+    return this.to('CancelDomainConfigChange');
   }
 
   /**
@@ -193,6 +215,17 @@ export class Es extends PolicyStatement {
    */
   public toCreateVpcEndpoint() {
     return this.to('CreateVpcEndpoint');
+  }
+
+  /**
+   * Grants permission to delete the data source for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteDataSource.html
+   */
+  public toDeleteDataSource() {
+    return this.to('DeleteDataSource');
   }
 
   /**
@@ -336,6 +369,28 @@ export class Es extends PolicyStatement {
    */
   public toDescribeDomainConfig() {
     return this.to('DescribeDomainConfig');
+  }
+
+  /**
+   * Grants permission to view information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainHealth.html
+   */
+  public toDescribeDomainHealth() {
+    return this.to('DescribeDomainHealth');
+  }
+
+  /**
+   * Grants permission to view information about nodes configured for the domain and their configurations- the node id, type of node, status of node, Availability Zone, instance type and storage
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainNodes.html
+   */
+  public toDescribeDomainNodes() {
+    return this.to('DescribeDomainNodes');
   }
 
   /**
@@ -636,6 +691,28 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the data source for the OpenSearch Service domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDataSource.html
+   */
+  public toGetDataSource() {
+    return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to retrieve the status of maintenance action for the node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDomainMaintenanceStatus.html
+   */
+  public toGetDomainMaintenanceStatus() {
+    return this.to('GetDomainMaintenanceStatus');
+  }
+
+  /**
    * Grants permission to fetch the version history for a package
    *
    * Access Level: Read
@@ -666,6 +743,28 @@ export class Es extends PolicyStatement {
    */
   public toGetUpgradeStatus() {
     return this.to('GetUpgradeStatus');
+  }
+
+  /**
+   * Grants permission to retrieve a list of data source for the OpenSearch Service domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDataSources.html
+   */
+  public toListDataSources() {
+    return this.to('ListDataSources');
+  }
+
+  /**
+   * Grants permission to retrieve a list of maintenance actions for the OpenSearch Service domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDomainMaintenances.html
+   */
+  public toListDomainMaintenances() {
+    return this.to('ListDomainMaintenances');
   }
 
   /**
@@ -881,6 +980,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the maintenance on the node
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartDomainMaintenance.html
+   */
+  public toStartDomainMaintenance() {
+    return this.to('StartDomainMaintenance');
+  }
+
+  /**
    * Grants permission to start a service software update of a domain. This permission is deprecated. Use StartServiceSoftwareUpdate instead
    *
    * Access Level: Write
@@ -900,6 +1010,17 @@ export class Es extends PolicyStatement {
    */
   public toStartServiceSoftwareUpdate() {
     return this.to('StartServiceSoftwareUpdate');
+  }
+
+  /**
+   * Grants permission to update the data source for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateDataSource.html
+   */
+  public toUpdateDataSource() {
+    return this.to('UpdateDataSource');
   }
 
   /**
@@ -983,8 +1104,10 @@ export class Es extends PolicyStatement {
     Write: [
       'AcceptInboundConnection',
       'AcceptInboundCrossClusterSearchConnection',
+      'AddDataSource',
       'AssociatePackage',
       'AuthorizeVpcEndpointAccess',
+      'CancelDomainConfigChange',
       'CancelElasticsearchServiceSoftwareUpdate',
       'CancelServiceSoftwareUpdate',
       'CreateDomain',
@@ -995,6 +1118,7 @@ export class Es extends PolicyStatement {
       'CreatePackage',
       'CreateServiceRole',
       'CreateVpcEndpoint',
+      'DeleteDataSource',
       'DeleteDomain',
       'DeleteElasticsearchDomain',
       'DeleteElasticsearchServiceRole',
@@ -1014,8 +1138,10 @@ export class Es extends PolicyStatement {
       'RejectInboundConnection',
       'RejectInboundCrossClusterSearchConnection',
       'RevokeVpcEndpointAccess',
+      'StartDomainMaintenance',
       'StartElasticsearchServiceSoftwareUpdate',
       'StartServiceSoftwareUpdate',
+      'UpdateDataSource',
       'UpdateDomainConfig',
       'UpdateElasticsearchDomainConfig',
       'UpdatePackage',
@@ -1033,6 +1159,8 @@ export class Es extends PolicyStatement {
       'DescribeDomainAutoTunes',
       'DescribeDomainChangeProgress',
       'DescribeDomainConfig',
+      'DescribeDomainHealth',
+      'DescribeDomainNodes',
       'DescribeDryRunProgress',
       'DescribeElasticsearchDomain',
       'DescribeElasticsearchDomainConfig',
@@ -1040,6 +1168,8 @@ export class Es extends PolicyStatement {
       'ESCrossClusterGet',
       'ESHttpGet',
       'ESHttpHead',
+      'GetDataSource',
+      'GetDomainMaintenanceStatus',
       'GetPackageVersionHistory',
       'GetUpgradeHistory',
       'GetUpgradeStatus',
@@ -1061,6 +1191,8 @@ export class Es extends PolicyStatement {
       'DescribeVpcEndpoints',
       'GetCompatibleElasticsearchVersions',
       'GetCompatibleVersions',
+      'ListDataSources',
+      'ListDomainMaintenances',
       'ListDomainNames',
       'ListDomainsForPackage',
       'ListElasticsearchInstanceTypeDetails',
@@ -1121,5 +1253,59 @@ export class Es extends PolicyStatement {
    */
   public onOpensearchserviceRole(account?: string, partition?: string) {
     return this.on(`arn:${ partition || Es.defaultPartition }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateDomain()
+   * - .toCreateElasticsearchDomain()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - domain
+   * - es_role
+   * - opensearchservice_role
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateDomain()
+   * - .toCreateElasticsearchDomain()
+   * - .toRemoveTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

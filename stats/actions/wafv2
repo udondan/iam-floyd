@@ -1,5 +1,6 @@
 wafv2:AssociateWebACL;Write
 wafv2:CheckCapacity;Read
+wafv2:CreateAPIKey;Write
 wafv2:CreateIPSet;Write
 wafv2:CreateRegexPatternSet;Write
 wafv2:CreateRuleGroup;Write
@@ -11,10 +12,13 @@ wafv2:DeletePermissionPolicy;Permissions management
 wafv2:DeleteRegexPatternSet;Write
 wafv2:DeleteRuleGroup;Write
 wafv2:DeleteWebACL;Write
+wafv2:DescribeAllManagedProducts;Read
+wafv2:DescribeManagedProductsByVendor;Read
 wafv2:DescribeManagedRuleGroup;Read
 wafv2:DisassociateFirewallManager;Write
 wafv2:DisassociateWebACL;Write
 wafv2:GenerateMobileSdkReleaseUrl;Read
+wafv2:GetDecryptedAPIKey;Read
 wafv2:GetIPSet;Read
 wafv2:GetLoggingConfiguration;Read
 wafv2:GetManagedRuleSet;Read
@@ -26,6 +30,7 @@ wafv2:GetRuleGroup;Read
 wafv2:GetSampledRequests;Read
 wafv2:GetWebACL;Read
 wafv2:GetWebACLForResource;Read
+wafv2:ListAPIKeys;List
 wafv2:ListAvailableManagedRuleGroupVersions;List
 wafv2:ListAvailableManagedRuleGroups;List
 wafv2:ListIPSets;List

@@ -1,8 +1,8 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhealthlake.html).
+ * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Healthlake extends PolicyStatement {
   public servicePrefix = 'healthlake';
 
   /**
-   * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhealthlake.html).
+   * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -287,14 +287,67 @@ export class Healthlake extends PolicyStatement {
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DatastoreProperties.html
    *
    * @param datastoreId - Identifier for the datastoreId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDatastore(datastoreId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Healthlake.defaultPartition }:healthlake:${ region || '*' }:${ accountId || '*' }:datastore/fhir/${ datastoreId }`);
+  public onDatastore(datastoreId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Healthlake.defaultPartition }:healthlake:${ region || '*' }:${ account || '*' }:datastore/fhir/${ datastoreId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateFHIRDatastore()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - datastore
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateFHIRDatastore()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

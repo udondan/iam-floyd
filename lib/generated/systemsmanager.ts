@@ -24,6 +24,7 @@ export class Ssm extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -87,6 +88,7 @@ export class Ssm extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -100,6 +102,11 @@ export class Ssm extends PolicyStatement {
    * Grants permission to combine entries for multiple CreateAssociation operations in a single command
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html
    */
@@ -215,6 +222,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html
    */
   public toDeleteAssociation() {
@@ -252,6 +262,17 @@ export class Ssm extends PolicyStatement {
    */
   public toDeleteMaintenanceWindow() {
     return this.to('DeleteMaintenanceWindow');
+  }
+
+  /**
+   * Grants permission to delete an OpsItem
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteOpsItem.html
+   */
+  public toDeleteOpsItem() {
+    return this.to('DeleteOpsItem');
   }
 
   /**
@@ -386,6 +407,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html
    */
   public toDescribeAssociation() {
@@ -397,6 +421,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html
    */
   public toDescribeAssociationExecutionTargets() {
@@ -407,6 +434,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view all executions for a specified association
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html
    */
@@ -485,6 +515,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html
    */
   public toDescribeEffectiveInstanceAssociations() {
@@ -506,6 +539,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view the status of the associations for a specified instance
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html
    */
@@ -1078,6 +1114,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html
    */
   public toListAssociationVersions() {
@@ -1177,6 +1216,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toListInstanceAssociations() {
@@ -1257,6 +1299,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -1289,6 +1334,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to register a compliance type and other compliance details on a specified resource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html
    */
@@ -1410,6 +1459,7 @@ export class Ssm extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html
@@ -1433,6 +1483,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to reconnect a Session Manager session to a managed instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceTagAws()
+   * - .ifResourceTagAws()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html
    */
@@ -1471,6 +1525,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html
    */
   public toStartAssociationsOnce() {
@@ -1481,6 +1538,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to initiate the execution of an Automation document
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html
    */
@@ -1494,6 +1555,8 @@ export class Ssm extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifAutoApprove()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartChangeRequestExecution.html
@@ -1534,6 +1597,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceTagAws()
+   * - .ifResourceTagAws()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html
    */
   public toTerminateSession() {
@@ -1556,6 +1623,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html
    */
   public toUpdateAssociation() {
@@ -1566,6 +1636,11 @@ export class Ssm extends PolicyStatement {
    * Grants permission to update the status of the SSM document associated with a specified instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
    */
@@ -1611,6 +1686,11 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
   public toUpdateInstanceAssociationStatus() {
@@ -1621,6 +1701,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceInstanceARN()
+   * - .ifEc2SourceInstanceARN()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -1756,6 +1840,7 @@ export class Ssm extends PolicyStatement {
       'DeleteDocument',
       'DeleteInventory',
       'DeleteMaintenanceWindow',
+      'DeleteOpsItem',
       'DeleteOpsMetadata',
       'DeleteParameter',
       'DeleteParameters',
@@ -1897,7 +1982,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type association to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-associations.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
    * @param associationId - Identifier for the associationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1914,7 +1999,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type automation-execution to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-working.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/running-automations.html
    *
    * @param automationExecutionId - Identifier for the automationExecutionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1959,7 +2044,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type document to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html
    *
    * @param documentName - Identifier for the documentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1969,6 +2054,7 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifDocumentCategories()
+   * - .ifResourceTag()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
@@ -2098,7 +2184,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type patchbaseline to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html
    *
    * @param patchBaselineIdResourceId - Identifier for the patchBaselineIdResourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2135,6 +2221,10 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourceTagAws()
+   * - .ifResourceTagAws()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
@@ -2157,7 +2247,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type servicesetting to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/API_ServiceSetting.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -2177,6 +2267,10 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtarget/${ windowTargetId }`);
@@ -2191,6 +2285,10 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtask/${ windowTaskId }`);
@@ -2211,6 +2309,130 @@ export class Ssm extends PolicyStatement {
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ssm.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+  }
+
+  /**
+   * Filters access by 'Create' requests based on the allowed set of values for a specified tags
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateActivation()
+   * - .toCreateAssociation()
+   * - .toCreateAssociationBatch()
+   * - .toCreateDocument()
+   * - .toCreateMaintenanceWindow()
+   * - .toCreateOpsItem()
+   * - .toCreateOpsMetadata()
+   * - .toCreatePatchBaseline()
+   * - .toPutParameter()
+   * - .toRegisterManagedInstance()
+   * - .toStartAutomationExecution()
+   * - .toStartChangeRequestExecution()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by based on a tag key-value pair assigned to the AWS resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateAssociation()
+   * - .toCreateAssociationBatch()
+   * - .toDeleteAssociation()
+   * - .toDescribeAssociation()
+   * - .toDescribeAssociationExecutionTargets()
+   * - .toDescribeAssociationExecutions()
+   * - .toDescribeEffectiveInstanceAssociations()
+   * - .toDescribeInstanceAssociationsStatus()
+   * - .toGetConnectionStatus()
+   * - .toListAssociationVersions()
+   * - .toListInstanceAssociations()
+   * - .toListTagsForResource()
+   * - .toRemoveTagsFromResource()
+   * - .toSendCommand()
+   * - .toStartAssociationsOnce()
+   * - .toStartSession()
+   * - .toUpdateAssociation()
+   * - .toUpdateAssociationStatus()
+   * - .toUpdateInstanceAssociationStatus()
+   *
+   * Applies to resource types:
+   * - association
+   * - automation-execution
+   * - document
+   * - instance
+   * - maintenancewindow
+   * - managed-instance
+   * - opsitem
+   * - opsmetadata
+   * - parameter
+   * - patchbaseline
+   * - windowtarget
+   * - windowtask
+   * - task
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by 'Create' requests based on whether mandatory tags are included in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateActivation()
+   * - .toCreateAssociation()
+   * - .toCreateAssociationBatch()
+   * - .toCreateDocument()
+   * - .toCreateMaintenanceWindow()
+   * - .toCreateOpsItem()
+   * - .toCreateOpsMetadata()
+   * - .toCreatePatchBaseline()
+   * - .toPutParameter()
+   * - .toRegisterManagedInstance()
+   * - .toRemoveTagsFromResource()
+   * - .toStartAutomationExecution()
+   * - .toStartChangeRequestExecution()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the instance from which the request originated
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toPutComplianceItems()
+   * - .toUpdateAssociationStatus()
+   * - .toUpdateInstanceAssociationStatus()
+   * - .toUpdateInstanceInformation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEc2SourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2246,7 +2468,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Controls whether Systems Manager parameters can be overwritten
+   * Filters access by controling whether Systems Manager parameters can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2261,7 +2483,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access to Systems Manager parameters created in a hierarchical structure
+   * Filters access by Systems Manager parameters created in a hierarchical structure
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2287,6 +2509,24 @@ export class Ssm extends PolicyStatement {
    */
   public ifSessionDocumentAccessCheck(value?: boolean) {
     return this.if(`SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys
+   *
+   * Applies to actions:
+   * - .toPutComplianceItems()
+   * - .toUpdateAssociationStatus()
+   * - .toUpdateInstanceAssociationStatus()
+   * - .toUpdateInstanceInformation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceInstanceARN`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2321,12 +2561,15 @@ export class Ssm extends PolicyStatement {
    *
    * Applies to resource types:
    * - automation-execution
+   * - document
    * - instance
    * - maintenancewindow
    * - managed-instance
    * - opsmetadata
    * - parameter
    * - patchbaseline
+   * - windowtarget
+   * - windowtask
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2334,5 +2577,24 @@ export class Ssm extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`resourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by based on a tag key-value pair assigned to the Systems Manager session resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toResumeSession()
+   * - .toTerminateSession()
+   *
+   * Applies to resource types:
+   * - session
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTagAws(value: string | string[], operator?: Operator | string) {
+    return this.if(`resourceTag/aws`, value, operator || 'StringLike');
   }
 }

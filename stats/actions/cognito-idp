@@ -60,6 +60,7 @@ cognito-idp:GetCSVHeader;Read
 cognito-idp:GetDevice;Read
 cognito-idp:GetGroup;Read
 cognito-idp:GetIdentityProviderByIdentifier;Read
+cognito-idp:GetLogDeliveryConfiguration;Read
 cognito-idp:GetSigningCertificate;Read
 cognito-idp:GetUICustomization;Read
 cognito-idp:GetUser;Read
@@ -82,6 +83,7 @@ cognito-idp:ListUsersInGroup;List
 cognito-idp:ResendConfirmationCode;Write
 cognito-idp:RespondToAuthChallenge;Write
 cognito-idp:RevokeToken;Write
+cognito-idp:SetLogDeliveryConfiguration;Write
 cognito-idp:SetRiskConfiguration;Write
 cognito-idp:SetUICustomization;Write
 cognito-idp:SetUserMFAPreference;Write

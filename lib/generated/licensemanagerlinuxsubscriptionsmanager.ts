@@ -21,7 +21,7 @@ export class LicenseManagerLinuxSubscriptions extends PolicyStatement {
   /**
    * Grants permission to get the service settings for Linux subscriptions in AWS License Manager
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html
    */
@@ -32,7 +32,7 @@ export class LicenseManagerLinuxSubscriptions extends PolicyStatement {
   /**
    * Grants permission to list all instances with Linux subscriptions in AWS License Manager
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLinuxSubscriptionInstances.html
    */
@@ -43,7 +43,7 @@ export class LicenseManagerLinuxSubscriptions extends PolicyStatement {
   /**
    * Grants permission to list all Linux subscriptions in AWS License Manager
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLinuxSubscriptions.html
    */
@@ -63,10 +63,12 @@ export class LicenseManagerLinuxSubscriptions extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Write: [
+    Read: [
       'GetServiceSettings',
       'ListLinuxSubscriptionInstances',
-      'ListLinuxSubscriptions',
+      'ListLinuxSubscriptions'
+    ],
+    Write: [
       'UpdateServiceSettings'
     ]
   };

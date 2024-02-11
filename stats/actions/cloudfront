@@ -9,6 +9,7 @@ cloudfront:CreateFieldLevelEncryptionProfile;Write
 cloudfront:CreateFunction;Write
 cloudfront:CreateInvalidation;Write
 cloudfront:CreateKeyGroup;Write
+cloudfront:CreateKeyValueStore;Write
 cloudfront:CreateMonitoringSubscription;Write
 cloudfront:CreateOriginAccessControl;Write
 cloudfront:CreateOriginRequestPolicy;Write
@@ -26,6 +27,7 @@ cloudfront:DeleteFieldLevelEncryptionConfig;Write
 cloudfront:DeleteFieldLevelEncryptionProfile;Write
 cloudfront:DeleteFunction;Write
 cloudfront:DeleteKeyGroup;Write
+cloudfront:DeleteKeyValueStore;Write
 cloudfront:DeleteMonitoringSubscription;Write
 cloudfront:DeleteOriginAccessControl;Write
 cloudfront:DeleteOriginRequestPolicy;Write
@@ -34,6 +36,7 @@ cloudfront:DeleteRealtimeLogConfig;Write
 cloudfront:DeleteResponseHeadersPolicy;Write
 cloudfront:DeleteStreamingDistribution;Write
 cloudfront:DescribeFunction;Read
+cloudfront:DescribeKeyValueStore;Read
 cloudfront:GetCachePolicy;Read
 cloudfront:GetCachePolicyConfig;Read
 cloudfront:GetCloudFrontOriginAccessIdentity;Read
@@ -80,6 +83,7 @@ cloudfront:ListFieldLevelEncryptionProfiles;List
 cloudfront:ListFunctions;List
 cloudfront:ListInvalidations;List
 cloudfront:ListKeyGroups;List
+cloudfront:ListKeyValueStores;List
 cloudfront:ListOriginAccessControls;List
 cloudfront:ListOriginRequestPolicies;List
 cloudfront:ListPublicKeys;List
@@ -98,11 +102,11 @@ cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write
 cloudfront:UpdateContinuousDeploymentPolicy;Write
 cloudfront:UpdateDistribution;Write
-cloudfront:UpdateDistributionWithStagingConfig;Write
 cloudfront:UpdateFieldLevelEncryptionConfig;Write
 cloudfront:UpdateFieldLevelEncryptionProfile;Write
 cloudfront:UpdateFunction;Write
 cloudfront:UpdateKeyGroup;Write
+cloudfront:UpdateKeyValueStore;Write
 cloudfront:UpdateOriginAccessControl;Write
 cloudfront:UpdateOriginRequestPolicy;Write
 cloudfront:UpdatePublicKey;Write

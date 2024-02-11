@@ -1,6 +1,7 @@
 personalize:CreateBatchInferenceJob;Write
 personalize:CreateBatchSegmentJob;Write
 personalize:CreateCampaign;Write
+personalize:CreateDataInsightsJob;Write
 personalize:CreateDataset;Write
 personalize:CreateDatasetExportJob;Write
 personalize:CreateDatasetGroup;Write
@@ -25,6 +26,7 @@ personalize:DescribeAlgorithm;Read
 personalize:DescribeBatchInferenceJob;Read
 personalize:DescribeBatchSegmentJob;Read
 personalize:DescribeCampaign;Read
+personalize:DescribeDataInsightsJob;Read
 personalize:DescribeDataset;Read
 personalize:DescribeDatasetExportJob;Read
 personalize:DescribeDatasetGroup;Read
@@ -38,12 +40,15 @@ personalize:DescribeRecommender;Read
 personalize:DescribeSchema;Read
 personalize:DescribeSolution;Read
 personalize:DescribeSolutionVersion;Read
+personalize:GetActionRecommendations;Read
+personalize:GetDataInsights;Read
 personalize:GetPersonalizedRanking;Read
 personalize:GetRecommendations;Read
 personalize:GetSolutionMetrics;Read
 personalize:ListBatchInferenceJobs;List
 personalize:ListBatchSegmentJobs;List
 personalize:ListCampaigns;List
+personalize:ListDataInsightsJobs;List
 personalize:ListDatasetExportJobs;List
 personalize:ListDatasetGroups;List
 personalize:ListDatasetImportJobs;List
@@ -58,6 +63,8 @@ personalize:ListSchemas;List
 personalize:ListSolutionVersions;List
 personalize:ListSolutions;List
 personalize:ListTagsForResource;List
+personalize:PutActionInteractions;Write
+personalize:PutActions;Write
 personalize:PutEvents;Write
 personalize:PutItems;Write
 personalize:PutUsers;Write
@@ -67,5 +74,6 @@ personalize:StopSolutionVersionCreation;Write
 personalize:TagResource;Tagging
 personalize:UntagResource;Tagging
 personalize:UpdateCampaign;Write
+personalize:UpdateDataset;Write
 personalize:UpdateMetricAttribution;Write
 personalize:UpdateRecommender;Write

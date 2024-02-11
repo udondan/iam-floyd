@@ -1,0 +1,4 @@
+customer-verification:CreateCustomerVerificationDetails;Write
+customer-verification:GetCustomerVerificationDetails;Read
+customer-verification:GetCustomerVerificationEligibility;Read
+customer-verification:UpdateCustomerVerificationDetails;Write

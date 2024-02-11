@@ -1,3 +1,7 @@
+logs:anomaly-detector
+logs:delivery
+logs:delivery-destination
+logs:delivery-source
 logs:destination
 logs:log-group
 logs:log-stream

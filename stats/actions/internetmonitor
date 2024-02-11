@@ -2,9 +2,13 @@ internetmonitor:CreateMonitor;Write
 internetmonitor:DeleteMonitor;Write
 internetmonitor:GetHealthEvent;Read
 internetmonitor:GetMonitor;Read
+internetmonitor:GetQueryResults;Read
+internetmonitor:GetQueryStatus;Read
 internetmonitor:ListHealthEvents;List
 internetmonitor:ListMonitors;List
 internetmonitor:ListTagsForResource;Read
+internetmonitor:StartQuery;Read
+internetmonitor:StopQuery;Read
 internetmonitor:TagResource;Tagging
 internetmonitor:UntagResource;Tagging
 internetmonitor:UpdateMonitor;Write

@@ -26,6 +26,9 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html
    */
@@ -38,6 +41,11 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityGroup()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ApplySecurityGroupsToLoadBalancer.html
    */
   public toApplySecurityGroupsToLoadBalancer() {
@@ -48,6 +56,11 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to add one or more subnets to the set of configured subnets for the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSubnet()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AttachLoadBalancerToSubnets.html
    */
@@ -60,6 +73,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html
    */
   public toConfigureHealthCheck() {
@@ -71,6 +88,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateAppCookieStickinessPolicy.html
    */
   public toCreateAppCookieStickinessPolicy() {
@@ -81,6 +102,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to generate a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLBCookieStickinessPolicy.html
    */
@@ -96,6 +121,15 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityGroup()
+   * - .ifSubnet()
+   * - .ifScheme()
+   * - .ifListenerProtocol()
+   *
+   * Dependent actions:
+   * - elasticloadbalancing:AddTags
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancer.html
    */
@@ -108,6 +142,11 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifListenerProtocol()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerListeners.html
    */
   public toCreateLoadBalancerListeners() {
@@ -118,6 +157,11 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to create a policy with the specified attributes for the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityPolicy()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerPolicy.html
    */
@@ -130,6 +174,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancer.html
    */
   public toDeleteLoadBalancer() {
@@ -140,6 +188,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to delete the specified listeners from the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerListeners.html
    */
@@ -152,6 +204,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerPolicy.html
    */
   public toDeleteLoadBalancerPolicy() {
@@ -162,6 +218,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to deregister the specified instances from the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeregisterInstancesFromLoadBalancer.html
    */
@@ -240,6 +300,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DetachLoadBalancerFromSubnets.html
    */
   public toDetachLoadBalancerFromSubnets() {
@@ -250,6 +314,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to remove the specified Availability Zones from the set of Availability Zones for the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DisableAvailabilityZonesForLoadBalancer.html
    */
@@ -262,6 +330,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_EnableAvailabilityZonesForLoadBalancer.html
    */
   public toEnableAvailabilityZonesForLoadBalancer() {
@@ -273,6 +345,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ModifyLoadBalancerAttributes.html
    */
   public toModifyLoadBalancerAttributes() {
@@ -283,6 +359,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to add the specified instances to the specified load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RegisterInstancesWithLoadBalancer.html
    */
@@ -298,6 +378,8 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RemoveTags.html
    */
@@ -310,6 +392,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerListenerSSLCertificate.html
    */
   public toSetLoadBalancerListenerSSLCertificate() {
@@ -321,6 +407,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesForBackendServer.html
    */
   public toSetLoadBalancerPoliciesForBackendServer() {
@@ -331,6 +421,11 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Grants permission to replace the current set of policies for the specified load balancer port with the specified set of policies
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   * - .ifSecurityPolicy()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesOfListener.html
    */
@@ -396,6 +491,112 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateLoadBalancer()
+   * - .toRemoveTags()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toApplySecurityGroupsToLoadBalancer()
+   * - .toAttachLoadBalancerToSubnets()
+   * - .toConfigureHealthCheck()
+   * - .toCreateAppCookieStickinessPolicy()
+   * - .toCreateLBCookieStickinessPolicy()
+   * - .toCreateLoadBalancer()
+   * - .toCreateLoadBalancerListeners()
+   * - .toCreateLoadBalancerPolicy()
+   * - .toDeleteLoadBalancer()
+   * - .toDeleteLoadBalancerListeners()
+   * - .toDeleteLoadBalancerPolicy()
+   * - .toDeregisterInstancesFromLoadBalancer()
+   * - .toDetachLoadBalancerFromSubnets()
+   * - .toDisableAvailabilityZonesForLoadBalancer()
+   * - .toEnableAvailabilityZonesForLoadBalancer()
+   * - .toModifyLoadBalancerAttributes()
+   * - .toRegisterInstancesWithLoadBalancer()
+   * - .toRemoveTags()
+   * - .toSetLoadBalancerListenerSSLCertificate()
+   * - .toSetLoadBalancerPoliciesForBackendServer()
+   * - .toSetLoadBalancerPoliciesOfListener()
+   *
+   * Applies to resource types:
+   * - loadbalancer
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateLoadBalancer()
+   * - .toRemoveTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/tagging-resources-during-creation.html
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the listener protocols that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#listenerprotocol-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancer()
+   * - .toCreateLoadBalancerListeners()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifListenerProtocol(value: string | string[], operator?: Operator | string) {
+    return this.if(`ListenerProtocol`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the preface string for a tag key and value pair that are attached to a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
@@ -412,6 +613,30 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toApplySecurityGroupsToLoadBalancer()
+   * - .toAttachLoadBalancerToSubnets()
+   * - .toConfigureHealthCheck()
+   * - .toCreateAppCookieStickinessPolicy()
+   * - .toCreateLBCookieStickinessPolicy()
+   * - .toCreateLoadBalancer()
+   * - .toCreateLoadBalancerListeners()
+   * - .toCreateLoadBalancerPolicy()
+   * - .toDeleteLoadBalancer()
+   * - .toDeleteLoadBalancerListeners()
+   * - .toDeleteLoadBalancerPolicy()
+   * - .toDeregisterInstancesFromLoadBalancer()
+   * - .toDetachLoadBalancerFromSubnets()
+   * - .toDisableAvailabilityZonesForLoadBalancer()
+   * - .toEnableAvailabilityZonesForLoadBalancer()
+   * - .toModifyLoadBalancerAttributes()
+   * - .toRegisterInstancesWithLoadBalancer()
+   * - .toRemoveTags()
+   * - .toSetLoadBalancerListenerSSLCertificate()
+   * - .toSetLoadBalancerPoliciesForBackendServer()
+   * - .toSetLoadBalancerPoliciesOfListener()
+   *
    * Applies to resource types:
    * - loadbalancer
    *
@@ -421,5 +646,68 @@ export class Elasticloadbalancing extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the load balancer scheme that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#scheme-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScheme(value: string | string[], operator?: Operator | string) {
+    return this.if(`Scheme`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the security-group IDs that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitygroup-condition
+   *
+   * Applies to actions:
+   * - .toApplySecurityGroupsToLoadBalancer()
+   * - .toCreateLoadBalancer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityGroup`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the SSL Security Policies that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitypolicy-condition
+   *
+   * Applies to actions:
+   * - .toCreateLoadBalancerPolicy()
+   * - .toSetLoadBalancerPoliciesOfListener()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityPolicy(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityPolicy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the subnet IDs that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#subnet-condition
+   *
+   * Applies to actions:
+   * - .toAttachLoadBalancerToSubnets()
+   * - .toCreateLoadBalancer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnet(value: string | string[], operator?: Operator | string) {
+    return this.if(`Subnet`, value, operator || 'StringLike');
   }
 }

@@ -28,6 +28,7 @@ deepracer:GetTrack;Read
 deepracer:GetTrainingJob;Read
 deepracer:ImportModel;Write
 deepracer:ListEvaluations;Read
+deepracer:ListLeaderboardEvaluations;Read
 deepracer:ListLeaderboardSubmissions;Read
 deepracer:ListLeaderboards;Read
 deepracer:ListModels;Read

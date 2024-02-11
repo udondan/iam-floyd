@@ -1,0 +1,17 @@
+thinclient:CreateEnvironment;Write
+thinclient:DeleteDevice;Write
+thinclient:DeleteEnvironment;Write
+thinclient:DeregisterDevice;Write
+thinclient:GetDevice;Read
+thinclient:GetEnvironment;Read
+thinclient:GetSoftwareSet;Read
+thinclient:ListDeviceSessions;List
+thinclient:ListDevices;List
+thinclient:ListEnvironments;List
+thinclient:ListSoftwareSets;List
+thinclient:ListTagsForResource;List
+thinclient:TagResource;Tagging
+thinclient:UntagResource;Tagging
+thinclient:UpdateDevice;Write
+thinclient:UpdateEnvironment;Write
+thinclient:UpdateSoftwareSet;Write

@@ -1,0 +1,6 @@
+cloudfront-keyvaluestore:DeleteKey;Write
+cloudfront-keyvaluestore:DescribeKeyValueStore;Read
+cloudfront-keyvaluestore:GetKey;Read
+cloudfront-keyvaluestore:ListKeys;List
+cloudfront-keyvaluestore:PutKey;Write
+cloudfront-keyvaluestore:UpdateKeys;Write

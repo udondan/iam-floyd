@@ -34,6 +34,40 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a practice run configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * Dependent actions:
+   * - cloudwatch:DescribeAlarms
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CreatePracticeRunConfiguration.html
+   */
+  public toCreatePracticeRunConfiguration() {
+    return this.to('CreatePracticeRunConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a practice run configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_DeletePracticeRunConfiguration.html
+   */
+  public toDeletePracticeRunConfiguration() {
+    return this.to('DeletePracticeRunConfiguration');
+  }
+
+  /**
    * Grants permission to get information about a managed resource
    *
    * Access Level: Read
@@ -46,6 +80,17 @@ export class ArcZonalShift extends PolicyStatement {
    */
   public toGetManagedResource() {
     return this.to('GetManagedResource');
+  }
+
+  /**
+   * Grants permission to list active and completed autoshifts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html
+   */
+  public toListAutoshifts() {
+    return this.to('ListAutoshifts');
   }
 
   /**
@@ -86,6 +131,40 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a practice run configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * Dependent actions:
+   * - cloudwatch:DescribeAlarms
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdatePracticeRunConfiguration.html
+   */
+  public toUpdatePracticeRunConfiguration() {
+    return this.to('UpdatePracticeRunConfiguration');
+  }
+
+  /**
+   * Grants permission to update a zonal autoshift status
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateZonalAutoshiftConfiguration.html
+   */
+  public toUpdateZonalAutoshiftConfiguration() {
+    return this.to('UpdateZonalAutoshiftConfiguration');
+  }
+
+  /**
    * Grants permission to update an existing zonal shift
    *
    * Access Level: Write
@@ -103,13 +182,18 @@ export class ArcZonalShift extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelZonalShift',
+      'CreatePracticeRunConfiguration',
+      'DeletePracticeRunConfiguration',
       'StartZonalShift',
+      'UpdatePracticeRunConfiguration',
+      'UpdateZonalAutoshiftConfiguration',
       'UpdateZonalShift'
     ],
     Read: [
       'GetManagedResource'
     ],
     List: [
+      'ListAutoshifts',
       'ListManagedResources',
       'ListZonalShifts'
     ]
@@ -160,8 +244,39 @@ export class ArcZonalShift extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCancelZonalShift()
+   * - .toCreatePracticeRunConfiguration()
+   * - .toDeletePracticeRunConfiguration()
    * - .toGetManagedResource()
    * - .toStartZonalShift()
+   * - .toUpdatePracticeRunConfiguration()
+   * - .toUpdateZonalAutoshiftConfiguration()
+   * - .toUpdateZonalShift()
+   *
+   * Applies to resource types:
+   * - ALB
+   * - NLB
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the managed resource
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys
+   *
+   * Applies to actions:
+   * - .toCancelZonalShift()
+   * - .toCreatePracticeRunConfiguration()
+   * - .toDeletePracticeRunConfiguration()
+   * - .toGetManagedResource()
+   * - .toStartZonalShift()
+   * - .toUpdatePracticeRunConfiguration()
+   * - .toUpdateZonalAutoshiftConfiguration()
    * - .toUpdateZonalShift()
    *
    * Applies to resource types:

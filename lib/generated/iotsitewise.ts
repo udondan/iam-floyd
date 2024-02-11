@@ -152,6 +152,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an asset model composite model inside an asset model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html
+   */
+  public toCreateAssetModelCompositeModel() {
+    return this.to('CreateAssetModelCompositeModel');
+  }
+
+  /**
    * Grants permission to create bulk import job
    *
    * Access Level: Write
@@ -260,6 +271,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an asset model composite model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelCompositeModel.html
+   */
+  public toDeleteAssetModelCompositeModel() {
+    return this.to('DeleteAssetModelCompositeModel');
+  }
+
+  /**
    * Grants permission to delete a dashboard
    *
    * Access Level: Write
@@ -329,6 +351,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAction.html
+   */
+  public toDescribeAction() {
+    return this.to('DescribeAction');
+  }
+
+  /**
    * Grants permission to describe an asset
    *
    * Access Level: Read
@@ -340,6 +373,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an asset composite model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetCompositeModel.html
+   */
+  public toDescribeAssetCompositeModel() {
+    return this.to('DescribeAssetCompositeModel');
+  }
+
+  /**
    * Grants permission to describe an asset model
    *
    * Access Level: Read
@@ -348,6 +392,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeAssetModel() {
     return this.to('DescribeAssetModel');
+  }
+
+  /**
+   * Grants permission to describe an asset model composite model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html
+   */
+  public toDescribeAssetModelCompositeModel() {
+    return this.to('DescribeAssetModelCompositeModel');
   }
 
   /**
@@ -498,6 +553,37 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow IoT SiteWise integrate with other services
+   *
+   * Access Level: Write
+   */
+  public toEnableSiteWiseIntegration() {
+    return this.to('EnableSiteWiseIntegration');
+  }
+
+  /**
+   * Grants permission to execute actions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ExecuteAction.html
+   */
+  public toExecuteAction() {
+    return this.to('ExecuteAction');
+  }
+
+  /**
+   * Grants permission to execute query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ExecuteQuery.html
+   */
+  public toExecuteQuery() {
+    return this.to('ExecuteQuery');
+  }
+
+  /**
    * Grants permission to retrieve computed aggregates for an asset property
    *
    * Access Level: Read
@@ -550,6 +636,28 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListAccessPolicies() {
     return this.to('ListAccessPolicies');
+  }
+
+  /**
+   * Grants permission to list all actions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListActions.html
+   */
+  public toListActions() {
+    return this.to('ListActions');
+  }
+
+  /**
+   * Grants permission to list all asset model composite models
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModelCompositeModels.html
+   */
+  public toListAssetModelCompositeModels() {
+    return this.to('ListAssetModelCompositeModels');
   }
 
   /**
@@ -627,6 +735,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListBulkImportJobs() {
     return this.to('ListBulkImportJobs');
+  }
+
+  /**
+   * Grants permission to list all asset model composition relationships
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListCompositionRelationships.html
+   */
+  public toListCompositionRelationships() {
+    return this.to('ListCompositionRelationships');
   }
 
   /**
@@ -805,6 +924,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update asset model composite model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModelCompositeModel.html
+   */
+  public toUpdateAssetModelCompositeModel() {
+    return this.to('UpdateAssetModelCompositeModel');
+  }
+
+  /**
    * Grants permission to update an AssetModel property routing
    *
    * Access Level: Write
@@ -889,6 +1019,7 @@ export class Iotsitewise extends PolicyStatement {
       'CreateAccessPolicy',
       'CreateAsset',
       'CreateAssetModel',
+      'CreateAssetModelCompositeModel',
       'CreateBulkImportJob',
       'CreateDashboard',
       'CreateGateway',
@@ -897,6 +1028,7 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteAccessPolicy',
       'DeleteAsset',
       'DeleteAssetModel',
+      'DeleteAssetModelCompositeModel',
       'DeleteDashboard',
       'DeleteGateway',
       'DeletePortal',
@@ -904,12 +1036,15 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteTimeSeries',
       'DisassociateAssets',
       'DisassociateTimeSeriesFromAssetProperty',
+      'EnableSiteWiseIntegration',
+      'ExecuteAction',
       'PutDefaultEncryptionConfiguration',
       'PutLoggingOptions',
       'PutStorageConfiguration',
       'UpdateAccessPolicy',
       'UpdateAsset',
       'UpdateAssetModel',
+      'UpdateAssetModelCompositeModel',
       'UpdateAssetModelPropertyRouting',
       'UpdateAssetProperty',
       'UpdateDashboard',
@@ -923,8 +1058,11 @@ export class Iotsitewise extends PolicyStatement {
       'BatchGetAssetPropertyValue',
       'BatchGetAssetPropertyValueHistory',
       'DescribeAccessPolicy',
+      'DescribeAction',
       'DescribeAsset',
+      'DescribeAssetCompositeModel',
       'DescribeAssetModel',
+      'DescribeAssetModelCompositeModel',
       'DescribeAssetProperty',
       'DescribeBulkImportJob',
       'DescribeDashboard',
@@ -936,6 +1074,7 @@ export class Iotsitewise extends PolicyStatement {
       'DescribeProject',
       'DescribeStorageConfiguration',
       'DescribeTimeSeries',
+      'ExecuteQuery',
       'GetAssetPropertyAggregates',
       'GetAssetPropertyValue',
       'GetAssetPropertyValueHistory',
@@ -944,6 +1083,8 @@ export class Iotsitewise extends PolicyStatement {
     ],
     List: [
       'ListAccessPolicies',
+      'ListActions',
+      'ListAssetModelCompositeModels',
       'ListAssetModelProperties',
       'ListAssetModels',
       'ListAssetProperties',
@@ -951,6 +1092,7 @@ export class Iotsitewise extends PolicyStatement {
       'ListAssets',
       'ListAssociatedAssets',
       'ListBulkImportJobs',
+      'ListCompositionRelationships',
       'ListDashboards',
       'ListGateways',
       'ListPortals',
@@ -1098,6 +1240,80 @@ export class Iotsitewise extends PolicyStatement {
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Iotsitewise.defaultPartition }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAccessPolicy()
+   * - .toCreateAsset()
+   * - .toCreateAssetModel()
+   * - .toCreateDashboard()
+   * - .toCreateGateway()
+   * - .toCreatePortal()
+   * - .toCreateProject()
+   * - .toDescribeTimeSeries()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   *
+   * Applies to resource types:
+   * - asset
+   * - asset-model
+   * - time-series
+   * - gateway
+   * - portal
+   * - project
+   * - dashboard
+   * - access-policy
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAccessPolicy()
+   * - .toCreateAsset()
+   * - .toCreateAssetModel()
+   * - .toCreateDashboard()
+   * - .toCreateGateway()
+   * - .toCreatePortal()
+   * - .toCreateProject()
+   * - .toDescribeTimeSeries()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

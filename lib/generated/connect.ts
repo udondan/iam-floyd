@@ -19,6 +19,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to activate an evaluation form in the specified Amazon Connect instance. After the evaluation form is activated, it is available to start new evaluations based on the form
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ActivateEvaluationForm.html
+   */
+  public toActivateEvaluationForm() {
+    return this.to('ActivateEvaluationForm');
+  }
+
+  /**
    * Grants permission to associate approved origin for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -82,6 +96,21 @@ export class Connect extends PolicyStatement {
    */
   public toAssociateDefaultVocabulary() {
     return this.to('AssociateDefaultVocabulary');
+  }
+
+  /**
+   * Grants permission to associate a resource with a flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateFlow.html
+   */
+  public toAssociateFlow() {
+    return this.to('AssociateFlow');
   }
 
   /**
@@ -208,6 +237,40 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a user to a traffic distribution group in the specified Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifAwsResourceTag()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeUser
+   * - connect:SearchUsers
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateTrafficDistributionGroupUser.html
+   */
+  public toAssociateTrafficDistributionGroupUser() {
+    return this.to('AssociateTrafficDistributionGroupUser');
+  }
+
+  /**
+   * Grants permission to associate user proficiencies to a user in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateUserProficiencies.html
+   */
+  public toAssociateUserProficiencies() {
+    return this.to('AssociateUserProficiencies');
+  }
+
+  /**
    * Grants permission to grant access and to associate the datasets with the specified AWS account
    *
    * Access Level: Write
@@ -236,6 +299,35 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get summary information about the flow associations for the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchGetFlowAssociation.html
+   */
+  public toBatchGetFlowAssociation() {
+    return this.to('BatchGetFlowAssociation');
+  }
+
+  /**
+   * Grants permission to put contacts in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchPutContact.html
+   */
+  public toBatchPutContact() {
+    return this.to('BatchPutContact');
+  }
+
+  /**
    * Grants permission to claim phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
@@ -243,6 +335,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html
    */
@@ -296,6 +389,20 @@ export class Connect extends PolicyStatement {
    */
   public toCreateContactFlowModule() {
     return this.to('CreateContactFlowModule');
+  }
+
+  /**
+   * Grants permission to create an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEvaluationForm.html
+   */
+  public toCreateEvaluationForm() {
+    return this.to('CreateEvaluationForm');
   }
 
   /**
@@ -353,7 +460,9 @@ export class Connect extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - app-integrations:CreateApplicationAssociation
    * - app-integrations:CreateEventIntegrationAssociation
+   * - app-integrations:GetApplication
    * - cases:GetDomain
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
@@ -366,11 +475,75 @@ export class Connect extends PolicyStatement {
    * - voiceid:DescribeDomain
    * - wisdom:GetAssistant
    * - wisdom:GetKnowledgeBase
+   * - wisdom:TagResource
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html
    */
   public toCreateIntegrationAssociation() {
     return this.to('CreateIntegrationAssociation');
+  }
+
+  /**
+   * Grants permission to add a participant to an ongoing contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html
+   */
+  public toCreateParticipant() {
+    return this.to('CreateParticipant');
+  }
+
+  /**
+   * Grants permission to create persistent contact associations for a contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePersistentContactAssociation.html
+   */
+  public toCreatePersistentContactAssociation() {
+    return this.to('CreatePersistentContactAssociation');
+  }
+
+  /**
+   * Grants permission to create a predefined attribute in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePredefinedAttribute.html
+   */
+  public toCreatePredefinedAttribute() {
+    return this.to('CreatePredefinedAttribute');
+  }
+
+  /**
+   * Grants permission to create a prompt in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - s3:GetObject
+   * - s3:GetObjectAcl
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePrompt.html
+   */
+  public toCreatePrompt() {
+    return this.to('CreatePrompt');
   }
 
   /**
@@ -531,6 +704,37 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a view in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateView.html
+   */
+  public toCreateView() {
+    return this.to('CreateView');
+  }
+
+  /**
+   * Grants permission to create a view version in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateViewVersion.html
+   */
+  public toCreateViewVersion() {
+    return this.to('CreateViewVersion');
+  }
+
+  /**
    * Grants permission to create a vocabulary in an Amazon Connect instance
    *
    * Access Level: Write
@@ -544,6 +748,35 @@ export class Connect extends PolicyStatement {
    */
   public toCreateVocabulary() {
     return this.to('CreateVocabulary');
+  }
+
+  /**
+   * Grants permission to deactivate an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeactivateEvaluationForm.html
+   */
+  public toDeactivateEvaluationForm() {
+    return this.to('DeactivateEvaluationForm');
+  }
+
+  /**
+   * Grants permission to delete a contact evaluation in the specified Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactEvaluation.html
+   */
+  public toDeleteContactEvaluation() {
+    return this.to('DeleteContactEvaluation');
   }
 
   /**
@@ -574,6 +807,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteContactFlowModule() {
     return this.to('DeleteContactFlowModule');
+  }
+
+  /**
+   * Grants permission to delete an evaluation form in the specified Amazon Connect instance. If the version property is provided, only the specified version of the evaluation form is deleted
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEvaluationForm.html
+   */
+  public toDeleteEvaluationForm() {
+    return this.to('DeleteEvaluationForm');
   }
 
   /**
@@ -620,6 +868,7 @@ export class Connect extends PolicyStatement {
    * - .ifInstanceId()
    *
    * Dependent actions:
+   * - app-integrations:DeleteApplicationAssociation
    * - app-integrations:DeleteEventIntegrationAssociation
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
@@ -631,6 +880,50 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteIntegrationAssociation() {
     return this.to('DeleteIntegrationAssociation');
+  }
+
+  /**
+   * Grants permission to delete a predefined attribute in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePredefinedAttribute.html
+   */
+  public toDeletePredefinedAttribute() {
+    return this.to('DeletePredefinedAttribute');
+  }
+
+  /**
+   * Grants permission to delete a prompt in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePrompt.html
+   */
+  public toDeletePrompt() {
+    return this.to('DeletePrompt');
+  }
+
+  /**
+   * Grants permission to delete a queue in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQueue.html
+   */
+  public toDeleteQueue() {
+    return this.to('DeleteQueue');
   }
 
   /**
@@ -646,6 +939,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteQuickConnect() {
     return this.to('DeleteQuickConnect');
+  }
+
+  /**
+   * Grants permission to delete routing profiles in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteRoutingProfile.html
+   */
+  public toDeleteRoutingProfile() {
+    return this.to('DeleteRoutingProfile');
   }
 
   /**
@@ -755,6 +1063,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a view in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteView.html
+   */
+  public toDeleteView() {
+    return this.to('DeleteView');
+  }
+
+  /**
+   * Grants permission to delete a view version in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteViewVersion.html
+   */
+  public toDeleteViewVersion() {
+    return this.to('DeleteViewVersion');
+  }
+
+  /**
    * Grants permission to delete a vocabulary in an Amazon Connect instance
    *
    * Access Level: Write
@@ -799,6 +1137,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a contact evaluation in the specified Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactEvaluation.html
+   */
+  public toDescribeContactEvaluation() {
+    return this.to('DescribeContactEvaluation');
+  }
+
+  /**
    * Grants permission to describe a contact flow in an Amazon Connect instance
    *
    * Access Level: Read
@@ -826,6 +1179,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeContactFlowModule() {
     return this.to('DescribeContactFlowModule');
+  }
+
+  /**
+   * Grants permission to describe an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEvaluationForm.html
+   */
+  public toDescribeEvaluationForm() {
+    return this.to('DescribeEvaluationForm');
   }
 
   /**
@@ -917,6 +1285,35 @@ export class Connect extends PolicyStatement {
    */
   public toDescribePhoneNumber() {
     return this.to('DescribePhoneNumber');
+  }
+
+  /**
+   * Grants permission to describe a predefined attribute in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePredefinedAttribute.html
+   */
+  public toDescribePredefinedAttribute() {
+    return this.to('DescribePredefinedAttribute');
+  }
+
+  /**
+   * Grants permission to describe a prompt in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePrompt.html
+   */
+  public toDescribePrompt() {
+    return this.to('DescribePrompt');
   }
 
   /**
@@ -1052,6 +1449,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a view in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeView.html
+   */
+  public toDescribeView() {
+    return this.to('DescribeView');
+  }
+
+  /**
    * Grants permission to describe a vocabulary in an Amazon Connect instance
    *
    * Access Level: Read
@@ -1118,6 +1530,21 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateCustomerProfilesDomain() {
     return this.to('DisassociateCustomerProfilesDomain');
+  }
+
+  /**
+   * Grants permission to disassociate a resource from a flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateFlow.html
+   */
+  public toDisassociateFlow() {
+    return this.to('DisassociateFlow');
   }
 
   /**
@@ -1231,6 +1658,35 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a user from a traffic distribution group in the specified Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateTrafficDistributionGroupUser.html
+   */
+  public toDisassociateTrafficDistributionGroupUser() {
+    return this.to('DisassociateTrafficDistributionGroupUser');
+  }
+
+  /**
+   * Grants permission to disassociate user proficiencies from a user in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateUserProficiencies.html
+   */
+  public toDisassociateUserProficiencies() {
+    return this.to('DisassociateUserProficiencies');
+  }
+
+  /**
    * Grants permission to dismiss terminated Contact from Agent CCP
    *
    * Access Level: Write
@@ -1265,6 +1721,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
@@ -1279,6 +1736,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentUserData.html
@@ -1311,10 +1769,25 @@ export class Connect extends PolicyStatement {
    * - connect:ListInstances
    * - ds:DescribeDirectories
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/emergency-admin-login.html
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationTokens() {
     return this.to('GetFederationTokens');
+  }
+
+  /**
+   * Grants permission to get information about the flow associations for the specified Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFlowAssociation.html
+   */
+  public toGetFlowAssociation() {
+    return this.to('GetFlowAssociation');
   }
 
   /**
@@ -1323,6 +1796,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
@@ -1336,10 +1810,29 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html
    */
   public toGetMetricDataV2() {
     return this.to('GetMetricDataV2');
+  }
+
+  /**
+   * Grants permission to get details about a prompt's presigned Amazon S3 URL in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html
+   */
+  public toGetPromptFile() {
+    return this.to('GetPromptFile');
   }
 
   /**
@@ -1369,6 +1862,24 @@ export class Connect extends PolicyStatement {
    */
   public toGetTrafficDistribution() {
     return this.to('GetTrafficDistribution');
+  }
+
+  /**
+   * Grants permission to import phone number resources to an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:DescribePhoneNumbers
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ImportPhoneNumber.html
+   */
+  public toImportPhoneNumber() {
+    return this.to('ImportPhoneNumber');
   }
 
   /**
@@ -1408,6 +1919,20 @@ export class Connect extends PolicyStatement {
    */
   public toListBots() {
     return this.to('ListBots');
+  }
+
+  /**
+   * Grants permission to list contact evaluations in the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactEvaluations.html
+   */
+  public toListContactEvaluations() {
+    return this.to('ListContactEvaluations');
   }
 
   /**
@@ -1458,6 +1983,48 @@ export class Connect extends PolicyStatement {
    */
   public toListDefaultVocabularies() {
     return this.to('ListDefaultVocabularies');
+  }
+
+  /**
+   * Grants permission to list versions of an evaluation form in the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationFormVersions.html
+   */
+  public toListEvaluationFormVersions() {
+    return this.to('ListEvaluationFormVersions');
+  }
+
+  /**
+   * Grants permission to list evaluation forms in the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationForms.html
+   */
+  public toListEvaluationForms() {
+    return this.to('ListEvaluationForms');
+  }
+
+  /**
+   * Grants permission to list summary information about the flow associations for the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListFlowAssociations.html
+   */
+  public toListFlowAssociations() {
+    return this.to('ListFlowAssociations');
   }
 
   /**
@@ -1585,6 +2152,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list predefined attributes in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPredefinedAttributes.html
+   */
+  public toListPredefinedAttributes() {
+    return this.to('ListPredefinedAttributes');
+  }
+
+  /**
    * Grants permission to list prompt resources in an Amazon Connect instance
    *
    * Access Level: List
@@ -1647,6 +2228,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the analysis segments for a real-time chat analytics session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRealtimeContactAnalysisSegmentsV2.html
+   */
+  public toListRealtimeContactAnalysisSegmentsV2() {
+    return this.to('ListRealtimeContactAnalysisSegmentsV2');
+  }
+
+  /**
    * Grants permission to list queue resources in a routing profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -1704,6 +2296,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list applications associated with a specific security profile in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfileApplications.html
+   */
+  public toListSecurityProfileApplications() {
+    return this.to('ListSecurityProfileApplications');
+  }
+
+  /**
    * Grants permission to list permissions associated with security profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -1758,6 +2365,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the active user associations for a traffic distribution group
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTrafficDistributionGroupUsers.html
+   */
+  public toListTrafficDistributionGroupUsers() {
+    return this.to('ListTrafficDistributionGroupUsers');
+  }
+
+  /**
    * Grants permission to list traffic distribution groups
    *
    * Access Level: List
@@ -1801,6 +2422,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list user proficiencies from a user in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserProficiencies.html
+   */
+  public toListUserProficiencies() {
+    return this.to('ListUserProficiencies');
+  }
+
+  /**
    * Grants permission to list user resources in an Amazon Connect instance
    *
    * Access Level: List
@@ -1812,6 +2447,35 @@ export class Connect extends PolicyStatement {
    */
   public toListUsers() {
     return this.to('ListUsers');
+  }
+
+  /**
+   * Grants permission to list the view versions in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListViewVersions.html
+   */
+  public toListViewVersions() {
+    return this.to('ListViewVersions');
+  }
+
+  /**
+   * Grants permission to list the views in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListViews.html
+   */
+  public toListViews() {
+    return this.to('ListViews');
   }
 
   /**
@@ -1828,6 +2492,21 @@ export class Connect extends PolicyStatement {
    */
   public toMonitorContact() {
     return this.to('MonitorContact');
+  }
+
+  /**
+   * Grants permission to pause an ongoing contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_PauseContact.html
+   */
+  public toPauseContact() {
+    return this.to('PauseContact');
   }
 
   /**
@@ -1867,6 +2546,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:AuthorizeApplication
@@ -1885,6 +2565,21 @@ export class Connect extends PolicyStatement {
    */
   public toReplicateInstance() {
     return this.to('ReplicateInstance');
+  }
+
+  /**
+   * Grants permission to resume a paused contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContact.html
+   */
+  public toResumeContact() {
+    return this.to('ResumeContact');
   }
 
   /**
@@ -1910,6 +2605,77 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search contacts in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchContactsByContactAnalysis()
+   *
+   * Dependent actions:
+   * - connect:DescribeContact
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContacts.html
+   */
+  public toSearchContacts() {
+    return this.to('SearchContacts');
+  }
+
+  /**
+   * Grants permission to search hours of operation resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeHoursOfOperation
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperations.html
+   */
+  public toSearchHoursOfOperations() {
+    return this.to('SearchHoursOfOperations');
+  }
+
+  /**
+   * Grants permission to search predefined attributes in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * Dependent actions:
+   * - connect:DescribePredefinedAttribute
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPredefinedAttributes.html
+   */
+  public toSearchPredefinedAttributes() {
+    return this.to('SearchPredefinedAttributes');
+  }
+
+  /**
+   * Grants permission to search prompt resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribePrompt
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPrompts.html
+   */
+  public toSearchPrompts() {
+    return this.to('SearchPrompts');
+  }
+
+  /**
    * Grants permission to search queue resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -1925,6 +2691,39 @@ export class Connect extends PolicyStatement {
    */
   public toSearchQueues() {
     return this.to('SearchQueues');
+  }
+
+  /**
+   * Grants permission to search quick connect resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeQuickConnect
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchQuickConnects.html
+   */
+  public toSearchQuickConnects() {
+    return this.to('SearchQuickConnects');
+  }
+
+  /**
+   * Grants permission to search tags that are used in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchResourceTags.html
+   */
+  public toSearchResourceTags() {
+    return this.to('SearchResourceTags');
   }
 
   /**
@@ -1996,6 +2795,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send chat integration events using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendChatIntegrationEvent.html
+   */
+  public toSendChatIntegrationEvent() {
+    return this.to('SendChatIntegrationEvent');
+  }
+
+  /**
    * Grants permission to initiate a chat using the Amazon Connect API
    *
    * Access Level: Write
@@ -2007,6 +2817,20 @@ export class Connect extends PolicyStatement {
    */
   public toStartChatContact() {
     return this.to('StartChatContact');
+  }
+
+  /**
+   * Grants permission to start an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact. The evaluation form version used for the contact evaluation corresponds to the currently activated version. If no version is activated for the evaluation form, the contact evaluation cannot be started
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactEvaluation.html
+   */
+  public toStartContactEvaluation() {
+    return this.to('StartContactEvaluation');
   }
 
   /**
@@ -2072,6 +2896,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a WebRTC contact using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartWebRTCContact.html
+   */
+  public toStartWebRTCContact() {
+    return this.to('StartWebRTCContact');
+  }
+
+  /**
    * Grants permission to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer
    *
    * Access Level: Write
@@ -2122,6 +2960,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object ({}) to the question identifier
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SubmitContactEvaluation.html
+   */
+  public toSubmitContactEvaluation() {
+    return this.to('SubmitContactEvaluation');
+  }
+
+  /**
    * Grants permission to suspend recording for the specified contact
    *
    * Access Level: Write
@@ -2130,6 +2982,20 @@ export class Connect extends PolicyStatement {
    */
   public toSuspendContactRecording() {
     return this.to('SuspendContactRecording');
+  }
+
+  /**
+   * Grants permission to tag a contact in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagContact.html
+   */
+  public toTagContact() {
+    return this.to('TagContact');
   }
 
   /**
@@ -2159,6 +3025,20 @@ export class Connect extends PolicyStatement {
    */
   public toTransferContact() {
     return this.to('TransferContact');
+  }
+
+  /**
+   * Grants permission to untag a contact in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagContact.html
+   */
+  public toUntagContact() {
+    return this.to('UntagContact');
   }
 
   /**
@@ -2216,6 +3096,20 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateContactAttributes() {
     return this.to('UpdateContactAttributes');
+  }
+
+  /**
+   * Grants permission to update details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in the draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object ({}) to the question identifier
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactEvaluation.html
+   */
+  public toUpdateContactEvaluation() {
+    return this.to('UpdateContactEvaluation');
   }
 
   /**
@@ -2294,6 +3188,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update routing properties on a contact in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactRoutingData.html
+   */
+  public toUpdateContactRoutingData() {
+    return this.to('UpdateContactRoutingData');
+  }
+
+  /**
    * Grants permission to update the schedule of a contact that is already scheduled in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2305,6 +3213,20 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateContactSchedule() {
     return this.to('UpdateContactSchedule');
+  }
+
+  /**
+   * Grants permission to update details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEvaluationForm.html
+   */
+  public toUpdateEvaluationForm() {
+    return this.to('UpdateEvaluationForm');
   }
 
   /**
@@ -2392,11 +3314,60 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html
    */
   public toUpdatePhoneNumber() {
     return this.to('UpdatePhoneNumber');
+  }
+
+  /**
+   * Grants permission to update the metadata of a phone number resource in an Amazon Connect instance or traffic distribution group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html
+   */
+  public toUpdatePhoneNumberMetadata() {
+    return this.to('UpdatePhoneNumberMetadata');
+  }
+
+  /**
+   * Grants permission to update a predefined attribute in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePredefinedAttribute.html
+   */
+  public toUpdatePredefinedAttribute() {
+    return this.to('UpdatePredefinedAttribute');
+  }
+
+  /**
+   * Grants permission to update a prompt's name, description, and Amazon S3 URI in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - s3:GetObject
+   * - s3:GetObjectAcl
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePrompt.html
+   */
+  public toUpdatePrompt() {
+    return this.to('UpdatePrompt');
   }
 
   /**
@@ -2502,6 +3473,21 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateQuickConnectName() {
     return this.to('UpdateQuickConnectName');
+  }
+
+  /**
+   * Grants permission to update a routing profile agent availability timer in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileAgentAvailabilityTimer.html
+   */
+  public toUpdateRoutingProfileAgentAvailabilityTimer() {
+    return this.to('UpdateRoutingProfileAgentAvailabilityTimer');
   }
 
   /**
@@ -2696,6 +3682,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update user proficiencies from a user in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserProficiencies.html
+   */
+  public toUpdateUserProficiencies() {
+    return this.to('UpdateUserProficiencies');
+  }
+
+  /**
    * Grants permission to update a routing profile for a user in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2726,7 +3726,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update contact flow module content in an Amazon Connect instance
+   * Grants permission to update a view's content in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -2734,18 +3734,35 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatedescribeContent.html
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateViewContent.html
    */
-  public toUpdatedescribeContent() {
-    return this.to('UpdatedescribeContent');
+  public toUpdateViewContent() {
+    return this.to('UpdateViewContent');
+  }
+
+  /**
+   * Grants permission to update a view's metadata in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateViewMetadata.html
+   */
+  public toUpdateViewMetadata() {
+    return this.to('UpdateViewMetadata');
   }
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ActivateEvaluationForm',
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateCustomerProfilesDomain',
       'AssociateDefaultVocabulary',
+      'AssociateFlow',
       'AssociateInstanceStorageConfig',
       'AssociateLambdaFunction',
       'AssociateLexBot',
@@ -2753,15 +3770,23 @@ export class Connect extends PolicyStatement {
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
+      'AssociateTrafficDistributionGroupUser',
+      'AssociateUserProficiencies',
       'BatchAssociateAnalyticsDataSet',
       'BatchDisassociateAnalyticsDataSet',
+      'BatchPutContact',
       'ClaimPhoneNumber',
       'CreateAgentStatus',
       'CreateContactFlow',
       'CreateContactFlowModule',
+      'CreateEvaluationForm',
       'CreateHoursOfOperation',
       'CreateInstance',
       'CreateIntegrationAssociation',
+      'CreateParticipant',
+      'CreatePersistentContactAssociation',
+      'CreatePredefinedAttribute',
+      'CreatePrompt',
       'CreateQueue',
       'CreateQuickConnect',
       'CreateRoutingProfile',
@@ -2772,13 +3797,22 @@ export class Connect extends PolicyStatement {
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
+      'CreateView',
+      'CreateViewVersion',
       'CreateVocabulary',
+      'DeactivateEvaluationForm',
+      'DeleteContactEvaluation',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
+      'DeleteEvaluationForm',
       'DeleteHoursOfOperation',
       'DeleteInstance',
       'DeleteIntegrationAssociation',
+      'DeletePredefinedAttribute',
+      'DeletePrompt',
+      'DeleteQueue',
       'DeleteQuickConnect',
+      'DeleteRoutingProfile',
       'DeleteRule',
       'DeleteSecurityProfile',
       'DeleteTaskTemplate',
@@ -2786,10 +3820,13 @@ export class Connect extends PolicyStatement {
       'DeleteUseCase',
       'DeleteUser',
       'DeleteUserHierarchyGroup',
+      'DeleteView',
+      'DeleteViewVersion',
       'DeleteVocabulary',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
       'DisassociateCustomerProfilesDomain',
+      'DisassociateFlow',
       'DisassociateInstanceStorageConfig',
       'DisassociateLambdaFunction',
       'DisassociateLexBot',
@@ -2797,39 +3834,56 @@ export class Connect extends PolicyStatement {
       'DisassociateQueueQuickConnects',
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
+      'DisassociateTrafficDistributionGroupUser',
+      'DisassociateUserProficiencies',
       'DismissUserContact',
       'GetFederationTokens',
+      'ImportPhoneNumber',
       'MonitorContact',
+      'PauseContact',
       'PutUserStatus',
       'ReleasePhoneNumber',
       'ReplicateInstance',
+      'ResumeContact',
       'ResumeContactRecording',
+      'SendChatIntegrationEvent',
       'StartChatContact',
+      'StartContactEvaluation',
       'StartContactRecording',
       'StartContactStreaming',
       'StartForecastingPlanningSchedulingIntegration',
       'StartOutboundVoiceContact',
       'StartTaskContact',
+      'StartWebRTCContact',
       'StopContact',
       'StopContactRecording',
       'StopContactStreaming',
       'StopForecastingPlanningSchedulingIntegration',
+      'SubmitContactEvaluation',
       'SuspendContactRecording',
+      'TagContact',
       'TransferContact',
+      'UntagContact',
       'UpdateAgentStatus',
       'UpdateContact',
       'UpdateContactAttributes',
+      'UpdateContactEvaluation',
       'UpdateContactFlowContent',
       'UpdateContactFlowMetadata',
       'UpdateContactFlowModuleContent',
       'UpdateContactFlowModuleMetadata',
       'UpdateContactFlowName',
+      'UpdateContactRoutingData',
       'UpdateContactSchedule',
+      'UpdateEvaluationForm',
       'UpdateHoursOfOperation',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
       'UpdateParticipantRoleConfig',
       'UpdatePhoneNumber',
+      'UpdatePhoneNumberMetadata',
+      'UpdatePredefinedAttribute',
+      'UpdatePrompt',
       'UpdateQueueHoursOfOperation',
       'UpdateQueueMaxContacts',
       'UpdateQueueName',
@@ -2837,6 +3891,7 @@ export class Connect extends PolicyStatement {
       'UpdateQueueStatus',
       'UpdateQuickConnectConfig',
       'UpdateQuickConnectName',
+      'UpdateRoutingProfileAgentAvailabilityTimer',
       'UpdateRoutingProfileConcurrency',
       'UpdateRoutingProfileDefaultOutboundQueue',
       'UpdateRoutingProfileName',
@@ -2850,54 +3905,26 @@ export class Connect extends PolicyStatement {
       'UpdateUserHierarchyStructure',
       'UpdateUserIdentityInfo',
       'UpdateUserPhoneConfig',
+      'UpdateUserProficiencies',
       'UpdateUserRoutingProfile',
       'UpdateUserSecurityProfiles',
-      'UpdatedescribeContent'
-    ],
-    Read: [
-      'DescribeAgentStatus',
-      'DescribeContact',
-      'DescribeContactFlow',
-      'DescribeContactFlowModule',
-      'DescribeForecastingPlanningSchedulingIntegration',
-      'DescribeHoursOfOperation',
-      'DescribeInstance',
-      'DescribeInstanceAttribute',
-      'DescribeInstanceStorageConfig',
-      'DescribePhoneNumber',
-      'DescribeQueue',
-      'DescribeQuickConnect',
-      'DescribeRoutingProfile',
-      'DescribeRule',
-      'DescribeSecurityProfile',
-      'DescribeTrafficDistributionGroup',
-      'DescribeUser',
-      'DescribeUserHierarchyGroup',
-      'DescribeUserHierarchyStructure',
-      'DescribeVocabulary',
-      'GetContactAttributes',
-      'GetCurrentMetricData',
-      'GetCurrentUserData',
-      'GetFederationToken',
-      'GetMetricData',
-      'GetMetricDataV2',
-      'GetTaskTemplate',
-      'ListRealtimeContactAnalysisSegments',
-      'ListTagsForResource',
-      'SearchQueues',
-      'SearchRoutingProfiles',
-      'SearchSecurityProfiles',
-      'SearchUsers'
+      'UpdateViewContent',
+      'UpdateViewMetadata'
     ],
     List: [
+      'BatchGetFlowAssociation',
       'GetTrafficDistribution',
       'ListAgentStatuses',
       'ListApprovedOrigins',
       'ListBots',
+      'ListContactEvaluations',
       'ListContactFlowModules',
       'ListContactFlows',
       'ListContactReferences',
       'ListDefaultVocabularies',
+      'ListEvaluationFormVersions',
+      'ListEvaluationForms',
+      'ListFlowAssociations',
       'ListHoursOfOperations',
       'ListInstanceAttributes',
       'ListInstanceStorageConfigs',
@@ -2907,23 +3934,78 @@ export class Connect extends PolicyStatement {
       'ListLexBots',
       'ListPhoneNumbers',
       'ListPhoneNumbersV2',
+      'ListPredefinedAttributes',
       'ListPrompts',
       'ListQueueQuickConnects',
       'ListQueues',
       'ListQuickConnects',
+      'ListRealtimeContactAnalysisSegmentsV2',
       'ListRoutingProfileQueues',
       'ListRoutingProfiles',
       'ListRules',
       'ListSecurityKeys',
+      'ListSecurityProfileApplications',
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
       'ListTaskTemplates',
+      'ListTrafficDistributionGroupUsers',
       'ListTrafficDistributionGroups',
       'ListUseCases',
       'ListUserHierarchyGroups',
+      'ListUserProficiencies',
       'ListUsers',
+      'ListViewVersions',
+      'ListViews',
       'SearchAvailablePhoneNumbers',
+      'SearchResourceTags',
       'SearchVocabularies'
+    ],
+    Read: [
+      'DescribeAgentStatus',
+      'DescribeContact',
+      'DescribeContactEvaluation',
+      'DescribeContactFlow',
+      'DescribeContactFlowModule',
+      'DescribeEvaluationForm',
+      'DescribeForecastingPlanningSchedulingIntegration',
+      'DescribeHoursOfOperation',
+      'DescribeInstance',
+      'DescribeInstanceAttribute',
+      'DescribeInstanceStorageConfig',
+      'DescribePhoneNumber',
+      'DescribePredefinedAttribute',
+      'DescribePrompt',
+      'DescribeQueue',
+      'DescribeQuickConnect',
+      'DescribeRoutingProfile',
+      'DescribeRule',
+      'DescribeSecurityProfile',
+      'DescribeTrafficDistributionGroup',
+      'DescribeUser',
+      'DescribeUserHierarchyGroup',
+      'DescribeUserHierarchyStructure',
+      'DescribeView',
+      'DescribeVocabulary',
+      'GetContactAttributes',
+      'GetCurrentMetricData',
+      'GetCurrentUserData',
+      'GetFederationToken',
+      'GetFlowAssociation',
+      'GetMetricData',
+      'GetMetricDataV2',
+      'GetPromptFile',
+      'GetTaskTemplate',
+      'ListRealtimeContactAnalysisSegments',
+      'ListTagsForResource',
+      'SearchContacts',
+      'SearchHoursOfOperations',
+      'SearchPredefinedAttributes',
+      'SearchPrompts',
+      'SearchQueues',
+      'SearchQuickConnects',
+      'SearchRoutingProfiles',
+      'SearchSecurityProfiles',
+      'SearchUsers'
     ],
     Tagging: [
       'TagResource',
@@ -3224,7 +4306,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type legacy-phone-number to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param phoneNumberId - Identifier for the phoneNumberId.
@@ -3239,7 +4321,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type wildcard-legacy-phone-number to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
@@ -3254,7 +4336,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type phone-number to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param phoneNumberId - Identifier for the phoneNumberId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3271,7 +4353,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type wildcard-phone-number to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3288,7 +4370,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type integration-association to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_IntegrationAssociationSummary.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param integrationAssociationId - Identifier for the integrationAssociationId.
@@ -3306,7 +4388,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type use-case to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_UseCase.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/add-rules-task-creation.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param useCaseId - Identifier for the useCaseId.
@@ -3324,7 +4406,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type vocabulary to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Vocabulary.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/add-custom-vocabulary.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param vocabularyId - Identifier for the vocabularyId.
@@ -3342,7 +4424,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type traffic-distribution-group to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/traffic-distribution-groups.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html
    *
    * @param trafficDistributionGroupId - Identifier for the trafficDistributionGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3375,6 +4457,360 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type evaluation-form to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param formId - Identifier for the formId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/evaluation-form/${ formId }`);
+  }
+
+  /**
+   * Adds a resource of type contact-evaluation to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/evaluations.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param evaluationId - Identifier for the evaluationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactEvaluation(instanceId: string, evaluationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param promptId - Identifier for the promptId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrompt(instanceId: string, promptId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/prompt/${ promptId }`);
+  }
+
+  /**
+   * Adds a resource of type customer-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomerManagedView(instanceId: string, viewId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }`);
+  }
+
+  /**
+   * Adds a resource of type aws-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param viewId - Identifier for the viewId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAwsManagedView(viewId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:aws:view/${ viewId }`);
+  }
+
+  /**
+   * Adds a resource of type qualified-customer-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param viewQualifier - Identifier for the viewQualifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
+  }
+
+  /**
+   * Adds a resource of type qualified-aws-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param viewId - Identifier for the viewId.
+   * @param viewQualifier - Identifier for the viewQualifier.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onQualifiedAwsManagedView(viewId: string, viewQualifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:aws:view/${ viewId }:${ viewQualifier }`);
+  }
+
+  /**
+   * Adds a resource of type customer-managed-view-version to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param viewVersion - Identifier for the viewVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomerManagedViewVersion(instanceId: string, viewId: string, viewVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
+  }
+
+  /**
+   * Filters access by using tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toClaimPhoneNumber()
+   * - .toCreateAgentStatus()
+   * - .toCreateContactFlow()
+   * - .toCreateContactFlowModule()
+   * - .toCreateHoursOfOperation()
+   * - .toCreateInstance()
+   * - .toCreateIntegrationAssociation()
+   * - .toCreatePrompt()
+   * - .toCreateQueue()
+   * - .toCreateQuickConnect()
+   * - .toCreateRoutingProfile()
+   * - .toCreateSecurityProfile()
+   * - .toCreateTrafficDistributionGroup()
+   * - .toCreateUseCase()
+   * - .toCreateUser()
+   * - .toCreateUserHierarchyGroup()
+   * - .toCreateView()
+   * - .toCreateVocabulary()
+   * - .toImportPhoneNumber()
+   * - .toReplicateInstance()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by using tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateFlow()
+   * - .toAssociatePhoneNumberContactFlow()
+   * - .toAssociateQueueQuickConnects()
+   * - .toAssociateRoutingProfileQueues()
+   * - .toAssociateTrafficDistributionGroupUser()
+   * - .toBatchGetFlowAssociation()
+   * - .toCreateViewVersion()
+   * - .toDeleteContactEvaluation()
+   * - .toDeleteContactFlow()
+   * - .toDeleteContactFlowModule()
+   * - .toDeleteEvaluationForm()
+   * - .toDeleteHoursOfOperation()
+   * - .toDeleteInstance()
+   * - .toDeletePrompt()
+   * - .toDeleteQueue()
+   * - .toDeleteQuickConnect()
+   * - .toDeleteRoutingProfile()
+   * - .toDeleteRule()
+   * - .toDeleteSecurityProfile()
+   * - .toDeleteTaskTemplate()
+   * - .toDeleteTrafficDistributionGroup()
+   * - .toDeleteUser()
+   * - .toDeleteView()
+   * - .toDeleteViewVersion()
+   * - .toDeleteVocabulary()
+   * - .toDescribeAgentStatus()
+   * - .toDescribeContactEvaluation()
+   * - .toDescribeContactFlow()
+   * - .toDescribeContactFlowModule()
+   * - .toDescribeEvaluationForm()
+   * - .toDescribeHoursOfOperation()
+   * - .toDescribeInstance()
+   * - .toDescribePhoneNumber()
+   * - .toDescribePrompt()
+   * - .toDescribeQueue()
+   * - .toDescribeQuickConnect()
+   * - .toDescribeRoutingProfile()
+   * - .toDescribeRule()
+   * - .toDescribeSecurityProfile()
+   * - .toDescribeTrafficDistributionGroup()
+   * - .toDescribeUser()
+   * - .toDescribeView()
+   * - .toDescribeVocabulary()
+   * - .toDisassociateFlow()
+   * - .toDisassociatePhoneNumberContactFlow()
+   * - .toDisassociateQueueQuickConnects()
+   * - .toDisassociateRoutingProfileQueues()
+   * - .toDisassociateTrafficDistributionGroupUser()
+   * - .toDismissUserContact()
+   * - .toGetCurrentMetricData()
+   * - .toGetCurrentUserData()
+   * - .toGetFlowAssociation()
+   * - .toGetMetricData()
+   * - .toGetMetricDataV2()
+   * - .toGetPromptFile()
+   * - .toGetTaskTemplate()
+   * - .toGetTrafficDistribution()
+   * - .toListQueueQuickConnects()
+   * - .toListRoutingProfileQueues()
+   * - .toListSecurityProfileApplications()
+   * - .toListSecurityProfilePermissions()
+   * - .toListTagsForResource()
+   * - .toListTrafficDistributionGroupUsers()
+   * - .toListViewVersions()
+   * - .toMonitorContact()
+   * - .toPauseContact()
+   * - .toPutUserStatus()
+   * - .toReleasePhoneNumber()
+   * - .toResumeContact()
+   * - .toSearchResourceTags()
+   * - .toStartTaskContact()
+   * - .toUpdateAgentStatus()
+   * - .toUpdateContactFlowContent()
+   * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleContent()
+   * - .toUpdateContactFlowModuleMetadata()
+   * - .toUpdateContactFlowName()
+   * - .toUpdateHoursOfOperation()
+   * - .toUpdatePhoneNumber()
+   * - .toUpdatePhoneNumberMetadata()
+   * - .toUpdatePrompt()
+   * - .toUpdateQueueHoursOfOperation()
+   * - .toUpdateQueueMaxContacts()
+   * - .toUpdateQueueName()
+   * - .toUpdateQueueOutboundCallerConfig()
+   * - .toUpdateQueueStatus()
+   * - .toUpdateQuickConnectConfig()
+   * - .toUpdateQuickConnectName()
+   * - .toUpdateRoutingProfileAgentAvailabilityTimer()
+   * - .toUpdateRoutingProfileConcurrency()
+   * - .toUpdateRoutingProfileDefaultOutboundQueue()
+   * - .toUpdateRoutingProfileName()
+   * - .toUpdateRoutingProfileQueues()
+   * - .toUpdateSecurityProfile()
+   * - .toUpdateTaskTemplate()
+   * - .toUpdateTrafficDistribution()
+   * - .toUpdateUserHierarchy()
+   * - .toUpdateUserIdentityInfo()
+   * - .toUpdateUserPhoneConfig()
+   * - .toUpdateUserRoutingProfile()
+   * - .toUpdateUserSecurityProfiles()
+   * - .toUpdateViewContent()
+   * - .toUpdateViewMetadata()
+   *
+   * Applies to resource types:
+   * - instance
+   * - user
+   * - routing-profile
+   * - security-profile
+   * - hierarchy-group
+   * - queue
+   * - quick-connect
+   * - contact-flow
+   * - task-template
+   * - contact-flow-module
+   * - hours-of-operation
+   * - agent-status
+   * - phone-number
+   * - wildcard-phone-number
+   * - integration-association
+   * - use-case
+   * - vocabulary
+   * - traffic-distribution-group
+   * - rule
+   * - evaluation-form
+   * - contact-evaluation
+   * - prompt
+   * - customer-managed-view
+   * - qualified-customer-managed-view
+   * - customer-managed-view-version
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by using tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toClaimPhoneNumber()
+   * - .toCreateAgentStatus()
+   * - .toCreateContactFlow()
+   * - .toCreateContactFlowModule()
+   * - .toCreateHoursOfOperation()
+   * - .toCreateInstance()
+   * - .toCreateIntegrationAssociation()
+   * - .toCreatePrompt()
+   * - .toCreateQueue()
+   * - .toCreateQuickConnect()
+   * - .toCreateRoutingProfile()
+   * - .toCreateSecurityProfile()
+   * - .toCreateTrafficDistributionGroup()
+   * - .toCreateUseCase()
+   * - .toCreateUser()
+   * - .toCreateUserHierarchyGroup()
+   * - .toCreateView()
+   * - .toCreateVocabulary()
+   * - .toImportPhoneNumber()
+   * - .toReplicateInstance()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -3396,9 +4832,11 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toActivateEvaluationForm()
    * - .toAssociateApprovedOrigin()
    * - .toAssociateBot()
    * - .toAssociateDefaultVocabulary()
+   * - .toAssociateFlow()
    * - .toAssociateInstanceStorageConfig()
    * - .toAssociateLambdaFunction()
    * - .toAssociateLexBot()
@@ -3406,13 +4844,23 @@ export class Connect extends PolicyStatement {
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
+   * - .toAssociateTrafficDistributionGroupUser()
+   * - .toAssociateUserProficiencies()
    * - .toBatchAssociateAnalyticsDataSet()
    * - .toBatchDisassociateAnalyticsDataSet()
+   * - .toBatchGetFlowAssociation()
+   * - .toBatchPutContact()
+   * - .toClaimPhoneNumber()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
+   * - .toCreateEvaluationForm()
    * - .toCreateHoursOfOperation()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateParticipant()
+   * - .toCreatePersistentContactAssociation()
+   * - .toCreatePredefinedAttribute()
+   * - .toCreatePrompt()
    * - .toCreateQueue()
    * - .toCreateQuickConnect()
    * - .toCreateRoutingProfile()
@@ -3422,29 +4870,44 @@ export class Connect extends PolicyStatement {
    * - .toCreateUseCase()
    * - .toCreateUser()
    * - .toCreateUserHierarchyGroup()
+   * - .toCreateView()
+   * - .toCreateViewVersion()
    * - .toCreateVocabulary()
+   * - .toDeactivateEvaluationForm()
+   * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
+   * - .toDeletePredefinedAttribute()
+   * - .toDeletePrompt()
+   * - .toDeleteQueue()
    * - .toDeleteQuickConnect()
+   * - .toDeleteRoutingProfile()
    * - .toDeleteRule()
    * - .toDeleteSecurityProfile()
    * - .toDeleteTaskTemplate()
    * - .toDeleteUseCase()
    * - .toDeleteUser()
    * - .toDeleteUserHierarchyGroup()
+   * - .toDeleteView()
+   * - .toDeleteViewVersion()
    * - .toDeleteVocabulary()
    * - .toDescribeAgentStatus()
    * - .toDescribeContact()
+   * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeEvaluationForm()
    * - .toDescribeForecastingPlanningSchedulingIntegration()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeInstanceStorageConfig()
+   * - .toDescribePredefinedAttribute()
+   * - .toDescribePrompt()
    * - .toDescribeQueue()
    * - .toDescribeQuickConnect()
    * - .toDescribeRoutingProfile()
@@ -3453,9 +4916,11 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUser()
    * - .toDescribeUserHierarchyGroup()
    * - .toDescribeUserHierarchyStructure()
+   * - .toDescribeView()
    * - .toDescribeVocabulary()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
+   * - .toDisassociateFlow()
    * - .toDisassociateInstanceStorageConfig()
    * - .toDisassociateLambdaFunction()
    * - .toDisassociateLexBot()
@@ -3463,60 +4928,94 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityKey()
+   * - .toDisassociateTrafficDistributionGroupUser()
+   * - .toDisassociateUserProficiencies()
    * - .toDismissUserContact()
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetFederationToken()
+   * - .toGetFlowAssociation()
    * - .toGetMetricData()
+   * - .toGetMetricDataV2()
+   * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toListApprovedOrigins()
    * - .toListBots()
+   * - .toListContactEvaluations()
    * - .toListContactReferences()
    * - .toListDefaultVocabularies()
+   * - .toListEvaluationFormVersions()
+   * - .toListEvaluationForms()
+   * - .toListFlowAssociations()
    * - .toListHoursOfOperations()
    * - .toListInstanceAttributes()
    * - .toListInstanceStorageConfigs()
    * - .toListIntegrationAssociations()
    * - .toListLambdaFunctions()
    * - .toListLexBots()
+   * - .toListPredefinedAttributes()
    * - .toListPrompts()
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileQueues()
    * - .toListRoutingProfiles()
    * - .toListRules()
    * - .toListSecurityKeys()
+   * - .toListSecurityProfileApplications()
    * - .toListSecurityProfilePermissions()
    * - .toListSecurityProfiles()
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
+   * - .toListUserProficiencies()
    * - .toListUsers()
+   * - .toListViewVersions()
+   * - .toListViews()
    * - .toMonitorContact()
+   * - .toPauseContact()
    * - .toPutUserStatus()
+   * - .toReplicateInstance()
+   * - .toResumeContact()
+   * - .toSearchContacts()
+   * - .toSearchHoursOfOperations()
+   * - .toSearchPredefinedAttributes()
+   * - .toSearchPrompts()
    * - .toSearchQueues()
+   * - .toSearchQuickConnects()
+   * - .toSearchResourceTags()
    * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
    * - .toStartChatContact()
+   * - .toStartContactEvaluation()
    * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartTaskContact()
+   * - .toStartWebRTCContact()
    * - .toStopContact()
    * - .toStopForecastingPlanningSchedulingIntegration()
+   * - .toSubmitContactEvaluation()
+   * - .toTagContact()
    * - .toTransferContact()
+   * - .toUntagContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
+   * - .toUpdateContactEvaluation()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
    * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
+   * - .toUpdateContactRoutingData()
    * - .toUpdateContactSchedule()
+   * - .toUpdateEvaluationForm()
    * - .toUpdateHoursOfOperation()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
    * - .toUpdateParticipantRoleConfig()
+   * - .toUpdatePhoneNumber()
+   * - .toUpdatePredefinedAttribute()
+   * - .toUpdatePrompt()
    * - .toUpdateQueueHoursOfOperation()
    * - .toUpdateQueueMaxContacts()
    * - .toUpdateQueueName()
@@ -3524,6 +5023,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateQueueStatus()
    * - .toUpdateQuickConnectConfig()
    * - .toUpdateQuickConnectName()
+   * - .toUpdateRoutingProfileAgentAvailabilityTimer()
    * - .toUpdateRoutingProfileConcurrency()
    * - .toUpdateRoutingProfileDefaultOutboundQueue()
    * - .toUpdateRoutingProfileName()
@@ -3536,9 +5036,11 @@ export class Connect extends PolicyStatement {
    * - .toUpdateUserHierarchyStructure()
    * - .toUpdateUserIdentityInfo()
    * - .toUpdateUserPhoneConfig()
+   * - .toUpdateUserProficiencies()
    * - .toUpdateUserRoutingProfile()
    * - .toUpdateUserSecurityProfiles()
-   * - .toUpdatedescribeContent()
+   * - .toUpdateViewContent()
+   * - .toUpdateViewMetadata()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3563,12 +5065,31 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting searches using analysis outputs from Amazon Connect Contact Lens
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toSearchContacts()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSearchContactsByContactAnalysis(value: string | string[], operator?: Operator | string) {
+    return this.if(`SearchContactsByContactAnalysis`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by TagFilter condition passed in the search request
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toAssociateTrafficDistributionGroupUser()
+   * - .toSearchHoursOfOperations()
+   * - .toSearchPrompts()
    * - .toSearchQueues()
+   * - .toSearchQuickConnects()
    * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()

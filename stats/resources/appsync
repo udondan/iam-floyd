@@ -3,4 +3,6 @@ appsync:domain
 appsync:field
 appsync:function
 appsync:graphqlapi
+appsync:mergedApiAssociation
+appsync:sourceApiAssociation
 appsync:type

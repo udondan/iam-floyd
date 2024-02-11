@@ -13,6 +13,7 @@ m2:GetDataSetDetails;Read
 m2:GetDataSetImportTask;Read
 m2:GetDeployment;Read
 m2:GetEnvironment;Read
+m2:GetSignedBluinsightsUrl;Read
 m2:ListApplicationVersions;Read
 m2:ListApplications;List
 m2:ListBatchJobDefinitions;Read

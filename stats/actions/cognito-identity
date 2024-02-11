@@ -5,7 +5,10 @@ cognito-identity:DescribeIdentity;Read
 cognito-identity:DescribeIdentityPool;Read
 cognito-identity:GetCredentialsForIdentity;Read
 cognito-identity:GetId;Write
+cognito-identity:GetIdentityPoolAnalytics;Read
+cognito-identity:GetIdentityPoolDailyAnalytics;Read
 cognito-identity:GetIdentityPoolRoles;Read
+cognito-identity:GetIdentityProviderDailyAnalytics;Read
 cognito-identity:GetOpenIdToken;Read
 cognito-identity:GetOpenIdTokenForDeveloperIdentity;Read
 cognito-identity:GetPrincipalTagAttributeMap;Read

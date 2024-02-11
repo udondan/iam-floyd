@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html).
@@ -461,6 +461,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve GuardDuty protection plan coverage statistics for member accounts in a Region
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetOrganizationStatistics.html
+   */
+  public toGetOrganizationStatistics() {
+    return this.to('GetOrganizationStatistics');
+  }
+
+  /**
    * Grants permission to provide the number of days left for each data source used in the free trial period
    *
    * Access Level: Read
@@ -634,6 +645,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toSendSecurityTelemetry() {
     return this.to('SendSecurityTelemetry');
+  }
+
+  /**
+   * Grants permission to initiate a new malware scan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StartMalwareScan.html
+   */
+  public toStartMalwareScan() {
+    return this.to('StartMalwareScan');
   }
 
   /**
@@ -836,6 +858,7 @@ export class Guardduty extends PolicyStatement {
       'EnableOrganizationAdminAccount',
       'InviteMembers',
       'SendSecurityTelemetry',
+      'StartMalwareScan',
       'StartMonitoringMembers',
       'StopMonitoringMembers',
       'UnarchiveFindings',
@@ -865,6 +888,7 @@ export class Guardduty extends PolicyStatement {
       'GetMasterAccount',
       'GetMemberDetectors',
       'GetMembers',
+      'GetOrganizationStatistics',
       'GetRemainingFreeTrialDays',
       'GetThreatIntelSet',
       'GetUsageStatistics',
@@ -972,5 +996,64 @@ export class Guardduty extends PolicyStatement {
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Guardduty.defaultPartition }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDetector()
+   * - .toCreateFilter()
+   * - .toCreateIPSet()
+   * - .toCreateThreatIntelSet()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - detector
+   * - filter
+   * - ipset
+   * - threatintelset
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDetector()
+   * - .toCreateFilter()
+   * - .toCreateIPSet()
+   * - .toCreateThreatIntelSet()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

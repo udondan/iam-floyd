@@ -1,0 +1,10 @@
+bedrock:agent
+bedrock:agent-alias
+bedrock:custom-model
+bedrock:foundation-model
+bedrock:guardrail
+bedrock:knowledge-base
+bedrock:model-customization-job
+bedrock:model-evaluation-job
+bedrock:model-invocation-job
+bedrock:provisioned-model

@@ -1,4 +1,5 @@
 appstream:app-block
+appstream:app-block-builder
 appstream:application
 appstream:fleet
 appstream:image

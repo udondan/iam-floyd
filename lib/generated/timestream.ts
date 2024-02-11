@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
@@ -442,6 +442,24 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to issue Unload queries
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:AbortMultipartUpload
+   * - s3:GetObject
+   * - s3:PutObject
+   * - timestream:DescribeEndpoints
+   * - timestream:Select
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
+   */
+  public toUnload() {
+    return this.to('Unload');
+  }
+
+  /**
    * Grants permission to remove a tag from a resource
    *
    * Access Level: Tagging
@@ -528,6 +546,7 @@ export class Timestream extends PolicyStatement {
       'ResumeBatchLoadTask',
       'StartAwsBackupJob',
       'StartAwsRestoreJob',
+      'Unload',
       'UpdateDatabase',
       'UpdateScheduledQuery',
       'UpdateTable',
@@ -609,5 +628,61 @@ export class Timestream extends PolicyStatement {
    */
   public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:scheduled-query/${ scheduledQueryName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateDatabase()
+   * - .toCreateScheduledQuery()
+   * - .toCreateTable()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to resource types:
+   * - database
+   * - table
+   * - scheduled-query
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateDatabase()
+   * - .toCreateScheduledQuery()
+   * - .toCreateTable()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

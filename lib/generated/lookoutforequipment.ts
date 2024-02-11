@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [lookoutequipment](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforequipment.html).
@@ -90,6 +90,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a retraining scheduler for a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateRetrainingScheduler.html
+   */
+  public toCreateRetrainingScheduler() {
+    return this.to('CreateRetrainingScheduler');
+  }
+
+  /**
    * Grants permission to delete a dataset
    *
    * Access Level: Write
@@ -145,11 +156,33 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete a retraining scheduler of a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteRetrainingScheduler.html
+   */
+  public toDeleteRetrainingScheduler() {
+    return this.to('DeleteRetrainingScheduler');
+  }
+
+  /**
    * Grants permission to describe a data ingestion job
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeDataIngestionJob
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeDataIngestionJob.html
    */
   public toDescribeDataIngestionJob() {
     return this.to('DescribeDataIngestionJob');
@@ -200,6 +233,39 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a model version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeModelVersion.html
+   */
+  public toDescribeModelVersion() {
+    return this.to('DescribeModelVersion');
+  }
+
+  /**
+   * Grants permission to describe a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeResourcePolicy.html
+   */
+  public toDescribeResourcePolicy() {
+    return this.to('DescribeResourcePolicy');
+  }
+
+  /**
+   * Grants permission to describe a retraining scheduler of a trained model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeRetrainingScheduler.html
+   */
+  public toDescribeRetrainingScheduler() {
+    return this.to('DescribeRetrainingScheduler');
+  }
+
+  /**
    * Grants permission to describe a label
    *
    * Access Level: Read
@@ -208,6 +274,37 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toDescribelabel() {
     return this.to('Describelabel');
+  }
+
+  /**
+   * Grants permission to import a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ImportDataset.html
+   */
+  public toImportDataset() {
+    return this.to('ImportDataset');
+  }
+
+  /**
+   * Grants permission to import a model version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifIsImportingData()
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ImportModelVersion.html
+   */
+  public toImportModelVersion() {
+    return this.to('ImportModelVersion');
   }
 
   /**
@@ -288,6 +385,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the model versions in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListModelVersions.html
+   */
+  public toListModelVersions() {
+    return this.to('ListModelVersions');
+  }
+
+  /**
    * Grants permission to list the models in your account
    *
    * Access Level: List
@@ -296,6 +404,17 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toListModels() {
     return this.to('ListModels');
+  }
+
+  /**
+   * Grants permission to list the retraining schedulers in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListRetrainingSchedulers.html
+   */
+  public toListRetrainingSchedulers() {
+    return this.to('ListRetrainingSchedulers');
   }
 
   /**
@@ -321,6 +440,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to start a data ingestion job for a dataset
    *
    * Access Level: Write
@@ -343,6 +473,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a retraining scheduler of a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StartRetrainingScheduler.html
+   */
+  public toStartRetrainingScheduler() {
+    return this.to('StartRetrainingScheduler');
+  }
+
+  /**
    * Grants permission to stop an inference scheduler
    *
    * Access Level: Write
@@ -351,6 +492,17 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public toStopInferenceScheduler() {
     return this.to('StopInferenceScheduler');
+  }
+
+  /**
+   * Grants permission to stop a retraining scheduler of a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StopRetrainingScheduler.html
+   */
+  public toStopRetrainingScheduler() {
+    return this.to('StopRetrainingScheduler');
   }
 
   /**
@@ -383,6 +535,17 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the active model version for a given machine learning model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateActiveModelVersion.html
+   */
+  public toUpdateActiveModelVersion() {
+    return this.to('UpdateActiveModelVersion');
+  }
+
+  /**
    * Grants permission to update an inference scheduler
    *
    * Access Level: Write
@@ -404,6 +567,28 @@ export class Lookoutequipment extends PolicyStatement {
     return this.to('UpdateLabelGroup');
   }
 
+  /**
+   * Grants permission to update a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateModel.html
+   */
+  public toUpdateModel() {
+    return this.to('UpdateModel');
+  }
+
+  /**
+   * Grants permission to update a retraining scheduler of a trained model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateRetrainingScheduler.html
+   */
+  public toUpdateRetrainingScheduler() {
+    return this.to('UpdateRetrainingScheduler');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateDataset',
@@ -411,16 +596,27 @@ export class Lookoutequipment extends PolicyStatement {
       'CreateLabel',
       'CreateLabelGroup',
       'CreateModel',
+      'CreateRetrainingScheduler',
       'DeleteDataset',
       'DeleteInferenceScheduler',
       'DeleteLabel',
       'DeleteLabelGroup',
       'DeleteModel',
+      'DeleteResourcePolicy',
+      'DeleteRetrainingScheduler',
+      'ImportDataset',
+      'ImportModelVersion',
+      'PutResourcePolicy',
       'StartDataIngestionJob',
       'StartInferenceScheduler',
+      'StartRetrainingScheduler',
       'StopInferenceScheduler',
+      'StopRetrainingScheduler',
+      'UpdateActiveModelVersion',
       'UpdateInferenceScheduler',
-      'UpdateLabelGroup'
+      'UpdateLabelGroup',
+      'UpdateModel',
+      'UpdateRetrainingScheduler'
     ],
     Read: [
       'DescribeDataIngestionJob',
@@ -428,6 +624,9 @@ export class Lookoutequipment extends PolicyStatement {
       'DescribeInferenceScheduler',
       'DescribeLabelGroup',
       'DescribeModel',
+      'DescribeModelVersion',
+      'DescribeResourcePolicy',
+      'DescribeRetrainingScheduler',
       'Describelabel',
       'ListInferenceEvents',
       'ListInferenceExecutions',
@@ -439,7 +638,9 @@ export class Lookoutequipment extends PolicyStatement {
       'ListInferenceSchedulers',
       'ListLabelGroups',
       'ListLabels',
+      'ListModelVersions',
       'ListModels',
+      'ListRetrainingSchedulers',
       'ListSensorStatistics'
     ],
     Tagging: [
@@ -485,6 +686,25 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type model-version to the statement
+   *
+   * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/model-version.html
+   *
+   * @param modelName - Identifier for the modelName.
+   * @param modelId - Identifier for the modelId.
+   * @param modelVersionNumber - Identifier for the modelVersionNumber.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onModelVersion(modelName: string, modelId: string, modelVersionNumber: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }/model-version/${ modelVersionNumber }`);
+  }
+
+  /**
    * Adds a resource of type inference-scheduler to the statement
    *
    * https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/inference-scheduler.html
@@ -518,5 +738,83 @@ export class Lookoutequipment extends PolicyStatement {
    */
   public onLabelGroup(labelGroupName: string, labelGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lookoutequipment.defaultPartition }:lookoutequipment:${ region || '*' }:${ account || '*' }:label-group/${ labelGroupName }/${ labelGroupId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateInferenceScheduler()
+   * - .toCreateLabelGroup()
+   * - .toCreateModel()
+   * - .toImportDataset()
+   * - .toImportModelVersion()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - dataset
+   * - model
+   * - model-version
+   * - inference-scheduler
+   * - label-group
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateInferenceScheduler()
+   * - .toCreateLabelGroup()
+   * - .toCreateModel()
+   * - .toImportDataset()
+   * - .toImportModelVersion()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the import strategy of underlying data
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-isimportingdata
+   *
+   * Applies to actions:
+   * - .toImportModelVersion()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsImportingData(value?: boolean) {
+    return this.if(`IsImportingData`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

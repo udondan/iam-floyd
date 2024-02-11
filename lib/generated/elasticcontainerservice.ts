@@ -39,9 +39,9 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCapacityProvider()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCapacityProvider()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
@@ -55,14 +55,16 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifTaskDefinition()
+   * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
    * - .ifEnableServiceConnect()
    * - .ifNamespace()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
@@ -76,12 +78,12 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifService()
    * - .ifTaskDefinition()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
@@ -93,6 +95,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to modify the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an account. You can specify whether the new ARN and resource ID format are disabled for new resources that are created
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountSetting()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAccountSetting.html
    */
@@ -106,6 +111,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html
@@ -119,6 +125,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCapacityProvider.html
    */
   public toDeleteCapacityProvider() {
@@ -129,6 +138,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to delete the specified cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html
    */
@@ -142,6 +154,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html
@@ -155,6 +168,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html
    */
   public toDeleteTaskDefinitions() {
@@ -167,6 +183,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    * - .ifService()
    *
@@ -180,6 +197,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to deregister an Amazon ECS container instance from the specified cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html
    */
@@ -203,6 +223,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeCapacityProviders.html
    */
   public toDescribeCapacityProviders() {
@@ -213,6 +236,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to describes one or more of your clusters
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html
    */
@@ -226,6 +252,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html
@@ -240,6 +267,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html
@@ -265,6 +293,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    * - .ifService()
    *
@@ -280,6 +309,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html
@@ -305,6 +335,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    * - .ifContainerName()
    * - .ifTask()
@@ -321,6 +352,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html
@@ -345,6 +377,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html
    */
   public toListAttributes() {
@@ -366,6 +401,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to get a list of container instances in a specified cluster
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html
    */
@@ -406,6 +444,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -440,6 +481,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html
@@ -467,6 +509,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccountSetting()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html
    */
   public toPutAccountSetting() {
@@ -477,6 +522,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to modify the ARN and resource ID format of a resource type for all IAM users on an account for which no individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as resource tagging
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountSetting()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html
    */
@@ -490,6 +538,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html
@@ -504,6 +553,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCapacityProvider()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html
@@ -519,6 +569,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
@@ -548,11 +599,13 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCluster()
-   * - .ifCapacityProvider()
-   * - .ifEnableExecuteCommand()
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCluster()
+   * - .ifCapacityProvider()
+   * - .ifEnableEbsVolumes()
+   * - .ifEnableExecuteCommand()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
@@ -566,11 +619,13 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCluster()
-   * - .ifContainerInstances()
-   * - .ifEnableExecuteCommand()
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCluster()
+   * - .ifContainerInstances()
+   * - .ifEnableEbsVolumes()
+   * - .ifEnableExecuteCommand()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
@@ -598,6 +653,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html
@@ -611,6 +667,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitAttachmentStateChanges.html
    */
   public toSubmitAttachmentStateChanges() {
@@ -622,6 +681,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitContainerStateChange.html
    */
   public toSubmitContainerStateChange() {
@@ -632,6 +694,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to send an acknowledgement that a task changed states
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitTaskStateChange.html
    */
@@ -646,7 +711,9 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
    */
@@ -660,8 +727,8 @@ export class Ecs extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
@@ -674,6 +741,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCapacityProvider.html
    */
   public toUpdateCapacityProvider() {
@@ -685,6 +755,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCluster.html
    */
   public toUpdateCluster() {
@@ -695,6 +768,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to modify the settings to use for a cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateClusterSettings.html
    */
@@ -708,6 +784,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html
@@ -722,6 +799,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html
@@ -736,8 +814,10 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    * - .ifCapacityProvider()
+   * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
    * - .ifEnableServiceConnect()
    * - .ifNamespace()
@@ -755,6 +835,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateServicePrimaryTaskSet.html
@@ -769,6 +850,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html
@@ -783,6 +865,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifCluster()
    * - .ifService()
    *
@@ -994,6 +1077,133 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateCapacityProvider()
+   * - .toCreateCluster()
+   * - .toCreateService()
+   * - .toCreateTaskSet()
+   * - .toRegisterContainerInstance()
+   * - .toRegisterTaskDefinition()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toDeleteAttributes()
+   * - .toDeleteCapacityProvider()
+   * - .toDeleteCluster()
+   * - .toDeleteService()
+   * - .toDeleteTaskDefinitions()
+   * - .toDeleteTaskSet()
+   * - .toDeregisterContainerInstance()
+   * - .toDescribeCapacityProviders()
+   * - .toDescribeClusters()
+   * - .toDescribeContainerInstances()
+   * - .toDescribeServices()
+   * - .toDescribeTaskSets()
+   * - .toDescribeTasks()
+   * - .toExecuteCommand()
+   * - .toGetTaskProtection()
+   * - .toListAttributes()
+   * - .toListContainerInstances()
+   * - .toListTagsForResource()
+   * - .toListTasks()
+   * - .toPutAttributes()
+   * - .toPutClusterCapacityProviders()
+   * - .toRegisterContainerInstance()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toStopTask()
+   * - .toSubmitAttachmentStateChanges()
+   * - .toSubmitContainerStateChange()
+   * - .toSubmitTaskStateChange()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateCapacityProvider()
+   * - .toUpdateCluster()
+   * - .toUpdateClusterSettings()
+   * - .toUpdateContainerAgent()
+   * - .toUpdateContainerInstancesState()
+   * - .toUpdateService()
+   * - .toUpdateServicePrimaryTaskSet()
+   * - .toUpdateTaskProtection()
+   * - .toUpdateTaskSet()
+   *
+   * Applies to resource types:
+   * - cluster
+   * - container-instance
+   * - service
+   * - task
+   * - task-definition
+   * - capacity-provider
+   * - task-set
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateCapacityProvider()
+   * - .toCreateCluster()
+   * - .toCreateService()
+   * - .toCreateTaskSet()
+   * - .toRegisterContainerInstance()
+   * - .toRegisterTaskDefinition()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-createaction
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -1013,6 +1223,23 @@ export class Ecs extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the Amazon ECS account setting name
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDeleteAccountSetting()
+   * - .toPutAccountSetting()
+   * - .toPutAccountSettingDefault()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccountSetting(value: string | string[], operator?: Operator | string) {
+    return this.if(`account-setting`, value, operator || 'StringLike');
   }
 
   /**
@@ -1102,6 +1329,24 @@ export class Ecs extends PolicyStatement {
    */
   public ifContainerName(value: string | string[], operator?: Operator | string) {
     return this.if(`container-name`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the Amazon ECS managed Amazon EBS volume capability of your ECS task or service
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnableEbsVolumes(value: string | string[], operator?: Operator | string) {
+    return this.if(`enable-ebs-volumes`, value, operator || 'StringLike');
   }
 
   /**

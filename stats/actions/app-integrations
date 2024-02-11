@@ -1,13 +1,20 @@
+app-integrations:CreateApplication;Write
+app-integrations:CreateApplicationAssociation;Write
 app-integrations:CreateDataIntegration;Write
 app-integrations:CreateDataIntegrationAssociation;Write
 app-integrations:CreateEventIntegration;Write
 app-integrations:CreateEventIntegrationAssociation;Write
+app-integrations:DeleteApplication;Write
+app-integrations:DeleteApplicationAssociation;Write
 app-integrations:DeleteDataIntegration;Write
 app-integrations:DeleteDataIntegrationAssociation;Write
 app-integrations:DeleteEventIntegration;Write
 app-integrations:DeleteEventIntegrationAssociation;Write
+app-integrations:GetApplication;Read
 app-integrations:GetDataIntegration;Read
 app-integrations:GetEventIntegration;Read
+app-integrations:ListApplicationAssociations;List
+app-integrations:ListApplications;List
 app-integrations:ListDataIntegrationAssociations;List
 app-integrations:ListDataIntegrations;List
 app-integrations:ListEventIntegrationAssociations;Read
@@ -15,5 +22,6 @@ app-integrations:ListEventIntegrations;List
 app-integrations:ListTagsForResource;Read
 app-integrations:TagResource;Tagging
 app-integrations:UntagResource;Tagging
+app-integrations:UpdateApplication;Write
 app-integrations:UpdateDataIntegration;Write
 app-integrations:UpdateEventIntegration;Write

@@ -1,0 +1,3 @@
+appfabric:RequestTag/${TagKey}
+appfabric:ResourceTag/${TagKey}
+appfabric:TagKeys

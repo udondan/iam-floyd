@@ -140,6 +140,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the configuration for the specified table optimizers
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-BatchGetTableOptimizer
+   */
+  public toBatchGetTableOptimizer() {
+    return this.to('BatchGetTableOptimizer');
+  }
+
+  /**
    * Grants permission to retrieve one or more triggers
    *
    * Access Level: Read
@@ -298,6 +312,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a Custom Entity Type
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-CreateCustomEntityType
    */
@@ -461,6 +479,9 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifVpcIds()
+   * - .ifSubnetIds()
+   * - .ifSecurityGroupIds()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-api-interactive-sessions-CreateSession
    */
@@ -477,6 +498,20 @@ export class Glue extends PolicyStatement {
    */
   public toCreateTable() {
     return this.to('CreateTable');
+  }
+
+  /**
+   * Grants permission to create a new table optimizer for a specific function. Compaction is the only currently supported optimizer type
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-CreateTableOptimizer
+   */
+  public toCreateTableOptimizer() {
+    return this.to('CreateTableOptimizer');
   }
 
   /**
@@ -752,6 +787,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an optimizer and all associated metadata for a table. The optimization will no longer be performed on the table
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-DeleteTableOptimizer
+   */
+  public toDeleteTableOptimizer() {
+    return this.to('DeleteTableOptimizer');
+  }
+
+  /**
    * Grants permission to delete a version of a table
    *
    * Access Level: Write
@@ -892,6 +941,39 @@ export class Glue extends PolicyStatement {
    */
   public toGetColumnStatisticsForTable() {
     return this.to('GetColumnStatisticsForTable');
+  }
+
+  /**
+   * Grants permission to retrieve Column Statistics run information for the table based on run-id
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-GetColumnStatisticsTaskRun
+   */
+  public toGetColumnStatisticsTaskRun() {
+    return this.to('GetColumnStatisticsTaskRun');
+  }
+
+  /**
+   * Grants permission to retrieve Column Statistics run information for the table based on run-ids
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-GetColumnStatisticsTaskRuns
+   */
+  public toGetColumnStatisticsTaskRuns() {
+    return this.to('GetColumnStatisticsTaskRuns');
+  }
+
+  /**
+   * Grants permission to get generated response for a completion request in Glue from AWS Q
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#
+   */
+  public toGetCompletion() {
+    return this.to('GetCompletion');
   }
 
   /**
@@ -1379,6 +1461,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the configuration of all optimizers associated with a specified table
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-GetTableOptimizer
+   */
+  public toGetTableOptimizer() {
+    return this.to('GetTableOptimizer');
+  }
+
+  /**
    * Grants permission to retrieve a version of a table
    *
    * Access Level: Read
@@ -1555,6 +1651,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all Column Statistics run-ids that have been executed for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-ListColumnStatisticsTaskRuns
+   */
+  public toListColumnStatisticsTaskRuns() {
+    return this.to('ListColumnStatisticsTaskRuns');
+  }
+
+  /**
    * Grants permission to retrieve all crawlers
    *
    * Access Level: List
@@ -1625,10 +1732,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityRulesets
    */
   public toListDataQualityRulesets() {
@@ -1661,10 +1764,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all ML Transforms
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-ListMLTransforms
    */
@@ -1728,6 +1827,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the history of previous optimizer runs for a specific table
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-ListTableOptimizerRuns
+   */
+  public toListTableOptimizerRuns() {
+    return this.to('ListTableOptimizerRuns');
+  }
+
+  /**
    * Grants permission to retrieve all triggers
    *
    * Access Level: List
@@ -1758,6 +1871,17 @@ export class Glue extends PolicyStatement {
    */
   public toNotifyEvent() {
     return this.to('NotifyEvent');
+  }
+
+  /**
+   * Grants permission to pass glue connection name in input for APIs that require them
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
+   */
+  public toPassConnection() {
+    return this.to('PassConnection');
   }
 
   /**
@@ -1904,6 +2028,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to provide feedback about a glue completion experience in AWS Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#
+   */
+  public toSendFeedback() {
+    return this.to('SendFeedback');
+  }
+
+  /**
    * Grants permission to start running a blueprint
    *
    * Access Level: Write
@@ -1912,6 +2047,32 @@ export class Glue extends PolicyStatement {
    */
   public toStartBlueprintRun() {
     return this.to('StartBlueprintRun');
+  }
+
+  /**
+   * Grants permission to start a run for generating Column Statistics for the table
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - glue:GetSecurityConfiguration
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-StartColumnStatisticsTaskRun
+   */
+  public toStartColumnStatisticsTaskRun() {
+    return this.to('StartColumnStatisticsTaskRun');
+  }
+
+  /**
+   * Grants permission to create a completion request in Glue for AWS Q experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#
+   */
+  public toStartCompletion() {
+    return this.to('StartCompletion');
   }
 
   /**
@@ -2047,6 +2208,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop execution for Column Statistics run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-StopColumnStatisticsTaskRun
+   */
+  public toStopColumnStatisticsTaskRun() {
+    return this.to('StopColumnStatisticsTaskRun');
+  }
+
+  /**
    * Grants permission to stop a running crawler
    *
    * Access Level: Write
@@ -2128,13 +2300,23 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to test connection in Glue Studio
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/console-test-connections.html
+   */
+  public toTestConnection() {
+    return this.to('TestConnection');
+  }
+
+  /**
    * Grants permission to remove tags associated with a resource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
@@ -2346,6 +2528,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the configuration for an existing table optimizer
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - glue:GetTable
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-UpdateTableOptimizer
+   */
+  public toUpdateTableOptimizer() {
+    return this.to('UpdateTableOptimizer');
+  }
+
+  /**
    * Grants permission to update a trigger
    *
    * Access Level: Write
@@ -2431,6 +2627,7 @@ export class Glue extends PolicyStatement {
       'CreateSecurityConfiguration',
       'CreateSession',
       'CreateTable',
+      'CreateTableOptimizer',
       'CreateTrigger',
       'CreateUserDefinedFunction',
       'CreateWorkflow',
@@ -2454,12 +2651,14 @@ export class Glue extends PolicyStatement {
       'DeleteSecurityConfiguration',
       'DeleteSession',
       'DeleteTable',
+      'DeleteTableOptimizer',
       'DeleteTableVersion',
       'DeleteTrigger',
       'DeleteUserDefinedFunction',
       'DeleteWorkflow',
       'ImportCatalogToGlue',
       'NotifyEvent',
+      'PassConnection',
       'PublishDataQuality',
       'PutDataCatalogEncryptionSettings',
       'PutSchemaVersionMetadata',
@@ -2469,7 +2668,10 @@ export class Glue extends PolicyStatement {
       'ResetJobBookmark',
       'ResumeWorkflowRun',
       'RunStatement',
+      'SendFeedback',
       'StartBlueprintRun',
+      'StartColumnStatisticsTaskRun',
+      'StartCompletion',
       'StartCrawler',
       'StartCrawlerSchedule',
       'StartDataQualityRuleRecommendationRun',
@@ -2481,6 +2683,7 @@ export class Glue extends PolicyStatement {
       'StartMLLabelingSetGenerationTaskRun',
       'StartTrigger',
       'StartWorkflowRun',
+      'StopColumnStatisticsTaskRun',
       'StopCrawler',
       'StopCrawlerSchedule',
       'StopSession',
@@ -2504,6 +2707,7 @@ export class Glue extends PolicyStatement {
       'UpdateSchema',
       'UpdateSourceControlFromJob',
       'UpdateTable',
+      'UpdateTableOptimizer',
       'UpdateTrigger',
       'UpdateUserDefinedFunction',
       'UpdateWorkflow',
@@ -2516,6 +2720,7 @@ export class Glue extends PolicyStatement {
       'BatchGetDevEndpoints',
       'BatchGetJobs',
       'BatchGetPartition',
+      'BatchGetTableOptimizer',
       'BatchGetTriggers',
       'BatchGetWorkflows',
       'CheckSchemaVersionValidity',
@@ -2527,6 +2732,9 @@ export class Glue extends PolicyStatement {
       'GetClassifiers',
       'GetColumnStatisticsForPartition',
       'GetColumnStatisticsForTable',
+      'GetColumnStatisticsTaskRun',
+      'GetColumnStatisticsTaskRuns',
+      'GetCompletion',
       'GetConnection',
       'GetConnections',
       'GetCrawler',
@@ -2567,6 +2775,7 @@ export class Glue extends PolicyStatement {
       'GetSession',
       'GetStatement',
       'GetTable',
+      'GetTableOptimizer',
       'GetTableVersion',
       'GetTableVersions',
       'GetTables',
@@ -2579,6 +2788,7 @@ export class Glue extends PolicyStatement {
       'GetWorkflowRun',
       'GetWorkflowRunProperties',
       'GetWorkflowRuns',
+      'ListColumnStatisticsTaskRuns',
       'SearchTables'
     ],
     'Permissions management': [
@@ -2592,6 +2802,7 @@ export class Glue extends PolicyStatement {
       'RunDataPreviewStatement',
       'StartNotebook',
       'TerminateNotebook',
+      'TestConnection',
       'UseGlueStudio'
     ],
     List: [
@@ -2613,6 +2824,7 @@ export class Glue extends PolicyStatement {
       'ListSchemas',
       'ListSessions',
       'ListStatements',
+      'ListTableOptimizerRuns',
       'ListTriggers',
       'ListWorkflows',
       'QuerySchemaVersionMetadata'
@@ -2901,6 +3113,123 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type customEntityType to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param customEntityTypeId - Identifier for the customEntityTypeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomEntityType(customEntityTypeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:customEntityType/${ customEntityTypeId }`);
+  }
+
+  /**
+   * Adds a resource of type completion to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param completionId - Identifier for the completionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCompletion(completionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Glue.defaultPartition }:glue:${ region || '*' }:${ account || '*' }:completion/${ completionId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBlueprint()
+   * - .toCreateConnection()
+   * - .toCreateCrawler()
+   * - .toCreateCustomEntityType()
+   * - .toCreateDataQualityRuleset()
+   * - .toCreateDevEndpoint()
+   * - .toCreateJob()
+   * - .toCreateMLTransform()
+   * - .toCreateRegistry()
+   * - .toCreateSchema()
+   * - .toCreateSession()
+   * - .toCreateTrigger()
+   * - .toCreateWorkflow()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - connection
+   * - devendpoint
+   * - job
+   * - trigger
+   * - crawler
+   * - workflow
+   * - blueprint
+   * - mlTransform
+   * - registry
+   * - schema
+   * - session
+   * - dataQualityRuleset
+   * - customEntityType
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBlueprint()
+   * - .toCreateConnection()
+   * - .toCreateCrawler()
+   * - .toCreateCustomEntityType()
+   * - .toCreateDataQualityRuleset()
+   * - .toCreateDevEndpoint()
+   * - .toCreateJob()
+   * - .toCreateMLTransform()
+   * - .toCreateRegistry()
+   * - .toCreateSchema()
+   * - .toCreateSession()
+   * - .toCreateTrigger()
+   * - .toCreateWorkflow()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the service from which the credentials of the request is issued
    *
    * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
@@ -2931,6 +3260,7 @@ export class Glue extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateJob()
+   * - .toCreateSession()
    * - .toUpdateJob()
    *
    * @param value The value(s) to check
@@ -2947,6 +3277,7 @@ export class Glue extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateJob()
+   * - .toCreateSession()
    * - .toUpdateJob()
    *
    * @param value The value(s) to check
@@ -2963,6 +3294,7 @@ export class Glue extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateJob()
+   * - .toCreateSession()
    * - .toUpdateJob()
    *
    * @param value The value(s) to check

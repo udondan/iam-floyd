@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudhsm.html).
@@ -30,13 +30,18 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Creates a copy of a backup in the specified region
+   * Grants permission to create a copy of a backup in the specified region
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudhsm:CopyBackupToRegion
+   * - cloudhsm:TagResource
+   * - cloudhsm:UntagResource
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html
    */
@@ -45,13 +50,23 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Creates a new AWS CloudHSM cluster
+   * Grants permission to create a new AWS CloudHSM cluster
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudhsm:TagResource
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateSecurityGroup
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:RevokeSecurityGroupEgress
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html
    */
@@ -71,9 +86,20 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster
+   * Grants permission to create a new hardware security module (HSM) in the specified AWS CloudHSM cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:RevokeSecurityGroupEgress
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html
    */
@@ -93,7 +119,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified CloudHSM backup
+   * Grants permission to delete the specified CloudHSM backup
    *
    * Access Level: Write
    *
@@ -104,9 +130,13 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified AWS CloudHSM cluster
+   * Grants permission to delete the specified AWS CloudHSM cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSecurityGroup
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html
    */
@@ -126,9 +156,12 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified HSM
+   * Grants permission to delete the specified HSM
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html
    */
@@ -148,7 +181,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Gets information about backups of AWS CloudHSM clusters
+   * Grants permission to get information about backups of AWS CloudHSM clusters
    *
    * Access Level: Read
    *
@@ -159,7 +192,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Gets information about AWS CloudHSM clusters
+   * Grants permission to get information about AWS CloudHSM clusters
    *
    * Access Level: Read
    *
@@ -214,7 +247,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Claims an AWS CloudHSM cluster
+   * Grants permission to claim an AWS CloudHSM cluster
    *
    * Access Level: Write
    *
@@ -269,7 +302,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Gets a list of tags for the specified AWS CloudHSM cluster
+   * Grants permission to get a list of tags for the specified AWS CloudHSM cluster
    *
    * Access Level: Read
    *
@@ -291,7 +324,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Modifies attributes for AWS CloudHSM backup
+   * Grants permission to modify attributes for an AWS CloudHSM backup
    *
    * Access Level: Write
    *
@@ -302,7 +335,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Modifies AWS CloudHSM cluster
+   * Grants permission to modify AWS CloudHSM cluster
    *
    * Access Level: Write
    *
@@ -357,7 +390,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Restores the specified CloudHSM backup
+   * Grants permission to restore the specified CloudHSM backup
    *
    * Access Level: Write
    *
@@ -368,7 +401,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Adds or overwrites one or more tags for the specified AWS CloudHSM cluster
+   * Grants permission to add or overwrite one or more tags for the specified AWS CloudHSM cluster
    *
    * Access Level: Tagging
    *
@@ -383,7 +416,7 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Removes the specified tag or tags from the specified AWS CloudHSM cluster
+   * Grants permission to remove the specified tag or tags from the specified AWS CloudHSM cluster
    *
    * Access Level: Tagging
    *
@@ -472,5 +505,58 @@ export class Cloudhsm extends PolicyStatement {
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudhsm.defaultPartition }:cloudhsm:${ region || '*' }:${ account || '*' }:cluster/${ cloudHsmClusterInstanceName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCopyBackupToRegion()
+   * - .toCreateCluster()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - backup
+   * - cluster
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCopyBackupToRegion()
+   * - .toCreateCluster()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

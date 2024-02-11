@@ -34,6 +34,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an export job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifExportSourceType()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CancelExportJob.html
+   */
+  public toCancelExportJob() {
+    return this.to('CancelExportJob');
+  }
+
+  /**
    * Grants permission to create a new configuration set
    *
    * Access Level: Write
@@ -184,6 +199,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toCreateEmailTemplate() {
     return this.to('CreateEmailTemplate');
+  }
+
+  /**
+   * Grants permission to create an export job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifExportSourceType()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateExportJob.html
+   */
+  public toCreateExportJob() {
+    return this.to('CreateExportJob');
   }
 
   /**
@@ -595,6 +625,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an export job
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifExportSourceType()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetExportJob.html
+   */
+  public toGetExportJob() {
+    return this.to('GetExportJob');
+  }
+
+  /**
    * Grants permission to provide information about an import job
    *
    * Access Level: Read
@@ -606,6 +651,20 @@ export class SesV2 extends PolicyStatement {
    */
   public toGetImportJob() {
     return this.to('GetImportJob');
+  }
+
+  /**
+   * Grants permission to provide insights about a message
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetMessageInsights.html
+   */
+  public toGetMessageInsights() {
+    return this.to('GetMessageInsights');
   }
 
   /**
@@ -746,6 +805,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toListEmailTemplates() {
     return this.to('ListEmailTemplates');
+  }
+
+  /**
+   * Grants permission to list all the exports jobs for your account
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifExportSourceType()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListExportJobs.html
+   */
+  public toListExportJobs() {
+    return this.to('ListExportJobs');
   }
 
   /**
@@ -978,6 +1052,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toPutDedicatedIpInPool() {
     return this.to('PutDedicatedIpInPool');
+  }
+
+  /**
+   * Grants permission to transition a dedicated IP pool from Standard to Managed
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutDedicatedIpPoolScalingAttributes.html
+   */
+  public toPutDedicatedIpPoolScalingAttributes() {
+    return this.to('PutDedicatedIpPoolScalingAttributes');
   }
 
   /**
@@ -1296,7 +1385,9 @@ export class SesV2 extends PolicyStatement {
       'GetEmailIdentity',
       'GetEmailIdentityPolicies',
       'GetEmailTemplate',
+      'GetExportJob',
       'GetImportJob',
+      'GetMessageInsights',
       'GetSuppressedDestination',
       'ListDomainDeliverabilityCampaigns',
       'ListRecommendations',
@@ -1304,6 +1395,7 @@ export class SesV2 extends PolicyStatement {
       'ListTagsForResource'
     ],
     Write: [
+      'CancelExportJob',
       'CreateConfigurationSet',
       'CreateConfigurationSetEventDestination',
       'CreateContact',
@@ -1313,6 +1405,7 @@ export class SesV2 extends PolicyStatement {
       'CreateDeliverabilityTestReport',
       'CreateEmailIdentity',
       'CreateEmailTemplate',
+      'CreateExportJob',
       'CreateImportJob',
       'DeleteConfigurationSet',
       'DeleteConfigurationSetEventDestination',
@@ -1335,6 +1428,7 @@ export class SesV2 extends PolicyStatement {
       'PutConfigurationSetTrackingOptions',
       'PutConfigurationSetVdmOptions',
       'PutDedicatedIpInPool',
+      'PutDedicatedIpPoolScalingAttributes',
       'PutDedicatedIpWarmupAttributes',
       'PutDeliverabilityDashboardOption',
       'PutEmailIdentityConfigurationSetAttributes',
@@ -1367,6 +1461,7 @@ export class SesV2 extends PolicyStatement {
       'ListDeliverabilityTestReports',
       'ListEmailIdentities',
       'ListEmailTemplates',
+      'ListExportJobs',
       'ListImportJobs'
     ],
     Tagging: [
@@ -1458,6 +1553,20 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type export-job to the statement
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ExportJobSummary.html
+   *
+   * @param exportJobId - Identifier for the exportJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExportJob(exportJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:export-job/${ exportJobId }`);
+  }
+
+  /**
    * Adds a resource of type identity to the statement
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_IdentityInfo.html
@@ -1503,12 +1612,115 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the SES API version
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateContactList()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toBatchGetMetricData()
+   * - .toCreateConfigurationSetEventDestination()
+   * - .toCreateContact()
+   * - .toCreateEmailIdentityPolicy()
+   * - .toDeleteConfigurationSet()
+   * - .toDeleteConfigurationSetEventDestination()
+   * - .toDeleteContact()
+   * - .toDeleteContactList()
+   * - .toDeleteDedicatedIpPool()
+   * - .toDeleteEmailIdentity()
+   * - .toDeleteEmailIdentityPolicy()
+   * - .toGetConfigurationSet()
+   * - .toGetConfigurationSetEventDestinations()
+   * - .toGetContact()
+   * - .toGetDedicatedIpPool()
+   * - .toGetDedicatedIps()
+   * - .toGetDeliverabilityTestReport()
+   * - .toGetDomainStatisticsReport()
+   * - .toGetEmailIdentity()
+   * - .toGetEmailIdentityPolicies()
+   * - .toListRecommendations()
+   * - .toPutConfigurationSetDeliveryOptions()
+   * - .toPutConfigurationSetReputationOptions()
+   * - .toPutConfigurationSetSendingOptions()
+   * - .toPutConfigurationSetSuppressionOptions()
+   * - .toPutConfigurationSetTrackingOptions()
+   * - .toPutConfigurationSetVdmOptions()
+   * - .toPutDedicatedIpInPool()
+   * - .toPutDedicatedIpPoolScalingAttributes()
+   * - .toPutEmailIdentityConfigurationSetAttributes()
+   * - .toPutEmailIdentityDkimAttributes()
+   * - .toPutEmailIdentityDkimSigningAttributes()
+   * - .toPutEmailIdentityFeedbackAttributes()
+   * - .toPutEmailIdentityMailFromAttributes()
+   * - .toUpdateConfigurationSetEventDestination()
+   * - .toUpdateContact()
+   * - .toUpdateContactList()
+   * - .toUpdateEmailIdentityPolicy()
+   *
+   * Applies to resource types:
+   * - configuration-set
+   * - contact-list
+   * - dedicated-ip-pool
+   * - deliverability-test-report
+   * - identity
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateConfigurationSet()
+   * - .toCreateContactList()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the SES API version
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toBatchGetMetricData()
+   * - .toCancelExportJob()
    * - .toCreateConfigurationSet()
    * - .toCreateConfigurationSetEventDestination()
    * - .toCreateContact()
@@ -1519,6 +1731,7 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateEmailIdentity()
    * - .toCreateEmailIdentityPolicy()
    * - .toCreateEmailTemplate()
+   * - .toCreateExportJob()
    * - .toCreateImportJob()
    * - .toDeleteConfigurationSet()
    * - .toDeleteConfigurationSetEventDestination()
@@ -1547,7 +1760,9 @@ export class SesV2 extends PolicyStatement {
    * - .toGetEmailIdentity()
    * - .toGetEmailIdentityPolicies()
    * - .toGetEmailTemplate()
+   * - .toGetExportJob()
    * - .toGetImportJob()
+   * - .toGetMessageInsights()
    * - .toGetSuppressedDestination()
    * - .toListConfigurationSets()
    * - .toListContactLists()
@@ -1558,6 +1773,7 @@ export class SesV2 extends PolicyStatement {
    * - .toListDomainDeliverabilityCampaigns()
    * - .toListEmailIdentities()
    * - .toListEmailTemplates()
+   * - .toListExportJobs()
    * - .toListImportJobs()
    * - .toListRecommendations()
    * - .toListSuppressedDestinations()
@@ -1574,6 +1790,7 @@ export class SesV2 extends PolicyStatement {
    * - .toPutConfigurationSetTrackingOptions()
    * - .toPutConfigurationSetVdmOptions()
    * - .toPutDedicatedIpInPool()
+   * - .toPutDedicatedIpPoolScalingAttributes()
    * - .toPutDedicatedIpWarmupAttributes()
    * - .toPutDeliverabilityDashboardOption()
    * - .toPutEmailIdentityConfigurationSetAttributes()
@@ -1603,7 +1820,25 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding
+   * Filters access by the export source type
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toCancelExportJob()
+   * - .toCreateExportJob()
+   * - .toGetExportJob()
+   * - .toListExportJobs()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportSourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ExportSourceType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
@@ -1618,7 +1853,7 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the "From" address of a message
+   * Filters access by the "From" address of a message
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
@@ -1633,7 +1868,7 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the "From" address that is used as the display name of a message
+   * Filters access by the "From" address that is used as the display name of a message
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
@@ -1648,7 +1883,7 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the recipient addresses of a message, which include the "To", "CC", and "BCC" addresses
+   * Filters access by the recipient addresses of a message, which include the "To", "CC", and "BCC" addresses
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *

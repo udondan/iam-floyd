@@ -1,5 +1,14 @@
 eks:RequestTag/${TagKey}
 eks:ResourceTag/${TagKey}
 eks:TagKeys
+eks:accessEntryType
+eks:accessScope
+eks:bootstrapClusterCreatorAdminPermissions
 eks:clientId
+eks:clusterName
 eks:issuerUrl
+eks:kubernetesGroups
+eks:namespaces
+eks:policyArn
+eks:principalArn
+eks:username

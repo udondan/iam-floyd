@@ -1,10 +1,19 @@
 s3:AbortMultipartUpload;Write
+s3:AssociateAccessGrantsIdentityCenter;Write
 s3:BypassGovernanceRetention;Permissions management
+s3:CreateAccessGrant;Write
+s3:CreateAccessGrantsInstance;Write
+s3:CreateAccessGrantsLocation;Write
 s3:CreateAccessPoint;Write
 s3:CreateAccessPointForObjectLambda;Write
 s3:CreateBucket;Write
 s3:CreateJob;Write
 s3:CreateMultiRegionAccessPoint;Write
+s3:CreateStorageLensGroup;Write
+s3:DeleteAccessGrant;Write
+s3:DeleteAccessGrantsInstance;Write
+s3:DeleteAccessGrantsInstanceResourcePolicy;Write
+s3:DeleteAccessGrantsLocation;Write
 s3:DeleteAccessPoint;Write
 s3:DeleteAccessPointForObjectLambda;Write
 s3:DeleteAccessPointPolicy;Permissions management
@@ -20,9 +29,16 @@ s3:DeleteObjectVersion;Write
 s3:DeleteObjectVersionTagging;Tagging
 s3:DeleteStorageLensConfiguration;Write
 s3:DeleteStorageLensConfigurationTagging;Tagging
+s3:DeleteStorageLensGroup;Write
 s3:DescribeJob;Read
 s3:DescribeMultiRegionAccessPointOperation;Read
+s3:DissociateAccessGrantsIdentityCenter;Write
 s3:GetAccelerateConfiguration;Read
+s3:GetAccessGrant;Read
+s3:GetAccessGrantsInstance;Read
+s3:GetAccessGrantsInstanceForPrefix;Read
+s3:GetAccessGrantsInstanceResourcePolicy;Read
+s3:GetAccessGrantsLocation;Read
 s3:GetAccessPoint;Read
 s3:GetAccessPointConfigurationForObjectLambda;Read
 s3:GetAccessPointForObjectLambda;Read
@@ -46,6 +62,7 @@ s3:GetBucketRequestPayment;Read
 s3:GetBucketTagging;Read
 s3:GetBucketVersioning;Read
 s3:GetBucketWebsite;Read
+s3:GetDataAccess;Read
 s3:GetEncryptionConfiguration;Read
 s3:GetIntelligentTieringConfiguration;Read
 s3:GetInventoryConfiguration;Read
@@ -73,7 +90,11 @@ s3:GetReplicationConfiguration;Read
 s3:GetStorageLensConfiguration;Read
 s3:GetStorageLensConfigurationTagging;Read
 s3:GetStorageLensDashboard;Read
+s3:GetStorageLensGroup;Read
 s3:InitiateReplication;Write
+s3:ListAccessGrants;List
+s3:ListAccessGrantsInstances;List
+s3:ListAccessGrantsLocations;List
 s3:ListAccessPoints;List
 s3:ListAccessPointsForObjectLambda;List
 s3:ListAllMyBuckets;List
@@ -84,8 +105,11 @@ s3:ListJobs;List
 s3:ListMultiRegionAccessPoints;List
 s3:ListMultipartUploadParts;List
 s3:ListStorageLensConfigurations;List
+s3:ListStorageLensGroups;List
+s3:ListTagsForResource;List
 s3:ObjectOwnerOverrideToBucketOwner;Permissions management
 s3:PutAccelerateConfiguration;Write
+s3:PutAccessGrantsInstanceResourcePolicy;Write
 s3:PutAccessPointConfigurationForObjectLambda;Write
 s3:PutAccessPointPolicy;Permissions management
 s3:PutAccessPointPolicyForObjectLambda;Permissions management
@@ -126,5 +150,9 @@ s3:ReplicateObject;Write
 s3:ReplicateTags;Tagging
 s3:RestoreObject;Write
 s3:SubmitMultiRegionAccessPointRoutes;Write
+s3:TagResource;Tagging
+s3:UntagResource;Tagging
+s3:UpdateAccessGrantsLocation;Write
 s3:UpdateJobPriority;Write
 s3:UpdateJobStatus;Write
+s3:UpdateStorageLensGroup;Write

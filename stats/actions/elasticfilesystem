@@ -33,3 +33,4 @@ elasticfilesystem:Restore;Write
 elasticfilesystem:TagResource;Tagging
 elasticfilesystem:UntagResource;Tagging
 elasticfilesystem:UpdateFileSystem;Write
+elasticfilesystem:UpdateFileSystemProtection;Write

@@ -30,6 +30,7 @@ dynamodb:EnableKinesisStreamingDestination;Write
 dynamodb:ExportTableToPointInTime;Write
 dynamodb:GetItem;Read
 dynamodb:GetRecords;Read
+dynamodb:GetResourcePolicy;Read
 dynamodb:GetShardIterator;Read
 dynamodb:ImportTable;Write
 dynamodb:ListBackups;List

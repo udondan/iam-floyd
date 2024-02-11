@@ -9,6 +9,7 @@ emr-containers:DescribeJobRun;Read
 emr-containers:DescribeJobTemplate;Read
 emr-containers:DescribeManagedEndpoint;Read
 emr-containers:DescribeVirtualCluster;Read
+emr-containers:GetManagedEndpointSessionCredentials;Write
 emr-containers:ListJobRuns;List
 emr-containers:ListJobTemplates;List
 emr-containers:ListManagedEndpoints;List

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
@@ -41,6 +41,21 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a delivery connecting a delivery source to a delivery destination
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html
+   */
+  public toCreateDelivery() {
+    return this.to('CreateDelivery');
+  }
+
+  /**
    * Grants permission to create an ExportTask which allows you to efficiently export data from a Log Group to your Amazon S3 bucket
    *
    * Access Level: Write
@@ -49,6 +64,21 @@ export class Logs extends PolicyStatement {
    */
   public toCreateExportTask() {
     return this.to('CreateExportTask');
+  }
+
+  /**
+   * Grants permission to create a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogAnomalyDetector.html
+   */
+  public toCreateLogAnomalyDetector() {
+    return this.to('CreateLogAnomalyDetector');
   }
 
   /**
@@ -89,6 +119,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a data protection policy attached to an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDataProtectionPolicy.html
+   */
+  public toDeleteAccountPolicy() {
+    return this.to('DeleteAccountPolicy');
+  }
+
+  /**
    * Grants permission to delete a data protection policy attached to a log group
    *
    * Access Level: Write
@@ -100,6 +141,50 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDelivery.html
+   */
+  public toDeleteDelivery() {
+    return this.to('DeleteDelivery');
+  }
+
+  /**
+   * Grants permission to delete a delivery destination after all associated deliveries are deleted
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestination.html
+   */
+  public toDeleteDeliveryDestination() {
+    return this.to('DeleteDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to delete a delivery destination policy associated with a delivery destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestinationPolicy.html
+   */
+  public toDeleteDeliveryDestinationPolicy() {
+    return this.to('DeleteDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to delete a delivery source after all associated deliveries are deleted
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliverySource.html
+   */
+  public toDeleteDeliverySource() {
+    return this.to('DeleteDeliverySource');
+  }
+
+  /**
    * Grants permission to delete the destination with the specified name
    *
    * Access Level: Write
@@ -108,6 +193,17 @@ export class Logs extends PolicyStatement {
    */
   public toDeleteDestination() {
     return this.to('DeleteDestination');
+  }
+
+  /**
+   * Grants permission to delete a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogAnomalyDetector.html
+   */
+  public toDeleteLogAnomalyDetector() {
+    return this.to('DeleteLogAnomalyDetector');
   }
 
   /**
@@ -196,6 +292,50 @@ export class Logs extends PolicyStatement {
    */
   public toDeleteSubscriptionFilter() {
     return this.to('DeleteSubscriptionFilter');
+  }
+
+  /**
+   * Grants permission to retrieve a data protection policy attached to an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeAccountPolicies.html
+   */
+  public toDescribeAccountPolicies() {
+    return this.to('DescribeAccountPolicies');
+  }
+
+  /**
+   * Grants permission to retrieve a list of deliveries an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html
+   */
+  public toDescribeDeliveries() {
+    return this.to('DescribeDeliveries');
+  }
+
+  /**
+   * Grants permission to retrieve a list of delivery destinations an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html
+   */
+  public toDescribeDeliveryDestinations() {
+    return this.to('DescribeDeliveryDestinations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of delivery sources in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliverySources.html
+   */
+  public toDescribeDeliverySources() {
+    return this.to('DescribeDeliverySources');
   }
 
   /**
@@ -331,6 +471,61 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a single delivery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDelivery.html
+   */
+  public toGetDelivery() {
+    return this.to('GetDelivery');
+  }
+
+  /**
+   * Grants permission to retrieve a single delivery destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestination.html
+   */
+  public toGetDeliveryDestination() {
+    return this.to('GetDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to retrieve a delivery destination policy attached to a delivery destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestinationPolicy.html
+   */
+  public toGetDeliveryDestinationPolicy() {
+    return this.to('GetDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a single delivery source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliverySource.html
+   */
+  public toGetDeliverySource() {
+    return this.to('GetDeliverySource');
+  }
+
+  /**
+   * Grants permission to get a log anomaly detector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogAnomalyDetector.html
+   */
+  public toGetLogAnomalyDetector() {
+    return this.to('GetLogAnomalyDetector');
+  }
+
+  /**
    * Grants permission to get the log delivery information for specified log delivery
    *
    * Access Level: Read
@@ -397,6 +592,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all anomalies detected in the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html
+   */
+  public toListAnomalies() {
+    return this.to('ListAnomalies');
+  }
+
+  /**
+   * Grants permission to return all the anomaly detectors that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogAnomalyDetectors.html
+   */
+  public toListLogAnomalyDetectors() {
+    return this.to('ListLogAnomalyDetectors');
+  }
+
+  /**
    * Grants permission to list all the log deliveries for specified account and/or log source
    *
    * Access Level: List
@@ -430,6 +647,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a data protection policy at account level to detect and redact sensitive information from log events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html
+   */
+  public toPutAccountPolicy() {
+    return this.to('PutAccountPolicy');
+  }
+
+  /**
    * Grants permission to attach a data protection policy to detect and redact sensitive information from log events
    *
    * Access Level: Write
@@ -438,6 +666,49 @@ export class Logs extends PolicyStatement {
    */
   public toPutDataProtectionPolicy() {
     return this.to('PutDataProtectionPolicy');
+  }
+
+  /**
+   * Grants permission to create/update a delivery destination
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifDeliveryDestinationResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html
+   */
+  public toPutDeliveryDestination() {
+    return this.to('PutDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to attach a delivery destination policy to a delivery destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html
+   */
+  public toPutDeliveryDestinationPolicy() {
+    return this.to('PutDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to create/update a delivery source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifLogGeneratingResourceArns()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html
+   */
+  public toPutDeliverySource() {
+    return this.to('PutDeliverySource');
   }
 
   /**
@@ -539,6 +810,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a Live Tail session in CloudWatch Logs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTail.html
+   */
+  public toStartLiveTail() {
+    return this.to('StartLiveTail');
+  }
+
+  /**
    * Grants permission to schedule a query of a log group using CloudWatch Logs Insights
    *
    * Access Level: Read
@@ -547,6 +829,17 @@ export class Logs extends PolicyStatement {
    */
   public toStartQuery() {
     return this.to('StartQuery');
+  }
+
+  /**
+   * Grants permission to stop a Live Tail session that is in progress
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html
+   */
+  public toStopLiveTail() {
+    return this.to('StopLiveTail');
   }
 
   /**
@@ -641,6 +934,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an anomaly reported by a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html
+   */
+  public toUpdateAnomaly() {
+    return this.to('UpdateAnomaly');
+  }
+
+  /**
+   * Grants permission to update a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html
+   */
+  public toUpdateLogAnomalyDetector() {
+    return this.to('UpdateLogAnomalyDetector');
+  }
+
+  /**
    * Grants permission to update the log delivery information for specified log delivery
    *
    * Access Level: Write
@@ -655,12 +970,20 @@ export class Logs extends PolicyStatement {
     Write: [
       'AssociateKmsKey',
       'CancelExportTask',
+      'CreateDelivery',
       'CreateExportTask',
+      'CreateLogAnomalyDetector',
       'CreateLogDelivery',
       'CreateLogGroup',
       'CreateLogStream',
+      'DeleteAccountPolicy',
       'DeleteDataProtectionPolicy',
+      'DeleteDelivery',
+      'DeleteDeliveryDestination',
+      'DeleteDeliveryDestinationPolicy',
+      'DeleteDeliverySource',
       'DeleteDestination',
+      'DeleteLogAnomalyDetector',
       'DeleteLogDelivery',
       'DeleteLogGroup',
       'DeleteLogStream',
@@ -670,7 +993,11 @@ export class Logs extends PolicyStatement {
       'DeleteSubscriptionFilter',
       'DisassociateKmsKey',
       'Link',
+      'PutAccountPolicy',
       'PutDataProtectionPolicy',
+      'PutDeliveryDestination',
+      'PutDeliveryDestinationPolicy',
+      'PutDeliverySource',
       'PutDestination',
       'PutDestinationPolicy',
       'PutLogEvents',
@@ -678,6 +1005,8 @@ export class Logs extends PolicyStatement {
       'PutQueryDefinition',
       'PutRetentionPolicy',
       'PutSubscriptionFilter',
+      'UpdateAnomaly',
+      'UpdateLogAnomalyDetector',
       'UpdateLogDelivery'
     ],
     'Permissions management': [
@@ -685,6 +1014,10 @@ export class Logs extends PolicyStatement {
       'PutResourcePolicy'
     ],
     List: [
+      'DescribeAccountPolicies',
+      'DescribeDeliveries',
+      'DescribeDeliveryDestinations',
+      'DescribeDeliverySources',
       'DescribeDestinations',
       'DescribeExportTasks',
       'DescribeLogGroups',
@@ -694,6 +1027,8 @@ export class Logs extends PolicyStatement {
       'DescribeQueryDefinitions',
       'DescribeResourcePolicies',
       'DescribeSubscriptionFilters',
+      'ListAnomalies',
+      'ListLogAnomalyDetectors',
       'ListLogDeliveries',
       'ListTagsForResource',
       'ListTagsLogGroup'
@@ -701,12 +1036,19 @@ export class Logs extends PolicyStatement {
     Read: [
       'FilterLogEvents',
       'GetDataProtectionPolicy',
+      'GetDelivery',
+      'GetDeliveryDestination',
+      'GetDeliveryDestinationPolicy',
+      'GetDeliverySource',
+      'GetLogAnomalyDetector',
       'GetLogDelivery',
       'GetLogEvents',
       'GetLogGroupFields',
       'GetLogRecord',
       'GetQueryResults',
+      'StartLiveTail',
       'StartQuery',
+      'StopLiveTail',
       'StopQuery',
       'TestMetricFilter',
       'Unmask'
@@ -746,6 +1088,9 @@ export class Logs extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
@@ -766,5 +1111,172 @@ export class Logs extends PolicyStatement {
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery-source to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliverySource.html
+   *
+   * @param deliverySourceName - Identifier for the deliverySourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeliverySource(deliverySourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery-source:${ deliverySourceName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html
+   *
+   * @param deliveryName - Identifier for the deliveryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDelivery(deliveryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery:${ deliveryName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery-destination to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliveryDestination.html
+   *
+   * @param deliveryDestinationName - Identifier for the deliveryDestinationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeliveryDestination(deliveryDestinationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery-destination:${ deliveryDestinationName }`);
+  }
+
+  /**
+   * Adds a resource of type anomaly-detector to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AnomalyDetector.html
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnomalyDetector(detectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:anomaly-detector:${ detectorId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDelivery()
+   * - .toCreateLogAnomalyDetector()
+   * - .toCreateLogGroup()
+   * - .toPutDeliveryDestination()
+   * - .toPutDeliverySource()
+   * - .toPutDestination()
+   * - .toTagLogGroup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - log-group
+   * - log-stream
+   * - destination
+   * - delivery-source
+   * - delivery
+   * - delivery-destination
+   * - anomaly-detector
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDelivery()
+   * - .toCreateLogAnomalyDetector()
+   * - .toCreateLogGroup()
+   * - .toPutDeliveryDestination()
+   * - .toPutDeliverySource()
+   * - .toPutDestination()
+   * - .toTagLogGroup()
+   * - .toTagResource()
+   * - .toUntagLogGroup()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the Log Destination ARN passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toPutDeliveryDestination()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDeliveryDestinationResourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DeliveryDestinationResourceArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the Log Generating Resource ARNs passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toPutDeliverySource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifLogGeneratingResourceArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`LogGeneratingResourceArns`, value, operator || 'ArnLike');
   }
 }

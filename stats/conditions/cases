@@ -1,3 +1,4 @@
 cases:RequestTag/${TagKey}
 cases:ResourceTag/${TagKey}
 cases:TagKeys
+cases:UserArn

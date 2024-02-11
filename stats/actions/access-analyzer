@@ -1,5 +1,7 @@
 access-analyzer:ApplyArchiveRule;Write
 access-analyzer:CancelPolicyGeneration;Write
+access-analyzer:CheckAccessNotGranted;Read
+access-analyzer:CheckNoNewAccess;Read
 access-analyzer:CreateAccessPreview;Write
 access-analyzer:CreateAnalyzer;Write
 access-analyzer:CreateArchiveRule;Write
@@ -10,6 +12,7 @@ access-analyzer:GetAnalyzedResource;Read
 access-analyzer:GetAnalyzer;Read
 access-analyzer:GetArchiveRule;Read
 access-analyzer:GetFinding;Read
+access-analyzer:GetFindingsStatistics;Read
 access-analyzer:GetGeneratedPolicy;Read
 access-analyzer:ListAccessPreviewFindings;Read
 access-analyzer:ListAccessPreviews;List

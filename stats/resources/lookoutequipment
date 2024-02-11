@@ -2,3 +2,4 @@ lookoutequipment:dataset
 lookoutequipment:inference-scheduler
 lookoutequipment:label-group
 lookoutequipment:model
+lookoutequipment:model-version

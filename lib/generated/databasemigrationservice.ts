@@ -24,6 +24,7 @@ export class Dms extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -49,6 +50,9 @@ export class Dms extends PolicyStatement {
    * Grants permission to associate a extension pack
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:StartExtensionPackAssociation
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -112,16 +116,40 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a database migration using the provided settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toCreateDataMigration() {
+    return this.to('CreateDataMigration');
+  }
+
+  /**
    * Grants permission to create an data provider using the provided settings
    *
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html
    */
   public toCreateDataProvider() {
     return this.to('CreateDataProvider');
@@ -133,9 +161,13 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
@@ -149,6 +181,7 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -164,6 +197,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateFleetAdvisorCollector.html
    */
   public toCreateFleetAdvisorCollector() {
@@ -176,11 +212,15 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html
    */
   public toCreateInstanceProfile() {
     return this.to('CreateInstanceProfile');
@@ -192,14 +232,35 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateMigrationProject.html
+   */
+  public toCreateMigrationProject() {
+    return this.to('CreateMigrationProject');
+  }
+
+  /**
+   * Grants permission to create a replication config using the provided settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
-  public toCreateMigrationProject() {
-    return this.to('CreateMigrationProject');
+  public toCreateReplicationConfig() {
+    return this.to('CreateReplicationConfig');
   }
 
   /**
@@ -208,9 +269,13 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
@@ -224,6 +289,7 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -240,6 +306,7 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -248,6 +315,50 @@ export class Dms extends PolicyStatement {
    */
   public toCreateReplicationTask() {
     return this.to('CreateReplicationTask');
+  }
+
+  /**
+   * Grants permission to create a test using the provided settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTest.html
+   */
+  public toCreateTest() {
+    return this.to('CreateTest');
+  }
+
+  /**
+   * Grants permission to create a test environment using the provided settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestEnvironments.html
+   */
+  public toCreateTestEnvironments() {
+    return this.to('CreateTestEnvironments');
+  }
+
+  /**
+   * Grants permission to create a test plan using the provided settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestPlan.html
+   */
+  public toCreateTestPlan() {
+    return this.to('CreateTestPlan');
+  }
+
+  /**
+   * Grants permission to create a test run using the provided settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestRun.html
+   */
+  public toCreateTestRun() {
+    return this.to('CreateTestRun');
   }
 
   /**
@@ -273,11 +384,22 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified data provider
+   * Grants permission to delete the specified database migration
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDeleteDataMigration() {
+    return this.to('DeleteDataMigration');
+  }
+
+  /**
+   * Grants permission to delete the specified data provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteDataProvider.html
    */
   public toDeleteDataProvider() {
     return this.to('DeleteDataProvider');
@@ -332,7 +454,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteInstanceProfile.html
    */
   public toDeleteInstanceProfile() {
     return this.to('DeleteInstanceProfile');
@@ -343,10 +465,21 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteMigrationProject.html
    */
   public toDeleteMigrationProject() {
     return this.to('DeleteMigrationProject');
+  }
+
+  /**
+   * Grants permission to delete the specified replication config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDeleteReplicationConfig() {
+    return this.to('DeleteReplicationConfig');
   }
 
   /**
@@ -394,6 +527,28 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTest.html
+   */
+  public toDeleteTest() {
+    return this.to('DeleteTest');
+  }
+
+  /**
+   * Grants permission to delete the specified test plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTestPlan.html
+   */
+  public toDeleteTestPlan() {
+    return this.to('DeleteTestPlan');
+  }
+
+  /**
    * Grants permission to list all of the AWS DMS attributes for a customer account
    *
    * Access Level: Read
@@ -438,6 +593,42 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about DMS Schema Conversion project configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConversionConfiguration.html
+   */
+  public toDescribeConversionConfiguration() {
+    return this.to('DescribeConversionConfiguration');
+  }
+
+  /**
+   * Grants permission to return information about database migrations for your account in the specified region
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDescribeDataMigrations() {
+    return this.to('DescribeDataMigrations');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a data providers. Note. This action should be added along with ListDataProviders, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListDataProviders
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeDataProviders.html
+   */
+  public toDescribeDataProviders() {
+    return this.to('DescribeDataProviders');
+  }
+
+  /**
    * Grants permission to return the possible endpoint settings available when you create an endpoint for a specific database engine
    *
    * Access Level: Read
@@ -471,6 +662,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about the available versions for DMS replication instances
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEngineVersions.html
+   */
+  public toDescribeEngineVersions() {
+    return this.to('DescribeEngineVersions');
+  }
+
+  /**
    * Grants permission to list categories for all event source types, or, if specified, for a specified source type
    *
    * Access Level: Read
@@ -501,6 +703,20 @@ export class Dms extends PolicyStatement {
    */
   public toDescribeEvents() {
     return this.to('DescribeEvents');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for extension packs. Note. This action should be added along with ListExtensionPacks, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListExtensionPacks
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeExtensionPackAssociations.html
+   */
+  public toDescribeExtensionPackAssociations() {
+    return this.to('DescribeExtensionPackAssociations');
   }
 
   /**
@@ -559,6 +775,101 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the AWS DMS attributes for a instance profiles. Note. This action should be added along with ListInstanceProfiles, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListInstanceProfiles
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeInstanceProfiles.html
+   */
+  public toDescribeInstanceProfiles() {
+    return this.to('DescribeInstanceProfiles');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for metadata model assessments. Note. This action should be added along with ListMetadataModelAssessments, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListMetadataModelAssessments
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html
+   */
+  public toDescribeMetadataModelAssessments() {
+    return this.to('DescribeMetadataModelAssessments');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a metadata model conversions. Note. This action should be added along with ListMetadataModelConversions, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListMetadataModelConversions
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html
+   */
+  public toDescribeMetadataModelConversions() {
+    return this.to('DescribeMetadataModelConversions');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a metadata model exports. Note. This action should be added along with ListMetadataModelExports, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListMetadataModelExports
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsAsScript.html
+   */
+  public toDescribeMetadataModelExportsAsScript() {
+    return this.to('DescribeMetadataModelExportsAsScript');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a metadata model exports. Note. This action should be added along with ListMetadataModelExports, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListMetadataModelExports
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsToTarget.html
+   */
+  public toDescribeMetadataModelExportsToTarget() {
+    return this.to('DescribeMetadataModelExportsToTarget');
+  }
+
+  /**
+   * Grants permission to return information about start metadata model import operations for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelImports.html
+   */
+  public toDescribeMetadataModelImports() {
+    return this.to('DescribeMetadataModelImports');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a migration projects. Note. This action should be added along with ListMigrationProjects, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:ListMigrationProjects
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMigrationProjects.html
+   */
+  public toDescribeMigrationProjects() {
+    return this.to('DescribeMigrationProjects');
+  }
+
+  /**
    * Grants permission to return information about the replication instance types that can be created in the specified region
    *
    * Access Level: Read
@@ -614,6 +925,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe replication configs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDescribeReplicationConfigs() {
+    return this.to('DescribeReplicationConfigs');
+  }
+
+  /**
    * Grants permission to return information about the task logs for the specified task
    *
    * Access Level: Read
@@ -648,6 +970,17 @@ export class Dms extends PolicyStatement {
    */
   public toDescribeReplicationSubnetGroups() {
     return this.to('DescribeReplicationSubnetGroups');
+  }
+
+  /**
+   * Grants permission to describe replication table statistics
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDescribeReplicationTableStatistics() {
+    return this.to('DescribeReplicationTableStatistics');
   }
 
   /**
@@ -695,6 +1028,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe replications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toDescribeReplications() {
+    return this.to('DescribeReplications');
+  }
+
+  /**
    * Grants permission to return information about the schema for the specified endpoint
    *
    * Access Level: Read
@@ -717,6 +1061,72 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list a test environment for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestEnvironments.html
+   */
+  public toDescribeTestEnvironments() {
+    return this.to('DescribeTestEnvironments');
+  }
+
+  /**
+   * Grants permission to list statuses of test generations for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestGenerationStatus.html
+   */
+  public toDescribeTestGenerationStatus() {
+    return this.to('DescribeTestGenerationStatus');
+  }
+
+  /**
+   * Grants permission to list all the test plans for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestPlans.html
+   */
+  public toDescribeTestPlans() {
+    return this.to('DescribeTestPlans');
+  }
+
+  /**
+   * Grants permission to view the summary of a specific test run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRunResultsSummaries.html
+   */
+  public toDescribeTestRunResultsSummaries() {
+    return this.to('DescribeTestRunResultsSummaries');
+  }
+
+  /**
+   * Grants permission to list all the test runs for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRuns.html
+   */
+  public toDescribeTestRuns() {
+    return this.to('DescribeTestRuns');
+  }
+
+  /**
+   * Grants permission to list all the tests for a test plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTests.html
+   */
+  public toDescribeTests() {
+    return this.to('DescribeTests');
+  }
+
+  /**
    * Grants permission to disassociate a extension pack
    *
    * Access Level: Write
@@ -732,16 +1142,19 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html
    */
   public toExportMetadataModelAssessment() {
     return this.to('ExportMetadataModelAssessment');
   }
 
   /**
-   * Grants permission to list all of the AWS DMS attributes for a metadata model
+   * Grants permission to list all of the AWS DMS attributes for a metadata model. Note. Despite this action requires StartMetadataModelImport, the latter does not currently authorize the described Schema Conversion operation
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:StartMetadataModelImport
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -755,6 +1168,7 @@ export class Dms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -769,6 +1183,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - dms:DescribeDataProviders
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toListDataProviders() {
@@ -779,6 +1196,9 @@ export class Dms extends PolicyStatement {
    * Grants permission to list the AWS DMS attributes for a extension packs
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:DescribeExtensionPackAssociations
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -791,6 +1211,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - dms:DescribeInstanceProfiles
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toListInstanceProfiles() {
@@ -798,9 +1221,12 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a metadata model assessment action items
+   * Grants permission to list the AWS DMS attributes for a metadata model assessment action items. Note. Despite this action requires StartMetadataModelImport, the latter does not currently authorize the described Schema Conversion operation
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:StartMetadataModelImport
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -813,6 +1239,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - dms:DescribeMetadataModelAssessments
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toListMetadataModelAssessments() {
@@ -823,6 +1252,9 @@ export class Dms extends PolicyStatement {
    * Grants permission to list the AWS DMS attributes for a metadata model conversions
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:DescribeMetadataModelConversions
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -835,6 +1267,10 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - dms:DescribeMetadataModelExportsAsScript
+   * - dms:DescribeMetadataModelExportsToTarget
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toListMetadataModelExports() {
@@ -842,9 +1278,13 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a migration projects
+   * Grants permission to list the AWS DMS attributes for a migration projects. Note. Despite this action requires DescribeMigrationProjects and DescribeConversionConfiguration, both required actions do not currently authorize the described Schema Conversion operation
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - dms:DescribeConversionConfiguration
+   * - dms:DescribeMigrationProjects
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -864,9 +1304,55 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a conversion configuration. Note. This action should be added along with UpdateConversionConfiguration, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:UpdateConversionConfiguration
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyConversionConfiguration.html
+   */
+  public toModifyConversionConfiguration() {
+    return this.to('ModifyConversionConfiguration');
+  }
+
+  /**
+   * Grants permission to modify the specified database migration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyDataMigration() {
+    return this.to('ModifyDataMigration');
+  }
+
+  /**
+   * Grants permission to modify the specified data provider. Note. This action should be added along with UpdateDataProvider, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:UpdateDataProvider
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyDataProvider.html
+   */
+  public toModifyDataProvider() {
+    return this.to('ModifyDataProvider');
+  }
+
+  /**
    * Grants permission to modify the specified endpoint
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html
    */
@@ -908,6 +1394,47 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the specified instance profile. Note. This action should be added along with UpdateInstanceProfile, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:UpdateInstanceProfile
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyInstanceProfile.html
+   */
+  public toModifyInstanceProfile() {
+    return this.to('ModifyInstanceProfile');
+  }
+
+  /**
+   * Grants permission to modify the specified migration project. Note. This action should be added along with UpdateMigrationProject, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:UpdateMigrationProject
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyMigrationProject.html
+   */
+  public toModifyMigrationProject() {
+    return this.to('ModifyMigrationProject');
+  }
+
+  /**
+   * Grants permission to modify the specified replication config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyReplicationConfig() {
+    return this.to('ModifyReplicationConfig');
+  }
+
+  /**
    * Grants permission to modify the replication instance to apply new settings
    *
    * Access Level: Write
@@ -938,6 +1465,28 @@ export class Dms extends PolicyStatement {
    */
   public toModifyReplicationTask() {
     return this.to('ModifyReplicationTask');
+  }
+
+  /**
+   * Grants permission to modify the specified test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTest.html
+   */
+  public toModifyTest() {
+    return this.to('ModifyTest');
+  }
+
+  /**
+   * Grants permission to modify the specified test plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTestPlan.html
+   */
+  public toModifyTestPlan() {
+    return this.to('ModifyTestPlan');
   }
 
   /**
@@ -974,6 +1523,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reload the target database table with the source for a replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toReloadReplicationTables() {
+    return this.to('ReloadReplicationTables');
+  }
+
+  /**
    * Grants permission to reload the target database table with the source data
    *
    * Access Level: Write
@@ -990,6 +1550,8 @@ export class Dms extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html
@@ -1010,11 +1572,47 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a new assessment of metadata model
+   * Grants permission to start the database migration
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toStartDataMigration() {
+    return this.to('StartDataMigration');
+  }
+
+  /**
+   * Grants permission to associate an extension pack. Note. This action should be added along with AssociateExtensionPack, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:AssociateExtensionPack
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html
+   */
+  public toStartExtensionPackAssociation() {
+    return this.to('StartExtensionPackAssociation');
+  }
+
+  /**
+   * Grants permission to start test generation for the specified test plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartGenerateTests.html
+   */
+  public toStartGenerateTests() {
+    return this.to('StartGenerateTests');
+  }
+
+  /**
+   * Grants permission to start a new assessment of metadata model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html
    */
   public toStartMetadataModelAssessment() {
     return this.to('StartMetadataModelAssessment');
@@ -1025,16 +1623,33 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html
    */
   public toStartMetadataModelConversion() {
     return this.to('StartMetadataModelConversion');
   }
 
   /**
+   * Grants permission to start a new export of metadata model as script. Note. This action should be added along with StartMetadataModelExportAsScripts, but does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:StartMetadataModelExportAsScripts
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html
+   */
+  public toStartMetadataModelExportAsScript() {
+    return this.to('StartMetadataModelExportAsScript');
+  }
+
+  /**
    * Grants permission to start a new export of metadata model as script
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:StartMetadataModelExportAsScript
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -1047,7 +1662,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportToTarget.html
    */
   public toStartMetadataModelExportToTarget() {
     return this.to('StartMetadataModelExportToTarget');
@@ -1058,7 +1673,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html
    */
   public toStartMetadataModelImport() {
     return this.to('StartMetadataModelImport');
@@ -1073,6 +1688,17 @@ export class Dms extends PolicyStatement {
    */
   public toStartRecommendations() {
     return this.to('StartRecommendations');
+  }
+
+  /**
+   * Grants permission to start a replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toStartReplication() {
+    return this.to('StartReplication');
   }
 
   /**
@@ -1102,10 +1728,46 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html
    */
   public toStartReplicationTaskAssessmentRun() {
     return this.to('StartReplicationTaskAssessmentRun');
+  }
+
+  /**
+   * Grants permission to stop the database migration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toStopDataMigration() {
+    return this.to('StopDataMigration');
+  }
+
+  /**
+   * Grants permission to stop test generation for the specified test plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopGenerateTests.html
+   */
+  public toStopGenerateTests() {
+    return this.to('StopGenerateTests');
+  }
+
+  /**
+   * Grants permission to stop a replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toStopReplication() {
+    return this.to('StopReplication');
   }
 
   /**
@@ -1117,6 +1779,17 @@ export class Dms extends PolicyStatement {
    */
   public toStopReplicationTask() {
     return this.to('StopReplicationTask');
+  }
+
+  /**
+   * Grants permission to stop a test run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopTestRun.html
+   */
+  public toStopTestRun() {
+    return this.to('StopTestRun');
   }
 
   /**
@@ -1135,6 +1808,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - dms:ModifyConversionConfiguration
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toUpdateConversionConfiguration() {
@@ -1145,6 +1821,9 @@ export class Dms extends PolicyStatement {
    * Grants permission to update the specified data provider
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:ModifyDataProvider
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -1157,6 +1836,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - dms:ModifyInstanceProfile
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
   public toUpdateInstanceProfile() {
@@ -1167,6 +1849,9 @@ export class Dms extends PolicyStatement {
    * Grants permission to update the specified migration project
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - dms:ModifyMigrationProject
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -1196,6 +1881,17 @@ export class Dms extends PolicyStatement {
     return this.to('UploadFileMetadataList');
   }
 
+  /**
+   * Grants permission to view the details of a specific test in a test run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ViewTestRunResults.html
+   */
+  public toViewTestRunResults() {
+    return this.to('ViewTestRunResults');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1209,17 +1905,24 @@ export class Dms extends PolicyStatement {
       'CancelMetadataModelConversion',
       'CancelMetadataModelExport',
       'CancelReplicationTaskAssessmentRun',
+      'CreateDataMigration',
       'CreateDataProvider',
       'CreateEndpoint',
       'CreateEventSubscription',
       'CreateFleetAdvisorCollector',
       'CreateInstanceProfile',
       'CreateMigrationProject',
+      'CreateReplicationConfig',
       'CreateReplicationInstance',
       'CreateReplicationSubnetGroup',
       'CreateReplicationTask',
+      'CreateTest',
+      'CreateTestEnvironments',
+      'CreateTestPlan',
+      'CreateTestRun',
       'DeleteCertificate',
       'DeleteConnection',
+      'DeleteDataMigration',
       'DeleteDataProvider',
       'DeleteEndpoint',
       'DeleteEventSubscription',
@@ -1227,35 +1930,56 @@ export class Dms extends PolicyStatement {
       'DeleteFleetAdvisorDatabases',
       'DeleteInstanceProfile',
       'DeleteMigrationProject',
+      'DeleteReplicationConfig',
       'DeleteReplicationInstance',
       'DeleteReplicationSubnetGroup',
       'DeleteReplicationTask',
       'DeleteReplicationTaskAssessmentRun',
+      'DeleteTest',
+      'DeleteTestPlan',
       'DisassociateExtensionPack',
       'ExportMetadataModelAssessment',
       'ImportCertificate',
+      'ModifyConversionConfiguration',
+      'ModifyDataMigration',
+      'ModifyDataProvider',
       'ModifyEndpoint',
       'ModifyEventSubscription',
       'ModifyFleetAdvisorCollector',
       'ModifyFleetAdvisorCollectorStatuses',
+      'ModifyInstanceProfile',
+      'ModifyMigrationProject',
+      'ModifyReplicationConfig',
       'ModifyReplicationInstance',
       'ModifyReplicationSubnetGroup',
       'ModifyReplicationTask',
+      'ModifyTest',
+      'ModifyTestPlan',
       'MoveReplicationTask',
       'RebootReplicationInstance',
       'RefreshSchemas',
+      'ReloadReplicationTables',
       'ReloadTables',
       'RunFleetAdvisorLsaAnalysis',
+      'StartDataMigration',
+      'StartExtensionPackAssociation',
+      'StartGenerateTests',
       'StartMetadataModelAssessment',
       'StartMetadataModelConversion',
+      'StartMetadataModelExportAsScript',
       'StartMetadataModelExportAsScripts',
       'StartMetadataModelExportToTarget',
       'StartMetadataModelImport',
       'StartRecommendations',
+      'StartReplication',
       'StartReplicationTask',
       'StartReplicationTaskAssessment',
       'StartReplicationTaskAssessmentRun',
+      'StopDataMigration',
+      'StopGenerateTests',
+      'StopReplication',
       'StopReplicationTask',
+      'StopTestRun',
       'UpdateConversionConfiguration',
       'UpdateDataProvider',
       'UpdateInstanceProfile',
@@ -1268,31 +1992,52 @@ export class Dms extends PolicyStatement {
       'DescribeApplicableIndividualAssessments',
       'DescribeCertificates',
       'DescribeConnections',
+      'DescribeConversionConfiguration',
+      'DescribeDataMigrations',
+      'DescribeDataProviders',
       'DescribeEndpointSettings',
       'DescribeEndpointTypes',
       'DescribeEndpoints',
+      'DescribeEngineVersions',
       'DescribeEventCategories',
       'DescribeEventSubscriptions',
       'DescribeEvents',
+      'DescribeExtensionPackAssociations',
       'DescribeFleetAdvisorCollectors',
       'DescribeFleetAdvisorDatabases',
       'DescribeFleetAdvisorLsaAnalysis',
       'DescribeFleetAdvisorSchemaObjectSummary',
       'DescribeFleetAdvisorSchemas',
+      'DescribeInstanceProfiles',
+      'DescribeMetadataModelAssessments',
+      'DescribeMetadataModelConversions',
+      'DescribeMetadataModelExportsAsScript',
+      'DescribeMetadataModelExportsToTarget',
+      'DescribeMetadataModelImports',
+      'DescribeMigrationProjects',
       'DescribeOrderableReplicationInstances',
       'DescribePendingMaintenanceActions',
       'DescribeRecommendationLimitations',
       'DescribeRecommendations',
       'DescribeRefreshSchemasStatus',
+      'DescribeReplicationConfigs',
       'DescribeReplicationInstanceTaskLogs',
       'DescribeReplicationInstances',
       'DescribeReplicationSubnetGroups',
+      'DescribeReplicationTableStatistics',
       'DescribeReplicationTaskAssessmentResults',
       'DescribeReplicationTaskAssessmentRuns',
       'DescribeReplicationTaskIndividualAssessments',
       'DescribeReplicationTasks',
+      'DescribeReplications',
       'DescribeSchemas',
       'DescribeTableStatistics',
+      'DescribeTestEnvironments',
+      'DescribeTestGenerationStatus',
+      'DescribeTestPlans',
+      'DescribeTestRunResultsSummaries',
+      'DescribeTestRuns',
+      'DescribeTests',
       'GetMetadataModel',
       'ListDataProviders',
       'ListExtensionPacks',
@@ -1303,7 +2048,8 @@ export class Dms extends PolicyStatement {
       'ListMetadataModelExports',
       'ListMigrationProjects',
       'ListTagsForResource',
-      'TestConnection'
+      'TestConnection',
+      'ViewTestRunResults'
     ]
   };
 
@@ -1337,10 +2083,28 @@ export class Dms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifDpTag()
+   * - .ifDataProviderTag()
    */
   public onDataProvider(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-provider:${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type DataMigration to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifDataMigrationTag()
+   */
+  public onDataMigration(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-migration:${ resourceName }`);
   }
 
   /**
@@ -1391,7 +2155,7 @@ export class Dms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifIpTag()
+   * - .ifInstanceProfileTag()
    */
   public onInstanceProfile(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:instance-profile:${ resourceName }`);
@@ -1409,10 +2173,28 @@ export class Dms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifMpTag()
+   * - .ifMigrationProjectTag()
    */
   public onMigrationProject(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:migration-project:${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type ReplicationConfig to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifReplicationConfigTag()
+   */
+  public onReplicationConfig(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:replication-config:${ resourceName }`);
   }
 
   /**
@@ -1498,6 +2280,180 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type TestPlan to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestPlan.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTestPlanTag()
+   */
+  public onTestPlan(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-plan:${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type Test to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Test.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTestTag()
+   */
+  public onTest(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test:${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type TestRun to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestRun.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTestRunTag()
+   */
+  public onTestRun(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-run:${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type TestEnvironment to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Api_TestEnvironment.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTestEnvironmentTag()
+   */
+  public onTestEnvironment(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-environment:${ resourceName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDataMigration()
+   * - .toCreateDataProvider()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateInstanceProfile()
+   * - .toCreateMigrationProject()
+   * - .toCreateReplicationConfig()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDataMigration()
+   * - .toCreateDataProvider()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateInstanceProfile()
+   * - .toCreateMigrationProject()
+   * - .toCreateReplicationConfig()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
+   * - .toDescribeReplicationInstanceTaskLogs()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromResource()
+   *
+   * Applies to resource types:
+   * - Certificate
+   * - DataProvider
+   * - DataMigration
+   * - Endpoint
+   * - EventSubscription
+   * - InstanceProfile
+   * - MigrationProject
+   * - ReplicationConfig
+   * - ReplicationInstance
+   * - ReplicationSubnetGroup
+   * - ReplicationTask
+   * - TestPlan
+   * - Test
+   * - TestRun
+   * - TestEnvironment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDataMigration()
+   * - .toCreateDataProvider()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateInstanceProfile()
+   * - .toCreateMigrationProject()
+   * - .toCreateReplicationConfig()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
+   * - .toDescribeReplicationInstanceTaskLogs()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request for Certificate
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_cert-tag___TagKey_
@@ -1514,6 +2470,22 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Filters access by the presence of tag key-value pairs in the request for DataMigration
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_data-migration-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - DataMigration
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataMigrationTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`data-migration-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request for DataProvider
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_dp-tag___TagKey_
@@ -1525,8 +2497,8 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dp-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifDataProviderTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`data-provider-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -1573,8 +2545,8 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifIpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ip-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifInstanceProfileTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`instance-profile-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -1589,8 +2561,8 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`mp-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifMigrationProjectTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`migration-project-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -1610,17 +2582,35 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Filters access by the presence of tag key-value pairs in the request for ReplicationConfig
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice%E2%80%94dms_replication-config-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - ReplicationConfig
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReplicationConfigTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`replication-config-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the given request
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_req-tag___TagKey_
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateDataMigration()
    * - .toCreateDataProvider()
    * - .toCreateEndpoint()
    * - .toCreateEventSubscription()
    * - .toCreateInstanceProfile()
    * - .toCreateMigrationProject()
+   * - .toCreateReplicationConfig()
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()
    * - .toCreateReplicationTask()
@@ -1663,5 +2653,69 @@ export class Dms extends PolicyStatement {
    */
   public ifTaskTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`task-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request for TestEnvironment
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-environment-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - TestEnvironment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTestEnvironmentTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`test-environment-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request for TestPlan
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-plan-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - TestPlan
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTestPlanTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`test-plan-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request for TestRun
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-run-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - TestRun
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTestRunTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`test-run-tag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request for Test
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - Test
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`test-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

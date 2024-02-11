@@ -1,5 +1,8 @@
 {
     "Action": [
+        "s3:ListAccessGrants",
+        "s3:ListAccessGrantsInstances",
+        "s3:ListAccessGrantsLocations",
         "s3:ListAccessPoints",
         "s3:ListAccessPointsForObjectLambda",
         "s3:ListAllMyBuckets",
@@ -9,7 +12,9 @@
         "s3:ListJobs",
         "s3:ListMultiRegionAccessPoints",
         "s3:ListMultipartUploadParts",
-        "s3:ListStorageLensConfigurations"
+        "s3:ListStorageLensConfigurations",
+        "s3:ListStorageLensGroups",
+        "s3:ListTagsForResource"
     ],
     "Resource": "*",
     "Effect": "Allow"

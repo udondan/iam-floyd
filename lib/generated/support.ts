@@ -19,7 +19,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Adds one or more attachments to an AWS Support case.
+   * Grants permission to add one or more attachments to an AWS Support case
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Adds a customer communication to an AWS Support case.
+   * Grants permission to add a customer communication to an AWS Support case
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Creates a new AWS Support case.
+   * Grants permission to creates a new AWS Support case
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the description for an attachment.
+   * Grants permission to describe attachment detail
    *
    * Access Level: Read
    *
@@ -63,16 +63,18 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * This is an internally managed function which allows secondary services to read AWS Support case attributes.
+   * Grants permission to allow secondary services to read AWS Support case attributes.This is an internally managed function
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toDescribeCaseAttributes() {
     return this.to('DescribeCaseAttributes');
   }
 
   /**
-   * Returns a list of AWS Support cases that matches the given inputs.
+   * Grants permission to list AWS Support cases that matches the given inputs
    *
    * Access Level: Read
    *
@@ -83,7 +85,18 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the communications and attachments for one or more AWS Support cases.
+   * Grants permission to get a single communication and attachments for a single AWS Support case
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toDescribeCommunication() {
+    return this.to('DescribeCommunication');
+  }
+
+  /**
+   * Grants permission to list the communications and attachments for one or more AWS Support cases
    *
    * Access Level: Read
    *
@@ -94,16 +107,29 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns issue types for AWS Support cases.
+   * Grants permission to describes the available options for creating a support case
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCreateCaseOptions.html
+   */
+  public toDescribeCreateCaseOptions() {
+    return this.to('DescribeCreateCaseOptions');
+  }
+
+  /**
+   * Grants permission to return issue types for AWS Support cases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toDescribeIssueTypes() {
     return this.to('DescribeIssueTypes');
   }
 
   /**
-   * Returns the current list of AWS services and categories that applies to each service.
+   * Grants permission to list AWS services and categories that applies to each service
    *
    * Access Level: Read
    *
@@ -114,7 +140,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the list of severity levels that can be assigned to an AWS Support case.
+   * Grants permission to list severity levels that can be assigned to an AWS Support case
    *
    * Access Level: Read
    *
@@ -125,16 +151,29 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the support level for an AWS Account identifier.
+   * Grants permission to return the support level for an AWS Account identifier
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toDescribeSupportLevel() {
     return this.to('DescribeSupportLevel');
   }
 
   /**
-   * Returns the status of a Trusted Advisor refresh check based on a list of check identifiers.
+   * Grants permission to describes the available support languages for a given category code, service code and issue type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSupportedLanguages.html
+   */
+  public toDescribeSupportedLanguages() {
+    return this.to('DescribeSupportedLanguages');
+  }
+
+  /**
+   * Grants permission to get the status of a Trusted Advisor refresh check based on a list of check identifiers
    *
    * Access Level: Read
    *
@@ -145,7 +184,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the results of the Trusted Advisor check that has the specified check identifier.
+   * Grants permission to get the results of the Trusted Advisor check that has the specified check identifier
    *
    * Access Level: Read
    *
@@ -156,7 +195,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns the summaries of the results of the Trusted Advisor checks that have the specified check identifiers.
+   * Grants permission to get the summaries of the results of the Trusted Advisor checks that have the specified check identifiers
    *
    * Access Level: Read
    *
@@ -167,7 +206,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all available Trusted Advisor checks, including name, identifier, category and description.
+   * Grants permission to get a list of all available Trusted Advisor checks, including name, identifier, category and description
    *
    * Access Level: Read
    *
@@ -178,43 +217,51 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * This is an internally managed function to initiate a call on AWS Support Center.
+   * Grants permission to initiate a call on AWS Support Center. This is an internally managed function
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toInitiateCallForCase() {
     return this.to('InitiateCallForCase');
   }
 
   /**
-   * This is an internally managed function to initiate a chat on AWS Support Center.
+   * Grants permission to initiate a chat on AWS Support Center.This is an internally managed function
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toInitiateChatForCase() {
     return this.to('InitiateChatForCase');
   }
 
   /**
-   * This is an internally managed function which allows secondary services to attach attributes to AWS Support cases.
+   * Grants permission to allow secondary services to attach attributes to AWS Support cases. This is an internally managed function
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toPutCaseAttributes() {
     return this.to('PutCaseAttributes');
   }
 
   /**
-   * Rate an AWS Support case communication.
+   * Grants permission to rate an AWS Support case communication
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toRateCaseCommunication() {
     return this.to('RateCaseCommunication');
   }
 
   /**
-   * Requests a refresh of the Trusted Advisor check that has the specified check identifier.
+   * Grants permission to requests a refresh of the Trusted Advisor check that has the specified check identifier
    *
    * Access Level: Write
    *
@@ -225,7 +272,7 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Resolves an AWS Support case.
+   * Grants permission to resolve an AWS Support case
    *
    * Access Level: Write
    *
@@ -236,9 +283,11 @@ export class Support extends PolicyStatement {
   }
 
   /**
-   * Returns a list of AWS Support cases that matches the given inputs.
+   * Grants permission to return a list of AWS Support cases that matches the given inputs
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
    */
   public toSearchForCases() {
     return this.to('SearchForCases');
@@ -260,11 +309,14 @@ export class Support extends PolicyStatement {
       'DescribeAttachment',
       'DescribeCaseAttributes',
       'DescribeCases',
+      'DescribeCommunication',
       'DescribeCommunications',
+      'DescribeCreateCaseOptions',
       'DescribeIssueTypes',
       'DescribeServices',
       'DescribeSeverityLevels',
       'DescribeSupportLevel',
+      'DescribeSupportedLanguages',
       'DescribeTrustedAdvisorCheckRefreshStatuses',
       'DescribeTrustedAdvisorCheckResult',
       'DescribeTrustedAdvisorCheckSummaries',

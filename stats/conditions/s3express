@@ -1,0 +1,8 @@
+s3express:LocationName
+s3express:ResourceAccount
+s3express:SessionMode
+s3express:TlsVersion
+s3express:authType
+s3express:signatureAge
+s3express:signatureversion
+s3express:x-amz-content-sha256

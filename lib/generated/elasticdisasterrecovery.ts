@@ -30,6 +30,33 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate CloudFormation stack with source network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudformation:DescribeStackResource
+   * - cloudformation:DescribeStacks
+   * - drs:GetLaunchConfiguration
+   * - ec2:CreateLaunchTemplateVersion
+   * - ec2:DescribeLaunchTemplateVersions
+   * - ec2:DescribeLaunchTemplates
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - ec2:ModifyLaunchTemplate
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_AssociateSourceNetworkStack.html
+   */
+  public toAssociateSourceNetworkStack() {
+    return this.to('AssociateSourceNetworkStack');
+  }
+
+  /**
    * Grants permission to batch create volume snapshot group
    *
    * Access Level: Write
@@ -86,6 +113,21 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create launch configuration template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateLaunchConfigurationTemplate.html
+   */
+  public toCreateLaunchConfigurationTemplate() {
+    return this.to('CreateLaunchConfigurationTemplate');
+  }
+
+  /**
    * Grants permission to create recovery instance
    *
    * Access Level: Write
@@ -125,6 +167,25 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a source network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeInstances
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateSourceNetwork.html
+   */
+  public toCreateSourceNetwork() {
+    return this.to('CreateSourceNetwork');
+  }
+
+  /**
    * Grants permission to create a source server
    *
    * Access Level: Write
@@ -151,6 +212,28 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a launch action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteLaunchAction.html
+   */
+  public toDeleteLaunchAction() {
+    return this.to('DeleteLaunchAction');
+  }
+
+  /**
+   * Grants permission to delete launch configuration template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteLaunchConfigurationTemplate.html
+   */
+  public toDeleteLaunchConfigurationTemplate() {
+    return this.to('DeleteLaunchConfigurationTemplate');
+  }
+
+  /**
    * Grants permission to delete recovery instance
    *
    * Access Level: Write
@@ -170,6 +253,17 @@ export class Drs extends PolicyStatement {
    */
   public toDeleteReplicationConfigurationTemplate() {
     return this.to('DeleteReplicationConfigurationTemplate');
+  }
+
+  /**
+   * Grants permission to delete source network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteSourceNetwork.html
+   */
+  public toDeleteSourceNetwork() {
+    return this.to('DeleteSourceNetwork');
   }
 
   /**
@@ -203,6 +297,17 @@ export class Drs extends PolicyStatement {
    */
   public toDescribeJobs() {
     return this.to('DescribeJobs');
+  }
+
+  /**
+   * Grants permission to describe launch configuration template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeLaunchConfigurationTemplates.html
+   */
+  public toDescribeLaunchConfigurationTemplates() {
+    return this.to('DescribeLaunchConfigurationTemplates');
   }
 
   /**
@@ -265,6 +370,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe source networks
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeSourceNetworks.html
+   */
+  public toDescribeSourceNetworks() {
+    return this.to('DescribeSourceNetworks');
+  }
+
+  /**
    * Grants permission to describe source servers
    *
    * Access Level: Read
@@ -295,6 +411,26 @@ export class Drs extends PolicyStatement {
    */
   public toDisconnectSourceServer() {
     return this.to('DisconnectSourceServer');
+  }
+
+  /**
+   * Grants permission to export CloudFormation template which contains source network resources
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetBucketLocation
+   * - s3:GetObject
+   * - s3:PutObject
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ExportSourceNetworkCfnTemplate.html
+   */
+  public toExportSourceNetworkCfnTemplate() {
+    return this.to('ExportSourceNetworkCfnTemplate');
   }
 
   /**
@@ -483,6 +619,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list launch actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListLaunchActions.html
+   */
+  public toListLaunchActions() {
+    return this.to('ListLaunchActions');
+  }
+
+  /**
    * Grants permission to list staging accounts
    *
    * Access Level: Read
@@ -579,6 +726,20 @@ export class Drs extends PolicyStatement {
    */
   public toNotifyVolumeEventForDrs() {
     return this.to('NotifyVolumeEventForDrs');
+  }
+
+  /**
+   * Grants permission to put a launch action
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ssm:DescribeDocument
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_PutLaunchAction.html
+   */
+  public toPutLaunchAction() {
+    return this.to('PutLaunchAction');
   }
 
   /**
@@ -757,6 +918,48 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start network recovery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudformation:CreateStack
+   * - cloudformation:DescribeStackResource
+   * - cloudformation:DescribeStacks
+   * - cloudformation:UpdateStack
+   * - drs:GetLaunchConfiguration
+   * - ec2:CreateLaunchTemplateVersion
+   * - ec2:DescribeLaunchTemplateVersions
+   * - ec2:DescribeLaunchTemplates
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - ec2:ModifyLaunchTemplate
+   * - s3:GetObject
+   * - s3:PutObject
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartSourceNetworkRecovery.html
+   */
+  public toStartSourceNetworkRecovery() {
+    return this.to('StartSourceNetworkRecovery');
+  }
+
+  /**
+   * Grants permission to start network replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartSourceNetworkReplication.html
+   */
+  public toStartSourceNetworkReplication() {
+    return this.to('StartSourceNetworkReplication');
+  }
+
+  /**
    * Grants permission to stop failback
    *
    * Access Level: Write
@@ -776,6 +979,17 @@ export class Drs extends PolicyStatement {
    */
   public toStopReplication() {
     return this.to('StopReplication');
+  }
+
+  /**
+   * Grants permission to stop network replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StopSourceNetworkReplication.html
+   */
+  public toStopSourceNetworkReplication() {
+    return this.to('StopSourceNetworkReplication');
   }
 
   /**
@@ -923,10 +1137,24 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeInstances
+   *
    * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateLaunchConfiguration.html
    */
   public toUpdateLaunchConfiguration() {
     return this.to('UpdateLaunchConfiguration');
+  }
+
+  /**
+   * Grants permission to update launch configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateLaunchConfigurationTemplate.html
+   */
+  public toUpdateLaunchConfigurationTemplate() {
+    return this.to('UpdateLaunchConfigurationTemplate');
   }
 
   /**
@@ -983,19 +1211,26 @@ export class Drs extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateFailbackClientToRecoveryInstanceForDrs',
+      'AssociateSourceNetworkStack',
       'BatchCreateVolumeSnapshotGroupForDrs',
       'BatchDeleteSnapshotRequestForDrs',
       'CreateConvertedSnapshotForDrs',
       'CreateExtendedSourceServer',
+      'CreateLaunchConfigurationTemplate',
       'CreateRecoveryInstanceForDrs',
       'CreateReplicationConfigurationTemplate',
+      'CreateSourceNetwork',
       'CreateSourceServerForDrs',
       'DeleteJob',
+      'DeleteLaunchAction',
+      'DeleteLaunchConfigurationTemplate',
       'DeleteRecoveryInstance',
       'DeleteReplicationConfigurationTemplate',
+      'DeleteSourceNetwork',
       'DeleteSourceServer',
       'DisconnectRecoveryInstance',
       'DisconnectSourceServer',
+      'ExportSourceNetworkCfnTemplate',
       'InitializeService',
       'IssueAgentCertificateForDrs',
       'NotifyAgentAuthenticationForDrs',
@@ -1005,6 +1240,7 @@ export class Drs extends PolicyStatement {
       'NotifyConsistencyAttainedForDrs',
       'NotifyReplicationServerAuthenticationForDrs',
       'NotifyVolumeEventForDrs',
+      'PutLaunchAction',
       'RetryDataReplication',
       'ReverseReplication',
       'SendAgentLogsForDrs',
@@ -1016,8 +1252,11 @@ export class Drs extends PolicyStatement {
       'StartFailbackLaunch',
       'StartRecovery',
       'StartReplication',
+      'StartSourceNetworkRecovery',
+      'StartSourceNetworkReplication',
       'StopFailback',
       'StopReplication',
+      'StopSourceNetworkReplication',
       'TerminateRecoveryInstances',
       'UpdateAgentBacklogForDrs',
       'UpdateAgentConversionInfoForDrs',
@@ -1028,6 +1267,7 @@ export class Drs extends PolicyStatement {
       'UpdateFailbackClientLastSeenForDrs',
       'UpdateFailbackReplicationConfiguration',
       'UpdateLaunchConfiguration',
+      'UpdateLaunchConfigurationTemplate',
       'UpdateReplicationCertificateForDrs',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate'
@@ -1035,11 +1275,13 @@ export class Drs extends PolicyStatement {
     Read: [
       'DescribeJobLogItems',
       'DescribeJobs',
+      'DescribeLaunchConfigurationTemplates',
       'DescribeRecoveryInstances',
       'DescribeRecoverySnapshots',
       'DescribeReplicationConfigurationTemplates',
       'DescribeReplicationServerAssociationsForDrs',
       'DescribeSnapshotRequestsForDrs',
+      'DescribeSourceNetworks',
       'DescribeSourceServers',
       'GetAgentCommandForDrs',
       'GetAgentConfirmedResumeInfoForDrs',
@@ -1055,6 +1297,7 @@ export class Drs extends PolicyStatement {
       'GetReplicationConfiguration',
       'GetSuggestedFailbackClientDeviceMappingForDrs',
       'ListExtensibleSourceServers',
+      'ListLaunchActions',
       'ListStagingAccounts',
       'ListTagsForResource'
     ],
@@ -1117,6 +1360,23 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type LaunchConfigurationTemplateResource to the statement
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/default-drs-launch-settings.html
+   *
+   * @param launchConfigurationTemplateID - Identifier for the launchConfigurationTemplateID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
+  }
+
+  /**
    * Adds a resource of type SourceServerResource to the statement
    *
    * https://docs.aws.amazon.com/drs/latest/userguide/source-servers.html
@@ -1131,6 +1391,104 @@ export class Drs extends PolicyStatement {
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+  }
+
+  /**
+   * Adds a resource of type SourceNetworkResource to the statement
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/source-networks.html
+   *
+   * @param sourceNetworkID - Identifier for the sourceNetworkID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSourceNetworkResource(sourceNetworkID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-network/${ sourceNetworkID }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAssociateSourceNetworkStack()
+   * - .toCreateConvertedSnapshotForDrs()
+   * - .toCreateExtendedSourceServer()
+   * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateRecoveryInstanceForDrs()
+   * - .toCreateReplicationConfigurationTemplate()
+   * - .toCreateSourceNetwork()
+   * - .toCreateSourceServerForDrs()
+   * - .toExportSourceNetworkCfnTemplate()
+   * - .toReverseReplication()
+   * - .toStartFailbackLaunch()
+   * - .toStartRecovery()
+   * - .toStartSourceNetworkRecovery()
+   * - .toTagResource()
+   * - .toTerminateRecoveryInstances()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - JobResource
+   * - RecoveryInstanceResource
+   * - ReplicationConfigurationTemplateResource
+   * - LaunchConfigurationTemplateResource
+   * - SourceServerResource
+   * - SourceNetworkResource
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAssociateSourceNetworkStack()
+   * - .toCreateConvertedSnapshotForDrs()
+   * - .toCreateExtendedSourceServer()
+   * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateRecoveryInstanceForDrs()
+   * - .toCreateReplicationConfigurationTemplate()
+   * - .toCreateSourceNetwork()
+   * - .toCreateSourceServerForDrs()
+   * - .toExportSourceNetworkCfnTemplate()
+   * - .toReverseReplication()
+   * - .toStartFailbackLaunch()
+   * - .toStartRecovery()
+   * - .toStartSourceNetworkRecovery()
+   * - .toTagResource()
+   * - .toTerminateRecoveryInstances()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1157,9 +1515,9 @@ export class Drs extends PolicyStatement {
    * - RecoveryInstanceResource
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifEC2InstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`EC2InstanceARN`, value, operator || 'StringLike');
+    return this.if(`EC2InstanceARN`, value, operator || 'ArnLike');
   }
 }

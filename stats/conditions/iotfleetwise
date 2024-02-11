@@ -1,3 +1,4 @@
+iotfleetwise:DestinationArn
 iotfleetwise:RequestTag/${TagKey}
 iotfleetwise:ResourceTag/${TagKey}
 iotfleetwise:TagKeys

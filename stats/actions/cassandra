@@ -1,9 +1,17 @@
 cassandra:Alter;Write
+cassandra:AlterMultiRegionResource;Write
 cassandra:Create;Write
+cassandra:CreateMultiRegionResource;Write
 cassandra:Drop;Write
+cassandra:DropMultiRegionResource;Write
 cassandra:Modify;Write
+cassandra:ModifyMultiRegionResource;Write
 cassandra:Restore;Write
+cassandra:RestoreMultiRegionTable;Write
 cassandra:Select;Read
+cassandra:SelectMultiRegionResource;Read
+cassandra:TagMultiRegionResource;Tagging
 cassandra:TagResource;Tagging
+cassandra:UnTagMultiRegionResource;Tagging
 cassandra:UntagResource;Tagging
 cassandra:UpdatePartitioner;Write

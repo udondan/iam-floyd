@@ -1,3 +1,6 @@
+states:HTTPEndpoint
+states:HTTPMethod
 states:RequestTag/${TagKey}
 states:ResourceTag/${TagKey}
+states:StateMachineQualifier
 states:TagKeys

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [lightsail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html).
@@ -2339,5 +2339,99 @@ export class Lightsail extends PolicyStatement {
    */
   public onBucket(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Lightsail.defaultPartition }:lightsail:${ region || '*' }:${ account || '*' }:Bucket/${ id }`);
+  }
+
+  /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBucket()
+   * - .toCreateCertificate()
+   * - .toCreateContainerService()
+   * - .toCreateDisk()
+   * - .toCreateDiskFromSnapshot()
+   * - .toCreateDiskSnapshot()
+   * - .toCreateDistribution()
+   * - .toCreateDomain()
+   * - .toCreateInstanceSnapshot()
+   * - .toCreateInstances()
+   * - .toCreateInstancesFromSnapshot()
+   * - .toCreateKeyPair()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRelationalDatabase()
+   * - .toCreateRelationalDatabaseFromSnapshot()
+   * - .toCreateRelationalDatabaseSnapshot()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Domain
+   * - Instance
+   * - InstanceSnapshot
+   * - KeyPair
+   * - StaticIp
+   * - Disk
+   * - DiskSnapshot
+   * - LoadBalancer
+   * - RelationalDatabase
+   * - RelationalDatabaseSnapshot
+   * - Certificate
+   * - ContainerService
+   * - Distribution
+   * - Bucket
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBucket()
+   * - .toCreateCertificate()
+   * - .toCreateContainerService()
+   * - .toCreateDisk()
+   * - .toCreateDiskFromSnapshot()
+   * - .toCreateDiskSnapshot()
+   * - .toCreateDistribution()
+   * - .toCreateDomain()
+   * - .toCreateInstanceSnapshot()
+   * - .toCreateInstances()
+   * - .toCreateInstancesFromSnapshot()
+   * - .toCreateKeyPair()
+   * - .toCreateLoadBalancer()
+   * - .toCreateRelationalDatabase()
+   * - .toCreateRelationalDatabaseFromSnapshot()
+   * - .toCreateRelationalDatabaseSnapshot()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

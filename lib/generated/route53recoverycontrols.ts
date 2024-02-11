@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [route53-recovery-control-config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html).
@@ -174,6 +174,17 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the resource policy of a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster/resourcepolicy-resourcearn.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to list associated Route 53 health checks
    *
    * Access Level: List
@@ -285,7 +296,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel-controlpanelarn-routingcontrols.html
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol.html
    */
   public toUpdateRoutingControl() {
     return this.to('UpdateRoutingControl');
@@ -322,6 +333,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       'DescribeRoutingControl',
       'DescribeRoutingControlByName',
       'DescribeSafetyRule',
+      'GetResourcePolicy',
       'ListClusters',
       'ListControlPanels',
       'ListRoutingControls',
@@ -398,5 +410,62 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    */
   public onSafetyrule(controlPanelId: string, safetyRuleId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Route53RecoveryControlConfig.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
+  }
+
+  /**
+   * Filters access by a tag's key and value in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toCreateControlPanel()
+   * - .toCreateSafetyRule()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - cluster
+   * - controlpanel
+   * - safetyrule
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toCreateControlPanel()
+   * - .toCreateSafetyRule()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

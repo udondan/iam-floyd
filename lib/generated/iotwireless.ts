@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html).
@@ -1087,6 +1087,10 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartSingleWirelessDeviceImportTask.html
    */
   public toStartSingleWirelessDeviceImportTask() {
@@ -1097,6 +1101,10 @@ export class Iotwireless extends PolicyStatement {
    * Grants permission to start the wireless device import task
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
    */
@@ -1605,11 +1613,11 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type WirelessDeviceImportTask to the statement
+   * Adds a resource of type ImportTask to the statement
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
    *
-   * @param wirelessDeviceImportTaskId - Identifier for the wirelessDeviceImportTaskId.
+   * @param importTaskId - Identifier for the importTaskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1617,7 +1625,89 @@ export class Iotwireless extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWirelessDeviceImportTask(wirelessDeviceImportTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDeviceImportTask/${ wirelessDeviceImportTaskId }`);
+  public onImportTask(importTaskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:ImportTask/${ importTaskId }`);
+  }
+
+  /**
+   * Filters access by a tag key that is present in the request that the user makes to IoT Wireless
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   *
+   * Applies to actions:
+   * - .toAssociateAwsAccountWithPartnerAccount()
+   * - .toCreateDestination()
+   * - .toCreateDeviceProfile()
+   * - .toCreateFuotaTask()
+   * - .toCreateMulticastGroup()
+   * - .toCreateNetworkAnalyzerConfiguration()
+   * - .toCreateServiceProfile()
+   * - .toCreateWirelessDevice()
+   * - .toCreateWirelessGateway()
+   * - .toCreateWirelessGatewayTaskDefinition()
+   * - .toStartSingleWirelessDeviceImportTask()
+   * - .toStartWirelessDeviceImportTask()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key component of a tag attached to an IoT Wireless resource
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   *
+   * Applies to resource types:
+   * - WirelessDevice
+   * - WirelessGateway
+   * - DeviceProfile
+   * - ServiceProfile
+   * - Destination
+   * - SidewalkAccount
+   * - WirelessGatewayTaskDefinition
+   * - FuotaTask
+   * - MulticastGroup
+   * - NetworkAnalyzerConfiguration
+   * - ImportTask
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   *
+   * Applies to actions:
+   * - .toAssociateAwsAccountWithPartnerAccount()
+   * - .toCreateDestination()
+   * - .toCreateDeviceProfile()
+   * - .toCreateFuotaTask()
+   * - .toCreateMulticastGroup()
+   * - .toCreateNetworkAnalyzerConfiguration()
+   * - .toCreateServiceProfile()
+   * - .toCreateWirelessDevice()
+   * - .toCreateWirelessGateway()
+   * - .toCreateWirelessGatewayTaskDefinition()
+   * - .toStartSingleWirelessDeviceImportTask()
+   * - .toStartWirelessDeviceImportTask()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

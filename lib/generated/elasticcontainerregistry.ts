@@ -67,7 +67,7 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchImportUpstreamImage.html
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html
    */
   public toBatchImportUpstreamImage() {
     return this.to('BatchImportUpstreamImage');
@@ -117,6 +117,21 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create the repository creation template
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ecr:PutLifecyclePolicy
+   * - ecr:SetRepositoryPolicy
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepositoryCreationTemplate.html
+   */
+  public toCreateRepositoryCreationTemplate() {
+    return this.to('CreateRepositoryCreationTemplate');
+  }
+
+  /**
    * Grants permission to delete the specified lifecycle policy
    *
    * Access Level: Write
@@ -158,6 +173,17 @@ export class Ecr extends PolicyStatement {
    */
   public toDeleteRepository() {
     return this.to('DeleteRepository');
+  }
+
+  /**
+   * Grants permission to delete the repository creation template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryCreationTemplate.html
+   */
+  public toDeleteRepositoryCreationTemplate() {
+    return this.to('DeleteRepositoryCreationTemplate');
   }
 
   /**
@@ -235,6 +261,17 @@ export class Ecr extends PolicyStatement {
    */
   public toDescribeRepositories() {
     return this.to('DescribeRepositories');
+  }
+
+  /**
+   * Grants permission to describe the repository creation template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositoryCreationTemplate.html
+   */
+  public toDescribeRepositoryCreationTemplate() {
+    return this.to('DescribeRepositoryCreationTemplate');
   }
 
   /**
@@ -493,13 +530,23 @@ export class Ecr extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the pull-through cache rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdatePullThroughCacheRule.html
+   */
+  public toUpdatePullThroughCacheRule() {
+    return this.to('UpdatePullThroughCacheRule');
   }
 
   /**
@@ -513,6 +560,17 @@ export class Ecr extends PolicyStatement {
     return this.to('UploadLayerPart');
   }
 
+  /**
+   * Grants permission to validate the pull-through cache rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ValidatePullThroughCacheRule.html
+   */
+  public toValidatePullThroughCacheRule() {
+    return this.to('ValidatePullThroughCacheRule');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchCheckLayerAvailability',
@@ -522,6 +580,7 @@ export class Ecr extends PolicyStatement {
       'DescribeImageScanFindings',
       'DescribeRegistry',
       'DescribeRepositories',
+      'DescribeRepositoryCreationTemplate',
       'GetAuthorizationToken',
       'GetDownloadUrlForLayer',
       'GetLifecyclePolicy',
@@ -529,7 +588,8 @@ export class Ecr extends PolicyStatement {
       'GetRegistryPolicy',
       'GetRegistryScanningConfiguration',
       'GetRepositoryPolicy',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ValidatePullThroughCacheRule'
     ],
     Write: [
       'BatchDeleteImage',
@@ -537,9 +597,11 @@ export class Ecr extends PolicyStatement {
       'CompleteLayerUpload',
       'CreatePullThroughCacheRule',
       'CreateRepository',
+      'CreateRepositoryCreationTemplate',
       'DeleteLifecyclePolicy',
       'DeletePullThroughCacheRule',
       'DeleteRepository',
+      'DeleteRepositoryCreationTemplate',
       'InitiateLayerUpload',
       'PutImage',
       'PutImageScanningConfiguration',
@@ -550,6 +612,7 @@ export class Ecr extends PolicyStatement {
       'ReplicateImage',
       'StartImageScan',
       'StartLifecyclePolicyPreview',
+      'UpdatePullThroughCacheRule',
       'UploadLayerPart'
     ],
     'Permissions management': [
@@ -585,6 +648,58 @@ export class Ecr extends PolicyStatement {
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ecr.defaultPartition }:ecr:${ region || '*' }:${ account || '*' }:repository/${ repositoryName }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

@@ -19,10 +19,11 @@ ec2:DPDTimeoutSeconds
 ec2:DhcpOptionsID
 ec2:DirectoryArn
 ec2:Domain
-ec2:DomainCertificateArn
 ec2:EbsOptimized
 ec2:ElasticGpuType
 ec2:Encrypted
+ec2:FisActionId
+ec2:FisTargetArns
 ec2:GatewayType
 ec2:HostRecovery
 ec2:IKEVersions
@@ -44,7 +45,6 @@ ec2:KeyPairName
 ec2:KeyPairType
 ec2:KmsKeyId
 ec2:LaunchTemplate
-ec2:LoadBalancerArn
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
 ec2:MetadataHttpTokens
@@ -89,7 +89,9 @@ ec2:RoutingType
 ec2:SamlProviderArn
 ec2:SecurityGroupID
 ec2:ServerCertificateArn
+ec2:SnapshotCoolOffPeriod
 ec2:SnapshotID
+ec2:SnapshotLockDuration
 ec2:SnapshotTime
 ec2:SourceInstanceARN
 ec2:SourceOutpostArn

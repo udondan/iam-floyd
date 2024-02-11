@@ -1,5 +1,6 @@
 omics:AnnotationImportJob
 omics:AnnotationStore
+omics:AnnotationStoreVersion
 omics:TaggingResource
 omics:TaskResource
 omics:VariantImportJob

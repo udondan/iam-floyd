@@ -96,6 +96,28 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to access Data Catalog resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_CreateLakeFormationIdentityCenterConfiguration.html
+   */
+  public toCreateLakeFormationIdentityCenterConfiguration() {
+    return this.to('CreateLakeFormationIdentityCenterConfiguration');
+  }
+
+  /**
+   * Enforce Lake Formation permissions for the given databases, tables, and principals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_CreateLakeFormationOptIn.html
+   */
+  public toCreateLakeFormationOptIn() {
+    return this.to('CreateLakeFormationOptIn');
+  }
+
+  /**
    * Grants permission to delete a Lake Formation data cell filter
    *
    * Access Level: Write
@@ -118,6 +140,28 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an IAM Identity Center connection with Lake Formation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_DeleteLakeFormationIdentityCenterConfiguration.html
+   */
+  public toDeleteLakeFormationIdentityCenterConfiguration() {
+    return this.to('DeleteLakeFormationIdentityCenterConfiguration');
+  }
+
+  /**
+   * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_DeleteLakeFormationOptIn.html
+   */
+  public toDeleteLakeFormationOptIn() {
+    return this.to('DeleteLakeFormationOptIn');
+  }
+
+  /**
    * Grants permission to delete the specified objects if the transaction is canceled
    *
    * Access Level: Write
@@ -137,6 +181,17 @@ export class Lakeformation extends PolicyStatement {
    */
   public toDeregisterResource() {
     return this.to('DeregisterResource');
+  }
+
+  /**
+   * Grants permission to describe the IAM Identity Center connection with Lake Formation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_DescribeLakeFormationIdentityCenterConfiguration.html
+   */
+  public toDescribeLakeFormationIdentityCenterConfiguration() {
+    return this.to('DescribeLakeFormationIdentityCenterConfiguration');
   }
 
   /**
@@ -340,6 +395,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_ListLakeFormationOptIns.html
+   */
+  public toListLakeFormationOptIns() {
+    return this.to('ListLakeFormationOptIns');
+  }
+
+  /**
    * Grants permission to list permissions filtered by principal or resource
    *
    * Access Level: List
@@ -494,6 +560,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the IAM Identity Center connection parameters
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_UpdateLakeFormationIdentityCenterConfiguration.html
+   */
+  public toUpdateLakeFormationIdentityCenterConfiguration() {
+    return this.to('UpdateLakeFormationIdentityCenterConfiguration');
+  }
+
+  /**
    * Grants permission to update a registered location
    *
    * Access Level: Write
@@ -543,8 +620,12 @@ export class Lakeformation extends PolicyStatement {
       'CommitTransaction',
       'CreateDataCellsFilter',
       'CreateLFTag',
+      'CreateLakeFormationIdentityCenterConfiguration',
+      'CreateLakeFormationOptIn',
       'DeleteDataCellsFilter',
       'DeleteLFTag',
+      'DeleteLakeFormationIdentityCenterConfiguration',
+      'DeleteLakeFormationOptIn',
       'DeleteObjectsOnCancel',
       'DeregisterResource',
       'ExtendTransaction',
@@ -554,11 +635,13 @@ export class Lakeformation extends PolicyStatement {
       'StartTransaction',
       'UpdateDataCellsFilter',
       'UpdateLFTag',
+      'UpdateLakeFormationIdentityCenterConfiguration',
       'UpdateResource',
       'UpdateTableObjects',
       'UpdateTableStorageOptimizer'
     ],
     Read: [
+      'DescribeLakeFormationIdentityCenterConfiguration',
       'DescribeResource',
       'DescribeTransaction',
       'GetDataCellsFilter',
@@ -577,6 +660,7 @@ export class Lakeformation extends PolicyStatement {
     ],
     List: [
       'ListDataCellsFilter',
+      'ListLakeFormationOptIns',
       'ListPermissions',
       'ListResources',
       'ListTableStorageOptimizers',

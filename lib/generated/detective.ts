@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [detective](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondetective.html).
@@ -57,8 +57,12 @@ export class Detective extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - detective:TagResource
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html
    */
@@ -178,6 +182,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an investigation's status and metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_GetInvestigation.html
+   */
+  public toGetInvestigation() {
+    return this.to('GetInvestigation');
+  }
+
+  /**
    * Grants permission to retrieve details on specified members of a behavior graph
    *
    * Access Level: Read
@@ -211,6 +226,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke Detective's Assistant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/finding-groups-summary.html
+   */
+  public toInvokeAssistant() {
+    return this.to('InvokeAssistant');
+  }
+
+  /**
    * Grants permission to list a graph's datasource package ingest states and timestamps for the most recent state changes in a behavior graph managed by this account
    *
    * Access Level: List
@@ -241,6 +267,28 @@ export class Detective extends PolicyStatement {
    */
   public toListHighDegreeEntities() {
     return this.to('ListHighDegreeEntities');
+  }
+
+  /**
+   * Grants permission to list the indicators of an investigation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListIndicators.html
+   */
+  public toListIndicators() {
+    return this.to('ListIndicators');
+  }
+
+  /**
+   * Grants permission to list the investigations of a behavior graph
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvestigations.html
+   */
+  public toListInvestigations() {
+    return this.to('ListInvestigations');
   }
 
   /**
@@ -316,6 +364,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start investigations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_StartInvestigation.html
+   */
+  public toStartInvestigation() {
+    return this.to('StartInvestigation');
+  }
+
+  /**
    * Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED
    *
    * Access Level: Write
@@ -368,6 +427,17 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an investigation's state and metadata
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateInvestigationState.html
+   */
+  public toUpdateInvestigationState() {
+    return this.to('UpdateInvestigationState');
+  }
+
+  /**
    * Grants permission to update the current configuration related to the Amazon Detective integration with AWS Organizations
    *
    * Access Level: Write
@@ -392,8 +462,10 @@ export class Detective extends PolicyStatement {
       'DisassociateMembership',
       'EnableOrganizationAdminAccount',
       'RejectInvitation',
+      'StartInvestigation',
       'StartMonitoringMember',
       'UpdateDatasourcePackages',
+      'UpdateInvestigationState',
       'UpdateOrganizationConfiguration'
     ],
     Read: [
@@ -402,15 +474,19 @@ export class Detective extends PolicyStatement {
       'DescribeOrganizationConfiguration',
       'GetFreeTrialEligibility',
       'GetGraphIngestState',
+      'GetInvestigation',
       'GetMembers',
       'GetPricingInformation',
       'GetUsageInformation',
+      'InvokeAssistant',
       'SearchGraph'
     ],
     List: [
       'ListDatasourcePackages',
       'ListGraphs',
       'ListHighDegreeEntities',
+      'ListIndicators',
+      'ListInvestigations',
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccount',
@@ -437,5 +513,60 @@ export class Detective extends PolicyStatement {
    */
   public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Detective.defaultPartition }:detective:${ region || '*' }:${ account || '*' }:graph:${ resourceId }`);
+  }
+
+  /**
+   * Filters access by specifying the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateGraph()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by specifying the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateGraph()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - Graph
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by specifying the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateGraph()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

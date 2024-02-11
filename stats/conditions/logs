@@ -1,3 +1,5 @@
+logs:DeliveryDestinationResourceArn
+logs:LogGeneratingResourceArns
 logs:RequestTag/${TagKey}
 logs:ResourceTag/${TagKey}
 logs:TagKeys

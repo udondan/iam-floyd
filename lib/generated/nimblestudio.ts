@@ -941,6 +941,88 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateLaunchProfile()
+   * - .toCreateStreamingImage()
+   * - .toCreateStreamingSession()
+   * - .toCreateStudio()
+   * - .toCreateStudioComponent()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - studio
+   * - streaming-image
+   * - studio-component
+   * - launch-profile
+   * - streaming-session
+   * - streaming-session-backup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - studio
+   * - streaming-image
+   * - studio-component
+   * - launch-profile
+   * - streaming-session
+   * - streaming-session-backup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateLaunchProfile()
+   * - .toCreateStreamingImage()
+   * - .toCreateStreamingSession()
+   * - .toCreateStudio()
+   * - .toCreateStudioComponent()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - studio
+   * - streaming-image
+   * - studio-component
+   * - launch-profile
+   * - streaming-session
+   * - streaming-session-backup
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the createdBy request parameter or the ID of the creator of the resource
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html

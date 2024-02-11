@@ -27,6 +27,7 @@ kms:RequestTag/${TagKey}
 kms:ResourceAliases
 kms:ResourceTag/${TagKey}
 kms:RetiringPrincipal
+kms:ScheduleKeyDeletionPendingWindowInDays
 kms:SigningAlgorithm
 kms:TagKeys
 kms:ValidTo

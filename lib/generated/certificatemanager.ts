@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [acm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscertificatemanager.html).
@@ -170,6 +170,11 @@ export class Acm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDomainNames()
+   * - .ifCertificateTransparencyLogging()
+   * - .ifValidationMethod()
+   * - .ifKeyAlgorithm()
+   * - .ifCertificateAuthority()
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
@@ -228,7 +233,7 @@ export class Acm extends PolicyStatement {
   /**
    * Adds a resource of type certificate to the statement
    *
-   * https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations
+   * https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-acm-cert
    *
    * @param certificateId - Identifier for the certificateId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -240,5 +245,133 @@ export class Acm extends PolicyStatement {
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Acm.defaultPartition }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+  }
+
+  /**
+   * Filters access by certificateAuthority in the request. Can be used to restrict which Certificate Authorites certificates can be issued from
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCertificateAuthority(value: string | string[], operator?: Operator | string) {
+    return this.if(`CertificateAuthority`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by certificateTransparencyLogging option in the request. Default 'ENABLED' if no key is present in the request
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCertificateTransparencyLogging(value: string | string[], operator?: Operator | string) {
+    return this.if(`CertificateTransparencyLogging`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by domainNames in the request. This key can be used to restrict which domains can be in certificate requests
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDomainNames(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainNames`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by keyAlgorithm in the request
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKeyAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeyAlgorithm`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by validationMethod in the request. Default 'EMAIL' if no key is present in the request
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifValidationMethod(value: string | string[], operator?: Operator | string) {
+    return this.if(`ValidationMethod`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToCertificate()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromCertificate()
+   * - .toRequestCertificate()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - certificate
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToCertificate()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromCertificate()
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

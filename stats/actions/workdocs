@@ -56,3 +56,4 @@ workdocs:UpdateDocumentVersion;Write
 workdocs:UpdateFolder;Write
 workdocs:UpdateInstanceAlias;Write
 workdocs:UpdateUser;Write
+workdocs:UpdateUserAdministrativeSettings;Write

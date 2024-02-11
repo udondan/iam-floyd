@@ -136,6 +136,17 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a previously submitted Medical Scribe job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteMedicalScribeJob.html
+   */
+  public toDeleteMedicalScribeJob() {
+    return this.to('DeleteMedicalScribeJob');
+  }
+
+  /**
    * Grants permission to delete a previously submitted medical transcription job
    *
    * Access Level: Write
@@ -224,6 +235,17 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about a Medical Scribe job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetMedicalScribeJob.html
+   */
+  public toGetMedicalScribeJob() {
+    return this.to('GetMedicalScribeJob');
+  }
+
+  /**
    * Grants permission to return information about a medical transcription job
    *
    * Access Level: Read
@@ -309,6 +331,17 @@ export class Transcribe extends PolicyStatement {
    */
   public toListLanguageModels() {
     return this.to('ListLanguageModels');
+  }
+
+  /**
+   * Grants permission to list Medical Scribe jobs with the specified status
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListMedicalScribeJobs.html
+   */
+  public toListMedicalScribeJobs() {
+    return this.to('ListMedicalScribeJobs');
   }
 
   /**
@@ -415,6 +448,26 @@ export class Transcribe extends PolicyStatement {
    */
   public toStartCallAnalyticsStreamTranscriptionWebSocket() {
     return this.to('StartCallAnalyticsStreamTranscriptionWebSocket');
+  }
+
+  /**
+   * Grants permission to start an asynchronous job to transcribe patient-clinician conversations and generates clinical notes
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalScribeJob.html
+   */
+  public toStartMedicalScribeJob() {
+    return this.to('StartMedicalScribeJob');
   }
 
   /**
@@ -595,6 +648,7 @@ export class Transcribe extends PolicyStatement {
       'DeleteCallAnalyticsCategory',
       'DeleteCallAnalyticsJob',
       'DeleteLanguageModel',
+      'DeleteMedicalScribeJob',
       'DeleteMedicalTranscriptionJob',
       'DeleteMedicalVocabulary',
       'DeleteTranscriptionJob',
@@ -603,6 +657,7 @@ export class Transcribe extends PolicyStatement {
       'StartCallAnalyticsJob',
       'StartCallAnalyticsStreamTranscription',
       'StartCallAnalyticsStreamTranscriptionWebSocket',
+      'StartMedicalScribeJob',
       'StartMedicalStreamTranscription',
       'StartMedicalStreamTranscriptionWebSocket',
       'StartMedicalTranscriptionJob',
@@ -618,6 +673,7 @@ export class Transcribe extends PolicyStatement {
       'DescribeLanguageModel',
       'GetCallAnalyticsCategory',
       'GetCallAnalyticsJob',
+      'GetMedicalScribeJob',
       'GetMedicalTranscriptionJob',
       'GetMedicalVocabulary',
       'GetTranscriptionJob',
@@ -629,6 +685,7 @@ export class Transcribe extends PolicyStatement {
       'ListCallAnalyticsCategories',
       'ListCallAnalyticsJobs',
       'ListLanguageModels',
+      'ListMedicalScribeJobs',
       'ListMedicalTranscriptionJobs',
       'ListMedicalVocabularies',
       'ListTranscriptionJobs',
@@ -772,11 +829,97 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type medicalscribejob to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalScribeJob.html
+   *
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMedicalscribejob(jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-scribe-job/${ jobName }`);
+  }
+
+  /**
+   * Filters access by requiring tag values present in a resource creation request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateLanguageModel()
+   * - .toCreateMedicalVocabulary()
+   * - .toCreateVocabulary()
+   * - .toCreateVocabularyFilter()
+   * - .toStartMedicalScribeJob()
+   * - .toStartMedicalTranscriptionJob()
+   * - .toStartTranscriptionJob()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring tag value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - transcriptionjob
+   * - vocabulary
+   * - vocabularyfilter
+   * - languagemodel
+   * - medicaltranscriptionjob
+   * - medicalvocabulary
+   * - medicalscribejob
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by requiring the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateLanguageModel()
+   * - .toCreateMedicalVocabulary()
+   * - .toCreateVocabulary()
+   * - .toCreateVocabularyFilter()
+   * - .toStartMedicalScribeJob()
+   * - .toStartMedicalTranscriptionJob()
+   * - .toStartTranscriptionJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access based on the output bucket name included in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
    * Applies to actions:
+   * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    *
@@ -794,6 +937,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartCallAnalyticsJob()
+   * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    *

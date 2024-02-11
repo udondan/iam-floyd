@@ -14,6 +14,7 @@ ce:DescribeReport;Read
 ce:GetAnomalies;Read
 ce:GetAnomalyMonitors;Read
 ce:GetAnomalySubscriptions;Read
+ce:GetApproximateUsageRecords;Read
 ce:GetConsoleActionSetEnforced;Read
 ce:GetCostAndUsage;Read
 ce:GetCostAndUsageWithResources;Read
@@ -25,6 +26,7 @@ ce:GetReservationCoverage;Read
 ce:GetReservationPurchaseRecommendation;Read
 ce:GetReservationUtilization;Read
 ce:GetRightsizingRecommendation;Read
+ce:GetSavingsPlanPurchaseRecommendationDetails;Read
 ce:GetSavingsPlansCoverage;Read
 ce:GetSavingsPlansPurchaseRecommendation;Read
 ce:GetSavingsPlansUtilization;Read

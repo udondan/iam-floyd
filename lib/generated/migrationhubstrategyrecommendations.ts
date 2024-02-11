@@ -151,6 +151,17 @@ export class MigrationhubStrategy extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of all analyzable servers in a customer's vcenter environment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListAnalyzableServers.html
+   */
+  public toListAnalyzableServers() {
+    return this.to('ListAnalyzableServers');
+  }
+
+  /**
    * Grants permission to get a list of all anti patterns that collector should look for in a customer's environment
    *
    * Access Level: List
@@ -342,6 +353,7 @@ export class MigrationhubStrategy extends PolicyStatement {
       'GetServerStrategies'
     ],
     List: [
+      'ListAnalyzableServers',
       'ListAntiPatterns',
       'ListApplicationComponents',
       'ListCollectors',

@@ -46,6 +46,7 @@ transfer:StartFileTransfer;Write
 transfer:StartServer;Write
 transfer:StopServer;Write
 transfer:TagResource;Tagging
+transfer:TestConnection;Write
 transfer:TestIdentityProvider;Read
 transfer:UntagResource;Tagging
 transfer:UpdateAccess;Write

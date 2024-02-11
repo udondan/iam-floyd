@@ -47,6 +47,7 @@ events:PutRule;Write
 events:PutTargets;Write
 events:RemovePermission;Permissions management
 events:RemoveTargets;Write
+events:RetrieveConnectionCredentials;Write
 events:StartReplay;Write
 events:TagResource;Tagging
 events:TestEventPattern;Read

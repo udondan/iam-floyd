@@ -26,10 +26,13 @@ sqlworkbench:ExportNotebook;Read
 sqlworkbench:GenerateSession;Write
 sqlworkbench:GetAccountInfo;Read
 sqlworkbench:GetAccountSettings;Read
+sqlworkbench:GetAutocompletionMetadata;Read
+sqlworkbench:GetAutocompletionResource;Read
 sqlworkbench:GetChart;Read
 sqlworkbench:GetConnection;Read
 sqlworkbench:GetNotebook;Read
 sqlworkbench:GetNotebookVersion;Read
+sqlworkbench:GetQSqlRecommendations;Read
 sqlworkbench:GetQueryExecutionHistory;Read
 sqlworkbench:GetSavedQuery;Read
 sqlworkbench:GetSchemaInference;Read
@@ -56,6 +59,7 @@ sqlworkbench:UntagResource;Tagging
 sqlworkbench:UpdateAccountConnectionSettings;Write
 sqlworkbench:UpdateAccountExportSettings;Write
 sqlworkbench:UpdateAccountGeneralSettings;Write
+sqlworkbench:UpdateAccountQSqlSettings;Write
 sqlworkbench:UpdateChart;Write
 sqlworkbench:UpdateConnection;Write
 sqlworkbench:UpdateFileFolder;Write

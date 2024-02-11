@@ -1,5 +1,6 @@
 omics:AnnotationImportJobJobId
 omics:AnnotationStoreName
+omics:AnnotationStoreVersionName
 omics:RequestTag/${TagKey}
 omics:ResourceTag/${TagKey}
 omics:TagKeys

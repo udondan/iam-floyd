@@ -19,7 +19,18 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   /**
-   * Grants access to push an SSH public key to the specified EC2 instance to be used for standard SSH
+   * Grants permission to establish SSH connection to an EC2 instance using EC2 Instance Connect Endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel
+   */
+  public toOpenTunnel() {
+    return this.to('OpenTunnel');
+  }
+
+  /**
+   * Grants permission to push an SSH public key to the specified EC2 instance to be used for standard SSH
    *
    * Access Level: Write
    *
@@ -33,7 +44,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   /**
-   * Grants access to push an SSH public key to the specified EC2 instance to be used for serial console SSH
+   * Grants permission to push an SSH public key to the specified EC2 instance to be used for serial console SSH
    *
    * Access Level: Write
    *
@@ -45,6 +56,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'OpenTunnel',
       'SendSSHPublicKey',
       'SendSerialConsoleSSHPublicKey'
     ]
@@ -69,12 +81,96 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the tags associated with the resource
+   * Adds a resource of type instance-connect-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-CreateInstanceConnectEndpoint
+   *
+   * @param instanceConnectEndpointId - Identifier for the instanceConnectEndpointId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifEc2ResourceTag()
+   */
+  public onInstanceConnectEndpoint(instanceConnectEndpointId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ec2InstanceConnect.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
+  }
+
+  /**
+   * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
    * Applies to resource types:
    * - instance
+   * - instance-connect-endpoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by maximum session duration associated with the instance
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaxTunnelDuration(value: number | number[], operator?: Operator | string) {
+    return this.if(`maxTunnelDuration`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by private IP Address associated with the instance
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel
+   *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [ipaddress operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
+   */
+  public ifPrivateIpAddress(value: string | string[], operator?: Operator | string) {
+    return this.if(`privateIpAddress`, value, operator || 'IpAddress');
+  }
+
+  /**
+   * Filters access by port number associated with the instance
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel
+   *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRemotePort(value: number | number[], operator?: Operator | string) {
+    return this.if(`remotePort`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
+   * Applies to resource types:
+   * - instance
+   * - instance-connect-endpoint
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

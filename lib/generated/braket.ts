@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [braket](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html).
@@ -16,6 +16,28 @@ export class Braket extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to accept the Amazon Braket user agreement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_AcceptUserAgreement.html
+   */
+  public toAcceptUserAgreement() {
+    return this.to('AcceptUserAgreement');
+  }
+
+  /**
+   * Grants permission to check if an Amazon Braket feature is enabled for an account. Customers need this permission to use all features available in the console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_AccessBraketFeature.html
+   */
+  public toAccessBraketFeature() {
+    return this.to('AccessBraketFeature');
   }
 
   /**
@@ -104,6 +126,28 @@ export class Braket extends PolicyStatement {
   }
 
   /**
+   * Grants permission to check if the Amazon Braket service linked role has been created
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetServiceLinkedRoleStatus.html
+   */
+  public toGetServiceLinkedRoleStatus() {
+    return this.to('GetServiceLinkedRoleStatus');
+  }
+
+  /**
+   * Grants permission to check if the account has accepted the Amazon Braket user agreement
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetUserAgreementStatus.html
+   */
+  public toGetUserAgreementStatus() {
+    return this.to('GetUserAgreementStatus');
+  }
+
+  /**
    * Grants permission to listing the tags that have been applied to the quantum task resource or the job
    *
    * Access Level: Read
@@ -148,7 +192,7 @@ export class Braket extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more tags to a quantum task
+   * Grants permission to add one or more tags to a quantum task or a hybrid job
    *
    * Access Level: Tagging
    *
@@ -178,15 +222,19 @@ export class Braket extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptUserAgreement',
       'CancelJob',
       'CancelQuantumTask',
       'CreateJob',
       'CreateQuantumTask'
     ],
     Read: [
+      'AccessBraketFeature',
       'GetDevice',
       'GetJob',
       'GetQuantumTask',
+      'GetServiceLinkedRoleStatus',
+      'GetUserAgreementStatus',
       'ListTagsForResource',
       'SearchDevices',
       'SearchJobs',
@@ -230,5 +278,58 @@ export class Braket extends PolicyStatement {
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Braket.defaultPartition }:braket:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toCreateQuantumTask()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - quantum-task
+   * - job
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toCreateQuantumTask()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

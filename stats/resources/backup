@@ -4,3 +4,4 @@ backup:framework
 backup:legalHold
 backup:recoveryPoint
 backup:reportPlan
+backup:restoreTestingPlan

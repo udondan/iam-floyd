@@ -9,6 +9,7 @@ grafana:DescribeWorkspaceConfiguration;Read
 grafana:DisassociateLicense;Write
 grafana:ListPermissions;List
 grafana:ListTagsForResource;Read
+grafana:ListVersions;List
 grafana:ListWorkspaces;Read
 grafana:TagResource;Tagging
 grafana:UntagResource;Tagging

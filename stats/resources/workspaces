@@ -1,5 +1,6 @@
 workspaces:connectionalias
 workspaces:directoryid
+workspaces:workspaceapplication
 workspaces:workspacebundle
 workspaces:workspaceid
 workspaces:workspaceimage

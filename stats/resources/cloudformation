@@ -1,4 +1,6 @@
 cloudformation:changeset
+cloudformation:generatedtemplate
+cloudformation:resourcescan
 cloudformation:stack
 cloudformation:stackset
 cloudformation:stackset-target

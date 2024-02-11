@@ -19,7 +19,7 @@ export class Freetier extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to get free tier alert preference (email address)
+   * Grants permission to get free tier alert preference (email address)
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Freetier extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to get free tier usage limits and MTD usage status
+   * Grants permission to get free tier usage limits and MTD usage status
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Freetier extends PolicyStatement {
   }
 
   /**
-   * Allow or deny IAM users permission to set free tier alert preference (email address)
+   * Grants permission to set free tier alert preference (email address)
    *
    * Access Level: Write
    *

@@ -19,6 +19,7 @@ snowball:ListClusters;List
 snowball:ListCompatibleImages;List
 snowball:ListJobs;List
 snowball:ListLongTermPricing;Read
+snowball:ListPickupLocations;List
 snowball:ListServiceVersions;List
 snowball:UpdateCluster;Write
 snowball:UpdateJob;Write

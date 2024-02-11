@@ -19,6 +19,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to activate trusted access between StackSets and Organizations. With trusted access between StackSets and Organizations activated, the management account has permissions to create and manage StackSets for your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateOrganizationsAccess.html
+   */
+  public toActivateOrganizationsAccess() {
+    return this.to('ActivateOrganizationsAccess');
+  }
+
+  /**
    * Grants permission to activate a public third-party extension, making it available for use in stack templates
    *
    * Access Level: Write
@@ -87,6 +98,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a template from existing resources that are not already managed with CloudFormation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateGeneratedTemplate.html
+   */
+  public toCreateGeneratedTemplate() {
+    return this.to('CreateGeneratedTemplate');
+  }
+
+  /**
    * Grants permission to create a stack as specified in the template
    *
    * Access Level: Write
@@ -149,6 +171,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deactivate trusted access between StackSets and Organizations. If trusted access is deactivated, the management account does not have permissions to create and manage service-managed StackSets for your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeactivateOrganizationsAccess.html
+   */
+  public toDeactivateOrganizationsAccess() {
+    return this.to('DeactivateOrganizationsAccess');
+  }
+
+  /**
    * Grants permission to deactivate a public extension that was previously activated in this account and region
    *
    * Access Level: Write
@@ -171,6 +204,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toDeleteChangeSet() {
     return this.to('DeleteChangeSet');
+  }
+
+  /**
+   * Grants permission to delete a generated template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteGeneratedTemplate.html
+   */
+  public toDeleteGeneratedTemplate() {
+    return this.to('DeleteGeneratedTemplate');
   }
 
   /**
@@ -263,6 +307,28 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a generated template. The output includes details about the progress of the creation of a generated template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeGeneratedTemplate.html
+   */
+  public toDescribeGeneratedTemplate() {
+    return this.to('DescribeGeneratedTemplate');
+  }
+
+  /**
+   * Grants permission to return information about the account's OrganizationAccess status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeOrganizationsAccess.html
+   */
+  public toDescribeOrganizationsAccess() {
+    return this.to('DescribeOrganizationsAccess');
+  }
+
+  /**
    * Grants permission to return information about a CloudFormation extension publisher
    *
    * Access Level: Read
@@ -271,6 +337,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toDescribePublisher() {
     return this.to('DescribePublisher');
+  }
+
+  /**
+   * Grants permission to describe details of a resource scan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeResourceScan.html
+   */
+  public toDescribeResourceScan() {
+    return this.to('DescribeResourceScan');
   }
 
   /**
@@ -362,9 +439,12 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the description for the specified stack
+   * Grants permission to return the description for the specified stack, and to all stacks when used in combination with the ListStacks action
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - cloudformation:ListStacks
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html
    */
@@ -432,6 +512,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifTemplateUrl()
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html
    */
   public toEstimateTemplateCost() {
@@ -450,6 +533,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toExecuteChangeSet() {
     return this.to('ExecuteChangeSet');
+  }
+
+  /**
+   * Grants permission to retrieve a generated template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetGeneratedTemplate.html
+   */
+  public toGetGeneratedTemplate() {
+    return this.to('GetGeneratedTemplate');
   }
 
   /**
@@ -478,6 +572,9 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to return information about a new or existing template
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifTemplateUrl()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html
    */
@@ -519,6 +616,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list your generated templates in this Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListGeneratedTemplates.html
+   */
+  public toListGeneratedTemplates() {
+    return this.to('ListGeneratedTemplates');
+  }
+
+  /**
    * Grants permission to list all stacks that are importing an exported output value
    *
    * Access Level: List
@@ -527,6 +635,50 @@ export class Cloudformation extends PolicyStatement {
    */
   public toListImports() {
     return this.to('ListImports');
+  }
+
+  /**
+   * Grants permission to list the related resources for a list of resources from a resource scan. The response indicates whether each returned resource is already managed by CloudFormation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScanRelatedResources.html
+   */
+  public toListResourceScanRelatedResources() {
+    return this.to('ListResourceScanRelatedResources');
+  }
+
+  /**
+   * Grants permission to list the resources from a resource scan. The results can be filtered by resource identifier, resource type prefix, tag key, and tag value
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScanResources.html
+   */
+  public toListResourceScanResources() {
+    return this.to('ListResourceScanResources');
+  }
+
+  /**
+   * Grants permission to list the resource scans from newest to oldest. By default it will return up to 10 resource scans
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScans.html
+   */
+  public toListResourceScans() {
+    return this.to('ListResourceScans');
+  }
+
+  /**
+   * Grants permission to return drift information for the resources that have been checked for drift in the specified stack instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstanceResourceDrifts.html
+   */
+  public toListStackInstanceResourceDrifts() {
+    return this.to('ListStackInstanceResourceDrifts');
   }
 
   /**
@@ -585,7 +737,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the summary information for stacks whose status matches the specified StackStatusFilter
+   * Grants permission to return the summary information for stacks whose status matches the specified StackStatusFilter. In combination with the DescribeStacks action, grants permission to list descriptions for stacks
    *
    * Access Level: List
    *
@@ -734,6 +886,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a scan of the resources in this account in this Region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StartResourceScan.html
+   */
+  public toStartResourceScan() {
+    return this.to('StartResourceScan');
+  }
+
+  /**
    * Grants permission to stop an in-progress operation on a stack set and its associated stack instances
    *
    * Access Level: Write
@@ -782,6 +945,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a generated template. This can be used to change the name, add and remove resources, refresh resources, and change the DeletionPolicy and UpdateReplacePolicy settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateGeneratedTemplate.html
+   */
+  public toUpdateGeneratedTemplate() {
+    return this.to('UpdateGeneratedTemplate');
   }
 
   /**
@@ -851,6 +1025,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifTemplateUrl()
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html
    */
   public toValidateTemplate() {
@@ -859,16 +1036,20 @@ export class Cloudformation extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ActivateOrganizationsAccess',
       'ActivateType',
       'CancelUpdateStack',
       'ContinueUpdateRollback',
       'CreateChangeSet',
+      'CreateGeneratedTemplate',
       'CreateStack',
       'CreateStackInstances',
       'CreateStackSet',
       'CreateUploadBucket',
+      'DeactivateOrganizationsAccess',
       'DeactivateType',
       'DeleteChangeSet',
+      'DeleteGeneratedTemplate',
       'DeleteStack',
       'DeleteStackInstances',
       'DeleteStackSet',
@@ -883,8 +1064,10 @@ export class Cloudformation extends PolicyStatement {
       'SetTypeConfiguration',
       'SetTypeDefaultVersion',
       'SignalResource',
+      'StartResourceScan',
       'StopStackSetOperation',
       'TestType',
+      'UpdateGeneratedTemplate',
       'UpdateStack',
       'UpdateStackInstances',
       'UpdateStackSet',
@@ -895,7 +1078,10 @@ export class Cloudformation extends PolicyStatement {
       'DescribeAccountLimits',
       'DescribeChangeSet',
       'DescribeChangeSetHooks',
+      'DescribeGeneratedTemplate',
+      'DescribeOrganizationsAccess',
       'DescribePublisher',
+      'DescribeResourceScan',
       'DescribeStackDriftDetectionStatus',
       'DescribeStackEvents',
       'DescribeStackInstance',
@@ -910,6 +1096,7 @@ export class Cloudformation extends PolicyStatement {
       'DetectStackResourceDrift',
       'DetectStackSetDrift',
       'EstimateTemplateCost',
+      'GetGeneratedTemplate',
       'GetStackPolicy',
       'GetTemplate',
       'GetTemplateSummary',
@@ -919,7 +1106,12 @@ export class Cloudformation extends PolicyStatement {
       'DescribeStacks',
       'ListChangeSets',
       'ListExports',
+      'ListGeneratedTemplates',
       'ListImports',
+      'ListResourceScanRelatedResources',
+      'ListResourceScanResources',
+      'ListResourceScans',
+      'ListStackInstanceResourceDrifts',
       'ListStackInstances',
       'ListStackResources',
       'ListStackSetOperationResults',
@@ -1019,6 +1211,95 @@ export class Cloudformation extends PolicyStatement {
    */
   public onType(type: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:type/resource/${ type }`);
+  }
+
+  /**
+   * Adds a resource of type generatedtemplate to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGeneratedtemplate(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:generatedTemplate/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type resourcescan to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onResourcescan(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Cloudformation.defaultPartition }:cloudformation:${ region || '*' }:${ account || '*' }:resourceScan/${ id }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toCreateChangeSet()
+   * - .toCreateStack()
+   * - .toCreateStackSet()
+   * - .toTagResource()
+   * - .toUpdateStack()
+   * - .toUpdateStackSet()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to resource types:
+   * - changeset
+   * - stack
+   * - stackset
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toCreateChangeSet()
+   * - .toCreateStack()
+   * - .toCreateStackInstances()
+   * - .toCreateStackSet()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateStack()
+   * - .toUpdateStackSet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1139,8 +1420,11 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateChangeSet()
    * - .toCreateStack()
    * - .toCreateStackSet()
+   * - .toEstimateTemplateCost()
+   * - .toGetTemplateSummary()
    * - .toUpdateStack()
    * - .toUpdateStackSet()
+   * - .toValidateTemplate()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

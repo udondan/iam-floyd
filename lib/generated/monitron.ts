@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [monitron](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmonitron.html).
@@ -32,7 +32,7 @@ export class Monitron extends PolicyStatement {
    * - sso:ListProfileAssociations
    * - sso:ListProfiles
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
    */
   public toAssociateProjectAdminUser() {
     return this.to('AssociateProjectAdminUser');
@@ -52,11 +52,51 @@ export class Monitron extends PolicyStatement {
    * - kms:CreateGrant
    * - sso:CreateManagedApplicationInstance
    * - sso:DeleteManagedApplicationInstance
+   * - sso:DescribeRegisteredRegions
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-creating-project.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-creating-project.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
+  }
+
+  /**
+   * Grants permission to associate a user with the project
+   *
+   * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - sso-directory:DescribeUsers
+   * - sso:AssociateProfile
+   * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
+   * - sso:ListDirectoryAssociations
+   * - sso:ListProfileAssociations
+   * - sso:ListProfiles
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html
+   */
+  public toCreateProjectUserAssociation() {
+    return this.to('CreateProjectUserAssociation');
+  }
+
+  /**
+   * Grants permission to associate an access role with the user
+   *
+   * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - sso-directory:DescribeUsers
+   * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
+   * - sso:ListDirectoryAssociations
+   * - sso:ListProfileAssociations
+   * - sso:ListProfiles
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html
+   */
+  public toCreateUserAccessRoleAssociation() {
+    return this.to('CreateUserAccessRoleAssociation');
   }
 
   /**
@@ -67,10 +107,40 @@ export class Monitron extends PolicyStatement {
    * Dependent actions:
    * - sso:DeleteManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-delete-project.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-delete-project.html
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
+  }
+
+  /**
+   * Grants permission to disassociate a user from the project
+   *
+   * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - sso-directory:DescribeUsers
+   * - sso:DisassociateProfile
+   * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
+   * - sso:ListDirectoryAssociations
+   * - sso:ListProfiles
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html
+   */
+  public toDeleteProjectUserAssociation() {
+    return this.to('DeleteProjectUserAssociation');
+  }
+
+  /**
+   * Grants permission to disassociate an access role from the user
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html
+   */
+  public toDeleteUserAccessRoleAssociation() {
+    return this.to('DeleteUserAccessRoleAssociation');
   }
 
   /**
@@ -86,7 +156,7 @@ export class Monitron extends PolicyStatement {
    * - sso:ListDirectoryAssociations
    * - sso:ListProfiles
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mu-remove-project-admin.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mu-remove-project-admin.html
    */
   public toDisassociateProjectAdminUser() {
     return this.to('DisassociateProjectAdminUser');
@@ -97,7 +167,7 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html
    */
   public toGetProject() {
     return this.to('GetProject');
@@ -113,7 +183,7 @@ export class Monitron extends PolicyStatement {
    * - sso:GetManagedApplicationInstance
    * - sso:ListProfileAssociations
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html
    */
   public toGetProjectAdminUser() {
     return this.to('GetProjectAdminUser');
@@ -128,10 +198,28 @@ export class Monitron extends PolicyStatement {
    * - sso-directory:DescribeUsers
    * - sso:GetManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
    */
   public toListProjectAdminUsers() {
     return this.to('ListProjectAdminUsers');
+  }
+
+  /**
+   * Grants permission to list all users associated with the project
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
+   * - sso:ListDirectoryAssociations
+   * - sso:ListProfileAssociations
+   * - sso:ListProfiles
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
+   */
+  public toListProjectUserAssociations() {
+    return this.to('ListProjectUserAssociations');
   }
 
   /**
@@ -139,7 +227,7 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html
    */
   public toListProjects() {
     return this.to('ListProjects');
@@ -150,14 +238,21 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list all access roles associated with the user
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
+   */
+  public toListUserAccessRoleAssociations() {
+    return this.to('ListUserAccessRoleAssociations');
   }
 
   /**
@@ -169,7 +264,7 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -183,7 +278,7 @@ export class Monitron extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html#modify-tag-1
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html#modify-tag-1
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -194,11 +289,7 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-updating-project.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-updating-project.html
    */
   public toUpdateProject() {
     return this.to('UpdateProject');
@@ -207,6 +298,10 @@ export class Monitron extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AssociateProjectAdminUser',
+      'CreateProjectUserAssociation',
+      'CreateUserAccessRoleAssociation',
+      'DeleteProjectUserAssociation',
+      'DeleteUserAccessRoleAssociation',
       'DisassociateProjectAdminUser',
       'ListProjectAdminUsers'
     ],
@@ -221,7 +316,9 @@ export class Monitron extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
-      'ListProjects'
+      'ListProjectUserAssociations',
+      'ListProjects',
+      'ListUserAccessRoleAssociations'
     ],
     Tagging: [
       'TagResource',
@@ -232,7 +329,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Adds a resource of type project to the statement
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/projects-chapter.html
+   * https://docs.aws.amazon.com/Monitron/latest/user-guide/projects-chapter.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -244,5 +341,55 @@ export class Monitron extends PolicyStatement {
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Monitron.defaultPartition }:monitron:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - project
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

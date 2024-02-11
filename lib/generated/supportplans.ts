@@ -19,6 +19,17 @@ export class Supportplans extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create support plan schedules for this AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html
+   */
+  public toCreateSupportPlanSchedule() {
+    return this.to('CreateSupportPlanSchedule');
+  }
+
+  /**
    * Grants permission to view details about the current support plan for this AWS account
    *
    * Access Level: Read
@@ -52,12 +63,13 @@ export class Supportplans extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'CreateSupportPlanSchedule',
+      'StartSupportPlanUpdate'
+    ],
     Read: [
       'GetSupportPlan',
       'GetSupportPlanUpdateStatus'
-    ],
-    Write: [
-      'StartSupportPlanUpdate'
     ]
   };
 }

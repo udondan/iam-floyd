@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html).
@@ -50,6 +50,16 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddRegion.html
    */
   public toAddRegion() {
@@ -78,6 +88,8 @@ export class Ds extends PolicyStatement {
    * Grants permission to authorize an application for your AWS Directory
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toAuthorizeApplication() {
     return this.to('AuthorizeApplication');
@@ -98,6 +110,8 @@ export class Ds extends PolicyStatement {
    * Grants permission to verify that the alias is available for use
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toCheckAlias() {
     return this.to('CheckAlias');
@@ -194,6 +208,8 @@ export class Ds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toCreateIdentityPoolDirectory() {
     return this.to('CreateIdentityPoolDirectory');
@@ -313,7 +329,7 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/directoryservice/latest/devguide/DeleteTrust.html
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteTrust.html
    */
   public toDeleteTrust() {
     return this.to('DeleteTrust');
@@ -518,6 +534,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable AWS Management Console access for identity in your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toDisableRoleAccess() {
+    return this.to('DisableRoleAccess');
+  }
+
+  /**
    * Grants permission to disable single-sign on for a directory
    *
    * Access Level: Write
@@ -562,6 +589,20 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable AWS Management Console access for identity in your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toEnableRoleAccess() {
+    return this.to('EnableRoleAccess');
+  }
+
+  /**
    * Grants permission to enable single-sign on for a directory
    *
    * Access Level: Write
@@ -577,7 +618,7 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetAuthorizedApplicationDetails.html
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toGetAuthorizedApplicationDetails() {
     return this.to('GetAuthorizedApplicationDetails');
@@ -609,6 +650,8 @@ export class Ds extends PolicyStatement {
    * Grants permission to obtain the AWS applications authorized for a directory
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toListAuthorizedApplications() {
     return this.to('ListAuthorizedApplications');
@@ -793,6 +836,8 @@ export class Ds extends PolicyStatement {
    * Grants permission to unauthorize an application from your AWS Directory
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
    */
   public toUnauthorizeApplication() {
     return this.to('UnauthorizeApplication');
@@ -810,6 +855,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an authorized application for your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toUpdateAuthorizedApplication() {
+    return this.to('UpdateAuthorizedApplication');
+  }
+
+  /**
    * Grants permission to update a conditional forwarder that has been set up for your AWS directory
    *
    * Access Level: Write
@@ -818,6 +874,17 @@ export class Ds extends PolicyStatement {
    */
   public toUpdateConditionalForwarder() {
     return this.to('UpdateConditionalForwarder');
+  }
+
+  /**
+   * Grants permission to update the configurations like service account credentials or DNS server IP addresses for the specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toUpdateDirectory() {
+    return this.to('UpdateDirectory');
   }
 
   /**
@@ -913,10 +980,12 @@ export class Ds extends PolicyStatement {
       'DisableClientAuthentication',
       'DisableLDAPS',
       'DisableRadius',
+      'DisableRoleAccess',
       'DisableSso',
       'EnableClientAuthentication',
       'EnableLDAPS',
       'EnableRadius',
+      'EnableRoleAccess',
       'EnableSso',
       'RegisterCertificate',
       'RegisterEventTopic',
@@ -929,7 +998,9 @@ export class Ds extends PolicyStatement {
       'StartSchemaExtension',
       'UnauthorizeApplication',
       'UnshareDirectory',
+      'UpdateAuthorizedApplication',
       'UpdateConditionalForwarder',
+      'UpdateDirectory',
       'UpdateDirectorySetup',
       'UpdateNumberOfDomainControllers',
       'UpdateRadius',
@@ -985,5 +1056,62 @@ export class Ds extends PolicyStatement {
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ds.defaultPartition }:ds:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+  }
+
+  /**
+   * Filters access by the value of the request to AWS DS
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toConnectDirectory()
+   * - .toCreateDirectory()
+   * - .toCreateIdentityPoolDirectory()
+   * - .toCreateMicrosoftAD()
+   * - .toRemoveTagsFromResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the AWS DS Resource being acted upon
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html
+   *
+   * Applies to resource types:
+   * - directory
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toConnectDirectory()
+   * - .toCreateDirectory()
+   * - .toCreateIdentityPoolDirectory()
+   * - .toCreateMicrosoftAD()
+   * - .toRemoveTagsFromResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

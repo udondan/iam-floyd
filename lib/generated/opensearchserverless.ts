@@ -19,6 +19,17 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grant permission to all the supported Opensearch APIs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_APIAccessAll.html
+   */
+  public toAPIAccessAll() {
+    return this.to('APIAccessAll');
+  }
+
+  /**
    * Grants permission to get attributes for one or more collections
    *
    * Access Level: Read
@@ -27,6 +38,28 @@ export class Aoss extends PolicyStatement {
    */
   public toBatchGetCollection() {
     return this.to('BatchGetCollection');
+  }
+
+  /**
+   * Grants permission to get the information about a lifecycle policy applied to one or more AOSS resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetEffectiveLifecyclePolicy.html
+   */
+  public toBatchGetEffectiveLifecyclePolicy() {
+    return this.to('BatchGetEffectiveLifecyclePolicy');
+  }
+
+  /**
+   * Grants permission to get information about one or more lifecycle policies
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetLifecyclePolicy.html
+   */
+  public toBatchGetLifecyclePolicy() {
+    return this.to('BatchGetLifecyclePolicy');
   }
 
   /**
@@ -44,6 +77,10 @@ export class Aoss extends PolicyStatement {
    * Grants permission to create a data access policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateAccessPolicy.html
    */
@@ -67,6 +104,21 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateLifecyclePolicy.html
+   */
+  public toCreateLifecyclePolicy() {
+    return this.to('CreateLifecyclePolicy');
+  }
+
+  /**
    * Grants permission to create a serverless security configuration
    *
    * Access Level: Write
@@ -81,6 +133,9 @@ export class Aoss extends PolicyStatement {
    * Grants permission to create a network or encryption policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateSecurityPolicy.html
    */
@@ -100,9 +155,24 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Opensearch Serverless Dashboards
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DashboardsAccessAll.html
+   */
+  public toDashboardsAccessAll() {
+    return this.to('DashboardsAccessAll');
+  }
+
+  /**
    * Grants permission to delete a data access policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteAccessPolicy.html
    */
@@ -122,6 +192,21 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteLifecyclePolicy.html
+   */
+  public toDeleteLifecyclePolicy() {
+    return this.to('DeleteLifecyclePolicy');
+  }
+
+  /**
    * Grants permission to delete a security configuration
    *
    * Access Level: Write
@@ -136,6 +221,9 @@ export class Aoss extends PolicyStatement {
    * Grants permission to delete a security policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteSecurityPolicy.html
    */
@@ -158,6 +246,10 @@ export class Aoss extends PolicyStatement {
    * Grants permission to get information about a data access policy
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetAccessPolicy.html
    */
@@ -203,6 +295,9 @@ export class Aoss extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifCollection()
+   *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetSecurityPolicy.html
    */
   public toGetSecurityPolicy() {
@@ -229,6 +324,17 @@ export class Aoss extends PolicyStatement {
    */
   public toListCollections() {
     return this.to('ListCollections');
+  }
+
+  /**
+   * Grants permission to list lifecycle policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListLifecyclePolicies.html
+   */
+  public toListLifecyclePolicies() {
+    return this.to('ListLifecyclePolicies');
   }
 
   /**
@@ -309,6 +415,10 @@ export class Aoss extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
+   *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateAccessPolicy.html
    */
   public toUpdateAccessPolicy() {
@@ -338,6 +448,21 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a lifecycle policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifIndex()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateLifecyclePolicy.html
+   */
+  public toUpdateLifecyclePolicy() {
+    return this.to('UpdateLifecyclePolicy');
+  }
+
+  /**
    * Grants permission to update a security configuration
    *
    * Access Level: Write
@@ -352,6 +477,9 @@ export class Aoss extends PolicyStatement {
    * Grants permission to update a security policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateSecurityPolicy.html
    */
@@ -371,23 +499,18 @@ export class Aoss extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Read: [
-      'BatchGetCollection',
-      'BatchGetVpcEndpoint',
-      'GetAccessPolicy',
-      'GetAccountSettings',
-      'GetPoliciesStats',
-      'GetSecurityConfig',
-      'GetSecurityPolicy'
-    ],
     Write: [
+      'APIAccessAll',
       'CreateAccessPolicy',
       'CreateCollection',
+      'CreateLifecyclePolicy',
       'CreateSecurityConfig',
       'CreateSecurityPolicy',
       'CreateVpcEndpoint',
+      'DashboardsAccessAll',
       'DeleteAccessPolicy',
       'DeleteCollection',
+      'DeleteLifecyclePolicy',
       'DeleteSecurityConfig',
       'DeleteSecurityPolicy',
       'DeleteVpcEndpoint',
@@ -396,13 +519,26 @@ export class Aoss extends PolicyStatement {
       'UpdateAccessPolicy',
       'UpdateAccountSettings',
       'UpdateCollection',
+      'UpdateLifecyclePolicy',
       'UpdateSecurityConfig',
       'UpdateSecurityPolicy',
       'UpdateVpcEndpoint'
     ],
+    Read: [
+      'BatchGetCollection',
+      'BatchGetEffectiveLifecyclePolicy',
+      'BatchGetLifecyclePolicy',
+      'BatchGetVpcEndpoint',
+      'GetAccessPolicy',
+      'GetAccountSettings',
+      'GetPoliciesStats',
+      'GetSecurityConfig',
+      'GetSecurityPolicy'
+    ],
     List: [
       'ListAccessPolicies',
       'ListCollections',
+      'ListLifecyclePolicies',
       'ListSecurityConfigs',
       'ListSecurityPolicies',
       'ListTagsForResource',
@@ -428,6 +564,19 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Dashboards to the statement
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDashboards(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Aoss.defaultPartition }:aoss:${ region || '*' }:${ account || '*' }:dashboards/default`);
+  }
+
+  /**
    * Filters access by the identifier of the collection
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
@@ -444,6 +593,19 @@ export class Aoss extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
    *
+   * Applies to actions:
+   * - .toCreateAccessPolicy()
+   * - .toCreateLifecyclePolicy()
+   * - .toCreateSecurityPolicy()
+   * - .toDeleteAccessPolicy()
+   * - .toDeleteLifecyclePolicy()
+   * - .toDeleteSecurityPolicy()
+   * - .toGetAccessPolicy()
+   * - .toGetSecurityPolicy()
+   * - .toUpdateAccessPolicy()
+   * - .toUpdateLifecyclePolicy()
+   * - .toUpdateSecurityPolicy()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -456,10 +618,63 @@ export class Aoss extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
    *
+   * Applies to actions:
+   * - .toCreateAccessPolicy()
+   * - .toCreateLifecyclePolicy()
+   * - .toDeleteAccessPolicy()
+   * - .toDeleteLifecyclePolicy()
+   * - .toGetAccessPolicy()
+   * - .toUpdateAccessPolicy()
+   * - .toUpdateLifecyclePolicy()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIndex(value: string | string[], operator?: Operator | string) {
     return this.if(`index`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * Applies to actions:
+   * - .toCreateCollection()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * Applies to resource types:
+   * - Collection
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * Applies to actions:
+   * - .toCreateCollection()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

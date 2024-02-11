@@ -1,4 +1,5 @@
 imagebuilder:CancelImageCreation;Write
+imagebuilder:CancelLifecycleExecution;Write
 imagebuilder:CreateComponent;Write
 imagebuilder:CreateContainerRecipe;Write
 imagebuilder:CreateDistributionConfiguration;Write
@@ -6,6 +7,8 @@ imagebuilder:CreateImage;Write
 imagebuilder:CreateImagePipeline;Write
 imagebuilder:CreateImageRecipe;Write
 imagebuilder:CreateInfrastructureConfiguration;Write
+imagebuilder:CreateLifecyclePolicy;Write
+imagebuilder:CreateWorkflow;Write
 imagebuilder:DeleteComponent;Write
 imagebuilder:DeleteContainerRecipe;Write
 imagebuilder:DeleteDistributionConfiguration;Write
@@ -13,6 +16,8 @@ imagebuilder:DeleteImage;Write
 imagebuilder:DeleteImagePipeline;Write
 imagebuilder:DeleteImageRecipe;Write
 imagebuilder:DeleteInfrastructureConfiguration;Write
+imagebuilder:DeleteLifecyclePolicy;Write
+imagebuilder:DeleteWorkflow;Write
 imagebuilder:GetComponent;Read
 imagebuilder:GetComponentPolicy;Read
 imagebuilder:GetContainerRecipe;Read
@@ -24,6 +29,9 @@ imagebuilder:GetImagePolicy;Read
 imagebuilder:GetImageRecipe;Read
 imagebuilder:GetImageRecipePolicy;Read
 imagebuilder:GetInfrastructureConfiguration;Read
+imagebuilder:GetLifecycleExecution;Read
+imagebuilder:GetLifecyclePolicy;Read
+imagebuilder:GetWorkflow;Read
 imagebuilder:GetWorkflowExecution;Read
 imagebuilder:GetWorkflowStepExecution;Read
 imagebuilder:ImportComponent;Write
@@ -41,16 +49,25 @@ imagebuilder:ListImageScanFindingAggregations;List
 imagebuilder:ListImageScanFindings;List
 imagebuilder:ListImages;List
 imagebuilder:ListInfrastructureConfigurations;List
+imagebuilder:ListLifecycleExecutionResources;List
+imagebuilder:ListLifecycleExecutions;List
+imagebuilder:ListLifecyclePolicies;List
 imagebuilder:ListTagsForResource;Read
+imagebuilder:ListWaitingWorkflowSteps;List
+imagebuilder:ListWorkflowBuildVersions;List
 imagebuilder:ListWorkflowExecutions;List
 imagebuilder:ListWorkflowStepExecutions;List
+imagebuilder:ListWorkflows;List
 imagebuilder:PutComponentPolicy;Permissions management
 imagebuilder:PutContainerRecipePolicy;Permissions management
 imagebuilder:PutImagePolicy;Permissions management
 imagebuilder:PutImageRecipePolicy;Permissions management
+imagebuilder:SendWorkflowStepAction;Write
 imagebuilder:StartImagePipelineExecution;Write
+imagebuilder:StartResourceStateUpdate;Write
 imagebuilder:TagResource;Tagging
 imagebuilder:UntagResource;Tagging
 imagebuilder:UpdateDistributionConfiguration;Write
 imagebuilder:UpdateImagePipeline;Write
 imagebuilder:UpdateInfrastructureConfiguration;Write
+imagebuilder:UpdateLifecyclePolicy;Write

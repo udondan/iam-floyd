@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [lex-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html).
@@ -23,7 +23,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchCreateCustomVocabularyItem.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchCreateCustomVocabularyItem.html
    */
   public toBatchCreateCustomVocabularyItem() {
     return this.to('BatchCreateCustomVocabularyItem');
@@ -34,7 +34,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchDeleteCustomVocabularyItem.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchDeleteCustomVocabularyItem.html
    */
   public toBatchDeleteCustomVocabularyItem() {
     return this.to('BatchDeleteCustomVocabularyItem');
@@ -45,7 +45,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BatchUpdateCustomVocabularyItem.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchUpdateCustomVocabularyItem.html
    */
   public toBatchUpdateCustomVocabularyItem() {
     return this.to('BatchUpdateCustomVocabularyItem');
@@ -56,7 +56,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_BuildBotLocale.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BuildBotLocale.html
    */
   public toBuildBotLocale() {
     return this.to('BuildBotLocale');
@@ -71,7 +71,7 @@ export class LexV2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html
    */
   public toCreateBot() {
     return this.to('CreateBot');
@@ -86,7 +86,7 @@ export class LexV2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBotAlias.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotAlias.html
    */
   public toCreateBotAlias() {
     return this.to('CreateBotAlias');
@@ -108,7 +108,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBotLocale.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotLocale.html
    */
   public toCreateBotLocale() {
     return this.to('CreateBotLocale');
@@ -119,7 +119,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBotVersion.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotVersion.html
    */
   public toCreateBotVersion() {
     return this.to('CreateBotVersion');
@@ -141,7 +141,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateExport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateExport.html
    */
   public toCreateExport() {
     return this.to('CreateExport');
@@ -152,7 +152,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html
    */
   public toCreateIntent() {
     return this.to('CreateIntent');
@@ -163,7 +163,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateResourcePolicy.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateResourcePolicy.html
    */
   public toCreateResourcePolicy() {
     return this.to('CreateResourcePolicy');
@@ -174,7 +174,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateSlot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateSlot.html
    */
   public toCreateSlot() {
     return this.to('CreateSlot');
@@ -185,10 +185,32 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateSlotType.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateSlotType.html
    */
   public toCreateSlotType() {
     return this.to('CreateSlotType');
+  }
+
+  /**
+   * Grants permission to import a new test-set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/create-test-set-from-CSV.html
+   */
+  public toCreateTestSet() {
+    return this.to('CreateTestSet');
+  }
+
+  /**
+   * Grants permission to create a test set discrepancy report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateTestSetDiscrepancyReport.html
+   */
+  public toCreateTestSetDiscrepancyReport() {
+    return this.to('CreateTestSetDiscrepancyReport');
   }
 
   /**
@@ -196,7 +218,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html
    */
   public toCreateUploadUrl() {
     return this.to('CreateUploadUrl');
@@ -216,7 +238,7 @@ export class LexV2 extends PolicyStatement {
    * - lex:DeleteSlot
    * - lex:DeleteSlotType
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html
    */
   public toDeleteBot() {
     return this.to('DeleteBot');
@@ -227,7 +249,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBotAlias.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAlias.html
    */
   public toDeleteBotAlias() {
     return this.to('DeleteBotAlias');
@@ -254,7 +276,7 @@ export class LexV2 extends PolicyStatement {
    * - lex:DeleteSlot
    * - lex:DeleteSlotType
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBotLocale.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotLocale.html
    */
   public toDeleteBotLocale() {
     return this.to('DeleteBotLocale');
@@ -265,7 +287,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBotVersion.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotVersion.html
    */
   public toDeleteBotVersion() {
     return this.to('DeleteBotVersion');
@@ -276,7 +298,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteCustomVocabulary.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteCustomVocabulary.html
    */
   public toDeleteCustomVocabulary() {
     return this.to('DeleteCustomVocabulary');
@@ -287,7 +309,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteExport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteExport.html
    */
   public toDeleteExport() {
     return this.to('DeleteExport');
@@ -298,7 +320,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteImport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteImport.html
    */
   public toDeleteImport() {
     return this.to('DeleteImport');
@@ -309,7 +331,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteIntent.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteIntent.html
    */
   public toDeleteIntent() {
     return this.to('DeleteIntent');
@@ -320,7 +342,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteResourcePolicy.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
@@ -331,7 +353,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DeleteSession.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DeleteSession.html
    */
   public toDeleteSession() {
     return this.to('DeleteSession');
@@ -342,7 +364,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteSlot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteSlot.html
    */
   public toDeleteSlot() {
     return this.to('DeleteSlot');
@@ -353,10 +375,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteSlotType.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteSlotType.html
    */
   public toDeleteSlotType() {
     return this.to('DeleteSlotType');
+  }
+
+  /**
+   * Grants permission to delete an existing test set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteTestSet.html
+   */
+  public toDeleteTestSet() {
+    return this.to('DeleteTestSet');
   }
 
   /**
@@ -364,7 +397,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteUtterances.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteUtterances.html
    */
   public toDeleteUtterances() {
     return this.to('DeleteUtterances');
@@ -375,7 +408,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html
    */
   public toDescribeBot() {
     return this.to('DescribeBot');
@@ -386,7 +419,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html
    */
   public toDescribeBotAlias() {
     return this.to('DescribeBotAlias');
@@ -408,7 +441,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotLocale.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotLocale.html
    */
   public toDescribeBotLocale() {
     return this.to('DescribeBotLocale');
@@ -419,10 +452,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotRecommendation.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotRecommendation.html
    */
   public toDescribeBotRecommendation() {
     return this.to('DescribeBotRecommendation');
+  }
+
+  /**
+   * Grants permission to retrieve metadata information for a bot resource generation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotResourceGeneration.html
+   */
+  public toDescribeBotResourceGeneration() {
+    return this.to('DescribeBotResourceGeneration');
   }
 
   /**
@@ -430,7 +474,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotVersion.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotVersion.html
    */
   public toDescribeBotVersion() {
     return this.to('DescribeBotVersion');
@@ -452,7 +496,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeCustomVocabularyMetadata.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeCustomVocabularyMetadata.html
    */
   public toDescribeCustomVocabularyMetadata() {
     return this.to('DescribeCustomVocabularyMetadata');
@@ -474,7 +518,7 @@ export class LexV2 extends PolicyStatement {
    * - lex:ListSlotTypes
    * - lex:ListSlots
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html
    */
   public toDescribeExport() {
     return this.to('DescribeExport');
@@ -485,7 +529,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html
    */
   public toDescribeImport() {
     return this.to('DescribeImport');
@@ -496,7 +540,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeIntent.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeIntent.html
    */
   public toDescribeIntent() {
     return this.to('DescribeIntent');
@@ -507,7 +551,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeResourcePolicy.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeResourcePolicy.html
    */
   public toDescribeResourcePolicy() {
     return this.to('DescribeResourcePolicy');
@@ -518,7 +562,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeSlot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeSlot.html
    */
   public toDescribeSlot() {
     return this.to('DescribeSlot');
@@ -529,10 +573,65 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeSlotType.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeSlotType.html
    */
   public toDescribeSlotType() {
     return this.to('DescribeSlotType');
+  }
+
+  /**
+   * Grants permission to retrieve test execution metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestExecution.html
+   */
+  public toDescribeTestExecution() {
+    return this.to('DescribeTestExecution');
+  }
+
+  /**
+   * Grants permission to retrieve an existing test set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSet.html
+   */
+  public toDescribeTestSet() {
+    return this.to('DescribeTestSet');
+  }
+
+  /**
+   * Grants permission to retrieve test set discrepancy report metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetDiscrepancyReport.html
+   */
+  public toDescribeTestSetDiscrepancyReport() {
+    return this.to('DescribeTestSetDiscrepancyReport');
+  }
+
+  /**
+   * Grants permission to retrieve test set generation metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetGeneration.html
+   */
+  public toDescribeTestSetGeneration() {
+    return this.to('DescribeTestSetGeneration');
+  }
+
+  /**
+   * Grants permission to generate supported fields or elements for a bot
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GenerateBotElement.html
+   */
+  public toGenerateBotElement() {
+    return this.to('GenerateBotElement');
   }
 
   /**
@@ -540,10 +639,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_GetSession.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_GetSession.html
    */
   public toGetSession() {
     return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to retrieve artifacts URL for a test execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GetTestExecutionArtifactsUrl.html
+   */
+  public toGetTestExecutionArtifactsUrl() {
+    return this.to('GetTestExecutionArtifactsUrl');
   }
 
   /**
@@ -551,7 +661,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html
    */
   public toListAggregatedUtterances() {
     return this.to('ListAggregatedUtterances');
@@ -562,7 +672,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliases.html
    */
   public toListBotAliases() {
     return this.to('ListBotAliases');
@@ -584,7 +694,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotLocales.html
    */
   public toListBotLocales() {
     return this.to('ListBotLocales');
@@ -595,10 +705,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotRecommendations.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotRecommendations.html
    */
   public toListBotRecommendations() {
     return this.to('ListBotRecommendations');
+  }
+
+  /**
+   * Grants permission to list the resource generations for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotResourceGenerations.html
+   */
+  public toListBotResourceGenerations() {
+    return this.to('ListBotResourceGenerations');
   }
 
   /**
@@ -606,7 +727,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotVersions.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersions.html
    */
   public toListBotVersions() {
     return this.to('ListBotVersions');
@@ -617,7 +738,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html
    */
   public toListBots() {
     return this.to('ListBots');
@@ -628,7 +749,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInIntents.html
    */
   public toListBuiltInIntents() {
     return this.to('ListBuiltInIntents');
@@ -639,7 +760,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInSlotTypes.html
    */
   public toListBuiltInSlotTypes() {
     return this.to('ListBuiltInSlotTypes');
@@ -650,7 +771,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListCustomVocabularyItems.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListCustomVocabularyItems.html
    */
   public toListCustomVocabularyItems() {
     return this.to('ListCustomVocabularyItems');
@@ -661,7 +782,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html
    */
   public toListExports() {
     return this.to('ListExports');
@@ -672,10 +793,43 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html
    */
   public toListImports() {
     return this.to('ListImports');
+  }
+
+  /**
+   * Grants permission to list intent analytics metrics for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentMetrics.html
+   */
+  public toListIntentMetrics() {
+    return this.to('ListIntentMetrics');
+  }
+
+  /**
+   * Grants permission to list intent path analytics for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentPaths.html
+   */
+  public toListIntentPaths() {
+    return this.to('ListIntentPaths');
+  }
+
+  /**
+   * Grants permission to list intentStage analytics metrics for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentStageMetrics.html
+   */
+  public toListIntentStageMetrics() {
+    return this.to('ListIntentStageMetrics');
   }
 
   /**
@@ -683,7 +837,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListIntents.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntents.html
    */
   public toListIntents() {
     return this.to('ListIntents');
@@ -694,10 +848,32 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListRecommendedIntents.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListRecommendedIntents.html
    */
   public toListRecommendedIntents() {
     return this.to('ListRecommendedIntents');
+  }
+
+  /**
+   * Grants permission to list session analytics data for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSessionAnalyticsData.html
+   */
+  public toListSessionAnalyticsData() {
+    return this.to('ListSessionAnalyticsData');
+  }
+
+  /**
+   * Grants permission to list session analytics metrics for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSessionMetrics.html
+   */
+  public toListSessionMetrics() {
+    return this.to('ListSessionMetrics');
   }
 
   /**
@@ -705,7 +881,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListSlotTypes.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSlotTypes.html
    */
   public toListSlotTypes() {
     return this.to('ListSlotTypes');
@@ -716,7 +892,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListSlots.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSlots.html
    */
   public toListSlots() {
     return this.to('ListSlots');
@@ -727,10 +903,57 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to retrieve test results data for a test execution
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lex:ListTestSetRecords
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestExecutionResultItems.html
+   */
+  public toListTestExecutionResultItems() {
+    return this.to('ListTestExecutionResultItems');
+  }
+
+  /**
+   * Grants permission to list test executions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestExecutions.html
+   */
+  public toListTestExecutions() {
+    return this.to('ListTestExecutions');
+  }
+
+  /**
+   * Grants permission to retrieve records inside an existing test set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestSetRecords.html
+   */
+  public toListTestSetRecords() {
+    return this.to('ListTestSetRecords');
+  }
+
+  /**
+   * Grants permission to list test sets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestSets.html
+   */
+  public toListTestSets() {
+    return this.to('ListTestSets');
   }
 
   /**
@@ -738,7 +961,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_PutSession.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_PutSession.html
    */
   public toPutSession() {
     return this.to('PutSession');
@@ -749,7 +972,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html
    */
   public toRecognizeText() {
     return this.to('RecognizeText');
@@ -760,7 +983,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html
    */
   public toRecognizeUtterance() {
     return this.to('RecognizeUtterance');
@@ -771,7 +994,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_SearchAssociatedTranscripts.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_SearchAssociatedTranscripts.html
    */
   public toSearchAssociatedTranscripts() {
     return this.to('SearchAssociatedTranscripts');
@@ -782,10 +1005,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StartBotRecommendation.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotRecommendation.html
    */
   public toStartBotRecommendation() {
     return this.to('StartBotRecommendation');
+  }
+
+  /**
+   * Grants permission to start a resource generation for an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotResourceGeneration.html
+   */
+  public toStartBotResourceGeneration() {
+    return this.to('StartBotResourceGeneration');
   }
 
   /**
@@ -793,7 +1027,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_StartConversation.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_StartConversation.html
    */
   public toStartConversation() {
     return this.to('StartConversation');
@@ -811,23 +1045,50 @@ export class LexV2 extends PolicyStatement {
    * Dependent actions:
    * - lex:CreateBot
    * - lex:CreateBotLocale
+   * - lex:CreateCustomVocabulary
    * - lex:CreateIntent
    * - lex:CreateSlot
    * - lex:CreateSlotType
+   * - lex:CreateTestSet
    * - lex:DeleteBotLocale
+   * - lex:DeleteCustomVocabulary
    * - lex:DeleteIntent
    * - lex:DeleteSlot
    * - lex:DeleteSlotType
    * - lex:UpdateBot
    * - lex:UpdateBotLocale
+   * - lex:UpdateCustomVocabulary
    * - lex:UpdateIntent
    * - lex:UpdateSlot
    * - lex:UpdateSlotType
+   * - lex:UpdateTestSet
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html
    */
   public toStartImport() {
     return this.to('StartImport');
+  }
+
+  /**
+   * Grants permission to start a test execution using a test set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestExecution.html
+   */
+  public toStartTestExecution() {
+    return this.to('StartTestExecution');
+  }
+
+  /**
+   * Grants permission to generate a test set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestSetGeneration.html
+   */
+  public toStartTestSetGeneration() {
+    return this.to('StartTestSetGeneration');
   }
 
   /**
@@ -835,7 +1096,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StopBotRecommendation.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotRecommendation.html
    */
   public toStopBotRecommendation() {
     return this.to('StopBotRecommendation');
@@ -850,7 +1111,7 @@ export class LexV2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_TagResource.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -863,9 +1124,8 @@ export class LexV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UntagResource.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -876,7 +1136,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBot.html
    */
   public toUpdateBot() {
     return this.to('UpdateBot');
@@ -887,7 +1147,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html
    */
   public toUpdateBotAlias() {
     return this.to('UpdateBotAlias');
@@ -898,7 +1158,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotLocale.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotLocale.html
    */
   public toUpdateBotLocale() {
     return this.to('UpdateBotLocale');
@@ -909,7 +1169,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotRecommendation.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotRecommendation.html
    */
   public toUpdateBotRecommendation() {
     return this.to('UpdateBotRecommendation');
@@ -931,7 +1191,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateExport.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateExport.html
    */
   public toUpdateExport() {
     return this.to('UpdateExport');
@@ -942,7 +1202,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateIntent.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateIntent.html
    */
   public toUpdateIntent() {
     return this.to('UpdateIntent');
@@ -953,7 +1213,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateResourcePolicy.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateResourcePolicy.html
    */
   public toUpdateResourcePolicy() {
     return this.to('UpdateResourcePolicy');
@@ -964,7 +1224,7 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateSlot.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateSlot.html
    */
   public toUpdateSlot() {
     return this.to('UpdateSlot');
@@ -975,10 +1235,21 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateSlotType.html
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateSlotType.html
    */
   public toUpdateSlotType() {
     return this.to('UpdateSlotType');
+  }
+
+  /**
+   * Grants permission to update an existing test set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateTestSet.html
+   */
+  public toUpdateTestSet() {
+    return this.to('UpdateTestSet');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -998,6 +1269,8 @@ export class LexV2 extends PolicyStatement {
       'CreateResourcePolicy',
       'CreateSlot',
       'CreateSlotType',
+      'CreateTestSet',
+      'CreateTestSetDiscrepancyReport',
       'CreateUploadUrl',
       'DeleteBot',
       'DeleteBotAlias',
@@ -1012,13 +1285,17 @@ export class LexV2 extends PolicyStatement {
       'DeleteSession',
       'DeleteSlot',
       'DeleteSlotType',
+      'DeleteTestSet',
       'DeleteUtterances',
       'PutSession',
       'RecognizeText',
       'RecognizeUtterance',
       'StartBotRecommendation',
+      'StartBotResourceGeneration',
       'StartConversation',
       'StartImport',
+      'StartTestExecution',
+      'StartTestSetGeneration',
       'StopBotRecommendation',
       'UpdateBot',
       'UpdateBotAlias',
@@ -1029,7 +1306,8 @@ export class LexV2 extends PolicyStatement {
       'UpdateIntent',
       'UpdateResourcePolicy',
       'UpdateSlot',
-      'UpdateSlotType'
+      'UpdateSlotType',
+      'UpdateTestSet'
     ],
     Read: [
       'DescribeBot',
@@ -1037,6 +1315,7 @@ export class LexV2 extends PolicyStatement {
       'DescribeBotChannel',
       'DescribeBotLocale',
       'DescribeBotRecommendation',
+      'DescribeBotResourceGeneration',
       'DescribeBotVersion',
       'DescribeCustomVocabulary',
       'DescribeCustomVocabularyMetadata',
@@ -1046,8 +1325,16 @@ export class LexV2 extends PolicyStatement {
       'DescribeResourcePolicy',
       'DescribeSlot',
       'DescribeSlotType',
+      'DescribeTestExecution',
+      'DescribeTestSet',
+      'DescribeTestSetDiscrepancyReport',
+      'DescribeTestSetGeneration',
+      'GenerateBotElement',
       'GetSession',
-      'ListTagsForResource'
+      'GetTestExecutionArtifactsUrl',
+      'ListTagsForResource',
+      'ListTestExecutionResultItems',
+      'ListTestSetRecords'
     ],
     List: [
       'ListAggregatedUtterances',
@@ -1055,6 +1342,7 @@ export class LexV2 extends PolicyStatement {
       'ListBotChannels',
       'ListBotLocales',
       'ListBotRecommendations',
+      'ListBotResourceGenerations',
       'ListBotVersions',
       'ListBots',
       'ListBuiltInIntents',
@@ -1062,10 +1350,17 @@ export class LexV2 extends PolicyStatement {
       'ListCustomVocabularyItems',
       'ListExports',
       'ListImports',
+      'ListIntentMetrics',
+      'ListIntentPaths',
+      'ListIntentStageMetrics',
       'ListIntents',
       'ListRecommendedIntents',
+      'ListSessionAnalyticsData',
+      'ListSessionMetrics',
       'ListSlotTypes',
       'ListSlots',
+      'ListTestExecutions',
+      'ListTestSets',
       'SearchAssociatedTranscripts'
     ],
     Tagging: [
@@ -1107,5 +1402,78 @@ export class LexV2 extends PolicyStatement {
    */
   public onBotAlias(botId: string, botAliasId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || LexV2.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot-alias/${ botId }/${ botAliasId }`);
+  }
+
+  /**
+   * Adds a resource of type test set to the statement
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/test-workbench.html
+   *
+   * @param testSetId - Identifier for the testSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTestSet(testSetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || LexV2.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:test-set/${ testSetId }`);
+  }
+
+  /**
+   * Filters access by the tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBot()
+   * - .toCreateBotAlias()
+   * - .toStartImport()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags attached to a Lex resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - bot
+   * - bot alias
+   * - test set
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the set of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBot()
+   * - .toCreateBotAlias()
+   * - .toStartImport()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

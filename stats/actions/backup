@@ -6,16 +6,22 @@ backup:CreateBackupSelection;Write
 backup:CreateBackupVault;Write
 backup:CreateFramework;Write
 backup:CreateLegalHold;Write
+backup:CreateLogicallyAirGappedBackupVault;Write
 backup:CreateReportPlan;Write
+backup:CreateRestoreTestingPlan;Write
+backup:CreateRestoreTestingSelection;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
 backup:DeleteBackupVault;Write
 backup:DeleteBackupVaultAccessPolicy;Permissions management
 backup:DeleteBackupVaultLockConfiguration;Write
 backup:DeleteBackupVaultNotifications;Write
+backup:DeleteBackupVaultSharingPolicy;Permissions management
 backup:DeleteFramework;Write
 backup:DeleteRecoveryPoint;Write
 backup:DeleteReportPlan;Write
+backup:DeleteRestoreTestingPlan;Write
+backup:DeleteRestoreTestingSelection;Write
 backup:DescribeBackupJob;Read
 backup:DescribeBackupVault;Read
 backup:DescribeCopyJob;Read
@@ -36,29 +42,43 @@ backup:GetBackupPlanFromTemplate;Read
 backup:GetBackupSelection;Read
 backup:GetBackupVaultAccessPolicy;Read
 backup:GetBackupVaultNotifications;Read
+backup:GetBackupVaultSharingPolicy;Read
 backup:GetLegalHold;Read
 backup:GetRecoveryPointRestoreMetadata;Read
+backup:GetRestoreJobMetadata;Read
+backup:GetRestoreTestingInferredMetadata;Read
+backup:GetRestoreTestingPlan;Read
+backup:GetRestoreTestingSelection;Read
 backup:GetSupportedResourceTypes;Read
+backup:ListBackupJobSummaries;List
 backup:ListBackupJobs;List
 backup:ListBackupPlanTemplates;List
 backup:ListBackupPlanVersions;List
 backup:ListBackupPlans;List
 backup:ListBackupSelections;List
 backup:ListBackupVaults;List
+backup:ListCopyJobSummaries;List
 backup:ListCopyJobs;List
 backup:ListFrameworks;List
 backup:ListLegalHolds;List
 backup:ListProtectedResources;List
+backup:ListProtectedResourcesByBackupVault;List
 backup:ListRecoveryPointsByBackupVault;List
 backup:ListRecoveryPointsByLegalHold;List
 backup:ListRecoveryPointsByResource;List
 backup:ListReportJobs;List
 backup:ListReportPlans;List
+backup:ListRestoreJobSummaries;List
 backup:ListRestoreJobs;List
+backup:ListRestoreJobsByProtectedResource;List
+backup:ListRestoreTestingPlans;List
+backup:ListRestoreTestingSelections;List
 backup:ListTags;Read
 backup:PutBackupVaultAccessPolicy;Permissions management
 backup:PutBackupVaultLockConfiguration;Write
 backup:PutBackupVaultNotifications;Write
+backup:PutBackupVaultSharingPolicy;Permissions management
+backup:PutRestoreValidationResult;Write
 backup:StartBackupJob;Write
 backup:StartCopyJob;Write
 backup:StartReportJob;Write
@@ -72,3 +92,5 @@ backup:UpdateGlobalSettings;Write
 backup:UpdateRecoveryPointLifecycle;Write
 backup:UpdateRegionSettings;Write
 backup:UpdateReportPlan;Write
+backup:UpdateRestoreTestingPlan;Write
+backup:UpdateRestoreTestingSelection;Write

@@ -21,6 +21,7 @@ proton:CreateServiceTemplateVersion;Write
 proton:CreateTemplateSyncConfig;Write
 proton:DeleteAccountRoles;Write
 proton:DeleteComponent;Write
+proton:DeleteDeployment;Write
 proton:DeleteEnvironment;Write
 proton:DeleteEnvironmentAccountConnection;Write
 proton:DeleteEnvironmentTemplate;Write
@@ -38,6 +39,7 @@ proton:DeleteTemplateSyncConfig;Write
 proton:GetAccountRoles;Read
 proton:GetAccountSettings;Read
 proton:GetComponent;Read
+proton:GetDeployment;Read
 proton:GetEnvironment;Read
 proton:GetEnvironmentAccountConnection;Read
 proton:GetEnvironmentTemplate;Read
@@ -62,6 +64,7 @@ proton:GetTemplateSyncStatus;Read
 proton:ListComponentOutputs;List
 proton:ListComponentProvisionedResources;List
 proton:ListComponents;List
+proton:ListDeployments;List
 proton:ListEnvironmentAccountConnections;List
 proton:ListEnvironmentOutputs;List
 proton:ListEnvironmentProvisionedResources;List

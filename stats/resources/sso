@@ -1,3 +1,6 @@
 sso:Account
+sso:Application
+sso:ApplicationProvider
 sso:Instance
 sso:PermissionSet
+sso:TrustedTokenIssuer

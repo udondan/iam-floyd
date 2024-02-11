@@ -12,8 +12,11 @@ cloudtrail:DeleteTrail;Write
 cloudtrail:DeregisterOrganizationDelegatedAdmin;Write
 cloudtrail:DescribeQuery;Read
 cloudtrail:DescribeTrails;Read
+cloudtrail:DisableFederation;Write
+cloudtrail:EnableFederation;Write
 cloudtrail:GetChannel;Read
 cloudtrail:GetEventDataStore;Read
+cloudtrail:GetEventDataStoreData;Read
 cloudtrail:GetEventSelectors;Read
 cloudtrail:GetImport;Read
 cloudtrail:GetInsightSelectors;Read
@@ -38,9 +41,11 @@ cloudtrail:PutResourcePolicy;Write
 cloudtrail:RegisterOrganizationDelegatedAdmin;Write
 cloudtrail:RemoveTags;Tagging
 cloudtrail:RestoreEventDataStore;Write
+cloudtrail:StartEventDataStoreIngestion;Write
 cloudtrail:StartImport;Write
 cloudtrail:StartLogging;Write
 cloudtrail:StartQuery;Write
+cloudtrail:StopEventDataStoreIngestion;Write
 cloudtrail:StopImport;Write
 cloudtrail:StopLogging;Write
 cloudtrail:UpdateChannel;Write

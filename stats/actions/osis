@@ -1,0 +1,15 @@
+osis:CreatePipeline;Write
+osis:DeletePipeline;Write
+osis:GetPipeline;Read
+osis:GetPipelineBlueprint;Read
+osis:GetPipelineChangeProgress;Read
+osis:Ingest;Write
+osis:ListPipelineBlueprints;List
+osis:ListPipelines;List
+osis:ListTagsForResource;Read
+osis:StartPipeline;Write
+osis:StopPipeline;Write
+osis:TagResource;Tagging
+osis:UntagResource;Tagging
+osis:UpdatePipeline;Write
+osis:ValidatePipeline;Read

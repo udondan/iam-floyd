@@ -1,1 +1,3 @@
-
+textract:RequestTag/${TagKey}
+textract:ResourceTag/${TagKey}
+textract:TagKeys

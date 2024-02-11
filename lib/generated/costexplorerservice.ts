@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostexplorerservice.html).
@@ -228,6 +228,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve approximate usage record count for the chosen resource, level, and hourly granularity preferences, derived from the past month's usage
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetApproximateUsageRecords() {
+    return this.to('GetApproximateUsageRecords');
+  }
+
+  /**
    * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
    *
    * Access Level: Read
@@ -346,6 +357,17 @@ export class Ce extends PolicyStatement {
    */
   public toGetRightsizingRecommendation() {
     return this.to('GetRightsizingRecommendation');
+  }
+
+  /**
+   * Grants permission to retrieve the Savings Plan recommendation details for your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlanPurchaseRecommendationDetails.html
+   */
+  public toGetSavingsPlanPurchaseRecommendationDetails() {
+    return this.to('GetSavingsPlanPurchaseRecommendationDetails');
   }
 
   /**
@@ -641,6 +663,7 @@ export class Ce extends PolicyStatement {
       'GetAnomalies',
       'GetAnomalyMonitors',
       'GetAnomalySubscriptions',
+      'GetApproximateUsageRecords',
       'GetConsoleActionSetEnforced',
       'GetCostAndUsage',
       'GetCostAndUsageWithResources',
@@ -652,6 +675,7 @@ export class Ce extends PolicyStatement {
       'GetReservationPurchaseRecommendation',
       'GetReservationUtilization',
       'GetRightsizingRecommendation',
+      'GetSavingsPlanPurchaseRecommendationDetails',
       'GetSavingsPlansCoverage',
       'GetSavingsPlansPurchaseRecommendation',
       'GetSavingsPlansUtilization',
@@ -717,5 +741,76 @@ export class Ce extends PolicyStatement {
    */
   public onCostcategory(identifier: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:costcategory/${ identifier }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAnomalyMonitor()
+   * - .toCreateAnomalySubscription()
+   * - .toCreateCostCategoryDefinition()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteAnomalyMonitor()
+   * - .toDeleteAnomalySubscription()
+   * - .toDeleteCostCategoryDefinition()
+   * - .toDescribeCostCategoryDefinition()
+   * - .toGetAnomalies()
+   * - .toGetAnomalyMonitors()
+   * - .toGetAnomalySubscriptions()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAnomalyMonitor()
+   * - .toUpdateAnomalySubscription()
+   * - .toUpdateCostCategoryDefinition()
+   *
+   * Applies to resource types:
+   * - anomalysubscription
+   * - anomalymonitor
+   * - costcategory
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAnomalyMonitor()
+   * - .toCreateAnomalySubscription()
+   * - .toCreateCostCategoryDefinition()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

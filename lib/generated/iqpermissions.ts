@@ -41,6 +41,17 @@ export class IqPermission extends PolicyStatement {
   }
 
   /**
+   * Grants permission to obtain a set of temporary security credentials for experts which they can use to access buyers' AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://aws.amazon.com/iq/
+   */
+  public toAssumePermissionRole() {
+    return this.to('AssumePermissionRole');
+  }
+
+  /**
    * Grants permission to create a permission request
    *
    * Access Level: Write
@@ -110,6 +121,7 @@ export class IqPermission extends PolicyStatement {
     Write: [
       'ApproveAccessGrant',
       'ApprovePermissionRequest',
+      'AssumePermissionRole',
       'CreatePermissionRequest',
       'RejectPermissionRequest',
       'RevokePermissionRequest',

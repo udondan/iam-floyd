@@ -5,6 +5,8 @@ ssm:Recursive
 ssm:RequestTag/${TagKey}
 ssm:ResourceTag/${TagKey}
 ssm:SessionDocumentAccessCheck
+ssm:SourceInstanceARN
 ssm:SyncType
 ssm:TagKeys
 ssm:resourceTag/${TagKey}
+ssm:resourceTag/aws

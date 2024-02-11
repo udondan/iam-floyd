@@ -19,6 +19,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the specified app block builder with the app block
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateAppBlockBuilderAppBlock.html
+   */
+  public toAssociateAppBlockBuilderAppBlock() {
+    return this.to('AssociateAppBlockBuilderAppBlock');
+  }
+
+  /**
    * Grants permission to associate the specified application with the fleet
    *
    * Access Level: Write
@@ -113,6 +127,35 @@ export class Appstream extends PolicyStatement {
    */
   public toCreateAppBlock() {
     return this.to('CreateAppBlock');
+  }
+
+  /**
+   * Grants permission to create an app block builder. An app block builder is a virtual machine that is used to create an app block
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlockBuilder.html
+   */
+  public toCreateAppBlockBuilder() {
+    return this.to('CreateAppBlockBuilder');
+  }
+
+  /**
+   * Grants permission to create a URL to start an app block builder streaming session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlockBuilderStreamingURL.html
+   */
+  public toCreateAppBlockBuilderStreamingURL() {
+    return this.to('CreateAppBlockBuilderStreamingURL');
   }
 
   /**
@@ -279,6 +322,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified app block builder and release capacity
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteAppBlockBuilder.html
+   */
+  public toDeleteAppBlockBuilder() {
+    return this.to('DeleteAppBlockBuilder');
+  }
+
+  /**
    * Grants permission to delete the specified application
    *
    * Access Level: Write
@@ -404,6 +461,28 @@ export class Appstream extends PolicyStatement {
    */
   public toDeleteUser() {
     return this.to('DeleteUser');
+  }
+
+  /**
+   * Grants permission to retrieve the associations that are associated with the specified app block builder or app block
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilderAppBlockAssociations.html
+   */
+  public toDescribeAppBlockBuilderAppBlockAssociations() {
+    return this.to('DescribeAppBlockBuilderAppBlockAssociations');
+  }
+
+  /**
+   * Grants permission to retrieve a list that describes one or more specified app block builders, if the app block builder names are provided. Otherwise, all app block builders in the account are described
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilders.html
+   */
+  public toDescribeAppBlockBuilders() {
+    return this.to('DescribeAppBlockBuilders');
   }
 
   /**
@@ -572,6 +651,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate the specified app block builder with the app block
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateAppBlockBuilderAppBlock.html
+   */
+  public toDisassociateAppBlockBuilderAppBlock() {
+    return this.to('DisassociateAppBlockBuilderAppBlock');
+  }
+
+  /**
    * Grants permission to disassociate the specified application from the specified fleet
    *
    * Access Level: Write
@@ -677,6 +770,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the specified app block builder
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartAppBlockBuilder.html
+   */
+  public toStartAppBlockBuilder() {
+    return this.to('StartAppBlockBuilder');
+  }
+
+  /**
    * Grants permission to start the specified fleet
    *
    * Access Level: Write
@@ -702,6 +809,20 @@ export class Appstream extends PolicyStatement {
    */
   public toStartImageBuilder() {
     return this.to('StartImageBuilder');
+  }
+
+  /**
+   * Grants permission to stop the specified app block builder
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopAppBlockBuilder.html
+   */
+  public toStopAppBlockBuilder() {
+    return this.to('StopAppBlockBuilder');
   }
 
   /**
@@ -774,6 +895,20 @@ export class Appstream extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a specific app block builder. An app block builder is a virtual machine that is used to create an app block
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateAppBlockBuilder.html
+   */
+  public toUpdateAppBlockBuilder() {
+    return this.to('UpdateAppBlockBuilder');
   }
 
   /**
@@ -856,6 +991,7 @@ export class Appstream extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateAppBlockBuilderAppBlock',
       'AssociateApplicationFleet',
       'AssociateApplicationToEntitlement',
       'AssociateFleet',
@@ -863,6 +999,8 @@ export class Appstream extends PolicyStatement {
       'BatchDisassociateUserStack',
       'CopyImage',
       'CreateAppBlock',
+      'CreateAppBlockBuilder',
+      'CreateAppBlockBuilderStreamingURL',
       'CreateApplication',
       'CreateDirectoryConfig',
       'CreateEntitlement',
@@ -875,6 +1013,7 @@ export class Appstream extends PolicyStatement {
       'CreateUsageReportSubscription',
       'CreateUser',
       'DeleteAppBlock',
+      'DeleteAppBlockBuilder',
       'DeleteApplication',
       'DeleteDirectoryConfig',
       'DeleteEntitlement',
@@ -886,16 +1025,20 @@ export class Appstream extends PolicyStatement {
       'DeleteUsageReportSubscription',
       'DeleteUser',
       'DisableUser',
+      'DisassociateAppBlockBuilderAppBlock',
       'DisassociateApplicationFleet',
       'DisassociateApplicationFromEntitlement',
       'DisassociateFleet',
       'EnableUser',
       'ExpireSession',
+      'StartAppBlockBuilder',
       'StartFleet',
       'StartImageBuilder',
+      'StopAppBlockBuilder',
       'StopFleet',
       'StopImageBuilder',
       'Stream',
+      'UpdateAppBlockBuilder',
       'UpdateApplication',
       'UpdateDirectoryConfig',
       'UpdateEntitlement',
@@ -904,6 +1047,8 @@ export class Appstream extends PolicyStatement {
       'UpdateStack'
     ],
     Read: [
+      'DescribeAppBlockBuilderAppBlockAssociations',
+      'DescribeAppBlockBuilders',
       'DescribeAppBlocks',
       'DescribeApplicationFleetAssociations',
       'DescribeApplications',
@@ -1034,6 +1179,23 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type app-block-builder to the statement
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
+   *
+   * @param appBlockBuilderName - Identifier for the appBlockBuilderName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAppBlockBuilder(appBlockBuilderName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block-builder/${ appBlockBuilderName }`);
+  }
+
+  /**
    * Filters access by the ID of the AppStream 2.0 user
    *
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
@@ -1046,5 +1208,110 @@ export class Appstream extends PolicyStatement {
    */
   public ifUserId(value: string | string[], operator?: Operator | string) {
     return this.if(`userId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAppBlock()
+   * - .toCreateAppBlockBuilder()
+   * - .toCreateApplication()
+   * - .toCreateFleet()
+   * - .toCreateImageBuilder()
+   * - .toCreateStack()
+   * - .toCreateUpdatedImage()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateAppBlockBuilderAppBlock()
+   * - .toAssociateApplicationFleet()
+   * - .toAssociateFleet()
+   * - .toBatchAssociateUserStack()
+   * - .toBatchDisassociateUserStack()
+   * - .toCopyImage()
+   * - .toCreateAppBlock()
+   * - .toCreateAppBlockBuilderStreamingURL()
+   * - .toCreateApplication()
+   * - .toCreateImageBuilderStreamingURL()
+   * - .toCreateStreamingURL()
+   * - .toCreateUpdatedImage()
+   * - .toDeleteAppBlock()
+   * - .toDeleteAppBlockBuilder()
+   * - .toDeleteApplication()
+   * - .toDeleteFleet()
+   * - .toDeleteImage()
+   * - .toDeleteImageBuilder()
+   * - .toDeleteImagePermissions()
+   * - .toDeleteStack()
+   * - .toDisassociateAppBlockBuilderAppBlock()
+   * - .toDisassociateApplicationFleet()
+   * - .toDisassociateFleet()
+   * - .toStartAppBlockBuilder()
+   * - .toStartFleet()
+   * - .toStartImageBuilder()
+   * - .toStopAppBlockBuilder()
+   * - .toStopFleet()
+   * - .toStopImageBuilder()
+   * - .toTagResource()
+   * - .toUpdateAppBlockBuilder()
+   * - .toUpdateApplication()
+   * - .toUpdateFleet()
+   * - .toUpdateImagePermissions()
+   * - .toUpdateStack()
+   *
+   * Applies to resource types:
+   * - fleet
+   * - image
+   * - image-builder
+   * - stack
+   * - app-block
+   * - application
+   * - app-block-builder
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAppBlock()
+   * - .toCreateAppBlockBuilder()
+   * - .toCreateApplication()
+   * - .toCreateFleet()
+   * - .toCreateImageBuilder()
+   * - .toCreateStack()
+   * - .toCreateUpdatedImage()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

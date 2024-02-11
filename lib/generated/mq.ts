@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html).
@@ -62,6 +62,17 @@ export class Mq extends PolicyStatement {
    */
   public toCreateConfiguration() {
     return this.to('CreateConfiguration');
+  }
+
+  /**
+   * Grants permission to create a replica broker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
+   */
+  public toCreateReplicaBroker() {
+    return this.to('CreateReplicaBroker');
   }
 
   /**
@@ -254,6 +265,17 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to promote a broker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-promote.html#rest-api-promote-methods-post
+   */
+  public toPromote() {
+    return this.to('Promote');
+  }
+
+  /**
    * Grants permission to reboot a broker
    *
    * Access Level: Write
@@ -301,9 +323,11 @@ export class Mq extends PolicyStatement {
     Write: [
       'CreateBroker',
       'CreateConfiguration',
+      'CreateReplicaBroker',
       'CreateUser',
       'DeleteBroker',
       'DeleteUser',
+      'Promote',
       'RebootBroker',
       'UpdateBroker',
       'UpdateConfiguration',
@@ -335,6 +359,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-how-it-works.html
    *
+   * @param brokerName - Identifier for the brokerName.
    * @param brokerId - Identifier for the brokerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -343,8 +368,8 @@ export class Mq extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mq.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:broker:${ brokerId }`);
+  public onBrokers(brokerName: string, brokerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Mq.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:broker:${ brokerName }:${ brokerId }`);
   }
 
   /**
@@ -362,5 +387,58 @@ export class Mq extends PolicyStatement {
    */
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Mq.defaultPartition }:mq:${ region || '*' }:${ account || '*' }:configuration:${ configurationId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateBroker()
+   * - .toCreateConfiguration()
+   * - .toCreateTags()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to resource types:
+   * - brokers
+   * - configurations
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateBroker()
+   * - .toCreateConfiguration()
+   * - .toCreateTags()
+   * - .toDeleteTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

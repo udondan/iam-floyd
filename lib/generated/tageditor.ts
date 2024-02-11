@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement } from '../shared';
 
 /**
- * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstageditor.html).
+ * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_tageditor.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ResourceExplorer extends PolicyStatement {
   public servicePrefix = 'resource-explorer';
 
   /**
-   * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstageditor.html).
+   * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_tageditor.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

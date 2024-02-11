@@ -1,5 +1,6 @@
 batch:compute-environment
 batch:job
 batch:job-definition
+batch:job-definition-revision
 batch:job-queue
 batch:scheduling-policy

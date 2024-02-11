@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [workspaces-web](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspacesweb.html).
@@ -27,6 +27,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toAssociateBrowserSettings() {
     return this.to('AssociateBrowserSettings');
+  }
+
+  /**
+   * Grants permission to associate ip access settings with web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateIpAccessSettings.html
+   */
+  public toAssociateIpAccessSettings() {
+    return this.to('AssociateIpAccessSettings');
   }
 
   /**
@@ -115,6 +126,21 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toCreateIdentityProvider() {
     return this.to('CreateIdentityProvider');
+  }
+
+  /**
+   * Grants permission to create ip access settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html
+   */
+  public toCreateIpAccessSettings() {
+    return this.to('CreateIpAccessSettings');
   }
 
   /**
@@ -225,6 +251,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete ip access settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteIpAccessSettings.html
+   */
+  public toDeleteIpAccessSettings() {
+    return this.to('DeleteIpAccessSettings');
+  }
+
+  /**
    * Grants permission to delete network settings
    *
    * Access Level: Write
@@ -291,6 +328,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate ip access logging from web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateIpAccessSettings.html
+   */
+  public toDisassociateIpAccessSettings() {
+    return this.to('DisassociateIpAccessSettings');
+  }
+
+  /**
    * Grants permission to disassociate network settings from web portals
    *
    * Access Level: Write
@@ -354,6 +402,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toGetIdentityProvider() {
     return this.to('GetIdentityProvider');
+  }
+
+  /**
+   * Grants permission to get details on ip access settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetIpAccessSettings.html
+   */
+  public toGetIpAccessSettings() {
+    return this.to('GetIpAccessSettings');
   }
 
   /**
@@ -453,6 +512,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toListIdentityProviders() {
     return this.to('ListIdentityProviders');
+  }
+
+  /**
+   * Grants permission to list ip access settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListIpAccessSettings.html
+   */
+  public toListIpAccessSettings() {
+    return this.to('ListIpAccessSettings');
   }
 
   /**
@@ -585,6 +655,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update ip access settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateIpAccessSettings.html
+   */
+  public toUpdateIpAccessSettings() {
+    return this.to('UpdateIpAccessSettings');
+  }
+
+  /**
    * Grants permission to update network settings
    *
    * Access Level: Write
@@ -654,12 +735,14 @@ export class WorkspacesWeb extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateBrowserSettings',
+      'AssociateIpAccessSettings',
       'AssociateNetworkSettings',
       'AssociateTrustStore',
       'AssociateUserAccessLoggingSettings',
       'AssociateUserSettings',
       'CreateBrowserSettings',
       'CreateIdentityProvider',
+      'CreateIpAccessSettings',
       'CreateNetworkSettings',
       'CreatePortal',
       'CreateTrustStore',
@@ -667,18 +750,21 @@ export class WorkspacesWeb extends PolicyStatement {
       'CreateUserSettings',
       'DeleteBrowserSettings',
       'DeleteIdentityProvider',
+      'DeleteIpAccessSettings',
       'DeleteNetworkSettings',
       'DeletePortal',
       'DeleteTrustStore',
       'DeleteUserAccessLoggingSettings',
       'DeleteUserSettings',
       'DisassociateBrowserSettings',
+      'DisassociateIpAccessSettings',
       'DisassociateNetworkSettings',
       'DisassociateTrustStore',
       'DisassociateUserAccessLoggingSettings',
       'DisassociateUserSettings',
       'UpdateBrowserSettings',
       'UpdateIdentityProvider',
+      'UpdateIpAccessSettings',
       'UpdateNetworkSettings',
       'UpdatePortal',
       'UpdateTrustStore',
@@ -688,6 +774,7 @@ export class WorkspacesWeb extends PolicyStatement {
     Read: [
       'GetBrowserSettings',
       'GetIdentityProvider',
+      'GetIpAccessSettings',
       'GetNetworkSettings',
       'GetPortal',
       'GetPortalServiceProviderMetadata',
@@ -697,6 +784,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'GetUserSettings',
       'ListBrowserSettings',
       'ListIdentityProviders',
+      'ListIpAccessSettings',
       'ListNetworkSettings',
       'ListPortals',
       'ListTagsForResource',
@@ -726,6 +814,21 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public onBrowserSettings(browserSettingsId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:browserSettings/${ browserSettingsId }`);
+  }
+
+  /**
+   * Adds a resource of type identityProvider to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIdentityProvider.html
+   *
+   * @param portalId - Identifier for the portalId.
+   * @param identityProviderId - Identifier for the identityProviderId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onIdentityProvider(portalId: string, identityProviderId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:identityProvider/${ portalId }/${ identityProviderId }`);
   }
 
   /**
@@ -811,5 +914,91 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public onUserAccessLoggingSettings(userAccessLoggingSettingsId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
+  }
+
+  /**
+   * Adds a resource of type ipAccessSettings to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html
+   *
+   * @param ipAccessSettingsId - Identifier for the ipAccessSettingsId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIpAccessSettings(ipAccessSettingsId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:ipAccessSettings/${ ipAccessSettingsId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBrowserSettings()
+   * - .toCreateIpAccessSettings()
+   * - .toCreateNetworkSettings()
+   * - .toCreatePortal()
+   * - .toCreateTrustStore()
+   * - .toCreateUserAccessLoggingSettings()
+   * - .toCreateUserSettings()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - browserSettings
+   * - networkSettings
+   * - portal
+   * - trustStore
+   * - userSettings
+   * - userAccessLoggingSettings
+   * - ipAccessSettings
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBrowserSettings()
+   * - .toCreateIpAccessSettings()
+   * - .toCreateNetworkSettings()
+   * - .toCreatePortal()
+   * - .toCreateTrustStore()
+   * - .toCreateUserAccessLoggingSettings()
+   * - .toCreateUserSettings()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

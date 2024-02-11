@@ -9,7 +9,9 @@
         "s3:PutObjectTagging",
         "s3:PutObjectVersionTagging",
         "s3:PutStorageLensConfigurationTagging",
-        "s3:ReplicateTags"
+        "s3:ReplicateTags",
+        "s3:TagResource",
+        "s3:UntagResource"
     ],
     "Resource": "*",
     "Effect": "Allow"

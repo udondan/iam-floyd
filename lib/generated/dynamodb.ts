@@ -402,6 +402,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a resource-based policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to return a shard iterator
    *
    * Access Level: Read
@@ -642,6 +653,15 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - dynamodb:BatchWriteItem
+   * - dynamodb:DeleteItem
+   * - dynamodb:GetItem
+   * - dynamodb:PutItem
+   * - dynamodb:Query
+   * - dynamodb:Scan
+   * - dynamodb:UpdateItem
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html
    */
   public toRestoreTableFromBackup() {
@@ -652,6 +672,15 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to restore a table to a point in time
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - dynamodb:BatchWriteItem
+   * - dynamodb:DeleteItem
+   * - dynamodb:GetItem
+   * - dynamodb:PutItem
+   * - dynamodb:Query
+   * - dynamodb:Scan
+   * - dynamodb:UpdateItem
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html
    */
@@ -692,9 +721,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -705,9 +731,6 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to remove the association of tags from an Amazon DynamoDB resource
    *
    * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html
    */
@@ -843,6 +866,7 @@ export class Dynamodb extends PolicyStatement {
       'DescribeTimeToLive',
       'GetItem',
       'GetRecords',
+      'GetResourcePolicy',
       'GetShardIterator',
       'ListStreams',
       'ListTagsOfResource',

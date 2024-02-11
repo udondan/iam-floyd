@@ -4,6 +4,8 @@ elasticache:parametergroup
 elasticache:replicationgroup
 elasticache:reserved-instance
 elasticache:securitygroup
+elasticache:serverlesscache
+elasticache:serverlesscachesnapshot
 elasticache:snapshot
 elasticache:subnetgroup
 elasticache:user

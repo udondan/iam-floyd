@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappconfig.html).
@@ -813,5 +813,94 @@ export class Appconfig extends PolicyStatement {
    */
   public onExtensionassociation(extensionAssociationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extensionassociation/${ extensionAssociationId }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for a specified tag
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConfigurationProfile()
+   * - .toCreateDeploymentStrategy()
+   * - .toCreateEnvironment()
+   * - .toCreateExtension()
+   * - .toCreateExtensionAssociation()
+   * - .toStartDeployment()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key-value pair assigned to the AWS resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toGetApplication()
+   * - .toGetConfiguration()
+   * - .toGetConfigurationProfile()
+   * - .toGetDeployment()
+   * - .toGetDeploymentStrategy()
+   * - .toGetEnvironment()
+   * - .toGetExtension()
+   * - .toGetExtensionAssociation()
+   * - .toGetLatestConfiguration()
+   * - .toListTagsForResource()
+   * - .toStartConfigurationSession()
+   * - .toTagResource()
+   * - .toUpdateApplication()
+   * - .toUpdateConfigurationProfile()
+   * - .toUpdateDeploymentStrategy()
+   * - .toUpdateEnvironment()
+   * - .toUpdateExtension()
+   * - .toUpdateExtensionAssociation()
+   *
+   * Applies to resource types:
+   * - application
+   * - environment
+   * - configurationprofile
+   * - deploymentstrategy
+   * - deployment
+   * - configuration
+   * - extension
+   * - extensionassociation
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConfigurationProfile()
+   * - .toCreateDeploymentStrategy()
+   * - .toCreateEnvironment()
+   * - .toCreateExtension()
+   * - .toCreateExtensionAssociation()
+   * - .toStartDeployment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -49,6 +49,7 @@ elasticmapreduce:ListSecurityConfigurations;List
 elasticmapreduce:ListSteps;Read
 elasticmapreduce:ListStudioSessionMappings;List
 elasticmapreduce:ListStudios;List
+elasticmapreduce:ListSupportedInstanceTypes;List
 elasticmapreduce:ListWorkspaceAccessIdentities;List
 elasticmapreduce:ModifyCluster;Write
 elasticmapreduce:ModifyInstanceFleet;Write
@@ -64,6 +65,7 @@ elasticmapreduce:RemoveAutoTerminationPolicy;Write
 elasticmapreduce:RemoveManagedScalingPolicy;Write
 elasticmapreduce:RemoveTags;Tagging
 elasticmapreduce:RunJobFlow;Write
+elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps;Write
 elasticmapreduce:SetTerminationProtection;Write
 elasticmapreduce:SetVisibleToAllUsers;Write
 elasticmapreduce:StartEditor;Write

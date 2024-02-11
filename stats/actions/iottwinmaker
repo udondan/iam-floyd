@@ -1,6 +1,8 @@
 iottwinmaker:BatchPutPropertyValues;Write
+iottwinmaker:CancelMetadataTransferJob;Write
 iottwinmaker:CreateComponentType;Write
 iottwinmaker:CreateEntity;Write
+iottwinmaker:CreateMetadataTransferJob;Write
 iottwinmaker:CreateScene;Write
 iottwinmaker:CreateSyncJob;Write
 iottwinmaker:CreateWorkspace;Write
@@ -12,6 +14,7 @@ iottwinmaker:DeleteWorkspace;Write
 iottwinmaker:ExecuteQuery;Read
 iottwinmaker:GetComponentType;Read
 iottwinmaker:GetEntity;Read
+iottwinmaker:GetMetadataTransferJob;Read
 iottwinmaker:GetPricingPlan;Read
 iottwinmaker:GetPropertyValue;Read
 iottwinmaker:GetPropertyValueHistory;Read
@@ -19,7 +22,10 @@ iottwinmaker:GetScene;Read
 iottwinmaker:GetSyncJob;Read
 iottwinmaker:GetWorkspace;Read
 iottwinmaker:ListComponentTypes;List
+iottwinmaker:ListComponents;List
 iottwinmaker:ListEntities;List
+iottwinmaker:ListMetadataTransferJobs;List
+iottwinmaker:ListProperties;List
 iottwinmaker:ListScenes;List
 iottwinmaker:ListSyncJobs;List
 iottwinmaker:ListSyncResources;List

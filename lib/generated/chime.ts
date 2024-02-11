@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonchime.html).
@@ -533,6 +533,47 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create kinesis video stream pool
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - kinesis:DescribeStream
+   * - kinesisvideo:CreateStream
+   * - kinesisvideo:GetDataEndpoint
+   * - kinesisvideo:ListStreams
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaPipelineKinesisVideoStreamPool.html
+   */
+  public toCreateMediaPipelineKinesisVideoStreamPool() {
+    return this.to('CreateMediaPipelineKinesisVideoStreamPool');
+  }
+
+  /**
+   * Grants permission to create a media stream pipeline
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - kinesisvideo:DescribeStream
+   * - kinesisvideo:GetDataEndpoint
+   * - kinesisvideo:PutMedia
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaStreamPipeline.html
+   */
+  public toCreateMediaStreamPipeline() {
+    return this.to('CreateMediaStreamPipeline');
+  }
+
+  /**
    * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees
    *
    * Access Level: Write
@@ -622,6 +663,10 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplication.html
    */
   public toCreateSipMediaApplication() {
@@ -665,6 +710,10 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a Amazon Chime Voice Connector under the administrator's AWS account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnector.html
    */
@@ -971,6 +1020,17 @@ export class Chime extends PolicyStatement {
    */
   public toDeleteMediaPipeline() {
     return this.to('DeleteMediaPipeline');
+  }
+
+  /**
+   * Grants permission to delete kinesis video stream pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaPipelineKinesisVideoStreamPool.html
+   */
+  public toDeleteMediaPipelineKinesisVideoStreamPool() {
+    return this.to('DeleteMediaPipelineKinesisVideoStreamPool');
   }
 
   /**
@@ -1592,6 +1652,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an existing media pipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaPipelineKinesisVideoStreamPool.html
+   */
+  public toGetMediaPipelineKinesisVideoStreamPool() {
+    return this.to('GetMediaPipelineKinesisVideoStreamPool');
+  }
+
+  /**
    * Grants permission to get the meeting record for a specified meeting ID
    *
    * Access Level: Read
@@ -1746,11 +1817,11 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a speaker search task
+   * Grants permission to get a speaker search task on the specified Amazon Chime resource
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSpeakerSearchTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetSpeakerSearchTask.html
    */
   public toGetSpeakerSearchTask() {
     return this.to('GetSpeakerSearchTask');
@@ -1933,11 +2004,11 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a voice tone analysis task
+   * Grants permission to get a voice tone analysis task on the specified Amazon Chime resource
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceToneAnalysisTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetVoiceToneAnalysisTask.html
    */
   public toGetVoiceToneAnalysisTask() {
     return this.to('GetVoiceToneAnalysisTask');
@@ -2295,6 +2366,17 @@ export class Chime extends PolicyStatement {
    */
   public toListMediaInsightsPipelineConfigurations() {
     return this.to('ListMediaInsightsPipelineConfigurations');
+  }
+
+  /**
+   * Grants permission to list media pipelines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaPipelineKinesisVideoStreamPools.html
+   */
+  public toListMediaPipelineKinesisVideoStreamPools() {
+    return this.to('ListMediaPipelineKinesisVideoStreamPools');
   }
 
   /**
@@ -2915,22 +2997,22 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a speaker search task
+   * Grants permission to start a speaker search task on the specified Amazon Chime resource
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StartSpeakerSearchTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StartSpeakerSearchTask.html
    */
   public toStartSpeakerSearchTask() {
     return this.to('StartSpeakerSearchTask');
   }
 
   /**
-   * Grants permission to start a voice tone analysis task
+   * Grants permission to start a voice tone analysis task on the specified Amazon Chime resource
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StartVoiceToneAnalysisTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StartVoiceToneAnalysisTask.html
    */
   public toStartVoiceToneAnalysisTask() {
     return this.to('StartVoiceToneAnalysisTask');
@@ -2948,22 +3030,22 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop a speaker search task
+   * Grants permission to stop a speaker search task on the specified Amazon Chime resource
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StopSpeakerSearchTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StopSpeakerSearchTask.html
    */
   public toStopSpeakerSearchTask() {
     return this.to('StopSpeakerSearchTask');
   }
 
   /**
-   * Grants permission to stop a voice tone analysis task
+   * Grants permission to stop a voice tone analysis task on the specified Amazon Chime resource
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_StopVoiceToneAnalysisTask.html
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StopVoiceToneAnalysisTask.html
    */
   public toStopVoiceToneAnalysisTask() {
     return this.to('StopVoiceToneAnalysisTask');
@@ -3291,6 +3373,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update kinesis video stream pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaPipelineKinesisVideoStreamPool.html
+   */
+  public toUpdateMediaPipelineKinesisVideoStreamPool() {
+    return this.to('UpdateMediaPipelineKinesisVideoStreamPool');
+  }
+
+  /**
    * Grants permission to update phone number details for the specified phone number
    *
    * Access Level: Write
@@ -3480,7 +3573,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to validate an address to be used for 911 calls made with Amazon Chime Voice Connectors
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ValidateE911Address.html
    */
@@ -3531,6 +3624,8 @@ export class Chime extends PolicyStatement {
       'CreateMediaInsightsPipeline',
       'CreateMediaInsightsPipelineConfiguration',
       'CreateMediaLiveConnectorPipeline',
+      'CreateMediaPipelineKinesisVideoStreamPool',
+      'CreateMediaStreamPipeline',
       'CreateMeeting',
       'CreateMeetingDialOut',
       'CreateMeetingWithAttendees',
@@ -3569,6 +3664,7 @@ export class Chime extends PolicyStatement {
       'DeleteMediaCapturePipeline',
       'DeleteMediaInsightsPipelineConfiguration',
       'DeleteMediaPipeline',
+      'DeleteMediaPipelineKinesisVideoStreamPool',
       'DeleteMeeting',
       'DeleteMessagingStreamingConfigurations',
       'DeletePhoneNumber',
@@ -3654,6 +3750,7 @@ export class Chime extends PolicyStatement {
       'UpdateGlobalSettings',
       'UpdateMediaInsightsPipelineConfiguration',
       'UpdateMediaInsightsPipelineStatus',
+      'UpdateMediaPipelineKinesisVideoStreamPool',
       'UpdatePhoneNumber',
       'UpdatePhoneNumberSettings',
       'UpdateProxySession',
@@ -3669,8 +3766,7 @@ export class Chime extends PolicyStatement {
       'UpdateVoiceConnector',
       'UpdateVoiceConnectorGroup',
       'UpdateVoiceProfile',
-      'UpdateVoiceProfileDomain',
-      'ValidateE911Address'
+      'UpdateVoiceProfileDomain'
     ],
     Read: [
       'DescribeAppInstance',
@@ -3703,6 +3799,7 @@ export class Chime extends PolicyStatement {
       'GetMediaCapturePipeline',
       'GetMediaInsightsPipelineConfiguration',
       'GetMediaPipeline',
+      'GetMediaPipelineKinesisVideoStreamPool',
       'GetMeeting',
       'GetMeetingDetail',
       'GetMessagingSessionEndpoint',
@@ -3739,7 +3836,8 @@ export class Chime extends PolicyStatement {
       'ListTagsForResource',
       'RetrieveDataExports',
       'SearchAvailablePhoneNumbers',
-      'ValidateAccountResource'
+      'ValidateAccountResource',
+      'ValidateE911Address'
     ],
     List: [
       'ListAccountUsageReportData',
@@ -3770,6 +3868,7 @@ export class Chime extends PolicyStatement {
       'ListGroups',
       'ListMediaCapturePipelines',
       'ListMediaInsightsPipelineConfigurations',
+      'ListMediaPipelineKinesisVideoStreamPools',
       'ListMediaPipelines',
       'ListMeetingEvents',
       'ListMeetingTags',
@@ -3942,6 +4041,23 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type media-pipeline-kinesis-video-stream-pool to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_KinesisVideoStreamPoolConfiguration.html
+   *
+   * @param poolName - Identifier for the poolName.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMediaPipelineKinesisVideoStreamPool(poolName: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:media-pipeline-kinesis-video-stream-pool/${ poolName }`);
+  }
+
+  /**
    * Adds a resource of type voice-profile-domain to the statement
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
@@ -3970,5 +4086,138 @@ export class Chime extends PolicyStatement {
    */
   public onVoiceProfile(voiceProfileId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:voice-profile/${ voiceProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type voice-connector to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_VoiceConnector.html
+   *
+   * @param voiceConnectorId - Identifier for the voiceConnectorId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVoiceConnector(voiceConnectorId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:vc/${ voiceConnectorId }`);
+  }
+
+  /**
+   * Adds a resource of type sip-media-application to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_SipMediaApplication.html
+   *
+   * @param sipMediaApplicationId - Identifier for the sipMediaApplicationId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSipMediaApplication(sipMediaApplicationId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Chime.defaultPartition }:chime:${ region || '*' }:${ accountId || '*' }:sma/${ sipMediaApplicationId }`);
+  }
+
+  /**
+   * Filters access by a tag's key and value in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAppInstance()
+   * - .toCreateAppInstanceBot()
+   * - .toCreateAppInstanceUser()
+   * - .toCreateChannel()
+   * - .toCreateChannelFlow()
+   * - .toCreateMediaCapturePipeline()
+   * - .toCreateMediaConcatenationPipeline()
+   * - .toCreateMediaInsightsPipeline()
+   * - .toCreateMediaInsightsPipelineConfiguration()
+   * - .toCreateMediaLiveConnectorPipeline()
+   * - .toCreateMediaPipelineKinesisVideoStreamPool()
+   * - .toCreateMediaStreamPipeline()
+   * - .toCreateMeeting()
+   * - .toCreateMeetingWithAttendees()
+   * - .toCreateSipMediaApplication()
+   * - .toCreateVoiceConnector()
+   * - .toCreateVoiceProfileDomain()
+   * - .toTagMeeting()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toTagMeeting()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - meeting
+   * - app-instance
+   * - app-instance-user
+   * - app-instance-bot
+   * - channel
+   * - channel-flow
+   * - media-pipeline
+   * - media-insights-pipeline-configuration
+   * - media-pipeline-kinesis-video-stream-pool
+   * - voice-profile-domain
+   * - voice-connector
+   * - sip-media-application
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys in a request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAppInstance()
+   * - .toCreateAppInstanceBot()
+   * - .toCreateAppInstanceUser()
+   * - .toCreateChannel()
+   * - .toCreateChannelFlow()
+   * - .toCreateMediaCapturePipeline()
+   * - .toCreateMediaConcatenationPipeline()
+   * - .toCreateMediaInsightsPipeline()
+   * - .toCreateMediaInsightsPipelineConfiguration()
+   * - .toCreateMediaLiveConnectorPipeline()
+   * - .toCreateMediaPipelineKinesisVideoStreamPool()
+   * - .toCreateMediaStreamPipeline()
+   * - .toCreateMeeting()
+   * - .toCreateMeetingWithAttendees()
+   * - .toCreateSipMediaApplication()
+   * - .toCreateVoiceConnector()
+   * - .toCreateVoiceProfileDomain()
+   * - .toTagMeeting()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

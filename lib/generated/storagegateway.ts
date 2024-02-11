@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
@@ -671,7 +671,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the automatic tape creation policies configured on the specified gateway-VTL or all gateway-VTLs owned by your account
+   * Grants permission to list the automatic tape creation policies configured on the specified gateway-VTL or all gateway-VTLs owned by your AWS account
    *
    * Access Level: List
    *
@@ -682,7 +682,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling user account
+   * Grants permission to get a list of the file shares for a specific file gateway, or the list of file shares owned by your AWS account
    *
    * Access Level: List
    *
@@ -1324,5 +1324,82 @@ export class Storagegateway extends PolicyStatement {
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/volume/${ volumeId }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toActivateGateway()
+   * - .toAddTagsToResource()
+   * - .toAssociateFileSystem()
+   * - .toCreateCachediSCSIVolume()
+   * - .toCreateNFSFileShare()
+   * - .toCreateSMBFileShare()
+   * - .toCreateSnapshot()
+   * - .toCreateSnapshotFromVolumeRecoveryPoint()
+   * - .toCreateStorediSCSIVolume()
+   * - .toCreateTapePool()
+   * - .toCreateTapeWithBarcode()
+   * - .toCreateTapes()
+   * - .toUpdateSnapshotSchedule()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - fs-association
+   * - gateway
+   * - share
+   * - tape
+   * - tapepool
+   * - volume
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toActivateGateway()
+   * - .toAddTagsToResource()
+   * - .toAssociateFileSystem()
+   * - .toCreateCachediSCSIVolume()
+   * - .toCreateNFSFileShare()
+   * - .toCreateSMBFileShare()
+   * - .toCreateSnapshot()
+   * - .toCreateSnapshotFromVolumeRecoveryPoint()
+   * - .toCreateStorediSCSIVolume()
+   * - .toCreateTapePool()
+   * - .toCreateTapeWithBarcode()
+   * - .toCreateTapes()
+   * - .toRemoveTagsFromResource()
+   * - .toUpdateSnapshotSchedule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

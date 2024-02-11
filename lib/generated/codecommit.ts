@@ -63,7 +63,7 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get return information about one or more commits in an AWS CodeCommit repository
+   * Grants permission to return information about one or more commits in an AWS CodeCommit repository
    *
    * Access Level: Read
    *
@@ -649,6 +649,17 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list commits and changes to a specified file
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListFileCommitHistory.html
+   */
+  public toListFileCommitHistory() {
+    return this.to('ListFileCommitHistory');
+  }
+
+  /**
    * Grants permission to list pull requests for a specified repository
    *
    * Access Level: List
@@ -890,6 +901,7 @@ export class Codecommit extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UntagResource.html
    */
@@ -1019,6 +1031,17 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to change the AWS KMS encryption key used to encrypt and decrypt an AWS CodeCommit repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryEncryptionKey.html
+   */
+  public toUpdateRepositoryEncryptionKey() {
+    return this.to('UpdateRepositoryEncryptionKey');
+  }
+
+  /**
    * Grants permission to change the name of an AWS CodeCommit repository
    *
    * Access Level: Write
@@ -1085,6 +1108,7 @@ export class Codecommit extends PolicyStatement {
       'UpdatePullRequestStatus',
       'UpdatePullRequestTitle',
       'UpdateRepositoryDescription',
+      'UpdateRepositoryEncryptionKey',
       'UpdateRepositoryName',
       'UploadArchive'
     ],
@@ -1128,6 +1152,7 @@ export class Codecommit extends PolicyStatement {
       'ListApprovalRuleTemplates',
       'ListAssociatedApprovalRuleTemplatesForRepository',
       'ListBranches',
+      'ListFileCommitHistory',
       'ListPullRequests',
       'ListRepositories',
       'ListRepositoriesForApprovalRuleTemplate',
@@ -1142,7 +1167,7 @@ export class Codecommit extends PolicyStatement {
   /**
    * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html#arn-formats
    *
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1154,6 +1179,60 @@ export class Codecommit extends PolicyStatement {
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Codecommit.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

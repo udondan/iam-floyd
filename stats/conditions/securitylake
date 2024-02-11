@@ -1,1 +1,3 @@
-
+securitylake:RequestTag/${TagKey}
+securitylake:ResourceTag/${TagKey}
+securitylake:TagKeys

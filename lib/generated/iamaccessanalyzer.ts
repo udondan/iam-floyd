@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html).
@@ -38,6 +38,28 @@ export class AccessAnalyzer extends PolicyStatement {
    */
   public toCancelPolicyGeneration() {
     return this.to('CancelPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to check that specified access is not allowed by a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html
+   */
+  public toCheckAccessNotGranted() {
+    return this.to('CheckAccessNotGranted');
+  }
+
+  /**
+   * Grants permission to check that no new access is allowed when compared to an existing policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckNoNewAccess.html
+   */
+  public toCheckNoNewAccess() {
+    return this.to('CheckNoNewAccess');
   }
 
   /**
@@ -155,10 +177,21 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFindingV2.html
    */
   public toGetFinding() {
     return this.to('GetFinding');
+  }
+
+  /**
+   * Grants permission to retrieve statistics for findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-permissions
+   */
+  public toGetFindingsStatistics() {
+    return this.to('GetFindingsStatistics');
   }
 
   /**
@@ -232,7 +265,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindingsV2.html
    */
   public toListFindings() {
     return this.to('ListFindings');
@@ -306,7 +339,6 @@ export class AccessAnalyzer extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html
@@ -363,11 +395,14 @@ export class AccessAnalyzer extends PolicyStatement {
       'UpdateFindings'
     ],
     Read: [
+      'CheckAccessNotGranted',
+      'CheckNoNewAccess',
       'GetAccessPreview',
       'GetAnalyzedResource',
       'GetAnalyzer',
       'GetArchiveRule',
       'GetFinding',
+      'GetFindingsStatistics',
       'GetGeneratedPolicy',
       'ListAccessPreviewFindings',
       'ListAnalyzedResources',
@@ -417,5 +452,57 @@ export class AccessAnalyzer extends PolicyStatement {
    */
   public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || AccessAnalyzer.defaultPartition }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAnalyzer()
+   * - .toGetAnalyzer()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Analyzer
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAnalyzer()
+   * - .toGetAnalyzer()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ivs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html).
@@ -23,7 +23,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchGetChannel.html
    */
   public toBatchGetChannel() {
     return this.to('BatchGetChannel');
@@ -34,10 +34,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchGetStreamKey.html
    */
   public toBatchGetStreamKey() {
     return this.to('BatchGetStreamKey');
+  }
+
+  /**
+   * Grants permission to perform StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchStartViewerSessionRevocation.html
+   */
+  public toBatchStartViewerSessionRevocation() {
+    return this.to('BatchStartViewerSessionRevocation');
   }
 
   /**
@@ -49,10 +60,25 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateChannel.html
    */
   public toCreateChannel() {
     return this.to('CreateChannel');
+  }
+
+  /**
+   * Grants permission to create a new encoder configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateEncoderConfiguration.html
+   */
+  public toCreateEncoderConfiguration() {
+    return this.to('CreateEncoderConfiguration');
   }
 
   /**
@@ -71,6 +97,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a playback restriction policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreatePlaybackRestrictionPolicy.html
+   */
+  public toCreatePlaybackRestrictionPolicy() {
+    return this.to('CreatePlaybackRestrictionPolicy');
+  }
+
+  /**
    * Grants permission to create a a new recording configuration
    *
    * Access Level: Write
@@ -79,7 +120,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateRecordingConfiguration.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateRecordingConfiguration.html
    */
   public toCreateRecordingConfiguration() {
     return this.to('CreateRecordingConfiguration');
@@ -101,6 +142,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new storage configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateStorageConfiguration.html
+   */
+  public toCreateStorageConfiguration() {
+    return this.to('CreateStorageConfiguration');
+  }
+
+  /**
    * Grants permission to create a stream key
    *
    * Access Level: Write
@@ -109,7 +165,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateStreamKey.html
    */
   public toCreateStreamKey() {
     return this.to('CreateStreamKey');
@@ -120,10 +176,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteChannel.html
    */
   public toDeleteChannel() {
     return this.to('DeleteChannel');
+  }
+
+  /**
+   * Grants permission to delete an encoder configuration for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteEncoderConfiguration.html
+   */
+  public toDeleteEncoderConfiguration() {
+    return this.to('DeleteEncoderConfiguration');
   }
 
   /**
@@ -131,10 +198,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeletePlaybackKeyPair.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeletePlaybackKeyPair.html
    */
   public toDeletePlaybackKeyPair() {
     return this.to('DeletePlaybackKeyPair');
+  }
+
+  /**
+   * Grants permission to delete the playback restriction policy for a specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeletePlaybackRestrictionPolicy.html
+   */
+  public toDeletePlaybackRestrictionPolicy() {
+    return this.to('DeletePlaybackRestrictionPolicy');
   }
 
   /**
@@ -142,7 +220,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteRecordingConfiguration.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteRecordingConfiguration.html
    */
   public toDeleteRecordingConfiguration() {
     return this.to('DeleteRecordingConfiguration');
@@ -160,11 +238,22 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an storage configuration for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteStorageConfiguration.html
+   */
+  public toDeleteStorageConfiguration() {
+    return this.to('DeleteStorageConfiguration');
+  }
+
+  /**
    * Grants permission to delete the stream key for a specified ARN
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteStreamKey.html
    */
   public toDeleteStreamKey() {
     return this.to('DeleteStreamKey');
@@ -186,10 +275,43 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetChannel.html
    */
   public toGetChannel() {
     return this.to('GetChannel');
+  }
+
+  /**
+   * Grants permission to get the composition for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetComposition.html
+   */
+  public toGetComposition() {
+    return this.to('GetComposition');
+  }
+
+  /**
+   * Grants permission to get the encoder configuration for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetEncoderConfiguration.html
+   */
+  public toGetEncoderConfiguration() {
+    return this.to('GetEncoderConfiguration');
+  }
+
+  /**
+   * Grants permission to get participant information for a specified stage ARN, session, and participant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetParticipant.html
+   */
+  public toGetParticipant() {
+    return this.to('GetParticipant');
   }
 
   /**
@@ -197,10 +319,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetPlaybackKeyPair.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetPlaybackKeyPair.html
    */
   public toGetPlaybackKeyPair() {
     return this.to('GetPlaybackKeyPair');
+  }
+
+  /**
+   * Grants permission to get the playback restriction policy for a specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetPlaybackRestrictionPolicy.html
+   */
+  public toGetPlaybackRestrictionPolicy() {
+    return this.to('GetPlaybackRestrictionPolicy');
   }
 
   /**
@@ -208,7 +341,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetRecordingConfiguration.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetRecordingConfiguration.html
    */
   public toGetRecordingConfiguration() {
     return this.to('GetRecordingConfiguration');
@@ -226,11 +359,33 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get stage session information for a specified stage ARN and session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStageSession.html
+   */
+  public toGetStageSession() {
+    return this.to('GetStageSession');
+  }
+
+  /**
+   * Grants permission to get the storage configuration for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStorageConfiguration.html
+   */
+  public toGetStorageConfiguration() {
+    return this.to('GetStorageConfiguration');
+  }
+
+  /**
    * Grants permission to get information about the active (live) stream on a specified channel
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStream.html
    */
   public toGetStream() {
     return this.to('GetStream');
@@ -241,7 +396,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStreamKey.html
    */
   public toGetStreamKey() {
     return this.to('GetStreamKey');
@@ -252,7 +407,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamSession.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStreamSession.html
    */
   public toGetStreamSession() {
     return this.to('GetStreamSession');
@@ -267,7 +422,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ImportPlaybackKeyPair.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ImportPlaybackKeyPair.html
    */
   public toImportPlaybackKeyPair() {
     return this.to('ImportPlaybackKeyPair');
@@ -278,10 +433,54 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListChannels.html
    */
   public toListChannels() {
     return this.to('ListChannels');
+  }
+
+  /**
+   * Grants permission to get summary information about compositions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListCompositions.html
+   */
+  public toListCompositions() {
+    return this.to('ListCompositions');
+  }
+
+  /**
+   * Grants permission to get summary information about encoder configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListEncoderConfigurations.html
+   */
+  public toListEncoderConfigurations() {
+    return this.to('ListEncoderConfigurations');
+  }
+
+  /**
+   * Grants permission to list participant events for a specified stage ARN, session, and participant
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipantEvents.html
+   */
+  public toListParticipantEvents() {
+    return this.to('ListParticipantEvents');
+  }
+
+  /**
+   * Grants permission to list participants for a specified stage ARN and session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipants.html
+   */
+  public toListParticipants() {
+    return this.to('ListParticipants');
   }
 
   /**
@@ -289,10 +488,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackKeyPairs.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListPlaybackKeyPairs.html
    */
   public toListPlaybackKeyPairs() {
     return this.to('ListPlaybackKeyPairs');
+  }
+
+  /**
+   * Grants permission to get summary information about playback restriction policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackRestrictionPolicies.html
+   */
+  public toListPlaybackRestrictionPolicies() {
+    return this.to('ListPlaybackRestrictionPolicies');
   }
 
   /**
@@ -300,10 +510,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListRecordingConfigurations.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListRecordingConfigurations.html
    */
   public toListRecordingConfigurations() {
     return this.to('ListRecordingConfigurations');
+  }
+
+  /**
+   * Grants permission to list stage sessions for a specified stage ARN
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStageSessions.html
+   */
+  public toListStageSessions() {
+    return this.to('ListStageSessions');
   }
 
   /**
@@ -318,11 +539,22 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get summary information about storage configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStorageConfigurations.html
+   */
+  public toListStorageConfigurations() {
+    return this.to('ListStorageConfigurations');
+  }
+
+  /**
    * Grants permission to get summary information about stream keys
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreamKeys.html
    */
   public toListStreamKeys() {
     return this.to('ListStreamKeys');
@@ -333,7 +565,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamSessions.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreamSessions.html
    */
   public toListStreamSessions() {
     return this.to('ListStreamSessions');
@@ -344,7 +576,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreams.html
    */
   public toListStreams() {
     return this.to('ListStreams');
@@ -359,7 +591,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -370,10 +602,47 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PutMetadata.html
    */
   public toPutMetadata() {
     return this.to('PutMetadata');
+  }
+
+  /**
+   * Grants permission to start a new composition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StartComposition.html
+   */
+  public toStartComposition() {
+    return this.to('StartComposition');
+  }
+
+  /**
+   * Grants permission to start the process of revoking the viewer session associated with a specified channel ARN and viewer ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StartViewerSessionRevocation.html
+   */
+  public toStartViewerSessionRevocation() {
+    return this.to('StartViewerSessionRevocation');
+  }
+
+  /**
+   * Grants permission to stop the composition for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StopComposition.html
+   */
+  public toStopComposition() {
+    return this.to('StopComposition');
   }
 
   /**
@@ -381,7 +650,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StopStream.html
    */
   public toStopStream() {
     return this.to('StopStream');
@@ -396,7 +665,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -410,7 +679,7 @@ export class Ivs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -421,10 +690,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateChannel.html
    */
   public toUpdateChannel() {
     return this.to('UpdateChannel');
+  }
+
+  /**
+   * Grants permission to update a playback restriction policy for a specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdatePlaybackRestrictionPolicy.html
+   */
+  public toUpdatePlaybackRestrictionPolicy() {
+    return this.to('UpdatePlaybackRestrictionPolicy');
   }
 
   /**
@@ -443,37 +723,61 @@ export class Ivs extends PolicyStatement {
       'BatchGetChannel',
       'BatchGetStreamKey',
       'GetChannel',
+      'GetComposition',
+      'GetEncoderConfiguration',
+      'GetParticipant',
       'GetPlaybackKeyPair',
+      'GetPlaybackRestrictionPolicy',
       'GetRecordingConfiguration',
       'GetStage',
+      'GetStageSession',
+      'GetStorageConfiguration',
       'GetStream',
       'GetStreamKey',
       'GetStreamSession',
       'ListTagsForResource'
     ],
     Write: [
+      'BatchStartViewerSessionRevocation',
       'CreateChannel',
+      'CreateEncoderConfiguration',
       'CreateParticipantToken',
+      'CreatePlaybackRestrictionPolicy',
       'CreateRecordingConfiguration',
       'CreateStage',
+      'CreateStorageConfiguration',
       'CreateStreamKey',
       'DeleteChannel',
+      'DeleteEncoderConfiguration',
       'DeletePlaybackKeyPair',
+      'DeletePlaybackRestrictionPolicy',
       'DeleteRecordingConfiguration',
       'DeleteStage',
+      'DeleteStorageConfiguration',
       'DeleteStreamKey',
       'DisconnectParticipant',
       'ImportPlaybackKeyPair',
       'PutMetadata',
+      'StartComposition',
+      'StartViewerSessionRevocation',
+      'StopComposition',
       'StopStream',
       'UpdateChannel',
+      'UpdatePlaybackRestrictionPolicy',
       'UpdateStage'
     ],
     List: [
       'ListChannels',
+      'ListCompositions',
+      'ListEncoderConfigurations',
+      'ListParticipantEvents',
+      'ListParticipants',
       'ListPlaybackKeyPairs',
+      'ListPlaybackRestrictionPolicies',
       'ListRecordingConfigurations',
+      'ListStageSessions',
       'ListStages',
+      'ListStorageConfigurations',
       'ListStreamKeys',
       'ListStreamSessions',
       'ListStreams'
@@ -487,7 +791,7 @@ export class Ivs extends PolicyStatement {
   /**
    * Adds a resource of type Channel to the statement
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_Channel.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -504,7 +808,7 @@ export class Ivs extends PolicyStatement {
   /**
    * Adds a resource of type Stream-Key to the statement
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StreamKey.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -521,7 +825,7 @@ export class Ivs extends PolicyStatement {
   /**
    * Adds a resource of type Playback-Key-Pair to the statement
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PlaybackKeyPair.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackKeyPair.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -536,9 +840,26 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Playback-Restriction-Policy to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackRestrictionPolicy.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPlaybackRestrictionPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:playback-restriction-policy/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type Recording-Configuration to the statement
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_RecordingConfiguration.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_RecordingConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -567,5 +888,134 @@ export class Ivs extends PolicyStatement {
    */
   public onStage(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stage/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Composition to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Composition.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComposition(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:composition/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Encoder-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_EncoderConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEncoderConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:encoder-configuration/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Storage-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StorageConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStorageConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:storage-configuration/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tags associated with the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateChannel()
+   * - .toCreateEncoderConfiguration()
+   * - .toCreateParticipantToken()
+   * - .toCreatePlaybackRestrictionPolicy()
+   * - .toCreateRecordingConfiguration()
+   * - .toCreateStage()
+   * - .toCreateStorageConfiguration()
+   * - .toCreateStreamKey()
+   * - .toImportPlaybackKeyPair()
+   * - .toListTagsForResource()
+   * - .toStartComposition()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Channel
+   * - Stream-Key
+   * - Playback-Key-Pair
+   * - Playback-Restriction-Policy
+   * - Recording-Configuration
+   * - Stage
+   * - Composition
+   * - Encoder-Configuration
+   * - Storage-Configuration
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateChannel()
+   * - .toCreateEncoderConfiguration()
+   * - .toCreateParticipantToken()
+   * - .toCreatePlaybackRestrictionPolicy()
+   * - .toCreateRecordingConfiguration()
+   * - .toCreateStage()
+   * - .toCreateStorageConfiguration()
+   * - .toCreateStreamKey()
+   * - .toImportPlaybackKeyPair()
+   * - .toListTagsForResource()
+   * - .toStartComposition()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

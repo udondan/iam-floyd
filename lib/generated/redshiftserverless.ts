@@ -23,10 +23,28 @@ export class RedshiftServerless extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ConvertRecoveryPointToSnapshot.html
    */
   public toConvertRecoveryPointToSnapshot() {
     return this.to('ConvertRecoveryPointToSnapshot');
+  }
+
+  /**
+   * Grants permission to create a custom domain association in Amazon Redshift Serverless
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - acm:DescribeCertificate
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateCustomDomainAssociation.html
+   */
+  public toCreateCustomDomainAssociation() {
+    return this.to('CreateCustomDomainAssociation');
   }
 
   /**
@@ -56,14 +74,40 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a scheduled action for a specified Amazon Redshift Serverless namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateScheduledAction.html
+   */
+  public toCreateScheduledAction() {
+    return this.to('CreateScheduledAction');
+  }
+
+  /**
    * Grants permission to create a snapshot of all databases in a namespace
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
     return this.to('CreateSnapshot');
+  }
+
+  /**
+   * Grants permission to create a snapshot copy configuration for a specified Amazon Redshift Serverless namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateSnapshotCopyConfiguration.html
+   */
+  public toCreateSnapshotCopyConfiguration() {
+    return this.to('CreateSnapshotCopyConfiguration');
   }
 
   /**
@@ -90,6 +134,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toCreateWorkgroup() {
     return this.to('CreateWorkgroup');
+  }
+
+  /**
+   * Grants permission to delete a custom domain association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_DeleteCustomDomainAssociation.html
+   */
+  public toDeleteCustomDomainAssociation() {
+    return this.to('DeleteCustomDomainAssociation');
   }
 
   /**
@@ -126,6 +181,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a scheduled action from Amazon Redshift Serverless
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_DeleteScheduledAction.html
+   */
+  public toDeleteScheduledAction() {
+    return this.to('DeleteScheduledAction');
+  }
+
+  /**
    * Grants permission to delete a snapshot from Amazon Redshift Serverless
    *
    * Access Level: Write
@@ -134,6 +200,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toDeleteSnapshot() {
     return this.to('DeleteSnapshot');
+  }
+
+  /**
+   * Grants permission to delete a snapshot copy configuration for a Amazon Redshift Serverless namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_DeleteSnapshotCopyConfiguration.html
+   */
+  public toDeleteSnapshotCopyConfiguration() {
+    return this.to('DeleteSnapshotCopyConfiguration');
   }
 
   /**
@@ -159,6 +236,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to see on the Amazon Redshift Serverless console the remaining number of free trial credits and their expiration date
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/redshift/free-trial/
+   */
+  public toDescribeOneTimeCredit() {
+    return this.to('DescribeOneTimeCredit');
+  }
+
+  /**
    * Grants permission to get a database user name and temporary password with temporary authorization to log on to Amazon Redshift Serverless
    *
    * Access Level: Write
@@ -167,6 +255,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toGetCredentials() {
     return this.to('GetCredentials');
+  }
+
+  /**
+   * Grants permission to get information about a specific custom domain association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetCustomDomainAssociation.html
+   */
+  public toGetCustomDomainAssociation() {
+    return this.to('GetCustomDomainAssociation');
   }
 
   /**
@@ -214,6 +313,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a specific scheduled action
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetScheduledAction.html
+   */
+  public toGetScheduledAction() {
+    return this.to('GetScheduledAction');
+  }
+
+  /**
    * Grants permission to get information about a specific snapshot
    *
    * Access Level: Read
@@ -258,6 +368,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list custom domain associations in Amazon Redshift Serverless
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListCustomDomainAssociations.html
+   */
+  public toListCustomDomainAssociations() {
+    return this.to('ListCustomDomainAssociations');
+  }
+
+  /**
    * Grants permission to list EndpointAccess objects and relevant information
    *
    * Access Level: List
@@ -288,6 +409,28 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toListRecoveryPoints() {
     return this.to('ListRecoveryPoints');
+  }
+
+  /**
+   * Grants permission to list scheduled actions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListScheduledActions.html
+   */
+  public toListScheduledActions() {
+    return this.to('ListScheduledActions');
+  }
+
+  /**
+   * Grants permission to list SnapshotCopyConfiguration objects and relevant information
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListSnapshotCopyConfigurations.html
+   */
+  public toListSnapshotCopyConfigurations() {
+    return this.to('ListSnapshotCopyConfigurations');
   }
 
   /**
@@ -382,6 +525,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore a table from a recovery point
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreTableFromRecoveryPoint.html
+   */
+  public toRestoreTableFromRecoveryPoint() {
+    return this.to('RestoreTableFromRecoveryPoint');
+  }
+
+  /**
    * Grants permission to restore a table from a snapshot
    *
    * Access Level: Write
@@ -423,6 +577,20 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a certificate associated with a custom domain
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - acm:DescribeCertificate
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateCustomDomainAssociation.html
+   */
+  public toUpdateCustomDomainAssociation() {
+    return this.to('UpdateCustomDomainAssociation');
+  }
+
+  /**
    * Grants permission to update an Amazon Redshift Serverless managed VPC endpoint
    *
    * Access Level: Write
@@ -445,6 +613,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a scheduled action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateScheduledAction.html
+   */
+  public toUpdateScheduledAction() {
+    return this.to('UpdateScheduledAction');
+  }
+
+  /**
    * Grants permission to update a snapshot
    *
    * Access Level: Write
@@ -453,6 +632,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toUpdateSnapshot() {
     return this.to('UpdateSnapshot');
+  }
+
+  /**
+   * Grants permission to update a snapshot copy configuration for a Amazon Redshift Serverless namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateSnapshotCopyConfiguration.html
+   */
+  public toUpdateSnapshotCopyConfiguration() {
+    return this.to('UpdateSnapshotCopyConfiguration');
   }
 
   /**
@@ -480,42 +670,58 @@ export class RedshiftServerless extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ConvertRecoveryPointToSnapshot',
+      'CreateCustomDomainAssociation',
       'CreateEndpointAccess',
       'CreateNamespace',
+      'CreateScheduledAction',
       'CreateSnapshot',
+      'CreateSnapshotCopyConfiguration',
       'CreateUsageLimit',
       'CreateWorkgroup',
+      'DeleteCustomDomainAssociation',
       'DeleteEndpointAccess',
       'DeleteNamespace',
       'DeleteResourcePolicy',
+      'DeleteScheduledAction',
       'DeleteSnapshot',
+      'DeleteSnapshotCopyConfiguration',
       'DeleteUsageLimit',
       'DeleteWorkgroup',
       'GetCredentials',
       'PutResourcePolicy',
       'RestoreFromRecoveryPoint',
       'RestoreFromSnapshot',
+      'RestoreTableFromRecoveryPoint',
       'RestoreTableFromSnapshot',
+      'UpdateCustomDomainAssociation',
       'UpdateEndpointAccess',
       'UpdateNamespace',
+      'UpdateScheduledAction',
       'UpdateSnapshot',
+      'UpdateSnapshotCopyConfiguration',
       'UpdateUsageLimit',
       'UpdateWorkgroup'
     ],
     Read: [
+      'DescribeOneTimeCredit',
+      'GetCustomDomainAssociation',
       'GetEndpointAccess',
       'GetNamespace',
       'GetRecoveryPoint',
       'GetResourcePolicy',
+      'GetScheduledAction',
       'GetSnapshot',
       'GetTableRestoreStatus',
       'GetUsageLimit',
       'GetWorkgroup'
     ],
     List: [
+      'ListCustomDomainAssociations',
       'ListEndpointAccess',
       'ListNamespaces',
       'ListRecoveryPoints',
+      'ListScheduledActions',
+      'ListSnapshotCopyConfigurations',
       'ListSnapshots',
       'ListTableRestoreStatus',
       'ListTagsForResource',
@@ -554,6 +760,9 @@ export class RedshiftServerless extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotId }`);
@@ -585,9 +794,12 @@ export class RedshiftServerless extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:recovery-point/${ recoveryPointId }`);
+    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:recoverypoint/${ recoveryPointId }`);
   }
 
   /**
@@ -602,6 +814,69 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public onEndpointAccess(endpointAccessId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:managedvpcendpoint/${ endpointAccessId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toConvertRecoveryPointToSnapshot()
+   * - .toCreateNamespace()
+   * - .toCreateSnapshot()
+   * - .toCreateWorkgroup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - namespace
+   * - snapshot
+   * - workgroup
+   * - recoveryPoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toConvertRecoveryPointToSnapshot()
+   * - .toCreateNamespace()
+   * - .toCreateSnapshot()
+   * - .toCreateWorkgroup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

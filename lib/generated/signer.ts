@@ -23,9 +23,6 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible conditions:
-   * - .ifProfileVersion()
-   *
    * https://docs.aws.amazon.com/signer/latest/api/API_AddProfilePermission.html
    */
   public toAddProfilePermission() {
@@ -55,6 +52,17 @@ export class Signer extends PolicyStatement {
    */
   public toDescribeSigningJob() {
     return this.to('DescribeSigningJob');
+  }
+
+  /**
+   * Grants permission to query revocation info of signing resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/signer/latest/api/API_GetRevocationStatus.html
+   */
+  public toGetRevocationStatus() {
+    return this.to('GetRevocationStatus');
   }
 
   /**
@@ -157,9 +165,6 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible conditions:
-   * - .ifProfileVersion()
-   *
    * https://docs.aws.amazon.com/signer/latest/api/API_RemoveProfilePermission.html
    */
   public toRemoveProfilePermission() {
@@ -192,6 +197,20 @@ export class Signer extends PolicyStatement {
    */
   public toRevokeSigningProfile() {
     return this.to('RevokeSigningProfile');
+  }
+
+  /**
+   * Grants permission to initiate a Signing Job on the provided payload
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProfileVersion()
+   *
+   * https://docs.aws.amazon.com/signer/latest/api/API_SignPayload.html
+   */
+  public toSignPayload() {
+    return this.to('SignPayload');
   }
 
   /**
@@ -248,10 +267,12 @@ export class Signer extends PolicyStatement {
       'PutSigningProfile',
       'RevokeSignature',
       'RevokeSigningProfile',
+      'SignPayload',
       'StartSigningJob'
     ],
     Read: [
       'DescribeSigningJob',
+      'GetRevocationStatus',
       'GetSigningPlatform',
       'GetSigningProfile',
       'ListProfilePermissions',
@@ -300,17 +321,67 @@ export class Signer extends PolicyStatement {
   }
 
   /**
+   * Filters access by allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toPutSigningProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - signing-profile
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toPutSigningProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by version of the Signing Profile
    *
    * https://docs.aws.amazon.com/signer/latest/developerguide/authen-apipermissions.html
    *
    * Applies to actions:
-   * - .toAddProfilePermission()
    * - .toCancelSigningProfile()
    * - .toGetSigningProfile()
-   * - .toRemoveProfilePermission()
    * - .toRevokeSignature()
    * - .toRevokeSigningProfile()
+   * - .toSignPayload()
    * - .toStartSigningJob()
    *
    * @param value The value(s) to check

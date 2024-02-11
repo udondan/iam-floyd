@@ -1,10 +1,13 @@
+ecs:CreateAction
 ecs:RequestTag/${TagKey}
 ecs:ResourceTag/${TagKey}
 ecs:TagKeys
+ecs:account-setting
 ecs:capacity-provider
 ecs:cluster
 ecs:container-instances
 ecs:container-name
+ecs:enable-ebs-volumes
 ecs:enable-execute-command
 ecs:enable-service-connect
 ecs:namespace

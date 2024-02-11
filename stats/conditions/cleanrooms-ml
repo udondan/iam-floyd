@@ -1,0 +1,4 @@
+cleanrooms-ml:CollaborationId
+cleanrooms-ml:RequestTag/${TagKey}
+cleanrooms-ml:ResourceTag/${TagKey}
+cleanrooms-ml:TagKeys

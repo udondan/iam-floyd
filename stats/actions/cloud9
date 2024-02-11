@@ -13,6 +13,7 @@ cloud9:DescribeSSHRemote;Read
 cloud9:GetEnvironmentConfig;Read
 cloud9:GetEnvironmentSettings;Read
 cloud9:GetMembershipSettings;Read
+cloud9:GetMigrationExperiences;Read
 cloud9:GetUserPublicKey;Read
 cloud9:GetUserSettings;Read
 cloud9:ListEnvironments;Read

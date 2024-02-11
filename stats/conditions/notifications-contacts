@@ -1,0 +1,3 @@
+notifications-contacts:RequestTag/${TagKey}
+notifications-contacts:ResourceTag/${TagKey}
+notifications-contacts:TagKeys

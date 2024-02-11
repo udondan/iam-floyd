@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [internetmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchinternetmonitor.html).
@@ -67,6 +67,28 @@ export class Internetmonitor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get results for a data query for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetQueryResults.html
+   */
+  public toGetQueryResults() {
+    return this.to('GetQueryResults');
+  }
+
+  /**
+   * Grants permission to get status for a data query for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetQueryStatus.html
+   */
+  public toGetQueryStatus() {
+    return this.to('GetQueryStatus');
+  }
+
+  /**
    * Grants permission to list all health events for a monitor
    *
    * Access Level: List
@@ -97,6 +119,28 @@ export class Internetmonitor extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to start a data query for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_StartQuery.html
+   */
+  public toStartQuery() {
+    return this.to('StartQuery');
+  }
+
+  /**
+   * Grants permission to stop a data query for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_StopQuery.html
+   */
+  public toStopQuery() {
+    return this.to('StopQuery');
   }
 
   /**
@@ -148,7 +192,11 @@ export class Internetmonitor extends PolicyStatement {
     Read: [
       'GetHealthEvent',
       'GetMonitor',
-      'ListTagsForResource'
+      'GetQueryResults',
+      'GetQueryStatus',
+      'ListTagsForResource',
+      'StartQuery',
+      'StopQuery'
     ],
     List: [
       'ListHealthEvents',
@@ -190,5 +238,55 @@ export class Internetmonitor extends PolicyStatement {
    */
   public onMonitor(monitorName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Internetmonitor.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:monitor/${ monitorName }`);
+  }
+
+  /**
+   * Filters access by tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateMonitor()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Monitor
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateMonitor()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

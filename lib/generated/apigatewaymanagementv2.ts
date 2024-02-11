@@ -561,6 +561,37 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type VpcLink to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param vpcLinkId - Identifier for the vpcLinkId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcLink(vpcLinkId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || ApigatewayV2.defaultPartition }:apigateway:${ region || '*' }::/vpclinks/${ vpcLinkId }`);
+  }
+
+  /**
+   * Adds a resource of type VpcLinks to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcLinks(region?: string, partition?: string) {
+    return this.on(`arn:${ partition || ApigatewayV2.defaultPartition }:apigateway:${ region || '*' }::/vpclinks`);
+  }
+
+  /**
    * Filters access by access log destination. Available during the CreateStage and UpdateStage operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -932,5 +963,75 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifResourceSecurityPolicy(value: string | string[], operator?: Operator | string) {
     return this.if(`Resource/SecurityPolicy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   * - ApiMapping
+   * - ApiMappings
+   * - Authorizer
+   * - Authorizers
+   * - Deployment
+   * - Deployments
+   * - Integration
+   * - Integrations
+   * - Model
+   * - Models
+   * - Route
+   * - Routes
+   * - Stage
+   * - Stages
+   * - VpcLink
+   * - VpcLinks
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
+   *
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -37,6 +37,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifTaggingAction()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html
    */
@@ -146,6 +147,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifOwnerUserProfileArn()
+   * - .ifSpaceSharingType()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -238,6 +241,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateAutoMLJobV2() {
     return this.to('CreateAutoMLJobV2');
+  }
+
+  /**
+   * Grants permission to create a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCluster.html
+   */
+  public toCreateCluster() {
+    return this.to('CreateCluster');
   }
 
   /**
@@ -458,8 +480,12 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVolumeKmsKey()
    * - .ifServerlessMaxConcurrency()
    * - .ifServerlessMemorySize()
+   * - .ifNetworkIsolation()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * Dependent actions:
+   * - iam:PassRole
    * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html
@@ -627,6 +653,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateImageVersion() {
     return this.to('CreateImageVersion');
+  }
+
+  /**
+   * Grants permission to create an inference component on an endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifModelArn()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceComponent.html
+   */
+  public toCreateInferenceComponent() {
+    return this.to('CreateInferenceComponent');
   }
 
   /**
@@ -1044,6 +1089,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifOwnerUserProfileArn()
+   * - .ifSpaceSharingType()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -1093,6 +1140,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    * - .ifKeepAlivePeriod()
+   * - .ifEnableRemoteDebug()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1249,6 +1297,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifOwnerUserProfileArn()
+   * - .ifSpaceSharingType()
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteApp.html
    */
   public toDeleteApp() {
@@ -1289,6 +1341,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteCluster.html
+   */
+  public toDeleteCluster() {
+    return this.to('DeleteCluster');
+  }
+
+  /**
    * Grants permission to delete a CodeRepository
    *
    * Access Level: Write
@@ -1297,6 +1360,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteCodeRepository() {
     return this.to('DeleteCodeRepository');
+  }
+
+  /**
+   * Grants permission to delete a compilation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteCompilationJob.html
+   */
+  public toDeleteCompilationJob() {
+    return this.to('DeleteCompilationJob');
   }
 
   /**
@@ -1468,6 +1542,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a hyper parameter tuning job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHyperParameterTuningJob.html
+   */
+  public toDeleteHyperParameterTuningJob() {
+    return this.to('DeleteHyperParameterTuningJob');
+  }
+
+  /**
    * Grants permission to delete a SageMaker Image
    *
    * Access Level: Write
@@ -1487,6 +1572,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteImageVersion() {
     return this.to('DeleteImageVersion');
+  }
+
+  /**
+   * Grants permission to delete an inference component. Amazon SageMaker frees up the resources that were reserved when the inference component was created
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteInferenceComponent.html
+   */
+  public toDeleteInferenceComponent() {
+    return this.to('DeleteInferenceComponent');
   }
 
   /**
@@ -1670,6 +1766,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifOwnerUserProfileArn()
+   * - .ifSpaceSharingType()
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteSpace.html
    */
   public toDeleteSpace() {
@@ -1842,6 +1942,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeAutoMLJobV2() {
     return this.to('DescribeAutoMLJobV2');
+  }
+
+  /**
+   * Grants permission to return information about a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCluster.html
+   */
+  public toDescribeCluster() {
+    return this.to('DescribeCluster');
+  }
+
+  /**
+   * Grants permission to return information about a cluster node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html
+   */
+  public toDescribeClusterNode() {
+    return this.to('DescribeClusterNode');
   }
 
   /**
@@ -2084,6 +2206,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeImageVersion() {
     return this.to('DescribeImageVersion');
+  }
+
+  /**
+   * Grants permission to return the description of an inference component
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceComponent.html
+   */
+  public toDescribeInferenceComponent() {
+    return this.to('DescribeInferenceComponent');
   }
 
   /**
@@ -2538,6 +2671,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a scaling policy configuration recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetScalingConfigurationRecommendation.html
+   */
+  public toGetScalingConfigurationRecommendation() {
+    return this.to('GetScalingConfigurationRecommendation');
+  }
+
+  /**
    * Grants permission to get search suggestions when provided with a keyword
    *
    * Access Level: Read
@@ -2589,6 +2733,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toInvokeEndpointAsync() {
     return this.to('InvokeEndpointAsync');
+  }
+
+  /**
+   * Grants permission to get the inference response as a stream from the specified endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointWithResponseStream.html
+   */
+  public toInvokeEndpointWithResponseStream() {
+    return this.to('InvokeEndpointWithResponseStream');
   }
 
   /**
@@ -2688,6 +2843,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListCandidatesForAutoMLJob() {
     return this.to('ListCandidatesForAutoMLJob');
+  }
+
+  /**
+   * Grants permission to list nodes within a cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusterNodes.html
+   */
+  public toListClusterNodes() {
+    return this.to('ListClusterNodes');
+  }
+
+  /**
+   * Grants permission to list clusters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusters.html
+   */
+  public toListClusters() {
+    return this.to('ListClusters');
   }
 
   /**
@@ -2930,6 +3107,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListImages() {
     return this.to('ListImages');
+  }
+
+  /**
+   * Grants permission to list inference components
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceComponents.html
+   */
+  public toListInferenceComponents() {
+    return this.to('ListInferenceComponents');
   }
 
   /**
@@ -3241,6 +3429,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resource catalogs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListResourceCatalogs.html
+   */
+  public toListResourceCatalogs() {
+    return this.to('ListResourceCatalogs');
+  }
+
+  /**
    * Grants permission to list shared model events
    *
    * Access Level: List
@@ -3504,6 +3703,9 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to search for SageMaker objects
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifSearchVisibilityCondition()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html
    */
@@ -3820,6 +4022,20 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCluster.html
+   */
+  public toUpdateCluster() {
+    return this.to('UpdateCluster');
+  }
+
+  /**
    * Grants permission to update a CodeRepository
    *
    * Access Level: Write
@@ -3874,6 +4090,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifDomainSharingOutputKmsKey()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifAppNetworkAccessType()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDomain.html
    */
@@ -3970,6 +4188,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateImageVersion() {
     return this.to('UpdateImageVersion');
+  }
+
+  /**
+   * Grants permission to update an inference component to use the specification and configurations specified in the request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateInferenceComponent.html
+   */
+  public toUpdateInferenceComponent() {
+    return this.to('UpdateInferenceComponent');
+  }
+
+  /**
+   * Grants permission to update the runtime config of a given inference component
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateInferenceComponentRuntimeConfig.html
+   */
+  public toUpdateInferenceComponentRuntimeConfig() {
+    return this.to('UpdateInferenceComponentRuntimeConfig');
   }
 
   /**
@@ -4135,6 +4375,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifOwnerUserProfileArn()
+   * - .ifSpaceSharingType()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html
    */
@@ -4150,6 +4392,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifInstanceTypes()
    * - .ifKeepAlivePeriod()
+   * - .ifEnableRemoteDebug()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrainingJob.html
    */
@@ -4232,6 +4475,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateArtifact',
       'CreateAutoMLJob',
       'CreateAutoMLJobV2',
+      'CreateCluster',
       'CreateCodeRepository',
       'CreateCompilationJob',
       'CreateContext',
@@ -4251,6 +4495,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateHyperParameterTuningJob',
       'CreateImage',
       'CreateImageVersion',
+      'CreateInferenceComponent',
       'CreateInferenceExperiment',
       'CreateInferenceRecommendationsJob',
       'CreateLabelingJob',
@@ -4287,7 +4532,9 @@ export class Sagemaker extends PolicyStatement {
       'DeleteAppImageConfig',
       'DeleteArtifact',
       'DeleteAssociation',
+      'DeleteCluster',
       'DeleteCodeRepository',
+      'DeleteCompilationJob',
       'DeleteContext',
       'DeleteDataQualityJobDefinition',
       'DeleteDeviceFleet',
@@ -4303,8 +4550,10 @@ export class Sagemaker extends PolicyStatement {
       'DeleteHubContent',
       'DeleteHumanLoop',
       'DeleteHumanTaskUi',
+      'DeleteHyperParameterTuningJob',
       'DeleteImage',
       'DeleteImageVersion',
+      'DeleteInferenceComponent',
       'DeleteInferenceExperiment',
       'DeleteLineageGroupPolicy',
       'DeleteModel',
@@ -4366,6 +4615,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateAction',
       'UpdateAppImageConfig',
       'UpdateArtifact',
+      'UpdateCluster',
       'UpdateCodeRepository',
       'UpdateContext',
       'UpdateDeviceFleet',
@@ -4379,6 +4629,8 @@ export class Sagemaker extends PolicyStatement {
       'UpdateHub',
       'UpdateImage',
       'UpdateImageVersion',
+      'UpdateInferenceComponent',
+      'UpdateInferenceComponentRuntimeConfig',
       'UpdateInferenceExperiment',
       'UpdateModelCard',
       'UpdateModelPackage',
@@ -4413,6 +4665,8 @@ export class Sagemaker extends PolicyStatement {
       'DescribeArtifact',
       'DescribeAutoMLJob',
       'DescribeAutoMLJobV2',
+      'DescribeCluster',
+      'DescribeClusterNode',
       'DescribeCodeRepository',
       'DescribeCompilationJob',
       'DescribeContext',
@@ -4435,6 +4689,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeHyperParameterTuningJob',
       'DescribeImage',
       'DescribeImageVersion',
+      'DescribeInferenceComponent',
       'DescribeInferenceExperiment',
       'DescribeInferenceRecommendationsJob',
       'DescribeLabelingJob',
@@ -4473,9 +4728,11 @@ export class Sagemaker extends PolicyStatement {
       'GetModelPackageGroupPolicy',
       'GetRecord',
       'GetSagemakerServicecatalogPortfolioStatus',
+      'GetScalingConfigurationRecommendation',
       'GetSearchSuggestions',
       'InvokeEndpoint',
       'InvokeEndpointAsync',
+      'InvokeEndpointWithResponseStream',
       'RenderUiTemplate',
       'Search'
     ],
@@ -4489,6 +4746,8 @@ export class Sagemaker extends PolicyStatement {
       'ListAssociations',
       'ListAutoMLJobs',
       'ListCandidatesForAutoMLJob',
+      'ListClusterNodes',
+      'ListClusters',
       'ListCodeRepositories',
       'ListCompilationJobs',
       'ListContexts',
@@ -4511,6 +4770,7 @@ export class Sagemaker extends PolicyStatement {
       'ListHyperParameterTuningJobs',
       'ListImageVersions',
       'ListImages',
+      'ListInferenceComponents',
       'ListInferenceExperiments',
       'ListInferenceRecommendationsJobSteps',
       'ListInferenceRecommendationsJobs',
@@ -4539,6 +4799,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListResourceCatalogs',
       'ListSharedModelEvents',
       'ListSharedModelVersions',
       'ListSharedModels',
@@ -5017,6 +5278,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
+  }
+
+  /**
    * Adds a resource of type training-job to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
@@ -5176,6 +5455,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+  }
+
+  /**
+   * Adds a resource of type inference-component to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
+   * @param inferenceComponentName - Identifier for the inferenceComponentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceComponent(inferenceComponentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-component/${ inferenceComponentName }`);
   }
 
   /**
@@ -5580,6 +5877,229 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type sagemaker-catalog to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceCatalog.html
+   *
+   * @param resourceCatalogName - Identifier for the resourceCatalogName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSagemakerCatalog(resourceCatalogName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:sagemaker-catalog/${ resourceCatalogName }`);
+  }
+
+  /**
+   * Filters access by a key that is present in the request the user makes to the SageMaker service
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateAction()
+   * - .toCreateAlgorithm()
+   * - .toCreateApp()
+   * - .toCreateAppImageConfig()
+   * - .toCreateArtifact()
+   * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
+   * - .toCreateCodeRepository()
+   * - .toCreateCompilationJob()
+   * - .toCreateContext()
+   * - .toCreateDataQualityJobDefinition()
+   * - .toCreateDeviceFleet()
+   * - .toCreateDomain()
+   * - .toCreateEdgeDeploymentPlan()
+   * - .toCreateEdgeDeploymentStage()
+   * - .toCreateEdgePackagingJob()
+   * - .toCreateEndpoint()
+   * - .toCreateEndpointConfig()
+   * - .toCreateExperiment()
+   * - .toCreateFeatureGroup()
+   * - .toCreateFlowDefinition()
+   * - .toCreateHub()
+   * - .toCreateHumanTaskUi()
+   * - .toCreateHyperParameterTuningJob()
+   * - .toCreateImage()
+   * - .toCreateInferenceComponent()
+   * - .toCreateInferenceExperiment()
+   * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateLabelingJob()
+   * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelCard()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelPackage()
+   * - .toCreateModelPackageGroup()
+   * - .toCreateModelQualityJobDefinition()
+   * - .toCreateMonitoringSchedule()
+   * - .toCreateNotebookInstance()
+   * - .toCreatePipeline()
+   * - .toCreateProcessingJob()
+   * - .toCreateProject()
+   * - .toCreateSpace()
+   * - .toCreateStudioLifecycleConfig()
+   * - .toCreateTrainingJob()
+   * - .toCreateTransformJob()
+   * - .toCreateTrial()
+   * - .toCreateTrialComponent()
+   * - .toCreateUserProfile()
+   * - .toCreateWorkforce()
+   * - .toCreateWorkteam()
+   * - .toDeleteFeatureGroup()
+   * - .toImportHubContent()
+   * - .toRegisterDevices()
+   * - .toUpdateMonitoringSchedule()
+   * - .toUpdateProject()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to resource types:
+   * - device
+   * - device-fleet
+   * - edge-packaging-job
+   * - edge-deployment-plan
+   * - flow-definition
+   * - human-task-ui
+   * - inference-recommendations-job
+   * - inference-experiment
+   * - labeling-job
+   * - workteam
+   * - workforce
+   * - domain
+   * - user-profile
+   * - space
+   * - app
+   * - app-image-config
+   * - studio-lifecycle-config
+   * - notebook-instance
+   * - code-repository
+   * - image
+   * - algorithm
+   * - cluster
+   * - training-job
+   * - processing-job
+   * - hyper-parameter-tuning-job
+   * - project
+   * - model-package
+   * - model-package-group
+   * - model
+   * - endpoint-config
+   * - endpoint
+   * - inference-component
+   * - transform-job
+   * - compilation-job
+   * - automl-job
+   * - monitoring-schedule
+   * - data-quality-job-definition
+   * - model-quality-job-definition
+   * - model-bias-job-definition
+   * - model-explainability-job-definition
+   * - experiment
+   * - experiment-trial
+   * - experiment-trial-component
+   * - feature-group
+   * - pipeline
+   * - artifact
+   * - context
+   * - action
+   * - lineage-group
+   * - model-card
+   * - model-card-export-job
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCreateAction()
+   * - .toCreateAlgorithm()
+   * - .toCreateApp()
+   * - .toCreateAppImageConfig()
+   * - .toCreateArtifact()
+   * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
+   * - .toCreateCodeRepository()
+   * - .toCreateCompilationJob()
+   * - .toCreateContext()
+   * - .toCreateDataQualityJobDefinition()
+   * - .toCreateDeviceFleet()
+   * - .toCreateDomain()
+   * - .toCreateEdgeDeploymentPlan()
+   * - .toCreateEdgeDeploymentStage()
+   * - .toCreateEdgePackagingJob()
+   * - .toCreateEndpoint()
+   * - .toCreateEndpointConfig()
+   * - .toCreateExperiment()
+   * - .toCreateFeatureGroup()
+   * - .toCreateFlowDefinition()
+   * - .toCreateHub()
+   * - .toCreateHumanTaskUi()
+   * - .toCreateHyperParameterTuningJob()
+   * - .toCreateImage()
+   * - .toCreateInferenceComponent()
+   * - .toCreateInferenceExperiment()
+   * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateLabelingJob()
+   * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelCard()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelPackage()
+   * - .toCreateModelPackageGroup()
+   * - .toCreateModelQualityJobDefinition()
+   * - .toCreateMonitoringSchedule()
+   * - .toCreateNotebookInstance()
+   * - .toCreatePipeline()
+   * - .toCreateProcessingJob()
+   * - .toCreateProject()
+   * - .toCreateSpace()
+   * - .toCreateStudioLifecycleConfig()
+   * - .toCreateTrainingJob()
+   * - .toCreateTransformJob()
+   * - .toCreateTrial()
+   * - .toCreateTrialComponent()
+   * - .toCreateUserProfile()
+   * - .toCreateWorkforce()
+   * - .toCreateWorkteam()
+   * - .toDeleteTags()
+   * - .toImportHubContent()
+   * - .toRegisterDevices()
+   * - .toUpdateMonitoringSchedule()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the list of all accelerator types associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -5603,6 +6123,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateDomain()
+   * - .toUpdateDomain()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5659,6 +6180,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * This context key is included in some requests sent from SageMaker Studio. You can use the domainId as a policy variable to filter requests from specific SageMaker Domains
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDomainId(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainId`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the Domain sharing output KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -5674,6 +6207,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
     return this.if(`DomainSharingOutputKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the remote debug config in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateTrainingJob()
+   * - .toUpdateTrainingJob()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnableRemoteDebug(value?: boolean) {
+    return this.if(`EnableRemoteDebug`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -5854,10 +6402,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifImageArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImageArns`, value, operator || 'StringLike');
+    return this.if(`ImageArns`, value, operator || 'ArnLike');
   }
 
   /**
@@ -5875,10 +6423,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifImageVersionArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImageVersionArns`, value, operator || 'StringLike');
+    return this.if(`ImageVersionArns`, value, operator || 'ArnLike');
   }
 
   /**
@@ -6018,6 +6566,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEndpointConfig()
+   * - .toCreateInferenceComponent()
    * - .toCreateTransformJob()
    *
    * @param value The value(s) to check
@@ -6034,6 +6583,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateDataQualityJobDefinition()
+   * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
@@ -6078,6 +6628,25 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access by the OwnerUserProfile arn associated with the space in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateSpace()
+   * - .toDeleteApp()
+   * - .toDeleteSpace()
+   * - .toUpdateSpace()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifOwnerUserProfileArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`OwnerUserProfileArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the preface string for a tag key and value pair attached to a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -6116,6 +6685,7 @@ export class Sagemaker extends PolicyStatement {
    * - code-repository
    * - image
    * - algorithm
+   * - cluster
    * - training-job
    * - processing-job
    * - hyper-parameter-tuning-job
@@ -6125,6 +6695,7 @@ export class Sagemaker extends PolicyStatement {
    * - model
    * - endpoint-config
    * - endpoint
+   * - inference-component
    * - transform-job
    * - compilation-job
    * - automl-job
@@ -6170,6 +6741,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Limits the results of your search request to the resources that you can access. ${FilterKey} is a key that the VisibilityConditions configuration presents in the Search request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toSearch()
+   *
+   * @param filterKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSearchVisibilityCondition(filterKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`SearchVisibilityCondition/${ filterKey }`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by limiting maximum concurrency used for Serverless inference in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -6200,6 +6787,40 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access by the sharing type associated with the space in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateSpace()
+   * - .toDeleteApp()
+   * - .toDeleteSpace()
+   * - .toUpdateSpace()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSpaceSharingType(value: string | string[], operator?: Operator | string) {
+    return this.if(`SpaceSharingType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the API actions to which a user can apply tags. Uses the name of the API operation that creates a taggable resource to filter access
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTaggingAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`TaggingAction`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the target model associated with the Multi-Model Endpoint in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -6212,6 +6833,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifTargetModel(value: string | string[], operator?: Operator | string) {
     return this.if(`TargetModel`, value, operator || 'StringLike');
+  }
+
+  /**
+   * This context key is included in some requests sent from SageMaker Studio. You can use the UserProfileName as a policy variable to filter requests from specific user profiles within a SageMaker Domain
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserProfileName(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserProfileName`, value, operator || 'StringLike');
   }
 
   /**
@@ -6254,6 +6887,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
+   * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
@@ -6285,6 +6919,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
+   * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
@@ -6294,6 +6929,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
+   * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    *
    * @param value The value(s) to check

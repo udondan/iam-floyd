@@ -386,6 +386,86 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateCanary()
+   * - .toCreateGroup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateResource()
+   * - .toDeleteCanary()
+   * - .toDeleteGroup()
+   * - .toDisassociateResource()
+   * - .toGetCanary()
+   * - .toGetCanaryRuns()
+   * - .toGetGroup()
+   * - .toListAssociatedGroups()
+   * - .toListGroupResources()
+   * - .toStartCanary()
+   * - .toStopCanary()
+   * - .toUntagResource()
+   * - .toUpdateCanary()
+   *
+   * Applies to resource types:
+   * - canary
+   * - group
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAssociateResource()
+   * - .toCreateCanary()
+   * - .toCreateGroup()
+   * - .toDeleteCanary()
+   * - .toDeleteGroup()
+   * - .toDisassociateResource()
+   * - .toGetCanary()
+   * - .toGetCanaryRuns()
+   * - .toGetGroup()
+   * - .toListAssociatedGroups()
+   * - .toListGroupResources()
+   * - .toStartCanary()
+   * - .toStopCanary()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateCanary()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access based on the name of the canary
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html

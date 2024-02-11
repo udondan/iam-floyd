@@ -2,6 +2,7 @@ mgh:AssociateCreatedArtifact;Write
 mgh:AssociateDiscoveredResource;Write
 mgh:CreateHomeRegionControl;Write
 mgh:CreateProgressUpdateStream;Write
+mgh:DeleteHomeRegionControl;Write
 mgh:DeleteProgressUpdateStream;Write
 mgh:DescribeApplicationState;Read
 mgh:DescribeHomeRegionControls;List

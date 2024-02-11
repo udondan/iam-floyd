@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
@@ -41,6 +41,11 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html
    */
   public toAssociateResolverEndpointIpAddress() {
@@ -65,6 +70,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to associate a specified Resolver rule with a specified VPC
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html
    */
@@ -114,6 +122,24 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Route 53 Resolver on Outposts
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - outposts:GetOutpost
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateOutpostResolver.html
+   */
+  public toCreateOutpostResolver() {
+    return this.to('CreateOutpostResolver');
+  }
+
+  /**
    * Grants permission to create a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound
    *
    * Access Level: Write
@@ -121,6 +147,13 @@ export class Route53resolver extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html
    */
@@ -192,9 +225,24 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Route 53 Resolver on Outposts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteOutpostResolver.html
+   */
+  public toDeleteOutpostResolver() {
+    return this.to('DeleteOutpostResolver');
+  }
+
+  /**
    * Grants permission to delete a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound endpoint
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html
    */
@@ -239,6 +287,10 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to remove a specified IP address from a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html
    */
@@ -324,6 +376,17 @@ export class Route53resolver extends PolicyStatement {
    */
   public toGetFirewallRuleGroupPolicy() {
     return this.to('GetFirewallRuleGroupPolicy');
+  }
+
+  /**
+   * Grants permission to get information about a specified Route 53 Resolver on Outposts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetOutpostResolver.html
+   */
+  public toGetOutpostResolver() {
+    return this.to('GetOutpostResolver');
   }
 
   /**
@@ -512,6 +575,17 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all instances of Route 53 Resolver on Outposts that were created using the current AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListOutpostResolvers.html
+   */
+  public toListOutpostResolvers() {
+    return this.to('ListOutpostResolvers');
+  }
+
+  /**
    * Grants permission to list Resolver Config statuses
    *
    * Access Level: List
@@ -590,6 +664,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWS account
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html
    */
@@ -729,6 +806,17 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update seletected settings for a specified Route 53 Resolver on Outposts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateOutpostResolver.html
+   */
+  public toUpdateOutpostResolver() {
+    return this.to('UpdateOutpostResolver');
+  }
+
+  /**
    * Grants permission to update the Resolver Config status within the specified resource
    *
    * Access Level: Write
@@ -758,6 +846,13 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:AssignIpv6Addresses
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:UnassignIpv6Addresses
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html
    */
   public toUpdateResolverEndpoint() {
@@ -784,12 +879,14 @@ export class Route53resolver extends PolicyStatement {
       'CreateFirewallDomainList',
       'CreateFirewallRule',
       'CreateFirewallRuleGroup',
+      'CreateOutpostResolver',
       'CreateResolverEndpoint',
       'CreateResolverQueryLogConfig',
       'CreateResolverRule',
       'DeleteFirewallDomainList',
       'DeleteFirewallRule',
       'DeleteFirewallRuleGroup',
+      'DeleteOutpostResolver',
       'DeleteResolverEndpoint',
       'DeleteResolverQueryLogConfig',
       'DeleteResolverRule',
@@ -802,6 +899,7 @@ export class Route53resolver extends PolicyStatement {
       'UpdateFirewallDomains',
       'UpdateFirewallRule',
       'UpdateFirewallRuleGroupAssociation',
+      'UpdateOutpostResolver',
       'UpdateResolverConfig',
       'UpdateResolverDnssecConfig',
       'UpdateResolverEndpoint',
@@ -813,6 +911,7 @@ export class Route53resolver extends PolicyStatement {
       'GetFirewallRuleGroup',
       'GetFirewallRuleGroupAssociation',
       'GetFirewallRuleGroupPolicy',
+      'GetOutpostResolver',
       'GetResolverConfig',
       'GetResolverDnssecConfig',
       'GetResolverEndpoint',
@@ -831,6 +930,7 @@ export class Route53resolver extends PolicyStatement {
       'ListFirewallRuleGroupAssociations',
       'ListFirewallRuleGroups',
       'ListFirewallRules',
+      'ListOutpostResolvers',
       'ListResolverConfigs',
       'ListResolverDnssecConfigs',
       'ListResolverEndpointIpAddresses',
@@ -999,5 +1099,92 @@ export class Route53resolver extends PolicyStatement {
    */
   public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type outpost-resolver to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOutpostResolver(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Route53resolver.defaultPartition }:route53resolver:${ region || '*' }:${ account || '*' }:outpost-resolver/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAssociateFirewallRuleGroup()
+   * - .toCreateFirewallDomainList()
+   * - .toCreateFirewallRuleGroup()
+   * - .toCreateOutpostResolver()
+   * - .toCreateResolverEndpoint()
+   * - .toCreateResolverQueryLogConfig()
+   * - .toCreateResolverRule()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - resolver-dnssec-config
+   * - resolver-query-log-config
+   * - resolver-rule
+   * - resolver-endpoint
+   * - firewall-rule-group
+   * - firewall-rule-group-association
+   * - firewall-domain-list
+   * - firewall-config
+   * - outpost-resolver
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAssociateFirewallRuleGroup()
+   * - .toCreateFirewallDomainList()
+   * - .toCreateFirewallRuleGroup()
+   * - .toCreateOutpostResolver()
+   * - .toCreateResolverEndpoint()
+   * - .toCreateResolverQueryLogConfig()
+   * - .toCreateResolverRule()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonforecast.html).
@@ -1190,5 +1190,100 @@ export class Forecast extends PolicyStatement {
    */
   public onEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Forecast.defaultPartition }:forecast:${ region || '*' }:${ account || '*' }:forecast-endpoint/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAutoPredictor()
+   * - .toCreateDataset()
+   * - .toCreateDatasetGroup()
+   * - .toCreateDatasetImportJob()
+   * - .toCreateExplainability()
+   * - .toCreateExplainabilityExport()
+   * - .toCreateForecast()
+   * - .toCreateForecastEndpoint()
+   * - .toCreateForecastExportJob()
+   * - .toCreateMonitor()
+   * - .toCreatePredictor()
+   * - .toCreatePredictorBacktestExportJob()
+   * - .toCreateWhatIfAnalysis()
+   * - .toCreateWhatIfForecast()
+   * - .toCreateWhatIfForecastExport()
+   * - .toResumeResource()
+   * - .toStopResource()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - dataset
+   * - datasetGroup
+   * - datasetImportJob
+   * - predictor
+   * - predictorBacktestExportJob
+   * - forecast
+   * - forecastExport
+   * - explainability
+   * - explainabilityExport
+   * - monitor
+   * - whatIfAnalysis
+   * - whatIfForecast
+   * - whatIfForecastExport
+   * - endpoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAutoPredictor()
+   * - .toCreateDataset()
+   * - .toCreateDatasetGroup()
+   * - .toCreateDatasetImportJob()
+   * - .toCreateExplainability()
+   * - .toCreateExplainabilityExport()
+   * - .toCreateForecast()
+   * - .toCreateForecastEndpoint()
+   * - .toCreateForecastExportJob()
+   * - .toCreateMonitor()
+   * - .toCreatePredictor()
+   * - .toCreatePredictorBacktestExportJob()
+   * - .toCreateWhatIfAnalysis()
+   * - .toCreateWhatIfForecast()
+   * - .toCreateWhatIfForecastExport()
+   * - .toResumeResource()
+   * - .toStopResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

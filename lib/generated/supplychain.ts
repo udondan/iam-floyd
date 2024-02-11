@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [scn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html).
@@ -27,6 +27,17 @@ export class Scn extends PolicyStatement {
    */
   public toAssignAdminPermissionsToUser() {
     return this.to('AssignAdminPermissionsToUser');
+  }
+
+  /**
+   * Grants permission to create a BillOfMaterialsImportJob which will import a CSV file of BillOfMaterials records
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toCreateBillOfMaterialsImportJob() {
+    return this.to('CreateBillOfMaterialsImportJob');
   }
 
   /**
@@ -82,6 +93,17 @@ export class Scn extends PolicyStatement {
    */
   public toDescribeInstance() {
     return this.to('DescribeInstance');
+  }
+
+  /**
+   * Grants permission to view status and details of a BillOfMaterialsImportJob
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetBillOfMaterialsImportJob() {
+    return this.to('GetBillOfMaterialsImportJob');
   }
 
   /**
@@ -149,7 +171,6 @@ export class Scn extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
@@ -172,6 +193,7 @@ export class Scn extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssignAdminPermissionsToUser',
+      'CreateBillOfMaterialsImportJob',
       'CreateInstance',
       'CreateSSOApplication',
       'DeleteInstance',
@@ -180,7 +202,8 @@ export class Scn extends PolicyStatement {
       'UpdateInstance'
     ],
     Read: [
-      'DescribeInstance'
+      'DescribeInstance',
+      'GetBillOfMaterialsImportJob'
     ],
     List: [
       'ListAdminUsers',
@@ -205,5 +228,65 @@ export class Scn extends PolicyStatement {
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || Scn.defaultPartition }:scn:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+  }
+
+  /**
+   * Adds a resource of type bill-of-materials-import-job to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBillOfMaterialsImportJob(instanceId: string, jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || Scn.defaultPartition }:scn:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/bill-of-materials-import-job/${ jobId }`);
+  }
+
+  /**
+   * Filters access by using tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by using tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by using tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

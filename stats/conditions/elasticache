@@ -4,9 +4,12 @@ elasticache:AutomaticFailoverEnabled
 elasticache:CacheNodeType
 elasticache:CacheParameterGroupName
 elasticache:ClusterModeEnabled
+elasticache:DataStorageUnit
 elasticache:EngineType
 elasticache:EngineVersion
 elasticache:KmsKeyId
+elasticache:MaximumDataStorage
+elasticache:MaximumECPUPerSecond
 elasticache:MultiAZEnabled
 elasticache:NumNodeGroups
 elasticache:ReplicasPerNodeGroup

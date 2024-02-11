@@ -52,6 +52,17 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view/download tax documents/forms
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetTaxInfoReportingDocument() {
+    return this.to('GetTaxInfoReportingDocument');
+  }
+
+  /**
    * Grants permission to view tax inheritance status
    *
    * Access Level: Read
@@ -161,6 +172,7 @@ export class Tax extends PolicyStatement {
     ],
     Read: [
       'GetExemptions',
+      'GetTaxInfoReportingDocument',
       'GetTaxInheritance',
       'GetTaxInterview',
       'GetTaxRegistration',

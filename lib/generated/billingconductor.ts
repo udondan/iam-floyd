@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingconductor.html).
@@ -189,6 +189,17 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the billing group cost report for the specified billing group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_GetBillingGroupCostReport.html
+   */
+  public toGetBillingGroupCostReport() {
+    return this.to('GetBillingGroupCostReport');
+  }
+
+  /**
    * Grants permission to list the linked accounts of the payer account for the given billing period while also providing the billing group the linked accounts belong to
    *
    * Access Level: List
@@ -335,7 +346,6 @@ export class Billingconductor extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UntagResource.html
    */
@@ -408,13 +418,8 @@ export class Billingconductor extends PolicyStatement {
       'UpdatePricingPlan',
       'UpdatePricingRule'
     ],
-    List: [
-      'ListAccountAssociations',
-      'ListPricingPlansAssociatedWithPricingRule',
-      'ListPricingRulesAssociatedToPricingPlan',
-      'ListResourcesAssociatedToCustomLineItem'
-    ],
     Read: [
+      'GetBillingGroupCostReport',
       'ListBillingGroupCostReports',
       'ListBillingGroups',
       'ListCustomLineItemVersions',
@@ -422,6 +427,12 @@ export class Billingconductor extends PolicyStatement {
       'ListPricingPlans',
       'ListPricingRules',
       'ListTagsForResource'
+    ],
+    List: [
+      'ListAccountAssociations',
+      'ListPricingPlansAssociatedWithPricingRule',
+      'ListPricingRulesAssociatedToPricingPlan',
+      'ListResourcesAssociatedToCustomLineItem'
     ],
     Tagging: [
       'TagResource',
@@ -491,5 +502,66 @@ export class Billingconductor extends PolicyStatement {
    */
   public onCustomlineitem(customLineItemId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || Billingconductor.defaultPartition }:billingconductor::${ account || '*' }:customlineitem/${ customLineItemId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBillingGroup()
+   * - .toCreateCustomLineItem()
+   * - .toCreatePricingPlan()
+   * - .toCreatePricingRule()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - billinggroup
+   * - pricingplan
+   * - pricingrule
+   * - customlineitem
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBillingGroup()
+   * - .toCreateCustomLineItem()
+   * - .toCreatePricingPlan()
+   * - .toCreatePricingRule()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

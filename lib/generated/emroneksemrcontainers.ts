@@ -153,6 +153,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a session token used to connect to a managed endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_GetManagedEndpointSessionCredentials.html
+   */
+  public toGetManagedEndpointSessionCredentials() {
+    return this.to('GetManagedEndpointSessionCredentials');
+  }
+
+  /**
    * Grants permission to list job runs associated with a virtual cluster
    *
    * Access Level: List
@@ -262,6 +273,7 @@ export class EmrContainers extends PolicyStatement {
       'DeleteJobTemplate',
       'DeleteManagedEndpoint',
       'DeleteVirtualCluster',
+      'GetManagedEndpointSessionCredentials',
       'StartJobRun'
     ],
     Read: [
@@ -354,6 +366,65 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tag key-value pairs present in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateJobTemplate()
+   * - .toCreateManagedEndpoint()
+   * - .toCreateVirtualCluster()
+   * - .toStartJobRun()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - virtualCluster
+   * - jobRun
+   * - jobTemplate
+   * - managedEndpoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys present in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateJobTemplate()
+   * - .toCreateManagedEndpoint()
+   * - .toCreateVirtualCluster()
+   * - .toStartJobRun()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the execution role arn present in the request
    *
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/iam-execution-role.html
@@ -363,10 +434,10 @@ export class EmrContainers extends PolicyStatement {
    * - .toStartJobRun()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExecutionRoleArn`, value, operator || 'StringLike');
+    return this.if(`ExecutionRoleArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -378,9 +449,9 @@ export class EmrContainers extends PolicyStatement {
    * - .toStartJobRun()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifJobTemplateArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`JobTemplateArn`, value, operator || 'StringLike');
+    return this.if(`JobTemplateArn`, value, operator || 'ArnLike');
   }
 }

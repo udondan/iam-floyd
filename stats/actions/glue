@@ -9,6 +9,7 @@ glue:BatchGetCustomEntityTypes;Read
 glue:BatchGetDevEndpoints;Read
 glue:BatchGetJobs;Read
 glue:BatchGetPartition;Read
+glue:BatchGetTableOptimizer;Read
 glue:BatchGetTriggers;Read
 glue:BatchGetWorkflows;Read
 glue:BatchStopJobRun;Write
@@ -36,6 +37,7 @@ glue:CreateScript;Write
 glue:CreateSecurityConfiguration;Write
 glue:CreateSession;Write
 glue:CreateTable;Write
+glue:CreateTableOptimizer;Write
 glue:CreateTrigger;Write
 glue:CreateUserDefinedFunction;Write
 glue:CreateWorkflow;Write
@@ -60,6 +62,7 @@ glue:DeleteSchemaVersions;Write
 glue:DeleteSecurityConfiguration;Write
 glue:DeleteSession;Write
 glue:DeleteTable;Write
+glue:DeleteTableOptimizer;Write
 glue:DeleteTableVersion;Write
 glue:DeleteTrigger;Write
 glue:DeleteUserDefinedFunction;Write
@@ -73,6 +76,9 @@ glue:GetClassifier;Read
 glue:GetClassifiers;Read
 glue:GetColumnStatisticsForPartition;Read
 glue:GetColumnStatisticsForTable;Read
+glue:GetColumnStatisticsTaskRun;Read
+glue:GetColumnStatisticsTaskRuns;Read
+glue:GetCompletion;Read
 glue:GetConnection;Read
 glue:GetConnections;Read
 glue:GetCrawler;Read
@@ -117,6 +123,7 @@ glue:GetSecurityConfigurations;Read
 glue:GetSession;Read
 glue:GetStatement;Read
 glue:GetTable;Read
+glue:GetTableOptimizer;Read
 glue:GetTableVersion;Read
 glue:GetTableVersions;Read
 glue:GetTables;Read
@@ -133,6 +140,7 @@ glue:GlueNotebookAuthorize;Permissions management
 glue:GlueNotebookRefreshCredentials;Permissions management
 glue:ImportCatalogToGlue;Write
 glue:ListBlueprints;List
+glue:ListColumnStatisticsTaskRuns;Read
 glue:ListCrawlers;List
 glue:ListCrawls;List
 glue:ListCustomEntityTypes;List
@@ -148,9 +156,11 @@ glue:ListSchemaVersions;List
 glue:ListSchemas;List
 glue:ListSessions;List
 glue:ListStatements;List
+glue:ListTableOptimizerRuns;List
 glue:ListTriggers;List
 glue:ListWorkflows;List
 glue:NotifyEvent;Write
+glue:PassConnection;Write
 glue:PublishDataQuality;Write
 glue:PutDataCatalogEncryptionSettings;Write
 glue:PutResourcePolicy;Permissions management
@@ -164,7 +174,10 @@ glue:ResumeWorkflowRun;Write
 glue:RunDataPreviewStatement;Permissions management
 glue:RunStatement;Write
 glue:SearchTables;Read
+glue:SendFeedback;Write
 glue:StartBlueprintRun;Write
+glue:StartColumnStatisticsTaskRun;Write
+glue:StartCompletion;Write
 glue:StartCrawler;Write
 glue:StartCrawlerSchedule;Write
 glue:StartDataQualityRuleRecommendationRun;Write
@@ -177,6 +190,7 @@ glue:StartMLLabelingSetGenerationTaskRun;Write
 glue:StartNotebook;Permissions management
 glue:StartTrigger;Write
 glue:StartWorkflowRun;Write
+glue:StopColumnStatisticsTaskRun;Write
 glue:StopCrawler;Write
 glue:StopCrawlerSchedule;Write
 glue:StopSession;Write
@@ -184,6 +198,7 @@ glue:StopTrigger;Write
 glue:StopWorkflowRun;Write
 glue:TagResource;Tagging
 glue:TerminateNotebook;Permissions management
+glue:TestConnection;Permissions management
 glue:UntagResource;Tagging
 glue:UpdateBlueprint;Write
 glue:UpdateClassifier;Write
@@ -203,6 +218,7 @@ glue:UpdateRegistry;Write
 glue:UpdateSchema;Write
 glue:UpdateSourceControlFromJob;Write
 glue:UpdateTable;Write
+glue:UpdateTableOptimizer;Write
 glue:UpdateTrigger;Write
 glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write

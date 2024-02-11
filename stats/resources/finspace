@@ -1,2 +1,9 @@
 finspace:environment
+finspace:kxCluster
+finspace:kxDatabase
+finspace:kxDataview
+finspace:kxEnvironment
+finspace:kxScalingGroup
+finspace:kxUser
+finspace:kxVolume
 finspace:user

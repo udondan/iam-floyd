@@ -6,10 +6,12 @@ ecr:BatchImportUpstreamImage;Write
 ecr:CompleteLayerUpload;Write
 ecr:CreatePullThroughCacheRule;Write
 ecr:CreateRepository;Write
+ecr:CreateRepositoryCreationTemplate;Write
 ecr:DeleteLifecyclePolicy;Write
 ecr:DeletePullThroughCacheRule;Write
 ecr:DeleteRegistryPolicy;Permissions management
 ecr:DeleteRepository;Write
+ecr:DeleteRepositoryCreationTemplate;Write
 ecr:DeleteRepositoryPolicy;Permissions management
 ecr:DescribeImageReplicationStatus;Read
 ecr:DescribeImageScanFindings;Read
@@ -17,6 +19,7 @@ ecr:DescribeImages;List
 ecr:DescribePullThroughCacheRules;List
 ecr:DescribeRegistry;Read
 ecr:DescribeRepositories;Read
+ecr:DescribeRepositoryCreationTemplate;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
 ecr:GetLifecyclePolicy;Read
@@ -40,4 +43,6 @@ ecr:StartImageScan;Write
 ecr:StartLifecyclePolicyPreview;Write
 ecr:TagResource;Tagging
 ecr:UntagResource;Tagging
+ecr:UpdatePullThroughCacheRule;Write
 ecr:UploadLayerPart;Write
+ecr:ValidatePullThroughCacheRule;Read

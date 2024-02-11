@@ -20,6 +20,7 @@ iot:CreateAuditSuppression;Write
 iot:CreateAuthorizer;Write
 iot:CreateBillingGroup;Write
 iot:CreateCertificateFromCsr;Write
+iot:CreateCertificateProvider;Write
 iot:CreateCustomMetric;Write
 iot:CreateDimension;Write
 iot:CreateDomainConfiguration;Write
@@ -30,6 +31,8 @@ iot:CreateJobTemplate;Write
 iot:CreateKeysAndCertificate;Write
 iot:CreateMitigationAction;Write
 iot:CreateOTAUpdate;Write
+iot:CreatePackage;Write
+iot:CreatePackageVersion;Write
 iot:CreatePolicy;Write
 iot:CreatePolicyVersion;Write
 iot:CreateProvisioningClaim;Write
@@ -50,6 +53,7 @@ iot:DeleteAuthorizer;Write
 iot:DeleteBillingGroup;Write
 iot:DeleteCACertificate;Write
 iot:DeleteCertificate;Write
+iot:DeleteCertificateProvider;Write
 iot:DeleteCustomMetric;Write
 iot:DeleteDimension;Write
 iot:DeleteDomainConfiguration;Write
@@ -60,6 +64,8 @@ iot:DeleteJobExecution;Write
 iot:DeleteJobTemplate;Write
 iot:DeleteMitigationAction;Write
 iot:DeleteOTAUpdate;Write
+iot:DeletePackage;Write
+iot:DeletePackageVersion;Write
 iot:DeletePolicy;Write
 iot:DeletePolicyVersion;Write
 iot:DeleteProvisioningTemplate;Write
@@ -86,6 +92,7 @@ iot:DescribeAuthorizer;Read
 iot:DescribeBillingGroup;Read
 iot:DescribeCACertificate;Read
 iot:DescribeCertificate;Read
+iot:DescribeCertificateProvider;Read
 iot:DescribeCustomMetric;Read
 iot:DescribeDefaultAuthorizer;Read
 iot:DescribeDetectMitigationActionsTask;Read
@@ -125,6 +132,9 @@ iot:GetIndexingConfiguration;Read
 iot:GetJobDocument;Read
 iot:GetLoggingOptions;Read
 iot:GetOTAUpdate;Read
+iot:GetPackage;Read
+iot:GetPackageConfiguration;Read
+iot:GetPackageVersion;Read
 iot:GetPercentiles;Read
 iot:GetPolicy;Read
 iot:GetPolicyVersion;Read
@@ -145,6 +155,7 @@ iot:ListAuditTasks;List
 iot:ListAuthorizers;List
 iot:ListBillingGroups;List
 iot:ListCACertificates;List
+iot:ListCertificateProviders;List
 iot:ListCertificates;List
 iot:ListCertificatesByCA;List
 iot:ListCustomMetrics;List
@@ -164,6 +175,8 @@ iot:ListMitigationActions;List
 iot:ListNamedShadowsForThing;List
 iot:ListOTAUpdates;List
 iot:ListOutgoingCertificates;List
+iot:ListPackageVersions;List
+iot:ListPackages;List
 iot:ListPolicies;List
 iot:ListPolicyPrincipals;List
 iot:ListPolicyVersions;List
@@ -232,6 +245,7 @@ iot:UpdateAuthorizer;Write
 iot:UpdateBillingGroup;Write
 iot:UpdateCACertificate;Write
 iot:UpdateCertificate;Write
+iot:UpdateCertificateProvider;Write
 iot:UpdateCustomMetric;Write
 iot:UpdateDimension;Write
 iot:UpdateDomainConfiguration;Write
@@ -241,6 +255,9 @@ iot:UpdateFleetMetric;Write
 iot:UpdateIndexingConfiguration;Write
 iot:UpdateJob;Write
 iot:UpdateMitigationAction;Write
+iot:UpdatePackage;Write
+iot:UpdatePackageConfiguration;Write
+iot:UpdatePackageVersion;Write
 iot:UpdateProvisioningTemplate;Write
 iot:UpdateRoleAlias;Write
 iot:UpdateScheduledAudit;Write

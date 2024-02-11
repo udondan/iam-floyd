@@ -38,10 +38,12 @@ ds:DescribeUpdateDirectory;Read
 ds:DisableClientAuthentication;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
+ds:DisableRoleAccess;Write
 ds:DisableSso;Write
 ds:EnableClientAuthentication;Write
 ds:EnableLDAPS;Write
 ds:EnableRadius;Write
+ds:EnableRoleAccess;Write
 ds:EnableSso;Write
 ds:GetAuthorizedApplicationDetails;Read
 ds:GetDirectoryLimits;Read
@@ -64,7 +66,9 @@ ds:ShareDirectory;Write
 ds:StartSchemaExtension;Write
 ds:UnauthorizeApplication;Write
 ds:UnshareDirectory;Write
+ds:UpdateAuthorizedApplication;Write
 ds:UpdateConditionalForwarder;Write
+ds:UpdateDirectory;Write
 ds:UpdateDirectorySetup;Write
 ds:UpdateNumberOfDomainControllers;Write
 ds:UpdateRadius;Write

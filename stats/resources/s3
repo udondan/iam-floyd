@@ -1,3 +1,6 @@
+s3:accessgrant
+s3:accessgrantsinstance
+s3:accessgrantslocation
 s3:accesspoint
 s3:bucket
 s3:job
@@ -6,3 +9,4 @@ s3:multiregionaccesspointrequestarn
 s3:object
 s3:objectlambdaaccesspoint
 s3:storagelensconfiguration
+s3:storagelensgroup

@@ -13,6 +13,7 @@ translate:ListTextTranslationJobs;List
 translate:StartTextTranslationJob;Write
 translate:StopTextTranslationJob;Write
 translate:TagResource;Tagging
+translate:TranslateDocument;Read
 translate:TranslateText;Read
 translate:UntagResource;Tagging
 translate:UpdateParallelData;Write
