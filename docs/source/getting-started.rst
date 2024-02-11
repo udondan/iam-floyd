@@ -19,14 +19,6 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
       # for use with CDK use the cdk-iam-floyd package
       npm install cdk-iam-floyd
 
-   .. code-tab:: bash Python
-
-      # for use without AWS CDK use the iam-floyd package
-      pip install iam-floyd
-
-      # for use with CDK use the cdk-iam-floyd package
-      pip install cdk-iam-floyd
-
 .. tabs::
 
    .. code-tab:: js
@@ -44,14 +36,6 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
       // for use with CDK use the cdk-iam-floyd package
       import * as statement from 'cdk-iam-floyd';
-
-   .. code-tab:: py
-
-      # for use without AWS CDK use the iam-floyd package
-      import iam_floyd as statement
-
-      # for use with CDK use the cdk-iam-floyd package
-      import cdk_iam_floyd as statement
 
 Both packages contain a statement provider for each AWS service, e.g. ``Ec2``. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
@@ -84,14 +68,6 @@ You can work with `access levels <access-levels_>`_. For every access level ther
       - ``allWriteActions()``
       - ``allPermissionManagementActions()``
       - ``allTaggingActions()``
-
-   .. group-tab:: Python
-
-      - ``all_list_actions()``
-      - ``all_read_actions()``
-      - ``all_write_actions()``
-      - ``all_permission_management_actions()``
-      - ``all_tagging_actions()``
 
 .. example:: access-levels
 

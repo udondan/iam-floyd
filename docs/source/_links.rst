@@ -6,20 +6,11 @@
 .. _iam-floyd-npm: https://www.npmjs.com/package/iam-floyd
 .. |iam-floyd-npm| image:: https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet
 
-.. _iam-floyd-pypi: https://pypi.org/project/iam-floyd/
-.. |iam-floyd-pypi| image:: https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet
-
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
 .. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange
 
-.. _cdk-iam-floyd-pypi: https://pypi.org/project/cdk-iam-floyd/
-.. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange
-
 .. _cdk-iam-floyd-npm-v1: https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0
 .. |cdk-iam-floyd-npm-v1| image:: https://img.shields.io/badge/npm-0.286.0-yellow
-
-.. _cdk-iam-floyd-pypi-v1: https://pypi.org/project/cdk-iam-floyd/0.286.0/
-.. |cdk-iam-floyd-pypi-v1| image:: https://img.shields.io/badge/pypi-0.286.0-yellow
 
 ..
    External documentation links

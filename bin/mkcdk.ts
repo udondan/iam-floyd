@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import fs = require('fs');
-import path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 import { Project } from 'ts-morph';
 
 import { formatCode } from '../lib/generator/format';
@@ -121,18 +121,6 @@ function preparePackageJson() {
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0',
     constructs: '^10.0.0',
-  };
-
-  var excludes = jsonData.jsii.excludeTypescript as string[];
-  jsonData.jsii.excludeTypescript = excludes.filter(function (el) {
-    return el.indexOf('CDK') < 0;
-  });
-
-  jsonData.jsii.targets = {
-    python: {
-      distName: 'cdk-iam-floyd',
-      module: 'cdk_iam_floyd',
-    },
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));

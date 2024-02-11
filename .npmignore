@@ -8,11 +8,8 @@ tsconfig.tsbuildinfo
 !*.js
 !*.d.ts
 
-# Exclude jsii outdir
+# Exclude outdir
 dist
-
-# Include .jsii
-!.jsii
 
 bin/*
 lib/generator/*
