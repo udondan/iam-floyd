@@ -163,7 +163,7 @@ jobs:
   release:
     name: Release
     if: |
-      github.event_name == 'pull_request' &&
+      github.event_name == 'push' &&
       github.head_ref == 'main'
     needs:
       - test-iam-floyd
@@ -211,7 +211,7 @@ jobs:
   publish-iam-floyd:
     name: Publish iam-floyd
     if: |
-      github.event_name == 'pull_request' &&
+      github.event_name == 'push' &&
       github.head_ref == 'main'
     needs: release
     runs-on: ubuntu-latest
@@ -251,7 +251,7 @@ jobs:
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
     if: |
-      github.event_name == 'pull_request' &&
+      github.event_name == 'push' &&
       github.head_ref == 'main'
     needs: release
     runs-on: ubuntu-latest
