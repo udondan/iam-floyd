@@ -10,6 +10,8 @@
         "sagemaker:StartMonitoringSchedule",
         "sagemaker:StopMonitoringSchedule",
         "sagemaker:ListMonitoringAlertHistory",
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
         "sagemaker:CreateModelCard",
         "sagemaker:DescribeModelCard",
         "sagemaker:UpdateModelCard",

@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DynamoDBActionsNeededForSteadyStateReplication",
       "Effect": "Allow",
       "Action": [
         "dynamodb:GetItem",
@@ -17,14 +18,17 @@
         "dynamodb:DescribeTimeToLive",
         "dynamodb:UpdateTimeToLive",
         "dynamodb:DescribeLimits",
+        "dynamodb:GetResourcePolicy",
         "application-autoscaling:RegisterScalableTarget",
         "application-autoscaling:DescribeScalableTargets",
         "application-autoscaling:PutScalingPolicy",
-        "application-autoscaling:DescribeScalingPolicies"
+        "application-autoscaling:DescribeScalingPolicies",
+        "account:ListRegions"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "DynamoDBReplicationServiceRolePolicy",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"

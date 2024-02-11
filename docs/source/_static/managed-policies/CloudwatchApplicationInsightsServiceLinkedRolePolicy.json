@@ -55,7 +55,8 @@
       "Effect": "Allow",
       "Action": [
         "cloudFormation:DescribeStacks",
-        "cloudFormation:ListStackResources"
+        "cloudFormation:ListStackResources",
+        "cloudFormation:ListStacks"
       ],
       "Resource": [
         "*"

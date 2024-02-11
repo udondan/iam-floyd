@@ -4,13 +4,14 @@
     {
       "Effect": "Allow",
       "Action": [
-        "cloud9:ValidateEnvironmentName",
         "cloud9:UpdateUserSettings",
         "cloud9:GetUserSettings",
         "iam:GetUser",
         "iam:ListUsers",
         "ec2:DescribeVpcs",
-        "ec2:DescribeSubnets"
+        "ec2:DescribeSubnets",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeRouteTables"
       ],
       "Resource": "*"
     },
@@ -68,7 +69,10 @@
     },
     {
       "Effect": "Allow",
-      "Action": "ssm:StartSession",
+      "Action": [
+        "ssm:StartSession",
+        "ssm:GetConnectionStatus"
+      ],
       "Resource": "arn:aws:ec2:*:*:instance/*",
       "Condition": {
         "StringLike": {

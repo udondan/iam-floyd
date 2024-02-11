@@ -11,7 +11,8 @@
         "tag:UntagResources",
         "resource-groups:*",
         "cloudformation:DescribeStacks",
-        "cloudformation:ListStackResources"
+        "cloudformation:ListStackResources",
+        "cloudformation:ListStacks"
       ],
       "Resource": "*"
     }

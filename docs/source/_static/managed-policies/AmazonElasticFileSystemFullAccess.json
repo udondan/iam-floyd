@@ -42,6 +42,7 @@
         "elasticfilesystem:PutLifecycleConfiguration",
         "elasticfilesystem:PutFileSystemPolicy",
         "elasticfilesystem:UpdateFileSystem",
+        "elasticfilesystem:UpdateFileSystemProtection",
         "elasticfilesystem:TagResource",
         "elasticfilesystem:UntagResource",
         "elasticfilesystem:ListTagsForResource",
@@ -50,11 +51,13 @@
         "kms:DescribeKey",
         "kms:ListAliases"
       ],
+      "Sid": "ElasticFileSystemFullAccess",
       "Effect": "Allow",
       "Resource": "*"
     },
     {
       "Action": "iam:CreateServiceLinkedRole",
+      "Sid": "CreateServiceLinkedRoleForEFS",
       "Effect": "Allow",
       "Resource": "*",
       "Condition": {

@@ -98,6 +98,21 @@
       }
     },
     {
+      "Sid": "ecc1scoping3",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignPrivateIpAddresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/AWSRDSCustom": [
+            "custom-oracle-rac"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "eccRunInstances1",
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
@@ -143,7 +158,8 @@
       "Condition": {
         "StringLike": {
           "aws:ResourceTag/AWSRDSCustom": [
-            "custom-oracle-rac"
+            "custom-oracle-rac",
+            "custom-oracle"
           ]
         }
       }
@@ -204,6 +220,41 @@
       }
     },
     {
+      "Sid": "eccNetworkInterface1",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/AWSRDSCustom": [
+            "custom-oracle-rac"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "eccNetworkInterface2",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "eccNetworkInterface3",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/AWSRDSCustom": [
+            "custom-oracle-rac"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "eccCreateTag1",
       "Effect": "Allow",
       "Action": [
@@ -237,6 +288,7 @@
           "ec2:CreateAction": [
             "CreateKeyPair",
             "RunInstances",
+            "CreateNetworkInterface",
             "CreateVolume",
             "CreateSnapshots",
             "CopySnapshot",
@@ -534,6 +586,49 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "eb3",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/do-not-delete-rds-custom-*",
+      "Condition": {
+        "StringLike": {
+          "events:ManagedBy": [
+            "custom.rds-preview.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "eb4",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutTargets",
+        "events:EnableRule",
+        "events:DeleteRule",
+        "events:RemoveTargets",
+        "events:DisableRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/do-not-delete-rds-custom-*",
+      "Condition": {
+        "StringLike": {
+          "events:ManagedBy": [
+            "custom.rds-preview.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "eb5",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/do-not-delete-rds-custom-*"
     },
     {
       "Sid": "secretmanager1",

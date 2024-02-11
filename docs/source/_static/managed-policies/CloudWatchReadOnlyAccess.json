@@ -2,10 +2,14 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CloudWatchReadOnlyAccessPermissions",
       "Effect": "Allow",
       "Action": [
+        "application-autoscaling:DescribeScalingPolicies",
         "autoscaling:Describe*",
+        "cloudwatch:BatchGet*",
         "cloudwatch:Describe*",
+        "cloudwatch:GenerateQuery",
         "cloudwatch:Get*",
         "cloudwatch:List*",
         "logs:Get*",
@@ -15,13 +19,24 @@
         "logs:Describe*",
         "logs:TestMetricFilter",
         "logs:FilterLogEvents",
+        "logs:StartLiveTail",
+        "logs:StopLiveTail",
         "oam:ListSinks",
         "sns:Get*",
-        "sns:List*"
+        "sns:List*",
+        "rum:BatchGet*",
+        "rum:Get*",
+        "rum:List*",
+        "synthetics:Describe*",
+        "synthetics:Get*",
+        "synthetics:List*",
+        "xray:BatchGet*",
+        "xray:Get*"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "OAMReadPermissions",
       "Effect": "Allow",
       "Action": [
         "oam:ListAttachedLinks"

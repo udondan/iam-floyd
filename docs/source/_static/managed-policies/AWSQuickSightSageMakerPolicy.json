@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "SageMakerTransformJobAccess",
       "Effect": "Allow",
       "Action": [
         "sagemaker:DescribeTransformJob",
@@ -11,14 +12,39 @@
       "Resource": "arn:aws:sagemaker:*:*:transform-job/quicksight-auto-generated-*"
     },
     {
+      "Sid": "SageMakerModelReadAccess",
       "Effect": "Allow",
-      "Action": "sagemaker:ListModels",
+      "Action": [
+        "sagemaker:ListModels",
+        "sagemaker:DescribeModel"
+      ],
       "Resource": "*"
     },
     {
+      "Sid": "S3ObjectReadAccess",
       "Effect": "Allow",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::quicksight-ml.*"
+      "Resource": [
+        "arn:aws:s3:::quicksight-ml.*",
+        "arn:aws:s3:::sagemaker*"
+      ]
+    },
+    {
+      "Sid": "S3ObjectUpdateAccess",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::sagemaker*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "S3BucketReadAccess",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::sagemaker*"
     }
   ]
 }

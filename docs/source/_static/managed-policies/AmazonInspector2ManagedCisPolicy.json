@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PermissionsForCISScans",
+      "Effect": "Allow",
+      "Action": [
+        "inspector2:StartCisSession",
+        "inspector2:StopCisSession",
+        "inspector2:SendCisSessionTelemetry",
+        "inspector2:SendCisSessionHealth"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

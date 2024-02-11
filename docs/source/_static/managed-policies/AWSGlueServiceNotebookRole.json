@@ -46,7 +46,8 @@
         "s3:GetBucketLocation",
         "s3:ListBucket",
         "s3:ListAllMyBuckets",
-        "s3:GetBucketAcl"
+        "s3:GetBucketAcl",
+        "codewhisperer:GenerateRecommendations"
       ],
       "Resource": [
         "*"

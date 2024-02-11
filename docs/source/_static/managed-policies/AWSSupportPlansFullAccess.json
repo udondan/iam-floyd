@@ -6,7 +6,8 @@
       "Action": [
         "supportplans:GetSupportPlan",
         "supportplans:GetSupportPlanUpdateStatus",
-        "supportplans:StartSupportPlanUpdate"
+        "supportplans:StartSupportPlanUpdate",
+        "supportplans:CreateSupportPlanSchedule"
       ],
       "Resource": "*"
     }

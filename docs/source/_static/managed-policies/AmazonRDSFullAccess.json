@@ -17,6 +17,7 @@
         "cloudwatch:PutMetricAlarm",
         "cloudwatch:DeleteAlarms",
         "cloudwatch:ListMetrics",
+        "cloudwatch:GetMetricData",
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeCoipPools",
@@ -43,7 +44,10 @@
     {
       "Effect": "Allow",
       "Action": "pi:*",
-      "Resource": "arn:aws:pi:*:*:metrics/rds/*"
+      "Resource": [
+        "arn:aws:pi:*:*:metrics/rds/*",
+        "arn:aws:pi:*:*:perf-reports/rds/*"
+      ]
     },
     {
       "Effect": "Allow",

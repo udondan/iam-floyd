@@ -1,0 +1,90 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "redshiftDataScopeDownPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:BatchExecuteStatement",
+        "redshift-data:DescribeTable",
+        "redshift-data:ExecuteStatement",
+        "redshift-data:ListTables",
+        "redshift-data:ListSchemas",
+        "redshift-data:ListDatabases"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:workgroup/*",
+        "arn:aws:redshift:*:*:cluster:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "listSecretsPermission",
+      "Effect": "Allow",
+      "Action": "secretsmanager:ListSecrets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "getWorkgroupPermission",
+      "Effect": "Allow",
+      "Action": "redshift-serverless:GetWorkgroup",
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:workgroup/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "getNamespacePermission",
+      "Effect": "Allow",
+      "Action": "redshift-serverless:GetNamespace",
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "redshiftDataPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:DescribeStatement",
+        "redshift-data:GetStatementResult",
+        "redshift:DescribeClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "dataSharesPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift:AuthorizeDataShare",
+        "redshift:DescribeDataShares"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:datashare:*/datazone*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "associateDataShareConsumerPermission",
+      "Effect": "Allow",
+      "Action": "redshift:AssociateDataShareConsumer",
+      "Resource": "arn:aws:redshift:*:*:datashare:*/datazone*"
+    }
+  ]
+}

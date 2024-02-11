@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "SecurityHubServiceRolePermissions",
       "Effect": "Allow",
       "Action": [
         "cloudtrail:DescribeTrails",
@@ -18,15 +19,42 @@
         "config:BatchGetResourceConfig",
         "config:SelectResourceConfig",
         "iam:GenerateCredentialReport",
-        "iam:GetCredentialReport",
         "organizations:ListAccounts",
+        "config:PutEvaluations",
+        "tag:GetResources",
+        "iam:GetCredentialReport",
         "organizations:DescribeAccount",
         "organizations:DescribeOrganization",
-        "config:PutEvaluations"
+        "organizations:ListChildren",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "securityhub:BatchDisableStandards",
+        "securityhub:BatchEnableStandards",
+        "securityhub:BatchUpdateStandardsControlAssociations",
+        "securityhub:BatchGetSecurityControls",
+        "securityhub:BatchGetStandardsControlAssociations",
+        "securityhub:CreateMembers",
+        "securityhub:DeleteMembers",
+        "securityhub:DescribeHub",
+        "securityhub:DescribeOrganizationConfiguration",
+        "securityhub:DescribeStandards",
+        "securityhub:DescribeStandardsControls",
+        "securityhub:DisassociateFromAdministratorAccount",
+        "securityhub:DisassociateMembers",
+        "securityhub:DisableSecurityHub",
+        "securityhub:EnableSecurityHub",
+        "securityhub:GetEnabledStandards",
+        "securityhub:ListStandardsControlAssociations",
+        "securityhub:ListSecurityControlDefinitions",
+        "securityhub:UpdateOrganizationConfiguration",
+        "securityhub:UpdateSecurityControl",
+        "securityhub:UpdateSecurityHubConfiguration",
+        "securityhub:UpdateStandardsControl"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "SecurityHubServiceRoleConfigPermissions",
       "Effect": "Allow",
       "Action": [
         "config:PutConfigRule",
@@ -34,6 +62,21 @@
         "config:GetComplianceDetailsByConfigRule"
       ],
       "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/*securityhub*"
+    },
+    {
+      "Sid": "SecurityHubServiceRoleOrganizationsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IVSReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ivs:BatchGetChannel",
+        "ivs:GetChannel",
+        "ivs:GetParticipant",
+        "ivs:GetPlaybackKeyPair",
+        "ivs:GetRecordingConfiguration",
+        "ivs:GetStage",
+        "ivs:GetStageSession",
+        "ivs:GetStream",
+        "ivs:GetStreamSession",
+        "ivs:ListChannels",
+        "ivs:ListParticipants",
+        "ivs:ListParticipantEvents",
+        "ivs:ListPlaybackKeyPairs",
+        "ivs:ListRecordingConfigurations",
+        "ivs:ListStages",
+        "ivs:ListStageSessions",
+        "ivs:ListStreamKeys",
+        "ivs:ListStreams",
+        "ivs:ListStreamSessions",
+        "ivs:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

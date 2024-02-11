@@ -14,7 +14,11 @@
       "Effect": "Allow",
       "Action": [
         "sso:ListProfileAssociations",
-        "sso:ListProfiles"
+        "sso:ListProfiles",
+        "sso:ListDirectoryAssociations",
+        "sso:DescribeRegisteredRegions",
+        "sso:GetProfile",
+        "sso:GetManagedApplicationInstance"
       ],
       "Resource": [
         "*"
@@ -34,7 +38,8 @@
       "Action": [
         "codeguru-security:CreateScan",
         "codeguru-security:GetScan",
-        "codeguru-security:ListFindings"
+        "codeguru-security:ListFindings",
+        "codeguru-security:GetFindings"
       ],
       "Resource": [
         "arn:aws:codeguru-security:*:*:scans/CodeWhisperer-*"

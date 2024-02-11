@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "FSxReadOnlyPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:DescribeAlarms",
@@ -9,6 +10,7 @@
         "ds:DescribeDirectories",
         "ec2:DescribeNetworkInterfaceAttribute",
         "ec2:DescribeSecurityGroups",
+        "ec2:GetSecurityGroupsForVpc",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
         "firehose:ListDeliveryStreams",

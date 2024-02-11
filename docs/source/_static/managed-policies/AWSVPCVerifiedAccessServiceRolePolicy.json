@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "VerifiedAccessRoleModifyTaggedNetworkInterfaceActions",
       "Effect": "Allow",
       "Action": [
         "ec2:ModifyNetworkInterfaceAttribute",
@@ -15,6 +16,7 @@
       }
     },
     {
+      "Sid": "VerifiedAccessRoleModifyNetworkInterfaceActions",
       "Effect": "Allow",
       "Action": [
         "ec2:ModifyNetworkInterfaceAttribute"
@@ -22,13 +24,18 @@
       "Resource": "arn:aws:ec2:*:*:security-group/*"
     },
     {
+      "Sid": "VerifiedAccessRoleNetworkInterfaceActions",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface"
       ],
-      "Resource": "arn:aws:ec2:*:*:subnet/*"
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
     },
     {
+      "Sid": "VerifiedAccessRoleTaggedNetworkInterfaceActions",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface"
@@ -41,6 +48,7 @@
       }
     },
     {
+      "Sid": "VerifiedAccessRoleTaggingActions",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"

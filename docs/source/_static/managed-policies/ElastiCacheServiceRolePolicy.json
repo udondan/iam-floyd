@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ElastiCacheManagementActions",
       "Effect": "Allow",
       "Action": [
         "ec2:AuthorizeSecurityGroupIngress",
@@ -14,6 +15,7 @@
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
+        "ec2:DescribeVpcEndpoints",
         "ec2:ModifyNetworkInterfaceAttribute",
         "ec2:RevokeSecurityGroupIngress",
         "cloudwatch:PutMetricData",
@@ -23,6 +25,56 @@
         "outposts:ListSites"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CreateDeleteVPCEndpoints",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:DeleteVpcEndpoints"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:VpceServiceName": "com.amazonaws.elasticache.serverless.*"
+        }
+      }
+    },
+    {
+      "Sid": "TagVPCEndpointsOnCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint",
+          "aws:RequestTag/AmazonElastiCacheManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ModifyVpcEndpoints",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AmazonElastiCacheManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccessToElastiCacheTaggedVpcEndpoints",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "NotResource": "arn:aws:ec2:*:*:vpc-endpoint/*"
     }
   ]
 }

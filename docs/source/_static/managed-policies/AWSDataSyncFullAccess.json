@@ -11,8 +11,11 @@
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
+        "ec2:DescribeVpcEndpoints",
         "ec2:ModifyNetworkInterfaceAttribute",
         "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "elasticfilesystem:DescribeAccessPoints",
         "elasticfilesystem:DescribeFileSystems",
         "elasticfilesystem:DescribeMountTargets",
         "iam:GetRole",
@@ -20,8 +23,12 @@
         "logs:CreateLogGroup",
         "logs:DescribeLogGroups",
         "logs:DescribeResourcePolicies",
+        "outposts:ListOutposts",
+        "s3:GetBucketLocation",
         "s3:ListAllMyBuckets",
-        "s3:ListBucket"
+        "s3:ListBucket",
+        "s3-outposts:ListAccessPoints",
+        "s3-outposts:ListRegionalBuckets"
       ],
       "Resource": "*"
     },

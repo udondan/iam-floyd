@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DRSFailbackInstallationPolicy1",
       "Effect": "Allow",
       "Action": [
         "drs:SendClientLogsForDrs",
@@ -12,6 +13,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DRSFailbackInstallationPolicy2",
       "Effect": "Allow",
       "Action": [
         "drs:TagResource",

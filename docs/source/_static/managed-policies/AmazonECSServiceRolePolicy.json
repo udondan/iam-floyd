@@ -46,7 +46,11 @@
         "autoscaling:DeletePolicy",
         "autoscaling:PutScalingPolicy",
         "autoscaling:SetInstanceProtection",
-        "autoscaling:UpdateAutoScalingGroup"
+        "autoscaling:UpdateAutoScalingGroup",
+        "autoscaling:PutLifecycleHook",
+        "autoscaling:DeleteLifecycleHook",
+        "autoscaling:CompleteLifecycleAction",
+        "autoscaling:RecordLifecycleActionHeartbeat"
       ],
       "Resource": "*",
       "Condition": {
@@ -61,9 +65,33 @@
       "Action": [
         "autoscaling-plans:CreateScalingPlan",
         "autoscaling-plans:DeleteScalingPlan",
-        "autoscaling-plans:DescribeScalingPlans"
+        "autoscaling-plans:DescribeScalingPlans",
+        "autoscaling-plans:DescribeScalingPlanResources"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "EventBridge",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/ecs-managed-*"
+    },
+    {
+      "Sid": "EventBridgeRuleManagement",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "ecs.amazonaws.com"
+        }
+      }
     },
     {
       "Sid": "CWAlarmManagement",
@@ -166,7 +194,8 @@
       "Sid": "CloudMapResourceDiscovery",
       "Effect": "Allow",
       "Action": [
-        "servicediscovery:DiscoverInstances"
+        "servicediscovery:DiscoverInstances",
+        "servicediscovery:DiscoverInstancesRevision"
       ],
       "Resource": "*"
     }

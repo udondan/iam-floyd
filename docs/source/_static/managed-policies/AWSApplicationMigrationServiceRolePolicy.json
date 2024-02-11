@@ -48,6 +48,23 @@
     {
       "Effect": "Allow",
       "Action": [
+        "organizations:DescribeAccount"
+      ],
+      "Resource": "arn:aws:organizations::*:account/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "ec2:RegisterImage",
         "ec2:DeregisterImage"
       ],

@@ -2,12 +2,16 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "cfReadOnly",
       "Effect": "Allow",
       "Action": [
         "acm:ListCertificates",
-        "cloudfront:DescribeFunction",
+        "cloudfront:Describe*",
         "cloudfront:Get*",
         "cloudfront:List*",
+        "cloudfront-keyvaluestore:Describe*",
+        "cloudfront-keyvaluestore:Get*",
+        "cloudfront-keyvaluestore:List*",
         "iam:ListServerCertificates",
         "route53:List*",
         "waf:ListWebACLs",

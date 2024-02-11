@@ -143,7 +143,10 @@
         "elasticloadbalancing:AddTags",
         "elasticloadbalancing:CreateListener"
       ],
-      "Resource": "arn:*:elasticloadbalancing:*:*:loadbalancer/net/refactor-spaces-nlb-*",
+      "Resource": [
+        "arn:*:elasticloadbalancing:*:*:loadbalancer/net/refactor-spaces-nlb-*",
+        "arn:*:elasticloadbalancing:*:*:listener/net/refactor-spaces-nlb-*"
+      ],
       "Condition": {
         "Null": {
           "aws:RequestTag/refactor-spaces:route-id": "false"

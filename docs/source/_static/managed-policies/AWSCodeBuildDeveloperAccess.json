@@ -1,6 +1,7 @@
 {
   "Statement": [
     {
+      "Sid": "AWSServicesAccess",
       "Action": [
         "codebuild:StartBuild",
         "codebuild:StopBuild",
@@ -29,6 +30,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "SSMParameterWriteAccess",
       "Effect": "Allow",
       "Action": [
         "ssm:PutParameter"
@@ -36,6 +38,7 @@
       "Resource": "arn:aws:ssm:*:*:parameter/CodeBuild/*"
     },
     {
+      "Sid": "SSMStartSessionAccess",
       "Effect": "Allow",
       "Action": [
         "ssm:StartSession"
@@ -92,7 +95,8 @@
       "Sid": "CodeStarNotificationsChatbotAccess",
       "Effect": "Allow",
       "Action": [
-        "chatbot:DescribeSlackChannelConfigurations"
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:ListMicrosoftTeamsChannelConfigurations"
       ],
       "Resource": "*"
     }

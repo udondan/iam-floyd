@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "EC2PolicyStatement",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface",
@@ -16,6 +17,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudWatchPolicyStatement",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData"
@@ -25,7 +27,10 @@
       ],
       "Condition": {
         "StringEquals": {
-          "cloudwatch:namespace": "AWS/EMRServerless"
+          "cloudwatch:namespace": [
+            "AWS/EMRServerless",
+            "AWS/Usage"
+          ]
         }
       }
     }

@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "support:DescribeAttachment",
+        "support:DescribeCaseAttributes",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeIssueTypes",
+        "support:DescribeServices",
+        "support:DescribeSeverityLevels",
+        "support:DescribeSupportLevel",
+        "support:SearchForCases",
+        "support:AddAttachmentsToSet",
+        "support:AddCommunicationToCase",
+        "support:CreateCase",
+        "support:InitiateCallForCase",
+        "support:InitiateChatForCase",
+        "support:PutCaseAttributes",
+        "support:RateCaseCommunication",
+        "support:ResolveCase"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

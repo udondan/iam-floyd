@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "GuardDutyGetDescribeListPolicy",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeInstances",
@@ -12,6 +13,7 @@
         "ec2:DescribeTransitGatewayAttachments",
         "organizations:ListAccounts",
         "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
         "s3:GetBucketPublicAccessBlock",
         "s3:GetEncryptionConfiguration",
         "s3:GetBucketTagging",
@@ -25,11 +27,14 @@
         "eks:ListClusters",
         "eks:DescribeCluster",
         "ec2:DescribeVpcEndpointServices",
-        "ec2:DescribeSecurityGroups"
+        "ec2:DescribeSecurityGroups",
+        "ecs:ListClusters",
+        "ecs:DescribeClusters"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "GuardDutyCreateSLRPolicy",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -40,6 +45,7 @@
       }
     },
     {
+      "Sid": "GuardDutyCreateVpcEndpointPolicy",
       "Effect": "Allow",
       "Action": "ec2:CreateVpcEndpoint",
       "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
@@ -56,6 +62,7 @@
       }
     },
     {
+      "Sid": "GuardDutyModifyDeleteVpcEndpointPolicy",
       "Effect": "Allow",
       "Action": [
         "ec2:ModifyVpcEndpoint",
@@ -69,6 +76,7 @@
       }
     },
     {
+      "Sid": "GuardDutyCreateModifyVpcEndpointNetworkPolicy",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVpcEndpoint",
@@ -81,6 +89,7 @@
       ]
     },
     {
+      "Sid": "GuardDutyCreateTagsDuringVpcEndpointCreationPolicy",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
@@ -94,6 +103,7 @@
       }
     },
     {
+      "Sid": "GuardDutySecurityGroupManagementPolicy",
       "Effect": "Allow",
       "Action": [
         "ec2:AuthorizeSecurityGroupIngress",
@@ -110,6 +120,7 @@
       }
     },
     {
+      "Sid": "GuardDutyCreateSecurityGroupPolicy",
       "Effect": "Allow",
       "Action": "ec2:CreateSecurityGroup",
       "Resource": "arn:aws:ec2:*:*:security-group/*",
@@ -120,11 +131,13 @@
       }
     },
     {
+      "Sid": "GuardDutyCreateSecurityGroupForVpcPolicy",
       "Effect": "Allow",
       "Action": "ec2:CreateSecurityGroup",
       "Resource": "arn:aws:ec2:*:*:vpc/*"
     },
     {
+      "Sid": "GuardDutyCreateTagsDuringSecurityGroupCreationPolicy",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": "arn:aws:ec2:*:*:security-group/*",
@@ -138,6 +151,7 @@
       }
     },
     {
+      "Sid": "GuardDutyCreateEksAddonPolicy",
       "Effect": "Allow",
       "Action": "eks:CreateAddon",
       "Resource": "arn:aws:eks:*:*:cluster/*",
@@ -148,6 +162,7 @@
       }
     },
     {
+      "Sid": "GuardDutyEksAddonManagementPolicy",
       "Effect": "Allow",
       "Action": [
         "eks:DeleteAddon",
@@ -157,12 +172,26 @@
       "Resource": "arn:aws:eks:*:*:addon/*/aws-guardduty-agent/*"
     },
     {
+      "Sid": "GuardDutyEksClusterTagResourcePolicy",
       "Effect": "Allow",
       "Action": "eks:TagResource",
       "Resource": "arn:aws:eks:*:*:cluster/*",
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws:TagKeys": "GuardDutyManaged"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyEcsPutAccountSettingsDefaultPolicy",
+      "Effect": "Allow",
+      "Action": "ecs:PutAccountSettingDefault",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:account-setting": [
+            "guardDutyActivate"
+          ]
         }
       }
     }

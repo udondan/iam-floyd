@@ -65,7 +65,7 @@
         "logs:PutLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:/aws-glue/*"
+        "arn:aws:logs:*:*:*:/aws-glue/*"
       ]
     },
     {

@@ -5,7 +5,8 @@
       "Sid": "CloudMapServiceDiscovery",
       "Effect": "Allow",
       "Action": [
-        "servicediscovery:DiscoverInstances"
+        "servicediscovery:DiscoverInstances",
+        "servicediscovery:DiscoverInstancesRevision"
       ],
       "Resource": "*"
     },

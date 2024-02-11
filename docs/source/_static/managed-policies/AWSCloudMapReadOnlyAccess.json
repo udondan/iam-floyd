@@ -6,7 +6,8 @@
       "Action": [
         "servicediscovery:Get*",
         "servicediscovery:List*",
-        "servicediscovery:DiscoverInstances"
+        "servicediscovery:DiscoverInstances",
+        "servicediscovery:DiscoverInstancesRevision"
       ],
       "Resource": [
         "*"

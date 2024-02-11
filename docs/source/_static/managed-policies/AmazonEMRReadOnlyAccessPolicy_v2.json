@@ -22,6 +22,7 @@
         "elasticmapreduce:ListInstances",
         "elasticmapreduce:ListSecurityConfigurations",
         "elasticmapreduce:ListSteps",
+        "elasticmapreduce:ListSupportedInstanceTypes",
         "elasticmapreduce:ViewEventsFromAllClustersInConsole"
       ],
       "Resource": "*"

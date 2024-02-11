@@ -60,7 +60,9 @@
         "sqlworkbench:ListQueryExecutionHistory",
         "sqlworkbench:GetQueryExecutionHistory",
         "sqlworkbench:ListNotebooks",
-        "sqlworkbench:GetSchemaInference"
+        "sqlworkbench:GetSchemaInference",
+        "sqlworkbench:GetAutocompletionMetadata",
+        "sqlworkbench:GetAutocompletionResource"
       ],
       "Resource": "*"
     },

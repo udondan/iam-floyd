@@ -77,9 +77,9 @@
       "Condition": {
         "StringEquals": {
           "cloudwatch:namespace": [
-            "AWS/DocDB",
-            "AWS/Neptune",
-            "AWS/RDS",
+            "AWS/DocDB-Preview",
+            "AWS/Neptune-Preview",
+            "AWS/RDS-Preview",
             "AWS/Usage"
           ]
         }

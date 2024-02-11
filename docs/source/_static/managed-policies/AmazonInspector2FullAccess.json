@@ -8,6 +8,14 @@
     },
     {
       "Effect": "Allow",
+      "Action": [
+        "codeguru-security:BatchGetFindings",
+        "codeguru-security:GetAccountConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
       "Condition": {

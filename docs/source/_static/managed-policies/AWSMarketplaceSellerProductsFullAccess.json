@@ -60,6 +60,15 @@
         "aws-marketplace:ListTagsForResource"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetResourcePolicy",
+        "aws-marketplace:PutResourcePolicy",
+        "aws-marketplace:DeleteResourcePolicy"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
     }
   ]
 }

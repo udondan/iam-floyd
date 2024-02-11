@@ -1,0 +1,83 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowConnectActions",
+      "Effect": "Allow",
+      "Action": [
+        "connect:CreateUser*",
+        "connect:UpdateUser*",
+        "connect:DeleteUser*",
+        "connect:DescribeUser*",
+        "connect:ListUser*",
+        "connect:CreateRoutingProfile",
+        "connect:UpdateRoutingProfile*",
+        "connect:DeleteRoutingProfile",
+        "connect:DescribeRoutingProfile",
+        "connect:ListRoutingProfile*",
+        "connect:CreateAgentStatus",
+        "connect:UpdateAgentStatus",
+        "connect:DescribeAgentStatus",
+        "connect:ListAgentStatuses",
+        "connect:CreateQuickConnect",
+        "connect:UpdateQuickConnect*",
+        "connect:DeleteQuickConnect",
+        "connect:DescribeQuickConnect",
+        "connect:ListQuickConnects",
+        "connect:CreateHoursOfOperation",
+        "connect:UpdateHoursOfOperation",
+        "connect:DeleteHoursOfOperation",
+        "connect:DescribeHoursOfOperation",
+        "connect:ListHoursOfOperations",
+        "connect:CreateQueue",
+        "connect:UpdateQueue*",
+        "connect:DeleteQueue",
+        "connect:DescribeQueue",
+        "connect:ListQueue*",
+        "connect:CreatePrompt",
+        "connect:UpdatePrompt",
+        "connect:DeletePrompt",
+        "connect:DescribePrompt",
+        "connect:ListPrompts",
+        "connect:GetPromptFile",
+        "connect:CreateSecurityProfile",
+        "connect:UpdateSecurityProfile",
+        "connect:DeleteSecurityProfile",
+        "connect:DescribeSecurityProfile",
+        "connect:ListSecurityProfile*",
+        "connect:CreateContactFlow*",
+        "connect:UpdateContactFlow*",
+        "connect:DeleteContactFlow*",
+        "connect:DescribeContactFlow*",
+        "connect:ListContactFlow*",
+        "connect:BatchGetFlowAssociation",
+        "connect:CreatePredefinedAttribute",
+        "connect:UpdatePredefinedAttribute",
+        "connect:DeletePredefinedAttribute",
+        "connect:DescribePredefinedAttribute",
+        "connect:ListPredefinedAttributes",
+        "connect:ListTagsForResource",
+        "connect:TagResource",
+        "connect:UntagResource",
+        "connect:ListTrafficDistributionGroups",
+        "connect:ListPhoneNumbersV2",
+        "connect:UpdatePhoneNumber",
+        "connect:DescribePhoneNumber",
+        "connect:Associate*",
+        "connect:Disassociate*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowPutMetricsForConnectNamespace",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Connect"
+        }
+      }
+    }
+  ]
+}

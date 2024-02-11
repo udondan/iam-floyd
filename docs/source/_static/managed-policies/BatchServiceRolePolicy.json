@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSBatchPolicyStatement1",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
@@ -17,6 +18,7 @@
         "ec2:DescribeSpotFleetInstances",
         "ec2:DescribeSpotFleetRequests",
         "ec2:DescribeSpotPriceHistory",
+        "ec2:DescribeSpotFleetRequestHistory",
         "ec2:DescribeVpcClassicLink",
         "ec2:DescribeLaunchTemplateVersions",
         "ec2:RequestSpotFleet",
@@ -24,6 +26,7 @@
         "autoscaling:DescribeAutoScalingGroups",
         "autoscaling:DescribeLaunchConfigurations",
         "autoscaling:DescribeAutoScalingInstances",
+        "autoscaling:DescribeScalingActivities",
         "eks:DescribeCluster",
         "ecs:DescribeClusters",
         "ecs:DescribeContainerInstances",
@@ -44,6 +47,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement2",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -52,6 +56,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement3",
       "Effect": "Allow",
       "Action": [
         "logs:PutLogEvents"
@@ -59,6 +64,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*:log-stream:*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement4",
       "Effect": "Allow",
       "Action": [
         "autoscaling:CreateOrUpdateTags"
@@ -71,6 +77,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement5",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -87,6 +94,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement6",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -102,6 +110,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement7",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateLaunchTemplate"
@@ -114,6 +123,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement8",
       "Effect": "Allow",
       "Action": [
         "ec2:TerminateInstances",
@@ -129,6 +139,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement9",
       "Effect": "Allow",
       "Action": [
         "autoscaling:CreateLaunchConfiguration",
@@ -137,6 +148,7 @@
       "Resource": "arn:aws:autoscaling:*:*:launchConfiguration:*:launchConfigurationName/AWSBatch*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement10",
       "Effect": "Allow",
       "Action": [
         "autoscaling:CreateAutoScalingGroup",
@@ -150,6 +162,7 @@
       "Resource": "arn:aws:autoscaling:*:*:autoScalingGroup:*:autoScalingGroupName/AWSBatch*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement11",
       "Effect": "Allow",
       "Action": [
         "ecs:DeleteCluster",
@@ -161,6 +174,7 @@
       "Resource": "arn:aws:ecs:*:*:cluster/AWSBatch*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement12",
       "Effect": "Allow",
       "Action": [
         "ecs:RunTask",
@@ -170,6 +184,7 @@
       "Resource": "arn:aws:ecs:*:*:task-definition/*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement13",
       "Effect": "Allow",
       "Action": [
         "ecs:StopTask"
@@ -177,6 +192,7 @@
       "Resource": "arn:aws:ecs:*:*:task/*/*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement14",
       "Effect": "Allow",
       "Action": [
         "ecs:CreateCluster",
@@ -190,6 +206,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement15",
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
       "Resource": [
@@ -209,6 +226,7 @@
       ]
     },
     {
+      "Sid": "AWSBatchPolicyStatement16",
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
       "Resource": "arn:aws:ec2:*:*:instance/*",
@@ -219,6 +237,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement17",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"

@@ -15,6 +15,7 @@
       "Effect": "Allow",
       "Action": [
         "vendor-insights:CreateDataSource",
+        "vendor-insights:UpdateDataSource",
         "vendor-insights:DeleteDataSource",
         "vendor-insights:GetDataSource",
         "vendor-insights:ListDataSources",
