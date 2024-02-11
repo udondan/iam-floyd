@@ -34,7 +34,6 @@
         "iot:DetachThingPrincipal",
         "iot:RegisterCACertificate",
         "iot:CreateThing",
-        "freertos:ListHardwarePlatforms",
         "iam:ListRoles",
         "iot:RegisterCertificate",
         "iot:DeleteCACertificate",
@@ -249,12 +248,14 @@
       ],
       "Condition": {
         "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "Owner"
+          ]
+        },
+        "StringEquals": {
           "ec2:CreateAction": [
             "RunInstances",
             "CreateSecurityGroup"
-          ],
-          "aws:TagKeys": [
-            "Owner"
           ]
         }
       }

@@ -5,7 +5,8 @@
       "Effect": "Allow",
       "Action": [
         "wellarchitected:Get*",
-        "wellarchitected:List*"
+        "wellarchitected:List*",
+        "wellarchitected:ExportLens"
       ],
       "Resource": "*"
     }

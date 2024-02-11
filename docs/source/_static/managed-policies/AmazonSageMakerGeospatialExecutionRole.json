@@ -19,6 +19,11 @@
       "Effect": "Allow",
       "Action": "sagemaker-geospatial:GetEarthObservationJob",
       "Resource": "arn:aws:sagemaker-geospatial:*:*:earth-observation-job/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sagemaker-geospatial:GetRasterDataCollection",
+      "Resource": "arn:aws:sagemaker-geospatial:*:*:raster-data-collection/*"
     }
   ]
 }

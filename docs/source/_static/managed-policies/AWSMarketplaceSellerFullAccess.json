@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "MarketplaceManagement",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace-management:uploadFiles",
@@ -28,6 +29,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AgreementAccess",
       "Action": [
         "aws-marketplace:SearchAgreements",
         "aws-marketplace:DescribeAgreement",
@@ -47,6 +49,7 @@
       }
     },
     {
+      "Sid": "IAMGetRole",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole"
@@ -54,6 +57,7 @@
       "Resource": "arn:aws:iam::*:role/*"
     },
     {
+      "Sid": "AssetScanning",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -66,6 +70,7 @@
       }
     },
     {
+      "Sid": "VendorInsights",
       "Effect": "Allow",
       "Action": [
         "vendor-insights:GetDataSource",
@@ -78,11 +83,50 @@
       "Resource": "*"
     },
     {
+      "Sid": "TagManagement",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:TagResource",
         "aws-marketplace:UntagResource",
         "aws-marketplace:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Sid": "SellerSettings",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace-management:GetSellerVerificationDetails",
+        "aws-marketplace-management:PutSellerVerificationDetails",
+        "aws-marketplace-management:GetBankAccountVerificationDetails",
+        "aws-marketplace-management:PutBankAccountVerificationDetails",
+        "aws-marketplace-management:GetSecondaryUserVerificationDetails",
+        "aws-marketplace-management:PutSecondaryUserVerificationDetails",
+        "aws-marketplace-management:GetAdditionalSellerNotificationRecipients",
+        "aws-marketplace-management:PutAdditionalSellerNotificationRecipients",
+        "payments:GetPaymentInstrument",
+        "payments:CreatePaymentInstrument",
+        "tax:GetTaxInterview",
+        "tax:PutTaxInterview",
+        "tax:GetTaxInfoReportingDocument"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ResourcePolicyManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetResourcePolicy",
+        "aws-marketplace:PutResourcePolicy",
+        "aws-marketplace:DeleteResourcePolicy"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
     }

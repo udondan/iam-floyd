@@ -1,0 +1,90 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateSecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:CreateSecret",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:ecs-sc!*",
+      "Condition": {
+        "ArnLike": {
+          "aws:RequestTag/AmazonECSCreated": [
+            "arn:aws:ecs:*:*:service/*/*",
+            "arn:aws:ecs:*:*:task-set/*/*"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/AmazonECSManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagOnCreateSecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:TagResource",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:ecs-sc!*",
+      "Condition": {
+        "ArnLike": {
+          "aws:RequestTag/AmazonECSCreated": [
+            "arn:aws:ecs:*:*:service/*/*",
+            "arn:aws:ecs:*:*:task-set/*/*"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/AmazonECSManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "RotateTLSCertificateSecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:RotateSecret",
+        "secretsmanager:UpdateSecretVersionStage"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:ecs-sc!*",
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "ecs-sc",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ManagePrivateCertificateAuthority",
+      "Effect": "Allow",
+      "Action": [
+        "acm-pca:GetCertificate",
+        "acm-pca:GetCertificateAuthorityCertificate",
+        "acm-pca:DescribeCertificateAuthority"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonECSManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ManagePrivateCertificateAuthorityForIssuingEndEntityCertificate",
+      "Effect": "Allow",
+      "Action": [
+        "acm-pca:IssueCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonECSManaged": "true",
+          "acm-pca:TemplateArn": "arn:aws:acm-pca:::template/EndEntityCertificate/V1"
+        }
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DynamoDBPermissions",
       "Effect": "Allow",
       "Action": [
         "dynamodb:Scan",
@@ -16,6 +17,7 @@
       "Resource": "arn:aws:dynamodb:*:*:table/*"
     },
     {
+      "Sid": "DynamoDBBackupResourcePermissions",
       "Effect": "Allow",
       "Action": [
         "dynamodb:RestoreTableFromBackup"
@@ -23,6 +25,7 @@
       "Resource": "arn:aws:dynamodb:*:*:table/*/backup/*"
     },
     {
+      "Sid": "EBSPermissions",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVolume",
@@ -34,25 +37,37 @@
       ]
     },
     {
+      "Sid": "EC2DescribePermissions",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeImages",
         "ec2:DescribeInstances",
         "ec2:DescribeSnapshots",
-        "ec2:DescribeVolumes"
+        "ec2:DescribeVolumes",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeSnapshotTierStatus"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "StorageGatewayVolumePermissions",
       "Effect": "Allow",
       "Action": [
         "storagegateway:DeleteVolume",
         "storagegateway:DescribeCachediSCSIVolumes",
-        "storagegateway:DescribeStorediSCSIVolumes"
+        "storagegateway:DescribeStorediSCSIVolumes",
+        "storagegateway:AddTagsToResource"
       ],
       "Resource": "arn:aws:storagegateway:*:*:gateway/*/volume/*"
     },
     {
+      "Sid": "StorageGatewayGatewayPermissions",
       "Effect": "Allow",
       "Action": [
         "storagegateway:DescribeGatewayInformation",
@@ -62,6 +77,7 @@
       "Resource": "arn:aws:storagegateway:*:*:gateway/*"
     },
     {
+      "Sid": "StorageGatewayListPermissions",
       "Effect": "Allow",
       "Action": [
         "storagegateway:ListVolumes"
@@ -69,6 +85,7 @@
       "Resource": "arn:aws:storagegateway:*:*:*"
     },
     {
+      "Sid": "RDSPermissions",
       "Effect": "Allow",
       "Action": [
         "rds:DescribeDBInstances",
@@ -80,26 +97,32 @@
         "rds:DescribeDBClusters",
         "rds:RestoreDBClusterFromSnapshot",
         "rds:DeleteDBCluster",
-        "rds:RestoreDBInstanceToPointInTime"
+        "rds:RestoreDBInstanceToPointInTime",
+        "rds:DescribeDBClusterSnapshots",
+        "rds:RestoreDBClusterToPointInTime"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "EFSPermissions",
       "Effect": "Allow",
       "Action": [
         "elasticfilesystem:Restore",
         "elasticfilesystem:CreateFilesystem",
         "elasticfilesystem:DescribeFilesystems",
-        "elasticfilesystem:DeleteFilesystem"
+        "elasticfilesystem:DeleteFilesystem",
+        "elasticfilesystem:TagResource"
       ],
       "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*"
     },
     {
+      "Sid": "KMSDescribePermissions",
       "Effect": "Allow",
       "Action": "kms:DescribeKey",
       "Resource": "*"
     },
     {
+      "Sid": "KMSPermissions",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
@@ -123,6 +146,7 @@
       }
     },
     {
+      "Sid": "KMSCreateGrantPermissions",
       "Effect": "Allow",
       "Action": "kms:CreateGrant",
       "Resource": "*",
@@ -133,6 +157,7 @@
       }
     },
     {
+      "Sid": "EBSSnapshotBlockPermissions",
       "Effect": "Allow",
       "Action": [
         "ebs:CompleteSnapshot",
@@ -142,6 +167,7 @@
       "Resource": "arn:aws:ec2:*::snapshot/*"
     },
     {
+      "Sid": "RDSResourcePermissions",
       "Effect": "Allow",
       "Action": [
         "rds:CreateDBInstance"
@@ -149,10 +175,12 @@
       "Resource": "arn:aws:rds:*:*:db:*"
     },
     {
+      "Sid": "EC2DeleteAndRestorePermissions",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteSnapshot",
-        "ec2:DeleteTags"
+        "ec2:DeleteTags",
+        "ec2:RestoreSnapshotTier"
       ],
       "Resource": "arn:aws:ec2:*::snapshot/*",
       "Condition": {
@@ -162,6 +190,7 @@
       }
     },
     {
+      "Sid": "EC2CreateTagsScopedPermissions",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -177,6 +206,7 @@
       }
     },
     {
+      "Sid": "EC2RunInstancesPermissions",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -184,6 +214,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "EC2TerminateInstancesPermissions",
       "Effect": "Allow",
       "Action": [
         "ec2:TerminateInstances"
@@ -191,6 +222,26 @@
       "Resource": "arn:aws:ec2:*:*:instance/*"
     },
     {
+      "Sid": "EC2CreateTagsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:volume/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "ec2:CreateAction": [
+            "RunInstances",
+            "CreateVolume"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FsxPermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:CreateFileSystemFromBackup"
@@ -201,6 +252,7 @@
       ]
     },
     {
+      "Sid": "FsxTagPermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:DescribeFileSystems",
@@ -209,11 +261,13 @@
       "Resource": "arn:aws:fsx:*:*:file-system/*"
     },
     {
+      "Sid": "FsxBackupPermissions",
       "Effect": "Allow",
       "Action": "fsx:DescribeBackups",
       "Resource": "arn:aws:fsx:*:*:backup/*"
     },
     {
+      "Sid": "FsxDeletePermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:DeleteFileSystem",
@@ -227,6 +281,7 @@
       }
     },
     {
+      "Sid": "FsxDescribePermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:DescribeVolumes"
@@ -234,6 +289,7 @@
       "Resource": "arn:aws:fsx:*:*:volume/*"
     },
     {
+      "Sid": "FsxVolumeTagPermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:CreateVolumeFromBackup",
@@ -251,16 +307,20 @@
       }
     },
     {
+      "Sid": "FsxBackupTagPermissions",
       "Effect": "Allow",
       "Action": [
-        "fsx:CreateVolumeFromBackup"
+        "fsx:CreateVolumeFromBackup",
+        "fsx:TagResource"
       ],
       "Resource": [
         "arn:aws:fsx:*:*:storage-virtual-machine/*",
-        "arn:aws:fsx:*:*:backup/*"
+        "arn:aws:fsx:*:*:backup/*",
+        "arn:aws:fsx:*:*:volume/*"
       ]
     },
     {
+      "Sid": "FsxVolumePermissions",
       "Effect": "Allow",
       "Action": [
         "fsx:DeleteVolume",
@@ -274,6 +334,7 @@
       }
     },
     {
+      "Sid": "DSPermissions",
       "Effect": "Allow",
       "Action": "ds:DescribeDirectories",
       "Resource": "*"
@@ -295,14 +356,17 @@
       "Resource": "arn:aws:backup-gateway:*:*:hypervisor/*"
     },
     {
+      "Sid": "CloudformationChangeSetPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateChangeSet",
-        "cloudformation:DescribeChangeSet"
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:TagResource"
       ],
-      "Resource": "arn:aws:cloudformation:*:*:stack/*/*"
+      "Resource": "arn:aws:cloudformation:*:*:*/*/*"
     },
     {
+      "Sid": "RedshiftClusterSnapshotPermissions",
       "Effect": "Allow",
       "Action": [
         "redshift:RestoreFromClusterSnapshot",
@@ -314,6 +378,7 @@
       ]
     },
     {
+      "Sid": "RedshiftClusterPermissions",
       "Effect": "Allow",
       "Action": [
         "redshift:DescribeClusters"
@@ -323,6 +388,7 @@
       ]
     },
     {
+      "Sid": "RedshiftTablePermissions",
       "Effect": "Allow",
       "Action": [
         "redshift:DescribeTableRestoreStatus"
@@ -330,19 +396,7 @@
       "Resource": "*"
     },
     {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:DescribeAccountAttributes",
-        "ec2:DescribeAddresses",
-        "ec2:DescribeAvailabilityZones",
-        "ec2:DescribeSecurityGroups",
-        "ec2:DescribeSubnets",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeInternetGateways"
-      ],
-      "Resource": "*"
-    },
-    {
+      "Sid": "TimestreamResourcePermissions",
       "Effect": "Allow",
       "Action": [
         "timestream:StartAwsRestoreJob",
@@ -354,11 +408,11 @@
         "timestream:DescribeDatabase"
       ],
       "Resource": [
-        "arn:aws:timestream:*:*:database/*/table/*",
         "arn:aws:timestream:*:*:database/*"
       ]
     },
     {
+      "Sid": "TimestreamEndpointPermissions",
       "Effect": "Allow",
       "Action": [
         "timestream:DescribeEndpoints"

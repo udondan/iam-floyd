@@ -18,37 +18,41 @@
         "logs:DescribeLogStreams"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:dms-tasks-*"
+        "arn:aws:logs:*:*:log-group:dms-tasks-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*"
       ]
     },
     {
-      "Sid": "AllowCreationOfDmsTasksLogGroups",
+      "Sid": "AllowCreationOfDmsLogGroups",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:dms-tasks-*"
+        "arn:aws:logs:*:*:log-group:dms-tasks-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:"
       ]
     },
     {
-      "Sid": "AllowCreationOfDmsTaskLogStream",
+      "Sid": "AllowCreationOfDmsLogStream",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogStream"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*"
+        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:dms-serverless-*"
       ]
     },
     {
-      "Sid": "AllowUploadOfLogEventsToDmsTaskLogStream",
+      "Sid": "AllowUploadOfLogEventsToDmsLogStream",
       "Effect": "Allow",
       "Action": [
         "logs:PutLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*"
+        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:dms-serverless-*"
       ]
     }
   ]

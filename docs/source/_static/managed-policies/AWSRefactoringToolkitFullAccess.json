@@ -25,7 +25,8 @@
       ],
       "Resource": [
         "arn:*:cloudformation:*:*:stack/a2c-app-*",
-        "arn:*:cloudformation:*:*:stack/a2c-build-*"
+        "arn:*:cloudformation:*:*:stack/a2c-build-*",
+        "arn:*:cloudformation:*:*:stack/application-transformation-app-*"
       ]
     },
     {
@@ -62,9 +63,6 @@
       "Sid": "Ec2CreateAccess",
       "Effect": "Allow",
       "Action": [
-        "ec2:AssociateRouteTable",
-        "ec2:AttachInternetGateway",
-        "ec2:AuthorizeSecurityGroupIngress",
         "ec2:CreateInternetGateway",
         "ec2:CreateKeyPair",
         "ec2:CreateRoute",
@@ -72,13 +70,32 @@
         "ec2:CreateSubnet",
         "ec2:CreateTags",
         "ec2:CreateVpc",
-        "ec2:ModifySubnetAttribute",
-        "ec2:ModifyVpcAttribute"
+        "ec2:AuthorizeSecurityGroupIngress"
       ],
       "Resource": "*",
       "Condition": {
         "Null": {
           "aws:RequestTag/a2c-generated": "false"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2CreateAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateInternetGateway",
+        "ec2:CreateKeyPair",
+        "ec2:CreateRoute",
+        "ec2:CreateRouteTable",
+        "ec2:CreateSubnet",
+        "ec2:CreateTags",
+        "ec2:CreateVpc",
+        "ec2:AuthorizeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/application-transformation": "false"
         }
       }
     },
@@ -89,22 +106,40 @@
         "ec2:AssociateRouteTable",
         "ec2:AttachInternetGateway",
         "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:CreateInternetGateway",
-        "ec2:CreateKeyPair",
-        "ec2:CreateRoute",
-        "ec2:CreateRouteTable",
-        "ec2:CreateSubnet",
-        "ec2:CreateTags",
-        "ec2:CreateVpc",
         "ec2:DeleteTags",
         "ec2:ModifySubnetAttribute",
         "ec2:ModifyVpcAttribute",
-        "ec2:RevokeSecurityGroupIngress"
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:CreateSubnet",
+        "ec2:CreateRoute",
+        "ec2:CreateRouteTable"
       ],
       "Resource": "*",
       "Condition": {
         "Null": {
           "aws:ResourceTag/a2c-generated": "false"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2ModifyAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssociateRouteTable",
+        "ec2:AttachInternetGateway",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DeleteTags",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVpcAttribute",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:CreateSubnet",
+        "ec2:CreateRoute",
+        "ec2:CreateRouteTable"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/application-transformation": "false"
         }
       }
     },
@@ -119,6 +154,20 @@
       "Condition": {
         "Null": {
           "aws:RequestTag/a2c-generated": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EcrCreateAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:CreateRepository",
+        "ecr:TagResource"
+      ],
+      "Resource": "arn:*:ecr:*:*:repository/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/application-transformation": "false"
         }
       }
     },
@@ -141,6 +190,24 @@
       }
     },
     {
+      "Sid": "EcrModifyAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetLifecyclePolicy",
+        "ecr:GetRepositoryPolicy",
+        "ecr:ListImages",
+        "ecr:ListTagsForResource",
+        "ecr:TagResource",
+        "ecr:UntagResource"
+      ],
+      "Resource": "arn:*:ecr:*:*:repository/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/application-transformation": "false"
+        }
+      }
+    },
+    {
       "Sid": "EcsCreateAccess",
       "Effect": "Allow",
       "Action": [
@@ -157,17 +224,48 @@
       }
     },
     {
+      "Sid": "EcsCreateAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCluster",
+        "ecs:CreateService",
+        "ecs:RegisterTaskDefinition",
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/application-transformation": "false"
+        }
+      }
+    },
+    {
       "Sid": "EcsModifyAccess",
       "Effect": "Allow",
       "Action": [
+        "ecs:UpdateService",
         "ecs:TagResource",
-        "ecs:UntagResource",
-        "ecs:UpdateService"
+        "ecs:UntagResource"
       ],
       "Resource": "*",
       "Condition": {
         "Null": {
           "aws:ResourceTag/a2c-generated": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EcsModifyAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:UpdateService",
+        "ecs:TagResource",
+        "ecs:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/application-transformation": "false"
         }
       }
     },
@@ -194,6 +292,19 @@
       "Condition": {
         "StringLike": {
           "ecs:container-name": "a2c-sidecar"
+        }
+      }
+    },
+    {
+      "Sid": "EcsExecuteCommandInSidecarATS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ExecuteCommand"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ecs:container-name": "application-transformation-sidecar"
         }
       }
     },
@@ -232,6 +343,28 @@
       }
     },
     {
+      "Sid": "CloudwatchCreateAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/ecs/containerinsights/*:*",
+        "arn:aws:logs:*:*:log-group:/aws/ecs/container-logs/*:*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/application-transformation": "false"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "application-transformation"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "CloudwatchGetAccess",
       "Effect": "Allow",
       "Action": [
@@ -245,6 +378,22 @@
       "Condition": {
         "Null": {
           "aws:ResourceTag/a2c-generated": "false"
+        }
+      }
+    },
+    {
+      "Sid": "CloudwatchGetAccessATS",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/ecs/containerinsights/*:*",
+        "arn:aws:logs:*:*:log-group:/aws/ecs/container-logs/*:*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/application-transformation": "false"
         }
       }
     },
@@ -281,7 +430,8 @@
       ],
       "Resource": [
         "arn:aws:s3:::*/refactoringtoolkit*",
-        "arn:aws:s3:::*/a2c-generated*"
+        "arn:aws:s3:::*/a2c-generated*",
+        "arn:aws:s3:::*/application-transformation*"
       ]
     },
     {
@@ -293,7 +443,10 @@
       "Resource": "arn:aws:s3:::*",
       "Condition": {
         "StringLike": {
-          "s3:prefix": "refactoringtoolkit*"
+          "s3:prefix": [
+            "application-transformation",
+            "refactoringtoolkit"
+          ]
         }
       }
     },
@@ -317,6 +470,7 @@
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
+        "ec2:DescribeRegions",
         "ecr:DescribeImages",
         "ecr:DescribeRepositories",
         "ecs:DescribeClusters",
@@ -348,6 +502,81 @@
         "arn:aws:s3:::aws.portingassistant.dotnet.datastore",
         "arn:aws:s3:::aws.portingassistant.dotnet.datastore/*"
       ]
+    },
+    {
+      "Sid": "ApplicationTransformationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "application-transformation:StartPortingCompatibilityAssessment",
+        "application-transformation:GetPortingCompatibilityAssessment",
+        "application-transformation:StartPortingRecommendationAssessment",
+        "application-transformation:GetPortingRecommendationAssessment",
+        "application-transformation:PutLogData",
+        "application-transformation:PutMetricData",
+        "application-transformation:StartContainerization",
+        "application-transformation:GetContainerization",
+        "application-transformation:StartDeployment",
+        "application-transformation:GetDeployment"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*::*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "kms:ResourceAliases": "alias/application-transformation*"
+        }
+      }
+    },
+    {
+      "Sid": "EcrPushAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:InitiateLayerUpload",
+        "ecr:PutImage",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer"
+      ],
+      "Resource": "arn:*:ecr:*:*:repository/*",
+      "Condition": {
+        "Null": {
+          "ecr:ResourceTag/application-transformation": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EcrAuthAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsCreateGrantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*::*",
+      "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": true
+        },
+        "ForAnyValue:StringLike": {
+          "kms:ResourceAliases": "alias/application-transformation*"
+        }
+      }
     }
   ]
 }

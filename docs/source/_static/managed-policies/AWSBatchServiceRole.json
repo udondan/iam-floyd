@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSBatchPolicyStatement1",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
@@ -17,6 +18,7 @@
         "ec2:DescribeSpotFleetInstances",
         "ec2:DescribeSpotFleetRequests",
         "ec2:DescribeSpotPriceHistory",
+        "ec2:DescribeSpotFleetRequestHistory",
         "ec2:DescribeVpcClassicLink",
         "ec2:DescribeLaunchTemplateVersions",
         "ec2:CreateLaunchTemplate",
@@ -30,6 +32,7 @@
         "autoscaling:DescribeAutoScalingGroups",
         "autoscaling:DescribeLaunchConfigurations",
         "autoscaling:DescribeAutoScalingInstances",
+        "autoscaling:DescribeScalingActivities",
         "autoscaling:CreateLaunchConfiguration",
         "autoscaling:CreateAutoScalingGroup",
         "autoscaling:UpdateAutoScalingGroup",
@@ -69,6 +72,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSBatchPolicyStatement2",
       "Effect": "Allow",
       "Action": "ecs:TagResource",
       "Resource": [
@@ -76,6 +80,7 @@
       ]
     },
     {
+      "Sid": "AWSBatchPolicyStatement3",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -92,6 +97,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement4",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -107,6 +113,7 @@
       }
     },
     {
+      "Sid": "AWSBatchPolicyStatement5",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"

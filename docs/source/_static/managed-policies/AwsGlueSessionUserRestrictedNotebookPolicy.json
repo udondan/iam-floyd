@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "NotebokAllowActions0",
       "Effect": "Allow",
       "Action": [
         "glue:CreateSession"
@@ -21,6 +22,18 @@
       }
     },
     {
+      "Sid": "NotebookAllowActions1",
+      "Effect": "Allow",
+      "Action": [
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:completion/*"
+      ]
+    },
+    {
+      "Sid": "NotebookAllowActions2",
       "Effect": "Allow",
       "Action": [
         "glue:RunStatement",
@@ -41,6 +54,7 @@
       }
     },
     {
+      "Sid": "NotebookAllowActions3",
       "Effect": "Allow",
       "Action": [
         "glue:ListSessions"
@@ -50,6 +64,7 @@
       ]
     },
     {
+      "Sid": "NotebookDenyActions",
       "Effect": "Deny",
       "Action": [
         "glue:TagResource",
@@ -69,6 +84,7 @@
       }
     },
     {
+      "Sid": "NotebookPassRole",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"

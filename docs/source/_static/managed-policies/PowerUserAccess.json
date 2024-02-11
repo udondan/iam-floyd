@@ -17,7 +17,8 @@
         "iam:DeleteServiceLinkedRole",
         "iam:ListRoles",
         "organizations:DescribeOrganization",
-        "account:ListRegions"
+        "account:ListRegions",
+        "account:GetAccountInformation"
       ],
       "Resource": "*"
     }

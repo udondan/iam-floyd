@@ -2,11 +2,13 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSOrganizationsFullAccess",
       "Effect": "Allow",
       "Action": "organizations:*",
       "Resource": "*"
     },
     {
+      "Sid": "AWSOrganizationsFullAccessAccount",
       "Effect": "Allow",
       "Action": [
         "account:PutAlternateContact",
@@ -21,6 +23,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSOrganizationsFullAccessCreateSLR",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",

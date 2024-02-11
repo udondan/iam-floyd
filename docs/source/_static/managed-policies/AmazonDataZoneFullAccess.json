@@ -1,0 +1,91 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "datazone:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "iam:ListRoles",
+        "sso:DescribeRegisteredRegions",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:CreateBucket",
+      "Resource": "arn:aws:s3:::amazon-datazone*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ram:CreateResourceShare"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "ram:RequestedResourceType": "datazone:Domain"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ram:DeleteResourceShare",
+        "ram:AssociateResourceShare",
+        "ram:DisassociateResourceShare",
+        "ram:RejectResourceShareInvitation"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ram:ResourceShareName": [
+            "DataZone*"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShares",
+        "ram:GetResourceShareInvitations",
+        "ram:GetResourceShareAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonDataZone*",
+        "arn:aws:iam::*:role/service-role/AmazonDataZone*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:passedToService": "datazone.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

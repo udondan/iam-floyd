@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MonitoringPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "health:DescribeEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ZonalShiftManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "arc-zonal-shift:CancelZonalShift",
+        "arc-zonal-shift:GetManagedResource",
+        "arc-zonal-shift:StartZonalShift",
+        "arc-zonal-shift:UpdateZonalShift"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -38,6 +38,20 @@
     {
       "Effect": "Allow",
       "Action": [
+        "ram:AssociateResourceSharePermission"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ram:PermissionArn": [
+            "arn:aws:ram::aws:permission/AWSRAMLFEnabled*"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "glue:PutResourcePolicy",
         "glue:DeleteResourcePolicy",
         "organizations:DescribeOrganization",

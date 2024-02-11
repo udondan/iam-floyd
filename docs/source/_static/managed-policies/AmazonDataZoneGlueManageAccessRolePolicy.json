@@ -1,0 +1,150 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GlueTableDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateTable",
+        "glue:DeleteTable",
+        "glue:GetDatabases",
+        "glue:GetTables"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:database/*",
+        "arn:aws:glue:*:*:table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "LakeformationResourceSharingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:BatchGrantPermissions",
+        "lakeformation:BatchRevokePermissions",
+        "lakeformation:CreateLakeFormationOptIn",
+        "lakeformation:DeleteLakeFormationOptIn",
+        "lakeformation:GrantPermissions",
+        "lakeformation:GetResourceLFTags",
+        "lakeformation:ListLakeFormationOptIns",
+        "lakeformation:ListPermissions",
+        "lakeformation:RevokePermissions",
+        "glue:GetDatabase",
+        "glue:GetTable",
+        "organizations:DescribeOrganization",
+        "ram:GetResourceShareInvitations",
+        "ram:ListResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CrossAccountRAMResourceSharingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:DeleteResourcePolicy",
+        "glue:PutResourcePolicy"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:database/*",
+        "arn:aws:glue:*:*:table/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ram.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CrossAccountLakeFormationResourceSharingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ram:CreateResourceShare"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "ram:RequestedResourceType": [
+            "glue:Table",
+            "glue:Database",
+            "glue:Catalog"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CrossAccountRAMResourceShareInvitationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AcceptResourceShareInvitation"
+      ],
+      "Resource": "arn:aws:ram:*:*:resource-share-invitation/*"
+    },
+    {
+      "Sid": "CrossAccountRAMResourceSharingViaLakeFormationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AssociateResourceShare",
+        "ram:DeleteResourceShare",
+        "ram:DisassociateResourceShare",
+        "ram:GetResourceShares",
+        "ram:ListResourceSharePermissions",
+        "ram:UpdateResourceShare"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ram:ResourceShareName": [
+            "LakeFormation*"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CrossAccountRAMResourceSharingViaLakeFormationHybrid",
+      "Effect": "Allow",
+      "Action": "ram:AssociateResourceSharePermission",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ram:PermissionArn": "arn:aws:ram::aws:permission/AWSRAMLFEnabled*"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "KMSDecryptPermission",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/datazone:projectId": "proj-all"
+        }
+      }
+    }
+  ]
+}

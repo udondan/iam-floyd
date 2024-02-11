@@ -2,11 +2,13 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "SecurityHubAllowAll",
       "Effect": "Allow",
       "Action": "securityhub:*",
       "Resource": "*"
     },
     {
+      "Sid": "SecurityHubServiceLinkedRole",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -15,6 +17,16 @@
           "iam:AWSServiceName": "securityhub.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "OtherServicePermission",
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:GetDetector",
+        "guardduty:ListDetectors",
+        "inspector2:BatchGetAccountStatus"
+      ],
+      "Resource": "*"
     }
   ]
 }

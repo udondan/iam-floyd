@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DRSServiceRolePolicy1",
       "Effect": "Allow",
       "Action": [
         "drs:ListTagsForResource"
@@ -9,6 +10,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DRSServiceRolePolicy2",
       "Effect": "Allow",
       "Action": [
         "drs:TagResource"
@@ -16,6 +18,7 @@
       "Resource": "arn:aws:drs:*:*:recovery-instance/*"
     },
     {
+      "Sid": "DRSServiceRolePolicy3",
       "Effect": "Allow",
       "Action": [
         "drs:CreateRecoveryInstanceForDrs",
@@ -24,16 +27,19 @@
       "Resource": "arn:aws:drs:*:*:source-server/*"
     },
     {
+      "Sid": "DRSServiceRolePolicy4",
       "Effect": "Allow",
       "Action": "iam:GetInstanceProfile",
       "Resource": "*"
     },
     {
+      "Sid": "DRSServiceRolePolicy5",
       "Effect": "Allow",
       "Action": "kms:ListRetirableGrants",
       "Resource": "*"
     },
     {
+      "Sid": "DRSServiceRolePolicy6",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeAccountAttributes",
@@ -49,12 +55,23 @@
         "ec2:DescribeSnapshots",
         "ec2:DescribeSubnets",
         "ec2:DescribeVolumes",
+        "ec2:DescribeVolumeAttribute",
         "ec2:GetEbsDefaultKmsKeyId",
-        "ec2:GetEbsEncryptionByDefault"
+        "ec2:GetEbsEncryptionByDefault",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeManagedPrefixLists",
+        "ec2:GetManagedPrefixListEntries",
+        "ec2:GetManagedPrefixListAssociations"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "DRSServiceRolePolicy7",
       "Effect": "Allow",
       "Action": [
         "ec2:RegisterImage"
@@ -62,6 +79,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DRSServiceRolePolicy8",
       "Effect": "Allow",
       "Action": [
         "ec2:DeregisterImage"
@@ -74,6 +92,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy9",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteSnapshot"
@@ -86,6 +105,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy10",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateLaunchTemplateVersion",
@@ -101,6 +121,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy11",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteVolume",
@@ -114,6 +135,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy12",
       "Effect": "Allow",
       "Action": [
         "ec2:StartInstances",
@@ -131,6 +153,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy13",
       "Effect": "Allow",
       "Action": [
         "ec2:RevokeSecurityGroupEgress",
@@ -145,6 +168,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy14",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVolume"
@@ -157,6 +181,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy15",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSecurityGroup"
@@ -169,6 +194,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy16",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSecurityGroup"
@@ -176,6 +202,7 @@
       "Resource": "arn:aws:ec2:*:*:vpc/*"
     },
     {
+      "Sid": "DRSServiceRolePolicy17",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateLaunchTemplate"
@@ -188,6 +215,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy18",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSnapshot"
@@ -200,6 +228,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy19",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSnapshot"
@@ -212,6 +241,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy20",
       "Effect": "Allow",
       "Action": [
         "ec2:DetachVolume",
@@ -225,6 +255,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy21",
       "Effect": "Allow",
       "Action": [
         "ec2:AttachVolume"
@@ -237,6 +268,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy22",
       "Effect": "Allow",
       "Action": [
         "ec2:DetachVolume"
@@ -244,6 +276,7 @@
       "Resource": "arn:aws:ec2:*:*:volume/*"
     },
     {
+      "Sid": "DRSServiceRolePolicy23",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -256,6 +289,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy24",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -270,6 +304,7 @@
       ]
     },
     {
+      "Sid": "DRSServiceRolePolicy25",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -284,6 +319,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy26",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -306,6 +342,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy27",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -318,6 +355,7 @@
       }
     },
     {
+      "Sid": "DRSServiceRolePolicy28",
       "Effect": "Allow",
       "Action": "cloudwatch:GetMetricData",
       "Resource": "*"

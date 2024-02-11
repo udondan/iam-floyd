@@ -75,59 +75,6 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-        "ec2:ReplaceRouteTableAssociation",
-        "ec2:CreateRouteTable",
-        "ec2:AttachInternetGateway",
-        "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-        "ec2:AssociateRouteTable",
-        "ec2:RevokeSecurityGroupIngress",
-        "ec2:CreateRoute",
-        "ec2:CreateSecurityGroup",
-        "ec2:RevokeSecurityGroupEgress",
-        "ec2:ModifyVpcAttribute",
-        "ec2:CreateSubnet"
-      ],
-      "Resource": [
-        "arn:aws:ec2:*:*:subnet/*",
-        "arn:aws:ec2:*:*:route-table/*",
-        "arn:aws:ec2:*:*:security-group/*",
-        "arn:aws:ec2:*:*:vpc/*",
-        "arn:aws:ec2:*:*:internet-gateway/*"
-      ],
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/Purpose": "RedshiftMigrateToVpc"
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:CreateSecurityGroup",
-        "ec2:CreateInternetGateway",
-        "ec2:CreateVpc",
-        "ec2:CreateRouteTable",
-        "ec2:CreateSubnet"
-      ],
-      "Resource": [
-        "arn:aws:ec2:*:*:subnet/*",
-        "arn:aws:ec2:*:*:route-table/*",
-        "arn:aws:ec2:*:*:security-group/*",
-        "arn:aws:ec2:*:*:vpc/*",
-        "arn:aws:ec2:*:*:internet-gateway/*"
-      ],
-      "Condition": {
-        "StringEquals": {
-          "aws:RequestTag/Purpose": "RedshiftMigrateToVpc"
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
         "ec2:CreateSecurityGroup"
       ],
       "Resource": [
@@ -218,6 +165,43 @@
           ]
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:UpdateSecretVersionStage",
+        "secretsmanager:RotateSecret"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:redshift!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "redshift",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetRandomPassword"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses",
+        "ec2:UnassignIpv6Addresses"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ]
     }
   ]
 }

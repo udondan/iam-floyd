@@ -16,7 +16,9 @@
     {
       "Effect": "Allow",
       "Action": [
-        "s3:ListAllMyBuckets"
+        "s3:ListAllMyBuckets",
+        "servicequotas:GetServiceQuota",
+        "cloudwatch:GetMetricData"
       ],
       "Resource": "*"
     },

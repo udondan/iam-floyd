@@ -2,9 +2,11 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AppRegistryUpdateStackAndResourceGroupTagging",
       "Effect": "Allow",
       "Action": [
-        "cloudformation:UpdateStack"
+        "cloudformation:UpdateStack",
+        "tag:GetResources"
       ],
       "Resource": "*",
       "Condition": {
@@ -14,6 +16,7 @@
       }
     },
     {
+      "Sid": "AppRegistryResourceGroupsIntegration",
       "Effect": "Allow",
       "Action": [
         "resource-groups:CreateGroup",
@@ -22,7 +25,9 @@
         "resource-groups:GetTags",
         "resource-groups:Tag",
         "resource-groups:Untag",
-        "resource-groups:GetGroupConfiguration"
+        "resource-groups:GetGroupConfiguration",
+        "resource-groups:AssociateResource",
+        "resource-groups:DisassociateResource"
       ],
       "Resource": "arn:aws:resource-groups:*:*:group/AWS_*",
       "Condition": {
@@ -32,6 +37,7 @@
       }
     },
     {
+      "Sid": "AppRegistryServiceLinkedRole",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/servicecatalog-appregistry.amazonaws.com/AWSServiceRoleForAWSServiceCatalogAppRegistry*",
@@ -42,6 +48,7 @@
       }
     },
     {
+      "Sid": "AppRegistryOperations",
       "Effect": "Allow",
       "Action": [
         "cloudformation:DescribeStacks",
@@ -70,6 +77,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AppRegistryResourceTagging",
       "Effect": "Allow",
       "Action": [
         "servicecatalog:ListTagsForResource",

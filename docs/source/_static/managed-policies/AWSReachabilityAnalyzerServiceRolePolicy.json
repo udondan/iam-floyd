@@ -66,6 +66,7 @@
         "organizations:ListAWSServiceAccessForOrganization",
         "organizations:ListAccounts",
         "organizations:ListDelegatedAdministrators",
+        "resource-groups:ListGroups",
         "resource-groups:ListGroupResources",
         "tag:GetResources",
         "tiros:CreateQuery",

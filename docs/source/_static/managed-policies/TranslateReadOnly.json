@@ -2,8 +2,10 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "translate:TranslateText",
+        "translate:TranslateDocument",
         "translate:GetTerminology",
         "translate:ListTerminologies",
         "translate:ListTextTranslationJobs",
@@ -14,7 +16,6 @@
         "cloudwatch:GetMetricStatistics",
         "cloudwatch:ListMetrics"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]

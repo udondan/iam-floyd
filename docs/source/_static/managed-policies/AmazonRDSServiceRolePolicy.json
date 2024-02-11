@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CrossRegionCommunication",
       "Effect": "Allow",
       "Action": [
         "rds:CrossRegionCommunication"
@@ -9,6 +10,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "Ec2",
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
@@ -48,6 +50,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "Sns",
       "Effect": "Allow",
       "Action": [
         "sns:Publish"
@@ -55,6 +58,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudWatchLogs",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup"
@@ -66,6 +70,7 @@
       ]
     },
     {
+      "Sid": "CloudWatchStreams",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogStream",
@@ -79,6 +84,7 @@
       ]
     },
     {
+      "Sid": "Kinesis",
       "Effect": "Allow",
       "Action": [
         "kinesis:CreateStream",
@@ -95,6 +101,7 @@
       ]
     },
     {
+      "Sid": "CloudWatch",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData"
@@ -112,6 +119,7 @@
       }
     },
     {
+      "Sid": "SecretsManagerPassword",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:GetRandomPassword"
@@ -119,6 +127,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "SecretsManagerSecret",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:DeleteSecret",
@@ -139,6 +148,7 @@
       }
     },
     {
+      "Sid": "SecretsManagerTags",
       "Effect": "Allow",
       "Action": "secretsmanager:TagResource",
       "Resource": "arn:aws:secretsmanager:*:*:secret:rds!*",

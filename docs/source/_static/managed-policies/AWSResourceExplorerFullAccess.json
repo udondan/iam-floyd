@@ -2,15 +2,19 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ResourceExplorerConsoleFullAccess",
       "Effect": "Allow",
       "Action": [
         "resource-explorer-2:*",
         "ec2:DescribeRegions",
-        "ram:ListResources"
+        "ram:ListResources",
+        "ram:GetResourceShares",
+        "organizations:DescribeOrganization"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "ResourceExplorerSLRAccess",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"

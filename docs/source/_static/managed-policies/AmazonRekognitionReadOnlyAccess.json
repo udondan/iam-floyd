@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonRekognitionReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "rekognition:CompareFaces",
@@ -33,7 +34,12 @@
         "rekognition:ListDatasetEntries",
         "rekognition:ListDatasetLabels",
         "rekognition:DescribeDataset",
-        "rekognition:ListProjectPolicies"
+        "rekognition:ListProjectPolicies",
+        "rekognition:ListUsers",
+        "rekognition:SearchUsers",
+        "rekognition:SearchUsersByImage",
+        "rekognition:GetMediaAnalysisJob",
+        "rekognition:ListMediaAnalysisJobs"
       ],
       "Resource": "*"
     }

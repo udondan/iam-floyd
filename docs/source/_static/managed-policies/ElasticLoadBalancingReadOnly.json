@@ -2,11 +2,16 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "Statement1",
       "Effect": "Allow",
-      "Action": "elasticloadbalancing:Describe*",
+      "Action": [
+        "elasticloadbalancing:Describe*",
+        "elasticloadbalancing:Get*"
+      ],
       "Resource": "*"
     },
     {
+      "Sid": "Statement2",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeInstances",
@@ -16,11 +21,13 @@
       "Resource": "*"
     },
     {
+      "Sid": "Statement3",
       "Effect": "Allow",
       "Action": "arc-zonal-shift:GetManagedResource",
       "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/*"
     },
     {
+      "Sid": "Statement4",
       "Effect": "Allow",
       "Action": [
         "arc-zonal-shift:ListManagedResources",

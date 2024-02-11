@@ -2,15 +2,34 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "SageMakerUserDetailsAndPackageOperations",
       "Effect": "Allow",
       "Action": [
         "sagemaker:DescribeDomain",
         "sagemaker:DescribeUserProfile",
-        "sagemaker:ListTags"
+        "sagemaker:ListTags",
+        "sagemaker:ListModelPackages",
+        "sagemaker:ListModelPackageGroups",
+        "sagemaker:ListEndpoints"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "SageMakerPackageGroupOperations",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateModelPackageGroup",
+        "sagemaker:CreateModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
+        "sagemaker:DescribeModelPackage"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:model-package/*",
+        "arn:aws:sagemaker:*:*:model-package-group/*"
+      ]
+    },
+    {
+      "Sid": "SageMakerTrainingOperations",
       "Effect": "Allow",
       "Action": [
         "sagemaker:CreateCompilationJob",
@@ -39,6 +58,22 @@
       ]
     },
     {
+      "Sid": "SageMakerHostingOperations",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DeleteEndpointConfig",
+        "sagemaker:DeleteModel",
+        "sagemaker:InvokeEndpoint",
+        "sagemaker:UpdateEndpointWeightsAndCapacities",
+        "sagemaker:InvokeEndpointAsync"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:*Canvas*",
+        "arn:aws:sagemaker:*:*:*canvas*"
+      ]
+    },
+    {
+      "Sid": "EC2VPCOperation",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVpcEndpoint",
@@ -51,6 +86,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "ECROperations",
       "Effect": "Allow",
       "Action": [
         "ecr:BatchGetImage",
@@ -60,6 +96,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "IAMGetOperations",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole"
@@ -67,6 +104,7 @@
       "Resource": "arn:aws:iam::*:role/*"
     },
     {
+      "Sid": "IAMPassOperation",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -79,6 +117,7 @@
       }
     },
     {
+      "Sid": "LoggingOperation",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -88,6 +127,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
     },
     {
+      "Sid": "S3Operations",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject",
@@ -104,6 +144,24 @@
       ]
     },
     {
+      "Sid": "ReadSageMakerJumpstartArtifacts",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::jumpstart-cache-prod-us-west-2/*",
+        "arn:aws:s3:::jumpstart-cache-prod-us-east-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-us-east-2/*",
+        "arn:aws:s3:::jumpstart-cache-prod-eu-west-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-eu-central-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-ap-south-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-ap-northeast-2/*",
+        "arn:aws:s3:::jumpstart-cache-prod-ap-northeast-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-ap-southeast-1/*",
+        "arn:aws:s3:::jumpstart-cache-prod-ap-southeast-2/*"
+      ]
+    },
+    {
+      "Sid": "S3ListOperations",
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket",
@@ -112,6 +170,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "GlueOperations",
       "Effect": "Allow",
       "Action": "glue:SearchTables",
       "Resource": [
@@ -121,6 +180,7 @@
       ]
     },
     {
+      "Sid": "SecretsManagerARNBasedOperation",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:DescribeSecret",
@@ -133,6 +193,7 @@
       ]
     },
     {
+      "Sid": "SecretManagerTagBasedOperation",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:DescribeSecret",
@@ -146,6 +207,7 @@
       }
     },
     {
+      "Sid": "RedshiftOperations",
       "Effect": "Allow",
       "Action": [
         "redshift-data:ExecuteStatement",
@@ -159,6 +221,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "RedshiftGetCredentialsOperation",
       "Effect": "Allow",
       "Action": [
         "redshift:GetClusterCredentials"
@@ -169,6 +232,7 @@
       ]
     },
     {
+      "Sid": "ForecastOperations",
       "Effect": "Allow",
       "Action": [
         "forecast:CreateExplainabilityExport",
@@ -203,6 +267,13 @@
       ]
     },
     {
+      "Sid": "RDSOperation",
+      "Effect": "Allow",
+      "Action": "rds:DescribeDBInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMPassOperationForForecast",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -211,6 +282,57 @@
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "forecast.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AutoscalingOperations",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget"
+      ],
+      "Resource": "arn:aws:application-autoscaling:*:*:scalable-target/*",
+      "Condition": {
+        "StringEquals": {
+          "application-autoscaling:service-namespace": "sagemaker",
+          "application-autoscaling:scalable-dimension": "sagemaker:variant:DesiredInstanceCount"
+        }
+      }
+    },
+    {
+      "Sid": "AsyncEndpointOperations",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "sagemaker:DescribeEndpointConfig"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerCloudWatchUpdate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:alarm:TargetTracking*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "application-autoscaling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AutoscalingSageMakerEndpointOperation",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/sagemaker.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_SageMakerEndpoint",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "sagemaker.application-autoscaling.amazonaws.com"
         }
       }
     }

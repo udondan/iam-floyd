@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "BaseAppPermissions",
       "Effect": "Allow",
       "Action": [
         "glue:*",
@@ -37,7 +38,10 @@
         "kms:ListAliases",
         "kms:DescribeKey",
         "cloudwatch:GetMetricData",
-        "cloudwatch:ListDashboards"
+        "cloudwatch:ListDashboards",
+        "databrew:ListRecipes",
+        "databrew:ListRecipeVersions",
+        "databrew:DescribeRecipe"
       ],
       "Resource": [
         "*"

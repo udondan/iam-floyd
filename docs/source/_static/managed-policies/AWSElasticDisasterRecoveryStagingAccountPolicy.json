@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DRSStagingAccountPolicy1",
       "Effect": "Allow",
       "Action": [
         "drs:DescribeSourceServers",
@@ -14,6 +15,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DRSStagingAccountPolicy2",
       "Effect": "Allow",
       "Action": [
         "ec2:ModifySnapshotAttribute"

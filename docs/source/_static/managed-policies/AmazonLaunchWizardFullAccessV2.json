@@ -1,0 +1,714 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AppInsightsActions0",
+      "Effect": "Allow",
+      "Action": "applicationinsights:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ResourceGroupActions0",
+      "Effect": "Allow",
+      "Action": "resource-groups:List*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Route53Actions0",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ChangeResourceRecordSets",
+        "route53:GetChange",
+        "route53:ListResourceRecordSets",
+        "route53:ListHostedZones",
+        "route53:ListHostedZonesByName"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3Actions0",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsActions0",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchActions0",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:List*",
+        "cloudwatch:Get*",
+        "cloudwatch:Describe*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2Actions0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateInternetGateway",
+        "ec2:CreateNatGateway",
+        "ec2:CreateVpc",
+        "ec2:CreateKeyPair",
+        "ec2:CreateRoute",
+        "ec2:CreateRouteTable",
+        "ec2:CreateSubnet"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2Actions1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AllocateAddress",
+        "ec2:AllocateHosts",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:AssociateAddress",
+        "ec2:CreateDhcpOptions",
+        "ec2:CreateEgressOnlyInternetGateway",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateVolume",
+        "ec2:CreateVpcEndpoint",
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "ec2:RunInstances",
+        "ec2:StartInstances",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVolumeAttribute",
+        "ec2:ModifyVpcAttribute",
+        "ec2:AssociateDhcpOptions",
+        "ec2:AssociateSubnetCidrBlock",
+        "ec2:AttachInternetGateway",
+        "ec2:AttachNetworkInterface",
+        "ec2:AttachVolume",
+        "ec2:DeleteDhcpOptions",
+        "ec2:DeleteInternetGateway",
+        "ec2:DeleteKeyPair",
+        "ec2:DeleteNatGateway",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteVolume",
+        "ec2:DeleteVpc",
+        "ec2:DetachInternetGateway",
+        "ec2:DetachVolume",
+        "ec2:DeleteSnapshot",
+        "ec2:AssociateRouteTable",
+        "ec2:AssociateVpcCidrBlock",
+        "ec2:DeleteNetworkAcl",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DeleteRoute",
+        "ec2:DeleteRouteTable",
+        "ec2:DeleteSubnet",
+        "ec2:DetachNetworkInterface",
+        "ec2:DisassociateAddress",
+        "ec2:DisassociateVpcCidrBlock",
+        "ec2:GetLaunchTemplateData",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:ModifyVolume",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:GetConsoleOutput",
+        "ec2:GetPasswordData",
+        "ec2:ReleaseAddress",
+        "ec2:ReplaceRoute",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DisassociateIamInstanceProfile",
+        "ec2:DisassociateRouteTable",
+        "ec2:DisassociateSubnetCidrBlock",
+        "ec2:ModifyInstancePlacement",
+        "ec2:DeletePlacementGroup",
+        "ec2:CreatePlacementGroup",
+        "elasticfilesystem:DeleteFileSystem",
+        "elasticfilesystem:DeleteMountTarget",
+        "ds:AddIpRoutes",
+        "ds:CreateComputer",
+        "ds:CreateMicrosoftAD",
+        "ds:DeleteDirectory",
+        "servicecatalog:AssociateProductWithPortfolio",
+        "cloudformation:GetTemplateSummary",
+        "sts:GetCallerIdentity"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFormationActions0",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStack*",
+        "cloudformation:Get*",
+        "cloudformation:ListStacks",
+        "cloudformation:SignalResource",
+        "cloudformation:DeleteStack"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/LaunchWizard*/*",
+        "arn:aws:cloudformation:*:*:stack/ApplicationInsights*/*"
+      ]
+    },
+    {
+      "Sid": "Ec2Actions2",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/LaunchWizard-*/*"
+        }
+      }
+    },
+    {
+      "Sid": "IamActions0",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateInstanceProfile",
+        "iam:DeleteInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:AddRoleToInstanceProfile"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonEC2RoleForLaunchWizard*",
+        "arn:aws:iam::*:instance-profile/LaunchWizard*"
+      ]
+    },
+    {
+      "Sid": "IamActions1",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonEC2RoleForLaunchWizard",
+        "arn:aws:iam::*:role/service-role/AmazonLambdaRoleForLaunchWizard",
+        "arn:aws:iam::*:instance-profile/LaunchWizard*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "iam:PassedToService": [
+            "lambda.amazonaws.com",
+            "ec2.amazonaws.com",
+            "ec2.amazonaws.com.cn"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AutoScalingActions0",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:AttachInstances",
+        "autoscaling:CreateAutoScalingGroup",
+        "autoscaling:CreateLaunchConfiguration",
+        "autoscaling:DeleteAutoScalingGroup",
+        "autoscaling:DeleteLaunchConfiguration",
+        "autoscaling:UpdateAutoScalingGroup",
+        "autoscaling:CreateOrUpdateTags",
+        "resource-groups:CreateGroup",
+        "resource-groups:DeleteGroup",
+        "sns:ListSubscriptionsByTopic",
+        "sns:Publish",
+        "ssm:DeleteDocument",
+        "ssm:DeleteParameter*",
+        "ssm:DescribeDocument*",
+        "ssm:GetDocument",
+        "ssm:PutParameter"
+      ],
+      "Resource": [
+        "arn:aws:resource-groups:*:*:group/LaunchWizard*",
+        "arn:aws:sns:*:*:*",
+        "arn:aws:autoscaling:*:*:autoScalingGroup:*:autoScalingGroupName/LaunchWizard*",
+        "arn:aws:autoscaling:*:*:launchConfiguration:*:launchConfigurationName/LaunchWizard*",
+        "arn:aws:ssm:*:*:parameter/LaunchWizard*",
+        "arn:aws:ssm:*:*:document/LaunchWizard*"
+      ]
+    },
+    {
+      "Sid": "SsmActions0",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetDocument",
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*::document/AWS-RunShellScript"
+      ]
+    },
+    {
+      "Sid": "SsmActions1",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/LaunchWizard-*/*"
+        }
+      }
+    },
+    {
+      "Sid": "SsmActions2",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource",
+        "ssm:DescribeDocument",
+        "ssm:GetDocument",
+        "ssm:ListTagsForResource",
+        "ssm:RemoveTagsFromResource"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/LaunchWizard*",
+        "arn:aws:ssm:*:*:document/LaunchWizard*"
+      ]
+    },
+    {
+      "Sid": "SsmActions3",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:Describe*",
+        "cloudformation:DescribeAccountLimits",
+        "cloudformation:DescribeStackDriftDetectionStatus",
+        "cloudformation:List*",
+        "cloudformation:ValidateTemplate",
+        "ds:Describe*",
+        "ds:ListAuthorizedApplications",
+        "ec2:Describe*",
+        "ec2:Get*",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser",
+        "iam:GetPolicyVersion",
+        "iam:GetPolicy",
+        "iam:List*",
+        "resource-groups:Get*",
+        "resource-groups:List*",
+        "servicequotas:GetServiceQuota",
+        "servicequotas:ListServiceQuotas",
+        "sns:ListSubscriptions",
+        "sns:ListTopics",
+        "ssm:CreateDocument",
+        "ssm:DescribeAutomation*",
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeParameters",
+        "ssm:GetAutomationExecution",
+        "ssm:GetCommandInvocation",
+        "ssm:GetParameter*",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommand*",
+        "ssm:ListDocument*",
+        "ssm:ListInstanceAssociations",
+        "ssm:SendAutomationSignal",
+        "tag:Get*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SsmActions4",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution",
+        "ssm:StopAutomationExecution"
+      ],
+      "Resource": "arn:aws:ssm:*:*:automation-definition/LaunchWizard-*:*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFormationActions1",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:List*",
+        "cloudformation:Describe*"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/LaunchWizard*/"
+    },
+    {
+      "Sid": "IamActions2",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "autoscaling.amazonaws.com",
+            "application-insights.amazonaws.com",
+            "events.amazonaws.com",
+            "autoscaling.amazonaws.com.cn",
+            "events.amazonaws.com.cn"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "LaunchWizardActions0",
+      "Effect": "Allow",
+      "Action": "launchwizard:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "SqsActions0",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:TagQueue",
+        "sqs:GetQueueUrl",
+        "sqs:AddPermission",
+        "sqs:ListQueues",
+        "sqs:DeleteQueue",
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueueTags",
+        "sqs:CreateQueue",
+        "sqs:SetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:*:*:LaunchWizard*"
+    },
+    {
+      "Sid": "CloudWatchActions1",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "iam:GetInstanceProfile",
+        "cloudwatch:DeleteAlarms",
+        "cloudwatch:DescribeAlarms"
+      ],
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:alarm:LaunchWizard*",
+        "arn:aws:iam::*:instance-profile/LaunchWizard*"
+      ]
+    },
+    {
+      "Sid": "EfsActions0",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "route53:ListHostedZones",
+        "ec2:CreateSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:CreateFileSystem",
+        "elasticfilesystem:CreateMountTarget",
+        "elasticfilesystem:DescribeMountTargets",
+        "elasticfilesystem:DescribeMountTargetSecurityGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3Actions1",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::launchwizard*",
+        "arn:aws:s3:::launchwizard*/*",
+        "arn:aws:s3:::aws-sap-data-provider/config.properties"
+      ]
+    },
+    {
+      "Sid": "CloudFormationActions2",
+      "Effect": "Allow",
+      "Action": "cloudformation:TagResource",
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": "LaunchWizard*"
+        }
+      }
+    },
+    {
+      "Sid": "LambdaActions0",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketVersioning",
+        "s3:DeleteBucket",
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:LaunchWizard*",
+        "arn:aws:s3:::launchwizard*"
+      ]
+    },
+    {
+      "Sid": "DynamodbActions0",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:CreateTable",
+        "dynamodb:DescribeTable",
+        "dynamodb:DeleteTable"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/LaunchWizard*"
+    },
+    {
+      "Sid": "SecretsManagerActions0",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:UntagResource",
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:DeleteResourcePolicy",
+        "secretsmanager:ListSecretVersionIds",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:LaunchWizard*"
+    },
+    {
+      "Sid": "SecretsManagerActions1",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetRandomPassword",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SsmActions5",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateOpsMetadata"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SsmActions6",
+      "Effect": "Allow",
+      "Action": "ssm:DeleteOpsMetadata",
+      "Resource": "arn:aws:ssm:*:*:opsmetadata/aws/ssm/LaunchWizard*"
+    },
+    {
+      "Sid": "SnsActions0",
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:DeleteTopic",
+        "sns:Subscribe",
+        "sns:Unsubscribe"
+      ],
+      "Resource": "arn:aws:sns:*:*:LaunchWizard*"
+    },
+    {
+      "Sid": "FsxActions0",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:UntagResource",
+        "fsx:TagResource",
+        "fsx:DeleteFileSystem",
+        "fsx:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/Name": "LaunchWizard*"
+        }
+      }
+    },
+    {
+      "Sid": "FsxActions1",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateFileSystem"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/Name": [
+            "LaunchWizard*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FsxActions2",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeFileSystems"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ServiceCatalogActions0",
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:CreatePortfolio",
+        "servicecatalog:DescribePortfolio",
+        "servicecatalog:CreateConstraint",
+        "servicecatalog:CreateProduct",
+        "servicecatalog:AssociatePrincipalWithPortfolio",
+        "servicecatalog:CreateProvisioningArtifact",
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:servicecatalog:*:*:*/*",
+        "arn:aws:catalog:*:*:*/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SsmActions7",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateAssociation",
+        "ssm:DeleteAssociation"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-ConfigureAWSPackage",
+        "arn:aws:ssm:*:*:association/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EfsActions1",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:UntagResource",
+        "elasticfilesystem:TagResource"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "LogsActions0",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DeleteLogGroup",
+        "logs:DescribeLogStreams",
+        "logs:UntagResource",
+        "logs:TagResource",
+        "logs:CreateLogGroup",
+        "logs:DeleteLogStream",
+        "logs:PutLogEvents",
+        "logs:GetLogEvents",
+        "logs:GetLogDelivery",
+        "logs:GetLogGroupFields",
+        "logs:GetLogRecord",
+        "logs:ListLogDeliveries"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:LaunchWizard*",
+        "arn:aws:logs:*:*:log-group:LaunchWizard*:log-stream:*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "LogsActions1",
+      "Effect": "Allow",
+      "Action": "logs:DescribeLogGroups",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "launchwizard.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "FsxActions3",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:CreateVolume"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/LaunchWizard-*/*"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "launchwizard.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FsxActions4",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "launchwizard.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FsxActions5",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DeleteStorageVirtualMachine",
+        "fsx:DeleteVolume"
+      ],
+      "Resource": [
+        "arn:aws:fsx:*:*:storage-virtual-machine/*/*",
+        "arn:aws:fsx:*:*:backup/*",
+        "arn:aws:fsx:*:*:volume/*/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/LaunchWizard-*/*"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "launchwizard.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -17,6 +17,7 @@
         "compute-optimizer:GetEffectiveRecommendationPreferences",
         "compute-optimizer:GetECSServiceRecommendations",
         "compute-optimizer:GetECSServiceRecommendationProjectedMetrics",
+        "compute-optimizer:GetLicenseRecommendations",
         "ec2:DescribeInstances",
         "ec2:DescribeVolumes",
         "ecs:ListServices",

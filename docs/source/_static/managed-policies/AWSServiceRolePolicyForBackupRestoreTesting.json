@@ -1,0 +1,98 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BackupActions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeRestoreJob",
+        "backup:GetRecoveryPointRestoreMetadata",
+        "backup:ListBackupVaults",
+        "backup:ListProtectedResourcesByBackupVault",
+        "backup:ListRecoveryPointsByBackupVault",
+        "backup:ListTags",
+        "backup:StartRestoreJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IamPassRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "backup.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeMountTargets",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeVolumes",
+        "fsx:ListTagsForResource",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBInstanceAutomatedBackups",
+        "rds:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVolume",
+        "ec2:TerminateInstances",
+        "elasticfilesystem:DeleteFilesystem",
+        "elasticfilesystem:DeleteMountTarget",
+        "rds:DeleteDBCluster",
+        "rds:DeleteDBInstance",
+        "fsx:DeleteFileSystem",
+        "fsx:DeleteVolume"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/awsbackup-restore-test": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DdbDeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DeleteTable",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/awsbackup-restore-test-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "S3DeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteBucket",
+        "s3:GetLifecycleConfiguration",
+        "s3:PutLifecycleConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::awsbackup-restore-test-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

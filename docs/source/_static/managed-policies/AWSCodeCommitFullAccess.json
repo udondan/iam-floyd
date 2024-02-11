@@ -176,7 +176,8 @@
       "Sid": "CodeStarNotificationsChatbotAccess",
       "Effect": "Allow",
       "Action": [
-        "chatbot:DescribeSlackChannelConfigurations"
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:ListMicrosoftTeamsChannelConfigurations"
       ],
       "Resource": "*"
     },

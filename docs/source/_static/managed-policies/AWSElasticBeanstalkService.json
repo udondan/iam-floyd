@@ -23,6 +23,22 @@
       ]
     },
     {
+      "Sid": "AllowECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "CreateCluster",
+            "RegisterTaskDefinition"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "AllowS3OperationsOnElasticBeanstalkBuckets",
       "Effect": "Allow",
       "Action": [
@@ -45,12 +61,28 @@
       }
     },
     {
+      "Sid": "AllowELBAddTags",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:AddTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "elasticloadbalancing:CreateAction": [
+            "CreateLoadBalancer"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "AllowOperations",
       "Effect": "Allow",
       "Action": [
         "autoscaling:AttachInstances",
         "autoscaling:CreateAutoScalingGroup",
         "autoscaling:CreateLaunchConfiguration",
+        "autoscaling:CreateOrUpdateTags",
         "autoscaling:DeleteLaunchConfiguration",
         "autoscaling:DeleteAutoScalingGroup",
         "autoscaling:DeleteScheduledAction",

@@ -1,11 +1,14 @@
 {
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
       "Action": [
+        "cloudfront:GetDistribution",
+        "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeVpcs",
-        "workspaces:DescribeWorkspaceDirectories",
-        "cloudfront:GetDistribution"
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "workspaces:DescribeWorkspaceDirectories"
       ],
       "Resource": "*"
     },
@@ -33,6 +36,5 @@
       },
       "Resource": "*"
     }
-  ],
-  "Version": "2012-10-17"
+  ]
 }

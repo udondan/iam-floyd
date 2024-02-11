@@ -4,185 +4,150 @@
     {
       "Effect": "Allow",
       "Action": [
-        "license-manager:ListLicenseConfigurations",
-        "license-manager:ListAssociationsForLicenseConfiguration",
-        "license-manager:ListUsageForLicenseConfiguration"
-      ],
-      "Resource": "*",
-      "Sid": "LicenseManagerAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:GenerateCredentialReport",
-        "iam:GetAccountSummary",
-        "iam:ListPolicies",
-        "iam:GetAccountPasswordPolicy",
-        "iam:ListUsers",
-        "iam:ListUserPolicies",
-        "iam:ListRoles",
-        "iam:ListRolePolicies",
-        "iam:ListGroups",
-        "iam:ListGroupPolicies",
-        "iam:ListEntitiesForPolicy"
-      ],
-      "Resource": "*",
-      "Sid": "IAMAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:DescribeInstances",
-        "ec2:DescribeFlowLogs",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeSecurityGroups",
-        "ec2:DescribeNetworkAcls",
-        "ec2:DescribeRouteTables",
-        "ec2:DescribeSnapshots",
-        "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeVolumes"
-      ],
-      "Resource": "*",
-      "Sid": "EC2Access"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudtrail:DescribeTrails"
-      ],
-      "Resource": "*",
-      "Sid": "CloudtrailAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
+        "acm:GetAccountConfiguration",
+        "acm:ListCertificates",
+        "backup:ListRecoveryPointsByResource",
+        "bedrock:GetCustomModel",
+        "bedrock:GetFoundationModel",
+        "bedrock:GetModelCustomizationJob",
+        "bedrock:GetModelInvocationLoggingConfiguration",
+        "bedrock:ListCustomModels",
+        "bedrock:ListFoundationModels",
+        "bedrock:ListModelCustomizationJobs",
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:LookupEvents",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:DescribeAlarmsForMetric",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics",
+        "cognito-idp:DescribeUserPool",
+        "config:DescribeConfigRules",
         "config:DescribeDeliveryChannels",
         "config:ListDiscoveredResources",
-        "config:DescribeConfigRules"
-      ],
-      "Resource": "*",
-      "Sid": "ConfigAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "securityhub:DescribeStandards"
-      ],
-      "Resource": "*",
-      "Sid": "SecurityHubAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "kms:ListKeys",
+        "directconnect:DescribeDirectConnectGateways",
+        "directconnect:DescribeVirtualGateways",
+        "dynamodb:DescribeTable",
+        "dynamodb:ListBackups",
+        "dynamodb:ListGlobalTables",
+        "dynamodb:ListTables",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeCustomerGateways",
+        "ec2:DescribeEgressOnlyInternetGateways",
+        "ec2:DescribeFlowLogs",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
+        "ec2:DescribeLocalGateways",
+        "ec2:DescribeLocalGatewayVirtualInterfaces",
+        "ec2:DescribeNatGateways",
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeTransitGateways",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpnConnections",
+        "ec2:DescribeVpnGateways",
+        "ec2:GetEbsDefaultKmsKeyId",
+        "ec2:GetEbsEncryptionByDefault",
+        "ecs:DescribeClusters",
+        "eks:DescribeAddonVersions",
+        "elasticache:DescribeCacheClusters",
+        "elasticache:DescribeServiceUpdates",
+        "elasticfilesystem:DescribeAccessPoints",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeSslPolicies",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticmapreduce:ListClusters",
+        "elasticmapreduce:ListSecurityConfigurations",
+        "events:DescribeRule",
+        "events:ListConnections",
+        "events:ListEventBuses",
+        "events:ListEventSources",
+        "events:ListRules",
+        "firehose:ListDeliveryStreams",
+        "fsx:DescribeFileSystems",
+        "guardduty:ListDetectors",
+        "iam:GenerateCredentialReport",
+        "iam:GetAccountAuthorizationDetails",
+        "iam:GetAccountPasswordPolicy",
+        "iam:GetAccountSummary",
+        "iam:GetCredentialReport",
+        "iam:ListEntitiesForPolicy",
+        "iam:ListGroupPolicies",
+        "iam:ListGroups",
+        "iam:ListOpenIdConnectProviders",
+        "iam:ListPolicies",
+        "iam:ListRolePolicies",
+        "iam:ListRoles",
+        "iam:ListSamlProviders",
+        "iam:ListUserPolicies",
+        "iam:ListUsers",
+        "iam:ListVirtualMFADevices",
+        "kafka:ListClusters",
+        "kafka:ListKafkaVersions",
+        "kinesis:ListStreams",
         "kms:DescribeKey",
-        "kms:ListGrants",
-        "kms:GetKeyRotationStatus",
         "kms:GetKeyPolicy",
-        "kms:ListKeyPolicies"
-      ],
-      "Resource": "*",
-      "Sid": "KMSAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudwatch:DescribeAlarms"
-      ],
-      "Resource": "*",
-      "Sid": "CloudwatchAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetLifecycleConfiguration",
+        "kms:GetKeyRotationStatus",
+        "kms:ListGrants",
+        "kms:ListKeyPolicies",
+        "kms:ListKeys",
+        "lambda:ListFunctions",
+        "license-manager:ListAssociationsForLicenseConfiguration",
+        "license-manager:ListLicenseConfigurations",
+        "license-manager:ListUsageForLicenseConfiguration",
+        "logs:DescribeDestinations",
+        "logs:DescribeExportTasks",
+        "logs:DescribeLogGroups",
+        "logs:DescribeMetricFilters",
+        "logs:DescribeResourcePolicies",
+        "logs:FilterLogEvents",
+        "organizations:DescribeOrganization",
+        "organizations:DescribePolicy",
+        "rds:DescribeCertificates",
+        "rds:DescribeDbClusterEndpoints",
+        "rds:DescribeDbClusterParameterGroups",
+        "rds:DescribeDbClusters",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDbSecurityGroups",
+        "redshift:DescribeClusters",
+        "route53:GetQueryLoggingConfig",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetBucketVersioning",
         "s3:GetEncryptionConfiguration",
-        "s3:ListAllMyBuckets"
-      ],
-      "Resource": "*",
-      "Sid": "S3Access"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "events:DescribeRule"
-      ],
-      "Resource": "*",
-      "Sid": "EventBridgeAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
+        "s3:GetLifecycleConfiguration",
+        "s3:ListAllMyBuckets",
+        "securityhub:DescribeStandards",
+        "sns:ListTopics",
+        "sqs:ListQueues",
+        "waf-regional:GetLoggingConfiguration",
+        "waf-regional:ListRuleGroups",
+        "waf-regional:ListSubscribedRuleGroups",
+        "waf-regional:ListWebACLs",
         "waf:ListActivatedRulesInRuleGroup"
       ],
       "Resource": "*",
-      "Sid": "WAFAccess"
+      "Sid": "AuditManagerAPICallAccess"
     },
     {
+      "Sid": "AuditManagerS3GetBucketPolicyAccess",
       "Effect": "Allow",
       "Action": [
-        "guardduty:ListDetectors"
+        "s3:GetBucketPolicy"
       ],
       "Resource": "*",
-      "Sid": "GuardDutyAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "route53:GetQueryLoggingConfig"
-      ],
-      "Resource": "*",
-      "Sid": "Route53Access"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "dynamodb:DescribeTable",
-        "dynamodb:ListTables"
-      ],
-      "Resource": "*",
-      "Sid": "DynamoDBAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "redshift:DescribeClusters"
-      ],
-      "Resource": "*",
-      "Sid": "RedshiftAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "rds:DescribeDBInstances"
-      ],
-      "Resource": "*",
-      "Sid": "RDSAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "organizations:DescribePolicy",
-        "organizations:DescribeOrganization"
-      ],
-      "Resource": "*",
-      "Sid": "OrganizationsAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cognito-idp:DescribeUserPool"
-      ],
-      "Resource": "*",
-      "Sid": "CognitoAccess"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "elasticfilesystem:DescribeFileSystems"
-      ],
-      "Resource": "*",
-      "Sid": "EFSAccess"
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": [
+            "${aws:PrincipalAccount}"
+          ]
+        }
+      }
     },
     {
       "Sid": "CreateEventsAccess",
