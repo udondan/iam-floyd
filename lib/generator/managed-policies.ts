@@ -1,80 +1,81 @@
-import * as IAM from 'aws-sdk/clients/iam';
+import { GetPolicyVersionCommand, IAMClient, ListPoliciesCommand, ListPoliciesRequest, Policy } from '@aws-sdk/client-iam';
 import * as fs from 'fs';
 
-const iam = new IAM();
+const iamClient = new IAMClient({
+  region: 'us-east-1',
+});
 
-export function indexManagedPolicies(): Promise<void> {
+export async function indexManagedPolicies(): Promise<void> {
   console.log('starting');
-  return new Promise(async (resolve, reject) => {
-    const policyNames: string[] = [];
-    const policies = await getPolicies();
-    console.log(`Fetched metadata of ${policies.length} managed policies`);
-    for (let policyMetadata of policies) {
-      if (
-        policyMetadata.PolicyName &&
-        policyMetadata.Arn &&
+  const policyNames: string[] = [];
+  const policies = await getPolicies();
+  console.log(`Fetched metadata of ${policies.length} managed policies`);
+  for (let policyMetadata of policies) {
+    if (
+      policyMetadata.PolicyName &&
+      policyMetadata.Arn &&
+      policyMetadata.DefaultVersionId
+    ) {
+      policyNames.push(policyMetadata.PolicyName);
+      console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
+      const document = await getPolicyDocument(
+        policyMetadata.Arn,
         policyMetadata.DefaultVersionId
-      ) {
-        policyNames.push(policyMetadata.PolicyName);
-        console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
-        const document = await getPolicyDocument(
-          policyMetadata.Arn,
-          policyMetadata.DefaultVersionId
-        );
-        storePolicyDocument(policyMetadata.PolicyName, document);
-      }
+      );
+      storePolicyDocument(policyMetadata.PolicyName, document);
     }
-    storePolicyIndex(policyNames);
-    resolve();
-  });
+  }
+  storePolicyIndex(policyNames);
 }
 
-function getPolicies(marker?: string): Promise<IAM.policyListType> {
-  const results: IAM.policyListType = [];
-  const params: IAM.ListPoliciesRequest = {
+async function getPolicies(marker?: string): Promise<Policy[]> {
+  const results: Policy[] = [];
+  const params: ListPoliciesRequest = {
     Scope: 'AWS',
     Marker: marker,
     MaxItems: 100,
   };
   console.log('Fetching metadata of 100 policies...');
-  return new Promise((resolve, reject) => {
-    iam.listPolicies(params, async function (err, data) {
-      if (err) return reject(err);
+  while (true) {
+    const { Policies, IsTruncated, Marker } = await iamClient.send(
+      new ListPoliciesCommand(params)
+    );
 
-      if (data.Policies) {
-        results.push(...data.Policies);
-      }
-      if (data.IsTruncated) {
-        await getPolicies(data.Marker).then((policies) => {
-          results.push(...policies);
-        });
-      }
-      resolve(results);
-    });
-  });
+    if (Policies) {
+      results.push(...Policies);
+    }
+
+    if (!IsTruncated) {
+      break;
+    }
+
+    params.Marker = Marker;
+  }
+  return results;
 }
 
-function getPolicyDocument(arn: string, version: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    var params = {
-      PolicyArn: arn,
-      VersionId: version,
-    };
+async function getPolicyDocument(
+  arn: string,
+  version: string
+): Promise<string> {
+  var params = {
+    PolicyArn: arn,
+    VersionId: version,
+  };
 
-    iam.getPolicyVersion(params, function (err, data) {
-      if (err) return reject(err);
-      if (data.PolicyVersion && data.PolicyVersion.Document) {
-        resolve(data.PolicyVersion.Document);
-      } else {
-        reject(`Could not find policy document for ${arn}`);
-      }
-    });
-  });
+  const { PolicyVersion } = await iamClient.send(
+    new GetPolicyVersionCommand(params)
+  );
+
+  if (PolicyVersion && PolicyVersion.Document) {
+    return decodeURIComponent(PolicyVersion.Document);
+  } else {
+    throw new Error(`Could not find policy document for ${arn}`);
+  }
 }
 
 function storePolicyDocument(name: string, document: string) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/${name}.json`;
-  document = decodeURIComponent(document);
 
   // formatting the document, so we do not permanently get re-formatting changes from the source
   document = JSON.stringify(JSON.parse(document), null, 2);
