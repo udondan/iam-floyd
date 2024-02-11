@@ -10,8 +10,9 @@ import {
 import { CreateBucketCommand, DeleteBucketCommand, PutBucketPolicyCommand, S3Client } from '@aws-sdk/client-s3';
 import { randomBytes } from 'crypto';
 
-const iamClient = new IAMClient({});
-const s3Client = new S3Client({});
+const region = 'us-east-1';
+const iamClient = new IAMClient({ region });
+const s3Client = new S3Client({ region });
 
 //import { Construct } from 'constructs';
 
