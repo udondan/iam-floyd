@@ -148,6 +148,11 @@ jobs:
           npm i
           npm run build
 
+      - name: Build packages
+        run: |
+          rm -rf dist/*
+          npm run package
+
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -191,7 +196,7 @@ jobs:
         run: |
           sed -i "s/iam-floyd/iam-dummy/g" package*
           sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
-          npm i dist/js/iam-floyd@*.jsii.tgz
+          npm i dist/js/iam-floyd@*.tgz
           sudo npm i -g typescript
 
       - name: Test npm package
