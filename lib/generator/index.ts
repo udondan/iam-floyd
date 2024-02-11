@@ -1,15 +1,27 @@
 import 'colors';
 
-import cheerio = require('cheerio');
-import fs = require('fs');
-import glob = require('glob');
-import request = require('request');
-import { OptionalKind, ParameterDeclarationStructure, Project, QuoteKind, Scope } from 'ts-morph';
+import * as cheerio from 'cheerio';
+import * as fs from 'fs';
+import * as glob from 'glob';
+import * as request from 'request';
+import {
+  OptionalKind,
+  ParameterDeclarationStructure,
+  Project,
+  QuoteKind,
+  Scope,
+} from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
-import { arnFixer, conditionFixer, conditionKeyFixer, fixes, serviceFixer } from './fixes';
+import {
+  arnFixer,
+  conditionFixer,
+  conditionKeyFixer,
+  fixes,
+  serviceFixer,
+} from './fixes';
 import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
@@ -479,11 +491,6 @@ export function createModule(module: Module): Promise<void> {
     const name = parts[1].split(/\/(?=[$<]|$)/);
 
     stats.conditions.push(`${module.servicePrefix}:${parts[1]}`);
-
-    // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
-    if (parts[0] == 'aws' && name[0] != 'FederatedProvider') {
-      continue;
-    }
 
     // boolean conditions don't take operators
     if (condition.type != 'boolean') {

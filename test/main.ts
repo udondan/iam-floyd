@@ -1,4 +1,4 @@
-import * as statement from '../lib';
+import * as statement from 'cdk-iam-floyd';
 
 function printPolicyWithStatements(statements: any[]) {
   console.log(

@@ -5,8 +5,7 @@
   "license": "Apache-2.0",
   "author": {
     "name": "Daniel Schroeder",
-    "url": "https://www.udondan.com/",
-    "twitter": "udondan"
+    "url": "https://www.udondan.com/"
   },
   "funding": [
     {
@@ -14,9 +13,6 @@
       "url": "https://github.com/sponsors/udondan"
     }
   ],
-  "awscdkio": {
-    "twitter": "udondan"
-  },
   "homepage": "https://github.com/udondan/iam-floyd",
   "repository": {
     "type": "git",

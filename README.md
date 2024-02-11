@@ -6,6 +6,7 @@
 [![libraries.io](https://img.shields.io/badge/packages-libraries.io-yellow)][libraries.io]
 [![Documentation](https://img.shields.io/badge/Documentation-Read%20the%20Docs-orange)][documentation]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+
 <!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
 -->
@@ -13,6 +14,7 @@
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
 <!-- stats -->
+
 Support for:
 
 - 353 Services
@@ -27,27 +29,24 @@ Support for:
 
 Find the documentation at [Read the Docs][documentation].
 
-[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=4dHY8qPHbKA "Auto completion demo")
+[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=4dHY8qPHbKA 'Auto completion demo')
 
 ## Packages
 
 There are two different package variants available:
 
-- **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
-[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)](https://pypi.org/project/iam-floyd/)
+- **iam-floyd**: Can be used in AWS SDK or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
 - **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
-[![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
 
   **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:<br>
   [![npm CDK v1](https://img.shields.io/badge/npm-0.286.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0)
-  [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.286.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.286.0/)
 
   Find them all on [libraries.io].
 
 ## CDK Compatibility Matrix
 
 | CDK        | cdk-iam-floyd              |
-| ---------- | -------------              |
+| ---------- | -------------------------- |
 | <= 1.151.0 | <= 0.285.0                 |
 | >= 1.152.0 | 0.286.0                    |
 | >= 1.158.0 | **No compatible version!** |
@@ -67,7 +66,7 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 
 This project is not affiliated, funded, or in any way associated with AWS.
 
-IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses. Especially the bundled packages [regex-parser](https://www.npmjs.com/package/regex-parser) and [common-substrings](https://www.npmjs.com/package/common-substrings) are released under the MIT License.
+IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses.
 
    [source]: https://github.com/udondan/iam-floyd
    [documentation]: https://iam-floyd.readthedocs.io/en/latest/

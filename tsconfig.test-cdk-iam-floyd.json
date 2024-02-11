@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["examples/**/*.cdk.ts"],
+  "exclude": []
+}

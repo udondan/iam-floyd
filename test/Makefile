@@ -1,15 +1,17 @@
 SHELL := /bin/bash
 
-test-cdk:
+clean:
 	@rm -rf node_modules package-lock.json
 	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
-	@npm i
-	@npm i --no-save ../dist/js/cdk-iam-floyd@*.jsii.tgz
-	@sudo npm i -g aws-cdk
+
+install:
+	@npm install
+
+test-cdk: install
 	@npm run build
-	@cdk diff
-	@cdk deploy --require-approval never
-	@cdk destroy --force
+	@npx cdk diff
+	@npx cdk deploy --require-approval never
+	@npx cdk destroy --force
 	@cat cdk.out/IAM-Floyd-Test.template.json
 
 test:

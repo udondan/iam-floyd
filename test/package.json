@@ -5,17 +5,16 @@
     "test": "cdk.js"
   },
   "scripts": {
-    "build": "tsc",
-    "cdk": "cdk"
+    "build": "npx tsc",
+    "cdk": "npx cdk"
   },
   "devDependencies": {
-    "@types/node": "^18.0.6",
-    "aws-cdk-lib": "^2.20.0",
-    "ts-node": "^10.7.0",
-    "typescript": "^5.0.2",
-    "constructs": "^10.0.0"
-  },
-  "overrides": {
-    "colors": "1.4.0"
+    "@types/node": "^20.11.17",
+    "aws-cdk": "^2.127.0",
+    "aws-cdk-lib": "^2.127.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "constructs": "^10.3.0",
+    "cdk-iam-floyd": "file:../"
   }
 }

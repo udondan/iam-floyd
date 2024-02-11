@@ -32,6 +32,7 @@ package: build
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
 	@npx ts-node bin/mkcdk.ts
+	@npm i
 
 test:
 	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
@@ -76,30 +77,19 @@ update-version-refs:
 	@perl -pi -e "s/(iam-floyd\@)[0-9.]+/\$${1}$(VERSION)/g" "README.md"
 	@perl -pi -e "s/^(release = ')[0-9.]+/\$${1}${VERSION}/g" "docs/source/conf.py"
 
-docs: python-examples-adjust-indention
+docs:
 	@cd docs && $(MAKE) clean html
 
-test-typescript: install
+test-typescript:
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test
 
-test-typescript-cdk: install
+test-typescript-cdk:
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
-
-test-python:
-	$(MAKE) --no-print-directory -f ./Test.Python.Makefile test
-
-test-python-cdk:
-	$(MAKE) --no-print-directory -f ./Test.Python.Makefile test-cdk
-
-python-examples-adjust-indention:
-	@ls examples/**/*.py | xargs autopep8 -i
-	@perl -pi -e "s/(?<=^     )(?=[^.])/    /g" examples/**/*.py
-	@perl -pi -e "s/^(\s{4,})\./\1    ./g" examples/**/*.py
 
 regenerate-code-example-results:
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
-	@tsc @/tmp/ts.result
+	@npx tsc @/tmp/ts.result
 	@rm /tmp/ts.result
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \

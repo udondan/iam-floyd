@@ -27,5 +27,15 @@
     "composite": false
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "bin/*",
+    "lib/generator/*",
+    "test/*",
+    "**/*CDK*",
+    "examples/*",
+    "twitter/*",
+    "helper/*",
+    "dist"
+  ]
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import fs = require('fs');
-import path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 import { Project } from 'ts-morph';
 
 import { formatCode } from '../lib/generator/format';
@@ -16,7 +16,8 @@ async function run() {
 
   const doFileSwap = !args.length || args.includes('--swap');
   const doPackageJson = !args.length || args.includes('--package-json');
-  const doFixIndex = !args.length || args.includes('--fix-index');
+  const doFixPolicyStatement =
+    !args.length || args.includes('--fix-policy-statement');
   const doFixModule = !args.length || args.includes('--fix-module');
 
   if (doFileSwap) swapFiles();
@@ -24,7 +25,7 @@ async function run() {
 
   const project = new Project();
 
-  if (doFixIndex) fixIndex(project);
+  if (doFixPolicyStatement) fixPolicyStatement(project);
 
   if (doFixModule) {
     const files = fs.readdirSync(`${lib}/generated`);
@@ -52,29 +53,49 @@ try {
   throw error;
 }
 
-function fixIndex(project: Project) {
+function fixPolicyStatement(project: Project) {
   try {
-    const file = path.join(
-      __dirname,
-      '../lib/shared/policy-statement/index.ts'
-    );
-    const sourceFile = project.addSourceFileAtPath(file);
+    // loop over files in ../lib/shared/policy-statement:
+    for (const fileName of fs.readdirSync(`${lib}/shared/policy-statement`)) {
+      if (fileName.endsWith('.ts') && !fileName.endsWith('.d.ts')) {
+        const file = path.join(
+          __dirname,
+          '../lib/shared/policy-statement',
+          fileName
+        );
 
-    sourceFile.addExportDeclaration({
-      namedExports: ['PolicyStatementWithCDKPrincipal'],
-      moduleSpecifier: './7-principals-CDK',
-    });
+        const sourceFile = project.addSourceFileAtPath(file);
 
-    sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
-      exportDeclaration.getNamedExports().forEach((exportItem) => {
-        if (exportItem.getName() == 'Effect') {
-          console.log('Removing Effect export...');
-          exportItem.remove();
+        if (fileName === 'index.ts') {
+          sourceFile.addExportDeclaration({
+            namedExports: ['PolicyStatementWithCDKPrincipal'],
+            moduleSpecifier: './7-principals-CDK',
+          });
+
+          sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
+            exportDeclaration.getNamedExports().forEach((exportItem) => {
+              if (exportItem.getName() == 'Effect') {
+                console.log('Removing Effect export...');
+                exportItem.remove();
+              }
+            });
+          });
         }
-      });
-    });
 
-    formatCode(sourceFile);
+        sourceFile.getClasses().forEach((classDeclaration) => {
+          console.log(`CHECKING CLASS NAME: ${classDeclaration.getName()}`);
+          if (classDeclaration.getMethod('freeze')) {
+            console.log('Importing aws_iam'); // otherwise TS2742
+            sourceFile.addImportDeclaration({
+              namedImports: ['aws_iam as _iam'],
+              moduleSpecifier: 'aws-cdk-lib',
+            });
+          }
+        });
+
+        formatCode(sourceFile);
+      }
+    }
   } catch (error: any) {
     throw error;
   }
@@ -121,18 +142,6 @@ function preparePackageJson() {
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0',
     constructs: '^10.0.0',
-  };
-
-  var excludes = jsonData.jsii.excludeTypescript as string[];
-  jsonData.jsii.excludeTypescript = excludes.filter(function (el) {
-    return el.indexOf('CDK') < 0;
-  });
-
-  jsonData.jsii.targets = {
-    python: {
-      distName: 'cdk-iam-floyd',
-      module: 'cdk_iam_floyd',
-    },
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));

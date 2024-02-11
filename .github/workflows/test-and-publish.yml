@@ -1,0 +1,306 @@
+---
+name: Test
+
+concurrency:
+  group: test-${{ github.head_ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - VERSION
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  finalize:
+    name: Finalize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Update version references
+        run: make update-version-refs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          set -x +e
+          [ -f package-lock.json ] && git stash -- package-lock.json
+          git diff
+          echo "CHANGED=$(git ls-files -m | wc -l | xargs)" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
+        if: steps.changes.outputs.CHANGED > 0
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.OVERRIDE_TOKEN }}
+          branch: ${{ github.head_ref }}
+        if: steps.changes.outputs.CHANGED > 0
+
+      - name: Get current SHA
+        run: git rev-parse HEAD > /tmp/sha
+
+      - name: Store SHA as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+  test-iam-floyd:
+    name: Test iam-floyd
+    needs: finalize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Update package version
+        run: |
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
+
+      - name: Test npm package
+        run: make install test-typescript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Dry run npm publish
+        run: npm publish --dry-run
+
+  test-cdk-iam-floyd:
+    name: Test cdk-iam-floyd
+    needs: finalize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Update package version
+        run: |
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      - name: Test npm package
+        run: |
+          make test-typescript-cdk
+          make cdk-test
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Dry run npm publish
+        run: npm publish --dry-run
+
+  release:
+    name: Release
+    if: |
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'main'
+    needs:
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v4
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Create tag
+        run: |
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
+          git config --local user.name "udondan"
+          git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
+          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+
+      - name: Create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+        with:
+          tag_name: v${{ steps.get_version.outputs.VERSION }}
+          release_name: v${{ steps.get_version.outputs.VERSION }}
+          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+
+  publish-iam-floyd:
+    name: Publish iam-floyd
+    if: |
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'main'
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Update package version
+        run: |
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-cdk-iam-floyd:
+    name: Publish cdk-iam-floyd
+    if: |
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'main'
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Update package version
+        run: |
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  success:
+    name: Test succeeded
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    needs:
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+    steps:
+      - name: Report success
+        run: echo 'Success'

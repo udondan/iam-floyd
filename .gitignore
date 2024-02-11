@@ -1,7 +1,5 @@
-.jsii
 node_modules
 dist
-/tsconfig.json
 **/*.js
 **/*.d.ts
 **/*.d.ts.map
@@ -11,6 +9,6 @@ test/package-lock.json
 test/cdk.out
 docs/build
 examples/*/*.*.result
-**/*.pyc
 package-lock.json
 tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo
