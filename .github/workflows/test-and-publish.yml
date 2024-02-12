@@ -246,7 +246,7 @@ jobs:
           ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Publish to npm
-        run: make publish
+        run: make install build publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -290,7 +290,7 @@ jobs:
           cat package.json
 
       - name: Publish to npm
-        run: make publish
+        run: make install build publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
