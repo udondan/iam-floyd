@@ -8,6 +8,7 @@ TARGET_COLOR=\x1b[96m
 
 build:
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
+	@rm -rf *.tsbuildinfo
 	@npm run build
 
 generate:
