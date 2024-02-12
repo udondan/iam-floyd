@@ -1,5 +1,4 @@
 node_modules
-dist
 **/*.js
 **/*.d.ts
 **/*.d.ts.map
@@ -10,5 +9,4 @@ test/cdk.out
 docs/build
 examples/*/*.*.result
 package-lock.json
-tsconfig.tsbuildinfo
-tsconfig.*.tsbuildinfo
+*.tsbuildinfo
