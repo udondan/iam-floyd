@@ -3,11 +3,11 @@
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
     "generate": "npx ts-node bin/generate.ts",
     "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
-    "build": "npx tsc"
+    "build": "npx tsc --build --force --verbose tsconfig.json"
   },
   "name": "iam-floyd",
   "description": "AWS IAM policy statement generator with fluent interface",
-  "version": "0.0.0",
+  "version": "0.601.1",
   "license": "Apache-2.0",
   "author": {
     "name": "Daniel Schroeder",

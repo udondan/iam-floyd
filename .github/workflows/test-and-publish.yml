@@ -36,6 +36,11 @@ jobs:
         id: get_version
         run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
 
+      - name: Update package version
+        run: |
+          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
+          grep version package.json
+
       - name: Update version references
         run: make update-version-refs
 
@@ -104,11 +109,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
       - name: Test npm package
         run: make install test-typescript
         env:
@@ -116,7 +116,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Dry run npm publish
-        run: npm publish --dry-run
+        run: make publish
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd
@@ -145,11 +145,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
       - name: Build CDK variant
         run: |
           make install
@@ -165,7 +160,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Dry run npm publish
-        run: npm publish --dry-run
+        run: make publish
 
   release:
     name: Release
@@ -250,13 +245,8 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
       - name: Publish to npm
-        run: npm publish
+        run: make install build publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -293,11 +283,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
       - name: Build CDK variant
         run: |
           make install
@@ -305,7 +290,7 @@ jobs:
           cat package.json
 
       - name: Publish to npm
-        run: npm publish
+        run: make build publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

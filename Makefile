@@ -8,6 +8,7 @@ TARGET_COLOR=\x1b[96m
 
 build:
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
+	@rm -rf *.tsbuildinfo
 	@npm run build
 
 generate:
@@ -102,3 +103,17 @@ tweet: install
 toot: install
 	@echo -e "$(TARGET_COLOR)Running toot$(NO_COLOR)"
 	@npx ts-node bin/toot.ts
+
+publish:
+	@echo -e "$(TARGET_COLOR)Running publish$(NO_COLOR)"
+	@output=$$(npm publish --dry-run 2>&1); \
+	echo "$${output}"; \
+	if ! echo "$${output}" | grep -q "lib/index.js"; then \
+		echo "❌ lib/index.js is NOT included in the package"; \
+		exit 1; \
+	fi
+	@if [ -z "$${NODE_AUTH_TOKEN}" ]; then \
+		echo "⚠️ NODE_AUTH_TOKEN is not set. Skipping publish"; \
+	else \
+		npm publish; \
+	fi
