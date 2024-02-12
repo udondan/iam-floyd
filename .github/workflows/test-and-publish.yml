@@ -290,7 +290,7 @@ jobs:
           cat package.json
 
       - name: Publish to npm
-        run: make install build publish
+        run: make build publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
