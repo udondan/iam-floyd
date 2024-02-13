@@ -1,7 +1,3 @@
-# Include javascript files and typescript declarations
-!*.js
-!*.d.ts
-
 # Exclude typescript source and config
 *.ts
 tsconfig.*
@@ -28,3 +24,7 @@ VERSION
 
 Makefile
 *.Makefile
+
+# Include javascript files and typescript declarations
+!*.js
+!*.d.ts
