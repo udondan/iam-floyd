@@ -10,3 +10,4 @@ docs/build
 examples/*/*.*.result
 package-lock.json
 *.tsbuildinfo
+*.tgz
