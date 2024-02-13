@@ -153,6 +153,7 @@ jobs:
 
       - name: Test npm package
         run: |
+          make build
           npm pack
           make test-typescript-cdk
           make cdk-test
