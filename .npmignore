@@ -1,10 +1,7 @@
-# Include javascript files and typescript declarations
-!*.js
-!*.d.ts
-
 # Exclude typescript source and config
 *.ts
 tsconfig.*
+*.tgz
 
 bin/*
 cdk/*
@@ -28,3 +25,7 @@ VERSION
 
 Makefile
 *.Makefile
+
+# Include javascript files and typescript declarations
+!*.js
+!*.d.ts

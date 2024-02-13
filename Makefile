@@ -28,7 +28,7 @@ index-managed-policies:
 
 package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
-	@npm run package
+	@npm pack
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
