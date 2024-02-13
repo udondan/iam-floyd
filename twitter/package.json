@@ -2,23 +2,23 @@
   "name": "twitter",
   "version": "0.1.0",
   "bin": {
-    "twitter": "bin/twitter.js"
+    "tooter": "bin/app.js"
   },
   "scripts": {
     "build": "npx tsc"
   },
-  "dependencies": {
-    "@types/aws-lambda": "^8.10.109",
-    "@types/node": "15.6.1",
-    "@types/twit": "^2.2.31",
-    "aws-cdk-lib": "2.56.1",
-    "constructs": "^10.0.0",
-    "esbuild": "^0.16.10",
-    "ts-node": "^10.9.1",
-    "twit": "^2.2.11",
-    "typescript": "^4.9.4"
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.133"
   },
-  "overrides": {
-    "colors": "1.4.0"
+  "dependencies": {
+    "@types/node": "20.11.17",
+    "aws-cdk-lib": "2.127.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.20.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "megalodon": "^5.5.0",
+    "@aws-sdk/client-sqs": "^3.511.0",
+    "@aws-sdk/client-secrets-manager": "^3.511.0"
   }
 }

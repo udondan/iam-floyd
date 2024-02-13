@@ -1,25 +1,21 @@
-import { Callback, Context } from 'aws-lambda';
-import AWS = require('aws-sdk');
+import { GetSecretValueCommand, SecretsManagerClient } from '@aws-sdk/client-secrets-manager';
+import { DeleteMessageCommand, Message, ReceiveMessageCommand, ReceiveMessageRequest, SQSClient } from '@aws-sdk/client-sqs';
+import { Handler } from 'aws-lambda';
 import generator, { MegalodonInterface } from 'megalodon';
 
-const sqs = new AWS.SQS();
-const no_toots_msg = 'No Toots in queue';
+const region = 'us-east-1';
+const sqsClient = new SQSClient({ region });
+const secretsManagerClient = new SecretsManagerClient({ region });
 
-interface Event {
-  [key: string]: any;
-}
+const no_toots_msg = 'No Toots in queue';
 
 interface Envelope {
   queue: string;
-  message: AWS.SQS.Message;
+  message: Message;
 }
 
-export const handler = function (
-  _event: Event = {},
-  _context: Context,
-  callback: Callback
-) {
-  getTootFromQueue(process.env.queue!)
+export const handler: Handler = async (_event, _context, callback) => {
+  await getTootFromQueue(process.env.queue!)
     .then(toot)
     .then(deleteTootFromQueue)
     .then((content) => {
@@ -35,28 +31,30 @@ export const handler = function (
     });
 };
 
-function getTootFromQueue(queue: string): Promise<Envelope> {
+async function getTootFromQueue(queue: string): Promise<Envelope> {
   log('Fetching Toots from queue');
-  return new Promise((resolve, reject) => {
-    const params: AWS.SQS.ReceiveMessageRequest = {
-      QueueUrl: queue,
+
+  const params: ReceiveMessageRequest = {
+    QueueUrl: queue,
+  };
+
+  const receiveMessageCommand = new ReceiveMessageCommand(params);
+
+  try {
+    const data = await sqsClient.send(receiveMessageCommand);
+    if (typeof data.Messages === 'undefined' || !data.Messages.length) {
+      throw new Error(no_toots_msg);
+    }
+    const message_1 = data.Messages[0];
+    log(`Got Toots: ${message_1.Body!}`);
+    return {
+      queue: queue,
+      message: message_1,
     };
-    sqs.receiveMessage(
-      params,
-      function (err: AWS.AWSError, data: AWS.SQS.ReceiveMessageResult) {
-        if (err) return reject(err);
-        if (typeof data.Messages === 'undefined' || !data.Messages.length) {
-          return reject(new Error(no_toots_msg));
-        }
-        const message = data.Messages![0];
-        log(`Got Toots: ${message.Body!}`);
-        resolve({
-          queue: queue,
-          message: message,
-        });
-      }
-    );
-  });
+  } catch (err) {
+    log(`Error fetching Toots from queue ${err}`);
+    throw err;
+  }
 }
 
 function toot(data: Envelope): Promise<Envelope> {
@@ -81,46 +79,44 @@ function toot(data: Envelope): Promise<Envelope> {
   });
 }
 
-function deleteTootFromQueue(data: Envelope): Promise<void> {
+async function deleteTootFromQueue(data: Envelope): Promise<void> {
   console.log(`Removing toot from queue: ${data.message.ReceiptHandle}`);
-  return new Promise((resolve, reject) => {
-    const params: AWS.SQS.DeleteMessageRequest = {
-      QueueUrl: data.queue,
-      ReceiptHandle: data.message.ReceiptHandle!,
-    };
-    sqs.deleteMessage(params, function (err, _) {
-      if (err) return reject(err);
-      resolve();
-    });
-  });
+
+  const params = {
+    QueueUrl: data.queue,
+    ReceiptHandle: data.message.ReceiptHandle,
+  };
+
+  const deleteMessageCommand = new DeleteMessageCommand(params);
+
+  try {
+    await sqsClient.send(deleteMessageCommand);
+    console.log('Toot removed from queue successfully');
+  } catch (err) {
+    console.error('Error removing Toot from queue', err);
+    throw err;
+  }
 }
 
-function authenticateMastodon(): Promise<MegalodonInterface> {
-  return new Promise((resolve, reject) => {
-    const secretsmanager = new AWS.SecretsManager();
-    const params: AWS.SecretsManager.GetSecretValueRequest = {
-      SecretId: process.env.credentials!,
-    };
-    secretsmanager.getSecretValue(
-      params,
-      async function (
-        err: AWS.AWSError,
-        data: AWS.SecretsManager.GetSecretValueResponse
-      ) {
-        if (err) return reject(err);
+async function authenticateMastodon(): Promise<MegalodonInterface> {
+  const params = {
+    SecretId: process.env.credentials!,
+  };
 
-        const credentials = JSON.parse(data.SecretString!);
-
-        const client = generator(
-          'mastodon',
-          'https://awscommunity.social',
-          credentials.access_token
-        );
-
-        resolve(client);
-      }
+  const getSecretValueCommand = new GetSecretValueCommand(params);
+  try {
+    const data = await secretsManagerClient.send(getSecretValueCommand);
+    const credentials = JSON.parse(data.SecretString!);
+    const client = generator(
+      'mastodon',
+      'https://awscommunity.social',
+      credentials.access_token
     );
-  });
+    return client;
+  } catch (err) {
+    console.error('Error retrieving secret', err);
+    throw err; // This preserves the call stack
+  }
 }
 
 function log(msg: string) {

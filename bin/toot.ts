@@ -1,9 +1,9 @@
-import * as AWS from 'aws-sdk';
+import { SendMessageCommand, SQSClient } from '@aws-sdk/client-sqs';
 import * as fs from 'fs';
 
 const maxLength = 500;
 
-const sqs = new AWS.SQS({ region: 'us-east-1' });
+const sqsClient = new SQSClient({ region: 'us-east-1' });
 
 function getChangelog() {
   let version = process.env.CHANGELOG || false;
@@ -18,20 +18,20 @@ function getChangelog() {
 }
 
 function enqueueToot(content: string) {
-  return new Promise((resolve, reject) => {
-    const params: AWS.SQS.SendMessageRequest = {
+  return new Promise(async (resolve, reject) => {
+    const params = {
       MessageBody: content,
       QueueUrl: process.env.AWS_SQS_URL!,
       MessageGroupId: 'Default',
     };
-    sqs.sendMessage(
-      params,
-      function (err: AWS.AWSError, data: AWS.SQS.SendMessageResult) {
-        if (err) return reject(err);
-        console.log(data);
-        resolve(data);
-      }
-    );
+
+    try {
+      const data = await sqsClient.send(new SendMessageCommand(params));
+      console.log(data);
+      resolve(data);
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 

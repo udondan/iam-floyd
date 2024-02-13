@@ -11,7 +11,7 @@ on:
         required: true
 
 jobs:
-  tweet:
+  toot:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,14 +34,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}
 
-      - name: Tweet latest version
-        run: make tweet
-        if: ${{ github.event_name == 'release' }}
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL }}
-
       - name: Toot specified version
         run: make toot
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -50,12 +42,3 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}
-
-      - name: Tweet specified version
-        run: make tweet
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        env:
-          CHANGELOG: ${{ github.event.inputs.changelog }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL }}
