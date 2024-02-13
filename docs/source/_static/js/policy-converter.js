@@ -104,8 +104,8 @@ function convertInputPolicy() {
 
 function setError(value) {
   const text = document.createTextNode(value);
-  $('#policyConverterError').innerHTML = '';
-  $('#policyConverterError').appendChild(text);
+  $('#policyConverterError').empty();
+  $('#policyConverterError').append(text);
 }
 
 function convert(convertTarget, data) {
