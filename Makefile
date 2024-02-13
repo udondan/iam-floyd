@@ -108,6 +108,10 @@ publish:
 		echo "❌ lib/index.js is NOT included in the package"; \
 		exit 1; \
 	fi
+	if ! echo "$${output}" | grep -q "lib/index.d.ts"; then \
+		echo "❌ lib/index.d.ts is NOT included in the package"; \
+		exit 1; \
+	fi
 	@if [ -z "$${NODE_AUTH_TOKEN}" ]; then \
 		echo "⚠️ NODE_AUTH_TOKEN is not set. Skipping publish"; \
 	else \
