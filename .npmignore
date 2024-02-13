@@ -1,6 +1,7 @@
 # Exclude typescript source and config
 *.ts
 tsconfig.*
+*.tgz
 
 bin/*
 cdk/*
