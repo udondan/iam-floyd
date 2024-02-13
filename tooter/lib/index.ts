@@ -1,7 +1,6 @@
 import {
   aws_events,
   aws_events_targets,
-  aws_iam,
   aws_kms,
   aws_lambda,
   aws_lambda_nodejs,
@@ -33,23 +32,6 @@ export class Stack extends CdkStack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const twitterCredentials = new aws_secretsmanager.Secret(
-      this,
-      'Credentials',
-      {
-        description: `${project}: Credentials for Twitter API`,
-        encryptionKey: kmsKey,
-        generateSecretString: {
-          secretStringTemplate: JSON.stringify({
-            consumer_key: '',
-            consumer_secret: '',
-            access_token: '',
-          }),
-          generateStringKey: 'access_token_secret',
-        },
-      }
-    );
-
     const mastodonCredentials = new aws_secretsmanager.Secret(
       this,
       'MastodonCredentials',
@@ -67,15 +49,6 @@ export class Stack extends CdkStack {
       }
     );
 
-    const twitterQueue = new aws_sqs.Queue(this, 'Queue', {
-      queueName: `${project_id}-tweets.fifo`,
-      fifo: true,
-      contentBasedDeduplication: true,
-      retentionPeriod: Duration.days(14),
-      encryption: aws_sqs.QueueEncryption.KMS,
-      encryptionMasterKey: kmsKey,
-    });
-
     const mastodonQueue = new aws_sqs.Queue(this, 'MastodonQueue', {
       queueName: `${project_id}-toots.fifo`,
       fifo: true,
@@ -86,23 +59,9 @@ export class Stack extends CdkStack {
     });
 
     const schedule = new aws_events.Rule(this, 'Schedule', {
-      ruleName: `${project_id}-tweet`,
-      description: `${project}: Trigger Tweeter & Tooter function`,
+      ruleName: `${project_id}-toot`,
+      description: `${project}: Trigger Tooter function`,
       schedule: aws_events.Schedule.rate(Duration.minutes(30)),
-    });
-
-    const twitterFn = new aws_lambda_nodejs.NodejsFunction(this, 'Tweeter', {
-      functionName: `${project_id}-tweeter`,
-      description: `${project}: Tweet one item from Floyd queue`,
-      entry: path.join(__dirname, '../lambda/tweet/index.ts'),
-      environmentEncryption: kmsKey,
-      environment: {
-        queue: twitterQueue.queueUrl,
-        credentials: twitterCredentials.secretArn,
-      },
-      runtime: aws_lambda.Runtime.NODEJS_14_X,
-      timeout: Duration.seconds(10),
-      logRetention: aws_logs.RetentionDays.ONE_WEEK,
     });
 
     const mastodonFn = new aws_lambda_nodejs.NodejsFunction(this, 'Tooter', {
@@ -119,18 +78,12 @@ export class Stack extends CdkStack {
       logRetention: aws_logs.RetentionDays.ONE_WEEK,
     });
 
-    twitterQueue.grantConsumeMessages(twitterFn);
-    twitterCredentials.grantRead(twitterFn);
-
     mastodonQueue.grantConsumeMessages(mastodonFn);
     mastodonCredentials.grantRead(mastodonFn);
 
-    kmsKey.grantEncryptDecrypt(twitterFn);
     kmsKey.grantEncryptDecrypt(mastodonFn);
 
-    const twitterTarget = new aws_events_targets.LambdaFunction(twitterFn);
     const mastodonTarget = new aws_events_targets.LambdaFunction(mastodonFn);
-    schedule.addTarget(twitterTarget);
     schedule.addTarget(mastodonTarget);
   }
 }

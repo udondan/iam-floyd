@@ -16,7 +16,7 @@ lib/generator/*
 node_modules
 stats/*
 test/*
-twitter/*
+tooter/*
 VERSION
 
 .editorconfig

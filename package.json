@@ -39,6 +39,7 @@
   "devDependencies": {
     "@aws-sdk/client-iam": "^3.511.0",
     "@aws-sdk/client-s3": "^3.511.0",
+    "@aws-sdk/client-sqs": "^3.511.0",
     "@types/cheerio": "^0.22.35",
     "@types/glob": "^8.1.0",
     "@types/lodash": "^4.14.202",
