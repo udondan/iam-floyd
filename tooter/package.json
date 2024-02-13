@@ -1,5 +1,5 @@
 {
-  "name": "twitter",
+  "name": "tooter",
   "version": "0.1.0",
   "bin": {
     "tooter": "bin/app.js"

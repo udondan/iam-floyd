@@ -34,7 +34,7 @@
     "test/*",
     "**/*CDK*",
     "examples/*",
-    "twitter/*",
+    "tooter/*",
     "helper/*",
     "dist"
   ]
