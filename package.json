@@ -40,6 +40,8 @@
     "@aws-sdk/client-iam": "^3.511.0",
     "@aws-sdk/client-s3": "^3.511.0",
     "@aws-sdk/client-sqs": "^3.511.0",
+    "@swc/core": "^1.4.1",
+    "@swc/helpers": "^0.5.6",
     "@types/cheerio": "^0.22.35",
     "@types/glob": "^8.1.0",
     "@types/lodash": "^4.14.202",
@@ -50,6 +52,7 @@
     "colors": "1.4.0",
     "glob": "^10.3.10",
     "publib": "^0.2.792",
+    "regenerator-runtime": "^0.14.1",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "ts-morph": "^21.0.1",
@@ -57,7 +60,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@udondan/common-substrings": "^3.0.2",
-    "regex-parser": "^2.3.0"
+    "@udondan/common-substrings": "3.0.2",
+    "regex-parser": "2.3.0"
   }
 }
