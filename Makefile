@@ -102,16 +102,17 @@ toot: install
 
 publish:
 	@echo -e "$(TARGET_COLOR)Running publish$(NO_COLOR)"
-	@output=$$(npm publish --dry-run 2>&1); \
-	echo "$${output}"; \
-	if ! echo "$${output}" | grep -q "lib/index.js"; then \
+	@find . -type f -name 'README.md' -mindepth 2 -exec rm {} \;
+	@npm publish --dry-run 2>&1 | tee publish_output.txt
+	@if ! grep -q "lib/index.js" publish_output.txt; then \
 		echo "❌ lib/index.js is NOT included in the package"; \
 		exit 1; \
 	fi
-	if ! echo "$${output}" | grep -q "lib/index.d.ts"; then \
+	@if ! grep -q "lib/index.d.ts" publish_output.txt; then \
 		echo "❌ lib/index.d.ts is NOT included in the package"; \
 		exit 1; \
 	fi
+	@rm publish_output.txt
 	@if [ -z "$${NODE_AUTH_TOKEN}" ]; then \
 		echo "⚠️ NODE_AUTH_TOKEN is not set. Skipping publish"; \
 	else \
