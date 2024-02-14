@@ -26,7 +26,7 @@ jobs:
           intervalSeconds: 30
 
       - name: Automerge
-        uses: pascalgn/automerge-action@v0.15.3
+        uses: pascalgn/automerge-action@v0.16.2
         if: steps.wait-for-ci.outputs.conclusion == 'success'
         env:
           MERGE_LABELS: automerge
