@@ -2,8 +2,8 @@
 name: Test / Publish / Release
 
 concurrency:
-  group: test-${{ github.head_ref }}
-  cancel-in-progress: true
+  group: test-publish-release
+  cancel-in-progress: false
 
 on:
   push:
