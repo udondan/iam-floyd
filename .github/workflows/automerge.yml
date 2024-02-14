@@ -8,32 +8,6 @@ on:
     types: [labeled, synchronize]
 
 jobs:
-  automerge_dependabot:
-    name: Automerge Dependabot
-    runs-on: ubuntu-latest
-    if: |
-      github.actor == 'dependabot[bot]' &&
-      contains(github.event.pull_request.labels.*.name, 'dependencies')
-    steps:
-      - name: Wait for tests to succeed
-        uses: fountainhead/action-wait-for-check@v1.1.0
-        id: wait-for-ci
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Test succeeded
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          timeoutSeconds: 1200
-          intervalSeconds: 30
-
-      - name: Automerge
-        uses: pascalgn/automerge-action@v0.15.3
-        if: steps.wait-for-ci.outputs.conclusion == 'success'
-        env:
-          MERGE_LABELS: dependencies
-          UPDATE_LABELS: dependencies
-          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
-          MERGE_DELETE_BRANCH: true
-
   automerge_ci:
     name: Automerge CI
     runs-on: ubuntu-latest
