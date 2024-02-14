@@ -10,7 +10,7 @@ function getStatement() {
       .ifAwsRequestTag(
         'Environment',
         ['Production', 'Staging', 'Dev'],
-        new statement.Operator().stringEquals().ifExists()
+        new statement.Operator().stringEquals().ifExists(),
       )
     // doc-end
   );

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "bin/*",
+    "lib/generator/*",
+    "test/*",
+    "**/*CDK*",
+    "examples/*",
+    "tooter/*",
+    "helper/*",
+    "dist"
+  ]
+}

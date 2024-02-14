@@ -1,8 +1,6 @@
 import { PolicyStatementWithActions } from './3-actions';
 
-export interface ResourceTypes {
-  [key: string]: ResourceType;
-}
+export type ResourceTypes = Record<string, ResourceType>;
 
 export interface ResourceType {
   name: string;

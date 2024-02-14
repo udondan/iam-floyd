@@ -1,5 +1,14 @@
-import { GetSecretValueCommand, SecretsManagerClient } from '@aws-sdk/client-secrets-manager';
-import { DeleteMessageCommand, Message, ReceiveMessageCommand, ReceiveMessageRequest, SQSClient } from '@aws-sdk/client-sqs';
+import {
+  GetSecretValueCommand,
+  SecretsManagerClient,
+} from '@aws-sdk/client-secrets-manager';
+import {
+  DeleteMessageCommand,
+  Message,
+  ReceiveMessageCommand,
+  ReceiveMessageRequest,
+  SQSClient,
+} from '@aws-sdk/client-sqs';
 import { Handler } from 'aws-lambda';
 import generator, { MegalodonInterface } from 'megalodon';
 
@@ -42,7 +51,7 @@ async function getTootFromQueue(queue: string): Promise<Envelope> {
 
   try {
     const data = await sqsClient.send(receiveMessageCommand);
-    if (typeof data.Messages === 'undefined' || !data.Messages.length) {
+    if (!data.Messages?.length) {
       throw new Error(no_toots_msg);
     }
     const message_1 = data.Messages[0];
@@ -110,7 +119,7 @@ async function authenticateMastodon(): Promise<MegalodonInterface> {
     const client = generator(
       'mastodon',
       'https://awscommunity.social',
-      credentials.access_token
+      credentials.access_token,
     );
     return client;
   } catch (err) {

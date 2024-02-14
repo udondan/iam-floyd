@@ -10,7 +10,7 @@ function getStatement() {
       .onTable('Thread')
       .ifAttributes(
         ['ID', 'Message', 'Tags'],
-        new statement.Operator().stringEquals().forAllValues()
+        new statement.Operator().stringEquals().forAllValues(),
       )
     // doc-end
   );

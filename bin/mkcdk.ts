@@ -7,9 +7,7 @@ import { formatCode } from '../lib/generator/format';
 
 const lib = path.join(__dirname, '../lib');
 
-interface Packages {
-  [key: string]: string;
-}
+type Packages = Record<string, string>;
 
 async function run() {
   const args = process.argv.slice(2);
@@ -61,7 +59,7 @@ function fixPolicyStatement(project: Project) {
         const file = path.join(
           __dirname,
           '../lib/shared/policy-statement',
-          fileName
+          fileName,
         );
 
         const sourceFile = project.addSourceFileAtPath(file);
@@ -104,7 +102,7 @@ function fixPolicyStatement(project: Project) {
 function fixModule(project: Project, file: string) {
   try {
     const sourceFile = project.addSourceFileAtPath(file);
-    const classDeclaration = sourceFile!.getClasses()[0];
+    const classDeclaration = sourceFile.getClasses()[0];
     sourceFile.addImportDeclaration({
       namedImports: ['aws_iam as iam'],
       moduleSpecifier: 'aws-cdk-lib',
@@ -138,7 +136,7 @@ function preparePackageJson() {
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
 
   (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '^2.0.0';
-  (jsonData.devDependencies as Packages)['constructs'] = '^10.0.0';
+  (jsonData.devDependencies as Packages).constructs = '^10.0.0';
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0',
     constructs: '^10.0.0',

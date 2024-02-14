@@ -118,3 +118,8 @@ publish:
 	else \
 		npm publish; \
 	fi
+
+eslint:
+	@echo "Running eslint $$(npx eslint --version)..."; \
+	npx eslint .; \
+	echo "Passed"

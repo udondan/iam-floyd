@@ -46,7 +46,7 @@ export class Stack extends CdkStack {
           }),
           generateStringKey: 'access_token_secret',
         },
-      }
+      },
     );
 
     const mastodonQueue = new aws_sqs.Queue(this, 'MastodonQueue', {

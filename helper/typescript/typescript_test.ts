@@ -7,7 +7,12 @@ import {
   DeleteRoleCommand,
   IAMClient,
 } from '@aws-sdk/client-iam';
-import { CreateBucketCommand, DeleteBucketCommand, PutBucketPolicyCommand, S3Client } from '@aws-sdk/client-s3';
+import {
+  CreateBucketCommand,
+  DeleteBucketCommand,
+  PutBucketPolicyCommand,
+  S3Client,
+} from '@aws-sdk/client-s3';
 import { randomBytes } from 'crypto';
 
 const region = 'us-east-1';
@@ -56,7 +61,7 @@ function deployPolicy(statements: any[]): Promise<void> {
           PolicyName: policyName,
           PolicyDocument: document,
           Description: 'Testing policy creation',
-        })
+        }),
       );
 
       log(`Deleting test policy ${policyName}`);
@@ -64,7 +69,7 @@ function deployPolicy(statements: any[]): Promise<void> {
       await iamClient.send(
         new DeletePolicyCommand({
           PolicyArn: data.Policy?.Arn,
-        })
+        }),
       );
       resolve();
     } catch (err) {
@@ -88,7 +93,7 @@ function deployAssume(statements: any[]): Promise<void> {
           RoleName: roleName,
           AssumeRolePolicyDocument: document,
           Description: 'Testing policy creation',
-        })
+        }),
       );
 
       log(`Deleting test role ${roleName}`);
@@ -96,7 +101,7 @@ function deployAssume(statements: any[]): Promise<void> {
       await iamClient.send(
         new DeleteRoleCommand({
           RoleName: data.Role?.RoleName,
-        })
+        }),
       );
       resolve();
     } catch (err) {
@@ -124,7 +129,7 @@ function deployAccess(statements: any[]): Promise<void> {
         new PutBucketPolicyCommand({
           Bucket: bucketName,
           Policy: document,
-        })
+        }),
       );
 
       log(`Deleting test bucket ${bucketName}`);

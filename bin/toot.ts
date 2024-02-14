@@ -67,7 +67,7 @@ async function main() {
     }
   });
 
-  for (let content of toots) {
+  for (const content of toots) {
     console.log('tooting:');
     console.log(content);
     await enqueueToot(content).catch((err: any) => {

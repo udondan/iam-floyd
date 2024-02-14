@@ -4,12 +4,24 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as request from 'request';
-import { OptionalKind, ParameterDeclarationStructure, Project, QuoteKind, Scope } from 'ts-morph';
+import {
+  OptionalKind,
+  ParameterDeclarationStructure,
+  Project,
+  QuoteKind,
+  Scope,
+} from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
-import { arnFixer, conditionFixer, conditionKeyFixer, fixes, serviceFixer } from './fixes';
+import {
+  arnFixer,
+  conditionFixer,
+  conditionKeyFixer,
+  fixes,
+  serviceFixer,
+} from './fixes';
 import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
@@ -26,7 +38,7 @@ project.manipulationSettings.set({
 const modules: Module[] = [];
 const timeThreshold = new Date();
 
-var threshold = 25;
+let threshold = 25;
 const thresholdOverride = process.env.NOCACHE;
 if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
   threshold += 999999999;
@@ -34,20 +46,21 @@ if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
 
 timeThreshold.setHours(timeThreshold.getHours() - threshold);
 
-type Stats = {
+interface Stats {
   actions: string[];
   conditions: string[];
   resources: string[];
-};
+}
 const serviceStats: string[] = [];
 
-const conditionTypeDefaults: {
-  [key: string]: {
+const conditionTypeDefaults: Record<
+  string,
+  {
     url: string;
     default: Operator;
     type: string[];
-  };
-} = {
+  }
+> = {
   string: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
     default: new Operator().stringLike(),
@@ -82,23 +95,17 @@ export interface Module {
   url?: string;
   actionList?: Actions;
   resourceTypes?: ResourceTypes;
-  fixes?: {
-    [key: string]: any;
-  };
+  fixes?: Record<string, any>;
   conditions?: Conditions;
 }
 
-export interface Actions {
-  [key: string]: Action;
-}
+export type Actions = Record<string, Action>;
 
 export interface Action {
   url: string;
   description: string;
   accessLevel: string;
-  resourceTypes?: {
-    [key: string]: ResourceTypeOnAction;
-  };
+  resourceTypes?: Record<string, ResourceTypeOnAction>;
   conditions?: string[];
   dependentActions?: string[];
 }
@@ -119,7 +126,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
     requestWithRetry(url)
       .then((body) => {
         const re = /href="\.\/list_(.*?)\.html"/g;
-        var match: RegExpExecArray;
+        let match: RegExpExecArray;
         const services: string[] = [];
         do {
           match = re.exec(body)!;
@@ -160,7 +167,7 @@ export function getContent(service: string): Promise<Module> {
     const shortName = service.replace(/^(amazon|aws)/, '');
 
     try {
-      var module: Module = {
+      let module: Module = {
         filename: shortName.replace(/[^a-z0-9-]/i, '-'),
       };
 
@@ -232,13 +239,13 @@ function writeStatsFile(file: string, data: string[]) {
       return data.indexOf(elem) == pos;
     })
     .sort();
-  const content = uniqueValues.join('\n') + '\n';
+  const content = `${uniqueValues.join('\n')}\n`;
   fs.writeFileSync(file, content);
 }
 
 function writeStats(module: string, stats: Stats) {
   process.stdout.write('Stats '.grey);
-  (Object.keys(stats) as Array<keyof Stats>).forEach(function (key) {
+  (Object.keys(stats) as (keyof Stats)[]).forEach(function (key) {
     const filePath = `./stats/${key}/${module}`;
     writeStatsFile(filePath, stats[key]);
   });
@@ -303,7 +310,7 @@ export function createModule(module: Module): Promise<void> {
   modules.push(module);
 
   const sourceFile = project.createSourceFile(
-    `./lib/generated/${module.filename}.ts`
+    `./lib/generated/${module.filename}.ts`,
   );
 
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
@@ -367,7 +374,7 @@ export function createModule(module: Module): Promise<void> {
       action.conditions?.forEach((condition) => {
         desc += `\n- .${createConditionName(
           module.conditions![condition].key,
-          module.servicePrefix!
+          module.servicePrefix!,
         )}()`;
       });
     }
@@ -392,7 +399,7 @@ export function createModule(module: Module): Promise<void> {
     initializer: JSON.stringify(accessLevelList, null, 2)
       .split('"') // ensure we use single quotes
       .join("'")
-      .replace(/^  '([^' ]+)'/gm, '$1'), // remove quotes from single word keys
+      .replace(/^ {2}'([^' ]+)'/gm, '$1'), // remove quotes from single word keys
   });
 
   for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
@@ -404,7 +411,7 @@ export function createModule(module: Module): Promise<void> {
     stats.resources.push(`${module.servicePrefix}:${name}`);
 
     const params = getArnPlaceholders(resourceType.arn);
-    let optionalMethodParameters: OptionalKind<ParameterDeclarationStructure>[] =
+    const optionalMethodParameters: OptionalKind<ParameterDeclarationStructure>[] =
       [];
     params.forEach((param) => {
       if (/^(Partition|Region|Account(Id)?)$/.test(param)) {
@@ -463,7 +470,7 @@ export function createModule(module: Module): Promise<void> {
       resourceType.conditionKeys.forEach((key) => {
         desc += `\n- .${createConditionName(
           module.conditions![key].key,
-          module.servicePrefix!
+          module.servicePrefix!,
         )}()`;
       });
     }
@@ -528,7 +535,7 @@ export function createModule(module: Module): Promise<void> {
 
     const methodBody: string[] = [];
 
-    var methodName = createConditionName(key, module.servicePrefix!);
+    let methodName = createConditionName(key, module.servicePrefix!);
     if (name.length > 1 && !name[1].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
@@ -544,7 +551,7 @@ export function createModule(module: Module): Promise<void> {
     let propsKey = '';
 
     if (parts[0] != module.servicePrefix) {
-      propsKey += parts[0] + ':';
+      propsKey += `${parts[0]}:`;
     }
 
     propsKey += name[0];
@@ -564,7 +571,7 @@ export function createModule(module: Module): Promise<void> {
     }
 
     if (type in conditionTypeDefaults) {
-      var types = [...conditionTypeDefaults[type].type];
+      let types = [...conditionTypeDefaults[type].type];
       if ('typeOverride' in condition) {
         types = condition.typeOverride!;
       }
@@ -600,14 +607,14 @@ export function createModule(module: Module): Promise<void> {
           '    }',
           '    return item;',
           '  });',
-          '}'
+          '}',
         );
       }
 
       methodBody.push(
         `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[
           type
-        ].default.toString()}')`
+        ].default.toString()}')`,
       );
     } else if (type == 'boolean') {
       desc += '\n@param value `true` or `false`. **Default:** `true`';
@@ -619,7 +626,7 @@ export function createModule(module: Module): Promise<void> {
       });
 
       methodBody.push(
-        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
+        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`,
       );
     } else {
       throw new Error(`Unexpected condition type: ${type} for ${name}`);
@@ -660,7 +667,7 @@ export function createIndex() {
 
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
-      `./lib/generated/${module.filename}.ts`
+      `./lib/generated/${module.filename}.ts`,
     );
     const exports: string[] = [];
 
@@ -745,8 +752,8 @@ function mkDirCache(dir: string, pattern: string) {
   if (!fs.existsSync(cacheDir)) {
     fs.mkdirSync(cacheDir);
   }
-  for (let file of glob.sync(`${dir}/${pattern}`)) {
-    const fileName = (file as string).split('/').slice(-1)[0];
+  for (const file of glob.sync(`${dir}/${pattern}`)) {
+    const fileName = file.split('/').slice(-1)[0];
     fs.renameSync(file, `${cacheDir}/${fileName}`);
   }
 }
@@ -767,7 +774,7 @@ function getLastModified(url: string): Promise<Date> {
   return new Promise((resolve, reject) => {
     requestWithRetry(url, { method: 'HEAD' })
       .then((lastModified: string) => {
-        var mod = new Date();
+        let mod = new Date();
         if (lastModified !== '') {
           mod = new Date(lastModified);
         }
@@ -792,11 +799,11 @@ function addActions($: CheerioStatic, module: Module): Module {
   const actions: Actions = {};
   const tableActions = getTable($, 'Actions');
 
-  var action: string;
+  let action: string;
   tableActions.find('tr').each((_: number, element: CheerioElement) => {
     const tds = $(element).find('td');
     const tdLength = tds.length;
-    var first = tds.first();
+    let first = tds.first();
 
     if (tdLength == 6) {
       // it's a new action
@@ -814,15 +821,15 @@ function addActions($: CheerioStatic, module: Module): Module {
       const content = cleanDescription(tds.text());
       if (content.length && !content.startsWith('SCENARIO:')) {
         console.warn(
-          `skipping row due to unexpected number of fields: ${content}`.yellow
+          `skipping row due to unexpected number of fields: ${content}`.yellow,
         );
       }
       return;
     }
 
-    var resourceType = first.text().trim();
-    var required = false;
-    var conditionKeys = first.next().find('p');
+    let resourceType = first.text().trim();
+    let required = false;
+    const conditionKeys = first.next().find('p');
     const dependentActions = first.next().next().find('p');
 
     const conditions: string[] = [];
@@ -830,13 +837,13 @@ function addActions($: CheerioStatic, module: Module): Module {
       conditionKeys.each((_: unknown, conditionKey: string) => {
         const condition = conditionKeyFixer(
           module.servicePrefix!,
-          cleanDescription($(conditionKey).text())
+          cleanDescription($(conditionKey).text()),
         );
 
         if (!module.conditions![condition]) {
           console.log(
             `[Skipping referenced condition, since it is not documented: ${condition}]`
-              .red
+              .red,
           );
           return;
         }
@@ -853,7 +860,7 @@ function addActions($: CheerioStatic, module: Module): Module {
       actions[action].dependentActions = [];
       dependentActions.each((_: unknown, dependentAction: string) => {
         actions[action].dependentActions?.push(
-          cleanDescription($(dependentAction).text())
+          cleanDescription($(dependentAction).text()),
         );
       });
     }
@@ -903,7 +910,7 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       .map((element: string) => {
         return conditionKeyFixer(
           module.servicePrefix!,
-          $(element).text().trim()
+          $(element).text().trim(),
         );
       });
 
@@ -995,7 +1002,7 @@ function requestWithRetry(
   url: string,
   options: request.CoreOptions = {},
   retries = 3,
-  backoff = 300
+  backoff = 300,
 ): Promise<any> {
   options.headers = {
     'User-Agent':
@@ -1017,7 +1024,7 @@ function requestWithRetry(
             reject(err);
           }
         } else {
-          if ('method' in options && options['method'] == 'HEAD') {
+          if ('method' in options && options.method == 'HEAD') {
             if ('last-modified' in response.headers) {
               resolve(response.headers['last-modified']);
             } else resolve('');

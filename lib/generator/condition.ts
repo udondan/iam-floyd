@@ -9,6 +9,4 @@ export interface Condition {
   relatedResourceTypes?: string[];
 }
 
-export interface Conditions {
-  [key: string]: Condition;
-}
+export type Conditions = Record<string, Condition>;

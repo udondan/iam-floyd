@@ -2,12 +2,10 @@ import { get } from 'lodash';
 
 import { Condition } from './condition';
 
-var colors = require('colors/safe');
+const colors = require('colors/safe');
 
 colors.enable();
-interface Fixes {
-  [key: string]: any;
-}
+type Fixes = Record<string, any>;
 
 /**
  * Global definition of fixes we apply to the AWS docs
@@ -154,7 +152,7 @@ export const fixes: Fixes = {
 
 export function conditionFixer(
   service: string,
-  condition: Condition
+  condition: Condition,
 ): Condition {
   let fixed = 0;
   const type = condition.type.toLowerCase();
@@ -185,7 +183,7 @@ export function conditionFixer(
 
   const operatorType = get(
     fixes,
-    `${service}.conditions.${keyWithoutPrefix}.operator.type`
+    `${service}.conditions.${keyWithoutPrefix}.operator.type`,
   );
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
@@ -194,7 +192,7 @@ export function conditionFixer(
 
   const operatorTypeOverride = get(
     fixes,
-    `${service}.conditions.${keyWithoutPrefix}.operator.override`
+    `${service}.conditions.${keyWithoutPrefix}.operator.override`,
   );
   if (typeof operatorTypeOverride !== 'undefined') {
     fixed = 2;
@@ -203,7 +201,7 @@ export function conditionFixer(
 
   if (fixed > 0) {
     process.stdout.write(
-      colors.yellow(`[L${fixed} fix for condition ${keyWithoutPrefix}] `)
+      colors.yellow(`[L${fixed} fix for condition ${keyWithoutPrefix}] `),
     );
   }
   return condition;
@@ -215,18 +213,18 @@ export function conditionKeyFixer(service: string, key: string): string {
 
   const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
   if (typeof keyOverride !== 'undefined') {
-    return split[0] + ':' + keyOverride;
+    return `${split[0]}:${keyOverride}`;
   }
 
-  return split[0] + ':' + key;
+  return `${split[0]}:${key}`;
 }
 
 export function arnFixer(
   service: string,
   resource: string,
-  arn: string
+  arn: string,
 ): string {
-  var fixed = 0;
+  let fixed = 0;
 
   // ensure all ARN placeholders start with an uppercase letter
   arn = arn.replace(/\$\{([a-z])/g, function (_, first: string) {
@@ -236,12 +234,12 @@ export function arnFixer(
 
   // fix ARNs that have wildcards instead of identifiers
   if (arn.match(/(:|\/)[a-zA-Z-]+(:|\/)\*$/)) {
-    arn = arn.slice(0, -1) + '${ResourceName}';
+    arn = `${arn.slice(0, -1)}\${ResourceName}`;
     fixed = 2;
   }
 
   // Rekognition has a duplicate parameter in the ARN. here we append a number to duplicate parameter names
-  const duplicates: { [key: string]: number } = {};
+  const duplicates: Record<string, number> = {};
   arn = arn.replace(/\$\{([A-Za-z]+)\}/g, (_, param): string => {
     if (!duplicates[param]) {
       duplicates[param] = 1;
@@ -252,7 +250,7 @@ export function arnFixer(
       param += duplicates[param];
       fixed = 2;
     }
-    return '${' + param + '}';
+    return `\${${param}}`;
   });
 
   // fix ARNs specified in the global fixes object above
@@ -264,7 +262,7 @@ export function arnFixer(
 
   if (fixed > 0) {
     process.stdout.write(
-      colors.yellow(`[L${fixed} fix for resource type ${resource}] `)
+      colors.yellow(`[L${fixed} fix for resource type ${resource}] `),
     );
   }
 
@@ -272,8 +270,8 @@ export function arnFixer(
   // arn:partition:service:region:account-id:resource-id
   // arn:partition:service:region:account-id:resource-type/resource-id
   // arn:partition:service:region:account-id:resource-type:resource-id
-  var r = `arn:\\$\\{Partition\\}:[a-z0-9_-]+:(\\$\\{Region\\})?:(\\$\\{((Master)?Account(Id)?)\\})?(:[a-z0-9_-]*)?((\\/|:)(((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}|[a-z0-9_-]+))*(\\/|:)((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}$`;
-  var re = new RegExp(r, 'i');
+  const r = `arn:\\$\\{Partition\\}:[a-z0-9_-]+:(\\$\\{Region\\})?:(\\$\\{((Master)?Account(Id)?)\\})?(:[a-z0-9_-]*)?((\\/|:)(((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}|[a-z0-9_-]+))*(\\/|:)((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}$`;
+  const re = new RegExp(r, 'i');
   const notMatchingButValid = [
     'glue:catalog', // has no identifier, there only is one catalog, identified by region & account
     'opsworks:stack', //the ONLY ARN in AWS with a trailing slash
