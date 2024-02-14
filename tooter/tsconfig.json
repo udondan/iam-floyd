@@ -20,5 +20,8 @@
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"]
   },
-  "exclude": ["cdk.out"]
+  "exclude": ["cdk.out"],
+  "ts-node": {
+    "swc": true
+  }
 }
