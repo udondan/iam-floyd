@@ -11,7 +11,7 @@ function getStatement() {
       .toAssumeRole()
       .forCdkPrincipal(
         new iam.ServicePrincipal('sns.amazonaws.com'),
-        new iam.ServicePrincipal('lambda.amazonaws.com')
+        new iam.ServicePrincipal('lambda.amazonaws.com'),
       )
     // doc-end
   );

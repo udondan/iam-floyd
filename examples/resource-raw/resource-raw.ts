@@ -9,7 +9,7 @@ function getStatement() {
       .allActions()
       .on(
         'arn:aws:s3:::example-bucket', //
-        'arn:aws:s3:::another-bucket'
+        'arn:aws:s3:::another-bucket',
       )
     // doc-end
   );

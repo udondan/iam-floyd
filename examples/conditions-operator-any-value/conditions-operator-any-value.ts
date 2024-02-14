@@ -10,7 +10,7 @@ function getStatement() {
       .onTable('Thread')
       .ifAttributes(
         ['ID', 'PostDateTime'],
-        new statement.Operator().stringEquals().forAnyValue()
+        new statement.Operator().stringEquals().forAnyValue(),
       )
     // doc-end
   );

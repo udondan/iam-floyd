@@ -4,16 +4,12 @@ import { PolicyStatementBase } from './1-base';
 /**
  * A Condition
  */
-export interface Condition {
-  [key: string]: String;
-}
+export type Condition = Record<string, string>;
 
 /**
  * A collection of Condition's
  */
-export interface Conditions {
-  [key: string]: Condition;
-}
+export type Conditions = Record<string, Condition>;
 
 /**
  * Adds "condition" functionality to the Policy Statement
@@ -87,14 +83,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public if(key: string, value: any, operator?: Operator | string) {
     if (this.servicePrefix.length && key.indexOf(':') < 0) {
-      key = this.servicePrefix + ':' + key;
+      key = `${this.servicePrefix}:${key}`;
     }
 
     if (typeof operator === 'undefined') {
       operator = new Operator().stringLike();
     }
 
-    var op = '';
+    let op = '';
     if (typeof operator === 'string') {
       op = operator;
     } else {
@@ -130,12 +126,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsCalledVia(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:CalledVia',
       value,
-      operator || new Operator().forAnyValue().stringEquals()
+      operator || new Operator().forAnyValue().stringEquals(),
     );
   }
 
@@ -151,7 +147,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsCalledViaFirst(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:CalledViaFirst', value, operator);
   }
@@ -168,7 +164,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsCalledViaLast(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:CalledViaLast', value, operator);
   }
@@ -185,7 +181,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsCurrentTime(
     value: Date | string | (Date | string)[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     if (typeof (value as Date).getMonth === 'function') {
       value = (value as Date).toISOString();
@@ -200,7 +196,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:CurrentTime',
       value,
-      operator || new Operator().dateLessThanEquals()
+      operator || new Operator().dateLessThanEquals(),
     );
   }
 
@@ -220,7 +216,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsEc2InstanceSourceVpc(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:Ec2InstanceSourceVpc', value, operator);
   }
@@ -239,12 +235,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsEc2InstanceSourcePrivateIPv4(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:Ec2InstanceSourcePrivateIPv4',
       value,
-      operator || new Operator().ipAddress()
+      operator || new Operator().ipAddress(),
     );
   }
 
@@ -260,7 +256,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsEpochTime(
     value: number | Date | string | (number | Date | string)[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     if (typeof (value as Date).getMonth === 'function') {
       value = (value as Date).toISOString();
@@ -275,7 +271,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:EpochTime',
       value,
-      operator || new Operator().dateLessThanEquals()
+      operator || new Operator().dateLessThanEquals(),
     );
   }
 
@@ -291,7 +287,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsFederatedProvider(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:FederatedProvider', value, operator);
   }
@@ -308,12 +304,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsMultiFactorAuthAge(
     value: number | number[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:MultiFactorAuthAge',
       value,
-      operator || new Operator().numericLessThan()
+      operator || new Operator().numericLessThan(),
     );
   }
 
@@ -334,7 +330,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:MultiFactorAuthPresent`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool()
+      new Operator().bool(),
     );
   }
 
@@ -350,7 +346,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalAccount(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:PrincipalAccount', value, operator);
   }
@@ -369,12 +365,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalArn(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:PrincipalArn',
       value,
-      operator || new Operator().arnLike()
+      operator || new Operator().arnLike(),
     );
   }
 
@@ -391,7 +387,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:PrincipalIsAWSService`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool()
+      new Operator().bool(),
     );
   }
 
@@ -409,7 +405,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalOrgID(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:PrincipalOrgID', value, operator);
   }
@@ -432,7 +428,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalOrgPaths(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:PrincipalOrgPaths', value, operator);
   }
@@ -455,7 +451,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalServiceName(
     value: string,
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:PrincipalServiceName', value, operator);
   }
@@ -478,12 +474,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalServiceNamesList(
     value: string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:PrincipalServiceNamesList',
       value,
-      operator || new Operator().stringLike().forAnyValue()
+      operator || new Operator().stringLike().forAnyValue(),
     );
   }
 
@@ -503,7 +499,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsPrincipalTag(
     key: string,
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(`aws:PrincipalTag/${key}`, value, operator);
   }
@@ -520,7 +516,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsPrincipalType(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:PrincipalType', value, operator);
   }
@@ -559,7 +555,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsRequestedRegion(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:RequestedRegion', value, operator);
   }
@@ -580,7 +576,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsRequestTag(
     key: string,
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(`aws:RequestTag/${key}`, value, operator);
   }
@@ -617,7 +613,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsResourceAccount(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:ResourceAccount', value, operator);
   }
@@ -648,7 +644,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsResourceOrgID(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:ResourceOrgID', value, operator);
   }
@@ -682,7 +678,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsResourceOrgPaths(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:ResourceOrgPaths', value, operator);
   }
@@ -701,7 +697,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsResourceTag(
     key: string,
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(`aws:ResourceTag/${key}`, value, operator);
   }
@@ -719,7 +715,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:SecureTransport`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool()
+      new Operator().bool(),
     );
   }
 
@@ -737,7 +733,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsSourceAccount(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:SourceAccount', value, operator);
   }
@@ -758,12 +754,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsSourceArn(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:SourceArn',
       value,
-      operator || new Operator().arnLike()
+      operator || new Operator().arnLike(),
     );
   }
 
@@ -785,7 +781,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsSourceIdentity(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:SourceIdentity', value, operator);
   }
@@ -806,7 +802,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:SourceIp',
       value,
-      operator || new Operator().ipAddress()
+      operator || new Operator().ipAddress(),
     );
   }
 
@@ -822,7 +818,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsSourceVpc(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:SourceVpc', value, operator);
   }
@@ -839,7 +835,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsSourceVpce(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:SourceVpce', value, operator);
   }
@@ -876,12 +872,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsTokenIssueTime(
     value: string | Date,
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:TokenIssueTime',
       dateToString(value),
-      operator || new Operator().dateGreaterThanEquals()
+      operator || new Operator().dateGreaterThanEquals(),
     );
   }
 
@@ -899,7 +895,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsUserAgent(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if('aws:UserAgent', value, operator);
   }
@@ -955,7 +951,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:ViaAWSService`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool()
+      new Operator().bool(),
     );
   }
 
@@ -973,12 +969,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsVpcSourceIp(
     value: string | string[],
-    operator?: Operator | string
+    operator?: Operator | string,
   ) {
     return this.if(
       'aws:VpcSourceIp',
       value,
-      operator || new Operator().ipAddress()
+      operator || new Operator().ipAddress(),
     );
   }
 }

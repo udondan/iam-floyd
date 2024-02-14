@@ -3,9 +3,7 @@ import { PolicyStatementWithEffect } from './5-effect';
 /**
  * A collection of Principal's
  */
-export interface Principals {
-  [key: string]: string[];
-}
+export type Principals = Record<string, string[]>;
 
 export enum PrincipalType {
   AWS = 'AWS',
@@ -108,8 +106,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     accounts.forEach((account) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`
-      )
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:root`,
+      ),
     );
     return this;
   }
@@ -121,7 +119,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forFederated(...providers: string[]) {
     providers.forEach((provider) =>
-      this.addPrincipal(PrincipalType.FEDERATED, provider)
+      this.addPrincipal(PrincipalType.FEDERATED, provider),
     );
     return this;
   }
@@ -164,7 +162,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    */
   public forCanonicalUser(...userIDs: string[]) {
     userIDs.forEach((userID) =>
-      this.addPrincipal(PrincipalType.CANONICAL_USER, userID)
+      this.addPrincipal(PrincipalType.CANONICAL_USER, userID),
     );
     return this;
   }
@@ -178,8 +176,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   public forSaml(account: string, ...providerNames: string[]) {
     providerNames.forEach((providerName) =>
       this.forFederated(
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`
-      )
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:saml-provider/${providerName}`,
+      ),
     );
     return this;
   }
@@ -194,8 +192,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     users.forEach((user) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:user/${user}`
-      )
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:user/${user}`,
+      ),
     );
     return this;
   }
@@ -210,8 +208,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     roles.forEach((role) =>
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:role/${role}`
-      )
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:iam::${account}:role/${role}`,
+      ),
     );
     return this;
   }
@@ -231,7 +229,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     sessionNames.forEach((sessionName) => {
       this.addPrincipal(
         PrincipalType.AWS,
-        `arn:${PolicyStatementWithPrincipal.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`
+        `arn:${PolicyStatementWithPrincipal.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`,
       );
     });
     return this;
@@ -247,7 +245,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
 
   public forService(...services: string[]) {
     services.forEach((service) =>
-      this.addPrincipal(PrincipalType.SERVICE, service)
+      this.addPrincipal(PrincipalType.SERVICE, service),
     );
     return this;
   }

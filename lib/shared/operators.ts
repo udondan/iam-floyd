@@ -36,7 +36,7 @@ export class Operator {
     }
     if (this.base == 'Null' && value != this.base) {
       throw new Error(
-        `You cannot add modifiers to the "Null" operator: ${value}`
+        `You cannot add modifiers to the "Null" operator: ${value}`,
       );
     }
     return value;

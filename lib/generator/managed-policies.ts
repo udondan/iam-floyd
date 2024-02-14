@@ -1,4 +1,10 @@
-import { GetPolicyVersionCommand, IAMClient, ListPoliciesCommand, ListPoliciesRequest, Policy } from '@aws-sdk/client-iam';
+import {
+  GetPolicyVersionCommand,
+  IAMClient,
+  ListPoliciesCommand,
+  ListPoliciesRequest,
+  Policy,
+} from '@aws-sdk/client-iam';
 import * as fs from 'fs';
 
 const iamClient = new IAMClient({
@@ -10,7 +16,7 @@ export async function indexManagedPolicies(): Promise<void> {
   const policyNames: string[] = [];
   const policies = await getPolicies();
   console.log(`Fetched metadata of ${policies.length} managed policies`);
-  for (let policyMetadata of policies) {
+  for (const policyMetadata of policies) {
     if (
       policyMetadata.PolicyName &&
       policyMetadata.Arn &&
@@ -20,7 +26,7 @@ export async function indexManagedPolicies(): Promise<void> {
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
         policyMetadata.Arn,
-        policyMetadata.DefaultVersionId
+        policyMetadata.DefaultVersionId,
       );
       storePolicyDocument(policyMetadata.PolicyName, document);
     }
@@ -38,7 +44,7 @@ async function getPolicies(marker?: string): Promise<Policy[]> {
   console.log('Fetching metadata of 100 policies...');
   while (true) {
     const { Policies, IsTruncated, Marker } = await iamClient.send(
-      new ListPoliciesCommand(params)
+      new ListPoliciesCommand(params),
     );
 
     if (Policies) {
@@ -56,18 +62,18 @@ async function getPolicies(marker?: string): Promise<Policy[]> {
 
 async function getPolicyDocument(
   arn: string,
-  version: string
+  version: string,
 ): Promise<string> {
-  var params = {
+  const params = {
     PolicyArn: arn,
     VersionId: version,
   };
 
   const { PolicyVersion } = await iamClient.send(
-    new GetPolicyVersionCommand(params)
+    new GetPolicyVersionCommand(params),
   );
 
-  if (PolicyVersion && PolicyVersion.Document) {
+  if (PolicyVersion?.Document) {
     return decodeURIComponent(PolicyVersion.Document);
   } else {
     throw new Error(`Could not find policy document for ${arn}`);

@@ -114,7 +114,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    */
   public to(action: string) {
     if (this.servicePrefix.length && action.indexOf(':') < 0) {
-      action = this.servicePrefix + ':' + action;
+      action = `${this.servicePrefix}:${action}`;
     }
 
     this.floydActions.push(action);
@@ -261,11 +261,11 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       {
         minLength: 3,
         minOccurrence: 2,
-      }
+      },
     )
       .filter((sub) => {
         // remove all substrings, that match an action we have not selected
-        for (let action of excludeActions) {
+        for (const action of excludeActions) {
           if (action.includes(sub.name)) {
             return false;
           }
@@ -297,7 +297,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       compactActionList.push(
         `${this.servicePrefix}:*${sub.name}*`
           .replace('*^', '')
-          .replace('$*', '')
+          .replace('$*', ''),
       );
       sub.source.forEach((source) => {
         includeActions[source] = ''; // invalidate, will be filtered later
