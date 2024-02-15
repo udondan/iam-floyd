@@ -238,7 +238,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   private compactActions() {
     // actions that will be included, service prefix is removed
     const includeActions = this.floydActions.map((elem) => {
-      return elem.substr(elem.indexOf(':') + 1);
+      return elem.substring(elem.indexOf(':') + 1);
     });
 
     // actions that will not be included, the opposite of includeActions

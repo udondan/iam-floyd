@@ -40,7 +40,7 @@ const timeThreshold = new Date();
 
 let threshold = 25;
 const thresholdOverride = process.env.NOCACHE;
-if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
+if (thresholdOverride?.length) {
   threshold += 999999999;
 }
 
@@ -140,7 +140,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
 
         // set env `SERVICE` to generate only a single service for testing purpose
         const testOverride = process.env.SERVICE;
-        if (typeof testOverride !== 'undefined' && testOverride.length) {
+        if (testOverride?.length) {
           return resolve([testOverride]);
         }
 
@@ -150,7 +150,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
 
         resolve(unique.sort());
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         reject(err);
       });
   });
@@ -206,10 +206,10 @@ export function getContent(service: string): Promise<Module> {
 
           resolve(module);
         })
-        .catch((err: any) => {
+        .catch((err: Error) => {
           reject(err);
         });
-    } catch (error: any) {
+    } catch (error: Error) {
       reject(error);
     }
   });
@@ -302,7 +302,7 @@ export function createModule(module: Module): Promise<void> {
     module.name = module.fixes.name;
   } else if (
     module.filename.endsWith('v2') &&
-    module.name.substr(-2).toLowerCase() != 'v2'
+    module.name.slice(-2).toLowerCase() !== 'v2'
   ) {
     module.name += '-v2';
   }
@@ -780,7 +780,7 @@ function getLastModified(url: string): Promise<Date> {
         }
         resolve(mod);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         reject(err);
       });
   });

@@ -8,8 +8,8 @@ function printPolicyWithStatements(statements: any[]) {
         Statement: [...statements],
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 }
 
@@ -21,7 +21,7 @@ printPolicyWithStatements([
 ]);
 
 printPolicyWithStatements(
-  new statement.Collection().allowEc2InstanceDeleteByOwner()
+  new statement.Collection().allowEc2InstanceDeleteByOwner(),
 );
 
 printPolicyWithStatements([
@@ -45,6 +45,6 @@ printPolicyWithStatements([
     .allPermissionManagementActions()
     .ifAwsSourceIp(
       '1.2.3.4',
-      new statement.Operator().notIpAddress().ifExists()
+      new statement.Operator().notIpAddress().ifExists(),
     ),
 ]);

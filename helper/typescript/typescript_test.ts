@@ -15,20 +15,22 @@ import {
 } from '@aws-sdk/client-s3';
 import { randomBytes } from 'crypto';
 
+import { PolicyStatement } from '../../lib';
+
 const region = 'us-east-1';
 const iamClient = new IAMClient({ region });
 const s3Client = new S3Client({ region });
 
 //import { Construct } from 'constructs';
 
-export function out(statements: any[]) {
+export function out(statements: PolicyStatement[]) {
   statements.forEach((statement) => {
     const str = JSON.stringify(statement.toJSON(), null, 4);
     console.log(str);
   });
 }
 
-export async function deploy(statements: any[], type = 'policy') {
+export async function deploy(statements: PolicyStatement[], type = 'policy') {
   try {
     if (type == 'policy') {
       await deployPolicy(statements);
@@ -47,7 +49,7 @@ export async function deploy(statements: any[], type = 'policy') {
   }
 }
 
-function deployPolicy(statements: any[]): Promise<void> {
+function deployPolicy(statements: PolicyStatement[]): Promise<void> {
   return new Promise(async function (resolve, reject) {
     const policyName = newRandomName();
 
@@ -113,8 +115,7 @@ function deployAssume(statements: any[]): Promise<void> {
 
 function deployAccess(statements: any[]): Promise<void> {
   return new Promise(async function (resolve, reject) {
-    const bucketName =
-      'random-bucket-for-floyd-' + newRandomName().toLowerCase();
+    const bucketName = `random-bucket-for-floyd-${newRandomName().toLowerCase()}`;
 
     log(`Creating test bucket ${bucketName}...`);
 
