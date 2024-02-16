@@ -146,6 +146,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLogScope()
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
   public toDeleteLoggingConfiguration() {
@@ -302,6 +305,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifLogScope()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
@@ -475,6 +479,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifLogScope()
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListLoggingConfigurations.html
    */
   public toListLoggingConfigurations() {
@@ -581,6 +588,10 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to enable a LoggingConfiguration, to start logging for a web ACL
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLogScope()
+   * - .ifLogDestinationResource()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -1028,5 +1039,38 @@ export class Wafv2 extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by log destination ARN for PutLoggingConfiguration API
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toPutLoggingConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifLogDestinationResource(value: string | string[], operator?: Operator | string) {
+    return this.if(`LogDestinationResource`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by log scope for Logging Configuration API
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDeleteLoggingConfiguration()
+   * - .toGetLoggingConfiguration()
+   * - .toListLoggingConfigurations()
+   * - .toPutLoggingConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`LogScope`, value, operator || 'StringLike');
   }
 }
