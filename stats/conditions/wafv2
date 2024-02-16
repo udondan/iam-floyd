@@ -1,3 +1,5 @@
+wafv2:LogDestinationResource
+wafv2:LogScope
 wafv2:RequestTag/${TagKey}
 wafv2:ResourceTag/${TagKey}
 wafv2:TagKeys

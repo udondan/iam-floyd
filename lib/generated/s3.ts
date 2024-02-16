@@ -2746,6 +2746,7 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifInventoryAccessibleOptionalFields()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
    */
@@ -4049,6 +4050,21 @@ export class S3 extends PolicyStatement {
    */
   public ifExistingObjectTag(key: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ExistingObjectTag/${ key }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting which optional metadata fields a user can add when configuring S3 Inventory reports
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-s3-inventory-2
+   *
+   * Applies to actions:
+   * - .toPutInventoryConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInventoryAccessibleOptionalFields(value: string | string[], operator?: Operator | string) {
+    return this.if(`InventoryAccessibleOptionalFields`, value, operator || 'StringLike');
   }
 
   /**
