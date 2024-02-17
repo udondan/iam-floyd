@@ -1,4 +1,3 @@
 export { Collection } from './collection';
-export { Operator, PolicyStatement } from './shared';
-export { AccessLevelList } from './shared/access-level';
+export { Operator } from './shared';
 export * as Statement from './statements';
