@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "PrivateMarketplaceRequestPermissions",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:AssociateProductsWithPrivateMarketplace",
@@ -14,6 +15,7 @@
       ]
     },
     {
+      "Sid": "PrivateMarketplaceCatalogAPIPermissions",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:ListEntities",
@@ -26,6 +28,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "PrivateMarketplaceCatalogTaggingPermissions",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:TagResource",
@@ -33,6 +36,23 @@
         "aws-marketplace:ListTagsForResource"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Sid": "PrivateMarketplaceOrganizationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount",
+        "organizations:ListRoots",
+        "organizations:ListParents",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
     }
   ]
 }
