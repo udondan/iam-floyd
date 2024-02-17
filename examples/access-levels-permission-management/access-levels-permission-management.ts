@@ -1,10 +1,10 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getStatement() {
   return (
     // doc-start
-    new statement.S3() //
+    new Statement.S3() //
       .allow()
       .allPermissionManagementActions()
     // doc-end

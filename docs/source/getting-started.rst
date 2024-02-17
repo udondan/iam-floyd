@@ -32,10 +32,10 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
    .. code-tab:: ts
 
       // for use without AWS CDK use the iam-floyd package
-      import * as statement from 'iam-floyd';
+      import { Statement } from 'iam-floyd';
 
       // for use with CDK use the cdk-iam-floyd package
-      import * as statement from 'cdk-iam-floyd';
+      import { Statement } statement from 'cdk-iam-floyd';
 
 Both packages contain a statement provider for each AWS service, e.g. ``Ec2``. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 

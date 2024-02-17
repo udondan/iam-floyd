@@ -1,10 +1,10 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Collection } from '../../lib';
 
 function getStatement() {
   return (
     // doc-start
-    new statement.Collection().allowEc2InstanceDeleteByOwner()
+    new Collection().allowEc2InstanceDeleteByOwner()
     // doc-end
   );
 }

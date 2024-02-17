@@ -1,4 +1,4 @@
-import * as statement from '..';
+import { Statement } from '..';
 
 /**
  * Allows stopping EC2 instance only for the user who started them
@@ -9,11 +9,11 @@ import * as statement from '..';
 export function allowEc2InstanceDeleteByOwner(tag?: string) {
   const tagName = tag ?? 'Owner';
   return [
-    new statement.Ec2()
+    new Statement.Ec2()
       .allow()
       .toStartInstances()
       .ifAwsRequestTag(tagName, '${aws:username}'),
-    new statement.Ec2()
+    new Statement.Ec2()
       .allow()
       .toStopInstances()
       .ifResourceTag(tagName, '${aws:username}'),

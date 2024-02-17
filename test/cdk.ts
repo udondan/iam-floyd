@@ -1,7 +1,7 @@
 import { App, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as s3 from 'aws-cdk-lib/aws-s3';
-import * as statement from 'cdk-iam-floyd';
+import { Statement } from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
 export class TestStack extends Stack {
@@ -12,17 +12,17 @@ export class TestStack extends Stack {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
-        new statement.Ssm()
+        new Statement.Ssm()
           .allow()
           .toListDocuments()
           .toListTagsForResource()
           .onInstance('i-1234567890'),
-        new statement.Ssm()
+        new Statement.Ssm()
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
           .ifAwsRequestTag('CreatedBy', 'Bob'),
-        new statement.Ssm()
+        new Statement.Ssm()
           .allow()
           .toDeleteDocument()
           .toDescribeDocument()
@@ -49,7 +49,7 @@ export class TestStack extends Stack {
     });
 
     bucket.addToResourcePolicy(
-      new statement.S3() //
+      new Statement.S3() //
         .allow()
         .toGetObject()
         .onObject(bucket.bucketName, '*')

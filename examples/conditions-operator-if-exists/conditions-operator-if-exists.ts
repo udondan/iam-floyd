@@ -1,16 +1,16 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Operator, Statement } from '../../lib';
 
 function getStatement() {
   return (
     // doc-start
-    new statement.Ec2()
+    new Statement.Ec2()
       .allow()
       .toStartInstances()
       .ifAwsRequestTag(
         'Environment',
         ['Production', 'Staging', 'Dev'],
-        new statement.Operator().stringEquals().ifExists(),
+        new Operator().stringEquals().ifExists(),
       )
     // doc-end
   );

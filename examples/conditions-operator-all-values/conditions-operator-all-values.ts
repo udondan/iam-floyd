@@ -1,16 +1,16 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Operator, Statement } from '../../lib';
 
 function getStatement() {
   return (
     // doc-start
-    new statement.Dynamodb()
+    new Statement.Dynamodb()
       .allow()
       .toGetItem()
       .onTable('Thread')
       .ifAttributes(
         ['ID', 'Message', 'Tags'],
-        new statement.Operator().stringEquals().forAllValues(),
+        new Operator().stringEquals().forAllValues(),
       )
     // doc-end
   );
