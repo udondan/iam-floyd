@@ -7,6 +7,7 @@ bin/*
 cdk/*
 CHANGELOG/*
 docs/*
+eslint.log
 examples/*
 helper/*
 lib/generator/*
@@ -26,6 +27,6 @@ VERSION
 Makefile
 *.Makefile
 
-# Include javascript files and typescript declarations
+# Include all javascript files and typescript declarations
 !*.js
 !*.d.ts

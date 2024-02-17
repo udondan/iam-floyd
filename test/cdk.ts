@@ -54,7 +54,7 @@ export class TestStack extends Stack {
         .toGetObject()
         .onObject(bucket.bucketName, '*')
         .forAccount(this.account)
-        .forCdkPrincipal(role)
+        .forCdkPrincipal(role),
     );
   }
 }

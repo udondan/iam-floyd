@@ -17,7 +17,7 @@ import { Construct } from 'constructs';
 import path = require('path');
 
 const project = 'Floyd Tweeter';
-const project_id = 'floyd-tweeter';
+const projectId = 'floyd-tweeter';
 
 export class Stack extends CdkStack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -28,7 +28,7 @@ export class Stack extends CdkStack {
     const kmsKey = new aws_kms.Key(this, 'KmsKey', {
       enableKeyRotation: false,
       description: `Encryption key for ${project}`,
-      alias: `alias/${project_id}`,
+      alias: `alias/${projectId}`,
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
@@ -50,7 +50,7 @@ export class Stack extends CdkStack {
     );
 
     const mastodonQueue = new aws_sqs.Queue(this, 'MastodonQueue', {
-      queueName: `${project_id}-toots.fifo`,
+      queueName: `${projectId}-toots.fifo`,
       fifo: true,
       contentBasedDeduplication: true,
       retentionPeriod: Duration.days(14),
@@ -59,13 +59,13 @@ export class Stack extends CdkStack {
     });
 
     const schedule = new aws_events.Rule(this, 'Schedule', {
-      ruleName: `${project_id}-toot`,
+      ruleName: `${projectId}-toot`,
       description: `${project}: Trigger Tooter function`,
       schedule: aws_events.Schedule.rate(Duration.minutes(30)),
     });
 
     const mastodonFn = new aws_lambda_nodejs.NodejsFunction(this, 'Tooter', {
-      functionName: `${project_id}-tooter`,
+      functionName: `${projectId}-tooter`,
       description: `${project}: Toot one item from Floyd queue`,
       entry: path.join(__dirname, '../lambda/toot/index.ts'),
       environmentEncryption: kmsKey,

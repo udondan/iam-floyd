@@ -6,7 +6,7 @@ const maxLength = 500;
 const sqsClient = new SQSClient({ region: 'us-east-1' });
 
 function getChangelog() {
-  let version = process.env.CHANGELOG || false;
+  let version = process.env.CHANGELOG ?? false;
   if (!version) {
     version = fs.readFileSync('VERSION', 'utf8').trim();
   }
@@ -70,7 +70,7 @@ async function main() {
   for (const content of toots) {
     console.log('tooting:');
     console.log(content);
-    await enqueueToot(content).catch((err: any) => {
+    await enqueueToot(content).catch((err: Error) => {
       console.error(err);
       process.exit(1);
     });

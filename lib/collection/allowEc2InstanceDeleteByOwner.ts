@@ -7,7 +7,7 @@ import * as statement from '..';
  */
 
 export function allowEc2InstanceDeleteByOwner(tag?: string) {
-  const tagName = tag || 'Owner';
+  const tagName = tag ?? 'Owner';
   return [
     new statement.Ec2()
       .allow()

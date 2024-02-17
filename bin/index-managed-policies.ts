@@ -5,7 +5,7 @@ indexManagedPolicies()
   .then(() => {
     console.log('ALL DONE');
   })
-  .catch((err: any) => {
+  .catch((err: Error) => {
     console.error(err);
     process.exit(1);
   });
