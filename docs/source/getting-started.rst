@@ -24,10 +24,10 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
    .. code-tab:: js
 
       // for use without AWS CDK use the iam-floyd package
-      var statement = require('iam-floyd');
+      const { Statement } = require('iam-floyd');
 
       // for use with CDK use the cdk-iam-floyd package
-      var statement = require('cdk-iam-floyd');
+      const { Statement } = require('cdk-iam-floyd');
 
    .. code-tab:: ts
 
