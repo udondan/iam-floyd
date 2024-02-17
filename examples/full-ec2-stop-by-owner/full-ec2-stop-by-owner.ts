@@ -1,4 +1,4 @@
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {
@@ -6,15 +6,15 @@ function getPolicy() {
     const policy = {
       Version: '2012-10-17',
       Statement: [
-        new statement.Ec2()
+        new Statement.Ec2()
           .allow()
           .toStartInstances()
           .ifAwsRequestTag('Owner', '${aws:username}'),
-        new statement.Ec2()
+        new Statement.Ec2()
           .allow()
           .toStopInstances()
           .ifResourceTag('Owner', '${aws:username}'),
-        new statement.Ec2() //
+        new Statement.Ec2() //
           .allow()
           .allListActions()
           .allReadActions(),

@@ -1,70 +1,70 @@
 import { out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getStatements() {
   function wrap() {
     // doc-start
-    const s1 = new statement.Sts()
+    const s1 = new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forAccount('1234567890');
 
-    const s2 = new statement.Sts()
+    const s2 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forService('lambda.amazonaws.com');
 
-    const s3 = new statement.Sts()
+    const s3 = new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forUser('1234567890', 'Bob');
 
-    const s4 = new statement.Sts()
+    const s4 = new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forRole('1234567890', 'role-name');
 
-    const s5 = new statement.Sts()
+    const s5 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedCognito();
 
-    const s6 = new statement.Sts()
+    const s6 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedAmazon();
 
-    const s7 = new statement.Sts()
+    const s7 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedGoogle();
 
-    const s8 = new statement.Sts()
+    const s8 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedFacebook();
 
-    const s9 = new statement.Sts()
+    const s9 = new Statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forSaml('1234567890', 'saml-provider');
 
-    const s10 = new statement.Sts() //
+    const s10 = new Statement.Sts() //
       .allow()
       .toAssumeRole()
       .forPublic();
 
-    const s11 = new statement.Sts()
+    const s11 = new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forAssumedRoleSession('123456789', 'role-name', 'session-name');
 
-    const s12 = new statement.Sts()
+    const s12 = new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forCanonicalUser('userID');
 
-    const s13 = new statement.Sts() //
+    const s13 = new Statement.Sts() //
       .allow()
       .toAssumeRole()
       .for('arn:foo:bar');

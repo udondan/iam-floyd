@@ -1,4 +1,4 @@
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {
@@ -6,22 +6,22 @@ function getPolicy() {
     const policy = {
       Version: '2012-10-17',
       Statement: [
-        new statement.Cloudformation() // allow all CFN actions
+        new Statement.Cloudformation() // allow all CFN actions
           .allow()
           .allActions(),
-        new statement.All() // allow absolutely everything that is triggered via CFN
+        new Statement.All() // allow absolutely everything that is triggered via CFN
           .allow()
           .allActions()
           .ifAwsCalledVia('cloudformation.amazonaws.com'),
-        new statement.S3() // allow access to the CDK staging bucket
+        new Statement.S3() // allow access to the CDK staging bucket
           .allow()
           .allActions()
           .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
-        new statement.Account() // even when triggered via CFN, do not allow modifications of the account
+        new Statement.Account() // even when triggered via CFN, do not allow modifications of the account
           .deny()
           .allPermissionManagementActions()
           .allWriteActions(),
-        new statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
+        new Statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
           .deny()
           .allPermissionManagementActions()
           .allWriteActions(),

@@ -1,12 +1,12 @@
 import { aws_iam as iam } from 'aws-cdk-lib';
 
 import { out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getStatement() {
   return (
     // doc-start
-    new statement.Sts()
+    new Statement.Sts()
       .allow()
       .toAssumeRole()
       .forCdkPrincipal(

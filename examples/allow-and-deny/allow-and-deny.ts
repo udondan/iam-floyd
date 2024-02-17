@@ -1,14 +1,14 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Statement } from '../../lib';
 
 function getStatements() {
   function wrap() {
     // doc-start
-    const s1 = new statement.Ec2() //
+    const s1 = new Statement.Ec2() //
       .allow()
       .toStartInstances();
 
-    const s2 = new statement.Ec2() //
+    const s2 = new Statement.Ec2() //
       .deny()
       .toStopInstances();
     // doc-end

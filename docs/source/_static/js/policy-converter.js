@@ -39,7 +39,7 @@ $(function () {
   $(':radio, #policyConverterInput').change(function () {
     preferredVariant = $("input[name='policyConverterVariant']:checked").val();
     preferredLanguage = $(
-      "input[name='policyConverterLanguage']:checked"
+      "input[name='policyConverterLanguage']:checked",
     ).val();
     preferredImports = $("input[name='policyConverterImports']:checked").val();
     convertInputPolicy();
@@ -48,7 +48,7 @@ $(function () {
   $('head').append(
     '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">',
     '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">',
-    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/labelauty/1.1.4/jquery-labelauty.css" integrity="sha512-NUD74ySmYmRWEO5NXZ2EU0FfFhCIVhsxSoi3i4fybJYVhr5DkV+gdyEBd8tO0Pl/CspRwllRSAaUG7theVh1dA==" crossorigin="anonymous" />'
+    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/labelauty/1.1.4/jquery-labelauty.css" integrity="sha512-NUD74ySmYmRWEO5NXZ2EU0FfFhCIVhsxSoi3i4fybJYVhr5DkV+gdyEBd8tO0Pl/CspRwllRSAaUG7theVh1dA==" crossorigin="anonymous" />',
   );
 
   $.getScript(
@@ -56,7 +56,7 @@ $(function () {
     function () {
       selectExtensionLoaded = true;
       beautifySelect();
-    }
+    },
   );
 
   $.getScript(
@@ -65,7 +65,7 @@ $(function () {
       $('input[type=radio]').labelauty({
         label: true,
       });
-    }
+    },
   );
 });
 
@@ -140,7 +140,7 @@ function convert(convertTarget, data) {
         resources[0],
         conditions,
         principals[0],
-        options
+        options,
       );
       statements.push(statementCode);
     }
@@ -153,24 +153,17 @@ function convert(convertTarget, data) {
     switch (preferredLanguage) {
       case 'TypeScript':
         if (preferredVariant == 'CDK') {
-          output += "import * as iam from '@aws-cdk/aws-iam';\n";
+          output += "import { aws_iam } from 'aws-cdk-lib';\n";
         }
         package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
-        output += "import * as statement from '" + package + "';";
+        output += "import { Statement } from '" + package + "';";
         break;
       case 'JavaScript':
         if (preferredVariant == 'CDK') {
-          output += "const iam = require('@aws-cdk/aws-iam');\n";
+          output += "const { aws_iam } = require('aws-cdk-lib');\n";
         }
         package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
-        output += "const statement = require('" + package + "');";
-        break;
-      case 'Python':
-        if (preferredVariant == 'CDK') {
-          output += 'from aws_cdk import (\n\taws_iam as iam,\n)\n';
-        }
-        package = preferredVariant == 'CDK' ? 'cdk_iam_floyd' : 'iam_floyd';
-        output += 'import ' + package + ' as statement';
+        output += "const { Statement } = require('" + package + "');";
         break;
     }
     output += '\n\n';
@@ -181,7 +174,7 @@ function convert(convertTarget, data) {
     case 'JavaScript':
       if (preferredVariant == 'CDK') {
         output +=
-          'const policy = new iam.PolicyDocument({\n\
+          'const policy = new aws_iam.PolicyDocument({\n\
   statements: [\n' +
           indent(statements.join(',\n'), ' ', 4) +
           '\n\
@@ -196,26 +189,6 @@ function convert(convertTarget, data) {
           '\n\
   ]\n\
 };';
-      }
-      break;
-    case 'Python':
-      if (preferredVariant == 'CDK') {
-        output +=
-          'policy = iam.PolicyDocument(\n\
-\tstatements=[\n' +
-          indent(statements.join(',\n'), '\t', 2) +
-          '\n\
-\t]\n\
-)';
-      } else {
-        output +=
-          "policy = {\n\
-\t'Version': '2012-10-17',\n\
-\t'Statement': [\n" +
-          indent(statements.join(',\n'), '\t', 2) +
-          '\n\
-\t]\n\
-}';
       }
       break;
   }
@@ -325,18 +298,14 @@ function makeStatementCode(
   resources,
   conditions,
   principals,
-  options
+  options,
 ) {
   let code = '';
   let caseFunction = camelCase; // default case function
   switch (language) {
     case 'TypeScript':
     case 'JavaScript':
-      code += 'new statement';
-      break;
-    case 'Python':
-      code += 'statement';
-      caseFunction = snakeCase;
+      code += 'new Statement';
       break;
   }
 
@@ -372,10 +341,10 @@ function makeStatementCode(
   }
 
   for (const [conditionOperator, conditionItems] of Object.entries(
-    conditions
+    conditions,
   )) {
     for (const [conditionKey, conditionValue] of Object.entries(
-      conditionItems
+      conditionItems,
     )) {
       code += makeMethodCall(caseFunction('if'), [
         conditionKey,
@@ -400,7 +369,7 @@ function makeStatementCode(
 
       let pFound = false;
       for (const [pMethod, pPattern] of Object.entries(
-        principalPattern[principalType]
+        principalPattern[principalType],
       )) {
         const params = pPattern.exec(principal);
         if (params !== null) {
@@ -427,15 +396,6 @@ function makeStatementCode(
     case 'TypeScript':
     case 'JavaScript':
       code = code.replace(/\)\./g, ')\n  .');
-      break;
-    case 'Python':
-      if (preferredVariant == 'CDK') {
-        code = code.replace(/\)\./g, ')\n\t.');
-      } else {
-        code = code.replace(/\)\./g, ')\\\n\t.');
-      }
-      code = code.replace(/\.if\(/g, '.if_(');
-      code = code.replace(/\.for\(/g, '.for_(');
       break;
   }
 

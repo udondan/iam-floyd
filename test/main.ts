@@ -1,4 +1,4 @@
-import * as statement from 'cdk-iam-floyd';
+import { Collection, Operator, Statement } from 'cdk-iam-floyd';
 
 function printPolicyWithStatements(statements: any[]) {
   console.log(
@@ -14,37 +14,32 @@ function printPolicyWithStatements(statements: any[]) {
 }
 
 printPolicyWithStatements([
-  new statement.Sts() //
+  new Statement.Sts() //
     .allow()
     .toAssumeRole()
     .forService('rds.amazonaws.com'),
 ]);
 
-printPolicyWithStatements(
-  new statement.Collection().allowEc2InstanceDeleteByOwner(),
-);
+printPolicyWithStatements(new Collection().allowEc2InstanceDeleteByOwner());
 
 printPolicyWithStatements([
-  new statement.Secretsmanager()
+  new Statement.Secretsmanager()
     .allow()
     .allActions()
     .ifResourceTag('CreatedBy', 'me'),
 ]);
 
 printPolicyWithStatements([
-  new statement.Ec2().allow().allMatchingActions('/vpn/i'),
+  new Statement.Ec2().allow().allMatchingActions('/vpn/i'),
 ]);
 
 printPolicyWithStatements([
-  new statement.Ec2().allow().allPermissionManagementActions(),
+  new Statement.Ec2().allow().allPermissionManagementActions(),
 ]);
 
 printPolicyWithStatements([
-  new statement.Ec2()
+  new Statement.Ec2()
     .allow()
     .allPermissionManagementActions()
-    .ifAwsSourceIp(
-      '1.2.3.4',
-      new statement.Operator().notIpAddress().ifExists(),
-    ),
+    .ifAwsSourceIp('1.2.3.4', new Operator().notIpAddress().ifExists()),
 ]);

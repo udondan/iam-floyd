@@ -47,6 +47,7 @@ Similar projects
 
 * `cdk-iam-actions <https://github.com/spacerat/cdk-iam-actions>`_
 * `cdk-iam-generator <https://github.com/srihariph/cdk-iam-generator>`_
+* `cdk-iam-policy-builder-helper <https://github.com/layerborn/cdk-iam-policy-builder-helper-construct>`_
 * `iam-policy-generator <https://github.com/aletheia/iam-policy-generator>`_
 * `policyuniverse <https://github.com/Netflix-Skunkworks/policyuniverse>`_
 * `policy_sentry <https://github.com/salesforce/policy_sentry>`_
