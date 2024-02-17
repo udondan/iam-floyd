@@ -700,15 +700,15 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html
    *
    * @param configurationSetName - Identifier for the configurationSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -717,15 +717,15 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DedicatedIp.html
    *
    * @param dedicatedIPPool - Identifier for the dedicatedIPPool.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -734,15 +734,15 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeliverabilityTestReport.html
    *
    * @param reportId - Identifier for the reportId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -751,15 +751,15 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_IdentityInfo.html
    *
    * @param identityName - Identifier for the identityName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesPinpoint.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identity/${ identityName }`);
   }
 
   /**

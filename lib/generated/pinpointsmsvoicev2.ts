@@ -941,15 +941,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateConfigurationSet.html
    *
    * @param configurationSetName - Identifier for the configurationSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -958,15 +958,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateOptOutList.html
    *
    * @param optOutListName - Identifier for the optOutListName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOptOutList(optOutListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:opt-out-list/${ optOutListName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opt-out-list/${ optOutListName }`);
   }
 
   /**
@@ -975,15 +975,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html
    *
    * @param phoneNumberId - Identifier for the phoneNumberId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -992,15 +992,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreatePool.html
    *
    * @param poolId - Identifier for the poolId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:pool/${ poolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pool/${ poolId }`);
   }
 
   /**
@@ -1010,15 +1010,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    *
    * @param senderId - Identifier for the senderId.
    * @param isoCountryCode - Identifier for the isoCountryCode.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSenderId(senderId: string, isoCountryCode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:sender-id/${ senderId }/${ isoCountryCode }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sender-id/${ senderId }/${ isoCountryCode }`);
   }
 
   /**
@@ -1027,15 +1027,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrations.html
    *
    * @param registrationId - Identifier for the registrationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegistration(registrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:registration/${ registrationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registration/${ registrationId }`);
   }
 
   /**
@@ -1044,15 +1044,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationAttachments.html
    *
    * @param registrationAttachmentId - Identifier for the registrationAttachmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegistrationAttachment(registrationAttachmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:registration-attachment/${ registrationAttachmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registration-attachment/${ registrationAttachmentId }`);
   }
 
   /**
@@ -1061,15 +1061,15 @@ export class SmsVoiceV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeVerifiedDestinationNumbers.html
    *
    * @param verifiedDestinationNumberId - Identifier for the verifiedDestinationNumberId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVerifiedDestinationNumber(verifiedDestinationNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SmsVoiceV2.defaultPartition }:sms-voice:${ region || '*' }:${ account || '*' }:verified-destination-number/${ verifiedDestinationNumberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-destination-number/${ verifiedDestinationNumberId }`);
   }
 
   /**

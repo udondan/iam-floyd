@@ -163,14 +163,14 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSavingsplan(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Savingsplans.defaultPartition }:savingsplans::${ account || '*' }:savingsplan/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:savingsplans::${ account || this.defaultAccount }:savingsplan/${ resourceId }`);
   }
 
   /**

@@ -381,15 +381,15 @@ export class PcaConnectorAd extends PolicyStatement {
    * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_Connector.html
    *
    * @param connectorId - Identifier for the connectorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PcaConnectorAd.defaultPartition }:pca-connector-ad:${ region || '*' }:${ account || '*' }:connector/${ connectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pca-connector-ad:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorId }`);
   }
 
   /**
@@ -398,15 +398,15 @@ export class PcaConnectorAd extends PolicyStatement {
    * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_DirectoryRegistration.html
    *
    * @param directoryId - Identifier for the directoryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDirectoryRegistration(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PcaConnectorAd.defaultPartition }:pca-connector-ad:${ region || '*' }:${ account || '*' }:directory-registration/${ directoryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pca-connector-ad:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory-registration/${ directoryId }`);
   }
 
   /**
@@ -415,12 +415,12 @@ export class PcaConnectorAd extends PolicyStatement {
    * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_ServicePrincipalName.html
    *
    * @param directoryId - Identifier for the directoryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServicePrincipalName(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PcaConnectorAd.defaultPartition }:pca-connector-ad:${ region || '*' }:${ account || '*' }:directory-registration/${ directoryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pca-connector-ad:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory-registration/${ directoryId }`);
   }
 
   /**
@@ -430,15 +430,15 @@ export class PcaConnectorAd extends PolicyStatement {
    *
    * @param connectorId - Identifier for the connectorId.
    * @param templateId - Identifier for the templateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTemplate(connectorId: string, templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PcaConnectorAd.defaultPartition }:pca-connector-ad:${ region || '*' }:${ account || '*' }:connector/${ connectorId }/template/${ templateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pca-connector-ad:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorId }/template/${ templateId }`);
   }
 
   /**
@@ -448,12 +448,12 @@ export class PcaConnectorAd extends PolicyStatement {
    *
    * @param connectorId - Identifier for the connectorId.
    * @param templateId - Identifier for the templateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplateGroupAccessControlEntry(connectorId: string, templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PcaConnectorAd.defaultPartition }:pca-connector-ad:${ region || '*' }:${ account || '*' }:connector/${ connectorId }/template/${ templateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pca-connector-ad:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorId }/template/${ templateId }`);
   }
 
   /**

@@ -440,15 +440,15 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-environment
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloud9.defaultPartition }:cloud9:${ region || '*' }:${ account || '*' }:environment:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloud9:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment:${ resourceId }`);
   }
 
   /**

@@ -446,15 +446,15 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifJobType()
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -463,15 +463,15 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
    *
    * @param dataSetId - Identifier for the dataSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataSets(dataSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }`);
   }
 
   /**
@@ -480,11 +480,11 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
    *
    * @param dataSetId - Identifier for the dataSetId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledDataSets(dataSetId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }`);
   }
 
   /**
@@ -494,15 +494,15 @@ export class Dataexchange extends PolicyStatement {
    *
    * @param dataSetId - Identifier for the dataSetId.
    * @param revisionId - Identifier for the revisionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRevisions(dataSetId: string, revisionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -512,11 +512,11 @@ export class Dataexchange extends PolicyStatement {
    *
    * @param dataSetId - Identifier for the dataSetId.
    * @param revisionId - Identifier for the revisionId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledRevisions(dataSetId: string, revisionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -527,12 +527,12 @@ export class Dataexchange extends PolicyStatement {
    * @param dataSetId - Identifier for the dataSetId.
    * @param revisionId - Identifier for the revisionId.
    * @param assetId - Identifier for the assetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -543,11 +543,11 @@ export class Dataexchange extends PolicyStatement {
    * @param dataSetId - Identifier for the dataSetId.
    * @param revisionId - Identifier for the revisionId.
    * @param assetId - Identifier for the assetId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledAssets(dataSetId: string, revisionId: string, assetId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -556,12 +556,12 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
    *
    * @param eventActionId - Identifier for the eventActionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dataexchange.defaultPartition }:dataexchange:${ region || '*' }:${ account || '*' }:event-actions/${ eventActionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-actions/${ eventActionId }`);
   }
 
   /**

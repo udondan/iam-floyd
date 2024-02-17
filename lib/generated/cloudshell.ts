@@ -139,11 +139,11 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#Environment
    *
    * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudshell.defaultPartition }:cloudshell:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudshell:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
   }
 }

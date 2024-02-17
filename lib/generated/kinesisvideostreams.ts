@@ -574,15 +574,15 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * @param streamName - Identifier for the streamName.
    * @param creationTime - Identifier for the creationTime.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ streamName }/${ creationTime }`);
   }
 
   /**
@@ -592,15 +592,15 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * @param channelName - Identifier for the channelName.
    * @param creationTime - Identifier for the creationTime.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kinesisvideo.defaultPartition }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelName }/${ creationTime }`);
   }
 
   /**

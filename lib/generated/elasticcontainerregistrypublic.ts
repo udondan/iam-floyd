@@ -327,7 +327,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR-Public_ARN_Format
    *
    * @param repositoryName - Identifier for the repositoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -335,7 +335,7 @@ export class EcrPublic extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || EcrPublic.defaultPartition }:ecr-public::${ account || '*' }:repository/${ repositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecr-public::${ account || this.defaultAccount }:repository/${ repositoryName }`);
   }
 
   /**
@@ -344,11 +344,11 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR-Public_ARN_Format
    *
    * @param registryId - Identifier for the registryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegistry(registryId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || EcrPublic.defaultPartition }:ecr-public::${ account || '*' }:registry/${ registryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecr-public::${ account || this.defaultAccount }:registry/${ registryId }`);
   }
 
   /**

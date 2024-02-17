@@ -439,14 +439,14 @@ export function createModule(module: Module): Promise<void> {
       const paramName = lowerFirst(camelCase(param));
       let orDefault = '';
       if (param == 'Partition') {
-        orDefault = ` || ${classDeclaration.getName()}.defaultPartition`;
+        orDefault = ` ?? this.defaultPartition`;
         paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`;
       } else if (param == 'Region') {
-        orDefault = " || '*'";
-        paramDocs += `\n@param ${paramName} - Region of the resource; defaults to empty string: all regions.`;
+        orDefault = ` ?? this.defaultRegion`;
+        paramDocs += `\n@param ${paramName} - Region of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's region.`;
       } else if (param.match(/^Account(Id)?$/)) {
-        orDefault = " || '*'";
-        paramDocs += `\n@param ${paramName} - Account of the resource; defaults to empty string: all accounts.`;
+        orDefault = ` ?? this.defaultAccount`;
+        paramDocs += `\n@param ${paramName} - Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`;
       } else {
         paramDocs += `\n@param ${paramName} - Identifier for the ${paramName}.`;
       }
@@ -612,7 +612,7 @@ export function createModule(module: Module): Promise<void> {
       }
 
       methodBody.push(
-        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[
+        `return this.if(\`${propsKey}\`, value, operator ?? '${conditionTypeDefaults[
           type
         ].default.toString()}')`,
       );

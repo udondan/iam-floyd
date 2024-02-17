@@ -1170,15 +1170,15 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html#arn-formats
    *
    * @param repositoryName - Identifier for the repositoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecommit.defaultPartition }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecommit:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ repositoryName }`);
   }
 
   /**

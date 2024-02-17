@@ -805,15 +805,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateBrowserSettings.html
    *
    * @param browserSettingsId - Identifier for the browserSettingsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBrowserSettings(browserSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:browserSettings/${ browserSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:browserSettings/${ browserSettingsId }`);
   }
 
   /**
@@ -823,12 +823,12 @@ export class WorkspacesWeb extends PolicyStatement {
    *
    * @param portalId - Identifier for the portalId.
    * @param identityProviderId - Identifier for the identityProviderId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentityProvider(portalId: string, identityProviderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:identityProvider/${ portalId }/${ identityProviderId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identityProvider/${ portalId }/${ identityProviderId }`);
   }
 
   /**
@@ -837,15 +837,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateNetworkSettings.html
    *
    * @param networkSettingsId - Identifier for the networkSettingsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkSettings(networkSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:networkSettings/${ networkSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:networkSettings/${ networkSettingsId }`);
   }
 
   /**
@@ -854,15 +854,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreatePortal.html
    *
    * @param portalId - Identifier for the portalId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:portal/${ portalId }`);
   }
 
   /**
@@ -871,15 +871,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateTrustStore.html
    *
    * @param trustStoreId - Identifier for the trustStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTrustStore(trustStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:trustStore/${ trustStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:trustStore/${ trustStoreId }`);
   }
 
   /**
@@ -888,15 +888,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserSettings.html
    *
    * @param userSettingsId - Identifier for the userSettingsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUserSettings(userSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userSettings/${ userSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userSettings/${ userSettingsId }`);
   }
 
   /**
@@ -905,15 +905,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html
    *
    * @param userAccessLoggingSettingsId - Identifier for the userAccessLoggingSettingsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUserAccessLoggingSettings(userAccessLoggingSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
   }
 
   /**
@@ -922,15 +922,15 @@ export class WorkspacesWeb extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html
    *
    * @param ipAccessSettingsId - Identifier for the ipAccessSettingsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIpAccessSettings(ipAccessSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || WorkspacesWeb.defaultPartition }:workspaces-web:${ region || '*' }:${ account || '*' }:ipAccessSettings/${ ipAccessSettingsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ipAccessSettings/${ ipAccessSettingsId }`);
   }
 
   /**

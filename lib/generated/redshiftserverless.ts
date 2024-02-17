@@ -740,15 +740,15 @@ export class RedshiftServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-workgroup-namespace.html
    *
    * @param namespaceId - Identifier for the namespaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -757,15 +757,15 @@ export class RedshiftServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html
    *
    * @param snapshotId - Identifier for the snapshotId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot/${ snapshotId }`);
   }
 
   /**
@@ -774,15 +774,15 @@ export class RedshiftServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-workgroup-namespace.html
    *
    * @param workgroupId - Identifier for the workgroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workgroup/${ workgroupId }`);
   }
 
   /**
@@ -791,15 +791,15 @@ export class RedshiftServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html
    *
    * @param recoveryPointId - Identifier for the recoveryPointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:recoverypoint/${ recoveryPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recoverypoint/${ recoveryPointId }`);
   }
 
   /**
@@ -808,12 +808,12 @@ export class RedshiftServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-connecting.html
    *
    * @param endpointAccessId - Identifier for the endpointAccessId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpointAccess(endpointAccessId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftServerless.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:managedvpcendpoint/${ endpointAccessId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managedvpcendpoint/${ endpointAccessId }`);
   }
 
   /**

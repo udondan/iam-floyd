@@ -419,15 +419,15 @@ export class RefactorSpaces extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
    *
    * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
   }
 
   /**
@@ -437,8 +437,8 @@ export class RefactorSpaces extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param applicationId - Identifier for the applicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -447,7 +447,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifCreatedByAccountIds()
    */
   public onApplication(environmentId: string, applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }`);
   }
 
   /**
@@ -458,8 +458,8 @@ export class RefactorSpaces extends PolicyStatement {
    * @param environmentId - Identifier for the environmentId.
    * @param applicationId - Identifier for the applicationId.
    * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -469,7 +469,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifServiceCreatedByAccount()
    */
   public onService(environmentId: string, applicationId: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
   }
 
   /**
@@ -480,8 +480,8 @@ export class RefactorSpaces extends PolicyStatement {
    * @param environmentId - Identifier for the environmentId.
    * @param applicationId - Identifier for the applicationId.
    * @param routeId - Identifier for the routeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -493,7 +493,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifSourcePath()
    */
   public onRoute(environmentId: string, applicationId: string, routeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RefactorSpaces.defaultPartition }:refactor-spaces:${ region || '*' }:${ account || '*' }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
   }
 
   /**

@@ -794,8 +794,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Studio.html
    *
    * @param studioId - Identifier for the studioId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -805,7 +805,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio/${ studioId }`);
   }
 
   /**
@@ -814,8 +814,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingImage.html
    *
    * @param streamingImageId - Identifier for the streamingImageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -825,7 +825,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStreamingImage(streamingImageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-image/${ streamingImageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-image/${ streamingImageId }`);
   }
 
   /**
@@ -834,8 +834,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StudioComponent.html
    *
    * @param studioComponentId - Identifier for the studioComponentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -845,7 +845,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudioComponent(studioComponentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:studio-component/${ studioComponentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio-component/${ studioComponentId }`);
   }
 
   /**
@@ -854,8 +854,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_LaunchProfile.html
    *
    * @param launchProfileId - Identifier for the launchProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -865,7 +865,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onLaunchProfile(launchProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:launch-profile/${ launchProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-profile/${ launchProfileId }`);
   }
 
   /**
@@ -874,8 +874,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSession.html
    *
    * @param streamingSessionId - Identifier for the streamingSessionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -886,7 +886,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSession(streamingSessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session/${ streamingSessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-session/${ streamingSessionId }`);
   }
 
   /**
@@ -895,8 +895,8 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSessionBackup.html
    *
    * @param streamingSessionBackupId - Identifier for the streamingSessionBackupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -906,7 +906,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSessionBackup(streamingSessionBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:streaming-session-backup/${ streamingSessionBackupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-session-backup/${ streamingSessionBackupId }`);
   }
 
   /**
@@ -915,12 +915,12 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Eula.html
    *
    * @param eulaId - Identifier for the eulaId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eula/${ eulaId }`);
   }
 
   /**
@@ -929,15 +929,15 @@ export class Nimble extends PolicyStatement {
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_EulaAcceptance.html
    *
    * @param eulaAcceptanceId - Identifier for the eulaAcceptanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifStudioId()
    */
   public onEulaAcceptance(eulaAcceptanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Nimble.defaultPartition }:nimble:${ region || '*' }:${ account || '*' }:eula-acceptance/${ eulaAcceptanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eula-acceptance/${ eulaAcceptanceId }`);
   }
 
   /**

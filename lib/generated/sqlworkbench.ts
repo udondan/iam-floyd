@@ -946,15 +946,15 @@ export class Sqlworkbench extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:connection/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ resourceId }`);
   }
 
   /**
@@ -963,15 +963,15 @@ export class Sqlworkbench extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuery(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:query/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:query/${ resourceId }`);
   }
 
   /**
@@ -980,15 +980,15 @@ export class Sqlworkbench extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:chart/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:chart/${ resourceId }`);
   }
 
   /**
@@ -997,15 +997,15 @@ export class Sqlworkbench extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sqlworkbench.defaultPartition }:sqlworkbench:${ region || '*' }:${ account || '*' }:notebook/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook/${ resourceId }`);
   }
 
   /**

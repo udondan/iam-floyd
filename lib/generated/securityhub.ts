@@ -1149,15 +1149,15 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
    *
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHub(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:hub/default`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub/default`);
   }
 
   /**
@@ -1167,12 +1167,12 @@ export class Securityhub extends PolicyStatement {
    *
    * @param company - Identifier for the company.
    * @param productId - Identifier for the productId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:product/${ company }/${ productId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:product/${ company }/${ productId }`);
   }
 
   /**
@@ -1181,12 +1181,12 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
    *
    * @param findingAggregatorId - Identifier for the findingAggregatorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:finding-aggregator/${ findingAggregatorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:finding-aggregator/${ findingAggregatorId }`);
   }
 
   /**
@@ -1195,12 +1195,12 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules
    *
    * @param automationRuleId - Identifier for the automationRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutomationRule(automationRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:automation-rule/${ automationRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-rule/${ automationRuleId }`);
   }
 
   /**
@@ -1209,12 +1209,12 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html
    *
    * @param configurationPolicyId - Identifier for the configurationPolicyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfigurationPolicy(configurationPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securityhub.defaultPartition }:securityhub:${ region || '*' }:${ account || '*' }:configuration-policy/${ configurationPolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-policy/${ configurationPolicyId }`);
   }
 
   /**

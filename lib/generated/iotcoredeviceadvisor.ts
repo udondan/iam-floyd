@@ -218,15 +218,15 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-workflow.html#device-advisor-workflow-create-suite-definition
    *
    * @param suiteDefinitionId - Identifier for the suiteDefinitionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSuitedefinition(suiteDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotdeviceadvisor.defaultPartition }:iotdeviceadvisor:${ region || '*' }:${ account || '*' }:suitedefinition/${ suiteDefinitionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotdeviceadvisor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suitedefinition/${ suiteDefinitionId }`);
   }
 
   /**
@@ -236,15 +236,15 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * @param suiteDefinitionId - Identifier for the suiteDefinitionId.
    * @param suiteRunId - Identifier for the suiteRunId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSuiterun(suiteDefinitionId: string, suiteRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotdeviceadvisor.defaultPartition }:iotdeviceadvisor:${ region || '*' }:${ account || '*' }:suiterun/${ suiteDefinitionId }/${ suiteRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotdeviceadvisor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suiterun/${ suiteDefinitionId }/${ suiteRunId }`);
   }
 
   /**

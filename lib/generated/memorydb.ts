@@ -694,15 +694,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param parameterGroupName - Identifier for the parameterGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parametergroup/${ parameterGroupName }`);
   }
 
   /**
@@ -711,15 +711,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param subnetGroupName - Identifier for the subnetGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnetgroup/${ subnetGroupName }`);
   }
 
   /**
@@ -728,15 +728,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -745,15 +745,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param snapshotName - Identifier for the snapshotName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot/${ snapshotName }`);
   }
 
   /**
@@ -762,15 +762,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param userName - Identifier for the userName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userName }`);
   }
 
   /**
@@ -779,15 +779,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param aclName - Identifier for the aclName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:acl/${ aclName }`);
   }
 
   /**
@@ -796,15 +796,15 @@ export class Memorydb extends PolicyStatement {
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
    * @param reservationID - Identifier for the reservationID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Memorydb.defaultPartition }:memorydb:${ region || '*' }:${ account || '*' }:reservednode/${ reservationID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reservednode/${ reservationID }`);
   }
 
   /**

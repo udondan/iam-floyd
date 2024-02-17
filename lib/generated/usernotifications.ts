@@ -299,11 +299,11 @@ export class Notifications extends PolicyStatement {
    *
    * @param notificationConfigurationId - Identifier for the notificationConfigurationId.
    * @param eventRuleId - Identifier for the eventRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventRule(notificationConfigurationId: string, eventRuleId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Notifications.defaultPartition }:notifications::${ account || '*' }:configuration/${ notificationConfigurationId }/rule/${ eventRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:notifications::${ account || this.defaultAccount }:configuration/${ notificationConfigurationId }/rule/${ eventRuleId }`);
   }
 
   /**
@@ -312,14 +312,14 @@ export class Notifications extends PolicyStatement {
    * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
    *
    * @param notificationConfigurationId - Identifier for the notificationConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNotificationConfiguration(notificationConfigurationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Notifications.defaultPartition }:notifications::${ account || '*' }:configuration/${ notificationConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:notifications::${ account || this.defaultAccount }:configuration/${ notificationConfigurationId }`);
   }
 
   /**
@@ -329,12 +329,12 @@ export class Notifications extends PolicyStatement {
    *
    * @param notificationConfigurationId - Identifier for the notificationConfigurationId.
    * @param notificationEventId - Identifier for the notificationEventId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNotificationEvent(notificationConfigurationId: string, notificationEventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Notifications.defaultPartition }:notifications:${ region || '*' }:${ account || '*' }:configuration/${ notificationConfigurationId }/event/${ notificationEventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:notifications:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration/${ notificationConfigurationId }/event/${ notificationEventId }`);
   }
 
   /**

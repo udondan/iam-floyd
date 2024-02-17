@@ -1420,15 +1420,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html
    *
    * @param wirelessDeviceId - Identifier for the wirelessDeviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDevice/${ wirelessDeviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessDevice/${ wirelessDeviceId }`);
   }
 
   /**
@@ -1437,15 +1437,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGateway.html
    *
    * @param wirelessGatewayId - Identifier for the wirelessGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGateway/${ wirelessGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessGateway/${ wirelessGatewayId }`);
   }
 
   /**
@@ -1454,15 +1454,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDeviceProfile.html
    *
    * @param deviceProfileId - Identifier for the deviceProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceProfile(deviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:DeviceProfile/${ deviceProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:DeviceProfile/${ deviceProfileId }`);
   }
 
   /**
@@ -1471,15 +1471,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateServiceProfile.html
    *
    * @param serviceProfileId - Identifier for the serviceProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:ServiceProfile/${ serviceProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ServiceProfile/${ serviceProfileId }`);
   }
 
   /**
@@ -1488,15 +1488,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDestination.html
    *
    * @param destinationName - Identifier for the destinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:Destination/${ destinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Destination/${ destinationName }`);
   }
 
   /**
@@ -1505,15 +1505,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    *
    * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:SidewalkAccount/${ sidewalkAccountId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:SidewalkAccount/${ sidewalkAccountId }`);
   }
 
   /**
@@ -1522,15 +1522,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
    *
    * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
   }
 
   /**
@@ -1539,15 +1539,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html
    *
    * @param fuotaTaskId - Identifier for the fuotaTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFuotaTask(fuotaTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:FuotaTask/${ fuotaTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:FuotaTask/${ fuotaTaskId }`);
   }
 
   /**
@@ -1556,15 +1556,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html
    *
    * @param multicastGroupId - Identifier for the multicastGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMulticastGroup(multicastGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:MulticastGroup/${ multicastGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:MulticastGroup/${ multicastGroupId }`);
   }
 
   /**
@@ -1573,15 +1573,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html
    *
    * @param networkAnalyzerConfigurationName - Identifier for the networkAnalyzerConfigurationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkAnalyzerConfiguration(networkAnalyzerConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:NetworkAnalyzerConfiguration/${ networkAnalyzerConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:NetworkAnalyzerConfiguration/${ networkAnalyzerConfigurationName }`);
   }
 
   /**
@@ -1590,12 +1590,12 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
    *
    * @param thingName - Identifier for the thingName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -1604,12 +1604,12 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html
    *
    * @param certificate - Identifier for the certificate.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert/${ certificate }`);
   }
 
   /**
@@ -1618,15 +1618,15 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
    *
    * @param importTaskId - Identifier for the importTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImportTask(importTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotwireless.defaultPartition }:iotwireless:${ region || '*' }:${ account || '*' }:ImportTask/${ importTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ImportTask/${ importTaskId }`);
   }
 
   /**

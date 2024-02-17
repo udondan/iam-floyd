@@ -797,15 +797,15 @@ export class Wafv2 extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -816,15 +816,15 @@ export class Wafv2 extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/ipset/${ name }/${ id }`);
   }
 
   /**
@@ -835,12 +835,12 @@ export class Wafv2 extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/managedruleset/${ name }/${ id }`);
   }
 
   /**
@@ -851,15 +851,15 @@ export class Wafv2 extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -870,15 +870,15 @@ export class Wafv2 extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/regexpatternset/${ name }/${ id }`);
   }
 
   /**
@@ -888,12 +888,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param loadBalancerId - Identifier for the loadBalancerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -903,12 +903,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * @param apiId - Identifier for the apiId.
    * @param stageName - Identifier for the stageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/restapis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -917,12 +917,12 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
    *
    * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -931,12 +931,12 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
    *
    * @param userPoolId - Identifier for the userPoolId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cognito-idp:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userpool/${ userPoolId }`);
   }
 
   /**
@@ -946,12 +946,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * @param serviceName - Identifier for the serviceName.
    * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -960,12 +960,12 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
    *
    * @param verifiedAccessInstanceId - Identifier for the verifiedAccessInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wafv2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-instance/${ verifiedAccessInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-instance/${ verifiedAccessInstanceId }`);
   }
 
   /**

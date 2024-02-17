@@ -359,15 +359,15 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html
    *
    * @param pipelineId - Identifier for the pipelineId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datapipeline.defaultPartition }:datapipeline:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datapipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineId }`);
   }
 
   /**

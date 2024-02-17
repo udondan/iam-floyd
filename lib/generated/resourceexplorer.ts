@@ -306,15 +306,15 @@ export class ResourceExplorer2 extends PolicyStatement {
    *
    * @param viewName - Identifier for the viewName.
    * @param viewUuid - Identifier for the viewUuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onView(viewName: string, viewUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ResourceExplorer2.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:view/${ viewName }/${ viewUuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resource-explorer-2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:view/${ viewName }/${ viewUuid }`);
   }
 
   /**
@@ -323,15 +323,15 @@ export class ResourceExplorer2 extends PolicyStatement {
    * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_Index.html
    *
    * @param indexUuid - Identifier for the indexUuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIndex(indexUuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ResourceExplorer2.defaultPartition }:resource-explorer-2:${ region || '*' }:${ account || '*' }:index/${ indexUuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resource-explorer-2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexUuid }`);
   }
 
   /**

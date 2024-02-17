@@ -248,15 +248,15 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_service-with-iam.html
    *
    * @param notificationRuleId - Identifier for the notificationRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarNotifications.defaultPartition }:codestar-notifications:${ region || '*' }:${ account || '*' }:notificationrule/${ notificationRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-notifications:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notificationrule/${ notificationRuleId }`);
   }
 
   /**

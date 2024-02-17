@@ -408,15 +408,15 @@ export class Fis extends PolicyStatement {
    * https://docs.aws.amazon.com/fis/latest/userguide/actions.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAction(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:action/${ id }`);
   }
 
   /**
@@ -425,15 +425,15 @@ export class Fis extends PolicyStatement {
    * https://docs.aws.amazon.com/fis/latest/userguide/experiments.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperiment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment/${ id }`);
   }
 
   /**
@@ -442,15 +442,15 @@ export class Fis extends PolicyStatement {
    * https://docs.aws.amazon.com/fis/latest/userguide/working-with-templates.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fis.defaultPartition }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-template/${ id }`);
   }
 
   /**

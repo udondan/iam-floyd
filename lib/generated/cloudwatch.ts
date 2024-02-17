@@ -714,15 +714,15 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
    *
    * @param alarmName - Identifier for the alarmName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:alarm:${ alarmName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:alarm:${ alarmName }`);
   }
 
   /**
@@ -731,11 +731,11 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
    *
    * @param dashboardName - Identifier for the dashboardName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch::${ account || '*' }:dashboard/${ dashboardName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch::${ account || this.defaultAccount }:dashboard/${ dashboardName }`);
   }
 
   /**
@@ -744,15 +744,15 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
    *
    * @param insightRuleName - Identifier for the insightRuleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:insight-rule/${ insightRuleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:insight-rule/${ insightRuleName }`);
   }
 
   /**
@@ -761,15 +761,15 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
    *
    * @param metricStreamName - Identifier for the metricStreamName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMetricStream(metricStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:metric-stream/${ metricStreamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metric-stream/${ metricStreamName }`);
   }
 
   /**
@@ -778,15 +778,15 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
    *
    * @param sloName - Identifier for the sloName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:slo/${ sloName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:slo/${ sloName }`);
   }
 
   /**
@@ -796,15 +796,15 @@ export class Cloudwatch extends PolicyStatement {
    *
    * @param serviceName - Identifier for the serviceName.
    * @param uniqueAttributesHex - Identifier for the uniqueAttributesHex.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, uniqueAttributesHex: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudwatch.defaultPartition }:cloudwatch:${ region || '*' }:${ account || '*' }:service/${ serviceName }-${ uniqueAttributesHex }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }-${ uniqueAttributesHex }`);
   }
 
   /**

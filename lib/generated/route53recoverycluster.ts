@@ -86,11 +86,11 @@ export class Route53RecoveryCluster extends PolicyStatement {
    *
    * @param controlPanelId - Identifier for the controlPanelId.
    * @param routingControlId - Identifier for the routingControlId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryCluster.defaultPartition }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-control::${ account || this.defaultAccount }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
   }
 
   /**

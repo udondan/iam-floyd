@@ -409,15 +409,15 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html
    *
    * @param namespaceId - Identifier for the namespaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicediscovery.defaultPartition }:servicediscovery:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicediscovery:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -426,15 +426,15 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html
    *
    * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicediscovery.defaultPartition }:servicediscovery:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicediscovery:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }`);
   }
 
   /**

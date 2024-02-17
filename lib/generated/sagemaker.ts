@@ -244,7 +244,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a cluster
+   * Grants permission to create a SageMaker HyperPod cluster
    *
    * Access Level: Write
    *
@@ -1341,7 +1341,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a cluster
+   * Grants permission to delete a SageMaker HyperPod cluster
    *
    * Access Level: Write
    *
@@ -1945,7 +1945,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a cluster
+   * Grants permission to return information about a SageMaker HyperPod cluster
    *
    * Access Level: Read
    *
@@ -1956,7 +1956,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a cluster node
+   * Grants permission to return information about a SageMaker HyperPod cluster node
    *
    * Access Level: Read
    *
@@ -2846,7 +2846,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list nodes within a cluster
+   * Grants permission to list nodes within a SageMaker HyperPod cluster
    *
    * Access Level: List
    *
@@ -2857,7 +2857,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list clusters
+   * Grants permission to list SageMaker HyperPod clusters
    *
    * Access Level: List
    *
@@ -4022,7 +4022,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a cluster
+   * Grants permission to update a SageMaker HyperPod cluster
    *
    * Access Level: Write
    *
@@ -4033,6 +4033,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateCluster() {
     return this.to('UpdateCluster');
+  }
+
+  /**
+   * Grants permission to update platform software for a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html
+   */
+  public toUpdateClusterSoftware() {
+    return this.to('UpdateClusterSoftware');
   }
 
   /**
@@ -4616,6 +4627,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateAppImageConfig',
       'UpdateArtifact',
       'UpdateCluster',
+      'UpdateClusterSoftware',
       'UpdateCodeRepository',
       'UpdateContext',
       'UpdateDeviceFleet',
@@ -4827,8 +4839,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param deviceFleetName - Identifier for the deviceFleetName.
    * @param deviceName - Identifier for the deviceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4836,7 +4848,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
   }
 
   /**
@@ -4845,8 +4857,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-device-fleet.html
    *
    * @param deviceFleetName - Identifier for the deviceFleetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4854,7 +4866,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-fleet/${ deviceFleetName }`);
   }
 
   /**
@@ -4863,8 +4875,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-packaging-job.html
    *
    * @param edgePackagingJobName - Identifier for the edgePackagingJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4872,7 +4884,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-packaging-job/${ edgePackagingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:edge-packaging-job/${ edgePackagingJobName }`);
   }
 
   /**
@@ -4881,8 +4893,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/edge.html
    *
    * @param edgeDeploymentPlanName - Identifier for the edgeDeploymentPlanName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4890,7 +4902,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:edge-deployment/${ edgeDeploymentPlanName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:edge-deployment/${ edgeDeploymentPlanName }`);
   }
 
   /**
@@ -4899,12 +4911,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html
    *
    * @param humanLoopName - Identifier for the humanLoopName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-loop/${ humanLoopName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:human-loop/${ humanLoopName }`);
   }
 
   /**
@@ -4913,8 +4925,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-create-flow-definition.html
    *
    * @param flowDefinitionName - Identifier for the flowDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4922,7 +4934,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:flow-definition/${ flowDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flow-definition/${ flowDefinitionName }`);
   }
 
   /**
@@ -4931,8 +4943,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-instructions-overview.html
    *
    * @param humanTaskUiName - Identifier for the humanTaskUiName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4940,7 +4952,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:human-task-ui/${ humanTaskUiName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:human-task-ui/${ humanTaskUiName }`);
   }
 
   /**
@@ -4949,12 +4961,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
    *
    * @param hubName - Identifier for the hubName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHub(hubName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub/${ hubName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub/${ hubName }`);
   }
 
   /**
@@ -4965,12 +4977,12 @@ export class Sagemaker extends PolicyStatement {
    * @param hubName - Identifier for the hubName.
    * @param hubContentType - Identifier for the hubContentType.
    * @param hubContentName - Identifier for the hubContentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
   }
 
   /**
@@ -4979,8 +4991,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommender-recommendation-jobs.html
    *
    * @param inferenceRecommendationsJobName - Identifier for the inferenceRecommendationsJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -4988,7 +5000,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
   }
 
   /**
@@ -4997,8 +5009,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-experiment.html
    *
    * @param inferenceExperimentName - Identifier for the inferenceExperimentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5006,7 +5018,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-experiment/${ inferenceExperimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-experiment/${ inferenceExperimentName }`);
   }
 
   /**
@@ -5015,8 +5027,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html
    *
    * @param labelingJobName - Identifier for the labelingJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5024,7 +5036,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:labeling-job/${ labelingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:labeling-job/${ labelingJobName }`);
   }
 
   /**
@@ -5033,8 +5045,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
    *
    * @param workteamName - Identifier for the workteamName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5042,7 +5054,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workteam/${ workteamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workteam/${ workteamName }`);
   }
 
   /**
@@ -5051,8 +5063,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
    *
    * @param workforceName - Identifier for the workforceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5060,7 +5072,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:workforce/${ workforceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workforce/${ workforceName }`);
   }
 
   /**
@@ -5069,8 +5081,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
    * @param domainId - Identifier for the domainId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5078,7 +5090,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }`);
   }
 
   /**
@@ -5088,8 +5100,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param userProfileName - Identifier for the userProfileName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5097,7 +5109,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:user-profile/${ domainId }/${ userProfileName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user-profile/${ domainId }/${ userProfileName }`);
   }
 
   /**
@@ -5107,8 +5119,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param spaceName - Identifier for the spaceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5116,7 +5128,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:space/${ domainId }/${ spaceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:space/${ domainId }/${ spaceName }`);
   }
 
   /**
@@ -5128,8 +5140,8 @@ export class Sagemaker extends PolicyStatement {
    * @param userProfileName - Identifier for the userProfileName.
    * @param appType - Identifier for the appType.
    * @param appName - Identifier for the appName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5137,7 +5149,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
   }
 
   /**
@@ -5146,8 +5158,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi-create.html
    *
    * @param appImageConfigName - Identifier for the appImageConfigName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5155,7 +5167,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-image-config/${ appImageConfigName }`);
   }
 
   /**
@@ -5164,8 +5176,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lcc.html
    *
    * @param studioLifecycleConfigName - Identifier for the studioLifecycleConfigName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5173,7 +5185,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
@@ -5182,8 +5194,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html
    *
    * @param notebookInstanceName - Identifier for the notebookInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5191,7 +5203,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance/${ notebookInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-instance/${ notebookInstanceName }`);
   }
 
   /**
@@ -5200,12 +5212,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html
    *
    * @param notebookInstanceLifecycleConfigName - Identifier for the notebookInstanceLifecycleConfigName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
   }
 
   /**
@@ -5214,8 +5226,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html
    *
    * @param codeRepositoryName - Identifier for the codeRepositoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5223,7 +5235,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:code-repository/${ codeRepositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:code-repository/${ codeRepositoryName }`);
   }
 
   /**
@@ -5232,8 +5244,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
    *
    * @param imageName - Identifier for the imageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5241,7 +5253,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }`);
   }
 
   /**
@@ -5251,12 +5263,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param imageName - Identifier for the imageName.
    * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:image-version/${ imageName }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-version/${ imageName }/${ version }`);
   }
 
   /**
@@ -5265,8 +5277,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html
    *
    * @param algorithmName - Identifier for the algorithmName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5274,17 +5286,17 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:algorithm/${ algorithmName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:algorithm/${ algorithmName }`);
   }
 
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html
    *
    * @param clusterId - Identifier for the clusterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5292,7 +5304,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterId }`);
   }
 
   /**
@@ -5301,8 +5313,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
    *
    * @param trainingJobName - Identifier for the trainingJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5310,7 +5322,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:training-job/${ trainingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training-job/${ trainingJobName }`);
   }
 
   /**
@@ -5319,8 +5331,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
    *
    * @param processingJobName - Identifier for the processingJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5328,7 +5340,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:processing-job/${ processingJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:processing-job/${ processingJobName }`);
   }
 
   /**
@@ -5337,8 +5349,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
    *
    * @param hyperParameterTuningJobName - Identifier for the hyperParameterTuningJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5346,7 +5358,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
   }
 
   /**
@@ -5355,8 +5367,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-whatis.html
    *
    * @param projectName - Identifier for the projectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5364,7 +5376,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -5373,8 +5385,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelPackage.html
    *
    * @param modelPackageName - Identifier for the modelPackageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5382,7 +5394,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package/${ modelPackageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-package/${ modelPackageName }`);
   }
 
   /**
@@ -5391,8 +5403,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-model-group.html
    *
    * @param modelPackageGroupName - Identifier for the modelPackageGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5400,7 +5412,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-package-group/${ modelPackageGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-package-group/${ modelPackageGroupName }`);
   }
 
   /**
@@ -5409,8 +5421,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param modelName - Identifier for the modelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5418,7 +5430,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }`);
   }
 
   /**
@@ -5427,8 +5439,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param endpointConfigName - Identifier for the endpointConfigName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5436,7 +5448,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint-config/${ endpointConfigName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint-config/${ endpointConfigName }`);
   }
 
   /**
@@ -5445,8 +5457,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param endpointName - Identifier for the endpointName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5454,7 +5466,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint/${ endpointName }`);
   }
 
   /**
@@ -5463,8 +5475,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param inferenceComponentName - Identifier for the inferenceComponentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5472,7 +5484,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceComponent(inferenceComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:inference-component/${ inferenceComponentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-component/${ inferenceComponentName }`);
   }
 
   /**
@@ -5481,8 +5493,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformJob.html.html
    *
    * @param transformJobName - Identifier for the transformJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5490,7 +5502,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:transform-job/${ transformJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transform-job/${ transformJobName }`);
   }
 
   /**
@@ -5499,8 +5511,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html
    *
    * @param compilationJobName - Identifier for the compilationJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5508,7 +5520,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:compilation-job/${ compilationJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:compilation-job/${ compilationJobName }`);
   }
 
   /**
@@ -5517,8 +5529,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html
    *
    * @param autoMLJobJobName - Identifier for the autoMLJobJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5526,7 +5538,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:automl-job/${ autoMLJobJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automl-job/${ autoMLJobJobName }`);
   }
 
   /**
@@ -5535,8 +5547,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
    *
    * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5544,7 +5556,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }`);
   }
 
   /**
@@ -5554,12 +5566,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
    * @param monitoringScheduleAlertName - Identifier for the monitoringScheduleAlertName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
   }
 
   /**
@@ -5568,8 +5580,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html
    *
    * @param dataQualityJobDefinitionName - Identifier for the dataQualityJobDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5577,7 +5589,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataQualityJobDefinition(dataQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
   }
 
   /**
@@ -5586,8 +5598,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html
    *
    * @param modelQualityJobDefinitionName - Identifier for the modelQualityJobDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5595,7 +5607,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
   }
 
   /**
@@ -5604,8 +5616,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html
    *
    * @param modelBiasJobDefinitionName - Identifier for the modelBiasJobDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5613,7 +5625,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
   }
 
   /**
@@ -5622,8 +5634,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html
    *
    * @param modelExplainabilityJobDefinitionName - Identifier for the modelExplainabilityJobDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5631,7 +5643,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
   }
 
   /**
@@ -5640,8 +5652,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Experiment.html
    *
    * @param experimentName - Identifier for the experimentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5649,7 +5661,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment/${ experimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment/${ experimentName }`);
   }
 
   /**
@@ -5658,8 +5670,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Trial.html
    *
    * @param trialName - Identifier for the trialName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5667,7 +5679,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial/${ trialName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-trial/${ trialName }`);
   }
 
   /**
@@ -5676,8 +5688,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrialComponent.html
    *
    * @param trialComponentName - Identifier for the trialComponentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5685,7 +5697,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial-component/${ trialComponentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-trial-component/${ trialComponentName }`);
   }
 
   /**
@@ -5694,8 +5706,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html
    *
    * @param featureGroupName - Identifier for the featureGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5703,7 +5715,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFeatureGroup(featureGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:feature-group/${ featureGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:feature-group/${ featureGroupName }`);
   }
 
   /**
@@ -5712,8 +5724,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Pipeline.html
    *
    * @param pipelineName - Identifier for the pipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5721,7 +5733,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -5731,12 +5743,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param pipelineName - Identifier for the pipelineName.
    * @param randomString - Identifier for the randomString.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }/execution/${ randomString }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
   }
 
   /**
@@ -5745,8 +5757,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ArtifactSummary.html
    *
    * @param hashOfArtifactSource - Identifier for the hashOfArtifactSource.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5754,7 +5766,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:artifact/${ hashOfArtifactSource }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:artifact/${ hashOfArtifactSource }`);
   }
 
   /**
@@ -5763,8 +5775,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContextSummary.html
    *
    * @param contextName - Identifier for the contextName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5772,7 +5784,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContext(contextName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:context/${ contextName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:context/${ contextName }`);
   }
 
   /**
@@ -5781,8 +5793,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ActionSummary.html
    *
    * @param actionName - Identifier for the actionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5790,7 +5802,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAction(actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:action/${ actionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:action/${ actionName }`);
   }
 
   /**
@@ -5799,8 +5811,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_LineageGroupSummary.html
    *
    * @param lineageGroupName - Identifier for the lineageGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5808,7 +5820,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLineageGroup(lineageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:lineage-group/${ lineageGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lineage-group/${ lineageGroupName }`);
   }
 
   /**
@@ -5817,8 +5829,8 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelCard.html
    *
    * @param modelCardName - Identifier for the modelCardName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5826,7 +5838,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCard(modelCardName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-card/${ modelCardName }`);
   }
 
   /**
@@ -5836,8 +5848,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param modelCardName - Identifier for the modelCardName.
    * @param exportJobName - Identifier for the exportJobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -5845,7 +5857,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCardExportJob(modelCardName: string, exportJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
   }
 
   /**
@@ -5854,12 +5866,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
    *
    * @param sharedModelId - Identifier for the sharedModelId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModel(sharedModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model/${ sharedModelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shared-model/${ sharedModelId }`);
   }
 
   /**
@@ -5868,12 +5880,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
    *
    * @param eventId - Identifier for the eventId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModelEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:shared-model-event/${ eventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shared-model-event/${ eventId }`);
   }
 
   /**
@@ -5882,12 +5894,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceCatalog.html
    *
    * @param resourceCatalogName - Identifier for the resourceCatalogName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSagemakerCatalog(resourceCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sagemaker.defaultPartition }:sagemaker:${ region || '*' }:${ account || '*' }:sagemaker-catalog/${ resourceCatalogName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sagemaker-catalog/${ resourceCatalogName }`);
   }
 
   /**

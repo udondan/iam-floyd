@@ -789,11 +789,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param conversationId - Identifier for the conversationId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConversation(conversationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::conversation/${ conversationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::conversation/${ conversationId }`);
   }
 
   /**
@@ -802,11 +802,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param buyerId - Identifier for the buyerId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuyer(buyerId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::buyer/${ buyerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::buyer/${ buyerId }`);
   }
 
   /**
@@ -815,11 +815,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param expertId - Identifier for the expertId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExpert(expertId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::expert/${ expertId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::expert/${ expertId }`);
   }
 
   /**
@@ -828,11 +828,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param callId - Identifier for the callId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCall(callId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::call/${ callId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::call/${ callId }`);
   }
 
   /**
@@ -841,11 +841,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param tokenId - Identifier for the tokenId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onToken(tokenId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::token/${ tokenId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::token/${ tokenId }`);
   }
 
   /**
@@ -855,11 +855,11 @@ export class Iq extends PolicyStatement {
    *
    * @param conversationId - Identifier for the conversationId.
    * @param proposalId - Identifier for the proposalId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProposal(conversationId: string, proposalId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::proposal/${ conversationId }/${ proposalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::proposal/${ conversationId }/${ proposalId }`);
   }
 
   /**
@@ -870,11 +870,11 @@ export class Iq extends PolicyStatement {
    * @param conversationId - Identifier for the conversationId.
    * @param proposalId - Identifier for the proposalId.
    * @param paymentRequestId - Identifier for the paymentRequestId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPaymentRequest(conversationId: string, proposalId: string, paymentRequestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::paymentRequest/${ conversationId }/${ proposalId }/${ paymentRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::paymentRequest/${ conversationId }/${ proposalId }/${ paymentRequestId }`);
   }
 
   /**
@@ -885,11 +885,11 @@ export class Iq extends PolicyStatement {
    * @param conversationId - Identifier for the conversationId.
    * @param proposalId - Identifier for the proposalId.
    * @param versionId - Identifier for the versionId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPaymentSchedule(conversationId: string, proposalId: string, versionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::paymentSchedule/${ conversationId }/${ proposalId }/${ versionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::paymentSchedule/${ conversationId }/${ proposalId }/${ versionId }`);
   }
 
   /**
@@ -898,11 +898,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param sellerAwsAccountId - Identifier for the sellerAwsAccountId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSeller(sellerAwsAccountId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::seller/${ sellerAwsAccountId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::seller/${ sellerAwsAccountId }`);
   }
 
   /**
@@ -911,11 +911,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param companyId - Identifier for the companyId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCompany(companyId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::company/${ companyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::company/${ companyId }`);
   }
 
   /**
@@ -924,11 +924,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param requestId - Identifier for the requestId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRequest(requestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::request/${ requestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::request/${ requestId }`);
   }
 
   /**
@@ -937,11 +937,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param listingId - Identifier for the listingId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onListing(listingId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::listing/${ listingId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::listing/${ listingId }`);
   }
 
   /**
@@ -950,11 +950,11 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param attachmentId - Identifier for the attachmentId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAttachment(attachmentId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq:${ region || '*' }::attachment/${ attachmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq:${ region || this.defaultRegion }::attachment/${ attachmentId }`);
   }
 
   /**
@@ -963,10 +963,10 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param permissionRequestId - Identifier for the permissionRequestId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPermission(permissionRequestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iq.defaultPartition }:iq-permission:${ region || '*' }::permission/${ permissionRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq-permission:${ region || this.defaultRegion }::permission/${ permissionRequestId }`);
   }
 }

@@ -584,15 +584,15 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_Database.html
    *
    * @param databaseName - Identifier for the databaseName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:database/${ databaseName }`);
   }
 
   /**
@@ -602,15 +602,15 @@ export class Timestream extends PolicyStatement {
    *
    * @param databaseName - Identifier for the databaseName.
    * @param tableName - Identifier for the tableName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }/table/${ tableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:database/${ databaseName }/table/${ tableName }`);
   }
 
   /**
@@ -619,15 +619,15 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ScheduledQuery.html
    *
    * @param scheduledQueryName - Identifier for the scheduledQueryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Timestream.defaultPartition }:timestream:${ region || '*' }:${ account || '*' }:scheduled-query/${ scheduledQueryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:timestream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scheduled-query/${ scheduledQueryName }`);
   }
 
   /**

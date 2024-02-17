@@ -865,15 +865,15 @@ export class Cleanrooms extends PolicyStatement {
    *
    * @param membershipId - Identifier for the membershipId.
    * @param analysisTemplateId - Identifier for the analysisTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnalysistemplate(membershipId: string, analysisTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/analysistemplate/${ analysisTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/analysistemplate/${ analysisTemplateId }`);
   }
 
   /**
@@ -882,15 +882,15 @@ export class Cleanrooms extends PolicyStatement {
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
    * @param collaborationId - Identifier for the collaborationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCollaboration(collaborationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:collaboration/${ collaborationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:collaboration/${ collaborationId }`);
   }
 
   /**
@@ -900,15 +900,15 @@ export class Cleanrooms extends PolicyStatement {
    *
    * @param membershipId - Identifier for the membershipId.
    * @param configuredAudienceModelAssociationId - Identifier for the configuredAudienceModelAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguredaudiencemodelassociation(membershipId: string, configuredAudienceModelAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredaudiencemodelassociation/${ configuredAudienceModelAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/configuredaudiencemodelassociation/${ configuredAudienceModelAssociationId }`);
   }
 
   /**
@@ -917,15 +917,15 @@ export class Cleanrooms extends PolicyStatement {
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
    * @param configuredTableId - Identifier for the configuredTableId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguredtable(configuredTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:configuredtable/${ configuredTableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuredtable/${ configuredTableId }`);
   }
 
   /**
@@ -935,15 +935,15 @@ export class Cleanrooms extends PolicyStatement {
    *
    * @param membershipId - Identifier for the membershipId.
    * @param configuredTableAssociationId - Identifier for the configuredTableAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguredtableassociation(membershipId: string, configuredTableAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
   }
 
   /**
@@ -952,15 +952,15 @@ export class Cleanrooms extends PolicyStatement {
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
    *
    * @param membershipId - Identifier for the membershipId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }`);
   }
 
   /**
@@ -970,15 +970,15 @@ export class Cleanrooms extends PolicyStatement {
    *
    * @param membershipId - Identifier for the membershipId.
    * @param privacyBudgetTemplateId - Identifier for the privacyBudgetTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPrivacybudgettemplate(membershipId: string, privacyBudgetTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cleanrooms.defaultPartition }:cleanrooms:${ region || '*' }:${ account || '*' }:membership/${ membershipId }/privacybudgettemplate/${ privacyBudgetTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/privacybudgettemplate/${ privacyBudgetTemplateId }`);
   }
 
   /**

@@ -453,14 +453,14 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.readiness-checks.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReadinesscheck(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:readiness-check/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:readiness-check/${ resourceId }`);
   }
 
   /**
@@ -469,14 +469,14 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.readiness-checks.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResourceset(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:resource-set/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:resource-set/${ resourceId }`);
   }
 
   /**
@@ -485,14 +485,14 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.recovery-groups.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCell(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:cell/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:cell/${ resourceId }`);
   }
 
   /**
@@ -501,14 +501,14 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.recovery-groups.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecoverygroup(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Route53RecoveryReadiness.defaultPartition }:route53-recovery-readiness::${ account || '*' }:recovery-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:recovery-group/${ resourceId }`);
   }
 
   /**

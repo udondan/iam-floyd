@@ -295,15 +295,15 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html
    *
    * @param profileName - Identifier for the profileName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Signer.defaultPartition }:signer:${ region || '*' }:${ account || '*' }:/signing-profiles/${ profileName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:signer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/signing-profiles/${ profileName }`);
   }
 
   /**
@@ -312,12 +312,12 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/developerguide/gs-job.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Signer.defaultPartition }:signer:${ region || '*' }:${ account || '*' }:/signing-jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:signer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/signing-jobs/${ jobId }`);
   }
 
   /**

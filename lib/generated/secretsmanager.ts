@@ -473,8 +473,8 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources
    *
    * @param secretId - Identifier for the secretId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -485,7 +485,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResource()
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Secretsmanager.defaultPartition }:secretsmanager:${ region || '*' }:${ account || '*' }:secret:${ secretId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:secretsmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:secret:${ secretId }`);
   }
 
   /**

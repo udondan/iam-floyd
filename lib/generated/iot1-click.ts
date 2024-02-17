@@ -362,15 +362,15 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/resources.html
    *
    * @param deviceId - Identifier for the deviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot1click.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:devices/${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot1click:${ region || this.defaultRegion }:${ account || this.defaultAccount }:devices/${ deviceId }`);
   }
 
   /**
@@ -379,15 +379,15 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_Operations.html
    *
    * @param projectName - Identifier for the projectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot1click.defaultPartition }:iot1click:${ region || '*' }:${ account || '*' }:projects/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot1click:${ region || this.defaultRegion }:${ account || this.defaultAccount }:projects/${ projectName }`);
   }
 
   /**

@@ -426,15 +426,15 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html
    *
    * @param discovererId - Identifier for the discovererId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:discoverer/${ discovererId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || this.defaultRegion }:${ account || this.defaultAccount }:discoverer/${ discovererId }`);
   }
 
   /**
@@ -443,15 +443,15 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html
    *
    * @param registryName - Identifier for the registryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registry/${ registryName }`);
   }
 
   /**
@@ -461,15 +461,15 @@ export class Schemas extends PolicyStatement {
    *
    * @param registryName - Identifier for the registryName.
    * @param schemaName - Identifier for the schemaName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Schemas.defaultPartition }:schemas:${ region || '*' }:${ account || '*' }:schema/${ registryName }/${ schemaName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:schemas:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/${ registryName }/${ schemaName }`);
   }
 
   /**

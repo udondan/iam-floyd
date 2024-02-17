@@ -798,11 +798,11 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param eventSourceName - Identifier for the eventSourceName.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }::event-source/${ eventSourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }::event-source/${ eventSourceName }`);
   }
 
   /**
@@ -811,15 +811,15 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param eventBusName - Identifier for the eventBusName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:event-bus/${ eventBusName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-bus/${ eventBusName }`);
   }
 
   /**
@@ -828,15 +828,15 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param ruleName - Identifier for the ruleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRuleOnDefaultEventBus(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ ruleName }`);
   }
 
   /**
@@ -846,15 +846,15 @@ export class Events extends PolicyStatement {
    *
    * @param eventBusName - Identifier for the eventBusName.
    * @param ruleName - Identifier for the ruleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRuleOnCustomEventBus(eventBusName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:rule/${ eventBusName }/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ eventBusName }/${ ruleName }`);
   }
 
   /**
@@ -863,12 +863,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param archiveName - Identifier for the archiveName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArchive(archiveName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:archive/${ archiveName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:archive/${ archiveName }`);
   }
 
   /**
@@ -877,12 +877,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param replayName - Identifier for the replayName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplay(replayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:replay/${ replayName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replay/${ replayName }`);
   }
 
   /**
@@ -891,12 +891,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param connectionName - Identifier for the connectionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionName }`);
   }
 
   /**
@@ -905,12 +905,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param apiDestinationName - Identifier for the apiDestinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:api-destination/${ apiDestinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:api-destination/${ apiDestinationName }`);
   }
 
   /**
@@ -919,12 +919,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
    *
    * @param endpointName - Identifier for the endpointName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Events.defaultPartition }:events:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint/${ endpointName }`);
   }
 
   /**

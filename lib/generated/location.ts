@@ -790,15 +790,15 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html
    *
    * @param keyName - Identifier for the keyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApiKey(keyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:api-key/${ keyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:api-key/${ keyName }`);
   }
 
   /**
@@ -807,8 +807,8 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/geofence-tracker-concepts.html
    *
    * @param geofenceCollectionName - Identifier for the geofenceCollectionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -816,7 +816,7 @@ export class Geo extends PolicyStatement {
    * - .ifGeofenceIds()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:geofence-collection/${ geofenceCollectionName }`);
   }
 
   /**
@@ -825,15 +825,15 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html
    *
    * @param mapName - Identifier for the mapName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:map/${ mapName }`);
   }
 
   /**
@@ -842,15 +842,15 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/places-concepts.html
    *
    * @param indexName - Identifier for the indexName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:place-index/${ indexName }`);
   }
 
   /**
@@ -859,15 +859,15 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/route-concepts.html
    *
    * @param calculatorName - Identifier for the calculatorName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:route-calculator/${ calculatorName }`);
   }
 
   /**
@@ -876,8 +876,8 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/geofence-tracker-concepts.html
    *
    * @param trackerName - Identifier for the trackerName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -885,7 +885,7 @@ export class Geo extends PolicyStatement {
    * - .ifDeviceIds()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Geo.defaultPartition }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tracker/${ trackerName }`);
   }
 
   /**

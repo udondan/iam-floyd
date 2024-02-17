@@ -196,15 +196,15 @@ export class Rbin extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html#recycle-bin-concepts
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rbin.defaultPartition }:rbin:${ region || '*' }:${ account || '*' }:rule/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rbin:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ resourceName }`);
   }
 
   /**

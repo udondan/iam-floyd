@@ -1,7 +1,7 @@
 // @ts-ignore only available after swapping 1-base
 import { aws_iam as iam } from 'aws-cdk-lib';
 
-import { PolicyStatementWithPrincipal, PrincipalType } from './6-principals';
+import { PolicyStatementWithPrincipal, PrincipalType } from './8-principals';
 
 /**
  * Adds CDK specific "principal" functionality to the Policy Statement

@@ -1013,15 +1013,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/manage-workspaces-directory.html
    *
    * @param directoryId - Identifier for the directoryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }`);
   }
 
   /**
@@ -1030,15 +1030,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html
    *
    * @param bundleId - Identifier for the bundleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspacebundle/${ bundleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspacebundle/${ bundleId }`);
   }
 
   /**
@@ -1047,15 +1047,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html
    *
    * @param workspaceId - Identifier for the workspaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -1064,15 +1064,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html
    *
    * @param imageId - Identifier for the imageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceimage(imageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceimage/${ imageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceimage/${ imageId }`);
   }
 
   /**
@@ -1081,15 +1081,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-ip-access-control-groups.html
    *
    * @param groupId - Identifier for the groupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceipgroup/${ groupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceipgroup/${ groupId }`);
   }
 
   /**
@@ -1098,15 +1098,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html
    *
    * @param connectionAliasId - Identifier for the connectionAliasId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connectionalias/${ connectionAliasId }`);
   }
 
   /**
@@ -1115,15 +1115,15 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/application-bundle-management.html
    *
    * @param workSpaceApplicationId - Identifier for the workSpaceApplicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspaceapplication(workSpaceApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workspaces.defaultPartition }:workspaces:${ region || '*' }:${ account || '*' }:workspaceapplication/${ workSpaceApplicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceapplication/${ workSpaceApplicationId }`);
   }
 
   /**

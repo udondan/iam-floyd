@@ -1476,15 +1476,15 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html
    *
    * @param configurationSetName - Identifier for the configurationSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1493,15 +1493,15 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ContactList.html
    *
    * @param contactListName - Identifier for the contactListName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContactList(contactListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:contact-list/${ contactListName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact-list/${ contactListName }`);
   }
 
   /**
@@ -1510,12 +1510,12 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CustomVerificationEmailTemplateMetadata.html
    *
    * @param templateName - Identifier for the templateName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1524,15 +1524,15 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DedicatedIp.html
    *
    * @param dedicatedIPPool - Identifier for the dedicatedIPPool.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -1541,15 +1541,15 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeliverabilityTestReport.html
    *
    * @param reportId - Identifier for the reportId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -1558,12 +1558,12 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ExportJobSummary.html
    *
    * @param exportJobId - Identifier for the exportJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportJob(exportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:export-job/${ exportJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export-job/${ exportJobId }`);
   }
 
   /**
@@ -1572,15 +1572,15 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_IdentityInfo.html
    *
    * @param identityName - Identifier for the identityName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identity/${ identityName }`);
   }
 
   /**
@@ -1589,12 +1589,12 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ImportJobSummary.html
    *
    * @param importJobId - Identifier for the importJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportJob(importJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:import-job/${ importJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-job/${ importJobId }`);
   }
 
   /**
@@ -1603,12 +1603,12 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html
    *
    * @param templateName - Identifier for the templateName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SesV2.defaultPartition }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:template/${ templateName }`);
   }
 
   /**

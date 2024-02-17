@@ -242,14 +242,14 @@ export class PurchaseOrders extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPurchaseOrder(resourceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || PurchaseOrders.defaultPartition }:purchase-orders::${ account || '*' }:purchase-order/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:purchase-orders::${ account || this.defaultAccount }:purchase-order/${ resourceName }`);
   }
 
   /**

@@ -372,15 +372,15 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_AdapterOverview.html
    *
    * @param adapterId - Identifier for the adapterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAdapter(adapterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Textract.defaultPartition }:textract:${ region || '*' }:${ account || '*' }:/adapters/${ adapterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:textract:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/adapters/${ adapterId }`);
   }
 
   /**
@@ -390,15 +390,15 @@ export class Textract extends PolicyStatement {
    *
    * @param adapterId - Identifier for the adapterId.
    * @param adapterVersion - Identifier for the adapterVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAdapterversion(adapterId: string, adapterVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Textract.defaultPartition }:textract:${ region || '*' }:${ account || '*' }:/adapters/${ adapterId }/versions/${ adapterVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:textract:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/adapters/${ adapterId }/versions/${ adapterVersion }`);
   }
 
   /**

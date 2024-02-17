@@ -301,15 +301,15 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/virtual-cluster.html
    *
    * @param virtualClusterId - Identifier for the virtualClusterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualCluster(virtualClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }`);
   }
 
   /**
@@ -319,15 +319,15 @@ export class EmrContainers extends PolicyStatement {
    *
    * @param virtualClusterId - Identifier for the virtualClusterId.
    * @param jobRunId - Identifier for the jobRunId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobRun(virtualClusterId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
   }
 
   /**
@@ -336,15 +336,15 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/job-templates.html
    *
    * @param jobTemplateId - Identifier for the jobTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/jobtemplates/${ jobTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/jobtemplates/${ jobTemplateId }`);
   }
 
   /**
@@ -354,15 +354,15 @@ export class EmrContainers extends PolicyStatement {
    *
    * @param virtualClusterId - Identifier for the virtualClusterId.
    * @param endpointId - Identifier for the endpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onManagedEndpoint(virtualClusterId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrContainers.defaultPartition }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
   }
 
   /**

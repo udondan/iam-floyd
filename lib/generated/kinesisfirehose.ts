@@ -190,15 +190,15 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html
    *
    * @param deliveryStreamName - Identifier for the deliveryStreamName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeliverystream(deliveryStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Firehose.defaultPartition }:firehose:${ region || '*' }:${ account || '*' }:deliverystream/${ deliveryStreamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:firehose:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deliverystream/${ deliveryStreamName }`);
   }
 
   /**

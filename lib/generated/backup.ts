@@ -1260,15 +1260,15 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html
    *
    * @param backupVaultName - Identifier for the backupVaultName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-vault:${ backupVaultName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup-vault:${ backupVaultName }`);
   }
 
   /**
@@ -1277,15 +1277,15 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/about-backup-plans.html
    *
    * @param backupPlanId - Identifier for the backupPlanId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:backup-plan:${ backupPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup-plan:${ backupPlanId }`);
   }
 
   /**
@@ -1294,15 +1294,15 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/recovery-points.html
    *
    * @param recoveryPointId - Identifier for the recoveryPointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:recovery-point:${ recoveryPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recovery-point:${ recoveryPointId }`);
   }
 
   /**
@@ -1312,15 +1312,15 @@ export class Backup extends PolicyStatement {
    *
    * @param frameworkName - Identifier for the frameworkName.
    * @param frameworkId - Identifier for the frameworkId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFramework(frameworkName: string, frameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:framework:${ frameworkName }-${ frameworkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:framework:${ frameworkName }-${ frameworkId }`);
   }
 
   /**
@@ -1330,15 +1330,15 @@ export class Backup extends PolicyStatement {
    *
    * @param reportPlanName - Identifier for the reportPlanName.
    * @param reportPlanId - Identifier for the reportPlanId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:report-plan:${ reportPlanName }-${ reportPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report-plan:${ reportPlanName }-${ reportPlanId }`);
   }
 
   /**
@@ -1347,15 +1347,15 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/legalhold.html
    *
    * @param legalHoldId - Identifier for the legalHoldId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLegalHold(legalHoldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:legal-hold:${ legalHoldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:legal-hold:${ legalHoldId }`);
   }
 
   /**
@@ -1365,15 +1365,15 @@ export class Backup extends PolicyStatement {
    *
    * @param restoreTestingPlanName - Identifier for the restoreTestingPlanName.
    * @param restoreTestingPlanId - Identifier for the restoreTestingPlanId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRestoreTestingPlan(restoreTestingPlanName: string, restoreTestingPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Backup.defaultPartition }:backup:${ region || '*' }:${ account || '*' }:restore-testing-plan:${ restoreTestingPlanName }-${ restoreTestingPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:restore-testing-plan:${ restoreTestingPlanName }-${ restoreTestingPlanId }`);
   }
 
   /**

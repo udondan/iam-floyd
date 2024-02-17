@@ -1475,15 +1475,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplate(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ name }`);
   }
 
   /**
@@ -1494,15 +1494,15 @@ export class Proton extends PolicyStatement {
    * @param templateName - Identifier for the templateName.
    * @param majorVersion - Identifier for the majorVersion.
    * @param minorVersion - Identifier for the minorVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1512,15 +1512,15 @@ export class Proton extends PolicyStatement {
    *
    * @param templateName - Identifier for the templateName.
    * @param majorVersionId - Identifier for the majorVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1531,15 +1531,15 @@ export class Proton extends PolicyStatement {
    * @param templateName - Identifier for the templateName.
    * @param majorVersionId - Identifier for the majorVersionId.
    * @param minorVersionId - Identifier for the minorVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1548,15 +1548,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceTemplate(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service-template/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ name }`);
   }
 
   /**
@@ -1567,15 +1567,15 @@ export class Proton extends PolicyStatement {
    * @param templateName - Identifier for the templateName.
    * @param majorVersion - Identifier for the majorVersion.
    * @param minorVersion - Identifier for the minorVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1585,15 +1585,15 @@ export class Proton extends PolicyStatement {
    *
    * @param templateName - Identifier for the templateName.
    * @param majorVersionId - Identifier for the majorVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1604,15 +1604,15 @@ export class Proton extends PolicyStatement {
    * @param templateName - Identifier for the templateName.
    * @param majorVersionId - Identifier for the majorVersionId.
    * @param minorVersionId - Identifier for the minorVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1621,15 +1621,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ name }`);
   }
 
   /**
@@ -1638,15 +1638,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ name }`);
   }
 
   /**
@@ -1656,15 +1656,15 @@ export class Proton extends PolicyStatement {
    *
    * @param serviceName - Identifier for the serviceName.
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:service/${ serviceName }/service-instance/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/service-instance/${ name }`);
   }
 
   /**
@@ -1673,15 +1673,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:environment-account-connection/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-account-connection/${ id }`);
   }
 
   /**
@@ -1691,15 +1691,15 @@ export class Proton extends PolicyStatement {
    *
    * @param provider - Identifier for the provider.
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRepository(provider: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:repository/${ provider }:${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:repository/${ provider }:${ name }`);
   }
 
   /**
@@ -1708,15 +1708,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponent(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:component/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ id }`);
   }
 
   /**
@@ -1725,15 +1725,15 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-deployments.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeployment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Proton.defaultPartition }:proton:${ region || '*' }:${ account || '*' }:deployment/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment/${ id }`);
   }
 
   /**

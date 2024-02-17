@@ -429,15 +429,15 @@ export class One extends PolicyStatement {
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/create-device-instance.html
    *
    * @param deviceInstanceId - Identifier for the deviceInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceInstance(deviceInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || One.defaultPartition }:one:${ region || '*' }:${ account || '*' }:device-instance/${ deviceInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-instance/${ deviceInstanceId }`);
   }
 
   /**
@@ -447,12 +447,12 @@ export class One extends PolicyStatement {
    *
    * @param deviceInstanceId - Identifier for the deviceInstanceId.
    * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguration(deviceInstanceId: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || One.defaultPartition }:one:${ region || '*' }:${ account || '*' }:device-instance/${ deviceInstanceId }/configuration/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-instance/${ deviceInstanceId }/configuration/${ version }`);
   }
 
   /**
@@ -461,15 +461,15 @@ export class One extends PolicyStatement {
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/create-config-template.html
    *
    * @param templateId - Identifier for the templateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceConfigurationTemplate(templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || One.defaultPartition }:one:${ region || '*' }:${ account || '*' }:device-configuration-template/${ templateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-configuration-template/${ templateId }`);
   }
 
   /**
@@ -478,15 +478,15 @@ export class One extends PolicyStatement {
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/create-sites.html
    *
    * @param siteId - Identifier for the siteId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSite(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || One.defaultPartition }:one:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }`);
   }
 
   /**
@@ -495,12 +495,12 @@ export class One extends PolicyStatement {
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html
    *
    * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || One.defaultPartition }:one:${ region || '*' }:${ account || '*' }:user/${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userId }`);
   }
 
   /**

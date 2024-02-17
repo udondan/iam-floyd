@@ -258,15 +258,15 @@ export class Rum extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_AppMonitor.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppMonitorResource(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rum.defaultPartition }:rum:${ region || '*' }:${ account || '*' }:appmonitor/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rum:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appmonitor/${ name }`);
   }
 
   /**

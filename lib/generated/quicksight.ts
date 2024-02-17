@@ -2626,12 +2626,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountInfo.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:account/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:account/${ resourceId }`);
   }
 
   /**
@@ -2640,12 +2640,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_User.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ resourceId }`);
   }
 
   /**
@@ -2654,12 +2654,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Group.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ resourceId }`);
   }
 
   /**
@@ -2668,15 +2668,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Analysis.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:analysis/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analysis/${ resourceId }`);
   }
 
   /**
@@ -2685,15 +2685,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboard/${ resourceId }`);
   }
 
   /**
@@ -2702,15 +2702,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:template/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:template/${ resourceId }`);
   }
 
   /**
@@ -2719,15 +2719,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_VPCConnection.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:vpcConnection/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcConnection/${ resourceId }`);
   }
 
   /**
@@ -2736,12 +2736,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssetBundleExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:asset-bundle-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset-bundle-export-job/${ resourceId }`);
   }
 
   /**
@@ -2750,12 +2750,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleImportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssetBundleImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:asset-bundle-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset-bundle-import-job/${ resourceId }`);
   }
 
   /**
@@ -2764,15 +2764,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSource.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:datasource/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datasource/${ resourceId }`);
   }
 
   /**
@@ -2781,15 +2781,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSet.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -2799,15 +2799,15 @@ export class Quicksight extends PolicyStatement {
    *
    * @param datasetId - Identifier for the datasetId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/ingestion/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetId }/ingestion/${ resourceId }`);
   }
 
   /**
@@ -2817,12 +2817,12 @@ export class Quicksight extends PolicyStatement {
    *
    * @param datasetId - Identifier for the datasetId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRefreshschedule(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
   }
 
   /**
@@ -2831,15 +2831,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:theme/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:theme/${ resourceId }`);
   }
 
   /**
@@ -2848,11 +2848,11 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssignment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight::${ account || '*' }:assignment/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight::${ account || this.defaultAccount }:assignment/${ resourceId }`);
   }
 
   /**
@@ -2861,15 +2861,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountCustomization.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:customization/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:customization/${ resourceId }`);
   }
 
   /**
@@ -2878,12 +2878,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_NamespaceInfoV2.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:namespace/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ resourceId }`);
   }
 
   /**
@@ -2892,15 +2892,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Folder.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:folder/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:folder/${ resourceId }`);
   }
 
   /**
@@ -2909,12 +2909,12 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:email-customization-template/${ resourceId }`);
   }
 
   /**
@@ -2923,15 +2923,15 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TopicDetails.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:topic/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ resourceId }`);
   }
 
   /**
@@ -2941,15 +2941,15 @@ export class Quicksight extends PolicyStatement {
    *
    * @param dashboardId - Identifier for the dashboardId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDashboardSnapshotJob(dashboardId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Quicksight.defaultPartition }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
   }
 
   /**

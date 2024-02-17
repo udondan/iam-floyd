@@ -486,12 +486,12 @@ export class S3ObjectLambda extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/transforming-objects.html
    *
    * @param accessPointName - Identifier for the accessPointName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3ObjectLambda.defaultPartition }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-object-lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:accesspoint/${ accessPointName }`);
   }
 
   /**

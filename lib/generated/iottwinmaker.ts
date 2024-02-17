@@ -560,15 +560,15 @@ export class Iottwinmaker extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateWorkspace.html
    *
    * @param workspaceId - Identifier for the workspaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -578,15 +578,15 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * @param workspaceId - Identifier for the workspaceId.
    * @param entityId - Identifier for the entityId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEntity(workspaceId: string, entityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/entity/${ entityId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/entity/${ entityId }`);
   }
 
   /**
@@ -596,15 +596,15 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * @param workspaceId - Identifier for the workspaceId.
    * @param componentTypeId - Identifier for the componentTypeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponentType(workspaceId: string, componentTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
   }
 
   /**
@@ -614,15 +614,15 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * @param workspaceId - Identifier for the workspaceId.
    * @param sceneId - Identifier for the sceneId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onScene(workspaceId: string, sceneId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/scene/${ sceneId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/scene/${ sceneId }`);
   }
 
   /**
@@ -632,15 +632,15 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * @param workspaceId - Identifier for the workspaceId.
    * @param syncJobId - Identifier for the syncJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSyncJob(workspaceId: string, syncJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
   }
 
   /**
@@ -649,12 +649,12 @@ export class Iottwinmaker extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html
    *
    * @param metadataTransferJobId - Identifier for the metadataTransferJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetadataTransferJob(metadataTransferJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iottwinmaker.defaultPartition }:iottwinmaker:${ region || '*' }:${ account || '*' }:metadata-transfer-job/${ metadataTransferJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metadata-transfer-job/${ metadataTransferJobId }`);
   }
 
   /**

@@ -1,4 +1,4 @@
-import { PolicyStatementWithCDKPrincipal } from './7-principals-CDK';
+import { PolicyStatementWithCDKPrincipal } from './9-principals-CDK';
 
 /**
  * Represents a statement in an IAM policy document

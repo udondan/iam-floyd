@@ -193,12 +193,12 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/using-mwaa.html
    *
    * @param environmentName - Identifier for the environmentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(environmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Airflow.defaultPartition }:airflow:${ region || '*' }:${ account || '*' }:environment/${ environmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:airflow:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentName }`);
   }
 
   /**
@@ -208,12 +208,12 @@ export class Airflow extends PolicyStatement {
    *
    * @param environmentName - Identifier for the environmentName.
    * @param roleName - Identifier for the roleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRbacRole(environmentName: string, roleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Airflow.defaultPartition }:airflow:${ region || '*' }:${ account || '*' }:role/${ environmentName }/${ roleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:airflow:${ region || this.defaultRegion }:${ account || this.defaultAccount }:role/${ environmentName }/${ roleName }`);
   }
 
   /**

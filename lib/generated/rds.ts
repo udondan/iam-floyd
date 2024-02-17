@@ -2438,8 +2438,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html
    *
    * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2447,7 +2447,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**
@@ -2456,12 +2456,12 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Overview.DBShardGroup.html
    *
    * @param dbShardGroupResourceId - Identifier for the dbShardGroupResourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onShardgrp(dbShardGroupResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:shard-group:${ dbShardGroupResourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shard-group:${ dbShardGroupResourceId }`);
   }
 
   /**
@@ -2470,12 +2470,12 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html
    *
    * @param dbClusterAutomatedBackupId - Identifier for the dbClusterAutomatedBackupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onClusterAutoBackup(dbClusterAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
   }
 
   /**
@@ -2484,12 +2484,12 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
    *
    * @param dbInstanceAutomatedBackupId - Identifier for the dbInstanceAutomatedBackupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutoBackup(dbInstanceAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:auto-backup:${ dbInstanceAutomatedBackupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:auto-backup:${ dbInstanceAutomatedBackupId }`);
   }
 
   /**
@@ -2498,15 +2498,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html
    *
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-endpoint:${ dbClusterEndpoint }`);
   }
 
   /**
@@ -2515,8 +2515,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithParamGroups.html
    *
    * @param clusterParameterGroupName - Identifier for the clusterParameterGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2524,7 +2524,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-pg:${ clusterParameterGroupName }`);
   }
 
   /**
@@ -2533,8 +2533,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html
    *
    * @param clusterSnapshotName - Identifier for the clusterSnapshotName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2542,7 +2542,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-snapshot:${ clusterSnapshotName }`);
   }
 
   /**
@@ -2551,8 +2551,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html
    *
    * @param dbInstanceName - Identifier for the dbInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2568,7 +2568,7 @@ export class Rds extends PolicyStatement {
    * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db:${ dbInstanceName }`);
   }
 
   /**
@@ -2577,8 +2577,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html
    *
    * @param subscriptionName - Identifier for the subscriptionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2586,7 +2586,7 @@ export class Rds extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:es:${ subscriptionName }`);
   }
 
   /**
@@ -2595,11 +2595,11 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html
    *
    * @param globalCluster - Identifier for the globalCluster.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds::${ account || this.defaultAccount }:global-cluster:${ globalCluster }`);
   }
 
   /**
@@ -2608,8 +2608,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html
    *
    * @param optionGroupName - Identifier for the optionGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2617,7 +2617,7 @@ export class Rds extends PolicyStatement {
    * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:og:${ optionGroupName }`);
   }
 
   /**
@@ -2626,8 +2626,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html
    *
    * @param parameterGroupName - Identifier for the parameterGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2635,7 +2635,7 @@ export class Rds extends PolicyStatement {
    * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pg:${ parameterGroupName }`);
   }
 
   /**
@@ -2644,15 +2644,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param dbProxyId - Identifier for the dbProxyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db-proxy:${ dbProxyId }`);
   }
 
   /**
@@ -2661,15 +2661,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param dbProxyEndpointId - Identifier for the dbProxyEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db-proxy-endpoint:${ dbProxyEndpointId }`);
   }
 
   /**
@@ -2678,8 +2678,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html
    *
    * @param reservedDbInstanceName - Identifier for the reservedDbInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2687,7 +2687,7 @@ export class Rds extends PolicyStatement {
    * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ri:${ reservedDbInstanceName }`);
   }
 
   /**
@@ -2696,8 +2696,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html
    *
    * @param securityGroupName - Identifier for the securityGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2705,7 +2705,7 @@ export class Rds extends PolicyStatement {
    * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:secgrp:${ securityGroupName }`);
   }
 
   /**
@@ -2714,8 +2714,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
    *
    * @param snapshotName - Identifier for the snapshotName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2723,7 +2723,7 @@ export class Rds extends PolicyStatement {
    * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -2732,8 +2732,8 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Scenarios.html#USER_VPC.Scenario1
    *
    * @param subnetGroupName - Identifier for the subnetGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2741,7 +2741,7 @@ export class Rds extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subgrp:${ subnetGroupName }`);
   }
 
   /**
@@ -2750,12 +2750,12 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param targetId - Identifier for the targetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:target:${ targetId }`);
   }
 
   /**
@@ -2764,15 +2764,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
    *
    * @param targetGroupId - Identifier for the targetGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:target-group:${ targetGroupId }`);
   }
 
   /**
@@ -2783,15 +2783,15 @@ export class Rds extends PolicyStatement {
    * @param engine - Identifier for the engine.
    * @param engineVersion - Identifier for the engineVersion.
    * @param customDbEngineVersionId - Identifier for the customDbEngineVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
   }
 
   /**
@@ -2800,15 +2800,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
    *
    * @param blueGreenDeploymentIdentifier - Identifier for the blueGreenDeploymentIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeployment(blueGreenDeploymentIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:deployment:${ blueGreenDeploymentIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment:${ blueGreenDeploymentIdentifier }`);
   }
 
   /**
@@ -2817,15 +2817,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html
    *
    * @param integrationIdentifier - Identifier for the integrationIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIntegration(integrationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:integration:${ integrationIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:integration:${ integrationIdentifier }`);
   }
 
   /**
@@ -2835,15 +2835,15 @@ export class Rds extends PolicyStatement {
    *
    * @param snapshotName - Identifier for the snapshotName.
    * @param tenantResourceId - Identifier for the tenantResourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSnapshotTenantDatabase(snapshotName: string, tenantResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:snapshot-tenant-database:${ snapshotName }:${ tenantResourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot-tenant-database:${ snapshotName }:${ tenantResourceId }`);
   }
 
   /**
@@ -2852,15 +2852,15 @@ export class Rds extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.CDBs.html#multi-tenant-configuration
    *
    * @param tenantResourceId - Identifier for the tenantResourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTenantDatabase(tenantResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rds.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:tenant-database:${ tenantResourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tenant-database:${ tenantResourceId }`);
   }
 
   /**

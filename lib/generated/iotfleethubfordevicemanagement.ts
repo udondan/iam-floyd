@@ -149,15 +149,15 @@ export class Iotfleethub extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_ApplicationSummary.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotfleethub.defaultPartition }:iotfleethub:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotfleethub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**

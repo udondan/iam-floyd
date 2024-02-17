@@ -156,7 +156,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReportPackage(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:::report-package/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::report-package/${ resourceName }`);
   }
 
   /**
@@ -165,11 +165,11 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact::${ account || '*' }:customer-agreement/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact::${ account || this.defaultAccount }:customer-agreement/${ resourceName }`);
   }
 
   /**
@@ -181,7 +181,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAgreement(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:::agreement/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::agreement/${ resourceName }`);
   }
 
   /**
@@ -190,11 +190,11 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(resourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Artifact.defaultPartition }:artifact:${ region || '*' }::report/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:artifact:${ region || this.defaultRegion }::report/${ resourceName }`);
   }
 
   /**

@@ -1145,14 +1145,14 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:global-network/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:global-network/${ resourceId }`);
   }
 
   /**
@@ -1162,14 +1162,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:site/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:site/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1179,14 +1179,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:link/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:link/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1196,14 +1196,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:device/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:device/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1213,14 +1213,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnection(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:connection/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:connection/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1229,14 +1229,14 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCoreNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:core-network/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:core-network/${ resourceId }`);
   }
 
   /**
@@ -1245,14 +1245,14 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:attachment/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**
@@ -1261,14 +1261,14 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnectPeer(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:connect-peer/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:connect-peer/${ resourceId }`);
   }
 
   /**
@@ -1277,14 +1277,14 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPeering(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmanager.defaultPartition }:networkmanager::${ account || '*' }:peering/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:peering/${ resourceId }`);
   }
 
   /**

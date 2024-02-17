@@ -423,15 +423,15 @@ export class CleanroomsMl extends PolicyStatement {
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_TrainingDatasetSummary.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTrainingdataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CleanroomsMl.defaultPartition }:cleanrooms-ml:${ region || '*' }:${ account || '*' }:training-dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training-dataset/${ resourceId }`);
   }
 
   /**
@@ -440,15 +440,15 @@ export class CleanroomsMl extends PolicyStatement {
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_AudienceModelSummary.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CleanroomsMl.defaultPartition }:cleanrooms-ml:${ region || '*' }:${ account || '*' }:audience-model/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:audience-model/${ resourceId }`);
   }
 
   /**
@@ -457,15 +457,15 @@ export class CleanroomsMl extends PolicyStatement {
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ConfiguredAudienceModelSummary.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguredaudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CleanroomsMl.defaultPartition }:cleanrooms-ml:${ region || '*' }:${ account || '*' }:configured-audience-model/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configured-audience-model/${ resourceId }`);
   }
 
   /**
@@ -474,15 +474,15 @@ export class CleanroomsMl extends PolicyStatement {
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_AudienceGenerationJobSummary.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAudiencegenerationjob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CleanroomsMl.defaultPartition }:cleanrooms-ml:${ region || '*' }:${ account || '*' }:audience-generation-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:audience-generation-job/${ resourceId }`);
   }
 
   /**

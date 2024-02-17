@@ -388,15 +388,15 @@ export class PrivateNetworks extends PolicyStatement {
    * https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html
    *
    * @param networkName - Identifier for the networkName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network/${ networkName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network/${ networkName }`);
   }
 
   /**
@@ -406,15 +406,15 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * @param networkName - Identifier for the networkName.
    * @param networkSiteName - Identifier for the networkSiteName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkSite(networkName: string, networkSiteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-site/${ networkName }/${ networkSiteName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-site/${ networkName }/${ networkSiteName }`);
   }
 
   /**
@@ -424,15 +424,15 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * @param networkName - Identifier for the networkName.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkResource(networkName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:network-resource/${ networkName }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-resource/${ networkName }/${ resourceId }`);
   }
 
   /**
@@ -442,15 +442,15 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * @param networkName - Identifier for the networkName.
    * @param orderId - Identifier for the orderId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOrder(networkName: string, orderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:order/${ networkName }/${ orderId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:order/${ networkName }/${ orderId }`);
   }
 
   /**
@@ -460,15 +460,15 @@ export class PrivateNetworks extends PolicyStatement {
    *
    * @param networkName - Identifier for the networkName.
    * @param deviceId - Identifier for the deviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceIdentifier(networkName: string, deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || PrivateNetworks.defaultPartition }:private-networks:${ region || '*' }:${ account || '*' }:device-identifier/${ networkName }/${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-identifier/${ networkName }/${ deviceId }`);
   }
 
   /**

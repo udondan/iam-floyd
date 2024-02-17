@@ -163,14 +163,14 @@ export class Ts extends PolicyStatement {
    * @param userId - Identifier for the userId.
    * @param toolId - Identifier for the toolId.
    * @param executionId - Identifier for the executionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExecution(userId: string, toolId: string, executionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ts.defaultPartition }:ts::${ account || '*' }:execution/${ userId }/${ toolId }/${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ts::${ account || this.defaultAccount }:execution/${ userId }/${ toolId }/${ executionId }`);
   }
 
   /**
@@ -182,7 +182,7 @@ export class Ts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTool(toolId: string, partition?: string) {
-    return this.on(`arn:${ partition || Ts.defaultPartition }:ts::aws:tool/${ toolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ts::aws:tool/${ toolId }`);
   }
 
   /**

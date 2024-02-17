@@ -311,6 +311,7 @@ sagemaker:UpdateAction;Write
 sagemaker:UpdateAppImageConfig;Write
 sagemaker:UpdateArtifact;Write
 sagemaker:UpdateCluster;Write
+sagemaker:UpdateClusterSoftware;Write
 sagemaker:UpdateCodeRepository;Write
 sagemaker:UpdateContext;Write
 sagemaker:UpdateDeviceFleet;Write

@@ -386,15 +386,15 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
    *
    * @param outpostId - Identifier for the outpostId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }`);
   }
 
   /**
@@ -403,15 +403,15 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
    *
    * @param siteId - Identifier for the siteId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSite(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Outposts.defaultPartition }:outposts:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }`);
   }
 
   /**

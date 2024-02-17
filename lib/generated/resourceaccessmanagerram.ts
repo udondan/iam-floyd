@@ -554,8 +554,8 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html
    *
    * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -564,7 +564,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceShareName()
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-share/${ resourcePath }`);
   }
 
   /**
@@ -573,15 +573,15 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html
    *
    * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifShareOwnerAccountId()
    */
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:resource-share-invitation/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-share-invitation/${ resourcePath }`);
   }
 
   /**
@@ -590,7 +590,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html
    *
    * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -598,7 +598,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram::${ account || '*' }:permission/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram::${ account || this.defaultAccount }:permission/${ resourcePath }`);
   }
 
   /**
@@ -607,8 +607,8 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html
    *
    * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -617,7 +617,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onCustomerManagedPermission(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ram.defaultPartition }:ram:${ region || '*' }:${ account || '*' }:permission/${ resourcePath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:permission/${ resourcePath }`);
   }
 
   /**

@@ -382,15 +382,15 @@ export class B2bi extends PolicyStatement {
    * https://docs.aws.amazon.com/b2bi/latest/userguide/
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || B2bi.defaultPartition }:b2bi:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:b2bi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ resourceId }`);
   }
 
   /**
@@ -399,15 +399,15 @@ export class B2bi extends PolicyStatement {
    * https://docs.aws.amazon.com/b2bi/latest/userguide/
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCapability(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || B2bi.defaultPartition }:b2bi:${ region || '*' }:${ account || '*' }:capability/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:b2bi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capability/${ resourceId }`);
   }
 
   /**
@@ -416,15 +416,15 @@ export class B2bi extends PolicyStatement {
    * https://docs.aws.amazon.com/b2bi/latest/userguide/
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPartnership(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || B2bi.defaultPartition }:b2bi:${ region || '*' }:${ account || '*' }:partnership/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:b2bi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:partnership/${ resourceId }`);
   }
 
   /**
@@ -433,15 +433,15 @@ export class B2bi extends PolicyStatement {
    * https://docs.aws.amazon.com/b2bi/latest/userguide/
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTransformer(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || B2bi.defaultPartition }:b2bi:${ region || '*' }:${ account || '*' }:transformer/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:b2bi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transformer/${ resourceId }`);
   }
 
   /**

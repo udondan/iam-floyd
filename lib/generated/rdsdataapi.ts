@@ -131,8 +131,8 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html
    *
    * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -140,7 +140,7 @@ export class RdsData extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RdsData.defaultPartition }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**

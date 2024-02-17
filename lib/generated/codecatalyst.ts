@@ -439,15 +439,15 @@ export class Codecatalyst extends PolicyStatement {
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
    *
    * @param connectionId - Identifier for the connectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnections(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecatalyst.defaultPartition }:codecatalyst:${ region || '*' }:${ account || '*' }:/connections/${ connectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/connections/${ connectionId }`);
   }
 
   /**
@@ -456,12 +456,12 @@ export class Codecatalyst extends PolicyStatement {
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/#
    *
    * @param identityCenterApplicationId - Identifier for the identityCenterApplicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentityCenterApplications(identityCenterApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecatalyst.defaultPartition }:codecatalyst:${ region || '*' }:${ account || '*' }:/identity-center-applications/${ identityCenterApplicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/identity-center-applications/${ identityCenterApplicationId }`);
   }
 
   /**
@@ -473,7 +473,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSpace(spaceId: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecatalyst.defaultPartition }:codecatalyst:::space/${ spaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:::space/${ spaceId }`);
   }
 
   /**
@@ -486,7 +486,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(spaceId: string, projectId: string, partition?: string) {
-    return this.on(`arn:${ partition || Codecatalyst.defaultPartition }:codecatalyst:::space/${ spaceId }/project/${ projectId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:::space/${ spaceId }/project/${ projectId }`);
   }
 
   /**

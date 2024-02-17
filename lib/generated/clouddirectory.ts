@@ -829,12 +829,12 @@ export class Clouddirectory extends PolicyStatement {
    * @param directoryId - Identifier for the directoryId.
    * @param schemaName - Identifier for the schemaName.
    * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppliedSchema(directoryId: string, schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
   }
 
   /**
@@ -843,12 +843,12 @@ export class Clouddirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory
    *
    * @param schemaName - Identifier for the schemaName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevelopmentSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/development/${ schemaName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/development/${ schemaName }`);
   }
 
   /**
@@ -857,12 +857,12 @@ export class Clouddirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory
    *
    * @param directoryId - Identifier for the directoryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }`);
   }
 
   /**
@@ -872,11 +872,11 @@ export class Clouddirectory extends PolicyStatement {
    *
    * @param schemaName - Identifier for the schemaName.
    * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishedSchema(schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Clouddirectory.defaultPartition }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/published/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/published/${ schemaName }/${ version }`);
   }
 }

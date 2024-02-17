@@ -67,7 +67,7 @@ function fixPolicyStatement(project: Project) {
         if (fileName === 'index.ts') {
           sourceFile.addExportDeclaration({
             namedExports: ['PolicyStatementWithCDKPrincipal'],
-            moduleSpecifier: './7-principals-CDK',
+            moduleSpecifier: './9-principals-CDK',
           });
 
           sourceFile.getExportDeclarations().forEach((exportDeclaration) => {

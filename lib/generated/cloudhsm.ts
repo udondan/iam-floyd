@@ -479,15 +479,15 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/userguide/backups.html
    *
    * @param cloudHsmBackupInstanceName - Identifier for the cloudHsmBackupInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudhsm.defaultPartition }:cloudhsm:${ region || '*' }:${ account || '*' }:backup/${ cloudHsmBackupInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudhsm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup/${ cloudHsmBackupInstanceName }`);
   }
 
   /**
@@ -496,15 +496,15 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html
    *
    * @param cloudHsmClusterInstanceName - Identifier for the cloudHsmClusterInstanceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudhsm.defaultPartition }:cloudhsm:${ region || '*' }:${ account || '*' }:cluster/${ cloudHsmClusterInstanceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudhsm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ cloudHsmClusterInstanceName }`);
   }
 
   /**

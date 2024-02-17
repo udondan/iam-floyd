@@ -125,15 +125,15 @@ export class Wickr extends PolicyStatement {
    * https://docs.aws.amazon.com/wickr/latest/adminguide/
    *
    * @param networkId - Identifier for the networkId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wickr.defaultPartition }:wickr:${ region || '*' }:${ account || '*' }:network/${ networkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wickr:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network/${ networkId }`);
   }
 
   /**

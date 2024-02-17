@@ -397,15 +397,15 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -414,15 +414,15 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    *
    * @param queueName - Identifier for the queueName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:queues/${ queueName }`);
   }
 
   /**
@@ -431,15 +431,15 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    *
    * @param presetName - Identifier for the presetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:presets/${ presetName }`);
   }
 
   /**
@@ -448,15 +448,15 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html
    *
    * @param jobTemplateName - Identifier for the jobTemplateName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobTemplates/${ jobTemplateName }`);
   }
 
   /**
@@ -465,12 +465,12 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html
    *
    * @param certificateArn - Identifier for the certificateArn.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconvert.defaultPartition }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificates/${ certificateArn }`);
   }
 
   /**

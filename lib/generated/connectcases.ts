@@ -424,15 +424,15 @@ export class Cases extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param caseId - Identifier for the caseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCase(domainId: string, caseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }/case/${ caseId }`);
   }
 
   /**
@@ -441,15 +441,15 @@ export class Cases extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/cases.html
    *
    * @param domainId - Identifier for the domainId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }`);
   }
 
   /**
@@ -459,15 +459,15 @@ export class Cases extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param fieldId - Identifier for the fieldId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onField(domainId: string, fieldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/field/${ fieldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }/field/${ fieldId }`);
   }
 
   /**
@@ -477,15 +477,15 @@ export class Cases extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param layoutId - Identifier for the layoutId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLayout(domainId: string, layoutId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/layout/${ layoutId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }/layout/${ layoutId }`);
   }
 
   /**
@@ -496,15 +496,15 @@ export class Cases extends PolicyStatement {
    * @param domainId - Identifier for the domainId.
    * @param caseId - Identifier for the caseId.
    * @param relatedItemId - Identifier for the relatedItemId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRelatedItem(domainId: string, caseId: string, relatedItemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
   }
 
   /**
@@ -514,15 +514,15 @@ export class Cases extends PolicyStatement {
    *
    * @param domainId - Identifier for the domainId.
    * @param templateId - Identifier for the templateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTemplate(domainId: string, templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cases.defaultPartition }:cases:${ region || '*' }:${ account || '*' }:domain/${ domainId }/template/${ templateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cases:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }/template/${ templateId }`);
   }
 
   /**

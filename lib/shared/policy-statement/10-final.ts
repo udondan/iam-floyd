@@ -1,4 +1,4 @@
-import { PolicyStatementWithPrincipal } from './6-principals';
+import { PolicyStatementWithPrincipal } from './8-principals';
 
 /**
  * Represents a statement in an IAM policy document

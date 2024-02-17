@@ -103,11 +103,11 @@ export class ElasticInference extends PolicyStatement {
    * Adds a resource of type accelerator to the statement
    *
    * @param acceleratorId - Identifier for the acceleratorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticInference.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastic-inference:${ region || this.defaultRegion }:${ account || this.defaultAccount }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 }

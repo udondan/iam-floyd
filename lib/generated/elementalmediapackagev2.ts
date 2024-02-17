@@ -378,15 +378,15 @@ export class Mediapackagev2 extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/userguide/channel-groups.html
    *
    * @param channelGroupName - Identifier for the channelGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannelGroup(channelGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackagev2.defaultPartition }:mediapackagev2:${ region || '*' }:${ account || '*' }:channelGroup/${ channelGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }`);
   }
 
   /**
@@ -396,15 +396,15 @@ export class Mediapackagev2 extends PolicyStatement {
    *
    * @param channelGroupName - Identifier for the channelGroupName.
    * @param channelName - Identifier for the channelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(channelGroupName: string, channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackagev2.defaultPartition }:mediapackagev2:${ region || '*' }:${ account || '*' }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
   }
 
   /**
@@ -415,15 +415,15 @@ export class Mediapackagev2 extends PolicyStatement {
    * @param channelGroupName - Identifier for the channelGroupName.
    * @param channelName - Identifier for the channelName.
    * @param originEndpointName - Identifier for the originEndpointName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoint(channelGroupName: string, channelName: string, originEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackagev2.defaultPartition }:mediapackagev2:${ region || '*' }:${ account || '*' }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }`);
   }
 
   /**

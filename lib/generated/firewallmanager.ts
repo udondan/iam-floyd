@@ -568,15 +568,15 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:policy/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:policy/${ id }`);
   }
 
   /**
@@ -585,15 +585,15 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AppsListData.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplicationsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:applications-list/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applications-list/${ id }`);
   }
 
   /**
@@ -602,15 +602,15 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ProtocolsListData.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProtocolsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:protocols-list/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:protocols-list/${ id }`);
   }
 
   /**
@@ -619,15 +619,15 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ResourceSet.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResourceSet(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Fms.defaultPartition }:fms:${ region || '*' }:${ account || '*' }:resource-set/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-set/${ id }`);
   }
 
   /**

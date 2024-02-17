@@ -978,12 +978,12 @@ export class S3Outposts extends PolicyStatement {
    *
    * @param outpostId - Identifier for the outpostId.
    * @param accessPointName - Identifier for the accessPointName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccesspoint(outpostId: string, accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3Outposts.defaultPartition }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -993,12 +993,12 @@ export class S3Outposts extends PolicyStatement {
    *
    * @param outpostId - Identifier for the outpostId.
    * @param bucketName - Identifier for the bucketName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(outpostId: string, bucketName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3Outposts.defaultPartition }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/bucket/${ bucketName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }`);
   }
 
   /**
@@ -1008,12 +1008,12 @@ export class S3Outposts extends PolicyStatement {
    *
    * @param outpostId - Identifier for the outpostId.
    * @param endpointId - Identifier for the endpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(outpostId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3Outposts.defaultPartition }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/endpoint/${ endpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/endpoint/${ endpointId }`);
   }
 
   /**
@@ -1024,12 +1024,12 @@ export class S3Outposts extends PolicyStatement {
    * @param outpostId - Identifier for the outpostId.
    * @param bucketName - Identifier for the bucketName.
    * @param objectName - Identifier for the objectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObject(outpostId: string, bucketName: string, objectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3Outposts.defaultPartition }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/bucket/${ bucketName }/object/${ objectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }/object/${ objectName }`);
   }
 
   /**
