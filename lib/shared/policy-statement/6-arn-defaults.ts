@@ -29,10 +29,10 @@ export class PolicyStatementWithArnDefaults extends PolicyStatementWithEffect {
    * @param account Default account ID for ARN, e.g. `123456789012`
    */
 
-  public in(partition: string, region?: string, account?: string) {
-    this.defaultPartition = partition;
-    if (region) this.defaultRegion = region;
+  public in(account: string, region?: string, partition?: string) {
     if (account) this.defaultAccount = account;
+    if (region) this.defaultRegion = region;
+    if (partition) this.defaultPartition = partition;
     return this;
   }
 
