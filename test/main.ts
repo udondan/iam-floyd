@@ -1,4 +1,4 @@
-import { Collection, Statement } from 'cdk-iam-floyd';
+import { Collection, Operator, Statement } from 'cdk-iam-floyd';
 
 function printPolicyWithStatements(statements: any[]) {
   console.log(
@@ -41,8 +41,5 @@ printPolicyWithStatements([
   new Statement.Ec2()
     .allow()
     .allPermissionManagementActions()
-    .ifAwsSourceIp(
-      '1.2.3.4',
-      new Statement.Operator().notIpAddress().ifExists(),
-    ),
+    .ifAwsSourceIp('1.2.3.4', new Operator().notIpAddress().ifExists()),
 ]);

@@ -126,7 +126,7 @@ In case of `missing conditions <faq.html#are-all-actions-conditions-resource-typ
 Operators
 ^^^^^^^^^
 
-`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the class ``statement.Operator()``:
+`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the class ``Operator()``:
 
 .. example:: conditions-operator-all-values
 
