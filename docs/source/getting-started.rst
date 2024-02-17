@@ -25,7 +25,7 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
       import { Statement } from 'iam-floyd';
 
       // for use with CDK use the cdk-iam-floyd package
-      import { Statement } statement from 'cdk-iam-floyd';
+      import { Statement } from 'cdk-iam-floyd';
 
    .. code-tab:: js
 

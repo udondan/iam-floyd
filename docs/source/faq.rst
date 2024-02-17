@@ -53,12 +53,15 @@ Once per day, at 2am UTC, the `AWS Documentation`_ is checked for updates. If an
 Do you release new packages when a new CDK version is released?
 ---------------------------------------------------------------
 
-No. I believe it's a myth and a user error if packages are incompatible with new releases of the CDK. ``cdk-iam-floyd`` is based on cdk ``^1.30.0`` and so far I have not seen any issues.
+No. I believe it's a myth and a user error if packages are incompatible with new releases of the CDK. ``cdk-iam-floyd`` is based on cdk ``^2.0.0`` and so far I have not seen any issues.
 
 Is the package following semantic versioning?
 ---------------------------------------------
 
-Mostly. For manual changes by developers this package follows `semver <https://semver.org/>`_.
+.. WARNING::
+   The package has not reached a stable state yet. Therefore breaking changes are not yet reflected by a major update!
+
+**When the package has reached version 1**, manual changes by developers of this package follow `semver <https://semver.org/>`_.
 
 Automatic releases triggered by changes in the IAM documentation will always result in a minor update.
 

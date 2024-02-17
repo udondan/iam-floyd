@@ -128,6 +128,28 @@ Operators
 
 `Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the class ``Operator()``:
 
+First import the ``Operator`` class along with the ``Statement``:
+
+.. tabs::
+
+   .. code-tab:: ts
+
+      // for use without AWS CDK use the iam-floyd package
+      import { Operator, Statement } from 'iam-floyd';
+
+      // for use with CDK use the cdk-iam-floyd package
+      import { Operator, Statement } from 'cdk-iam-floyd';
+
+   .. code-tab:: js
+
+      // for use without AWS CDK use the iam-floyd package
+      const { Operator, Statement } = require('iam-floyd');
+
+      // for use with CDK use the cdk-iam-floyd package
+      const { Operator, Statement } = require('cdk-iam-floyd');
+
+Then it can be used like this:
+
 .. example:: conditions-operator-all-values
 
 .. example:: conditions-operator-any-value
