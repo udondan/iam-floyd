@@ -131,7 +131,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:CalledVia',
       value,
-      operator || new Operator().forAnyValue().stringEquals(),
+      operator ?? new Operator().forAnyValue().stringEquals(),
     );
   }
 
@@ -196,7 +196,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:CurrentTime',
       value,
-      operator || new Operator().dateLessThanEquals(),
+      operator ?? new Operator().dateLessThanEquals(),
     );
   }
 
@@ -240,7 +240,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:Ec2InstanceSourcePrivateIPv4',
       value,
-      operator || new Operator().ipAddress(),
+      operator ?? new Operator().ipAddress(),
     );
   }
 
@@ -271,7 +271,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:EpochTime',
       value,
-      operator || new Operator().dateLessThanEquals(),
+      operator ?? new Operator().dateLessThanEquals(),
     );
   }
 
@@ -309,7 +309,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:MultiFactorAuthAge',
       value,
-      operator || new Operator().numericLessThan(),
+      operator ?? new Operator().numericLessThan(),
     );
   }
 
@@ -370,7 +370,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:PrincipalArn',
       value,
-      operator || new Operator().arnLike(),
+      operator ?? new Operator().arnLike(),
     );
   }
 
@@ -479,7 +479,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:PrincipalServiceNamesList',
       value,
-      operator || new Operator().stringLike().forAnyValue(),
+      operator ?? new Operator().stringLike().forAnyValue(),
     );
   }
 
@@ -759,7 +759,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:SourceArn',
       value,
-      operator || new Operator().arnLike(),
+      operator ?? new Operator().arnLike(),
     );
   }
 
@@ -802,7 +802,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:SourceIp',
       value,
-      operator || new Operator().ipAddress(),
+      operator ?? new Operator().ipAddress(),
     );
   }
 
@@ -877,7 +877,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:TokenIssueTime',
       dateToString(value),
-      operator || new Operator().dateGreaterThanEquals(),
+      operator ?? new Operator().dateGreaterThanEquals(),
     );
   }
 
@@ -974,7 +974,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:VpcSourceIp',
       value,
-      operator || new Operator().ipAddress(),
+      operator ?? new Operator().ipAddress(),
     );
   }
 }

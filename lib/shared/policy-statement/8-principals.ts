@@ -1,4 +1,4 @@
-import { PolicyStatementWithEffect } from './5-effect';
+import { PolicyStatementWithArnDefaults } from './6-arn-defaults';
 
 /**
  * A collection of Principal's
@@ -15,7 +15,7 @@ export enum PrincipalType {
 /**
  * Adds "principal" functionality to the Policy Statement
  */
-export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
+export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults {
   protected useNotPrincipal = false;
   protected myPrincipals: Principals = {};
 
