@@ -15,7 +15,7 @@ import {
 } from '@aws-sdk/client-s3';
 import { randomBytes } from 'crypto';
 
-import { PolicyStatement } from '../../lib';
+import { PolicyStatement } from '../../lib/shared';
 
 const region = 'us-east-1';
 const iamClient = new IAMClient({ region });
