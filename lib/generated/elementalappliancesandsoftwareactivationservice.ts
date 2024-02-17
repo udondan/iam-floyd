@@ -160,15 +160,15 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onActivation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElementalActivations.defaultPartition }:elemental-activations:${ region || '*' }:${ account || '*' }:activation/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elemental-activations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:activation/${ resourceId }`);
   }
 
   /**

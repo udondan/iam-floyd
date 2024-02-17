@@ -1327,15 +1327,15 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html
    *
    * @param userPoolId - Identifier for the userPoolId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:cognito-idp:${ region || '*' }:${ account || '*' }:userpool/${ userPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cognito-idp:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userpool/${ userPoolId }`);
   }
 
   /**
@@ -1346,12 +1346,12 @@ export class CognitoIdp extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CognitoIdp.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**

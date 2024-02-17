@@ -983,12 +983,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html#schema-examples
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:schema/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/${ resourceId }`);
   }
 
   /**
@@ -997,12 +997,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFeatureTransformation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:feature-transformation/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:feature-transformation/${ resourceId }`);
   }
 
   /**
@@ -1011,12 +1011,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Dataset.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -1025,12 +1025,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetGroup.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-group/${ resourceId }`);
   }
 
   /**
@@ -1039,12 +1039,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetImportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-import-job/${ resourceId }`);
   }
 
   /**
@@ -1053,12 +1053,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataInsightsJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:data-insights-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-insights-job/${ resourceId }`);
   }
 
   /**
@@ -1067,12 +1067,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:dataset-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-export-job/${ resourceId }`);
   }
 
   /**
@@ -1081,12 +1081,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:solution/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:solution/${ resourceId }`);
   }
 
   /**
@@ -1095,12 +1095,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Campaign.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:campaign/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:campaign/${ resourceId }`);
   }
 
   /**
@@ -1109,12 +1109,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_EventTracker.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventTracker(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:event-tracker/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-tracker/${ resourceId }`);
   }
 
   /**
@@ -1123,12 +1123,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recipe/${ resourceId }`);
   }
 
   /**
@@ -1137,12 +1137,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:algorithm/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:algorithm/${ resourceId }`);
   }
 
   /**
@@ -1151,12 +1151,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:batch-inference-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-inference-job/${ resourceId }`);
   }
 
   /**
@@ -1165,12 +1165,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Filter.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:filter/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:filter/${ resourceId }`);
   }
 
   /**
@@ -1179,12 +1179,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Recommender.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommender(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:recommender/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommender/${ resourceId }`);
   }
 
   /**
@@ -1193,12 +1193,12 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:batch-segment-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-segment-job/${ resourceId }`);
   }
 
   /**
@@ -1207,11 +1207,11 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_MetricAttribution.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetricAttribution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Personalize.defaultPartition }:personalize:${ region || '*' }:${ account || '*' }:metric-attribution/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metric-attribution/${ resourceId }`);
   }
 }

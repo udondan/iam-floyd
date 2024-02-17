@@ -2252,11 +2252,11 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data-orgs.html
    *
    * @param entityPath - Identifier for the entityPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessReport(entityPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:access-report/${ entityPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:access-report/${ entityPath }`);
   }
 
   /**
@@ -2266,11 +2266,11 @@ export class Iam extends PolicyStatement {
    *
    * @param roleName - Identifier for the roleName.
    * @param roleSessionName - Identifier for the roleSessionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssumedRole(roleName: string, roleSessionName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:assumed-role/${ roleName }/${ roleSessionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:assumed-role/${ roleName }/${ roleSessionName }`);
   }
 
   /**
@@ -2279,11 +2279,11 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html
    *
    * @param userName - Identifier for the userName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFederatedUser(userName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:federated-user/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:federated-user/${ userName }`);
   }
 
   /**
@@ -2292,11 +2292,11 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html
    *
    * @param groupNameWithPath - Identifier for the groupNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:group/${ groupNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:group/${ groupNameWithPath }`);
   }
 
   /**
@@ -2305,14 +2305,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html
    *
    * @param instanceProfileNameWithPath - Identifier for the instanceProfileNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:instance-profile/${ instanceProfileNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:instance-profile/${ instanceProfileNameWithPath }`);
   }
 
   /**
@@ -2321,14 +2321,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html
    *
    * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2337,14 +2337,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html
    *
    * @param oidcProviderName - Identifier for the oidcProviderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:oidc-provider/${ oidcProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:oidc-provider/${ oidcProviderName }`);
   }
 
   /**
@@ -2353,14 +2353,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
    *
    * @param policyNameWithPath - Identifier for the policyNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:policy/${ policyNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:policy/${ policyNameWithPath }`);
   }
 
   /**
@@ -2369,7 +2369,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2377,7 +2377,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -2386,14 +2386,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html
    *
    * @param samlProviderName - Identifier for the samlProviderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:saml-provider/${ samlProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:saml-provider/${ samlProviderName }`);
   }
 
   /**
@@ -2402,14 +2402,14 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html
    *
    * @param certificateNameWithPath - Identifier for the certificateNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:server-certificate/${ certificateNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:server-certificate/${ certificateNameWithPath }`);
   }
 
   /**
@@ -2418,11 +2418,11 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html
    *
    * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:sms-mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:sms-mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2431,7 +2431,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html
    *
    * @param userNameWithPath - Identifier for the userNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2439,7 +2439,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iam.defaultPartition }:iam::${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:user/${ userNameWithPath }`);
   }
 
   /**

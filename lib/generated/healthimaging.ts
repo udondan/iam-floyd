@@ -263,15 +263,15 @@ export class MedicalImaging extends PolicyStatement {
    * https://docs.aws.amazon.com/healthimaging/latest/devguide/API_DatastoreProperties.html
    *
    * @param datastoreId - Identifier for the datastoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatastore(datastoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MedicalImaging.defaultPartition }:medical-imaging:${ region || '*' }:${ account || '*' }:datastore/${ datastoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medical-imaging:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreId }`);
   }
 
   /**
@@ -281,15 +281,15 @@ export class MedicalImaging extends PolicyStatement {
    *
    * @param datastoreId - Identifier for the datastoreId.
    * @param imageSetId - Identifier for the imageSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImageset(datastoreId: string, imageSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MedicalImaging.defaultPartition }:medical-imaging:${ region || '*' }:${ account || '*' }:datastore/${ datastoreId }/imageset/${ imageSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:medical-imaging:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreId }/imageset/${ imageSetId }`);
   }
 
   /**

@@ -154,14 +154,14 @@ export class NotificationsContacts extends PolicyStatement {
    * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
    *
    * @param emailContactId - Identifier for the emailContactId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEmailContactResource(emailContactId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || NotificationsContacts.defaultPartition }:notifications-contacts::${ account || '*' }:emailcontact/${ emailContactId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:notifications-contacts::${ account || this.defaultAccount }:emailcontact/${ emailContactId }`);
   }
 
   /**

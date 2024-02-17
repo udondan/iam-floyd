@@ -389,15 +389,15 @@ export class Appfabric extends PolicyStatement {
    * https://docs.aws.amazon.com/appfabric/latest/api/API_AppBundle.html
    *
    * @param appBundleIdentifier - Identifier for the appBundleIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppbundle(appBundleIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appfabric.defaultPartition }:appfabric:${ region || '*' }:${ account || '*' }:appbundle/${ appBundleIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appBundleIdentifier }`);
   }
 
   /**
@@ -407,15 +407,15 @@ export class Appfabric extends PolicyStatement {
    *
    * @param appbundleId - Identifier for the appbundleId.
    * @param appAuthorizationIdentifier - Identifier for the appAuthorizationIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppauthorization(appbundleId: string, appAuthorizationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appfabric.defaultPartition }:appfabric:${ region || '*' }:${ account || '*' }:appbundle/${ appbundleId }/appauthorization/${ appAuthorizationIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/appauthorization/${ appAuthorizationIdentifier }`);
   }
 
   /**
@@ -425,15 +425,15 @@ export class Appfabric extends PolicyStatement {
    *
    * @param appbundleId - Identifier for the appbundleId.
    * @param ingestionIdentifier - Identifier for the ingestionIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIngestion(appbundleId: string, ingestionIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appfabric.defaultPartition }:appfabric:${ region || '*' }:${ account || '*' }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }`);
   }
 
   /**
@@ -444,15 +444,15 @@ export class Appfabric extends PolicyStatement {
    * @param appbundleId - Identifier for the appbundleId.
    * @param ingestionIdentifier - Identifier for the ingestionIdentifier.
    * @param ingestionDestinationIdentifier - Identifier for the ingestionDestinationIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIngestiondestination(appbundleId: string, ingestionIdentifier: string, ingestionDestinationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appfabric.defaultPartition }:appfabric:${ region || '*' }:${ account || '*' }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }/ingestiondestination/${ ingestionDestinationIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }/ingestiondestination/${ ingestionDestinationIdentifier }`);
   }
 
   /**

@@ -334,15 +334,15 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || DocdbElastic.defaultPartition }:docdb-elastic:${ region || '*' }:${ account || '*' }:cluster/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:docdb-elastic:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ resourceId }`);
   }
 
   /**
@@ -351,15 +351,15 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html#elastic-manage-snapshots
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClusterSnapshot(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || DocdbElastic.defaultPartition }:docdb-elastic:${ region || '*' }:${ account || '*' }:cluster-snapshot/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:docdb-elastic:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-snapshot/${ resourceId }`);
   }
 
   /**

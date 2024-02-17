@@ -524,15 +524,15 @@ export class Codepipeline extends PolicyStatement {
    * @param pipelineName - Identifier for the pipelineName.
    * @param stageName - Identifier for the stageName.
    * @param actionName - Identifier for the actionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }/${ actionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }/${ stageName }/${ actionName }`);
   }
 
   /**
@@ -544,15 +544,15 @@ export class Codepipeline extends PolicyStatement {
    * @param category - Identifier for the category.
    * @param provider - Identifier for the provider.
    * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
   }
 
   /**
@@ -561,15 +561,15 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
    *
    * @param pipelineName - Identifier for the pipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }`);
   }
 
   /**
@@ -579,15 +579,15 @@ export class Codepipeline extends PolicyStatement {
    *
    * @param pipelineName - Identifier for the pipelineName.
    * @param stageName - Identifier for the stageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }/${ stageName }`);
   }
 
   /**
@@ -596,15 +596,15 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
    *
    * @param webhookName - Identifier for the webhookName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codepipeline.defaultPartition }:codepipeline:${ region || '*' }:${ account || '*' }:webhook:${ webhookName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:webhook:${ webhookName }`);
   }
 
   /**

@@ -275,15 +275,15 @@ export class Iotroborunner extends PolicyStatement {
    *
    * @param siteId - Identifier for the siteId.
    * @param destinationId - Identifier for the destinationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifDestinationResourceId()
    */
   public onDestinationResource(siteId: string, destinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/destination/${ destinationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/destination/${ destinationId }`);
   }
 
   /**
@@ -292,15 +292,15 @@ export class Iotroborunner extends PolicyStatement {
    * https://docs.aws.amazon.com/iotroborunner/latest/api/
    *
    * @param siteId - Identifier for the siteId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifSiteResourceId()
    */
   public onSiteResource(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }`);
   }
 
   /**
@@ -310,15 +310,15 @@ export class Iotroborunner extends PolicyStatement {
    *
    * @param siteId - Identifier for the siteId.
    * @param workerFleetId - Identifier for the workerFleetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifWorkerFleetResourceId()
    */
   public onWorkerFleetResource(siteId: string, workerFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
   }
 
   /**
@@ -329,15 +329,15 @@ export class Iotroborunner extends PolicyStatement {
    * @param siteId - Identifier for the siteId.
    * @param workerFleetId - Identifier for the workerFleetId.
    * @param workerId - Identifier for the workerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifWorkerResourceId()
    */
   public onWorkerResource(siteId: string, workerFleetId: string, workerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotroborunner.defaultPartition }:iotroborunner:${ region || '*' }:${ account || '*' }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
   }
 
   /**

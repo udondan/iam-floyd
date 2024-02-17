@@ -823,8 +823,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html
    *
    * @param serviceNetworkId - Identifier for the serviceNetworkId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -834,7 +834,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetwork/${ serviceNetworkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
   }
 
   /**
@@ -843,8 +843,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html
    *
    * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -854,7 +854,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }`);
   }
 
   /**
@@ -863,8 +863,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations
    *
    * @param serviceNetworkVpcAssociationId - Identifier for the serviceNetworkVpcAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -876,7 +876,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
   }
 
   /**
@@ -885,8 +885,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations
    *
    * @param serviceNetworkServiceAssociationId - Identifier for the serviceNetworkServiceAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -897,7 +897,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    */
   public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
   }
 
   /**
@@ -906,8 +906,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html
    *
    * @param targetGroupId - Identifier for the targetGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -917,7 +917,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:targetgroup/${ targetGroupId }`);
   }
 
   /**
@@ -927,8 +927,8 @@ export class VpcLattice extends PolicyStatement {
    *
    * @param serviceId - Identifier for the serviceId.
    * @param listenerId - Identifier for the listenerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -939,7 +939,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onListener(serviceId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -950,8 +950,8 @@ export class VpcLattice extends PolicyStatement {
    * @param serviceId - Identifier for the serviceId.
    * @param listenerId - Identifier for the listenerId.
    * @param ruleId - Identifier for the ruleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -961,7 +961,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
   }
 
   /**
@@ -970,8 +970,8 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html
    *
    * @param accessLogSubscriptionId - Identifier for the accessLogSubscriptionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -980,7 +980,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || VpcLattice.defaultPartition }:vpc-lattice:${ region || '*' }:${ account || '*' }:accesslogsubscription/${ accessLogSubscriptionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
   }
 
   /**

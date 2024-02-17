@@ -23,6 +23,7 @@ bedrock:DeleteGuardrail;Write
 bedrock:DeleteKnowledgeBase;Write
 bedrock:DeleteModelInvocationLoggingConfiguration;Write
 bedrock:DeleteProvisionedModelThroughput;Write
+bedrock:DetectGeneratedContent;Read
 bedrock:DisassociateAgentKnowledgeBase;Write
 bedrock:GetAgent;Read
 bedrock:GetAgentActionGroup;Read

@@ -706,15 +706,15 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
    *
    * @param domainName - Identifier for the domainName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomains(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }`);
   }
 
   /**
@@ -724,15 +724,15 @@ export class Profile extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param objectTypeName - Identifier for the objectTypeName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onObjectTypes(domainName: string, objectTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/object-types/${ objectTypeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/object-types/${ objectTypeName }`);
   }
 
   /**
@@ -742,15 +742,15 @@ export class Profile extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param uri - Identifier for the uri.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIntegrations(domainName: string, uri: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/integrations/${ uri }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/integrations/${ uri }`);
   }
 
   /**
@@ -760,15 +760,15 @@ export class Profile extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param eventStreamName - Identifier for the eventStreamName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEventStreams(domainName: string, eventStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/event-streams/${ eventStreamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/event-streams/${ eventStreamName }`);
   }
 
   /**
@@ -778,15 +778,15 @@ export class Profile extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param calculatedAttributeName - Identifier for the calculatedAttributeName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCalculatedAttributes(domainName: string, calculatedAttributeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Profile.defaultPartition }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/calculated-attributes/${ calculatedAttributeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/calculated-attributes/${ calculatedAttributeName }`);
   }
 
   /**

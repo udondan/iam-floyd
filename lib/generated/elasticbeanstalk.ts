@@ -693,15 +693,15 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
    *
    * @param applicationName - Identifier for the applicationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationName }`);
   }
 
   /**
@@ -711,8 +711,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * @param applicationName - Identifier for the applicationName.
    * @param versionLabel - Identifier for the versionLabel.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -720,7 +720,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:applicationversion/${ applicationName }/${ versionLabel }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applicationversion/${ applicationName }/${ versionLabel }`);
   }
 
   /**
@@ -730,8 +730,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * @param applicationName - Identifier for the applicationName.
    * @param templateName - Identifier for the templateName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -739,7 +739,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:configurationtemplate/${ applicationName }/${ templateName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configurationtemplate/${ applicationName }/${ templateName }`);
   }
 
   /**
@@ -749,8 +749,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * @param applicationName - Identifier for the applicationName.
    * @param environmentName - Identifier for the environmentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -758,7 +758,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:environment/${ applicationName }/${ environmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ applicationName }/${ environmentName }`);
   }
 
   /**
@@ -767,11 +767,11 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
    *
    * @param solutionStackName - Identifier for the solutionStackName.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }::solutionstack/${ solutionStackName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }::solutionstack/${ solutionStackName }`);
   }
 
   /**
@@ -780,11 +780,11 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
    *
    * @param platformNameWithVersion - Identifier for the platformNameWithVersion.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticbeanstalk.defaultPartition }:elasticbeanstalk:${ region || '*' }::platform/${ platformNameWithVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }::platform/${ platformNameWithVersion }`);
   }
 
   /**

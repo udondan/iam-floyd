@@ -421,11 +421,11 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html
    *
    * @param domainName - Identifier for the domainName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cloudsearch.defaultPartition }:cloudsearch:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudsearch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainName }`);
   }
 }

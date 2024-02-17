@@ -1439,15 +1439,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/launching-target-servers.html
    *
    * @param jobID - Identifier for the jobID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobID }`);
   }
 
   /**
@@ -1456,15 +1456,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/replication-settings-template.html
    *
    * @param replicationConfigurationTemplateID - Identifier for the replicationConfigurationTemplateID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -1473,15 +1473,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/post-launch-settings.html
    *
    * @param launchConfigurationTemplateID - Identifier for the launchConfigurationTemplateID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-configuration-template/${ launchConfigurationTemplateID }`);
   }
 
   /**
@@ -1490,15 +1490,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/agentless-mgn.html
    *
    * @param vcenterClientID - Identifier for the vcenterClientID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVcenterClientResource(vcenterClientID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:vcenter-client/${ vcenterClientID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vcenter-client/${ vcenterClientID }`);
   }
 
   /**
@@ -1507,15 +1507,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/source-servers.html
    *
    * @param sourceServerID - Identifier for the sourceServerID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source-server/${ sourceServerID }`);
   }
 
   /**
@@ -1524,15 +1524,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/applications.html
    *
    * @param applicationID - Identifier for the applicationID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplicationResource(applicationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:application/${ applicationID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationID }`);
   }
 
   /**
@@ -1541,15 +1541,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/waves.html
    *
    * @param waveID - Identifier for the waveID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWaveResource(waveID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:wave/${ waveID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:wave/${ waveID }`);
   }
 
   /**
@@ -1558,15 +1558,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/imports.html
    *
    * @param importID - Identifier for the importID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImportResource(importID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:import/${ importID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import/${ importID }`);
   }
 
   /**
@@ -1575,15 +1575,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/exports.html
    *
    * @param exportID - Identifier for the exportID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExportResource(exportID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:export/${ exportID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export/${ exportID }`);
   }
 
   /**
@@ -1592,15 +1592,15 @@ export class Mgn extends PolicyStatement {
    * https://docs.aws.amazon.com/mgn/latest/ug/connectors.html
    *
    * @param connectorID - Identifier for the connectorID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnectorResource(connectorID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mgn.defaultPartition }:mgn:${ region || '*' }:${ account || '*' }:connector/${ connectorID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mgn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorID }`);
   }
 
   /**

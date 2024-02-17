@@ -167,8 +167,33 @@ In case of `missing resources <faq.html#are-all-actions-conditions-resource-type
 
 .. example:: resource-raw
 
+Non-global resource ARNs contain the region and/or account. Generally all ARNs contain the partition. In ``cdk-iam-floyd`` the `account`, `region` and `partition` default to the values provided by the stack. In ``iam-floyd`` the `partition` defaults to ``aws`` and the `account` and `region` default to ``*``.
 
-If no resources are applied to the statement without principals, it defaults to all resources (``*``).
+The ``on*()`` methods take optional parameters to override the default values:
+
+.. example:: resource-default-override
+
+If you want to override the defaults for the whole statement, see `in (ARN defaults)`_.
+
+**in** (ARN defaults)
+---------------------
+
+The `on*`__ methods generate ARNs which contain `partition` and potentially `region` and `account`. The ``in()*`` methods can be used to override the defaults for all **consecutively** added resources. You allow/deny something on resources **in** a specific account, region and partition.
+
+__ `on (Resource)`_
+
+.. NOTE::
+   The ``in*()`` methods do not by themselves modify the statement. They just set the defaults for the resource added **consecutively** to the statement. Therefore make sure to call the ``in*()`` methods before adding resources via ``on*()``.
+
+.. example:: arn-defaults-separate
+
+There also is a shorthand function to set all defaults at once:
+
+.. example:: arn-defaults-combined
+
+Since these methods set defaults for consecutively added resources, you can also override the defaults for additional resource in the same statement:
+
+.. example:: arn-defaults-override
 
 **for** (Principal)
 -------------------

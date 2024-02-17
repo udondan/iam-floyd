@@ -1200,12 +1200,12 @@ export class Storagegateway extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param vtldevice - Identifier for the vtldevice.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/device/${ vtldevice }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/device/${ vtldevice }`);
   }
 
   /**
@@ -1214,15 +1214,15 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/API_AssociateFileSystem.html
    *
    * @param fsaId - Identifier for the fsaId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFsAssociation(fsaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:fs-association/${ fsaId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fs-association/${ fsaId }`);
   }
 
   /**
@@ -1231,15 +1231,15 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html
    *
    * @param gatewayId - Identifier for the gatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1248,15 +1248,15 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html
    *
    * @param shareId - Identifier for the shareId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:share/${ shareId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:share/${ shareId }`);
   }
 
   /**
@@ -1265,15 +1265,15 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts
    *
    * @param tapeBarcode - Identifier for the tapeBarcode.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tape/${ tapeBarcode }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tape/${ tapeBarcode }`);
   }
 
   /**
@@ -1282,15 +1282,15 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html
    *
    * @param poolId - Identifier for the poolId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTapepool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:tapepool/${ poolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tapepool/${ poolId }`);
   }
 
   /**
@@ -1300,12 +1300,12 @@ export class Storagegateway extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param iscsiTarget - Identifier for the iscsiTarget.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
   }
 
   /**
@@ -1315,15 +1315,15 @@ export class Storagegateway extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param volumeId - Identifier for the volumeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Storagegateway.defaultPartition }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/volume/${ volumeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/volume/${ volumeId }`);
   }
 
   /**

@@ -464,15 +464,15 @@ export class Xray extends PolicyStatement {
    *
    * @param groupName - Identifier for the groupName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGroup(groupName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Xray.defaultPartition }:xray:${ region || '*' }:${ account || '*' }:group/${ groupName }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:xray:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ groupName }/${ id }`);
   }
 
   /**
@@ -481,15 +481,15 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-sampling
    *
    * @param samplingRuleName - Identifier for the samplingRuleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSamplingRule(samplingRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Xray.defaultPartition }:xray:${ region || '*' }:${ account || '*' }:sampling-rule/${ samplingRuleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:xray:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sampling-rule/${ samplingRuleName }`);
   }
 
   /**

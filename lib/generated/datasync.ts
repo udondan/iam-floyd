@@ -836,15 +836,15 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html
    *
    * @param agentId - Identifier for the agentId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:agent/${ agentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**
@@ -853,15 +853,15 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html
    *
    * @param locationId - Identifier for the locationId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:location/${ locationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:location/${ locationId }`);
   }
 
   /**
@@ -870,15 +870,15 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html
    *
    * @param taskId - Identifier for the taskId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:task/${ taskId }`);
   }
 
   /**
@@ -888,15 +888,15 @@ export class Datasync extends PolicyStatement {
    *
    * @param taskId - Identifier for the taskId.
    * @param executionId - Identifier for the executionId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:task/${ taskId }/execution/${ executionId }`);
   }
 
   /**
@@ -905,15 +905,15 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html
    *
    * @param storageSystemId - Identifier for the storageSystemId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStoragesystem(storageSystemId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:system/${ storageSystemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:system/${ storageSystemId }`);
   }
 
   /**
@@ -923,15 +923,15 @@ export class Datasync extends PolicyStatement {
    *
    * @param storageSystemId - Identifier for the storageSystemId.
    * @param discoveryJobId - Identifier for the discoveryJobId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDiscoveryjob(storageSystemId: string, discoveryJobId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Datasync.defaultPartition }:datasync:${ region || '*' }:${ accountId || '*' }:system/${ storageSystemId }/job/${ discoveryJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:system/${ storageSystemId }/job/${ discoveryJobId }`);
   }
 
   /**

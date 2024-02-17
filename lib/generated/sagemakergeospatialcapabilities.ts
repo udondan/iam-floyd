@@ -326,15 +326,15 @@ export class SagemakerGeospatial extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/geospatial-eoj.html
    *
    * @param jobID - Identifier for the jobID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEarthObservationJob(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:earth-observation-job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || this.defaultRegion }:${ account || this.defaultAccount }:earth-observation-job/${ jobID }`);
   }
 
   /**
@@ -343,15 +343,15 @@ export class SagemakerGeospatial extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/geospatial-data-collections.html
    *
    * @param collectionID - Identifier for the collectionID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRasterDataCollection(collectionID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:raster-data-collection/${ collectionID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || this.defaultRegion }:${ account || this.defaultAccount }:raster-data-collection/${ collectionID }`);
   }
 
   /**
@@ -360,15 +360,15 @@ export class SagemakerGeospatial extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/geospatial-vej.html
    *
    * @param jobID - Identifier for the jobID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVectorEnrichmentJob(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SagemakerGeospatial.defaultPartition }:sagemaker-geospatial:${ region || '*' }:${ account || '*' }:vector-enrichment-job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker-geospatial:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vector-enrichment-job/${ jobID }`);
   }
 
   /**

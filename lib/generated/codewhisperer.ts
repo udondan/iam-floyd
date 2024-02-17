@@ -303,14 +303,14 @@ export class Codewhisperer extends PolicyStatement {
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-profiles
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProfile(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codewhisperer.defaultPartition }:codewhisperer::${ account || '*' }:profile/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codewhisperer::${ account || this.defaultAccount }:profile/${ identifier }`);
   }
 
   /**
@@ -319,14 +319,14 @@ export class Codewhisperer extends PolicyStatement {
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-customizations
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomization(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codewhisperer.defaultPartition }:codewhisperer::${ account || '*' }:customization/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codewhisperer::${ account || this.defaultAccount }:customization/${ identifier }`);
   }
 
   /**

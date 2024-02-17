@@ -582,15 +582,15 @@ export class Wisdom extends PolicyStatement {
    * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AssistantData.html
    *
    * @param assistantId - Identifier for the assistantId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssistant(assistantId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assistant/${ assistantId }`);
   }
 
   /**
@@ -600,15 +600,15 @@ export class Wisdom extends PolicyStatement {
    *
    * @param assistantId - Identifier for the assistantId.
    * @param assistantAssociationId - Identifier for the assistantAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssistantAssociation(assistantId: string, assistantAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:association/${ assistantId }/${ assistantAssociationId }`);
   }
 
   /**
@@ -618,15 +618,15 @@ export class Wisdom extends PolicyStatement {
    *
    * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
    * @param contentId - Identifier for the contentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContent(knowledgeBaseId: string, contentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:content/${ knowledgeBaseId }/${ contentId }`);
   }
 
   /**
@@ -635,15 +635,15 @@ export class Wisdom extends PolicyStatement {
    * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_KnowledgeBaseData.html
    *
    * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -653,15 +653,15 @@ export class Wisdom extends PolicyStatement {
    *
    * @param assistantId - Identifier for the assistantId.
    * @param sessionId - Identifier for the sessionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSession(assistantId: string, sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session/${ assistantId }/${ sessionId }`);
   }
 
   /**
@@ -671,15 +671,15 @@ export class Wisdom extends PolicyStatement {
    *
    * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
    * @param quickResponseId - Identifier for the quickResponseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuickResponse(knowledgeBaseId: string, quickResponseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wisdom.defaultPartition }:wisdom:${ region || '*' }:${ account || '*' }:quick-response/${ knowledgeBaseId }/${ quickResponseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:quick-response/${ knowledgeBaseId }/${ quickResponseId }`);
   }
 
   /**

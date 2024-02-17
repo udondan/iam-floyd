@@ -404,7 +404,7 @@ export class VendorInsights extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onDataSource(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::data-source:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vendor-insights:::data-source:${ resourceId }`);
   }
 
   /**
@@ -421,7 +421,7 @@ export class VendorInsights extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSecurityProfile(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition || VendorInsights.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:vendor-insights:::security-profile:${ resourceId }`);
   }
 
   /**

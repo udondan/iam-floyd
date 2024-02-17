@@ -139,10 +139,10 @@ export class IqPermission extends PolicyStatement {
    * https://aws.amazon.com/iq/
    *
    * @param permissionRequestId - Identifier for the permissionRequestId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPermission(permissionRequestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || IqPermission.defaultPartition }:iq-permission:${ region || '*' }::permission/${ permissionRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iq-permission:${ region || this.defaultRegion }::permission/${ permissionRequestId }`);
   }
 }

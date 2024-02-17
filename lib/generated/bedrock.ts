@@ -333,6 +333,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detect if the provided content is generated using Amazon Bedrock
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toDetectGeneratedContent() {
+    return this.to('DetectGeneratedContent');
+  }
+
+  /**
    * Grants permission to disassociate a knowledge base from the agent
    *
    * Access Level: Write
@@ -1023,6 +1034,7 @@ export class Bedrock extends PolicyStatement {
       'UpdateProvisionedModelThroughput'
     ],
     Read: [
+      'DetectGeneratedContent',
       'GetAgent',
       'GetAgentActionGroup',
       'GetAgentAlias',
@@ -1077,11 +1089,11 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFoundationModel(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }::foundation-model/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }::foundation-model/${ resourceId }`);
   }
 
   /**
@@ -1090,15 +1102,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:custom-model/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-model/${ resourceId }`);
   }
 
   /**
@@ -1107,15 +1119,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProvisionedModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:provisioned-model/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:provisioned-model/${ resourceId }`);
   }
 
   /**
@@ -1124,15 +1136,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModelCustomizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:model-customization-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-customization-job/${ resourceId }`);
   }
 
   /**
@@ -1141,15 +1153,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param agentId - Identifier for the agentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:agent/${ agentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**
@@ -1159,15 +1171,15 @@ export class Bedrock extends PolicyStatement {
    *
    * @param agentId - Identifier for the agentId.
    * @param agentAliasId - Identifier for the agentAliasId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAgentAlias(agentId: string, agentAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:agent-alias/${ agentId }/${ agentAliasId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent-alias/${ agentId }/${ agentAliasId }`);
   }
 
   /**
@@ -1176,15 +1188,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -1193,15 +1205,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModelEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:model-evaluation-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-evaluation-job/${ resourceId }`);
   }
 
   /**
@@ -1210,15 +1222,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param jobIdentifier - Identifier for the jobIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onModelInvocationJob(jobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:model-invocation-job/${ jobIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-invocation-job/${ jobIdentifier }`);
   }
 
   /**
@@ -1227,15 +1239,15 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param guardrailId - Identifier for the guardrailId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGuardrail(guardrailId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Bedrock.defaultPartition }:bedrock:${ region || '*' }:${ account || '*' }:guardrail/${ guardrailId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:guardrail/${ guardrailId }`);
   }
 
   /**

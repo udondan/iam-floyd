@@ -813,15 +813,15 @@ export class Transfer extends PolicyStatement {
    *
    * @param serverId - Identifier for the serverId.
    * @param userName - Identifier for the userName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ serverId }/${ userName }`);
   }
 
   /**
@@ -830,15 +830,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html
    *
    * @param serverId - Identifier for the serverId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:server/${ serverId }`);
   }
 
   /**
@@ -847,15 +847,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-workflows.html
    *
    * @param workflowId - Identifier for the workflowId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowId }`);
   }
 
   /**
@@ -864,15 +864,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
    *
    * @param certificateId - Identifier for the certificateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificate/${ certificateId }`);
   }
 
   /**
@@ -881,15 +881,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
    *
    * @param connectorId - Identifier for the connectorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:connector/${ connectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorId }`);
   }
 
   /**
@@ -898,15 +898,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
    *
    * @param profileId - Identifier for the profileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:profile/${ profileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ profileId }`);
   }
 
   /**
@@ -915,15 +915,15 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
    *
    * @param agreementId - Identifier for the agreementId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:agreement/${ agreementId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agreement/${ agreementId }`);
   }
 
   /**
@@ -933,15 +933,15 @@ export class Transfer extends PolicyStatement {
    *
    * @param serverId - Identifier for the serverId.
    * @param hostKeyId - Identifier for the hostKeyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHostKey(serverId: string, hostKeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transfer.defaultPartition }:transfer:${ region || '*' }:${ account || '*' }:host-key/${ serverId }/${ hostKeyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:host-key/${ serverId }/${ hostKeyId }`);
   }
 
   /**

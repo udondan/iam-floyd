@@ -379,14 +379,14 @@ export class Entityresolution extends PolicyStatement {
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/
    *
    * @param workflowName - Identifier for the workflowName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMatchingWorkflow(workflowName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Entityresolution.defaultPartition }:entityresolution::${ account || '*' }:matchingworkflow/${ workflowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:entityresolution::${ account || this.defaultAccount }:matchingworkflow/${ workflowName }`);
   }
 
   /**
@@ -395,14 +395,14 @@ export class Entityresolution extends PolicyStatement {
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/
    *
    * @param schemaName - Identifier for the schemaName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSchemaMapping(schemaName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Entityresolution.defaultPartition }:entityresolution::${ account || '*' }:schemamapping/${ schemaName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:entityresolution::${ account || this.defaultAccount }:schemamapping/${ schemaName }`);
   }
 
   /**
@@ -411,14 +411,14 @@ export class Entityresolution extends PolicyStatement {
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/
    *
    * @param workflowName - Identifier for the workflowName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIdMappingWorkflow(workflowName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Entityresolution.defaultPartition }:entityresolution::${ account || '*' }:idmappingworkflow/${ workflowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:entityresolution::${ account || this.defaultAccount }:idmappingworkflow/${ workflowName }`);
   }
 
   /**
@@ -428,14 +428,14 @@ export class Entityresolution extends PolicyStatement {
    *
    * @param providerName - Identifier for the providerName.
    * @param providerServiceName - Identifier for the providerServiceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProviderService(providerName: string, providerServiceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Entityresolution.defaultPartition }:entityresolution::${ account || '*' }:providerservice/${ providerName }/${ providerServiceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:entityresolution::${ account || this.defaultAccount }:providerservice/${ providerName }/${ providerServiceName }`);
   }
 
   /**

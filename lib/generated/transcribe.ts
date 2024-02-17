@@ -704,15 +704,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_TranscriptionJob.html
    *
    * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transcription-job/${ jobName }`);
   }
 
   /**
@@ -721,15 +721,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabulary.html
    *
    * @param vocabularyName - Identifier for the vocabularyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -738,15 +738,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabularyFilter.html
    *
    * @param vocabularyFilterName - Identifier for the vocabularyFilterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVocabularyfilter(vocabularyFilterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:vocabulary-filter/${ vocabularyFilterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vocabulary-filter/${ vocabularyFilterName }`);
   }
 
   /**
@@ -755,15 +755,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_LanguageModel.html
    *
    * @param modelName - Identifier for the modelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLanguagemodel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:language-model/${ modelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:language-model/${ modelName }`);
   }
 
   /**
@@ -772,15 +772,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalTranscriptionJob.html
    *
    * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMedicaltranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-transcription-job/${ jobName }`);
   }
 
   /**
@@ -789,15 +789,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
    *
    * @param vocabularyName - Identifier for the vocabularyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMedicalvocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -806,12 +806,12 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CallAnalyticsJob.html
    *
    * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analytics-job/${ jobName }`);
   }
 
   /**
@@ -820,12 +820,12 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
    *
    * @param categoryName - Identifier for the categoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:analytics-category/${ categoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analytics-category/${ categoryName }`);
   }
 
   /**
@@ -834,15 +834,15 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalScribeJob.html
    *
    * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMedicalscribejob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Transcribe.defaultPartition }:transcribe:${ region || '*' }:${ account || '*' }:medical-scribe-job/${ jobName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-scribe-job/${ jobName }`);
   }
 
   /**

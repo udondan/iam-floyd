@@ -808,15 +808,15 @@ export class Robomaker extends PolicyStatement {
    *
    * @param applicationName - Identifier for the applicationName.
    * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:robot-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -826,15 +826,15 @@ export class Robomaker extends PolicyStatement {
    *
    * @param applicationName - Identifier for the applicationName.
    * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -843,15 +843,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/simulation.html
    *
    * @param simulationJobId - Identifier for the simulationJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job/${ simulationJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-job/${ simulationJobId }`);
   }
 
   /**
@@ -860,15 +860,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/simulation-job-batch.html
    *
    * @param simulationJobBatchId - Identifier for the simulationJobBatchId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job-batch/${ simulationJobBatchId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-job-batch/${ simulationJobBatchId }`);
   }
 
   /**
@@ -877,15 +877,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html
    *
    * @param deploymentJobId - Identifier for the deploymentJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-job/${ deploymentJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment-job/${ deploymentJobId }`);
   }
 
   /**
@@ -895,15 +895,15 @@ export class Robomaker extends PolicyStatement {
    *
    * @param robotName - Identifier for the robotName.
    * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:robot/${ robotName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:robot/${ robotName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -913,15 +913,15 @@ export class Robomaker extends PolicyStatement {
    *
    * @param fleetName - Identifier for the fleetName.
    * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -930,15 +930,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generation-jobs.html
    *
    * @param worldGenerationJobId - Identifier for the worldGenerationJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorldGenerationJob(worldGenerationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-generation-job/${ worldGenerationJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-generation-job/${ worldGenerationJobId }`);
   }
 
   /**
@@ -947,15 +947,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-export-jobs.html
    *
    * @param worldExportJobId - Identifier for the worldExportJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-export-job/${ worldExportJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-export-job/${ worldExportJobId }`);
   }
 
   /**
@@ -964,15 +964,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-simworld-templates.html
    *
    * @param worldTemplateJobId - Identifier for the worldTemplateJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world-template/${ worldTemplateJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-template/${ worldTemplateJobId }`);
   }
 
   /**
@@ -981,15 +981,15 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generated-worlds.html
    *
    * @param worldId - Identifier for the worldId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Robomaker.defaultPartition }:robomaker:${ region || '*' }:${ account || '*' }:world/${ worldId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world/${ worldId }`);
   }
 
   /**

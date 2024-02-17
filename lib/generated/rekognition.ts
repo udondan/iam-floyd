@@ -970,15 +970,15 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/collections.html
    *
    * @param collectionId - Identifier for the collectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:collection/${ collectionId }`);
   }
 
   /**
@@ -987,15 +987,15 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html
    *
    * @param streamprocessorId - Identifier for the streamprocessorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:streamprocessor/${ streamprocessorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streamprocessor/${ streamprocessorId }`);
   }
 
   /**
@@ -1005,12 +1005,12 @@ export class Rekognition extends PolicyStatement {
    *
    * @param projectName - Identifier for the projectName.
    * @param creationTimestamp - Identifier for the creationTimestamp.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/${ creationTimestamp }`);
   }
 
   /**
@@ -1021,15 +1021,15 @@ export class Rekognition extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param versionName - Identifier for the versionName.
    * @param creationTimestamp - Identifier for the creationTimestamp.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
   }
 
   /**
@@ -1040,12 +1040,12 @@ export class Rekognition extends PolicyStatement {
    * @param projectName - Identifier for the projectName.
    * @param datasetType - Identifier for the datasetType.
    * @param creationTimestamp - Identifier for the creationTimestamp.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Rekognition.defaultPartition }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
   }
 
   /**

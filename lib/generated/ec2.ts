@@ -9768,8 +9768,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
    *
    * @param allocationId - Identifier for the allocationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9785,7 +9785,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onElasticIp(allocationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:elastic-ip/${ allocationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:elastic-ip/${ allocationId }`);
   }
 
   /**
@@ -9794,8 +9794,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param capacityReservationFleetId - Identifier for the capacityReservationFleetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9808,7 +9808,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityReservationFleet(capacityReservationFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation-fleet/${ capacityReservationFleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capacity-reservation-fleet/${ capacityReservationFleetId }`);
   }
 
   /**
@@ -9817,8 +9817,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
    *
    * @param capacityReservationId - Identifier for the capacityReservationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9834,7 +9834,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityReservation(capacityReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation/${ capacityReservationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capacity-reservation/${ capacityReservationId }`);
   }
 
   /**
@@ -9843,8 +9843,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html
    *
    * @param carrierGatewayId - Identifier for the carrierGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9857,7 +9857,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onCarrierGateway(carrierGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:carrier-gateway/${ carrierGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:carrier-gateway/${ carrierGatewayId }`);
   }
 
   /**
@@ -9866,12 +9866,12 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations
    *
    * @param certificateId - Identifier for the certificateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:acm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificate/${ certificateId }`);
   }
 
   /**
@@ -9880,8 +9880,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html
    *
    * @param clientVpnEndpointId - Identifier for the clientVpnEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9900,7 +9900,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifServerCertificateArn()
    */
   public onClientVpnEndpoint(clientVpnEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:client-vpn-endpoint/${ clientVpnEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:client-vpn-endpoint/${ clientVpnEndpointId }`);
   }
 
   /**
@@ -9909,8 +9909,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
    *
    * @param customerGatewayId - Identifier for the customerGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9921,7 +9921,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCustomerGateway(customerGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:customer-gateway/${ customerGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:customer-gateway/${ customerGatewayId }`);
   }
 
   /**
@@ -9930,8 +9930,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html
    *
    * @param dedicatedHostId - Identifier for the dedicatedHostId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9951,7 +9951,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDedicatedHost(dedicatedHostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:dedicated-host/${ dedicatedHostId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dedicated-host/${ dedicatedHostId }`);
   }
 
   /**
@@ -9960,8 +9960,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html
    *
    * @param dhcpOptionsId - Identifier for the dhcpOptionsId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9973,7 +9973,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDhcpOptions(dhcpOptionsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:dhcp-options/${ dhcpOptionsId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dhcp-options/${ dhcpOptionsId }`);
   }
 
   /**
@@ -9982,8 +9982,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html
    *
    * @param egressOnlyInternetGatewayId - Identifier for the egressOnlyInternetGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -9994,7 +9994,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEgressOnlyInternetGateway(egressOnlyInternetGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:egress-only-internet-gateway/${ egressOnlyInternetGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:egress-only-internet-gateway/${ egressOnlyInternetGatewayId }`);
   }
 
   /**
@@ -10003,8 +10003,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html
    *
    * @param elasticGpuId - Identifier for the elasticGpuId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10018,7 +10018,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onElasticGpu(elasticGpuId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:elastic-gpu/${ elasticGpuId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:elastic-gpu/${ elasticGpuId }`);
   }
 
   /**
@@ -10027,12 +10027,12 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elastic-inference/latest/developerguide/what-is-ei.html
    *
    * @param acceleratorId - Identifier for the acceleratorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onElasticInference(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastic-inference:${ region || this.defaultRegion }:${ account || this.defaultAccount }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 
   /**
@@ -10041,8 +10041,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#export-vm-image
    *
    * @param exportImageTaskId - Identifier for the exportImageTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10053,7 +10053,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExportImageTask(exportImageTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:export-image-task/${ exportImageTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export-image-task/${ exportImageTaskId }`);
   }
 
   /**
@@ -10062,8 +10062,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
    *
    * @param exportTaskId - Identifier for the exportTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10074,7 +10074,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExportInstanceTask(exportTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:export-instance-task/${ exportTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export-instance-task/${ exportTaskId }`);
   }
 
   /**
@@ -10083,8 +10083,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html
    *
    * @param fleetId - Identifier for the fleetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10097,7 +10097,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetId }`);
   }
 
   /**
@@ -10106,8 +10106,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param fpgaImageId - Identifier for the fpgaImageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10122,7 +10122,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFpgaImage(fpgaImageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:fpga-image/${ fpgaImageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fpga-image/${ fpgaImageId }`);
   }
 
   /**
@@ -10131,8 +10131,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param hostReservationId - Identifier for the hostReservationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10143,7 +10143,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHostReservation(hostReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:host-reservation/${ hostReservationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:host-reservation/${ hostReservationId }`);
   }
 
   /**
@@ -10152,7 +10152,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
    *
    * @param imageId - Identifier for the imageId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10172,7 +10172,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRootDeviceType()
    */
   public onImage(imageId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }::image/${ imageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }::image/${ imageId }`);
   }
 
   /**
@@ -10181,8 +10181,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#import-vm-image
    *
    * @param importImageTaskId - Identifier for the importImageTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10193,7 +10193,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImportImageTask(importImageTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:import-image-task/${ importImageTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-image-task/${ importImageTaskId }`);
   }
 
   /**
@@ -10202,8 +10202,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html
    *
    * @param importSnapshotTaskId - Identifier for the importSnapshotTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10214,7 +10214,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImportSnapshotTask(importSnapshotTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:import-snapshot-task/${ importSnapshotTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-snapshot-task/${ importSnapshotTaskId }`);
   }
 
   /**
@@ -10223,8 +10223,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceConnectEndpointId - Identifier for the instanceConnectEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10238,7 +10238,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifSubnetID()
    */
   public onInstanceConnectEndpoint(instanceConnectEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
   }
 
   /**
@@ -10247,8 +10247,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceEventWindowId - Identifier for the instanceEventWindowId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10259,7 +10259,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstanceEventWindow(instanceEventWindowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance-event-window/${ instanceEventWindowId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-event-window/${ instanceEventWindowId }`);
   }
 
   /**
@@ -10268,8 +10268,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Instances.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10300,7 +10300,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -10309,8 +10309,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html
    *
    * @param internetGatewayId - Identifier for the internetGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10322,7 +10322,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInternetGateway(internetGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:internet-gateway/${ internetGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:internet-gateway/${ internetGatewayId }`);
   }
 
   /**
@@ -10331,7 +10331,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipamId - Identifier for the ipamId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10344,7 +10344,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpam(ipamId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam/${ ipamId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2::${ account || this.defaultAccount }:ipam/${ ipamId }`);
   }
 
   /**
@@ -10353,7 +10353,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipamPoolId - Identifier for the ipamPoolId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10366,7 +10366,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpamPool(ipamPoolId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-pool/${ ipamPoolId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2::${ account || this.defaultAccount }:ipam-pool/${ ipamPoolId }`);
   }
 
   /**
@@ -10375,7 +10375,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipamResourceDiscoveryAssociationId - Identifier for the ipamResourceDiscoveryAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10386,7 +10386,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpamResourceDiscoveryAssociation(ipamResourceDiscoveryAssociationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-resource-discovery-association/${ ipamResourceDiscoveryAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2::${ account || this.defaultAccount }:ipam-resource-discovery-association/${ ipamResourceDiscoveryAssociationId }`);
   }
 
   /**
@@ -10395,7 +10395,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipamResourceDiscoveryId - Identifier for the ipamResourceDiscoveryId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10406,7 +10406,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpamResourceDiscovery(ipamResourceDiscoveryId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-resource-discovery/${ ipamResourceDiscoveryId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2::${ account || this.defaultAccount }:ipam-resource-discovery/${ ipamResourceDiscoveryId }`);
   }
 
   /**
@@ -10415,7 +10415,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipamScopeId - Identifier for the ipamScopeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10428,7 +10428,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpamScope(ipamScopeId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2::${ account || '*' }:ipam-scope/${ ipamScopeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2::${ account || this.defaultAccount }:ipam-scope/${ ipamScopeId }`);
   }
 
   /**
@@ -10437,8 +10437,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param ipv4PoolCoipId - Identifier for the ipv4PoolCoipId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10449,7 +10449,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCoipPool(ipv4PoolCoipId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:coip-pool/${ ipv4PoolCoipId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:coip-pool/${ ipv4PoolCoipId }`);
   }
 
   /**
@@ -10458,8 +10458,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#ip-addressing-eips
    *
    * @param ipv4PoolEc2Id - Identifier for the ipv4PoolEc2Id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10470,7 +10470,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpv4poolEc2(ipv4PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:ipv4pool-ec2/${ ipv4PoolEc2Id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ipv4pool-ec2/${ ipv4PoolEc2Id }`);
   }
 
   /**
@@ -10479,8 +10479,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#ipv6-addressing
    *
    * @param ipv6PoolEc2Id - Identifier for the ipv6PoolEc2Id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10491,7 +10491,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpv6poolEc2(ipv6PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:ipv6pool-ec2/${ ipv6PoolEc2Id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ipv6pool-ec2/${ ipv6PoolEc2Id }`);
   }
 
   /**
@@ -10500,8 +10500,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
    *
    * @param keyPairName - Identifier for the keyPairName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10516,7 +10516,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onKeyPair(keyPairName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:key-pair/${ keyPairName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key-pair/${ keyPairName }`);
   }
 
   /**
@@ -10525,8 +10525,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html
    *
    * @param launchTemplateId - Identifier for the launchTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10541,7 +10541,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLaunchTemplate(launchTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:launch-template/${ launchTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-template/${ launchTemplateId }`);
   }
 
   /**
@@ -10550,12 +10550,12 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/create-license-configuration.html
    *
    * @param licenseConfigurationId - Identifier for the licenseConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -10564,8 +10564,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#lgw
    *
    * @param localGatewayId - Identifier for the localGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10576,7 +10576,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGateway(localGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway/${ localGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway/${ localGatewayId }`);
   }
 
   /**
@@ -10585,8 +10585,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html
    *
    * @param localGatewayRouteTableVirtualInterfaceGroupAssociationId - Identifier for the localGatewayRouteTableVirtualInterfaceGroupAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10597,7 +10597,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTableVirtualInterfaceGroupAssociation(localGatewayRouteTableVirtualInterfaceGroupAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-virtual-interface-group-association/${ localGatewayRouteTableVirtualInterfaceGroupAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway-route-table-virtual-interface-group-association/${ localGatewayRouteTableVirtualInterfaceGroupAssociationId }`);
   }
 
   /**
@@ -10606,8 +10606,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#vpc-associations
    *
    * @param localGatewayRouteTableVpcAssociationId - Identifier for the localGatewayRouteTableVpcAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10618,7 +10618,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTableVpcAssociation(localGatewayRouteTableVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-vpc-association/${ localGatewayRouteTableVpcAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway-route-table-vpc-association/${ localGatewayRouteTableVpcAssociationId }`);
   }
 
   /**
@@ -10627,8 +10627,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#route-tables
    *
    * @param localGatewayRoutetableId - Identifier for the localGatewayRoutetableId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10639,7 +10639,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTable(localGatewayRoutetableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table/${ localGatewayRoutetableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway-route-table/${ localGatewayRoutetableId }`);
   }
 
   /**
@@ -10648,8 +10648,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html
    *
    * @param localGatewayVirtualInterfaceGroupId - Identifier for the localGatewayVirtualInterfaceGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10660,7 +10660,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayVirtualInterfaceGroup(localGatewayVirtualInterfaceGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface-group/${ localGatewayVirtualInterfaceGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway-virtual-interface-group/${ localGatewayVirtualInterfaceGroupId }`);
   }
 
   /**
@@ -10669,8 +10669,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html
    *
    * @param localGatewayVirtualInterfaceId - Identifier for the localGatewayVirtualInterfaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10681,7 +10681,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayVirtualInterface(localGatewayVirtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface/${ localGatewayVirtualInterfaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:local-gateway-virtual-interface/${ localGatewayVirtualInterfaceId }`);
   }
 
   /**
@@ -10690,8 +10690,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
    *
    * @param natGatewayId - Identifier for the natGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10702,7 +10702,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNatgateway(natGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:natgateway/${ natGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:natgateway/${ natGatewayId }`);
   }
 
   /**
@@ -10711,8 +10711,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
    *
    * @param naclId - Identifier for the naclId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10725,7 +10725,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onNetworkAcl(naclId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-acl/${ naclId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-acl/${ naclId }`);
   }
 
   /**
@@ -10734,8 +10734,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param networkInsightsAccessScopeAnalysisId - Identifier for the networkInsightsAccessScopeAnalysisId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10746,7 +10746,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsAccessScopeAnalysis(networkInsightsAccessScopeAnalysisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope-analysis/${ networkInsightsAccessScopeAnalysisId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-insights-access-scope-analysis/${ networkInsightsAccessScopeAnalysisId }`);
   }
 
   /**
@@ -10755,8 +10755,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param networkInsightsAccessScopeId - Identifier for the networkInsightsAccessScopeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10767,7 +10767,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsAccessScope(networkInsightsAccessScopeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope/${ networkInsightsAccessScopeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-insights-access-scope/${ networkInsightsAccessScopeId }`);
   }
 
   /**
@@ -10776,8 +10776,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param networkInsightsAnalysisId - Identifier for the networkInsightsAnalysisId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10788,7 +10788,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsAnalysis(networkInsightsAnalysisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-insights-analysis/${ networkInsightsAnalysisId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-insights-analysis/${ networkInsightsAnalysisId }`);
   }
 
   /**
@@ -10797,8 +10797,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param networkInsightsPathId - Identifier for the networkInsightsPathId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10809,7 +10809,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsPath(networkInsightsPathId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-insights-path/${ networkInsightsPathId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-insights-path/${ networkInsightsPathId }`);
   }
 
   /**
@@ -10818,8 +10818,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html
    *
    * @param networkInterfaceId - Identifier for the networkInterfaceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10842,7 +10842,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onNetworkInterface(networkInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:network-interface/${ networkInterfaceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-interface/${ networkInterfaceId }`);
   }
 
   /**
@@ -10851,8 +10851,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
    *
    * @param placementGroupName - Identifier for the placementGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10867,7 +10867,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPlacementGroup(placementGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:placement-group/${ placementGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:placement-group/${ placementGroupName }`);
   }
 
   /**
@@ -10876,8 +10876,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html
    *
    * @param prefixListId - Identifier for the prefixListId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10890,7 +10890,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPrefixList(prefixListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:prefix-list/${ prefixListId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:prefix-list/${ prefixListId }`);
   }
 
   /**
@@ -10899,8 +10899,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html
    *
    * @param replaceRootVolumeTaskId - Identifier for the replaceRootVolumeTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10911,7 +10911,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onReplaceRootVolumeTask(replaceRootVolumeTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:replace-root-volume-task/${ replaceRootVolumeTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replace-root-volume-task/${ replaceRootVolumeTaskId }`);
   }
 
   /**
@@ -10920,8 +10920,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html
    *
    * @param reservationId - Identifier for the reservationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10938,7 +10938,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    */
   public onReservedInstances(reservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:reserved-instances/${ reservationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reserved-instances/${ reservationId }`);
   }
 
   /**
@@ -10947,12 +10947,12 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/resource-groups.html
    *
    * @param groupName - Identifier for the groupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resource-groups:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ groupName }`);
   }
 
   /**
@@ -10961,11 +10961,11 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -10974,8 +10974,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
    *
    * @param routeTableId - Identifier for the routeTableId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -10988,7 +10988,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onRouteTable(routeTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:route-table/${ routeTableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:route-table/${ routeTableId }`);
   }
 
   /**
@@ -10997,8 +10997,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html
    *
    * @param securityGroupId - Identifier for the securityGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11015,7 +11015,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onSecurityGroup(securityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:security-group/${ securityGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:security-group/${ securityGroupId }`);
   }
 
   /**
@@ -11024,8 +11024,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param securityGroupRuleId - Identifier for the securityGroupRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11036,7 +11036,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSecurityGroupRule(securityGroupRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:security-group-rule/${ securityGroupRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:security-group-rule/${ securityGroupRuleId }`);
   }
 
   /**
@@ -11045,7 +11045,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html
    *
    * @param snapshotId - Identifier for the snapshotId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11075,7 +11075,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }::snapshot/${ snapshotId }`);
   }
 
   /**
@@ -11084,8 +11084,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param spotFleetRequestId - Identifier for the spotFleetRequestId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11098,7 +11098,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpotFleetRequest(spotFleetRequestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:spot-fleet-request/${ spotFleetRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:spot-fleet-request/${ spotFleetRequestId }`);
   }
 
   /**
@@ -11107,8 +11107,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html
    *
    * @param spotInstanceRequestId - Identifier for the spotInstanceRequestId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11119,7 +11119,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpotInstancesRequest(spotInstanceRequestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:spot-instances-request/${ spotInstanceRequestId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:spot-instances-request/${ spotInstanceRequestId }`);
   }
 
   /**
@@ -11128,8 +11128,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html
    *
    * @param subnetCidrReservationId - Identifier for the subnetCidrReservationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11140,7 +11140,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSubnetCidrReservation(subnetCidrReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:subnet-cidr-reservation/${ subnetCidrReservationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnet-cidr-reservation/${ subnetCidrReservationId }`);
   }
 
   /**
@@ -11149,8 +11149,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html
    *
    * @param subnetId - Identifier for the subnetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11168,7 +11168,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onSubnet(subnetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:subnet/${ subnetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnet/${ subnetId }`);
   }
 
   /**
@@ -11177,8 +11177,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-filter.html
    *
    * @param trafficMirrorFilterId - Identifier for the trafficMirrorFilterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11191,7 +11191,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorFilter(trafficMirrorFilterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter/${ trafficMirrorFilterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-mirror-filter/${ trafficMirrorFilterId }`);
   }
 
   /**
@@ -11200,8 +11200,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-filter.html
    *
    * @param trafficMirrorFilterRuleId - Identifier for the trafficMirrorFilterRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11210,7 +11210,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    */
   public onTrafficMirrorFilterRule(trafficMirrorFilterRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter-rule/${ trafficMirrorFilterRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-mirror-filter-rule/${ trafficMirrorFilterRuleId }`);
   }
 
   /**
@@ -11219,8 +11219,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-session.html
    *
    * @param trafficMirrorSessionId - Identifier for the trafficMirrorSessionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11233,7 +11233,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorSession(trafficMirrorSessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-session/${ trafficMirrorSessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-mirror-session/${ trafficMirrorSessionId }`);
   }
 
   /**
@@ -11242,8 +11242,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-target.html
    *
    * @param trafficMirrorTargetId - Identifier for the trafficMirrorTargetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11254,7 +11254,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorTarget(trafficMirrorTargetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-target/${ trafficMirrorTargetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-mirror-target/${ trafficMirrorTargetId }`);
   }
 
   /**
@@ -11263,8 +11263,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html
    *
    * @param transitGatewayAttachmentId - Identifier for the transitGatewayAttachmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11277,7 +11277,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayAttachment(transitGatewayAttachmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-attachment/${ transitGatewayAttachmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-attachment/${ transitGatewayAttachmentId }`);
   }
 
   /**
@@ -11286,8 +11286,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param transitGatewayConnectPeerId - Identifier for the transitGatewayConnectPeerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11298,7 +11298,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayConnectPeer(transitGatewayConnectPeerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-connect-peer/${ transitGatewayConnectPeerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-connect-peer/${ transitGatewayConnectPeerId }`);
   }
 
   /**
@@ -11307,8 +11307,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html
    *
    * @param transitGatewayId - Identifier for the transitGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11321,7 +11321,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGateway(transitGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway/${ transitGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway/${ transitGatewayId }`);
   }
 
   /**
@@ -11330,8 +11330,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html
    *
    * @param transitGatewayMulticastDomainId - Identifier for the transitGatewayMulticastDomainId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11342,7 +11342,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayMulticastDomain(transitGatewayMulticastDomainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-multicast-domain/${ transitGatewayMulticastDomainId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-multicast-domain/${ transitGatewayMulticastDomainId }`);
   }
 
   /**
@@ -11351,8 +11351,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param transitGatewayPolicyTableId - Identifier for the transitGatewayPolicyTableId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11363,7 +11363,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayPolicyTable(transitGatewayPolicyTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-policy-table/${ transitGatewayPolicyTableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-policy-table/${ transitGatewayPolicyTableId }`);
   }
 
   /**
@@ -11372,8 +11372,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param transitGatewayRouteTableAnnouncementId - Identifier for the transitGatewayRouteTableAnnouncementId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11384,7 +11384,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayRouteTableAnnouncement(transitGatewayRouteTableAnnouncementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-route-table-announcement/${ transitGatewayRouteTableAnnouncementId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-route-table-announcement/${ transitGatewayRouteTableAnnouncementId }`);
   }
 
   /**
@@ -11393,8 +11393,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html
    *
    * @param transitGatewayRouteTableId - Identifier for the transitGatewayRouteTableId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11407,7 +11407,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayRouteTable(transitGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-route-table/${ transitGatewayRouteTableId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transit-gateway-route-table/${ transitGatewayRouteTableId }`);
   }
 
   /**
@@ -11416,8 +11416,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param verifiedAccessEndpointId - Identifier for the verifiedAccessEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11428,7 +11428,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVerifiedAccessEndpoint(verifiedAccessEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-endpoint/${ verifiedAccessEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-endpoint/${ verifiedAccessEndpointId }`);
   }
 
   /**
@@ -11437,8 +11437,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param verifiedAccessGroupId - Identifier for the verifiedAccessGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11449,7 +11449,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVerifiedAccessGroup(verifiedAccessGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-group/${ verifiedAccessGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-group/${ verifiedAccessGroupId }`);
   }
 
   /**
@@ -11458,8 +11458,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param verifiedAccessInstanceId - Identifier for the verifiedAccessInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11470,7 +11470,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-instance/${ verifiedAccessInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-instance/${ verifiedAccessInstanceId }`);
   }
 
   /**
@@ -11479,8 +11479,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param verifiedAccessPolicyId - Identifier for the verifiedAccessPolicyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11491,7 +11491,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVerifiedAccessPolicy(verifiedAccessPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-policy/${ verifiedAccessPolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-policy/${ verifiedAccessPolicyId }`);
   }
 
   /**
@@ -11500,8 +11500,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param verifiedAccessTrustProviderId - Identifier for the verifiedAccessTrustProviderId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11512,7 +11512,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVerifiedAccessTrustProvider(verifiedAccessTrustProviderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:verified-access-trust-provider/${ verifiedAccessTrustProviderId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-trust-provider/${ verifiedAccessTrustProviderId }`);
   }
 
   /**
@@ -11521,8 +11521,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
    *
    * @param volumeId - Identifier for the volumeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11546,7 +11546,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeType()
    */
   public onVolume(volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:volume/${ volumeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:volume/${ volumeId }`);
   }
 
   /**
@@ -11555,8 +11555,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
    *
    * @param vpcEndpointConnectionId - Identifier for the vpcEndpointConnectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11567,7 +11567,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpcEndpointConnection(vpcEndpointConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-connection/${ vpcEndpointConnectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-endpoint-connection/${ vpcEndpointConnectionId }`);
   }
 
   /**
@@ -11576,8 +11576,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
    *
    * @param vpcEndpointId - Identifier for the vpcEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11592,7 +11592,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpceServiceOwner()
    */
   public onVpcEndpoint(vpcEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint/${ vpcEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-endpoint/${ vpcEndpointId }`);
   }
 
   /**
@@ -11601,8 +11601,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
    *
    * @param vpcEndpointServiceId - Identifier for the vpcEndpointServiceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11616,7 +11616,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpceServicePrivateDnsName()
    */
   public onVpcEndpointService(vpcEndpointServiceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service/${ vpcEndpointServiceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-endpoint-service/${ vpcEndpointServiceId }`);
   }
 
   /**
@@ -11625,8 +11625,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html#vpc-endpoint-policies
    *
    * @param vpcEndpointServicePermissionId - Identifier for the vpcEndpointServicePermissionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11637,7 +11637,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpcEndpointServicePermission(vpcEndpointServicePermissionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service-permission/${ vpcEndpointServicePermissionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-endpoint-service-permission/${ vpcEndpointServicePermissionId }`);
   }
 
   /**
@@ -11646,8 +11646,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html
    *
    * @param vpcFlowLogId - Identifier for the vpcFlowLogId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11658,7 +11658,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpcFlowLog(vpcFlowLogId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-flow-log/${ vpcFlowLogId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-flow-log/${ vpcFlowLogId }`);
   }
 
   /**
@@ -11667,8 +11667,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html
    *
    * @param vpcId - Identifier for the vpcId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11685,7 +11685,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpcID()
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc/${ vpcId }`);
   }
 
   /**
@@ -11694,8 +11694,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html
    *
    * @param vpcPeeringConnectionId - Identifier for the vpcPeeringConnectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11711,7 +11711,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpcPeeringConnectionID()
    */
   public onVpcPeeringConnection(vpcPeeringConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpc-peering-connection/${ vpcPeeringConnectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc-peering-connection/${ vpcPeeringConnectionId }`);
   }
 
   /**
@@ -11720,15 +11720,15 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
    *
    * @param vpnConnectionDeviceTypeId - Identifier for the vpnConnectionDeviceTypeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifRegion()
    */
   public onVpnConnectionDeviceType(vpnConnectionDeviceTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection-device-type/${ vpnConnectionDeviceTypeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpn-connection-device-type/${ vpnConnectionDeviceTypeId }`);
   }
 
   /**
@@ -11737,8 +11737,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
    *
    * @param vpnConnectionId - Identifier for the vpnConnectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11770,7 +11770,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRoutingType()
    */
   public onVpnConnection(vpnConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection/${ vpnConnectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpn-connection/${ vpnConnectionId }`);
   }
 
   /**
@@ -11779,8 +11779,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
    *
    * @param vpnGatewayId - Identifier for the vpnGatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -11791,7 +11791,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpnGateway(vpnGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:vpn-gateway/${ vpnGatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpn-gateway/${ vpnGatewayId }`);
   }
 
   /**

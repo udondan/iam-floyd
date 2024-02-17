@@ -1082,15 +1082,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param fleetName - Identifier for the fleetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetName }`);
   }
 
   /**
@@ -1099,15 +1099,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param imageName - Identifier for the imageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }`);
   }
 
   /**
@@ -1116,15 +1116,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param imageBuilderName - Identifier for the imageBuilderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:image-builder/${ imageBuilderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-builder/${ imageBuilderName }`);
   }
 
   /**
@@ -1133,15 +1133,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param stackName - Identifier for the stackName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stack/${ stackName }`);
   }
 
   /**
@@ -1150,15 +1150,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param appBlockName - Identifier for the appBlockName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppBlock(appBlockName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-block/${ appBlockName }`);
   }
 
   /**
@@ -1167,15 +1167,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param applicationName - Identifier for the applicationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationName }`);
   }
 
   /**
@@ -1184,15 +1184,15 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
    *
    * @param appBlockBuilderName - Identifier for the appBlockBuilderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppBlockBuilder(appBlockBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appstream.defaultPartition }:appstream:${ region || '*' }:${ account || '*' }:app-block-builder/${ appBlockBuilderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-block-builder/${ appBlockBuilderName }`);
   }
 
   /**

@@ -237,12 +237,12 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -251,12 +251,12 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html
    *
    * @param pipelineId - Identifier for the pipelineId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineId }`);
   }
 
   /**
@@ -265,11 +265,11 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html
    *
    * @param presetId - Identifier for the presetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elastictranscoder.defaultPartition }:elastictranscoder:${ region || '*' }:${ account || '*' }:preset/${ presetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:preset/${ presetId }`);
   }
 }

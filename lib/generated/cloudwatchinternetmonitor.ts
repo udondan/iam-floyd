@@ -215,12 +215,12 @@ export class Internetmonitor extends PolicyStatement {
    *
    * @param monitorName - Identifier for the monitorName.
    * @param eventId - Identifier for the eventId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHealthEvent(monitorName: string, eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Internetmonitor.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:monitor/${ monitorName }/health-event/${ eventId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:internetmonitor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitor/${ monitorName }/health-event/${ eventId }`);
   }
 
   /**
@@ -229,15 +229,15 @@ export class Internetmonitor extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-components.html
    *
    * @param monitorName - Identifier for the monitorName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMonitor(monitorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Internetmonitor.defaultPartition }:internetmonitor:${ region || '*' }:${ account || '*' }:monitor/${ monitorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:internetmonitor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitor/${ monitorName }`);
   }
 
   /**

@@ -42,11 +42,11 @@ export class RdsDb extends PolicyStatement {
    *
    * @param dbiResourceId - Identifier for the dbiResourceId.
    * @param dbUserName - Identifier for the dbUserName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDbUser(dbiResourceId: string, dbUserName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RdsDb.defaultPartition }:rds-db:${ region || '*' }:${ account || '*' }:dbuser:${ dbiResourceId }/${ dbUserName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:rds-db:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dbuser:${ dbiResourceId }/${ dbUserName }`);
   }
 }

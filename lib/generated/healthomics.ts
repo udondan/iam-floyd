@@ -1046,15 +1046,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationImportJobItem.html
    *
    * @param annotationImportJobId - Identifier for the annotationImportJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAnnotationImportJobJobId()
    */
   public onAnnotationImportJob(annotationImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:annotationImportJob/${ annotationImportJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationImportJob/${ annotationImportJobId }`);
   }
 
   /**
@@ -1063,15 +1063,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationStoreItem.html
    *
    * @param annotationStoreId - Identifier for the annotationStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAnnotationStoreName()
    */
   public onAnnotationStore(annotationStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:annotationStore/${ annotationStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationStore/${ annotationStoreId }`);
   }
 
   /**
@@ -1081,15 +1081,15 @@ export class Omics extends PolicyStatement {
    *
    * @param annotationStoreName - Identifier for the annotationStoreName.
    * @param annotationStoreVersionName - Identifier for the annotationStoreVersionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAnnotationStoreVersionName()
    */
   public onAnnotationStoreVersion(annotationStoreName: string, annotationStoreVersionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
   }
 
   /**
@@ -1099,15 +1099,15 @@ export class Omics extends PolicyStatement {
    *
    * @param sequenceStoreId - Identifier for the sequenceStoreId.
    * @param readSetId - Identifier for the readSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReadSet(sequenceStoreId: string, readSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:sequenceStore/${ sequenceStoreId }/readSet/${ readSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sequenceStore/${ sequenceStoreId }/readSet/${ readSetId }`);
   }
 
   /**
@@ -1117,15 +1117,15 @@ export class Omics extends PolicyStatement {
    *
    * @param referenceStoreId - Identifier for the referenceStoreId.
    * @param referenceId - Identifier for the referenceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReference(referenceStoreId: string, referenceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:referenceStore/${ referenceStoreId }/reference/${ referenceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:referenceStore/${ referenceStoreId }/reference/${ referenceId }`);
   }
 
   /**
@@ -1134,15 +1134,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_ReferenceStoreDetail.html
    *
    * @param referenceStoreId - Identifier for the referenceStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReferenceStore(referenceStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:referenceStore/${ referenceStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:referenceStore/${ referenceStoreId }`);
   }
 
   /**
@@ -1151,15 +1151,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_RunListItem.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRun(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:run/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:run/${ id }`);
   }
 
   /**
@@ -1168,15 +1168,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_RunGroupListItem.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRunGroup(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:runGroup/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:runGroup/${ id }`);
   }
 
   /**
@@ -1185,15 +1185,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_SequenceStoreDetail.html
    *
    * @param sequenceStoreId - Identifier for the sequenceStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSequenceStore(sequenceStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:sequenceStore/${ sequenceStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sequenceStore/${ sequenceStoreId }`);
   }
 
   /**
@@ -1202,12 +1202,12 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_TagResource.html
    *
    * @param tagKey - Identifier for the tagKey.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTaggingResource(tagKey: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:tag/${ tagKey }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tag/${ tagKey }`);
   }
 
   /**
@@ -1216,12 +1216,12 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_TaskListItem.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTaskResource(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:task/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ id }`);
   }
 
   /**
@@ -1230,15 +1230,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_VariantImportJobItem.html
    *
    * @param variantImportJobId - Identifier for the variantImportJobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifVariantImportJobJobId()
    */
   public onVariantImportJob(variantImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:variantImportJob/${ variantImportJobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:variantImportJob/${ variantImportJobId }`);
   }
 
   /**
@@ -1247,15 +1247,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_VariantStoreItem.html
    *
    * @param variantStoreId - Identifier for the variantStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifVariantStoreName()
    */
   public onVariantStore(variantStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:variantStore/${ variantStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:variantStore/${ variantStoreId }`);
   }
 
   /**
@@ -1264,15 +1264,15 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/omics/latest/api/API_WorkflowListItem.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflow(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Omics.defaultPartition }:omics:${ region || '*' }:${ account || '*' }:workflow/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ id }`);
   }
 
   /**

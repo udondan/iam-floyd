@@ -222,15 +222,15 @@ export class Scheduler extends PolicyStatement {
    * https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-schedule-group.html
    *
    * @param groupName - Identifier for the groupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onScheduleGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Scheduler.defaultPartition }:scheduler:${ region || '*' }:${ account || '*' }:schedule-group/${ groupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:scheduler:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule-group/${ groupName }`);
   }
 
   /**
@@ -240,12 +240,12 @@ export class Scheduler extends PolicyStatement {
    *
    * @param groupName - Identifier for the groupName.
    * @param scheduleName - Identifier for the scheduleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchedule(groupName: string, scheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Scheduler.defaultPartition }:scheduler:${ region || '*' }:${ account || '*' }:schedule/${ groupName }/${ scheduleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:scheduler:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule/${ groupName }/${ scheduleName }`);
   }
 
   /**

@@ -417,8 +417,8 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param environmentName - Identifier for the environmentName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -428,7 +428,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCodegenJobResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/codegen-jobs/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/codegen-jobs/${ id }`);
   }
 
   /**
@@ -439,8 +439,8 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param environmentName - Identifier for the environmentName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -450,7 +450,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
   }
 
   /**
@@ -461,8 +461,8 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param environmentName - Identifier for the environmentName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -472,7 +472,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFormResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
   }
 
   /**
@@ -483,8 +483,8 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param appId - Identifier for the appId.
    * @param environmentName - Identifier for the environmentName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -494,7 +494,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifyuibuilder.defaultPartition }:amplifyuibuilder:${ region || '*' }:${ account || '*' }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
   }
 
   /**

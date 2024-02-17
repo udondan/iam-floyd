@@ -261,15 +261,15 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html
    *
    * @param assetIdentifier - Identifier for the assetIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:assets/${ assetIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assets/${ assetIdentifier }`);
   }
 
   /**
@@ -278,15 +278,15 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html
    *
    * @param packagingConfigurationIdentifier - Identifier for the packagingConfigurationIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-configurations/${ packagingConfigurationIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:packaging-configurations/${ packagingConfigurationIdentifier }`);
   }
 
   /**
@@ -295,15 +295,15 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html
    *
    * @param packagingGroupIdentifier - Identifier for the packagingGroupIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || MediapackageVod.defaultPartition }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-groups/${ packagingGroupIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:packaging-groups/${ packagingGroupIdentifier }`);
   }
 
   /**

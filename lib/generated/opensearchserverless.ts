@@ -552,15 +552,15 @@ export class Aoss extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html
    *
    * @param collectionId - Identifier for the collectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Aoss.defaultPartition }:aoss:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aoss:${ region || this.defaultRegion }:${ account || this.defaultAccount }:collection/${ collectionId }`);
   }
 
   /**
@@ -568,12 +568,12 @@ export class Aoss extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html
    *
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDashboards(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Aoss.defaultPartition }:aoss:${ region || '*' }:${ account || '*' }:dashboards/default`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aoss:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboards/default`);
   }
 
   /**

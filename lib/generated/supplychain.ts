@@ -222,12 +222,12 @@ export class Scn extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Scn.defaultPartition }:scn:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:scn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -237,12 +237,12 @@ export class Scn extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBillOfMaterialsImportJob(instanceId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Scn.defaultPartition }:scn:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/bill-of-materials-import-job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:scn:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/bill-of-materials-import-job/${ jobId }`);
   }
 
   /**

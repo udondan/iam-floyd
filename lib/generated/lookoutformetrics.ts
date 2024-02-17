@@ -415,15 +415,15 @@ export class Lookoutmetrics extends PolicyStatement {
    * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AnomalyDetectorSummary.html
    *
    * @param anomalyDetectorName - Identifier for the anomalyDetectorName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(anomalyDetectorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:AnomalyDetector:${ anomalyDetectorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:AnomalyDetector:${ anomalyDetectorName }`);
   }
 
   /**
@@ -433,15 +433,15 @@ export class Lookoutmetrics extends PolicyStatement {
    *
    * @param anomalyDetectorName - Identifier for the anomalyDetectorName.
    * @param metricSetName - Identifier for the metricSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
   }
 
   /**
@@ -450,15 +450,15 @@ export class Lookoutmetrics extends PolicyStatement {
    * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AlertSummary.html
    *
    * @param alertName - Identifier for the alertName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlert(alertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Lookoutmetrics.defaultPartition }:lookoutmetrics:${ region || '*' }:${ account || '*' }:Alert:${ alertName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Alert:${ alertName }`);
   }
 
   /**

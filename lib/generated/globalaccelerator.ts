@@ -732,14 +732,14 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAccelerator(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }`);
   }
 
   /**
@@ -749,14 +749,14 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param listenerId - Identifier for the listenerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onListener(resourceId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -767,14 +767,14 @@ export class Globalaccelerator extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param listenerId - Identifier for the listenerId.
    * @param endpointGroupId - Identifier for the endpointGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEndpointgroup(resourceId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:accelerator/${ resourceId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
   }
 
   /**
@@ -783,14 +783,14 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CrossAccountAttachment.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Globalaccelerator.defaultPartition }:globalaccelerator::${ account || '*' }:attachment/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**

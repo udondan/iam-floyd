@@ -165,15 +165,15 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ clusterName }`);
   }
 
   /**
@@ -182,15 +182,15 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html
    *
    * @param workgroupId - Identifier for the workgroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || RedshiftData.defaultPartition }:redshift-serverless:${ region || '*' }:${ account || '*' }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workgroup/${ workgroupId }`);
   }
 
   /**

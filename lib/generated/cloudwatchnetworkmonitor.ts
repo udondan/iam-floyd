@@ -182,15 +182,15 @@ export class Networkmonitor extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NM-components.html
    *
    * @param monitorName - Identifier for the monitorName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMonitor(monitorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmonitor.defaultPartition }:networkmonitor:${ region || '*' }:${ account || '*' }:monitor/${ monitorName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmonitor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitor/${ monitorName }`);
   }
 
   /**
@@ -199,15 +199,15 @@ export class Networkmonitor extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NM-components.html
    *
    * @param probeId - Identifier for the probeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProbe(probeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Networkmonitor.defaultPartition }:networkmonitor:${ region || '*' }:${ account || '*' }:probe/${ probeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:networkmonitor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:probe/${ probeId }`);
   }
 
   /**

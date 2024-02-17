@@ -794,15 +794,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_Channel.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ resourceId }`);
   }
 
   /**
@@ -811,15 +811,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StreamKey.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStreamKey(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stream-key/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream-key/${ resourceId }`);
   }
 
   /**
@@ -828,15 +828,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackKeyPair.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPlaybackKeyPair(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:playback-key/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:playback-key/${ resourceId }`);
   }
 
   /**
@@ -845,15 +845,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackRestrictionPolicy.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPlaybackRestrictionPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:playback-restriction-policy/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:playback-restriction-policy/${ resourceId }`);
   }
 
   /**
@@ -862,15 +862,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_RecordingConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:recording-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recording-configuration/${ resourceId }`);
   }
 
   /**
@@ -879,15 +879,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Stage.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStage(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:stage/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stage/${ resourceId }`);
   }
 
   /**
@@ -896,15 +896,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Composition.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComposition(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:composition/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:composition/${ resourceId }`);
   }
 
   /**
@@ -913,15 +913,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_EncoderConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEncoderConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:encoder-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:encoder-configuration/${ resourceId }`);
   }
 
   /**
@@ -930,15 +930,15 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StorageConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStorageConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivs.defaultPartition }:ivs:${ region || '*' }:${ account || '*' }:storage-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:storage-configuration/${ resourceId }`);
   }
 
   /**

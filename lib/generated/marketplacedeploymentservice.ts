@@ -103,8 +103,8 @@ export class AwsMarketplaceDeploymentService extends PolicyStatement {
    * @param catalogName - Identifier for the catalogName.
    * @param productId - Identifier for the productId.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -113,7 +113,7 @@ export class AwsMarketplaceDeploymentService extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onDeploymentParameter(catalogName: string, productId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AwsMarketplaceDeploymentService.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:DeploymentParameter:catalogs/${ catalogName }/products/${ productId }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:DeploymentParameter:catalogs/${ catalogName }/products/${ productId }/${ resourceId }`);
   }
 
   /**

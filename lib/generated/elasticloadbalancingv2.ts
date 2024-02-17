@@ -730,8 +730,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param listenerId - Identifier for the listenerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -739,7 +739,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -751,8 +751,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param listenerId - Identifier for the listenerId.
    * @param listenerRuleId - Identifier for the listenerRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -760,7 +760,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -771,8 +771,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param listenerId - Identifier for the listenerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -780,7 +780,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -792,8 +792,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param loadBalancerId - Identifier for the loadBalancerId.
    * @param listenerId - Identifier for the listenerId.
    * @param listenerRuleId - Identifier for the listenerRuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -801,7 +801,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -811,8 +811,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param loadBalancerId - Identifier for the loadBalancerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -820,7 +820,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -830,8 +830,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * @param loadBalancerName - Identifier for the loadBalancerName.
    * @param loadBalancerId - Identifier for the loadBalancerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -839,7 +839,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -849,8 +849,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * @param targetGroupName - Identifier for the targetGroupName.
    * @param targetGroupId - Identifier for the targetGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -858,7 +858,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
   }
 
   /**
@@ -868,8 +868,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * @param trustStoreName - Identifier for the trustStoreName.
    * @param trustStoreId - Identifier for the trustStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -877,7 +877,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTruststore(trustStoreName: string, trustStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ElasticloadbalancingV2.defaultPartition }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:truststore/${ trustStoreName }/${ trustStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:truststore/${ trustStoreName }/${ trustStoreId }`);
   }
 
   /**

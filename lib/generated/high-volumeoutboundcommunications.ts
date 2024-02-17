@@ -326,15 +326,15 @@ export class ConnectCampaigns extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
    *
    * @param campaignId - Identifier for the campaignId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || ConnectCampaigns.defaultPartition }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect-campaigns:${ region || this.defaultRegion }:${ account || this.defaultAccount }:campaign/${ campaignId }`);
   }
 
   /**

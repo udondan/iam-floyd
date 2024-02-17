@@ -42,10 +42,10 @@ export class SsoOauth extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param applicationId - Identifier for the applicationId.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplication(instanceId: string, applicationId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsoOauth.defaultPartition }:sso::${ accountId || '*' }:application/${ instanceId }/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:sso::${ accountId || this.defaultAccount }:application/${ instanceId }/${ applicationId }`);
   }
 }

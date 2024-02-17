@@ -781,15 +781,15 @@ export class Finspace extends PolicyStatement {
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
    *
    * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
   }
 
   /**
@@ -798,15 +798,15 @@ export class Finspace extends PolicyStatement {
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
    *
    * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:user/${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userId }`);
   }
 
   /**
@@ -815,15 +815,15 @@ export class Finspace extends PolicyStatement {
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
    *
    * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }`);
   }
 
   /**
@@ -833,15 +833,15 @@ export class Finspace extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param userName - Identifier for the userName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxUser(environmentId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
   }
 
   /**
@@ -851,15 +851,15 @@ export class Finspace extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param kxCluster - Identifier for the kxCluster.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxCluster(environmentId: string, kxCluster: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxCluster/${ kxCluster }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxCluster/${ kxCluster }`);
   }
 
   /**
@@ -869,15 +869,15 @@ export class Finspace extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param kxDatabase - Identifier for the kxDatabase.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxDatabase(environmentId: string, kxDatabase: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }`);
   }
 
   /**
@@ -887,15 +887,15 @@ export class Finspace extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param kxScalingGroup - Identifier for the kxScalingGroup.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxScalingGroup(environmentId: string, kxScalingGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
   }
 
   /**
@@ -906,15 +906,15 @@ export class Finspace extends PolicyStatement {
    * @param environmentId - Identifier for the environmentId.
    * @param kxDatabase - Identifier for the kxDatabase.
    * @param kxDataview - Identifier for the kxDataview.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxDataview(environmentId: string, kxDatabase: string, kxDataview: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }/kxDataview/${ kxDataview }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }/kxDataview/${ kxDataview }`);
   }
 
   /**
@@ -924,15 +924,15 @@ export class Finspace extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param kxVolume - Identifier for the kxVolume.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKxVolume(environmentId: string, kxVolume: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Finspace.defaultPartition }:finspace:${ region || '*' }:${ account || '*' }:kxEnvironment/${ environmentId }/kxVolume/${ kxVolume }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxVolume/${ kxVolume }`);
   }
 
   /**

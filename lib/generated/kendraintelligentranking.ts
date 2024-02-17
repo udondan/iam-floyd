@@ -154,15 +154,15 @@ export class KendraRanking extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/search-service-rerank.html
    *
    * @param rescoreExecutionPlanId - Identifier for the rescoreExecutionPlanId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRescoreExecutionPlan(rescoreExecutionPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || KendraRanking.defaultPartition }:kendra-ranking:${ region || '*' }:${ account || '*' }:rescore-execution-plan/${ rescoreExecutionPlanId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra-ranking:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rescore-execution-plan/${ rescoreExecutionPlanId }`);
   }
 
   /**

@@ -189,12 +189,12 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html
    *
    * @param reportName - Identifier for the reportName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCur(reportName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cur.defaultPartition }:cur:${ region || '*' }:${ account || '*' }:definition/${ reportName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cur:${ region || this.defaultRegion }:${ account || this.defaultAccount }:definition/${ reportName }`);
   }
 
   /**

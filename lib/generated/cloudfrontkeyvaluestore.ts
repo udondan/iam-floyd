@@ -105,10 +105,10 @@ export class CloudfrontKeyvaluestore extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKeyValueStore(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || CloudfrontKeyvaluestore.defaultPartition }:cloudfront::${ account || '*' }:key-value-store/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:key-value-store/${ resourceId }`);
   }
 }

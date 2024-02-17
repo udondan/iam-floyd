@@ -496,15 +496,15 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_Firewall.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewall(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || this.defaultRegion }:${ account || this.defaultAccount }:firewall/${ name }`);
   }
 
   /**
@@ -513,15 +513,15 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_FirewallPolicyResponse.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFirewallPolicy(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:firewall-policy/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || this.defaultRegion }:${ account || this.defaultAccount }:firewall-policy/${ name }`);
   }
 
   /**
@@ -530,15 +530,15 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStatefulRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateful-rulegroup/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateful-rulegroup/${ name }`);
   }
 
   /**
@@ -547,15 +547,15 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStatelessRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:stateless-rulegroup/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateless-rulegroup/${ name }`);
   }
 
   /**
@@ -564,15 +564,15 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_TLSInspectionConfigurationResponse.html
    *
    * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTLSInspectionConfiguration(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NetworkFirewall.defaultPartition }:network-firewall:${ region || '*' }:${ account || '*' }:tls-configuration/${ name }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:network-firewall:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tls-configuration/${ name }`);
   }
 
   /**

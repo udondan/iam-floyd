@@ -586,15 +586,15 @@ export class Apprunner extends PolicyStatement {
    *
    * @param serviceName - Identifier for the serviceName.
    * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -602,15 +602,15 @@ export class Apprunner extends PolicyStatement {
    *
    * @param connectionName - Identifier for the connectionName.
    * @param connectionId - Identifier for the connectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionName }/${ connectionId }`);
   }
 
   /**
@@ -619,15 +619,15 @@ export class Apprunner extends PolicyStatement {
    * @param autoscalingConfigurationName - Identifier for the autoscalingConfigurationName.
    * @param autoscalingConfigurationVersion - Identifier for the autoscalingConfigurationVersion.
    * @param autoscalingConfigurationId - Identifier for the autoscalingConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAutoscalingconfiguration(autoscalingConfigurationName: string, autoscalingConfigurationVersion: string, autoscalingConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
   }
 
   /**
@@ -636,15 +636,15 @@ export class Apprunner extends PolicyStatement {
    * @param observabilityConfigurationName - Identifier for the observabilityConfigurationName.
    * @param observabilityConfigurationVersion - Identifier for the observabilityConfigurationVersion.
    * @param observabilityConfigurationId - Identifier for the observabilityConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onObservabilityconfiguration(observabilityConfigurationName: string, observabilityConfigurationVersion: string, observabilityConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
   }
 
   /**
@@ -653,15 +653,15 @@ export class Apprunner extends PolicyStatement {
    * @param vpcConnectorName - Identifier for the vpcConnectorName.
    * @param vpcConnectorVersion - Identifier for the vpcConnectorVersion.
    * @param vpcConnectorId - Identifier for the vpcConnectorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcconnector(vpcConnectorName: string, vpcConnectorVersion: string, vpcConnectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
   }
 
   /**
@@ -669,15 +669,15 @@ export class Apprunner extends PolicyStatement {
    *
    * @param vpcIngressConnectionName - Identifier for the vpcIngressConnectionName.
    * @param vpcIngressConnectionId - Identifier for the vpcIngressConnectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcingressconnection(vpcIngressConnectionName: string, vpcIngressConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:apprunner:${ region || '*' }:${ account || '*' }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
   }
 
   /**
@@ -686,12 +686,12 @@ export class Apprunner extends PolicyStatement {
    * @param scope - Identifier for the scope.
    * @param name - Identifier for the name.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Apprunner.defaultPartition }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**

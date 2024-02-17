@@ -56,10 +56,10 @@ export class Consoleapp extends PolicyStatement {
    *
    * @param deviceId - Identifier for the deviceId.
    * @param identityId - Identifier for the identityId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDeviceIdentity(deviceId: string, identityId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Consoleapp.defaultPartition }:consoleapp::${ account || '*' }:device/${ deviceId }/identity/${ identityId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:consoleapp::${ account || this.defaultAccount }:device/${ deviceId }/identity/${ identityId }`);
   }
 }

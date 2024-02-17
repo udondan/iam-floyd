@@ -486,15 +486,15 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-appliance
    *
    * @param deviceId - Identifier for the deviceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:device/${ deviceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:panorama:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device/${ deviceId }`);
   }
 
   /**
@@ -503,15 +503,15 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-node
    *
    * @param packageId - Identifier for the packageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackage(packageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:package/${ packageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:panorama:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ packageId }`);
   }
 
   /**
@@ -520,15 +520,15 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-application
    *
    * @param applicationInstanceId - Identifier for the applicationInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Panorama.defaultPartition }:panorama:${ region || '*' }:${ account || '*' }:applicationInstance/${ applicationInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:panorama:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applicationInstance/${ applicationInstanceId }`);
   }
 
   /**

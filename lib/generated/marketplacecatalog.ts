@@ -244,8 +244,8 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param catalog - Identifier for the catalog.
    * @param entityType - Identifier for the entityType.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -253,7 +253,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - .ifCatalogChangeType()
    */
   public onEntity(catalog: string, entityType: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/${ entityType }/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ catalog }/${ entityType }/${ resourceId }`);
   }
 
   /**
@@ -263,8 +263,8 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * @param catalog - Identifier for the catalog.
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -272,7 +272,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - .ifCatalogChangeType()
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || AwsMarketplaceCatalog.defaultPartition }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ catalog }/ChangeSet/${ resourceId }`);
   }
 
   /**

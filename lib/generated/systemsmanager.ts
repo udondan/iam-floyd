@@ -1985,15 +1985,15 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
    * @param associationId - Identifier for the associationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAssociation(associationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:association/${ associationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:association/${ associationId }`);
   }
 
   /**
@@ -2002,8 +2002,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/running-automations.html
    *
    * @param automationExecutionId - Identifier for the automationExecutionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2011,7 +2011,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-execution/${ automationExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-execution/${ automationExecutionId }`);
   }
 
   /**
@@ -2021,12 +2021,12 @@ export class Ssm extends PolicyStatement {
    *
    * @param automationDefinitionName - Identifier for the automationDefinitionName.
    * @param versionId - Identifier for the versionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutomationDefinition(automationDefinitionName: string, versionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:automation-definition/${ automationDefinitionName }:${ versionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-definition/${ automationDefinitionName }:${ versionId }`);
   }
 
   /**
@@ -2038,7 +2038,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:s3:::${ bucketName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3:::${ bucketName }`);
   }
 
   /**
@@ -2047,8 +2047,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html
    *
    * @param documentName - Identifier for the documentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2057,7 +2057,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:document/${ documentName }`);
   }
 
   /**
@@ -2066,8 +2066,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2075,7 +2075,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -2084,8 +2084,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-maintenance.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2093,7 +2093,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:maintenancewindow/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:maintenancewindow/${ resourceId }`);
   }
 
   /**
@@ -2102,8 +2102,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2111,7 +2111,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onManagedInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-instance/${ instanceId }`);
   }
 
   /**
@@ -2120,12 +2120,12 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedInstanceInventory(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:managed-instance-inventory/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-instance-inventory/${ instanceId }`);
   }
 
   /**
@@ -2134,15 +2134,15 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsitem/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsitem/${ resourceId }`);
   }
 
   /**
@@ -2151,8 +2151,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/application-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2160,7 +2160,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsmetadata/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsmetadata/${ resourceId }`);
   }
 
   /**
@@ -2169,8 +2169,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
    *
    * @param parameterNameWithoutLeadingSlash - Identifier for the parameterNameWithoutLeadingSlash.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2178,7 +2178,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onParameter(parameterNameWithoutLeadingSlash: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:parameter/${ parameterNameWithoutLeadingSlash }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parameter/${ parameterNameWithoutLeadingSlash }`);
   }
 
   /**
@@ -2187,8 +2187,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html
    *
    * @param patchBaselineIdResourceId - Identifier for the patchBaselineIdResourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2196,7 +2196,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:patchbaseline/${ patchBaselineIdResourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:patchbaseline/${ patchBaselineIdResourceId }`);
   }
 
   /**
@@ -2204,12 +2204,12 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html
    *
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcearn(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:opsitemgroup/default`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsitemgroup/default`);
   }
 
   /**
@@ -2218,8 +2218,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html
    *
    * @param sessionId - Identifier for the sessionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2227,7 +2227,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTagAws()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session/${ sessionId }`);
   }
 
   /**
@@ -2236,12 +2236,12 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html
    *
    * @param syncName - Identifier for the syncName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcedatasync(syncName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:resource-data-sync/${ syncName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-data-sync/${ syncName }`);
   }
 
   /**
@@ -2250,12 +2250,12 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServicesetting(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:servicesetting/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicesetting/${ resourceId }`);
   }
 
   /**
@@ -2264,8 +2264,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-assign-targets.html
    *
    * @param windowTargetId - Identifier for the windowTargetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2273,7 +2273,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtarget/${ windowTargetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:windowtarget/${ windowTargetId }`);
   }
 
   /**
@@ -2282,8 +2282,8 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-assign-tasks.html
    *
    * @param windowTaskId - Identifier for the windowTaskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2291,7 +2291,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ssm:${ region || '*' }:${ account || '*' }:windowtask/${ windowTaskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:windowtask/${ windowTaskId }`);
   }
 
   /**
@@ -2300,15 +2300,15 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
    *
    * @param taskId - Identifier for the taskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ssm.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ taskId }`);
   }
 
   /**

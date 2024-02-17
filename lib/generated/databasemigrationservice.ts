@@ -2059,8 +2059,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2068,7 +2068,7 @@ export class Dms extends PolicyStatement {
    * - .ifCertTag()
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert:${ resourceName }`);
   }
 
   /**
@@ -2077,8 +2077,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2086,7 +2086,7 @@ export class Dms extends PolicyStatement {
    * - .ifDataProviderTag()
    */
   public onDataProvider(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-provider:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-provider:${ resourceName }`);
   }
 
   /**
@@ -2095,8 +2095,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2104,7 +2104,7 @@ export class Dms extends PolicyStatement {
    * - .ifDataMigrationTag()
    */
   public onDataMigration(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:data-migration:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-migration:${ resourceName }`);
   }
 
   /**
@@ -2113,8 +2113,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_Endpoint.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2122,7 +2122,7 @@ export class Dms extends PolicyStatement {
    * - .ifEndpointTag()
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint:${ resourceName }`);
   }
 
   /**
@@ -2131,8 +2131,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_EventSubscription.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2140,7 +2140,7 @@ export class Dms extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:es:${ resourceName }`);
   }
 
   /**
@@ -2149,8 +2149,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2158,7 +2158,7 @@ export class Dms extends PolicyStatement {
    * - .ifInstanceProfileTag()
    */
   public onInstanceProfile(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:instance-profile:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-profile:${ resourceName }`);
   }
 
   /**
@@ -2167,8 +2167,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2176,7 +2176,7 @@ export class Dms extends PolicyStatement {
    * - .ifMigrationProjectTag()
    */
   public onMigrationProject(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:migration-project:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:migration-project:${ resourceName }`);
   }
 
   /**
@@ -2185,8 +2185,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2194,7 +2194,7 @@ export class Dms extends PolicyStatement {
    * - .ifReplicationConfigTag()
    */
   public onReplicationConfig(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:replication-config:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replication-config:${ resourceName }`);
   }
 
   /**
@@ -2203,8 +2203,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2212,7 +2212,7 @@ export class Dms extends PolicyStatement {
    * - .ifRepTag()
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rep:${ resourceName }`);
   }
 
   /**
@@ -2221,8 +2221,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationSubnetGroup.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2230,7 +2230,7 @@ export class Dms extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subgrp:${ resourceName }`);
   }
 
   /**
@@ -2239,8 +2239,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2248,7 +2248,7 @@ export class Dms extends PolicyStatement {
    * - .ifTaskTag()
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task:${ resourceName }`);
   }
 
   /**
@@ -2257,12 +2257,12 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskAssessmentRun.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assessment-run:${ resourceName }`);
   }
 
   /**
@@ -2271,12 +2271,12 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskIndividualAssessment.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:individual-assessment:${ resourceName }`);
   }
 
   /**
@@ -2285,8 +2285,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestPlan.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2294,7 +2294,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestPlanTag()
    */
   public onTestPlan(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-plan:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-plan:${ resourceName }`);
   }
 
   /**
@@ -2303,8 +2303,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_Test.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2312,7 +2312,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestTag()
    */
   public onTest(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test:${ resourceName }`);
   }
 
   /**
@@ -2321,8 +2321,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestRun.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2330,7 +2330,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestRunTag()
    */
   public onTestRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-run:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-run:${ resourceName }`);
   }
 
   /**
@@ -2339,8 +2339,8 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/Api_TestEnvironment.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -2348,7 +2348,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestEnvironmentTag()
    */
   public onTestEnvironment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Dms.defaultPartition }:dms:${ region || '*' }:${ account || '*' }:test-environment:${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-environment:${ resourceName }`);
   }
 
   /**

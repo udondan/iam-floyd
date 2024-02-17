@@ -858,15 +858,15 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/index.html
    *
    * @param indexId - Identifier for the indexId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }`);
   }
 
   /**
@@ -876,15 +876,15 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param dataSourceId - Identifier for the dataSourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -894,15 +894,15 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param faqId - Identifier for the faqId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/faq/${ faqId }`);
   }
 
   /**
@@ -912,12 +912,12 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param experienceId - Identifier for the experienceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**
@@ -927,15 +927,15 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param thesaurusId - Identifier for the thesaurusId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -945,15 +945,15 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param querySuggestionsBlockListId - Identifier for the querySuggestionsBlockListId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
   }
 
   /**
@@ -963,15 +963,15 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param featuredResultsSetId - Identifier for the featuredResultsSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFeaturedResultsSet(indexId: string, featuredResultsSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
   }
 
   /**
@@ -981,12 +981,12 @@ export class Kendra extends PolicyStatement {
    *
    * @param indexId - Identifier for the indexId.
    * @param accessControlConfigurationId - Identifier for the accessControlConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kendra.defaultPartition }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
   }
 
   /**
