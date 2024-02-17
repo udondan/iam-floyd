@@ -684,12 +684,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param flowId - Identifier for the flowId.
    * @param entitlementName - Identifier for the entitlementName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitlement(flowId: string, entitlementName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:entitlement:${ flowId }:${ entitlementName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entitlement:${ flowId }:${ entitlementName }`);
   }
 
   /**
@@ -699,12 +699,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param flowId - Identifier for the flowId.
    * @param flowName - Identifier for the flowName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFlow(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:flow:${ flowId }:${ flowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flow:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -714,12 +714,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param outputId - Identifier for the outputId.
    * @param outputName - Identifier for the outputName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOutput(outputId: string, outputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:output:${ outputId }:${ outputName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:output:${ outputId }:${ outputName }`);
   }
 
   /**
@@ -729,12 +729,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param sourceId - Identifier for the sourceId.
    * @param sourceName - Identifier for the sourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:source:${ sourceId }:${ sourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source:${ sourceId }:${ sourceName }`);
   }
 
   /**
@@ -744,12 +744,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param gatewayName - Identifier for the gatewayName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGateway(gatewayId: string, gatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:gateway:${ gatewayId }:${ gatewayName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }`);
   }
 
   /**
@@ -759,12 +759,12 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param flowId - Identifier for the flowId.
    * @param flowName - Identifier for the flowName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBridge(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:bridge:${ flowId }:${ flowName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bridge:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -775,11 +775,11 @@ export class Mediaconnect extends PolicyStatement {
    * @param gatewayId - Identifier for the gatewayId.
    * @param gatewayName - Identifier for the gatewayName.
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewayInstance(gatewayId: string, gatewayName: string, instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediaconnect.defaultPartition }:mediaconnect:${ region || '*' }:${ account || '*' }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
   }
 }

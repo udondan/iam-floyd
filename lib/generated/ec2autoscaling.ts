@@ -882,8 +882,8 @@ export class Autoscaling extends PolicyStatement {
    *
    * @param groupId - Identifier for the groupId.
    * @param groupFriendlyName - Identifier for the groupFriendlyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -891,7 +891,7 @@ export class Autoscaling extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:autoscaling:${ region || this.defaultRegion }:${ account || this.defaultAccount }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
   }
 
   /**
@@ -901,12 +901,12 @@ export class Autoscaling extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param launchConfigurationName - Identifier for the launchConfigurationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLaunchConfiguration(id: string, launchConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Autoscaling.defaultPartition }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:autoscaling:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
   }
 
   /**

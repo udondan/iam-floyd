@@ -504,15 +504,15 @@ export class Tnb extends PolicyStatement {
    * https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html
    *
    * @param functionPackageId - Identifier for the functionPackageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFunctionPackage(functionPackageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Tnb.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:function-package/${ functionPackageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function-package/${ functionPackageId }`);
   }
 
   /**
@@ -521,15 +521,15 @@ export class Tnb extends PolicyStatement {
    * https://docs.aws.amazon.com/tnb/latest/ug/network-packages.html
    *
    * @param networkPackageId - Identifier for the networkPackageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkPackage(networkPackageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Tnb.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:network-package/${ networkPackageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-package/${ networkPackageId }`);
   }
 
   /**
@@ -538,15 +538,15 @@ export class Tnb extends PolicyStatement {
    * https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html
    *
    * @param networkInstanceId - Identifier for the networkInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkInstance(networkInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Tnb.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:network-instance/${ networkInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-instance/${ networkInstanceId }`);
   }
 
   /**
@@ -555,15 +555,15 @@ export class Tnb extends PolicyStatement {
    * https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html
    *
    * @param functionInstanceId - Identifier for the functionInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFunctionInstance(functionInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Tnb.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:function-instance/${ functionInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function-instance/${ functionInstanceId }`);
   }
 
   /**
@@ -572,15 +572,15 @@ export class Tnb extends PolicyStatement {
    * https://docs.aws.amazon.com/tnb/latest/ug/network-operations.html
    *
    * @param networkOperationId - Identifier for the networkOperationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkOperation(networkOperationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Tnb.defaultPartition }:tnb:${ region || '*' }:${ account || '*' }:network-operation/${ networkOperationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-operation/${ networkOperationId }`);
   }
 
   /**

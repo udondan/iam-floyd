@@ -538,15 +538,15 @@ export class SsmContacts extends PolicyStatement {
    * https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html
    *
    * @param contactAlias - Identifier for the contactAlias.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact/${ contactAlias }`);
   }
 
   /**
@@ -556,12 +556,12 @@ export class SsmContacts extends PolicyStatement {
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param contactChannelId - Identifier for the contactChannelId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactchannel(contactAlias: string, contactChannelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contactchannel/${ contactAlias }/${ contactChannelId }`);
   }
 
   /**
@@ -571,12 +571,12 @@ export class SsmContacts extends PolicyStatement {
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param engagementId - Identifier for the engagementId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEngagement(contactAlias: string, engagementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ contactAlias }/${ engagementId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:engagement/${ contactAlias }/${ engagementId }`);
   }
 
   /**
@@ -586,12 +586,12 @@ export class SsmContacts extends PolicyStatement {
    *
    * @param contactAlias - Identifier for the contactAlias.
    * @param pageId - Identifier for the pageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPage(contactAlias: string, pageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:page/${ contactAlias }/${ pageId }`);
   }
 
   /**
@@ -600,15 +600,15 @@ export class SsmContacts extends PolicyStatement {
    * https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-on-call-schedule.html
    *
    * @param rotationId - Identifier for the rotationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRotation(rotationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SsmContacts.defaultPartition }:ssm-contacts:${ region || '*' }:${ account || '*' }:rotation/${ rotationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rotation/${ rotationId }`);
   }
 
   /**

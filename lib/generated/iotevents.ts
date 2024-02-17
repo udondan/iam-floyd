@@ -522,15 +522,15 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
    *
    * @param detectorModelName - Identifier for the detectorModelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detectorModel/${ detectorModelName }`);
   }
 
   /**
@@ -539,15 +539,15 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
    *
    * @param alarmModelName - Identifier for the alarmModelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlarmModel(alarmModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || this.defaultRegion }:${ account || this.defaultAccount }:alarmModel/${ alarmModelName }`);
   }
 
   /**
@@ -556,15 +556,15 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
    *
    * @param inputName - Identifier for the inputName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotevents.defaultPartition }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotevents:${ region || this.defaultRegion }:${ account || this.defaultAccount }:input/${ inputName }`);
   }
 
   /**

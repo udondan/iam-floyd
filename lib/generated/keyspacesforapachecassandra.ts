@@ -277,15 +277,15 @@ export class Cassandra extends PolicyStatement {
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html
    *
    * @param keyspaceName - Identifier for the keyspaceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onKeyspace(keyspaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cassandra.defaultPartition }:cassandra:${ region || '*' }:${ account || '*' }:/keyspace/${ keyspaceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cassandra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/keyspace/${ keyspaceName }`);
   }
 
   /**
@@ -295,15 +295,15 @@ export class Cassandra extends PolicyStatement {
    *
    * @param keyspaceName - Identifier for the keyspaceName.
    * @param tableName - Identifier for the tableName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTable(keyspaceName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Cassandra.defaultPartition }:cassandra:${ region || '*' }:${ account || '*' }:/keyspace/${ keyspaceName }/table/${ tableName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:cassandra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/keyspace/${ keyspaceName }/table/${ tableName }`);
   }
 
   /**

@@ -544,15 +544,15 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
    *
    * @param domainName - Identifier for the domainName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codeartifact.defaultPartition }:codeartifact:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codeartifact:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainName }`);
   }
 
   /**
@@ -562,15 +562,15 @@ export class Codeartifact extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codeartifact.defaultPartition }:codeartifact:${ region || '*' }:${ account || '*' }:repository/${ domainName }/${ repositoryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codeartifact:${ region || this.defaultRegion }:${ account || this.defaultAccount }:repository/${ domainName }/${ repositoryName }`);
   }
 
   /**
@@ -583,12 +583,12 @@ export class Codeartifact extends PolicyStatement {
    * @param packageFormat - Identifier for the packageFormat.
    * @param packageNamespace - Identifier for the packageNamespace.
    * @param packageName - Identifier for the packageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPackage(domainName: string, repositoryName: string, packageFormat: string, packageNamespace: string, packageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Codeartifact.defaultPartition }:codeartifact:${ region || '*' }:${ account || '*' }:package/${ domainName }/${ repositoryName }/${ packageFormat }/${ packageNamespace }/${ packageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codeartifact:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ domainName }/${ repositoryName }/${ packageFormat }/${ packageNamespace }/${ packageName }`);
   }
 
   /**

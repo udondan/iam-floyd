@@ -1002,15 +1002,15 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html
    *
    * @param dataCatalogName - Identifier for the dataCatalogName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:datacatalog/${ dataCatalogName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:athena:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datacatalog/${ dataCatalogName }`);
   }
 
   /**
@@ -1019,15 +1019,15 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html
    *
    * @param workGroupName - Identifier for the workGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:workgroup/${ workGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:athena:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workgroup/${ workGroupName }`);
   }
 
   /**
@@ -1036,15 +1036,15 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/ug/example-policies-capacity-reservations.html
    *
    * @param capacityReservationName - Identifier for the capacityReservationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCapacityReservation(capacityReservationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Athena.defaultPartition }:athena:${ region || '*' }:${ account || '*' }:capacity-reservation/${ capacityReservationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:athena:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capacity-reservation/${ capacityReservationName }`);
   }
 
   /**

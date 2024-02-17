@@ -405,12 +405,12 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCreatedBackend(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ resourceName }`);
   }
 
   /**
@@ -419,12 +419,12 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend.html
    *
    * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackend(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/*`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/*`);
   }
 
   /**
@@ -434,12 +434,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/environments/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/environments/${ resourceName }`);
   }
 
   /**
@@ -449,12 +449,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApi(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/api/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/api/${ resourceName }`);
   }
 
   /**
@@ -464,12 +464,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAuth(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/auth/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/auth/${ resourceName }`);
   }
 
   /**
@@ -479,12 +479,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/job/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/job/${ resourceName }`);
   }
 
   /**
@@ -494,12 +494,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfig(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/config/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/config/${ resourceName }`);
   }
 
   /**
@@ -509,12 +509,12 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onToken(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/challenge/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/challenge/${ resourceName }`);
   }
 
   /**
@@ -524,11 +524,11 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param appId - Identifier for the appId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStorage(appId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Amplifybackend.defaultPartition }:amplifybackend:${ region || '*' }:${ account || '*' }:/backend/${ appId }/storage/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:amplifybackend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/backend/${ appId }/storage/${ resourceName }`);
   }
 }

@@ -1046,8 +1046,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html
    *
    * @param clusterId - Identifier for the clusterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1055,7 +1055,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterId }`);
   }
 
   /**
@@ -1064,8 +1064,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html
    *
    * @param editorId - Identifier for the editorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1073,7 +1073,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:editor/${ editorId }`);
   }
 
   /**
@@ -1082,8 +1082,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
    *
    * @param notebookExecutionId - Identifier for the notebookExecutionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1091,7 +1091,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-execution/${ notebookExecutionId }`);
   }
 
   /**
@@ -1100,8 +1100,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
    *
    * @param studioId - Identifier for the studioId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1109,7 +1109,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticmapreduce.defaultPartition }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio/${ studioId }`);
   }
 
   /**

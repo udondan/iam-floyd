@@ -368,10 +368,10 @@ export class Chatbot extends PolicyStatement {
    *
    * @param configurationType - Identifier for the configurationType.
    * @param chatbotConfigurationName - Identifier for the chatbotConfigurationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChatbotConfiguration(configurationType: string, chatbotConfigurationName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Chatbot.defaultPartition }:chatbot::${ account || '*' }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:chatbot::${ account || this.defaultAccount }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
   }
 }

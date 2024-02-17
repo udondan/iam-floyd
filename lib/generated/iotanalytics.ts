@@ -467,8 +467,8 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
    *
    * @param channelName - Identifier for the channelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -477,7 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelName }`);
   }
 
   /**
@@ -486,8 +486,8 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
    *
    * @param datasetName - Identifier for the datasetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -496,7 +496,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetName }`);
   }
 
   /**
@@ -505,8 +505,8 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
    *
    * @param datastoreName - Identifier for the datastoreName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -515,7 +515,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreName }`);
   }
 
   /**
@@ -524,8 +524,8 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
    *
    * @param pipelineName - Identifier for the pipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -534,7 +534,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iotanalytics.defaultPartition }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }`);
   }
 
   /**

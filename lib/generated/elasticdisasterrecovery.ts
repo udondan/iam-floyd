@@ -1313,15 +1313,15 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/failback-overview.html
    *
    * @param jobID - Identifier for the jobID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobID }`);
   }
 
   /**
@@ -1330,8 +1330,8 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/recovery-instances.html
    *
    * @param recoveryInstanceID - Identifier for the recoveryInstanceID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1339,7 +1339,7 @@ export class Drs extends PolicyStatement {
    * - .ifEC2InstanceARN()
    */
   public onRecoveryInstanceResource(recoveryInstanceID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:recovery-instance/${ recoveryInstanceID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recovery-instance/${ recoveryInstanceID }`);
   }
 
   /**
@@ -1348,15 +1348,15 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/replication-settings-template.html
    *
    * @param replicationConfigurationTemplateID - Identifier for the replicationConfigurationTemplateID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -1365,15 +1365,15 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/default-drs-launch-settings.html
    *
    * @param launchConfigurationTemplateID - Identifier for the launchConfigurationTemplateID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:launch-configuration-template/${ launchConfigurationTemplateID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-configuration-template/${ launchConfigurationTemplateID }`);
   }
 
   /**
@@ -1382,15 +1382,15 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/source-servers.html
    *
    * @param sourceServerID - Identifier for the sourceServerID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source-server/${ sourceServerID }`);
   }
 
   /**
@@ -1399,15 +1399,15 @@ export class Drs extends PolicyStatement {
    * https://docs.aws.amazon.com/drs/latest/userguide/source-networks.html
    *
    * @param sourceNetworkID - Identifier for the sourceNetworkID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSourceNetworkResource(sourceNetworkID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Drs.defaultPartition }:drs:${ region || '*' }:${ account || '*' }:source-network/${ sourceNetworkID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source-network/${ sourceNetworkID }`);
   }
 
   /**

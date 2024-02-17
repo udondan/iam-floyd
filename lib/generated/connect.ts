@@ -4019,15 +4019,15 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -4037,12 +4037,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param contactId - Identifier for the contactId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact/${ contactId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact/${ contactId }`);
   }
 
   /**
@@ -4052,15 +4052,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent/${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent/${ userId }`);
   }
 
   /**
@@ -4070,15 +4070,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param routingProfileId - Identifier for the routingProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
   }
 
   /**
@@ -4088,15 +4088,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param securityProfileId - Identifier for the securityProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
   }
 
   /**
@@ -4106,15 +4106,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param hierarchyGroupId - Identifier for the hierarchyGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
   }
 
   /**
@@ -4124,15 +4124,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param queueId - Identifier for the queueId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/queue/${ queueId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/queue/${ queueId }`);
   }
 
   /**
@@ -4142,12 +4142,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardQueue(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/queue/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/queue/${ resourceName }`);
   }
 
   /**
@@ -4157,15 +4157,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param quickConnectId - Identifier for the quickConnectId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
   }
 
   /**
@@ -4175,12 +4175,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardQuickConnect(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
   }
 
   /**
@@ -4190,15 +4190,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param contactFlowId - Identifier for the contactFlowId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
   }
 
   /**
@@ -4208,15 +4208,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param taskTemplateId - Identifier for the taskTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTaskTemplate(instanceId: string, taskTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
   }
 
   /**
@@ -4226,15 +4226,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param contactFlowModuleId - Identifier for the contactFlowModuleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContactFlowModule(instanceId: string, contactFlowModuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
   }
 
   /**
@@ -4244,12 +4244,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardContactFlow(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-flow/${ resourceName }`);
   }
 
   /**
@@ -4259,15 +4259,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
   }
 
   /**
@@ -4277,15 +4277,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param agentStatusId - Identifier for the agentStatusId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAgentStatus(instanceId: string, agentStatusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
   }
 
   /**
@@ -4295,12 +4295,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-state/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-state/${ resourceName }`);
   }
 
   /**
@@ -4310,12 +4310,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param phoneNumberId - Identifier for the phoneNumberId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLegacyPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -4325,12 +4325,12 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardLegacyPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-number/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/phone-number/${ resourceName }`);
   }
 
   /**
@@ -4339,15 +4339,15 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param phoneNumberId - Identifier for the phoneNumberId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -4356,15 +4356,15 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWildcardPhoneNumber(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:phone-number/${ resourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ resourceName }`);
   }
 
   /**
@@ -4374,15 +4374,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param integrationAssociationId - Identifier for the integrationAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
   }
 
   /**
@@ -4392,15 +4392,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param useCaseId - Identifier for the useCaseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/use-case/${ useCaseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/use-case/${ useCaseId }`);
   }
 
   /**
@@ -4410,15 +4410,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param vocabularyId - Identifier for the vocabularyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
   }
 
   /**
@@ -4427,15 +4427,15 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html
    *
    * @param trafficDistributionGroupId - Identifier for the trafficDistributionGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTrafficDistributionGroup(trafficDistributionGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:traffic-distribution-group/${ trafficDistributionGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-distribution-group/${ trafficDistributionGroupId }`);
   }
 
   /**
@@ -4445,15 +4445,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param ruleId - Identifier for the ruleId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(instanceId: string, ruleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/rule/${ ruleId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/rule/${ ruleId }`);
   }
 
   /**
@@ -4463,15 +4463,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param formId - Identifier for the formId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/evaluation-form/${ formId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
   }
 
   /**
@@ -4481,15 +4481,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param evaluationId - Identifier for the evaluationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContactEvaluation(instanceId: string, evaluationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
   }
 
   /**
@@ -4499,15 +4499,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param promptId - Identifier for the promptId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPrompt(instanceId: string, promptId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/prompt/${ promptId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/prompt/${ promptId }`);
   }
 
   /**
@@ -4517,15 +4517,15 @@ export class Connect extends PolicyStatement {
    *
    * @param instanceId - Identifier for the instanceId.
    * @param viewId - Identifier for the viewId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomerManagedView(instanceId: string, viewId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }`);
   }
 
   /**
@@ -4534,11 +4534,11 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
    *
    * @param viewId - Identifier for the viewId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAwsManagedView(viewId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:aws:view/${ viewId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:aws:view/${ viewId }`);
   }
 
   /**
@@ -4549,15 +4549,15 @@ export class Connect extends PolicyStatement {
    * @param instanceId - Identifier for the instanceId.
    * @param viewId - Identifier for the viewId.
    * @param viewQualifier - Identifier for the viewQualifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
   }
 
   /**
@@ -4567,11 +4567,11 @@ export class Connect extends PolicyStatement {
    *
    * @param viewId - Identifier for the viewId.
    * @param viewQualifier - Identifier for the viewQualifier.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQualifiedAwsManagedView(viewId: string, viewQualifier: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:aws:view/${ viewId }:${ viewQualifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:aws:view/${ viewId }:${ viewQualifier }`);
   }
 
   /**
@@ -4582,15 +4582,15 @@ export class Connect extends PolicyStatement {
    * @param instanceId - Identifier for the instanceId.
    * @param viewId - Identifier for the viewId.
    * @param viewVersion - Identifier for the viewVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomerManagedViewVersion(instanceId: string, viewId: string, viewVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Connect.defaultPartition }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
   }
 
   /**

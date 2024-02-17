@@ -171,12 +171,12 @@ export class S3express extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-zonal-buckets.html
    *
    * @param bucketName - Identifier for the bucketName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || S3express.defaultPartition }:s3express:${ region || '*' }:${ account || '*' }:bucket/${ bucketName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:s3express:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bucket/${ bucketName }`);
   }
 
   /**

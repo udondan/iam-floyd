@@ -57,11 +57,11 @@ export class Workmailmessageflow extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param context - Identifier for the context.
    * @param messageId - Identifier for the messageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRawMessage(organizationId: string, context: string, messageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Workmailmessageflow.defaultPartition }:workmailmessageflow:${ region || '*' }:${ account || '*' }:message/${ organizationId }/${ context }/${ messageId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:workmailmessageflow:${ region || this.defaultRegion }:${ account || this.defaultAccount }:message/${ organizationId }/${ context }/${ messageId }`);
   }
 }

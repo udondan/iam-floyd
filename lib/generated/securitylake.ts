@@ -626,8 +626,8 @@ export class Securitylake extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DataLakeResource.html
    *
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -635,7 +635,7 @@ export class Securitylake extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataLake(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securitylake.defaultPartition }:securitylake:${ region || '*' }:${ account || '*' }:data-lake/default`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securitylake:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-lake/default`);
   }
 
   /**
@@ -644,8 +644,8 @@ export class Securitylake extends PolicyStatement {
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_SubscriberResource.html
    *
    * @param subscriberId - Identifier for the subscriberId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -653,7 +653,7 @@ export class Securitylake extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubscriber(subscriberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Securitylake.defaultPartition }:securitylake:${ region || '*' }:${ account || '*' }:subscriber/${ subscriberId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:securitylake:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subscriber/${ subscriberId }`);
   }
 
   /**

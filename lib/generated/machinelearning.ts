@@ -371,12 +371,12 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions
    *
    * @param batchPredictionId - Identifier for the batchPredictionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchprediction(batchPredictionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Machinelearning.defaultPartition }:machinelearning:${ region || '*' }:${ account || '*' }:batchprediction/${ batchPredictionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batchprediction/${ batchPredictionId }`);
   }
 
   /**
@@ -385,12 +385,12 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources
    *
    * @param datasourceId - Identifier for the datasourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasource(datasourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Machinelearning.defaultPartition }:machinelearning:${ region || '*' }:${ account || '*' }:datasource/${ datasourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datasource/${ datasourceId }`);
   }
 
   /**
@@ -399,12 +399,12 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations
    *
    * @param evaluationId - Identifier for the evaluationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvaluation(evaluationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Machinelearning.defaultPartition }:machinelearning:${ region || '*' }:${ account || '*' }:evaluation/${ evaluationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:evaluation/${ evaluationId }`);
   }
 
   /**
@@ -413,11 +413,11 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models
    *
    * @param mlModelId - Identifier for the mlModelId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMlmodel(mlModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Machinelearning.defaultPartition }:machinelearning:${ region || '*' }:${ account || '*' }:mlmodel/${ mlModelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mlmodel/${ mlModelId }`);
   }
 }

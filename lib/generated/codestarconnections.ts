@@ -568,15 +568,15 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
    *
    * @param connectionId - Identifier for the connectionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionId }`);
   }
 
   /**
@@ -585,15 +585,15 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-hosts.html
    *
    * @param hostId - Identifier for the hostId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHost(hostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:host/${ hostId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:host/${ hostId }`);
   }
 
   /**
@@ -602,15 +602,15 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/repositorylinks.html
    *
    * @param repositoryLinkId - Identifier for the repositoryLinkId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRepositoryLink(repositoryLinkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || CodestarConnections.defaultPartition }:codestar-connections:${ region || '*' }:${ account || '*' }:repository-link/${ repositoryLinkId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:repository-link/${ repositoryLinkId }`);
   }
 
   /**

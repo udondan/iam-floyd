@@ -596,15 +596,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/projects.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ resourceId }`);
   }
 
   /**
@@ -613,15 +613,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/datasets.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -630,15 +630,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/rulesets.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRuleset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:ruleset/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ruleset/${ resourceId }`);
   }
 
   /**
@@ -647,15 +647,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/recipes.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recipe/${ resourceId }`);
   }
 
   /**
@@ -664,15 +664,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/jobs.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ resourceId }`);
   }
 
   /**
@@ -681,15 +681,15 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/jobs.html#jobs.scheduling
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Databrew.defaultPartition }:databrew:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule/${ resourceId }`);
   }
 
   /**

@@ -236,12 +236,12 @@ export class Health extends PolicyStatement {
    * @param service - Identifier for the service.
    * @param eventTypeCode - Identifier for the eventTypeCode.
    * @param eventTypePlusId - Identifier for the eventTypePlusId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvent(service: string, eventTypeCode: string, eventTypePlusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Health.defaultPartition }:health:${ region || '*' }:${ account || '*' }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:health:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
   }
 
   /**

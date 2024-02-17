@@ -207,15 +207,15 @@ export class SnowDeviceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onManagedDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SnowDeviceManagement.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:managed-device/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-device/${ resourceId }`);
   }
 
   /**
@@ -224,15 +224,15 @@ export class SnowDeviceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || SnowDeviceManagement.defaultPartition }:snow-device-management:${ region || '*' }:${ account || '*' }:task/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ resourceId }`);
   }
 
   /**

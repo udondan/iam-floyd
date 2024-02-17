@@ -248,15 +248,15 @@ export class EmrServerless extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrServerless.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }`);
   }
 
   /**
@@ -266,15 +266,15 @@ export class EmrServerless extends PolicyStatement {
    *
    * @param applicationId - Identifier for the applicationId.
    * @param jobRunId - Identifier for the jobRunId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobRun(applicationId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || EmrServerless.defaultPartition }:emr-serverless:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
   }
 
   /**

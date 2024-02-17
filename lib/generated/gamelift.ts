@@ -1397,14 +1397,14 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-aliases.html
    *
    * @param aliasId - Identifier for the aliasId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAlias(aliasId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }::alias/${ aliasId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }::alias/${ aliasId }`);
   }
 
   /**
@@ -1413,15 +1413,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-builds.html
    *
    * @param buildId - Identifier for the buildId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:build/${ buildId }`);
   }
 
   /**
@@ -1430,15 +1430,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-fleets.html
    *
    * @param fleetId - Identifier for the fleetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetId }`);
   }
 
   /**
@@ -1447,15 +1447,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-integrate-gameservergroup.html
    *
    * @param gameServerGroupName - Identifier for the gameServerGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gameservergroup/${ gameServerGroupName }`);
   }
 
   /**
@@ -1464,15 +1464,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html
    *
    * @param gameSessionQueueName - Identifier for the gameSessionQueueName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGameSessionQueue(gameSessionQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:gamesessionqueue/${ gameSessionQueueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gamesessionqueue/${ gameSessionQueueName }`);
   }
 
   /**
@@ -1481,15 +1481,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html#fleet-anywhere-location
    *
    * @param locationId - Identifier for the locationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:location/${ locationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:location/${ locationId }`);
   }
 
   /**
@@ -1498,15 +1498,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-create-configuration.html
    *
    * @param matchmakingConfigurationName - Identifier for the matchmakingConfigurationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMatchmakingConfiguration(matchmakingConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
   }
 
   /**
@@ -1515,15 +1515,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html
    *
    * @param matchmakingRuleSetName - Identifier for the matchmakingRuleSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMatchmakingRuleSet(matchmakingRuleSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingruleset/${ matchmakingRuleSetName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:matchmakingruleset/${ matchmakingRuleSetName }`);
   }
 
   /**
@@ -1532,15 +1532,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-scripts.html
    *
    * @param scriptId - Identifier for the scriptId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onScript(scriptId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Gamelift.defaultPartition }:gamelift:${ region || '*' }:${ account || '*' }:script/${ scriptId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:script/${ scriptId }`);
   }
 
   /**

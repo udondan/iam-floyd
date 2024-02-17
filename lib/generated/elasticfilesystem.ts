@@ -505,15 +505,15 @@ export class Elasticfilesystem extends PolicyStatement {
    * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
    *
    * @param fileSystemId - Identifier for the fileSystemId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticfilesystem.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || this.defaultRegion }:${ account || this.defaultAccount }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -522,15 +522,15 @@ export class Elasticfilesystem extends PolicyStatement {
    * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
    *
    * @param accessPointId - Identifier for the accessPointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticfilesystem.defaultPartition }:elasticfilesystem:${ region || '*' }:${ account || '*' }:access-point/${ accessPointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || this.defaultRegion }:${ account || this.defaultAccount }:access-point/${ accessPointId }`);
   }
 
   /**

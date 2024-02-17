@@ -830,15 +830,15 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCar(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:car/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:car/${ resourceId }`);
   }
 
   /**
@@ -847,15 +847,15 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -864,14 +864,14 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLeaderboard(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }::leaderboard/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }::leaderboard/${ resourceId }`);
   }
 
   /**
@@ -880,15 +880,15 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:leaderboard_evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:leaderboard_evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -897,15 +897,15 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:model/reinforcement_learning/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/reinforcement_learning/${ resourceId }`);
   }
 
   /**
@@ -914,11 +914,11 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrack(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }::track/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }::track/${ resourceId }`);
   }
 
   /**
@@ -927,15 +927,15 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deepracer.defaultPartition }:deepracer:${ region || '*' }:${ account || '*' }:training_job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training_job/${ resourceId }`);
   }
 
   /**

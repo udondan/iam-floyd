@@ -1018,15 +1018,15 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAllowList(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:allow-list/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:allow-list/${ resourceId }`);
   }
 
   /**
@@ -1035,15 +1035,15 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:classification-job/${ resourceId }`);
   }
 
   /**
@@ -1052,15 +1052,15 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-data-identifier/${ resourceId }`);
   }
 
   /**
@@ -1069,15 +1069,15 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:findings-filter/${ resourceId }`);
   }
 
   /**
@@ -1086,15 +1086,15 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Macie2.defaultPartition }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:macie2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:member/${ resourceId }`);
   }
 
   /**

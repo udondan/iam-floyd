@@ -779,15 +779,15 @@ export class Eks extends PolicyStatement {
    * https://docs.aws.amazon.com/eks/latest/userguide/clusters.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -798,15 +798,15 @@ export class Eks extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param nodegroupName - Identifier for the nodegroupName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
   }
 
   /**
@@ -817,15 +817,15 @@ export class Eks extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param addonName - Identifier for the addonName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:addon/${ clusterName }/${ addonName }/${ uUID }`);
   }
 
   /**
@@ -836,15 +836,15 @@ export class Eks extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param fargateProfileName - Identifier for the fargateProfileName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
   }
 
   /**
@@ -856,15 +856,15 @@ export class Eks extends PolicyStatement {
    * @param identityProviderType - Identifier for the identityProviderType.
    * @param identityProviderConfigName - Identifier for the identityProviderConfigName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
   }
 
   /**
@@ -873,15 +873,15 @@ export class Eks extends PolicyStatement {
    * https://anywhere.eks.amazonaws.com/docs/clustermgmt/support/cluster-license/
    *
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEksAnywhereSubscription(uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:eks-anywhere-subscription/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eks-anywhere-subscription/${ uUID }`);
   }
 
   /**
@@ -891,15 +891,15 @@ export class Eks extends PolicyStatement {
    *
    * @param clusterName - Identifier for the clusterName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPodidentityassociation(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:podidentityassociation/${ clusterName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:podidentityassociation/${ clusterName }/${ uUID }`);
   }
 
   /**
@@ -912,8 +912,8 @@ export class Eks extends PolicyStatement {
    * @param iamIdentityAccountID - Identifier for the iamIdentityAccountID.
    * @param iamIdentityName - Identifier for the iamIdentityName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -925,7 +925,7 @@ export class Eks extends PolicyStatement {
    * - .ifUsername()
    */
   public onAccessEntry(clusterName: string, iamIdentityType: string, iamIdentityAccountID: string, iamIdentityName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks:${ region || '*' }:${ account || '*' }:access-entry/${ clusterName }/${ iamIdentityType }/${ iamIdentityAccountID }/${ iamIdentityName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:access-entry/${ clusterName }/${ iamIdentityType }/${ iamIdentityAccountID }/${ iamIdentityName }/${ uUID }`);
   }
 
   /**
@@ -937,7 +937,7 @@ export class Eks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessPolicy(accessPolicyName: string, partition?: string) {
-    return this.on(`arn:${ partition || Eks.defaultPartition }:eks::aws:cluster-access-policy/${ accessPolicyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:eks::aws:cluster-access-policy/${ accessPolicyName }`);
   }
 
   /**

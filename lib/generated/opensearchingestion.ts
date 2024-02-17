@@ -246,15 +246,15 @@ export class Osis extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Pipeline.html
    *
    * @param pipelineName - Identifier for the pipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Osis.defaultPartition }:osis:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:osis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -263,12 +263,12 @@ export class Osis extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PipelineBlueprint.html
    *
    * @param blueprintName - Identifier for the blueprintName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipelineBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Osis.defaultPartition }:osis:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:osis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:blueprint/${ blueprintName }`);
   }
 
   /**

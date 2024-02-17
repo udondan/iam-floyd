@@ -1311,8 +1311,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ParameterGroups
    *
    * @param cacheParameterGroupName - Identifier for the cacheParameterGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1322,7 +1322,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifCacheParameterGroupName()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parametergroup:${ cacheParameterGroupName }`);
   }
 
   /**
@@ -1331,8 +1331,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SecurityGroups
    *
    * @param cacheSecurityGroupName - Identifier for the cacheSecurityGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1341,7 +1341,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securitygroup:${ cacheSecurityGroupName }`);
   }
 
   /**
@@ -1350,8 +1350,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SubnetGroups
    *
    * @param cacheSubnetGroupName - Identifier for the cacheSubnetGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1360,7 +1360,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnetgroup:${ cacheSubnetGroupName }`);
   }
 
   /**
@@ -1369,8 +1369,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ReplicationGroups
    *
    * @param replicationGroupId - Identifier for the replicationGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1393,7 +1393,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replicationgroup:${ replicationGroupId }`);
   }
 
   /**
@@ -1402,8 +1402,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Clusters
    *
    * @param cacheClusterId - Identifier for the cacheClusterId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1419,7 +1419,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifSnapshotRetentionLimit()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ cacheClusterId }`);
   }
 
   /**
@@ -1428,8 +1428,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html
    *
    * @param reservedCacheNodeId - Identifier for the reservedCacheNodeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1438,7 +1438,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reserved-instance:${ reservedCacheNodeId }`);
   }
 
   /**
@@ -1447,8 +1447,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Snapshots
    *
    * @param snapshotName - Identifier for the snapshotName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1458,7 +1458,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -1467,7 +1467,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html
    *
    * @param globalReplicationGroupId - Identifier for the globalReplicationGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1487,7 +1487,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache::${ account || this.defaultAccount }:globalreplicationgroup:${ globalReplicationGroupId }`);
   }
 
   /**
@@ -1496,8 +1496,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html
    *
    * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1507,7 +1507,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifUserAuthenticationMode()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user:${ userId }`);
   }
 
   /**
@@ -1516,8 +1516,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html
    *
    * @param userGroupId - Identifier for the userGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1526,7 +1526,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:usergroup:${ userGroupId }`);
   }
 
   /**
@@ -1535,8 +1535,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html
    *
    * @param serverlessCacheName - Identifier for the serverlessCacheName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1552,7 +1552,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifSnapshotRetentionLimit()
    */
   public onServerlesscache(serverlessCacheName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:serverlesscache:${ serverlessCacheName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:serverlesscache:${ serverlessCacheName }`);
   }
 
   /**
@@ -1561,8 +1561,8 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html
    *
    * @param serverlessCacheSnapshotName - Identifier for the serverlessCacheSnapshotName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1572,7 +1572,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    */
   public onServerlesscachesnapshot(serverlessCacheSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Elasticache.defaultPartition }:elasticache:${ region || '*' }:${ account || '*' }:serverlesscachesnapshot:${ serverlessCacheSnapshotName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:serverlesscachesnapshot:${ serverlessCacheSnapshotName }`);
   }
 
   /**

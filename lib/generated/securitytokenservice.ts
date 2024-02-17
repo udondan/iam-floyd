@@ -275,7 +275,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -283,7 +283,7 @@ export class Sts extends PolicyStatement {
    * - .ifIamResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sts.defaultPartition }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -292,11 +292,11 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html
    *
    * @param userNameWithPath - Identifier for the userNameWithPath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Sts.defaultPartition }:iam::${ account || '*' }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:user/${ userNameWithPath }`);
   }
 
   /**

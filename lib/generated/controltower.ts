@@ -180,6 +180,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable a Baseline on a target
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableBaseline.html
+   */
+  public toDisableBaseline() {
+    return this.to('DisableBaseline');
+  }
+
+  /**
    * Grants permission to remove a control from an organizational unit
    *
    * Access Level: Write
@@ -199,6 +210,24 @@ export class Controltower extends PolicyStatement {
    */
   public toDisableGuardrail() {
     return this.to('DisableGuardrail');
+  }
+
+  /**
+   * Grants permission to enable a Baseline on a target
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - controltower:TagResource
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableBaseline.html
+   */
+  public toEnableBaseline() {
+    return this.to('EnableBaseline');
   }
 
   /**
@@ -253,6 +282,28 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Baseline details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaseline.html
+   */
+  public toGetBaseline() {
+    return this.to('GetBaseline');
+  }
+
+  /**
+   * Grants permission to get the current status of a particular Baseline operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaselineOperation.html
+   */
+  public toGetBaselineOperation() {
+    return this.to('GetBaselineOperation');
+  }
+
+  /**
    * Grants permission to get the current status of a particular EnabledControl or DisableControl operation
    *
    * Access Level: Read
@@ -261,6 +312,17 @@ export class Controltower extends PolicyStatement {
    */
   public toGetControlOperation() {
     return this.to('GetControlOperation');
+  }
+
+  /**
+   * Grants permission to get an enabled Baseline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledBaseline.html
+   */
+  public toGetEnabledBaseline() {
+    return this.to('GetEnabledBaseline');
   }
 
   /**
@@ -341,6 +403,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Baselines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListBaselines.html
+   */
+  public toListBaselines() {
+    return this.to('ListBaselines');
+  }
+
+  /**
    * Grants permission to list the current directory groups available through &SSO;
    *
    * Access Level: List
@@ -360,6 +433,17 @@ export class Controltower extends PolicyStatement {
    */
   public toListDriftDetails() {
     return this.to('ListDriftDetails');
+  }
+
+  /**
+   * Grants permission to list enabled Baselines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledBaselines.html
+   */
+  public toListEnabledBaselines() {
+    return this.to('ListEnabledBaselines');
   }
 
   /**
@@ -539,6 +623,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset an enabled Baseline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledBaseline.html
+   */
+  public toResetEnabledBaseline() {
+    return this.to('ResetEnabledBaseline');
+  }
+
+  /**
    * Grants permission to reset a landing zone
    *
    * Access Level: Write
@@ -601,6 +696,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an enabled Baseline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledBaseline.html
+   */
+  public toUpdateEnabledBaseline() {
+    return this.to('UpdateEnabledBaseline');
+  }
+
+  /**
    * Grants permission to update an enabled control for an organizational unit
    *
    * Access Level: Write
@@ -629,14 +735,18 @@ export class Controltower extends PolicyStatement {
       'DeleteLandingZone',
       'DeregisterManagedAccount',
       'DeregisterOrganizationalUnit',
+      'DisableBaseline',
       'DisableControl',
       'DisableGuardrail',
+      'EnableBaseline',
       'EnableControl',
       'EnableGuardrail',
       'ManageOrganizationalUnit',
+      'ResetEnabledBaseline',
       'ResetLandingZone',
       'SetupLandingZone',
       'UpdateAccountFactoryConfig',
+      'UpdateEnabledBaseline',
       'UpdateEnabledControl',
       'UpdateLandingZone'
     ],
@@ -652,7 +762,10 @@ export class Controltower extends PolicyStatement {
       'DescribeSingleSignOn',
       'GetAccountInfo',
       'GetAvailableUpdates',
+      'GetBaseline',
+      'GetBaselineOperation',
       'GetControlOperation',
+      'GetEnabledBaseline',
       'GetEnabledControl',
       'GetGuardrailComplianceStatus',
       'GetHomeRegion',
@@ -666,7 +779,9 @@ export class Controltower extends PolicyStatement {
       'PerformPreLaunchChecks'
     ],
     List: [
+      'ListBaselines',
       'ListDirectoryGroups',
+      'ListEnabledBaselines',
       'ListEnabledControls',
       'ListEnabledGuardrails',
       'ListExtendGovernancePrecheckDetails',
@@ -692,15 +807,45 @@ export class Controltower extends PolicyStatement {
    * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html
    *
    * @param enabledControlId - Identifier for the enabledControlId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnabledControl(enabledControlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Controltower.defaultPartition }:controltower:${ region || '*' }:${ account || '*' }:enabledcontrol/${ enabledControlId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:enabledcontrol/${ enabledControlId }`);
+  }
+
+  /**
+   * Adds a resource of type Baseline to the statement
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaseline.html
+   *
+   * @param baselineId - Identifier for the baselineId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBaseline(baselineId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }::baseline/${ baselineId }`);
+  }
+
+  /**
+   * Adds a resource of type EnabledBaseline to the statement
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableBaseline.html
+   *
+   * @param enabledBaselineId - Identifier for the enabledBaselineId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnabledBaseline(enabledBaselineId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:enabledbaseline/${ enabledBaselineId }`);
   }
 
   /**
@@ -709,15 +854,15 @@ export class Controltower extends PolicyStatement {
    * https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html
    *
    * @param landingZoneId - Identifier for the landingZoneId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLandingZone(landingZoneId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Controltower.defaultPartition }:controltower:${ region || '*' }:${ account || '*' }:landingzone/${ landingZoneId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:landingzone/${ landingZoneId }`);
   }
 
   /**
@@ -727,6 +872,7 @@ export class Controltower extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateLandingZone()
+   * - .toEnableBaseline()
    * - .toEnableControl()
    * - .toTagResource()
    *
@@ -745,6 +891,7 @@ export class Controltower extends PolicyStatement {
    *
    * Applies to resource types:
    * - EnabledControl
+   * - EnabledBaseline
    * - LandingZone
    *
    * @param tagKey The tag key to check
@@ -762,6 +909,7 @@ export class Controltower extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateLandingZone()
+   * - .toEnableBaseline()
    * - .toEnableControl()
    * - .toTagResource()
    * - .toUntagResource()

@@ -649,15 +649,15 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/license-configurations.html
    *
    * @param licenseConfigurationId - Identifier for the licenseConfigurationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -666,11 +666,11 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/seller-issued-licenses.html
    *
    * @param licenseId - Identifier for the licenseId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:license:${ licenseId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || this.defaultAccount }:license:${ licenseId }`);
   }
 
   /**
@@ -679,11 +679,11 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html
    *
    * @param grantId - Identifier for the grantId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager::${ account || '*' }:grant:${ grantId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || this.defaultAccount }:grant:${ grantId }`);
   }
 
   /**
@@ -692,15 +692,15 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/report-generators.html
    *
    * @param reportGeneratorId - Identifier for the reportGeneratorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LicenseManager.defaultPartition }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report-generator:${ reportGeneratorId }`);
   }
 
   /**

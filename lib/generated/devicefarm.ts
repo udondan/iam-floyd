@@ -994,15 +994,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:project:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project:${ resourceId }`);
   }
 
   /**
@@ -1011,15 +1011,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Run.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:run:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:run:${ resourceId }`);
   }
 
   /**
@@ -1028,12 +1028,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:job:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job:${ resourceId }`);
   }
 
   /**
@@ -1042,12 +1042,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Suite.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSuite(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:suite:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suite:${ resourceId }`);
   }
 
   /**
@@ -1056,12 +1056,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Test.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:test:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test:${ resourceId }`);
   }
 
   /**
@@ -1070,12 +1070,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:upload:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:upload:${ resourceId }`);
   }
 
   /**
@@ -1084,12 +1084,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:artifact:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:artifact:${ resourceId }`);
   }
 
   /**
@@ -1098,12 +1098,12 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:sample:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sample:${ resourceId }`);
   }
 
   /**
@@ -1112,15 +1112,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:networkprofile:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:networkprofile:${ resourceId }`);
   }
 
   /**
@@ -1129,14 +1129,14 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }::deviceinstance:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }::deviceinstance:${ resourceId }`);
   }
 
   /**
@@ -1145,15 +1145,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:session:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session:${ resourceId }`);
   }
 
   /**
@@ -1162,15 +1162,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:devicepool:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:devicepool:${ resourceId }`);
   }
 
   /**
@@ -1179,14 +1179,14 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }::device:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }::device:${ resourceId }`);
   }
 
   /**
@@ -1195,15 +1195,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:instanceprofile:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instanceprofile:${ resourceId }`);
   }
 
   /**
@@ -1212,15 +1212,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:vpceconfiguration:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpceconfiguration:${ resourceId }`);
   }
 
   /**
@@ -1229,15 +1229,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridProject.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:testgrid-project:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:testgrid-project:${ resourceId }`);
   }
 
   /**
@@ -1246,15 +1246,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridSession.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Devicefarm.defaultPartition }:devicefarm:${ region || '*' }:${ account || '*' }:testgrid-session:${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:testgrid-session:${ resourceId }`);
   }
 
   /**

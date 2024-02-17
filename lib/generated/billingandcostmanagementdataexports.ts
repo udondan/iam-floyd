@@ -210,15 +210,15 @@ export class BcmDataExports extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Export.html
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExport(identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || BcmDataExports.defaultPartition }:bcm-data-exports:${ region || '*' }:${ account || '*' }:export/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bcm-data-exports:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export/${ identifier }`);
   }
 
   /**
@@ -227,12 +227,12 @@ export class BcmDataExports extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Table.html
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || BcmDataExports.defaultPartition }:bcm-data-exports:${ region || '*' }:${ account || '*' }:table/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:bcm-data-exports:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ identifier }`);
   }
 
   /**

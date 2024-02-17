@@ -262,15 +262,15 @@ export class Ivschat extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_Room.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivschat:${ region || this.defaultRegion }:${ account || this.defaultAccount }:room/${ resourceId }`);
   }
 
   /**
@@ -279,15 +279,15 @@ export class Ivschat extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/ChatAPIReference/API_LoggingConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLoggingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ivschat.defaultPartition }:ivschat:${ region || '*' }:${ account || '*' }:logging-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ivschat:${ region || this.defaultRegion }:${ account || this.defaultAccount }:logging-configuration/${ resourceId }`);
   }
 
   /**

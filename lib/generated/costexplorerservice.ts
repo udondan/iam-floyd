@@ -701,14 +701,14 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalysubscription(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:anomalysubscription/${ identifier }`);
   }
 
   /**
@@ -717,14 +717,14 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalymonitor(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:anomalymonitor/${ identifier }`);
   }
 
   /**
@@ -733,14 +733,14 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html
    *
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCostcategory(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ce.defaultPartition }:ce::${ account || '*' }:costcategory/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:costcategory/${ identifier }`);
   }
 
   /**

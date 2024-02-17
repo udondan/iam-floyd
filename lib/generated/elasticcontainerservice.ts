@@ -950,8 +950,8 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -959,7 +959,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -969,8 +969,8 @@ export class Ecs extends PolicyStatement {
    *
    * @param clusterName - Identifier for the clusterName.
    * @param containerInstanceId - Identifier for the containerInstanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -978,7 +978,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContainerInstance(clusterName: string, containerInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ clusterName }/${ containerInstanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:container-instance/${ clusterName }/${ containerInstanceId }`);
   }
 
   /**
@@ -988,8 +988,8 @@ export class Ecs extends PolicyStatement {
    *
    * @param clusterName - Identifier for the clusterName.
    * @param serviceName - Identifier for the serviceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -997,7 +997,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:service/${ clusterName }/${ serviceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
   }
 
   /**
@@ -1007,8 +1007,8 @@ export class Ecs extends PolicyStatement {
    *
    * @param clusterName - Identifier for the clusterName.
    * @param taskId - Identifier for the taskId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1016,7 +1016,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTask(clusterName: string, taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task/${ clusterName }/${ taskId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ clusterName }/${ taskId }`);
   }
 
   /**
@@ -1026,8 +1026,8 @@ export class Ecs extends PolicyStatement {
    *
    * @param taskDefinitionFamilyName - Identifier for the taskDefinitionFamilyName.
    * @param taskDefinitionRevisionNumber - Identifier for the taskDefinitionRevisionNumber.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1035,7 +1035,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
   }
 
   /**
@@ -1044,8 +1044,8 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html
    *
    * @param capacityProviderName - Identifier for the capacityProviderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1053,7 +1053,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:capacity-provider/${ capacityProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capacity-provider/${ capacityProviderName }`);
   }
 
   /**
@@ -1064,8 +1064,8 @@ export class Ecs extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param serviceName - Identifier for the serviceName.
    * @param taskSetId - Identifier for the taskSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -1073,7 +1073,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ecs.defaultPartition }:ecs:${ region || '*' }:${ account || '*' }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
   }
 
   /**

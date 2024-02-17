@@ -260,15 +260,15 @@ export class Oam extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLink(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Oam.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:link/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:oam:${ region || this.defaultRegion }:${ account || this.defaultAccount }:link/${ resourceId }`);
   }
 
   /**
@@ -277,15 +277,15 @@ export class Oam extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSink(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Oam.defaultPartition }:oam:${ region || '*' }:${ account || '*' }:sink/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:oam:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sink/${ resourceId }`);
   }
 
   /**

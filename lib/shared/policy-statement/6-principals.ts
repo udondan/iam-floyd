@@ -94,7 +94,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    * @param prefix One of **AWS**, **Federated**, **CanonicalUser** or **Service** - Default: **AWS**
    */
   public for(arn: string, prefix?: string) {
-    return this.addPrincipal(prefix || PrincipalType.AWS, arn);
+    return this.addPrincipal(prefix ?? PrincipalType.AWS, arn);
   }
 
   /**

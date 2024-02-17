@@ -532,15 +532,15 @@ export class NeptuneGraph extends PolicyStatement {
    * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#graph
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NeptuneGraph.defaultPartition }:neptune-graph:${ region || '*' }:${ account || '*' }:graph/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:graph/${ resourceId }`);
   }
 
   /**
@@ -549,15 +549,15 @@ export class NeptuneGraph extends PolicyStatement {
    * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#graph-snapshot
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGraphSnapshot(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NeptuneGraph.defaultPartition }:neptune-graph:${ region || '*' }:${ account || '*' }:graph-snapshot/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:graph-snapshot/${ resourceId }`);
   }
 
   /**
@@ -566,12 +566,12 @@ export class NeptuneGraph extends PolicyStatement {
    * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#import-task
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || NeptuneGraph.defaultPartition }:neptune-graph:${ region || '*' }:${ account || '*' }:import-task/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-task/${ resourceId }`);
   }
 
   /**

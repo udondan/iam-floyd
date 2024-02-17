@@ -5,10 +5,24 @@
  */
 export class PolicyStatementBase {
   /**
-   * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]). In
-   * CDK applications, this is a reference to the current partition, otherwise, 'aws'.
+   * The default partition for ARNs (such as one of [aws, aws-us-gov, aws-cn]).
+   * In CDK applications, this is a reference to the current partition,
+   * otherwise, 'aws'.
    */
-  protected static readonly defaultPartition = 'aws';
+  protected readonly defaultPartition = 'aws';
+
+  /**
+   * The default region for ARNs (such as one of [us-east-1, eu-central-1,
+   * ap-east-1]). In CDK applications, this is a reference to the current
+   * region, otherwise, '*'.
+   */
+  protected readonly defaultRegion = '*';
+
+  /**
+   * The default account for ARNs. In CDK applications, this is a reference to
+   * the current account, otherwise, '*'.
+   */
+  protected readonly defaultAccount = '*';
 
   public sid = '';
 

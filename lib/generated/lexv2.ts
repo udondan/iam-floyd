@@ -1375,15 +1375,15 @@ export class LexV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/lexv2/latest/dg/how-it-works.html
    *
    * @param botId - Identifier for the botId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBot(botId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LexV2.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot/${ botId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot/${ botId }`);
   }
 
   /**
@@ -1393,15 +1393,15 @@ export class LexV2 extends PolicyStatement {
    *
    * @param botId - Identifier for the botId.
    * @param botAliasId - Identifier for the botAliasId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botId: string, botAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LexV2.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:bot-alias/${ botId }/${ botAliasId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot-alias/${ botId }/${ botAliasId }`);
   }
 
   /**
@@ -1410,15 +1410,15 @@ export class LexV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/lexv2/latest/dg/test-workbench.html
    *
    * @param testSetId - Identifier for the testSetId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTestSet(testSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || LexV2.defaultPartition }:lex:${ region || '*' }:${ account || '*' }:test-set/${ testSetId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-set/${ testSetId }`);
   }
 
   /**

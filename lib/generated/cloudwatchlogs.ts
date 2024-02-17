@@ -1067,15 +1067,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LogGroup.html
    *
    * @param logGroupName - Identifier for the logGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:log-group:${ logGroupName }`);
   }
 
   /**
@@ -1085,15 +1085,15 @@ export class Logs extends PolicyStatement {
    *
    * @param logGroupName - Identifier for the logGroupName.
    * @param logStreamName - Identifier for the logStreamName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
   }
 
   /**
@@ -1102,15 +1102,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Destination.html
    *
    * @param destinationName - Identifier for the destinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:destination:${ destinationName }`);
   }
 
   /**
@@ -1119,15 +1119,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliverySource.html
    *
    * @param deliverySourceName - Identifier for the deliverySourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeliverySource(deliverySourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery-source:${ deliverySourceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery-source:${ deliverySourceName }`);
   }
 
   /**
@@ -1136,15 +1136,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html
    *
    * @param deliveryName - Identifier for the deliveryName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDelivery(deliveryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery:${ deliveryName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery:${ deliveryName }`);
   }
 
   /**
@@ -1153,15 +1153,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliveryDestination.html
    *
    * @param deliveryDestinationName - Identifier for the deliveryDestinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeliveryDestination(deliveryDestinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:delivery-destination:${ deliveryDestinationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery-destination:${ deliveryDestinationName }`);
   }
 
   /**
@@ -1170,15 +1170,15 @@ export class Logs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AnomalyDetector.html
    *
    * @param detectorId - Identifier for the detectorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Logs.defaultPartition }:logs:${ region || '*' }:${ account || '*' }:anomaly-detector:${ detectorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:anomaly-detector:${ detectorId }`);
   }
 
   /**

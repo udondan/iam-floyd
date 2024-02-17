@@ -913,15 +913,15 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Workload.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workload/${ resourceId }`);
   }
 
   /**
@@ -930,15 +930,15 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Lens.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLens(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:lens/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lens/${ resourceId }`);
   }
 
   /**
@@ -947,15 +947,15 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Profile.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ resourceId }`);
   }
 
   /**
@@ -964,15 +964,15 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ReviewTemplate.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReviewTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Wellarchitected.defaultPartition }:wellarchitected:${ region || '*' }:${ account || '*' }:review-template/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:wellarchitected:${ region || this.defaultRegion }:${ account || this.defaultAccount }:review-template/${ resourceId }`);
   }
 
   /**

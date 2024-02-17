@@ -1547,15 +1547,15 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateApplication.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }`);
   }
 
   /**
@@ -1564,15 +1564,15 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateAttributeGroup.html
    *
    * @param attributeGroupId - Identifier for the attributeGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/attribute-groups/${ attributeGroupId }`);
   }
 
   /**
@@ -1581,15 +1581,15 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_PortfolioDetail.html
    *
    * @param portfolioId - Identifier for the portfolioId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:portfolio/${ portfolioId }`);
   }
 
   /**
@@ -1598,15 +1598,15 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProductViewDetail.html
    *
    * @param productId - Identifier for the productId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicecatalog.defaultPartition }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:product/${ productId }`);
   }
 
   /**

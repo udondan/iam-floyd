@@ -276,12 +276,12 @@ export class Servicequotas extends PolicyStatement {
    *
    * @param serviceCode - Identifier for the serviceCode.
    * @param quotaCode - Identifier for the quotaCode.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQuota(serviceCode: string, quotaCode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Servicequotas.defaultPartition }:servicequotas:${ region || '*' }:${ account || '*' }:${ serviceCode }/${ quotaCode }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:servicequotas:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ serviceCode }/${ quotaCode }`);
   }
 
   /**

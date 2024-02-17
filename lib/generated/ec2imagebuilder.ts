@@ -1022,15 +1022,15 @@ export class Imagebuilder extends PolicyStatement {
    * @param componentName - Identifier for the componentName.
    * @param componentVersion - Identifier for the componentVersion.
    * @param componentBuildVersion - Identifier for the componentBuildVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
   }
 
   /**
@@ -1040,15 +1040,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * @param componentName - Identifier for the componentName.
    * @param componentVersion - Identifier for the componentVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ componentName }/${ componentVersion }`);
   }
 
   /**
@@ -1057,15 +1057,15 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DistributionConfiguration.html
    *
    * @param distributionConfigurationName - Identifier for the distributionConfigurationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:distribution-configuration/${ distributionConfigurationName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:distribution-configuration/${ distributionConfigurationName }`);
   }
 
   /**
@@ -1076,15 +1076,15 @@ export class Imagebuilder extends PolicyStatement {
    * @param imageName - Identifier for the imageName.
    * @param imageVersion - Identifier for the imageVersion.
    * @param imageBuildVersion - Identifier for the imageBuildVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
   }
 
   /**
@@ -1094,15 +1094,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * @param imageName - Identifier for the imageName.
    * @param imageVersion - Identifier for the imageVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }/${ imageVersion }`);
   }
 
   /**
@@ -1112,15 +1112,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * @param imageRecipeName - Identifier for the imageRecipeName.
    * @param imageRecipeVersion - Identifier for the imageRecipeVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
   }
 
   /**
@@ -1130,15 +1130,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * @param containerRecipeName - Identifier for the containerRecipeName.
    * @param containerRecipeVersion - Identifier for the containerRecipeVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onContainerRecipe(containerRecipeName: string, containerRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
   }
 
   /**
@@ -1147,15 +1147,15 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImagePipeline.html
    *
    * @param imagePipelineName - Identifier for the imagePipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:image-pipeline/${ imagePipelineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-pipeline/${ imagePipelineName }`);
   }
 
   /**
@@ -1164,15 +1164,15 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_InfrastructureConfiguration.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:infrastructure-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:infrastructure-configuration/${ resourceId }`);
   }
 
   /**
@@ -1181,12 +1181,12 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys
    *
    * @param keyId - Identifier for the keyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key/${ keyId }`);
   }
 
   /**
@@ -1195,12 +1195,12 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecycleExecution.html
    *
    * @param lifecycleExecutionId - Identifier for the lifecycleExecutionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLifecycleExecution(lifecycleExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:lifecycle-execution/${ lifecycleExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lifecycle-execution/${ lifecycleExecutionId }`);
   }
 
   /**
@@ -1209,15 +1209,15 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecyclePolicy.html
    *
    * @param lifecyclePolicyName - Identifier for the lifecyclePolicyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLifecyclePolicy(lifecyclePolicyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:lifecycle-policy/${ lifecyclePolicyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lifecycle-policy/${ lifecyclePolicyName }`);
   }
 
   /**
@@ -1229,15 +1229,15 @@ export class Imagebuilder extends PolicyStatement {
    * @param workflowName - Identifier for the workflowName.
    * @param workflowVersion - Identifier for the workflowVersion.
    * @param workflowBuildVersion - Identifier for the workflowBuildVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowType: string, workflowName: string, workflowVersion: string, workflowBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }/${ workflowBuildVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }/${ workflowBuildVersion }`);
   }
 
   /**
@@ -1248,15 +1248,15 @@ export class Imagebuilder extends PolicyStatement {
    * @param workflowType - Identifier for the workflowType.
    * @param workflowName - Identifier for the workflowName.
    * @param workflowVersion - Identifier for the workflowVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onWorkflowVersion(workflowType: string, workflowName: string, workflowVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }`);
   }
 
   /**
@@ -1265,12 +1265,12 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowExecutionMetadata.html
    *
    * @param workflowExecutionId - Identifier for the workflowExecutionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkflowExecution(workflowExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow-execution/${ workflowExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow-execution/${ workflowExecutionId }`);
   }
 
   /**
@@ -1279,12 +1279,12 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowStepMetadata.html
    *
    * @param workflowStepExecutionId - Identifier for the workflowStepExecutionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkflowStepExecution(workflowStepExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Imagebuilder.defaultPartition }:imagebuilder:${ region || '*' }:${ account || '*' }:workflow-step-execution/${ workflowStepExecutionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow-step-execution/${ workflowStepExecutionId }`);
   }
 
   /**

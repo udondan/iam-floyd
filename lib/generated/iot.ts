@@ -3440,12 +3440,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html
    *
    * @param clientId - Identifier for the clientId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onClient(clientId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:client/${ clientId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:client/${ clientId }`);
   }
 
   /**
@@ -3454,12 +3454,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
    *
    * @param indexName - Identifier for the indexName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:index/${ indexName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexName }`);
   }
 
   /**
@@ -3468,15 +3468,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
    *
    * @param fleetMetricName - Identifier for the fleetMetricName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFleetmetric(fleetMetricName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:fleetmetric/${ fleetMetricName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleetmetric/${ fleetMetricName }`);
   }
 
   /**
@@ -3485,15 +3485,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -3502,15 +3502,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/job-templates.html
    *
    * @param jobTemplateId - Identifier for the jobTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobtemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:jobtemplate/${ jobTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobtemplate/${ jobTemplateId }`);
   }
 
   /**
@@ -3519,15 +3519,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-tunnels.html
    *
    * @param tunnelId - Identifier for the tunnelId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:tunnel/${ tunnelId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tunnel/${ tunnelId }`);
   }
 
   /**
@@ -3536,12 +3536,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
    *
    * @param thingName - Identifier for the thingName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -3550,15 +3550,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html
    *
    * @param thingGroupName - Identifier for the thingGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thinggroup/${ thingGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3567,15 +3567,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html
    *
    * @param billingGroupName - Identifier for the billingGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:billinggroup/${ billingGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:billinggroup/${ billingGroupName }`);
   }
 
   /**
@@ -3584,15 +3584,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/dynamic-thing-groups.html
    *
    * @param thingGroupName - Identifier for the thingGroupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thinggroup/${ thingGroupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3601,15 +3601,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html
    *
    * @param thingTypeName - Identifier for the thingTypeName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:thingtype/${ thingTypeName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thingtype/${ thingTypeName }`);
   }
 
   /**
@@ -3618,12 +3618,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html
    *
    * @param topicName - Identifier for the topicName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:topic/${ topicName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ topicName }`);
   }
 
   /**
@@ -3632,12 +3632,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/topics.html
    *
    * @param topicFilter - Identifier for the topicFilter.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopicfilter(topicFilter: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:topicfilter/${ topicFilter }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topicfilter/${ topicFilter }`);
   }
 
   /**
@@ -3646,15 +3646,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html
    *
    * @param roleAlias - Identifier for the roleAlias.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:rolealias/${ roleAlias }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rolealias/${ roleAlias }`);
   }
 
   /**
@@ -3663,15 +3663,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html
    *
    * @param authorizerName - Identifier for the authorizerName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:authorizer/${ authorizerName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:authorizer/${ authorizerName }`);
   }
 
   /**
@@ -3680,15 +3680,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html
    *
    * @param policyName - Identifier for the policyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:policy/${ policyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:policy/${ policyName }`);
   }
 
   /**
@@ -3697,12 +3697,12 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
    *
    * @param certificate - Identifier for the certificate.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert/${ certificate }`);
   }
 
   /**
@@ -3711,15 +3711,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
    *
    * @param cACertificate - Identifier for the cACertificate.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:cacert/${ cACertificate }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cacert/${ cACertificate }`);
   }
 
   /**
@@ -3728,15 +3728,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
    *
    * @param streamId - Identifier for the streamId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:stream/${ streamId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ streamId }`);
   }
 
   /**
@@ -3745,15 +3745,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
    *
    * @param otaUpdateId - Identifier for the otaUpdateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:otaupdate/${ otaUpdateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:otaupdate/${ otaUpdateId }`);
   }
 
   /**
@@ -3762,15 +3762,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html
    *
    * @param scheduleName - Identifier for the scheduleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:scheduledaudit/${ scheduleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scheduledaudit/${ scheduleName }`);
   }
 
   /**
@@ -3779,15 +3779,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html
    *
    * @param mitigationActionName - Identifier for the mitigationActionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:mitigationaction/${ mitigationActionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mitigationaction/${ mitigationActionName }`);
   }
 
   /**
@@ -3796,15 +3796,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
    *
    * @param securityProfileName - Identifier for the securityProfileName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:securityprofile/${ securityProfileName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securityprofile/${ securityProfileName }`);
   }
 
   /**
@@ -3813,15 +3813,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
    *
    * @param metricName - Identifier for the metricName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:custommetric/${ metricName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custommetric/${ metricName }`);
   }
 
   /**
@@ -3830,15 +3830,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
    *
    * @param dimensionName - Identifier for the dimensionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:dimension/${ dimensionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dimension/${ dimensionName }`);
   }
 
   /**
@@ -3847,15 +3847,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html
    *
    * @param ruleName - Identifier for the ruleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ ruleName }`);
   }
 
   /**
@@ -3865,12 +3865,12 @@ export class Iot extends PolicyStatement {
    *
    * @param destinationType - Identifier for the destinationType.
    * @param uuid - Identifier for the uuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:destination/${ destinationType }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:destination/${ destinationType }/${ uuid }`);
   }
 
   /**
@@ -3879,15 +3879,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html
    *
    * @param provisioningTemplate - Identifier for the provisioningTemplate.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:provisioningtemplate/${ provisioningTemplate }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:provisioningtemplate/${ provisioningTemplate }`);
   }
 
   /**
@@ -3897,15 +3897,15 @@ export class Iot extends PolicyStatement {
    *
    * @param domainConfigurationName - Identifier for the domainConfigurationName.
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:domainconfiguration/${ domainConfigurationName }/${ id }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domainconfiguration/${ domainConfigurationName }/${ id }`);
   }
 
   /**
@@ -3914,15 +3914,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
    *
    * @param packageName - Identifier for the packageName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackage(packageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:package/${ packageName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ packageName }`);
   }
 
   /**
@@ -3932,15 +3932,15 @@ export class Iot extends PolicyStatement {
    *
    * @param packageName - Identifier for the packageName.
    * @param versionName - Identifier for the versionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPackageversion(packageName: string, versionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:package/${ packageName }/version/${ versionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ packageName }/version/${ versionName }`);
   }
 
   /**
@@ -3949,15 +3949,15 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html
    *
    * @param certificateProviderName - Identifier for the certificateProviderName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCertificateprovider(certificateProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Iot.defaultPartition }:iot:${ region || '*' }:${ account || '*' }:certificateprovider/${ certificateProviderName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificateprovider/${ certificateProviderName }`);
   }
 
   /**

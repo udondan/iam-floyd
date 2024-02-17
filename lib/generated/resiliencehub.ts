@@ -752,15 +752,15 @@ export class Resiliencehub extends PolicyStatement {
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ResiliencyPolicy.html
    *
    * @param resiliencyPolicyId - Identifier for the resiliencyPolicyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onResiliencyPolicy(resiliencyPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:resiliency-policy/${ resiliencyPolicyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resiliency-policy/${ resiliencyPolicyId }`);
   }
 
   /**
@@ -769,15 +769,15 @@ export class Resiliencehub extends PolicyStatement {
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_App.html
    *
    * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app/${ appId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }`);
   }
 
   /**
@@ -786,15 +786,15 @@ export class Resiliencehub extends PolicyStatement {
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_AppAssessment.html
    *
    * @param appAssessmentId - Identifier for the appAssessmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onAppAssessment(appAssessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:app-assessment/${ appAssessmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-assessment/${ appAssessmentId }`);
   }
 
   /**
@@ -803,15 +803,15 @@ export class Resiliencehub extends PolicyStatement {
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_RecommendationTemplate.html
    *
    * @param recommendationTemplateId - Identifier for the recommendationTemplateId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onRecommendationTemplate(recommendationTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Resiliencehub.defaultPartition }:resiliencehub:${ region || '*' }:${ account || '*' }:recommendation-template/${ recommendationTemplateId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommendation-template/${ recommendationTemplateId }`);
   }
 
   /**

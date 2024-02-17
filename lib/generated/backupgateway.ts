@@ -378,14 +378,14 @@ export class BackupGateway extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Gateway.html
    *
    * @param gatewayId - Identifier for the gatewayId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -394,14 +394,14 @@ export class BackupGateway extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Hypervisor.html
    *
    * @param hypervisorId - Identifier for the hypervisorId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHypervisor(hypervisorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:hypervisor/${ hypervisorId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || this.defaultAccount }:hypervisor/${ hypervisorId }`);
   }
 
   /**
@@ -410,14 +410,14 @@ export class BackupGateway extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_VirtualMachine.html
    *
    * @param virtualmachineId - Identifier for the virtualmachineId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVirtualmachine(virtualmachineId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || BackupGateway.defaultPartition }:backup-gateway::${ account || '*' }:vm/${ virtualmachineId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:backup-gateway::${ account || this.defaultAccount }:vm/${ virtualmachineId }`);
   }
 
   /**

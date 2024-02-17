@@ -459,8 +459,8 @@ export class Groundstation extends PolicyStatement {
    *
    * @param configType - Identifier for the configType.
    * @param configId - Identifier for the configId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -469,7 +469,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:config/${ configType }/${ configId }`);
   }
 
   /**
@@ -478,8 +478,8 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html
    *
    * @param contactId - Identifier for the contactId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -487,7 +487,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact/${ contactId }`);
   }
 
   /**
@@ -496,8 +496,8 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html
    *
    * @param dataflowEndpointGroupId - Identifier for the dataflowEndpointGroupId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -505,7 +505,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
   }
 
   /**
@@ -514,8 +514,8 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_EphemerisItem.html
    *
    * @param ephemerisId - Identifier for the ephemerisId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -523,7 +523,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifEphemerisId()
    */
   public onEphemerisItem(ephemerisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:ephemeris/${ ephemerisId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ephemeris/${ ephemerisId }`);
   }
 
   /**
@@ -532,15 +532,15 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html
    *
    * @param groundStationId - Identifier for the groundStationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:groundstation:${ groundStationId }`);
   }
 
   /**
@@ -549,8 +549,8 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html
    *
    * @param missionProfileId - Identifier for the missionProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -558,7 +558,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mission-profile/${ missionProfileId }`);
   }
 
   /**
@@ -567,15 +567,15 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html
    *
    * @param satelliteId - Identifier for the satelliteId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:satellite/${ satelliteId }`);
   }
 
   /**
@@ -584,15 +584,15 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AgentDetails.html
    *
    * @param agentId - Identifier for the agentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAgentId()
    */
   public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Groundstation.defaultPartition }:groundstation:${ region || '*' }:${ account || '*' }:agent/${ agentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**

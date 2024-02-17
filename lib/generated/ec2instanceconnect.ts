@@ -68,8 +68,8 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -77,7 +77,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2InstanceConnect.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -86,8 +86,8 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-CreateInstanceConnectEndpoint
    *
    * @param instanceConnectEndpointId - Identifier for the instanceConnectEndpointId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
@@ -95,7 +95,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstanceConnectEndpoint(instanceConnectEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Ec2InstanceConnect.defaultPartition }:ec2:${ region || '*' }:${ account || '*' }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
   }
 
   /**

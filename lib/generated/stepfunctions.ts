@@ -549,15 +549,15 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html
    *
    * @param activityName - Identifier for the activityName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:activity:${ activityName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:activity:${ activityName }`);
   }
 
   /**
@@ -567,15 +567,15 @@ export class States extends PolicyStatement {
    *
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param executionId - Identifier for the executionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }:${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:execution:${ stateMachineName }:${ executionId }`);
   }
 
   /**
@@ -586,12 +586,12 @@ export class States extends PolicyStatement {
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param executionId - Identifier for the executionId.
    * @param expressId - Identifier for the expressId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExpress(stateMachineName: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
   }
 
   /**
@@ -600,15 +600,15 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
    *
    * @param stateMachineName - Identifier for the stateMachineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }`);
   }
 
   /**
@@ -618,12 +618,12 @@ export class States extends PolicyStatement {
    *
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param stateMachineVersionId - Identifier for the stateMachineVersionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStatemachineversion(stateMachineName: string, stateMachineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
   }
 
   /**
@@ -633,12 +633,12 @@ export class States extends PolicyStatement {
    *
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param stateMachineAliasName - Identifier for the stateMachineAliasName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStatemachinealias(stateMachineName: string, stateMachineAliasName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
   }
 
   /**
@@ -649,12 +649,12 @@ export class States extends PolicyStatement {
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param mapRunLabel - Identifier for the mapRunLabel.
    * @param mapRunId - Identifier for the mapRunId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
   }
 
   /**
@@ -665,12 +665,12 @@ export class States extends PolicyStatement {
    * @param stateMachineName - Identifier for the stateMachineName.
    * @param mapRunLabel - Identifier for the mapRunLabel.
    * @param executionId - Identifier for the executionId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLabelledExecution(stateMachineName: string, mapRunLabel: string, executionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }/${ mapRunLabel }:${ executionId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:execution:${ stateMachineName }/${ mapRunLabel }:${ executionId }`);
   }
 
   /**
@@ -682,12 +682,12 @@ export class States extends PolicyStatement {
    * @param mapRunLabel - Identifier for the mapRunLabel.
    * @param executionId - Identifier for the executionId.
    * @param expressId - Identifier for the expressId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLabelledExpress(stateMachineName: string, mapRunLabel: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || States.defaultPartition }:states:${ region || '*' }:${ account || '*' }:express:${ stateMachineName }/${ mapRunLabel }:${ executionId }:${ expressId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:express:${ stateMachineName }/${ mapRunLabel }:${ executionId }:${ expressId }`);
   }
 
   /**

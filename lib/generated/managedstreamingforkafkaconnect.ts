@@ -202,12 +202,12 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * @param connectorName - Identifier for the connectorName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorName }/${ uUID }`);
   }
 
   /**
@@ -217,12 +217,12 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * @param customPluginName - Identifier for the customPluginName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-plugin/${ customPluginName }/${ uUID }`);
   }
 
   /**
@@ -232,11 +232,11 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * @param workerConfigurationName - Identifier for the workerConfigurationName.
    * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafkaconnect.defaultPartition }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
   }
 }

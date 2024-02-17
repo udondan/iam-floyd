@@ -757,15 +757,15 @@ export class Kafka extends PolicyStatement {
    *
    * @param clusterName - Identifier for the clusterName.
    * @param uuid - Identifier for the uuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }/${ uuid }`);
   }
 
   /**
@@ -775,12 +775,12 @@ export class Kafka extends PolicyStatement {
    *
    * @param configurationName - Identifier for the configurationName.
    * @param uuid - Identifier for the uuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguration(configurationName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration/${ configurationName }/${ uuid }`);
   }
 
   /**
@@ -792,14 +792,14 @@ export class Kafka extends PolicyStatement {
    * @param clusterOwnerAccount - Identifier for the clusterOwnerAccount.
    * @param clusterName - Identifier for the clusterName.
    * @param uuid - Identifier for the uuid.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onVpcConnection(vpcOwnerAccount: string, clusterOwnerAccount: string, clusterName: string, uuid: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ vpcOwnerAccount }:vpc-connection/${ clusterOwnerAccount }/${ clusterName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ vpcOwnerAccount }:vpc-connection/${ clusterOwnerAccount }/${ clusterName }/${ uuid }`);
   }
 
   /**
@@ -809,15 +809,15 @@ export class Kafka extends PolicyStatement {
    *
    * @param replicatorName - Identifier for the replicatorName.
    * @param uuid - Identifier for the uuid.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onReplicator(replicatorName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:replicator/${ replicatorName }/${ uuid }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replicator/${ replicatorName }/${ uuid }`);
   }
 
   /**
@@ -828,12 +828,12 @@ export class Kafka extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
    * @param topicName - Identifier for the topicName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
   }
 
   /**
@@ -844,12 +844,12 @@ export class Kafka extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
    * @param groupName - Identifier for the groupName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
   }
 
   /**
@@ -860,12 +860,12 @@ export class Kafka extends PolicyStatement {
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
    * @param transactionalId - Identifier for the transactionalId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Kafka.defaultPartition }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
   }
 
   /**

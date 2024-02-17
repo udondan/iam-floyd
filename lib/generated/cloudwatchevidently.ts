@@ -524,15 +524,15 @@ export class Evidently extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Project.html
    *
    * @param projectName - Identifier for the projectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -542,15 +542,15 @@ export class Evidently extends PolicyStatement {
    *
    * @param projectName - Identifier for the projectName.
    * @param featureName - Identifier for the featureName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onFeature(projectName: string, featureName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/feature/${ featureName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/feature/${ featureName }`);
   }
 
   /**
@@ -560,15 +560,15 @@ export class Evidently extends PolicyStatement {
    *
    * @param projectName - Identifier for the projectName.
    * @param experimentName - Identifier for the experimentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExperiment(projectName: string, experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/experiment/${ experimentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/experiment/${ experimentName }`);
   }
 
   /**
@@ -578,15 +578,15 @@ export class Evidently extends PolicyStatement {
    *
    * @param projectName - Identifier for the projectName.
    * @param launchName - Identifier for the launchName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onLaunch(projectName: string, launchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:project/${ projectName }/launch/${ launchName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/launch/${ launchName }`);
   }
 
   /**
@@ -595,15 +595,15 @@ export class Evidently extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_Segment.html
    *
    * @param segmentName - Identifier for the segmentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSegment(segmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Evidently.defaultPartition }:evidently:${ region || '*' }:${ account || '*' }:segment/${ segmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:segment/${ segmentName }`);
   }
 
   /**

@@ -321,10 +321,10 @@ export class Verifiedpermissions extends PolicyStatement {
    * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/policy-stores.html
    *
    * @param policyStoreId - Identifier for the policyStoreId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPolicyStore(policyStoreId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || Verifiedpermissions.defaultPartition }:verifiedpermissions::${ account || '*' }:policy-store/${ policyStoreId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:verifiedpermissions::${ account || this.defaultAccount }:policy-store/${ policyStoreId }`);
   }
 }

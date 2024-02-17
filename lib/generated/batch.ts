@@ -365,15 +365,15 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html
    *
    * @param computeEnvironmentName - Identifier for the computeEnvironmentName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:compute-environment/${ computeEnvironmentName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:compute-environment/${ computeEnvironmentName }`);
   }
 
   /**
@@ -382,15 +382,15 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html
    *
    * @param jobQueueName - Identifier for the jobQueueName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-queue/${ jobQueueName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-queue/${ jobQueueName }`);
   }
 
   /**
@@ -399,12 +399,12 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html
    *
    * @param jobDefinitionName - Identifier for the jobDefinitionName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJobDefinition(jobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-definition/${ jobDefinitionName }`);
   }
 
   /**
@@ -414,15 +414,15 @@ export class Batch extends PolicyStatement {
    *
    * @param jobDefinitionName - Identifier for the jobDefinitionName.
    * @param revision - Identifier for the revision.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJobDefinitionRevision(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }:${ revision }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-definition/${ jobDefinitionName }:${ revision }`);
   }
 
   /**
@@ -431,15 +431,15 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/jobs.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -448,15 +448,15 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/userguide/scheduling-policies.html
    *
    * @param schedulingPolicyName - Identifier for the schedulingPolicyName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onSchedulingPolicy(schedulingPolicyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Batch.defaultPartition }:batch:${ region || '*' }:${ account || '*' }:scheduling-policy/${ schedulingPolicyName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scheduling-policy/${ schedulingPolicyName }`);
   }
 
   /**

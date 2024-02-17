@@ -662,15 +662,15 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-application.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
@@ -680,15 +680,15 @@ export class Appconfig extends PolicyStatement {
    *
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }`);
   }
 
   /**
@@ -698,15 +698,15 @@ export class Appconfig extends PolicyStatement {
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
   }
 
   /**
@@ -715,15 +715,15 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html
    *
    * @param deploymentStrategyId - Identifier for the deploymentStrategyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:deploymentstrategy/${ deploymentStrategyId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deploymentstrategy/${ deploymentStrategyId }`);
   }
 
   /**
@@ -734,15 +734,15 @@ export class Appconfig extends PolicyStatement {
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
    * @param deploymentNumber - Identifier for the deploymentNumber.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/deployment/${ deploymentNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }/deployment/${ deploymentNumber }`);
   }
 
   /**
@@ -753,12 +753,12 @@ export class Appconfig extends PolicyStatement {
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
    * @param versionNumber - Identifier for the versionNumber.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
   }
 
   /**
@@ -769,15 +769,15 @@ export class Appconfig extends PolicyStatement {
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
   }
 
   /**
@@ -787,15 +787,15 @@ export class Appconfig extends PolicyStatement {
    *
    * @param extensionId - Identifier for the extensionId.
    * @param extensionVersionNumber - Identifier for the extensionVersionNumber.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExtension(extensionId: string, extensionVersionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extension/${ extensionId }/${ extensionVersionNumber }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:extension/${ extensionId }/${ extensionVersionNumber }`);
   }
 
   /**
@@ -804,15 +804,15 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html
    *
    * @param extensionAssociationId - Identifier for the extensionAssociationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onExtensionassociation(extensionAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Appconfig.defaultPartition }:appconfig:${ region || '*' }:${ account || '*' }:extensionassociation/${ extensionAssociationId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:appconfig:${ region || this.defaultRegion }:${ account || this.defaultAccount }:extensionassociation/${ extensionAssociationId }`);
   }
 
   /**

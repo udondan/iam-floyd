@@ -203,12 +203,12 @@ export class Pi extends PolicyStatement {
    *
    * @param serviceType - Identifier for the serviceType.
    * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Pi.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:metrics/${ serviceType }/${ identifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metrics/${ serviceType }/${ identifier }`);
   }
 
   /**
@@ -219,15 +219,15 @@ export class Pi extends PolicyStatement {
    * @param serviceType - Identifier for the serviceType.
    * @param identifier - Identifier for the identifier.
    * @param reportId - Identifier for the reportId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onPerfReportsResource(serviceType: string, identifier: string, reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Pi.defaultPartition }:pi:${ region || '*' }:${ account || '*' }:perf-reports/${ serviceType }/${ identifier }/${ reportId }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:pi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:perf-reports/${ serviceType }/${ identifier }/${ reportId }`);
   }
 
   /**

@@ -273,35 +273,35 @@ export class Deeplens extends PolicyStatement {
    * Adds a resource of type device to the statement
    *
    * @param deviceName - Identifier for the deviceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevice(deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deeplens.defaultPartition }:deeplens:${ region || '*' }:${ account || '*' }:device/${ deviceName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device/${ deviceName }`);
   }
 
   /**
    * Adds a resource of type project to the statement
    *
    * @param projectName - Identifier for the projectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deeplens.defaultPartition }:deeplens:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
    * Adds a resource of type model to the statement
    *
    * @param modelName - Identifier for the modelName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Deeplens.defaultPartition }:deeplens:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }`);
   }
 }

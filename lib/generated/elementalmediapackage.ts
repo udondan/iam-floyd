@@ -283,15 +283,15 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html
    *
    * @param channelIdentifier - Identifier for the channelIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:channels/${ channelIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channels/${ channelIdentifier }`);
   }
 
   /**
@@ -300,15 +300,15 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html
    *
    * @param originEndpointIdentifier - Identifier for the originEndpointIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:origin_endpoints/${ originEndpointIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:origin_endpoints/${ originEndpointIdentifier }`);
   }
 
   /**
@@ -317,15 +317,15 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html
    *
    * @param harvestJobIdentifier - Identifier for the harvestJobIdentifier.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
   public onHarvestJobs(harvestJobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || Mediapackage.defaultPartition }:mediapackage:${ region || '*' }:${ account || '*' }:harvest_jobs/${ harvestJobIdentifier }`);
+    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:harvest_jobs/${ harvestJobIdentifier }`);
   }
 
   /**
