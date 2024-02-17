@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DataSyncFullAccessPermissions",
       "Effect": "Allow",
       "Action": [
         "datasync:*",
@@ -27,12 +28,14 @@
         "s3:GetBucketLocation",
         "s3:ListAllMyBuckets",
         "s3:ListBucket",
+        "s3:ListBucketVersions",
         "s3-outposts:ListAccessPoints",
         "s3-outposts:ListRegionalBuckets"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "DataSyncPassRolePermissions",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
