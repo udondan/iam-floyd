@@ -407,7 +407,7 @@ export function createModule(module: Module): Promise<void> {
       .replace(/^ {2}'([^' ]+)'/gm, '$1'), // remove quotes from single word keys
   });
 
-  for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
+  for (const [name, resourceType] of Object.entries(module.resourceTypes)) {
     const method = classDeclaration.addMethod({
       name: `on${camelCase(name)}`,
       scope: Scope.Public,

@@ -115,7 +115,7 @@ async function authenticateMastodon(): Promise<MegalodonInterface> {
   const getSecretValueCommand = new GetSecretValueCommand(params);
   try {
     const data = await secretsManagerClient.send(getSecretValueCommand);
-    const credentials = JSON.parse(data.SecretString!);
+    const credentials = JSON.parse(data.SecretString);
     const client = generator(
       'mastodon',
       'https://awscommunity.social',

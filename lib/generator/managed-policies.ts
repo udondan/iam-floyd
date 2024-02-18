@@ -1,15 +1,30 @@
 import {
+  GetPolicyCommand,
   GetPolicyVersionCommand,
   IAMClient,
+  IAMClientConfig,
   ListPoliciesCommand,
   ListPoliciesRequest,
   Policy,
 } from '@aws-sdk/client-iam';
 import * as fs from 'fs';
 
-const iamClient = new IAMClient({
+const clientConfig: IAMClientConfig = {
   region: 'us-east-1',
-});
+};
+if (
+  process.env.AWS_ACCESS_KEY_ID &&
+  process.env.AWS_SECRET_ACCESS_KEY &&
+  process.env.AWS_SESSION_TOKEN
+) {
+  clientConfig.credentials = {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    sessionToken: process.env.AWS_SESSION_TOKEN,
+  };
+}
+
+const iamClient = new IAMClient(clientConfig);
 
 export async function indexManagedPolicies(): Promise<void> {
   console.log('starting');
@@ -22,6 +37,8 @@ export async function indexManagedPolicies(): Promise<void> {
       policyMetadata.Arn &&
       policyMetadata.DefaultVersionId
     ) {
+      const description = await getIAMPolicyDescription(policyMetadata.Arn);
+      console.log(description);
       policyNames.push(policyMetadata.PolicyName);
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
@@ -80,6 +97,13 @@ async function getPolicyDocument(
   }
 }
 
+async function getIAMPolicyDescription(policyArn) {
+  const response = await iamClient.send(
+    new GetPolicyCommand({ PolicyArn: policyArn }),
+  );
+  return response.Policy!.Description;
+}
+
 function storePolicyDocument(name: string, document: string) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/${name}.json`;
 
@@ -88,7 +112,7 @@ function storePolicyDocument(name: string, document: string) {
 
   try {
     fs.writeFileSync(path, document);
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
   }
 }
@@ -97,7 +121,7 @@ function storePolicyIndex(names: string[]) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/index.json`;
   try {
     fs.writeFileSync(path, JSON.stringify(names));
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
   }
 }
