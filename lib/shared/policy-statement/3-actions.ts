@@ -165,7 +165,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * For example, the Amazon S3 action `ListBucket` has the List access level.
    */
   public allListActions() {
-    return this.addAccessLevel(AccessLevel.LIST);
+    return this.addAccessLevel(AccessLevel.list);
   }
 
   /**
@@ -176,7 +176,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * For example, the Amazon S3 actions `GetObject` and `GetBucketLocation` have the Read access level.
    */
   public allReadActions() {
-    return this.addAccessLevel(AccessLevel.READ);
+    return this.addAccessLevel(AccessLevel.read);
   }
 
   /**
@@ -189,7 +189,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * Write actions might also allow modifying a resource tag. However, an action that allows only changes to tags has the Tagging access level.
    */
   public allWriteActions() {
-    return this.addAccessLevel(AccessLevel.WRITE);
+    return this.addAccessLevel(AccessLevel.write);
   }
 
   /**
@@ -200,7 +200,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * For example, most IAM and AWS Organizations actions, as well as actions like the Amazon S3 actions `PutBucketPolicy` and `DeleteBucketPolicy` have the Permissions management access level.
    */
   public allPermissionManagementActions() {
-    return this.addAccessLevel(AccessLevel.PERMISSION_MANAGEMENT);
+    return this.addAccessLevel(AccessLevel.permissionsManagement);
   }
 
   /**
@@ -211,12 +211,12 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * For example, the IAM actions `TagRole` and `UntagRole` have the Tagging access level because they allow only tagging or untagging a role. However, the `CreateRole` action allows tagging a role resource when you create that role. Because the action does not only add a tag, it has the Write access level.
    */
   public allTaggingActions() {
-    return this.addAccessLevel(AccessLevel.TAGGING);
+    return this.addAccessLevel(AccessLevel.tagging);
   }
 
   private addAccessLevel(accessLevel: AccessLevel) {
     if (accessLevel in this.accessLevelList) {
-      this.accessLevelList[accessLevel].forEach((action) => {
+      this.accessLevelList[accessLevel]?.forEach((action) => {
         this.to(`${this.servicePrefix}:${action}`);
       });
     }

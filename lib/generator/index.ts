@@ -791,21 +791,21 @@ function getLastModified(url: string): Promise<Date> {
   });
 }
 
-function getTable($: CheerioStatic, title: string) {
+function getTable($: cheerio.Root, title: string) {
   const table = $('.table-container table')
     .toArray()
-    .filter((element: string) => {
+    .filter((element) => {
       return $(element).find('th').first().text() == title;
     });
   return $(table[0]);
 }
 
-function addActions($: CheerioStatic, module: Module): Module {
+function addActions($: cheerio.Root, module: Module): Module {
   const actions: Actions = {};
   const tableActions = getTable($, 'Actions');
 
   let action: string;
-  tableActions.find('tr').each((_: number, element: CheerioElement) => {
+  tableActions.find('tr').each((_, element) => {
     const tds = $(element).find('td');
     const tdLength = tds.length;
     let first = tds.first();
@@ -894,10 +894,10 @@ function addActions($: CheerioStatic, module: Module): Module {
   return module;
 }
 
-function addResourceTypes($: CheerioStatic, module: Module): Module {
+function addResourceTypes($: cheerio.Root, module: Module): Module {
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource types');
-  tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
+  tableResourceTypes.find('tr').each((_, element) => {
     const tds = $(element).find('td');
     const name = tds.first().text().trim();
     const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
@@ -912,7 +912,7 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       .next()
       .find('p')
       .toArray()
-      .map((element: string) => {
+      .map((element) => {
         return conditionKeyFixer(
           module.servicePrefix!,
           $(element).text().trim(),
@@ -939,10 +939,10 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
   return module;
 }
 
-function addConditions($: CheerioStatic, module: Module): Module {
+function addConditions($: cheerio.Root, module: Module): Module {
   const conditions: Conditions = {};
   const table = getTable($, 'Condition keys');
-  table.find('tr').each((_: number, element: CheerioElement) => {
+  table.find('tr').each((_, element) => {
     const tds = $(element).find('td');
     const key = tds.first().text().trim();
     const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());

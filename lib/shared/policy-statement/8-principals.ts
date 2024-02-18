@@ -3,13 +3,13 @@ import { PolicyStatementWithArnDefaults } from './6-arn-defaults';
 /**
  * A collection of Principal's
  */
-export type Principals = Record<string, string[]>;
+export type Principals = Partial<Record<PrincipalType, string[]>>;
 
 export enum PrincipalType {
-  AWS = 'AWS',
-  FEDERATED = 'Federated',
-  CANONICAL_USER = 'CanonicalUser',
-  SERVICE = 'Service',
+  aws = 'AWS',
+  federated = 'Federated',
+  canonicalUser = 'CanonicalUser',
+  service = 'Service',
 }
 
 /**
@@ -78,12 +78,12 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
    * @param prefix One of **AWS**, **Federated**, **CanonicalUser** or **Service**
    * @param principal The principal string
    */
-  protected addPrincipal(prefix: string, principal: string) {
+  protected addPrincipal(prefix: PrincipalType, principal: string) {
     this.skipAutoResource = true;
     if (!(prefix in this.myPrincipals)) {
       this.myPrincipals[prefix] = [];
     }
-    this.myPrincipals[prefix].push(principal);
+    this.myPrincipals[prefix]!.push(principal);
     return this;
   }
 
@@ -93,8 +93,8 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
    * @param arn The ARN of the principal
    * @param prefix One of **AWS**, **Federated**, **CanonicalUser** or **Service** - Default: **AWS**
    */
-  public for(arn: string, prefix?: string) {
-    return this.addPrincipal(prefix ?? PrincipalType.AWS, arn);
+  public for(arn: string, prefix?: PrincipalType) {
+    return this.addPrincipal(prefix ?? PrincipalType.aws, arn);
   }
 
   /**
@@ -105,7 +105,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
   public forAccount(...accounts: string[]) {
     accounts.forEach((account) =>
       this.addPrincipal(
-        PrincipalType.AWS,
+        PrincipalType.aws,
         `arn:${this.defaultPartition}:iam::${account}:root`,
       ),
     );
@@ -119,7 +119,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
    */
   public forFederated(...providers: string[]) {
     providers.forEach((provider) =>
-      this.addPrincipal(PrincipalType.FEDERATED, provider),
+      this.addPrincipal(PrincipalType.federated, provider),
     );
     return this;
   }
@@ -162,7 +162,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
    */
   public forCanonicalUser(...userIDs: string[]) {
     userIDs.forEach((userID) =>
-      this.addPrincipal(PrincipalType.CANONICAL_USER, userID),
+      this.addPrincipal(PrincipalType.canonicalUser, userID),
     );
     return this;
   }
@@ -191,7 +191,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
   public forUser(account: string, ...users: string[]) {
     users.forEach((user) =>
       this.addPrincipal(
-        PrincipalType.AWS,
+        PrincipalType.aws,
         `arn:${this.defaultPartition}:iam::${account}:user/${user}`,
       ),
     );
@@ -207,7 +207,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
   public forRole(account: string, ...roles: string[]) {
     roles.forEach((role) =>
       this.addPrincipal(
-        PrincipalType.AWS,
+        PrincipalType.aws,
         `arn:${this.defaultPartition}:iam::${account}:role/${role}`,
       ),
     );
@@ -228,7 +228,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
   ) {
     sessionNames.forEach((sessionName) => {
       this.addPrincipal(
-        PrincipalType.AWS,
+        PrincipalType.aws,
         `arn:${this.defaultPartition}:sts::${account}:assumed-role/${roleName}/${sessionName}`,
       );
     });
@@ -245,7 +245,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
 
   public forService(...services: string[]) {
     services.forEach((service) =>
-      this.addPrincipal(PrincipalType.SERVICE, service),
+      this.addPrincipal(PrincipalType.service, service),
     );
     return this;
   }
@@ -258,6 +258,6 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
    * We strongly recommend that you do not use a wildcard in the Principal element in a role's trust policy unless you otherwise restrict access through a Condition element in the policy. Otherwise, any IAM user in any account in your partition can access the role.
    */
   public forPublic() {
-    return this.addPrincipal(PrincipalType.AWS, '*');
+    return this.addPrincipal(PrincipalType.aws, '*');
   }
 }
