@@ -26,10 +26,6 @@ import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
 
-// tmp solution. the cheerio/types is currently not working
-type CheerioStatic = any;
-type CheerioElement = any;
-
 const project = new Project();
 project.manipulationSettings.set({
   quoteKind: QuoteKind.Single,

@@ -8,6 +8,49 @@ import {
   Policy,
 } from '@aws-sdk/client-iam';
 import * as fs from 'fs';
+import { EnumDeclaration, Project, QuoteKind, SourceFile } from 'ts-morph';
+
+import { camelCase } from '.';
+
+class ManagedPolicies {
+  private file: SourceFile;
+  private collection: EnumDeclaration;
+
+  constructor() {
+    const project = new Project();
+    project.manipulationSettings.set({
+      quoteKind: QuoteKind.Single,
+    });
+
+    this.file = project.createSourceFile(
+      'lib/generated/aws-managed-policies.ts',
+      '',
+      {
+        overwrite: true,
+      },
+    );
+
+    this.collection = this.file.addEnum({
+      isExported: true,
+      name: 'AwsManagedPolicies',
+    });
+  }
+
+  public save() {
+    this.file.saveSync();
+  }
+
+  public add(name: string, value: string, description: string) {
+    this.collection
+      .addMember({
+        name,
+        value,
+      })
+      .addJsDoc({
+        description,
+      });
+  }
+}
 
 const clientConfig: IAMClientConfig = {
   region: 'us-east-1',
@@ -28,6 +71,7 @@ const iamClient = new IAMClient(clientConfig);
 
 export async function indexManagedPolicies(): Promise<void> {
   console.log('starting');
+  const managedPolicies = new ManagedPolicies();
   const policyNames: string[] = [];
   const policies = await getPolicies();
   console.log(`Fetched metadata of ${policies.length} managed policies`);
@@ -38,7 +82,11 @@ export async function indexManagedPolicies(): Promise<void> {
       policyMetadata.DefaultVersionId
     ) {
       const description = await getIAMPolicyDescription(policyMetadata.Arn);
-      console.log(description);
+      managedPolicies.add(
+        camelCase(policyMetadata.PolicyName),
+        policyMetadata.Arn,
+        description!,
+      );
       policyNames.push(policyMetadata.PolicyName);
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
@@ -49,6 +97,7 @@ export async function indexManagedPolicies(): Promise<void> {
     }
   }
   storePolicyIndex(policyNames);
+  managedPolicies.save();
 }
 
 async function getPolicies(marker?: string): Promise<Policy[]> {
