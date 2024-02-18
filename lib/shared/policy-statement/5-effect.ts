@@ -4,15 +4,15 @@ import { PolicyStatementWithResources } from './4-resources';
  * Policy effects
  */
 export enum Effect {
-  ALLOW = 'Allow',
-  DENY = 'Deny',
+  allow = 'Allow',
+  deny = 'Deny',
 }
 
 /**
  * Adds "effect" functionality to the Policy Statement
  */
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
-  public effect = Effect.ALLOW;
+  public effect = Effect.allow;
 
   /**
    * Injects effect into the statement.
@@ -33,7 +33,7 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
    * Allow the actions in this statement
    */
   public allow() {
-    this.effect = Effect.ALLOW;
+    this.effect = Effect.allow;
     return this;
   }
 
@@ -41,7 +41,7 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
    * Deny the actions in this statement
    */
   public deny() {
-    this.effect = Effect.DENY;
+    this.effect = Effect.deny;
     return this;
   }
 }
