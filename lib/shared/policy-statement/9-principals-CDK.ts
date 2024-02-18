@@ -28,25 +28,25 @@ export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipa
       if (this.hasPrincipals()) {
         Object.keys(this.myPrincipals).forEach((prefix) => {
           switch (prefix) {
-            case PrincipalType.AWS:
+            case PrincipalType.aws:
               this.myPrincipals[prefix].forEach((arn) => {
                 // @ts-ignore only available after swapping 1-base
                 this[mode](new iam.ArnPrincipal(arn));
               });
               break;
-            case PrincipalType.CANONICAL_USER:
+            case PrincipalType.canonicalUser:
               this.myPrincipals[prefix].forEach((userId) => {
                 // @ts-ignore only available after swapping 1-base
                 this[mode](new iam.CanonicalUserPrincipal(userId));
               });
               break;
-            case PrincipalType.FEDERATED:
+            case PrincipalType.federated:
               this.myPrincipals[prefix].forEach((provider) => {
                 // @ts-ignore only available after swapping 1-base
                 this[mode](new iam.FederatedPrincipal(provider, {}));
               });
               break;
-            case PrincipalType.SERVICE:
+            case PrincipalType.service:
               this.myPrincipals[prefix].forEach((service) => {
                 // @ts-ignore only available after swapping 1-base
                 this[mode](new iam.ServicePrincipal(service));
