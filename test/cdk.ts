@@ -15,7 +15,7 @@ export class TestStack extends Stack {
 
     const policy = new aws_iam.ManagedPolicy(this, 'Policy', {
       managedPolicyName: `${this.stackName}-testpolicy`,
-      description: `test policy`,
+      description: 'test policy',
       statements: [
         new Statement.Ssm()
           .allow()
