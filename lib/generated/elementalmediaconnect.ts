@@ -689,7 +689,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitlement(flowId: string, entitlementName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entitlement:${ flowId }:${ entitlementName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entitlement:${ flowId }:${ entitlementName }`);
   }
 
   /**
@@ -704,7 +704,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFlow(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flow:${ flowId }:${ flowName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -719,7 +719,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOutput(outputId: string, outputName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:output:${ outputId }:${ outputName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:output:${ outputId }:${ outputName }`);
   }
 
   /**
@@ -734,7 +734,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source:${ sourceId }:${ sourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:source:${ sourceId }:${ sourceName }`);
   }
 
   /**
@@ -749,7 +749,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGateway(gatewayId: string, gatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }`);
   }
 
   /**
@@ -764,7 +764,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBridge(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bridge:${ flowId }:${ flowName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bridge:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -780,6 +780,6 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewayInstance(gatewayId: string, gatewayName: string, instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
   }
 }

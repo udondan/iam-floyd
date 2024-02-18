@@ -489,7 +489,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ledger/${ ledgerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ledger/${ ledgerName }`);
   }
 
   /**
@@ -507,7 +507,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ ledgerName }/${ streamId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ ledgerName }/${ streamId }`);
   }
 
   /**
@@ -525,7 +525,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(ledgerName: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ledger/${ ledgerName }/table/${ tableId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ledger/${ ledgerName }/table/${ tableId }`);
   }
 
   /**
@@ -542,7 +542,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qldb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ledger/${ ledgerName }/information_schema/user_tables`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ledger/${ ledgerName }/information_schema/user_tables`);
   }
 
   /**
@@ -562,7 +562,7 @@ export class Qldb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -581,7 +581,7 @@ export class Qldb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -600,7 +600,7 @@ export class Qldb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -616,6 +616,6 @@ export class Qldb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPurge(value: string | string[], operator?: Operator | string) {
-    return this.if(`Purge`, value, operator || 'StringLike');
+    return this.if(`Purge`, value, operator ?? 'StringLike');
   }
 }

@@ -708,7 +708,7 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalysubscription(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:anomalysubscription/${ identifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ce::${ account ?? this.defaultAccount }:anomalysubscription/${ identifier }`);
   }
 
   /**
@@ -724,7 +724,7 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalymonitor(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:anomalymonitor/${ identifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ce::${ account ?? this.defaultAccount }:anomalymonitor/${ identifier }`);
   }
 
   /**
@@ -740,7 +740,7 @@ export class Ce extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCostcategory(identifier: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ce::${ account || this.defaultAccount }:costcategory/${ identifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ce::${ account ?? this.defaultAccount }:costcategory/${ identifier }`);
   }
 
   /**
@@ -759,7 +759,7 @@ export class Ce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -792,7 +792,7 @@ export class Ce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -811,6 +811,6 @@ export class Ce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

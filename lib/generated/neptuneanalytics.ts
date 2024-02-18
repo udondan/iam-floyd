@@ -540,7 +540,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:graph/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:neptune-graph:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:graph/${ resourceId }`);
   }
 
   /**
@@ -557,7 +557,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraphSnapshot(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:graph-snapshot/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:neptune-graph:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:graph-snapshot/${ resourceId }`);
   }
 
   /**
@@ -571,7 +571,7 @@ export class NeptuneGraph extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:neptune-graph:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-task/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:neptune-graph:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:import-task/${ resourceId }`);
   }
 
   /**
@@ -592,7 +592,7 @@ export class NeptuneGraph extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -633,7 +633,7 @@ export class NeptuneGraph extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -654,6 +654,6 @@ export class NeptuneGraph extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

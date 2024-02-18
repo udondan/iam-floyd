@@ -188,7 +188,7 @@ export class IdentitySync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSyncProfileResource(syncProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identity-sync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ syncProfileName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identity-sync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ syncProfileName }`);
   }
 
   /**
@@ -203,6 +203,6 @@ export class IdentitySync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSyncTargetResource(syncProfileName: string, syncTargetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identity-sync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:target/${ syncProfileName }/${ syncTargetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identity-sync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/${ syncProfileName }/${ syncTargetName }`);
   }
 }

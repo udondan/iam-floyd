@@ -138,7 +138,7 @@ export class Ebs extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }::snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }::snapshot/${ snapshotId }`);
   }
 
   /**
@@ -157,7 +157,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -181,7 +181,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -199,7 +199,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -217,7 +217,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDescription(value: string | string[], operator?: Operator | string) {
-    return this.if(`Description`, value, operator || 'StringLike');
+    return this.if(`Description`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -235,7 +235,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifParentSnapshot(value: string | string[], operator?: Operator | string) {
-    return this.if(`ParentSnapshot`, value, operator || 'StringLike');
+    return this.if(`ParentSnapshot`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -253,6 +253,6 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifVolumeSize(value: number | number[], operator?: Operator | string) {
-    return this.if(`VolumeSize`, value, operator || 'NumericEquals');
+    return this.if(`VolumeSize`, value, operator ?? 'NumericEquals');
   }
 }

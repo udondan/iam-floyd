@@ -657,7 +657,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:license-configuration:${ licenseConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -670,7 +670,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || this.defaultAccount }:license:${ licenseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager::${ account ?? this.defaultAccount }:license:${ licenseId }`);
   }
 
   /**
@@ -683,7 +683,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:license-manager::${ account || this.defaultAccount }:grant:${ grantId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager::${ account ?? this.defaultAccount }:grant:${ grantId }`);
   }
 
   /**
@@ -700,7 +700,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:license-manager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report-generator:${ reportGeneratorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report-generator:${ reportGeneratorId }`);
   }
 
   /**
@@ -718,7 +718,7 @@ export class LicenseManager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -735,7 +735,7 @@ export class LicenseManager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -752,6 +752,6 @@ export class LicenseManager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

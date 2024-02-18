@@ -4027,7 +4027,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -4042,7 +4042,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact/${ contactId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact/${ contactId }`);
   }
 
   /**
@@ -4060,7 +4060,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent/${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent/${ userId }`);
   }
 
   /**
@@ -4078,7 +4078,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
   }
 
   /**
@@ -4096,7 +4096,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
   }
 
   /**
@@ -4114,7 +4114,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
   }
 
   /**
@@ -4132,7 +4132,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/queue/${ queueId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ queueId }`);
   }
 
   /**
@@ -4147,7 +4147,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardQueue(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/queue/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ resourceName }`);
   }
 
   /**
@@ -4165,7 +4165,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
   }
 
   /**
@@ -4180,7 +4180,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardQuickConnect(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
   }
 
   /**
@@ -4198,7 +4198,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
   }
 
   /**
@@ -4216,7 +4216,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTaskTemplate(instanceId: string, taskTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
   }
 
   /**
@@ -4234,7 +4234,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactFlowModule(instanceId: string, contactFlowModuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
   }
 
   /**
@@ -4249,7 +4249,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardContactFlow(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-flow/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ resourceName }`);
   }
 
   /**
@@ -4267,7 +4267,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
   }
 
   /**
@@ -4285,7 +4285,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgentStatus(instanceId: string, agentStatusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
   }
 
   /**
@@ -4300,7 +4300,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/agent-state/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-state/${ resourceName }`);
   }
 
   /**
@@ -4315,7 +4315,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLegacyPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -4330,7 +4330,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWildcardLegacyPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/phone-number/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ resourceName }`);
   }
 
   /**
@@ -4347,7 +4347,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -4364,7 +4364,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWildcardPhoneNumber(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ resourceName }`);
   }
 
   /**
@@ -4382,7 +4382,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
   }
 
   /**
@@ -4400,7 +4400,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/use-case/${ useCaseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/use-case/${ useCaseId }`);
   }
 
   /**
@@ -4418,7 +4418,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
   }
 
   /**
@@ -4435,7 +4435,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrafficDistributionGroup(trafficDistributionGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:traffic-distribution-group/${ trafficDistributionGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:traffic-distribution-group/${ trafficDistributionGroupId }`);
   }
 
   /**
@@ -4453,7 +4453,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(instanceId: string, ruleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/rule/${ ruleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/rule/${ ruleId }`);
   }
 
   /**
@@ -4471,7 +4471,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
   }
 
   /**
@@ -4489,7 +4489,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactEvaluation(instanceId: string, evaluationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
   }
 
   /**
@@ -4507,7 +4507,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPrompt(instanceId: string, promptId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/prompt/${ promptId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/prompt/${ promptId }`);
   }
 
   /**
@@ -4525,7 +4525,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomerManagedView(instanceId: string, viewId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }`);
   }
 
   /**
@@ -4538,7 +4538,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAwsManagedView(viewId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:aws:view/${ viewId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }`);
   }
 
   /**
@@ -4557,7 +4557,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
   }
 
   /**
@@ -4571,7 +4571,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQualifiedAwsManagedView(viewId: string, viewQualifier: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:aws:view/${ viewId }:${ viewQualifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }:${ viewQualifier }`);
   }
 
   /**
@@ -4590,7 +4590,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomerManagedViewVersion(instanceId: string, viewId: string, viewVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:connect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
   }
 
   /**
@@ -4626,7 +4626,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4771,7 +4771,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4807,7 +4807,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4823,7 +4823,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAttributeType(value: string | string[], operator?: Operator | string) {
-    return this.if(`AttributeType`, value, operator || 'StringLike');
+    return this.if(`AttributeType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5046,7 +5046,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`InstanceId`, value, operator || 'StringLike');
+    return this.if(`InstanceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5061,7 +5061,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMonitorCapabilities(value: string | string[], operator?: Operator | string) {
-    return this.if(`MonitorCapabilities`, value, operator || 'StringLike');
+    return this.if(`MonitorCapabilities`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5076,7 +5076,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSearchContactsByContactAnalysis(value: string | string[], operator?: Operator | string) {
-    return this.if(`SearchContactsByContactAnalysis`, value, operator || 'StringLike');
+    return this.if(`SearchContactsByContactAnalysis`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5099,7 +5099,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSearchTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`SearchTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`SearchTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5117,6 +5117,6 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStorageResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`StorageResourceType`, value, operator || 'StringLike');
+    return this.if(`StorageResourceType`, value, operator ?? 'StringLike');
   }
 }

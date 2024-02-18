@@ -1152,7 +1152,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:global-network/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:global-network/${ resourceId }`);
   }
 
   /**
@@ -1169,7 +1169,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:site/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:site/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:link/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:link/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1203,7 +1203,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:device/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:device/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1220,7 +1220,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:connection/${ globalNetworkId }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:connection/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1236,7 +1236,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCoreNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:core-network/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:core-network/${ resourceId }`);
   }
 
   /**
@@ -1252,7 +1252,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:attachment/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**
@@ -1268,7 +1268,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnectPeer(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:connect-peer/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:connect-peer/${ resourceId }`);
   }
 
   /**
@@ -1284,7 +1284,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPeering(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:networkmanager::${ account || this.defaultAccount }:peering/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:peering/${ resourceId }`);
   }
 
   /**
@@ -1313,7 +1313,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1341,7 +1341,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1370,7 +1370,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1386,7 +1386,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCgwArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`cgwArn`, value, operator || 'ArnLike');
+    return this.if(`cgwArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1402,7 +1402,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSubnetArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`subnetArns`, value, operator || 'ArnLike');
+    return this.if(`subnetArns`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1419,7 +1419,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwArn`, value, operator || 'ArnLike');
+    return this.if(`tgwArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1435,7 +1435,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwConnectPeerArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwConnectPeerArn`, value, operator || 'ArnLike');
+    return this.if(`tgwConnectPeerArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1450,7 +1450,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTgwRtbArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`tgwRtbArn`, value, operator || 'ArnLike');
+    return this.if(`tgwRtbArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1465,7 +1465,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpcArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpcArn`, value, operator || 'ArnLike');
+    return this.if(`vpcArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1480,6 +1480,6 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpnConnectionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpnConnectionArn`, value, operator || 'ArnLike');
+    return this.if(`vpnConnectionArn`, value, operator ?? 'ArnLike');
   }
 }

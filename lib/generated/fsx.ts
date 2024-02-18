@@ -805,7 +805,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -822,7 +822,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileCache(fileCacheId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:file-cache/${ fileCacheId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-cache/${ fileCacheId }`);
   }
 
   /**
@@ -839,7 +839,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup/${ backupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:backup/${ backupId }`);
   }
 
   /**
@@ -857,7 +857,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStorageVirtualMachine(fileSystemId: string, storageVirtualMachineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
   }
 
   /**
@@ -874,7 +874,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ taskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task/${ taskId }`);
   }
 
   /**
@@ -892,7 +892,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssociation(fileSystemIdOrFileCacheId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
   }
 
   /**
@@ -910,7 +910,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:volume/${ fileSystemId }/${ volumeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:volume/${ fileSystemId }/${ volumeId }`);
   }
 
   /**
@@ -928,7 +928,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fsx:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot/${ volumeId }/${ snapshotId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**
@@ -958,7 +958,7 @@ export class Fsx extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -981,7 +981,7 @@ export class Fsx extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1011,7 +1011,7 @@ export class Fsx extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1078,7 +1078,7 @@ export class Fsx extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifParentVolumeId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ParentVolumeId`, value, operator || 'StringLike');
+    return this.if(`ParentVolumeId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1096,6 +1096,6 @@ export class Fsx extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStorageVirtualMachineId(value: string | string[], operator?: Operator | string) {
-    return this.if(`StorageVirtualMachineId`, value, operator || 'StringLike');
+    return this.if(`StorageVirtualMachineId`, value, operator ?? 'StringLike');
   }
 }

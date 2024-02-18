@@ -816,7 +816,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:robot-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:robot-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -834,7 +834,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -851,7 +851,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-job/${ simulationJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:simulation-job/${ simulationJobId }`);
   }
 
   /**
@@ -868,7 +868,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:simulation-job-batch/${ simulationJobBatchId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:simulation-job-batch/${ simulationJobBatchId }`);
   }
 
   /**
@@ -885,7 +885,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment-job/${ deploymentJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-job/${ deploymentJobId }`);
   }
 
   /**
@@ -903,7 +903,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:robot/${ robotName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:robot/${ robotName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -921,7 +921,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -938,7 +938,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldGenerationJob(worldGenerationJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-generation-job/${ worldGenerationJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-generation-job/${ worldGenerationJobId }`);
   }
 
   /**
@@ -955,7 +955,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-export-job/${ worldExportJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-export-job/${ worldExportJobId }`);
   }
 
   /**
@@ -972,7 +972,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world-template/${ worldTemplateJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-template/${ worldTemplateJobId }`);
   }
 
   /**
@@ -989,7 +989,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:robomaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:world/${ worldId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world/${ worldId }`);
   }
 
   /**
@@ -1015,7 +1015,7 @@ export class Robomaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1041,7 +1041,7 @@ export class Robomaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1067,6 +1067,6 @@ export class Robomaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

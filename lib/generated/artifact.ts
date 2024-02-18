@@ -156,7 +156,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReportPackage(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::report-package/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:::report-package/${ resourceName }`);
   }
 
   /**
@@ -169,7 +169,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:artifact::${ account || this.defaultAccount }:customer-agreement/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact::${ account ?? this.defaultAccount }:customer-agreement/${ resourceName }`);
   }
 
   /**
@@ -181,7 +181,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAgreement(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:artifact:::agreement/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:::agreement/${ resourceName }`);
   }
 
   /**
@@ -194,7 +194,7 @@ export class Artifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(resourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:artifact:${ region || this.defaultRegion }::report/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }::report/${ resourceName }`);
   }
 
   /**
@@ -206,7 +206,7 @@ export class Artifact extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReportCategory(value: string | string[], operator?: Operator | string) {
-    return this.if(`ReportCategory`, value, operator || 'StringLike');
+    return this.if(`ReportCategory`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -218,6 +218,6 @@ export class Artifact extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReportSeries(value: string | string[], operator?: Operator | string) {
-    return this.if(`ReportSeries`, value, operator || 'StringLike');
+    return this.if(`ReportSeries`, value, operator ?? 'StringLike');
   }
 }

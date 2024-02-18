@@ -47,6 +47,6 @@ export class AwsMarketplaceSellerReporting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSellerDashboard(catalog: string, factTable: string, dashboardName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:aws-marketplace::${ account || this.defaultAccount }:${ catalog }/ReportingData/${ factTable }/Dashboard/${ dashboardName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace::${ account ?? this.defaultAccount }:${ catalog }/ReportingData/${ factTable }/Dashboard/${ dashboardName }`);
   }
 }

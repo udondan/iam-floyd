@@ -417,7 +417,7 @@ export class Servicediscovery extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:servicediscovery:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:servicediscovery:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -434,7 +434,7 @@ export class Servicediscovery extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:servicediscovery:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:servicediscovery:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
   }
 
   /**
@@ -454,7 +454,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -471,7 +471,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -491,7 +491,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -506,7 +506,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifNamespaceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`NamespaceArn`, value, operator || 'ArnLike');
+    return this.if(`NamespaceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -522,7 +522,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNamespaceName(value: string | string[], operator?: Operator | string) {
-    return this.if(`NamespaceName`, value, operator || 'StringLike');
+    return this.if(`NamespaceName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -542,7 +542,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -558,6 +558,6 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServiceName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceName`, value, operator || 'StringLike');
+    return this.if(`ServiceName`, value, operator ?? 'StringLike');
   }
 }

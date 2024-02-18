@@ -1404,7 +1404,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlias(aliasId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }::alias/${ aliasId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }::alias/${ aliasId }`);
   }
 
   /**
@@ -1421,7 +1421,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:build/${ buildId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:build/${ buildId }`);
   }
 
   /**
@@ -1438,7 +1438,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetId }`);
   }
 
   /**
@@ -1455,7 +1455,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gameservergroup/${ gameServerGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gameservergroup/${ gameServerGroupName }`);
   }
 
   /**
@@ -1472,7 +1472,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameSessionQueue(gameSessionQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gamesessionqueue/${ gameSessionQueueName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gamesessionqueue/${ gameSessionQueueName }`);
   }
 
   /**
@@ -1489,7 +1489,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:location/${ locationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:location/${ locationId }`);
   }
 
   /**
@@ -1506,7 +1506,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingConfiguration(matchmakingConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
   }
 
   /**
@@ -1523,7 +1523,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingRuleSet(matchmakingRuleSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:matchmakingruleset/${ matchmakingRuleSetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:matchmakingruleset/${ matchmakingRuleSetName }`);
   }
 
   /**
@@ -1540,7 +1540,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScript(scriptId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:gamelift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:script/${ scriptId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:script/${ scriptId }`);
   }
 
   /**
@@ -1565,7 +1565,7 @@ export class Gamelift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1589,7 +1589,7 @@ export class Gamelift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1614,6 +1614,6 @@ export class Gamelift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

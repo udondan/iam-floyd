@@ -266,7 +266,7 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServer(serverName: string, uniqueId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:opsworks-cm::${ account || this.defaultAccount }:server/${ serverName }/${ uniqueId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:opsworks-cm::${ account ?? this.defaultAccount }:server/${ serverName }/${ uniqueId }`);
   }
 
   /**
@@ -277,6 +277,6 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackup(serverName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:opsworks-cm::${ account || this.defaultAccount }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:opsworks-cm::${ account ?? this.defaultAccount }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
   }
 }

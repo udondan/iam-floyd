@@ -1321,7 +1321,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobID }`);
   }
 
   /**
@@ -1339,7 +1339,7 @@ export class Drs extends PolicyStatement {
    * - .ifEC2InstanceARN()
    */
   public onRecoveryInstanceResource(recoveryInstanceID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recovery-instance/${ recoveryInstanceID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recovery-instance/${ recoveryInstanceID }`);
   }
 
   /**
@@ -1356,7 +1356,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -1373,7 +1373,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLaunchConfigurationTemplateResource(launchConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-configuration-template/${ launchConfigurationTemplateID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:launch-configuration-template/${ launchConfigurationTemplateID }`);
   }
 
   /**
@@ -1390,7 +1390,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source-server/${ sourceServerID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:source-server/${ sourceServerID }`);
   }
 
   /**
@@ -1407,7 +1407,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceNetworkResource(sourceNetworkID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:drs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:source-network/${ sourceNetworkID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:source-network/${ sourceNetworkID }`);
   }
 
   /**
@@ -1437,7 +1437,7 @@ export class Drs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1458,7 +1458,7 @@ export class Drs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1488,7 +1488,7 @@ export class Drs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1503,7 +1503,7 @@ export class Drs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreateAction`, value, operator || 'StringLike');
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1518,6 +1518,6 @@ export class Drs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifEC2InstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`EC2InstanceARN`, value, operator || 'ArnLike');
+    return this.if(`EC2InstanceARN`, value, operator ?? 'ArnLike');
   }
 }

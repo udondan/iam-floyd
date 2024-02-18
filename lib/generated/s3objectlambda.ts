@@ -491,7 +491,7 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3-object-lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-object-lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -531,7 +531,7 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifTlsVersion(value: number | number[], operator?: Operator | string) {
-    return this.if(`TlsVersion`, value, operator || 'NumericEquals');
+    return this.if(`TlsVersion`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -571,7 +571,7 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`authType`, value, operator || 'StringLike');
+    return this.if(`authType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -611,7 +611,7 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSignatureAge(value: number | number[], operator?: Operator | string) {
-    return this.if(`signatureAge`, value, operator || 'NumericEquals');
+    return this.if(`signatureAge`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -632,6 +632,6 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionid(value: string | string[], operator?: Operator | string) {
-    return this.if(`versionid`, value, operator || 'StringLike');
+    return this.if(`versionid`, value, operator ?? 'StringLike');
   }
 }

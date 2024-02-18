@@ -260,7 +260,7 @@ export class Braket extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuantumTask(randomId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:braket:${ region || this.defaultRegion }:${ account || this.defaultAccount }:quantum-task/${ randomId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:quantum-task/${ randomId }`);
   }
 
   /**
@@ -277,7 +277,7 @@ export class Braket extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:braket:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobName }`);
   }
 
   /**
@@ -295,7 +295,7 @@ export class Braket extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -312,7 +312,7 @@ export class Braket extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -330,6 +330,6 @@ export class Braket extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

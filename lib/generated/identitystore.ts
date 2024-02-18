@@ -265,7 +265,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentitystore(identityStoreId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore::${ account || this.defaultAccount }:identitystore/${ identityStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore::${ account ?? this.defaultAccount }:identitystore/${ identityStoreId }`);
   }
 
   /**
@@ -277,7 +277,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::user/${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::user/${ userId }`);
   }
 
   /**
@@ -289,7 +289,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::group/${ groupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ groupId }`);
   }
 
   /**
@@ -301,7 +301,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroupMembership(membershipId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::membership/${ membershipId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ membershipId }`);
   }
 
   /**
@@ -313,7 +313,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllUsers(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::user/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::user/${ resourceName }`);
   }
 
   /**
@@ -325,7 +325,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllGroups(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::group/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ resourceName }`);
   }
 
   /**
@@ -337,7 +337,7 @@ export class Identitystore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAllGroupMemberships(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:identitystore:::membership/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ resourceName }`);
   }
 
   /**
@@ -349,6 +349,6 @@ export class Identitystore extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserId(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserId`, value, operator || 'StringLike');
+    return this.if(`UserId`, value, operator ?? 'StringLike');
   }
 }

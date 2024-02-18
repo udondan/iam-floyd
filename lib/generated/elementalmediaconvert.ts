@@ -405,7 +405,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconvert:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -422,7 +422,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:queues/${ queueName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconvert:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:queues/${ queueName }`);
   }
 
   /**
@@ -439,7 +439,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:presets/${ presetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconvert:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:presets/${ presetName }`);
   }
 
   /**
@@ -456,7 +456,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobTemplates/${ jobTemplateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconvert:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobTemplates/${ jobTemplateName }`);
   }
 
   /**
@@ -470,7 +470,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediaconvert:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificates/${ certificateArn }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconvert:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificates/${ certificateArn }`);
   }
 
   /**
@@ -490,7 +490,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -509,7 +509,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -529,7 +529,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**

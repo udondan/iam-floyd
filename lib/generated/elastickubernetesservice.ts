@@ -787,7 +787,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -806,7 +806,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
   }
 
   /**
@@ -825,7 +825,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:addon/${ clusterName }/${ addonName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:addon/${ clusterName }/${ addonName }/${ uUID }`);
   }
 
   /**
@@ -844,7 +844,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
   }
 
   /**
@@ -864,7 +864,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
   }
 
   /**
@@ -881,7 +881,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEksAnywhereSubscription(uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eks-anywhere-subscription/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eks-anywhere-subscription/${ uUID }`);
   }
 
   /**
@@ -899,7 +899,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPodidentityassociation(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:podidentityassociation/${ clusterName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:podidentityassociation/${ clusterName }/${ uUID }`);
   }
 
   /**
@@ -925,7 +925,7 @@ export class Eks extends PolicyStatement {
    * - .ifUsername()
    */
   public onAccessEntry(clusterName: string, iamIdentityType: string, iamIdentityAccountID: string, iamIdentityName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:access-entry/${ clusterName }/${ iamIdentityType }/${ iamIdentityAccountID }/${ iamIdentityName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-entry/${ clusterName }/${ iamIdentityType }/${ iamIdentityAccountID }/${ iamIdentityName }/${ uUID }`);
   }
 
   /**
@@ -937,7 +937,7 @@ export class Eks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessPolicy(accessPolicyName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:eks::aws:cluster-access-policy/${ accessPolicyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks::aws:cluster-access-policy/${ accessPolicyName }`);
   }
 
   /**
@@ -962,7 +962,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -985,7 +985,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1010,7 +1010,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1028,7 +1028,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccessEntryType(value: string | string[], operator?: Operator | string) {
-    return this.if(`accessEntryType`, value, operator || 'StringLike');
+    return this.if(`accessEntryType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1044,7 +1044,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccessScope(value: string | string[], operator?: Operator | string) {
-    return this.if(`accessScope`, value, operator || 'StringLike');
+    return this.if(`accessScope`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1073,7 +1073,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClientId(value: string | string[], operator?: Operator | string) {
-    return this.if(`clientId`, value, operator || 'StringLike');
+    return this.if(`clientId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1088,7 +1088,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClusterName(value: string | string[], operator?: Operator | string) {
-    return this.if(`clusterName`, value, operator || 'StringLike');
+    return this.if(`clusterName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1103,7 +1103,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIssuerUrl(value: string | string[], operator?: Operator | string) {
-    return this.if(`issuerUrl`, value, operator || 'StringLike');
+    return this.if(`issuerUrl`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1121,7 +1121,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKubernetesGroups(value: string | string[], operator?: Operator | string) {
-    return this.if(`kubernetesGroups`, value, operator || 'StringLike');
+    return this.if(`kubernetesGroups`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1137,7 +1137,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNamespaces(value: string | string[], operator?: Operator | string) {
-    return this.if(`namespaces`, value, operator || 'StringLike');
+    return this.if(`namespaces`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1153,7 +1153,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPolicyArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`policyArn`, value, operator || 'ArnLike');
+    return this.if(`policyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1171,7 +1171,7 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPrincipalArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`principalArn`, value, operator || 'ArnLike');
+    return this.if(`principalArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1189,6 +1189,6 @@ export class Eks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUsername(value: string | string[], operator?: Operator | string) {
-    return this.if(`username`, value, operator || 'StringLike');
+    return this.if(`username`, value, operator ?? 'StringLike');
   }
 }

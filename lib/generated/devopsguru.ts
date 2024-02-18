@@ -424,7 +424,7 @@ export class DevopsGuru extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sns:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ topicName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sns:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ topicName }`);
   }
 
   /**
@@ -440,6 +440,6 @@ export class DevopsGuru extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServiceNames(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceNames`, value, operator || 'StringLike');
+    return this.if(`ServiceNames`, value, operator ?? 'StringLike');
   }
 }

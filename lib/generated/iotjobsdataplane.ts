@@ -90,7 +90,7 @@ export class Iotjobsdata extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thing/${ thingName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -106,6 +106,6 @@ export class Iotjobsdata extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIotJobId(value: string | string[], operator?: Operator | string) {
-    return this.if(`iot:JobId`, value, operator || 'StringLike');
+    return this.if(`iot:JobId`, value, operator ?? 'StringLike');
   }
 }

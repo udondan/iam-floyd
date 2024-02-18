@@ -307,7 +307,7 @@ export class SsmSap extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationType: string, applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-sap:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ applicationType }/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-sap:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ applicationType }/${ applicationId }`);
   }
 
   /**
@@ -326,7 +326,7 @@ export class SsmSap extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(applicationType: string, applicationId: string, componentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-sap:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ applicationType }/${ applicationId }/COMPONENT/${ componentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-sap:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ applicationType }/${ applicationId }/COMPONENT/${ componentId }`);
   }
 
   /**
@@ -345,7 +345,7 @@ export class SsmSap extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatabase(applicationType: string, applicationId: string, databaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-sap:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ applicationType }/${ applicationId }/DB/${ databaseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-sap:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ applicationType }/${ applicationId }/DB/${ databaseId }`);
   }
 
   /**
@@ -362,7 +362,7 @@ export class SsmSap extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -380,7 +380,7 @@ export class SsmSap extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -397,6 +397,6 @@ export class SsmSap extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

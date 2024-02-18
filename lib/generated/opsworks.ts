@@ -930,6 +930,6 @@ export class Opsworks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStack(stackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:opsworks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stack/${ stackId }/`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:opsworks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stack/${ stackId }/`);
   }
 }

@@ -546,7 +546,7 @@ export class SsmContacts extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact/${ contactAlias }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-contacts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:contact/${ contactAlias }`);
   }
 
   /**
@@ -561,7 +561,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactchannel(contactAlias: string, contactChannelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contactchannel/${ contactAlias }/${ contactChannelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-contacts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:contactchannel/${ contactAlias }/${ contactChannelId }`);
   }
 
   /**
@@ -576,7 +576,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEngagement(contactAlias: string, engagementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:engagement/${ contactAlias }/${ engagementId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-contacts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:engagement/${ contactAlias }/${ engagementId }`);
   }
 
   /**
@@ -591,7 +591,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPage(contactAlias: string, pageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:page/${ contactAlias }/${ pageId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-contacts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:page/${ contactAlias }/${ pageId }`);
   }
 
   /**
@@ -608,7 +608,7 @@ export class SsmContacts extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRotation(rotationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm-contacts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rotation/${ rotationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-contacts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rotation/${ rotationId }`);
   }
 
   /**
@@ -626,7 +626,7 @@ export class SsmContacts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -643,7 +643,7 @@ export class SsmContacts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -661,6 +661,6 @@ export class SsmContacts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

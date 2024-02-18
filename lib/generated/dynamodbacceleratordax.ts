@@ -424,7 +424,7 @@ export class Dax extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplication(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dax:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cache/${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dax:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cache/${ clusterName }`);
   }
 
   /**
@@ -442,6 +442,6 @@ export class Dax extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnclosingOperation(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnclosingOperation`, value, operator || 'StringLike');
+    return this.if(`EnclosingOperation`, value, operator ?? 'StringLike');
   }
 }

@@ -1120,7 +1120,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset/${ assetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset/${ assetId }`);
   }
 
   /**
@@ -1137,7 +1137,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset-model/${ assetModelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-model/${ assetModelId }`);
   }
 
   /**
@@ -1154,7 +1154,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:time-series/${ timeSeriesId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:time-series/${ timeSeriesId }`);
   }
 
   /**
@@ -1171,7 +1171,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1188,7 +1188,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:portal/${ portalId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:portal/${ portalId }`);
   }
 
   /**
@@ -1205,7 +1205,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectId }`);
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboard/${ dashboardId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotsitewise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:access-policy/${ accessPolicyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-policy/${ accessPolicyId }`);
   }
 
   /**
@@ -1263,7 +1263,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1289,7 +1289,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1313,7 +1313,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1325,7 +1325,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssetHierarchyPath(value: string | string[], operator?: Operator | string) {
-    return this.if(`assetHierarchyPath`, value, operator || 'StringLike');
+    return this.if(`assetHierarchyPath`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1337,7 +1337,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChildAssetId(value: string | string[], operator?: Operator | string) {
-    return this.if(`childAssetId`, value, operator || 'StringLike');
+    return this.if(`childAssetId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1349,7 +1349,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`group`, value, operator || 'StringLike');
+    return this.if(`group`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1361,7 +1361,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIam(value: string | string[], operator?: Operator | string) {
-    return this.if(`iam`, value, operator || 'StringLike');
+    return this.if(`iam`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1373,7 +1373,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIsAssociatedWithAssetProperty(value: string | string[], operator?: Operator | string) {
-    return this.if(`isAssociatedWithAssetProperty`, value, operator || 'StringLike');
+    return this.if(`isAssociatedWithAssetProperty`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1385,7 +1385,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPortal(value: string | string[], operator?: Operator | string) {
-    return this.if(`portal`, value, operator || 'StringLike');
+    return this.if(`portal`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1397,7 +1397,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProject(value: string | string[], operator?: Operator | string) {
-    return this.if(`project`, value, operator || 'StringLike');
+    return this.if(`project`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1409,7 +1409,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPropertyAlias(value: string | string[], operator?: Operator | string) {
-    return this.if(`propertyAlias`, value, operator || 'StringLike');
+    return this.if(`propertyAlias`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1421,7 +1421,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPropertyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`propertyId`, value, operator || 'StringLike');
+    return this.if(`propertyId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1433,6 +1433,6 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUser(value: string | string[], operator?: Operator | string) {
-    return this.if(`user`, value, operator || 'StringLike');
+    return this.if(`user`, value, operator ?? 'StringLike');
   }
 }

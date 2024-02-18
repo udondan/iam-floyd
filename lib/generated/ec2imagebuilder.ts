@@ -1030,7 +1030,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
   }
 
   /**
@@ -1048,7 +1048,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ componentName }/${ componentVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:component/${ componentName }/${ componentVersion }`);
   }
 
   /**
@@ -1065,7 +1065,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:distribution-configuration/${ distributionConfigurationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:distribution-configuration/${ distributionConfigurationName }`);
   }
 
   /**
@@ -1084,7 +1084,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
   }
 
   /**
@@ -1102,7 +1102,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }/${ imageVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }/${ imageVersion }`);
   }
 
   /**
@@ -1120,7 +1120,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
   }
 
   /**
@@ -1138,7 +1138,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContainerRecipe(containerRecipeName: string, containerRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
   }
 
   /**
@@ -1155,7 +1155,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-pipeline/${ imagePipelineName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-pipeline/${ imagePipelineName }`);
   }
 
   /**
@@ -1172,7 +1172,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:infrastructure-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:infrastructure-configuration/${ resourceId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key/${ keyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
   }
 
   /**
@@ -1200,7 +1200,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLifecycleExecution(lifecycleExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lifecycle-execution/${ lifecycleExecutionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lifecycle-execution/${ lifecycleExecutionId }`);
   }
 
   /**
@@ -1217,7 +1217,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLifecyclePolicy(lifecyclePolicyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lifecycle-policy/${ lifecyclePolicyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lifecycle-policy/${ lifecyclePolicyName }`);
   }
 
   /**
@@ -1237,7 +1237,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowType: string, workflowName: string, workflowVersion: string, workflowBuildVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }/${ workflowBuildVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }/${ workflowBuildVersion }`);
   }
 
   /**
@@ -1256,7 +1256,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflowVersion(workflowType: string, workflowName: string, workflowVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ workflowType }/${ workflowName }/${ workflowVersion }`);
   }
 
   /**
@@ -1270,7 +1270,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkflowExecution(workflowExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow-execution/${ workflowExecutionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow-execution/${ workflowExecutionId }`);
   }
 
   /**
@@ -1284,7 +1284,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkflowStepExecution(workflowStepExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:imagebuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow-step-execution/${ workflowStepExecutionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:imagebuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow-step-execution/${ workflowStepExecutionId }`);
   }
 
   /**
@@ -1311,7 +1311,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1346,7 +1346,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1373,7 +1373,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1390,7 +1390,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatedResourceTag(key: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`CreatedResourceTag/${ key }`, value, operator || 'StringLike');
+    return this.if(`CreatedResourceTag/${ key }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1406,7 +1406,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatedResourceTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreatedResourceTagKeys`, value, operator || 'StringLike');
+    return this.if(`CreatedResourceTagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1422,7 +1422,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEc2MetadataHttpTokens(value: string | string[], operator?: Operator | string) {
-    return this.if(`Ec2MetadataHttpTokens`, value, operator || 'StringLike');
+    return this.if(`Ec2MetadataHttpTokens`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1438,7 +1438,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLifecyclePolicyResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`LifecyclePolicyResourceType`, value, operator || 'StringLike');
+    return this.if(`LifecyclePolicyResourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1454,6 +1454,6 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifStatusTopicArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`StatusTopicArn`, value, operator || 'ArnLike');
+    return this.if(`StatusTopicArn`, value, operator ?? 'ArnLike');
   }
 }

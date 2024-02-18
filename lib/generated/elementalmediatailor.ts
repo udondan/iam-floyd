@@ -603,7 +603,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:playbackConfiguration/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:playbackConfiguration/${ resourceId }`);
   }
 
   /**
@@ -617,7 +617,7 @@ export class Mediatailor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPrefetchSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:prefetchSchedule/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prefetchSchedule/${ resourceId }`);
   }
 
   /**
@@ -634,7 +634,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ channelName }`);
   }
 
   /**
@@ -649,7 +649,7 @@ export class Mediatailor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProgram(channelName: string, programName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:program/${ channelName }/${ programName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:program/${ channelName }/${ programName }`);
   }
 
   /**
@@ -666,7 +666,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceLocation(sourceLocationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sourceLocation/${ sourceLocationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sourceLocation/${ sourceLocationName }`);
   }
 
   /**
@@ -684,7 +684,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVodSource(sourceLocationName: string, vodSourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vodSource/${ sourceLocationName }/${ vodSourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vodSource/${ sourceLocationName }/${ vodSourceName }`);
   }
 
   /**
@@ -702,7 +702,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLiveSource(sourceLocationName: string, liveSourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediatailor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:liveSource/${ sourceLocationName }/${ liveSourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediatailor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:liveSource/${ sourceLocationName }/${ liveSourceName }`);
   }
 
   /**
@@ -723,7 +723,7 @@ export class Mediatailor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -743,7 +743,7 @@ export class Mediatailor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -764,6 +764,6 @@ export class Mediatailor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

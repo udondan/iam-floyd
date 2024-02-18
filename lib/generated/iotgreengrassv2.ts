@@ -466,7 +466,7 @@ export class GreengrassV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/greengrass/things/${ thingName }/connectivityInfo`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:greengrass:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/greengrass/things/${ thingName }/connectivityInfo`);
   }
 
   /**
@@ -483,7 +483,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || this.defaultRegion }:${ account || this.defaultAccount }:components:${ componentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:greengrass:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:components:${ componentName }`);
   }
 
   /**
@@ -501,7 +501,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || this.defaultRegion }:${ account || this.defaultAccount }:components:${ componentName }:versions:${ componentVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:greengrass:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:components:${ componentName }:versions:${ componentVersion }`);
   }
 
   /**
@@ -518,7 +518,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCoreDevice(coreDeviceThingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || this.defaultRegion }:${ account || this.defaultAccount }:coreDevices:${ coreDeviceThingName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:greengrass:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:coreDevices:${ coreDeviceThingName }`);
   }
 
   /**
@@ -535,7 +535,7 @@ export class GreengrassV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(deploymentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:greengrass:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployments:${ deploymentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:greengrass:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployments:${ deploymentId }`);
   }
 
   /**
@@ -555,7 +555,7 @@ export class GreengrassV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -574,7 +574,7 @@ export class GreengrassV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -593,6 +593,6 @@ export class GreengrassV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

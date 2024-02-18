@@ -744,7 +744,7 @@ export class Cloudtrail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:trail/${ trailName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trail/${ trailName }`);
   }
 
   /**
@@ -761,7 +761,7 @@ export class Cloudtrail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eventdatastore/${ eventDataStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventdatastore/${ eventDataStoreId }`);
   }
 
   /**
@@ -778,7 +778,7 @@ export class Cloudtrail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudtrail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ channelId }`);
   }
 
   /**
@@ -797,7 +797,7 @@ export class Cloudtrail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -814,7 +814,7 @@ export class Cloudtrail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -833,6 +833,6 @@ export class Cloudtrail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

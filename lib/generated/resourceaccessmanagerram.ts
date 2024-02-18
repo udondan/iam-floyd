@@ -564,7 +564,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceShareName()
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-share/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ram:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resource-share/${ resourcePath }`);
   }
 
   /**
@@ -581,7 +581,7 @@ export class Ram extends PolicyStatement {
    * - .ifShareOwnerAccountId()
    */
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-share-invitation/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ram:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resource-share-invitation/${ resourcePath }`);
   }
 
   /**
@@ -598,7 +598,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ram::${ account || this.defaultAccount }:permission/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ram::${ account ?? this.defaultAccount }:permission/${ resourcePath }`);
   }
 
   /**
@@ -617,7 +617,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onCustomerManagedPermission(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ram:${ region || this.defaultRegion }:${ account || this.defaultAccount }:permission/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ram:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:permission/${ resourcePath }`);
   }
 
   /**
@@ -637,7 +637,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -663,7 +663,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -682,7 +682,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -730,7 +730,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPermissionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`PermissionArn`, value, operator || 'ArnLike');
+    return this.if(`PermissionArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -756,7 +756,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPermissionResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`PermissionResourceType`, value, operator || 'StringLike');
+    return this.if(`PermissionResourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -773,7 +773,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`Principal`, value, operator || 'StringLike');
+    return this.if(`Principal`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -805,7 +805,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestedResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestedResourceType`, value, operator || 'StringLike');
+    return this.if(`RequestedResourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -822,7 +822,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifResourceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceArn`, value, operator || 'ArnLike');
+    return this.if(`ResourceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -844,7 +844,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceShareName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceShareName`, value, operator || 'StringLike');
+    return this.if(`ResourceShareName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -863,7 +863,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -882,6 +882,6 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifShareOwnerAccountId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ShareOwnerAccountId`, value, operator || 'StringLike');
+    return this.if(`ShareOwnerAccountId`, value, operator ?? 'StringLike');
   }
 }

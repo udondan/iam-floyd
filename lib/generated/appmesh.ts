@@ -530,7 +530,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }`);
   }
 
   /**
@@ -548,7 +548,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
   }
 
   /**
@@ -566,7 +566,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
   }
 
   /**
@@ -584,7 +584,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
   }
 
   /**
@@ -603,7 +603,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
   }
 
   /**
@@ -621,7 +621,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
   }
 
   /**
@@ -640,7 +640,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appmesh:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
   }
 
   /**
@@ -663,7 +663,7 @@ export class Appmesh extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -685,7 +685,7 @@ export class Appmesh extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -708,6 +708,6 @@ export class Appmesh extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

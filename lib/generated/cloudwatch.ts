@@ -722,7 +722,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:alarm:${ alarmName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alarm:${ alarmName }`);
   }
 
   /**
@@ -735,7 +735,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch::${ account || this.defaultAccount }:dashboard/${ dashboardName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch::${ account ?? this.defaultAccount }:dashboard/${ dashboardName }`);
   }
 
   /**
@@ -752,7 +752,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:insight-rule/${ insightRuleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:insight-rule/${ insightRuleName }`);
   }
 
   /**
@@ -769,7 +769,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMetricStream(metricStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metric-stream/${ metricStreamName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metric-stream/${ metricStreamName }`);
   }
 
   /**
@@ -786,7 +786,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:slo/${ sloName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:slo/${ sloName }`);
   }
 
   /**
@@ -804,7 +804,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, uniqueAttributesHex: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudwatch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }-${ uniqueAttributesHex }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }-${ uniqueAttributesHex }`);
   }
 
   /**
@@ -827,7 +827,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -847,7 +847,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -870,7 +870,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -886,7 +886,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAlarmActions(value: string | string[], operator?: Operator | string) {
-    return this.if(`AlarmActions`, value, operator || 'StringLike');
+    return this.if(`AlarmActions`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -901,7 +901,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNamespace(value: string | string[], operator?: Operator | string) {
-    return this.if(`namespace`, value, operator || 'StringLike');
+    return this.if(`namespace`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -916,7 +916,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestInsightRuleLogGroups(value: string | string[], operator?: Operator | string) {
-    return this.if(`requestInsightRuleLogGroups`, value, operator || 'StringLike');
+    return this.if(`requestInsightRuleLogGroups`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -932,6 +932,6 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRequestManagedResourceARNs(value: string | string[], operator?: Operator | string) {
-    return this.if(`requestManagedResourceARNs`, value, operator || 'ArnLike');
+    return this.if(`requestManagedResourceARNs`, value, operator ?? 'ArnLike');
   }
 }

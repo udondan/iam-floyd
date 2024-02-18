@@ -256,7 +256,7 @@ export class EmrServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/applications/${ applicationId }`);
   }
 
   /**
@@ -274,7 +274,7 @@ export class EmrServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobRun(applicationId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/applications/${ applicationId }/jobruns/${ jobRunId }`);
   }
 
   /**
@@ -292,7 +292,7 @@ export class EmrServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -309,7 +309,7 @@ export class EmrServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -327,6 +327,6 @@ export class EmrServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

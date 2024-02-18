@@ -1055,7 +1055,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticmapreduce:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }`);
   }
 
   /**
@@ -1073,7 +1073,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:editor/${ editorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticmapreduce:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:editor/${ editorId }`);
   }
 
   /**
@@ -1091,7 +1091,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-execution/${ notebookExecutionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticmapreduce:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-execution/${ notebookExecutionId }`);
   }
 
   /**
@@ -1109,7 +1109,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticmapreduce:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio/${ studioId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticmapreduce:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio/${ studioId }`);
   }
 
   /**
@@ -1129,7 +1129,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1148,7 +1148,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1168,7 +1168,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1184,7 +1184,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExecutionRoleArn`, value, operator || 'ArnLike');
+    return this.if(`ExecutionRoleArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1204,7 +1204,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1223,6 +1223,6 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

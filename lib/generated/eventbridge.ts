@@ -802,7 +802,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }::event-source/${ eventSourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }::event-source/${ eventSourceName }`);
   }
 
   /**
@@ -819,7 +819,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-bus/${ eventBusName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-bus/${ eventBusName }`);
   }
 
   /**
@@ -836,7 +836,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleOnDefaultEventBus(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ ruleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ ruleName }`);
   }
 
   /**
@@ -854,7 +854,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleOnCustomEventBus(eventBusName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ eventBusName }/${ ruleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ eventBusName }/${ ruleName }`);
   }
 
   /**
@@ -868,7 +868,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArchive(archiveName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:archive/${ archiveName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:archive/${ archiveName }`);
   }
 
   /**
@@ -882,7 +882,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplay(replayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replay/${ replayName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:replay/${ replayName }`);
   }
 
   /**
@@ -896,7 +896,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }`);
   }
 
   /**
@@ -910,7 +910,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:api-destination/${ apiDestinationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:api-destination/${ apiDestinationName }`);
   }
 
   /**
@@ -924,7 +924,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:events:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint/${ endpointName }`);
   }
 
   /**
@@ -942,7 +942,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -960,7 +960,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -978,7 +978,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -994,7 +994,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifEventBusArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`EventBusArn`, value, operator || 'ArnLike');
+    return this.if(`EventBusArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1014,7 +1014,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifManagedBy(value: string | string[], operator?: Operator | string) {
-    return this.if(`ManagedBy`, value, operator || 'StringLike');
+    return this.if(`ManagedBy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1029,7 +1029,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTargetArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetArn`, value, operator || 'ArnLike');
+    return this.if(`TargetArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1054,7 +1054,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatorAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`creatorAccount`, value, operator || 'StringLike');
+    return this.if(`creatorAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1070,7 +1070,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailType(value: string | string[], operator?: Operator | string) {
-    return this.if(`detail-type`, value, operator || 'StringLike');
+    return this.if(`detail-type`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1085,7 +1085,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailEventTypeCode(value: string | string[], operator?: Operator | string) {
-    return this.if(`detail.eventTypeCode`, value, operator || 'StringLike');
+    return this.if(`detail.eventTypeCode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1100,7 +1100,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailService(value: string | string[], operator?: Operator | string) {
-    return this.if(`detail.service`, value, operator || 'StringLike');
+    return this.if(`detail.service`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1115,7 +1115,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`detail.userIdentity.principalId`, value, operator || 'StringLike');
+    return this.if(`detail.userIdentity.principalId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1130,7 +1130,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEventBusInvocation(value: string | string[], operator?: Operator | string) {
-    return this.if(`eventBusInvocation`, value, operator || 'StringLike');
+    return this.if(`eventBusInvocation`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1146,6 +1146,6 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSource(value: string | string[], operator?: Operator | string) {
-    return this.if(`source`, value, operator || 'StringLike');
+    return this.if(`source`, value, operator ?? 'StringLike');
   }
 }

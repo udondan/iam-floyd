@@ -335,7 +335,7 @@ export class EcrPublic extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecr-public::${ account || this.defaultAccount }:repository/${ repositoryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecr-public::${ account ?? this.defaultAccount }:repository/${ repositoryName }`);
   }
 
   /**
@@ -348,7 +348,7 @@ export class EcrPublic extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRegistry(registryId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecr-public::${ account || this.defaultAccount }:registry/${ registryId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecr-public::${ account ?? this.defaultAccount }:registry/${ registryId }`);
   }
 
   /**
@@ -365,7 +365,7 @@ export class EcrPublic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -381,7 +381,7 @@ export class EcrPublic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -398,7 +398,7 @@ export class EcrPublic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -414,6 +414,6 @@ export class EcrPublic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

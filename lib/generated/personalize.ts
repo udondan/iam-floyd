@@ -988,7 +988,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ resourceId }`);
   }
 
   /**
@@ -1002,7 +1002,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFeatureTransformation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:feature-transformation/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:feature-transformation/${ resourceId }`);
   }
 
   /**
@@ -1016,7 +1016,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -1030,7 +1030,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-group/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-group/${ resourceId }`);
   }
 
   /**
@@ -1044,7 +1044,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-import-job/${ resourceId }`);
   }
 
   /**
@@ -1058,7 +1058,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataInsightsJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-insights-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-insights-job/${ resourceId }`);
   }
 
   /**
@@ -1072,7 +1072,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-export-job/${ resourceId }`);
   }
 
   /**
@@ -1086,7 +1086,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:solution/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:solution/${ resourceId }`);
   }
 
   /**
@@ -1100,7 +1100,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:campaign/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:campaign/${ resourceId }`);
   }
 
   /**
@@ -1114,7 +1114,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventTracker(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-tracker/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-tracker/${ resourceId }`);
   }
 
   /**
@@ -1128,7 +1128,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recipe/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recipe/${ resourceId }`);
   }
 
   /**
@@ -1142,7 +1142,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:algorithm/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:algorithm/${ resourceId }`);
   }
 
   /**
@@ -1156,7 +1156,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-inference-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-inference-job/${ resourceId }`);
   }
 
   /**
@@ -1170,7 +1170,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:filter/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:filter/${ resourceId }`);
   }
 
   /**
@@ -1184,7 +1184,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommender(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommender/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommender/${ resourceId }`);
   }
 
   /**
@@ -1198,7 +1198,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-segment-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-segment-job/${ resourceId }`);
   }
 
   /**
@@ -1212,6 +1212,6 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetricAttribution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:personalize:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metric-attribution/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metric-attribution/${ resourceId }`);
   }
 }

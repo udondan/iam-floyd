@@ -447,7 +447,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .ifResourceAliases()
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:payment-cryptography:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key/${ keyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:payment-cryptography:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
   }
 
   /**
@@ -462,7 +462,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .ifResourceAliases()
    */
   public onAlias(alias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:payment-cryptography:${ region || this.defaultRegion }:${ account || this.defaultAccount }:alias/${ alias }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:payment-cryptography:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alias/${ alias }`);
   }
 
   /**
@@ -483,7 +483,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -499,7 +499,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -520,7 +520,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -530,7 +530,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCertificateAuthorityPublicKeyIdentifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`CertificateAuthorityPublicKeyIdentifier`, value, operator || 'StringLike');
+    return this.if(`CertificateAuthorityPublicKeyIdentifier`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -540,7 +540,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImportKeyMaterial(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImportKeyMaterial`, value, operator || 'StringLike');
+    return this.if(`ImportKeyMaterial`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -550,7 +550,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`KeyAlgorithm`, value, operator || 'StringLike');
+    return this.if(`KeyAlgorithm`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -560,7 +560,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyClass(value: string | string[], operator?: Operator | string) {
-    return this.if(`KeyClass`, value, operator || 'StringLike');
+    return this.if(`KeyClass`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -570,7 +570,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyUsage(value: string | string[], operator?: Operator | string) {
-    return this.if(`KeyUsage`, value, operator || 'StringLike');
+    return this.if(`KeyUsage`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -580,7 +580,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAlias(value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestAlias`, value, operator || 'StringLike');
+    return this.if(`RequestAlias`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -594,7 +594,7 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAliases(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceAliases`, value, operator || 'StringLike');
+    return this.if(`ResourceAliases`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -604,6 +604,6 @@ export class PaymentCryptography extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWrappingKeyIdentifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`WrappingKeyIdentifier`, value, operator || 'StringLike');
+    return this.if(`WrappingKeyIdentifier`, value, operator ?? 'StringLike');
   }
 }

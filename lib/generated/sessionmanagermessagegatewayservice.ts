@@ -87,7 +87,7 @@ export class Ssmmessages extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifEc2SourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnLike');
+    return this.if(`ec2:SourceInstanceARN`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -102,6 +102,6 @@ export class Ssmmessages extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSsmSourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`ssm:SourceInstanceARN`, value, operator || 'ArnLike');
+    return this.if(`ssm:SourceInstanceARN`, value, operator ?? 'ArnLike');
   }
 }

@@ -437,7 +437,7 @@ export class One extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceInstance(deviceInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-instance/${ deviceInstanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:one:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-instance/${ deviceInstanceId }`);
   }
 
   /**
@@ -452,7 +452,7 @@ export class One extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguration(deviceInstanceId: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-instance/${ deviceInstanceId }/configuration/${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:one:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-instance/${ deviceInstanceId }/configuration/${ version }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class One extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceConfigurationTemplate(templateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-configuration-template/${ templateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:one:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-configuration-template/${ templateId }`);
   }
 
   /**
@@ -486,7 +486,7 @@ export class One extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSite(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:one:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:site/${ siteId }`);
   }
 
   /**
@@ -500,7 +500,7 @@ export class One extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:one:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:one:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userId }`);
   }
 
   /**
@@ -519,7 +519,7 @@ export class One extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -556,7 +556,7 @@ export class One extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -575,6 +575,6 @@ export class One extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

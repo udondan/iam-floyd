@@ -1090,7 +1090,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetName }`);
   }
 
   /**
@@ -1107,7 +1107,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }`);
   }
 
   /**
@@ -1124,7 +1124,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-builder/${ imageBuilderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-builder/${ imageBuilderName }`);
   }
 
   /**
@@ -1141,7 +1141,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stack/${ stackName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stack/${ stackName }`);
   }
 
   /**
@@ -1158,7 +1158,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppBlock(appBlockName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-block/${ appBlockName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app-block/${ appBlockName }`);
   }
 
   /**
@@ -1175,7 +1175,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationName }`);
   }
 
   /**
@@ -1192,7 +1192,7 @@ export class Appstream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppBlockBuilder(appBlockBuilderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appstream:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-block-builder/${ appBlockBuilderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app-block-builder/${ appBlockBuilderName }`);
   }
 
   /**
@@ -1207,7 +1207,7 @@ export class Appstream extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserId(value: string | string[], operator?: Operator | string) {
-    return this.if(`userId`, value, operator || 'StringLike');
+    return this.if(`userId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1230,7 +1230,7 @@ export class Appstream extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1289,7 +1289,7 @@ export class Appstream extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1312,6 +1312,6 @@ export class Appstream extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

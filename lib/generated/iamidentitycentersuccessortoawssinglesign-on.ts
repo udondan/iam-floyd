@@ -1689,7 +1689,7 @@ export class Sso extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPermissionSet(instanceId: string, permissionSetId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
   }
 
   /**
@@ -1701,7 +1701,7 @@ export class Sso extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso:::account/${ accountId || this.defaultAccount }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso:::account/${ accountId ?? this.defaultAccount }`);
   }
 
   /**
@@ -1716,7 +1716,7 @@ export class Sso extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstance(instanceId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso:::instance/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso:::instance/${ instanceId }`);
   }
 
   /**
@@ -1734,7 +1734,7 @@ export class Sso extends PolicyStatement {
    * - .ifApplicationAccount()
    */
   public onApplication(instanceId: string, applicationId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso::${ accountId || this.defaultAccount }:application/${ instanceId }/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso::${ accountId ?? this.defaultAccount }:application/${ instanceId }/${ applicationId }`);
   }
 
   /**
@@ -1751,7 +1751,7 @@ export class Sso extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrustedTokenIssuer(instanceId: string, trustedTokenIssuerId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso::${ accountId || this.defaultAccount }:trustedTokenIssuer/${ instanceId }/${ trustedTokenIssuerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso::${ accountId ?? this.defaultAccount }:trustedTokenIssuer/${ instanceId }/${ trustedTokenIssuerId }`);
   }
 
   /**
@@ -1763,7 +1763,7 @@ export class Sso extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplicationProvider(applicationProviderId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sso::aws:applicationProvider/${ applicationProviderId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sso::aws:applicationProvider/${ applicationProviderId }`);
   }
 
   /**
@@ -1783,7 +1783,7 @@ export class Sso extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1802,7 +1802,7 @@ export class Sso extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1822,7 +1822,7 @@ export class Sso extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1861,6 +1861,6 @@ export class Sso extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifApplicationAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`ApplicationAccount`, value, operator || 'StringLike');
+    return this.if(`ApplicationAccount`, value, operator ?? 'StringLike');
   }
 }

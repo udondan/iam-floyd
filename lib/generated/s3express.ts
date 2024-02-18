@@ -176,7 +176,7 @@ export class S3express extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3express:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bucket/${ bucketName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }`);
   }
 
   /**
@@ -191,7 +191,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLocationName(value: string | string[], operator?: Operator | string) {
-    return this.if(`LocationName`, value, operator || 'StringLike');
+    return this.if(`LocationName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -212,7 +212,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceAccount`, value, operator || 'StringLike');
+    return this.if(`ResourceAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -227,7 +227,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSessionMode(value: string | string[], operator?: Operator | string) {
-    return this.if(`SessionMode`, value, operator || 'StringLike');
+    return this.if(`SessionMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -246,7 +246,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifTlsVersion(value: number | number[], operator?: Operator | string) {
-    return this.if(`TlsVersion`, value, operator || 'NumericEquals');
+    return this.if(`TlsVersion`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -267,7 +267,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`authType`, value, operator || 'StringLike');
+    return this.if(`authType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -282,7 +282,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSignatureAge(value: number | number[], operator?: Operator | string) {
-    return this.if(`signatureAge`, value, operator || 'NumericEquals');
+    return this.if(`signatureAge`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -303,7 +303,7 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSignatureversion(value: string | string[], operator?: Operator | string) {
-    return this.if(`signatureversion`, value, operator || 'StringLike');
+    return this.if(`signatureversion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -324,6 +324,6 @@ export class S3express extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzContentSha256(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-content-sha256`, value, operator || 'StringLike');
+    return this.if(`x-amz-content-sha256`, value, operator ?? 'StringLike');
   }
 }

@@ -236,7 +236,7 @@ export class Serverlessrepo extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplications(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:serverlessrepo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applications/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:serverlessrepo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:applications/${ resourceId }`);
   }
 
   /**
@@ -256,6 +256,6 @@ export class Serverlessrepo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifApplicationType(value: string | string[], operator?: Operator | string) {
-    return this.if(`applicationType`, value, operator || 'StringLike');
+    return this.if(`applicationType`, value, operator ?? 'StringLike');
   }
 }

@@ -207,7 +207,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorName }/${ uUID }`);
   }
 
   /**
@@ -222,7 +222,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-plugin/${ customPluginName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-plugin/${ customPluginName }/${ uUID }`);
   }
 
   /**
@@ -237,6 +237,6 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafkaconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
   }
 }

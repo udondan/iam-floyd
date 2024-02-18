@@ -77,7 +77,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -95,7 +95,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstanceConnectEndpoint(instanceConnectEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance-connect-endpoint/${ instanceConnectEndpointId }`);
   }
 
   /**
@@ -115,7 +115,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -127,7 +127,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxTunnelDuration(value: number | number[], operator?: Operator | string) {
-    return this.if(`maxTunnelDuration`, value, operator || 'NumericEquals');
+    return this.if(`maxTunnelDuration`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -142,7 +142,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [ipaddress operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
   public ifPrivateIpAddress(value: string | string[], operator?: Operator | string) {
-    return this.if(`privateIpAddress`, value, operator || 'IpAddress');
+    return this.if(`privateIpAddress`, value, operator ?? 'IpAddress');
   }
 
   /**
@@ -157,7 +157,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRemotePort(value: number | number[], operator?: Operator | string) {
-    return this.if(`remotePort`, value, operator || 'NumericEquals');
+    return this.if(`remotePort`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -177,7 +177,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEc2ResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -192,6 +192,6 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEc2Osuser(value: string | string[], operator?: Operator | string) {
-    return this.if(`ec2:osuser`, value, operator || 'StringLike');
+    return this.if(`ec2:osuser`, value, operator ?? 'StringLike');
   }
 }

@@ -244,7 +244,7 @@ export class Acm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:acm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:acm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificate/${ certificateId }`);
   }
 
   /**
@@ -259,7 +259,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCertificateAuthority(value: string | string[], operator?: Operator | string) {
-    return this.if(`CertificateAuthority`, value, operator || 'StringLike');
+    return this.if(`CertificateAuthority`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -274,7 +274,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCertificateTransparencyLogging(value: string | string[], operator?: Operator | string) {
-    return this.if(`CertificateTransparencyLogging`, value, operator || 'StringLike');
+    return this.if(`CertificateTransparencyLogging`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -289,7 +289,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDomainNames(value: string | string[], operator?: Operator | string) {
-    return this.if(`DomainNames`, value, operator || 'StringLike');
+    return this.if(`DomainNames`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -304,7 +304,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`KeyAlgorithm`, value, operator || 'StringLike');
+    return this.if(`KeyAlgorithm`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -319,7 +319,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifValidationMethod(value: string | string[], operator?: Operator | string) {
-    return this.if(`ValidationMethod`, value, operator || 'StringLike');
+    return this.if(`ValidationMethod`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -338,7 +338,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -354,7 +354,7 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -372,6 +372,6 @@ export class Acm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

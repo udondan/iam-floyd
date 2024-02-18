@@ -283,7 +283,7 @@ export class Sts extends PolicyStatement {
    * - .ifIamResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -296,7 +296,7 @@ export class Sts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:user/${ userNameWithPath }`);
   }
 
   /**
@@ -312,7 +312,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGoogleAud(value: string | string[], operator?: Operator | string) {
-    return this.if(`accounts.google.com:aud`, value, operator || 'StringLike');
+    return this.if(`accounts.google.com:aud`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -327,7 +327,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGoogleOaud(value: string | string[], operator?: Operator | string) {
-    return this.if(`accounts.google.com:oaud`, value, operator || 'StringLike');
+    return this.if(`accounts.google.com:oaud`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -343,7 +343,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGoogleSub(value: string | string[], operator?: Operator | string) {
-    return this.if(`accounts.google.com:sub`, value, operator || 'StringLike');
+    return this.if(`accounts.google.com:sub`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -363,7 +363,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -379,7 +379,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -398,7 +398,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -414,7 +414,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCognitoAmr(value: string | string[], operator?: Operator | string) {
-    return this.if(`cognito-identity.amazonaws.com:amr`, value, operator || 'StringLike');
+    return this.if(`cognito-identity.amazonaws.com:amr`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -430,7 +430,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCognitoAud(value: string | string[], operator?: Operator | string) {
-    return this.if(`cognito-identity.amazonaws.com:aud`, value, operator || 'StringLike');
+    return this.if(`cognito-identity.amazonaws.com:aud`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -446,7 +446,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCognitoSub(value: string | string[], operator?: Operator | string) {
-    return this.if(`cognito-identity.amazonaws.com:sub`, value, operator || 'StringLike');
+    return this.if(`cognito-identity.amazonaws.com:sub`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -462,7 +462,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFacebookAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`graph.facebook.com:app_id`, value, operator || 'StringLike');
+    return this.if(`graph.facebook.com:app_id`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -478,7 +478,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFacebookId(value: string | string[], operator?: Operator | string) {
-    return this.if(`graph.facebook.com:id`, value, operator || 'StringLike');
+    return this.if(`graph.facebook.com:id`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -497,7 +497,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIamResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -513,7 +513,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlAud(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:aud`, value, operator || 'StringLike');
+    return this.if(`saml:aud`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -528,7 +528,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlCn(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:cn`, value, operator || 'StringLike');
+    return this.if(`saml:cn`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -543,7 +543,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlCommonName(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:commonName`, value, operator || 'StringLike');
+    return this.if(`saml:commonName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -558,7 +558,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlDoc(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:doc`, value, operator || 'StringLike');
+    return this.if(`saml:doc`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -573,7 +573,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEduorghomepageuri(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:eduorghomepageuri`, value, operator || 'StringLike');
+    return this.if(`saml:eduorghomepageuri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -588,7 +588,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEduorgidentityauthnpolicyuri(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:eduorgidentityauthnpolicyuri`, value, operator || 'StringLike');
+    return this.if(`saml:eduorgidentityauthnpolicyuri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -603,7 +603,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEduorglegalname(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:eduorglegalname`, value, operator || 'StringLike');
+    return this.if(`saml:eduorglegalname`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -618,7 +618,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEduorgsuperioruri(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:eduorgsuperioruri`, value, operator || 'StringLike');
+    return this.if(`saml:eduorgsuperioruri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -633,7 +633,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEduorgwhitepagesuri(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:eduorgwhitepagesuri`, value, operator || 'StringLike');
+    return this.if(`saml:eduorgwhitepagesuri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -648,7 +648,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonaffiliation(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonaffiliation`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonaffiliation`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -663,7 +663,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonassurance(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonassurance`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonassurance`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -678,7 +678,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonentitlement(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonentitlement`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonentitlement`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -693,7 +693,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonnickname(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonnickname`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonnickname`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -708,7 +708,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonorgdn(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonorgdn`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonorgdn`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -723,7 +723,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonorgunitdn(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonorgunitdn`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonorgunitdn`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -738,7 +738,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonprimaryaffiliation(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonprimaryaffiliation`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonprimaryaffiliation`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -753,7 +753,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonprimaryorgunitdn(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonprimaryorgunitdn`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonprimaryorgunitdn`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -768,7 +768,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonprincipalname(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonprincipalname`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonprincipalname`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -783,7 +783,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersonscopedaffiliation(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersonscopedaffiliation`, value, operator || 'StringLike');
+    return this.if(`saml:edupersonscopedaffiliation`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -798,7 +798,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlEdupersontargetedid(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:edupersontargetedid`, value, operator || 'StringLike');
+    return this.if(`saml:edupersontargetedid`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -813,7 +813,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlGivenName(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:givenName`, value, operator || 'StringLike');
+    return this.if(`saml:givenName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -828,7 +828,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlIss(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:iss`, value, operator || 'StringLike');
+    return this.if(`saml:iss`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -843,7 +843,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlMail(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:mail`, value, operator || 'StringLike');
+    return this.if(`saml:mail`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -858,7 +858,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlName(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:name`, value, operator || 'StringLike');
+    return this.if(`saml:name`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -874,7 +874,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlNamequalifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:namequalifier`, value, operator || 'StringLike');
+    return this.if(`saml:namequalifier`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -889,7 +889,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlOrganizationStatus(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:organizationStatus`, value, operator || 'StringLike');
+    return this.if(`saml:organizationStatus`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -904,7 +904,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlPrimaryGroupSID(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:primaryGroupSID`, value, operator || 'StringLike');
+    return this.if(`saml:primaryGroupSID`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -920,7 +920,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlSub(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:sub`, value, operator || 'StringLike');
+    return this.if(`saml:sub`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -936,7 +936,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlSubType(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:sub_type`, value, operator || 'StringLike');
+    return this.if(`saml:sub_type`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -951,7 +951,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlSurname(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:surname`, value, operator || 'StringLike');
+    return this.if(`saml:surname`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -966,7 +966,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlUid(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:uid`, value, operator || 'StringLike');
+    return this.if(`saml:uid`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -981,7 +981,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSamlX500UniqueIdentifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`saml:x500UniqueIdentifier`, value, operator || 'StringLike');
+    return this.if(`saml:x500UniqueIdentifier`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -996,7 +996,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSServiceName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AWSServiceName`, value, operator || 'StringLike');
+    return this.if(`AWSServiceName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1011,7 +1011,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDurationSeconds(value: string | string[], operator?: Operator | string) {
-    return this.if(`DurationSeconds`, value, operator || 'StringLike');
+    return this.if(`DurationSeconds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1026,7 +1026,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExternalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExternalId`, value, operator || 'StringLike');
+    return this.if(`ExternalId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1042,7 +1042,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestContext(contextKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestContext/${ contextKey }`, value, operator || 'StringLike');
+    return this.if(`RequestContext/${ contextKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1057,7 +1057,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRequestContextProviders(value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestContextProviders`, value, operator || 'ArnLike');
+    return this.if(`RequestContextProviders`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1074,7 +1074,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRoleSessionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`RoleSessionName`, value, operator || 'StringLike');
+    return this.if(`RoleSessionName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1092,7 +1092,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSourceIdentity(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceIdentity`, value, operator || 'StringLike');
+    return this.if(`SourceIdentity`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1110,7 +1110,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTransitiveTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`TransitiveTagKeys`, value, operator || 'StringLike');
+    return this.if(`TransitiveTagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1126,7 +1126,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAmazonAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`www.amazon.com:app_id`, value, operator || 'StringLike');
+    return this.if(`www.amazon.com:app_id`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1142,6 +1142,6 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAmazonUserId(value: string | string[], operator?: Operator | string) {
-    return this.if(`www.amazon.com:user_id`, value, operator || 'StringLike');
+    return this.if(`www.amazon.com:user_id`, value, operator ?? 'StringLike');
   }
 }

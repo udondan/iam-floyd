@@ -701,7 +701,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationName }`);
   }
 
   /**
@@ -720,7 +720,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applicationversion/${ applicationName }/${ versionLabel }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:applicationversion/${ applicationName }/${ versionLabel }`);
   }
 
   /**
@@ -739,7 +739,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configurationtemplate/${ applicationName }/${ templateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configurationtemplate/${ applicationName }/${ templateName }`);
   }
 
   /**
@@ -758,7 +758,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ applicationName }/${ environmentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ applicationName }/${ environmentName }`);
   }
 
   /**
@@ -771,7 +771,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }::solutionstack/${ solutionStackName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }::solutionstack/${ solutionStackName }`);
   }
 
   /**
@@ -784,7 +784,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticbeanstalk:${ region || this.defaultRegion }::platform/${ platformNameWithVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }::platform/${ platformNameWithVersion }`);
   }
 
   /**
@@ -806,7 +806,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -825,7 +825,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -847,7 +847,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -863,7 +863,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromApplication(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromApplication`, value, operator || 'ArnLike');
+    return this.if(`FromApplication`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -881,7 +881,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromApplicationVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromApplicationVersion`, value, operator || 'ArnLike');
+    return this.if(`FromApplicationVersion`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -899,7 +899,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromConfigurationTemplate(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromConfigurationTemplate`, value, operator || 'ArnLike');
+    return this.if(`FromConfigurationTemplate`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -916,7 +916,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromEnvironment(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromEnvironment`, value, operator || 'ArnLike');
+    return this.if(`FromEnvironment`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -934,7 +934,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromPlatform(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromPlatform`, value, operator || 'ArnLike');
+    return this.if(`FromPlatform`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -952,7 +952,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromSolutionStack(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromSolutionStack`, value, operator || 'ArnLike');
+    return this.if(`FromSolutionStack`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -998,6 +998,6 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifInApplication(value: string | string[], operator?: Operator | string) {
-    return this.if(`InApplication`, value, operator || 'ArnLike');
+    return this.if(`InApplication`, value, operator ?? 'ArnLike');
   }
 }

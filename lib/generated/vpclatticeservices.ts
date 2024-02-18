@@ -56,7 +56,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onService(serviceId: string, requestPath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }/${ requestPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }/${ requestPath }`);
   }
 
   /**
@@ -71,7 +71,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPort(value: number | number[], operator?: Operator | string) {
-    return this.if(`Port`, value, operator || 'NumericEquals');
+    return this.if(`Port`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -87,7 +87,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestHeader(headerName: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestHeader/${ headerName }`, value, operator || 'StringLike');
+    return this.if(`RequestHeader/${ headerName }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -99,7 +99,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestMethod(value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestMethod`, value, operator || 'StringLike');
+    return this.if(`RequestMethod`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -115,7 +115,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestQueryString(queryStringKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestQueryString/${ queryStringKey }`, value, operator || 'StringLike');
+    return this.if(`RequestQueryString/${ queryStringKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -130,7 +130,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -145,7 +145,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceNetworkArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceNetworkArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceNetworkArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -160,7 +160,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSourceVpc(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceVpc`, value, operator || 'StringLike');
+    return this.if(`SourceVpc`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -175,6 +175,6 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSourceVpcOwnerAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceVpcOwnerAccount`, value, operator || 'StringLike');
+    return this.if(`SourceVpcOwnerAccount`, value, operator ?? 'StringLike');
   }
 }

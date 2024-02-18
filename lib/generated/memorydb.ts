@@ -702,7 +702,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parametergroup/${ parameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parametergroup/${ parameterGroupName }`);
   }
 
   /**
@@ -719,7 +719,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnetgroup/${ subnetGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subnetgroup/${ subnetGroupName }`);
   }
 
   /**
@@ -736,7 +736,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -753,7 +753,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot/${ snapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot/${ snapshotName }`);
   }
 
   /**
@@ -770,7 +770,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userName }`);
   }
 
   /**
@@ -787,7 +787,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:acl/${ aclName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:acl/${ aclName }`);
   }
 
   /**
@@ -804,7 +804,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:memorydb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reservednode/${ reservationID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reservednode/${ reservationID }`);
   }
 
   /**
@@ -828,7 +828,7 @@ export class Memorydb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -884,7 +884,7 @@ export class Memorydb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -908,6 +908,6 @@ export class Memorydb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

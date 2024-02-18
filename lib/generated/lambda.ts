@@ -933,7 +933,7 @@ export class Lambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:code-signing-config:${ codeSigningConfigId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-signing-config:${ codeSigningConfigId }`);
   }
 
   /**
@@ -947,7 +947,7 @@ export class Lambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-source-mapping:${ uUID }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-source-mapping:${ uUID }`);
   }
 
   /**
@@ -964,7 +964,7 @@ export class Lambda extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunction(functionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function:${ functionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function:${ functionName }`);
   }
 
   /**
@@ -982,7 +982,7 @@ export class Lambda extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunctionAlias(functionName: string, alias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function:${ functionName }:${ alias }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function:${ functionName }:${ alias }`);
   }
 
   /**
@@ -1000,7 +1000,7 @@ export class Lambda extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function:${ functionName }:${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function:${ functionName }:${ version }`);
   }
 
   /**
@@ -1014,7 +1014,7 @@ export class Lambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLayer(layerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:layer:${ layerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:layer:${ layerName }`);
   }
 
   /**
@@ -1029,7 +1029,7 @@ export class Lambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLayerVersion(layerName: string, layerVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lambda:${ region || this.defaultRegion }:${ account || this.defaultAccount }:layer:${ layerName }:${ layerVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:layer:${ layerName }:${ layerVersion }`);
   }
 
   /**
@@ -1046,7 +1046,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1064,7 +1064,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1081,7 +1081,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1097,7 +1097,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCodeSigningConfigArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`CodeSigningConfigArn`, value, operator || 'ArnLike');
+    return this.if(`CodeSigningConfigArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1113,7 +1113,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEventSourceToken(value: string | string[], operator?: Operator | string) {
-    return this.if(`EventSourceToken`, value, operator || 'StringLike');
+    return this.if(`EventSourceToken`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1136,7 +1136,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFunctionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`FunctionArn`, value, operator || 'ArnLike');
+    return this.if(`FunctionArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1158,7 +1158,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFunctionUrlAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`FunctionUrlAuthType`, value, operator || 'StringLike');
+    return this.if(`FunctionUrlAuthType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1174,7 +1174,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLayer(value: string | string[], operator?: Operator | string) {
-    return this.if(`Layer`, value, operator || 'StringLike');
+    return this.if(`Layer`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1190,7 +1190,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`Principal`, value, operator || 'StringLike');
+    return this.if(`Principal`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1206,7 +1206,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`SecurityGroupIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1218,7 +1218,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSourceFunctionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceFunctionArn`, value, operator || 'ArnLike');
+    return this.if(`SourceFunctionArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1234,7 +1234,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnetIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`SubnetIds`, value, operator || 'StringLike');
+    return this.if(`SubnetIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1250,6 +1250,6 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcIds`, value, operator || 'StringLike');
+    return this.if(`VpcIds`, value, operator ?? 'StringLike');
   }
 }

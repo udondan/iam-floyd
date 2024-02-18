@@ -241,7 +241,7 @@ export class Health extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvent(service: string, eventTypeCode: string, eventTypePlusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:health:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:health:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
   }
 
   /**
@@ -257,7 +257,7 @@ export class Health extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEventTypeCode(value: string | string[], operator?: Operator | string) {
-    return this.if(`eventTypeCode`, value, operator || 'StringLike');
+    return this.if(`eventTypeCode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -273,6 +273,6 @@ export class Health extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifService(value: string | string[], operator?: Operator | string) {
-    return this.if(`service`, value, operator || 'StringLike');
+    return this.if(`service`, value, operator ?? 'StringLike');
   }
 }

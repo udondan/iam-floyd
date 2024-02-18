@@ -1093,7 +1093,7 @@ export class Bedrock extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFoundationModel(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }::foundation-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }::foundation-model/${ resourceId }`);
   }
 
   /**
@@ -1110,7 +1110,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model/${ resourceId }`);
   }
 
   /**
@@ -1127,7 +1127,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProvisionedModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:provisioned-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioned-model/${ resourceId }`);
   }
 
   /**
@@ -1144,7 +1144,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelCustomizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-customization-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-customization-job/${ resourceId }`);
   }
 
   /**
@@ -1161,7 +1161,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent/${ agentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**
@@ -1179,7 +1179,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgentAlias(agentId: string, agentAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent-alias/${ agentId }/${ agentAliasId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-alias/${ agentId }/${ agentAliasId }`);
   }
 
   /**
@@ -1196,7 +1196,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -1213,7 +1213,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-evaluation-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-evaluation-job/${ resourceId }`);
   }
 
   /**
@@ -1230,7 +1230,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelInvocationJob(jobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-invocation-job/${ jobIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-invocation-job/${ jobIdentifier }`);
   }
 
   /**
@@ -1247,7 +1247,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGuardrail(guardrailId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:bedrock:${ region || this.defaultRegion }:${ account || this.defaultAccount }:guardrail/${ guardrailId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail/${ guardrailId }`);
   }
 
   /**
@@ -1272,7 +1272,7 @@ export class Bedrock extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1296,7 +1296,7 @@ export class Bedrock extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1321,7 +1321,7 @@ export class Bedrock extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1336,6 +1336,6 @@ export class Bedrock extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifThirdPartyKnowledgeBaseCredentialsSecretArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThirdPartyKnowledgeBaseCredentialsSecretArn`, value, operator || 'ArnLike');
+    return this.if(`ThirdPartyKnowledgeBaseCredentialsSecretArn`, value, operator ?? 'ArnLike');
   }
 }

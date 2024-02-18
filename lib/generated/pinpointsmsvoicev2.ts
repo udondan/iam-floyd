@@ -949,7 +949,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -966,7 +966,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOptOutList(optOutListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opt-out-list/${ optOutListName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opt-out-list/${ optOutListName }`);
   }
 
   /**
@@ -983,7 +983,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone-number/${ phoneNumberId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -1000,7 +1000,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pool/${ poolId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pool/${ poolId }`);
   }
 
   /**
@@ -1018,7 +1018,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSenderId(senderId: string, isoCountryCode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sender-id/${ senderId }/${ isoCountryCode }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sender-id/${ senderId }/${ isoCountryCode }`);
   }
 
   /**
@@ -1035,7 +1035,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistration(registrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registration/${ registrationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registration/${ registrationId }`);
   }
 
   /**
@@ -1052,7 +1052,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistrationAttachment(registrationAttachmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registration-attachment/${ registrationAttachmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registration-attachment/${ registrationAttachmentId }`);
   }
 
   /**
@@ -1069,7 +1069,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVerifiedDestinationNumber(verifiedDestinationNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sms-voice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-destination-number/${ verifiedDestinationNumberId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:verified-destination-number/${ verifiedDestinationNumberId }`);
   }
 
   /**
@@ -1093,7 +1093,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1116,7 +1116,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1140,6 +1140,6 @@ export class SmsVoiceV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

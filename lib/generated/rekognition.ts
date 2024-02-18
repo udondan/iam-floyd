@@ -978,7 +978,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:collection/${ collectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:collection/${ collectionId }`);
   }
 
   /**
@@ -995,7 +995,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streamprocessor/${ streamprocessorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streamprocessor/${ streamprocessorId }`);
   }
 
   /**
@@ -1010,7 +1010,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/${ creationTimestamp }`);
   }
 
   /**
@@ -1029,7 +1029,7 @@ export class Rekognition extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
   }
 
   /**
@@ -1045,7 +1045,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rekognition:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
   }
 
   /**
@@ -1065,7 +1065,7 @@ export class Rekognition extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1083,7 +1083,7 @@ export class Rekognition extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1103,6 +1103,6 @@ export class Rekognition extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

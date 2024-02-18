@@ -2447,7 +2447,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ dbClusterInstanceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**
@@ -2461,7 +2461,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onShardgrp(dbShardGroupResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shard-group:${ dbShardGroupResourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:shard-group:${ dbShardGroupResourceId }`);
   }
 
   /**
@@ -2475,7 +2475,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onClusterAutoBackup(dbClusterAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
   }
 
   /**
@@ -2489,7 +2489,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutoBackup(dbInstanceAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:auto-backup:${ dbInstanceAutomatedBackupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:auto-backup:${ dbInstanceAutomatedBackupId }`);
   }
 
   /**
@@ -2506,7 +2506,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-endpoint:${ dbClusterEndpoint }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-endpoint:${ dbClusterEndpoint }`);
   }
 
   /**
@@ -2524,7 +2524,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-pg:${ clusterParameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-pg:${ clusterParameterGroupName }`);
   }
 
   /**
@@ -2542,7 +2542,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-snapshot:${ clusterSnapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-snapshot:${ clusterSnapshotName }`);
   }
 
   /**
@@ -2568,7 +2568,7 @@ export class Rds extends PolicyStatement {
    * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db:${ dbInstanceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:db:${ dbInstanceName }`);
   }
 
   /**
@@ -2586,7 +2586,7 @@ export class Rds extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:es:${ subscriptionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:es:${ subscriptionName }`);
   }
 
   /**
@@ -2599,7 +2599,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds::${ account || this.defaultAccount }:global-cluster:${ globalCluster }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds::${ account ?? this.defaultAccount }:global-cluster:${ globalCluster }`);
   }
 
   /**
@@ -2617,7 +2617,7 @@ export class Rds extends PolicyStatement {
    * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:og:${ optionGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:og:${ optionGroupName }`);
   }
 
   /**
@@ -2635,7 +2635,7 @@ export class Rds extends PolicyStatement {
    * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pg:${ parameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pg:${ parameterGroupName }`);
   }
 
   /**
@@ -2652,7 +2652,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db-proxy:${ dbProxyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:db-proxy:${ dbProxyId }`);
   }
 
   /**
@@ -2669,7 +2669,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:db-proxy-endpoint:${ dbProxyEndpointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:db-proxy-endpoint:${ dbProxyEndpointId }`);
   }
 
   /**
@@ -2687,7 +2687,7 @@ export class Rds extends PolicyStatement {
    * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ri:${ reservedDbInstanceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ri:${ reservedDbInstanceName }`);
   }
 
   /**
@@ -2705,7 +2705,7 @@ export class Rds extends PolicyStatement {
    * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:secgrp:${ securityGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secgrp:${ securityGroupName }`);
   }
 
   /**
@@ -2723,7 +2723,7 @@ export class Rds extends PolicyStatement {
    * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -2741,7 +2741,7 @@ export class Rds extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subgrp:${ subnetGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subgrp:${ subnetGroupName }`);
   }
 
   /**
@@ -2755,7 +2755,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:target:${ targetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target:${ targetId }`);
   }
 
   /**
@@ -2772,7 +2772,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:target-group:${ targetGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target-group:${ targetGroupId }`);
   }
 
   /**
@@ -2791,7 +2791,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
   }
 
   /**
@@ -2808,7 +2808,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(blueGreenDeploymentIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment:${ blueGreenDeploymentIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment:${ blueGreenDeploymentIdentifier }`);
   }
 
   /**
@@ -2825,7 +2825,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegration(integrationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:integration:${ integrationIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration:${ integrationIdentifier }`);
   }
 
   /**
@@ -2843,7 +2843,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotTenantDatabase(snapshotName: string, tenantResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot-tenant-database:${ snapshotName }:${ tenantResourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot-tenant-database:${ snapshotName }:${ tenantResourceId }`);
   }
 
   /**
@@ -2860,7 +2860,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTenantDatabase(tenantResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rds:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tenant-database:${ tenantResourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tenant-database:${ tenantResourceId }`);
   }
 
   /**
@@ -2907,7 +2907,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2949,7 +2949,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2995,7 +2995,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3013,7 +3013,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifBackupTarget(value: string | string[], operator?: Operator | string) {
-    return this.if(`BackupTarget`, value, operator || 'StringLike');
+    return this.if(`BackupTarget`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3049,7 +3049,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDatabaseClass(value: string | string[], operator?: Operator | string) {
-    return this.if(`DatabaseClass`, value, operator || 'StringLike');
+    return this.if(`DatabaseClass`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3069,7 +3069,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDatabaseEngine(value: string | string[], operator?: Operator | string) {
-    return this.if(`DatabaseEngine`, value, operator || 'StringLike');
+    return this.if(`DatabaseEngine`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3089,7 +3089,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDatabaseName(value: string | string[], operator?: Operator | string) {
-    return this.if(`DatabaseName`, value, operator || 'StringLike');
+    return this.if(`DatabaseName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3104,7 +3104,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEndpointType(value: string | string[], operator?: Operator | string) {
-    return this.if(`EndpointType`, value, operator || 'StringLike');
+    return this.if(`EndpointType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3156,7 +3156,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMultiTenant(value: string | string[], operator?: Operator | string) {
-    return this.if(`MultiTenant`, value, operator || 'StringLike');
+    return this.if(`MultiTenant`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3178,7 +3178,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPiops(value: number | number[], operator?: Operator | string) {
-    return this.if(`Piops`, value, operator || 'NumericEquals');
+    return this.if(`Piops`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -3219,7 +3219,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifStorageSize(value: number | number[], operator?: Operator | string) {
-    return this.if(`StorageSize`, value, operator || 'NumericEquals');
+    return this.if(`StorageSize`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -3235,7 +3235,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTenantDatabaseName(value: string | string[], operator?: Operator | string) {
-    return this.if(`TenantDatabaseName`, value, operator || 'StringLike');
+    return this.if(`TenantDatabaseName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3271,7 +3271,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClusterPgTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`cluster-pg-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`cluster-pg-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3287,7 +3287,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`cluster-snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`cluster-snapshot-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3306,7 +3306,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClusterTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`cluster-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`cluster-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3325,7 +3325,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDbTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`db-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`db-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3341,7 +3341,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEsTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`es-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`es-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3357,7 +3357,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOgTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`og-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`og-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3376,7 +3376,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPgTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`pg-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`pg-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3412,7 +3412,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReqTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`req-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`req-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3428,7 +3428,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRiTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ri-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ri-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3444,7 +3444,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecgrpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`secgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`secgrp-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3460,7 +3460,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSnapshotTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`snapshot-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3476,6 +3476,6 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubgrpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`subgrp-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

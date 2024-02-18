@@ -45,6 +45,6 @@ export class FinspaceApi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCredential(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace-api:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/credentials/programmatic`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace-api:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/credentials/programmatic`);
   }
 }

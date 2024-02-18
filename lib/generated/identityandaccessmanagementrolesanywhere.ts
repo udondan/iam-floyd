@@ -408,7 +408,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrustAnchor(trustAnchorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || this.defaultRegion }:${ account || this.defaultAccount }:trust-anchor/${ trustAnchorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rolesanywhere:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trust-anchor/${ trustAnchorId }`);
   }
 
   /**
@@ -425,7 +425,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ profileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rolesanywhere:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ profileId }`);
   }
 
   /**
@@ -442,7 +442,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubject(subjectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subject/${ subjectId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rolesanywhere:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subject/${ subjectId }`);
   }
 
   /**
@@ -459,7 +459,7 @@ export class Rolesanywhere extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCrl(crlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rolesanywhere:${ region || this.defaultRegion }:${ account || this.defaultAccount }:crl/${ crlId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rolesanywhere:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:crl/${ crlId }`);
   }
 
   /**
@@ -479,7 +479,7 @@ export class Rolesanywhere extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -498,7 +498,7 @@ export class Rolesanywhere extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -517,6 +517,6 @@ export class Rolesanywhere extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -821,7 +821,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ serverId }/${ userName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ serverId }/${ userName }`);
   }
 
   /**
@@ -838,7 +838,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:server/${ serverId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:server/${ serverId }`);
   }
 
   /**
@@ -855,7 +855,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ workflowId }`);
   }
 
   /**
@@ -872,7 +872,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificate/${ certificateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificate/${ certificateId }`);
   }
 
   /**
@@ -889,7 +889,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connector/${ connectorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
   }
 
   /**
@@ -906,7 +906,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ profileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ profileId }`);
   }
 
   /**
@@ -923,7 +923,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agreement/${ agreementId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agreement/${ agreementId }`);
   }
 
   /**
@@ -941,7 +941,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHostKey(serverId: string, hostKeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transfer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:host-key/${ serverId }/${ hostKeyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:host-key/${ serverId }/${ hostKeyId }`);
   }
 
   /**
@@ -965,7 +965,7 @@ export class Transfer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -988,7 +988,7 @@ export class Transfer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1012,6 +1012,6 @@ export class Transfer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

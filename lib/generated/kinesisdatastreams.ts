@@ -424,7 +424,7 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStream(streamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kinesis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ streamName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kinesis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamName }`);
   }
 
   /**
@@ -441,7 +441,7 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConsumer(streamType: string, streamName: string, consumerName: string, consumerCreationTimpstamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kinesis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ streamType }/${ streamName }/consumer/${ consumerName }:${ consumerCreationTimpstamp }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kinesis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ streamType }/${ streamName }/consumer/${ consumerName }:${ consumerCreationTimpstamp }`);
   }
 
   /**
@@ -455,6 +455,6 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key/${ keyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
   }
 }

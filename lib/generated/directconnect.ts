@@ -846,7 +846,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxcon(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:directconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dxcon/${ connectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dxcon/${ connectionId }`);
   }
 
   /**
@@ -863,7 +863,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxlag(lagId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:directconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dxlag/${ lagId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dxlag/${ lagId }`);
   }
 
   /**
@@ -880,7 +880,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxvif(virtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:directconnect:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dxvif/${ virtualInterfaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dxvif/${ virtualInterfaceId }`);
   }
 
   /**
@@ -893,7 +893,7 @@ export class Directconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:directconnect::${ account || this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
   }
 
   /**
@@ -919,7 +919,7 @@ export class Directconnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -937,7 +937,7 @@ export class Directconnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -963,6 +963,6 @@ export class Directconnect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

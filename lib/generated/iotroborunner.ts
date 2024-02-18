@@ -283,7 +283,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifDestinationResourceId()
    */
   public onDestinationResource(siteId: string, destinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/destination/${ destinationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotroborunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:site/${ siteId }/destination/${ destinationId }`);
   }
 
   /**
@@ -300,7 +300,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifSiteResourceId()
    */
   public onSiteResource(siteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotroborunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:site/${ siteId }`);
   }
 
   /**
@@ -318,7 +318,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifWorkerFleetResourceId()
    */
   public onWorkerFleetResource(siteId: string, workerFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotroborunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }`);
   }
 
   /**
@@ -337,7 +337,7 @@ export class Iotroborunner extends PolicyStatement {
    * - .ifWorkerResourceId()
    */
   public onWorkerResource(siteId: string, workerFleetId: string, workerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotroborunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotroborunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:site/${ siteId }/worker-fleet/${ workerFleetId }/worker/${ workerId }`);
   }
 
   /**
@@ -352,7 +352,7 @@ export class Iotroborunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDestinationResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`DestinationResourceId`, value, operator || 'StringLike');
+    return this.if(`DestinationResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -367,7 +367,7 @@ export class Iotroborunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSiteResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`SiteResourceId`, value, operator || 'StringLike');
+    return this.if(`SiteResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -382,7 +382,7 @@ export class Iotroborunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWorkerFleetResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`WorkerFleetResourceId`, value, operator || 'StringLike');
+    return this.if(`WorkerFleetResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -397,6 +397,6 @@ export class Iotroborunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWorkerResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`WorkerResourceId`, value, operator || 'StringLike');
+    return this.if(`WorkerResourceId`, value, operator ?? 'StringLike');
   }
 }

@@ -726,7 +726,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:campaign/${ campaignName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:campaign/${ campaignName }`);
   }
 
   /**
@@ -743,7 +743,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDecodermanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:decoder-manifest/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:decoder-manifest/${ name }`);
   }
 
   /**
@@ -760,7 +760,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetId }`);
   }
 
   /**
@@ -777,7 +777,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelmanifest(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-manifest/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-manifest/${ name }`);
   }
 
   /**
@@ -794,7 +794,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSignalcatalog(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:signal-catalog/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:signal-catalog/${ name }`);
   }
 
   /**
@@ -811,7 +811,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVehicle(vehicleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotfleetwise:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vehicle/${ vehicleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vehicle/${ vehicleId }`);
   }
 
   /**
@@ -835,7 +835,7 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -856,7 +856,7 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -880,7 +880,7 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -895,7 +895,7 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDestinationArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`DestinationArn`, value, operator || 'ArnLike');
+    return this.if(`DestinationArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -911,7 +911,7 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUpdateToDecoderManifestArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`UpdateToDecoderManifestArn`, value, operator || 'ArnLike');
+    return this.if(`UpdateToDecoderManifestArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -927,6 +927,6 @@ export class Iotfleetwise extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUpdateToModelManifestArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`UpdateToModelManifestArn`, value, operator || 'ArnLike');
+    return this.if(`UpdateToModelManifestArn`, value, operator ?? 'ArnLike');
   }
 }

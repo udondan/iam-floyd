@@ -1054,7 +1054,7 @@ export class Omics extends PolicyStatement {
    * - .ifAnnotationImportJobJobId()
    */
   public onAnnotationImportJob(annotationImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationImportJob/${ annotationImportJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationImportJob/${ annotationImportJobId }`);
   }
 
   /**
@@ -1071,7 +1071,7 @@ export class Omics extends PolicyStatement {
    * - .ifAnnotationStoreName()
    */
   public onAnnotationStore(annotationStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationStore/${ annotationStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreId }`);
   }
 
   /**
@@ -1089,7 +1089,7 @@ export class Omics extends PolicyStatement {
    * - .ifAnnotationStoreVersionName()
    */
   public onAnnotationStoreVersion(annotationStoreName: string, annotationStoreVersionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
   }
 
   /**
@@ -1107,7 +1107,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReadSet(sequenceStoreId: string, readSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sequenceStore/${ sequenceStoreId }/readSet/${ readSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sequenceStore/${ sequenceStoreId }/readSet/${ readSetId }`);
   }
 
   /**
@@ -1125,7 +1125,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReference(referenceStoreId: string, referenceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:referenceStore/${ referenceStoreId }/reference/${ referenceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:referenceStore/${ referenceStoreId }/reference/${ referenceId }`);
   }
 
   /**
@@ -1142,7 +1142,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReferenceStore(referenceStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:referenceStore/${ referenceStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:referenceStore/${ referenceStoreId }`);
   }
 
   /**
@@ -1159,7 +1159,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRun(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:run/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:run/${ id }`);
   }
 
   /**
@@ -1176,7 +1176,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRunGroup(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:runGroup/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:runGroup/${ id }`);
   }
 
   /**
@@ -1193,7 +1193,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSequenceStore(sequenceStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sequenceStore/${ sequenceStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sequenceStore/${ sequenceStoreId }`);
   }
 
   /**
@@ -1207,7 +1207,7 @@ export class Omics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTaggingResource(tagKey: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tag/${ tagKey }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tag/${ tagKey }`);
   }
 
   /**
@@ -1221,7 +1221,7 @@ export class Omics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTaskResource(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task/${ id }`);
   }
 
   /**
@@ -1238,7 +1238,7 @@ export class Omics extends PolicyStatement {
    * - .ifVariantImportJobJobId()
    */
   public onVariantImportJob(variantImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:variantImportJob/${ variantImportJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variantImportJob/${ variantImportJobId }`);
   }
 
   /**
@@ -1255,7 +1255,7 @@ export class Omics extends PolicyStatement {
    * - .ifVariantStoreName()
    */
   public onVariantStore(variantStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:variantStore/${ variantStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variantStore/${ variantStoreId }`);
   }
 
   /**
@@ -1272,7 +1272,7 @@ export class Omics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:omics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ id }`);
   }
 
   /**
@@ -1293,7 +1293,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1315,7 +1315,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1336,7 +1336,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1351,7 +1351,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAnnotationImportJobJobId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationImportJobJobId`, value, operator || 'StringLike');
+    return this.if(`AnnotationImportJobJobId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1366,7 +1366,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAnnotationStoreName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationStoreName`, value, operator || 'StringLike');
+    return this.if(`AnnotationStoreName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1381,7 +1381,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAnnotationStoreVersionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationStoreVersionName`, value, operator || 'StringLike');
+    return this.if(`AnnotationStoreVersionName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1396,7 +1396,7 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVariantImportJobJobId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VariantImportJobJobId`, value, operator || 'StringLike');
+    return this.if(`VariantImportJobJobId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1411,6 +1411,6 @@ export class Omics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVariantStoreName(value: string | string[], operator?: Operator | string) {
-    return this.if(`VariantStoreName`, value, operator || 'StringLike');
+    return this.if(`VariantStoreName`, value, operator ?? 'StringLike');
   }
 }

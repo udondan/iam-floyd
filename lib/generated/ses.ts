@@ -1126,7 +1126,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1140,7 +1140,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-verification-email-template/${ templateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1154,7 +1154,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identity/${ identityName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identity/${ identityName }`);
   }
 
   /**
@@ -1168,7 +1168,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:template/${ templateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ templateName }`);
   }
 
   /**
@@ -1253,7 +1253,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifApiVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`ApiVersion`, value, operator || 'StringLike');
+    return this.if(`ApiVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1272,7 +1272,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFeedbackAddress(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeedbackAddress`, value, operator || 'StringLike');
+    return this.if(`FeedbackAddress`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1292,7 +1292,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromAddress(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromAddress`, value, operator || 'StringLike');
+    return this.if(`FromAddress`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1311,7 +1311,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromDisplayName(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromDisplayName`, value, operator || 'StringLike');
+    return this.if(`FromDisplayName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1330,6 +1330,6 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecipients(value: string | string[], operator?: Operator | string) {
-    return this.if(`Recipients`, value, operator || 'StringLike');
+    return this.if(`Recipients`, value, operator ?? 'StringLike');
   }
 }

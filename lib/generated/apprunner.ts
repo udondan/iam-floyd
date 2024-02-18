@@ -594,7 +594,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -610,7 +610,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionName }/${ connectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }/${ connectionId }`);
   }
 
   /**
@@ -627,7 +627,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoscalingconfiguration(autoscalingConfigurationName: string, autoscalingConfigurationVersion: string, autoscalingConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
   }
 
   /**
@@ -644,7 +644,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onObservabilityconfiguration(observabilityConfigurationName: string, observabilityConfigurationVersion: string, observabilityConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
   }
 
   /**
@@ -661,7 +661,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcconnector(vpcConnectorName: string, vpcConnectorVersion: string, vpcConnectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcconnector/${ vpcConnectorName }/${ vpcConnectorVersion }/${ vpcConnectorId }`);
   }
 
   /**
@@ -677,7 +677,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcingressconnection(vpcIngressConnectionName: string, vpcIngressConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcingressconnection/${ vpcIngressConnectionName }/${ vpcIngressConnectionId }`);
   }
 
   /**
@@ -691,7 +691,7 @@ export class Apprunner extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -705,7 +705,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAutoScalingConfigurationArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`AutoScalingConfigurationArn`, value, operator || 'ArnLike');
+    return this.if(`AutoScalingConfigurationArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -719,7 +719,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifConnectionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ConnectionArn`, value, operator || 'ArnLike');
+    return this.if(`ConnectionArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -733,7 +733,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifObservabilityConfigurationArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ObservabilityConfigurationArn`, value, operator || 'ArnLike');
+    return this.if(`ObservabilityConfigurationArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -746,7 +746,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -760,7 +760,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpcConnectorArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcConnectorArn`, value, operator || 'ArnLike');
+    return this.if(`VpcConnectorArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -774,7 +774,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcEndpointId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcEndpointId`, value, operator || 'StringLike');
+    return this.if(`VpcEndpointId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -788,7 +788,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcId`, value, operator || 'StringLike');
+    return this.if(`VpcId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -808,7 +808,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -827,7 +827,7 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -847,6 +847,6 @@ export class Apprunner extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

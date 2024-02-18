@@ -450,7 +450,7 @@ export class NeptuneDb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatabase(cluster: string, database: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:neptune-db:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ cluster }/${ database }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:neptune-db:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ cluster }/${ database }`);
   }
 
   /**
@@ -469,6 +469,6 @@ export class NeptuneDb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifQueryLanguage(value: string | string[], operator?: Operator | string) {
-    return this.if(`QueryLanguage`, value, operator || 'StringLike');
+    return this.if(`QueryLanguage`, value, operator ?? 'StringLike');
   }
 }

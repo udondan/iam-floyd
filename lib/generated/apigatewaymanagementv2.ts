@@ -112,7 +112,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessLogSettings(apiId: string, stageName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/accesslogsettings`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/accesslogsettings`);
   }
 
   /**
@@ -142,7 +142,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApi(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }`);
   }
 
   /**
@@ -164,7 +164,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApis(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis`);
   }
 
   /**
@@ -181,7 +181,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApiMapping(domainName: string, apiMappingId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/domainnames/${ domainName }/apimappings/${ apiMappingId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/domainnames/${ domainName }/apimappings/${ apiMappingId }`);
   }
 
   /**
@@ -197,7 +197,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApiMappings(domainName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/domainnames/${ domainName }/apimappings`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/domainnames/${ domainName }/apimappings`);
   }
 
   /**
@@ -218,7 +218,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(apiId: string, authorizerId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/authorizers/${ authorizerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/authorizers/${ authorizerId }`);
   }
 
   /**
@@ -236,7 +236,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizers(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/authorizers`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/authorizers`);
   }
 
   /**
@@ -250,7 +250,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAuthorizersCache(apiId: string, stageName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/cache/authorizers`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/cache/authorizers`);
   }
 
   /**
@@ -263,7 +263,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCors(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/cors`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/cors`);
   }
 
   /**
@@ -280,7 +280,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(apiId: string, deploymentId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/deployments/${ deploymentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/deployments/${ deploymentId }`);
   }
 
   /**
@@ -297,7 +297,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployments(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/deployments`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/deployments`);
   }
 
   /**
@@ -311,7 +311,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportedAPI(apiId: string, specification: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/exports/${ specification }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/exports/${ specification }`);
   }
 
   /**
@@ -328,7 +328,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegration(apiId: string, integrationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }`);
   }
 
   /**
@@ -344,7 +344,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrations(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/integrations`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/integrations`);
   }
 
   /**
@@ -359,7 +359,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntegrationResponse(apiId: string, integrationId: string, integrationResponseId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }/integrationresponses/${ integrationResponseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }/integrationresponses/${ integrationResponseId }`);
   }
 
   /**
@@ -373,7 +373,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntegrationResponses(apiId: string, integrationId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }/integrationresponses`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/integrations/${ integrationId }/integrationresponses`);
   }
 
   /**
@@ -390,7 +390,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(apiId: string, modelId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/models/${ modelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/models/${ modelId }`);
   }
 
   /**
@@ -406,7 +406,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModels(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/models`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/models`);
   }
 
   /**
@@ -420,7 +420,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onModelTemplate(apiId: string, modelId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/models/${ modelId }/template`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/models/${ modelId }/template`);
   }
 
   /**
@@ -441,7 +441,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoute(apiId: string, routeId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }`);
   }
 
   /**
@@ -459,7 +459,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoutes(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/routes`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/routes`);
   }
 
   /**
@@ -474,7 +474,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRouteResponse(apiId: string, routeId: string, routeResponseId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/routeresponses/${ routeResponseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/routeresponses/${ routeResponseId }`);
   }
 
   /**
@@ -488,7 +488,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRouteResponses(apiId: string, routeId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/routeresponses`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/routeresponses`);
   }
 
   /**
@@ -503,7 +503,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRouteRequestParameter(apiId: string, routeId: string, requestParameterKey: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/requestparameters/${ requestParameterKey }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/routes/${ routeId }/requestparameters/${ requestParameterKey }`);
   }
 
   /**
@@ -518,7 +518,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRouteSettings(apiId: string, stageName: string, routeKey: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/routesettings/${ routeKey }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }/routesettings/${ routeKey }`);
   }
 
   /**
@@ -539,7 +539,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(apiId: string, stageName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -557,7 +557,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStages(apiId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/apis/${ apiId }/stages`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/apis/${ apiId }/stages`);
   }
 
   /**
@@ -573,7 +573,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcLink(vpcLinkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/vpclinks/${ vpcLinkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/vpclinks/${ vpcLinkId }`);
   }
 
   /**
@@ -588,7 +588,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcLinks(region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }::/vpclinks`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/vpclinks`);
   }
 
   /**
@@ -604,7 +604,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAccessLoggingDestination(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/AccessLoggingDestination`, value, operator || 'StringLike');
+    return this.if(`Request/AccessLoggingDestination`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -620,7 +620,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAccessLoggingFormat(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/AccessLoggingFormat`, value, operator || 'StringLike');
+    return this.if(`Request/AccessLoggingFormat`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -653,7 +653,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestApiName(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/ApiName`, value, operator || 'StringLike');
+    return this.if(`Request/ApiName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -671,7 +671,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAuthorizerType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/AuthorizerType`, value, operator || 'StringLike');
+    return this.if(`Request/AuthorizerType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -689,7 +689,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAuthorizerUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/AuthorizerUri`, value, operator || 'StringLike');
+    return this.if(`Request/AuthorizerUri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -720,7 +720,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestEndpointType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/EndpointType`, value, operator || 'StringLike');
+    return this.if(`Request/EndpointType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -732,7 +732,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestMtlsTrustStoreUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/MtlsTrustStoreUri`, value, operator || 'StringLike');
+    return this.if(`Request/MtlsTrustStoreUri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -744,7 +744,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestMtlsTrustStoreVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/MtlsTrustStoreVersion`, value, operator || 'StringLike');
+    return this.if(`Request/MtlsTrustStoreVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -762,7 +762,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/RouteAuthorizationType`, value, operator || 'StringLike');
+    return this.if(`Request/RouteAuthorizationType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -774,7 +774,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestSecurityPolicy(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/SecurityPolicy`, value, operator || 'StringLike');
+    return this.if(`Request/SecurityPolicy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -789,7 +789,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestStageName(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/StageName`, value, operator || 'StringLike');
+    return this.if(`Request/StageName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -804,7 +804,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAccessLoggingDestination(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/AccessLoggingDestination`, value, operator || 'StringLike');
+    return this.if(`Resource/AccessLoggingDestination`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -819,7 +819,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAccessLoggingFormat(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/AccessLoggingFormat`, value, operator || 'StringLike');
+    return this.if(`Resource/AccessLoggingFormat`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -849,7 +849,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceApiName(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/ApiName`, value, operator || 'StringLike');
+    return this.if(`Resource/ApiName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -865,7 +865,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAuthorizerType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/AuthorizerType`, value, operator || 'StringLike');
+    return this.if(`Resource/AuthorizerType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -881,7 +881,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAuthorizerUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/AuthorizerUri`, value, operator || 'StringLike');
+    return this.if(`Resource/AuthorizerUri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -910,7 +910,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceEndpointType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/EndpointType`, value, operator || 'StringLike');
+    return this.if(`Resource/EndpointType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -922,7 +922,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceMtlsTrustStoreUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/MtlsTrustStoreUri`, value, operator || 'StringLike');
+    return this.if(`Resource/MtlsTrustStoreUri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -934,7 +934,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceMtlsTrustStoreVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/MtlsTrustStoreVersion`, value, operator || 'StringLike');
+    return this.if(`Resource/MtlsTrustStoreVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -950,7 +950,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/RouteAuthorizationType`, value, operator || 'StringLike');
+    return this.if(`Resource/RouteAuthorizationType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -962,7 +962,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceSecurityPolicy(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/SecurityPolicy`, value, operator || 'StringLike');
+    return this.if(`Resource/SecurityPolicy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -981,7 +981,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1014,7 +1014,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1032,6 +1032,6 @@ export class ApigatewayV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

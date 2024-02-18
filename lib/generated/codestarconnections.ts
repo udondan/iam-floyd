@@ -576,7 +576,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionId }`);
   }
 
   /**
@@ -593,7 +593,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHost(hostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:host/${ hostId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:host/${ hostId }`);
   }
 
   /**
@@ -610,7 +610,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRepositoryLink(repositoryLinkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codestar-connections:${ region || this.defaultRegion }:${ account || this.defaultAccount }:repository-link/${ repositoryLinkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository-link/${ repositoryLinkId }`);
   }
 
   /**
@@ -629,7 +629,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -647,7 +647,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -666,7 +666,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -683,7 +683,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifBranch(value: string | string[], operator?: Operator | string) {
-    return this.if(`Branch`, value, operator || 'StringLike');
+    return this.if(`Branch`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -698,7 +698,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifBranchName(value: string | string[], operator?: Operator | string) {
-    return this.if(`BranchName`, value, operator || 'StringLike');
+    return this.if(`BranchName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -713,7 +713,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFullRepositoryId(value: string | string[], operator?: Operator | string) {
-    return this.if(`FullRepositoryId`, value, operator || 'StringLike');
+    return this.if(`FullRepositoryId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -729,7 +729,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifHostArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`HostArn`, value, operator || 'ArnLike');
+    return this.if(`HostArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -744,7 +744,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstallationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`InstallationId`, value, operator || 'StringLike');
+    return this.if(`InstallationId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -759,7 +759,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOwnerId(value: string | string[], operator?: Operator | string) {
-    return this.if(`OwnerId`, value, operator || 'StringLike');
+    return this.if(`OwnerId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -775,7 +775,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPassedToService(value: string | string[], operator?: Operator | string) {
-    return this.if(`PassedToService`, value, operator || 'StringLike');
+    return this.if(`PassedToService`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -790,7 +790,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`ProviderAction`, value, operator || 'StringLike');
+    return this.if(`ProviderAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -805,7 +805,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderPermissionsRequired(value: string | string[], operator?: Operator | string) {
-    return this.if(`ProviderPermissionsRequired`, value, operator || 'StringLike');
+    return this.if(`ProviderPermissionsRequired`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -824,7 +824,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ProviderType`, value, operator || 'StringLike');
+    return this.if(`ProviderType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -840,7 +840,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderTypeFilter(value: string | string[], operator?: Operator | string) {
-    return this.if(`ProviderTypeFilter`, value, operator || 'StringLike');
+    return this.if(`ProviderTypeFilter`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -855,6 +855,6 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRepositoryName(value: string | string[], operator?: Operator | string) {
-    return this.if(`RepositoryName`, value, operator || 'StringLike');
+    return this.if(`RepositoryName`, value, operator ?? 'StringLike');
   }
 }

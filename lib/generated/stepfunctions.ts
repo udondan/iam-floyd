@@ -557,7 +557,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:activity:${ activityName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:activity:${ activityName }`);
   }
 
   /**
@@ -575,7 +575,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:execution:${ stateMachineName }:${ executionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:execution:${ stateMachineName }:${ executionId }`);
   }
 
   /**
@@ -591,7 +591,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExpress(stateMachineName: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:express:${ stateMachineName }:${ executionId }:${ expressId }`);
   }
 
   /**
@@ -608,7 +608,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }`);
   }
 
   /**
@@ -623,7 +623,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStatemachineversion(stateMachineName: string, stateMachineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
   }
 
   /**
@@ -638,7 +638,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStatemachinealias(stateMachineName: string, stateMachineAliasName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
   }
 
   /**
@@ -654,7 +654,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
   }
 
   /**
@@ -670,7 +670,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLabelledExecution(stateMachineName: string, mapRunLabel: string, executionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:execution:${ stateMachineName }/${ mapRunLabel }:${ executionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:execution:${ stateMachineName }/${ mapRunLabel }:${ executionId }`);
   }
 
   /**
@@ -687,7 +687,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLabelledExpress(stateMachineName: string, mapRunLabel: string, executionId: string, expressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:states:${ region || this.defaultRegion }:${ account || this.defaultAccount }:express:${ stateMachineName }/${ mapRunLabel }:${ executionId }:${ expressId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:express:${ stateMachineName }/${ mapRunLabel }:${ executionId }:${ expressId }`);
   }
 
   /**
@@ -706,7 +706,7 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -724,7 +724,7 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -743,7 +743,7 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -755,7 +755,7 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifHTTPEndpoint(value: string | string[], operator?: Operator | string) {
-    return this.if(`HTTPEndpoint`, value, operator || 'StringLike');
+    return this.if(`HTTPEndpoint`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -767,7 +767,7 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifHTTPMethod(value: string | string[], operator?: Operator | string) {
-    return this.if(`HTTPMethod`, value, operator || 'StringLike');
+    return this.if(`HTTPMethod`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -791,6 +791,6 @@ export class States extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStateMachineQualifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`StateMachineQualifier`, value, operator || 'StringLike');
+    return this.if(`StateMachineQualifier`, value, operator ?? 'StringLike');
   }
 }

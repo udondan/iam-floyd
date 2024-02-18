@@ -682,7 +682,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
@@ -698,7 +698,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRetriever(applicationId: string, retrieverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/retriever/${ retrieverId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/retriever/${ retrieverId }`);
   }
 
   /**
@@ -714,7 +714,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIndex(applicationId: string, indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/index/${ indexId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/index/${ indexId }`);
   }
 
   /**
@@ -731,7 +731,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSource(applicationId: string, indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/index/${ indexId }/data-source/${ dataSourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -747,7 +747,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlugin(applicationId: string, pluginId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/plugin/${ pluginId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/plugin/${ pluginId }`);
   }
 
   /**
@@ -763,7 +763,7 @@ export class Qbusiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebExperience(applicationId: string, webExperienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/web-experience/${ webExperienceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/web-experience/${ webExperienceId }`);
   }
 
   /**
@@ -776,7 +776,7 @@ export class Qbusiness extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserLicense(applicationId: string, userLicenseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:qbusiness:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }/user-license/${ userLicenseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/user-license/${ userLicenseId }`);
   }
 
   /**
@@ -798,7 +798,7 @@ export class Qbusiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -819,7 +819,7 @@ export class Qbusiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -841,6 +841,6 @@ export class Qbusiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

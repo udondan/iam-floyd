@@ -278,7 +278,7 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevice(deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device/${ deviceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deeplens:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device/${ deviceName }`);
   }
 
   /**
@@ -290,7 +290,7 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deeplens:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -302,6 +302,6 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deeplens:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deeplens:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }`);
   }
 }

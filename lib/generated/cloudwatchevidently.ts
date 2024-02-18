@@ -532,7 +532,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:evidently:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -550,7 +550,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFeature(projectName: string, featureName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/feature/${ featureName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:evidently:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/feature/${ featureName }`);
   }
 
   /**
@@ -568,7 +568,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperiment(projectName: string, experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/experiment/${ experimentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:evidently:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/experiment/${ experimentName }`);
   }
 
   /**
@@ -586,7 +586,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLaunch(projectName: string, launchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }/launch/${ launchName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:evidently:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/launch/${ launchName }`);
   }
 
   /**
@@ -603,7 +603,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSegment(segmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:evidently:${ region || this.defaultRegion }:${ account || this.defaultAccount }:segment/${ segmentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:evidently:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:segment/${ segmentName }`);
   }
 
   /**
@@ -624,7 +624,7 @@ export class Evidently extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -644,7 +644,7 @@ export class Evidently extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -665,6 +665,6 @@ export class Evidently extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

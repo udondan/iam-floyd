@@ -204,7 +204,7 @@ export class Rbin extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:rbin:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rbin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ resourceName }`);
   }
 
   /**
@@ -221,7 +221,7 @@ export class Rbin extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -247,7 +247,7 @@ export class Rbin extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -264,7 +264,7 @@ export class Rbin extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -286,7 +286,7 @@ export class Rbin extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAttributeResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Attribute/ResourceType`, value, operator || 'StringLike');
+    return this.if(`Attribute/ResourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -302,6 +302,6 @@ export class Rbin extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/ResourceType`, value, operator || 'StringLike');
+    return this.if(`Request/ResourceType`, value, operator ?? 'StringLike');
   }
 }

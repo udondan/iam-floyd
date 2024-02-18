@@ -454,7 +454,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifJobType()
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobs/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -471,7 +471,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSets(dataSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }`);
   }
 
   /**
@@ -484,7 +484,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledDataSets(dataSetId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }`);
   }
 
   /**
@@ -502,7 +502,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRevisions(dataSetId: string, revisionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -516,7 +516,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledRevisions(dataSetId: string, revisionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -532,7 +532,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -547,7 +547,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEntitledAssets(dataSetId: string, revisionId: string, assetId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -561,7 +561,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dataexchange:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-actions/${ eventActionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-actions/${ eventActionId }`);
   }
 
   /**
@@ -579,7 +579,7 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -596,7 +596,7 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -614,7 +614,7 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -629,6 +629,6 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifJobType(value: string | string[], operator?: Operator | string) {
-    return this.if(`JobType`, value, operator || 'StringLike');
+    return this.if(`JobType`, value, operator ?? 'StringLike');
   }
 }

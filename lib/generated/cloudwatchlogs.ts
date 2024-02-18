@@ -1075,7 +1075,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:log-group:${ logGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:log-group:${ logGroupName }`);
   }
 
   /**
@@ -1093,7 +1093,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
   }
 
   /**
@@ -1110,7 +1110,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:destination:${ destinationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:destination:${ destinationName }`);
   }
 
   /**
@@ -1127,7 +1127,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverySource(deliverySourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery-source:${ deliverySourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery-source:${ deliverySourceName }`);
   }
 
   /**
@@ -1144,7 +1144,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDelivery(deliveryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery:${ deliveryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery:${ deliveryName }`);
   }
 
   /**
@@ -1161,7 +1161,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliveryDestination(deliveryDestinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:delivery-destination:${ deliveryDestinationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery-destination:${ deliveryDestinationName }`);
   }
 
   /**
@@ -1178,7 +1178,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:logs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:anomaly-detector:${ detectorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:anomaly-detector:${ detectorId }`);
   }
 
   /**
@@ -1201,7 +1201,7 @@ export class Logs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1223,7 +1223,7 @@ export class Logs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1247,7 +1247,7 @@ export class Logs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1262,7 +1262,7 @@ export class Logs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDeliveryDestinationResourceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`DeliveryDestinationResourceArn`, value, operator || 'ArnLike');
+    return this.if(`DeliveryDestinationResourceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1277,6 +1277,6 @@ export class Logs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifLogGeneratingResourceArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`LogGeneratingResourceArns`, value, operator || 'ArnLike');
+    return this.if(`LogGeneratingResourceArns`, value, operator ?? 'ArnLike');
   }
 }

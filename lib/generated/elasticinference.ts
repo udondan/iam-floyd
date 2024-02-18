@@ -108,6 +108,6 @@ export class ElasticInference extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elastic-inference:${ region || this.defaultRegion }:${ account || this.defaultAccount }:elastic-inference-accelerator/${ acceleratorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elastic-inference:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 }

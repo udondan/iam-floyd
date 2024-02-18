@@ -485,7 +485,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResource()
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:secretsmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:secret:${ secretId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:secretsmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secret:${ secretId }`);
   }
 
   /**
@@ -505,7 +505,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -543,7 +543,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -563,7 +563,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -579,7 +579,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAddReplicaRegions(value: string | string[], operator?: Operator | string) {
-    return this.if(`AddReplicaRegions`, value, operator || 'StringLike');
+    return this.if(`AddReplicaRegions`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -609,7 +609,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDescription(value: string | string[], operator?: Operator | string) {
-    return this.if(`Description`, value, operator || 'StringLike');
+    return this.if(`Description`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -654,7 +654,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKmsKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`KmsKeyId`, value, operator || 'StringLike');
+    return this.if(`KmsKeyId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -683,7 +683,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifName(value: string | string[], operator?: Operator | string) {
-    return this.if(`Name`, value, operator || 'StringLike');
+    return this.if(`Name`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -698,7 +698,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRecoveryWindowInDays(value: number | number[], operator?: Operator | string) {
-    return this.if(`RecoveryWindowInDays`, value, operator || 'NumericEquals');
+    return this.if(`RecoveryWindowInDays`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -736,7 +736,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -765,7 +765,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRotationLambdaARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`RotationLambdaARN`, value, operator || 'ArnLike');
+    return this.if(`RotationLambdaARN`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -798,7 +798,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSecretId(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecretId`, value, operator || 'ArnLike');
+    return this.if(`SecretId`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -831,7 +831,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecretPrimaryRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecretPrimaryRegion`, value, operator || 'StringLike');
+    return this.if(`SecretPrimaryRegion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -846,7 +846,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VersionId`, value, operator || 'StringLike');
+    return this.if(`VersionId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -862,7 +862,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionStage(value: string | string[], operator?: Operator | string) {
-    return this.if(`VersionStage`, value, operator || 'StringLike');
+    return this.if(`VersionStage`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -899,6 +899,6 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`resource/${ allowRotationLambdaArn }`, value, operator || 'ArnLike');
+    return this.if(`resource/${ allowRotationLambdaArn }`, value, operator ?? 'ArnLike');
   }
 }

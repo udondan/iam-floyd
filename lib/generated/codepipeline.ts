@@ -532,7 +532,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }/${ stageName }/${ actionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codepipeline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ pipelineName }/${ stageName }/${ actionName }`);
   }
 
   /**
@@ -552,7 +552,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codepipeline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
   }
 
   /**
@@ -569,7 +569,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codepipeline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ pipelineName }`);
   }
 
   /**
@@ -587,7 +587,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ pipelineName }/${ stageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codepipeline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ pipelineName }/${ stageName }`);
   }
 
   /**
@@ -604,7 +604,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codepipeline:${ region || this.defaultRegion }:${ account || this.defaultAccount }:webhook:${ webhookName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codepipeline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:webhook:${ webhookName }`);
   }
 
   /**
@@ -623,7 +623,7 @@ export class Codepipeline extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -643,7 +643,7 @@ export class Codepipeline extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -662,6 +662,6 @@ export class Codepipeline extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

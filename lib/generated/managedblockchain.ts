@@ -494,7 +494,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }::networks/${ networkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }::networks/${ networkId }`);
   }
 
   /**
@@ -511,7 +511,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }:${ account || this.defaultAccount }:members/${ memberId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:members/${ memberId }`);
   }
 
   /**
@@ -528,7 +528,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }:${ account || this.defaultAccount }:nodes/${ nodeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:nodes/${ nodeId }`);
   }
 
   /**
@@ -544,7 +544,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }::proposals/${ proposalId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }::proposals/${ proposalId }`);
   }
 
   /**
@@ -561,7 +561,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }:${ account || this.defaultAccount }:invitations/${ invitationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:invitations/${ invitationId }`);
   }
 
   /**
@@ -578,7 +578,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:managedblockchain:${ region || this.defaultRegion }:${ account || this.defaultAccount }:accessors/${ accessorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accessors/${ accessorId }`);
   }
 
   /**
@@ -599,7 +599,7 @@ export class Managedblockchain extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -620,7 +620,7 @@ export class Managedblockchain extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -641,6 +641,6 @@ export class Managedblockchain extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

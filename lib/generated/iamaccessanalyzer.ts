@@ -436,7 +436,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:access-analyzer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analyzer/${ analyzerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:access-analyzer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analyzer/${ analyzerName }`);
   }
 
   /**
@@ -451,7 +451,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:access-analyzer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:access-analyzer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -485,7 +485,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -503,6 +503,6 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

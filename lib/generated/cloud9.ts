@@ -448,7 +448,7 @@ export class Cloud9 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloud9:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloud9:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment:${ resourceId }`);
   }
 
   /**
@@ -466,7 +466,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -482,7 +482,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -500,7 +500,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -517,7 +517,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnvironmentId(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnvironmentId`, value, operator || 'StringLike');
+    return this.if(`EnvironmentId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -533,7 +533,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnvironmentName`, value, operator || 'StringLike');
+    return this.if(`EnvironmentName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -548,7 +548,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`InstanceType`, value, operator || 'StringLike');
+    return this.if(`InstanceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -564,7 +564,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifOwnerArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`OwnerArn`, value, operator || 'ArnLike');
+    return this.if(`OwnerArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -580,7 +580,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPermissions(value: string | string[], operator?: Operator | string) {
-    return this.if(`Permissions`, value, operator || 'StringLike');
+    return this.if(`Permissions`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -595,7 +595,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnetId(value: string | string[], operator?: Operator | string) {
-    return this.if(`SubnetId`, value, operator || 'StringLike');
+    return this.if(`SubnetId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -614,6 +614,6 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUserArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserArn`, value, operator || 'ArnLike');
+    return this.if(`UserArn`, value, operator ?? 'ArnLike');
   }
 }

@@ -428,7 +428,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCodegenJobResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/codegen-jobs/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplifyuibuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ appId }/environment/${ environmentName }/codegen-jobs/${ id }`);
   }
 
   /**
@@ -450,7 +450,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplifyuibuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ appId }/environment/${ environmentName }/components/${ id }`);
   }
 
   /**
@@ -472,7 +472,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFormResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplifyuibuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ appId }/environment/${ environmentName }/forms/${ id }`);
   }
 
   /**
@@ -494,7 +494,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThemeResource(appId: string, environmentName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplifyuibuilder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplifyuibuilder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ appId }/environment/${ environmentName }/themes/${ id }`);
   }
 
   /**
@@ -509,7 +509,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCodegenJobResourceAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`CodegenJobResourceAppId`, value, operator || 'StringLike');
+    return this.if(`CodegenJobResourceAppId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -524,7 +524,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCodegenJobResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`CodegenJobResourceEnvironmentName`, value, operator || 'StringLike');
+    return this.if(`CodegenJobResourceEnvironmentName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -539,7 +539,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCodegenJobResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`CodegenJobResourceId`, value, operator || 'StringLike');
+    return this.if(`CodegenJobResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -554,7 +554,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifComponentResourceAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ComponentResourceAppId`, value, operator || 'StringLike');
+    return this.if(`ComponentResourceAppId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -569,7 +569,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifComponentResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ComponentResourceEnvironmentName`, value, operator || 'StringLike');
+    return this.if(`ComponentResourceEnvironmentName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -584,7 +584,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifComponentResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ComponentResourceId`, value, operator || 'StringLike');
+    return this.if(`ComponentResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -599,7 +599,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFormResourceAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`FormResourceAppId`, value, operator || 'StringLike');
+    return this.if(`FormResourceAppId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -614,7 +614,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFormResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`FormResourceEnvironmentName`, value, operator || 'StringLike');
+    return this.if(`FormResourceEnvironmentName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -629,7 +629,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFormResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`FormResourceId`, value, operator || 'StringLike');
+    return this.if(`FormResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -644,7 +644,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifThemeResourceAppId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThemeResourceAppId`, value, operator || 'StringLike');
+    return this.if(`ThemeResourceAppId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -659,7 +659,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifThemeResourceEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThemeResourceEnvironmentName`, value, operator || 'StringLike');
+    return this.if(`ThemeResourceEnvironmentName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -674,7 +674,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifThemeResourceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThemeResourceId`, value, operator || 'StringLike');
+    return this.if(`ThemeResourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -693,7 +693,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -712,7 +712,7 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -730,6 +730,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

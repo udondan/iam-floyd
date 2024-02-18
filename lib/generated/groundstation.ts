@@ -469,7 +469,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:config/${ configType }/${ configId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:config/${ configType }/${ configId }`);
   }
 
   /**
@@ -487,7 +487,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact/${ contactId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:contact/${ contactId }`);
   }
 
   /**
@@ -505,7 +505,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
   }
 
   /**
@@ -523,7 +523,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifEphemerisId()
    */
   public onEphemerisItem(ephemerisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ephemeris/${ ephemerisId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ephemeris/${ ephemerisId }`);
   }
 
   /**
@@ -540,7 +540,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:groundstation:${ groundStationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:groundstation:${ groundStationId }`);
   }
 
   /**
@@ -558,7 +558,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mission-profile/${ missionProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mission-profile/${ missionProfileId }`);
   }
 
   /**
@@ -575,7 +575,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:satellite/${ satelliteId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:satellite/${ satelliteId }`);
   }
 
   /**
@@ -592,7 +592,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifAgentId()
    */
   public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:groundstation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:agent/${ agentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**
@@ -613,7 +613,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -633,7 +633,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -654,7 +654,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -669,7 +669,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAgentId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AgentId`, value, operator || 'StringLike');
+    return this.if(`AgentId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -684,7 +684,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ConfigId`, value, operator || 'StringLike');
+    return this.if(`ConfigId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -699,7 +699,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ConfigType`, value, operator || 'StringLike');
+    return this.if(`ConfigType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -714,7 +714,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifContactId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ContactId`, value, operator || 'StringLike');
+    return this.if(`ContactId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -729,7 +729,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataflowEndpointGroupId(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataflowEndpointGroupId`, value, operator || 'StringLike');
+    return this.if(`DataflowEndpointGroupId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -744,7 +744,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEphemerisId(value: string | string[], operator?: Operator | string) {
-    return this.if(`EphemerisId`, value, operator || 'StringLike');
+    return this.if(`EphemerisId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -759,7 +759,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGroundStationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`GroundStationId`, value, operator || 'StringLike');
+    return this.if(`GroundStationId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -774,7 +774,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMissionProfileId(value: string | string[], operator?: Operator | string) {
-    return this.if(`MissionProfileId`, value, operator || 'StringLike');
+    return this.if(`MissionProfileId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -789,6 +789,6 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSatelliteId(value: string | string[], operator?: Operator | string) {
-    return this.if(`SatelliteId`, value, operator || 'StringLike');
+    return this.if(`SatelliteId`, value, operator ?? 'StringLike');
   }
 }

@@ -1240,7 +1240,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:profile/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ resourceId }`);
   }
 
   /**
@@ -1257,7 +1257,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:room/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:room/${ resourceId }`);
   }
 
   /**
@@ -1274,7 +1274,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device/${ resourceId }`);
   }
 
   /**
@@ -1288,7 +1288,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:skill-group/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:skill-group/${ resourceId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ resourceId }`);
   }
 
   /**
@@ -1319,7 +1319,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:address-book/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:address-book/${ resourceId }`);
   }
 
   /**
@@ -1333,7 +1333,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:conference-provider/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:conference-provider/${ resourceId }`);
   }
 
   /**
@@ -1347,7 +1347,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:contact/${ resourceId }`);
   }
 
   /**
@@ -1361,7 +1361,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schedule/${ resourceId }`);
   }
 
   /**
@@ -1375,7 +1375,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-profile/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-profile/${ resourceId }`);
   }
 
   /**
@@ -1389,7 +1389,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGateway(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ resourceId }`);
   }
 
   /**
@@ -1403,7 +1403,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGatewaygroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:a4b:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway-group/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:a4b:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway-group/${ resourceId }`);
   }
 
   /**
@@ -1415,7 +1415,7 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAmazonId(value: string | string[], operator?: Operator | string) {
-    return this.if(`amazonId`, value, operator || 'StringLike');
+    return this.if(`amazonId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1427,7 +1427,7 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFiltersDeviceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`filters_deviceType`, value, operator || 'StringLike');
+    return this.if(`filters_deviceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1454,7 +1454,7 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1472,7 +1472,7 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1498,6 +1498,6 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

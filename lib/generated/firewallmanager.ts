@@ -576,7 +576,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:policy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy/${ id }`);
   }
 
   /**
@@ -593,7 +593,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplicationsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:applications-list/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:applications-list/${ id }`);
   }
 
   /**
@@ -610,7 +610,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtocolsList(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:protocols-list/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:protocols-list/${ id }`);
   }
 
   /**
@@ -627,7 +627,7 @@ export class Fms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceSet(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-set/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resource-set/${ id }`);
   }
 
   /**
@@ -647,7 +647,7 @@ export class Fms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -670,7 +670,7 @@ export class Fms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -690,6 +690,6 @@ export class Fms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

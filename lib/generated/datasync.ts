@@ -844,7 +844,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:agent/${ agentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:agent/${ agentId }`);
   }
 
   /**
@@ -861,7 +861,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:location/${ locationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:location/${ locationId }`);
   }
 
   /**
@@ -878,7 +878,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:task/${ taskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:task/${ taskId }`);
   }
 
   /**
@@ -896,7 +896,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:task/${ taskId }/execution/${ executionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:task/${ taskId }/execution/${ executionId }`);
   }
 
   /**
@@ -913,7 +913,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStoragesystem(storageSystemId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:system/${ storageSystemId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }`);
   }
 
   /**
@@ -931,7 +931,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDiscoveryjob(storageSystemId: string, discoveryJobId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:datasync:${ region || this.defaultRegion }:${ accountId || this.defaultAccount }:system/${ storageSystemId }/job/${ discoveryJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }/job/${ discoveryJobId }`);
   }
 
   /**
@@ -962,7 +962,7 @@ export class Datasync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -991,7 +991,7 @@ export class Datasync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1022,6 +1022,6 @@ export class Datasync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

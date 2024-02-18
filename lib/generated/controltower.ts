@@ -815,7 +815,7 @@ export class Controltower extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnabledControl(enabledControlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:enabledcontrol/${ enabledControlId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:controltower:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:enabledcontrol/${ enabledControlId }`);
   }
 
   /**
@@ -828,7 +828,7 @@ export class Controltower extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBaseline(baselineId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }::baseline/${ baselineId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:controltower:${ region ?? this.defaultRegion }::baseline/${ baselineId }`);
   }
 
   /**
@@ -845,7 +845,7 @@ export class Controltower extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnabledBaseline(enabledBaselineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:enabledbaseline/${ enabledBaselineId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:controltower:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:enabledbaseline/${ enabledBaselineId }`);
   }
 
   /**
@@ -862,7 +862,7 @@ export class Controltower extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLandingZone(landingZoneId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:controltower:${ region || this.defaultRegion }:${ account || this.defaultAccount }:landingzone/${ landingZoneId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:controltower:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:landingzone/${ landingZoneId }`);
   }
 
   /**
@@ -881,7 +881,7 @@ export class Controltower extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -899,7 +899,7 @@ export class Controltower extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -918,6 +918,6 @@ export class Controltower extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

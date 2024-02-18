@@ -838,7 +838,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCar(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:car/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:car/${ resourceId }`);
   }
 
   /**
@@ -855,7 +855,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -871,7 +871,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboard(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }::leaderboard/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }::leaderboard/${ resourceId }`);
   }
 
   /**
@@ -888,7 +888,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:leaderboard_evaluation_job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:leaderboard_evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -905,7 +905,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/reinforcement_learning/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/reinforcement_learning/${ resourceId }`);
   }
 
   /**
@@ -918,7 +918,7 @@ export class Deepracer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrack(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }::track/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }::track/${ resourceId }`);
   }
 
   /**
@@ -935,7 +935,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepracer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training_job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepracer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training_job/${ resourceId }`);
   }
 
   /**
@@ -957,7 +957,7 @@ export class Deepracer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -982,7 +982,7 @@ export class Deepracer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1004,7 +1004,7 @@ export class Deepracer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1115,6 +1115,6 @@ export class Deepracer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserToken(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserToken`, value, operator || 'StringLike');
+    return this.if(`UserToken`, value, operator ?? 'StringLike');
   }
 }

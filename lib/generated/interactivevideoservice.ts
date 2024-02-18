@@ -802,7 +802,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ resourceId }`);
   }
 
   /**
@@ -819,7 +819,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamKey(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream-key/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream-key/${ resourceId }`);
   }
 
   /**
@@ -836,7 +836,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackKeyPair(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:playback-key/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:playback-key/${ resourceId }`);
   }
 
   /**
@@ -853,7 +853,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackRestrictionPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:playback-restriction-policy/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:playback-restriction-policy/${ resourceId }`);
   }
 
   /**
@@ -870,7 +870,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recording-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recording-configuration/${ resourceId }`);
   }
 
   /**
@@ -887,7 +887,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stage/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stage/${ resourceId }`);
   }
 
   /**
@@ -904,7 +904,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComposition(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:composition/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:composition/${ resourceId }`);
   }
 
   /**
@@ -921,7 +921,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEncoderConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:encoder-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:encoder-configuration/${ resourceId }`);
   }
 
   /**
@@ -938,7 +938,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStorageConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ivs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:storage-configuration/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:storage-configuration/${ resourceId }`);
   }
 
   /**
@@ -965,7 +965,7 @@ export class Ivs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -989,7 +989,7 @@ export class Ivs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1016,6 +1016,6 @@ export class Ivs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
