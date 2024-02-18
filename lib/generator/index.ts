@@ -57,33 +57,38 @@ const conditionTypeDefaults: Record<
   string,
   {
     url: string;
-    default: Operator;
+    default: Operator | string;
     type: string[];
   }
 > = {
   string: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
-    default: new Operator().stringLike(),
+    default: Operator.stringLike,
     type: ['string'],
   },
   arn: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
-    default: new Operator().arnLike(),
+    default: Operator.arnLike,
     type: ['string'],
   },
   numeric: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
-    default: new Operator().numericEquals(),
+    default: Operator.numericEquals,
     type: ['number'],
   },
   date: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
-    default: new Operator().dateEquals(),
+    default: Operator.dateEquals,
     type: ['Date', 'string'],
   },
   ipaddress: {
     url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress',
-    default: new Operator().ipAddress(),
+    default: Operator.ipAddress,
+    type: ['string'],
+  },
+  binary: {
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_BinaryEquals',
+    default: Operator.binaryEquals,
     type: ['string'],
   },
 };
