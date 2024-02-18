@@ -1,4 +1,3 @@
-// @ts-ignore only available after swapping 1-base
 import { aws_iam as iam } from 'aws-cdk-lib';
 
 import { PolicyStatementWithPrincipal, PrincipalType } from './8-principals';

@@ -1,5 +1,4 @@
 // This file is used in the CDK variant of the package: cdk-iam-floyd
-// @ts-ignore only available running bin/mkcdk
 import { aws_iam as iam } from 'aws-cdk-lib';
 
 import { PolicyStatementWithResources } from './4-resources';
